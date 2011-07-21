@@ -89,11 +89,8 @@ class IdentityService(object):
 
         if not duser.enabled:
             raise fault.UserDisabledFault("Your account has been disabled")
-        try:
-            if not validate(duser):
-                raise fault.UnauthorizedFault("Unauthorized")
-        except Exception as exc:
-            raise fault.UnauthorizedFault("Unable to validate: %s" % exc)
+        if not api.user.check_password(duser, credentials.password):
+            raise fault.UnauthorizedFault("Unauthorized")
 
         # Look for an existing token, or create one,
         # TODO: Handle tenant/token search

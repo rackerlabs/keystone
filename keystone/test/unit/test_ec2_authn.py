@@ -62,8 +62,7 @@ class EC2AuthnMethods(base.ServiceAPITest):
         obj_creds = auth.Ec2Credentials(**credentials)
         credentials['signature'] = sign.generate(obj_creds)
         body = {
-            "ec2Credentials": credentials
-        }
+            "ec2Credentials": credentials}
         req.body = json.dumps(body)
         self.get_response()
 
@@ -72,10 +71,7 @@ class EC2AuthnMethods(base.ServiceAPITest):
                 u'serviceCatalog': {},
                 u'token': {
                     u'expires': self.expires.strftime("%Y-%m-%dT%H:%M:%S.%f"),
-                    u'id': self.auth_token_id
-                }
-            }
-        }
+                    u'id': self.auth_token_id}}}
         self.assert_dict_equal(expected, json.loads(self.res.body))
         self.status_ok()
 
@@ -113,17 +109,14 @@ class EC2AuthnMethods(base.ServiceAPITest):
         obj_creds = auth.Ec2Credentials(**credentials)
         credentials['signature'] = sign.generate(obj_creds)
         body = {
-            "ec2Credentials": credentials
-        }
+            "ec2Credentials": credentials}
         req.body = json.dumps(body)
         self.get_response()
 
         expected = {
             u'unauthorized': {
                 u'code': u'401',
-                u'message': u'Unauthorized on this tenant',
-            }
-        }
+                u'message': u'Unauthorized on this tenant'}}
         self.assert_dict_equal(expected, json.loads(self.res.body))
         self.assertEqual(self.res.status_int, 401)
 
@@ -161,17 +154,14 @@ class EC2AuthnMethods(base.ServiceAPITest):
         obj_creds = auth.Ec2Credentials(**credentials)
         credentials['signature'] = sign.generate(obj_creds)
         body = {
-            "ec2Credentials": credentials
-        }
+            "ec2Credentials": credentials}
         req.body = json.dumps(body)
         self.get_response()
 
         expected = {
             u'unauthorized': {
                 u'code': u'401',
-                u'message': u'Unauthorized on this tenant',
-            }
-        }
+                u'message': u'Unauthorized on this tenant'}}
         self.assert_dict_equal(expected, json.loads(self.res.body))
         self.assertEqual(self.res.status_int, 401)
 
