@@ -142,17 +142,19 @@ class FakeLDAP(object):
             LOG.error("FakeLDAP bind fail: dn=%s not found" % (dn,))
             raise ldap.NO_SUCH_OBJECT
 
-        dp_passwd = None
+        db_passwd = None
         try:
-            if attrs['userPassword'][0] != password:
-                LOG.error(
-                    "FakeLDAP bind fail: password for dn=%s does not match" %
-                    dn)
-                raise ldap.INVALID_CREDENTIALS
+            db_passwd = attrs['userPassword'][0]
         except KeyError, IndexError:
             LOG.error(
                 "FakeLDAP bind fail: password for dn=%s not found" % dn)
             raise ldap.INAPPROPRIATE_AUTH
+
+        if db_passwd != password:
+            LOG.error(
+                "FakeLDAP bind fail: password for dn=%s does not match" %
+                dn)
+            raise ldap.INVALID_CREDENTIALS
 
     def unbind_s(self):
         """This method is ignored, but provided for compatibility."""
