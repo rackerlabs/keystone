@@ -35,17 +35,17 @@ def get_app_root():
 
 
 def get_auth_token(req):
-    """Returns the auth token from request headers"""
+    """Returns the auth token from the request's headers"""
     return req.headers.get("X-Auth-Token")
 
 
 def get_auth_user(req):
-    """Returns the auth user from request headers"""
+    """Returns the auth user from the request's headers"""
     return req.headers.get("X-Auth-User")
 
 
 def get_auth_key(req):
-    """Returns the auth key from request headers"""
+    """Returns the auth key from the request's headers"""
     return req.headers.get("X-Auth-Key")
 
 
