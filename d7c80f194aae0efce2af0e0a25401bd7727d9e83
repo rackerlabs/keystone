@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAA3///6A\u003d",
+        "filename": "keystone/backends/memcache/api/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-07-26T21:09:06Z",
+      "side": 1,
+      "message": "Is this configurable somewhere? If not, I\u0027d create a new constant in keystone.config that both backends can reference",
+      "revId": "d7c80f194aae0efce2af0e0a25401bd7727d9e83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
