@@ -1,0 +1,8 @@
+Change-Id: Iba8412d6e324035149e59338bc4c497365cc6816
+Verified+1: Jenkins
+Code-Review+2: Ziad Sawalha <ziad.sawalha@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 26 Jul 2011 17:57:50 +0000
+Reviewed-on: https://review.openstack.org/43
+Project: openstack/keystone
+Branch: refs/heads/master
