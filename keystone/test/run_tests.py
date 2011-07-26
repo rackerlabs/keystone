@@ -7,10 +7,10 @@ if __name__ == '__main__':
     test_dir = os.path.dirname(__file__)
 
     #remove pre-existing test databases
-    subprocess.call(['rm', os.path.join(test_dir, 'keystone.db')])
-    subprocess.call(['rm', os.path.join(test_dir, 'keystone.token.db')])
-    subprocess.call(['rm', os.path.join(test_dir, 'ldap.db')])
-    subprocess.call(['rm', os.path.join(test_dir, 'ldap.db.db')])
+    for old_file in ('keystone.db','keystone.token.db',
+                     'ldap.db','ldap.db.db'):
+        if os.path.exists(old_file):
+            os.remove(old_file)
 
     # populate the test database
     subprocess.check_call([os.path.join(test_dir, '../../bin/sampledata.sh')])
@@ -39,7 +39,7 @@ if __name__ == '__main__':
             server.kill()
     finally:
         # remove test databases
-        subprocess.call(['rm', os.path.join(test_dir, 'keystone.db')])
-        subprocess.call(['rm', os.path.join(test_dir, 'keystone.token.db')])
-        subprocess.call(['rm', os.path.join(test_dir, 'ldap.db')])
-        subprocess.call(['rm', os.path.join(test_dir, 'ldap.db.db')])
+        for old_file in ('keystone.db','keystone.token.db',
+                         'ldap.db','ldap.db.db'):
+            if os.path.exists(old_file):
+                os.remove(old_file)
