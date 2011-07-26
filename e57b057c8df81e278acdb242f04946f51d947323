@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAA3///5w\u003d",
+        "filename": "keystone/backends/memcache/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-07-26T16:07:09Z",
+      "side": 1,
+      "message": "Module level variables should be UPPERCASE, and if this value applies to token expiration in other backends as well, should be centralized in keystone.config and renamed to TOKEN_DURATION or something",
+      "revId": "e57b057c8df81e278acdb242f04946f51d947323",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
