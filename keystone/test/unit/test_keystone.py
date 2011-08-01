@@ -16,6 +16,7 @@ TEST_FILES = [
     'test_tenants.py',
     'test_token.py',
     'test_users.py',
+    'test_services.py',
     'test_version.py']
 
 
