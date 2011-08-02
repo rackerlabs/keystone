@@ -78,5 +78,15 @@ class KeystoneAuthShim(wsgi.Middleware):
         if not self.auth.is_project_member(user_id, project_id):
             self.auth.add_to_project(user_id, project_id)
 
-        req.environ['nova.context'] = context.RequestContext(user_ref, project_ref)
+        # Get the auth token
+        auth_token = req.headers.get('X_AUTH_TOKEN',
+                                     req.headers.get('X_STORAGE_TOKEN'))
+
+        # Build a context, including the auth_token...
+        ctx = context.RequestContext(user_ref, project_ref,
+                                     auth_token=auth_token)
+
+        # And install it
+        req.environ['nova.context'] = ctx
+
         return self.application
