@@ -17,6 +17,7 @@ from datetime import datetime, timedelta
 import uuid
 
 from keystone.logic.types import auth, atom
+from keystone.logic.signer import Signer
 import keystone.backends as backends
 import keystone.backends.api as api
 import keystone.backends.models as models
@@ -41,54 +42,74 @@ class IdentityService(object):
         if not isinstance(credentials, auth.PasswordCredentials):
             raise fault.BadRequestFault("Expecting Password Credentials!")
 
-        if not credentials.tenant_id:
-            duser = api.user.get(credentials.username)
+        def validate(duser):
+            hashed_pass = utils.get_hashed_password(credentials.password)
+            return duser.password == hashed_pass
+
+        return self._authenticate(validate,
+                                  credentials.username,
+                                  credentials.tenant_id)
+
+    def authenticate_ec2(self, credentials):
+        # Check credentials
+        if not isinstance(credentials, auth.Ec2Credentials):
+            raise fault.BadRequestFault("Expecting Ec2 Credentials!")
+
+        creds = api.credentials.get_by_access(credentials.access)
+        if not creds:
+            raise fault.UnauthorizedFault("No credentials found for %s"
+                                          % credentials.access)
+
+        def validate(duser):
+            signature = Signer(creds.secret).generate(credentials)
+            return signature == credentials.signature
+
+        return self._authenticate(validate, creds.user_id, creds.tenant_id)
+
+
+    def _authenticate(self, validate, user_id, tenant_id=None):
+        if not tenant_id:
+            duser = api.user.get(user_id)
             if duser == None:
                 raise fault.UnauthorizedFault("Unauthorized")
         else:
-            duser = api.user.get_by_tenant(credentials.username,
-                credentials.tenant_id)
+            duser = api.user.get_by_tenant(user_id, tenant_id)
             if duser == None:
                 raise fault.UnauthorizedFault("Unauthorized on this tenant")
 
         if not duser.enabled:
             raise fault.UserDisabledFault("Your account has been disabled")
-        if duser.password != utils.get_hashed_password(credentials.password):
-            raise fault.UnauthorizedFault("Unauthorized")
-        
-        #
+        try:
+            if not validate(duser):
+                raise fault.UnauthorizedFault("Unauthorized")
+        except Exception as exc:
+            raise fault.UnauthorizedFault("Unable to validate: %s" % exc)
+
         # Look for an existing token, or create one,
         # TODO: Handle tenant/token search
         #
-        if not credentials.tenant_id:
-            dtoken = api.token.get_for_user(duser.id)
-        else:
-            dtoken = api.token.get_for_user_by_tenant(duser.id,
-                                                  credentials.tenant_id)
-        
-        tenant_id = credentials.tenant_id or duser.tenant_id
-        
+        user_id = duser.id
+        tenant_id = tenant_id or duser.tenant_id
+        dtoken = api.token.get_for_user_by_tenant(user_id, tenant_id)
+
         if not dtoken or dtoken.expires < datetime.now():
             # Create new token
             dtoken = models.Token()
             dtoken.id = str(uuid.uuid4())
-            dtoken.user_id = duser.id
-            if credentials.tenant_id:
-                dtoken.tenant_id = credentials.tenant_id
+            dtoken.user_id = user_id
+            dtoken.tenant_id = tenant_id
             dtoken.expires = datetime.now() + timedelta(days=1)
             api.token.create(dtoken)
-        #if tenant_id is passed in the call that tenant_id is passed else
-        #user's default tenant_id is used.
         return self.__get_auth_data(dtoken, tenant_id)
 
     def validate_token(self, admin_token, token_id, belongs_to=None):
         self.__validate_admin_token(admin_token)
-        
+
         if not api.token.get(token_id):
             raise fault.UnauthorizedFault("Bad token, please reauthenticate")
-        
+
         (token, user) = self.__validate_token(token_id, belongs_to)
-        
+
         return self.__get_validate_data(token, user)
 
     def revoke_token(self, admin_token, token_id):
@@ -131,7 +152,7 @@ class IdentityService(object):
     def get_tenants(self, admin_token, marker, limit, url):
         try:
             (_token, user) = self.__validate_admin_token(admin_token)
-            # If Global admin return all 
+            # If Global admin return all
             ts = []
             dtenants = api.tenant.get_page(marker, limit)
             for dtenant in dtenants:
@@ -179,7 +200,7 @@ class IdentityService(object):
 
         if not isinstance(tenant, Tenant):
             raise fault.BadRequestFault("Expecting a Tenant")
-        
+
         dtenant = api.tenant.get(tenant_id)
         if dtenant == None:
             raise fault.ItemNotFoundFault("The tenant could not be found")
@@ -189,15 +210,15 @@ class IdentityService(object):
 
     def delete_tenant(self, admin_token, tenant_id):
         self.__validate_admin_token(admin_token)
-        
+
         dtenant = api.tenant.get(tenant_id)
         if dtenant == None:
             raise fault.ItemNotFoundFault("The tenant could not be found")
-        
+
         if not api.tenant.is_empty(tenant_id):
             raise fault.ForbiddenFault("You may not delete a tenant that "
                                        "contains get_users")
-        
+
         api.tenant.delete(dtenant.id)
         return None
 
@@ -279,10 +300,10 @@ class IdentityService(object):
             prev, next = api.user.users_get_by_tenant_get_page_markers(
                     tenant_id, marker, limit)
             if prev:
-                links.append(atom.Link('prev', "%s?'marker=%s&limit=%s'" % 
+                links.append(atom.Link('prev', "%s?'marker=%s&limit=%s'" %
                                       (url, prev, limit)))
             if next:
-                links.append(atom.Link('next', "%s?'marker=%s&limit=%s'" % 
+                links.append(atom.Link('next', "%s?'marker=%s&limit=%s'" %
                                       (url, next, limit)))
         return Users(ts, links)
 
@@ -297,10 +318,10 @@ class IdentityService(object):
         if ts.__len__():
             prev, next = api.user.users_get_page_markers(marker, limit)
             if prev:
-                links.append(atom.Link('prev', "%s?'marker=%s&limit=%s'" % 
+                links.append(atom.Link('prev', "%s?'marker=%s&limit=%s'" %
                                       (url, prev, limit)))
             if next:
-                links.append(atom.Link('next', "%s?'marker=%s&limit=%s'" % 
+                links.append(atom.Link('next', "%s?'marker=%s&limit=%s'" %
                                       (url, next, limit)))
         return Users(ts, links)
 
@@ -438,9 +459,9 @@ class IdentityService(object):
     def __validate_tenant(self, tenant_id):
         if not tenant_id:
             raise fault.UnauthorizedFault("Missing tenant")
-        
+
         tenant = api.tenant.get(tenant_id)
-        
+
         if not tenant.enabled:
             raise fault.TenantDisabledFault("Tenant %s has been disabled!"
                                           % tenant.id)
@@ -448,38 +469,38 @@ class IdentityService(object):
     def __validate_token(self, token_id, belongs_to=None):
         if not token_id:
             raise fault.UnauthorizedFault("Missing token")
-        
+
         (token, user) = self.__get_dauth_data(token_id)
 
         if not token:
             raise fault.ItemNotFoundFault("Bad token, please reauthenticate")
-        
+
         if token.expires < datetime.now():
             raise fault.ForbiddenFault("Token expired, please renew")
-        
+
         if not user.enabled:
             raise fault.UserDisabledFault("User %s has been disabled!"
                                           % user.id)
-        
+
         if user.tenant_id:
             self.__validate_tenant(user.tenant_id)
-        
+
         if token.tenant_id:
             self.__validate_tenant(token.tenant_id)
-        
+
         if belongs_to and token.tenant_id != belongs_to:
             raise fault.UnauthorizedFault("Unauthorized on this tenant")
-        
+
         return (token, user)
-    
+
     def __validate_admin_token(self, token_id):
         (token, user) = self.__validate_token(token_id)
-        
+
         for roleRef in api.role.ref_get_all_global_roles(user.id):
             if roleRef.role_id == backends.KeyStoneAdminRole and \
                     roleRef.tenant_id is None:
                 return (token, user)
-        
+
         raise fault.UnauthorizedFault(
             "You are not authorized to make this call")
 
@@ -651,10 +672,10 @@ class IdentityService(object):
                 api.endpoint_template.endpoint_get_by_tenant_get_page_markers(
                     tenant_id, marker, limit)
             if prev:
-                links.append(atom.Link('prev', "%s?'marker=%s&limit=%s'" % 
+                links.append(atom.Link('prev', "%s?'marker=%s&limit=%s'" %
                                       (url, prev, limit)))
             if next:
-                links.append(atom.Link('next', "%s?'marker=%s&limit=%s'" % 
+                links.append(atom.Link('next', "%s?'marker=%s&limit=%s'" %
                                       (url, next, limit)))
         return Endpoints(ts, links)
 
@@ -674,7 +695,7 @@ class IdentityService(object):
         dendpoint.tenant_id = tenant_id
         dendpoint.endpoint_template_id = endpoint_template.id
         dendpoint = api.endpoint_template.endpoint_add(dendpoint)
-        dendpoint = Endpoint(dendpoint.id, url + 
+        dendpoint = Endpoint(dendpoint.id, url +
             '/endpointTemplates/' + dendpoint.endpoint_template_id)
         return dendpoint
 

@@ -8,6 +8,7 @@ TEST_FILES = [
     'test_authentication.py',
     #'test_authn_v2.py', # this is largely failing
     'test_common.py', # this doesn't actually contain tests
+    'test_ec2_authn.py',
     'test_endpoints.py',
     #'test_urlrewritefilter.py',
     'test_keystone.py', # not sure why this is referencing itself

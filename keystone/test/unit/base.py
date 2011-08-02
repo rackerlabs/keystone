@@ -21,6 +21,10 @@ import functools
 import httplib
 import logging
 import pprint
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.abspath(__file__),
+                                '..', '..', '..', '..', '..', 'keystone')))
 import unittest
 
 from lxml import etree, objectify
@@ -28,13 +32,14 @@ import webob
 
 from keystone import server
 import keystone.backends.sqlalchemy as db
+import keystone.backends.alterdb as tokendb
 import keystone.backends.api as db_api
 
 logger = logging.getLogger('test.unit.base')
 
 
 class ServiceAPITest(unittest.TestCase):
-    
+
     """
     Base test case class for any unit test that tests the main service API.
     """
@@ -45,12 +50,6 @@ class ServiceAPITest(unittest.TestCase):
     """
     api_class = server.ServiceApi
 
-    """
-    Dict of configuration options to pass to the API controller
-    """
-    options = {'sql_connection': 'sqlite:///', # in-memory db
-               'verbose': False,
-               'debug': False}
 
     """
     Set of dicts of tenant attributes we start each test case with
@@ -88,6 +87,27 @@ class ServiceAPITest(unittest.TestCase):
     """
     api_version = '2.0'
 
+    """
+    Dict of configuration options to pass to the API controller
+    """
+    options = {
+        'backends': "keystone.backends.sqlalchemy,keystone.backends.alterdb",
+        'keystone.backends.sqlalchemy': {
+            'sql_connection': 'sqlite:///', # in-memory db
+            'verbose': False,
+            'debug': False,
+            'backend_entities':
+                "['UserRoleAssociation', 'Endpoints', 'Role', "
+                "'Tenant', 'User', 'Credentials', 'EndpointTemplates']",
+        },
+        'keystone.backends.alterdb': {
+            'sql_connection': 'sqlite:///', # in-memory db
+            'verbose': False,
+            'debug': False,
+            'backend_entities': "['Token']",
+        },
+        'keystone-admin-role': 'Admin',
+    }
     def setUp(self):
         self.api = self.api_class(self.options)
 
@@ -101,10 +121,11 @@ class ServiceAPITest(unittest.TestCase):
         # Create the user we will authenticate with
         self.auth_user = self.fixture_create_user(**self.auth_user_attrs)
         self.auth_token = self.fixture_create_token(
+            id=self.auth_token_id,
             user_id=self.auth_user['id'],
             tenant_id=self.auth_user['tenant_id'],
             expires=self.expires,
-            token_id=self.auth_token_id)
+        )
 
         self.add_verify_status_helpers()
 
@@ -118,9 +139,21 @@ class ServiceAPITest(unittest.TestCase):
         Purges the database of all data
         """
         db.unregister_models()
+        tokendb.unregister_models()
         logger.debug("Cleared all data from database")
-        #TODO: You can't register models without passing in options
-        db.register_models(options=None)
+        db.register_models(options=self.options['keystone.backends.sqlalchemy'])
+        tokendb.register_models(options=self.options['keystone.backends.alterdb'])
+
+    def fixture_create_credentials(self, **kwargs):
+        """
+        Creates a tenant fixture.
+
+        :params **kwargs: Attributes of the tenant to create
+        """
+        values = kwargs.copy()
+        credentials = db_api.credentials.create(values)
+        logger.debug("Created credentials fixture %s", credentials['id'])
+        return credentials
 
     def fixture_create_tenant(self, **kwargs):
         """
@@ -159,9 +192,9 @@ class ServiceAPITest(unittest.TestCase):
         """
         values = kwargs.copy()
         token = db_api.token.create(values)
-        logger.debug("Created token fixture %s", values['token_id'])
+        logger.debug("Created token fixture %s", values['id'])
         return token
-    
+
     def get_request(self, method, url, headers=None):
         """
         Sets the `req` attribute to a `webob.Request` object that
@@ -204,7 +237,7 @@ class ServiceAPITest(unittest.TestCase):
                                "get_response()!")
 
         self.assertEqual(status_code, self.res.status_int,
-                         "Incorrect status code %d. Expected %d" % 
+                         "Incorrect status code %d. Expected %d" %
                          (self.res.status_int, status_code))
 
     def add_verify_status_helpers(self):
@@ -226,7 +259,7 @@ class ServiceAPITest(unittest.TestCase):
         nicely formatted for easy comparison if there is a failure.
         """
         self.assertEqual(expected, got, "Mappings are not equal.\n"
-                         "Got:\n%s\nExpected:\n%s" % 
+                         "Got:\n%s\nExpected:\n%s" %
                          (pprint.pformat(got),
                           pprint.pformat(expected)))
 
@@ -243,7 +276,7 @@ class ServiceAPITest(unittest.TestCase):
         expected = objectify.fromstring(expected)
         self.assertEqual(etree.tostring(expected),
                          etree.tostring(got), "DOMs are not equal.\n"
-                         "Got:\n%s\nExpected:\n%s" % 
+                         "Got:\n%s\nExpected:\n%s" %
                          (etree.tostring(got, pretty_print=True),
                           etree.tostring(expected, pretty_print=True)))
 

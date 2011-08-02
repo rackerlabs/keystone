@@ -28,7 +28,7 @@ class KeystoneBase(object):
     """Base class for Keystone Models."""
     __api__ = None
     _i = None
-    
+
     def save(self, session=None):
         """Save this object."""
 
@@ -124,12 +124,15 @@ class User(Base, KeystoneBase):
     enabled = Column(Integer)
     tenant_id = Column(String(255), ForeignKey('tenants.id'))
     roles = relationship(UserRoleAssociation, cascade="all")
+    credentials = relationship('Credentials', backref='user', cascade="all")
 
 
 class Credentials(Base, KeystoneBase):
     __tablename__ = 'credentials'
-
-    user_id = Column(String(255), ForeignKey('users.id'), primary_key=True)
+    __api__ = 'credentials'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(String(255), ForeignKey('users.id'))
+    tenant_id = Column(String(255), ForeignKey('tenants.id'), nullable=True)
     type = Column(String(20))  # ('Password','APIKey','EC2')
     key = Column(String(255))
     secret = Column(String(255))
