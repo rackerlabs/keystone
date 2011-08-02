@@ -9,17 +9,20 @@ from keystone.controllers.staticfiles import StaticFilesController
 
 class ServiceApi(wsgi.Router):
     """WSGI entry point for Keystone Service API requests."""
-    
+
     def __init__(self, options):
         self.options = options
         mapper = routes.Mapper()
-        
+
         db.configure_backends(options)
-        
+
         # Token Operations
         auth_controller = AuthController(options)
         mapper.connect("/v2.0/tokens", controller=auth_controller,
                        action="authenticate",
+                       conditions=dict(method=["POST"]))
+        mapper.connect("/v2.0/ec2tokens", controller=auth_controller,
+                       action="authenticate_ec2",
                        conditions=dict(method=["POST"]))
 
         # Tenant Operations

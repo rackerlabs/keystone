@@ -18,7 +18,7 @@ import json
 import logging
 import unittest
 
-from keystone.test.unit import base
+import base
 from keystone.test.unit.decorators import jsonify, xmlify
 
 LOGGER = logging.getLogger('test.unit.test_authn_v2')
@@ -455,7 +455,7 @@ class TestAdminAuthnV2(base.AdminAPITest, AuthnMethods):
 
         for user_role in self.auth_user['roles']:
             expected = expected + """
-            <roleRef xmlns="http://docs.openstack.org/identity/api/v2.0" 
+            <roleRef xmlns="http://docs.openstack.org/identity/api/v2.0"
             id="%s" roleId="%s"/>""" % (user_role['id'],
                                         user_role['role_id'])
         expected = expected + """</roleRefs>
