@@ -16,3 +16,5 @@ pidfile
 doc/build/
 build/
 doc/guide/target
+.keystone-venv/
+keystone.egg-info/
