@@ -1,0 +1,9 @@
+Verified+1: Jenkins
+Code-Review+1: Dolph Mathews <dolph.mathews@rackspace.com>
+Code-Review+2: Jay Pipes <jaypipes@gmail.com>
+Code-Review+1: sleepsonthefloor
+Submitted-by: Jenkins
+Submitted-at: Wed, 03 Aug 2011 18:07:01 +0000
+Reviewed-on: https://review.openstack.org/131
+Project: openstack/keystone
+Branch: refs/heads/master
