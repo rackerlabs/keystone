@@ -28,7 +28,7 @@ class KeystoneBase(object):
     """Base class for Keystone Models."""
     __api__ = None
     _i = None
-    
+
     def save(self, session=None):
         """Save this object."""
 
@@ -89,6 +89,7 @@ class UserRoleAssociation(Base, KeystoneBase):
 
     user = relationship('User')
 
+
 class Endpoints(Base, KeystoneBase):
     __tablename__ = 'endpoints'
     id = Column(Integer, primary_key=True)
@@ -142,6 +143,7 @@ class Token(Base, KeystoneBase):
     user_id = Column(String(255))
     tenant_id = Column(String(255))
     expires = Column(DateTime)
+
 
 class EndpointTemplates(Base, KeystoneBase):
     __tablename__ = 'endpoint_templates'
