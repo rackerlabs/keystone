@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAA3///O0\u003d",
+        "filename": ".pylintrc",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-03T18:02:47Z",
+      "side": 1,
+      "message": "Given the poor state of our test suite, I can\u0027t agree with this.",
+      "revId": "3693c01f077d4af2decbc5362f116b69f2261739",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
