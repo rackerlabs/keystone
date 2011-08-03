@@ -21,14 +21,14 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, object_mapper
 
-Base = declarative_base()
+BASE = declarative_base()
 
 
 class KeystoneBase(object):
-    """Base class for Keystone Models."""
+    """BASE class for Keystone Models."""
     __api__ = None
-    _i = None
-    
+    _iter = None
+
     def save(self, session=None):
         """Save this object."""
 
@@ -55,11 +55,11 @@ class KeystoneBase(object):
         return getattr(self, key, default)
 
     def __iter__(self):
-        self._i = iter(object_mapper(self).columns)
+        self._iter = iter(object_mapper(self).columns)
         return self
 
     def next(self):
-        n = self._i.next().name
+        n = self._iter.next().name
         return n, getattr(self, n)
 
     def update(self, values):
@@ -79,7 +79,7 @@ class KeystoneBase(object):
 
 
 # Define associations first
-class UserRoleAssociation(Base, KeystoneBase):
+class UserRoleAssociation(BASE, KeystoneBase):
     __tablename__ = 'user_roles'
     id = Column(Integer, primary_key=True)
     user_id = Column(String(255), ForeignKey('users.id'))
@@ -89,7 +89,8 @@ class UserRoleAssociation(Base, KeystoneBase):
 
     user = relationship('User')
 
-class Endpoints(Base, KeystoneBase):
+
+class Endpoints(BASE, KeystoneBase):
     __tablename__ = 'endpoints'
     id = Column(Integer, primary_key=True)
     tenant_id = Column(String(255), ForeignKey('tenants.id'))
@@ -99,14 +100,21 @@ class Endpoints(Base, KeystoneBase):
 
 
 # Define objects
-class Role(Base, KeystoneBase):
+class Role(BASE, KeystoneBase):
     __tablename__ = 'roles'
     __api__ = 'role'
     id = Column(String(255), primary_key=True, unique=True)
     desc = Column(String(255))
 
 
-class Tenant(Base, KeystoneBase):
+class Service(BASE, KeystoneBase):
+    __tablename__ = 'services'
+    __api__ = 'service'
+    id = Column(String(255), primary_key=True, unique=True)
+    desc = Column(String(255))
+
+
+class Tenant(BASE, KeystoneBase):
     __tablename__ = 'tenants'
     __api__ = 'tenant'
     id = Column(String(255), primary_key=True, unique=True)
@@ -115,7 +123,7 @@ class Tenant(Base, KeystoneBase):
     endpoints = relationship('Endpoints', backref='tenant', cascade="all")
 
 
-class User(Base, KeystoneBase):
+class User(BASE, KeystoneBase):
     __tablename__ = 'users'
     __api__ = 'user'
     id = Column(String(255), primary_key=True, unique=True)
@@ -126,7 +134,7 @@ class User(Base, KeystoneBase):
     roles = relationship(UserRoleAssociation, cascade="all")
 
 
-class Credentials(Base, KeystoneBase):
+class Credentials(BASE, KeystoneBase):
     __tablename__ = 'credentials'
 
     user_id = Column(String(255), ForeignKey('users.id'), primary_key=True)
@@ -135,7 +143,7 @@ class Credentials(Base, KeystoneBase):
     secret = Column(String(255))
 
 
-class Token(Base, KeystoneBase):
+class Token(BASE, KeystoneBase):
     __tablename__ = 'token'
     __api__ = 'token'
     id = Column(String(255), primary_key=True, unique=True)
@@ -143,7 +151,8 @@ class Token(Base, KeystoneBase):
     tenant_id = Column(String(255))
     expires = Column(DateTime)
 
-class EndpointTemplates(Base, KeystoneBase):
+
+class EndpointTemplates(BASE, KeystoneBase):
     __tablename__ = 'endpoint_templates'
     __api__ = 'endpoint_template'
     id = Column(Integer, primary_key=True)

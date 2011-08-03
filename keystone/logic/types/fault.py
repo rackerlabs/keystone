@@ -144,9 +144,18 @@ class EmailConflictFault(IdentityFault):
         super(EmailConflictFault, self).__init__(msg, details, code)
         self.key = "emailConflict"
 
+
 class RoleConflictFault(IdentityFault):
-    """The User already exists?"""
+    """The Role already exists?"""
 
     def __init__(self, msg, details=None, code=409):
         super(RoleConflictFault, self).__init__(msg, details, code)
         self.key = "roleConflict"
+
+
+class ServiceConflictFault(IdentityFault):
+    """The Service already exists?"""
+
+    def __init__(self, msg, details=None, code=409):
+        super(ServiceConflictFault, self).__init__(msg, details, code)
+        self.key = "serviceConflict"
