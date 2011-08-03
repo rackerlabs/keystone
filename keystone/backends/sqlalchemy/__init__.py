@@ -28,7 +28,7 @@ import keystone.backends.api as top_api
 import keystone.backends.models as top_models
 _ENGINE = None
 _MAKER = None
-BASE = models.Base
+BASE = models.BASE
 
 MODEL_PREFIX = 'keystone.backends.sqlalchemy.models.'
 API_PREFIX = 'keystone.backends.sqlalchemy.api.'

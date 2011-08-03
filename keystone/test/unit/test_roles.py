@@ -69,7 +69,7 @@ class GetRolesTest(RolesTest):
         if not "roles" in obj:
             raise self.fail("Expecting Roles")
         roles = obj["roles"]["values"]
-        if len(roles) != 2:
+        if len(roles) != 3:
             self.fail("Roles not of required length.")
 
         role = roles[0]
@@ -77,7 +77,7 @@ class GetRolesTest(RolesTest):
             role_id = None
         else:
             role_id = role["id"]
-        if role_id not in ['Admin', 'Member']:
+        if role_id not in ['Admin', 'Member', 'KeystoneServiceAdmin']:
             self.fail("Not the expected Role")
 
 
@@ -104,10 +104,10 @@ class GetRolesTest(RolesTest):
             self.fail("Expecting Roles")
         roles = roles.findall("{http://docs.openstack.org/identity/api/v2.0}" \
             "role")
-        if len(roles) != 2:
+        if len(roles) != 3:
             self.fail("Not the expected Role count")
         for role in roles:
-            if role.get("id") not in ['Admin', 'Member']:
+            if role.get("id") not in ['Admin', 'Member', 'KeystoneServiceAdmin']:
                 self.fail("Unexpected Role")
         
 
@@ -126,7 +126,7 @@ class GetRolesTest(RolesTest):
 
     def test_get_roles_exp_token_xml(self):
         header = httplib2.Http(".cache")
-        url = '%stenants' % (utils.URL_V2)
+        url = '%sroles' % (utils.URL_V2)
         #test for Content-Type = application/json
         resp, _content = header.request(url, "GET", body='',
                                   headers={"Content-Type": "application/xml",

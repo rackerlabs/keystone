@@ -24,7 +24,8 @@ DEFAULT_BACKENDS = 'keystone.backends.sqlalchemy'
 
 #Configs applicable to all backends.
 #Reference to Admin Role.
-KeyStoneAdminRole = None
+KEYSTONEADMINROLE = None
+KEYSTONESERVICEADMINROLE = None
 
 
 def configure_backends(options):
@@ -34,5 +35,7 @@ def configure_backends(options):
         backend_module = utils.import_module(backend)
         backend_module.configure_backend(options[backend])
         #Initialize common configs general to all backends.
-        global KeyStoneAdminRole
-        KeyStoneAdminRole = options["keystone-admin-role"]
+        global KEYSTONEADMINROLE
+        KEYSTONEADMINROLE = options["keystone-admin-role"]
+        global KEYSTONESERVICEADMINROLE
+        KEYSTONESERVICEADMINROLE = options["keystone-service-admin-role"]
