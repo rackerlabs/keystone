@@ -44,8 +44,7 @@ done
 
 function run_tests {
   # Just run the test suites in current environment
-  ${wrapper} rm -f tests.sqlite
-  ${wrapper} $NOSETESTS 2> run_tests.err.log
+  ${wrapper} $NOSETESTS
 }
 
 function run_pep8 {
@@ -63,7 +62,7 @@ function run_pep8 {
 }
 
 
-NOSETESTS="python run_tests.py $noseargs"
+NOSETESTS="python keystone/test/run_tests.py $noseargs"
 
 if [ $never_venv -eq 0 ]
 then
@@ -98,6 +97,6 @@ fi
 
 run_tests || exit
 
-if [ -z "$noseargs" ]; then
-  run_pep8
-fi
+#if [ -z "$noseargs" ]; then
+#  run_pep8
+#fi
