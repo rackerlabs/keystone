@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
             # run system tests
             subprocess.check_call(
-                ['unit2', 'discover', 'keystone.test.system'])
+                ['unit2', 'discover', 'keystone/test/system'])
         finally:
             #kill the keystone server
             server.kill()

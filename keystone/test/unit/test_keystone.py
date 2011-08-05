@@ -6,13 +6,14 @@ MODULE_EXTENSIONS = set('.py'.split())
 TEST_FILES = [
     'test_auth.py',
     'test_authentication.py',
-    # 'test_authn_v2.py', # this is largely failing
-    'test_common.py',
+    #'test_authn_v2.py',  # this is largely failing
+    'test_common.py',  # this doesn't actually contain tests
+    'test_ec2_authn.py',
     'test_endpoints.py',
     # 'test_urlrewritefilter.py',
-    # 'test_keystone.py', # not sure why this is referencing itself
+    # 'test_keystone.py',  # not sure why this is referencing itself
     'test_roles.py',
-    # 'test_server.py', # this is largely failing
+    # 'test_server.py',  # this is largely failing
     'test_tenants.py',
     'test_token.py',
     'test_users.py',
