@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAA3///KQ\u003d",
+        "filename": ".gitignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-05T03:33:56Z",
+      "side": 1,
+      "message": "Glad you added this, I\u0027ve been meaning to.",
+      "revId": "38752f400effbe9c8fb06ccf23495e6eb7edf532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAA3///Ck\u003d",
+        "filename": "keystone/test/run_tests.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-05T03:33:56Z",
+      "side": 1,
+      "message": "ldap.db.db was a real file created by the ldap backend (terrible name, yes)... is it not produced anymore?",
+      "revId": "38752f400effbe9c8fb06ccf23495e6eb7edf532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAA3///Co\u003d",
+        "filename": "keystone/test/run_tests.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-05T03:33:56Z",
+      "side": 1,
+      "message": "Why store the function\u0027s output?",
+      "revId": "38752f400effbe9c8fb06ccf23495e6eb7edf532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAA3///Cs\u003d",
+        "filename": "tools/install_venv.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-05T03:33:56Z",
+      "side": 1,
+      "message": "Should we merge all three pip-requires* into one file? If keystone is always going to be installed in production via apt, yum, etc, then the development/testing specific requirements wouldn\u0027t harm anyone in pip-requires, right?",
+      "revId": "38752f400effbe9c8fb06ccf23495e6eb7edf532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAA3///Cw\u003d",
+        "filename": "tools/install_venv.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-05T03:33:56Z",
+      "side": 1,
+      "message": "This can be better accomplished with:\n\npython setup.py develop",
+      "revId": "38752f400effbe9c8fb06ccf23495e6eb7edf532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAA3///Jo\u003d",
+        "filename": "tools/pip-requires",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-05T03:33:56Z",
+      "side": 1,
+      "message": "This is already in tools/pip-requires-testing... were you intending to \"promote\" it?",
+      "revId": "38752f400effbe9c8fb06ccf23495e6eb7edf532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
