@@ -1,0 +1,8 @@
+Change-Id: I5ca27a1f55304783fe174cecb8ea8e0c11af49be
+Verified+1: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 08 Aug 2011 19:28:27 +0000
+Reviewed-on: https://review.openstack.org/178
+Project: openstack/keystone
+Branch: refs/heads/master
