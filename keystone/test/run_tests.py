@@ -9,7 +9,7 @@ TEST_DIR = os.path.abspath(os.path.dirname(__file__))
 
 CONFIG_FILES = (
     'sql.conf.template',
-    #'memcache.conf.template',
+    'memcache.conf.template',
     'ldap.conf.template')
 
 TEST_FILES = (
