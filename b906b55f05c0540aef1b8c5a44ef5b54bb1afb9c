@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAA3//+lg\u003d",
+        "filename": "keystone/backends/ldap/api/tenant.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-10T17:02:29Z",
+      "side": 1,
+      "message": "PEP8 violation, spacing in dictionary.",
+      "revId": "b906b55f05c0540aef1b8c5a44ef5b54bb1afb9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
