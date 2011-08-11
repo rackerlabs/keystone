@@ -435,7 +435,7 @@ class IdentityService(object):
         """return AuthData object for a token"""
         endpoints = None
         try:
-            endpoints = api.tenant.get_all_endpoints(tenant_id)
+            endpoints = api.TENANT.get_all_endpoints(tenant_id)
         except:
             pass
         token = auth.Token(dtoken.expires, dtoken.id, tenant_id)
