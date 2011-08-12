@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAABH///6M\u003d",
+        "filename": "keystone/content/xsd/token.xsd",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-12T22:04:41Z",
+      "side": 1,
+      "message": "Intended to be required?",
+      "revId": "f983a2736dffb24ea64d98661d82c4fa47c479ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAABH///6Q\u003d",
+        "filename": "keystone/content/xsd/token.xsd",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-12T22:04:41Z",
+      "side": 1,
+      "message": "Was this intended to be optional?",
+      "revId": "f983a2736dffb24ea64d98661d82c4fa47c479ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
