@@ -4,10 +4,12 @@
 <!--                                                       -->
 <!--     You can resolve the entites with xmllint          -->
 <!--                                                       -->
-<!--        xmllint -noent os-compute-1.1.wadl             -->
+<!--        xmllint -noent identity.wadl             -->
 <!--*******************************************************-->
-<!DOCTYPE application [<!ENTITY % common  SYSTEM "common.ent">
-%common;]>
+<!DOCTYPE application [
+    <!ENTITY % common  SYSTEM "../common/common.ent">
+    %common;
+]>
 
 <application xmlns="http://wadl.dev.java.net/2009/02"
              xmlns:identity="http://docs.openstack.org/identity/api/v2.0"

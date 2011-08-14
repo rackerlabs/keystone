@@ -339,7 +339,8 @@ def static_file(resp, req, filename, root, guessmime=True, mimetype=None,
             if ims is not None and ims >= filetime:
                 resp.date = time.strftime(
                     "%a, %d %b %Y %H:%M:%S GMT", time.gmtime())
-                return Response(body=None, status=304, headerlist=resp.headerlist)
+                return Response(body=None, status=304,
+                                headerlist=resp.headerlist)
         except:
             print "TODO(Ziad): handle this better"
             pass
