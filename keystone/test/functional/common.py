@@ -137,7 +137,6 @@ class KeystoneTestCase(RestfulTestCase):
             as_json=self.admin_credentials)
         self.admin_token = r.json['auth']['token']['id']
 
-
     def service_request(self, version='2.0', path='', port=5000, headers=None,
             **kwargs):
         """Returns a request to the service API"""

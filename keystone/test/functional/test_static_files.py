@@ -19,6 +19,7 @@ class TestStaticFiles(KeystoneTestCase):
         r = self.service_request(path='/xsd/atom/atom.xsd')
         self.assertTrue('xml' in r.getheader('Content-Type'))
 
+
 class TestAdminStaticFiles(KeystoneTestCase):
     def test_pdf_contract(self):
         r = self.admin_request(path='/identityadminguide.pdf')
