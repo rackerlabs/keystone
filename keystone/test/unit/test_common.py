@@ -709,6 +709,15 @@ def create_endpoint_xml(tenant_id, endpoint_templates_id, auth_token):
     return (resp, content)
 
 
+def delete_endpoint(tenant, endpoint_id, auth_token):
+    header = httplib2.Http(".cache")
+    url = '%stenants/%s/endpoints/%s' % (URL_V2, tenant, endpoint_id)
+    resp, _content = header.request(url, "DELETE", body='', headers={
+        "Content-Type": "application/json",
+        "X-Auth-Token": str(auth_token)})
+    return (resp, _content)
+
+
 def delete_all_endpoint(tenant_id, auth_token):
     header = httplib2.Http(".cache")
     url = '%stenants/%s/endpoints' % (URL_V2, tenant_id)
