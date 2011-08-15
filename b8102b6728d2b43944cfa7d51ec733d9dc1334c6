@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAB3///7o\u003d",
+        "filename": "keystone/contrib/extensions/rskey/frontend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-15T20:12:27Z",
+      "side": 1,
+      "message": "I\u0027m confused, is this generic support for extensions or is this a specific extension?",
+      "revId": "b8102b6728d2b43944cfa7d51ec733d9dc1334c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAB3///7s\u003d",
+        "filename": "keystone/contrib/extensions/rskey/frontend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-15T20:12:27Z",
+      "side": 1,
+      "message": "Don\u0027t think path munging is necessary.",
+      "revId": "b8102b6728d2b43944cfa7d51ec733d9dc1334c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
