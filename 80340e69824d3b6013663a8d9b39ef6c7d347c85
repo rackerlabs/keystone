@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAB3////8\u003d",
+        "filename": "keystone/contrib/extensions/rskey/extension.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-15T16:24:59Z",
+      "side": 1,
+      "message": "Is there a reason RS-KEY is uppercase everywhere? Seems like that will cause minor headaches down the line unless there\u0027s a good reason for it.",
+      "revId": "80340e69824d3b6013663a8d9b39ef6c7d347c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAB3////k\u003d",
+        "filename": "keystone/contrib/extensions/rskey/frontend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-15T16:24:59Z",
+      "side": 1,
+      "message": "I don\u0027t think path munging is necessary here.",
+      "revId": "80340e69824d3b6013663a8d9b39ef6c7d347c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAB3////g\u003d",
+        "filename": "keystone/contrib/extensions/rskey/frontend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-15T16:24:59Z",
+      "side": 1,
+      "message": "Is this used?",
+      "revId": "80340e69824d3b6013663a8d9b39ef6c7d347c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAB3////Y\u003d",
+        "filename": "keystone/contrib/extensions/rskey/frontend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-15T16:24:59Z",
+      "side": 1,
+      "message": "jsondd?",
+      "revId": "80340e69824d3b6013663a8d9b39ef6c7d347c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAB3////w\u003d",
+        "filename": "keystone/contrib/extensions/rskey/frontend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-15T16:24:59Z",
+      "side": 1,
+      "message": "This is obviously terribly unfinished code, and should remain under review until it\u0027s reached an appropriate level of stability \u0026 polish.",
+      "revId": "80340e69824d3b6013663a8d9b39ef6c7d347c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAB3////4\u003d",
+        "filename": "keystone/contrib/extensions/rskey/frontend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-15T16:24:59Z",
+      "side": 1,
+      "message": "\u0027resp\u0027 doesn\u0027t exist... not sure if it\u0027s supposed to be a Response() or not.",
+      "revId": "80340e69824d3b6013663a8d9b39ef6c7d347c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAB3////c\u003d",
+        "filename": "keystone/contrib/extensions/rskey/frontend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-15T16:24:59Z",
+      "side": 1,
+      "message": "print()\u0027s need to be removed prior to merging.",
+      "revId": "80340e69824d3b6013663a8d9b39ef6c7d347c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAB3////M\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-15T16:24:59Z",
+      "side": 1,
+      "message": "This is a good catch.",
+      "revId": "80340e69824d3b6013663a8d9b39ef6c7d347c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

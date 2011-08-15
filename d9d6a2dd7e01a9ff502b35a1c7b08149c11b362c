@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAABn///9M\u003d",
+        "filename": "keystone/content/identity-admin-OS.wadl",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-15T16:24:59Z",
+      "side": 0,
+      "message": "Need to fix all these tab/spacing consistency issues - jenkins won\u0027t catch these outside of python.",
+      "revId": "d9d6a2dd7e01a9ff502b35a1c7b08149c11b362c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAB3////Q\u003d",
+        "filename": "keystone/routers/admin.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-15T16:24:59Z",
+      "side": 0,
+      "message": "Not sure if removing all of these was intentional or not - they showed up as a merge conflict from rackspace/keystone.",
+      "revId": "d9d6a2dd7e01a9ff502b35a1c7b08149c11b362c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
