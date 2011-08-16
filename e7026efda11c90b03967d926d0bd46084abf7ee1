@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACH///7A\u003d",
+        "filename": "keystone/content/admin/identity-admin.wadl",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-16T19:40:21Z",
+      "side": 1,
+      "message": "Does X-Auth-Token need to be redundantly defined for each nested resource?",
+      "revId": "e7026efda11c90b03967d926d0bd46084abf7ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACH///68\u003d",
+        "filename": "keystone/content/admin/identity-admin.wadl",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-16T19:40:21Z",
+      "side": 1,
+      "message": "Not sure if this should be defined as a \"username\" or \"uid\"... blueprints sort of contradict themselves.",
+      "revId": "e7026efda11c90b03967d926d0bd46084abf7ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACH///64\u003d",
+        "filename": "keystone/content/admin/identity-admin.wadl",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-16T19:40:21Z",
+      "side": 1,
+      "message": "If these ID\u0027s are supposed to be unique within the document, is there a naming convention we can follow? I don\u0027t really see a pre-existing one.",
+      "revId": "e7026efda11c90b03967d926d0bd46084abf7ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
