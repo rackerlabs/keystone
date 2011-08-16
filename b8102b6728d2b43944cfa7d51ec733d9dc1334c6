@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACH///+4\u003d",
+        "filename": "keystone/contrib/extensions/rskey/frontend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-08-16T14:01:12Z",
+      "side": 1,
+      "message": "This is a specific extension (only supporting apikeyCredentials).",
+      "parentUuid": "AAAAB3///7o\u003d",
+      "revId": "b8102b6728d2b43944cfa7d51ec733d9dc1334c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAB3///7s\u003d",
         "filename": "keystone/contrib/extensions/rskey/frontend.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2011-08-15T20:12:27Z",
       "side": 1,
       "message": "Don\u0027t think path munging is necessary.",
+      "revId": "b8102b6728d2b43944cfa7d51ec733d9dc1334c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACH///+0\u003d",
+        "filename": "keystone/contrib/extensions/rskey/frontend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-08-16T14:01:12Z",
+      "side": 1,
+      "message": "Copied and pasted this from other files. Is there a better/newer way to do this?",
+      "parentUuid": "AAAAB3///7s\u003d",
       "revId": "b8102b6728d2b43944cfa7d51ec733d9dc1334c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
