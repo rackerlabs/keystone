@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACH///+g\u003d",
+        "filename": "run_tests.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2011-08-16T14:26:04Z",
+      "side": 1,
+      "message": "Did you mean to exclude MemcacheTest here? What about either using skip_test functionality or making an option to include testing memcache?",
+      "revId": "7ba9772c0ccf64134061f1b6b11a7a3c8b633407",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
