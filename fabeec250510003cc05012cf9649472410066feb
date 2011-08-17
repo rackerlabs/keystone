@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACH///sQ\u003d",
+        "filename": "keystone/content/admin/identity-admin-OS.wadl",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-17T22:36:41Z",
+      "side": 0,
+      "message": "Blatantly copied last revision of the admin wadl, as a starting point for this one.",
+      "revId": "fabeec250510003cc05012cf9649472410066feb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACH///sU\u003d",
+        "filename": "keystone/content/common/common.ent",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-17T22:36:41Z",
+      "side": 0,
+      "message": "Didn\u0027t actually change anything here, I just ordered them by HTTP status code.",
+      "revId": "fabeec250510003cc05012cf9649472410066feb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
