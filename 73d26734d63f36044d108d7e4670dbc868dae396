@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACH///w0\u003d",
+        "filename": "keystone/backends/sqlalchemy/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-17T16:38:02Z",
+      "side": 1,
+      "message": "This can be removed only when we refactor the rest of the python server management code out of bin/ and into the keystone module.",
+      "revId": "73d26734d63f36044d108d7e4670dbc868dae396",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
