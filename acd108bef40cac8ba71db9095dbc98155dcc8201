@@ -1,0 +1,7 @@
+Verified+1: Jenkins
+Code-Review+2: Ziad Sawalha <ziad.sawalha@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Sun, 21 Aug 2011 17:16:08 +0000
+Reviewed-on: https://review.openstack.org/301
+Project: openstack/keystone
+Branch: refs/heads/master
