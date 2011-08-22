@@ -31,9 +31,11 @@ class UserAPI(BaseLdapAPI, BaseUserAPI):
         return obj
 
     def create(self, values):
-        super(UserAPI, self).create(values)
+        values['id'] = values['name']
+        values = super(UserAPI, self).create(values)
         if values['tenant_id'] is not None:
             self.api.tenant.add_user(values['tenant_id'], values['id'])
+        return values
 
     def update(self, id, values):
         old_obj = self.get(id)

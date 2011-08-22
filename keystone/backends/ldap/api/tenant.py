@@ -15,6 +15,10 @@ class TenantAPI(BaseLdapAPI, BaseTenantAPI):
     model = models.Tenant
     attribute_mapping = {'desc': 'description', 'enabled': 'keystoneEnabled'}
 
+    def create(self, values):
+        values.id = values.name
+        return super(TenantAPI, self).create(values)
+
     def get_user_tenants(self, user_id):
         user_dn = self.api.user._id_to_dn(user_id)
         query = '(member=%s)' % (user_dn,)
