@@ -62,7 +62,7 @@ class ServiceAPITest(unittest.TestCase):
     will authenticate against the API. The `auth_user` attribute
     will contain the created user with the following attributes.
     """
-    auth_user_attrs = {'id': 'auth_user',
+    auth_user_attrs = {'name': 'auth_user',
                        'password': 'auth_pass',
                        'email': 'auth_user@example.com',
                        'enabled': True,
@@ -90,7 +90,8 @@ class ServiceAPITest(unittest.TestCase):
     options = {
         'backends': "keystone.backends.sqlalchemy",
         'keystone.backends.sqlalchemy': {
-            'sql_connection': 'sqlite://',  # in-memory db
+            # in-memory db
+            'sql_connection': 'sqlite://',
             'verbose': False,
             'debug': False,
             'backend_entities':
@@ -175,7 +176,7 @@ class ServiceAPITest(unittest.TestCase):
                                       'enabled': True,
                                       'desc': tenant_id})
         user = db_api.USER.create(values)
-        logger.debug("Created user fixture %s", values['id'])
+        logger.debug("Created user fixture %s", user.id)
         return user
 
     def fixture_create_token(self, **kwargs):

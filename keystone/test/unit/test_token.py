@@ -15,58 +15,45 @@
 # limitations under the License.
 
 
-import httplib2
-import os
-import sys
-app_path = os.path.abspath(os.path.join(os.path.abspath(__file__),
-    '..', '..', '..', '..', '..', '..', 'keystone'))
-sys.path.append(app_path)
 import unittest2 as unittest
-import test_common as utils
+import httplib2
 import json
-import keystone.logic.types.fault as fault
 from lxml import etree
 
+from keystone.test.unit import common
 
-class ValidateToken(unittest.TestCase):
+class ValidateToken(common.FunctionalTest):
+    def setUp(self, *args, **kwargs):
+        super(ValidateToken, self).setUp(*args, **kwargs)
 
-    def setUp(self):
-        self.tenant = utils.get_tenant()
-        self.user = 'joeuser'
-        self.token = utils.get_token('joeuser', 'secrete', self.tenant,
-                                    'token')
-        self.auth_token = utils.get_auth_token()
-        self.exp_auth_token = utils.get_exp_auth_token()
-        _resp, content = utils.create_role_ref(self.user, 'Admin', self.tenant,
-            str(self.auth_token))
+        # self.user? 'Admin'?
+        resp, content = common.create_role_ref(self.user_id, 'Admin',
+            self.tenant_id, self.admin_token)
         obj = json.loads(content)
-        if not "roleRef" in obj:
-            raise fault.BadRequestFault("Expecting RoleRef")
-        roleRef = obj["roleRef"]
-        if not "id" in roleRef:
-            self.role_ref_id = None
-        else:
-            self.role_ref_id = roleRef["id"]
 
-    def tearDown(self):
-        _resp, _content = utils.delete_role_ref(self.user, self.role_ref_id,
-            self.auth_token)
-        utils.delete_token(self.token, self.auth_token)
+        # This seems very wrong.
+        self.role_ref_id = obj['roleRef'].get('id', None)
+
+    def tearDown(self, *args, **kwargs):
+        resp, content = common.delete_role_ref(self.user_id, self.role_ref_id,
+            self.admin_token)
+
+        super(ValidateToken, self).tearDown(*args, **kwargs)
 
     def test_validate_token_true(self):
         header = httplib2.Http(".cache")
 
-        url = '%stokens/%s?belongsTo=%s' % (utils.URL_V2, self.token,
+        url = '%stokens/%s?belongsTo=%s' % (common.URL_V2, self.token,
             self.tenant)
         resp, content = header.request(url, "GET", body='', headers={
             "Content-Type": "application/json",
-            "X-Auth-Token": self.auth_token})
+            "X-Auth-Token": self.admin_token})
         if int(resp['status']) == 500:
             self.fail('Identity Fault')
         elif int(resp['status']) == 503:
             self.fail('Service Not Available')
         self.assertEqual(200, int(resp['status']))
-        self.assertEqual('application/json', utils.content_type(resp))
+        self.assertEqual('application/json', common.content_type(resp))
         #verify content
         obj = json.loads(content)
         if not "auth" in obj:
@@ -79,17 +66,17 @@ class ValidateToken(unittest.TestCase):
     def test_validate_token_true_using_service_token(self):
         header = httplib2.Http(".cache")
 
-        url = '%stokens/%s?belongsTo=%s' % (utils.URL_V2, self.token,
+        url = '%stokens/%s?belongsTo=%s' % (common.URL_V2, self.token,
             self.tenant)
         resp, content = header.request(url, "GET", body='', headers={
             "Content-Type": "application/json",
-            "X-Auth-Token": utils.get_service_token()})
+            "X-Auth-Token": self.service_token})
         if int(resp['status']) == 500:
             self.fail('Identity Fault')
         elif int(resp['status']) == 503:
             self.fail('Service Not Available')
         self.assertEqual(200, int(resp['status']))
-        self.assertEqual('application/json', utils.content_type(resp))
+        self.assertEqual('application/json', common.content_type(resp))
         #verify content
         obj = json.loads(content)
         if not "auth" in obj:
@@ -102,17 +89,17 @@ class ValidateToken(unittest.TestCase):
     def test_validate_token_true_xml(self):
         header = httplib2.Http(".cache")
         url = '%stokens/%s?belongsTo=%s' % (
-            utils.URL_V2, self.token, self.tenant)
+            common.URL_V2, self.token, self.tenant)
         resp, content = header.request(url, "GET", body='', headers={
             "Content-Type": "application/xml",
-            "X-Auth-Token": self.auth_token,
+            "X-Auth-Token": self.admin_token,
             "ACCEPT": "application/xml"})
         if int(resp['status']) == 500:
             self.fail('Identity Fault')
         elif int(resp['status']) == 503:
             self.fail('Service Not Available')
         self.assertEqual(200, int(resp['status']))
-        self.assertEqual('application/xml', utils.content_type(resp))
+        self.assertEqual('application/xml', common.content_type(resp))
         #verify content
         dom = etree.Element("root")
         dom.append(etree.fromstring(content))
@@ -137,7 +124,7 @@ class ValidateToken(unittest.TestCase):
 
     def test_validate_token_expired(self):
         header = httplib2.Http(".cache")
-        url = '%stokens/%s?belongsTo=%s' % (utils.URL_V2, self.exp_auth_token,
+        url = '%stokens/%s?belongsTo=%s' % (common.URL_V2, self.exp_auth_token,
                                            self.tenant)
         resp, _content = header.request(url, "GET", body='',
                                   headers={"Content-Type": "application/json",
@@ -147,12 +134,12 @@ class ValidateToken(unittest.TestCase):
         elif int(resp['status']) == 503:
             self.fail('Service Not Available')
         self.assertEqual(403, int(resp['status']))
-        self.assertEqual('application/json', utils.content_type(resp))
+        self.assertEqual('application/json', common.content_type(resp))
 
     def test_validate_token_expired_xml(self):
         header = httplib2.Http(".cache")
 
-        url = '%stokens/%s?belongsTo=%s' % (utils.URL_V2, self.exp_auth_token,
+        url = '%stokens/%s?belongsTo=%s' % (common.URL_V2, self.exp_auth_token,
                                            self.tenant)
         resp, _content = header.request(url, "GET", body='',
                                   headers={"Content-Type": "application/xml",
@@ -163,36 +150,36 @@ class ValidateToken(unittest.TestCase):
         elif int(resp['status']) == 503:
             self.fail('Service Not Available')
         self.assertEqual(403, int(resp['status']))
-        self.assertEqual('application/xml', utils.content_type(resp))
+        self.assertEqual('application/xml', common.content_type(resp))
 
     def test_validate_token_invalid(self):
         header = httplib2.Http(".cache")
-        url = '%stokens/%s?belongsTo=%s' % (utils.URL_V2, 'NonExistingToken',
+        url = '%stokens/%s?belongsTo=%s' % (common.URL_V2, 'NonExistingToken',
                                            self.tenant)
         resp, _content = header.request(url, "GET", body='',
                                   headers={"Content-Type": "application/json",
-                                           "X-Auth-Token": self.auth_token})
+                                           "X-Auth-Token": self.admin_token})
 
         if int(resp['status']) == 500:
             self.fail('Identity Fault')
         elif int(resp['status']) == 503:
             self.fail('Service Not Available')
         self.assertEqual(401, int(resp['status']))
-        self.assertEqual('application/json', utils.content_type(resp))
+        self.assertEqual('application/json', common.content_type(resp))
 
     def test_validate_token_invalid_xml(self):
         header = httplib2.Http(".cache")
-        url = '%stokens/%s?belongsTo=%s' % (utils.URL_V2, 'NonExistingToken',
+        url = '%stokens/%s?belongsTo=%s' % (common.URL_V2, 'NonExistingToken',
                                            self.tenant)
         resp, _content = header.request(url, "GET", body='',
                                   headers={"Content-Type": "application/json",
-                                           "X-Auth-Token": self.auth_token})
+                                           "X-Auth-Token": self.admin_token})
         if int(resp['status']) == 500:
             self.fail('Identity Fault')
         elif int(resp['status']) == 503:
             self.fail('Service Not Available')
         self.assertEqual(401, int(resp['status']))
-        self.assertEqual('application/json', utils.content_type(resp))
+        self.assertEqual('application/json', common.content_type(resp))
 
 if __name__ == '__main__':
     unittest.main()

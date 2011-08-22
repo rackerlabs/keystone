@@ -16,34 +16,30 @@
 
 
 import httplib2
-import os
-import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.abspath(__file__),
-                                '..', '..', '..', '..', '..', 'keystone')))
 import unittest2 as unittest
 
-import test_common as utils
+from keystone.test.unit import common
 
 
-class VersionTest(unittest.TestCase):
+class VersionTest(common.FunctionalTest):
 
     #Given _a_ to make inherited test cases in an order.
     #here to call below method will call as last test case
 
     def test_a_get_version_json(self):
         header = httplib2.Http(".cache")
-        resp, content = header.request(utils.URL_V2, "GET", body="",
+        resp, content = header.request(common.URL_V2, "GET", body="",
                                   headers={"Content-Type": "application/json"})
         self.assertEqual(200, int(resp['status']))
-        self.assertEqual('application/json', utils.content_type(resp))
+        self.assertEqual('application/json', common.content_type(resp))
 
     def test_a_get_version_xml(self):
         header = httplib2.Http(".cache")
-        resp, content = header.request(utils.URL_V2, "GET", body="",
+        resp, content = header.request(common.URL_V2, "GET", body="",
                                   headers={"Content-Type": "application/xml",
                                            "ACCEPT": "application/xml"})
         self.assertEqual(200, int(resp['status']))
-        self.assertEqual('application/xml', utils.content_type(resp))
+        self.assertEqual('application/xml', common.content_type(resp))
 
 if __name__ == '__main__':
     unittest.main()

@@ -6,7 +6,8 @@ class TestIssue85(common.KeystoneTestCase):
     """Illustrates github issue #85"""
 
     tenant_id = common.KeystoneTestCase._uuid()
-    user_id = common.KeystoneTestCase._uuid()
+    user_name = common.KeystoneTestCase._uuid()
+    user_id = None
 
     def setUp(self):
         super(TestIssue85, self).setUp()
@@ -20,14 +21,15 @@ class TestIssue85(common.KeystoneTestCase):
                     'enabled': True}})
 
         # Create a user for a specific tenant
-        self.admin_request(method='PUT', path='/users',
+        r = self.admin_request(method='POST', path='/users',
             as_json={
                 'user': {
-                    'id': self.user_id,
+                    'name': self.user_name,
                     'password': 'secrete',
-                    'email': 'user@openstack.org',
+                    'email': self.user_name + '@openstack.org',
                     'enabled': True,
                     'tenantId': self.tenant_id}})
+        self.user_id = r.json['user']['id']
 
     def tearDown(self):
         # Delete user
@@ -44,7 +46,7 @@ class TestIssue85(common.KeystoneTestCase):
         r = self.service_request(method='POST', path='/tokens',
             as_json={
                 'passwordCredentials': {
-                    'username': self.user_id,
+                    'username': self.user_name,
                     'password': 'secrete',
                     'tenantId': self.tenant_id}})
         self.service_token = r.json['auth']['token']['id']

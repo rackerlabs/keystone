@@ -22,9 +22,14 @@ from keystone.logic.types import fault
 
 class Tenant(object):
     """Describes a tenant in the auth system"""
+    id = None
+    name = None
+    description = None
+    enabled = None
 
-    def __init__(self, tenant_id, description, enabled):
-        self.tenant_id = tenant_id
+    def __init__(self, id=None, name=None, description=None, enabled=None):
+        self.id = id
+        self.name = name
         self.description = description
         self.enabled = enabled
 
@@ -37,7 +42,8 @@ class Tenant(object):
                 "{http://docs.openstack.org/identity/api/v2.0}tenant")
             if root == None:
                 raise fault.BadRequestFault("Expecting Tenant")
-            tenant_id = root.get("id")
+            id = root.get("id")
+            name = root.get("name")
             enabled = root.get("enabled")
             if enabled == None or enabled == "true" or enabled == "yes":
                 set_enabled = True
@@ -49,7 +55,7 @@ class Tenant(object):
                              "description")
             if desc == None:
                 raise fault.BadRequestFault("Expecting Tenant Description")
-            return Tenant(tenant_id, desc.text, set_enabled)
+            return Tenant(id=id, name=name, description=desc.text, enabled=set_enabled)
         except etree.LxmlError as e:
             raise fault.BadRequestFault("Cannot parse Tenant", str(e))
 
@@ -60,10 +66,8 @@ class Tenant(object):
             if not "tenant" in obj:
                 raise fault.BadRequestFault("Expecting tenant")
             tenant = obj["tenant"]
-            if not "id" in tenant:
-                tenant_id = None
-            else:
-                tenant_id = tenant["id"]
+            id = tenant.get("id", None)
+            name = tenant.get("name", None)
             set_enabled = True
             if "enabled" in tenant:
                 set_enabled = tenant["enabled"]
@@ -72,7 +76,7 @@ class Tenant(object):
             if not "description" in tenant:
                 raise fault.BadRequestFault("Expecting Tenant Description")
             description = tenant["description"]
-            return Tenant(tenant_id, description, set_enabled)
+            return Tenant(id=id, name=name, description=description, enabled=set_enabled)
         except (ValueError, TypeError) as e:
             raise fault.BadRequestFault("Cannot parse Tenant", str(e))
 
@@ -80,8 +84,10 @@ class Tenant(object):
         dom = etree.Element("tenant",
                         xmlns="http://docs.openstack.org/identity/api/v2.0",
                         enabled=string.lower(str(self.enabled)))
-        if self.tenant_id:
-            dom.set("id", self.tenant_id)
+        if self.id:
+            dom.set("id", self.id)
+        if self.name:
+            dom.set("name", self.name)
         desc = etree.Element("description")
         desc.text = self.description
         dom.append(desc)
@@ -91,12 +97,14 @@ class Tenant(object):
         return etree.tostring(self.to_dom())
 
     def to_dict(self):
-        tenant = {}
-        if self.tenant_id:
-            tenant["id"] = self.tenant_id
-        tenant["description"] = self.description
-        tenant["enabled"] = self.enabled
-        return {'tenant': tenant}
+        tenant = {
+            "description": self.description,
+            "enabled": self.enabled}
+        if self.id:
+            tenant["id"] = self.id
+        if self.name:
+            tenant["name"] = self.name
+        return {"tenant": tenant}
 
     def to_json(self):
         return json.dumps(self.to_dict())
