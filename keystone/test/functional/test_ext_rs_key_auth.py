@@ -2,7 +2,7 @@ import unittest2 as unittest
 from keystone.test.functional import common
 
 
-class TestExtensions(common.KeystoneTestCase):
+class TestExtensions(common.ApiTestCase):
     def test_extensions_json(self):
         r = self.service_request(path='/extensions.json',
             assert_status=200)
