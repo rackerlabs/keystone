@@ -126,9 +126,7 @@ class KeystoneTestCase(RestfulTestCase):
     admin_credentials = {
         'passwordCredentials': {
             'username': 'admin',
-            'password': 'secrete',
-        }
-    }
+            'password': 'secrete'}}
 
     def setUp(self):
         """Prepare keystone for system tests"""

@@ -127,7 +127,8 @@ class Tenant(Base, KeystoneBase):
 class User(Base, KeystoneBase):
     __tablename__ = 'users'
     __api__ = 'user'
-    id = Column(String(255), primary_key=True, unique=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(255), unique=True)
     password = Column(String(255))
     email = Column(String(255))
     enabled = Column(Integer)

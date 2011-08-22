@@ -2,7 +2,7 @@
 <auth xmlns="http://docs.openstack.org/identity/api/v2.0">
 	<token expires="2010-11-01T03:32:15-05:00"
 		id="ab48a9efdfedb23ty3494"/>
-	<user username="jqsmith">
+	<user id="123" username="jqsmith">
 		<roles xmlns="http://docs.openstack.org/identity/api/v2.0">
 			<role xmlns="http://docs.openstack.org/identity/api/v2.0"
 				id="Admin" tenantId="one"/>

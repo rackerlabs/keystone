@@ -20,6 +20,7 @@ import json
 from lxml import etree
 import os
 import sys
+import uuid
 sys.path.append(os.path.abspath(os.path.join(os.path.abspath(__file__),
                                 '..', '..', '..', '..', '..', 'keystone')))
 import unittest2 as unittest
@@ -28,29 +29,31 @@ import test_common as utils
 
 
 class TenantTest(unittest.TestCase):
+    user_id = None
 
     def setUp(self):
         self.tenant = 'test_tenant'
         self.auth_token = utils.get_auth_token()
-        self.user = utils.get_user()
+        self.username = str(uuid.uuid4())
         self.userdisabled = utils.get_userdisabled()
         self.exp_auth_token = utils.get_exp_auth_token()
         self.disabled_token = utils.get_disabled_token()
         utils.create_tenant(self.tenant, str(self.auth_token))
-        utils.create_user(self.tenant, self.user, self.auth_token)
+        self.user_id = utils.create_user(self.tenant, self.username,
+            self.auth_token)
         utils.add_user_json(self.auth_token)
-        self.token = utils.get_token(self.user, 'secrete', self.tenant,
+        self.token = utils.get_token(self.username, 'secrete', self.tenant,
                                      'token')
 
     def tearDown(self):
-        utils.delete_user(self.user, self.auth_token)
+        utils.delete_user(self.user_id, self.auth_token)
         utils.delete_tenant(self.tenant, self.auth_token)
 
 
 class CreateTenantTest(TenantTest):
 
     def test_tenant_create(self):
-        utils.delete_user(self.user, self.auth_token)
+        utils.delete_user(self.user_id, self.auth_token)
         utils.delete_tenant(self.tenant, str(self.auth_token))
         resp, content = utils.create_tenant(self.tenant, str(self.auth_token))
         if int(resp['status']) == 500:
@@ -63,7 +66,7 @@ class CreateTenantTest(TenantTest):
             self.fail('Failed due to %d' % int(resp['status']))
 
     def test_tenant_create_xml(self):
-        utils.delete_user(self.user, self.auth_token)
+        utils.delete_user(self.user_id, self.auth_token)
         utils.delete_tenant_xml(self.tenant, str(self.auth_token))
         resp, content = utils.create_tenant_xml(self.tenant,
                                                 str(self.auth_token))
