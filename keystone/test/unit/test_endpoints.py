@@ -31,6 +31,8 @@ from keystone.logic.types import fault
 
 
 class EndpointTemplatesTest(unittest.TestCase):
+    user_id = None
+
     def setUp(self):
         self.tenant = utils.get_tenant()
         self.password = utils.get_password()
@@ -44,9 +46,9 @@ class EndpointTemplatesTest(unittest.TestCase):
         self.missing_token = utils.get_none_token()
         self.invalid_token = utils.get_non_existing_token()
         utils.create_tenant(self.tenant, str(self.auth_token))
-        utils.create_user(self.tenant, self.user, self.auth_token)
+        self.user_id = utils.create_user(self.tenant, self.user, self.auth_token)
         self.token = utils.get_token(self.user, 'secrete', self.tenant,
-                                     'token')
+            'token')
         self.region = 'DFW'
         self.service = utils.get_test_service_id()
         self.public_url = 'public'
@@ -55,8 +57,8 @@ class EndpointTemplatesTest(unittest.TestCase):
         self.enabled = True
         self.is_global = False
         resp, content = utils.create_endpoint_template(\
-            self.region, self.service, self.public_url,\
-            self.admin_url, self.internal_url,\
+            self.region, self.service, self.public_url, \
+            self.admin_url, self.internal_url, \
             self.enabled, self.is_global, self.auth_token)
         self.assertEqual(201, int(resp['status']))
         obj = json.loads(content)
@@ -69,7 +71,7 @@ class EndpointTemplatesTest(unittest.TestCase):
             self.endpoint_template_id = endpoint_template["id"]
 
     def tearDown(self):
-        utils.delete_user(self.user, self.auth_token)
+        utils.delete_user(self.user_id, self.auth_token)
         utils.delete_tenant(self.tenant, self.auth_token)
         utils.delete_endpoint_template(self.endpoint_template_id,
             self.auth_token)
@@ -79,8 +81,8 @@ class EndpointTemplatesTest(unittest.TestCase):
 class CreateEndpointTemplatesTest(EndpointTemplatesTest):
     def test_create_endpoint_template(self):
         resp, content = utils.create_endpoint_template(\
-            self.region, self.service, self.public_url,\
-            self.admin_url, self.internal_url,\
+            self.region, self.service, self.public_url, \
+            self.admin_url, self.internal_url, \
             self.enabled, self.is_global, self.auth_token)
         self.assertEqual(201, int(resp['status']))
         obj = json.loads(content)
@@ -105,8 +107,8 @@ class CreateEndpointTemplatesTest(EndpointTemplatesTest):
 
     def test_create_and_delete_endpoint_template_that_has_dependencies(self):
         resp, content = utils.create_endpoint_template(\
-            self.region, self.service, self.public_url,\
-            self.admin_url, self.internal_url,\
+            self.region, self.service, self.public_url, \
+            self.admin_url, self.internal_url, \
             self.enabled, self.is_global, self.auth_token)
         self.assertEqual(201, int(resp['status']))
         obj = json.loads(content)

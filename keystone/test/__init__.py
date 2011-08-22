@@ -91,13 +91,13 @@ class KeystoneTest(object):
             raise
         try:
             # discover and run tests
-            print "Running tests..."
             if '--with-coverage' in sys.argv:
-                print "running coverage"
+                print "Running tests with coverage..."
                 execute('coverage run %s discover -t %s -s %s' %
                         ('/usr/bin/unit2', BASE_DIR, TEST_DIR))
             else:
-                execute('unit2 discover -f -t %s -s %s' %
+                print "Running tests..."
+                execute('unit2 discover -t %s -s %s' %
                         (BASE_DIR, TEST_DIR))
         finally:
             self.tearDown()

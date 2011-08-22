@@ -44,14 +44,14 @@ class RolesTest(unittest.TestCase):
         self.missing_token = utils.get_none_token()
         self.invalid_token = utils.get_non_existing_token()
         utils.create_tenant(self.tenant, str(self.auth_token))
-        utils.create_user(self.tenant, self.user, self.auth_token)
+        self.user_id = utils.create_user(self.tenant, self.user, self.auth_token)
         self.token = utils.get_token(self.user, 'secrete', self.tenant,
                                      'token')
         self.service_id = utils.get_test_service_id()
         self.service_role = self.service_id + ':test_role'
 
     def tearDown(self):
-        utils.delete_user(self.user, self.auth_token)
+        utils.delete_user(self.user_id, self.auth_token)
         utils.delete_tenant(self.tenant, self.auth_token)
 
 

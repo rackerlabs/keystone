@@ -165,50 +165,50 @@ def delete_tenant_xml(tenantid, auth_token):
     return resp
 
 
-def create_user(tenantid, userid, auth_token, email=None, password='secrete'):
-    header = httplib2.Http(".cache")
-    url = '%susers' % (URL_V2)
-    if email is not None:
-        email_id = email
-    else:
-        email_id = "%s@openstack.org" % userid
-    body = {"user": {"password": password,
-                     "id": userid,
-                     "tenantId": tenantid,
-                     "email": "%s" % email_id,
-                     "enabled": True}}
-    resp, content = header.request(url, "PUT", body=json.dumps(body),
-                              headers={"Content-Type": "application/json",
-                                       "X-Auth-Token": auth_token})
-    return (resp, content)
-
-
-def delete_user(userid, auth_token):
-    header = httplib2.Http(".cache")
-    url = '%susers/%s' % (URL_V2, userid)
-    resp, _content = header.request(url, "DELETE", body='{}',
-                              headers={"Content-Type": "application/json",
-                                       "X-Auth-Token": auth_token})
-    return resp
-
-
-def create_user_xml(tenantid, userid, auth_token, email=None,
+def create_user_xml(tenantid, username, auth_token, email=None,
         password='secrete'):
     header = httplib2.Http(".cache")
     url = '%susers' % (URL_V2)
-    if email is not None:
-        email_id = email
-    else:
-        email_id = userid
+    email = email or "%s@openstack.org" % (username,)
     body = '<?xml version="1.0" encoding="UTF-8"?> \
             <user xmlns="http://docs.openstack.org/identity/api/v2.0" \
-            email="%s" tenantId="%s" id="%s" enabled="true" \
-            password="%s"/>' % (email_id, tenantid, userid, password)
+            email="%s" tenantId="%s" name="%s" enabled="true" \
+            password="%s"/>' % (email, tenantid, username, password)
     resp, content = header.request(url, "PUT", body=body,
                               headers={"Content-Type": "application/xml",
                                        "X-Auth-Token": auth_token,
                                        "ACCEPT": "application/xml"})
     return (resp, content)
+
+
+def create_user_json(tenantid, username, auth_token, email=None, password='secrete'):
+    header = httplib2.Http(".cache")
+    url = '%susers' % (URL_V2)
+    email = email or "%s@openstack.org" % (username,)
+    body = {"user": {"password": password,
+                     "name": username,
+                     "tenantId": tenantid,
+                     "email": "%s" % email,
+                     "enabled": True}}
+    return header.request(url, "PUT", body=json.dumps(body),
+                              headers={"Content-Type": "application/json",
+                                       "X-Auth-Token": auth_token})
+
+
+def create_user(tenantid, username, auth_token, email=None, password='secrete'):
+    _resp, content = create_user_json(tenantid, username, auth_token, email,
+        password)
+    return json.loads(content)['user']['id']
+
+
+def delete_user(user_id, auth_token):
+    header = httplib2.Http(".cache")
+    url = '%susers/%s' % (URL_V2, user_id)
+    resp, _content = header.request(url, "DELETE", body='{}',
+                              headers={"Content-Type": "application/json",
+                                       "X-Auth-Token": auth_token})
+    return resp
+
 
 
 def delete_user_xml(userid, auth_token):
@@ -253,14 +253,11 @@ def user_set_enabled(auth_token, user_id, enabled=True):
 def user_update_json(auth_token, user_id, email=None):
     header = httplib2.Http(".cache")
     url = '%susers/%s' % (URL_V2, user_id)
-    if email is None:
-        new_email = "updatedjoeuser@openstack.org"
-    else:
-        new_email = email
-    data = '{"user": { "email": "%s"}}' % (new_email)
-    resp, content = header.request(url, "PUT", body=data,
-                              headers={"Content-Type": "application/json",
-                                       "X-Auth-Token": auth_token})
+    email = email or "updatedjoeuser@openstack.org"
+    data = '{"user": { "email": "%s"}}' % (email)
+    resp, content = header.request(url, "PUT", body=data, headers={
+        "Content-Type": "application/json",
+        "X-Auth-Token": auth_token})
     return (resp, content)
 
 
@@ -421,11 +418,11 @@ def get_email():
 
 
 def get_tenant():
-    return '1234'
+    return str('1234')
 
 
 def get_another_tenant():
-    return '4321'
+    return str('4321')
 
 
 def get_user():
@@ -437,15 +434,15 @@ def get_userdisabled():
 
 
 def get_auth_token():
-    return '999888777666'
+    return str('999888777666')
 
 
 def get_service_token():
-    return '111222333444'
+    return str('111222333444')
 
 
 def get_exp_auth_token():
-    return '000999'
+    return str('000999')
 
 
 def get_none_token():
@@ -457,7 +454,7 @@ def get_non_existing_token():
 
 
 def get_disabled_token():
-    return '999888777'
+    return str('999888777')
 
 
 def content_type(resp):
@@ -470,23 +467,6 @@ def get_global_tenant():
 
 def get_test_service_id():
     return 'exampleservice'
-
-
-def handle_user_resp(self, content, respvalue, resptype):
-    if respvalue == 200:
-        if resptype == 'application/json':
-            content = json.loads(content)
-            if 'tenantId' in content['user']:
-                self.tenant = content['user']['tenantId']
-            self.userid = content['user']['id']
-        if resptype == 'application/xml':
-            content = etree.fromstring(content)
-            self.tenant = content.get("tenantId")
-            self.id = content.get("id")
-    if respvalue == 500:
-        self.fail('Identity Fault')
-    elif respvalue == 503:
-        self.fail('Service Not Available')
 
 
 def create_role(roleid, auth_token):
@@ -766,13 +746,17 @@ def create_endpoint_template_xml(region, service, public_url, admin_url,
     header = httplib2.Http(".cache")
 
     url = '%sendpointTemplates' % (URL_V2)
-    body = '<?xml version="1.0" encoding="UTF-8"?>\
-        <endpointTemplate xmlns="http://docs.openstack.org/identity/api/v2.0" \
-        region="%s" serviceId="%s" \
-        publicURL="%s" adminURL="%s"\
-        internalURL="%s" enabled="%s"\
-        global="%s"/>' % (region, service, public_url,\
-        admin_url, internal_url, enabled, is_global)
+    body = ('<?xml version="1.0" encoding="UTF-8"?> '
+        '<endpointTemplate '
+        'xmlns="http://docs.openstack.org/identity/api/v2.0" '
+        'region="%s" '
+        'serviceId="%s" '
+        'publicURL="%s" '
+        'adminURL="%s" '
+        'internalURL="%s" '
+        'enabled="%s" '
+        'global="%s"/>' % (region, service, public_url, admin_url,
+            internal_url, enabled, is_global))
     body = {"endpointTemplate": {"region": region,
                        "serviceId": service,
                        "publicURL": public_url,
@@ -825,7 +809,7 @@ def update_endpoint_template_xml(endpoint_template_id, region, service,
         region="%s" serviceId="%s" \
         publicURL="%s" adminURL="%s"\
         internalURL="%s" enabled="%s"\
-        global="%s"/>' % (region, service, public_url,\
+        global="%s"/>' % (region, service, public_url, \
         admin_url, internal_url, enabled, is_global)
     body = {"endpointTemplate": {"region": region,
                        "serviceId": service,

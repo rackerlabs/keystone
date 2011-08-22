@@ -31,6 +31,8 @@ from keystone.logic.types import fault
 
 
 class ServicesTest(unittest.TestCase):
+    user_id = None
+
     def setUp(self):
         self.auth_token = utils.get_auth_token()
         self.service_token = utils.get_service_token()
@@ -41,7 +43,7 @@ class ServicesTest(unittest.TestCase):
         self.user = utils.get_user()
         self.tenant = utils.get_tenant()
         utils.create_tenant(self.tenant, str(self.auth_token))
-        utils.create_user(self.tenant, self.user, self.auth_token)
+        self.user_id = utils.create_user(self.tenant, self.user, self.auth_token)
         self.sample_service = 'sampleservice'
         self.test_service = 'test_service'
         self.token = utils.get_token(self.user, 'secrete', self.tenant,
@@ -49,7 +51,7 @@ class ServicesTest(unittest.TestCase):
         utils.create_service(self.sample_service, str(self.auth_token))
 
     def tearDown(self):
-        utils.delete_user(self.user, self.auth_token)
+        utils.delete_user(self.user_id, self.auth_token)
         utils.delete_tenant(self.tenant, self.auth_token)
         utils.delete_service(self.sample_service, str(self.auth_token))
 
@@ -284,7 +286,7 @@ class DeleteServiceTest(ServicesTest):
             ":test_role", self.tenant, self.auth_token)
         self.assertEqual(201, int(resp['status']))
         resp, _content = utils.create_endpoint_template(\
-            'DFW', self.test_service, 'public_url',\
+            'DFW', self.test_service, 'public_url', \
             'admin_url', 'internal_url', True, False, self.auth_token)
         self.assertEqual(201, int(resp['status']))
 

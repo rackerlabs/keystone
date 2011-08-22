@@ -23,27 +23,30 @@ class TestAdminAuthentication(common.KeystoneTestCase):
 class TestAdminAuthenticationNegative(common.KeystoneTestCase):
     """Negative test admin-side user authentication"""
 
-    user_id = common.KeystoneTestCase._uuid()
-    user_id2 = common.KeystoneTestCase._uuid()
+    # Clients generate user names, and keystone generates user id's
+    user_name = common.KeystoneTestCase._uuid()
+    user_name2 = common.KeystoneTestCase._uuid()
+    user_id = None
     admin_token_backup = None
 
     def test_service_token_as_admin_token(self):
         """Admin actions should fail for mere service tokens"""
 
         # Admin create a user
-        self.admin_request(method='PUT', path='/users',
+        r = self.admin_request(method='POST', path='/users',
             as_json={
                 'user': {
-                    'id': self.user_id,
+                    'name': self.user_name,
                     'password': 'secrete',
-                    'email': self.user_id + '@openstack.org',
+                    'email': self.user_name + '@openstack.org',
                     'enabled': True}})
+        self.user_id = r.json['user']['id']
 
         # User authenticates to get a token
         r = self.service_request(method='POST', path='/tokens',
             as_json={
                 'passwordCredentials': {
-                    'username': self.user_id,
+                    'username': self.user_name,
                     'password': 'secrete'}})
 
         self.service_token = r.json['auth']['token']['id']
@@ -53,12 +56,12 @@ class TestAdminAuthenticationNegative(common.KeystoneTestCase):
         self.admin_token = self.service_token
 
         # Try creating another user
-        self.admin_request(method='PUT', path='/users', assert_status=401,
+        r = self.admin_request(method='POST', path='/users', assert_status=401,
             as_json={
                 'user': {
-                    'id': self.user_id2,
+                    'name': self.user_name2,
                     'password': 'secrete',
-                    'email': self.user_id2 + '@openstack.org',
+                    'email': self.user_name2 + '@openstack.org',
                     'enabled': True}})
 
     def tearDown(self):
@@ -72,19 +75,21 @@ class TestAdminAuthenticationNegative(common.KeystoneTestCase):
 class TestServiceAuthentication(common.KeystoneTestCase):
     """Test service-side user authentication"""
 
-    user_id = common.KeystoneTestCase._uuid()
+    user_name = common.KeystoneTestCase._uuid()
+    user_id = None
 
     def setUp(self):
         super(TestServiceAuthentication, self).setUp()
 
         # Create a user
-        self.admin_request(method='PUT', path='/users',
+        r = self.admin_request(method='POST', path='/users',
             as_json={
                 'user': {
-                    'id': self.user_id,
+                    'name': self.user_name,
                     'password': 'secrete',
-                    'email': self.user_id + '@openstack.org',
+                    'email': self.user_name + '@openstack.org',
                     'enabled': True}})
+        self.user_id = r.json['user']['id']
 
     def tearDown(self):
         # Delete user
@@ -96,45 +101,46 @@ class TestServiceAuthentication(common.KeystoneTestCase):
         r = self.service_request(method='POST', path='/tokens',
             as_json={
                 'passwordCredentials': {
-                    'username': self.user_id,
+                    'username': self.user_name,
                     'password': 'secrete'}})
 
         self.service_token = r.json['auth']['token']['id']
 
         # In the real world, the service user would then pass his/her token
         # to some service that depends on keystone, which would then need to
-        # user keystone to validate the provided token.
+        # use keystone to validate the provided token.
 
         # Admin independently validates the user token
         r = self.admin_request(path='/tokens/%s' % self.service_token)
         self.assertTrue(r.json['auth']['token']['expires'])
         self.assertEqual(r.json['auth']['token']['id'], self.service_token)
-        self.assertEqual(r.json['auth']['user']['username'], self.user_id)
+        self.assertEqual(r.json['auth']['user']['id'], self.user_id)
+        self.assertEqual(r.json['auth']['user']['username'], self.user_name)
         self.assertEqual(r.json['auth']['user']['roleRefs'], [])
 
     def test_get_request_fails(self):
         """GET /tokens should return a 404 (Github issue #5)"""
-        r = self.service_request(method='GET', path='/tokens',
+        self.service_request(method='GET', path='/tokens',
             assert_status=404,
             as_json={
                 'passwordCredentials': {
-                    'username': self.user_id,
+                    'username': self.user_name,
                     'password': 'secrete'}})
 
     def test_user_auth_with_malformed_request_body(self):
         """Authenticating with unnexpected json returns a 400"""
         # Authenticate as user to get a token
-        r = self.service_request(method='POST', path='/tokens',
+        self.service_request(method='POST', path='/tokens',
             assert_status=400,
             as_json={
                 'this-is-completely-wrong': {
-                    'username': self.user_id,
+                    'username': self.user_name,
                     'password': 'secrete'}})
 
     def test_user_auth_with_wrong_name(self):
         """Authenticating with an unknown username returns a 401"""
         # Authenticate as user to get a token
-        r = self.service_request(method='POST', path='/tokens',
+        self.service_request(method='POST', path='/tokens',
             assert_status=401,
             as_json={
                 'passwordCredentials': {
@@ -144,7 +150,7 @@ class TestServiceAuthentication(common.KeystoneTestCase):
     def test_user_auth_with_no_name(self):
         """Authenticating without a username returns a 401"""
         # Authenticate as user to get a token
-        r = self.service_request(method='POST', path='/tokens',
+        self.service_request(method='POST', path='/tokens',
             assert_status=401,
             as_json={
                 'passwordCredentials': {
@@ -154,21 +160,21 @@ class TestServiceAuthentication(common.KeystoneTestCase):
     def test_user_auth_with_wrong_password(self):
         """Authenticating with an invalid password returns a 401"""
         # Authenticate as user to get a token
-        r = self.service_request(method='POST', path='/tokens',
+        self.service_request(method='POST', path='/tokens',
             assert_status=401,
             as_json={
                 'passwordCredentials': {
-                    'username': self.user_id,
+                    'username': self.user_name,
                     'password': 'this-is-completely-wrong'}})
 
     def test_user_auth_with_invalid_tenant(self):
         """Authenticating with an invalid password returns a 401"""
         # Authenticate as user to get a token
-        r = self.service_request(method='POST', path='/tokens',
+        self.service_request(method='POST', path='/tokens',
             assert_status=401,
             as_json={
                 'passwordCredentials': {
-                    'username': self.user_id,
+                    'username': self.user_name,
                     'password': 'secrete',
                     'tenantId': 'this-is-completely-wrong'}})
 

@@ -22,14 +22,12 @@ import keystone.backends as backends
 import keystone.backends.api as api
 import keystone.backends.models as models
 from keystone.logic.types import fault
-from keystone.logic.types.tenant import \
-    Tenant, Tenants, User as TenantUser
+from keystone.logic.types.tenant import Tenant, Tenants
 from keystone.logic.types.role import Role, RoleRef, RoleRefs, Roles
 from keystone.logic.types.service import Service, Services
 from keystone.logic.types.user import User, User_Update, Users
 from keystone.logic.types.endpoint import Endpoint, Endpoints, \
     EndpointTemplate, EndpointTemplates
-import keystone.utils as utils
 
 
 class IdentityService(object):
@@ -46,9 +44,11 @@ class IdentityService(object):
         def validate(duser):
             return api.USER.check_password(duser, credentials.password)
 
-        return self._authenticate(validate,
-                                  credentials.username,
-                                  credentials.tenant_id)
+        user = api.USER.get_by_name(credentials.username)
+        if not user:
+            raise fault.UnauthorizedFault("Unauthorized")
+
+        return self._authenticate(validate, user.id, credentials.tenant_id)
 
     def authenticate_ec2(self, credentials):
         # Check credentials
@@ -68,7 +68,7 @@ class IdentityService(object):
             # NOTE(vish): Some libraries don't use the port when signing
             #             requests, so try again without port.
             if ':' in credentials.host:
-                hostname, _sep, port = credentials.partition(':')
+                hostname, _sep, _port = credentials.partition(':')
                 credentials.host = hostname
                 signature = signer.generate(credentials)
                 return signature == credentials.signature
@@ -77,14 +77,14 @@ class IdentityService(object):
         return self._authenticate(validate, creds.user_id, creds.tenant_id)
 
     def _authenticate(self, validate, user_id, tenant_id=None):
-        if not tenant_id:
-            duser = api.USER.get(user_id)
-            if duser == None:
-                raise fault.UnauthorizedFault("Unauthorized")
-        else:
+        if tenant_id:
             duser = api.USER.get_by_tenant(user_id, tenant_id)
             if duser == None:
                 raise fault.UnauthorizedFault("Unauthorized on this tenant")
+        else:
+            duser = api.USER.get(user_id)
+            if duser == None:
+                raise fault.UnauthorizedFault("Unauthorized")
 
         if not duser.enabled:
             raise fault.UserDisabledFault("Your account has been disabled")
@@ -92,25 +92,22 @@ class IdentityService(object):
         if not validate(duser):
             raise fault.UnauthorizedFault("Unauthorized")
 
-        #
-        # Look for an existing token, or create one,
-        # TODO: Handle tenant/token search
-        #
-        user_id = duser.id
+        # use user's default tenant_id if one is not specified
         tenant_id = tenant_id or duser.tenant_id
-        dtoken = api.TOKEN.get_for_user_by_tenant(user_id, tenant_id)
+
+        # check for an existing token
+        dtoken = api.TOKEN.get_for_user_by_tenant(duser.id, tenant_id)
 
         if not dtoken or dtoken.expires < datetime.now():
             # Create new token
             dtoken = models.Token()
             dtoken.id = str(uuid.uuid4())
-            dtoken.user_id = user_id
+            dtoken.user_id = duser.id
             dtoken.tenant_id = tenant_id
             dtoken.expires = datetime.now() + timedelta(days=1)
             api.TOKEN.create(dtoken)
-        #if tenant_id is passed in the call that tenant_id is passed else
-        #user's default tenant_id is used.
-        return self.__get_auth_data(dtoken, tenant_id)
+
+        return self.__get_auth_data(dtoken)
 
     def validate_token(self, admin_token, token_id, belongs_to=None):
         self.__validate_service_or_keystone_admin_token(admin_token)
@@ -250,24 +247,25 @@ class IdentityService(object):
         if not isinstance(user, User):
             raise fault.BadRequestFault("Expecting a User")
 
-        if user.user_id == None or len(user.user_id.strip()) == 0:
-            raise fault.BadRequestFault("Expecting a unique User Id")
+        if user.name is None or not user.name.strip():
+            raise fault.BadRequestFault("Expecting a unique username")
 
-        if api.USER.get(user.user_id) != None:
+        if api.USER.get_by_name(user.name):
             raise fault.UserConflictFault(
-                "An user with that id already exists")
+                "A user with that name already exists")
 
-        if api.USER.get_by_email(user.email) != None:
-            raise fault.EmailConflictFault("Email already exists")
+        if api.USER.get_by_email(user.email):
+            raise fault.EmailConflictFault(
+                "A user with that email already exists")
 
         duser = models.User()
-        duser.id = user.user_id
+        duser.name = user.name
         duser.password = user.password
         duser.email = user.email
         duser.enabled = user.enabled
         duser.tenant_id = user.tenant_id
-        api.USER.create(duser)
-
+        duser = api.USER.create(duser)
+        user.id = duser.id
         return user
 
     def validate_and_fetch_user_tenant(self, tenant_id):
@@ -350,15 +348,14 @@ class IdentityService(object):
             raise fault.BadRequestFault("Expecting a User")
 
         if user.email != duser.email and \
-            api.USER.get_by_email(user.email) is not None:
-            raise fault.EmailConflictFault(
-                "Email already exists")
+                api.USER.get_by_email(user.email) is not None:
+            raise fault.EmailConflictFault("Email already exists")
 
         values = {'email': user.email}
         api.USER.update(user_id, values)
         duser = api.USER.user_get_update(user_id)
-        return User(duser.password, duser.id, duser.tenant_id,
-                          duser.email, duser.enabled)
+        return User(duser.password, duser.id, duser.name, duser.tenant_id,
+            duser.email, duser.enabled)
 
     def set_user_password(self, admin_token, user_id, user):
         self.__validate_admin_token(admin_token)
@@ -378,8 +375,7 @@ class IdentityService(object):
 
         api.USER.update(user_id, values)
 
-        return User_Update(user.password,
-            None, None, None, None)
+        return User_Update(password=user.password)
 
     def enable_disable_user(self, admin_token, user_id, user):
         self.__validate_admin_token(admin_token)
@@ -389,16 +385,12 @@ class IdentityService(object):
         if not isinstance(user, User):
             raise fault.BadRequestFault("Expecting a User")
 
-        duser = api.USER.get(user_id)
-        if duser == None:
-            raise fault.ItemNotFoundFault("The user could not be found")
-
         values = {'enabled': user.enabled}
 
         api.USER.update(user_id, values)
 
-        return User_Update(None,
-            None, None, None, user.enabled)
+        # This looks really bad.
+        return User_Update(enabled=user.enabled)
 
     def set_user_tenant(self, admin_token, user_id, user):
         self.__validate_admin_token(admin_token)
@@ -415,8 +407,7 @@ class IdentityService(object):
         self.validate_and_fetch_user_tenant(user.tenant_id)
         values = {'tenant_id': user.tenant_id}
         api.USER.update(user_id, values)
-        return User_Update(None,
-            None, user.tenant_id, None, None)
+        return User_Update(tenant_id=user.tenant_id)
 
     def delete_user(self, admin_token, user_id):
         self.__validate_admin_token(admin_token)
@@ -431,32 +422,34 @@ class IdentityService(object):
             api.USER.delete(user_id)
         return None
 
-    def __get_auth_data(self, dtoken, tenant_id):
+    def __get_auth_data(self, dtoken):
         """return AuthData object for a token"""
         endpoints = None
         try:
-            endpoints = api.TENANT.get_all_endpoints(tenant_id)
+            endpoints = api.TENANT.get_all_endpoints(dtoken.tenant_id)
         except:
             pass
-        token = auth.Token(dtoken.expires, dtoken.id, tenant_id)
+        token = auth.Token(dtoken.expires, dtoken.id, dtoken.tenant_id)
+
         return auth.AuthData(token, endpoints)
 
     def __get_validate_data(self, dtoken, duser):
         """return ValidateData object for a token/user pair"""
-
         token = auth.Token(dtoken.expires, dtoken.id, dtoken.tenant_id)
         ts = []
         if dtoken.tenant_id:
             drole_refs = api.ROLE.ref_get_all_tenant_roles(duser.id,
-                                                             dtoken.tenant_id)
+                dtoken.tenant_id)
             for drole_ref in drole_refs:
                 ts.append(RoleRef(drole_ref.id, drole_ref.role_id,
-                                         drole_ref.tenant_id))
+                    drole_ref.tenant_id))
         drole_refs = api.ROLE.ref_get_all_global_roles(duser.id)
         for drole_ref in drole_refs:
             ts.append(RoleRef(drole_ref.id, drole_ref.role_id,
-                                     drole_ref.tenant_id))
-        user = auth.User(duser.id, duser.tenant_id, RoleRefs(ts, []))
+                drole_ref.tenant_id))
+
+        user = auth.User(duser.id, duser.name, duser.tenant_id, RoleRefs(ts, []))
+
         return auth.ValidateData(token, user)
 
     def __validate_tenant(self, tenant_id):
@@ -483,7 +476,7 @@ class IdentityService(object):
 
         if not user.enabled:
             raise fault.UserDisabledFault("User %s has been disabled!"
-                                          % user.id)
+                % user.id)
 
         if user.tenant_id:
             self.__validate_tenant(user.tenant_id)
@@ -498,7 +491,6 @@ class IdentityService(object):
 
     def __validate_admin_token(self, token_id):
         (token, user) = self.__validate_token(token_id)
-
         for role_ref in api.ROLE.ref_get_all_global_roles(user.id):
             if role_ref.role_id == backends.KEYSTONEADMINROLE and \
                     role_ref.tenant_id is None:
@@ -514,6 +506,7 @@ class IdentityService(object):
                 role_ref.role_id == backends.KEYSTONESERVICEADMINROLE) and \
                     role_ref.tenant_id is None:
                 return (token, user)
+
         raise fault.UnauthorizedFault(
             "You are not authorized to make this call")
 
@@ -531,8 +524,7 @@ class IdentityService(object):
                 "A role with that id '" + role.role_id + "' already exists")
         #Check if the passed service exist
         #and the role begins with service_id:.
-        if role.service_id != None and\
-            len(role.service_id.strip()) > 0:
+        if role.service_id != None and len(role.service_id.strip()) > 0:
             if api.SERVICE.get(role.service_id) == None:
                 raise fault.BadRequestFault(
                         "A service with that id doesnt exist.")

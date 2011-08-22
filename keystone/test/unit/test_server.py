@@ -26,7 +26,7 @@ class TestServer(unittest.TestCase):
         environ = {'wsgi.url_scheme': 'http'}
         self.request = Request(environ)
         self.auth_data = auth.ValidateData(auth.Token(date.today(), "2231312"),
-            auth.User("username", "12345"))
+            auth.User("id", "username", "12345"))
 
     #def tearDown(self):
 
@@ -48,6 +48,7 @@ class TestServer(unittest.TestCase):
         token = xml.find("{http://docs.openstack.org/identity/api/v2.0}token")
 
         self.assertTrue(user.get("username"), "username")
+        self.assertTrue(user.get("id"), "id")
         self.assertTrue(user.get("tenantId"), '12345')
         self.assertTrue(token.get("id"), '2231312')
         self.assertTrue(token.get("expires"), date.today())
@@ -58,6 +59,7 @@ class TestServer(unittest.TestCase):
         self.assertTrue(response.headers['content-type'] ==
             "application/json; charset=UTF-8")
         dict = json.loads(response.unicode_body)
+        self.assertTrue(dict['auth']['user']['id'], 'id')
         self.assertTrue(dict['auth']['user']['username'], 'username')
         self.assertTrue(dict['auth']['user']['tenantId'], '12345')
         self.assertTrue(dict['auth']['token']['id'], '2231312')

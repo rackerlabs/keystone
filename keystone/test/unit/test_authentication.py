@@ -156,20 +156,21 @@ class AuthenticationTest(unittest.TestCase):
 
 
 class MultiToken(unittest.TestCase):
+    user_id1 = None
+    user_id2 = None
 
     def setUp(self):
         self.auth_token = utils.get_auth_token()
         self.userdisabled = utils.get_userdisabled()
         utils.create_tenant('test_tenant1', self.auth_token)
         utils.create_tenant('test_tenant2', self.auth_token)
-        utils.create_user('test_tenant1', 'test_user1', self.auth_token)
-        utils.create_user('test_tenant1', 'test_user2', self.auth_token)
+        self.user_id1 = utils.create_user('test_tenant1', 'test_user1', self.auth_token)
+        self.user_id2 = utils.create_user('test_tenant1', 'test_user2', self.auth_token)
         utils.add_user_json(self.auth_token)
 
     def tearDown(self):
-        utils.delete_user('test_user1', self.auth_token)
-        utils.delete_user('test_user2', self.auth_token)
-        utils.delete_user('test_user1', self.auth_token)
+        utils.delete_user(self.user_id1, self.auth_token)
+        utils.delete_user(self.user_id2, self.auth_token)
         utils.delete_tenant('test_tenant1', self.auth_token)
         utils.delete_tenant('test_tenant2', self.auth_token)
 
