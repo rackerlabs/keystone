@@ -28,3 +28,4 @@ coverage # computes code coverage percentages
 webtest
 unittest2
 pep8
+pymox
