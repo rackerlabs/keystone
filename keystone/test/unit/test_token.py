@@ -24,8 +24,11 @@ sys.path.append(app_path)
 import unittest2 as unittest
 import test_common as utils
 import json
+import keystone.backends.api
 import keystone.logic.types.fault as fault
+import keystone.logic.service as service
 from lxml import etree
+import stubout
 
 
 class ValidateToken(unittest.TestCase):
@@ -193,6 +196,65 @@ class ValidateToken(unittest.TestCase):
             self.fail('Service Not Available')
         self.assertEqual(401, int(resp['status']))
         self.assertEqual('application/json', utils.content_type(resp))
+
+
+class TokenEndpointTest(unittest.TestCase):
+    def _noop_validate_admin_token(self, admin_token):
+        pass
+
+    class FakeDtoken(object):
+        expires = 'now'
+        tenant_id = 1
+        id = 2
+
+    def _fake_token_get(self, token_id):
+        return self.FakeDtoken()
+
+    def _fake_missing_token_get(self, token_id):
+        return None
+
+    class FakeEndpoint(object):
+        service = 'foo'
+
+    def _fake_tenant_get_all_endpoints(self, tenant_id):
+        return [self.FakeEndpoint()]
+
+    def setUp(self):
+        self.stubout = stubout.StubOutForTesting()
+
+        self.identity = service.IdentityService()
+        # The downside of python "private" methods ... you
+        # have to do stuff like this to stub them out.
+        self.stubout.SmartSet(self.identity,
+                              "_IdentityService__validate_admin_token",
+                              self._noop_validate_admin_token)
+
+    def tearDown(self):
+        self.stubout.SmartUnsetAll()
+        self.stubout.UnsetAll()
+
+    def test_endpoints_from_good_token(self):
+        """Happy Day scenario."""
+        self.stubout.SmartSet(keystone.backends.api.TOKEN,
+                              'get', self._fake_token_get)
+
+        self.stubout.SmartSet(keystone.backends.api.BaseTenantAPI,
+                              'get_all_endpoints',
+                              self._fake_tenant_get_all_endpoints)
+
+        auth_data = self.identity.get_endpoints_for_token("admin token",
+                                                          "token id")
+        self.assertEquals(auth_data.base_urls[0].service, 'foo')
+        self.assertEquals(len(auth_data.base_urls), 1)
+
+    def test_endpoints_from_bad_token(self):
+        self.stubout.SmartSet(keystone.backends.api.TOKEN,
+                              'get', self._fake_missing_token_get)
+
+        self.assertRaises(fault.ItemNotFoundFault,
+                          self.identity.get_endpoints_for_token,
+                          "admin token", "token id")
+
 
 if __name__ == '__main__':
     unittest.main()
