@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAACH///CI\u003d",
+        "filename": "keystone/content/admin/xsd/credentials.xsd",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-08-25T19:24:44Z",
+      "side": 1,
+      "message": "This is correct; hence the sample I commented on does not match this.",
+      "revId": "64d751e9f8f862a4abdfa0aff11bfb6f19904ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACH///CQ\u003d",
         "filename": "keystone/content/common/samples/auth_credentials.xml",
         "patchSetId": 2
