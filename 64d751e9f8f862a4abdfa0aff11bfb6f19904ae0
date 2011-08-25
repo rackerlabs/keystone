@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACH///CQ\u003d",
+        "filename": "keystone/content/common/samples/auth_credentials.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-08-25T19:23:41Z",
+      "side": 1,
+      "message": "Yogi - I think this needs to stay passwordCredentials as we selected the strict type. It can be \"credentials\" as a type in the XSD, but the element is specific to the type; which in this case are Password Credentials...",
+      "revId": "64d751e9f8f862a4abdfa0aff11bfb6f19904ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
