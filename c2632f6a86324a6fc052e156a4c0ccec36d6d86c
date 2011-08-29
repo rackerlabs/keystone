@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACH//+4U\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-08-29T16:46:40Z",
+      "side": 1,
+      "message": "I don\u0027t see a good reason to be swallowing exceptions here?",
+      "revId": "c2632f6a86324a6fc052e156a4c0ccec36d6d86c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
