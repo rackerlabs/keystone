@@ -44,6 +44,9 @@
             </resource>
 
             <resource id="tokens" path="tokens">
+                <param name="X-Auth-Token" style="header" type="xsd:string" required="true">
+                    <doc>You need a valid admin token for access.</doc>
+                </param>                
                 <method href="#authenticate"/>
 
                 <resource id="tokenById" path="{tokenId}">
@@ -58,9 +61,10 @@
             </resource>
 
             <resource id="users" path="users">
-                <param name="username" style="query" type="xsd:string" required="false"/>
+                <param name="X-Auth-Token" style="header" type="xsd:string" required="true">
+                    <doc>You need a valid admin token for access.</doc>
+                </param>                
                 <method href="#getUserByName"/>
-
                 <resource id="userid" path="{user_id}">
                     <param name="user_id" style="template" type="xsd:string" required="true"/>
                     <method href="#getUserById"/>
@@ -72,12 +76,14 @@
             </resource>
 
             <resource id="tenants" path="tenants">
-                <param name="name" style="query" type="xsd:string" required="false"/>
+                <param name="X-Auth-Token" style="header" type="xsd:string" required="true">
+                    <doc>You need a valid admin token for access.</doc>
+                </param>                
 				<method href="#listTenants"/>
-
+                <method href="#getTenantByName"/>
                 <resource id="tenantById" path="{tenantId}">
                     <param name="tenantId" style="template" type="xsd:string"/>
-                    <method href="#getTenant"/>
+                    <method href="#getTenantById"/>
 
                     <resource id="usersForTenant" path="users">
                         <resource id="getTenantUser" path="{user_id}">
@@ -233,6 +239,9 @@
             	Returns detailed information about a specific user, by user name.
             </p>
         </doc>
+        <request>
+            <param name="name" style="query" type="xsd:string" required="true"/>
+        </request>
         <response status="200 203">
             <representation mediaType="application/xml" element="identity:user"/>
             <representation mediaType="application/json"/>
@@ -292,6 +301,9 @@
             	Returns detailed information about a tenant, by name.
             </p>
         </doc>
+        <request>
+            <param name="name" style="query" type="xsd:string" required="true"/>
+        </request>
         <response status="200 203">
             <representation mediaType="application/xml" element="identity:tenant"/>
             <representation mediaType="application/json"/>
