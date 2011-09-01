@@ -14,14 +14,12 @@
 
 <application xmlns="http://wadl.dev.java.net/2009/02"
 	xmlns:identity="http://docs.openstack.org/identity/api/v2.0"
-	xmlns:OS-KSADM="http://docs.openstack.org/identity/api/ext/OS-KSADM/v1.0"
 	xmlns:capi="http://docs.openstack.org/common/api/v2.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xsi:schemaLocation="http://docs.openstack.org/identity/api/v2.0 ../common/xsd/api.xsd
 		http://docs.openstack.org/common/api/v1.0 ../common/xsd/api-common.xsd
 		http://wadl.dev.java.net/2009/02 http://www.w3.org/Submission/wadl/wadl.xsd
-		http://docs.openstack.org/identity/api/ext/OS-KSADM/v1.0 ../common/xsd/OS-KSADM-endpointtemplates.xsd
 		">
 
     <grammars>
@@ -102,7 +100,7 @@
                 </resource>
             </resource>
 
-            <resource id="role-OS-KSADM" path="OS-KSADM">
+            <resource id="role-service-OS-KSADM" path="OS-KSADM">
                 <resource id="roles" path="roles">
                     <method href="#listRoles"/>
                     <resource id="roleId" path="{roleId}">
@@ -110,6 +108,16 @@
                         <method href="#addRole"/>
                         <method href="#getRole"/>
                         <method href="#deleteRole"/>
+                    </resource>
+                </resource>
+                <resource id="services" path="services">
+                    <method href="#listServices"/>
+                    <method href="#addService"/>
+                    
+                    <resource id="serviceId" path="{serviceId}">
+                        <param name="serviceId" style="template" type="xsd:int"/>
+                        <method href="#getService"/>
+                        <method href="#deleteService"/>
                     </resource>
                 </resource>
             </resource>
@@ -262,6 +270,7 @@
         </response>
         &commonFaults;
         &getFaults;
+        &postPutFaults;
     </method>
    
     <method name="GET" id="getUser">
@@ -484,6 +493,49 @@
         <doc xml:lang="EN" title="Delete Role">
             <p xmlns="http://www.w3.org/1999/xhtml">Delete a role.</p>
         </doc>
+        <response status="204"/>
+        &commonFaults;
+        &getFaults;
+    </method>
+
+    <!-- Service Operations -->
+    <method name="GET" id="listServices">
+        <request>
+            <param name="serviceId" style="query" required="false" type="xsd:string"/>
+        </request>
+        <response status="200 203">
+            <representation mediaType="application/xml" element="identity:services"/>
+            <representation mediaType="application/json"/>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    <method name="GET" id="getService">
+        <response status="200 203">
+            <representation mediaType="application/xml" element="identity:service"/>
+            <representation mediaType="application/json"/>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    <method name="POST" id="addService">
+        <request>
+            <representation mediaType="application/xml" element="identity:service"/>
+            <representation mediaType="application/json"/>
+        </request>
+        <response status="201">
+            <representation mediaType="application/xml" element="identity:service">
+                <param name="Location" type="xsd:anyURI" style="header"/>
+            </representation>
+            <representation mediaType="application/json">
+                <param name="Location" type="xsd:anyURI" style="header"/>
+            </representation>
+        </response>
+        &commonFaults;
+        &postPutFaults;
+        &getFaults;
+    </method>
+    <method name="DELETE" id="deleteService">
         <response status="204"/>
         &commonFaults;
         &getFaults;
