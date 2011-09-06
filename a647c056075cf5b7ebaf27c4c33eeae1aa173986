@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACH//+po\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/user.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2011-09-06T14:48:09Z",
+      "side": 1,
+      "message": "The above looks like it should be removed...",
+      "revId": "a647c056075cf5b7ebaf27c4c33eeae1aa173986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACH//+pk\u003d",
+        "filename": "keystone/content/admin/xsd/token.xsd",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2011-09-06T14:48:09Z",
+      "side": 1,
+      "message": "Isn\u0027t the type for id an Integer?",
+      "revId": "a647c056075cf5b7ebaf27c4c33eeae1aa173986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
