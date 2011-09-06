@@ -20,6 +20,7 @@
     <import vc:minVersion="1.1" namespace="http://www.w3.org/2005/Atom"
             schemaLocation="atom/atom.xsd" />
 
+
     <element name="endpointTemplates" type="OS-KSCATALOG:EndpointTemplateList">
         <annotation>
             <xsd:documentation
@@ -44,6 +45,32 @@
         </annotation>
     </element>
 
+    <!-- Elements -->
+    <element name="services" type="OS-KSCATALOG:ServiceList">
+        <annotation>
+            <xsd:documentation
+                    xml:lang="EN"
+                    xmlns="http://www.w3.org/1999/xhtml">
+                <p>
+                    A list of services.
+                </p>
+            </xsd:documentation>
+        </annotation>
+    </element>
+    
+    <element name="service" type="OS-KSCATALOG:Service"  >
+        <annotation>
+            <xsd:documentation
+                    xml:lang="EN"
+                    xmlns="http://www.w3.org/1999/xhtml">
+                <p>
+                    A service.
+                </p>
+            </xsd:documentation>
+        </annotation>
+    </element>
+    
+    
     <!-- Complex Types -->
     <complexType name="EndpointTemplate">
         <attribute name="id" type="xsd:int" use="required">
@@ -147,4 +174,20 @@
          <anyAttribute namespace="##other" processContents="lax"/>
     </complexType>
 
+    <!-- Complex Types -->
+    <complexType name="Service">
+        <attribute name="id" type="xsd:string" use="required"/>
+        <attribute name="type" type="identity:ExtensibleServiceType" use="required"/>
+        <attribute name="description" type="xsd:string"  use="optional"/>
+        <anyAttribute namespace="##other" processContents="lax"/>
+    </complexType>
+    
+    <complexType name="ServiceList">
+        <sequence>
+            <element name="service" type="identity:Service" minOccurs="0" maxOccurs="unbounded"/>
+            <element vc:minVersion="1.1" ref="atom:link" minOccurs="0" maxOccurs="unbounded" />
+            <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+        <anyAttribute namespace="##other" processContents="lax"/>
+    </complexType>
 </schema>
