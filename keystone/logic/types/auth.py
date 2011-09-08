@@ -267,7 +267,8 @@ class AuthData(object):
                         base_url_item = getattr(base_url, url_kind + "_url")
                         if base_url_item:
                             endpoint[url_kind + "URL"] = base_url_item.\
-                                replace('%tenant_id%', str(self.token.tenant_id)) \
+                                replace('%tenant_id%',
+                                    str(self.token.tenant_id)) \
                                 if self.token.tenant_id else base_url_item
                     endpoints.append(endpoint)
                 service_catalog[key] = endpoints

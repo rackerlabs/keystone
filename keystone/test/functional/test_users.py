@@ -187,10 +187,14 @@ class UpdateUserTest(UserTest):
         self.assertTrue(r.json['user']['email'], new_user_email)
 
     def test_enable_disable_user(self):
-        self.assertFalse(self.disable_user(self.user['id']).json['user']['enabled'])
-        self.assertFalse(self.fetch_user(self.user['id']).json['user']['enabled'])
-        self.assertTrue(self.enable_user(self.user['id']).json['user']['enabled'])
-        self.assertTrue(self.fetch_user(self.user['id']).json['user']['enabled'])
+        self.assertFalse(self.disable_user(self.user['id']).\
+            json['user']['enabled'])
+        self.assertFalse(self.fetch_user(self.user['id']).\
+            json['user']['enabled'])
+        self.assertTrue(self.enable_user(self.user['id']).\
+            json['user']['enabled'])
+        self.assertTrue(self.fetch_user(self.user['id']).\
+            json['user']['enabled'])
 
     def test_update_user_bad_request(self):
         data = '{"user_bad": { "bad": "%s"}}' % (common.unique_email(),)

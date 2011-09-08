@@ -125,10 +125,10 @@ class GetTenantsTest(TenantTest):
 
     def test_get_tenants_using_user_token(self):
         tenant = self.create_tenant().json['tenant']
-        user = self.create_user_with_known_password(tenant_id=tenant['id']
-            ).json['user']
-        token = self.authenticate(user['name'], user['password'], tenant['id']
-            ).json['auth']['token']
+        user = self.create_user_with_known_password(tenant_id=tenant['id']).\
+            json['user']
+        token = self.authenticate(user['name'], user['password'],
+            tenant['id']).json['auth']['token']
         self.service_token = token['id']
         tenants = self.service_request(method='GET', path='/tenants',
             assert_status=200).json['tenants']['values']
@@ -137,10 +137,10 @@ class GetTenantsTest(TenantTest):
 
     def test_get_tenants_using_user_token_xml(self):
         tenant = self.create_tenant().json['tenant']
-        user = self.create_user_with_known_password(tenant_id=tenant['id']
-            ).json['user']
-        token = self.authenticate(user['name'], user['password'], tenant['id']
-            ).json['auth']['token']
+        user = self.create_user_with_known_password(tenant_id=tenant['id']).\
+            json['user']
+        token = self.authenticate(user['name'], user['password'],
+            tenant['id']).json['auth']['token']
         self.service_token = token['id']
 
         r = self.service_request(method='GET', path='/tenants',
@@ -148,7 +148,6 @@ class GetTenantsTest(TenantTest):
         self.assertEqual(r.xml.tag, self.xmlns + 'tenants')
         xml_tenant = r.xml.find(self.xmlns + 'tenant')
         self.assertEqual(tenant['id'], xml_tenant.get('id'))
-
 
     def test_get_tenants_exp_token(self):
         self.admin_token = self.expired_admin_token
@@ -189,8 +188,8 @@ class UpdateTenantTest(TenantTest):
     def test_update_tenant(self):
         new_description = common.unique_str()
         updated_tenant = self.update_tenant(self.tenant['id'],
-            tenant_description=new_description, assert_status=200
-            ).json['tenant']
+            tenant_description=new_description, assert_status=200).\
+            json['tenant']
         self.assertEqual(updated_tenant['description'], new_description)
 
     def test_update_tenant_xml(self):

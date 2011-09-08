@@ -83,8 +83,8 @@ class CreateRolesTest(RolesTest):
     def test_create_role_mapped_to_a_service(self):
         service = self.create_service().json['service']
         role_id = service['id'] + ':' + common.unique_str()
-        role = self.create_role(role_id=role_id, service_id=service['id']
-            ).json['role']
+        role = self.create_role(role_id=role_id, service_id=service['id']).\
+            json['role']
         self.assertEqual(service['id'], role['serviceId'])
 
     def test_create_role_mapped_to_a_service_xml(self):
@@ -314,8 +314,8 @@ class DeleteRoleRefTest(RolesTest):
         self.role = self.create_role().json['role']
         self.grant_role_to_user(self.user['id'], self.role['id'],
             self.tenant['id'])
-        self.role_refs = self.get_user_roles(self.user['id']
-            ).json['roleRefs']['values']
+        self.role_refs = self.get_user_roles(self.user['id']).\
+            json['roleRefs']['values']
 
     def test_delete_roleref(self):
         self.delete_user_role(self.user['id'], self.role_refs[0]['id'],

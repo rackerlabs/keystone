@@ -71,8 +71,8 @@ class AuthenticationTest(common.FunctionalTestCase):
 
     def test_authorize_user_disabled(self):
         self.disable_user(self.user['id'])
-        self.authenticate(self.user['name'], self.user['password'], self.tenant['id'],
-            assert_status=403)
+        self.authenticate(self.user['name'], self.user['password'],
+            self.tenant['id'], assert_status=403)
 
     def test_authorize_user_wrong(self):
         data = {
@@ -92,6 +92,7 @@ class AuthenticationTest(common.FunctionalTestCase):
                 self.user['name'], self.user['password'], self.tenant['id'])
 
         self.post_token(as_xml=data, assert_status=400)
+
 
 class MultiTokenTest(common.FunctionalTestCase):
     def setUp(self, *args, **kwargs):

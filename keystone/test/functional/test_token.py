@@ -18,6 +18,7 @@
 import unittest2 as unittest
 from keystone.test.functional import common
 
+
 class ValidateToken(common.FunctionalTestCase):
     def setUp(self, *args, **kwargs):
         super(ValidateToken, self).setUp(*args, **kwargs)
@@ -28,8 +29,7 @@ class ValidateToken(common.FunctionalTestCase):
         self.role_ref = self.grant_role_to_user(self.user['id'], 'Admin',
             self.tenant['id']).json['roleRef']
         self.token = self.authenticate(self.user['name'],
-            self.user['password'], self.tenant['id']
-            ).json['auth']['token']
+            self.user['password'], self.tenant['id']).json['auth']['token']
 
     def test_validate_token_true(self):
         r = self.get_token_belongsto(self.token['id'], self.tenant['id'],

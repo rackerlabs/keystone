@@ -106,9 +106,6 @@ class BaseLdapAPI(object):
         else:
             return self._ldap_res_to_model(res)
 
-    def get_by_name(self, name, filter=None):
-        return self.get(name, filter)
-
     def get_all(self, filter=None):
         return map(self._ldap_res_to_model, self._ldap_get_all(filter))
 

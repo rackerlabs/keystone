@@ -4,6 +4,7 @@ import uuid
 import json
 from xml.etree import ElementTree
 
+
 class HttpTestCase(unittest.TestCase):
     """Performs generic HTTP request testing"""
 
@@ -450,7 +451,8 @@ class FunctionalTestCase(ApiTestCase):
         # Authenticate as admin user to establish admin_token
         self.admin_token = self.authenticate(self.admin_username,
             self.admin_password).json['auth']['token']['id']
-        self.admin_user_id = self.fetch_user_by_name('admin').json['users']['values'][0]['id']
+        self.admin_user_id = self.fetch_user_by_name('admin').\
+            json['users']['values'][0]['id']
 
     def authenticate(self, user_name=None, user_password=None, tenant_id=None,
             **kwargs):
@@ -585,7 +587,7 @@ class FunctionalTestCase(ApiTestCase):
 
     def _enable_disable_user(self, user_id, user_enabled, **kwargs):
         """Private function to enable and disable a user.
-        
+
         Use enable_user() and disable_user() instead."""
         data = {"user": {"enabled": user_enabled}}
 

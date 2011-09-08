@@ -150,7 +150,8 @@ class ServiceAPITest(unittest.TestCase):
         if user:
             values['user_id'] = user.id
             credentials = db_api.CREDENTIALS.create(values)
-            logger.debug("Created credentials fixture %s", credentials['user_id'])
+            logger.debug("Created credentials fixture %s",
+                credentials['user_id'])
             return credentials
 
     def fixture_create_tenant(self, **kwargs):

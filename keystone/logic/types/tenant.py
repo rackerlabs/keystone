@@ -57,7 +57,8 @@ class Tenant(object):
                              "description")
             if desc == None:
                 raise fault.BadRequestFault("Expecting Tenant Description")
-            return Tenant(id=id, name=name, description=desc.text, enabled=set_enabled)
+            return Tenant(id=id, name=name, description=desc.text,
+                enabled=set_enabled)
         except etree.LxmlError as e:
             raise fault.BadRequestFault("Cannot parse Tenant", str(e))
 
@@ -78,7 +79,8 @@ class Tenant(object):
             if not "description" in tenant:
                 raise fault.BadRequestFault("Expecting Tenant Description")
             description = tenant["description"]
-            return Tenant(id=id, name=name, description=description, enabled=set_enabled)
+            return Tenant(id=id, name=name, description=description,
+                enabled=set_enabled)
         except (ValueError, TypeError) as e:
             raise fault.BadRequestFault("Cannot parse Tenant", str(e))
 

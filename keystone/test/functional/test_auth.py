@@ -31,7 +31,8 @@ class TestAdminAuthenticationNegative(common.FunctionalTestCase):
         user['password'] = password
 
         # Replace our admin_token with a mere service token
-        self.admin_token = self.authenticate(user['name'], user['password']).json['auth']['token']['id']
+        self.admin_token = self.authenticate(user['name'], user['password']).\
+            json['auth']['token']['id']
 
         # Try creating another user using the wrong token
         self.create_user(assert_status=401)
@@ -54,7 +55,8 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.service_token = self.post_token(as_json={
             'passwordCredentials': {
                 'username': self.user['name'],
-                'password': self.user['password']}}).json['auth']['token']['id']
+                'password': self.user['password']}}).\
+            json['auth']['token']['id']
 
         # In the real world, the service user would then pass his/her token
         # to some service that depends on keystone, which would then need to

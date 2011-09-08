@@ -28,8 +28,8 @@ class ServicesTest(common.FunctionalTestCase):
 
 class GetServicesTest(ServicesTest):
     def test_get_services_using_keystone_admin_token_json(self):
-        services = self.list_services(assert_status=200
-            ).json['services']['values']
+        services = self.list_services(assert_status=200).\
+            json['services']['values']
 
         self.assertTrue(len(services))
 
@@ -43,8 +43,8 @@ class GetServicesTest(ServicesTest):
 
     def test_get_services_using_service_admin_token(self):
         self.admin_token = self.service_admin_token
-        services = self.list_services(assert_status=200
-            ).json['services']['values']
+        services = self.list_services(assert_status=200).\
+            json['services']['values']
 
         self.assertTrue(len(services))
 
@@ -110,7 +110,6 @@ class GetServiceTest(ServicesTest):
     def test_get_service_using_invalid_token(self):
         self.admin_token = common.unique_str()
         self.fetch_service(service_id=self.service['id'], assert_status=404)
-
 
 
 class CreateServiceTest(ServicesTest):

@@ -5,8 +5,10 @@ import tempfile
 import time
 import unittest2 as unittest
 
+
 TEST_DIR = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR = os.path.abspath(os.path.join(TEST_DIR, '..', '..'))
+
 
 def execute(cmd, raise_error=True):
     """

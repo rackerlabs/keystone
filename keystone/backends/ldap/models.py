@@ -46,8 +46,8 @@ Endpoints = create_model(
 Role = create_model(
     'Role', ['id', 'desc', 'service_id'])
 Tenant = create_model(
-    'Tenant', ['id', 'name', 'desc', 'enabled'])
+    'Tenant', ['id', 'desc', 'enabled'])
 User = create_model(
-    'User', ['id', 'name', 'password', 'email', 'enabled', 'tenant_id'])
+    'User', ['id', 'password', 'email', 'enabled', 'tenant_id'])
 Credentials = create_model(
     'Credentials', ['user_id', 'type', 'key', 'secret'])

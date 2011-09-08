@@ -31,8 +31,8 @@ class EndpointTemplatesTest(common.FunctionalTestCase):
 class CreateEndpointTemplatesTest(EndpointTemplatesTest):
     def test_create_endpoint_template(self):
         endpoint_template = self.create_endpoint_template(
-            service_id=self.service['id'], assert_status=201
-            ).json['endpointTemplate']
+            service_id=self.service['id'], assert_status=201).\
+            json['endpointTemplate']
 
         self.assertIsNotNone(endpoint_template['id'], endpoint_template)
         self.assertIsNotNone(endpoint_template['serviceId'], endpoint_template)
@@ -46,7 +46,8 @@ class CreateEndpointTemplatesTest(EndpointTemplatesTest):
         is_global = True
 
         data = ('<?xml version="1.0" encoding="UTF-8"?> '
-            '<endpointTemplate xmlns="http://docs.openstack.org/identity/api/v2.0" '
+            '<endpointTemplate '
+            'xmlns="http://docs.openstack.org/identity/api/v2.0" '
             'region="%s" serviceId="%s" publicURL="%s" adminURL="%s" '
             'internalURL="%s" enabled="%s" global="%s"/>') % (region,
                 self.service['id'], public_url, admin_url, internal_url,
@@ -76,8 +77,8 @@ class CreateEndpointTemplatesTest(EndpointTemplatesTest):
     def test_create_endpoint_template_using_service_admin_token(self):
         self.admin_token = self.service_admin_token
         endpoint_template = self.create_endpoint_template(
-            service_id=self.service['id'], assert_status=201
-            ).json['endpointTemplate']
+            service_id=self.service['id'], assert_status=201).\
+            json['endpointTemplate']
 
         self.assertIsNotNone(endpoint_template['id'])
         self.assertEqual(endpoint_template['serviceId'], self.service['id'])
@@ -188,7 +189,8 @@ class UpdateEndpointTemplateTest(EndpointTemplatesTest):
         is_global = True
 
         data = ('<?xml version="1.0" encoding="UTF-8"?> '
-            '<endpointTemplate xmlns="http://docs.openstack.org/identity/api/v2.0" '
+            '<endpointTemplate '
+            'xmlns="http://docs.openstack.org/identity/api/v2.0" '
             'region="%s" serviceId="%s" publicURL="%s" adminURL="%s" '
             'internalURL="%s" enabled="%s" global="%s"/>') % (region,
                 self.service['id'], public_url, admin_url, internal_url,
@@ -217,20 +219,23 @@ class UpdateEndpointTemplateTest(EndpointTemplatesTest):
 #        enabled = True
 #        is_global = True
 #
-#        r = self.update_endpoint_template(self.endpoint_template['id'], region,
-#            self.service['id'], public_url, admin_url, internal_url, enabled,
-#            is_global, assert_status=201)
+#        r = self.update_endpoint_template(self.endpoint_template['id'],
+#            region, self.service['id'], public_url, admin_url, internal_url,
+#            enabled, is_global, assert_status=201)
 #
 #        endpoint_template = r.json.get('endpointTemplate')
 #
 #        self.assertIsNotNone(endpoint_template.get("id"), r.json)
-#        self.assertEqual(endpoint_template.get("serviceId"), self.service['id'])
+#        self.assertEqual(endpoint_template.get("serviceId"),
+#            self.service['id'])
 #        self.assertEqual(endpoint_template.get("region"), region)
 #        self.assertEqual(endpoint_template.get("publicURL"), public_url)
 #        self.assertEqual(endpoint_template.get("adminURL"), admin_url)
 #        self.assertEqual(endpoint_template.get("internalURL"), internal_url)
-#        self.assertEqual(endpoint_template.get("enabled"), str(enabled).lower())
-#        self.assertEqual(endpoint_template.get("global"), str(is_global).lower())
+#        self.assertEqual(endpoint_template.get("enabled"),
+#            str(enabled).lower())
+#        self.assertEqual(endpoint_template.get("global"),
+#            str(is_global).lower())
 
 #    def test_update_endpoint_xml_using_service_admin_token(self):
 #        self.admin_token = service_admin_token
