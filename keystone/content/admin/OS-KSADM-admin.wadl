@@ -64,7 +64,7 @@
                             <method href="#addUserCredential"/>
                             <method href="#listCredentials"/>
                             <resource id="userCredentialsByType" path="{credential-type}">
-                                <param name="credentialType" style="template" type="OS-KSADM:extensibleCredentialsType"/>
+                                <param name="credentialType" style="template" type="OS-KSADM:extensibleCredentialsType" required="true"/>
                                 <method href="#updateUserCredential"/>
                                 <method href="#deleteUserCredential"/>
                                 <method href="#getUserCredential"/>
