@@ -627,14 +627,14 @@ class FunctionalTestCase(ApiTestCase):
 
         return self.delete_user_role(user_id, role_id, **kwargs)
 
-    def create_role(self, role_id=None, role_description=None,
+    def create_role(self, role_name=None, role_description=None,
             service_id=None, **kwargs):
-        role_id = optional_str(role_id)
+        role_name = optional_str(role_name)
         role_description = optional_str(role_description)
 
         data = {
             "role": {
-                "id": role_id,
+                "name": role_name,
                 "description": role_description}}
 
         if service_id is not None:
