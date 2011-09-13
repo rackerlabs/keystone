@@ -495,8 +495,13 @@ class IdentityService(object):
 
     def __validate_admin_token(self, token_id):
         (token, user) = self.__validate_token(token_id)
+
+        if backends.ADMIN_ROLE_ID is None:
+            role = api.ROLE.get_by_name(backends.ADMIN_ROLE_NAME)
+            backends.ADMIN_ROLE_ID = role.id
+
         for role_ref in api.ROLE.ref_get_all_global_roles(user.id):
-            if role_ref.role_id == backends.KEYSTONEADMINROLE and \
+            if role_ref.role_id == backends.ADMIN_ROLE_ID and \
                     role_ref.tenant_id is None:
                 return (token, user)
 
@@ -505,10 +510,19 @@ class IdentityService(object):
 
     def __validate_service_or_keystone_admin_token(self, token_id):
         (token, user) = self.__validate_token(token_id)
+
+        if backends.ADMIN_ROLE_ID is None:
+            role = api.ROLE.get_by_name(backends.ADMIN_ROLE_NAME)
+            backends.ADMIN_ROLE_ID = role.id
+
+        if backends.SERVICE_ADMIN_ROLE_ID is None:
+            role = api.ROLE.get_by_name(backends.SERVICE_ADMIN_ROLE_NAME)
+            backends.SERVICE_ADMIN_ROLE_ID = role.id
+
         for role_ref in api.ROLE.ref_get_all_global_roles(user.id):
-            if (role_ref.role_id == backends.KEYSTONEADMINROLE or \
-                role_ref.role_id == backends.KEYSTONESERVICEADMINROLE) and \
-                    role_ref.tenant_id is None:
+            if (role_ref.role_id == backends.ADMIN_ROLE_ID or \
+                role_ref.role_id == backends.SERVICE_ADMIN_ROLE_ID) \
+                and role_ref.tenant_id is None:
                 return (token, user)
 
         raise fault.UnauthorizedFault(
@@ -520,28 +534,29 @@ class IdentityService(object):
         if not isinstance(role, Role):
             raise fault.BadRequestFault("Expecting a Role")
 
-        if role.role_id == None or len(role.role_id.strip()) == 0:
-            raise fault.BadRequestFault("Expecting a Role Id")
+        if not role.name:
+            raise fault.BadRequestFault("Expecting a Role name")
 
-        if api.ROLE.get(role.role_id) != None:
+        if api.ROLE.get(role.name) != None:
             raise fault.RoleConflictFault(
-                "A role with that id '" + role.role_id + "' already exists")
+                "A role with that name '" + role.name + "' already exists")
         #Check if the passed service exist
         #and the role begins with service_id:.
-        if role.service_id != None and len(role.service_id.strip()) > 0:
+        if role.service_id:
             if api.SERVICE.get(role.service_id) == None:
                 raise fault.BadRequestFault(
                         "A service with that id doesnt exist.")
-            if not role.role_id.startswith(role.service_id + ":"):
+            if not role.name.startswith(role.service_id + ":"):
                 raise fault.BadRequestFault(
                     "Role should begin with service id '" +
                         role.service_id + ":'")
 
         drole = models.Role()
-        drole.id = role.role_id
-        drole.desc = role.desc
+        drole.name = role.name
+        drole.desc = role.description
         drole.service_id = role.service_id
-        api.ROLE.create(drole)
+        drole = api.ROLE.create(drole)
+        role.id = drole.id
         return role
 
     def get_roles(self, admin_token, marker, limit, url):
@@ -550,8 +565,7 @@ class IdentityService(object):
         ts = []
         droles = api.ROLE.get_page(marker, limit)
         for drole in droles:
-            ts.append(Role(drole.id,
-                                     drole.desc, drole.service_id))
+            ts.append(Role(drole.id, drole.name, drole.desc, drole.service_id))
         prev, next = api.ROLE.get_page_markers(marker, limit)
         links = []
         if prev:
@@ -568,7 +582,7 @@ class IdentityService(object):
         drole = api.ROLE.get(role_id)
         if not drole:
             raise fault.ItemNotFoundFault("The role could not be found")
-        return Role(drole.id, drole.desc, drole.service_id)
+        return Role(drole.id, drole.name, drole.desc, drole.service_id)
 
     def delete_role(self, admin_token, role_id):
         self.__validate_service_or_keystone_admin_token(admin_token)
