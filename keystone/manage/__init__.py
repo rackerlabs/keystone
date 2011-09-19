@@ -211,7 +211,7 @@ def process(*args):
     elif (object_type, command) == ('service', 'add'):
         type = optional_arg(args, 3)
         desc = optional_arg(args, 4)
-        if api.add_service(service=object_id, type=type, desc=desc):
+        if api.add_service(name=object_id, type=type, desc=desc):
             print "SUCCESS: Service %s created successfully." % (object_id,)
 
     elif (object_type, command) == ('service', 'list'):

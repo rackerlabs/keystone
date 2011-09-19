@@ -113,7 +113,8 @@ class Role(Base, KeystoneBase):
 class Service(Base, KeystoneBase):
     __tablename__ = 'services'
     __api__ = 'service'
-    id = Column(String(255), primary_key=True, unique=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(255), unique=True)
     type = Column(String(255))
     desc = Column(String(255))
 

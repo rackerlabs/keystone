@@ -5,7 +5,6 @@ import keystone.backends.models as db_models
 
 
 def add_user(name, password, tenant=None):
-
     dbtenant = db_api.TENANT.get_by_name(tenant)
     if dbtenant:
         tenant = dbtenant.id
@@ -164,9 +163,9 @@ def delete_token(token):
     return db_api.TOKEN.delete(token)
 
 
-def add_service(service, type, desc):
+def add_service(name, type, desc):
     obj = db_models.Service()
-    obj.id = service
+    obj.name = name
     obj.type = type
     obj.desc = desc
     return db_api.SERVICE.create(obj)

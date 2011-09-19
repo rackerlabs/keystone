@@ -53,15 +53,15 @@ class ValidateToken(common.FunctionalTestCase):
         r = self.get_token_belongsto(self.token['id'], self.tenant['id'],
             assert_status=200, headers={'Accept': 'application/xml'})
 
-        self.assertEqual(r.xml.tag, self.xmlns + 'auth')
+        self.assertEqual(r.xml.tag, '{%s}auth' % self.xmlns)
 
-        user = r.xml.find(self.xmlns + 'user')
+        user = r.xml.find('{%s}user' % self.xmlns)
         self.assertIsNotNone(user)
 
-        roleRefs = user.find(self.xmlns + 'roleRefs')
+        roleRefs = user.find('{%s}roleRefs' % self.xmlns)
         self.assertIsNotNone(roleRefs)
 
-        roleRef = roleRefs.find(self.xmlns + 'roleRef')
+        roleRef = roleRefs.find('{%s}roleRef' % self.xmlns)
         self.assertIsNotNone(roleRef)
         self.assertEqual(self.role_ref['id'], roleRef.get("id"))
 

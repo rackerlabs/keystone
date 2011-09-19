@@ -543,13 +543,14 @@ class IdentityService(object):
         #Check if the passed service exist
         #and the role begins with service_id:.
         if role.service_id:
-            if api.SERVICE.get(role.service_id) == None:
+            service = api.SERVICE.get(role.service_id)
+            if service is None:
                 raise fault.BadRequestFault(
-                        "A service with that id doesnt exist.")
-            if not role.name.startswith(role.service_id + ":"):
+                    "A service with that id doesnt exist.")
+            if not role.name.startswith(service.name + ":"):
                 raise fault.BadRequestFault(
-                    "Role should begin with service id '" +
-                        role.service_id + ":'")
+                    "Role should begin with service name '" +
+                        service.name + ":'")
 
         drole = models.Role()
         drole.name = role.name
@@ -834,17 +835,19 @@ class IdentityService(object):
         if not isinstance(service, Service):
             raise fault.BadRequestFault("Expecting a Service")
 
-        if service.service_id == None:
-            raise fault.BadRequestFault("Expecting a Service Id")
+        if service.name == None:
+            raise fault.BadRequestFault("Expecting a Service Name")
 
-        if api.SERVICE.get(service.service_id) != None:
+        if api.SERVICE.get_by_name(service.name) != None:
             raise fault.ServiceConflictFault(
-                "A service with that id already exists")
+                "A service with that name already exists")
+
         dservice = models.Service()
-        dservice.id = service.service_id
+        dservice.name = service.name
         dservice.type = service.type
-        dservice.desc = service.desc
-        api.SERVICE.create(dservice)
+        dservice.desc = service.description
+        dservice = api.SERVICE.create(dservice)
+        service.id = dservice.id
         return service
 
     def get_services(self, admin_token, marker, limit, url):
@@ -853,8 +856,7 @@ class IdentityService(object):
         ts = []
         dservices = api.SERVICE.get_page(marker, limit)
         for dservice in dservices:
-            ts.append(Service(dservice.id,
-                dservice.type, dservice.desc))
+            ts.append(Service(dservice.id, dservice.name, dservice.type, dservice.desc))
         prev, next = api.SERVICE.get_page_markers(marker, limit)
         links = []
         if prev:
@@ -871,7 +873,7 @@ class IdentityService(object):
         dservice = api.SERVICE.get(service_id)
         if not dservice:
             raise fault.ItemNotFoundFault("The service could not be found")
-        return Service(dservice.id, dservice.type, dservice.desc)
+        return Service(dservice.id, dservice.name, dservice.type, dservice.desc)
 
     def delete_service(self, admin_token, service_id):
         self.__validate_service_or_keystone_admin_token(admin_token)
