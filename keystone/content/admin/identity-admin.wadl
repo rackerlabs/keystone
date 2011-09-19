@@ -203,14 +203,18 @@
 	      The Keystone Service is a ReSTful web service. It is the entry point to all service APIs.
 	      To access the Keystone Service, you must know URL of the Keystone service.
 	    </p>
-            <examples xmlns="http://docs.rackspace.com/api" title="Auth Request">
-                <example href="../common/samples/auth_credentials.xml" language="xml"/>
-                <example href="../common/samples/auth_credentials.json" language="javascript"/>
-	    </examples>
-            <examples xmlns="http://docs.rackspace.com/api" title="Auth Response">
-                <example href="../common/samples/auth.xml" language="xml"/>
-                <example href="../common/samples/auth.json" language="javascript"/>
-            </examples>
+            <xsdxt:samples xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+                <xsdxt:sample title="Auth Request">
+                    <xsdxt:code href="../common/samples/auth_credentials.xml" type="application/xml"/>
+                    <xsdxt:code href="../common/samples/auth_credentials.json" type="application/json"/>
+                </xsdxt:sample>
+	        </xsdxt:samples>
+            <xsdxt:samples xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+                <xsdxt:sample title="Auth Response">
+                    <xsdxt:code href="../common/samples/auth.xml" type="application/xml"/>
+                    <xsdxt:code href="../common/samples/auth.json" type="application/json"/>
+                </xsdxt:sample>
+            </xsdxt:samples>
         </doc>
         <request>
             <representation mediaType="application/xml" element="identity:auth"/>
@@ -240,10 +244,12 @@
                 itemNotFound (<code>404</code>) fault for an
                 invalid token.
             </p>
-            <examples xmlns="http://docs.rackspace.com/api" title="Validate Token Response">
-                <example href="../common/samples/validatetoken.xml" language="xml"/>
-                <example href="../common/samples/validatetoken.json" language="javascript"/>
-            </examples>
+            <xsdxt:samples xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+                <xsdxt:sample title="Validate Token Response">
+                    <xsdxt:code href="../common/samples/validatetoken.xml" type="application/xml"/>
+                    <xsdxt:code href="../common/samples/validatetoken.json" type="application/json"/>
+                </xsdxt:sample>
+            </xsdxt:samples>
         </doc>
         <request>
             <param name="belongsTo" style="query" required="false" type="xsd:string">
@@ -304,10 +310,12 @@
             <p xmlns="http://www.w3.org/1999/xhtml">
             	Returns detailed information about a specific user, by user name.
             </p>
-            <examples xmlns="http://docs.rackspace.com/api" title="User Response">
-                <example href="../common/samples/user.xml" language="xml"/>
-                <example href="../common/samples/user.json" language="javascript"/>
-            </examples>
+            <xsdxt:samples xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+                <xsdxt:sample title="User Response">
+                    <xsdxt:code href="../common/samples/user.xml" type="application/xml"/>
+                    <xsdxt:code href="../common/samples/user.json" type="application/json"/>
+                </xsdxt:sample>
+            </xsdxt:samples>
         </doc>
         <request>
             <param name="name" style="query" type="xsd:string" required="true"/>
@@ -324,10 +332,12 @@
             <p xmlns="http://www.w3.org/1999/xhtml">
             	Returns detailed information about a specific user, by user id.
             </p>
-            <examples xmlns="http://docs.rackspace.com/api" title="User Response">
-                <example href="../common/samples/user.xml" language="xml"/>
-                <example href="../common/samples/user.json" language="javascript"/>
-            </examples>
+            <xsdxt:samples xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+                <xsdxt:sample title="User Response">
+                    <xsdxt:code href="../common/samples/user.xml" type="application/xml"/>
+                    <xsdxt:code href="../common/samples/user.json" type="application/json"/>
+                </xsdxt:sample>
+            </xsdxt:samples>
         </doc>
         <response status="200 203">
             <representation mediaType="application/xml" element="identity:user"/>
@@ -343,10 +353,12 @@
             	</p>            
             <p xmlns="http://www.w3.org/1999/xhtml">Returns a list of global roles associated with a specific
             	    user (excludes tenant roles).</p>
-            <examples xmlns="http://docs.rackspace.com/api" title="User Response">
-                <example href="../common/samples/roles.xml" language="xml"/>
-                <example href="../common/samples/roles.json" language="javascript"/>
-            </examples>
+            <xsdxt:samples xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+                <xsdxt:sample title="User Response">
+                    <xsdxt:code href="../common/samples/roles.xml" type="application/xml"/>
+                    <xsdxt:code href="../common/samples/roles.json" type="application/json"/>
+                </xsdxt:sample>
+            </xsdxt:samples>
         </doc>
         <response status="200 203">
             <representation mediaType="application/xml" element="identity:roles"/>
@@ -368,13 +380,15 @@
 	      access to. This call must be authenticated, so a valid token must
 	      be passed in as a header. 
             </p>
-	    <examples xmlns="http://docs.rackspace.com/api" title="Tenants Request with Auth Token">
-	      <example href="../common/samples/tenants-request.txt" language="text"/>
-	    </examples>
-        <examples xmlns="http://docs.rackspace.com/api" title="Tenants Response">
-	      <example href="../common/samples/tenants.xml" language="xml"/>
-	      <example href="../common/samples/tenants.json" language="javascript"/>
-	    </examples>
+	    <xsdxt:samples xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+	      <xsdxt:sample title="Tenants Request with Auth Token"><xsdxt:code href="../common/samples/tenants-request.txt"/></xsdxt:sample>
+	    </xsdxt:samples>
+        <xsdxt:samples xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+	      <xsdxt:sample title="Tenants Response">
+	          <xsdxt:code href="../common/samples/tenants.xml" type="application/xml"/>
+	          <xsdxt:code href="../common/samples/tenants.json" type="application/json"/>
+	      </xsdxt:sample>
+	    </xsdxt:samples>
         </doc>
         <request>
             <param name="marker" style="query" required="false" type="xsd:string"/>
@@ -392,10 +406,12 @@
             <p xmlns="http://www.w3.org/1999/xhtml" class="shortdesc">
             	Returns detailed information about a tenant, by name.
             </p>
-            <examples xmlns="http://docs.rackspace.com/api" title="Tenant Response">
-                <example href="../common/samples/tenant.xml" language="xml"/>
-                <example href="../common/samples/tenant.json" language="javascript"/>
-            </examples>
+            <xsdxt:samples xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+                <xsdxt:sample title="Tenant Response">
+                    <xsdxt:code href="../common/samples/tenant.xml" type="application/xml"/>
+                    <xsdxt:code href="../common/samples/tenant.json" type="application/json"/>
+                </xsdxt:sample>
+            </xsdxt:samples>
         </doc>
         <request>
             <param name="name" style="query" type="xsd:string" required="true"/>
@@ -412,10 +428,12 @@
             <p xmlns="http://www.w3.org/1999/xhtml" class="shortdesc">
             	Returns detailed information about a tenant, by id.
             </p>
-            <examples xmlns="http://docs.rackspace.com/api" title="Tenant Response">
-                <example href="../common/samples/tenant.xml" language="xml"/>
-                <example href="../common/samples/tenant.json" language="javascript"/>
-            </examples>
+            <xsdxt:samples xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+                <xsdxt:sample title="Tenant Response">
+                    <xsdxt:code href="../common/samples/tenant.xml" type="application/xml"/>
+                    <xsdxt:code href="../common/samples/tenant.json" type="application/json"/>
+                </xsdxt:sample>
+            </xsdxt:samples>
         </doc>
         <response status="200 203">
             <representation mediaType="application/xml" element="identity:tenant"/>
@@ -429,10 +447,12 @@
             <p xmlns="http://www.w3.org/1999/xhtml">
             	Returns a list of endpoints associated with a specific token.
             </p>
-            <examples xmlns="http://docs.rackspace.com/api" title="Tenant Endpoint Response">
-                <example href="../common/samples/endpoints.xml" language="xml"/>
-                <example href="../common/samples/endpoints.json" language="javascript"/>
-            </examples>
+            <xsdxt:samples xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+                <xsdxt:sample title="Tenant Endpoint Response">
+                    <xsdxt:code href="../common/samples/endpoints.xml" type="application/xml"/>
+                    <xsdxt:code href="../common/samples/endpoints.json" type="application/json"/>
+                </xsdxt:sample>
+            </xsdxt:samples>
         </doc>
         <response status="200 203">
             <representation mediaType="application/xml" element="identity:endpoints"/>
@@ -447,10 +467,12 @@
             <p xmlns="http://www.w3.org/1999/xhtml">
                 Returns roles for a specific user on a specific tenant (excludes global roles).
             </p>
-            <examples xmlns="http://docs.rackspace.com/api" title="Tenant Roles Response">
-                <example href="../common/samples/roles.xml" language="xml"/>
-                <example href="../common/samples/roles.json" language="javascript"/>
-            </examples>
+            <xsdxt:samples xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+                <xsdxt:sample title="Tenant Roles Response">
+                    <xsdxt:code href="../common/samples/roles.xml" type="application/xml"/>
+                    <xsdxt:code href="../common/samples/roles.json" type="application/json"/>
+                </xsdxt:sample>
+            </xsdxt:samples>
         </doc>
         <response status="200 203">
             <representation mediaType="application/xml" element="identity:roles"/>
