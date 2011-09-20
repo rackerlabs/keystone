@@ -80,5 +80,34 @@ class ValidateToken(common.FunctionalTestCase):
             'Accept': 'application/xml'})
 
 
+class CheckToken(common.FunctionalTestCase):
+    def setUp(self, *args, **kwargs):
+        super(CheckToken, self).setUp(*args, **kwargs)
+        self.tenant = self.create_tenant().json['tenant']
+        self.user = self.create_user_with_known_password(
+            tenant_id=self.tenant['id']).json['user']
+        self.token = self.authenticate(self.user['name'],
+        self.user['password'], self.tenant['id']).json['auth']['token']
+
+    def test_validate_token_true(self):
+        self.check_token_belongs_to(self.token['id'], self.tenant['id'],
+            assert_status=200)
+
+    def test_validate_token_true_using_service_token(self):
+        self.admin_token = self.service_admin_token
+        self.check_token_belongs_to(self.token['id'], self.tenant['id'],
+            assert_status=200)
+
+    def test_validate_token_expired(self):
+        self.check_token(self.expired_admin_token, assert_status=403)
+
+    def test_validate_token_expired_xml(self):
+        self.check_token(self.expired_admin_token, assert_status=403, headers={
+            'Accept': 'application/xml'})
+
+    def test_validate_token_invalid(self):
+        self.check_token(common.unique_str(), assert_status=401)
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -78,9 +78,8 @@ class AuthenticationTest(common.FunctionalTestCase):
             "auth": {
                 "passwordCredentials": {
                     "username-field-completely-wrong": self.user['name'],
-                    "password": self.user['password']
-                    },
-                "tenantId": self.tenant['id']}}
+                    "password": self.user['password']},
+                    "tenantId": self.tenant['id']}}
         self.post_token(as_json=data, assert_status=400)
 
     def test_authorize_user_wrong_xml(self):
