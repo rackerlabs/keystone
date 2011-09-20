@@ -30,8 +30,14 @@ class AuthController(wsgi.Controller):
 
         rval = config.SERVICE.validate_token(
             utils.get_auth_token(req), token_id, belongs_to)
-
         return utils.send_result(200, req, rval)
+
+    @utils.wrap_error
+    def check_token(self, req, token_id):
+        belongs_to = req.GET.get("belongsTo", None)
+        config.SERVICE.check_token(
+            utils.get_auth_token(req), token_id, belongs_to)
+        return utils.send_result(200, None, None)
 
     @utils.wrap_error
     def delete_token(self, req, token_id):

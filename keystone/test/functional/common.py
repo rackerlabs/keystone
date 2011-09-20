@@ -107,10 +107,11 @@ class RestfulTestCase(HttpTestCase):
 
     def _decode_response_body(self, response):
         """Detects response body type, and attempts to decode it"""
-        if 'application/json' in response.getheader('Content-Type', ''):
-            response.json = self._decode_json(response.body)
-        elif 'application/xml' in response.getheader('Content-Type', ''):
-            response.xml = self._decode_xml(response.body)
+        if response.body != None and response.body.strip():
+            if 'application/json' in response.getheader('Content-Type', ''):
+                response.json = self._decode_json(response.body)
+            elif 'application/xml' in response.getheader('Content-Type', ''):
+                response.xml = self._decode_xml(response.body)
         return response
 
     @staticmethod
@@ -184,6 +185,16 @@ class ApiTestCase(RestfulTestCase):
     def get_token_belongsto(self, token_id, tenant_id, **kwargs):
         """GET /tokens/{token_id}?belongsTo={tenant_id}"""
         return self.admin_request(method='GET',
+            path='/tokens/%s?belongsTo=%s' % (token_id, tenant_id), **kwargs)
+
+    def check_token(self, token_id, **kwargs):
+        """HEAD /tokens/{token_id}"""
+        return self.admin_request(method='HEAD',
+            path='/tokens/%s' % (token_id,), **kwargs)
+
+    def check_token_belongs_to(self, token_id, tenant_id, **kwargs):
+        """HEAD /tokens/{token_id}?belongsTo={tenant_id}"""
+        return self.admin_request(method='HEAD',
             path='/tokens/%s?belongsTo=%s' % (token_id, tenant_id), **kwargs)
 
     def delete_token(self, token_id, **kwargs):
