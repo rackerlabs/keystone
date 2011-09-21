@@ -27,15 +27,10 @@ import webob
 import webob.dec
 import webob.exc
 
-from nova import context
 from nova import exception
 from nova import flags
-from nova import log as logging
 from nova import utils
 from nova import wsgi
-from nova.api.ec2 import apirequest
-from nova.api.ec2 import ec2utils
-from nova.auth import manager
 
 
 FLAGS = flags.FLAGS
