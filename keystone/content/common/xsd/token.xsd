@@ -54,6 +54,7 @@
             </xsd:appinfo>
         </annotation>
         <sequence>
+            <element name="tenant" type="identity:Tenant"/>
             <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
         </sequence>
         <attribute name="expires" type="xsd:dateTime" use="required"/>

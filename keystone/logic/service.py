@@ -191,7 +191,8 @@ class IdentityService(object):
                 tenants_for_user_get_page_markers(user, marker, limit)
 
         for dtenant in dtenants:
-            ts.append(Tenant(dtenant.id, dtenant.desc, dtenant.enabled))
+            ts.append(Tenant(id=dtenant.id, name=dtenant.name,
+                description=dtenant.desc, enabled=dtenant.enabled))
 
         links = []
         if prev_page:
@@ -440,18 +441,46 @@ class IdentityService(object):
 
     def __get_auth_data(self, dtoken):
         """return AuthData object for a token"""
+        tenant = None
         endpoints = None
-        try:
-            endpoints = api.TENANT.get_all_endpoints(dtoken.tenant_id)
-        except:
-            pass
-        token = auth.Token(dtoken.expires, dtoken.id, dtoken.tenant_id)
 
-        return auth.AuthData(token, endpoints)
+        if dtoken.tenant_id:
+            dtenant = api.TENANT.get(dtoken.tenant_id)
+            tenant = auth.Tenant(id=dtenant.id, name=dtenant.name)
+
+            endpoints = api.TENANT.get_all_endpoints(dtoken.tenant_id)
+
+        token = auth.Token(dtoken.expires, dtoken.id, tenant)
+
+        duser = api.USER.get(dtoken.user_id)
+
+        ts = []
+        if dtoken.tenant_id:
+            drole_refs = api.ROLE.ref_get_all_tenant_roles(duser.id,
+                dtoken.tenant_id)
+            for drole_ref in drole_refs:
+                drole = api.ROLE.get(drole_ref.role_id)
+                ts.append(UserRole(drole_ref.role_id, drole.name,
+                    drole_ref.tenant_id))
+        drole_refs = api.ROLE.ref_get_all_global_roles(duser.id)
+        for drole_ref in drole_refs:
+            drole = api.ROLE.get(drole_ref.role_id)
+            ts.append(UserRole(drole_ref.role_id, drole.name,
+                drole_ref.tenant_id))
+
+        user = auth.User(duser.id, duser.name, None, UserRoles(ts, []))
+
+        return auth.AuthData(token, user, endpoints)
 
     def __get_validate_data(self, dtoken, duser):
         """return ValidateData object for a token/user pair"""
-        token = auth.Token(dtoken.expires, dtoken.id, dtoken.tenant_id)
+        tenant = None
+        if dtoken.tenant_id:
+            dtenant = api.TENANT.get(dtoken.tenant_id)
+            tenant = auth.Tenant(id=dtenant.id, name=dtenant.name)
+
+        token = auth.Token(dtoken.expires, dtoken.id, tenant)
+
         ts = []
         if dtoken.tenant_id:
             drole_refs = api.ROLE.ref_get_all_tenant_roles(duser.id,
