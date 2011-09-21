@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX///d4\u003d",
+        "filename": "keystone/controllers/auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-09-21T15:39:38Z",
+      "side": 1,
+      "message": "You need to document what the difference is between this and validate_token. Also, Duplication is Evil.",
+      "revId": "7eaa3e26ec09c546d7bdafe35d948490f9629370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX///dw\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-09-21T15:39:38Z",
+      "side": 1,
+      "message": "Same as the controller, two nearly identical functions needs documentation to distinguish them. And once again, Duplication is Evil.",
+      "revId": "7eaa3e26ec09c546d7bdafe35d948490f9629370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
