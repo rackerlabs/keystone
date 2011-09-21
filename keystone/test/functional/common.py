@@ -464,7 +464,7 @@ class FunctionalTestCase(ApiTestCase):
         """Prepare keystone for system tests"""
         # Authenticate as admin user to establish admin_token
         self.admin_token = self.authenticate(self.admin_username,
-            self.admin_password).json['auth']['token']['id']
+            self.admin_password).json['access']['token']['id']
         self.admin_user_id = self.fetch_user_by_name('admin').\
             json['users']['values'][0]['id']
 

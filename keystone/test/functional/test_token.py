@@ -30,7 +30,7 @@ class ValidateToken(common.FunctionalTestCase):
         self.role_ref = self.grant_role_to_user(self.user['id'],
             self.role['id'], self.tenant['id']).json['roleRef']
         self.token = self.authenticate(self.user['name'],
-            self.user['password'], self.tenant['id']).json['auth']['token']
+            self.user['password'], self.tenant['id']).json['access']['token']
 
     def test_validate_token_true(self):
         r = self.get_token_belongsto(self.token['id'], self.tenant['id'],
@@ -87,7 +87,7 @@ class CheckToken(common.FunctionalTestCase):
         self.user = self.create_user_with_known_password(
             tenant_id=self.tenant['id']).json['user']
         self.token = self.authenticate(self.user['name'],
-        self.user['password'], self.tenant['id']).json['auth']['token']
+        self.user['password'], self.tenant['id']).json['access']['token']
 
     def test_validate_token_true(self):
         self.check_token_belongs_to(self.token['id'], self.tenant['id'],
