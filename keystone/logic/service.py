@@ -191,7 +191,8 @@ class IdentityService(object):
                 tenants_for_user_get_page_markers(user, marker, limit)
 
         for dtenant in dtenants:
-            ts.append(Tenant(dtenant.id, dtenant.desc, dtenant.enabled))
+            ts.append(Tenant(id=dtenant.id, name=dtenant.name,
+                description=dtenant.desc, enabled=dtenant.enabled))
 
         links = []
         if prev_page:
@@ -440,18 +441,28 @@ class IdentityService(object):
 
     def __get_auth_data(self, dtoken):
         """return AuthData object for a token"""
+        tenant = None
         endpoints = None
-        try:
+
+        if dtoken.tenant_id:
+            dtenant = api.TENANT.get(dtoken.tenant_id)
+            tenant = auth.Tenant(id=dtenant.id, name=dtenant.name)
+
             endpoints = api.TENANT.get_all_endpoints(dtoken.tenant_id)
-        except:
-            pass
-        token = auth.Token(dtoken.expires, dtoken.id, dtoken.tenant_id)
+
+        token = auth.Token(dtoken.expires, dtoken.id, tenant)
 
         return auth.AuthData(token, endpoints)
 
     def __get_validate_data(self, dtoken, duser):
         """return ValidateData object for a token/user pair"""
-        token = auth.Token(dtoken.expires, dtoken.id, dtoken.tenant_id)
+        tenant = None
+        if dtoken.tenant_id:
+            dtenant = api.TENANT.get(dtoken.tenant_id)
+            tenant = auth.Tenant(id=dtenant.id, name=dtenant.name)
+
+        token = auth.Token(dtoken.expires, dtoken.id, tenant)
+
         ts = []
         if dtoken.tenant_id:
             drole_refs = api.ROLE.ref_get_all_tenant_roles(duser.id,
