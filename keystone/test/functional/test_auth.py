@@ -49,14 +49,14 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.user = self.create_user(user_password=password).json['user']
         self.user['password'] = password
 
-    def test_user_auth(self):
+    def test_unscoped_user_auth(self):
         """Admin should be able to validate a user's token"""
         # Authenticate as user to get a token
         self.service_token = self.post_token(as_json={
             'auth': {
-            'passwordCredentials': {
-                'username': self.user['name'],
-                'password': self.user['password']}}}).\
+                'passwordCredentials': {
+                    'username': self.user['name'],
+                    'password': self.user['password']}}}).\
             json['access']['token']['id']
 
         # In the real world, the service user would then pass his/her token
@@ -65,12 +65,58 @@ class TestServiceAuthentication(common.FunctionalTestCase):
 
         # Admin independently validates the user token
         r = self.get_token(self.service_token)
-        self.assertTrue(r.json['access']['token']['expires'])
         self.assertEqual(r.json['access']['token']['id'], self.service_token)
+        self.assertTrue(r.json['access']['token']['expires'])
         self.assertEqual(r.json['access']['user']['id'], self.user['id'])
         self.assertEqual(r.json['access']['user']['username'],
             self.user['name'])
         self.assertEqual(r.json['access']['user']['roles'], [])
+
+    def test_user_auth_with_role_on_tenant(self):
+        # Additonal setUp
+        tenant = self.create_tenant().json['tenant']
+        role = self.create_role().json['role']
+        self.grant_role_to_user(self.user['id'], role['id'], tenant['id'])
+
+        # Create an unscoped token
+        unscoped = self.post_token(as_json={
+            'auth': {
+                'passwordCredentials': {
+                    'username': self.user['name'],
+                    'password': self.user['password']}}}).json['access']
+
+        # The token shouldn't be scoped to a tenant just yet
+        self.assertIsNone(unscoped['token'].get('tenant'))
+
+        # Request our tenant list as a service user
+        self.service_token = unscoped['token']['id']
+        tenants = self.service_request(method='GET', path='/tenants').\
+            json['tenants']['values']
+
+        # Our tenant should be the only tenant in the list
+        self.assertEqual(len(tenants), 1, tenants)
+        self.assertEqual(tenant['id'], tenants[0]['id'])
+        self.assertEqual(tenant['name'], tenants[0]['name'], (tenant, tenants[0]))
+        self.assertEqual(tenant['description'], tenants[0]['description'])
+        self.assertEqual(tenant['enabled'], tenants[0]['enabled'])
+
+        # We can now get a token scoped to our tenant
+        scoped = self.post_token(as_json={
+            'auth': {
+                'tenantId': tenant['id'],
+                'passwordCredentials': {
+                    'username': self.user['name'],
+                    'password': self.user['password']}}}).json['access']
+
+        self.assertEqual(scoped['token']['tenant']['id'], tenant['id'])
+        self.assertEqual(scoped['token']['tenant']['name'], tenant['name'])
+
+        # And an admin should be able to validate that our new token is scoped
+        r = self.validate_token(scoped['token']['id'], tenant['id'])
+        access = r.json['access']
+
+        self.assertEqual(access['token']['tenant']['id'], tenant['id'])
+        self.assertEqual(access['token']['tenant']['name'], tenant['name'])
 
     def test_get_request_fails(self):
         """GET /tokens should return a 404 (Github issue #5)"""

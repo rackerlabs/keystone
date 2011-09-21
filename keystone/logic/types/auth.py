@@ -189,13 +189,22 @@ class Ec2Credentials(object):
                                         str(e))
 
 
+class Tenant(object):
+    """Provides the scope of a token"""
+
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+
 class Token(object):
     """An auth token."""
 
-    def __init__(self, expires, token_id, tenant_id=None):
+    def __init__(self, expires, token_id, tenant=None):
+        assert tenant is None or isinstance(tenant, Tenant)
+
         self.expires = expires
         self.id = token_id
-        self.tenant_id = tenant_id
+        self.tenant = tenant
 
 
 class User(object):
@@ -245,8 +254,8 @@ class AuthData(object):
                         base_url_item = getattr(base_url, url_kind + "_url")
                         if base_url_item:
                             endpoint.set(url_kind + "URL", base_url_item.\
-                            replace('%tenant_id%', str(self.token.tenant_id))
-                            if self.token.tenant_id else base_url_item)
+                            replace('%tenant_id%', str(self.token.tenant.id))
+                            if self.token.tenant else base_url_item)
                     service.append(endpoint)
                 service_catalog.append(service)
             dom.append(service_catalog)
@@ -262,6 +271,10 @@ class AuthData(object):
         token = {}
         token["id"] = self.token.id
         token["expires"] = self.token.expires.isoformat()
+        if self.token.tenant:
+            token['tenant'] = {
+                'id': unicode(self.token.tenant.id),
+                'name': unicode(self.token.tenant.name)}
         auth = {}
         auth["token"] = token
         if self.base_urls != None:
@@ -277,8 +290,8 @@ class AuthData(object):
                         if base_url_item:
                             endpoint[url_kind + "URL"] = base_url_item.\
                                 replace('%tenant_id%',
-                                    str(self.token.tenant_id)) \
-                                if self.token.tenant_id else base_url_item
+                                    str(self.token.tenant.id)) \
+                                if self.token.tenant else base_url_item
                     endpoints.append(endpoint)
                 service_catalog[key] = endpoints
             auth["serviceCatalog"] = service_catalog
@@ -305,8 +318,11 @@ class ValidateData(object):
             id=unicode(self.token.id),
             expires=self.token.expires.isoformat())
 
-        if self.token.tenant_id:
-            token.set("tenantId", unicode(self.token.tenant_id))
+        if self.token.tenant:
+            tenant = etree.Element("tenant",
+                id=unicode(self.token.tenant.id),
+                name=unicode(self.token.tenant.name))
+            token.append(tenant)
 
         user = etree.Element("user",
             id=unicode(self.user.id),
@@ -325,8 +341,10 @@ class ValidateData(object):
             "id": unicode(self.token.id),
             "expires": self.token.expires.isoformat()}
 
-        if self.token.tenant_id:
-            token["tenantId"] = unicode(self.token.tenant_id)
+        if self.token.tenant:
+            token['tenant'] = {
+                'id': unicode(self.token.tenant.id),
+                'name': unicode(self.token.tenant.name)}
 
         user = {
             "id": unicode(self.user.id),

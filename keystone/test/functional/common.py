@@ -483,9 +483,15 @@ class FunctionalTestCase(ApiTestCase):
 
         return self.post_token(as_json=data, **kwargs)
 
-    def validate_token(self, token_id=None, **kwargs):
+    def validate_token(self, token_id=None, tenant_id=None, **kwargs):
         token_id = optional_str(token_id)
-        return self.get_token(token_id, **kwargs)
+
+        if tenant_id:
+            # validate scoped token
+            return self.get_token_belongsto(token_id, tenant_id, **kwargs)
+        else:
+            # validate unscoped token
+            return self.get_token(token_id, **kwargs)
 
     def remove_token(self, token_id=None, **kwargs):
         token_id = optional_str(token_id)
