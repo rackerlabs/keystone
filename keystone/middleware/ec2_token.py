@@ -38,11 +38,10 @@ from nova.api.ec2 import ec2utils
 from nova.auth import manager
 
 
-# FIXME - add this back once ToToken gets removed from nova
-#FLAGS = flags.FLAGS
-#flags.DEFINE_string('keystone_ec2_url',
-#                    'http://localhost:5000/v2.0/ec2tokens',
-#                    'URL to get token from ec2 request.')
+FLAGS = flags.FLAGS
+flags.DEFINE_string('keystone_ec2_url',
+                    'http://localhost:5000/v2.0/ec2tokens',
+                    'URL to get token from ec2 request.')
 
 
 class EC2Token(wsgi.Middleware):
