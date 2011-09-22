@@ -218,8 +218,9 @@ class AuthData(object):
 
     url_kinds = ["internal", "public", "admin"]
 
-    def __init__(self, token, base_urls=None):
+    def __init__(self, token, user, base_urls=None):
         self.token = token
+        self.user = user
         self.base_urls = base_urls
         self.d = {}
         if self.base_urls != None:
@@ -264,6 +265,16 @@ class AuthData(object):
         token["expires"] = self.token.expires.isoformat()
         auth = {}
         auth["token"] = token
+
+        user = {
+            "id": unicode(self.user.id),
+            "username": unicode(self.user.username)}
+
+        if self.user.role_refs is not None:
+            user["roles"] = self.user.role_refs.to_json_values()
+
+        auth["user"] = user
+
         if self.base_urls != None:
             service_catalog = {}
             for key, key_base_urls in self.d.items():

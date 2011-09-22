@@ -73,7 +73,12 @@ class EC2AuthnMethods(base.ServiceAPITest):
                 u'token': {
                     u'expires': self.expires.strftime("%Y-%m-%dT%H:%M:%S.%f"),
                     u'id': self.auth_token_id,
-                }
+                },
+                u'user': {u'id': u'1',
+                    u'roles': [],
+                    u'tenantId': u'None',
+                    u'username': u'auth_user'}
+
             }
         }
         self.assert_dict_equal(expected, json.loads(self.res.body))

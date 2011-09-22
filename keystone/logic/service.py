@@ -116,7 +116,7 @@ class IdentityService(object):
             dtoken.expires = datetime.now() + timedelta(days=1)
             api.TOKEN.create(dtoken)
 
-        return self.__get_auth_data(dtoken)
+        return self.__get_auth_data(dtoken, duser)
 
     def validate_token(self, admin_token, token_id, belongs_to=None):
         self.__validate_service_or_keystone_admin_token(admin_token)
@@ -438,20 +438,27 @@ class IdentityService(object):
             api.USER.delete(user_id)
         return None
 
-    def __get_auth_data(self, dtoken):
+    def __get_auth_data(self, dtoken, duser):
         """return AuthData object for a token"""
         endpoints = None
         try:
             endpoints = api.TENANT.get_all_endpoints(dtoken.tenant_id)
         except:
             pass
-        token = auth.Token(dtoken.expires, dtoken.id, dtoken.tenant_id)
 
-        return auth.AuthData(token, endpoints)
+        token = auth.Token(dtoken.expires, dtoken.id, dtoken.tenant_id)
+        user = self.__get_user_with_roles(dtoken, duser)
+
+        return auth.AuthData(token, user, endpoints)
 
     def __get_validate_data(self, dtoken, duser):
         """return ValidateData object for a token/user pair"""
         token = auth.Token(dtoken.expires, dtoken.id, dtoken.tenant_id)
+        user = self.__get_user_with_roles(dtoken, duser)
+        return auth.ValidateData(token, user)
+
+    def __get_user_with_roles(self, dtoken, duser):
+        """return an auth.User with roles"""
         ts = []
         if dtoken.tenant_id:
             drole_refs = api.ROLE.ref_get_all_tenant_roles(duser.id,
@@ -469,7 +476,7 @@ class IdentityService(object):
         user = auth.User(duser.id, duser.name, duser.tenant_id,
             UserRoles(ts, []))
 
-        return auth.ValidateData(token, user)
+        return user
 
     def __validate_tenant(self, tenant_id):
         if not tenant_id:
