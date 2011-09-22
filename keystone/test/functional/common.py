@@ -290,11 +290,13 @@ class ApiTestCase(RestfulTestCase):
 
     def post_role(self, **kwargs):
         """POST /roles"""
-        return self.admin_request(method='POST', path='/OS-KSADM/roles', **kwargs)
+        return self.admin_request(method='POST',
+            path='/OS-KSADM/roles', **kwargs)
 
     def get_roles(self, **kwargs):
         """GET /roles"""
-        return self.admin_request(method='GET', path='/OS-KSADM/roles', **kwargs)
+        return self.admin_request(method='GET',
+            path='/OS-KSADM/roles', **kwargs)
 
     def get_role(self, role_id, **kwargs):
         """GET /roles/{role_id}"""
