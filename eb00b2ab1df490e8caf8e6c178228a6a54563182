@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX///WQ\u003d",
+        "filename": "keystone/content/common/xsd/credentials.xsd",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-09-22T02:14:06Z",
+      "side": 1,
+      "message": "I have no idea if it\u0027s valid to replace a substitutionGroup (defined as an element) with an attribute definition...? I\u0027m guessing not, in which case, I have no idea what this XSD should look like to satisfy either a passwordCredentials or tokenId..?",
+      "revId": "eb00b2ab1df490e8caf8e6c178228a6a54563182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
