@@ -31,6 +31,11 @@ class RolesController(wsgi.Controller):
         return utils.send_result(200, req, roles)
 
     @utils.wrap_error
+    def list_global_roles(self, req):
+        marker, limit, url = get_marker_limit_and_url(req)
+        #roles = config.SERVICE.get_user_roles(admin_token, marker, limit, url, user_id)        
+
+    @utils.wrap_error
     def get_role(self, req, role_id):
         role = config.SERVICE.get_role(utils.get_auth_token(req), role_id)
         return utils.send_result(200, req, role)
