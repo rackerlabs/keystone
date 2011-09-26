@@ -21,9 +21,10 @@ import keystone.backends.api as db_api
 
 
 class AuthWithUnscopedToken(object):
-    def __init__(self, token_id, tenant_id):
+    def __init__(self, token_id, tenant_id=None, tenant_name=None):
         self.token_id = token_id
         self.tenant_id = tenant_id
+        self.tenant_name = tenant_name
 
     @staticmethod
     def from_xml(xml_str):
@@ -44,10 +45,16 @@ class AuthWithUnscopedToken(object):
                 raise fault.BadRequestFault("Expecting a token id")
 
             tenant_id = root.get("tenantId")
-            if tenant_id is None:
-                raise fault.BadRequestFault("Expecting a tenant id")
+            tenant_name = root.get("tenantName")
 
-            return AuthWithUnscopedToken(token_id, tenant_id)
+            if token_id is None:
+                raise fault.BadRequestFault("Expecting a token id")
+
+            if tenant_id and tenant_name:
+                raise fault.BadRequestFault(
+                    "Expecting either Tenant ID or Tenant Name, but not both")
+
+            return AuthWithUnscopedToken(token_id, tenant_id, tenant_name)
         except etree.LxmlError as e:
             raise fault.BadRequestFault("Cannot parse password access", str(e))
 
@@ -62,13 +69,16 @@ class AuthWithUnscopedToken(object):
             token = obj['auth']['token']
             if not token.get("id"):
                 raise fault.BadRequestFault("Expecting token id")
-            if not obj['auth'].get("tenantId"):
-                raise fault.BadRequestFault("Expecting tenant id")
 
-            tenant_id = obj["auth"]["tenantId"]
             token_id = obj["auth"]["token"]["id"]
+            tenant_id = obj["auth"].get("tenantId")
+            tenant_name = obj["auth"].get("tenantName")
 
-            return AuthWithUnscopedToken(token_id, tenant_id)
+            if tenant_id and tenant_name:
+                raise fault.BadRequestFault(
+                    "Expecting either Tenant ID or Tenant Name, but not both")
+
+            return AuthWithUnscopedToken(token_id, tenant_id, tenant_name)
         except (ValueError, TypeError) as e:
             raise fault.BadRequestFault("Cannot parse auth", str(e))
 
