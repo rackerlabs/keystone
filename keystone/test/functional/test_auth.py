@@ -156,6 +156,20 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.assertEqual(access['token']['tenant']['id'], tenant['id'])
         self.assertEqual(access['token']['tenant']['name'], tenant['name'])
 
+    def test_user_auth_against_nonexistent_tenant(self):
+        # Create an unscoped token
+        unscoped = self.post_token(as_json={
+            'auth': {
+                'passwordCredentials': {
+                    'username': self.user['name'],
+                    'password': self.user['password']}}}).json['access']
+
+        # We can now get a token scoped to our tenant
+        self.post_token(as_json={
+            'auth': {
+                'tokenId': unscoped['token']['id'],
+                'tenantId': common.unique_str()}})
+
     def test_get_request_fails(self):
         """GET /tokens should return a 404 (Github issue #5)"""
         self.service_request(method='GET', path='/tokens', assert_status=404)
