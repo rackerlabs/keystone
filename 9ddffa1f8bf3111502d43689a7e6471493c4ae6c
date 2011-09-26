@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//+qM\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 688
+      },
+      "writtenOn": "2011-09-26T23:17:52Z",
+      "side": 0,
+      "message": "I think this is the offending line.",
+      "revId": "9ddffa1f8bf3111502d43689a7e6471493c4ae6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
