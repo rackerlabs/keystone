@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//+qc\u003d",
+        "filename": "keystone/content/common/xsd/credentials.xsd",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-09-26T22:10:48Z",
+      "side": 1,
+      "message": "An attribute is defined as a complex type???\n\nSimple elements cannot have attributes. If an element has attributes, it is considered to be of a complex type. But the attribute itself is always declared as a simple type.",
+      "revId": "4f7cdf933018542cc4186d2e2a8d7df3e6a73858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//+qg\u003d",
+        "filename": "keystone/content/common/xsd/credentials.xsd",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-09-26T22:10:48Z",
+      "side": 1,
+      "message": "Why scope type is extending Credential Type",
+      "revId": "4f7cdf933018542cc4186d2e2a8d7df3e6a73858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
