@@ -68,6 +68,10 @@ class IdentityService(object):
         # _token, user = self.__validate_unscoped_token(auth_request.token_id)
         _token, user = self.__validate_token(auth_request.token_id)
 
+        if auth_request.tenant_name:
+            dtenant = api.TENANT.get_by_name(auth_request.tenant_name)
+            auth_request.tenant_id = dtenant.id
+
         self.__validate_tenant(auth_request.tenant_id)
 
         def validate(duser):
