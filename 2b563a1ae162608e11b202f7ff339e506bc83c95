@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//+as\u003d",
+        "filename": "keystone/content/common/xsd/credentials.xsd",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-09-27T21:10:30Z",
+      "side": 1,
+      "message": "An attribute cannot be a complex type.It has to be a simple type.",
+      "revId": "2b563a1ae162608e11b202f7ff339e506bc83c95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//+ak\u003d",
+        "filename": "keystone/content/common/xsd/credentials.xsd",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-09-27T21:10:30Z",
+      "side": 1,
+      "message": "You have an any namespace along with attributes .This is wrong.You should have \nanyattribute",
+      "revId": "2b563a1ae162608e11b202f7ff339e506bc83c95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
