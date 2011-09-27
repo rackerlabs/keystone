@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//+p8\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 688
+      },
+      "writtenOn": "2011-09-27T00:15:07Z",
+      "side": 1,
+      "message": "Hmm, no. It definitely wants the token_id ... but I don\u0027t understand the purpose of it if I\u0027m using credentials to auth?\n\nIf I have to get an unscoped token first, why not just look up the tenant id from the tenant name directly? Either way, I think it\u0027s an unnecessary round-trip.",
+      "revId": "2d9e3a306d9feb772899b4264fa6bc5789324a8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
