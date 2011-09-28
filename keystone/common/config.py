@@ -213,11 +213,14 @@ def find_config_file(options, args):
                         fix_path(os.path.join('~', '.keystone')),
                         fix_path('~'),
                         '/etc/keystone/',
+                        '/etc/init/',
                         '/etc']
 
     for cfg_dir in config_file_dirs:
         cfg_file = os.path.join(cfg_dir, 'keystone.conf')
+        print 'Looking for', cfg_file
         if os.path.exists(cfg_file):
+            print 'Found it!'
             return cfg_file
         else:
             if os.path.exists(os.path.join(POSSIBLE_TOPDIR, 'etc', \
