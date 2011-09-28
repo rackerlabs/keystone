@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAACX//+YA\u003d",
+        "filename": "keystone/content/common/xsd/credentials.xsd",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-09-28T00:33:39Z",
+      "side": 1,
+      "message": "This is what I suggest just declare two optional attributes tenantId and tenantName for AuthenticationRequest.That is enough to satisfy current needs for diablo.",
+      "revId": "2b563a1ae162608e11b202f7ff339e506bc83c95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACX//+as\u003d",
         "filename": "keystone/content/common/xsd/credentials.xsd",
         "patchSetId": 4
