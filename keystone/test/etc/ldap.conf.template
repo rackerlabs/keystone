@@ -14,17 +14,21 @@ admin_host = 0.0.0.0
 admin_port = 5001
 keystone-admin-role = Admin
 keystone-service-admin-role = KeystoneServiceAdmin
+hash-password = True
+password-salt = ABCDEFG
 
 [keystone.backends.sqlalchemy]
 sql_connection = for_testing_only
 sql_idle_timeout = 30
 backend_entities = ['Endpoints', 'Credentials',  'EndpointTemplates', 'Token', 'Service']
+encrypt-password = True
 
 [keystone.backends.ldap]
 ldap_url = fake://memory
 ldap_user = cn=Admin
 ldap_password = password
 backend_entities = ['Tenant', 'User', 'UserRoleAssociation', 'Role']
+encrypt-password = True
 
 [pipeline:admin]
 pipeline =
