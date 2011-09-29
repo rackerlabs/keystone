@@ -115,7 +115,7 @@ Mac OSX
 #. Branch Keystone's trunk branch:: (see http://wiki.openstack.org/GerritWorkflow to get the project initially setup)::
 
    $> git checkout master
-   $> get pull origin master
+   $> git pull origin master
 
 #. Set up the virtual environment to get the additional dependencies
 
