@@ -1,0 +1,8 @@
+Verified+1: Jenkins
+Code-Review+2: Dolph Mathews <antiver@gmail.com>
+Code-Review+1: Joe Savak <joe.savak@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 30 Sep 2011 15:36:32 +0000
+Reviewed-on: https://review.openstack.org/765
+Project: openstack/keystone
+Branch: refs/heads/master
