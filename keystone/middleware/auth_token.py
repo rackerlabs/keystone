@@ -166,7 +166,8 @@ class AuthProtocol(object):
                     self._decorate_request('X_AUTHORIZATION', "Proxy %s" %
                         claims['user'], env, proxy_headers)
                     self._decorate_request('X_TENANT',
-                        claims['tenant'], env, proxy_headers)
+                        claims.get('tenant_name', claims['tenant']),
+                        env, proxy_headers)
                     self._decorate_request('X_USER',
                         claims['user'], env, proxy_headers)
                     if 'roles' in claims and len(claims['roles']) > 0:
@@ -288,13 +289,18 @@ class AuthProtocol(object):
 
         try:
             tenant = token_info['access']['token']['tenant']['id']
+            tenant_name = token_info['access']['token']['tenant']['name']
         except:
             tenant = None
+            tenant_name = None
         if not tenant:
             tenant = token_info['access']['user'].get('tenantId')
+            tenant_name = token_info['access']['user'].get('tenantName')
         verified_claims = {'user': token_info['access']['user']['username'],
                     'tenant': tenant,
                     'roles': roles}
+        if tenant_name:
+            verified_claims['tenantName'] = tenant_name
         return verified_claims
 
     def _decorate_request(self, index, value, env, proxy_headers):
