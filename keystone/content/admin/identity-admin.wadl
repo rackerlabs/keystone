@@ -220,7 +220,7 @@
 	    </representation>
         </request>
         <response status="200 203">
-            <representation mediaType="application/xml" element="identity:access">
+            <representation mediaType="application/xml" element="identity:token">
 	      <doc>
 		<xsdxt:code href="../common/samples/auth.xml"/>
 	      </doc>
@@ -262,7 +262,7 @@
             </param>
         </request>
         <response status="200 203">
-            <representation mediaType="application/xml" element="identity:access">
+            <representation mediaType="application/xml" element="identity:token">
 	      <doc>
 		<xsdxt:code href="../common/samples/validatetoken.xml"/>
 	      </doc>
@@ -305,10 +305,7 @@
                 </doc>
             </param>
         </request>
-        <response status="200 203">
-            <representation mediaType="application/xml" element="identity:access"/>
-            <representation mediaType="application/json"/>
-        </response>
+        <response status="200 203"/>
         &commonFaults;
         &getFaults;
     </method>
