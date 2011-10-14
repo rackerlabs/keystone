@@ -195,7 +195,8 @@ class AuthProtocol(object):
         validate a user's token. Validate_token is a priviledged call so
         it needs to be authenticated by a service that is calling it
         """
-        headers = {"Content-type": "application/json", "Accept": "application/json"}
+        headers = {"Content-type": "application/json",
+                   "Accept": "application/json"}
         params = {"passwordCredentials": {"username": username,
                                           "password": password,
                                           "tenantId": "1"}}
