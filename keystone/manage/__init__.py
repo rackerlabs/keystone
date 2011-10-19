@@ -32,6 +32,11 @@ from keystone.manage import api
 import keystone.backends as db
 
 
+# Messages
+ACTION_NOT_SUPPORTED = 'Action not supported for %s'
+ACTION_NOT_SPECIFIED = 'No action specified for second argument'
+
+
 class RaisingOptionParser(optparse.OptionParser):
     def error(self, msg):
         self.print_usage(sys.stderr)
@@ -77,27 +82,30 @@ def process(*args):
     Example: keystone-manage user add Admin P@ssw0rd
     """
     # Check arguments
+    supported_objects = ['user', 'tenant', 'role', 'service',
+        'endpointTemplates', 'token', 'endpoint', 'credentials']
+
     if len(args) == 0:
         raise optparse.OptParseError(
-            'No obj type specified for first argument')
+            'No object type specified for first argument')
+    if args[0] not in supported_objects:
+        raise optparse.OptParseError("Supported objects: " +
+            ", ".join(supported_objects))
 
     object_type = args[0]
-    if object_type not in ['user', 'tenant', 'role', 'service',
-            'endpointTemplates', 'token', 'endpoint', 'credentials']:
-        raise optparse.OptParseError(
-            '%s is not a supported obj type' % object_type)
 
     if len(args) == 1:
-        raise optparse.OptParseError(
-            'No command specified for second argument')
+        raise optparse.OptParseError(ACTION_NOT_SPECIFIED)
     command = args[1]
-    if command not in ['add', 'list', 'disable', 'delete', 'grant', 'revoke']:
-        raise optparse.OptParseError('add, disable, delete, and list are the '
-            'only supported commands (right now)')
+    supported_commands = ['add', 'list', 'disable', 'delete', 'grant',
+        'revoke']
+    if command not in supported_commands:
+        raise optparse.OptParseError("Supported commands: " +
+            ", ".join(supported_commands))
 
     if len(args) == 2:
         if command != 'list':
-            raise optparse.OptParseError('No id specified for third argument')
+            raise optparse.OptParseError('No ID specified for third argument')
     if len(args) > 2:
         object_id = args[2]
 
@@ -118,19 +126,21 @@ def process(*args):
         print "\n".join(["\t".join(row) for row in rows])
 
     # Execute command
-
     if (object_type, command) == ('user', 'add'):
         require_args(args, 4, 'No password specified for fourth argument')
         if api.add_user(name=object_id, password=args[3],
                 tenant=optional_arg(args, 4)):
             print "SUCCESS: User %s created." % object_id
 
+    elif (object_type, command) == ('user', 'list'):
+        print_table(('id', 'name', 'enabled', 'tenant'), api.list_users())
+
     elif (object_type, command) == ('user', 'disable'):
         if api.disable_user(name=object_id):
             print "SUCCESS: User %s disabled." % object_id
 
-    elif (object_type, command) == ('user', 'list'):
-        print_table(('id', 'name', 'enabled', 'tenant'), api.list_users())
+    elif object_type == 'user':
+        raise optparse.OptParseError(ACTION_NOT_SUPPORTED % ('users'))
 
     elif (object_type, command) == ('tenant', 'add'):
         if api.add_tenant(name=object_id):
@@ -142,6 +152,9 @@ def process(*args):
     elif (object_type, command) == ('tenant', 'disable'):
         if api.disable_tenant(name=object_id):
             print "SUCCESS: Tenant %s disabled." % object_id
+
+    elif object_type == 'tenant':
+        raise optparse.OptParseError(ACTION_NOT_SUPPORTED % ('tenants'))
 
     elif (object_type, command) == ('role', 'add'):
         if api.add_role(name=object_id):
@@ -165,6 +178,9 @@ def process(*args):
             print("SUCCESS: Granted %s the %s role on %s." %
                 (object_id, args[3], tenant))
 
+    elif object_type == 'role':
+        raise optparse.OptParseError(ACTION_NOT_SUPPORTED % ('roles'))
+
     elif (object_type, command) == ('endpointTemplates', 'add'):
         require_args(args, 9, "Missing arguments: endpointTemplates add "
             "'region' 'service' 'publicURL' 'adminURL' 'internalURL' "
@@ -186,12 +202,19 @@ def process(*args):
             print_table(('service', 'region', 'Public URL'),
                 api.list_endpoint_templates())
 
+    elif object_type == 'endpointTemplates':
+        raise optparse.OptParseError(ACTION_NOT_SUPPORTED % (
+            'endpointTemplates'))
+
     elif (object_type, command) == ('endpoint', 'add'):
         require_args(args, 4, "Missing arguments: endPoint add tenant "
             "endPointTemplate")
         if api.add_endpoint(tenant=args[2], endpoint_template=args[3]):
             print("SUCCESS: Endpoint %s added to tenant %s." %
                 (args[3], args[2]))
+
+    elif object_type == 'endpoint':
+        raise optparse.OptParseError(ACTION_NOT_SUPPORTED % ('endpoints'))
 
     elif (object_type, command) == ('token', 'add'):
         require_args(args, 6, 'Creating a token requires a token id, user, '
@@ -208,6 +231,9 @@ def process(*args):
         if api.delete_token(token=object_id):
             print 'SUCCESS: Token %s deleted.' % (object_id,)
 
+    elif object_type == 'token':
+        raise optparse.OptParseError(ACTION_NOT_SUPPORTED % ('tokens'))
+
     elif (object_type, command) == ('service', 'add'):
         require_args(args, 4, "Missing arguments: service add name "
             "type")
@@ -219,6 +245,9 @@ def process(*args):
     elif (object_type, command) == ('service', 'list'):
         print_table(('id', 'name', 'type'), api.list_services())
 
+    elif object_type == 'service':
+        raise optparse.OptParseError(ACTION_NOT_SUPPORTED % ('services'))
+
     elif (object_type, command) == ('credentials', 'add'):
         require_args(args, 6, 'Creating a credentials requires a type, key, '
             'secret, and tenant_id (id is user_id)')
@@ -226,9 +255,12 @@ def process(*args):
                 secrete=args[5], tenant=optional_arg(args, 6)):
             print "SUCCESS: Credentials %s created." % object_id
 
+    elif object_type == 'credentials':
+        raise optparse.OptParseError(ACTION_NOT_SUPPORTED % ('credentials'))
+
     else:
-        # Command not handled
-        print ("ERROR: unrecognized command %s %s" % (object_type, command))
+        # Command recognized but not handled: should never reach this
+        raise NotImplementedError()
 
 
 def main(args=None):
