@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//70o\u003d",
+        "filename": "keystone/content/common/xsd/RAX-KSQA-secretQA.xsd",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-19T15:33:06Z",
+      "side": 1,
+      "message": "Can you replace tabs with spaces?",
+      "revId": "427f817b3781a720b4be83375dc0b07703673e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//70k\u003d",
+        "filename": "keystone/content/common/xsd/RAX-KSQA-secretQA.xsd",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-19T15:33:06Z",
+      "side": 1,
+      "message": "And removing trailing whitespace?",
+      "revId": "427f817b3781a720b4be83375dc0b07703673e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
