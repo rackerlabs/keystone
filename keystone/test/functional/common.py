@@ -2,6 +2,7 @@ import unittest2 as unittest
 import httplib
 import uuid
 import json
+import os
 from xml.etree import ElementTree
 
 
@@ -15,6 +16,19 @@ class HttpTestCase(unittest.TestCase):
     * assertResponseStatus
     """
 
+    # Client certificate for authenticating with Keystone (only valid if
+    # we are testing with SSL)
+    cert_file = None
+
+    def isSsl(self):
+        """ See if we are testing with SSL.  If cert is non-empty, we are! """
+        if self.cert_file != None:
+            return True
+        if 'cert_file' in os.environ:
+            self.cert_file = os.environ['cert_file']
+            return True
+        return False
+
     def request(self, host='127.0.0.1', port=80, method='GET', path='/',
             headers=None, body=None, assert_status=None):
         """Perform request and fetch httplib.HTTPResponse from the server"""
@@ -23,7 +37,12 @@ class HttpTestCase(unittest.TestCase):
         headers = {} if not headers else headers
 
         # Initialize a connection
-        connection = httplib.HTTPConnection(host, port, timeout=20)
+        if (self.isSsl()):
+            connection = httplib.HTTPSConnection(host, port,
+                                            cert_file=self.cert_file,
+                                            timeout=20)
+        else:
+            connection = httplib.HTTPConnection(host, port, timeout=20)
 
         # Perform the request
         connection.request(method, path, body, headers)
@@ -906,8 +925,7 @@ class FunctionalTestCase(ApiTestCase):
                 "global": is_global,
                 "versionId": version_id,
                 "versionInfo": version_info,
-                "versionList": version_list
-                }}
+                "versionList": version_list}}
         return self.post_endpoint_template(as_json=data, **kwargs)
 
     def remove_endpoint_template(self, endpoint_template_id=None, **kwargs):
