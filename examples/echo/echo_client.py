@@ -20,14 +20,25 @@ Implement a client for Echo service using Identity service
 
 import httplib
 import json
+import sys
 
+def keystone_conn():
+    """ Get a connection.  If it is SSL, needs the '-s' option, optionally 
+        followed by the location of the cert_file with private key. """
+    if '-s' in sys.argv:
+        cert_file = None
+        if len(sys.argv) > sys.argv.index('-s')+1:
+            cert_file = sys.argv[sys.argv.index('-s')+1]
+        conn = httplib.HTTPSConnection("localhost:5000", cert_file=cert_file)
+    else:
+        conn = httplib.HTTPConnection("localhost:5000")
+    return conn
 
 def get_auth_token(username, password, tenant):
     headers = {"Content-type": "application/json", "Accept": "application/json"}
-    params = {"passwordCredentials": {"username": username,
-                                      "password": password,
-                                      "tenantId": tenant}}
-    conn = httplib.HTTPConnection("localhost:5000")
+    params = {"auth": {"passwordCredentials": 
+            {"username": username, "password": password}, "tenantId": tenant}}
+    conn = keystone_conn()
     conn.request("POST", "/v2.0/tokens", json.dumps(params), headers=headers)
     response = conn.getresponse()
     data = response.read()
@@ -69,9 +80,9 @@ if __name__ == '__main__':
     # Call the keystone service to get a token
     # NOTE: assumes the test_setup.sql script has loaded this user
     print "\033[91mTrying with valid test credentials...\033[0m"
-    auth = get_auth_token("joeuser", "secrete", "customer-x")
+    auth = get_auth_token("joeuser", "secrete", "1")
     obj = json.loads(auth)
-    token = obj["auth"]["token"]["id"]
+    token = obj["access"]["token"]["id"]
     print "Token obtained:", token
 
     # Use that token to call an OpenStack service (echo)
