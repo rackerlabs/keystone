@@ -7,6 +7,12 @@ from xml.etree import ElementTree
 
 class HttpTestCase(unittest.TestCase):
     """Performs generic HTTP request testing"""
+    
+    # Testing with SSL
+    isSsl = False
+    
+    # Client certificate for authenticating with Keystone
+    cert_file = None
 
     def request(self, host='127.0.0.1', port=80, method='GET', path='/',
             headers=None, body=None, assert_status=None):
@@ -16,7 +22,12 @@ class HttpTestCase(unittest.TestCase):
         headers = {} if not headers else headers
 
         # Initialize a connection
-        connection = httplib.HTTPConnection(host, port, timeout=20)
+        if (HttpTestCase.isSsl == True):
+            connection = httplib.HTTPSConnection(host, port, 
+                                                 cert_file=HttpTestCase.cert_file,
+                                                 timeout=20)
+        else:
+            connection = httplib.HTTPConnection(host, port, timeout=20)
 
         # Perform the request
         connection.request(method, path, body, headers)
