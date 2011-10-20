@@ -955,9 +955,20 @@ class IdentityService(object):
                 endpoint_get_by_tenant_get_page(
                     tenant_id, marker, limit)
         for dtenant_endpoint in dtenant_endpoints:
-            ts.append(Endpoint(dtenant_endpoint.id,
-                    url + '/endpointTemplates/' + \
-                    str(dtenant_endpoint.endpoint_template_id)))
+            dendpoint_template = api.ENDPOINT_TEMPLATE.get(
+                dtenant_endpoint.endpoint_template_id)
+            ts.append(Endpoint(
+                            dtenant_endpoint.id,
+                            dtenant_endpoint.tenant_id,
+                            dendpoint_template.region,
+                            dendpoint_template.service_id,
+                            dendpoint_template.public_url,
+                            dendpoint_template.admin_url,
+                            dendpoint_template.internal_url,
+                            dendpoint_template.version_id,
+                            dendpoint_template.version_list,
+                            dendpoint_template.version_info
+                            ))
         links = []
         if ts.__len__():
             prev, next = \
@@ -987,8 +998,18 @@ class IdentityService(object):
         dendpoint.tenant_id = tenant_id
         dendpoint.endpoint_template_id = endpoint_template.id
         dendpoint = api.ENDPOINT_TEMPLATE.endpoint_add(dendpoint)
-        dendpoint = Endpoint(dendpoint.id, url +
-            '/endpointTemplates/' + unicode(dendpoint.endpoint_template_id))
+        dendpoint = Endpoint(
+                            dendpoint.id,
+                            dendpoint.tenant_id,
+                            dendpoint_template.region,
+                            dendpoint_template.service_id,
+                            dendpoint_template.public_url,
+                            dendpoint_template.admin_url,
+                            dendpoint_template.internal_url,
+                            dendpoint_template.version_id,
+                            dendpoint_template.version_list,
+                            dendpoint_template.version_info
+                            )
         return dendpoint
 
     def delete_endpoint(self, admin_token, endpoint_id):
