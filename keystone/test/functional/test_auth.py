@@ -65,8 +65,8 @@ class TestAdminAuthenticationNegative(common.FunctionalTestCase):
         user['password'] = password
 
         # Replace our admin_token with a mere service token
-        self.admin_token = self.authenticate(user['name'], user['password']).\
-            json['access']['token']['id']
+        self.admin_token = self.authenticate(user['username'],
+            user['password']).json['access']['token']['id']
 
         # Try creating another user using the wrong token
         self.create_user(assert_status=401)
@@ -89,7 +89,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.service_token = self.post_token(as_json={
             'auth': {
                 'passwordCredentials': {
-                    'username': self.user['name'],
+                    'username': self.user['username'],
                     'password': self.user['password']}}}).\
             json['access']['token']['id']
 
@@ -103,7 +103,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.assertTrue(r.json['access']['token']['expires'])
         self.assertEqual(r.json['access']['user']['id'], self.user['id'])
         self.assertEqual(r.json['access']['user']['username'],
-            self.user['name'])
+            self.user['username'])
         self.assertEqual(r.json['access']['user']['roles'], [])
 
     def test_user_auth_with_role_on_tenant(self):
@@ -116,7 +116,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         unscoped = self.post_token(as_json={
             'auth': {
                 'passwordCredentials': {
-                    'username': self.user['name'],
+                    'username': self.user['username'],
                     'password': self.user['password']}}}).json['access']
 
         # The token shouldn't be scoped to a tenant nor have roles just yet
@@ -125,7 +125,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.assertEqual(len(unscoped['user']['roles']), 0)
         self.assertIsNotNone(unscoped.get('user'))
         self.assertEqual(unscoped['user'].get('id'), self.user['id'])
-        self.assertEqual(unscoped['user'].get('name'), self.user['name'])
+        self.assertEqual(unscoped['user'].get('name'), self.user['username'])
 
         # Request our tenant list as a service user
         self.service_token = unscoped['token']['id']
@@ -155,7 +155,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         access = r.json['access']
 
         self.assertEqual(access['user']['id'], self.user['id'])
-        self.assertEqual(access['user']['username'], self.user['name'])
+        self.assertEqual(access['user']['username'], self.user['username'])
         self.assertEqual(access['token']['tenant']['id'], tenant['id'])
         self.assertEqual(access['token']['tenant']['name'], tenant['name'])
 
@@ -170,7 +170,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
             '<auth xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"'
                     'xmlns="http://docs.openstack.org/identity/api/v2.0">'
                 '<passwordCredentials username="%s" password="%s"/>'
-            '</auth>' % (self.user['name'], self.user['password']))
+            '</auth>' % (self.user['username'], self.user['password']))
 
         # The token shouldn't be scoped to a tenant nor have roles just yet
         self.assertEqual(r.xml.tag, '{%s}access' % self.xmlns)
@@ -183,7 +183,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         user = r.xml.find('{%s}user' % self.xmlns)
         self.assertIsNotNone(user)
         self.assertEqual(user.get('id'), self.user['id'])
-        self.assertEqual(user.get('name'), self.user['name'])
+        self.assertEqual(user.get('name'), self.user['username'])
         self.assertIsNone(user.get('tenantId'))
 
         roles = user.find('{%s}roles' % self.xmlns)
@@ -213,7 +213,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
                     'xmlns="http://docs.openstack.org/identity/api/v2.0" '
                     'tenantId="%s">'
                 '<passwordCredentials username="%s" password="%s"/>'
-            '</auth>' % (tenant['id'], self.user['name'],
+            '</auth>' % (tenant['id'], self.user['username'],
                 self.user['password']))
 
         self.assertEqual(r.xml.tag, '{%s}access' % self.xmlns)
@@ -240,7 +240,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         user = r.xml.find('{%s}user' % self.xmlns)
         self.assertIsNotNone(user)
         self.assertEqual(user.get('id'), self.user['id'])
-        self.assertEqual(user.get('username'), self.user['name'])
+        self.assertEqual(user.get('username'), self.user['username'])
         self.assertIsNone(user.get('tenantId'))
 
     def test_scope_to_tenant_by_name(self):
@@ -253,7 +253,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         unscoped = self.post_token(as_json={
             'auth': {
                 'passwordCredentials': {
-                    'username': self.user['name'],
+                    'username': self.user['username'],
                     'password': self.user['password']}}}).json['access']
 
         # We can now get a token scoped to our tenant
@@ -271,7 +271,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         access = r.json['access']
 
         self.assertEqual(access['user']['id'], self.user['id'])
-        self.assertEqual(access['user']['username'], self.user['name'])
+        self.assertEqual(access['user']['username'], self.user['username'])
         self.assertEqual(access['token']['tenant']['id'], tenant['id'])
         self.assertEqual(access['token']['tenant']['name'], tenant['name'])
 
@@ -284,7 +284,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         scoped = self.post_token(as_json={
             'auth': {
                 'passwordCredentials': {
-                    'username': self.user['name'],
+                    'username': self.user['username'],
                     'password': self.user['password']},
                 'tenantName': tenant['name']}}).json['access']
 
@@ -296,7 +296,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         access = r.json['access']
 
         self.assertEqual(access['user']['id'], self.user['id'])
-        self.assertEqual(access['user']['username'], self.user['name'])
+        self.assertEqual(access['user']['username'], self.user['username'])
         self.assertEqual(access['token']['tenant']['id'], tenant['id'])
         self.assertEqual(access['token']['tenant']['name'], tenant['name'])
 
@@ -305,7 +305,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         unscoped = self.post_token(as_json={
             'auth': {
                 'passwordCredentials': {
-                    'username': self.user['name'],
+                    'username': self.user['username'],
                     'password': self.user['password']}}}).json['access']
 
         # Invalid tenant id
@@ -324,7 +324,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.post_token(assert_status=401, as_json={
             'auth': {
                 'passwordCredentials': {
-                    'username': self.user['name'],
+                    'username': self.user['username'],
                     'password': self.user['password']},
                 'tenantId': common.unique_str()}})
 
@@ -332,7 +332,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.post_token(assert_status=401, as_json={
             'auth': {
                 'passwordCredentials': {
-                    'username': self.user['name'],
+                    'username': self.user['username'],
                     'password': self.user['password']},
                 'tenantName': common.unique_str()}})
 
@@ -346,7 +346,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         unscoped = self.post_token(as_json={
             'auth': {
                 'passwordCredentials': {
-                    'username': self.user['name'],
+                    'username': self.user['username'],
                     'password': self.user['password']}}}).json['access']
 
         # tenant Name & ID should never be provided together
@@ -365,7 +365,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         # Authenticate as user to get a token
         self.post_token(assert_status=400, as_json={
             'this-is-completely-wrong': {
-                'username': self.user['name'],
+                'username': self.user['username'],
                 'password': self.user['password']}})
 
     def test_user_auth_with_wrong_name(self):
@@ -388,7 +388,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         # Authenticate as user to get a token
         self.post_token(assert_status=401, as_json={
             'auth': {'passwordCredentials': {
-                'username': self.user['name'],
+                'username': self.user['username'],
                 'password': 'this-is-completely-wrong'}}})
 
     def test_user_auth_with_no_password(self):
@@ -396,7 +396,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         # Authenticate as user to get a token
         self.post_token(assert_status=400, as_json={
             'auth': {'passwordCredentials': {
-                'username': self.user['name'],
+                'username': self.user['username'],
                 'password': None}}})
 
     def test_user_auth_with_invalid_tenant(self):
@@ -405,7 +405,7 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.post_token(assert_status=401, as_json={
             'auth': {
             'passwordCredentials': {
-                'username': self.user['name'],
+                'username': self.user['username'],
                 'password': self.user['password'],
                 },
              'tenantId': 'this-is-completely-wrong'}})

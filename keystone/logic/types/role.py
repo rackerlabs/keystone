@@ -53,7 +53,6 @@ class Role(object):
             if not "role" in obj:
                 raise fault.BadRequestFault("Expecting Role")
             role = obj["role"]
-
             id = role.get('id')
             name = role.get('name')
             description = role.get('description')

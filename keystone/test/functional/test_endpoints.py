@@ -499,9 +499,13 @@ class GetEndPointsForTokenTest(EndpointTemplatesTest):
         super(GetEndPointsForTokenTest, self).setUp(*args, **kwargs)
         password = common.unique_str()
         self.tenant = self.create_tenant().json['tenant']
-        self.user = self.create_user(user_password=password,
-            tenant_id=self.tenant['id']).json['user']
+        self.user = self.create_user(user_password=password
+            ).json['user']
         self.user['password'] = password
+        role_id = common.unique_str()
+        role = self.create_role(role_id,
+            assert_status=201).json['role']
+        self.grant_role_to_user(self.user['id'], role['id'], self.tenant['id'])
 
         self.services = {}
         self.endpoint_templates = {}
@@ -513,7 +517,7 @@ class GetEndPointsForTokenTest(EndpointTemplatesTest):
                 json['OS-KSCATALOG:endpointTemplate']
             self.create_endpoint_for_tenant(self.tenant['id'],
                 self.endpoint_templates[x]['id'])
-        r = self.authenticate(self.user['name'], self.user['password'],
+        r = self.authenticate(self.user['username'], self.user['password'],
             self.tenant['id'], assert_status=200)
         self.token = r.json['access']['token']['id']
 

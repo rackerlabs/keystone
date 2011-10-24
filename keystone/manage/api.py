@@ -5,14 +5,10 @@ import keystone.backends.models as db_models
 
 
 def add_user(name, password, tenant=None):
-    if tenant:
-        tenant = db_api.TENANT.get_by_name(tenant).id
-
     obj = db_models.User()
     obj.name = name
     obj.password = password
     obj.enabled = True
-    obj.tenant_id = tenant
     return db_api.USER.create(obj)
 
 
@@ -28,7 +24,7 @@ def list_users():
     objects = db_api.USER.get_all()
     if objects == None:
         raise IndexError("No users found")
-    return [[o.id, o.name, o.enabled, o.tenant_id] for o in objects]
+    return [[o.id, o.name, o.enabled] for o in objects]
 
 
 def add_tenant(name):

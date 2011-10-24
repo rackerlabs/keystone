@@ -34,7 +34,8 @@ class CreateRolesTest(RolesTest):
 
     def test_create_role_using_service_token(self):
         user = self.create_user_with_known_password().json['user']
-        self.admin_token = self.authenticate(user['name'], user['password'])
+        self.admin_token = self.authenticate(user['username'],
+            user['password'])
         self.create_role(assert_status=401)
 
     def test_create_roles_using_disabled_token(self):
@@ -106,7 +107,7 @@ class DeleteRoleTest(RolesTest):
 
     def test_create_and_delete_role_that_has_references(self):
         tenant = self.create_tenant().json['tenant']
-        user = self.create_user(tenant_id=tenant['id']).json['user']
+        user = self.create_user().json['user']
         self.grant_role_to_user(user['id'], self.role['id'], tenant['id'])
         self.remove_role(self.role['id'], assert_status=204)
 
@@ -232,7 +233,7 @@ class CreateRoleAssignmentTest(RolesTest):
 
         self.tenant = self.create_tenant().json['tenant']
         self.user = self.create_user_with_known_password(
-            tenant_id=self.tenant['id']).json['user']
+            ).json['user']
         self.role = self.create_role().json['role']
 
     def test_grant_role(self):
@@ -286,7 +287,7 @@ class GetRoleAssignmentsTest(RolesTest):
 
         self.tenant = self.create_tenant().json['tenant']
         self.user = self.create_user_with_known_password(
-            tenant_id=self.tenant['id']).json['user']
+            ).json['user']
         self.role = self.create_role().json['role']
         self.grant_role_to_user(self.user['id'], self.role['id'],
             self.tenant['id'])
@@ -343,7 +344,7 @@ class DeleteRoleAssignmentsTest(RolesTest):
 
         self.tenant = self.create_tenant().json['tenant']
         self.user = self.create_user_with_known_password(
-            tenant_id=self.tenant['id']).json['user']
+            ).json['user']
         self.role = self.create_role().json['role']
         self.grant_role_to_user(self.user['id'], self.role['id'],
             self.tenant['id'])
@@ -381,7 +382,7 @@ class DeleteGlobalRoleAssignmentsTest(RolesTest):
 
         self.tenant = self.create_tenant().json['tenant']
         self.user = self.create_user_with_known_password(
-            tenant_id=self.tenant['id']).json['user']
+            ).json['user']
         self.role = self.create_role().json['role']
         self.grant_global_role_to_user(self.user['id'], self.role['id'])
         self.roles = self.get_user_roles(self.user['id']).\

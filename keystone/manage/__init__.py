@@ -130,12 +130,11 @@ def process(*args):
     # Execute command
     if (object_type, action) == ('user', 'add'):
         require_args(args, 4, 'No password specified for fourth argument')
-        if api.add_user(name=object_id, password=args[3],
-                tenant=optional_arg(args, 4)):
+        if api.add_user(name=object_id, password=args[3]):
             print "SUCCESS: User %s created." % object_id
 
     elif (object_type, action) == ('user', 'list'):
-        print_table(('id', 'name', 'enabled', 'tenant'), api.list_users())
+        print_table(('id', 'name', 'enabled'), api.list_users())
 
     elif (object_type, action) == ('user', 'disable'):
         if api.disable_user(name=object_id):

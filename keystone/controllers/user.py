@@ -63,13 +63,6 @@ class UserController(wsgi.Controller):
         return utils.send_result(200, req, rval)
 
     @utils.wrap_error
-    def update_user_tenant(self, req, user_id):
-        user = utils.get_normalized_request_content(User_Update, req)
-        rval = config.SERVICE.set_user_tenant(utils.get_auth_token(req),
-            user_id, user)
-        return utils.send_result(200, req, rval)
-
-    @utils.wrap_error
     def get_tenant_users(self, req, tenant_id):
         marker, limit, url = get_marker_limit_and_url(req)
         users = config.SERVICE.get_tenant_users(utils.get_auth_token(req),

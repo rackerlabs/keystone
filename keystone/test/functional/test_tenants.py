@@ -129,10 +129,14 @@ class GetTenantsTest(TenantTest):
 
     def test_get_tenants_using_user_token(self):
         tenant = self.create_tenant().json['tenant']
-        user = self.create_user_with_known_password(tenant_id=tenant['id']).\
+        user = self.create_user_with_known_password().\
             json['user']
-        token = self.authenticate(user['name'], user['password'],
-            tenant['id']).json['access']['token']
+        role_id = common.unique_str()
+        role = self.create_role(role_id,
+            assert_status=201).json['role']
+        self.grant_role_to_user(user['id'], role['id'], tenant['id'])
+        token = self.authenticate(user['username'], user['password']
+            ).json['access']['token']
         self.service_token = token['id']
         tenants = self.service_request(method='GET', path='/tenants',
             assert_status=200).json['tenants']['values']
@@ -141,9 +145,13 @@ class GetTenantsTest(TenantTest):
 
     def test_get_tenants_using_user_token_xml(self):
         tenant = self.create_tenant().json['tenant']
-        user = self.create_user_with_known_password(tenant_id=tenant['id']).\
+        user = self.create_user_with_known_password().\
             json['user']
-        token = self.authenticate(user['name'], user['password'],
+        role_id = common.unique_str()
+        role = self.create_role(role_id,
+            assert_status=201).json['role']
+        self.grant_role_to_user(user['id'], role['id'], tenant['id'])
+        token = self.authenticate(user['username'], user['password'],
             tenant['id']).json['access']['token']
         self.service_token = token['id']
 
