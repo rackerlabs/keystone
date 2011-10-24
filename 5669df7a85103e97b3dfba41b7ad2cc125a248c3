@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//65k\u003d",
+        "filename": "doc/source/ssl.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-24T21:41:55Z",
+      "side": 1,
+      "message": "I might have already thanked you for this file, but anyway... thank you (again)!",
+      "revId": "5669df7a85103e97b3dfba41b7ad2cc125a248c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//65o\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-24T21:41:55Z",
+      "side": 1,
+      "message": "Can you add a comment on these like \"required only if x_ssl is True, ignored otherwise\"\n\nI\u0027m honestly not clear on when these values would be used (if it\u0027s one or both service_ssl and admin_ssl) without diving into code.",
+      "revId": "5669df7a85103e97b3dfba41b7ad2cc125a248c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
