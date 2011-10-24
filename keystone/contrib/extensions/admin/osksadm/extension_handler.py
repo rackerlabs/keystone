@@ -77,10 +77,6 @@ class ExtensionHandler(BaseExtensionHandler):
                     controller=user_controller,
                     action="set_user_password",
                     conditions=dict(method=["PUT"]))
-        mapper.connect("/users/{user_id}/tenant",
-                    controller=user_controller,
-                    action="update_user_tenant",
-                    conditions=dict(method=["PUT"]))
         # Test this, test failed
         mapper.connect("/users/{user_id}/enabled",
                     controller=user_controller,

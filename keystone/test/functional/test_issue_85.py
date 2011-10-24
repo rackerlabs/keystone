@@ -10,12 +10,16 @@ class TestIssue85(common.FunctionalTestCase):
         # Create a user for a specific tenant
         tenant = self.create_tenant().json['tenant']
         password = common.unique_str()
-        user = self.create_user(user_password=password,
-            tenant_id=tenant['id']).json['user']
+        user = self.create_user(user_password=password
+            ).json['user']
+        role_id = common.unique_str()
+        role = self.create_role(role_id,
+            assert_status=201).json['role']
+        self.grant_role_to_user(user['id'], role['id'], tenant['id'])
         user['password'] = password
 
         # Authenticate as user to get a token *for a specific tenant*
-        user_token = self.authenticate(user['name'], user['password'],
+        user_token = self.authenticate(user['username'], user['password'],
             tenant['id']).json['access']['token']['id']
 
         # Validate and check that token belongs to tenant

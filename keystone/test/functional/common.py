@@ -695,7 +695,7 @@ class FunctionalTestCase(ApiTestCase):
         return self.delete_tenant(tenant_id, **kwargs)
 
     def create_user(self, user_name=None, user_password=None, user_email=None,
-            tenant_id=None, user_enabled=True, **kwargs):
+            user_enabled=True, **kwargs):
         user_name = optional_str(user_name)
         user_password = optional_str(user_password)
         user_email = optional_email(user_email)
@@ -703,8 +703,7 @@ class FunctionalTestCase(ApiTestCase):
         data = {
             "user": {
                 "password": user_password,
-                "name": user_name,
-                "tenantId": tenant_id,
+                "username": user_name,
                 "email": user_email,
                 "enabled": user_enabled}}
 
@@ -712,7 +711,6 @@ class FunctionalTestCase(ApiTestCase):
 
     def create_user_with_known_password(self, **kwargs):
         """Manually injects the new user's password into the response data"""
-
         password = unique_str()
         r = self.create_user(user_password=password, **kwargs)
         r.json['user']['password'] = password
@@ -741,7 +739,7 @@ class FunctionalTestCase(ApiTestCase):
         if user_enabled is not None:
             data['user']['enabled'] = user_enabled
         if user_name is not None:
-            data['user']['name'] = user_name
+            data['user']['username'] = user_name
         return self.post_user_for_update(user_id, as_json=data, **kwargs)
 
     def update_user_password(self, user_id=None, user_password=None, **kwargs):
@@ -750,13 +748,6 @@ class FunctionalTestCase(ApiTestCase):
 
         data = {"user": {"password": user_password}}
         return self.put_user_password(user_id, as_json=data, **kwargs)
-
-    def update_user_tenant(self, user_id=None, tenant_id=None, **kwargs):
-        user_id = optional_str(user_id)
-        tenant_id = optional_str(tenant_id)
-
-        data = {"user": {"tenantId": tenant_id}}
-        return self.put_user_tenant(user_id, as_json=data, **kwargs)
 
     def _enable_disable_user(self, user_id, user_enabled, **kwargs):
         """Private function to enable and disable a user.

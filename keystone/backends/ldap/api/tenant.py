@@ -30,9 +30,7 @@ class TenantAPI(BaseLdapAPI, BaseTenantAPI):
         return super(TenantAPI, self).create(values)
 
     def get_user_tenants(self, user_id, include_roles=True):
-        user_dn = self.api.user._id_to_dn(user_id)
-        query = '(member=%s)' % (user_dn,)
-        memberships = self.get_all(query)
+        memberships = []
         if include_roles:
             roles = self.api.role.ref_get_all_tenant_roles(user_id)
             for role in roles:
@@ -69,14 +67,7 @@ class TenantAPI(BaseLdapAPI, BaseTenantAPI):
             [(ldap.MOD_DELETE, 'member', self.api.user._id_to_dn(user_id))])
 
     def get_users(self, tenant_id, role_id=None):
-        tenant = self._ldap_get(tenant_id)
         res = []
-        if not role_id:
-            # Get users who have default tenant mapping
-            for user_dn in tenant[1].get('member', []):
-                if self.use_dumb_member and user_dn == self.DUMB_MEMBER_DN:
-                    continue
-                res.append(self.api.user.get(self.api.user._dn_to_id(user_dn)))
         role_refs = self.api.role.get_role_assignments(tenant_id)
         # Get users who are explicitly mapped via a tenant
         for role_ref in role_refs:

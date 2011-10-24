@@ -27,9 +27,8 @@ class AuthenticationTest(common.FunctionalTestCase):
         password = common.unique_str()
         self.tenant = self.create_tenant().json['tenant']
         self.user = self.create_user(user_password=password,
-            tenant_id=self.tenant['id']).json['user']
+            ).json['user']
         self.user['password'] = password
-
         self.services = {}
         self.endpoint_templates = {}
         for x in range(0, 5):
@@ -40,11 +39,14 @@ class AuthenticationTest(common.FunctionalTestCase):
                 json['OS-KSCATALOG:endpointTemplate']
             self.create_endpoint_for_tenant(self.tenant['id'],
                 self.endpoint_templates[x]['id'])
+        role_id = common.unique_str()
+        role = self.create_role(role_id,
+            assert_status=201).json['role']
+        self.grant_role_to_user(self.user['id'], role['id'], self.tenant['id'])
 
     def test_authorize(self):
-        r = self.authenticate(self.user['name'], self.user['password'],
+        r = self.authenticate(self.user['username'], self.user['password'],
             self.tenant['id'], assert_status=200)
-
         self.assertIsNotNone(r.json['access']['token'])
         self.assertIsNotNone(r.json['access']['serviceCatalog'])
 
@@ -54,7 +56,7 @@ class AuthenticationTest(common.FunctionalTestCase):
             '<passwordCredentials username="%s" password="%s" '
             '/> </auth>') % (
             self.xmlns, self.tenant['id'],
-            self.user['name'], self.user['password'])
+            self.user['username'], self.user['password'])
         r = self.post_token(as_xml=data, assert_status=200)
 
         self.assertEquals(r.xml.tag, '{%s}access' % self.xmlns)
@@ -63,23 +65,26 @@ class AuthenticationTest(common.FunctionalTestCase):
 
     def test_authorize_legacy(self):
         r = self.service_request(version='1.0', assert_status=204, headers={
-            "X-Auth-User": self.user['name'],
+            "X-Auth-User": self.user['username'],
             "X-Auth-Key": self.user['password']})
 
         self.assertIsNotNone(r.getheader('x-auth-token'))
-        for service in self.services.values():
-            self.assertIsNotNone(r.getheader('x-' + service['name']))
+        #Now there is no concept of default tenant.
+        #There are no services returned.
+        #Need to figure out how to handle.
+        #for service in self.services.values():
+            #self.assertIsNotNone(r.getheader('x-' + service['name']))
 
     def test_authorize_user_disabled(self):
         self.disable_user(self.user['id'])
-        self.authenticate(self.user['name'], self.user['password'],
+        self.authenticate(self.user['username'], self.user['password'],
             self.tenant['id'], assert_status=403)
 
     def test_authorize_user_wrong(self):
         data = {
             "auth": {
                 "passwordCredentials": {
-                    "username-field-completely-wrong": self.user['name'],
+                    "username-field-completely-wrong": self.user['username'],
                     "password": self.user['password']},
                     "tenantId": self.tenant['id']}}
         self.post_token(as_json=data, assert_status=400)
@@ -91,7 +96,8 @@ class AuthenticationTest(common.FunctionalTestCase):
             'usernamefieldcompletelywrong="%s" '
             'password="%s" '
             'tenantId="%s"/>') % (
-                self.user['name'], self.user['password'], self.tenant['id'])
+                self.user['username'],
+                self.user['password'], self.tenant['id'])
 
         self.post_token(as_xml=data, assert_status=400)
 
@@ -106,12 +112,17 @@ class MultiTokenTest(common.FunctionalTestCase):
             self.tenants[x] = self.create_tenant().json['tenant']
 
             password = common.unique_str()
-            self.users[x] = self.create_user(user_password=password,
-                tenant_id=self.tenants[x]['id']).json['user']
+            self.users[x] = self.create_user(
+                user_password=password).json['user']
             self.users[x]['password'] = password
+            role_id = common.unique_str()
+            role = self.create_role(role_id,
+                assert_status=201).json['role']
+            self.grant_role_to_user(self.users[x]['id'],
+                role['id'], self.tenants[x]['id'])
 
     def test_unassigned_user(self):
-        self.authenticate(self.users[1]['name'], self.users[1]['password'],
+        self.authenticate(self.users[1]['username'], self.users[1]['password'],
             self.tenants[0]['id'], assert_status=401)
 
 

@@ -127,9 +127,6 @@ class IdentityService(object):
         if not validate(duser):
             raise fault.UnauthorizedFault("Unauthorized")
 
-        # use user's default tenant_id if one is not specified
-        tenant_id = tenant_id or duser.tenant_id
-
         # check for an existing token
         dtoken = api.TOKEN.get_for_user_by_tenant(duser.id, tenant_id)
 
@@ -302,8 +299,6 @@ class IdentityService(object):
     def create_user(self, admin_token, user):
         self.__validate_admin_token(admin_token)
 
-        self.validate_and_fetch_user_tenant(user.tenant_id)
-
         if not isinstance(user, User):
             raise fault.BadRequestFault("Expecting a User")
 
@@ -323,7 +318,6 @@ class IdentityService(object):
         duser.password = user.password
         duser.email = user.email
         duser.enabled = user.enabled
-        duser.tenant_id = user.tenant_id
         duser = api.USER.create(duser)
         user.id = duser.id
         return user
@@ -340,6 +334,7 @@ class IdentityService(object):
 
     def get_tenant_users(self, admin_token, tenant_id,
         role_id, marker, limit, url):
+
         self.__validate_admin_token(admin_token)
 
         if tenant_id == None:
@@ -356,7 +351,7 @@ class IdentityService(object):
         dtenantusers = api.USER.users_get_by_tenant_get_page(
             tenant_id, role_id, marker, limit)
         for dtenantuser in dtenantusers:
-            ts.append(User(None, dtenantuser.id, dtenantuser.name, tenant_id,
+            ts.append(User(None, dtenantuser.id, dtenantuser.name,
                            dtenantuser.email, dtenantuser.enabled,
                            dtenantuser.tenant_roles if hasattr(dtenantuser,
                                                     "tenant_roles") else None))
@@ -377,7 +372,7 @@ class IdentityService(object):
         ts = []
         dusers = api.USER.users_get_page(marker, limit)
         for duser in dusers:
-            ts.append(User(None, duser.id, duser.name, duser.tenant_id,
+            ts.append(User(None, duser.id, duser.name,
                                    duser.email, duser.enabled))
         links = []
         if ts.__len__():
@@ -395,7 +390,7 @@ class IdentityService(object):
         duser = api.USER.get(user_id)
         if not duser:
             raise fault.ItemNotFoundFault("The user could not be found")
-        return User_Update(id=duser.id, tenant_id=duser.tenant_id,
+        return User_Update(id=duser.id,
                 email=duser.email, enabled=duser.enabled, name=duser.name)
 
     def get_user_by_name(self, admin_token, user_name):
@@ -403,7 +398,7 @@ class IdentityService(object):
         duser = api.USER.get_by_name(user_name)
         if not duser:
             raise fault.ItemNotFoundFault("The user could not be found")
-        return User_Update(id=duser.id, tenant_id=duser.tenant_id,
+        return User_Update(id=duser.id,
                 email=duser.email, enabled=duser.enabled, name=duser.name)
 
     def update_user(self, admin_token, user_id, user):
@@ -432,7 +427,7 @@ class IdentityService(object):
         values = {'email': user.email, 'name': user.name}
         api.USER.update(user_id, values)
         duser = api.USER.user_get_update(user_id)
-        return User(duser.password, duser.id, duser.name, duser.tenant_id,
+        return User(duser.password, duser.id, duser.name,
             duser.email, duser.enabled)
 
     def set_user_password(self, admin_token, user_id, user):
@@ -471,34 +466,16 @@ class IdentityService(object):
 
         return User_Update(enabled=user.enabled)
 
-    def set_user_tenant(self, admin_token, user_id, user):
-        self.__validate_admin_token(admin_token)
-        duser = api.USER.get(user_id)
-        if not duser:
-            raise fault.ItemNotFoundFault("The user could not be found")
-        if not isinstance(user, User):
-            raise fault.BadRequestFault("Expecting a User")
-
-        duser = api.USER.get(user_id)
-        if duser == None:
-            raise fault.ItemNotFoundFault("The user could not be found")
-
-        self.validate_and_fetch_user_tenant(user.tenant_id)
-        values = {'tenant_id': user.tenant_id}
-        api.USER.update(user_id, values)
-        return User_Update(tenant_id=user.tenant_id)
-
     def delete_user(self, admin_token, user_id):
         self.__validate_admin_token(admin_token)
         duser = api.USER.get(user_id)
         if not duser:
             raise fault.ItemNotFoundFault("The user could not be found")
-
-        dtenant = api.TENANT.get(duser.tenant_id)
-        if dtenant != None:
-            api.USER.delete_tenant_user(user_id, dtenant.id)
-        else:
-            api.USER.delete(user_id)
+        drole_refs = api.ROLE.ref_get_all_tenant_roles(user_id)
+        #Delete all the user/role relations
+        for drole_ref in drole_refs:
+            api.ROLE.ref_delete(drole_ref.id)
+        api.USER.delete(user_id)
         return None
 
     def __get_auth_data(self, dtoken):
@@ -550,21 +527,15 @@ class IdentityService(object):
             for drole_ref in drole_refs:
                 drole = api.ROLE.get(drole_ref.role_id)
                 ts.append(Role(drole_ref.role_id, drole.name,
-                    None, drole_ref.tenant_id))
+                    drole.desc, None, drole_ref.tenant_id))
         drole_refs = api.ROLE.ref_get_all_global_roles(duser.id)
         for drole_ref in drole_refs:
             drole = api.ROLE.get(drole_ref.role_id)
             ts.append(Role(drole_ref.role_id, drole.name,
-                None, drole_ref.tenant_id))
+                drole.desc, None, drole_ref.tenant_id))
 
-        # Also get the user's tenant's name
-        tenant_name = None
-        if duser.tenant_id:
-            utenant = api.TENANT.get(duser.tenant_id)
-            tenant_name = utenant.name
-
-        user = auth.User(duser.id, duser.name, duser.tenant_id,
-            tenant_name, Roles(ts, []))
+        user = auth.User(duser.id, duser.name, None,
+            None, Roles(ts, []))
 
         return auth.ValidateData(token, user)
 
@@ -625,9 +596,6 @@ class IdentityService(object):
         if not user.enabled:
             raise fault.UserDisabledFault("User %s has been disabled!"
                 % user.id)
-
-        if user.tenant_id:
-            self.__validate_tenant_by_id(user.tenant_id)
 
         if token.tenant_id:
             self.__validate_tenant_by_id(token.tenant_id)

@@ -33,7 +33,7 @@ import webob
 from keystone import server
 import keystone.backends.sqlalchemy as db
 import keystone.backends.api as db_api
-
+import keystone.backends.models as models
 logger = logging.getLogger('test.unit.base')
 
 
@@ -111,16 +111,18 @@ class ServiceAPITest(unittest.TestCase):
         self.expires = dt.datetime.utcnow() + dt.timedelta(days=1)
         self.clear_all_data()
 
+        self.tenants = []
         # Create all our base tenants
         for tenant in self.tenant_fixtures:
-            self.fixture_create_tenant(**tenant)
+            tenant = self.fixture_create_tenant(**tenant)
+            self.tenants.append(tenant)
 
         # Create the user we will authenticate with
         self.auth_user = self.fixture_create_user(**self.auth_user_attrs)
         self.auth_token = self.fixture_create_token(
             id=self.auth_token_id,
             user_id=self.auth_user['id'],
-            tenant_id=self.auth_user['tenant_id'],
+            tenant_id=tenant['id'],
             expires=self.expires,
         )
 
@@ -175,13 +177,20 @@ class ServiceAPITest(unittest.TestCase):
         """
         values = kwargs.copy()
         tenant_name = values.get('tenant_name')
+        user = db_api.USER.create(values)
         if tenant_name:
-            if not db_api.TENANT.get_by_name(tenant_name):
+            tenant = db_api.TENANT.get_by_name(tenant_name)
+            if not tenant:
                 tenant = db_api.TENANT.create({'name': tenant_name,
                                       'enabled': True,
                                       'desc': tenant_name})
-                values['tenant_id'] = tenant.id
-        user = db_api.USER.create(values)
+            db_api.ROLE.create({"name": "Member"})
+            self.role = db_api.ROLE.get_by_name("Member")
+            drole_ref = models.UserRoleAssociation()
+            drole_ref.user_id = user.id
+            drole_ref.role_id = self.role.id
+            drole_ref.tenant_id = tenant.id
+            db_api.USER.user_role_add(drole_ref)
         logger.debug("Created user fixture %s", user.id)
         return user
 

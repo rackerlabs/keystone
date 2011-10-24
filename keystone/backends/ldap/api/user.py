@@ -1,4 +1,3 @@
-import ldap
 import ldap.filter
 import uuid
 
@@ -27,9 +26,6 @@ class UserAPI(BaseLdapAPI, BaseUserAPI):
 
     def _ldap_res_to_model(self, res):
         obj = super(UserAPI, self)._ldap_res_to_model(res)
-        tenants = self.api.tenant.get_user_tenants(obj.id, False)
-        if len(tenants) > 0:
-            obj.tenant_id = tenants[0].id
         return obj
 
     def get_by_name(self, name, filter=None):
@@ -82,15 +78,9 @@ class UserAPI(BaseLdapAPI, BaseUserAPI):
         return self.api.role.ref_get_all_tenant_roles(user_id, tenant_id)
 
     def get_by_tenant(self, id, tenant_id):
-        user_dn = self._id_to_dn(id)
         user = self.get(id)
-        tenant = self.api.tenant._ldap_get(tenant_id,
-                                           '(member=%s)' % (user_dn,))
-        if tenant is not None:
+        if self.api.role.ref_get_all_tenant_roles(id, tenant_id):
             return user
-        else:
-            if self.api.role.ref_get_all_tenant_roles(id, tenant_id):
-                return user
         return None
 
     def delete_tenant_user(self, id, tenant_id):

@@ -46,14 +46,12 @@ class TenantAPI(BaseTenantAPI):
         tenant = aliased(models.Tenant)
         q1 = session.query(tenant).join((ura, ura.tenant_id == tenant.id)).\
             filter(ura.user_id == user.id)
-        q2 = session.query(tenant).filter(tenant.id == user.tenant_id)
-        q3 = q1.union(q2)
         if marker:
-            return q3.filter("tenant.id>:marker").params(\
+            return q1.filter("tenant.id>:marker").params(\
                     marker='%s' % marker).order_by(\
                     tenant.id.desc()).limit(limit).all()
         else:
-            return q3.order_by(tenant.id.desc()).limit(limit).all()
+            return q1.order_by(tenant.id.desc()).limit(limit).all()
 
     def tenants_for_user_get_page_markers(self, user, marker, limit,
             session=None):
@@ -63,20 +61,18 @@ class TenantAPI(BaseTenantAPI):
         tenant = aliased(models.Tenant)
         q1 = session.query(tenant).join((ura, ura.tenant_id == tenant.id)).\
             filter(ura.user_id == user.id)
-        q2 = session.query(tenant).filter(tenant.id == user.tenant_id)
-        q3 = q1.union(q2)
 
-        first = q3.order_by(\
+        first = q1.order_by(\
                             tenant.id).first()
-        last = q3.order_by(\
+        last = q1.order_by(\
                             tenant.id.desc()).first()
         if first is None:
             return (None, None)
         if marker is None:
             marker = first.id
-        next_page = q3.filter(tenant.id > marker).order_by(\
+        next_page = q1.filter(tenant.id > marker).order_by(\
                         tenant.id).limit(limit).all()
-        prev_page = q3.filter(tenant.id > marker).order_by(\
+        prev_page = q1.filter(tenant.id > marker).order_by(\
                         tenant.id.desc()).limit(int(limit)).all()
         if len(next_page) == 0:
             next_page = last
@@ -158,9 +154,6 @@ class TenantAPI(BaseTenantAPI):
             session = get_session()
         a_user = session.query(models.UserRoleAssociation).filter_by(\
             tenant_id=id).first()
-        if a_user != None:
-            return False
-        a_user = session.query(models.User).filter_by(tenant_id=id).first()
         if a_user != None:
             return False
         return True

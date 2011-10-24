@@ -136,7 +136,6 @@ class User(Base, KeystoneBase):
     password = Column(String(255))
     email = Column(String(255))
     enabled = Column(Integer)
-    tenant_id = Column(Integer, ForeignKey('tenants.id'))
     roles = relationship(UserRoleAssociation, cascade="all")
     credentials = relationship('Credentials', backref='user', cascade="all")
 
