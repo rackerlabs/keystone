@@ -172,7 +172,7 @@ class BaseRoleAPI(object):
     def ref_get_all_global_roles(self, user_id):
         raise NotImplementedError
 
-    def ref_get_all_tenant_roles(self, user_id, tenant_id):
+    def ref_get_all_tenant_roles(self, user_id, tenant_id=None):
         raise NotImplementedError
 
     def ref_get(self, id):

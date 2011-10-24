@@ -25,11 +25,11 @@ class ValidateToken(common.FunctionalTestCase):
 
         self.tenant = self.create_tenant().json['tenant']
         self.user = self.create_user_with_known_password(
-            tenant_id=self.tenant['id']).json['user']
+            ).json['user']
         self.role = self.create_role().json['role']
         self.role_ref = self.grant_role_to_user(self.user['id'],
             self.role['id'], self.tenant['id'])
-        self.token = self.authenticate(self.user['name'],
+        self.token = self.authenticate(self.user['username'],
             self.user['password'], self.tenant['id']).json['access']['token']
 
     def test_validate_token_true(self):
@@ -90,8 +90,11 @@ class CheckToken(common.FunctionalTestCase):
         super(CheckToken, self).setUp(*args, **kwargs)
         self.tenant = self.create_tenant().json['tenant']
         self.user = self.create_user_with_known_password(
-            tenant_id=self.tenant['id']).json['user']
-        self.token = self.authenticate(self.user['name'],
+            ).json['user']
+        self.role = self.create_role().json['role']
+        self.grant_role_to_user(self.user['id'], self.role['id'],
+            self.tenant['id'])
+        self.token = self.authenticate(self.user['username'],
         self.user['password'], self.tenant['id']).json['access']['token']
 
     def test_validate_token_true(self):

@@ -179,8 +179,7 @@ class DeleteServiceTest(ServicesTest):
             assert_status=201).json['role']
 
         tenant = self.create_tenant().json['tenant']
-        user = self.create_user(tenant_id=tenant['id']).json['user']
-
+        user = self.create_user().json['user']
         self.grant_role_to_user(user['id'], role['id'], tenant['id'])
         self.create_endpoint_template(name=self.service['name'],
             type=self.service['type'])
