@@ -128,12 +128,6 @@ class UserAPI(BaseUserAPI):
     def get_by_tenant(self, id, tenant_id, session=None):
         if not session:
             session = get_session()
-        # Most common use case: user lives in tenant
-        user = session.query(models.User).\
-                        filter_by(id=id, tenant_id=tenant_id).first()
-        if user:
-            return user
-
         # Find user through grants to this tenant
         result = session.query(models.UserRoleAssociation).\
                          filter_by(tenant_id=tenant_id, user_id=id).first()
@@ -229,7 +223,7 @@ class UserAPI(BaseUserAPI):
     def users_get_by_tenant_get_page(self, tenant_id, role_id, marker, limit,
             session=None):
         # This is broken.  If a user has more than one role per project
-        # shit hits the fan because we're limiting the wrong model.
+        # it doesnt work because we're limiting the wrong model.
         # Also the user lookup is nasty and potentially injectiable.
         if not session:
             session = get_session()

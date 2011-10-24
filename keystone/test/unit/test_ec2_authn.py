@@ -37,7 +37,7 @@ class EC2AuthnMethods(base.ServiceAPITest):
         secret = "345fgi.secret"
         kwargs = {
                   "user_name": self.auth_user['name'],
-                  "tenant_id": self.auth_user['tenant_id'],
+                  "tenant_id": self.tenants[0]['id'],
                   "type": "EC2",
                   "key": access,
                   "secret": secret,
@@ -69,13 +69,19 @@ class EC2AuthnMethods(base.ServiceAPITest):
 
         expected = {
             u'access': {
+                u'serviceCatalog': [],
                 u'token': {
                     u'id': self.auth_token_id,
-                    u'expires': self.expires.strftime("%Y-%m-%dT%H:%M:%S.%f")},
+                    u'expires': self.expires.strftime("%Y-%m-%dT%H:%M:%S.%f"),
+                    u'tenant': {u'id': unicode(self.tenants[0]['id']),
+                                u'name': unicode(self.tenants[0]['name'])}},
                 u'user': {
                     u'id': unicode(self.auth_user['id']),
-                    u'name': self.auth_user['name'],
-                    u'roles': []}}}
+                    u'name': unicode(self.auth_user['name']),
+                    u'roles': [{u'id': unicode(self.role['id']),
+                                   u'name': u'Member',
+                                   u'tenantId': unicode(self.tenants[0]['id'])
+                                }]}}}
 
         self.assert_dict_equal(expected, json.loads(self.res.body))
         self.status_ok()

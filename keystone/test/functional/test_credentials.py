@@ -13,7 +13,8 @@ class TestGetCredentials(common.FunctionalTestCase):
     def test_get_user_credentials(self):
         password_credentials = self.fetch_user_credentials(
             self.user['id']).json['credentials'][0]['passwordCredentials']
-        self.assertEquals(password_credentials['username'],  self.user['name'])
+        self.assertEquals(
+            password_credentials['username'],  self.user['username'])
 
     def test_get_user_credentials_xml(self):
         r = self.fetch_user_credentials(self.user['id'],
@@ -23,7 +24,7 @@ class TestGetCredentials(common.FunctionalTestCase):
         password_credentials =\
             r.xml.find('{%s}passwordCredentials' % self.xmlns)
         self.assertEqual(
-            password_credentials.get('username'), self.user['name'])
+            password_credentials.get('username'), self.user['username'])
 
     def test_get_user_credentials_using_expired_token(self):
         self.admin_token = self.expired_admin_token
@@ -35,7 +36,7 @@ class TestGetCredentials(common.FunctionalTestCase):
 
     def test_get_user_credentials_using_disabled_token(self):
         self.admin_token = self.disabled_admin_token
-        self.fetch_user_credentials(self.user['name'], assert_status=403)
+        self.fetch_user_credentials(self.user['username'], assert_status=403)
 
     def test_get_user_credentials_using_missing_token(self):
         self.admin_token = ''
@@ -57,7 +58,8 @@ class TestGetPasswordCredentials(common.FunctionalTestCase):
     def test_get_user_credentials(self):
         password_credentials = self.fetch_password_credentials(
             self.user['id']).json['passwordCredentials']
-        self.assertEquals(password_credentials['username'],  self.user['name'])
+        self.assertEquals(password_credentials['username'],
+                          self.user['username'])
 
     def test_get_user_credentials_xml(self):
         r = self.fetch_password_credentials(self.user['id'],
@@ -65,7 +67,7 @@ class TestGetPasswordCredentials(common.FunctionalTestCase):
             'Accept': 'application/xml'})
         password_credentials = r.xml
         self.assertEqual(
-            password_credentials.get('username'), self.user['name'])
+            password_credentials.get('username'), self.user['username'])
 
     def test_get_user_credentials_using_expired_token(self):
         self.admin_token = self.expired_admin_token
@@ -77,7 +79,8 @@ class TestGetPasswordCredentials(common.FunctionalTestCase):
 
     def test_get_user_credentials_using_disabled_token(self):
         self.admin_token = self.disabled_admin_token
-        self.fetch_password_credentials(self.user['name'], assert_status=403)
+        self.fetch_password_credentials(
+            self.user['username'], assert_status=403)
 
     def test_get_user_credentials_using_missing_token(self):
         self.admin_token = ''
@@ -101,35 +104,40 @@ class TestCreatePasswordCredentials(common.FunctionalTestCase):
 
     def test_create_password_credentials(self):
         self.create_password_credentials(
-            self.user['id'], self.user['name'],
+            self.user['id'], self.user['username'],
             assert_status=201)
 
     def test_create_password_credentials_xml(self):
         data = ('<?xml version="1.0" encoding="UTF-8"?> '
             '<passwordCredentials xmlns="%s"'
             ' username="%s" password="%s"/>') % (
-                self.xmlns, self.user['name'], 'passw0rd')
+                self.xmlns, self.user['username'], 'passw0rd')
         self.post_credentials(self.user['id'], as_xml=data, assert_status=201)
 
     def test_create_password_credentials_twice(self):
-        self.create_password_credentials(self.user['id'], self.user['name'],
+        self.create_password_credentials(
+            self.user['id'], self.user['username'],
             assert_status=201)
-        self.create_password_credentials(self.user['id'], self.user['name'],
+        self.create_password_credentials(
+            self.user['id'], self.user['username'],
             assert_status=400)
 
     def test_create_password_credentials_disabled_token(self):
         self.admin_token = self.disabled_admin_token
-        self.create_password_credentials(self.user['id'], self.user['name'],
+        self.create_password_credentials(
+            self.user['id'], self.user['username'],
             assert_status=403)
 
     def test_create_password_credentials_missing_token(self):
         self.admin_token = ''
-        self.create_password_credentials(self.user['id'], self.user['name'],
+        self.create_password_credentials(
+            self.user['id'], self.user['username'],
             assert_status=401)
 
     def test_create_password_credentials_invalid_token(self):
         self.admin_token = common.unique_str()
-        self.create_password_credentials(self.user['id'], self.user['name'],
+        self.create_password_credentials(
+            self.user['id'], self.user['username'],
             assert_status=401)
 
 
@@ -142,30 +150,34 @@ class TestUpdatePasswordCredentials(common.FunctionalTestCase):
         self.user = self.create_user(user_password=password).json['user']
 
     def test_update_password_credentials(self):
-        self.update_password_credentials(self.user['id'], self.user['name'],
+        self.update_password_credentials(
+            self.user['id'], self.user['username'],
             assert_status=200)
 
     def test_update_password_credentials_xml(self):
         data = ('<?xml version="1.0" encoding="UTF-8"?> '
             '<passwordCredentials xmlns="%s"'
             ' username="%s" password="%s"/>') % (
-                self.xmlns, self.user['name'], 'passw0rd')
+                self.xmlns, self.user['username'], 'passw0rd')
         self.post_credentials_by_type(self.user['id'], 'passwordCredentials',
             as_xml=data, assert_status=200)
 
     def test_update_password_credentials_disabled_token(self):
         self.admin_token = self.disabled_admin_token
-        self.update_password_credentials(self.user['id'], self.user['name'],
+        self.update_password_credentials(
+            self.user['id'], self.user['username'],
             assert_status=403)
 
     def test_update_password_credentials_missing_token(self):
         self.admin_token = ''
-        self.update_password_credentials(self.user['id'], self.user['name'],
+        self.update_password_credentials(
+            self.user['id'], self.user['username'],
             assert_status=401)
 
     def test_update_password_credentials_invalid_token(self):
         self.admin_token = common.unique_str()
-        self.update_password_credentials(self.user['id'], self.user['name'],
+        self.update_password_credentials(
+            self.user['id'], self.user['username'],
             assert_status=401)
 
 
@@ -205,13 +217,16 @@ class TestAuthentication(common.FunctionalTestCase):
         self.user = self.create_user(user_password=password).json['user']
 
     def test_authentication_after_password_change(self):
-        self.authenticate(self.user['name'], self.user['password'],
-                    assert_status=200)
+        self.authenticate(
+            self.user['username'], self.user['password'],
+            assert_status=200)
         password = common.unique_str()
-        self.update_password_credentials(self.user['id'], self.user['name'],
+        self.update_password_credentials(
+            self.user['id'], self.user['username'],
             password=password, assert_status=200)
-        self.authenticate(self.user['name'], password,
-                    assert_status=200)
+        self.authenticate(
+            self.user['username'], password,
+            assert_status=200)
 
 if __name__ == '__main__':
     unittest.main()

@@ -129,10 +129,14 @@ class GetTenantsTest(TenantTest):
 
     def test_get_tenants_using_user_token(self):
         tenant = self.create_tenant().json['tenant']
-        user = self.create_user_with_known_password(tenant_id=tenant['id']).\
+        user = self.create_user_with_known_password().\
             json['user']
-        token = self.authenticate(user['name'], user['password'],
-            tenant['id']).json['access']['token']
+        role_id = common.unique_str()
+        role = self.create_role(role_id,
+            assert_status=201).json['role']
+        self.grant_role_to_user(user['id'], role['id'], tenant['id'])
+        token = self.authenticate(user['username'], user['password']
+            ).json['access']['token']
         self.service_token = token['id']
         tenants = self.service_request(method='GET', path='/tenants',
             assert_status=200).json['tenants']
@@ -141,9 +145,13 @@ class GetTenantsTest(TenantTest):
 
     def test_get_tenants_using_user_token_xml(self):
         tenant = self.create_tenant().json['tenant']
-        user = self.create_user_with_known_password(tenant_id=tenant['id']).\
+        user = self.create_user_with_known_password().\
             json['user']
-        token = self.authenticate(user['name'], user['password'],
+        role_id = common.unique_str()
+        role = self.create_role(role_id,
+            assert_status=201).json['role']
+        self.grant_role_to_user(user['id'], role['id'], tenant['id'])
+        token = self.authenticate(user['username'], user['password'],
             tenant['id']).json['access']['token']
         self.service_token = token['id']
 
@@ -197,7 +205,7 @@ class GetTenantUsersTest(TenantTest):
     def test_list_tenant_users(self):
         user = self.list_tenant_users(self.tenant['id'],
             assert_status=200).json['users'][0]
-        self.assertEquals(user['name'], self.user['name'])
+        self.assertEquals(user['username'], self.user['username'])
 
     def test_list_tenant_users_xml(self):
         r = self.list_tenant_users(self.tenant['id'],
@@ -206,7 +214,7 @@ class GetTenantUsersTest(TenantTest):
         self.assertEquals(r.xml.tag, '{%s}users' % self.xmlns)
         users = r.xml.findall('{%s}user' % self.xmlns)
         for user in users:
-            self.assertEqual(user.get('name'), self.user['name'])
+            self.assertEqual(user.get('username'), self.user['username'])
 
     def test_list_tenant_users_expired_token(self):
         self.admin_token = self.expired_admin_token
@@ -239,7 +247,7 @@ class GetTenantUsersByRoleTest(TenantTest):
     def test_list_tenant_users(self):
         user = self.list_tenant_users(self.tenant['id'],
             self.role['id'], assert_status=200).json['users'][0]
-        self.assertEquals(user['name'], self.user['name'])
+        self.assertEquals(user['username'], self.user['username'])
 
     def test_list_tenant_users_xml(self):
         r = self.list_tenant_users(self.tenant['id'],
@@ -248,7 +256,7 @@ class GetTenantUsersByRoleTest(TenantTest):
         self.assertEquals(r.xml.tag, '{%s}users' % self.xmlns)
         users = r.xml.findall('{%s}user' % self.xmlns)
         for user in users:
-            self.assertEqual(user.get('name'), self.user['name'])
+            self.assertEqual(user.get('username'), self.user['username'])
 
     def test_list_tenant_users_expired_token(self):
         self.admin_token = self.expired_admin_token

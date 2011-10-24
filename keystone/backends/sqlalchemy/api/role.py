@@ -91,11 +91,17 @@ class RoleAPI(BaseRoleAPI):
         return session.query(models.UserRoleAssociation).\
             filter_by(user_id=user_id).filter("tenant_id is null").all()
 
-    def ref_get_all_tenant_roles(self, user_id, tenant_id, session=None):
+    def ref_get_all_tenant_roles(self, user_id, tenant_id=None, session=None):
         if not session:
             session = get_session()
-        return session.query(models.UserRoleAssociation).\
-                filter_by(user_id=user_id).filter_by(tenant_id=tenant_id).all()
+        if tenant_id:
+            return session.query(models.UserRoleAssociation).\
+                    filter_by(user_id=user_id).\
+                    filter_by(tenant_id=tenant_id).all()
+        else:
+            return session.query(models.UserRoleAssociation).\
+                filter_by(user_id=user_id).\
+                filter("tenant_id is not null").all()
 
     def ref_get(self, id, session=None):
         if not session:
