@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//7GQ\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-24T14:26:36Z",
+      "side": 1,
+      "message": "Nice to see absolute paths here! (for a change lol)",
+      "revId": "6b06c9da02538009cfac086eee48ff2d11d3230f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//7FY\u003d",
+        "filename": "examples/echo/echo/echo.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-24T14:26:36Z",
+      "side": 1,
+      "message": "\"Un\"comment, I hope!\n\nOtherwise, that\u0027s some serious black-magic configuration ;)",
+      "revId": "6b06c9da02538009cfac086eee48ff2d11d3230f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//7Fs\u003d",
+        "filename": "examples/echo/echo_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-24T14:26:36Z",
+      "side": 1,
+      "message": "auth by tenantName (instead of tenantId) would provide an easier to understand (and more stable) example here.",
+      "revId": "6b06c9da02538009cfac086eee48ff2d11d3230f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//7Fo\u003d",
+        "filename": "examples/echo/echo_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-24T14:26:36Z",
+      "side": 1,
+      "message": "... so change this back, I guess, per comment above.",
+      "revId": "6b06c9da02538009cfac086eee48ff2d11d3230f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//7Gc\u003d",
+        "filename": "examples/ssl/README.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-24T14:26:36Z",
+      "side": 1,
+      "message": "This is awesome, but belongs in the admin documentation, not here.",
+      "revId": "6b06c9da02538009cfac086eee48ff2d11d3230f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//7Gw\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-24T14:26:36Z",
+      "side": 1,
+      "message": "Can this be written to call super start()? There\u0027s obviously overlap between the two.",
+      "revId": "6b06c9da02538009cfac086eee48ff2d11d3230f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//7Gs\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-24T14:26:36Z",
+      "side": 1,
+      "message": "Doc string should also differ from parent to reflect additional behavior.",
+      "revId": "6b06c9da02538009cfac086eee48ff2d11d3230f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//7Gk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-24T14:26:36Z",
+      "side": 1,
+      "message": "Explain \u0027why\u0027 or just remove this ;)",
+      "revId": "6b06c9da02538009cfac086eee48ff2d11d3230f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//7Gg\u003d",
+        "filename": "keystone/test/etc/sql.conf.template",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-10-24T14:26:36Z",
+      "side": 1,
+      "message": "This patch has no tests? Can we create an https.conf.template derived from this one?",
+      "revId": "6b06c9da02538009cfac086eee48ff2d11d3230f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
