@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//6WE\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-10-26T21:14:33Z",
+      "side": 1,
+      "message": "Do you like to group all of keystone certificate properties in a grouping like what we have for our backends?\nex: [keystone.ssl.certs]",
+      "revId": "5b32deda0fb2d13f56377cafb6baa350b06da86f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
