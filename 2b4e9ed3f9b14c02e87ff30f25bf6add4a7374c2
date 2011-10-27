@@ -1,0 +1,10 @@
+Verified+1: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: anotherjesse
+Code-Review+1: Brian Lamar <brian.lamar@rackspace.com>
+Code-Review+1: Justin Shepherd <jshepher@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 27 Oct 2011 19:48:53 +0000
+Reviewed-on: https://review.openstack.org/932
+Project: openstack/keystone
+Branch: refs/heads/master
