@@ -20,6 +20,18 @@ and aborts after the first test failure (a fail-fast behavior)::
 
     $ ./run_tests.sh
 
+Schema Migration Tests
+----------------------
+
+Schema migrations are tested using SQLAlchemy Migrate's built-in test
+runner::
+
+    $ python keystone/backends/sqlalchemy/migrate_repo/manage.py test --url=sqlite:///test_migrations.db --repository=keystone/backends/sqlalchemy/migrate_repo/
+
+This tests both forward and backward migrations, and should leave behind
+an empty sqlite database (``test_migrations.db``) that can be safely
+removed or simply ignored.
+
 Writing Tests
 =============
 
