@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//5kk\u003d",
+        "filename": "manage.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2011-10-31T19:29:02Z",
+      "side": 1,
+      "message": "I don\u0027t think you want this file... is this left over from the creation of the repo?  Generally, you will want to have a db_sync command in keystone-manage that migrates the schema based on the sql_connection, not a hardcoded SQLite database :)",
+      "revId": "f7f194e71ec2d3cf5000782c8eac50ceb6554961",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
