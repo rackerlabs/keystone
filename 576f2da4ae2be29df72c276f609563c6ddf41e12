@@ -1,0 +1,7 @@
+Verified+1: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 31 Oct 2011 13:58:07 +0000
+Reviewed-on: https://review.openstack.org/1211
+Project: openstack/keystone
+Branch: refs/heads/master
