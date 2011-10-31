@@ -1,0 +1,5 @@
+<capabilities xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSRBAC/v1.0">
+    <capability xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSRBAC/v1.0" id="43897" name="allocate-resource">
+        <description>Allocate a resource to a tenant.</description>
+    </capability>
+</capabilities>
