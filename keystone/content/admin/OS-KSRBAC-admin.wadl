@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (C) 2011 OpenStack LLC., All Rights Reserved -->
+<!--*******************************************************-->
+<!--         Import Common XML Entities                    -->
+<!--                                                       -->
+<!--     You can resolve the entites with xmllint          -->
+<!--                                                       -->
+<!--        xmllint -noent OS-KSRBAC-admin.wadl             -->
+<!--*******************************************************-->
+<!DOCTYPE application [
+<!ENTITY % common  SYSTEM "../common/common.ent">
+%common;
+]>
+
+<application xmlns="http://wadl.dev.java.net/2009/02"
+    xmlns:identity="http://docs.openstack.org/identity/api/v2.0"
+    xmlns:OS-KSRBAC="http://docs.openstack.org/identity/api/ext/OS-KSRBAC/v1.0"
+    xmlns:OS-KSADM="http://docs.openstack.org/identity/api/ext/OS-KSADM/v1.0"
+    xmlns:capi="http://docs.openstack.org/common/api/v1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
+    xsi:schemaLocation="http://docs.openstack.org/identity/api/v2.0 ../common/xsd/api.xsd
+        http://docs.openstack.org/common/api/v1.0 ../common/xsd/api-common.xsd
+        http://wadl.dev.java.net/2009/02 http://www.w3.org/Submission/wadl/wadl.xsd
+        http://docs.openstack.org/identity/api/ext/OS-KSRBAC/v1.0 ../common/xsd/OS-KSRBAC.xsd
+        http://docs.openstack.org/identity/api/ext/OS-KSADM/v1.0 ../common/xsd/OS-KSADM.xsd
+        ">
+
+    <grammars>
+        <include href="../common/xsd/api.xsd"/>
+        <include href="../common/xsd/api-common.xsd"/>
+        <include href="../common/xsd/OS-KSRBAC.xsd" />
+    </grammars>
+
+    <!--*******************************************************-->
+    <!--             All Resoruces                             -->
+    <!--*******************************************************-->
+
+    <!-- We should use SSL in production -->
+    <resources base="http://localhost:35357">
+        <resource id="version" path="v2.0">
+            <param name="X-Auth-Token" style="header" type="xsd:string" required="true">
+                <doc xml:lang="EN" title="Authentication Token Required">
+                    <p xmlns="http://www.w3.org/1999/xhtml">You need a valid admin token for access.</p>
+                </doc>
+            </param>
+
+            <resource id="capabilities" path="capabilities">
+                <method href="#listCapabilities"/>
+                <method href="#postCapability"/>
+
+                <resource id="capability" path="{capabilityId}">
+                    <param name="capabilityId" style="template" type="xsd:string"/>
+
+                    <method href="#getCapability"/>
+                    <method href="#putCapability"/>
+                    <method href="#deleteCapability"/>
+                </resource>
+            </resource>
+
+            <resource id="role-service-OS-KSADM" path="OS-KSADM">
+                <resource id="roles" path="roles">
+                    <resource id="roleId" path="{roleId}">
+                        <param name="roleId" style="template" type="xsd:string"/>
+
+                        <resource id="roleCapabilities" path="capabilities">
+                            <resource id="roleCapability" path="{capabilityId}">
+                                <param name="capabilityId" style="template" type="xsd:string"/>
+
+                                <method href="#addCapabilityToRole"/>
+                                <method href="#removeCapabilityFromRole"/>
+                            </resource>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resource>
+    </resources>
+
+    <!--*******************************************************-->
+    <!--               All Methods                             -->
+    <!--*******************************************************-->
+
+    <method name="GET" id="listCapabilities">
+        <doc xml:lang="EN" title="List Capabilities">
+            <p xmlns="http://www.w3.org/1999/xhtml">List all capabilities.</p>
+        </doc>
+        <response status="200 203">
+            <representation mediaType="application/xml" element="OS-KSRBAC:Capabilities">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="../common/samples/OS-KSRBAC-listcapabilities.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="../common/samples/OS-KSRBAC-listcapabilities.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    <method name="POST" id="postCapability">
+        <doc xml:lang="EN" title="Create Capability">
+            <p xmlns="http://www.w3.org/1999/xhtml">Create a new capability.</p>
+        </doc>
+        <request>
+            <representation mediaType="application/xml" element="OS-KSRBAC:Capability">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="../common/samples/OS-KSRBAC-createcapability.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="../common/samples/OS-KSRBAC-createcapability.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="201">
+            <representation mediaType="application/xml" element="OS-KSRBAC:Capability">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="../common/samples/OS-KSRBAC-getcapability.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="../common/samples/OS-KSRBAC-getcapability.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &postPutFaults;
+    </method>
+    <method name="GET" id="getCapability">
+        <doc xml:lang="EN" title="Get Capability">
+            <p xmlns="http://www.w3.org/1999/xhtml">Retrieve a specific capability, by ID.</p>
+        </doc>
+        <response status="200 203">
+            <representation mediaType="application/xml" element="OS-KSRBAC:Capability">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="../common/samples/OS-KSRBAC-getcapability.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="../common/samples/OS-KSRBAC-getcapability.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    <method name="PUT" id="putCapability">
+        <doc xml:lang="EN" title="Update Capability">
+            <p xmlns="http://www.w3.org/1999/xhtml">Update a specific capability, by ID.</p>
+        </doc>
+        <request>
+            <representation mediaType="application/xml" element="OS-KSRBAC:Capability">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="../common/samples/OS-KSRBAC-updatecapability.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="../common/samples/OS-KSRBAC-updatecapability.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="204" />
+        &commonFaults;
+        &postPutFaults;
+    </method>
+    <method name="DELETE" id="deleteCapability">
+        <doc xml:lang="EN" title="Delete Capability">
+            <p xmlns="http://www.w3.org/1999/xhtml">Delete a specific capability, by ID.</p>
+        </doc>
+        <response status="204" />
+        &commonFaults;
+        &getFaults;
+    </method>
+    <method name="PUT" id="addCapabalityToRole">
+        <doc xml:lang="EN" title="Add Capability to Role">
+            <p xmlns="http://www.w3.org/1999/xhtml">Grant a capability to users with the specified role.</p>
+        </doc>
+        <response status="201" />
+        &commonFaults;
+        &postPutFaults;
+    </method>
+    <method name="DELETE" id="removeCapabilityFromRole">
+        <doc xml:lang="EN" title="Remove Capability From Role">
+            <p xmlns="http://www.w3.org/1999/xhtml">Revoke a capability from users with the specified role.</p>
+        </doc>
+        <response status="204" />
+        &commonFaults;
+        &getFaults;
+    </method>
+</application>
