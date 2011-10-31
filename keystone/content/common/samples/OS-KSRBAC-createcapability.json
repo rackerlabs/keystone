@@ -1,0 +1,6 @@
+{
+    "capability": {
+        "name", "allocate-resource",
+        "description": "Allocate a resource to a tenant."
+    }
+}
