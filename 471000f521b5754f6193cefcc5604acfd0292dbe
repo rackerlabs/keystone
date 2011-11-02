@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//5N4\u003d",
+        "filename": "keystone/content/admin/OS-KSRBAC-admin.wadl",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-02T15:25:37Z",
+      "side": 1,
+      "message": "All the paths are not extension specific.Need to fix",
+      "revId": "471000f521b5754f6193cefcc5604acfd0292dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//5N0\u003d",
+        "filename": "keystone/content/admin/OS-KSRBAC-admin.wadl",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-02T15:25:37Z",
+      "side": 1,
+      "message": "Incorrect id.Name referred is wrong.",
+      "revId": "471000f521b5754f6193cefcc5604acfd0292dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//5Nw\u003d",
+        "filename": "keystone/content/common/xsd/OS-KSRBAC.xsd",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-02T15:25:37Z",
+      "side": 1,
+      "message": "Why is this referring RAX:KSGRP??",
+      "revId": "471000f521b5754f6193cefcc5604acfd0292dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//5Ns\u003d",
+        "filename": "keystone/content/common/xsd/OS-KSRBAC.xsd",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-02T15:25:37Z",
+      "side": 1,
+      "message": "No namespace mapped as RAX-KSRBAC?? XSD wont work",
+      "revId": "471000f521b5754f6193cefcc5604acfd0292dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//5No\u003d",
+        "filename": "keystone/content/common/xsd/OS-KSRBAC.xsd",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-02T15:25:37Z",
+      "side": 1,
+      "message": "Where are we referring right now??",
+      "revId": "471000f521b5754f6193cefcc5604acfd0292dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
