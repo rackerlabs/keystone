@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//5Dw\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-02T19:41:09Z",
+      "side": 1,
+      "message": "Same fix can apply to pylint.",
+      "revId": "700e2db3f9c5fb882c10e48738dda3cd6a0dde2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
