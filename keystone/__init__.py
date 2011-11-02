@@ -22,6 +22,8 @@ API_VERSION_DATE = "2011-11-19T00:00:00Z"
 RELEASE_VERSION = "2012.1"
 RELEASE_VERSION_FINAL = False  # becomes true at Release Candidate time
 
+def canonical_version():
+    return RELEASE_VERSION
 
 def version():
     if RELEASE_VERSION_FINAL:
