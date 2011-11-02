@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//5O0\u003d",
+        "filename": "keystone/backends/ldap/api/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-02T15:11:24Z",
+      "side": 1,
+      "message": "This can be done safely in one line as \"obj[k] \u003d v.get(0)\"",
+      "revId": "e3812f01ebaf72c9901499ed5cb2bc38a0d542e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//5OI\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1190,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-02T15:11:24Z",
+      "side": 1,
+      "message": "This message implies the requested contains a non-unique username, and doesn\u0027t reflect the condition being tested: the request didn\u0027t provide a username.",
+      "revId": "e3812f01ebaf72c9901499ed5cb2bc38a0d542e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//5OM\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1210,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-02T15:11:24Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "e3812f01ebaf72c9901499ed5cb2bc38a0d542e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//5OE\u003d",
+        "filename": "keystone/test/functional/test_credentials.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-02T15:11:24Z",
+      "side": 1,
+      "message": "Can you add a functional test that illustrates an entire use case with comments? e.g. Authn with old password, updating password, re-authn",
+      "revId": "e3812f01ebaf72c9901499ed5cb2bc38a0d542e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
