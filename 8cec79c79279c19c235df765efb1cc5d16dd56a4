@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACX//4t8\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-03T16:49:13Z",
+      "side": 1,
+      "message": "You\u0027re correct -- I thought this was in the service layer -- not in tests!",
+      "parentUuid": "AAAACX//4uM\u003d",
+      "revId": "8cec79c79279c19c235df765efb1cc5d16dd56a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACX//4uc\u003d",
         "filename": "keystone/test/functional/test_tenants.py",
         "patchSetId": 1
