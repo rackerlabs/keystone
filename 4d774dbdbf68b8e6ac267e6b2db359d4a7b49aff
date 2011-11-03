@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//4uo\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-03T16:19:25Z",
+      "side": 0,
+      "message": "Glad to see this fixed, but ... were there absolutely no tests for this call?! I don\u0027t understand how that could have made it to trunk.",
+      "revId": "4d774dbdbf68b8e6ac267e6b2db359d4a7b49aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
