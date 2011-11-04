@@ -141,7 +141,7 @@ class Middleware(object):
     def __init__(self, application):
         self.application = application
 
-    def process_request(self, req):
+    def process_request(self, _req):
         """
         Called on each request.
 
