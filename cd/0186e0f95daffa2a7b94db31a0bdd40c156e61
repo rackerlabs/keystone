@@ -1,0 +1,8 @@
+Verified+1: Jenkins
+Code-Review+2: anotherjesse
+Code-Review+1: Jason Cannavale <jason@cannavale.com>
+Submitted-by: Jenkins
+Submitted-at: Sun, 06 Nov 2011 00:11:29 +0000
+Reviewed-on: https://review.openstack.org/1332
+Project: openstack/keystone
+Branch: refs/heads/stable/diablo
