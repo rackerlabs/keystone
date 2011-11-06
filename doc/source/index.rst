@@ -47,6 +47,7 @@ Developer Docs
    :maxdepth: 1
 
    architecture
+   middleware
    community
 
 Outstanding Documentation Tasks
