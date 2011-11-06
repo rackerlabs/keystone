@@ -1,0 +1,9 @@
+Verified+1: Jenkins
+Code-Review+1: Joe Heck <heckj@mac.com>
+Code-Review+1: Vish Ishaya <vishvananda@gmail.com>
+Code-Review+2: anotherjesse
+Submitted-by: Jenkins
+Submitted-at: Sun, 06 Nov 2011 00:02:36 +0000
+Reviewed-on: https://review.openstack.org/1339
+Project: openstack/keystone
+Branch: refs/heads/stable/diablo
