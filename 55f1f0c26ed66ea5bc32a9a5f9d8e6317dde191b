@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//35k\u003d",
+        "filename": "keystone/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-07T18:03:45Z",
+      "side": 1,
+      "message": "This is how it was set in the diablo release.",
+      "revId": "55f1f0c26ed66ea5bc32a9a5f9d8e6317dde191b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
