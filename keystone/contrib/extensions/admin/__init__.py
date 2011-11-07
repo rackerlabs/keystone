@@ -16,16 +16,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License
 
+import ast
+import logging
+from keystone import utils
+from keystone.contrib.extensions import BaseExtensionConfigurer
+DEFAULT_EXTENSIONS = 'osksadm,oskscatalog'
+CONFIGURER = None
+CONFIG_EXTENSION_PROPERTY = 'extensions'
+EXTENSION_ADMIN_PREFIX = 'admin'
+class AdminExtensionConfigurer(BaseExtensionConfigurer):
+    def configure(self, mapper, options):
+        self.configure_extensions(CONFIG_EXTENSION_PROPERTY,
+                EXTENSION_ADMIN_PREFIX,
+                DEFAULT_EXTENSIONS, mapper, options)
 
-from keystone.contrib.extensions.admin.osksadm.extension_handler\
-    import ExtensionHandler as KSADMExtensionHandler
-from keystone.contrib.extensions.admin.oskscatalog.extension_handler\
-    import ExtensionHandler as KSCATALOGExtensionHandler
 
-
-def configure_extensions(mapper, options):
-    #TODO: Make extensions configurable.
-    ksadm_extenion_handler = KSADMExtensionHandler()
-    ksadm_extenion_handler.map_extension_methods(mapper, options)
-    kscatalog_extension_handler = KSCATALOGExtensionHandler()
-    kscatalog_extension_handler.map_extension_methods(mapper, options)
+def getExtensionconfigurer():
+    global CONFIGURER
+    if not CONFIGURER:
+        CONFIGURER = AdminExtensionConfigurer()
+    return CONFIGURER
