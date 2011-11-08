@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACX//3pM\u003d",
+        "filename": "keystone/backends/sqlalchemy/migrate_repo/versions/004_alter_users_table_for_role_based_tenants.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-08T16:10:07Z",
+      "side": 1,
+      "message": "I\u0027d like to see some community feedback on requiring a role named \"Member.\" Is this already documented somewhere?",
+      "revId": "e4dd4121850d053c3456b189ad4709f41e379583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//3pQ\u003d",
+        "filename": "keystone/backends/sqlalchemy/migrate_repo/versions/004_alter_users_table_for_role_based_tenants.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-08T16:10:07Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of rolling data + schema migrations into the same ball-- debugging a failed migration becomes a very delicate task.",
+      "revId": "e4dd4121850d053c3456b189ad4709f41e379583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
