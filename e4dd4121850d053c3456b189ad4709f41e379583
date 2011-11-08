@@ -69,6 +69,23 @@
       "revId": "e4dd4121850d053c3456b189ad4709f41e379583",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//3ok\u003d",
+        "filename": "keystone/test/functional/test_authentication.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-08T18:06:43Z",
+      "side": 1,
+      "message": "This looks unfinished. Also, no need to document how the code *was*.",
+      "revId": "e4dd4121850d053c3456b189ad4709f41e379583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
