@@ -1,0 +1,8 @@
+Verified+1: Jenkins
+Code-Review+2: Ziad Sawalha <ziad.sawalha@rackspace.com>
+Code-Review+1: Joe Heck <heckj@mac.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 07 Nov 2011 14:49:25 +0000
+Reviewed-on: https://review.openstack.org/1354
+Project: openstack/keystone
+Branch: refs/heads/stable/diablo
