@@ -31,7 +31,7 @@ class AdminExtensionConfigurer(BaseExtensionConfigurer):
                 DEFAULT_EXTENSIONS, mapper, options)
 
 
-def getExtensionconfigurer():
+def get_extension_configurer():
     global CONFIGURER
     if not CONFIGURER:
         CONFIGURER = AdminExtensionConfigurer()
