@@ -86,6 +86,24 @@
       "revId": "e4dd4121850d053c3456b189ad4709f41e379583",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//3gU\u003d",
+        "filename": "keystone/test/functional/test_authentication.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-08T19:44:32Z",
+      "side": 1,
+      "message": "The implementation of our legacy auth need to change,\nThis is a seperate bug to track it.\nhttps://bugs.launchpad.net/keystone/+bug/887739",
+      "parentUuid": "AAAACX//3ok\u003d",
+      "revId": "e4dd4121850d053c3456b189ad4709f41e379583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
