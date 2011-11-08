@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACX//3og\u003d",
+        "filename": "keystone/backends/sqlalchemy/migrate_repo/versions/004_alter_users_table_for_role_based_tenants.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-08T16:30:19Z",
+      "side": 1,
+      "message": "If some one wants to use a different name other then member.They could go ahead.All they need to do is to change the Role name on the migration script.No where code checks for a specific role.",
+      "parentUuid": "AAAACX//3pM\u003d",
+      "revId": "e4dd4121850d053c3456b189ad4709f41e379583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACX//3pQ\u003d",
         "filename": "keystone/backends/sqlalchemy/migrate_repo/versions/004_alter_users_table_for_role_based_tenants.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2011-11-08T16:10:07Z",
       "side": 1,
       "message": "I\u0027m not a fan of rolling data + schema migrations into the same ball-- debugging a failed migration becomes a very delicate task.",
+      "revId": "e4dd4121850d053c3456b189ad4709f41e379583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACX//3oo\u003d",
+        "filename": "keystone/backends/sqlalchemy/migrate_repo/versions/004_alter_users_table_for_role_based_tenants.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-08T16:30:19Z",
+      "side": 1,
+      "message": "This is one change that need to go together.\nSeperating them would leave the db in an inconsistent state between migrations.",
+      "parentUuid": "AAAACX//3pQ\u003d",
       "revId": "e4dd4121850d053c3456b189ad4709f41e379583",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
