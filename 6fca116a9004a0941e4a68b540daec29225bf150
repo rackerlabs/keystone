@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn///ow\u003d",
+        "filename": "doc/source/middleware.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-09T20:08:29Z",
+      "side": 1,
+      "message": "This file isn\u0027t really using RST syntax, and will render really ugly... I was planning on fixing it after it merged, but now that you have a chance to rebase ;)\n\nThese doc additions also need to be forward-ported to master, which would be easier if they were a discrete change.",
+      "revId": "6fca116a9004a0941e4a68b540daec29225bf150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn///os\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-09T20:08:29Z",
+      "side": 1,
+      "message": "5 space indent?",
+      "revId": "6fca116a9004a0941e4a68b540daec29225bf150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn///pA\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-09T20:08:29Z",
+      "side": 1,
+      "message": "again ^^",
+      "revId": "6fca116a9004a0941e4a68b540daec29225bf150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
