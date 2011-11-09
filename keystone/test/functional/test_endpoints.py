@@ -203,7 +203,7 @@ class UpdateEndpointTemplateTest(EndpointTemplatesTest):
         data = ('<?xml version="1.0" encoding="UTF-8"?> '
             '<endpointTemplate '
             'xmlns="http://docs.openstack.org'
-            '/identity/api/ext/OSKSCATALOG/v1.0" '
+            '/identity/api/ext/OS-KSCATALOG/v1.0" '
             'region="%s" name="%s" type="%s"'
             ' publicURL="%s" adminURL="%s"'
             ' internalURL="%s" enabled="%s" global="%s"/>') % (region,
@@ -355,7 +355,7 @@ class CreateEndpointRefsTest(EndpointTemplatesTest):
         data = ('<?xml version="1.0" encoding="UTF-8"?> '
             '<endpointTemplate '
             'xmlns="http://docs.openstack.org/identity'
-            '/api/ext/OSKSCATALOG/v1.0" '
+            '/api/ext/OS-KSCATALOG/v1.0" '
             'region="%s" name="%s"'
             ' type="%s" publicURL="%s" adminURL="%s" '
             'internalURL="%s" enabled="%s" global="%s"/>') % (
@@ -371,7 +371,7 @@ class CreateEndpointRefsTest(EndpointTemplatesTest):
         data = ('<?xml version="1.0" encoding="UTF-8"?> '
             '<endpointTemplate '
             'xmlns="http://docs.openstack.org/identity'
-            '/api/ext/OSKSCATALOG/v1.0" '
+            '/api/ext/OS-KSCATALOG/v1.0" '
             'region="%s" name="%s" type="%s" publicURL="%s" adminURL="%s" '
             'internalURL="%s" enabled="%s" global="%s"/>') % (
                 common.unique_str(), self.service['name'],
@@ -385,7 +385,7 @@ class CreateEndpointRefsTest(EndpointTemplatesTest):
         data = ('<?xml version="1.0" encoding="UTF-8"?> '
             '<endpointTemplate '
             'xmlns="http://docs.openstack.org'
-            '/identity/api/ext/OSKSCATALOG/v1.0" '
+            '/identity/api/ext/OS-KSCATALOG/v1.0" '
             'region="%s" name="%s" type="%s"  publicURL="%s" adminURL="%s" '
             'internalURL="%s" enabled="%s" global="%s"/>') % (
                 common.unique_str(),
@@ -400,7 +400,7 @@ class CreateEndpointRefsTest(EndpointTemplatesTest):
         data = ('<?xml version="1.0" encoding="UTF-8"?> '
             '<endpointTemplate '
             'xmlns="http://docs.openstack.org/'
-            'identity/api/ext/OSKSCATALOG/v1.0" '
+            'identity/api/ext/OS-KSCATALOG/v1.0" '
             'region="%s" name="%s" type="%s" publicURL="%s" adminURL="%s" '
             'internalURL="%s" enabled="%s" global="%s"/>') % (
                 common.unique_str(), self.service['name'],
