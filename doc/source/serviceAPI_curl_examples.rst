@@ -14,18 +14,41 @@
       License for the specific language governing permissions and limitations
       under the License.
 
-Curl Service API examples
-=========================
+===============================
+Service API Examples Using Curl
+===============================
 
-All examples assume default port usage (5000)
+The service API is defined to be a subset of the Admin API and, by
+default, runs on port 5000.
 
-Initial GET
-###########
+GET /
+=====
 
-Retrieves version, full API url, pdf doc link, and wadl link::
+This call is identical to that documented for the Admin API, except
+that it uses port 5000, instead of port 35357, by default::
 
-    $> curl http://0.0.0.0:5000
+    $ curl http://0.0.0.0:5000
 
 or::
 
-    $> curl http://0.0.0.0:5000/v2.0/
+    $ curl http://0.0.0.0:5000/v2.0/
+
+See the `Admin API Examples Using Curl`_ for more info.
+
+.. _`Admin API Examples Using Curl`: adminAPI_curl_examples.html
+
+GET /extensions
+===============
+
+This call is identical to that documented for the Admin API.
+
+POST /tokens
+============
+
+This call is identical to that documented for the Admin API.
+
+GET /tenants
+============
+
+This call is identical to that documented for the Admin API, but only
+applies to service tokens.
