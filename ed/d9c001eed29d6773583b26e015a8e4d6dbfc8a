@@ -1,0 +1,8 @@
+Verified+1: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Yogeshwar Srikrishnan <yoga80@yahoo.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 09 Nov 2011 18:44:26 +0000
+Reviewed-on: https://review.openstack.org/1434
+Project: openstack/keystone
+Branch: refs/heads/stable/diablo
