@@ -14,18 +14,25 @@
       License for the specific language governing permissions and limitations
       under the License.
 
-Curl Service API examples
+Service API Examples Using Curl
 =========================
 
-All examples assume default port usage (5000)
+GET /
+#####
 
-Initial GET
-###########
+This call is identical to that documented for the Admin API.
 
-Retrieves version, full API url, pdf doc link, and wadl link::
+GET /extensions
+###############
 
-    $> curl http://0.0.0.0:5000
+This call is identical to that documented for the Admin API.
 
-or::
+POST /tokens
+############
 
-    $> curl http://0.0.0.0:5000/v2.0/
+This call is identical to that documented for the Admin API.
+
+GET /tenants
+############
+
+This call is identical to that documented for the Admin API.
