@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn///+Q\u003d",
+        "filename": "doc/source/serviceAPI_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-09T00:34:29Z",
+      "side": 1,
+      "message": "Calls are not identical.You should change it.Check the code to understand how they behave.",
+      "revId": "451dd0c930f5f9833307c631fae6dc98df26dfd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
