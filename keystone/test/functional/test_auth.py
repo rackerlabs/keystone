@@ -121,9 +121,9 @@ class TestServiceAuthentication(common.FunctionalTestCase):
 
         # The token shouldn't be scoped to a tenant nor have roles just yet
         self.assertIsNone(unscoped['token'].get('tenant'))
+        self.assertIsNotNone(unscoped.get('user'))
         self.assertIsNotNone(unscoped['user'].get('roles'))
         self.assertEqual(len(unscoped['user']['roles']), 0)
-        self.assertIsNotNone(unscoped.get('user'))
         self.assertEqual(unscoped['user'].get('id'), self.user['id'])
         self.assertEqual(unscoped['user'].get('name'), self.user['name'])
 
