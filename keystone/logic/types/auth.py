@@ -308,14 +308,20 @@ class AuthData(object):
     """Authentation Information returned upon successful login."""
 
     url_kinds = ["internal", "public", "admin"]
+    url_service_kinds = ["public"]
 
-    def __init__(self, token, user, base_urls=None):
+    def __init__(self, token, user, base_urls=None, is_service_operation=None):
         self.token = token
         self.user = user
         self.base_urls = base_urls
+        self.is_service_operation = None
         self.d = {}
         if self.base_urls != None:
             self.__convert_baseurls_to_dict()
+        if is_service_operation:
+            self.url_kinds = AuthData.url_service_kinds
+        else:
+            self.url_kinds = AuthData.url_kinds
 
     def to_xml(self):
         dom = etree.Element("access",
@@ -351,7 +357,7 @@ class AuthData(object):
                     endpoint = etree.Element("endpoint")
                     if base_url.region:
                         endpoint.set("region", base_url.region)
-                    for url_kind in AuthData.url_kinds:
+                    for url_kind in self.url_kinds:
                         base_url_item = getattr(base_url, url_kind + "_url")
                         if base_url_item:
                             endpoint.set(url_kind + "URL", base_url_item.\
@@ -394,7 +400,7 @@ class AuthData(object):
                     endpoint = {}
                     if base_url.region:
                         endpoint["region"] = base_url.region
-                    for url_kind in AuthData.url_kinds:
+                    for url_kind in self.url_kinds:
                         base_url_item = getattr(base_url, url_kind + "_url")
                         if base_url_item:
                             endpoint[url_kind + "URL"] = base_url_item.\
