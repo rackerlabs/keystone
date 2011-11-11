@@ -8,9 +8,9 @@ from . import get_marker_limit_and_url
 class TenantController(wsgi.Controller):
     """Controller for Tenant related operations"""
 
-    def __init__(self, options, is_service_operation=None):
+    def __init__(self, options, is_admin_user=None):
         self.options = options
-        self.is_service_operation = is_service_operation
+        self.is_service_operation = is_admin_user
 
     @utils.wrap_error
     def create_tenant(self, req):

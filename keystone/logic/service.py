@@ -62,7 +62,8 @@ class IdentityService(object):
         return self._authenticate(
             validate, user.id, auth_request.tenant_id)
 
-    def authenticate_with_unscoped_token(self, auth_request):
+    def authenticate_with_unscoped_token(self,
+        auth_request):
         # Check auth_with_unscoped_token
         if not isinstance(auth_request, auth.AuthWithUnscopedToken):
             raise fault.BadRequestFault("Expecting auth_with_unscoped_token!")
@@ -82,8 +83,8 @@ class IdentityService(object):
         def validate(duser):
             # The user is already authenticated
             return True
-
-        return self._authenticate(validate, user.id, auth_request.tenant_id)
+        return self._authenticate(validate, user.id,
+                auth_request.tenant_id)
 
     def authenticate_ec2(self, credentials):
         # Check credentials
@@ -108,10 +109,11 @@ class IdentityService(object):
                 signature = signer.generate(credentials)
                 return signature == credentials.signature
             return False
+        return self._authenticate(validate, creds.user_id,
+            creds.tenant_id)
 
-        return self._authenticate(validate, creds.user_id, creds.tenant_id)
-
-    def _authenticate(self, validate, user_id, tenant_id=None):
+    def _authenticate(self, validate, user_id,
+        tenant_id=None):
         if tenant_id:
             duser = api.USER.get_by_tenant(user_id, tenant_id)
             if duser == None:
@@ -141,7 +143,6 @@ class IdentityService(object):
             dtoken.tenant_id = tenant_id
             dtoken.expires = datetime.now() + timedelta(days=1)
             api.TOKEN.create(dtoken)
-
         return self.__get_auth_data(dtoken)
 
     def validate_token(self, admin_token, token_id, belongs_to=None):
@@ -531,8 +532,8 @@ class IdentityService(object):
                 drole.desc, None, drole_ref.tenant_id))
 
         user = auth.User(duser.id, duser.name, None, None, Roles(ts, []))
-
-        return auth.AuthData(token, user, endpoints)
+        return auth.AuthData(token, user, endpoints,
+            self.is_user_admin_or_service_admin(duser.id))
 
     def __get_validate_data(self, dtoken, duser):
         """return ValidateData object for a token/user pair"""
@@ -677,14 +678,19 @@ class IdentityService(object):
             else:
                 LOG.warn('No service admin role is defined.')
 
-        for role_ref in api.ROLE.ref_get_all_global_roles(user.id):
-            if (role_ref.role_id == backends.ADMIN_ROLE_ID or \
-                role_ref.role_id == backends.SERVICE_ADMIN_ROLE_ID) \
-                and role_ref.tenant_id is None:
-                return (token, user)
+        if self.is_user_admin_or_service_admin(user.id):
+            return (token, user)
 
         raise fault.UnauthorizedFault(
             "You are not authorized to make this call")
+
+    def is_user_admin_or_service_admin(self, user_id):
+        for role_ref in api.ROLE.ref_get_all_global_roles(user_id):
+            if (role_ref.role_id == backends.ADMIN_ROLE_ID or \
+                role_ref.role_id == backends.SERVICE_ADMIN_ROLE_ID) \
+                and role_ref.tenant_id is None:
+                return True
+        return False
 
     def create_role(self, admin_token, role):
         self.__validate_service_or_keystone_admin_token(admin_token)
