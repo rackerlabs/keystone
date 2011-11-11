@@ -38,27 +38,16 @@ LOG = logging.getLogger('keystone.logic.service')
 
 def validate_admin_token(token_id):
     (token, user) = validate_token(token_id)
-
-    if backends.ADMIN_ROLE_ID is None:
-        role = api.ROLE.get_by_name(backends.ADMIN_ROLE_NAME)
-        backends.ADMIN_ROLE_ID = role.id
-
-    for role_ref in api.ROLE.ref_get_all_global_roles(user.id):
-        if role_ref.role_id == backends.ADMIN_ROLE_ID and \
-                role_ref.tenant_id is None:
+    initialize_admin_role_identifiers()
+    if has_role({"api": api}, user, backends.ADMIN_ROLE_ID):
             return (token, user)
-
     raise fault.UnauthorizedFault(
         "You are not authorized to make this call")
 
 
 def validate_has_admin_role(token_id):
     (token, user) = validate_token(token_id)
-
-    if backends.ADMIN_ROLE_ID is None:
-        role = api.ROLE.get_by_name(backends.ADMIN_ROLE_NAME)
-        backends.ADMIN_ROLE_ID = role.id
-
+    initialize_admin_role_identifiers()
     if has_role({"api": api}, user, backends.ADMIN_ROLE_ID):
         return (token, user)
     else:
@@ -67,13 +56,7 @@ def validate_has_admin_role(token_id):
 
 def validate_has_service_role(token_id):
     (token, user) = validate_token(token_id)
-
-    if backends.SERVICE_ADMIN_ROLE_ID is None:
-        role = api.ROLE.get_by_name(backends.SERVICE_ADMIN_ROLE_NAME)
-        if role:
-            backends.SERVICE_ADMIN_ROLE_ID = role.id
-        else:
-            LOG.warn('No service admin role is defined.')
+    initialize_admin_role_identifiers()
     if has_role({"api": api}, user,
                 backends.SERVICE_ADMIN_ROLE_ID):
         return (token, user)
@@ -91,6 +74,31 @@ def validate_privileged_token(token_id):
 
     raise fault.UnauthorizedFault(
         "You are not authorized to make this call")
+
+
+def initialize_admin_role_identifiers():
+    if backends.SERVICE_ADMIN_ROLE_ID is None:
+        role = api.ROLE.get_by_name(backends.SERVICE_ADMIN_ROLE_NAME)
+        if role:
+            backends.SERVICE_ADMIN_ROLE_ID = role.id
+        else:
+            LOG.warn('No service admin role is defined.')
+    if backends.ADMIN_ROLE_ID is None:
+        role = api.ROLE.get_by_name(backends.ADMIN_ROLE_NAME)
+        if role:
+            backends.ADMIN_ROLE_ID = role.id
+        else:
+            LOG.warn('No service admin role is defined.')
+
+
+def is_user_admin_or_service_admin(user):
+    initialize_admin_role_identifiers()
+    if has_role({"api": api}, user,
+                backends.SERVICE_ADMIN_ROLE_ID):
+        return True
+    if has_role({"api": api}, user, backends.ADMIN_ROLE_ID):
+        return True
+    return False
 
 
 def has_role(env, user, role):
@@ -174,10 +182,9 @@ def get_auth_data(dtoken):
         drole = api.ROLE.get(drole_ref.role_id)
         ts.append(Role(drole_ref.role_id, drole.name,
             drole.desc, None, drole_ref.tenant_id))
-
     user = auth.User(duser.id, duser.name, None, None, Roles(ts, []))
-
-    return auth.AuthData(token, user, endpoints)
+    return auth.AuthData(token, user, endpoints,
+        is_user_admin_or_service_admin(duser))
 
 
 def get_validate_data(dtoken, duser):
@@ -320,7 +327,6 @@ class IdentityService(object):
         def validate(duser):
             # The user is already authenticated
             return True
-
         return IdentityService._authenticate(validate, user.id,
                                              auth_request.tenant_id)
 
@@ -348,7 +354,6 @@ class IdentityService(object):
                 signature = signer.generate(credentials)
                 return signature == credentials.signature
             return False
-
         return IdentityService._authenticate(validate, creds.user_id,
                                              creds.tenant_id)
 
@@ -383,7 +388,6 @@ class IdentityService(object):
             dtoken.tenant_id = tenant_id
             dtoken.expires = datetime.now() + timedelta(days=1)
             api.TOKEN.create(dtoken)
-
         return get_auth_data(dtoken)
 
     @staticmethod
