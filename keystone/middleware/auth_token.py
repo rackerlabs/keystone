@@ -63,11 +63,34 @@ What we add to the request for use by the OpenStack service
 HTTP_X_AUTHORIZATION
     the client identity being passed in
 
+HTTP_X_IDENTITY_STATUS
+    'Confirmed' or 'Invalid'
+
+HTTP_X_TENANT
+    Deprecated in favor of HTTP_X_TENANT_NAME and HTTP_X_TENANT_ID
+    Keystone-assigned unique identifier, deprecated
+
+HTTP_X_TENANT_NAME
+    Unique tenant identifier, string
+
+HTTP_X_TENANT_ID (backend-managed identifier, string)
+    Keystone-assigned unique identifier, string
+
+HTTP_X_USER (user name, string)
+    Unique user identifier, string
+
+HTTP_X_ROLES
+    Pending deprecation in favor of more granular X_CAPABILITY / X_CAPABILITIES
+    Comma delimited list of case-sensitive Roles
+
+HTTP_X_CAPABILITIES
+    Not yet implemented!
+    Comma-delimited list of capabilities authorized for the current request context
+
 """
 
 import eventlet
 from eventlet import wsgi
-import httplib
 import json
 import os
 from paste.deploy import loadapp
@@ -77,6 +100,7 @@ from webob.exc import Request, Response
 import keystone.tools.tracer  # @UnusedImport # module runs on import
 
 from keystone.common.bufferedhttp import http_connect_raw as http_connect
+
 
 PROTOCOL_NAME = "Token Authentication"
 
