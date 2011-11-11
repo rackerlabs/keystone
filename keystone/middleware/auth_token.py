@@ -129,7 +129,9 @@ class AuthProtocol(object):
         # and the OpenSTack service is running remotely
         self.service_protocol = conf.get('service_protocol', 'https')
         self.service_host = conf.get('service_host')
-        self.service_port = int(conf.get('service_port'))
+        service_port = conf.get('service_port')
+        if service_port:
+            self.service_port = int(service_port)
         self.service_url = '%s://%s:%s' % (self.service_protocol,
                                            self.service_host,
                                            self.service_port)
