@@ -36,7 +36,7 @@ class ServiceApi(wsgi.Router):
         db.configure_backends(options)
 
         # Token Operations
-        auth_controller = AuthController(options)
+        auth_controller = AuthController(options, True)
         mapper.connect("/tokens", controller=auth_controller,
                        action="authenticate",
                        conditions=dict(method=["POST"]))

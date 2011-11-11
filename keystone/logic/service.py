@@ -40,7 +40,7 @@ class IdentityService(object):
     #
     #  Token Operations
     #
-    def authenticate(self, auth_request):
+    def authenticate(self, auth_request, is_service_operation=None):
         # Check auth_with_password_credentials
         if not isinstance(auth_request, auth.AuthWithPasswordCredentials):
             raise fault.BadRequestFault(
@@ -60,9 +60,10 @@ class IdentityService(object):
             raise fault.UnauthorizedFault("Unauthorized")
 
         return self._authenticate(
-            validate, user.id, auth_request.tenant_id)
+            validate, user.id, auth_request.tenant_id, is_service_operation)
 
-    def authenticate_with_unscoped_token(self, auth_request):
+    def authenticate_with_unscoped_token(self,
+        auth_request, is_service_operation=None):
         # Check auth_with_unscoped_token
         if not isinstance(auth_request, auth.AuthWithUnscopedToken):
             raise fault.BadRequestFault("Expecting auth_with_unscoped_token!")
@@ -83,9 +84,10 @@ class IdentityService(object):
             # The user is already authenticated
             return True
 
-        return self._authenticate(validate, user.id, auth_request.tenant_id)
+        return self._authenticate(validate, user.id,
+                auth_request.tenant_id, is_service_operation)
 
-    def authenticate_ec2(self, credentials):
+    def authenticate_ec2(self, credentials, is_service_operation=None):
         # Check credentials
         if not isinstance(credentials, auth.Ec2Credentials):
             raise fault.BadRequestFault("Expecting Ec2 Credentials!")
@@ -109,9 +111,11 @@ class IdentityService(object):
                 return signature == credentials.signature
             return False
 
-        return self._authenticate(validate, creds.user_id, creds.tenant_id)
+        return self._authenticate(validate, creds.user_id,
+            creds.tenant_id, is_service_operation)
 
-    def _authenticate(self, validate, user_id, tenant_id=None):
+    def _authenticate(self, validate, user_id,
+        tenant_id=None, is_service_operation=None):
         if tenant_id:
             duser = api.USER.get_by_tenant(user_id, tenant_id)
             if duser == None:
@@ -142,7 +146,7 @@ class IdentityService(object):
             dtoken.expires = datetime.now() + timedelta(days=1)
             api.TOKEN.create(dtoken)
 
-        return self.__get_auth_data(dtoken)
+        return self.__get_auth_data(dtoken, is_service_operation)
 
     def validate_token(self, admin_token, token_id, belongs_to=None):
         self.__validate_service_or_keystone_admin_token(admin_token)
@@ -501,7 +505,7 @@ class IdentityService(object):
             api.USER.delete(user_id)
         return None
 
-    def __get_auth_data(self, dtoken):
+    def __get_auth_data(self, dtoken, is_service_operation=None):
         """return AuthData object for a token"""
         tenant = None
         endpoints = None
@@ -532,7 +536,7 @@ class IdentityService(object):
 
         user = auth.User(duser.id, duser.name, None, None, Roles(ts, []))
 
-        return auth.AuthData(token, user, endpoints)
+        return auth.AuthData(token, user, endpoints, is_service_operation)
 
     def __get_validate_data(self, dtoken, duser):
         """return ValidateData object for a token/user pair"""

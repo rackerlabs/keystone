@@ -230,7 +230,14 @@ class ApiTestCase(RestfulTestCase):
 
     def post_token(self, **kwargs):
         """POST /tokens"""
-        return self.service_request(method='POST', path='/tokens', **kwargs)
+        #Setting service call as the default behavior."""
+        if 'request_type' in kwargs and \
+            kwargs.pop('request_type') == 'admin':
+            return self.admin_request(method='POST',
+                path='/tokens', **kwargs)
+        else:
+            return self.service_request(method='POST',
+                path='/tokens', **kwargs)
 
     def get_token(self, token_id, **kwargs):
         """GET /tokens/{token_id}"""

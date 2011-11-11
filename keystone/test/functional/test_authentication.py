@@ -41,14 +41,23 @@ class AuthenticationTest(common.FunctionalTestCase):
             self.create_endpoint_for_tenant(self.tenant['id'],
                 self.endpoint_templates[x]['id'])
 
-    def test_authorize(self):
+    def test_authenticate(self):
         r = self.authenticate(self.user['name'], self.user['password'],
             self.tenant['id'], assert_status=200)
 
         self.assertIsNotNone(r.json['access']['token'])
-        self.assertIsNotNone(r.json['access']['serviceCatalog'])
+        service_catalog = r.json['access']['serviceCatalog']
+        self.assertIsNotNone(service_catalog)
+        for x in range(0, len(service_catalog)):
+            endpoints = r.json['access']['serviceCatalog'][x]['endpoints']
+            for y in range(0, len(endpoints)):
+                endpoint = endpoints[y]
+                for key in endpoint:
+                    #Checks whether internalURL and adminURL are not present.
+                    self.assertNotEquals(key, 'internalURL')
+                    self.assertNotEquals(key, 'adminURL')
 
-    def test_authorize_xml(self):
+    def test_authenticate_xml(self):
         data = ('<?xml version="1.0" encoding="UTF-8"?> '
             '<auth xmlns="%s" tenantId="%s">'
             '<passwordCredentials username="%s" password="%s" '
@@ -60,8 +69,61 @@ class AuthenticationTest(common.FunctionalTestCase):
         self.assertEquals(r.xml.tag, '{%s}access' % self.xmlns)
         serviceCatalog = r.xml.find('{%s}serviceCatalog' % self.xmlns)
         self.assertIsNotNone(serviceCatalog)
+        services = serviceCatalog.findall('{%s}service' % self.xmlns)
+        self.assertIsNotNone(services)
+        for service in services:
+            endpoints = service.findall('{%s}endpoint' % self.xmlns)
+            self.assertIsNotNone(endpoints)
+            for endpoint in endpoints:
+                #Checks whether internalURL and adminURL are not present.
+                self.assertIsNone(endpoint.get('internalURL'))
+                self.assertIsNone(endpoint.get('adminURL'))
+        self.assertIsNotNone(serviceCatalog)
 
-    def test_authorize_legacy(self):
+    def test_authenticate_on_admin_api(self):
+        r = self.authenticate(self.user['name'], self.user['password'],
+            self.tenant['id'], assert_status=200, request_type='admin')
+
+        self.assertIsNotNone(r.json['access']['token'])
+        self.assertIsNotNone(r.json['access']['serviceCatalog'])
+        service_catalog = r.json['access']['serviceCatalog']
+        for x in range(0, len(service_catalog)):
+            endpoints = r.json['access']['serviceCatalog'][x]['endpoints']
+            is_admin_or_internal_url_present = None
+            for y in range(0, len(endpoints)):
+                endpoint = endpoints[y]
+                for key in endpoint:
+                    if key == 'internalURL' or key == 'adminURL':
+                        is_admin_or_internal_url_present = True
+            self.assertTrue(is_admin_or_internal_url_present,
+                            "Admin API does not return internal or admin URL")
+
+    def test_authenticate_xml_on_admin_api(self):
+        data = ('<?xml version="1.0" encoding="UTF-8"?> '
+            '<auth xmlns="%s" tenantId="%s">'
+            '<passwordCredentials username="%s" password="%s" '
+            '/> </auth>') % (
+            self.xmlns, self.tenant['id'],
+            self.user['name'], self.user['password'])
+        r = self.post_token(as_xml=data, assert_status=200,
+                request_type='admin')
+
+        self.assertEquals(r.xml.tag, '{%s}access' % self.xmlns)
+        serviceCatalog = r.xml.find('{%s}serviceCatalog' % self.xmlns)
+        self.assertIsNotNone(serviceCatalog)
+        services = serviceCatalog.findall('{%s}service' % self.xmlns)
+        self.assertIsNotNone(services)
+        is_admin_or_internal_url_present = None
+        for service in services:
+            endpoints = service.findall('{%s}endpoint' % self.xmlns)
+            self.assertIsNotNone(endpoints)
+            for endpoint in endpoints:
+                if endpoint.get('internalURL') or endpoint.get('adminURL'):
+                    is_admin_or_internal_url_present = True
+        self.assertTrue(is_admin_or_internal_url_present,
+            "Admin API does not return internal or admin URL")
+
+    def test_authenticate_legacy(self):
         r = self.service_request(version='1.0', assert_status=204, headers={
             "X-Auth-User": self.user['name'],
             "X-Auth-Key": self.user['password']})
@@ -70,12 +132,12 @@ class AuthenticationTest(common.FunctionalTestCase):
         for service in self.services.values():
             self.assertIsNotNone(r.getheader('x-' + service['name']))
 
-    def test_authorize_user_disabled(self):
+    def test_authenticate_user_disabled(self):
         self.disable_user(self.user['id'])
         self.authenticate(self.user['name'], self.user['password'],
             self.tenant['id'], assert_status=403)
 
-    def test_authorize_user_wrong(self):
+    def test_authenticate_user_wrong(self):
         data = {
             "auth": {
                 "passwordCredentials": {
@@ -84,7 +146,7 @@ class AuthenticationTest(common.FunctionalTestCase):
                     "tenantId": self.tenant['id']}}
         self.post_token(as_json=data, assert_status=400)
 
-    def test_authorize_user_wrong_xml(self):
+    def test_authenticate_user_wrong_xml(self):
         data = ('<?xml version="1.0" encoding="UTF-8"?> '
             '<passwordCredentials '
             'xmlns="http://docs.openstack.org/identity/api/v2.0" '

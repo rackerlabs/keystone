@@ -9,21 +9,23 @@ from . import get_marker_limit_and_url
 class AuthController(wsgi.Controller):
     """Controller for token related operations"""
 
-    def __init__(self, options):
+    def __init__(self, options, is_service_operation=None):
         self.options = options
+        self.is_service_operation = is_service_operation
 
     @utils.wrap_error
     def authenticate(self, req):
         try:
             auth_with_credentials = utils.get_normalized_request_content(
                 auth.AuthWithPasswordCredentials, req)
-            result = config.SERVICE.authenticate(auth_with_credentials)
+            result = config.SERVICE.authenticate(auth_with_credentials,
+                self.is_service_operation)
         except fault.BadRequestFault as e1:
             try:
                 unscoped = utils.get_normalized_request_content(
                     auth.AuthWithUnscopedToken, req)
                 result = config.SERVICE.authenticate_with_unscoped_token(
-                    unscoped)
+                    unscoped, self.is_service_operation)
             except fault.BadRequestFault as e2:
                 if e1.msg == e2.msg:
                     raise e1
@@ -36,7 +38,7 @@ class AuthController(wsgi.Controller):
     def authenticate_ec2(self, req):
         creds = utils.get_normalized_request_content(auth.Ec2Credentials, req)
         return utils.send_result(200, req,
-            config.SERVICE.authenticate_ec2(creds))
+            config.SERVICE.authenticate_ec2(creds, self.is_service_operation))
 
     def _validate_token(self, req, token_id):
         """Validates the token, and that it belongs to the specified tenant"""

@@ -42,6 +42,10 @@ class AdminApi(wsgi.Router):
         mapper.connect("/tokens", controller=auth_controller,
                        action="authenticate",
                        conditions=dict(method=["POST"]))
+        # Also adding missing ec2 auth in admin as well.
+        mapper.connect("/ec2tokens", controller=auth_controller,
+                       action="authenticate_ec2",
+                       conditions=dict(method=["POST"]))
         mapper.connect("/tokens/{token_id}", controller=auth_controller,
                         action="validate_token",
                         conditions=dict(method=["GET"]))
