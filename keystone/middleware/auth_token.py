@@ -341,7 +341,8 @@ class AuthProtocol(object):
 
         token_info = json.loads(data)
 
-        roles = [role['name'] for role in token_info["access"]["user"]["roles"]]
+        roles = [role['name'] for role in token_info[
+            "access"]["user"]["roles"]]
 
         # in diablo, there were two ways to get tenant data
         tenant = token_info['access']['token'].get('tenant')
