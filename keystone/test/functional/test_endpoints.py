@@ -42,6 +42,18 @@ class CreateEndpointTemplatesTest(EndpointTemplatesTest):
         self.assertIsNotNone(endpoint_template['name'], endpoint_template)
         self.assertIsNotNone(endpoint_template['type'], endpoint_template)
 
+    def test_create_endpoint_template_with_empty_name(self):
+        self.create_endpoint_template(
+            name=self.service['name'],
+            type='',
+            assert_status=400)
+
+    def test_create_endpoint_template_with_empty_type(self):
+        self.create_endpoint_template(
+            name='',
+            type=self.service['type'],
+            assert_status=400)
+
     def test_create_endpoint_template_xml(self):
         region = common.unique_str()
         public_url = common.unique_url()
@@ -191,6 +203,16 @@ class UpdateEndpointTemplateTest(EndpointTemplatesTest):
             name=self.service['name'], type=self.service['type'],
             assert_status=201)
 #       self.assertIsNotNone(r.json['endpointTemplate'].get('enabled'), r.json)
+
+    def test_update_endpoint_with_empty_name(self):
+        self.update_endpoint_template(self.endpoint_template['id'],
+            name='', type=self.service['type'],
+            assert_status=400)
+
+    def test_update_endpoint_with_empty_type(self):
+        self.update_endpoint_template(self.endpoint_template['id'],
+            name=self.service['name'], type='',
+            assert_status=400)
 
     def test_update_endpoint_xml(self):
         region = common.unique_str()
