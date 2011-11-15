@@ -114,3 +114,7 @@ class TestMiddleware(common.FunctionalTestCase):
         # This is there for legacy support
         header = "HTTP_X_TENANT: %s" % self.tenant['id']
         self.assertTrue(header in headers)
+
+
+if __name__ == '__main__':
+    unittest.main()
