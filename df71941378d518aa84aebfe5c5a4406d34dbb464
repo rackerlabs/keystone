@@ -50,6 +50,40 @@
       "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//+e4\u003d",
+        "filename": "keystone/routers/admin.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T00:37:40Z",
+      "side": 1,
+      "message": "This belongs in a different commit, and this comment is not appropriate.",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//+e0\u003d",
+        "filename": "keystone/routers/service.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T00:37:40Z",
+      "side": 1,
+      "message": "The problem with this approach is evident right here -- True *what*?",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
