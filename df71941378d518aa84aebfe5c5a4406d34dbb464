@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//+fQ\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T00:35:32Z",
+      "side": 1,
+      "message": "\u0027url_kinds\u0027 doesn\u0027t really make much sense; these are \u0027endpoint_types\u0027",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//+fM\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T00:35:32Z",
+      "side": 1,
+      "message": "Similar to above, this is a list of \u0027service_types\u0027?",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//+fI\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T00:35:32Z",
+      "side": 1,
+      "message": "Having a flag alter the produced structure feels very dirty.",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
