@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//+SM\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T18:34:55Z",
+      "side": 1,
+      "message": "This is just an issue of grammar, \u0027kind\u0027 is an adjective, and \u0027type\u0027 is a noun.",
+      "parentUuid": "AAAACn//+Xg\u003d",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//+fI\u003d",
         "filename": "keystone/logic/types/auth.py",
         "patchSetId": 3
@@ -137,6 +155,24 @@
       "side": 1,
       "message": "do u think passing the structure to\n self.__convert_baseurls_to_dict()\nie like\n self.__convert_baseurls_to_dict(url_kinds) would make it better?",
       "parentUuid": "AAAACn//+fI\u003d",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//+SE\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T18:34:55Z",
+      "side": 1,
+      "message": "How would that avoid the use of a flag here?",
+      "parentUuid": "AAAACn//+X4\u003d",
       "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +225,24 @@
       "side": 1,
       "message": "would auth_controller \u003d AuthController(options\u003doptions, is_service_operation\u003dTrue)\nmake u happy?",
       "parentUuid": "AAAACn//+e0\u003d",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//+SA\u003d",
+        "filename": "keystone/routers/service.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T18:34:55Z",
+      "side": 1,
+      "message": "That\u0027s better, but auth_controller \u003d ServiceAuthController(options) would be much cleaner",
+      "parentUuid": "AAAACn//+Xw\u003d",
       "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
