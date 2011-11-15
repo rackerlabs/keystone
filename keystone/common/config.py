@@ -30,6 +30,8 @@ from keystone.common.wsgi import add_console_handler
 
 DEFAULT_LOG_FORMAT = "%(asctime)s %(levelname)8s [%(name)s] %(message)s"
 DEFAULT_LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+DEFAULT_LOG_DIR = "/var/log/keystone"
+DEFAULT_LOG_FILE = "keystone.log"
 
 
 def parse_options(parser, cli_args=None):
@@ -162,10 +164,10 @@ def setup_logging(options, conf):
     log_date_format = options.get('log_date_format', DEFAULT_LOG_DATE_FORMAT)
     formatter = logging.Formatter(log_format, log_date_format)
 
-    logfile = options.get('log_file') or conf.get('log_file')
+    logfile = options.get('log_file', DEFAULT_LOG_FILE) or conf.get('log_file')
 
     if logfile:
-        logdir = options.get('log_dir') or conf.get('log_dir')
+        logdir = options.get('log_dir', DEFAULT_LOG_DIR) or conf.get('log_dir')
         if logdir:
             logfile = os.path.join(logdir, logfile)
         logfile = logging.FileHandler(logfile)
