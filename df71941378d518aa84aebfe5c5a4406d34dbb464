@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//+dw\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-15T16:24:31Z",
+      "side": 1,
+      "message": "Is this not the same variable that is already been used?",
+      "parentUuid": "AAAACn//+fQ\u003d",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//+fM\u003d",
         "filename": "keystone/logic/types/auth.py",
         "patchSetId": 3
