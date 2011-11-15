@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//+Xg\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-15T16:51:21Z",
+      "side": 1,
+      "message": "or better service_api_url_kinds and admin_api_url_kinds",
+      "parentUuid": "AAAACn//+YI\u003d",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//+fI\u003d",
         "filename": "keystone/logic/types/auth.py",
         "patchSetId": 3
