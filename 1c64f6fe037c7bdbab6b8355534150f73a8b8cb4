@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//+Rg\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T18:47:12Z",
+      "side": 1,
+      "message": "An appropriate try/except would be more user friendly here ;)",
+      "revId": "1c64f6fe037c7bdbab6b8355534150f73a8b8cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
