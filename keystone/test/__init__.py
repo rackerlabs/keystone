@@ -4,6 +4,8 @@ import subprocess
 import tempfile
 import time
 import unittest2 as unittest
+import cgitb
+cgitb.enable(format="text")
 
 from functional.common import HttpTestCase
 
@@ -31,12 +33,8 @@ def execute(cmd, raise_error=True):
     env['PATH'] = os.path.join(BASE_DIR, 'bin') + ':' + env['PATH']
     process = subprocess.Popen(cmd,
                                shell=True,
-                               stdin=subprocess.PIPE,
-                               stdout=subprocess.PIPE,
-                               stderr=subprocess.PIPE,
                                env=env)
     result = process.communicate()
-    (out, err) = result
     exitcode = process.returncode
     if process.returncode != 0 and raise_error:
         msg = "Command %(cmd)s did not succeed. Returned an exit "\
@@ -44,7 +42,7 @@ def execute(cmd, raise_error=True):
               "\n\nSTDOUT: %(out)s"\
               "\n\nSTDERR: %(err)s" % locals()
         raise RuntimeError(msg)
-    return exitcode, out, err
+    return exitcode, result
 
 
 class KeystoneTest(object):
@@ -113,15 +111,29 @@ class KeystoneTest(object):
             if '--with-progress' in sys.argv:
                 loader = unittest.TestLoader()
                 suite = loader.discover(TEST_DIR, top_level_dir=BASE_DIR)
-                result = unittest.TextTestRunner(verbosity=1).run(suite)
+                if '--verbose' in sys.argv:
+                    result = unittest.TextTestRunner(verbosity=2).run(suite)
+                else:
+                    result = unittest.TextTestRunner(verbosity=1).run(suite)
                 if not result.wasSuccessful():
                     raise RuntimeError("%s unresolved issues." %
                         (len(result.errors) + len(result.failures),))
             elif '--with-coverage' in sys.argv:
                 print "running coverage"
-                execute('coverage run %s discover -t %s -s %s' %
+                if '--verbose' in sys.argv:
+                    execute('coverage run %s discover -v -t %s -s %s' %
                         ('/usr/bin/unit2', BASE_DIR, TEST_DIR))
+                else:
+                    execute('coverage run %s discover -t %s -s %s' %
+                        ('/usr/bin/unit2', BASE_DIR, TEST_DIR))
+
             else:
-                execute('unit2 discover -f -t %s -s %s' % (BASE_DIR, TEST_DIR))
+                if '--verbose' in sys.argv:
+                    execute('unit2 discover -f -t %s -s %s' %
+                            (BASE_DIR, TEST_DIR))
+                else:
+                    
+                    execute('unit2 discover -v -f -t %s -s %s' %
+                            (BASE_DIR, TEST_DIR))
         finally:
             self.tearDown()
