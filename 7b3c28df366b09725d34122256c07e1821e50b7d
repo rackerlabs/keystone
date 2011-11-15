@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//+RI\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T19:01:44Z",
+      "side": 1,
+      "message": "PEP8",
+      "revId": "7b3c28df366b09725d34122256c07e1821e50b7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//+RA\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T19:01:44Z",
+      "side": 1,
+      "message": "PEP8",
+      "revId": "7b3c28df366b09725d34122256c07e1821e50b7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//+RE\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T19:01:44Z",
+      "side": 1,
+      "message": "Instead of repeating the same code twice with 3 characters added, can we build the command to be executed dynamically? Maintenance cost is skyrocketing in this function.",
+      "revId": "7b3c28df366b09725d34122256c07e1821e50b7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//+RQ\u003d",
+        "filename": "run_tests.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T19:01:44Z",
+      "side": 1,
+      "message": "This is a really cryptic chunk of code better handled externally by argparse or optparse",
+      "revId": "7b3c28df366b09725d34122256c07e1821e50b7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//+RU\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-15T19:01:44Z",
+      "side": 1,
+      "message": "How do you specify a test? What are the options?",
+      "revId": "7b3c28df366b09725d34122256c07e1821e50b7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
