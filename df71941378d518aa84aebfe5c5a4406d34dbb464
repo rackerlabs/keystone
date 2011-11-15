@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//+YM\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-15T16:41:40Z",
+      "side": 1,
+      "message": "Actually we are dealing with url types.Dont we?Out database stores them as three different URLS\npublic\nprivate and internal",
+      "parentUuid": "AAAACn//+dw\u003d",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//+fM\u003d",
         "filename": "keystone/logic/types/auth.py",
         "patchSetId": 3
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//+YI\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-15T16:41:40Z",
+      "side": 1,
+      "message": "probably service_url_kinds",
+      "parentUuid": "AAAACn//+fM\u003d",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//+fI\u003d",
         "filename": "keystone/logic/types/auth.py",
         "patchSetId": 3
@@ -65,6 +101,24 @@
       "writtenOn": "2011-11-15T00:35:32Z",
       "side": 1,
       "message": "Having a flag alter the produced structure feels very dirty.",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//+X4\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-15T16:41:40Z",
+      "side": 1,
+      "message": "do u think passing the structure to\n self.__convert_baseurls_to_dict()\nie like\n self.__convert_baseurls_to_dict(url_kinds) would make it better?",
+      "parentUuid": "AAAACn//+fI\u003d",
       "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +153,24 @@
       "writtenOn": "2011-11-15T00:37:40Z",
       "side": 1,
       "message": "The problem with this approach is evident right here -- True *what*?",
+      "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//+Xw\u003d",
+        "filename": "keystone/routers/service.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-15T16:41:40Z",
+      "side": 1,
+      "message": "would auth_controller \u003d AuthController(options\u003doptions, is_service_operation\u003dTrue)\nmake u happy?",
+      "parentUuid": "AAAACn//+e0\u003d",
       "revId": "df71941378d518aa84aebfe5c5a4406d34dbb464",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
