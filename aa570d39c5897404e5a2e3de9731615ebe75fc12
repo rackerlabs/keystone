@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//97k\u003d",
+        "filename": "MANIFEST.in",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-16T17:39:33Z",
+      "side": 1,
+      "message": "Nova \u0026 glance include tools/ (swift doesn\u0027t), but I don\u0027t really see a reason to include it, other than perhaps tools/pip-requires... thoughts?",
+      "revId": "aa570d39c5897404e5a2e3de9731615ebe75fc12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
