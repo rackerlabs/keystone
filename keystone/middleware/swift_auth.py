@@ -52,8 +52,17 @@ class AuthProtocol(object):
         keystone_admin_token = admin_token
         keystone_admin_group = Admin
 
-    This middleware handle ACL as well and allow Keystone groups to
-    map to swift ACL.
+    This maps tenants to account in Swift. The user who's able to give
+    ACL / Create Containers permision will be the same user as the account.
+
+    Example: If we have the account called hellocorp with a user
+    hellocorp that user will be admin on that account and can give ACL
+    to all other users for hellocorp.
+
+    If there is a user who has not the same name the account and if it
+    is inside the group (or roles in keystone lingua)
+    keystone_admin_group as specifed in the configuration variable
+    (Admin by default) it will be allowed to be an admin the account.
 
     :param app: The next WSGI app in the pipeline
     :param conf: The dict of configuration values
@@ -72,7 +81,7 @@ class AuthProtocol(object):
             if h.strip()]
 
     def __call__(self, environ, start_response):
-        self.logger.debug('Initialising keystone middleware')
+        self.logger.debug('Initialise keystone middleware')
 
         req = Request(environ)
         token = environ.get('HTTP_X_AUTH_TOKEN',
@@ -148,7 +157,8 @@ class AuthProtocol(object):
         identity_info = json.loads(data)
 
         try:
-            tenant = identity_info['access']['token']['tenant']['id']
+            tenant = (identity_info['access']['token']['tenant']['id'],
+                      identity_info['access']['token']['tenant']['name'])
             expires = self.convert_date(
                 identity_info['access']['token']['expires'])
             user = identity_info['access']['user']['name']
@@ -175,12 +185,19 @@ class AuthProtocol(object):
         except ValueError:
             return HTTPNotFound(request=req)
 
-        if account != '%s_%s' % (self.reseller_prefix, tenant):
+        if account != '%s_%s' % (self.reseller_prefix, tenant[0]):
             self.log.debug('tenant mismatch')
             return self.denied_response(req)
 
+        # If user is in admin group then make the owner of it.
         user_groups = env_identity.get('roles', [])
         if self.keystone_admin_group in user_groups:
+            req.environ['swift_owner'] = True
+            return None
+
+        # If user is of the same name of the tenant then make owner of it.
+        user = env_identity.get('user', '')
+        if user == tenant[1]:
             req.environ['swift_owner'] = True
             return None
 
