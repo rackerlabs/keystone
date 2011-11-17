@@ -32,6 +32,9 @@ class CreateRolesTest(RolesTest):
     def test_create_role(self):
         self.create_role(assert_status=201)
 
+    def test_create_role_using_blank_name(self):
+        self.create_role(role_name='', assert_status=400)
+
     def test_create_role_using_service_token(self):
         user = self.create_user_with_known_password().json['user']
         self.admin_token = self.authenticate(user['name'], user['password'])

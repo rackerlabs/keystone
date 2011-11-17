@@ -32,6 +32,9 @@ class CreateTenantTest(TenantTest):
     def test_create_tenant(self):
         self.create_tenant(assert_status=201)
 
+    def test_create_tenant_blank_name(self):
+        self.create_tenant(tenant_name='', assert_status=400)
+
     def test_create_tenant_xml(self):
         data = ('<?xml version="1.0" encoding="UTF-8"?> '
             '<tenant xmlns="http://docs.openstack.org/identity/api/v2.0" '
