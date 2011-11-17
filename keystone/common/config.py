@@ -165,7 +165,7 @@ def setup_logging(options, conf):
     formatter = logging.Formatter(log_format, log_date_format)
 
     # grab log_file and log_dir from config; set to defaults of not already defined
-    logfile = options.get('log_file') or conf.get('log_file' DEFAULT_LOG_FILE)
+    logfile = options.get('log_file') or conf.get('log_file', DEFAULT_LOG_FILE)
     logdir = options.get('log_dir') or conf.get('log_dir', DEFAULT_LOG_DIR)
 
     logfile = os.path.join(logdir, logfile)
