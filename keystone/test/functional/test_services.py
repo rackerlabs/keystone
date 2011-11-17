@@ -205,6 +205,12 @@ class CreateServiceTest(ServicesTest):
         self.admin_token = common.unique_str()
         self.create_service(assert_status=401)
 
+    def test_service_create_json_missing_name(self):
+        self.create_service(service_name='', assert_status=400)
+
+    def test_service_create_json_missing_type(self):
+        self.create_service(service_type='', assert_status=400)
+
 
 class DeleteServiceTest(ServicesTest):
     def setUp(self, *args, **kwargs):
