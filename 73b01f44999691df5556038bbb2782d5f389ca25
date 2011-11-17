@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//9nw\u003d",
+        "filename": "keystone/logic/types/fault.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-17T16:56:10Z",
+      "side": 1,
+      "message": "Not using utils as it causes circular reference.",
+      "revId": "73b01f44999691df5556038bbb2782d5f389ca25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
