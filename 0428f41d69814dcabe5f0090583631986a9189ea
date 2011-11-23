@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//8rM\u003d",
+        "filename": "keystone/backends/sqlalchemy/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-23T18:08:43Z",
+      "side": 1,
+      "message": "This is what I figured even if we define a column type as integer it is still allowed by sqlalchemy to have strings!\nThis allowed user_id to be stored as string regardless of its definition.Things would fail when we have LDAP and a regular DB like postgres.\nHowever this is present in other models like tokens where user_id is defined as Integer.So this all together should be a separate issue.",
+      "parentUuid": "AAAACn//8rU\u003d",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8uY\u003d",
         "filename": "keystone/logic/service.py",
         "patchSetId": 1
