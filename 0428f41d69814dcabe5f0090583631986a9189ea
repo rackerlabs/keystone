@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//8rs\u003d",
+        "filename": "keystone/backends/sqlalchemy/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-23T17:30:21Z",
+      "side": 1,
+      "message": "Ziad correct me if I am wrong?\nLDAP not yet supports Services.Services and bunch of other models except for Tenant\u0027, \u0027User\u0027, \u0027UserRoleAssociation\u0027, \u0027Role\u0027 would remain in sql.Since user belongs to LDAP it would have an id that is made of strings.When we attempt to store it in sql I think it would fail.",
+      "parentUuid": "AAAACn//8tE\u003d",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8uY\u003d",
         "filename": "keystone/logic/service.py",
         "patchSetId": 1
