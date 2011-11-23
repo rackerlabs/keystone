@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//8uY\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-23T15:51:12Z",
+      "side": 1,
+      "message": "In the modify call if some one is going to pass a different name and type, which is different then the actual name and type of the original endpointtemplate, the update would show success.However the service would have never got changed for the endpoint template.Should we altogether prevent updates of name and type which together identify a service?",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8uQ\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-23T15:51:12Z",
+      "side": 1,
+      "message": "is this a repetitive check?",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
