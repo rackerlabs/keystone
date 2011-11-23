@@ -102,6 +102,7 @@ class AuthProtocol(object):
         self.auth_location = "%s://%s:%s" % (self.auth_protocol,
                                              self.auth_host,
                                              self.auth_port)
+        self.auth_uri = conf.get('auth_uri', self.auth_location)
         LOG.debug("Authentication Service:%s", self.auth_location)
         # Credentials used to verify this component with the Auth service
         # since validating tokens is a privileged call
@@ -126,6 +127,7 @@ class AuthProtocol(object):
         self.auth_api_version = None
         self.auth_host = None
         self.auth_location = None
+        self.auth_uri = None
         self.auth_port = None
         self.auth_protocol = None
         self.service_host = None
@@ -188,8 +190,21 @@ class AuthProtocol(object):
                     #             like tenant and group info
                     self._decorate_request('X_AUTHORIZATION', "Proxy %s" %
                         claims['user'])
-                    self._decorate_request('X_TENANT', claims['tenant'])
-                    self._decorate_request('X_USER', claims['user'])
+
+
+                    self._decorate_request('X_TENANT_ID',
+                                        claims['tenant']['id'],)
+                    self._decorate_request('X_TENANT_NAME',
+                                        claims['tenant']['name'])
+
+                    self._decorate_request('X_USER_ID',
+                                        claims['user']['id'])
+                    self._decorate_request('X_USER_NAME',
+                                        claims['user']['name'])
+
+                    self._decorate_request('X_TENANT', claims['tenant']['id'])
+                    self._decorate_request('X_USER', claims['user']['id'])
+
                     if 'group' in claims:
                         self._decorate_request('X_GROUP', claims['group'])
                     if 'roles' in claims and len(claims['roles']) > 0:
@@ -242,7 +257,10 @@ class AuthProtocol(object):
 
     def _reject_request(self):
         """Redirect client to auth server"""
-        return HTTPUnauthorized()(self.env, self.start_response)
+        return HTTPUnauthorized("Authentication required",
+                    [("WWW-Authenticate",
+                      "Keystone uri='%s'" % self.auth_uri)])(self.env,
+                                                        self.start_response)
 
     def _reject_claims(self):
         """Client sent bad claims"""
@@ -317,15 +335,35 @@ class AuthProtocol(object):
         role_refs = token_info["access"]["user"]["roles"]
         if role_refs != None:
             for role_ref in role_refs:
-                roles.append(role_ref["roleId"])
+                roles.append(role_ref["Id"])
 
-        verified_claims = {'user': token_info['access']['user']['name'],
-                    'tenant': token_info['access']['user']['tenantId'],
-                    'roles': roles}
+        token_info = json.loads(data)
 
-        # TODO(Ziad): removed groups for now
-        #            ,'group': '%s/%s' % (first_group['id'],
-        #                                first_group['tenantId'])}
+        roles = [role['name'] for role in token_info[
+            "access"]["user"]["roles"]]
+
+        # in diablo, there were two ways to get tenant data
+        tenant = token_info['access']['token'].get('tenant')
+        if tenant:
+            # post diablo
+            tenant_id = tenant['id']
+            tenant_name = tenant['name']
+        else:
+            # diablo only
+            tenant_id = token_info['access']['user'].get('tenantId')
+            tenant_name = token_info['access']['user'].get('tenantName')
+
+        verified_claims = {
+            'user': {
+                'id': token_info['access']['user']['id'],
+                'name': token_info['access']['user']['name'],
+            },
+            'tenant': {
+                'id': tenant_id,
+                'name': tenant_name
+            },
+            'roles': roles}
+
         return verified_claims
 
     def _decorate_request(self, index, value):
