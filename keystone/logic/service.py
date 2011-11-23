@@ -645,49 +645,9 @@ class IdentityService(object):
 
         return (token, user)
 
-    def __validate_admin_token(self, token_id):
-        (token, user) = self.__validate_token(token_id)
-
-        if backends.ADMIN_ROLE_ID is None:
-            role = api.ROLE.get_by_name(backends.ADMIN_ROLE_NAME)
-            backends.ADMIN_ROLE_ID = role.id
-
-        for role_ref in api.ROLE.ref_get_all_global_roles(user.id):
-            if role_ref.role_id == backends.ADMIN_ROLE_ID and \
-                    role_ref.tenant_id is None:
-                return (token, user)
-
-        raise fault.UnauthorizedFault(
-            "You are not authorized to make this call")
-
-    def __validate_service_or_keystone_admin_token(self, token_id):
-        (token, user) = self.__validate_token(token_id)
-
-        if backends.ADMIN_ROLE_ID is None:
-            role = api.ROLE.get_by_name(backends.ADMIN_ROLE_NAME)
-            if role:
-                backends.ADMIN_ROLE_ID = role.id
-            else:
-                LOG.error('Admin role is missing.')
-
-        if backends.SERVICE_ADMIN_ROLE_ID is None:
-            role = api.ROLE.get_by_name(backends.SERVICE_ADMIN_ROLE_NAME)
-            if role:
-                backends.SERVICE_ADMIN_ROLE_ID = role.id
-            else:
-                LOG.warn('No service admin role is defined.')
-
-        for role_ref in api.ROLE.ref_get_all_global_roles(user.id):
-            if (role_ref.role_id == backends.ADMIN_ROLE_ID or \
-                role_ref.role_id == backends.SERVICE_ADMIN_ROLE_ID) \
-                and role_ref.tenant_id is None:
-                return (token, user)
-
-        raise fault.UnauthorizedFault(
-            "You are not authorized to make this call")
-
     def create_role(self, admin_token, role):
-        self.__validate_service_or_keystone_admin_token(admin_token)
+        (token, user) = \
+            self.__validate_service_or_keystone_admin_token(admin_token)
 
         if not isinstance(role, Role):
             raise fault.BadRequestFault("Expecting a Role")
@@ -697,17 +657,35 @@ class IdentityService(object):
         if api.ROLE.get(role.name) != None:
             raise fault.RoleConflictFault(
                 "A role with that name '" + role.name + "' already exists")
-        #Check if the passed service exist
-        #and the role begins with service_id:.
+
+        #Check if the role name includes an embedded service: in it
+        #if so, verify the service exists
+        if role.service_id is None:
+            split = role.name.split(":")
+            if isinstance(split, list) and len(split) > 1:
+                service_name, role_name = split
+                service = api.SERVICE.get_by_name(service_name)
+                if service is None:
+                    raise fault.BadRequestFault(
+                        "A service with the name %s doesn't exist." \
+                        % service_name)
+                role.service_id = service.id
+
+        # Check ownership of the service (or overriding admin rights)
         if role.service_id:
             service = api.SERVICE.get(role.service_id)
             if service is None:
                 raise fault.BadRequestFault(
-                    "A service with that id doesnt exist.")
+                    "A service with that id doesn't exist.")
             if not role.name.startswith(service.name + ":"):
                 raise fault.BadRequestFault(
                     "Role should begin with service name '" +
                         service.name + ":'")
+            if not self.is_owner({"api": api}, user, service):
+                if not self.__validate_has_admin_role(admin_token):
+                    raise fault.UnauthorizedFault(
+                        "You do not have ownership of the '%s' service" \
+                        % service.name)
 
         drole = models.Role()
         drole.name = role.name
@@ -751,10 +729,23 @@ class IdentityService(object):
         return Role(drole.id, drole.name, drole.desc, drole.service_id)
 
     def delete_role(self, admin_token, role_id):
-        self.__validate_service_or_keystone_admin_token(admin_token)
+        (token, user) = \
+            self.__validate_service_or_keystone_admin_token(admin_token)
+
         drole = api.ROLE.get(role_id)
         if not drole:
             raise fault.ItemNotFoundFault("The role could not be found")
+
+        # Check ownership of the service (or overriding admin rights)
+        if drole.service_id:
+            service = api.SERVICE.get(drole.service_id)
+            if service:
+                if not self.is_owner({"api": api}, user, service):
+                    if not self.__validate_has_admin_role(admin_token):
+                        raise fault.UnauthorizedFault(
+                            "You do not have ownership of the '%s' service" \
+                            % service.name)
+
         role_refs = api.ROLE.ref_get_by_role(role_id)
         if role_refs != None:
             for role_ref in role_refs:
@@ -827,7 +818,8 @@ class IdentityService(object):
         return Roles(ts, links)
 
     def add_endpoint_template(self, admin_token, endpoint_template):
-        self.__validate_service_or_keystone_admin_token(admin_token)
+        (token, user) = \
+            self.__validate_service_or_keystone_admin_token(admin_token)
 
         if not isinstance(endpoint_template, EndpointTemplate):
             raise fault.BadRequestFault("Expecting a EndpointTemplate")
@@ -836,12 +828,21 @@ class IdentityService(object):
                 "Expecting Endpoint Template name.")
         utils.check_empty_string(endpoint_template.type,
                 "Expecting Endpoint Template type.")
+
         dservice = api.SERVICE.get_by_name_and_type(
             endpoint_template.name,
             endpoint_template.type)
         if dservice is None:
             raise fault.BadRequestFault(
                     "A service with that name and type doesn't exist.")
+
+        # Check ownership of the service (or overriding admin rights)
+        if not self.is_owner({"api": api}, user, dservice):
+            if not self.__validate_has_admin_role(admin_token):
+                raise fault.UnauthorizedFault(
+                    "You do not have ownership of the '%s' service" \
+                    % dservice.name)
+
         dendpoint_template = models.EndpointTemplates()
         dendpoint_template.region = endpoint_template.region
         dendpoint_template.service_id = dservice.id
@@ -859,7 +860,8 @@ class IdentityService(object):
 
     def modify_endpoint_template(self,
         admin_token, endpoint_template_id, endpoint_template):
-        self.__validate_service_or_keystone_admin_token(admin_token)
+        (token, user) = \
+            self.__validate_service_or_keystone_admin_token(admin_token)
 
         if not isinstance(endpoint_template, EndpointTemplate):
             raise fault.BadRequestFault("Expecting a EndpointTemplate")
@@ -874,13 +876,18 @@ class IdentityService(object):
         utils.check_empty_string(endpoint_template.type,
             "Expecting Endpoint Template type.")
 
-        dservice = api.SERVICE.get_by_name_and_type(
-            endpoint_template.name,
-            endpoint_template.type)
-
-        if dservice is None:
+        dservice = api.SERVICE.get(dendpoint_template.service_id)
+        if not dservice:
             raise fault.BadRequestFault(
                     "A service with that name and type doesn't exist.")
+
+        # Check ownership of the service (or overriding admin rights)
+        if not self.is_owner({"api": api}, user, dservice):
+            if not self.__validate_has_admin_role(admin_token):
+                raise fault.UnauthorizedFault(
+                    "You do not have ownership of the '%s' service" \
+                    % dservice.name)
+
         dendpoint_template.region = endpoint_template.region
         dendpoint_template.service_id = dservice.id
         dendpoint_template.public_url = endpoint_template.public_url
@@ -909,11 +916,28 @@ class IdentityService(object):
             )
 
     def delete_endpoint_template(self, admin_token, endpoint_template_id):
-        self.__validate_service_or_keystone_admin_token(admin_token)
+        (token, user) = \
+            self.__validate_service_or_keystone_admin_token(admin_token)
         dendpoint_template = api.ENDPOINT_TEMPLATE.get(endpoint_template_id)
         if not dendpoint_template:
             raise fault.ItemNotFoundFault(
                 "The endpoint template could not be found")
+
+        dservice = api.SERVICE.get(dendpoint_template.service_id)
+        if dservice:
+            # Check ownership of the service (or overriding admin rights)
+            if not self.is_owner({"api": api}, user, dservice):
+                if not self.__validate_has_admin_role(admin_token):
+                    raise fault.UnauthorizedFault(
+                        "You do not have ownership of the '%s' service" \
+                        % dservice.name)
+        else:
+            # Cannot verify service ownership, so verify full admin rights
+            if not self.__validate_has_admin_role(admin_token):
+                raise fault.UnauthorizedFault(
+                    "You do not have ownership of the '%s' service" \
+                    % dservice.name)
+
         #Delete Related endpoints
         endpoints = api.ENDPOINT_TEMPLATE.\
             endpoint_get_by_endpoint_template(endpoint_template_id)
@@ -1072,12 +1096,16 @@ class IdentityService(object):
             raise fault.ServiceConflictFault(
                 "A service with that name already exists")
 
+        (token, user) = self.__validate_token(admin_token)
+
         dservice = models.Service()
         dservice.name = service.name
         dservice.type = service.type
         dservice.desc = service.description
+        dservice.owner_id = user.id
         dservice = api.SERVICE.create(dservice)
         service.id = dservice.id
+
         return service
 
     def get_services(self, admin_token, marker, limit, url):
@@ -1216,3 +1244,68 @@ class IdentityService(object):
         api.USER.update(user_id, values)
         duser = api.USER.get(user_id)
         return PasswordCredentials(duser.name, duser.password)
+
+    def __validate_admin_token(self, token_id):
+        (token, user) = self.__validate_token(token_id)
+
+        if backends.ADMIN_ROLE_ID is None:
+            role = api.ROLE.get_by_name(backends.ADMIN_ROLE_NAME)
+            backends.ADMIN_ROLE_ID = role.id
+
+        for role_ref in api.ROLE.ref_get_all_global_roles(user.id):
+            if role_ref.role_id == backends.ADMIN_ROLE_ID and \
+                    role_ref.tenant_id is None:
+                return (token, user)
+
+        raise fault.UnauthorizedFault(
+            "You are not authorized to make this call")
+
+    def __validate_has_admin_role(self, token_id):
+        (token, user) = self.__validate_token(token_id)
+
+        if backends.ADMIN_ROLE_ID is None:
+            role = api.ROLE.get_by_name(backends.ADMIN_ROLE_NAME)
+            backends.ADMIN_ROLE_ID = role.id
+
+        if self.has_role({"api": api}, user, backends.ADMIN_ROLE_ID, None):
+                return (token, user)
+        else:
+            return False
+
+    def __validate_has_service_role(self, token_id):
+        (token, user) = self.__validate_token(token_id)
+
+        if backends.SERVICE_ADMIN_ROLE_ID is None:
+            role = api.ROLE.get_by_name(backends.SERVICE_ADMIN_ROLE_NAME)
+            if role:
+                backends.SERVICE_ADMIN_ROLE_ID = role.id
+            else:
+                LOG.warn('No service admin role is defined.')
+        if self.has_role({"api": api}, user,
+                    backends.SERVICE_ADMIN_ROLE_ID, None):
+            return (token, user)
+        else:
+            return False
+
+    def __validate_service_or_keystone_admin_token(self, token_id):
+        result = self.__validate_has_service_role(token_id)
+        if result:
+                return result
+        result = self.__validate_has_admin_role(token_id)
+        if result:
+                return result
+
+        raise fault.UnauthorizedFault(
+            "You are not authorized to make this call")
+
+    def has_role(self, env, user, role, target):
+        api = env['api']
+        for role_ref in api.ROLE.ref_get_all_global_roles(user.id):
+            if (role_ref.role_id == role) \
+                and role_ref.tenant_id is None:
+                return True
+
+    def is_owner(self, env, user, object):
+        if hasattr(object, 'owner_id'):
+            if object.owner_id == user.id:
+                return True
