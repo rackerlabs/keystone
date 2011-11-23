@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//8tE\u003d",
+        "filename": "keystone/backends/sqlalchemy/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T16:35:20Z",
+      "side": 1,
+      "message": "On an LDAP backend the ID would be a string. And that should work there. There won\u0027t be a foreign key in LDAP (unless you have back linked attribute)",
+      "parentUuid": "AAAACn//8t4\u003d",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8uY\u003d",
         "filename": "keystone/logic/service.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2011-11-23T15:51:12Z",
       "side": 1,
       "message": "In the modify call if some one is going to pass a different name and type, which is different then the actual name and type of the original endpointtemplate, the update would show success.However the service would have never got changed for the endpoint template.Should we altogether prevent updates of name and type which together identify a service?",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8tU\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T16:35:20Z",
+      "side": 1,
+      "message": "That makes sense. Yes.",
+      "parentUuid": "AAAACn//8uY\u003d",
       "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -65,6 +101,42 @@
       "side": 1,
       "message": "My bad missed the logic.This is fine.",
       "parentUuid": "AAAACn//8uQ\u003d",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8tM\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T16:35:20Z",
+      "side": 1,
+      "message": "No. First check is if the user has the ServiceAdmin role. Second one is if they have the Admin role (uber rights over everything).",
+      "parentUuid": "AAAACn//8uQ\u003d",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8tI\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T16:35:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAACn//8uI\u003d",
       "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
