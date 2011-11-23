@@ -16,6 +16,24 @@
       "revId": "cf6900469ab69a9841601667e4cf5a1abd1638f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8l8\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T21:24:53Z",
+      "side": 0,
+      "message": "The space is included in the %s. If you don\u0027t you end up with two spaces. Just cleans it up.",
+      "parentUuid": "AAAACn//8n4\u003d",
+      "revId": "cf6900469ab69a9841601667e4cf5a1abd1638f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

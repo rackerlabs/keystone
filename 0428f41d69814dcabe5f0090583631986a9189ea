@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//8ls\u003d",
+        "filename": "doc/source/migration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T21:24:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAACn//8oo\u003d",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8os\u003d",
         "filename": "doc/source/migration.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2011-11-23T19:59:56Z",
       "side": 1,
       "message": "(rst syntax) need a second colon here ^^",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8lo\u003d",
+        "filename": "doc/source/migration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T21:24:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAACn//8os\u003d",
       "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -159,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//8mU\u003d",
+        "filename": "keystone/content/common/samples/endpointTemplate.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T21:24:53Z",
+      "side": 1,
+      "message": "Yes. This never worked. I gues it was always done in keystone-manage.",
+      "parentUuid": "AAAACn//8oc\u003d",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8oY\u003d",
         "filename": "keystone/content/common/samples/endpointTemplate.xml",
         "patchSetId": 1
@@ -170,6 +224,24 @@
       "writtenOn": "2011-11-23T19:59:56Z",
       "side": 1,
       "message": "Should this be a seperate commit? Should this be in stable/diablo?",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8mQ\u003d",
+        "filename": "keystone/content/common/samples/endpointTemplate.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T21:24:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAACn//8oY\u003d",
       "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -299,6 +371,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//8mM\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T21:24:53Z",
+      "side": 1,
+      "message": "Could be. This didn\u0027t change, this just makes it clearer.",
+      "parentUuid": "AAAACn//8oA\u003d",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8oQ\u003d",
         "filename": "keystone/manage/__init__.py",
         "patchSetId": 1
@@ -310,6 +400,24 @@
       "writtenOn": "2011-11-23T19:59:56Z",
       "side": 1,
       "message": "\u003cname\u003e implies required, [name] implies optional -- we\u0027re doing this inconsistently in keystone-manage, but name should at least match the rest of the line :)",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8mI\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T21:24:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAACn//8oQ\u003d",
       "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -333,6 +441,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//8mA\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T21:24:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAACn//8oU\u003d",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8oE\u003d",
         "filename": "keystone/manage/__init__.py",
         "patchSetId": 1
@@ -344,6 +470,24 @@
       "writtenOn": "2011-11-23T19:59:56Z",
       "side": 1,
       "message": "Other tables don\u0027t use title case (\u0027Description\u0027)",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8mE\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T21:24:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAACn//8oE\u003d",
       "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -367,6 +511,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//8l4\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T21:24:53Z",
+      "side": 1,
+      "message": "Definition sets them all to None optionally. But if they are passed in they are not None.\n\nSo this only sets defaults if the values are not passed in.\n\nThis is more sound. Previous code had errors that were highlighted by new tests.",
+      "parentUuid": "AAAACn//8no\u003d",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8nk\u003d",
         "filename": "keystone/test/functional/test_endpoints.py",
         "patchSetId": 1
@@ -378,6 +540,24 @@
       "writtenOn": "2011-11-23T19:59:56Z",
       "side": 1,
       "message": "We need a better way to do achieve this pattern :)\n\nNo need to rewrite this now though",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8l0\u003d",
+        "filename": "keystone/test/functional/test_endpoints.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-23T21:24:53Z",
+      "side": 1,
+      "message": "Open to suggestions. This works for now.",
+      "parentUuid": "AAAACn//8nk\u003d",
       "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
