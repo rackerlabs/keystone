@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//8q4\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2011-11-23T18:39:12Z",
+      "side": 1,
+      "message": "this should be a single line",
+      "revId": "c3491c85ae726cb1c4379e19ec98fa28e3b014b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8q0\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2011-11-23T18:39:12Z",
+      "side": 1,
+      "message": "this should be a single line",
+      "revId": "c3491c85ae726cb1c4379e19ec98fa28e3b014b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8qw\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2011-11-23T18:39:12Z",
+      "side": 1,
+      "message": "this should be a single line",
+      "revId": "c3491c85ae726cb1c4379e19ec98fa28e3b014b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8qs\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2011-11-23T18:39:12Z",
+      "side": 1,
+      "message": "this should be a single line",
+      "revId": "c3491c85ae726cb1c4379e19ec98fa28e3b014b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8qk\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2011-11-23T18:39:12Z",
+      "side": 1,
+      "message": "more pythonic:\n\nrole_ref.role_id in [backends.ADMIN_ROLE_ID, backends.SERVICE_ADMIN_ROLE_ID] and role_ref.tenant_id is None",
+      "revId": "c3491c85ae726cb1c4379e19ec98fa28e3b014b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8qo\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2011-11-23T18:39:12Z",
+      "side": 1,
+      "message": "this should be 1 space to the left - the *and* is to the ( not to the role_ref.role_id above",
+      "revId": "c3491c85ae726cb1c4379e19ec98fa28e3b014b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8qc\u003d",
+        "filename": "keystone/routers/admin.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2011-11-23T18:39:12Z",
+      "side": 1,
+      "message": "this comment should be in your commit message? \n\nand should this be a separate commit?",
+      "revId": "c3491c85ae726cb1c4379e19ec98fa28e3b014b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
