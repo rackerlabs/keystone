@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//8nM\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T20:07:55Z",
+      "side": 1,
+      "message": "\u003d)",
+      "revId": "1ff7ca8f2f38ef75f2149d485e66c5e47b33f392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8m8\u003d",
+        "filename": "keystone/middleware/quantum_auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T20:07:55Z",
+      "side": 1,
+      "message": "All this middleware really needs to inherit from some base middleware :)",
+      "revId": "1ff7ca8f2f38ef75f2149d485e66c5e47b33f392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8nI\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1016,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T20:07:55Z",
+      "side": 1,
+      "message": "Nice",
+      "revId": "1ff7ca8f2f38ef75f2149d485e66c5e47b33f392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8nE\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T20:07:55Z",
+      "side": 1,
+      "message": "Interesting... this should actually look like \"X-IDENTITY-STATUS\" to the underlying service, per CGI spec.",
+      "revId": "1ff7ca8f2f38ef75f2149d485e66c5e47b33f392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8nA\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1145,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T20:07:55Z",
+      "side": 1,
+      "message": "No X-ROLES?",
+      "revId": "1ff7ca8f2f38ef75f2149d485e66c5e47b33f392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
