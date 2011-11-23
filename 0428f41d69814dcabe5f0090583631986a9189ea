@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAACn//8t4\u003d",
+        "filename": "keystone/backends/sqlalchemy/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-23T16:08:12Z",
+      "side": 1,
+      "message": "would this work on LDAP as a back end?\nWe wont have the id as integer.Also the references wont be applicable?",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8uY\u003d",
         "filename": "keystone/logic/service.py",
         "patchSetId": 1
