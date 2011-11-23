@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAACn//8oo\u003d",
+        "filename": "doc/source/migration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T19:59:56Z",
+      "side": 1,
+      "message": "(rst syntax) `::` instead of `.`",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8os\u003d",
+        "filename": "doc/source/migration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T19:59:56Z",
+      "side": 1,
+      "message": "(rst syntax) need a second colon here ^^",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8ok\u003d",
+        "filename": "doc/source/migration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T19:59:56Z",
+      "side": 1,
+      "message": "Not necessary, but this could become an actual anchored link using rst, verified by sphinx_build.",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8t4\u003d",
         "filename": "keystone/backends/sqlalchemy/models.py",
         "patchSetId": 1
@@ -85,6 +136,40 @@
       "side": 1,
       "message": "This is what I figured even if we define a column type as integer it is still allowed by sqlalchemy to have strings!\nThis allowed user_id to be stored as string regardless of its definition.Things would fail when we have LDAP and a regular DB like postgres.\nHowever this is present in other models like tokens where user_id is defined as Integer.So this all together should be a separate issue.",
       "parentUuid": "AAAACn//8rU\u003d",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8oc\u003d",
+        "filename": "keystone/content/common/samples/endpointTemplate.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T19:59:56Z",
+      "side": 1,
+      "message": "Should this be in a separate commit? Is this applicable to stable/diablo?",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8oY\u003d",
+        "filename": "keystone/content/common/samples/endpointTemplate.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T19:59:56Z",
+      "side": 1,
+      "message": "Should this be a seperate commit? Should this be in stable/diablo?",
       "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -191,6 +276,108 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "AAAACn//8uI\u003d",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8oA\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T19:59:56Z",
+      "side": 1,
+      "message": "Applicable to stable/diablo?",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8oQ\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T19:59:56Z",
+      "side": 1,
+      "message": "\u003cname\u003e implies required, [name] implies optional -- we\u0027re doing this inconsistently in keystone-manage, but name should at least match the rest of the line :)",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8oU\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T19:59:56Z",
+      "side": 1,
+      "message": "PEP8",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8oE\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T19:59:56Z",
+      "side": 1,
+      "message": "Other tables don\u0027t use title case (\u0027Description\u0027)",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8no\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T19:59:56Z",
+      "side": 1,
+      "message": "Not sure why all these if statements are necessary... see the definition for optional_str() on line 579",
+      "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8nk\u003d",
+        "filename": "keystone/test/functional/test_endpoints.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-23T19:59:56Z",
+      "side": 1,
+      "message": "We need a better way to do achieve this pattern :)\n\nNo need to rewrite this now though",
       "revId": "0428f41d69814dcabe5f0090583631986a9189ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
