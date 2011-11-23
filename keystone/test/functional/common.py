@@ -898,15 +898,24 @@ class FunctionalTestCase(ApiTestCase):
             is_global=True, version_id=None,
             version_list=None, version_info=None, **kwargs):
 
-        region = optional_str(region)
-        name = optional_str(name)
-        type = optional_str(type)
-        public_url = optional_url(public_url)
-        admin_url = optional_url(admin_url)
-        internal_url = optional_url(internal_url)
-        version_id = optional_url(version_id)
-        version_list = optional_url(version_list)
-        version_info = optional_url(version_info)
+        if region is None:
+            region = optional_str(region)
+        if name is None:
+            name = optional_str(name)
+        if type is None:
+            type = optional_str(type)
+        if public_url is None:
+            public_url = optional_url(public_url)
+        if admin_url is None:
+            admin_url = optional_url(admin_url)
+        if internal_url is None:
+            internal_url = optional_url(internal_url)
+        if version_id is None:
+            version_id = optional_url(version_id)
+        if version_list is None:
+            version_list = optional_url(version_list)
+        if version_info is None:
+            version_info = optional_url(version_info)
 
         data = {
             "OS-KSCATALOG:endpointTemplate": {
