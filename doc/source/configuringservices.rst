@@ -47,8 +47,7 @@ appropriate action. It will also retrive additional information from the token
 such as user name, id, tenant name, id, roles, etc...
 
 The middleware will pass those data down to the service as headers. The
-detailed description of this archirtecture is in
-`the Middleware Architecture guide <middleware_architecture>`_
+detailed description of this architecture is available here :doc:`middleware_architecture`
 
 
 Setting up credentials
