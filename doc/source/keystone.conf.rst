@@ -45,6 +45,9 @@ keystone.conf example
         'swift' : 'X-Storage-Url',
         'cdn' : 'X-CDN-Management-Url'}
 
+  	#List of extensions currently supported
+	extensions= osksadm,oskscatalog
+  
     # Address to bind the API server
     # TODO Properties defined within app not available via pipeline.
     service_host = 0.0.0.0
