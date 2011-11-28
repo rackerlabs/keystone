@@ -1,32 +1,22 @@
 #!/usr/bin/env python
+
+"""
+To run all tests
+    python run_tests.py
+
+To run a single test:
+    python run_tests.py
+        functional.test_extensions:TestExtensions.test_extensions_json
+
+To run a single test module:
+    python run_tests.py functional.test_extensions
+
+"""
 import sys
 
-"""Manages execution of keystone test suites"""
-from keystone.test import KeystoneTest
+from keystone.test import KeystoneTest, SQLTest, MemcacheTest, LDAPTest, \
+                        SSLTest
 
-
-class SQLTest(KeystoneTest):
-    """Test defined using only SQLAlchemy back-end"""
-    config_name = 'sql.conf.template'
-    test_files = ('keystone.db',)
-
-
-class SSLTest(KeystoneTest):
-    config_name = 'ssl.conf.template'
-    test_files = ('keystone.db',)
-    isSsl = True
-
-
-class MemcacheTest(KeystoneTest):
-    """Test defined using only SQLAlchemy and Memcache back-end"""
-    config_name = 'memcache.conf.template'
-    test_files = ('keystone.db',)
-
-
-class LDAPTest(KeystoneTest):
-    """Test defined using only SQLAlchemy and LDAP back-end"""
-    config_name = 'ldap.conf.template'
-    test_files = ('keystone.db', 'ldap.db', 'ldap.db.db',)
 
 TESTS = [
     SQLTest,
@@ -36,6 +26,7 @@ TESTS = [
     LDAPTest,
     SSLTest,
 ]
+
 
 if __name__ == '__main__':
     if '-O' in sys.argv:
