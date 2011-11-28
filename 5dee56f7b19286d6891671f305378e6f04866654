@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//8YA\u003d",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-28T05:42:24Z",
+      "side": 1,
+      "message": "wud loaded_extensions do good?",
+      "parentUuid": "AAAACn//8Zg\u003d",
+      "revId": "5dee56f7b19286d6891671f305378e6f04866654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8Zc\u003d",
         "filename": "keystone/contrib/extensions/__init__.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2011-11-28T02:07:01Z",
       "side": 1,
       "message": "osec2 should be default too.",
+      "revId": "5dee56f7b19286d6891671f305378e6f04866654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8X8\u003d",
+        "filename": "keystone/contrib/extensions/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-28T05:42:24Z",
+      "side": 1,
+      "message": "Agreed. However we don\u0027t yet have the correct code to support osec2.Once we do have I ll come and add it back.",
+      "parentUuid": "AAAACn//8Zc\u003d",
       "revId": "5dee56f7b19286d6891671f305378e6f04866654",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//8X4\u003d",
+        "filename": "keystone/controllers/extensions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-28T05:42:24Z",
+      "side": 1,
+      "message": "The initialization happens once.Same content  is passed repeatedly when the get_extensions_info call is made.\nBy passing it to the get_extensions_info call i have repeatedly fetch info.",
+      "parentUuid": "AAAACn//8ZY\u003d",
+      "revId": "5dee56f7b19286d6891671f305378e6f04866654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8ZU\u003d",
         "filename": "keystone/test/functional/test_extensions.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2011-11-28T02:07:01Z",
       "side": 1,
       "message": "We should add tests for the extensions themselves - or do we have that already?",
+      "revId": "5dee56f7b19286d6891671f305378e6f04866654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8YE\u003d",
+        "filename": "keystone/test/functional/test_extensions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-28T05:42:24Z",
+      "side": 1,
+      "message": "We already have tests for ksadm and kscatalog extensions.These are the two that are supported by default.",
+      "parentUuid": "AAAACn//8ZU\u003d",
       "revId": "5dee56f7b19286d6891671f305378e6f04866654",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
