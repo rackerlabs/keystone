@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//8Zg\u003d",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-28T02:07:01Z",
+      "side": 1,
+      "message": "Does this list supported extensions or currently loaded extensions? Might need clarification and maybe a rename.",
+      "revId": "5dee56f7b19286d6891671f305378e6f04866654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8Zc\u003d",
+        "filename": "keystone/contrib/extensions/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-28T02:07:01Z",
+      "side": 1,
+      "message": "osec2 should be default too.",
+      "revId": "5dee56f7b19286d6891671f305378e6f04866654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8ZY\u003d",
+        "filename": "keystone/controllers/extensions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-28T02:07:01Z",
+      "side": 1,
+      "message": "Can the is_service_operation be passed in to the get_extensions_info call instead of in the initializer?",
+      "revId": "5dee56f7b19286d6891671f305378e6f04866654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8ZU\u003d",
+        "filename": "keystone/test/functional/test_extensions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-28T02:07:01Z",
+      "side": 1,
+      "message": "We should add tests for the extensions themselves - or do we have that already?",
+      "revId": "5dee56f7b19286d6891671f305378e6f04866654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

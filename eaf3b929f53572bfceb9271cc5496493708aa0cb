@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//8Zk\u003d",
+        "filename": "keystone/test/functional/test_ext_raxkskey.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-28T02:07:01Z",
+      "side": 0,
+      "message": "I don\u0027t think we should delete this file. We still need it to test the raxkey extensions.",
+      "revId": "eaf3b929f53572bfceb9271cc5496493708aa0cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
