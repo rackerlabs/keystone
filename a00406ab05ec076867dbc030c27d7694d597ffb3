@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//8VY\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-28T17:41:45Z",
+      "side": 1,
+      "message": "Dropping support for python \u003c 2.7?",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8VU\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-28T17:41:45Z",
+      "side": 1,
+      "message": "Nova?",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8VQ\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-28T17:41:45Z",
+      "side": 1,
+      "message": "Why use a local variable here?",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8VI\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-28T17:41:45Z",
+      "side": 1,
+      "message": "I\u0027d rather not have an except block if it\u0027s not accomplishing anything (?)",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8Vg\u003d",
+        "filename": "run_tests.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-28T17:41:45Z",
+      "side": 1,
+      "message": "Just a thought... now that there\u0027s some useful content here, if we moved this file into keystone/, it would get picked up on http://keystone.openstack.org/",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8Vc\u003d",
+        "filename": "run_tests.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-28T17:41:45Z",
+      "side": 1,
+      "message": "OS community prefers importing modules (from keystone import test)",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8Vs\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-28T17:41:45Z",
+      "side": 1,
+      "message": "Is the default behavior to run all the tests now? Jenkins was using fail-fast.",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8Vw\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-28T17:41:45Z",
+      "side": 1,
+      "message": "This statement is backwards -- if you\u0027re using virtualenv, you should never have to sudo",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8Vo\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-28T17:41:45Z",
+      "side": 1,
+      "message": "Was pep8 looking at non-py files?",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
