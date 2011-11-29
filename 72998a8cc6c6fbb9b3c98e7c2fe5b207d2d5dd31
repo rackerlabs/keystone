@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//8DU\u003d",
+        "filename": "doc/source/backends.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 964
+      },
+      "writtenOn": "2011-11-29T20:29:18Z",
+      "side": 1,
+      "message": "should be Unique",
+      "revId": "72998a8cc6c6fbb9b3c98e7c2fe5b207d2d5dd31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8DY\u003d",
+        "filename": "doc/source/backends.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 964
+      },
+      "writtenOn": "2011-11-29T20:29:18Z",
+      "side": 1,
+      "message": "Pro tip: If you use the nova_todo.py extension their docs have, you can use this syntax:\n.. todo:: \n\nand the HTML output puts a red banner around it for higher visibility. Not required but you might like to use it.",
+      "revId": "72998a8cc6c6fbb9b3c98e7c2fe5b207d2d5dd31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
