@@ -34,6 +34,24 @@
       "revId": "bb6c02336164225b3a6832229c7ae2f4e83a5240",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//7/0\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-29T22:33:45Z",
+      "side": 1,
+      "message": "Obviously, I vote to drop them, but I\u0027ll be revisiting this code in the next couple weeks anyway, as we implement https://blueprints.launchpad.net/keystone/+spec/portable-identifiers",
+      "parentUuid": "AAAACn//8AY\u003d",
+      "revId": "bb6c02336164225b3a6832229c7ae2f4e83a5240",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
