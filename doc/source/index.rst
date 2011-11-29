@@ -55,12 +55,11 @@ Administration
 .. toctree::
     :maxdepth: 1
 
+    backends
     migration
-    configuration
     controllingservers
     configuringservices
     endpoints
-
 
 API Use Case Examples
 =====================
