@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//8DQ\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-29T20:31:08Z",
+      "side": 1,
+      "message": "Do need to show user **ID** and role **ID** here?\n\nI know we were showing ID\u0027s before, but I\u0027d like to stick to just \u0027user\u0027 and \u0027role\u0027 (both names) unless we have a reason to show both ID and name. Thoughts?",
+      "revId": "bb6c02336164225b3a6832229c7ae2f4e83a5240",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
