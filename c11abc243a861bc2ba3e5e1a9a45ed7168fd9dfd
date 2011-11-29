@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//8C4\u003d",
+        "filename": "bin/keystone",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-11-29T20:35:12Z",
+      "side": 1,
+      "message": "PEP8",
+      "revId": "c11abc243a861bc2ba3e5e1a9a45ed7168fd9dfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
