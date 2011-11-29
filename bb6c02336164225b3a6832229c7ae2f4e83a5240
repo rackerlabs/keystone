@@ -16,6 +16,24 @@
       "revId": "bb6c02336164225b3a6832229c7ae2f4e83a5240",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//8AY\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1032
+      },
+      "writtenOn": "2011-11-29T21:57:29Z",
+      "side": 1,
+      "message": "Actually i would also prefer that.. but i was not sure if there were any other places in the keystone-manage cli that required the IDs as inputs instead of the name.\n\nLet me know if you would rather me drop the ID fields.",
+      "parentUuid": "AAAACn//8DQ\u003d",
+      "revId": "bb6c02336164225b3a6832229c7ae2f4e83a5240",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
