@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAACn//75A\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2011-11-30T15:20:54Z",
+      "side": 1,
+      "message": "There should not be a single quote in the above querystring...\n\ninstead of \u0027marker\u003d%s\u0026limit\u003d%s\u0027, should just be marker\u003d%s\u0026limit\u003d%s",
+      "revId": "4e88102359f723a4370d31fa714eb3efbffc52e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//744\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1408,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2011-11-30T15:20:54Z",
+      "side": 1,
+      "message": "same as above...",
+      "revId": "4e88102359f723a4370d31fa714eb3efbffc52e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
