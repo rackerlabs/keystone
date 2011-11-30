@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//75s\u003d",
+        "filename": "keystone/backends/ldap/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-30T14:32:48Z",
+      "side": 1,
+      "message": "They don\u0027t live in LDAP - they live in sqlalchemy. When we run with LDAP we also run SQL and store those entities in SQL.",
+      "parentUuid": "AAAACn//76s\u003d",
+      "revId": "7c6befb0df1b4de4f4ed0316f929d6fa820bd52f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//774\u003d",
         "filename": "keystone/test/__init__.py",
         "patchSetId": 3
