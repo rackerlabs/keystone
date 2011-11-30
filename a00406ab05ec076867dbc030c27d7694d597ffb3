@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//7/E\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-30T00:18:47Z",
+      "side": 1,
+      "message": "Other way round.",
+      "parentUuid": "AAAACn//8VY\u003d",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8VU\u003d",
         "filename": "keystone/test/__init__.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2011-11-28T17:41:45Z",
       "side": 1,
       "message": "Nova?",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//7/A\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-30T00:18:47Z",
+      "side": 1,
+      "message": "Yes. Took it from Nova. Keeping it that way now (I expect we\u0027ll get this in OpenStack common soon).",
+      "parentUuid": "AAAACn//8VU\u003d",
       "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//7+8\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-30T00:18:47Z",
+      "side": 1,
+      "message": "No specific reason. Just getting the process up and running before storing it in self.",
+      "parentUuid": "AAAACn//8VQ\u003d",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8VI\u003d",
         "filename": "keystone/test/__init__.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2011-11-28T17:41:45Z",
       "side": 1,
       "message": "I\u0027d rather not have an except block if it\u0027s not accomplishing anything (?)",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//7+w\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-30T00:18:47Z",
+      "side": 1,
+      "message": "We might miss the exception otherwise, won\u0027t we?",
+      "parentUuid": "AAAACn//8VI\u003d",
       "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//7+s\u003d",
+        "filename": "run_tests.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-30T00:18:47Z",
+      "side": 1,
+      "message": "It\u0027s in the root in all other projects. I\u0027d rather stay in line.",
+      "parentUuid": "AAAACn//8Vg\u003d",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8Vc\u003d",
         "filename": "run_tests.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2011-11-28T17:41:45Z",
       "side": 1,
       "message": "OS community prefers importing modules (from keystone import test)",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//7+M\u003d",
+        "filename": "run_tests.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-30T00:18:47Z",
+      "side": 1,
+      "message": "Will fix.",
+      "parentUuid": "AAAACn//8Vc\u003d",
       "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//7+I\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-30T00:18:47Z",
+      "side": 1,
+      "message": "Got this from Nova. We can tell Jenkins to use -x.",
+      "parentUuid": "AAAACn//8Vs\u003d",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8Vw\u003d",
         "filename": "run_tests.sh",
         "patchSetId": 1
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAACn//7+E\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-30T00:18:47Z",
+      "side": 1,
+      "message": "If you force, you [re]create the virtual environment and the pip install into it. I saw pip install fail without sudo.",
+      "parentUuid": "AAAACn//8Vw\u003d",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//8Vo\u003d",
         "filename": "run_tests.sh",
         "patchSetId": 1
@@ -149,6 +293,24 @@
       "writtenOn": "2011-11-28T17:41:45Z",
       "side": 1,
       "message": "Was pep8 looking at non-py files?",
+      "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAACn//7+A\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-11-30T00:18:47Z",
+      "side": 1,
+      "message": "Not sure. I brought this in line with nova.",
+      "parentUuid": "AAAACn//8Vo\u003d",
       "revId": "a00406ab05ec076867dbc030c27d7694d597ffb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
