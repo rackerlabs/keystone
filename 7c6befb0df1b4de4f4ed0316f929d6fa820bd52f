@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAACn//76s\u003d",
+        "filename": "keystone/backends/ldap/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-11-30T05:35:36Z",
+      "side": 1,
+      "message": "Ziad why are the other models disabled?Comments also don\u0027t give details.",
+      "revId": "7c6befb0df1b4de4f4ed0316f929d6fa820bd52f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAACn//774\u003d",
         "filename": "keystone/test/__init__.py",
         "patchSetId": 3
