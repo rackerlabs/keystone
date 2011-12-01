@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3///qE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2011-12-01T23:49:26Z",
+      "side": 1,
+      "message": "This point is probably moot, since this has gone in already, but the parens around \u0027if\u0027 conditionals are not required (and are usually omitted) in Python; also, CamelCase for variable names is generally discouraged, at least in nova.",
+      "revId": "4f69fbaa8b11e8021b53e0c692a2533f05f2b97c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
