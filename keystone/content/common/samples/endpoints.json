@@ -1,64 +1,65 @@
 {
-    "endpoints":[{
-                "id":1,
-                "tenantId":"1",
-                "region":"North",
-                "type":"compute",
-                "publicURL":"https://compute.north.public.com/v1",
-                "internalURL":"https://compute.north.internal.com/v1",
-                "adminURL" : "https://compute.north.internal.com/v1",
-                "versionId":"1",
-                "versionInfo":"https://compute.north.public.com/v1/",
-                "versionList":"https://compute.north.public.com/"
-            },
-            {
-                "id":2,
-                "tenantId":"1",
-                "region":"South",
-                "type":"compute",
-                "publicURL":"https://compute.north.public.com/v1",
-                "internalURL":"https://compute.north.internal.com/v1",
-                "adminURL" : "https://compute.north.internal.com/v1",
-                "versionId":"1",
-                "versionInfo":"https://compute.north.public.com/v1/",
-                "versionList":"https://compute.north.public.com/"
-            },
-            {
-                "id":3,
-                "tenantId":"1",
-                "region":"East",
-                "type":"compute",
-                "publicURL":"https://compute.north.public.com/v1",
-                "internalURL":"https://compute.north.internal.com/v1",
-                "adminURL" : "https://compute.north.internal.com/v1",
-                "versionId":"1",
-                "versionInfo":"https://compute.north.public.com/v1/",
-                "versionList":"https://compute.north.public.com/"
-            },
-            {
-                "id":4,
-                "tenantId":"1",
-                "region":"West",
-                "type":"compute",
-                "publicURL":"https://compute.north.public.com/v1",
-                "internalURL":"https://compute.north.internal.com/v1",
-                "adminURL" : "https://compute.north.internal.com/v1",
-                "versionId":"1",
-                "versionInfo":"https://compute.north.public.com/v1/",
-                "versionList":"https://compute.north.public.com/"
-            },
-            {
-                "id":5,
-                "tenantId":"1",
-                "region":"Global",
-                "type":"compute",
-                "publicURL":"https://compute.north.public.com/v1",
-                "internalURL":"https://compute.north.internal.com/v1",
-                "adminURL" : "https://compute.north.internal.com/v1",
-                "versionId":"1",
-                "versionInfo":"https://compute.north.public.com/v1/",
-                "versionList":"https://compute.north.public.com/"
-            }
-        ],
-    "endpoints_links":[]
+  "endpoints": [
+    {
+      "adminURL": "https://compute.north.internal.com/v1",
+      "id": 1,
+      "internalURL": "https://compute.north.internal.com/v1",
+      "publicURL": "https://compute.north.public.com/v1",
+      "region": "North",
+      "tenantId": "1",
+      "type": "compute",
+      "versionId": "1",
+      "versionInfo": "https://compute.north.public.com/v1/",
+      "versionList": "https://compute.north.public.com/"
+    },
+    {
+      "adminURL": "https://compute.north.internal.com/v1",
+      "id": 2,
+      "internalURL": "https://compute.north.internal.com/v1",
+      "publicURL": "https://compute.north.public.com/v1",
+      "region": "South",
+      "tenantId": "1",
+      "type": "compute",
+      "versionId": "1",
+      "versionInfo": "https://compute.north.public.com/v1/",
+      "versionList": "https://compute.north.public.com/"
+    },
+    {
+      "adminURL": "https://compute.north.internal.com/v1",
+      "id": 3,
+      "internalURL": "https://compute.north.internal.com/v1",
+      "publicURL": "https://compute.north.public.com/v1",
+      "region": "East",
+      "tenantId": "1",
+      "type": "compute",
+      "versionId": "1",
+      "versionInfo": "https://compute.north.public.com/v1/",
+      "versionList": "https://compute.north.public.com/"
+    },
+    {
+      "adminURL": "https://compute.north.internal.com/v1",
+      "id": 4,
+      "internalURL": "https://compute.north.internal.com/v1",
+      "publicURL": "https://compute.north.public.com/v1",
+      "region": "West",
+      "tenantId": "1",
+      "type": "compute",
+      "versionId": "1",
+      "versionInfo": "https://compute.north.public.com/v1/",
+      "versionList": "https://compute.north.public.com/"
+    },
+    {
+      "adminURL": "https://compute.north.internal.com/v1",
+      "id": 5,
+      "internalURL": "https://compute.north.internal.com/v1",
+      "publicURL": "https://compute.north.public.com/v1",
+      "region": "Global",
+      "tenantId": "1",
+      "type": "compute",
+      "versionId": "1",
+      "versionInfo": "https://compute.north.public.com/v1/",
+      "versionList": "https://compute.north.public.com/"
+    }
+  ],
+  "endpoints_links": []
 }

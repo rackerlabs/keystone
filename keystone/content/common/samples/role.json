@@ -1,7 +1,7 @@
 {
   "role": {
+    "description": "Guest Access",
     "id": "123",
-    "name": "Guest",
-    "description": "Guest Access"
+    "name": "Guest"
   }
 }

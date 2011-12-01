@@ -1,7 +1,7 @@
 {
   "itemNotFound": {
-    "message": "Item not found.",
+    "code": 404,
     "details": "Error Details...",
-    "code": 404
+    "message": "Item not found."
   }
 }

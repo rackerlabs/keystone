@@ -1,7 +1,7 @@
 {
   "identityFault": {
-    "message": "Fault",
+    "code": 500,
     "details": "Error Details...",
-    "code": 500
+    "message": "Fault"
   }
 }

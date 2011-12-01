@@ -1,21 +1,21 @@
 {
   "user": {
-    "roles": [
-        {
-          "tenantId": "1234",
-          "id": "Admin"
-        }
-      ],
-    "roles_links": [],
-    "id": "1000",
-    "username": "jqsmith",
-    "email": "john.smith@example.org",
-    "enabled": true,
     "RS-META:metadata": {
       "values": {
         "MetaKey1": "MetaValue1",
         "MetaKey2": "MetaValue2"
       }
-    }
+    },
+    "email": "john.smith@example.org",
+    "enabled": true,
+    "id": "1000",
+    "roles": [
+      {
+        "id": "Admin",
+        "tenantId": "1234"
+      }
+    ],
+    "roles_links": [],
+    "username": "jqsmith"
   }
 }
