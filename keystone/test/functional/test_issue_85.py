@@ -9,17 +9,21 @@ class TestIssue85(common.FunctionalTestCase):
         """Disabling a tenant should invalidate previously-issued tokens"""
         # Create a user for a specific tenant
         tenant = self.create_tenant().json['tenant']
+        services = {}
+        services = self.create_service().json['OS-KSADM:service']
+        role = self.create_role(service_name=services['name']).json['role']
         password = common.unique_str()
         user = self.create_user(user_password=password,
             tenant_id=tenant['id']).json['user']
         user['password'] = password
+        self.grant_role_to_user(user['id'], role['id'], tenant['id'])
 
         # Authenticate as user to get a token *for a specific tenant*
         user_token = self.authenticate(user['name'], user['password'],
             tenant['id']).json['access']['token']['id']
 
         # Validate and check that token belongs to tenant
-        tenant_id = self.get_token(user_token).\
+        tenant_id = self.get_token(user_token, services['id']).\
             json['access']['token']['tenant']['id']
         self.assertEqual(tenant_id, tenant['id'])
 
@@ -34,8 +38,8 @@ class TestIssue85(common.FunctionalTestCase):
         self.assertFalse(r.json['tenant']['enabled'])
 
         # Assert that token belonging to disabled tenant is invalid
-        r = self.admin_request(path='/tokens/%s?belongsTo=%s' %
-            (user_token, tenant['id']), assert_status=403)
+        r = self.admin_request(path='/tokens/%s?belongsTo=%s&serviceId=%s' %
+            (user_token, tenant['id'], services['id']), assert_status=403)
         self.assertTrue(r.json['tenantDisabled'], 'Tenant is disabled')
 
 if __name__ == '__main__':

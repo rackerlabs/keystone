@@ -53,9 +53,25 @@ def disable_tenant(name):
     return db_api.TENANT.update(obj.id, obj)
 
 
-def add_role(name):
+def add_role(name, service_name):
     obj = db_models.Role()
     obj.name = name
+    sname = None
+    if name.find(":") != -1:
+        # name has service prefix
+        names = name.split(":")
+        if len(names) == 2 and len(names[0]) > 0:
+            sname = names[0]
+    if service_name:
+        # name is prefixed by service, make sure it
+        # agrees with the given service_name
+        if sname and sname != service_name:
+            raise ValueError("service name mistmatch")
+        sname = service_name
+    if sname:
+        # we have a service role, fill in the service ID
+        service = db_api.SERVICE.get_by_name(name=sname)
+        obj.service_id = service.id
     role = db_api.ROLE.create(obj)
     return role
 

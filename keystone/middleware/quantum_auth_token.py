@@ -71,6 +71,7 @@ HTTP_X_AUTHORIZATION
 import httplib
 import json
 import logging
+from urllib import quote
 from urlparse import urlparse
 from webob.exc import HTTPUnauthorized, Request, Response
 
@@ -128,10 +129,15 @@ class AuthProtocol(object):
         self.admin_user = conf.get('auth_admin_user')
         self.admin_password = conf.get('auth_admin_password')
         self.admin_token = conf.get('auth_admin_token')
+        # bind to one or more service instances
+        service_ids = conf.get('service_ids')
+        self.serviceId_qs = ''
+        if service_ids:
+            self.serviceId_qs = '?serviceId=%s' % (quote(service_ids))
 
     def _build_token_uri(self, claims=None):
         uri = "/v" + self.auth_api_version + "/tokens" + \
-              (claims and '/' + claims or '')
+              (claims and '/' + claims + self.serviceId_qs or '')
         return uri
 
     def __init__(self, app, conf):
@@ -364,7 +370,7 @@ class AuthProtocol(object):
         role_refs = token_info["access"]["user"]["roles"]
         if role_refs != None:
             for role_ref in role_refs:
-                roles.append(role_ref["Id"])
+                roles.append(role_ref["id"])
 
         token_info = json.loads(data)
 

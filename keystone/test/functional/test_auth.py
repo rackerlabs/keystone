@@ -118,7 +118,8 @@ class TestServiceAuthentication(common.FunctionalTestCase):
 
     def test_user_auth_with_role_on_tenant(self):
         # Additonal setUp
-        role = self.create_role().json['role']
+        r = self.create_role(service_name=self.services['name'])
+        role = r.json['role']
         self.grant_role_to_user(self.user['id'], role['id'], self.tenant['id'])
 
         # Create an unscoped token
@@ -166,7 +167,8 @@ class TestServiceAuthentication(common.FunctionalTestCase):
             self.tenant['id'])
 
         # And an admin should be able to validate that our new token is scoped
-        r = self.validate_token(scoped['token']['id'], self.tenant['id'])
+        r = self.validate_token(scoped['token']['id'],
+                                self.tenant['id'], self.services['id'])
         access = r.json['access']
 
         self.assertEqual(access['user']['id'], self.user['id'])
@@ -175,10 +177,38 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.assertEqual(access['token']['tenant']['name'],\
             self.tenant['name'])
 
+        # make sure only the service roles are returned
+        self.assertIsNotNone(access['user'].get('roles'))
+        self.assertEqual(len(access['user']['roles']), 1)
+        self.assertEqual(access['user']['roles'][0]['name'], role['name'])
+
+        # now validate the scoped token and ask the global roles
+        global_role = self.create_role().json['role']
+        # crete a global role
+        self.put_user_role(self.user['id'], global_role['id'], None)
+        service_ids = "%s,global" % (self.services['id'])
+        r = self.validate_token(scoped['token']['id'],
+                                self.tenant['id'], service_ids)
+        access = r.json['access']
+
+        self.assertEqual(access['user']['id'], self.user['id'])
+        self.assertEqual(access['user']['name'], self.user['name'])
+        self.assertEqual(access['token']['tenant']['id'], self.tenant['id'])
+        self.assertEqual(access['token']['tenant']['name'],\
+            self.tenant['name'])
+
+        # make sure only the service roles are returned
+        self.assertIsNotNone(access['user'].get('roles'))
+        self.assertEqual(len(access['user']['roles']), 2)
+        role_names = map(lambda x: x['name'], access['user']['roles'])
+        self.assertTrue(role['name'] in role_names)
+        self.assertTrue(global_role['name'] in role_names)
+
     def test_user_auth_with_role_on_tenant_xml(self):
         # Additonal setUp
         tenant = self.create_tenant().json['tenant']
-        role = self.create_role().json['role']
+        r = self.create_role(service_name=self.services['name'])
+        role = r.json['role']
         self.grant_role_to_user(self.user['id'], role['id'], tenant['id'])
 
         # Create an unscoped token
@@ -242,8 +272,9 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.assertEqual(tenant_scope.get('name'), tenant['name'])
 
         # And an admin should be able to validate that our new token is scoped
-        r = self.validate_token(token.get('id'), tenant['id'], headers={
-            'Accept': 'application/xml'})
+        r = self.validate_token(token.get('id'), tenant['id'],
+                                self.services['id'],
+                                headers={'Accept': 'application/xml'})
         self.assertEqual(r.xml.tag, '{%s}access' % self.xmlns)
 
         token = r.xml.find('{%s}token' % self.xmlns)
@@ -259,10 +290,47 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.assertEqual(user.get('name'), self.user['name'])
         self.assertIsNone(user.get('tenantId'))
 
+        roles = user.find('{%s}roles' % self.xmlns)
+        self.assertIsNotNone(roles)
+        self.assertEqual(len(roles), 1)
+        self.assertEqual(roles[0].get('name'), role['name'])
+
+        # now validate the scoped token and ask the global roles
+        global_role = self.create_role().json['role']
+        # crete a global role
+        self.put_user_role(self.user['id'], global_role['id'], None)
+        service_ids = "%s,global" % (self.services['id'])
+        r = self.validate_token(token.get('id'), tenant['id'],
+                                service_ids,
+                                headers={'Accept': 'application/xml'})
+        self.assertEqual(r.xml.tag, '{%s}access' % self.xmlns)
+
+        token = r.xml.find('{%s}token' % self.xmlns)
+        self.assertIsNotNone(token)
+        tenant_scope = token.find('{%s}tenant' % self.xmlns)
+        self.assertIsNotNone(tenant_scope)
+        self.assertEqual(tenant_scope.get('id'), tenant['id'])
+        self.assertEqual(tenant_scope.get('name'), tenant['name'])
+
+        user = r.xml.find('{%s}user' % self.xmlns)
+        self.assertIsNotNone(user)
+        self.assertEqual(user.get('id'), self.user['id'])
+        self.assertEqual(user.get('name'), self.user['name'])
+        self.assertIsNone(user.get('tenantId'))
+
+        roles = user.find('{%s}roles' % self.xmlns)
+        self.assertIsNotNone(roles)
+        self.assertEqual(len(roles), 2)
+        role_names = map(lambda x: x.get('name'), roles)
+        self.assertTrue(role['name'] in role_names)
+        self.assertTrue(global_role['name'] in role_names)
+
     def test_scope_to_tenant_by_name(self):
         # Additonal setUp
         tenant = self.create_tenant().json['tenant']
-        role = self.create_role().json['role']
+        services = {}
+        services = self.create_service().json['OS-KSADM:service']
+        role = self.create_role(service_name=services['name']).json['role']
         self.grant_role_to_user(self.user['id'], role['id'], tenant['id'])
 
         # Create an unscoped token
@@ -283,7 +351,8 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.assertEqual(scoped['token']['tenant']['name'], tenant['name'])
 
         # And an admin should be able to validate that our new token is scoped
-        r = self.validate_token(scoped['token']['id'], tenant['id'])
+        r = self.validate_token(scoped['token']['id'],
+                                tenant['id'], services['id'])
         access = r.json['access']
 
         self.assertEqual(access['user']['id'], self.user['id'])
@@ -291,10 +360,38 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.assertEqual(access['token']['tenant']['id'], tenant['id'])
         self.assertEqual(access['token']['tenant']['name'], tenant['name'])
 
+        # make sure only the service roles are returned
+        self.assertIsNotNone(access['user'].get('roles'))
+        self.assertEqual(len(access['user']['roles']), 1)
+        self.assertEqual(access['user']['roles'][0]['name'], role['name'])
+
+        # now validate the scoped token and ask the global roles
+        global_role = self.create_role().json['role']
+        # crete a global role
+        self.put_user_role(self.user['id'], global_role['id'], None)
+        service_ids = "%s,global" % (services['id'])
+        r = self.validate_token(scoped['token']['id'],
+                                tenant['id'], service_ids)
+        access = r.json['access']
+
+        self.assertEqual(access['user']['id'], self.user['id'])
+        self.assertEqual(access['user']['name'], self.user['name'])
+        self.assertEqual(access['token']['tenant']['id'], tenant['id'])
+        self.assertEqual(access['token']['tenant']['name'],\
+            tenant['name'])
+
+        # make sure only the service roles are returned
+        self.assertIsNotNone(access['user'].get('roles'))
+        self.assertEqual(len(access['user']['roles']), 2)
+        role_names = map(lambda x: x['name'], access['user']['roles'])
+        self.assertTrue(role['name'] in role_names)
+        self.assertTrue(global_role['name'] in role_names)
+
     def test_scope_to_tenant_by_name_with_credentials(self):
         # Additonal setUp
         tenant = self.create_tenant().json['tenant']
-        role = self.create_role().json['role']
+        r = self.create_role(service_name=self.services['name'])
+        role = r.json['role']
         self.grant_role_to_user(self.user['id'], role['id'], tenant['id'])
 
         scoped = self.post_token(as_json={
@@ -308,13 +405,153 @@ class TestServiceAuthentication(common.FunctionalTestCase):
         self.assertEqual(scoped['token']['tenant']['name'], tenant['name'])
 
         # And an admin should be able to validate that our new token is scoped
-        r = self.validate_token(scoped['token']['id'], tenant['id'])
+        r = self.validate_token(scoped['token']['id'],
+                                tenant['id'], self.services['id'])
         access = r.json['access']
 
         self.assertEqual(access['user']['id'], self.user['id'])
         self.assertEqual(access['user']['name'], self.user['name'])
         self.assertEqual(access['token']['tenant']['id'], tenant['id'])
         self.assertEqual(access['token']['tenant']['name'], tenant['name'])
+
+        # make sure only the service roles are returned
+        self.assertIsNotNone(access['user'].get('roles'))
+        self.assertEqual(len(access['user']['roles']), 1)
+        self.assertEqual(access['user']['roles'][0]['name'], role['name'])
+
+        # now validate the scoped token and ask the global roles
+        global_role = self.create_role().json['role']
+        # crete a global role
+        self.put_user_role(self.user['id'], global_role['id'], None)
+        service_ids = "%s,global" % (self.services['id'])
+        r = self.validate_token(scoped['token']['id'],
+                                tenant['id'], service_ids)
+        access = r.json['access']
+
+        self.assertEqual(access['user']['id'], self.user['id'])
+        self.assertEqual(access['user']['name'], self.user['name'])
+        self.assertEqual(access['token']['tenant']['id'], tenant['id'])
+        self.assertEqual(access['token']['tenant']['name'],\
+            tenant['name'])
+
+        # make sure only the service roles are returned
+        self.assertIsNotNone(access['user'].get('roles'))
+        self.assertEqual(len(access['user']['roles']), 2)
+        role_names = map(lambda x: x['name'], access['user']['roles'])
+        self.assertTrue(role['name'] in role_names)
+        self.assertTrue(global_role['name'] in role_names)
+
+    def test_scope_to_tenant_by_name_with_credentials_and_services(self):
+        # Additonal setUp
+        tenant = self.create_tenant().json['tenant']
+        r = self.create_role(service_name=self.services['name'])
+        role = r.json['role']
+        another_service = self.create_service().json['OS-KSADM:service']
+        service_with_no_users = self.create_service().json['OS-KSADM:service']
+        ar = self.create_role(service_name=another_service['name'])
+        another_role = ar.json['role']
+        rnu = self.create_role(service_name=service_with_no_users['name'])
+        role_with_no_users = rnu.json['role']
+        rns = self.create_role()
+        role_with_no_service = rns.json['role']
+        self.grant_role_to_user(self.user['id'], role['id'], tenant['id'])
+        self.grant_role_to_user(self.user['id'], role_with_no_service['id'],
+                                tenant['id'])
+        self.grant_role_to_user(self.user['id'],
+                                another_role['id'], tenant['id'])
+        global_role = self.create_role().json['role']
+        # crete a global role
+        self.put_user_role(self.user['id'], global_role['id'], None)
+
+        scoped = self.post_token(as_json={
+            'auth': {
+                'passwordCredentials': {
+                    'username': self.user['name'],
+                    'password': self.user['password']},
+                'tenantName': tenant['name']}}).json['access']
+
+        self.assertEqual(scoped['token']['tenant']['id'], tenant['id'])
+        self.assertEqual(scoped['token']['tenant']['name'], tenant['name'])
+
+        # And an admin should be able to validate that our new token is scoped
+        r = self.validate_token(scoped['token']['id'],
+                                tenant['id'], self.services['id'])
+        access = r.json['access']
+
+        self.assertEqual(access['user']['id'], self.user['id'])
+        self.assertEqual(access['user']['name'], self.user['name'])
+        self.assertEqual(access['token']['tenant']['id'], tenant['id'])
+        self.assertEqual(access['token']['tenant']['name'], tenant['name'])
+
+        # make sure only the service roles are returned
+        self.assertIsNotNone(access['user'].get('roles'))
+        self.assertEqual(len(access['user']['roles']), 1)
+        self.assertEqual(access['user']['roles'][0]['name'], role['name'])
+
+        # now make sure we get all the services
+        service_ids = "%s,%s" % (self.services['id'], another_service['id'])
+        r = self.validate_token(scoped['token']['id'],
+                                tenant['id'], service_ids)
+        access = r.json['access']
+
+        self.assertEqual(access['user']['id'], self.user['id'])
+        self.assertEqual(access['user']['name'], self.user['name'])
+        self.assertEqual(access['token']['tenant']['id'], tenant['id'])
+        self.assertEqual(access['token']['tenant']['name'], tenant['name'])
+
+        # make sure only the service roles are returned
+        self.assertIsNotNone(access['user'].get('roles'))
+        self.assertEqual(len(access['user']['roles']), 2)
+        role_names = map(lambda x: x['name'], access['user']['roles'])
+        self.assertTrue(role['name'] in role_names)
+        self.assertTrue(another_role['name'] in role_names)
+
+        # now make sure we get all the services,
+        # excluding the one with no users
+        service_ids = "%s,%s,%s" % (self.services['id'], another_service['id'],
+                                  service_with_no_users['id'])
+        r = self.validate_token(scoped['token']['id'],
+                                tenant['id'], service_ids)
+        access = r.json['access']
+
+        self.assertEqual(access['user']['id'], self.user['id'])
+        self.assertEqual(access['user']['name'], self.user['name'])
+        self.assertEqual(access['token']['tenant']['id'], tenant['id'])
+        self.assertEqual(access['token']['tenant']['name'], tenant['name'])
+
+        # make sure only the service roles are returned
+        self.assertIsNotNone(access['user'].get('roles'))
+        self.assertEqual(len(access['user']['roles']), 2)
+        role_names = map(lambda x: x['name'], access['user']['roles'])
+        self.assertTrue(role['name'] in role_names)
+        self.assertTrue(another_role['name'] in role_names)
+
+        # now validate the scoped token and ask the global roles
+        service_ids = "%s,%s,global" % (self.services['id'],
+                                        another_service['id'])
+        r = self.validate_token(scoped['token']['id'],
+                                tenant['id'], service_ids)
+        access = r.json['access']
+
+        self.assertEqual(access['user']['id'], self.user['id'])
+        self.assertEqual(access['user']['name'], self.user['name'])
+        self.assertEqual(access['token']['tenant']['id'], tenant['id'])
+        self.assertEqual(access['token']['tenant']['name'],\
+            tenant['name'])
+
+        # make sure only the service roles are returned
+        self.assertIsNotNone(access['user'].get('roles'))
+        self.assertEqual(len(access['user']['roles']), 3)
+        role_names = map(lambda x: x['name'], access['user']['roles'])
+        self.assertTrue(role['name'] in role_names)
+        self.assertTrue(another_role['name'] in role_names)
+        self.assertTrue(global_role['name'] in role_names)
+
+        # test bogus service ID
+        service_ids = "%s,%s,global,boguzz" % (self.services['id'],
+                                               another_service['id'])
+        self.validate_token(scoped['token']['id'], tenant['id'],
+                            service_ids, assert_status=401)
 
     def test_user_auth_against_nonexistent_tenant(self):
         # Create an unscoped token
