@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3///kM\u003d",
+        "filename": "etc/memcache.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2011-12-02T17:52:53Z",
+      "side": 1,
+      "message": "tabs to spaces?",
+      "revId": "02dbbc2dee577a7b9a7f903a455994b2b4963ae5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///kI\u003d",
+        "filename": "etc/ssl.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2011-12-02T17:52:53Z",
+      "side": 1,
+      "message": "tabs",
+      "revId": "02dbbc2dee577a7b9a7f903a455994b2b4963ae5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
