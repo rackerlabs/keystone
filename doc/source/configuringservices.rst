@@ -232,6 +232,42 @@ Then use::
 
     $ keystone-import `filename`
 
+
+Setting Up Middleware
+=====================
+
+Keystone Auth-Token Middleware
+--------------------------------
+
+The Keystone auth_token middleware is a WSGI component that can be inserted in
+the WSGI pipeline to handle authenticating tokens with Keystone. See :doc:`middleware`
+for details on middleware and configuration parameters.
+
+Here is a sample configuration of the middleware::
+
+
+    [app:myService]
+    paste.app_factory = myService:app_factory
+    
+    [pipeline:main]
+    pipeline =
+        tokenauth
+        myService
+
+    [filter:tokenauth]
+    paste.filter_factory = keystone.middleware.auth_token:filter_factory
+    service_protocol = http
+    service_host = 127.0.0.1
+    service_port = 5000
+    auth_host = 127.0.0.1
+    auth_port = 35357
+    auth_protocol = http
+    auth_uri = http://127.0.0.1:5000/
+    admin_token = 999888777666
+    ;Uncomment next line and check ip:port to use memcached to cache token requests
+    ;memcache_hosts = 127.0.0.1:11211
+
+
 Configuring Nova to use Keystone
 --------------------------------
 
