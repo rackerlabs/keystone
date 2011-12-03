@@ -1,6 +1,5 @@
 import os
 import subprocess
-import sys
 import unittest2 as unittest
 
 # Calculate root path so ewe call files in bin
@@ -16,9 +15,9 @@ class TestKeystoneManage(unittest.TestCase):
     Functional tests for the keystone-manage client.
     """
 
-    def test_check_can_call_keystone_manage(self):
+    def test_keystone_manage_usage(self):
         """
-        Test that we can call keystone-manage
+        Test that we can call ``keystone-manage --help``
         """
         cmd = [
             os.path.join(possible_topdir, 'bin', 'keystone-manage'),
@@ -26,7 +25,21 @@ class TestKeystoneManage(unittest.TestCase):
         ]
         process = subprocess.Popen(cmd, stdout=subprocess.PIPE)
         result = process.communicate()[0]
-        self.assertIn('Usage', result)
+        self.assertIn('usage', result)
+        self.assertIn('version', result)
+
+    def test_version_help(self):
+        """
+        Test that we can call ``keystone-manage version --help``
+        """
+        cmd = [
+            os.path.join(possible_topdir, 'bin', 'keystone-manage'),
+            'version', '--help',
+        ]
+        process = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+        result = process.communicate()[0]
+        self.assertIn('usage: version [-h] [--api] [--implementation]', result)
+
 
 if __name__ == '__main__':
     unittest.main()

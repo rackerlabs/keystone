@@ -1,0 +1,32 @@
+def arg(name, **kwargs):
+    """Decorate the command class with an argparse argument"""
+    def _decorator(cls):
+        if not hasattr(cls, '_args'):
+            setattr(cls, '_args', {})
+        args = getattr(cls, '_args')
+        args[name] = kwargs
+        return cls
+    return _decorator
+
+
+class BaseCommand(object):
+    """Provides a common pattern for keystone-manage commands"""
+    _args = {}
+
+    @staticmethod
+    def append_parser(parser):
+        """Append this command's arguments to an argparser
+
+        :param parser: argparse.ArgumentParser
+        """
+        args = BaseCommand._args
+        for name in args.keys():
+            parser.add_argument(name, **args[name])
+
+    @staticmethod
+    def run(args):
+        """Prints command results to stdout
+
+        :param args: argparse Namespace
+        """
+        raise NotImplemented()
