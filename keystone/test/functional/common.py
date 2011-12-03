@@ -97,7 +97,6 @@ class RestfulTestCase(HttpTestCase):
         Dynamically encodes json or xml as request body if one is provided.
 
         .. WARNING::
-
             * Existing Content-Type header will be overwritten.
             * If both as_json and as_xml are provided, as_xml is ignored.
             * If either as_json or as_xml AND a body is provided, the body
@@ -240,25 +239,37 @@ class ApiTestCase(RestfulTestCase):
             return self.service_request(method='POST',
                 path='/tokens', **kwargs)
 
-    def get_token(self, token_id, **kwargs):
-        """GET /tokens/{token_id}"""
+    def get_token(self, token_id, service_ids=None, **kwargs):
+        """GET /tokens/{token_id}[?serviceId={service_ids}]"""
+        serviceId_qs = ""
+        if service_ids:
+            serviceId_qs = "?serviceId=%s" % (service_ids)
         return self.admin_request(method='GET',
-            path='/tokens/%s' % (token_id,), **kwargs)
+            path='/tokens/%s%s' % (token_id, serviceId_qs), **kwargs)
 
-    def get_token_belongsto(self, token_id, tenant_id, **kwargs):
-        """GET /tokens/{token_id}?belongsTo={tenant_id}"""
+    def get_token_belongsto(self, token_id, tenant_id, service_ids, **kwargs):
+        """GET /tokens/{token_id}?belongsTo={tenant_id}[&serviceId={sids}]"""
+        serviceId_qs = ""
+        if service_ids:
+            serviceId_qs = "&serviceId=%s" % (service_ids)
         return self.admin_request(method='GET',
-            path='/tokens/%s?belongsTo=%s' % (token_id, tenant_id), **kwargs)
+            path='/tokens/%s?belongsTo=%s%s' % (token_id, tenant_id,
+                serviceId_qs), **kwargs)
 
     def check_token(self, token_id, **kwargs):
         """HEAD /tokens/{token_id}"""
         return self.admin_request(method='HEAD',
             path='/tokens/%s' % (token_id,), **kwargs)
 
-    def check_token_belongs_to(self, token_id, tenant_id, **kwargs):
-        """HEAD /tokens/{token_id}?belongsTo={tenant_id}"""
+    def check_token_belongs_to(self, token_id, tenant_id,
+                               service_ids, **kwargs):
+        """HEAD /tokens/{token_id}?belongsTo={tenant_id}[&serviceId={sids}]"""
+        serviceId_qs = ""
+        if service_ids:
+            serviceId_qs = "&serviceId=%s" % (service_ids)
         return self.admin_request(method='HEAD',
-            path='/tokens/%s?belongsTo=%s' % (token_id, tenant_id), **kwargs)
+            path='/tokens/%s?belongsTo=%s%s' % (token_id, tenant_id,
+                serviceId_qs), **kwargs)
 
     def delete_token(self, token_id, **kwargs):
         """DELETE /tokens/{token_id}"""
@@ -654,12 +665,14 @@ class FunctionalTestCase(ApiTestCase):
             data["auth"]["tenantId"] = tenant_id
         return self.post_token(as_json=data, **kwargs)
 
-    def validate_token(self, token_id=None, tenant_id=None, **kwargs):
+    def validate_token(self, token_id=None, tenant_id=None,
+                       service_ids=None, **kwargs):
         token_id = optional_str(token_id)
 
         if tenant_id:
             # validate scoped token
-            return self.get_token_belongsto(token_id, tenant_id, **kwargs)
+            return self.get_token_belongsto(token_id,
+                                            tenant_id, service_ids, **kwargs)
         else:
             # validate unscoped token
             return self.get_token(token_id, **kwargs)
@@ -832,8 +845,11 @@ class FunctionalTestCase(ApiTestCase):
         return self.delete_user_role(user_id, tenant_id, **kwargs)
 
     def create_role(self, role_name=None, role_description=None,
-            service_id=None, **kwargs):
-        role_name = optional_str(role_name)
+            service_id=None, service_name=None, **kwargs):
+        if service_name and not role_name:
+            role_name = service_name + ":" + optional_str(role_name)
+        else:
+            role_name = optional_str(role_name)
         role_description = optional_str(role_description)
 
         data = {
@@ -1127,6 +1143,18 @@ class MiddlewareTestCase(FunctionalTestCase):
     Base class to run tests for Keystone WSGI middleware.
     """
 
+    def _setup_test_middleware(self):
+        test_middleware = None
+        if isinstance(self.middleware, tuple):
+            test_middleware = HeaderApp()
+            for filter in self.middleware:
+                test_middleware = \
+                filter.filter_factory(self.settings)(test_middleware)
+        else:
+            test_middleware = \
+                self.middleware.filter_factory(self.settings)(HeaderApp())
+        return test_middleware
+
     def setUp(self, middleware, settings=None):
         super(MiddlewareTestCase, self).setUp()
         if settings is None:
@@ -1143,14 +1171,9 @@ class MiddlewareTestCase(FunctionalTestCase):
             settings['auth_protocol'] = 'https'
             settings['certfile'] = cert_file
             settings['auth_uri'] = 'https://localhost:35357/'
-        if isinstance(middleware, tuple):
-            self.test_middleware = HeaderApp()
-            for filter in middleware:
-                self.test_middleware = \
-                filter.filter_factory(settings)(self.test_middleware)
-        else:
-            self.test_middleware = \
-                middleware.filter_factory(settings)(HeaderApp())
+        self.settings = settings
+        self.middleware = middleware
+        self.test_middleware = self._setup_test_middleware()
 
         password = unique_str()
         self.tenant = self.create_tenant().json['tenant']
@@ -1172,6 +1195,30 @@ class MiddlewareTestCase(FunctionalTestCase):
         r = self.authenticate(self.user['name'], self.user['password'],
             self.tenant['id'], assert_status=200)
         self.user_token = r.json['access']['token']['id']
+
+    def test_with_service_id(self):
+        # create a service role so the scope token validation will succeed
+        r = self.create_role(service_name=self.services[0]['name'])
+        role = r.json['role']
+        self.grant_role_to_user(self.user['id'],
+                                role['id'], self.tenant['id'])
+        r = self.authenticate(self.user['name'], self.user['password'],
+            self.tenant['id'], assert_status=200)
+        user_token = r.json['access']['token']['id']
+        self.settings['service_ids'] = "%s" % self.services[0]['id']
+        test_middleware = self._setup_test_middleware()
+        resp = Request.blank('/',
+            headers={'X-Auth-Token': user_token}) \
+            .get_response(test_middleware)
+        self.assertEquals(resp.status_int, 200)
+
+        # now give it a bogus service ID to make sure we get a 401
+        self.settings['service_ids'] = "boguzz"
+        test_middleware = self._setup_test_middleware()
+        resp = Request.blank('/',
+            headers={'X-Auth-Token': user_token}) \
+            .get_response(test_middleware)
+        self.assertEquals(resp.status_int, 401)
 
     def test_401_without_token(self):
         resp = Request.blank('/').get_response(self.test_middleware)

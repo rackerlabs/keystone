@@ -45,6 +45,10 @@ class ValidateToken(common.FunctionalTestCase):
         self.assertIsNotNone(r.json['access']['user']['name'],
             self.user['name'])
 
+    def test_validate_token_with_bogus_service_ids(self):
+        self.get_token_belongsto(self.token['id'], self.tenant['id'],
+                                 'boguzzz', assert_status=401)
+
     def test_validate_token_true_using_service_token(self):
         self.admin_token = self.service_admin_token
         r = self.get_token_belongsto(self.token['id'], self.tenant['id'],
@@ -96,12 +100,25 @@ class CheckToken(common.FunctionalTestCase):
         self.tenant = self.create_tenant().json['tenant']
         self.user = self.create_user_with_known_password(
             tenant_id=self.tenant['id']).json['user']
+        self.service = self.create_service().json['OS-KSADM:service']
+        r = self.create_role(service_name=self.service['name'])
+        self.role = r.json['role']
+        self.role_ref = self.grant_role_to_user(self.user['id'],
+            self.role['id'], self.tenant['id'])
         self.token = self.authenticate(self.user['name'],
         self.user['password'], self.tenant['id']).json['access']['token']
 
     def test_validate_token_true(self):
         self.check_token_belongs_to(self.token['id'], self.tenant['id'],
             assert_status=200)
+
+    def test_validate_token_with_service(self):
+        self.check_token_belongs_to(self.token['id'], self.tenant['id'],
+            self.service['id'], assert_status=401)
+
+    def test_validate_token_with_bogus_service(self):
+        self.check_token_belongs_to(self.token['id'], self.tenant['id'],
+            'boguzzz', assert_status=401)
 
     def test_validate_token_true_using_service_token(self):
         self.admin_token = self.service_admin_token

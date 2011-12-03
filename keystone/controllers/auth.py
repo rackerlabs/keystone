@@ -41,8 +41,9 @@ class AuthController(wsgi.Controller):
     def _validate_token(self, req, token_id):
         """Validates the token, and that it belongs to the specified tenant"""
         belongs_to = req.GET.get('belongsTo')
+        service_ids = req.GET.get('serviceId')
         return config.SERVICE.validate_token(
-            utils.get_auth_token(req), token_id, belongs_to)
+            utils.get_auth_token(req), token_id, belongs_to, service_ids)
 
     @utils.wrap_error
     def validate_token(self, req, token_id):
