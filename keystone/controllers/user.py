@@ -27,8 +27,8 @@ class UserController(wsgi.Controller):
             return utils.send_result(200, req, tenant)
         else:
             marker, limit, url = get_marker_limit_and_url(req)
-            users = IdentityService.get_users(utils.get_auth_token(req), marker,
-                limit, url)
+            users = IdentityService.get_users(utils.get_auth_token(req),
+                marker, limit, url)
             return utils.send_result(200, req, users)
 
     @utils.wrap_error
