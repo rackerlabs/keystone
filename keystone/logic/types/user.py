@@ -119,7 +119,7 @@ class User(object):
             dom_roles = etree.Element("tenantRoles")
             for role in self.tenant_roles:
                 dom_role = etree.Element("tenantRole")
-                dom_role.text = role
+                dom_role.text = unicode(role)
                 dom_roles.append(dom_role)
             dom.append(dom_roles)
         return dom

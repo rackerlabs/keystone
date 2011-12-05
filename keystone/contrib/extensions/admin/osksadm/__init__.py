@@ -35,24 +35,24 @@ class ExtensionHandler(BaseExtensionHandler):
         mapper.connect("/tenants", controller=tenant_controller,
                     action="create_tenant",
                     conditions=dict(method=["POST"]))
-        mapper.connect("/tenants/{tenant_id}",
+        mapper.connect("/tenants/{tenant_uid}",
                     controller=tenant_controller,
                     action="update_tenant", conditions=dict(method=["POST"]))
-        mapper.connect("/tenants/{tenant_id}",
+        mapper.connect("/tenants/{tenant_uid}",
                     controller=tenant_controller,
                     action="delete_tenant", conditions=dict(method=["DELETE"]))
-        mapper.connect("/tenants/{tenant_id}/users",
+        mapper.connect("/tenants/{tenant_uid}/users",
                     controller=user_controller,
                     action="get_tenant_users",
                     conditions=dict(method=["GET"]))
 
         #Add/Delete Tenant specific role.
         mapper.connect(
-            "/tenants/{tenant_id}/users/{user_id}/roles/OS-KSADM/{role_id}",
+            "/tenants/{tenant_uid}/users/{user_id}/roles/OS-KSADM/{role_id}",
             controller=roles_controller, action="add_role_to_user",
             conditions=dict(method=["PUT"]))
         mapper.connect(
-            "/tenants/{tenant_id}/users/{user_id}/roles/OS-KSADM/{role_id}",
+            "/tenants/{tenant_uid}/users/{user_id}/roles/OS-KSADM/{role_id}",
             controller=roles_controller, action="delete_role_from_user",
             conditions=dict(method=["DELETE"]))
         # User Operations

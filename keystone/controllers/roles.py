@@ -42,20 +42,20 @@ class RolesController(wsgi.Controller):
         return utils.send_result(200, req, role)
 
     @utils.wrap_error
-    def add_role_to_user(self, req, user_id, role_id, tenant_id=None):
+    def add_role_to_user(self, req, user_id, role_id, tenant_uid=None):
         IdentityService.add_role_to_user(utils.get_auth_token(req),
-            user_id, role_id, tenant_id)
+            user_id, role_id, tenant_uid)
         return utils.send_result(201, None)
 
     @utils.wrap_error
-    def delete_role_from_user(self, req, user_id, role_id, tenant_id=None):
+    def delete_role_from_user(self, req, user_id, role_id, tenant_uid=None):
         IdentityService.remove_role_from_user(utils.get_auth_token(req),
-            user_id, role_id, tenant_id)
+            user_id, role_id, tenant_uid)
         return utils.send_result(204, req, None)
 
     @utils.wrap_error
-    def get_user_roles(self, req, user_id, tenant_id=None):
+    def get_user_roles(self, req, user_id, tenant_uid=None):
         marker, limit, url = get_marker_limit_and_url(req)
         roles = IdentityService.get_user_roles(
-            utils.get_auth_token(req), marker, limit, url, user_id, tenant_id)
+            utils.get_auth_token(req), marker, limit, url, user_id, tenant_uid)
         return utils.send_result(200, req, roles)

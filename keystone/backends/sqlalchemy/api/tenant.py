@@ -17,6 +17,7 @@
 
 from keystone.backends.sqlalchemy import get_session, models, aliased
 from keystone.backends.api import BaseTenantAPI
+import uuid
 
 
 class TenantAPI(BaseTenantAPI):
@@ -24,12 +25,20 @@ class TenantAPI(BaseTenantAPI):
     def create(self, values):
         tenant_ref = models.Tenant()
         tenant_ref.update(values)
+
+        if tenant_ref.uid is None:
+            tenant_ref.uid = str(uuid.uuid4())
+
         tenant_ref.save()
         return tenant_ref
 
     def get(self, id, session=None):
         session = session or get_session()
         return session.query(models.Tenant).filter_by(id=id).first()
+
+    def get_by_uid(self, uid, session=None):
+        session = session or get_session()
+        return session.query(models.Tenant).filter_by(uid=uid).first()
 
     def get_by_name(self, name, session=None):
         session = session or get_session()

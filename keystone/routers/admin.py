@@ -61,7 +61,7 @@ class AdminApi(wsgi.Router):
         tenant_controller = TenantController(options)
         mapper.connect("/tenants", controller=tenant_controller,
                     action="get_tenants", conditions=dict(method=["GET"]))
-        mapper.connect("/tenants/{tenant_id}",
+        mapper.connect("/tenants/{tenant_uid}",
                     controller=tenant_controller,
                     action="get_tenant", conditions=dict(method=["GET"]))
         roles_controller = RolesController(options)

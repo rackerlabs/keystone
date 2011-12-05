@@ -27,10 +27,19 @@ class TenantTest(common.FunctionalTestCase):
         super(TenantTest, self).tearDown(*args, **kwargs)
 
 
-class CreateTenantTest(TenantTest):
+class CreateTenantsTest(TenantTest):
 
     def test_create_tenant(self):
-        self.create_tenant(assert_status=201)
+        tenant = self.create_tenant(assert_status=201).json['tenant']
+        self.assertIsNotNone(tenant.get('id'))
+        self.assertIsNotNone(tenant.get('name'))
+        self.assertIsNotNone(tenant.get('description'))
+        self.assertTrue(tenant.get('enabled'))
+
+        # we want something back that looks more like a UUID
+        # than an auto-incremented integer ID
+        self.assertRaises(ValueError, int, tenant['id'])
+
 
     def test_create_tenant_blank_name(self):
         self.create_tenant(tenant_name='', assert_status=400)

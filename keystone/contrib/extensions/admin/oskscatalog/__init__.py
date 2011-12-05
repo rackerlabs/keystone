@@ -48,16 +48,16 @@ class ExtensionHandler(BaseExtensionHandler):
             action="delete_endpoint_template",
                         conditions=dict(method=["DELETE"]))
         #Endpoint Calls
-        mapper.connect("/tenants/{tenant_id}/OS-KSCATALOG/endpoints",
+        mapper.connect("/tenants/{tenant_uid}/OS-KSCATALOG/endpoints",
                        controller=endpoint_templates_controller,
                     action="get_endpoints_for_tenant",
                     conditions=dict(method=["GET"]))
-        mapper.connect("/tenants/{tenant_id}/OS-KSCATALOG/endpoints",
+        mapper.connect("/tenants/{tenant_uid}/OS-KSCATALOG/endpoints",
                        controller=endpoint_templates_controller,
                      action="add_endpoint_to_tenant",
                      conditions=dict(method=["POST"]))
         mapper.connect(
-                "/tenants/{tenant_id}/OS-KSCATALOG/endpoints/{endpoint_id}",
+                "/tenants/{tenant_uid}/OS-KSCATALOG/endpoints/{endpoint_id}",
                 controller=endpoint_templates_controller,
                 action="remove_endpoint_from_tenant",
                 conditions=dict(method=["DELETE"]))

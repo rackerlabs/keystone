@@ -54,21 +54,22 @@ class EndpointTemplatesController(wsgi.Controller):
         return utils.send_result(200, req, endpoint_template)
 
     @utils.wrap_error
-    def get_endpoints_for_tenant(self, req, tenant_id):
+    def get_endpoints_for_tenant(self, req, tenant_uid):
         marker, limit, url = get_marker_limit_and_url(req)
         endpoints = IdentityService.get_tenant_endpoints(
-            utils.get_auth_token(req), marker, limit, url, tenant_id)
+            utils.get_auth_token(req), marker, limit, url, tenant_uid)
         return utils.send_result(200, req, endpoints)
 
     @utils.wrap_error
-    def add_endpoint_to_tenant(self, req, tenant_id):
+    def add_endpoint_to_tenant(self, req, tenant_uid):
         endpoint = utils.get_normalized_request_content(EndpointTemplate, req)
         return utils.send_result(201, req,
             IdentityService.create_endpoint_for_tenant(
-                utils.get_auth_token(req), tenant_id, endpoint))
+                utils.get_auth_token(req), tenant_uid, endpoint))
 
     @utils.wrap_error
-    def remove_endpoint_from_tenant(self, req, tenant_id, endpoint_id):
+    def remove_endpoint_from_tenant(self, req, tenant_uid, endpoint_id):
+        # TODO(dolph): tenant_uid isn't used?
         rval = IdentityService.delete_endpoint(utils.get_auth_token(req),
                                         endpoint_id)
         return utils.send_result(204, req, rval)

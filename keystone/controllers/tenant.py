@@ -33,20 +33,20 @@ class TenantController(wsgi.Controller):
             return utils.send_result(200, req, tenants)
 
     @utils.wrap_error
-    def get_tenant(self, req, tenant_id):
+    def get_tenant(self, req, tenant_uid):
         tenant = IdentityService.get_tenant(utils.get_auth_token(req),
-            tenant_id)
+            tenant_uid)
         return utils.send_result(200, req, tenant)
 
     @utils.wrap_error
-    def update_tenant(self, req, tenant_id):
+    def update_tenant(self, req, tenant_uid):
         tenant = utils.get_normalized_request_content(Tenant, req)
         rval = IdentityService.update_tenant(utils.get_auth_token(req),
-            tenant_id, tenant)
+            tenant_uid, tenant)
         return utils.send_result(200, req, rval)
 
     @utils.wrap_error
-    def delete_tenant(self, req, tenant_id):
+    def delete_tenant(self, req, tenant_uid):
         rval = IdentityService.delete_tenant(utils.get_auth_token(req),
-            tenant_id)
+            tenant_uid)
         return utils.send_result(204, req, rval)
