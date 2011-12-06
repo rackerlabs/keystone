@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3///Bw\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "Nice help!",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///Bs\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "\"Middleware must specify *this* (?) global service ID\"\n\n\"inorder\" -\u003e \"in order\"",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///Bk\u003d",
+        "filename": "keystone/backends/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "You should be able to specify the default value here:\n\n    global GLOBAL_SERVICE_ID\n    GLOBAL_SERVICE_ID \u003d options.get(\u0027global_service_id\u0027, \u0027global\u0027)",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///Bg\u003d",
+        "filename": "keystone/backends/ldap/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "Fancy ;)",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///Ck\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "Can you change `sids` to `service_ids`? `sids` isn\u0027t a convention used in keystone :)",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///Cg\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "Not sure what `ts` is supposed to be either, but that\u0027s not your fault :P",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///CM\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "ts.append ?",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///Cc\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "`sids` -\u003e `service_ids`",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///CY\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "`sid` -\u003e `service_id`",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///CE\u003d",
+        "filename": "keystone/manage/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "if \":\" in name:",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///CA\u003d",
+        "filename": "keystone/manage/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "(service_prefix, role_name) \u003d name.split(\":\") ?",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///B8\u003d",
+        "filename": "keystone/manage/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "Why the `sname and `? Not sure what scenario you\u0027re checking for?",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///B4\u003d",
+        "filename": "keystone/manage/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "You just checked if they were equal, so is this redundant?",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///B0\u003d",
+        "filename": "keystone/manage/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "Can these last two if blocks be merged into one?",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///Bc\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "The OS convention is to import modules wherever possible:\n\n  .. urllib.quote( ..",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///BM\u003d",
+        "filename": "keystone/middleware/quantum_auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "Nice catch, does this need to be addressed downstream?",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///BY\u003d",
+        "filename": "keystone/test/functional/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "create*",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///BQ\u003d",
+        "filename": "keystone/test/functional/test_issue_85.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "service*",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///BI\u003d",
+        "filename": "keystone/test/functional/test_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "service*",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///BE\u003d",
+        "filename": "keystone/test/functional/test_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "service*",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///BU\u003d",
+        "filename": "keystone/test/sampledata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T04:29:23Z",
+      "side": 1,
+      "message": "I like this; we should theme the entire sampledata file... and possibly some docs.",
+      "revId": "d5f106de7ec2f76f8c59af1d51d2363d93b8b52a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
