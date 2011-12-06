@@ -16,6 +16,24 @@
       "revId": "ff30def8899c36626eacbbd5c2266c1a7b72d2cd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3///C0\u003d",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-06T03:39:37Z",
+      "side": 1,
+      "message": "Eh, I guess people could still have one sitting around.",
+      "parentUuid": "AAAAC3///DI\u003d",
+      "revId": "ff30def8899c36626eacbbd5c2266c1a7b72d2cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
