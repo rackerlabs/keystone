@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//+tI\u003d",
+        "filename": "keystone/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2011-12-07T00:53:49Z",
+      "side": 1,
+      "message": "optparse and sys can go",
+      "revId": "d0d5d083a0b5e189f136c09115ec7334c78f3833",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//+tM\u003d",
+        "filename": "keystone/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2011-12-07T00:53:49Z",
+      "side": 1,
+      "message": "why is this import here?",
+      "revId": "d0d5d083a0b5e189f136c09115ec7334c78f3833",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
