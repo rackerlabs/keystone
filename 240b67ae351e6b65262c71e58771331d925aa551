@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//+gI\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/tenant.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-07T21:41:42Z",
+      "side": 1,
+      "message": "this should become return session.query(models.Tenant).filter_by(uid\u003did).first()",
+      "revId": "240b67ae351e6b65262c71e58771331d925aa551",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//+gM\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/tenant.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-07T21:41:42Z",
+      "side": 1,
+      "message": "This should be get_by_id. The distinction between ID and UID is purely internal to the SQLite backend. A call to UID should not be made from outside the backend.",
+      "revId": "240b67ae351e6b65262c71e58771331d925aa551",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//+gA\u003d",
+        "filename": "keystone/contrib/extensions/admin/osksadm/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-07T21:41:42Z",
+      "side": 1,
+      "message": "This should remain tenant_id. Same as before: UID is a concept internal to the backend. Outside, in all Keystone code and APIs, it\u0027s just the ID (as a string)",
+      "revId": "240b67ae351e6b65262c71e58771331d925aa551",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
