@@ -385,7 +385,8 @@ class KeystoneTest(object):
         # run the keystone server
         print "Starting the keystone server..."
 
-        parser = optparse.OptionParser(version='%%prog %s' % keystone.version)
+        parser = optparse.OptionParser(version='%%prog %s' %
+                                       keystone.version.version())
         common_group = config.add_common_options(parser)
         config.add_log_options(parser)
 

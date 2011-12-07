@@ -108,7 +108,7 @@ without issue::
 
 If you want to check the version of Keystone you are running:
 
-    >>> print keystone.version()
+    >>> print keystone.version.version()
     2012.1-dev
 
 
