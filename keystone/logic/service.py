@@ -23,7 +23,7 @@ import keystone.backends as backends
 import keystone.backends.api as api
 import keystone.backends.models as models
 from keystone.logic.types import fault
-from keystone.logic.types.tenant import Tenant, Tenants
+from keystone.logic.types.tenant import Tenants
 from keystone.logic.types.role import Role, Roles
 from keystone.logic.types.service import Service, Services
 from keystone.logic.types.user import User, User_Update, Users
@@ -32,6 +32,10 @@ from keystone.logic.types.endpoint import Endpoint, Endpoints, \
 from keystone.logic.types.credential import Credentials, PasswordCredentials
 from keystone.common import wsgi
 from keystone import utils
+# New imports as we refactor old backend design and models
+from keystone.models import Tenant, Token
+from keystone.token import Manager as TokenManager
+from keystone.tenant import Manager as TenantManager
 
 
 LOG = logging.getLogger('keystone.logic.service')
@@ -276,7 +280,8 @@ def validate_tenant(dtenant):
     if not dtenant:
         raise fault.UnauthorizedFault("Tenant not found")
 
-    if not dtenant.enabled:
+    if dtenant.enabled is None or \
+            str(dtenant.enabled).lower() not in ['1', 'true']:
         raise fault.TenantDisabledFault("Tenant %s has been disabled!"
             % dtenant.id)
 
@@ -328,13 +333,25 @@ def validate_token(token_id, belongs_to=None, is_check_token=None):
 
 
 class IdentityService(object):
-    """Implements Identity service"""
+    """Implements the Identity service
+
+    This class handles all logic of routing requests to the correct
+    backend as well as validating incoming/outgoing data
+    """
+
+    def __init__(self, options):
+        """ Initialize
+
+        Loads all necessary backends to handle incoming requests.
+        """
+        backends.configure_backends(options)
+        self.token_manager = TokenManager(options)
+        self.tenant_manager = TenantManager(options)
 
     #
     #  Token Operations
     #
-    @staticmethod
-    def authenticate(auth_request):
+    def authenticate(self, auth_request):
         # Check auth_with_password_credentials
         if not isinstance(auth_request, auth.AuthWithPasswordCredentials):
             raise fault.BadRequestFault(
@@ -353,11 +370,10 @@ class IdentityService(object):
         if not user:
             raise fault.UnauthorizedFault("Unauthorized")
 
-        return IdentityService._authenticate(
+        return self._authenticate(
             validate, user.id, auth_request.tenant_id)
 
-    @staticmethod
-    def authenticate_with_unscoped_token(auth_request):
+    def authenticate_with_unscoped_token(self, auth_request):
         # Check auth_with_unscoped_token
         if not isinstance(auth_request, auth.AuthWithUnscopedToken):
             raise fault.BadRequestFault("Expecting auth_with_unscoped_token!")
@@ -377,11 +393,10 @@ class IdentityService(object):
         def validate(duser):
             # The user is already authenticated
             return True
-        return IdentityService._authenticate(validate, user.id,
+        return self._authenticate(validate, user.id,
                                              auth_request.tenant_id)
 
-    @staticmethod
-    def authenticate_ec2(credentials):
+    def authenticate_ec2(self, credentials):
         # Check credentials
         if not isinstance(credentials, auth.Ec2Credentials):
             raise fault.BadRequestFault("Expecting Ec2 Credentials!")
@@ -404,11 +419,10 @@ class IdentityService(object):
                 signature = signer.generate(credentials)
                 return signature == credentials.signature
             return False
-        return IdentityService._authenticate(validate, creds.user_id,
+        return self._authenticate(validate, creds.user_id,
                                              creds.tenant_id)
 
-    @staticmethod
-    def _authenticate(validate, user_id, tenant_id=None):
+    def _authenticate(self, validate, user_id, tenant_id=None):
         if tenant_id:
             duser = api.USER.get_by_tenant(user_id, tenant_id)
             if duser is None:
@@ -432,22 +446,20 @@ class IdentityService(object):
 
         if not dtoken or dtoken.expires < datetime.now():
             # Create new token
-            dtoken = models.Token()
+            dtoken = Token()
             dtoken.id = str(uuid.uuid4())
             dtoken.user_id = duser.id
             dtoken.tenant_id = tenant_id
             dtoken.expires = datetime.now() + timedelta(days=1)
-            api.TOKEN.create(dtoken)
+            dtoken = api.TOKEN.create(dtoken)
         return get_auth_data(dtoken)
 
-    @staticmethod
-    def validate_token(admin_token, token_id, belongs_to=None):
+    def validate_token(self, admin_token, token_id, belongs_to=None):
         validate_service_admin_token(admin_token)
         (token, user) = validate_token(token_id, belongs_to, True)
         return get_validate_data(token, user)
 
-    @staticmethod
-    def revoke_token(admin_token, token_id):
+    def revoke_token(self, admin_token, token_id):
         validate_admin_token(admin_token)
 
         dtoken = api.TOKEN.get(token_id)
@@ -456,8 +468,7 @@ class IdentityService(object):
 
         api.TOKEN.delete(token_id)
 
-    @staticmethod
-    def get_endpoints_for_token(admin_token,
+    def get_endpoints_for_token(self, admin_token,
             token_id, marker, limit, url,):
         validate_service_admin_token(admin_token)
         dtoken = api.TOKEN.get(token_id)
@@ -465,37 +476,30 @@ class IdentityService(object):
             raise fault.ItemNotFoundFault("Token not found")
         if not dtoken.tenant_id:
             raise fault.ItemNotFoundFault("Token not mapped to any tenant.")
-        return IdentityService.fetch_tenant_endpoints(
+        return self.fetch_tenant_endpoints(
             marker, limit, url, dtoken.tenant_id)
 
     #
     #   Tenant Operations
     #
-
-    @staticmethod
-    def create_tenant(admin_token, tenant):
+    def create_tenant(self, admin_token, tenant):
         validate_admin_token(admin_token)
 
         if not isinstance(tenant, Tenant):
             raise fault.BadRequestFault("Expecting a Tenant")
 
         utils.check_empty_string(tenant.name, "Expecting a unique Tenant Name")
-
-        if api.TENANT.get_by_name(tenant.name) != None:
+        if api.TENANT.get_by_name(tenant.name) is not None:
             raise fault.TenantConflictFault(
                 "A tenant with that name already exists")
 
-        dtenant = models.Tenant()
+        dtenant = Tenant()
         dtenant.name = tenant.name
-        dtenant.desc = tenant.description
+        dtenant.description = tenant.description
         dtenant.enabled = tenant.enabled
+        return api.TENANT.create(dtenant)
 
-        dtenant = api.TENANT.create(dtenant)
-        tenant.id = dtenant.id
-        return tenant
-
-    @staticmethod
-    def get_tenants(admin_token, marker, limit, url,
+    def get_tenants(self, admin_token, marker, limit, url,
                     is_service_operation=False):
         """Fetch tenants for either an admin or service operation."""
         ts = []
@@ -517,14 +521,14 @@ class IdentityService(object):
             prev_page, next_page = api.TENANT.get_page_markers(marker, limit)
 
         for dtenant in dtenants:
-            ts.append(Tenant(id=dtenant.id, name=dtenant.name,
-                description=dtenant.desc, enabled=dtenant.enabled))
+            t = Tenant(id=dtenant.id, name=dtenant.name,
+                description=dtenant.desc, enabled=dtenant.enabled)
+            ts.append(t)
 
-        links = IdentityService.get_links(url, prev_page, next_page, limit)
+        links = self.get_links(url, prev_page, next_page, limit)
         return Tenants(ts, links)
 
-    @staticmethod
-    def get_tenant(admin_token, tenant_id):
+    def get_tenant(self, admin_token, tenant_id):
         validate_admin_token(admin_token)
 
         dtenant = api.TENANT.get(tenant_id)
@@ -532,8 +536,7 @@ class IdentityService(object):
             raise fault.ItemNotFoundFault("The tenant could not be found")
         return Tenant(dtenant.id, dtenant.name, dtenant.desc, dtenant.enabled)
 
-    @staticmethod
-    def get_tenant_by_name(admin_token, tenant_name):
+    def get_tenant_by_name(self, admin_token, tenant_name):
         validate_admin_token(admin_token)
 
         dtenant = api.TENANT.get_by_name(tenant_name)
@@ -541,8 +544,7 @@ class IdentityService(object):
             raise fault.ItemNotFoundFault("The tenant could not be found")
         return Tenant(dtenant.id, dtenant.name, dtenant.desc, dtenant.enabled)
 
-    @staticmethod
-    def update_tenant(admin_token, tenant_id, tenant):
+    def update_tenant(self, admin_token, tenant_id, tenant):
         validate_admin_token(admin_token)
 
         if not isinstance(tenant, Tenant):
@@ -561,10 +563,10 @@ class IdentityService(object):
                   'name': tenant.name}
         api.TENANT.update(tenant_id, values)
         dtenant = api.TENANT.get(tenant_id)
-        return Tenant(dtenant.id, dtenant.name, dtenant.desc, dtenant.enabled)
+        return Tenant(id=dtenant.id, name=dtenant.name,
+            description=dtenant.desc, enabled=dtenant.enabled)
 
-    @staticmethod
-    def delete_tenant(admin_token, tenant_id):
+    def delete_tenant(self, admin_token, tenant_id):
         validate_admin_token(admin_token)
 
         dtenant = api.TENANT.get(tenant_id)
@@ -581,11 +583,10 @@ class IdentityService(object):
     #
     #   User Operations
     #
-    @staticmethod
-    def create_user(admin_token, user):
+    def create_user(self, admin_token, user):
         validate_admin_token(admin_token)
 
-        IdentityService.validate_and_fetch_user_tenant(user.tenant_id)
+        self.validate_and_fetch_user_tenant(user.tenant_id)
 
         if not isinstance(user, User):
             raise fault.BadRequestFault("Expecting a User")
@@ -611,8 +612,7 @@ class IdentityService(object):
         user.id = duser.id
         return user
 
-    @staticmethod
-    def validate_and_fetch_user_tenant(tenant_id):
+    def validate_and_fetch_user_tenant(self, tenant_id):
         if tenant_id:
             dtenant = api.TENANT.get(tenant_id)
             if dtenant is None:
@@ -622,8 +622,7 @@ class IdentityService(object):
                     "Your account has been disabled")
             return dtenant
 
-    @staticmethod
-    def get_tenant_users(admin_token, tenant_id,
+    def get_tenant_users(self, admin_token, tenant_id,
         role_id, marker, limit, url):
         validate_admin_token(admin_token)
 
@@ -649,11 +648,10 @@ class IdentityService(object):
         if ts.__len__():
             prev, next = api.USER.users_get_by_tenant_get_page_markers(
                     tenant_id, role_id, marker, limit)
-            links = IdentityService.get_links(url, prev, next, limit)
+            links = self.get_links(url, prev, next, limit)
         return Users(ts, links)
 
-    @staticmethod
-    def get_users(admin_token, marker, limit, url):
+    def get_users(self, admin_token, marker, limit, url):
         validate_admin_token(admin_token)
         ts = []
         dusers = api.USER.users_get_page(marker, limit)
@@ -663,11 +661,10 @@ class IdentityService(object):
         links = []
         if ts.__len__():
             prev, next = api.USER.users_get_page_markers(marker, limit)
-            links = IdentityService.get_links(url, prev, next, limit)
+            links = self.get_links(url, prev, next, limit)
         return Users(ts, links)
 
-    @staticmethod
-    def get_user(admin_token, user_id):
+    def get_user(self, admin_token, user_id):
         validate_admin_token(admin_token)
         duser = api.USER.get(user_id)
         if not duser:
@@ -675,8 +672,7 @@ class IdentityService(object):
         return User_Update(id=duser.id, tenant_id=duser.tenant_id,
                 email=duser.email, enabled=duser.enabled, name=duser.name)
 
-    @staticmethod
-    def get_user_by_name(admin_token, user_name):
+    def get_user_by_name(self, admin_token, user_name):
         validate_admin_token(admin_token)
         duser = api.USER.get_by_name(user_name)
         if not duser:
@@ -684,8 +680,7 @@ class IdentityService(object):
         return User_Update(id=duser.id, tenant_id=duser.tenant_id,
                 email=duser.email, enabled=duser.enabled, name=duser.name)
 
-    @staticmethod
-    def update_user(admin_token, user_id, user):
+    def update_user(self, admin_token, user_id, user):
         validate_admin_token(admin_token)
 
         duser = api.USER.get(user_id)
@@ -714,8 +709,7 @@ class IdentityService(object):
         return User(duser.password, duser.id, duser.name, duser.tenant_id,
             duser.email, duser.enabled)
 
-    @staticmethod
-    def set_user_password(admin_token, user_id, user):
+    def set_user_password(self, admin_token, user_id, user):
         validate_admin_token(admin_token)
 
         duser = api.USER.get(user_id)
@@ -735,8 +729,7 @@ class IdentityService(object):
 
         return User_Update(password=user.password)
 
-    @staticmethod
-    def enable_disable_user(admin_token, user_id, user):
+    def enable_disable_user(self, admin_token, user_id, user):
         validate_admin_token(admin_token)
         duser = api.USER.get(user_id)
         if not duser:
@@ -752,26 +745,21 @@ class IdentityService(object):
 
         return User_Update(enabled=user.enabled)
 
-    @staticmethod
-    def set_user_tenant(admin_token, user_id, user):
+    def set_user_tenant(self, admin_token, user_id, user):
         validate_admin_token(admin_token)
+
         duser = api.USER.get(user_id)
         if not duser:
             raise fault.ItemNotFoundFault("The user could not be found")
         if not isinstance(user, User):
             raise fault.BadRequestFault("Expecting a User")
 
-        duser = api.USER.get(user_id)
-        if duser is None:
-            raise fault.ItemNotFoundFault("The user could not be found")
-
-        IdentityService.validate_and_fetch_user_tenant(user.tenant_id)
+        self.validate_and_fetch_user_tenant(user.tenant_id)
         values = {'tenant_id': user.tenant_id}
         api.USER.update(user_id, values)
         return User_Update(tenant_id=user.tenant_id)
 
-    @staticmethod
-    def delete_user(admin_token, user_id):
+    def delete_user(self, admin_token, user_id):
         validate_admin_token(admin_token)
         duser = api.USER.get(user_id)
         if not duser:
@@ -784,8 +772,7 @@ class IdentityService(object):
             api.USER.delete(user_id)
         return None
 
-    @staticmethod
-    def create_role(admin_token, role):
+    def create_role(self, admin_token, role):
         user = validate_service_admin_token(admin_token)[1]
 
         if not isinstance(role, Role):
@@ -834,8 +821,7 @@ class IdentityService(object):
         role.id = drole.id
         return role
 
-    @staticmethod
-    def get_roles(admin_token, marker, limit, url):
+    def get_roles(self, admin_token, marker, limit, url):
         validate_service_admin_token(admin_token)
 
         ts = []
@@ -843,11 +829,10 @@ class IdentityService(object):
         for drole in droles:
             ts.append(Role(drole.id, drole.name, drole.desc, drole.service_id))
         prev, next = api.ROLE.get_page_markers(marker, limit)
-        links = IdentityService.get_links(url, prev, next, limit)
+        links = self.get_links(url, prev, next, limit)
         return Roles(ts, links)
 
-    @staticmethod
-    def get_role(admin_token, role_id):
+    def get_role(self, admin_token, role_id):
         validate_service_admin_token(admin_token)
 
         drole = api.ROLE.get(role_id)
@@ -855,8 +840,7 @@ class IdentityService(object):
             raise fault.ItemNotFoundFault("The role could not be found")
         return Role(drole.id, drole.name, drole.desc, drole.service_id)
 
-    @staticmethod
-    def get_role_by_name(admin_token, role_name):
+    def get_role_by_name(self, admin_token, role_name):
         validate_service_admin_token(admin_token)
 
         drole = api.ROLE.get_by_name(role_name)
@@ -864,8 +848,7 @@ class IdentityService(object):
             raise fault.ItemNotFoundFault("The role could not be found")
         return Role(drole.id, drole.name, drole.desc, drole.service_id)
 
-    @staticmethod
-    def delete_role(admin_token, role_id):
+    def delete_role(self, admin_token, role_id):
         user = validate_service_admin_token(admin_token)[1]
 
         drole = api.ROLE.get(role_id)
@@ -888,8 +871,7 @@ class IdentityService(object):
                 api.ROLE.ref_delete(role_ref.id)
         api.ROLE.delete(role_id)
 
-    @staticmethod
-    def add_role_to_user(admin_token,
+    def add_role_to_user(self, admin_token,
         user_id, role_id, tenant_id=None):
         validate_service_admin_token(admin_token)
         duser = api.USER.get(user_id)
@@ -916,18 +898,17 @@ class IdentityService(object):
             drole_ref.tenant_id = dtenant.id
         api.USER.user_role_add(drole_ref)
 
-    @staticmethod
-    def remove_role_from_user(admin_token,
+    def remove_role_from_user(self, admin_token,
         user_id, role_id, tenant_id=None):
         validate_service_admin_token(admin_token)
+        print user_id, role_id, tenant_id
         drole_ref = api.ROLE.ref_get_by_user(user_id, role_id, tenant_id)
         if drole_ref is None:
             raise fault.ItemNotFoundFault(
                 "This role is not mapped to the user.")
         api.ROLE.ref_delete(drole_ref.id)
 
-    @staticmethod
-    def get_user_roles(admin_token, marker,
+    def get_user_roles(self, admin_token, marker,
         limit, url, user_id, tenant_id):
         validate_service_admin_token(admin_token)
         duser = api.USER.get(user_id)
@@ -947,11 +928,10 @@ class IdentityService(object):
                     drole.desc, drole.service_id))
         prev, next = api.ROLE.ref_get_page_markers(
             user_id, tenant_id, marker, limit)
-        links = IdentityService.get_links(url, prev, next, limit)
+        links = self.get_links(url, prev, next, limit)
         return Roles(ts, links)
 
-    @staticmethod
-    def add_endpoint_template(admin_token, endpoint_template):
+    def add_endpoint_template(self, admin_token, endpoint_template):
         user = validate_service_admin_token(admin_token)[1]
 
         if not isinstance(endpoint_template, EndpointTemplate):
@@ -991,8 +971,7 @@ class IdentityService(object):
         endpoint_template.id = dendpoint_template.id
         return endpoint_template
 
-    @staticmethod
-    def modify_endpoint_template(admin_token, endpoint_template_id,
+    def modify_endpoint_template(self, admin_token, endpoint_template_id,
                                  endpoint_template):
         user = validate_service_admin_token(admin_token)[1]
 
@@ -1048,8 +1027,7 @@ class IdentityService(object):
             dendpoint_template.version_info
             )
 
-    @staticmethod
-    def delete_endpoint_template(admin_token, endpoint_template_id):
+    def delete_endpoint_template(self, admin_token, endpoint_template_id):
         user = validate_service_admin_token(admin_token)[1]
         dendpoint_template = api.ENDPOINT_TEMPLATE.get(endpoint_template_id)
         if not dendpoint_template:
@@ -1079,17 +1057,15 @@ class IdentityService(object):
                 api.ENDPOINT_TEMPLATE.endpoint_delete(endpoint.id)
         api.ENDPOINT_TEMPLATE.delete(endpoint_template_id)
 
-    @staticmethod
-    def get_endpoint_templates(admin_token, marker, limit, url):
+    def get_endpoint_templates(self, admin_token, marker, limit, url):
         validate_service_admin_token(admin_token)
         dendpoint_templates = api.ENDPOINT_TEMPLATE.get_page(marker, limit)
-        ts = IdentityService.transform_endpoint_templates(dendpoint_templates)
+        ts = self.transform_endpoint_templates(dendpoint_templates)
         prev, next = api.ENDPOINT_TEMPLATE.get_page_markers(marker, limit)
-        links = IdentityService.get_links(url, prev, next, limit)
+        links = self.get_links(url, prev, next, limit)
         return EndpointTemplates(ts, links)
 
-    @staticmethod
-    def get_endpoint_templates_by_service(admin_token,
+    def get_endpoint_templates_by_service(self, admin_token,
         service_id, marker, limit, url):
         validate_service_admin_token(admin_token)
         dservice = api.SERVICE.get(service_id)
@@ -1098,14 +1074,13 @@ class IdentityService(object):
                 "No service with the id %s found." % service_id)
         dendpoint_templates = api.ENDPOINT_TEMPLATE.\
             get_by_service_get_page(service_id, marker, limit)
-        ts = IdentityService.transform_endpoint_templates(dendpoint_templates)
+        ts = self.transform_endpoint_templates(dendpoint_templates)
         prev, next = api.ENDPOINT_TEMPLATE.\
             get_by_service_get_page_markers(service_id, marker, limit)
-        links = IdentityService.get_links(url, prev, next, limit)
+        links = self.get_links(url, prev, next, limit)
         return EndpointTemplates(ts, links)
 
-    @staticmethod
-    def transform_endpoint_templates(dendpoint_templates):
+    def transform_endpoint_templates(self, dendpoint_templates):
         ts = []
         for dendpoint_template in dendpoint_templates:
             dservice = api.SERVICE.get(dendpoint_template.service_id)
@@ -1125,8 +1100,7 @@ class IdentityService(object):
                 ))
         return ts
 
-    @staticmethod
-    def get_endpoint_template(admin_token, endpoint_template_id):
+    def get_endpoint_template(self, admin_token, endpoint_template_id):
         validate_service_admin_token(admin_token)
 
         dendpoint_template = api.ENDPOINT_TEMPLATE.get(endpoint_template_id)
@@ -1149,14 +1123,12 @@ class IdentityService(object):
             dendpoint_template.version_info
             )
 
-    @staticmethod
-    def get_tenant_endpoints(admin_token, marker, limit, url, tenant_id):
+    def get_tenant_endpoints(self, admin_token, marker, limit, url, tenant_id):
         validate_service_admin_token(admin_token)
-        return IdentityService.fetch_tenant_endpoints(marker, limit,
+        return self.fetch_tenant_endpoints(marker, limit,
                                                       url, tenant_id)
 
-    @staticmethod
-    def fetch_tenant_endpoints(marker, limit, url, tenant_id):
+    def fetch_tenant_endpoints(self, marker, limit, url, tenant_id):
         if tenant_id is None:
             raise fault.BadRequestFault("Expecting a Tenant Id")
 
@@ -1191,11 +1163,10 @@ class IdentityService(object):
             prev, next = \
                 api.ENDPOINT_TEMPLATE.endpoint_get_by_tenant_get_page_markers(
                     tenant_id, marker, limit)
-            links = IdentityService.get_links(url, prev, next, limit)
+            links = self.get_links(url, prev, next, limit)
         return Endpoints(ts, links)
 
-    @staticmethod
-    def create_endpoint_for_tenant(admin_token,
+    def create_endpoint_for_tenant(self, admin_token,
                                      tenant_id, endpoint_template):
         validate_service_admin_token(admin_token)
         utils.check_empty_string(tenant_id, "Expecting a Tenant Id.")
@@ -1226,8 +1197,7 @@ class IdentityService(object):
                             )
         return dendpoint
 
-    @staticmethod
-    def delete_endpoint(admin_token, endpoint_id):
+    def delete_endpoint(self, admin_token, endpoint_id):
         validate_service_admin_token(admin_token)
         if api.ENDPOINT_TEMPLATE.get(endpoint_id) is None:
             raise fault.ItemNotFoundFault("The Endpoint is not found.")
@@ -1235,8 +1205,7 @@ class IdentityService(object):
         return None
 
     #Service Operations
-    @staticmethod
-    def create_service(admin_token, service):
+    def create_service(self, admin_token, service):
         validate_service_admin_token(admin_token)
 
         if not isinstance(service, Service):
@@ -1258,8 +1227,7 @@ class IdentityService(object):
 
         return service
 
-    @staticmethod
-    def get_services(admin_token, marker, limit, url):
+    def get_services(self, admin_token, marker, limit, url):
         validate_service_admin_token(admin_token)
 
         ts = []
@@ -1268,11 +1236,10 @@ class IdentityService(object):
             ts.append(Service(dservice.id, dservice.name, dservice.type,
                 dservice.desc))
         prev, next = api.SERVICE.get_page_markers(marker, limit)
-        links = IdentityService.get_links(url, prev, next, limit)
+        links = self.get_links(url, prev, next, limit)
         return Services(ts, links)
 
-    @staticmethod
-    def get_service(admin_token, service_id):
+    def get_service(self, admin_token, service_id):
         validate_service_admin_token(admin_token)
 
         dservice = api.SERVICE.get(service_id)
@@ -1281,8 +1248,7 @@ class IdentityService(object):
         return Service(dservice.id, dservice.name, dservice.type,
             dservice.desc)
 
-    @staticmethod
-    def get_service_by_name(admin_token, service_name):
+    def get_service_by_name(self, admin_token, service_name):
         validate_service_admin_token(admin_token)
         dservice = api.SERVICE.get_by_name(service_name)
         if not dservice:
@@ -1290,8 +1256,7 @@ class IdentityService(object):
         return Service(dservice.id, dservice.name, dservice.type,
             dservice.desc)
 
-    @staticmethod
-    def delete_service(admin_token, service_id):
+    def delete_service(self, admin_token, service_id):
         validate_service_admin_token(admin_token)
         dservice = api.SERVICE.get(service_id)
 
@@ -1319,8 +1284,7 @@ class IdentityService(object):
                 api.ROLE.delete(role.id)
         api.SERVICE.delete(service_id)
 
-    @staticmethod
-    def get_credentials(admin_token, user_id, marker, limit, url):
+    def get_credentials(self, admin_token, user_id, marker, limit, url):
         validate_admin_token(admin_token)
         ts = []
         duser = api.USER.get(user_id)
@@ -1330,8 +1294,7 @@ class IdentityService(object):
         links = []
         return Credentials(ts, links)
 
-    @staticmethod
-    def get_password_credentials(admin_token, user_id):
+    def get_password_credentials(self, admin_token, user_id):
         validate_admin_token(admin_token)
         duser = api.USER.get(user_id)
         if not duser:
@@ -1341,8 +1304,7 @@ class IdentityService(object):
                 "Password credentials could not be found")
         return PasswordCredentials(duser.name, None)
 
-    @staticmethod
-    def delete_password_credentials(admin_token, user_id):
+    def delete_password_credentials(self, admin_token, user_id):
         validate_admin_token(admin_token)
         duser = api.USER.get(user_id)
         if not duser:
@@ -1351,8 +1313,7 @@ class IdentityService(object):
         api.USER.update(user_id, values)
         return
 
-    @staticmethod
-    def update_password_credentials(admin_token,
+    def update_password_credentials(self, admin_token,
         user_id, password_credentials):
         validate_admin_token(admin_token)
         duser = api.USER.get(user_id)
@@ -1372,8 +1333,7 @@ class IdentityService(object):
         duser = api.USER.get(user_id)
         return PasswordCredentials(duser.name, duser.password)
 
-    @staticmethod
-    def create_password_credentials(admin_token, user_id, \
+    def create_password_credentials(self, admin_token, user_id, \
         password_credentials):
         validate_admin_token(admin_token)
         duser = api.USER.get(user_id)
@@ -1398,8 +1358,7 @@ class IdentityService(object):
         duser = api.USER.get(user_id)
         return PasswordCredentials(duser.name, duser.password)
 
-    @staticmethod
-    def get_links(url, prev, next, limit):
+    def get_links(self, url, prev, next, limit):
         """Method to form and return pagination links."""
         links = []
         if prev:
