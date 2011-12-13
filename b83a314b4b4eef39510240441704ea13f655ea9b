@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAC3//9SU\u003d",
+        "filename": "keystone/frontends/d5_compat.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1475
+      },
+      "writtenOn": "2011-12-13T18:38:25Z",
+      "side": 1,
+      "message": "the user attribute \u0027name\u0027 does not exist in this json object and prevents authentication of tokens.",
+      "revId": "b83a314b4b4eef39510240441704ea13f655ea9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//9SQ\u003d",
+        "filename": "keystone/frontends/d5_compat.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1475
+      },
+      "writtenOn": "2011-12-13T18:38:25Z",
+      "side": 1,
+      "message": "This is not needed anymore - remove",
+      "revId": "b83a314b4b4eef39510240441704ea13f655ea9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//9eQ\u003d",
         "filename": "keystone/frontends/d5_compat.py",
         "patchSetId": 1
