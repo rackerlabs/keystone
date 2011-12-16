@@ -89,8 +89,6 @@ def parse_args(args=None):
 
     config.setup_logging(options, conf)
 
-    db.configure_backends(conf.global_conf)
-
     return args
 
 
@@ -110,6 +108,8 @@ def get_options(args=None):
 
 
 def process(*args):
+    options = get_options(args)
+
     # Check arguments
     if len(args) == 0:
         raise optparse.OptParseError(OBJECT_NOT_SPECIFIED)
@@ -139,6 +139,10 @@ def process(*args):
 
     optional_arg = (lambda args, x:
         len(args) > x and str(args[x]).strip() or None)
+
+    # Intialize the database, but only if we're not managing it
+    if object_type != 'database':
+        db.configure_backends(options)
 
     # Execute command
     if (object_type, action) == ('user', 'add'):
@@ -286,8 +290,6 @@ def process(*args):
 
     elif (object_type, action) == ('database', 'sync'):
         require_args(args, 1, 'Syncing database requires a version #')
-        options = get_options(args)
-        options = get_options(args)
         backend_names = options.get('backends', None)
         if backend_names:
             if 'keystone.backends.sqlalchemy' in backend_names.split(','):
@@ -299,7 +301,6 @@ def process(*args):
 
     elif (object_type, action) == ('database', 'upgrade'):
         require_args(args, 1, 'Upgrading database requires a version #')
-        options = get_options(args)
         backend_names = options.get('backends', None)
         if backend_names:
             if 'keystone.backends.sqlalchemy' in backend_names.split(','):
@@ -311,7 +312,6 @@ def process(*args):
 
     elif (object_type, action) == ('database', 'downgrade'):
         require_args(args, 1, 'Downgrading database requires a version #')
-        options = get_options(args)
         backend_names = options.get('backends', None)
         if backend_names:
             if 'keystone.backends.sqlalchemy' in backend_names.split(','):
@@ -322,7 +322,6 @@ def process(*args):
                     'SQL alchemy backend not specified in config')
 
     elif (object_type, action) == ('database', 'version_control'):
-        options = get_options(args)
         backend_names = options.get('backends', None)
         if backend_names:
             if 'keystone.backends.sqlalchemy' in backend_names.split(','):
@@ -332,7 +331,6 @@ def process(*args):
                     'SQL alchemy backend not specified in config')
 
     elif (object_type, action) == ('database', 'version'):
-        options = get_options(args)
         backend_names = options.get('backends', None)
         if backend_names:
             if 'keystone.backends.sqlalchemy' in backend_names.split(','):
