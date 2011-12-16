@@ -1,0 +1,8 @@
+Code-Review+1: Monty Taylor <mordred@inaugust.com>
+Verified+1: Jenkins
+Code-Review+2: Ziad Sawalha <ziad.sawalha@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 16 Dec 2011 20:16:00 +0000
+Reviewed-on: https://review.openstack.org/2423
+Project: openstack/keystone
+Branch: refs/heads/master
