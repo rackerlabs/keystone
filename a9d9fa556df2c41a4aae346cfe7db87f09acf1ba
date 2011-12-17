@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//8JI\u003d",
+        "filename": "keystone/test/functional/test_tenants.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-17T04:12:19Z",
+      "side": 1,
+      "message": "these need to be lowercase \u0027true\u0027 or \u0027false\u0027",
+      "revId": "a9d9fa556df2c41a4aae346cfe7db87f09acf1ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
