@@ -30,13 +30,24 @@ class TenantAPI(BaseLdapAPI, BaseTenantAPI):
         return super(TenantAPI, self).create(values)
 
     def get_user_tenants(self, user_id, include_roles=True):
+        """Returns list of tenants a user has access to
+        
+        Always includes default tenants.
+        Adds role assignments if 'include_roles' is True.
+        """
         user_dn = self.api.user._id_to_dn(user_id)
         query = '(member=%s)' % (user_dn,)
         memberships = self.get_all(query)
         if include_roles:
             roles = self.api.role.ref_get_all_tenant_roles(user_id)
             for role in roles:
-                memberships.append(self.get(role.tenant_id))
+                exists = False
+                for tenant in memberships:
+                    if tenant['id'] == role.tenant_id:
+                        exists = True
+                        break
+                if not exists:
+                    memberships.append(self.get(role.tenant_id))
         return memberships
 
     def tenants_for_user_get_page(self, user, marker, limit):
