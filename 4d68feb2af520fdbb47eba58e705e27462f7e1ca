@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//7+s\u003d",
+        "filename": "doc/source/migration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-19T16:33:08Z",
+      "side": 1,
+      "message": "What version do I set it if I am starting with E1 or E2 database?\n\nCan we make this a \u0027keystone-manage database version_set\u0027 command?",
+      "revId": "4d68feb2af520fdbb47eba58e705e27462f7e1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
