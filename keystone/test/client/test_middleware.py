@@ -1,7 +1,6 @@
 import unittest2 as unittest
 
-import keystone.common.exception
-from keystone.test.functional import common
+from keystone.test import middleware
 
 #
 #   Auth Token
@@ -9,7 +8,7 @@ from keystone.test.functional import common
 from keystone.middleware import auth_token
 
 
-class TestAuthTokenMiddleware(common.MiddlewareTestCase):
+class TestAuthTokenMiddleware(middleware.MiddlewareTestCase):
     """
     Tests for Keystone WSGI middleware: Auth Token
     """
@@ -29,7 +28,7 @@ except ImportError as e:
 
 @unittest.skipUnless('glance_auth_token' in vars(),
                      "Glance Auth Token not imported")
-class TestGlanceMiddleware(common.MiddlewareTestCase):
+class TestGlanceMiddleware(middleware.MiddlewareTestCase):
     """
     Tests for Keystone WSGI middleware: Glance
     """
@@ -45,12 +44,15 @@ class TestGlanceMiddleware(common.MiddlewareTestCase):
 from keystone.middleware import quantum_auth_token
 
 
-class TestQuantumMiddleware(common.MiddlewareTestCase):
+class TestQuantumMiddleware(middleware.MiddlewareTestCase):
     """
     Tests for Keystone WSGI middleware: Glance
     """
 
     def setUp(self):
+        access = self.authenticate(self.admin_username, self.admin_password).\
+            json['access']
+        self.admin_token = access['token']['id']
         settings = {'delay_auth_decision': '0',
                 'auth_host': '127.0.0.1',
                 'auth_port': '35357',
@@ -74,7 +76,7 @@ except ImportError as e:
 #TODO(Ziad): find out how to disable swift logging
 #@unittest.skipUnless('swift_auth' in vars(),
 #                     "swift_auth not imported")
-#class TestSwiftMiddleware(common.MiddlewareTestCase):
+#class TestSwiftMiddleware(middleware.MiddlewareTestCase):
 #    """
 #    Tests for Keystone WSGI middleware: Glance
 #    """
@@ -85,7 +87,7 @@ except ImportError as e:
 #                'auth_port': '35357',
 #                'auth_protocol': 'http',
 #                'auth_uri': 'http://localhost:35357/',
-#                'admin_token': '999888777666',
+#                'admin_token': self.admin_token,
 #                'set log_facility': 'LOG_NULL'}
 #        super(TestSwiftMiddleware, self).setUp(swift_auth, settings)
 

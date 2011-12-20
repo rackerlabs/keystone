@@ -1,5 +1,5 @@
 import unittest2 as unittest
-from keystone.test.functional import common
+from keystone.test import common
 
 
 class TestIssue85(common.FunctionalTestCase):

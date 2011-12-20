@@ -17,11 +17,13 @@
 
 import unittest2 as unittest
 
-from keystone.test.functional import common
+from keystone.test import common
 
 
 class D5_AuthenticationTest(common.FunctionalTestCase):
     """ Tests the functionality of the D5 compat module """
+    use_server = True
+
     def setUp(self, *args, **kwargs):
         super(D5_AuthenticationTest, self).setUp(*args, **kwargs)
 

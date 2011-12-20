@@ -1,13 +1,9 @@
 import unittest2 as unittest
-from keystone.test.functional import common
+from keystone.test import common
 
 
 class TestAdminAuthentication(common.FunctionalTestCase):
     """Test admin-side user authentication"""
-
-    def setUp(self):
-        """Empty method to prevent KeystoneTestCase from authenticating"""
-        pass
 
     def test_bootstrapped_admin_user(self):
         """Bootstrap script should create an 'admin' user with 'Admin' role"""

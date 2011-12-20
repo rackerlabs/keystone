@@ -2,19 +2,20 @@ import unittest
 
 import keystone.common.exception
 import keystone.client
-from common import isSsl
+from keystone.test import common
 
 
 class TestAdminClient(unittest.TestCase):
     """
     Quick functional tests for the Keystone HTTP admin client.
     """
+    use_server = True
 
     def setUp(self):
         """
         Run before each test.
         """
-        cert_file = isSsl()
+        cert_file = common.isSsl()
         self.client = keystone.client.AdminClient("127.0.0.1",
                                                   is_ssl=(cert_file != None),
                                                   cert_file=cert_file,
@@ -75,7 +76,7 @@ class TestServiceClient(unittest.TestCase):
         """
         Run before each test.
         """
-        cert_file = isSsl()
+        cert_file = common.isSsl()
         self.client = keystone.client.ServiceClient("127.0.0.1",
                                                     is_ssl=(cert_file != None),
                                                     cert_file=cert_file)
