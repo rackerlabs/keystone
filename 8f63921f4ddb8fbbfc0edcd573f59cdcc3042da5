@@ -34,6 +34,24 @@
       "revId": "8f63921f4ddb8fbbfc0edcd573f59cdcc3042da5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7PM\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2011-12-21T21:51:20Z",
+      "side": 1,
+      "message": "It\u0027s because if the _protect_claims() call encrypts the data (which is intended to be used for), we cannot extract claims[\u0027expires\u0027] anymore (without having to decrypt).\n\nBTW, we noticed that the token info (value) stored in memcache is not encrypted, hence this can be a security hole.  So, we put in these place-holders.  Do you think this is something Keystone can benefit from?",
+      "parentUuid": "AAAAC3//7SA\u003d",
+      "revId": "8f63921f4ddb8fbbfc0edcd573f59cdcc3042da5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
