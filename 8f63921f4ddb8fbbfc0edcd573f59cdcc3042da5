@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//7SA\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-21T20:26:12Z",
+      "side": 1,
+      "message": "I don\u0027t understand why you broke this out. It doesn\u0027t look like any of the inputs./outputs change between the earlier call and the later call?",
+      "revId": "8f63921f4ddb8fbbfc0edcd573f59cdcc3042da5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
