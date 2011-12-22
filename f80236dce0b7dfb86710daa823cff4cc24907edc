@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//660\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-12-22T21:15:48Z",
+      "side": 1,
+      "message": "changed all over this script.",
+      "parentUuid": "AAAAC3//7CE\u003d",
+      "revId": "f80236dce0b7dfb86710daa823cff4cc24907edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//7CI\u003d",
         "filename": "keystone/backends/sqlalchemy/api/role.py",
         "patchSetId": 1
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//66s\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-12-22T21:15:48Z",
+      "side": 1,
+      "message": "changed all over.",
+      "parentUuid": "AAAAC3//7CA\u003d",
+      "revId": "f80236dce0b7dfb86710daa823cff4cc24907edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//7B8\u003d",
         "filename": "keystone/controllers/roles.py",
         "patchSetId": 1
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//67E\u003d",
+        "filename": "keystone/controllers/roles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-12-22T21:15:48Z",
+      "side": 1,
+      "message": "if the check is not there we get a exceptions.KeyError.Check is needed",
+      "parentUuid": "AAAAC3//7B8\u003d",
+      "revId": "f80236dce0b7dfb86710daa823cff4cc24907edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//7B0\u003d",
         "filename": "keystone/logic/service.py",
         "patchSetId": 1
@@ -81,6 +135,24 @@
       "writtenOn": "2011-12-22T17:25:25Z",
       "side": 1,
       "message": "Could be more efficient with:\n\ndef transform_roles(self, droles):\n    return [(Role(drole.id, drole.name, drole.desc, drole.service_id)\n            for drole in droles]",
+      "revId": "f80236dce0b7dfb86710daa823cff4cc24907edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//664\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 865,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-12-22T21:15:48Z",
+      "side": 1,
+      "message": "agreed.",
+      "parentUuid": "AAAAC3//7B0\u003d",
       "revId": "f80236dce0b7dfb86710daa823cff4cc24907edc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
