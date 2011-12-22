@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//67M\u003d",
+        "filename": "keystone/client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-22T21:17:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//7I0\u003d",
+      "revId": "1f94f218406c30cf0c0483a972b92ca5b86bc983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//7Iw\u003d",
         "filename": "keystone/server.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2011-12-22T07:02:54Z",
       "side": 1,
       "message": "port/host can be set outside the if block",
+      "revId": "1f94f218406c30cf0c0483a972b92ca5b86bc983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//67A\u003d",
+        "filename": "keystone/server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-22T21:17:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//7Iw\u003d",
       "revId": "1f94f218406c30cf0c0483a972b92ca5b86bc983",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//668\u003d",
+        "filename": "keystone/server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-22T21:17:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//7Dw\u003d",
+      "revId": "1f94f218406c30cf0c0483a972b92ca5b86bc983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//7Ds\u003d",
         "filename": "keystone/test/__init__.py",
         "patchSetId": 1
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//66w\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-22T21:17:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//7Ds\u003d",
+      "revId": "1f94f218406c30cf0c0483a972b92ca5b86bc983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//7Do\u003d",
         "filename": "keystone/test/__init__.py",
         "patchSetId": 1
@@ -81,6 +153,24 @@
       "writtenOn": "2011-12-22T16:07:45Z",
       "side": 1,
       "message": "Again, why the capitalization for these attributes?",
+      "revId": "1f94f218406c30cf0c0483a972b92ca5b86bc983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//66o\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-22T21:17:47Z",
+      "side": 1,
+      "message": "These are global variables used by all tests.",
+      "parentUuid": "AAAAC3//7Do\u003d",
       "revId": "1f94f218406c30cf0c0483a972b92ca5b86bc983",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
