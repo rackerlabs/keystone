@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//68Y\u003d",
+        "filename": "keystone/test/client/test_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-22T20:32:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//7JU\u003d",
+      "revId": "34a2516fdc703ad4c3f4feac08d151efac948dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//7Jk\u003d",
         "filename": "keystone/test/functional/common.py",
         "patchSetId": 3
@@ -65,6 +83,24 @@
       "writtenOn": "2011-12-22T06:53:23Z",
       "side": 1,
       "message": "why not call the assert methods you have available?",
+      "revId": "34a2516fdc703ad4c3f4feac08d151efac948dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//68Q\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-22T20:32:30Z",
+      "side": 1,
+      "message": "They don\u0027t work with this type of response (see res.status_int below)",
+      "parentUuid": "AAAAC3//7Jo\u003d",
       "revId": "34a2516fdc703ad4c3f4feac08d151efac948dd0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -187,6 +223,24 @@
       "writtenOn": "2011-12-22T06:53:23Z",
       "side": 1,
       "message": "this should be 4 tests",
+      "revId": "34a2516fdc703ad4c3f4feac08d151efac948dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//68M\u003d",
+        "filename": "keystone/test/unit/test_models_Tenant.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-22T20:32:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//7Jc\u003d",
       "revId": "34a2516fdc703ad4c3f4feac08d151efac948dd0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
