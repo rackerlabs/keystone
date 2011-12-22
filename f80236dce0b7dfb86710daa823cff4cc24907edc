@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//64o\u003d",
+        "filename": "keystone/controllers/roles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-12-22T23:15:04Z",
+      "side": 1,
+      "message": "I dont think its a dictionary.It is of tyepe webob.request.Request.I checked and if value is not present it indeed throws error.",
+      "parentUuid": "AAAAC3//66I\u003d",
+      "revId": "f80236dce0b7dfb86710daa823cff4cc24907edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//7B0\u003d",
         "filename": "keystone/logic/service.py",
         "patchSetId": 1
