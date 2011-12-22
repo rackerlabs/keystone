@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//7JU\u003d",
+        "filename": "keystone/test/client/test_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-22T06:53:23Z",
+      "side": 1,
+      "message": "importing from a different package\u0027s common module is awkward",
+      "revId": "34a2516fdc703ad4c3f4feac08d151efac948dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7Jk\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-22T06:53:23Z",
+      "side": 1,
+      "message": "I see why you called this \u0027request\u0027, but it would have saved even more code to replace the parent class instead, especially if it\u0027s no longer being used in test.functional",
+      "revId": "34a2516fdc703ad4c3f4feac08d151efac948dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7Jo\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-22T06:53:23Z",
+      "side": 1,
+      "message": "why not call the assert methods you have available?",
+      "revId": "34a2516fdc703ad4c3f4feac08d151efac948dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7Jw\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-22T06:53:23Z",
+      "side": 1,
+      "message": "How is this different from the method you\u0027re overriding?",
+      "revId": "34a2516fdc703ad4c3f4feac08d151efac948dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7Js\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-22T06:53:23Z",
+      "side": 1,
+      "message": "Same question as above",
+      "revId": "34a2516fdc703ad4c3f4feac08d151efac948dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7Jg\u003d",
+        "filename": "keystone/test/functional/test_tenants.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-22T06:53:23Z",
+      "side": 1,
+      "message": "I don\u0027t understand the tenant description changes",
+      "revId": "34a2516fdc703ad4c3f4feac08d151efac948dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7Jc\u003d",
+        "filename": "keystone/test/unit/test_models_Tenant.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2011-12-22T06:53:23Z",
+      "side": 1,
+      "message": "this should be 4 tests",
+      "revId": "34a2516fdc703ad4c3f4feac08d151efac948dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
