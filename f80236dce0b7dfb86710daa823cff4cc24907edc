@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//7CE\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T17:25:25Z",
+      "side": 1,
+      "message": "Backslashes to continue lines are not needed (and shouldn\u0027t be used) if the line break is contained within parentheses/brackets. This comment applies to multiple places in this script, both existing and newly added.",
+      "revId": "f80236dce0b7dfb86710daa823cff4cc24907edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7CI\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T17:25:25Z",
+      "side": 1,
+      "message": "The continuation line should not be indented to the same level as the contained block. Typically you should indent two levels (8 spaces) for continuation lines.",
+      "revId": "f80236dce0b7dfb86710daa823cff4cc24907edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7CA\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T17:25:25Z",
+      "side": 1,
+      "message": "Don\u0027t compare a len() to zero. Instead, use the more common:\n\nif not next_page:",
+      "revId": "f80236dce0b7dfb86710daa823cff4cc24907edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7B8\u003d",
+        "filename": "keystone/controllers/roles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T17:25:25Z",
+      "side": 1,
+      "message": "Could be written more simply as:\n\nservice_id \u003d req.GET.get(\"serviceId\")",
+      "revId": "f80236dce0b7dfb86710daa823cff4cc24907edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7B0\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 865,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T17:25:25Z",
+      "side": 1,
+      "message": "Could be more efficient with:\n\ndef transform_roles(self, droles):\n    return [(Role(drole.id, drole.name, drole.desc, drole.service_id)\n            for drole in droles]",
+      "revId": "f80236dce0b7dfb86710daa823cff4cc24907edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
