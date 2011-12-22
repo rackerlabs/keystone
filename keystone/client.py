@@ -16,8 +16,11 @@
 
 import httplib
 import json
+import logging
 
 import keystone.common.exception
+
+logger = logging.getLogger('keystone.client')
 
 
 class ServiceClient(object):
@@ -52,6 +55,7 @@ class ServiceClient(object):
         :returns: httplib.HTTPResponse object
 
         """
+        logger.debug("Connecting to %s" % self.auth_address)
         if (self.is_ssl):
             connection = httplib.HTTPSConnection(self.auth_address,
                                                  cert_file=self.cert_file)
