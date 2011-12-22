@@ -33,6 +33,57 @@
       "revId": "1f94f218406c30cf0c0483a972b92ca5b86bc983",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7Dw\u003d",
+        "filename": "keystone/server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T16:07:45Z",
+      "side": 1,
+      "message": "+1 on Dolph\u0027s comment",
+      "revId": "1f94f218406c30cf0c0483a972b92ca5b86bc983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7Ds\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T16:07:45Z",
+      "side": 1,
+      "message": "I know that this wasn\u0027t part of this change, but why is \u0027CONF_PARAMS\u0027 capitalized? That usually indicates a constant, and you\u0027re clearly modifying it here.",
+      "revId": "1f94f218406c30cf0c0483a972b92ca5b86bc983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7Do\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T16:07:45Z",
+      "side": 1,
+      "message": "Again, why the capitalization for these attributes?",
+      "revId": "1f94f218406c30cf0c0483a972b92ca5b86bc983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
