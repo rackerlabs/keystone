@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//7Bo\u003d",
+        "filename": "keystone/manage2/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T17:51:22Z",
+      "side": 1,
+      "message": "Here\u0027s a loopless version that also raises an exception with information rather than just a plain assertion failure.\n\ntry:\n    module_loader, name, is_package \u003d [md for md in MODULES\n            if md[1] \u003d\u003d module_name][0]\nexcept IndexError:\n    raise ValueError(\"No module found named \u0027%s\u0027\" % module_name)\nloader \u003d module_loader.find_module(name)\nmodule \u003d loader.load_module(name)\nreturn module",
+      "revId": "f462608072df101460f886f2b58d9028c108a671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7Bk\u003d",
+        "filename": "keystone/manage2/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T17:51:22Z",
+      "side": 1,
+      "message": "Use enumerate() for this sort of iteration:\n\nfor pos, arg in enumerate(sys.argv):\n    if arg in module_names:\n        command \u003d sys.argv.pop(pos)\n        break",
+      "revId": "f462608072df101460f886f2b58d9028c108a671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7A8\u003d",
+        "filename": "keystone/test/unit/test_buffout.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T17:51:22Z",
+      "side": 1,
+      "message": "Could this be simplified/sped up with a single method instead of the three separate methods? E.g.:\n\n    def test_stdout(self):\n        stdout \u003d sys.stdout\n        ob \u003d buffout.OutputBuffer()\n        self.assertTrue(sys.stdout is stdout,\n                \"sys.stdout was replaced\")\n        ob.start()\n        self.assertTrue(sys.stdout is not stdout,\n                \"sys.stdout not replaced\")\n        ob.stop()\n        self.assertTrue(sys.stdout is stdout,\n                \"sys.stdout not restored\")",
+      "revId": "f462608072df101460f886f2b58d9028c108a671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//7Aw\u003d",
+        "filename": "keystone/tools/buffout.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T17:51:22Z",
+      "side": 1,
+      "message": "Is the goal of this class to wipe out any data every time the start() method is called? Or would it make more sense to have the buffered content preserved, and add a clear() method to wipe the content?",
+      "revId": "f462608072df101460f886f2b58d9028c108a671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
