@@ -72,6 +72,63 @@ class RoleAPI(api.BaseRoleAPI):
             return session.query(models.Role).order_by(\
                                 models.Role.id.desc()).limit(limit).all()
 
+    def get_by_service_get_page(self, service_id, marker, limit, session=None):
+        if not session:
+            session = get_session()
+
+        if marker:
+            return session.query(models.Role).filter("id>:marker").params(\
+                    marker='%s' % marker).filter_by(\
+                    service_id=service_id).order_by(\
+                    models.Role.id.desc()).limit(limit).all()
+        else:
+            return session.query(models.Role).filter_by(\
+                    service_id=service_id).order_by(\
+                                models.Role.id.desc()).limit(limit).all()
+
+    # pylint: disable=R0912
+    def get_by_service_get_page_markers(self,
+        service_id, marker, limit, session=None):
+        if not session:
+            session = get_session()
+        first = session.query(models.Role).filter_by(\
+                    service_id=service_id).order_by(\
+                    models.Role.id).first()
+        last = session.query(models.Role).filter_by(\
+                    service_id=service_id).order_by(\
+                    models.Role.id.desc()).first()
+        if first is None:
+            return (None, None)
+        if marker is None:
+            marker = first.id
+        next_page = session.query(models.Role).filter("id > :marker").params(\
+                        marker='%s' % marker).filter_by(\
+                        service_id=service_id).order_by(\
+                        models.Role.id).limit(limit).all()
+        prev_page = session.query(models.Role).filter("id < :marker").params(\
+                        marker='%s' % marker).filter_by(\
+                        service_id=service_id).order_by(\
+                        models.Role.id.desc()).limit(int(limit)).all()
+        if len(next_page) == 0:
+            next_page = last
+        else:
+            for t in next_page:
+                next_page = t
+        if len(prev_page) == 0:
+            prev_page = first
+        else:
+            for t in prev_page:
+                prev_page = t
+        if prev_page.id == marker:
+            prev_page = None
+        else:
+            prev_page = prev_page.id
+        if next_page.id == last.id:
+            next_page = None
+        else:
+            next_page = next_page.id
+        return (prev_page, next_page)
+
     def ref_get_page(self, marker, limit, user_id, tenant_id, session=None):
         if not session:
             session = get_session()
