@@ -124,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//66I\u003d",
+        "filename": "keystone/controllers/roles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-22T21:21:38Z",
+      "side": 1,
+      "message": "Isn\u0027t req.GET a dict? If so, the dict\u0027s get() method should return None if the key isn\u0027t present, not raise an exception.",
+      "parentUuid": "AAAAC3//67E\u003d",
+      "revId": "f80236dce0b7dfb86710daa823cff4cc24907edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//7B0\u003d",
         "filename": "keystone/logic/service.py",
         "patchSetId": 1
