@@ -10,6 +10,7 @@ from xml.etree import ElementTree
 
 from keystone import server
 import keystone.backends.api as db_api
+from keystone.test import client as client_tests
 
 logger = logging.getLogger('test.functional.common')
 
@@ -31,15 +32,16 @@ class HttpTestCase(unittest.TestCase):
     * assertResponseStatus
     """
 
-    def request(self, host='127.0.0.1', port=80, method='GET', path='/',
-            headers=None, body=None, assert_status=None):
+    def request(self, host='127.0.0.1', protocol='http', port=80, method='GET',
+                path='/', headers=None, body=None, assert_status=None):
         """Perform request and fetch httplib.HTTPResponse from the server"""
 
         # Initialize headers dictionary
         headers = {} if not headers else headers
 
-        cert_file = isSsl()
-        if (cert_file is not None):
+        logger.debug("Connecting to %s://%s:%s", protocol, host, port)
+        if protocol == 'https':
+            cert_file = isSsl()
             connection = httplib.HTTPSConnection(host, port,
                                             cert_file=cert_file,
                                             timeout=20)
@@ -324,8 +326,9 @@ class ApiTestCase(RestfulTestCase):
     def tearDown(self):
         pass
 
-    def request(self, host='127.0.0.1', port=80, method='GET', path='/',
-            headers=None, body=None, assert_status=None, server=None):
+    def request(self, host='127.0.0.1', protocol='http', port=80, method='GET',
+                path='/', headers=None, body=None, assert_status=None,
+                server=None):
         """Overrides HttpTestCase and uses local calls"""
         if self.use_server:
             # Call a real server (bypass the override)
@@ -413,8 +416,8 @@ class ApiTestCase(RestfulTestCase):
             'Status code %s is not %s, as expected)\n\n%s' %
             (response.status_int, assert_status, response.body))
 
-    def service_request(self, version='2.0', path='', port=5000, headers=None,
-            **kwargs):
+    def service_request(self, version='2.0', path='', port=None, headers=None,
+            host=None, protocol=None, **kwargs):
         """Returns a request to the service API"""
 
         # Initialize headers dictionary
@@ -422,17 +425,23 @@ class ApiTestCase(RestfulTestCase):
 
         if self.use_server:
             path = ApiTestCase._version_path(version, path)
+            if port is None:
+                port = client_tests.TEST_TARGET_SERVER_SERVICE_PORT
+            if host is None:
+                host = client_tests.TEST_TARGET_SERVER_SERVICE_ADDRESS
+            if protocol is None:
+                protocol = client_tests.TEST_TARGET_SERVER_SERVICE_PROTOCOL
 
         if self.service_token:
             headers['X-Auth-Token'] = self.service_token
         elif self.admin_token:
             headers['X-Auth-Token'] = self.admin_token
 
-        return self.restful_request(port=port, path=path, headers=headers,
-            server=self.service_api, **kwargs)
+        return self.restful_request(host=host, protocol=protocol, port=port,
+                path=path, headers=headers, server=self.service_api, **kwargs)
 
-    def admin_request(self, version='2.0', path='', port=35357, headers=None,
-            **kwargs):
+    def admin_request(self, version='2.0', path='', port=None, headers=None,
+            host=None, protocol=None, **kwargs):
         """Returns a request to the admin API"""
 
         # Initialize headers dictionary
@@ -440,12 +449,18 @@ class ApiTestCase(RestfulTestCase):
 
         if self.use_server:
             path = ApiTestCase._version_path(version, path)
+            if port is None:
+                port = client_tests.TEST_TARGET_SERVER_ADMIN_PORT
+            if host is None:
+                host = client_tests.TEST_TARGET_SERVER_ADMIN_ADDRESS
+            if protocol is None:
+                protocol = client_tests.TEST_TARGET_SERVER_ADMIN_PROTOCOL
 
         if self.admin_token:
             headers['X-Auth-Token'] = self.admin_token
 
-        return self.restful_request(port=port, path=path, headers=headers,
-            server=self.admin_api, **kwargs)
+        return self.restful_request(host=host, protocol=protocol, port=port,
+            path=path, headers=headers, server=self.admin_api, **kwargs)
 
     @staticmethod
     def _version_path(version, path):
@@ -1490,10 +1505,14 @@ class MiddlewareTestCase(FunctionalTestCase):
         super(MiddlewareTestCase, self).setUp()
         if settings is None:
             settings = {'delay_auth_decision': '0',
-                'auth_host': '127.0.0.1',
-                'auth_port': '35357',
-                'auth_protocol': 'http',
-                'auth_uri': 'http://localhost:35357/',
+                'auth_host': client_tests.TEST_TARGET_SERVER_ADMIN_ADDRESS,
+                'auth_port': client_tests.TEST_TARGET_SERVER_ADMIN_PORT,
+                'auth_protocol':
+                    client_tests.TEST_TARGET_SERVER_ADMIN_PROTOCOL,
+                'auth_uri': ('%s://%s:%s/' % \
+                             (client_tests.TEST_TARGET_SERVER_SERVICE_PROTOCOL,
+                              client_tests.TEST_TARGET_SERVER_SERVICE_ADDRESS,
+                              client_tests.TEST_TARGET_SERVER_SERVICE_PORT)),
                 'admin_token': self.admin_token,
                 'auth_admin_user': self.admin_username,
                 'auth_admin_password': self.admin_password}
@@ -1543,12 +1562,11 @@ class MiddlewareTestCase(FunctionalTestCase):
         self.assertEquals(resp.status_int, 401)
         headers = resp.headers
         self.assertTrue("WWW-Authenticate" in headers)
-        if isSsl():
-            self.assertEquals(headers['WWW-Authenticate'],
-                                    "Keystone uri='https://localhost:35357/'")
-        else:
-            self.assertEquals(headers['WWW-Authenticate'],
-                                    "Keystone uri='http://localhost:35357/'")
+        self.assertEquals(headers['WWW-Authenticate'],
+                            "Keystone uri='%s://%s:%s/'" % \
+                         (client_tests.TEST_TARGET_SERVER_SERVICE_PROTOCOL,
+                          client_tests.TEST_TARGET_SERVER_SERVICE_ADDRESS,
+                          client_tests.TEST_TARGET_SERVER_SERVICE_PORT))
 
     def test_401_bad_token(self):
         resp = Request.blank('/',
