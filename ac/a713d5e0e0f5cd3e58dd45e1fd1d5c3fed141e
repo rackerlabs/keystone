@@ -1,0 +1,8 @@
+Verified+1: Jenkins
+Code-Review+2: Yogeshwar Srikrishnan <yoga80@yahoo.com>
+Code-Review+1: Carlos Marin <carlos.marin@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 23 Dec 2011 23:55:34 +0000
+Reviewed-on: https://review.openstack.org/2564
+Project: openstack/keystone
+Branch: refs/heads/master
