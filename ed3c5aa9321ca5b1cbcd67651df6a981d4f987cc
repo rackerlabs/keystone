@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//6zA\u003d",
+        "filename": "keystone/test/unit/test_models_Tenant.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-23T17:12:48Z",
+      "side": 0,
+      "message": "Use the assertRaises() method instead of this \u0027try\u0027 construct:\n\nself.assertRaises(AttributeError, getattr, tenant, \u0027some_bad_property\u0027)",
+      "revId": "ed3c5aa9321ca5b1cbcd67651df6a981d4f987cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
