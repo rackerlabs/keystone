@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//63g\u003d",
+        "filename": "keystone/controllers/version.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-12-23T03:01:52Z",
+      "side": 1,
+      "message": "Could we have a type for versions defined in keystone / keystone / logic / types  just the way you suggested for extensions.Would make it more consistent with the other calls",
+      "revId": "aca713d5e0e0f5cd3e58dd45e1fd1d5c3fed141e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
