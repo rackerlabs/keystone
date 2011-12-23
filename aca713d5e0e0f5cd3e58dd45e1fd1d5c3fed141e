@@ -16,6 +16,24 @@
       "revId": "aca713d5e0e0f5cd3e58dd45e1fd1d5c3fed141e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6zc\u003d",
+        "filename": "keystone/controllers/version.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-23T16:43:29Z",
+      "side": 1,
+      "message": "We could. But I don\u0027t consider a version as a first-class Keystone citizen. It\u0027s not part of our model, so I\u0027d rater keep it\u0027s handling separate.",
+      "parentUuid": "AAAAC3//63g\u003d",
+      "revId": "aca713d5e0e0f5cd3e58dd45e1fd1d5c3fed141e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
