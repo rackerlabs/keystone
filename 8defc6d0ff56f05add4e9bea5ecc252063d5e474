@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//60g\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-23T15:50:55Z",
+      "side": 1,
+      "message": "Can you explain what this loop is doing? If you just want the last item in the list, just do:\n\nnext_page \u003d next_page[-1]\n\n(same comment applies to prev_page loop on lines 120-1, and those in lines 242-251 and 300-309)",
+      "revId": "8defc6d0ff56f05add4e9bea5ecc252063d5e474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//60Y\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-23T15:50:55Z",
+      "side": 1,
+      "message": "Lines 863-6 should be deleted.",
+      "revId": "8defc6d0ff56f05add4e9bea5ecc252063d5e474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//60U\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 886,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-23T15:50:55Z",
+      "side": 1,
+      "message": "Shouldn\u0027t the **kwargs also be passed here?",
+      "revId": "8defc6d0ff56f05add4e9bea5ecc252063d5e474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
