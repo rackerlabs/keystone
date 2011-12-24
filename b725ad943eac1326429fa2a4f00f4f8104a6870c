@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//6qc\u003d",
+        "filename": "keystone/logic/types/auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-12-24T00:24:39Z",
+      "side": 1,
+      "message": "should this not be if self.base_urls is not None and len(self.base_urls) \u003e 0:",
+      "revId": "b725ad943eac1326429fa2a4f00f4f8104a6870c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
