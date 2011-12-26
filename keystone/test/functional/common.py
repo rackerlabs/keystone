@@ -229,7 +229,7 @@ class ApiTestCase(RestfulTestCase):
                 "'Tenant', 'User', 'Credentials', 'EndpointTemplates', "
                 "'Token', 'Service']",
         },
-        'extensions': 'osksadm,oskscatalog',
+        'extensions': 'osksadm,oskscatalog,hpidm',
         'keystone-admin-role': 'Admin',
         'keystone-service-admin-role': 'KeystoneServiceAdmin',
         'hash-password': 'True',
@@ -1203,12 +1203,15 @@ class FunctionalTestCase(ApiTestCase):
         return self.delete_user_role(user_id, tenant_id, **kwargs)
 
     def create_role(self, role_name=None, role_description=None,
-            service_id=None, **kwargs):
+            service_id=None, service_name=None, **kwargs):
         """Creates a role for testing
 
         The role name and description are generated from UUIDs.
         """
-        role_name = optional_str(role_name)
+        if service_name and not role_name:
+            role_name = service_name + ":" + optional_str(role_name)
+        else:
+            role_name = optional_str(role_name)
         role_description = optional_str(role_description)
 
         data = {
@@ -1502,6 +1505,18 @@ class MiddlewareTestCase(FunctionalTestCase):
     Base class to run tests for Keystone WSGI middleware.
     """
     use_server = True
+    
+    def _setup_test_middleware(self):
+        test_middleware = None
+        if isinstance(self.middleware, tuple):
+            test_middleware = HeaderApp()
+            for filter in self.middleware:
+                test_middleware = \
+                filter.filter_factory(self.settings)(test_middleware)
+        else:
+            test_middleware = \
+                self.middleware.filter_factory(self.settings)(HeaderApp())
+        return test_middleware
 
     def setUp(self, middleware, settings=None):
         super(MiddlewareTestCase, self).setUp()
@@ -1521,14 +1536,9 @@ class MiddlewareTestCase(FunctionalTestCase):
         cert_file = isSsl()
         if cert_file:
             settings['certfile'] = cert_file
-        if isinstance(middleware, tuple):
-            self.test_middleware = HeaderApp()
-            for filter in middleware:
-                self.test_middleware = \
-                filter.filter_factory(settings)(self.test_middleware)
-        else:
-            self.test_middleware = \
-                middleware.filter_factory(settings)(HeaderApp())
+        self.settings = settings
+        self.middleware = middleware
+        self.test_middleware = self._setup_test_middleware()
 
         name = unique_str()
         r = self.create_tenant(tenant_name=name, assert_status=201)
@@ -1556,6 +1566,30 @@ class MiddlewareTestCase(FunctionalTestCase):
                 json['OS-KSCATALOG:endpointTemplate']
             self.create_endpoint_for_tenant(self.tenant['id'],
                 self.endpoint_templates[x]['id'])
+                
+    def test_with_service_id(self):
+        # create a service role so the scope token validation will succeed
+        r = self.create_role(service_name=self.services[0]['name'])
+        role = r.json['role']
+        self.grant_role_to_user(self.tenant_user['id'],
+                                role['id'], self.tenant['id'])
+        r = self.authenticate(self.tenant_user['name'], self.tenant_user['password'],
+            self.tenant['id'], assert_status=200)
+        user_token = r.json['access']['token']['id']
+        self.settings['service_ids'] = "%s" % self.services[0]['id']
+        test_middleware = self._setup_test_middleware()
+        resp = Request.blank('/',
+            headers={'X-Auth-Token': user_token}) \
+            .get_response(test_middleware)
+        self.assertEquals(resp.status_int, 200)
+
+        # now give it a bogus service ID to make sure we get a 401
+        self.settings['service_ids'] = "boguzz"
+        test_middleware = self._setup_test_middleware()
+        resp = Request.blank('/',
+            headers={'X-Auth-Token': user_token}) \
+            .get_response(test_middleware)
+        self.assertEquals(resp.status_int, 401)
 
     def test_401_without_token(self):
         resp = Request.blank('/').get_response(self.test_middleware)

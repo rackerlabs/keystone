@@ -71,6 +71,7 @@ HTTP_X_AUTHORIZATION
 import httplib
 import json
 import logging
+import urllib
 from urlparse import urlparse
 from webob.exc import HTTPUnauthorized, Request, Response
 
@@ -129,10 +130,16 @@ class AuthProtocol(object):
         self.admin_user = conf.get('auth_admin_user')
         self.admin_password = conf.get('auth_admin_password')
         self.admin_token = conf.get('auth_admin_token')
+        # bind to one or more service instances
+        service_ids = conf.get('service_ids')
+        self.serviceId_qs = ''
+        if service_ids:
+            self.serviceId_qs = '?HP-IDM-serviceId=%s' % \
+                                (urllib.quote(service_ids))
 
     def _build_token_uri(self, claims=None):
         uri = "/v" + self.auth_api_version + "/tokens" + \
-              (claims and '/' + claims or '')
+              (claims and '/' + claims + self.serviceId_qs or '')
         return uri
 
     def __init__(self, app, conf):
