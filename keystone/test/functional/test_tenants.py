@@ -279,6 +279,73 @@ class GetTenantsTest(TenantTest):
         self.get_tenants(assert_status=403, headers={
             'Accept': 'application/xml'})
 
+    def test_get_tenants_default_and_role(self):
+        """ Validates that the GET /tenants call returns tenants that are
+        assigned to the user by role AND by default tenant setting """
+
+    def test_get_tenants_blank(self):
+        # Create user with no default tenant set
+        self.nodefaultuser = self.create_user_with_known_password()\
+                                            .json['user']
+        r = self.authenticate(self.nodefaultuser['name'],
+                              self.nodefaultuser['password'],
+                              tenant_id = None, assert_status=200)
+        token_id = r.json['access']['token']['id']
+        r = self.get_tenants(request_type='service', use_token=token_id)
+        self.assertTrue(len(r.json['tenants']) == 0,
+                        "No tenants should be returned")
+
+    def test_get_tenants_default_and_role(self):
+        self.fixture_create_normal_tenant()
+        self.fixture_create_tenant_user()
+        other_tenant = self.create_tenant().json['tenant']
+        role = self.create_role().json['role']
+        self.grant_role_to_user(self.tenant_user['id'], role['id'],
+                                other_tenant['id'])
+
+        r = self.authenticate(self.tenant_user['name'],
+                              self.tenant_user['password'],
+                              tenant_id = None, assert_status=200)
+        token_id = r.json['access']['token']['id']
+        r = self.get_tenants(request_type='service', use_token=token_id)
+        tenants = r.json['tenants']
+        second_tenant = [tenant for tenant in tenants \
+                          if tenant['id'] == other_tenant['id']]
+        self.assertTrue(len(second_tenant) > 0,
+                        "Tenants with roles assigned should be returned")
+
+        default_tenant = [tenant for tenant in tenants \
+                          if tenant['id'] == self.tenant['id']]
+        self.assertTrue(len(default_tenant) > 0,
+                        "Default tenant should be returned")
+
+
+    def test_get_tenants_does_not_return_default(self):
+        self.fixture_create_normal_tenant()
+        self.fixture_create_tenant_user()
+        other_tenant = self.create_tenant().json['tenant']
+        role = self.create_role().json['role']
+        self.grant_role_to_user(self.tenant_user['id'], role['id'],
+                                other_tenant['id'])
+
+        # Authenticate scp[ed to the non-default tenant
+        r = self.authenticate(self.tenant_user['name'],
+                              self.tenant_user['password'],
+                              tenant_id = other_tenant['id'],
+                              assert_status=200)
+        token_id = r.json['access']['token']['id']
+        r = self.get_tenants(request_type='service', use_token=token_id)
+        tenants = r.json['tenants']
+        second_tenant = [tenant for tenant in tenants \
+                          if tenant['id'] == other_tenant['id']]
+        self.assertTrue(len(second_tenant) > 0,
+                        "Tenants with roles assigned should be returned")
+
+        default_tenant = [tenant for tenant in tenants \
+                          if tenant['id'] == self.tenant['id']]
+        self.assertTrue(len(default_tenant) == 0,
+                        "Default tenant should not be returned")
+
 
 class GetTenantTest(TenantTest):
     def setUp(self, *args, **kwargs):

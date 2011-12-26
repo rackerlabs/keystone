@@ -183,11 +183,9 @@ class UnScopedAuthenticationTest(common.FunctionalTestCase):
     def setUp(self, *args, **kwargs):
         super(UnScopedAuthenticationTest, self).setUp(*args, **kwargs)
 
-        password = common.unique_str()
         self.tenant = self.create_tenant().json['tenant']
-        self.user = self.create_user(user_password=password,
+        self.user = self.create_user_with_known_password(
             tenant_id=self.tenant['id']).json['user']
-        self.user['password'] = password
 
         self.services = {}
         self.endpoint_templates = {}
@@ -244,6 +242,21 @@ class UnScopedAuthenticationTest(common.FunctionalTestCase):
         self.assertEquals(r.xml.tag, '{%s}access' % self.xmlns)
         service_catalog = r.xml.find('{%s}serviceCatalog' % self.xmlns)
         self.check_urls_for_regular_user_xml(service_catalog)
+
+    def test_authenticate_without_default_tenant(self):
+        # Create user with no default tenant set (but granted a role)
+        self.nodefaultuser = self.create_user_with_known_password()\
+                                            .json['user']
+        self.role = self.create_role().json['role']
+        self.grant_role_to_user(self.nodefaultuser['id'], self.role['id'],
+                                self.tenant['id'])
+
+        r = self.authenticate(self.nodefaultuser['name'],
+                              self.nodefaultuser['password'],
+                              tenant_id = None, assert_status=200)
+
+        self.assertIsNotNone(r.json['access']['token'])
+        self.assertNotIn('tenant', r.json['access']['token'])
 
 
 class AdminUserAuthenticationTest(common.FunctionalTestCase):
