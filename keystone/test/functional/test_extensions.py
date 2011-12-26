@@ -2,54 +2,6 @@ import sys
 import unittest2 as unittest
 from keystone.test.functional import common
 
-
-class TestExtensions(common.FunctionalTestCase):
-    def test_extensions_json(self):
-        r = self.service_request(path='/extensions.json')
-        self.assertTrue('json' in r.getheader('Content-Type'))
-        content = r.json
-        self.assertIsNotNone(content['extensions'])
-        self.assertIsNotNone(content['extensions']['values'])
-
-    def test_extensions_xml(self):
-        r = self.service_request(path='/extensions.xml')
-        self.assertTrue('xml' in r.getheader('Content-Type'))
-
-
-class TestAdminExtensions(common.ApiTestCase):
-    def test_extensions_json(self):
-        r = self.admin_request(path='/extensions.json')
-        self.assertTrue('json' in r.getheader('Content-Type'))
-        content = r.json
-        self.assertIsNotNone(content['extensions'])
-        self.assertIsNotNone(content['extensions']['values'])
-        found_osksadm = False
-        found_oskscatalog = False
-        for value in content['extensions']['values']:
-            if value['extension']['alias'] == 'OS-KSADM':
-                found_osksadm = True
-            if value['extension']['alias'] == 'OS-KSCATALOG':
-                found_oskscatalog = True
-        self.assertTrue(found_osksadm, "Missing OS-KSADM extension.")
-        self.assertTrue(found_oskscatalog, "Missing OS-KSCATALOG extension.")
-
-    def test_extensions_xml(self):
-        r = self.admin_request(path='/extensions.xml')
-        self.assertTrue('xml' in r.getheader('Content-Type'))
-        content = r.xml
-        extensions = content.findall(
-            "{http://docs.openstack.org/common/api/v1.0}extension")
-        found_osksadm = False
-        found_oskscatalog = False
-        for extension in extensions:
-            if extension.get("alias") == 'OS-KSADM':
-                found_osksadm = True
-            if extension.get("alias") == 'OS-KSCATALOG':
-                found_oskscatalog = True
-        self.assertTrue(found_osksadm, "Missing OS-KSADM extension.")
-        self.assertTrue(found_oskscatalog, "Missing OS-KSCATALOG extension.")
-
-
 class TestHPIDMTokensExtension(common.FunctionalTestCase):
     """Test HP-IDM token validation extension"""
 
@@ -81,11 +33,21 @@ class TestHPIDMTokensExtension(common.FunctionalTestCase):
 
     def get_token_belongsto(self, token_id, tenant_id, service_ids, **kwargs):
         """GET /tokens/{token_id}?belongsTo={tenant_id}
-                                  [&HP-IDM-serviceId={sids}]"""
+                                  [&HP-IDM-serviceId={service_ids}]"""
         serviceId_qs = ""
         if service_ids:
             serviceId_qs = "&HP-IDM-serviceId=%s" % (service_ids)
         return self.admin_request(method='GET',
+            path='/tokens/%s?belongsTo=%s%s' % (token_id, tenant_id,
+                serviceId_qs), **kwargs)
+
+    def check_token_belongs_to(self, token_id, tenant_id, service_ids, **kwargs):
+        """HEAD /tokens/{token_id}?belongsTo={tenant_id}
+                                   [&HP-IDM-serviceId={service_ids}]"""
+        serviceId_qs = ""
+        if service_ids:
+            serviceId_qs = "&HP-IDM-serviceId=%s" % (service_ids)
+        return self.admin_request(method='HEAD',
             path='/tokens/%s?belongsTo=%s%s' % (token_id, tenant_id,
                 serviceId_qs), **kwargs)
 
@@ -115,6 +77,11 @@ class TestHPIDMTokensExtension(common.FunctionalTestCase):
         self.assertIsNotNone(access['user'].get('roles'))
         self.assertEqual(len(access['user']['roles']), 1)
         self.assertEqual(access['user']['roles'][0]['name'], self.role['name'])
+
+        # make sure check token also works
+        self.check_token_belongs_to(token_id=scoped['token']['id'],
+            tenant_id=self.tenant['id'], service_ids=self.service['id'],
+            assert_status=200)
 
     @unittest.skipIf(common.isSsl(),
                      "Skipping SSL tests")
@@ -177,6 +144,11 @@ class TestHPIDMTokensExtension(common.FunctionalTestCase):
         role_names = map(lambda x: x['name'], access['user']['roles'])
         self.assertTrue(self.role['name'] in role_names)
         self.assertTrue(self.another_role['name'] in role_names)
+
+        # make sure check token also works
+        self.check_token_belongs_to(token_id=scoped['token']['id'],
+            tenant_id=self.tenant['id'], service_ids=service_ids,
+            assert_status=200)
 
     @unittest.skipIf(common.isSsl(),
                      "Skipping SSL tests")
@@ -254,6 +226,11 @@ class TestHPIDMTokensExtension(common.FunctionalTestCase):
         service_ids="%s,%s,boguzzz" % (self.service['id'], self.another_service['id'])
         r = self.get_token_belongsto(token_id=scoped['token']['id'],
                 tenant_id=self.tenant['id'], service_ids=service_ids, assert_status=401)
+
+        # make sure check token also works
+        self.check_token_belongs_to(token_id=scoped['token']['id'],
+            tenant_id=self.tenant['id'], service_ids=service_ids,
+            assert_status=401)
 
 
 if __name__ == '__main__':
