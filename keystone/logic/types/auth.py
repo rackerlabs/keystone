@@ -359,6 +359,7 @@ class AuthData(object):
                             endpoint.set(url_kind + "URL", base_url_item.\
                             replace('%tenant_id%', str(self.token.tenant.id))
                             if self.token.tenant else base_url_item)
+                    endpoint.set("id", str(base_url.id))
                     service.append(endpoint)
                 service_catalog.append(service)
             dom.append(service_catalog)
@@ -412,6 +413,7 @@ class AuthData(object):
                                 endpoint[url_kind + "URL"] = base_url_item
                                 include_this_endpoint = True
                     if include_this_endpoint:
+                        endpoint['id'] = str(base_url.id)
                         endpoints.append(endpoint)
                         dservice = db_api.SERVICE.get(key)
                         if not dservice:
