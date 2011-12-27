@@ -20,7 +20,7 @@ import ast
 import logging
 from keystone import utils
 EXTENSION_PREFIX = 'keystone.contrib.extensions.'
-DEFAULT_EXTENSIONS = 'osksadm,oskscatalog,hpidm'
+DEFAULT_EXTENSIONS = 'osksadm,oskscatalog'
 CONFIG_EXTENSION_PROPERTY = 'extensions'
 
 

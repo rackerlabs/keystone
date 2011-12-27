@@ -35,7 +35,7 @@ DEFAULT_FIXTURE = [
     ('role', 'add', 'barista', 'tea'),
     ('role', 'grant', 'barista', 'pete'),
     ('role', 'add', 'barista-global'),
-    ('role', 'grant', 'barista-globa', 'pete'),
+    ('role', 'grant', 'barista-global', 'pete'),
 # Add Services
     #1 Service Name:exampleservice Type:example type
     ('service', 'add', 'exampleservice',

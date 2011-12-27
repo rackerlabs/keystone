@@ -11,7 +11,7 @@ EXTENSIONS_PATH = 'contrib/extensions'
 
 
 def get_supported_extensions(options):
-    """ 
+    """
     Returns list of supported extensions.
     options - global configuration options
     """
@@ -19,6 +19,12 @@ def get_supported_extensions(options):
 
 
 def is_extension_supported(options, extension_name):
+    """
+    Return True if the extension is enabled, False otherwise.
+    options - global configuration options
+    extension_name - extension name
+    extension_name is case-sensitive.
+    """
     if extension_name is not None and options is not None:
         return extension_name in get_supported_extensions(options)
     return False

@@ -76,8 +76,8 @@ HP-IDM
     This extension adds capability to filter roles with optional service IDs
     for token validation to mitigate security risks with role name conflicts.
     See https://bugs.launchpad.net/keystone/+bug/890411 for more details.
-    
-    This is an Admin API extension. Applicable to validate token (HEAD) 
+
+    This is an Admin API extension. Applicable to validate token (GET)
     and check token (HEAD) APIs only.
 
 .. note::

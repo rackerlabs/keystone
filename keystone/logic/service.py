@@ -245,7 +245,7 @@ def get_auth_data(dtoken):
     return auth.AuthData(token, user, endpoints, url_types=url_types)
 
 
-def get_validate_data(dtoken, duser, service_ids):
+def get_validate_data(dtoken, duser, service_ids=None):
     """return ValidateData object for a token/user pair"""
     tenant = None
     if dtoken.tenant_id:
@@ -257,8 +257,8 @@ def get_validate_data(dtoken, duser, service_ids):
     ts = get_tenant_roles_for_user_and_services(duser.id,
                                                 dtoken.tenant_id,
                                                 service_ids)
-    if not dtoken.tenant_id or not service_ids \
-        or backends.GLOBAL_SERVICE_ID in service_ids:
+    if (not dtoken.tenant_id or not service_ids or
+            (backends.GLOBAL_SERVICE_ID in service_ids)):
         # return the global roles for unscoped tokens or
         # its ID is in the service IDs
         ts = ts + get_global_roles_for_user(duser.id)
@@ -350,14 +350,15 @@ def validate_service_ids(service_ids):
     If not service IDs or encounter an invalid service ID,
     fault.UnauthorizedFault will be raised.
     """
-    if len(service_ids) == 0:
+    if not service_ids:
         raise fault.UnauthorizedFault("Missing service IDs")
 
     for service_id in service_ids:
         if not service_id == backends.GLOBAL_SERVICE_ID:
             service = api.SERVICE.get(service_id)
             if not service:
-                raise fault.UnauthorizedFault("Invalid service ID: %s" % (service_id))
+                raise fault.UnauthorizedFault("Invalid service ID: %s" %
+                                              (service_id))
 
 
 def get_roles_names_by_service_ids(service_ids):
@@ -369,7 +370,7 @@ def get_roles_names_by_service_ids(service_ids):
     for service_id in service_ids:
         if service_id != backends.GLOBAL_SERVICE_ID:
             sroles = api.ROLE.get_by_service(service_id=service_id)
-            if sroles and len(sroles) > 0:
+            if sroles:
                 roles = roles + sroles
     return map(lambda role: role.name, roles)
 
@@ -400,7 +401,6 @@ def get_tenant_roles_for_user_and_services(user_id, tenant_id,
     service IDs.
     """
     ts = []
-    filtered_ts = []
     if tenant_id and user_id:
         drole_refs = api.ROLE.ref_get_all_tenant_roles(user_id,
             tenant_id)
@@ -412,10 +412,8 @@ def get_tenant_roles_for_user_and_services(user_id, tenant_id,
     if service_ids:
         # if service IDs are specified, filter roles by service IDs
         sroles_names = get_roles_names_by_service_ids(service_ids)
-        for role in ts:
-            if role.name in sroles_names:
-                filtered_ts.append(role)
-        return filtered_ts
+        return [role for role in ts
+                if role.name in sroles_names]
     else:
         return ts
 
@@ -555,7 +553,7 @@ class IdentityService(object):
         auth_data = get_validate_data(token, user, service_ids)
         if service_ids and (token.tenant_id or belongs_to):
             # we have service Ids and scope token, make sure we have some roles
-            if len(auth_data.user.role_refs.values) == 0:
+            if not auth_data.user.role_refs.values:
                 raise fault.UnauthorizedFault("No roles found for scope token")
         return auth_data
 

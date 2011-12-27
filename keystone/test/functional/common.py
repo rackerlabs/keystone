@@ -1519,14 +1519,14 @@ class MiddlewareTestCase(FunctionalTestCase):
     Base class to run tests for Keystone WSGI middleware.
     """
     use_server = True
-    
+
     def _setup_test_middleware(self):
         test_middleware = None
         if isinstance(self.middleware, tuple):
             test_middleware = HeaderApp()
             for filter in self.middleware:
                 test_middleware = \
-                filter.filter_factory(self.settings)(test_middleware)
+                    filter.filter_factory(self.settings)(test_middleware)
         else:
             test_middleware = \
                 self.middleware.filter_factory(self.settings)(HeaderApp())
@@ -1580,16 +1580,19 @@ class MiddlewareTestCase(FunctionalTestCase):
                 json['OS-KSCATALOG:endpointTemplate']
             self.create_endpoint_for_tenant(self.tenant['id'],
                 self.endpoint_templates[x]['id'])
-                
+
+    @unittest.skipIf(isSsl() or 'HP-IDM_Disabled' in os.environ,
+                     "Skipping SSL or HP-IDM tests")
     def test_with_service_id(self):
         # create a service role so the scope token validation will succeed
-        r = self.create_role(service_name=self.services[0]['name'])
-        role = r.json['role']
+        role_resp = self.create_role(service_name=self.services[0]['name'])
+        role = role_resp.json['role']
         self.grant_role_to_user(self.tenant_user['id'],
                                 role['id'], self.tenant['id'])
-        r = self.authenticate(self.tenant_user['name'], self.tenant_user['password'],
+        auth_resp = self.authenticate(self.tenant_user['name'],
+            self.tenant_user['password'],
             self.tenant['id'], assert_status=200)
-        user_token = r.json['access']['token']['id']
+        user_token = auth_resp.json['access']['token']['id']
         self.settings['service_ids'] = "%s" % self.services[0]['id']
         test_middleware = self._setup_test_middleware()
         resp = Request.blank('/',
@@ -1604,6 +1607,33 @@ class MiddlewareTestCase(FunctionalTestCase):
             headers={'X-Auth-Token': user_token}) \
             .get_response(test_middleware)
         self.assertEquals(resp.status_int, 401)
+
+    @unittest.skipUnless(not isSsl() and 'HP-IDM_Disabled' in os.environ,
+                     "Skipping since HP-IDM is enabled")
+    def test_with_service_id_with_hpidm_disabled(self):
+        # create a service role so the scope token validation will succeed
+        role_resp = self.create_role(service_name=self.services[0]['name'])
+        role = role_resp.json['role']
+        self.grant_role_to_user(self.tenant_user['id'],
+                                role['id'], self.tenant['id'])
+        auth_resp = self.authenticate(self.tenant_user['name'],
+            self.tenant_user['password'],
+            self.tenant['id'], assert_status=200)
+        user_token = auth_resp.json['access']['token']['id']
+        self.settings['service_ids'] = "%s" % self.services[0]['id']
+        test_middleware = self._setup_test_middleware()
+        resp = Request.blank('/',
+            headers={'X-Auth-Token': user_token}) \
+            .get_response(test_middleware)
+        self.assertEquals(resp.status_int, 200)
+
+        # now give it a bogus service ID to make sure it got ignored
+        self.settings['service_ids'] = "boguzz"
+        test_middleware = self._setup_test_middleware()
+        resp = Request.blank('/',
+            headers={'X-Auth-Token': user_token}) \
+            .get_response(test_middleware)
+        self.assertEquals(resp.status_int, 200)
 
     def test_401_without_token(self):
         resp = Request.blank('/').get_response(self.test_middleware)

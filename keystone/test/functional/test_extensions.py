@@ -1,6 +1,8 @@
+import os
 import sys
 import unittest2 as unittest
 from keystone.test.functional import common
+
 
 class TestHPIDMTokensExtension(common.FunctionalTestCase):
     """Test HP-IDM token validation extension"""
