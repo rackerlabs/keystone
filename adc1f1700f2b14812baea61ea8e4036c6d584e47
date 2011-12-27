@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//6bQ\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T17:12:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//6dw\u003d",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//6dc\u003d",
         "filename": "keystone/test/functional/test_authentication.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2011-12-27T16:39:56Z",
       "side": 1,
       "message": "Don\u0027t use single-letter names. Use something descriptive.",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6bI\u003d",
+        "filename": "keystone/test/functional/test_authentication.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T17:12:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//6dc\u003d",
       "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//6bE\u003d",
+        "filename": "keystone/test/functional/test_authentication.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T17:12:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//6dg\u003d",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//6dU\u003d",
         "filename": "keystone/test/functional/test_tenants.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2011-12-27T16:39:56Z",
       "side": 1,
       "message": "Is this supposed to be an empty method? Either remove it, or add a \u0027pass\u0027 statement along with an explanation as to why this needs to be here.",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6bA\u003d",
+        "filename": "keystone/test/functional/test_tenants.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T17:12:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//6dU\u003d",
       "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//6aw\u003d",
+        "filename": "keystone/test/functional/test_tenants.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T17:12:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//6dI\u003d",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//6c0\u003d",
         "filename": "keystone/test/functional/test_tenants.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2011-12-27T16:39:56Z",
       "side": 1,
       "message": "Continued lines inside of brackets/parens don\u0027t need trailing backslashes (applies to multiple places).",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6as\u003d",
+        "filename": "keystone/test/functional/test_tenants.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T17:12:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//6c0\u003d",
       "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//6ao\u003d",
+        "filename": "keystone/test/functional/test_tenants.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T17:12:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//6dA\u003d",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//6cs\u003d",
         "filename": "keystone/test/unit/test_backends.py",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2011-12-27T16:39:56Z",
       "side": 1,
       "message": "No trailing backslash needed.",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6ak\u003d",
+        "filename": "keystone/test/unit/test_backends.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T17:12:11Z",
+      "side": 1,
+      "message": "It\u0027s in a string (not in brackets)",
+      "parentUuid": "AAAAC3//6cs\u003d",
       "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
