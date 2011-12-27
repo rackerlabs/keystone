@@ -16,6 +16,24 @@
       "revId": "97d13046e870ae2a582bd55e3883008b230969f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6cc\u003d",
+        "filename": "keystone/test/unit/test_backends.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T16:46:50Z",
+      "side": 1,
+      "message": "I\u0027m actually in a sting which contains brackets, so I need the \\",
+      "parentUuid": "AAAAC3//6d8\u003d",
+      "revId": "97d13046e870ae2a582bd55e3883008b230969f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
