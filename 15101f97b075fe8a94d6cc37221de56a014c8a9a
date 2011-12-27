@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//6Xg\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2011-12-27T18:32:36Z",
+      "side": 1,
+      "message": "There is no service ID called \"global\". We are basically using it to tell Keystone backend to return the global roles on validate token (GET) call, and to process the global roles on check token (HEAD) call.",
+      "parentUuid": "AAAAC3//6Y4\u003d",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//6Y8\u003d",
         "filename": "etc/keystone.conf",
         "patchSetId": 1
@@ -115,6 +133,24 @@
       "writtenOn": "2011-12-27T18:06:15Z",
       "side": 1,
       "message": "Does this need to be defaulted to None?",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6Xs\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2011-12-27T18:32:36Z",
+      "side": 1,
+      "message": "Sure, since I am changing the existing interface.",
+      "parentUuid": "AAAAC3//6Yo\u003d",
       "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -302,6 +338,24 @@
       "writtenOn": "2011-12-27T18:06:15Z",
       "side": 1,
       "message": "Typo? \u0027globa\u0027\nIs this used in any tests or sample use cases?",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6YA\u003d",
+        "filename": "keystone/test/sampledata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2011-12-27T18:32:36Z",
+      "side": 1,
+      "message": "I used this data for command line testing (mostly via curl).",
+      "parentUuid": "AAAAC3//6YY\u003d",
       "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
