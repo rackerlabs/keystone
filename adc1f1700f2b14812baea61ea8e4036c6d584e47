@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//6dw\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T16:39:56Z",
+      "side": 1,
+      "message": "I would add more parens to make the comparisons explicit:\n\nif scope is None or \\\n    ((scope and default_tenant) and (scope \u003d\u003d default_tenant)):",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6dc\u003d",
+        "filename": "keystone/test/functional/test_authentication.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T16:39:56Z",
+      "side": 1,
+      "message": "Don\u0027t use single-letter names. Use something descriptive.",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6dg\u003d",
+        "filename": "keystone/test/functional/test_authentication.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T16:39:56Z",
+      "side": 1,
+      "message": "Should not have spaces around the \u0027\u003d\u0027.",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6dU\u003d",
+        "filename": "keystone/test/functional/test_tenants.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T16:39:56Z",
+      "side": 1,
+      "message": "Is this supposed to be an empty method? Either remove it, or add a \u0027pass\u0027 statement along with an explanation as to why this needs to be here.",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6dI\u003d",
+        "filename": "keystone/test/functional/test_tenants.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T16:39:56Z",
+      "side": 1,
+      "message": "Same comment as in other scripts: don\u0027t use single-letter names. (multiple places in this script).",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6c0\u003d",
+        "filename": "keystone/test/functional/test_tenants.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T16:39:56Z",
+      "side": 1,
+      "message": "Continued lines inside of brackets/parens don\u0027t need trailing backslashes (applies to multiple places).",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6dA\u003d",
+        "filename": "keystone/test/functional/test_tenants.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T16:39:56Z",
+      "side": 1,
+      "message": "typo?",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6cs\u003d",
+        "filename": "keystone/test/unit/test_backends.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T16:39:56Z",
+      "side": 1,
+      "message": "No trailing backslash needed.",
+      "revId": "adc1f1700f2b14812baea61ea8e4036c6d584e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

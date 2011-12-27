@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//6do\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T16:39:56Z",
+      "side": 0,
+      "message": "First, don\u0027t use single-letter names unless it\u0027s a standard loop counter like \u0027i\u0027 or \u0027j\u0027.\n\nSecond, a list comp would be much cleaner. Remove line 513, and then replace lines 542-545 with:\n\nts \u003d [Tenant(id\u003ddtenant.id, name\u003ddtenant.name, description\u003ddtenant.desc,\n\t\tenabled\u003ddtenant.enabled)\n\t\tfor dtenant in dtenants]",
+      "revId": "6c40cc9223f76f9242475b8f55165b38ff0999c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
