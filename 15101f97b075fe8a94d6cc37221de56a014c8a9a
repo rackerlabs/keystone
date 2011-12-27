@@ -121,6 +121,108 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//6a0\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T18:30:34Z",
+      "side": 1,
+      "message": "When continuing the opening line of a block, you should indent two levels to distinguish it from the indentation of the enclosed block. You should probably also add parens to both make the logic clearer and eliminate the backslash:\n\nif (not dtoken.tenant_id or not service_ids or\n        (backends.GLOBAL_SERVICE_ID in service_ids)):",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6ac\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T18:30:34Z",
+      "side": 1,
+      "message": "Better written as:\n\nif not service_ids:",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6aM\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T18:30:34Z",
+      "side": 1,
+      "message": "This is redundant. Just use:\n\nif sroles:",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6aA\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T18:30:34Z",
+      "side": 1,
+      "message": "This entire method can be written much cleaner with a single list comprehension:\n\nreturn [Role(drole_ref.role_id, drole.name, None, drole_ref.tenant_id)\n        for drole in api.ROLE.ref_get_all_global_roles(user_id)]",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6Zc\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T18:30:34Z",
+      "side": 1,
+      "message": "This method could be simplified:\n\nts \u003d []\nif tenant_id and user_id:\n    ts \u003d [Role(drole_ref.role_id, drole.name, None, drole_ref.tenant_id)\n            for drole in api.ROLE.ref_get_all_tenant_roles(user_id, tenant_id)\nif service_ids:\n    sroles_names \u003d get_roles_names_by_service_ids(service_ids)\n    return [role for role in ts\n            if role.name in sroles_names]\nreturn ts",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6ZU\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T18:30:34Z",
+      "side": 1,
+      "message": "Should be written:\n\nif not auth_data.user.role_refs.values:",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//6Yk\u003d",
         "filename": "keystone/test/functional/common.py",
         "patchSetId": 1
@@ -138,6 +240,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAC3//6Xo\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1515,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T18:30:34Z",
+      "side": 1,
+      "message": "Continued line should be indented 2 levels.",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//6Yg\u003d",
         "filename": "keystone/test/functional/common.py",
         "patchSetId": 1
@@ -149,6 +268,23 @@
       "writtenOn": "2011-12-27T18:06:15Z",
       "side": 1,
       "message": "PEP8",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6Xk\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1572,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T18:30:34Z",
+      "side": 1,
+      "message": "Please don\u0027t use single-letter names except with index counters. Use a descriptive name instead.",
       "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

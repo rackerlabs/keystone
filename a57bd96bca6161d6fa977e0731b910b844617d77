@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAC3//6Xw\u003d",
+        "filename": "keystone/middleware/quantum_auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-27T18:30:34Z",
+      "side": 0,
+      "message": "This method is confusingly written. I would suggest (assuming I understand the intent):\n\ndef _build_token_uri(self, claims\u003dNone):\n    if claims:\n        claim_str \u003d \"/%s%s\" % (claims, self.serviceId_qs)\n    else:\n        claim_str \u003d \"\"\n    return \"/v%s/tokens%s\" % (self.auth_api_version, claim_str)",
+      "revId": "a57bd96bca6161d6fa977e0731b910b844617d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//6ZE\u003d",
         "filename": "keystone/test/functional/test_extensions.py",
         "patchSetId": 1
