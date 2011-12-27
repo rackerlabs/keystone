@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//6ZE\u003d",
+        "filename": "keystone/test/functional/test_extensions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T18:06:15Z",
+      "side": 0,
+      "message": "Why did you remove these tests?\n\nI would think you keep those as is and add a new file to test the HPIDM extension?",
+      "revId": "a57bd96bca6161d6fa977e0731b910b844617d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6Yc\u003d",
+        "filename": "keystone/test/functional/test_extensions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T18:06:15Z",
+      "side": 0,
+      "message": "We need to add some test cases where the middleware and the server don\u0027t support the HPIDM extension and validate the expected behavior:\n- Server does not support the query string, but middleware sends it\n- Middleware does not support the query string, and validate that default-configured server responds as previously expected",
+      "revId": "a57bd96bca6161d6fa977e0731b910b844617d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

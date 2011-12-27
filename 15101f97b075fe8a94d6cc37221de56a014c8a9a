@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAC3//6ZA\u003d",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T18:06:15Z",
+      "side": 1,
+      "message": "Remove the extra spaces highlighted in red here",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6Y4\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T18:06:15Z",
+      "side": 1,
+      "message": "Not sure I understand this. Do you create a service called \"global\" and put it\u0027s ID here?",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6Y8\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T18:06:15Z",
+      "side": 1,
+      "message": "Extra space",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6Y0\u003d",
+        "filename": "keystone/contrib/extensions/admin/hpidm/extension.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T18:06:15Z",
+      "side": 1,
+      "message": "Remove extra space",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6Ys\u003d",
+        "filename": "keystone/logic/extension_reader.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T18:06:15Z",
+      "side": 1,
+      "message": "Is this a list of \u0027supported\u0027 or \u0027loaded/enabled\u0027 extensions?\n\nI see now that we call this \u0027supported\u0027 below, but seems to me that is not the correct word to use. Maybe we fix this in another patch.",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6Yw\u003d",
+        "filename": "keystone/logic/extension_reader.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T18:06:15Z",
+      "side": 1,
+      "message": "Extra space",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6Yo\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T18:06:15Z",
+      "side": 1,
+      "message": "Does this need to be defaulted to None?",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6Yk\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T18:06:15Z",
+      "side": 1,
+      "message": "PEP8",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6Yg\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1569,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T18:06:15Z",
+      "side": 1,
+      "message": "PEP8",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAC3//6YY\u003d",
+        "filename": "keystone/test/sampledata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-27T18:06:15Z",
+      "side": 1,
+      "message": "Typo? \u0027globa\u0027\nIs this used in any tests or sample use cases?",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
