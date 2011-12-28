@@ -122,6 +122,23 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///+o\u003d",
+        "filename": "keystone/logic/extension_reader.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-12-28T03:41:29Z",
+      "side": 1,
+      "message": "Minor suggestion: Do you want to store it in a local variable so that you don\u0027t have to\nfetch it over and over\nif self.supported extensions is None\n  self.supported_extensions \u003d options.get(CONFIG_EXTENSION_PROPERTY, DEFAULT_EXTENSIONS).split(\u0027,\u0027)\n\nreturn self.supported_extensions",
+      "revId": "15101f97b075fe8a94d6cc37221de56a014c8a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//6Yo\u003d",
         "filename": "keystone/logic/service.py",
         "patchSetId": 1
