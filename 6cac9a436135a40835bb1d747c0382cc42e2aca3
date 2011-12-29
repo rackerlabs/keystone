@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH///rI\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "Trailing backslash is not needed here and line 51.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///qs\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "Continued lines that start a block should be indented two levels, to distinguish them from the enclosed block. You should also add parens around the full \u0027if\u0027 expression to eliminate the need for the trailing backslash.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///qo\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "Between here and line 480 there seems to be a lot of unneeded blank lines within the methods. Blank lines should indicate logical chunks; rarely does a single line need to be set off by blank lines.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///qA\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1349,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "Trailing backslash is not needed.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///p8\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1374,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "Trailing backslash is not needed.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///p0\u003d",
+        "filename": "keystone/managers/user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "None of the other methods in this script use this stilted style of parameter list. It should be changed to the same direct list of params as the other methods.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///pw\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "Is it possible that \u0027maps\u0027 and \u0027rename\u0027 may not be defined at this point? I.e., if \u0027hints\u0027 is None or doesn\u0027t have the key \u0027maps\u0027, neither maps nor rename will be defined.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///ps\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "The bool() is not needed; the result of a \u0027not in\u0027 is already a bool.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///pk\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "Trailing backslash is not needed.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///pg\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "Simpler:\n\nif not invalid:",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///pQ\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "Trailing backslash is not needed.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///pM\u003d",
+        "filename": "keystone/test/unit/test_models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "Trailing backslash is not needed. Continued line should be indented two levels from the main line.\n\nSame comment applies to line 66",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///pE\u003d",
+        "filename": "keystone/test/unit/test_models_Role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "Trailing backslash is not needed.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///o0\u003d",
+        "filename": "keystone/test/unit/test_models_Service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "As written, the above string evaluates to (using \u0027+\u0027 for spaces, since space runs don\u0027t show in HTML):\n\u0027\u003cservice+++++++++++xmlns\u003d\"http://docs.openstack.org/identity/api/ext/OS-KSADM/v1.0\"+++++++++++id\u003d\"1\"+name\u003d\"the+service\"+type\u003d\"compute\"/\u003e\u0027\n\nDid you want it to be one long line with those two long runs of 12 spaces?\n\nSame comment applies to the test_service_validation_from_xml() method below.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///oM\u003d",
+        "filename": "keystone/test/unit/test_models_Tenant.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 1,
+      "message": "Trailing backslash is not needed. Continued line should be indented two levels from the main line.\n\nSame comment applies to line 82.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

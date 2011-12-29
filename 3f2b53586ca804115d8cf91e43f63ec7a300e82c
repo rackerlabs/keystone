@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH///qY\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 0,
+      "message": "This line is way to jumbled; it should be broken apart to make it clearer:\ntry:\n\ttroles \u003d dtenantuser.tenant_roles\nexcept AttributeError:\n\ttroles \u003d None\nts.append(User(None, dtenantuser.id, dtenantuser.name, tenant_id,\n        dtenantuser.email, dtenantuser.enabled, troles)",
+      "revId": "3f2b53586ca804115d8cf91e43f63ec7a300e82c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///qQ\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 910,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 0,
+      "message": "Trailing backslash is not needed.",
+      "revId": "3f2b53586ca804115d8cf91e43f63ec7a300e82c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///pI\u003d",
+        "filename": "keystone/test/unit/test_models_Role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T18:49:45Z",
+      "side": 0,
+      "message": "Trailing backslash is not needed.",
+      "revId": "3f2b53586ca804115d8cf91e43f63ec7a300e82c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
