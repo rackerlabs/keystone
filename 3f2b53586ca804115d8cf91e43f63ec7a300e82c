@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH///rk\u003d",
+        "filename": "keystone/middleware/quantum_auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T17:38:34Z",
+      "side": 0,
+      "message": "I had commented about the confusion of this code in your previous commit. Please change this to make it more readable:\n\ndef _build_token_uri(self, claims\u003dNone):\n    claim_str \u003d \"/%s\" % claims if claims else \"\"\n    return \"/v%s/tokens%s\" % (self.auth_api_version, claim_str)",
+      "revId": "3f2b53586ca804115d8cf91e43f63ec7a300e82c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

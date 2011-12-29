@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH///sE\u003d",
+        "filename": "keystone/logic/extension_reader.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T17:38:34Z",
+      "side": 1,
+      "message": "Use parens to make the separate conditions clearer:\n\nif (extension_name is not None) and (options is not None):",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///sA\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T17:38:34Z",
+      "side": 1,
+      "message": "Only one line needed here:\n\nreturn service_ids.rstrip().split(\u0027,\u0027)",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///r8\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T17:38:34Z",
+      "side": 1,
+      "message": "The following block could be made much more efficient:\n\nservices \u003d [api.SERVICE.get(service_id) for service_id in service_ids\n        if not service_id \u003d\u003d backends.GLOBAL_SERVICE_ID]\nif not all(services):\n    raise fault.UnauthorizedFault(\"Invalid service ID: %s\" % (service_id))",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///r4\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T17:38:34Z",
+      "side": 1,
+      "message": "Don\u0027t use map if avoidable; use a list comprehension instead:\n\nreturn [role.name for role in roles]",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///ro\u003d",
+        "filename": "keystone/manage/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T17:38:34Z",
+      "side": 1,
+      "message": "The block from 60-64 could be simplified:\n\nnames \u003d name.split(\":\")\nif len(names) \u003d\u003d 2:\n\tservice_name \u003d names[0] or service_name",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///rg\u003d",
+        "filename": "keystone/test/etc/ldap.conf.template",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T17:38:34Z",
+      "side": 1,
+      "message": "I know that the old code was also incorrectly formatted, but if you are changing the code, you should also correct the formatting. There should be a space on either side of the equals sign in this line. Please correct this here and in the other template files.",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///rc\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1223,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-29T17:38:34Z",
+      "side": 1,
+      "message": "Not a huge issue, but generally string concatenation in Python is to be avoided, and string formatting used instead:\n\nrole_name \u003d \"%s:%s\" % service_name, optional_str(role_name))",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
