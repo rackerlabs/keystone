@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///o4\u003d",
+        "filename": "keystone/logic/extension_reader.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T19:13:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///sE\u003d",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///sA\u003d",
         "filename": "keystone/logic/service.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2011-12-29T17:38:34Z",
       "side": 1,
       "message": "Only one line needed here:\n\nreturn service_ids.rstrip().split(\u0027,\u0027)",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///ow\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T19:13:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///sA\u003d",
       "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///os\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T19:13:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///r8\u003d",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///r4\u003d",
         "filename": "keystone/logic/service.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2011-12-29T17:38:34Z",
       "side": 1,
       "message": "Don\u0027t use map if avoidable; use a list comprehension instead:\n\nreturn [role.name for role in roles]",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///ok\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T19:13:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///r4\u003d",
       "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///oY\u003d",
+        "filename": "keystone/manage/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T19:13:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///ro\u003d",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///rg\u003d",
         "filename": "keystone/test/etc/ldap.conf.template",
         "patchSetId": 1
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///ns\u003d",
+        "filename": "keystone/test/etc/ldap.conf.template",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T19:13:54Z",
+      "side": 1,
+      "message": "This is a config file, does that still apply?\nDone anyway, just asking...\n\nWhat I do think is the code should not be sensitive to spacing here. And that was a bug in the existing code which I just fixed.",
+      "parentUuid": "AAAADH///rg\u003d",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///rc\u003d",
         "filename": "keystone/test/functional/common.py",
         "patchSetId": 1
@@ -115,6 +223,24 @@
       "writtenOn": "2011-12-29T17:38:34Z",
       "side": 1,
       "message": "Not a huge issue, but generally string concatenation in Python is to be avoided, and string formatting used instead:\n\nrole_name \u003d \"%s:%s\" % service_name, optional_str(role_name))",
+      "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///no\u003d",
+        "filename": "keystone/test/functional/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1223,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T19:13:54Z",
+      "side": 1,
+      "message": "Done (with parens).\nrole_name \u003d \"%s:%s\" % (service_name, optional_str(role_name))",
+      "parentUuid": "AAAADH///rc\u003d",
       "revId": "c0ad55d99264409009e7c297fc0ead2744c82a29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
