@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///lQ\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///rI\u003d",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///qs\u003d",
         "filename": "keystone/logic/service.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2011-12-29T18:49:45Z",
       "side": 1,
       "message": "Continued lines that start a block should be indented two levels, to distinguish them from the enclosed block. You should also add parens around the full \u0027if\u0027 expression to eliminate the need for the trailing backslash.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///lM\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///qs\u003d",
       "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///lI\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///qo\u003d",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///qA\u003d",
         "filename": "keystone/logic/service.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2011-12-29T18:49:45Z",
       "side": 1,
       "message": "Trailing backslash is not needed.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///k8\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1349,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///qA\u003d",
       "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///k4\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1374,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///p8\u003d",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///p0\u003d",
         "filename": "keystone/managers/user.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2011-12-29T18:49:45Z",
       "side": 1,
       "message": "None of the other methods in this script use this stilted style of parameter list. It should be changed to the same direct list of params as the other methods.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///k0\u003d",
+        "filename": "keystone/managers/user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///p0\u003d",
       "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///kw\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "rename not, because we initialize it above. I added a line to initialize maps to {}",
+      "parentUuid": "AAAADH///pw\u003d",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///ps\u003d",
         "filename": "keystone/models.py",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2011-12-29T18:49:45Z",
       "side": 1,
       "message": "The bool() is not needed; the result of a \u0027not in\u0027 is already a bool.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///ks\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///ps\u003d",
       "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///ko\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///pk\u003d",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///pg\u003d",
         "filename": "keystone/models.py",
         "patchSetId": 1
@@ -166,6 +328,24 @@
       "writtenOn": "2011-12-29T18:49:45Z",
       "side": 1,
       "message": "Simpler:\n\nif not invalid:",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///kk\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///pg\u003d",
       "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///kg\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///pQ\u003d",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///pM\u003d",
         "filename": "keystone/test/unit/test_models.py",
         "patchSetId": 1
@@ -200,6 +398,24 @@
       "writtenOn": "2011-12-29T18:49:45Z",
       "side": 1,
       "message": "Trailing backslash is not needed. Continued line should be indented two levels from the main line.\n\nSame comment applies to line 66",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///kc\u003d",
+        "filename": "keystone/test/unit/test_models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///pM\u003d",
       "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///kY\u003d",
+        "filename": "keystone/test/unit/test_models_Role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///pE\u003d",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///o0\u003d",
         "filename": "keystone/test/unit/test_models_Service.py",
         "patchSetId": 1
@@ -240,6 +474,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///kQ\u003d",
+        "filename": "keystone/test/unit/test_models_Service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "I don\u0027t care about the spaces (since XML doesn\u0027t). How would you format this nicely in python?",
+      "parentUuid": "AAAADH///o0\u003d",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///oM\u003d",
         "filename": "keystone/test/unit/test_models_Tenant.py",
         "patchSetId": 1
@@ -251,6 +503,24 @@
       "writtenOn": "2011-12-29T18:49:45Z",
       "side": 1,
       "message": "Trailing backslash is not needed. Continued line should be indented two levels from the main line.\n\nSame comment applies to line 82.",
+      "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///kM\u003d",
+        "filename": "keystone/test/unit/test_models_Tenant.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-29T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///oM\u003d",
       "revId": "6cac9a436135a40835bb1d747c0382cc42e2aca3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
