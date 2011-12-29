@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH///tA\u003d",
+        "filename": "keystone/middleware/url.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-12-29T16:47:09Z",
+      "side": 1,
+      "message": "This means existing deployments would stop normalizing.Is that fine?",
+      "revId": "e0e82db021f9aa7e64ed1a8f92a81fe7603ca93f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///s4\u003d",
+        "filename": "keystone/test/unit/test_normalizingfilter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2011-12-29T16:47:09Z",
+      "side": 1,
+      "message": "This should be normalizer.Test fails.",
+      "revId": "e0e82db021f9aa7e64ed1a8f92a81fe7603ca93f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
