@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///QQ\u003d",
+        "filename": "keystone/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-30T23:23:53Z",
+      "side": 1,
+      "message": "I\u0027m trying to follow nova hacking doc. What\u0027s the right way to do this?\n\nFrom nova HACKING:\n\"\"\"A multiline docstring has a one-line summary, less than 80 characters.\n\n  Then a new paragraph after a newline that explains in more detail any\n  general information about the function, class or method. Example usages\n  are also great to have here if it is a complex class for function. After\n  you have finished your descriptions add an extra newline and close the\n  quotations.\n\n  When writing the docstring for a class, an extra line should be placed\n  after the closing quotations. For more in-depth explanations for these\n  decisions see http://www.python.org/dev/peps/pep-0257/\n\n  If you are going to describe parameters and return values, use Sphinx, the\n  appropriate syntax is as follows.\n\n  :param foo: the foo parameter\n  :param bar: the bar parameter\n  :returns: return_type -- description of the return value\n  :returns: description of the return value\n  :raises: AttributeError, KeyError\n\n  \"\"\"",
+      "parentUuid": "AAAADH///Qw\u003d",
+      "revId": "2501e78dce506736649e2f04b2e57a9d3b21636a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///Qo\u003d",
         "filename": "keystone/utils.py",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2011-12-30T23:20:47Z",
       "side": 1,
       "message": "I had suggested doing something like this to replace the print statements that were in the code to display output that wasn\u0027t logging, but informational in nature. I thought having a clear separation between deliberate console output and casual debugging output was preferable.",
+      "parentUuid": "AAAADH///Qo\u003d",
+      "revId": "2501e78dce506736649e2f04b2e57a9d3b21636a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///QM\u003d",
+        "filename": "keystone/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-30T23:23:53Z",
+      "side": 1,
+      "message": "Do you have an example of the correct way to output to the console?\n\nUse case 1: I run ./keystone and want to know it ran without going to a log!\nUse case 2: I check the \u0027screen\u0027 in devstack to see if keystone started on the right ports with the right middleware.",
       "parentUuid": "AAAADH///Qo\u003d",
       "revId": "2501e78dce506736649e2f04b2e57a9d3b21636a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
