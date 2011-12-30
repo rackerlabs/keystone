@@ -32,7 +32,7 @@ from keystone.backends.sqlalchemy import migration
 from keystone.common import config
 from keystone.logic.types import fault
 from keystone.manage import api
-
+from keystone import utils
 
 logger = logging.getLogger(__name__)
 
@@ -152,55 +152,57 @@ def process(*args):
         require_args(args, 4, 'No password specified for fourth argument')
         if api.add_user(name=object_id, password=args[3],
                 tenant=optional_arg(args, 4)):
-            print "SUCCESS: User %s created." % object_id
+            utils.print_to_console("SUCCESS: User %s created." % object_id)
 
     elif (object_type, action) == ('user', 'list'):
-        print Table('Users', ['id', 'name', 'enabled', 'tenant'],
-                    api.list_users())
+        utils.print_to_console(Table('Users', ['id', 'name', 'enabled',
+                                               'tenant'], api.list_users()))
 
     elif (object_type, action) == ('user', 'disable'):
         if api.disable_user(name=object_id):
-            print "SUCCESS: User %s disabled." % object_id
+            utils.print_to_console("SUCCESS: User %s disabled." % object_id)
 
     elif object_type == 'user':
         raise optparse.OptParseError(ACTION_NOT_SUPPORTED % ('users'))
 
     elif (object_type, action) == ('tenant', 'add'):
         if api.add_tenant(name=object_id):
-            print "SUCCESS: Tenant %s created." % object_id
+            utils.print_to_console("SUCCESS: Tenant %s created." % object_id)
 
     elif (object_type, action) == ('tenant', 'list'):
         print Table('Tenants', ['id', 'name', 'enabled'], api.list_tenants())
 
     elif (object_type, action) == ('tenant', 'disable'):
         if api.disable_tenant(name=object_id):
-            print "SUCCESS: Tenant %s disabled." % object_id
+            utils.print_to_console("SUCCESS: Tenant %s disabled." % object_id)
 
     elif object_type == 'tenant':
         raise optparse.OptParseError(ACTION_NOT_SUPPORTED % ('tenants'))
 
     elif (object_type, action) == ('role', 'add'):
         if api.add_role(name=object_id, service_name=optional_arg(args, 3)):
-            print "SUCCESS: Role %s created successfully." % object_id
+            utils.print_to_console("SUCCESS: Role %s created successfully." %
+                                   object_id)
 
     elif (object_type, action) == ('role', 'list'):
         tenant = optional_arg(args, 2)
         if tenant:
             # print with users
-            print Table('Role assignments for tenant %s' % tenant,
-                        ['User', 'Role'],
-                       api.list_roles(tenant=tenant))
+            utils.print_to_console(Table('Role assignments for tenant %s' %
+                                         tenant, ['User', 'Role'],
+                                         api.list_roles(tenant=tenant)))
         else:
             # print without tenants
-            print Table('Roles', ['id', 'name', 'service_id', 'description'],
-                api.list_roles())
+            utils.print_to_console(Table('Roles', ['id', 'name', 'service_id',
+                                                   'description'],
+                                        api.list_roles()))
 
     elif (object_type, action) == ('role', 'grant'):
         require_args(args, 4, "Missing arguments: role grant 'role' 'user' "
             "'tenant (optional)'")
         tenant = optional_arg(args, 4)
         if api.grant_role(object_id, args[3], tenant):
-            print("SUCCESS: Granted %s the %s role on %s." %
+            utils.print_to_console("SUCCESS: Granted %s the %s role on %s." %
                 (args[3], object_id, tenant))
 
     elif object_type == 'role':
@@ -218,8 +220,8 @@ def process(*args):
                 enabled=args[7], is_global=args[8],
                 version_id=version_id, version_list=version_list,
                 version_info=version_info):
-            print("SUCCESS: Created EndpointTemplates for %s pointing to %s." %
-                (args[3], args[4]))
+            utils.print_to_console("SUCCESS: Created EndpointTemplates for %s "
+                                   "pointing to %s." % (args[3], args[4]))
 
     elif (object_type, action) == ('endpointTemplates', 'list'):
         tenant = optional_arg(args, 2)
@@ -237,7 +239,7 @@ def process(*args):
         require_args(args, 4, "Missing arguments: endPoint add tenant "
             "endPointTemplate")
         if api.add_endpoint(tenant=args[2], endpoint_template=args[3]):
-            print("SUCCESS: Endpoint %s added to tenant %s." %
+            utils.print_to_console("SUCCESS: Endpoint %s added to tenant %s." %
                 (args[3], args[2]))
 
     elif object_type == 'endpoint':
@@ -248,7 +250,7 @@ def process(*args):
             'tenant, and expiration')
         if api.add_token(token=object_id, user=args[3], tenant=args[4],
                 expires=args[5]):
-            print "SUCCESS: Token %s created." % (object_id,)
+            utils.print_to_console("SUCCESS: Token %s created." % object_id)
 
     elif (object_type, action) == ('token', 'list'):
         print Table('Tokens', ('token', 'user', 'expiration', 'tenant'),
@@ -256,7 +258,7 @@ def process(*args):
 
     elif (object_type, action) == ('token', 'delete'):
         if api.delete_token(token=object_id):
-            print 'SUCCESS: Token %s deleted.' % (object_id,)
+            utils.print_to_console('SUCCESS: Token %s deleted.' % (object_id,))
 
     elif object_type == 'token':
         raise optparse.OptParseError(ACTION_NOT_SUPPORTED % ('tokens'))
@@ -271,12 +273,13 @@ def process(*args):
 
         if api.add_service(name=object_id, type=type, desc=desc,
                            owner_id=owner_id):
-            print "SUCCESS: Service %s created successfully." % (object_id,)
+            utils.print_to_console("SUCCESS: Service %s created successfully."
+                                   % (object_id,))
 
     elif (object_type, action) == ('service', 'list'):
-        print Table('Services',
+        utils.print_to_console(Table('Services',
                     ('id', 'name', 'type', 'owner_id', 'description'),
-                    api.list_services())
+                    api.list_services()))
 
     elif object_type == 'service':
         raise optparse.OptParseError(ACTION_NOT_SUPPORTED % ('services'))
@@ -286,7 +289,8 @@ def process(*args):
             'secret, and tenant_id (id is user_id)')
         if api.add_credentials(user=object_id, type=args[3], key=args[4],
                 secrete=args[5], tenant=optional_arg(args, 6)):
-            print "SUCCESS: Credentials %s created." % object_id
+            utils.print_to_console("SUCCESS: Credentials %s created." %
+                                   (object_id,))
 
     elif object_type == 'credentials':
         raise optparse.OptParseError(ACTION_NOT_SUPPORTED % ('credentials'))
@@ -364,7 +368,7 @@ def process(*args):
 #
 def do_db_version(options):
     """Print database's current migration level"""
-    print migration.db_version(options)
+    utils.print_to_console(migration.db_version(options))
 
 
 def do_db_goto_version(options, version):
@@ -372,7 +376,7 @@ def do_db_goto_version(options, version):
     if migration.db_goto_version(options, version):
         msg = ('Jumped to version=%s (without performing intermediate '
             'migrations)') % version
-        print msg
+        utils.print_to_console(msg)
 
 
 def do_db_upgrade(options, args):
@@ -382,7 +386,7 @@ def do_db_upgrade(options, args):
     except IndexError:
         db_version = None
 
-    print "Upgrading database to version %s" % db_version
+    utils.print_to_console("Upgrading database to version %s" % db_version)
     migration.upgrade(options, version=db_version)
 
 
@@ -399,7 +403,7 @@ def do_db_downgrade(options, args):
 def do_db_version_control(options):
     """Place a database under migration control"""
     migration.version_control(options)
-    print "Database now under version control"
+    utils.print_to_console("Database now under version control")
 
 
 def do_db_sync(options, args):

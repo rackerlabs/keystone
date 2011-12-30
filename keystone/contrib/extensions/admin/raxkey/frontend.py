@@ -29,6 +29,8 @@ import json
 from lxml import etree
 from webob.exc import Request, Response
 
+from keystone import utils
+
 EXTENSION_ALIAS = "RAX-KSKEY-admin"
 
 
@@ -37,7 +39,8 @@ class FrontEndFilter(object):
 
     def __init__(self, app, conf):
         """ Common initialization code """
-        print "Starting the %s extension" % EXTENSION_ALIAS
+        utils.print_to_console(_("Starting the %s extension" %
+                                 EXTENSION_ALIAS))
         self.conf = conf
         self.app = app
 

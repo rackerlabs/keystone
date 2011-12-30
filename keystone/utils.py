@@ -193,3 +193,14 @@ def is_empty_string(value):
     if len(value.strip()) == 0:
         return True
     return False
+
+
+def print_to_console(msg):
+    """ Print message to console.
+
+    This will be used to distinguish a message that we intend to output to the
+    console as interactive feedback to someone vs debugging and other uses for
+    print.
+
+    """
+    print msg
