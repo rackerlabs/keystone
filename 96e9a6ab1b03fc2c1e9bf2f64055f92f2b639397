@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH///e0\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-30T15:33:33Z",
+      "side": 0,
+      "message": "Simpler and clearer:\n\nglobal_roles \u003d self.grant_manager.list_global_roles_for_user(user.id)\nmatches \u003d [rolegrant for rolegrant in global_roles\n        if rolegrant.role_id \u003d\u003d role]\nreturn bool(matches)",
+      "revId": "96e9a6ab1b03fc2c1e9bf2f64055f92f2b639397",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
