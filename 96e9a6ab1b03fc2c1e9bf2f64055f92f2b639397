@@ -34,6 +34,24 @@
       "revId": "96e9a6ab1b03fc2c1e9bf2f64055f92f2b639397",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///VM\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-30T20:07:22Z",
+      "side": 0,
+      "message": "Perhaps, but it is just as likely to be the last. :)\nThe list comprehension will only grab the one match if there is one; there won\u0027t ever be more than one, will there?",
+      "parentUuid": "AAAADH///ck\u003d",
+      "revId": "96e9a6ab1b03fc2c1e9bf2f64055f92f2b639397",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
