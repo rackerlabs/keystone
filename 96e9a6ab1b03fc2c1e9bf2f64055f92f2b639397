@@ -16,6 +16,24 @@
       "revId": "96e9a6ab1b03fc2c1e9bf2f64055f92f2b639397",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///ck\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-30T16:17:03Z",
+      "side": 0,
+      "message": "What if I have 50 roles and the first one is a match? Wouldn\u0027t the existing code finish and exit faster?\n\nWe\u0027re not interested in the whole list here, we just want to find a first existence...",
+      "parentUuid": "AAAADH///e0\u003d",
+      "revId": "96e9a6ab1b03fc2c1e9bf2f64055f92f2b639397",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

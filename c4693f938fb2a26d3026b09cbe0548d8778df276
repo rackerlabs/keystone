@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///cc\u003d",
+        "filename": "keystone/middleware/quantum_auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-30T16:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///e8\u003d",
+      "revId": "c4693f938fb2a26d3026b09cbe0548d8778df276",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///e4\u003d",
         "filename": "keystone/middleware/quantum_auth_token.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2011-12-30T15:33:33Z",
       "side": 1,
       "message": "Could just use a list comprehension for this loop:\n\nroles \u003d [rolegrant[\"id\"] for rolegrant in rolegrants]",
+      "revId": "c4693f938fb2a26d3026b09cbe0548d8778df276",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///cY\u003d",
+        "filename": "keystone/middleware/quantum_auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-30T16:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///e4\u003d",
       "revId": "c4693f938fb2a26d3026b09cbe0548d8778df276",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
