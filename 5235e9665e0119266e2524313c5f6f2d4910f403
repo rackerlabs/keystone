@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH///dM\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-30T16:12:33Z",
+      "side": 1,
+      "message": "Change to:\n\nLOG.debug(\"delay_auth_decision is %s, so sending request \"\n        \"down the pipeline\" % delay_auth_decision)",
+      "revId": "5235e9665e0119266e2524313c5f6f2d4910f403",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///c4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-30T16:12:33Z",
+      "side": 1,
+      "message": "Don\u0027t do doubly-nested formatting. Change to:\n\nLOG.debug(\"Decorating request with HTTP_%s\u003d%s\" % (index, value))",
+      "revId": "5235e9665e0119266e2524313c5f6f2d4910f403",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
