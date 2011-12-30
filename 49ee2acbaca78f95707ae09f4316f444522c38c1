@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///SY\u003d",
+        "filename": "keystone/backends/backendutils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-30T22:43:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///TU\u003d",
+      "revId": "49ee2acbaca78f95707ae09f4316f444522c38c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///TY\u003d",
         "filename": "keystone/frontends/d5_compat.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///Rs\u003d",
+        "filename": "keystone/frontends/d5_compat.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-30T22:43:11Z",
+      "side": 1,
+      "message": "OK. Implemented utils.print_to_console()",
+      "parentUuid": "AAAADH///TY\u003d",
+      "revId": "49ee2acbaca78f95707ae09f4316f444522c38c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH///To\u003d",
         "filename": "keystone/frontends/legacy_token_auth.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2011-12-30T21:50:26Z",
       "side": 1,
       "message": "Why are we printing the msg? Console output should be handled by the loggers.",
+      "revId": "49ee2acbaca78f95707ae09f4316f444522c38c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///Rk\u003d",
+        "filename": "keystone/frontends/legacy_token_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2011-12-30T22:43:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADH///To\u003d",
       "revId": "49ee2acbaca78f95707ae09f4316f444522c38c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
