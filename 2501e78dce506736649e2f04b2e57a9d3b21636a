@@ -33,6 +33,24 @@
       "revId": "2501e78dce506736649e2f04b2e57a9d3b21636a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///Qc\u003d",
+        "filename": "keystone/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2011-12-30T23:20:47Z",
+      "side": 1,
+      "message": "I had suggested doing something like this to replace the print statements that were in the code to display output that wasn\u0027t logging, but informational in nature. I thought having a clear separation between deliberate console output and casual debugging output was preferable.",
+      "parentUuid": "AAAADH///Qo\u003d",
+      "revId": "2501e78dce506736649e2f04b2e57a9d3b21636a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
