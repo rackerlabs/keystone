@@ -16,6 +16,23 @@
       "revId": "2501e78dce506736649e2f04b2e57a9d3b21636a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///Qo\u003d",
+        "filename": "keystone/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1816
+      },
+      "writtenOn": "2011-12-30T23:09:19Z",
+      "side": 1,
+      "message": "I\u0027m unclear on why you need to print to the console at all. This should be handled either by logging, or, if *really* necessary, should write to sys.stdout.\n\nAll this function does right now is call print by another name.",
+      "revId": "2501e78dce506736649e2f04b2e57a9d3b21636a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
