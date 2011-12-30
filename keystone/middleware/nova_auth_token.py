@@ -27,6 +27,10 @@ Use by applying after auth_token in the nova paste config.
 Example: docs/nova-api-paste.ini
 """
 
+import logging
+import webob.dec
+import webob.exc
+
 from nova import auth
 from nova import context
 from nova import flags
@@ -34,10 +38,10 @@ from nova import utils
 from nova import wsgi
 # pylint: disable=W0611
 from nova import exception
-import webob.dec
-import webob.exc
 
+logger = logging.getLogger(__name__)  # pylint: disable=C0103
 
+PROTOCOL_NAME = "Nova Lazy Provisioning Shim"
 FLAGS = flags.FLAGS
 
 
@@ -46,6 +50,7 @@ class KeystoneAuthShim(wsgi.Middleware):
 
     # pylint: disable=E1002
     def __init__(self, application, db_driver=None):
+        logger.info("Starting the %s component", PROTOCOL_NAME)
         if not db_driver:
             db_driver = FLAGS.db_driver
         # pylint: disable=C0103
@@ -58,7 +63,7 @@ class KeystoneAuthShim(wsgi.Middleware):
     def __call__(self, req):
         # find or create user
         try:
-            user_id = req.headers['X_USER']
+            user_id = req.headers.get('X_USER')
         except:
             return webob.exc.HTTPUnauthorized()
         try:
