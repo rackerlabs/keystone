@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH///MA\u003d",
+        "filename": "keystone/server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-01-01T13:57:56Z",
+      "side": 1,
+      "message": "This line did not need to change. A dict\u0027s get() method accepts a param for a default, so self.options.get(A, B) would yield B if A is None.",
+      "revId": "b990dd243b3b178e166d2194e0406368a4c98772",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
