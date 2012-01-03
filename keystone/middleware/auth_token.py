@@ -153,7 +153,6 @@ class AuthProtocol(object):
         initialization code that applies to all protocols
         """
         LOG.info("Starting the %s component", PROTOCOL_NAME)
-        print "Starting the %s component" % PROTOCOL_NAME
 
         #if app is set, then we are in a WSGI pipeline and requests get passed
         # on to app. If it is not set, this component should forward requests
@@ -199,6 +198,7 @@ class AuthProtocol(object):
                                         self.auth_port))
         LOG.debug("Authentication Service:%s", self.auth_location)
 
+        
         # Credentials used to verify this component with the Auth service since
         # validating tokens is a privileged call
         self.admin_token = conf.get('admin_token')
@@ -256,7 +256,6 @@ class AuthProtocol(object):
             if env.get(self.cache, None) is None:
                 memcache_client = memcache.Client([self.memcache_hosts])
                 env[self.cache] = memcache_client
-
         #Prep headers to forward request to local or remote downstream service
         proxy_headers = env.copy()
         for header in proxy_headers.iterkeys():
@@ -353,10 +352,12 @@ class AuthProtocol(object):
             key = 'tokens/%s' % (token)
             if "timeout" in cache.set.func_code.co_varnames:
                 # swift cache
-                expires = self._convert_date(claims['expires'])
+#                expires = self._convert_date(claims['expires'])
+                #BUG
+                expires = claims['expires']
                 claims = self._protect_claims(token, claims)
                 cache.set(key, (claims, expires, valid),
-                             timeout=expires - time.time())
+                             timeout=self._convert_date(claims['expires']) - time.time())
             else:
                 # normal memcache client
                 expires = get_datetime(claims['expires'])
@@ -379,10 +380,10 @@ class AuthProtocol(object):
                 claims, expires, valid = cached_claims
                 if valid:
                     if "timeout" in cache.set.func_code.co_varnames:
-                        if expires > time.time():
+                        if time.strptime(expires, EXPIRE_TIME_FORMAT) > time.time():
                             claims = self._unprotect_claims(token, claims)
                     else:
-                        if expires > datetime.now():
+                        if datetime.strptime(expires, EXPIRE_TIME_FORMAT) > datetime.now():
                             claims = self._unprotect_claims(token, claims)
                 return (claims, expires, valid)
         return None
@@ -425,9 +426,9 @@ class AuthProtocol(object):
             if not valid:
                 LOG.debug("Claims not valid (according to cache)")
                 raise ValidationFailed()
-            if expires <= datetime.now():
-                LOG.debug("Claims (token) expired (according to cache)")
+            if datetime.strptime(expires, EXPIRE_TIME_FORMAT) <= datetime.now():
                 raise TokenExpired()
+                LOG.debug("Claims (token) expired (according to cache)")
             return claims
 
         # Step 1: We need to auth with the keystone service, so get an
