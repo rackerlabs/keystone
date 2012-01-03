@@ -1,12 +1,16 @@
 """OpenStack Identity (Keystone) Management"""
 
 
+import optparse
 import argparse
 import pkgutil
 import os
 import sys
 
+from keystone import version
+from keystone.common import config
 from keystone.manage2 import commands
+from keystone.manage2 import common
 
 
 # builds a complete path to the commands package
@@ -29,6 +33,22 @@ def load_module(module_name):
     return module
 
 
+def get_options():
+    # Initialize a parser for our configuration paramaters
+    parser = optparse.OptionParser("usage", version='%%prog %s'
+        % version.version())
+    config.add_common_options(parser)
+    config.add_log_options(parser)
+
+    # Parse command-line and load config
+    (options, args) = config.parse_options(parser, [])
+    _config_file, conf = config.load_paste_config('admin', options, args)
+
+    config.setup_logging(options, conf)
+
+    return conf.global_conf
+
+
 def main():
     # discover command modules
     module_names = [name for _, name, _ in MODULES]
@@ -48,11 +68,13 @@ def main():
             description=module.Command.__doc__)
 
         # let the command append arguments to the parser
-        module.Command.append_parser(parser)
+        options = get_options()
+        managers = common.init_managers(options)
+        cmd = module.Command(managers=managers)
+        cmd.append_parser(parser)
         args = parser.parse_args()
 
-        # command
-        exit(module.Command.run(args))
+        exit(cmd.run(args))
     else:
         # show help
         parser = argparse.ArgumentParser(description=__doc__)
