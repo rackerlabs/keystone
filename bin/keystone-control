@@ -95,7 +95,7 @@ def do_start(server, options, args):
                 (MAX_MEMORY, MAX_MEMORY))
     except ValueError:
         print "Unable to increase file descriptor limit.  Running as non-root?"
-    os.environ['PYTHON_EGG_CACHE'] = '/tmp'
+    os.environ['PYTHON_EGG_CACHE'] = '/var/lib/keystone/cache'
 
     def write_pid_file(pid_file, pid):
         dir, file = os.path.split(pid_file)
