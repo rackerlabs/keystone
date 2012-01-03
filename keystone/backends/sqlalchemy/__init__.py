@@ -98,8 +98,8 @@ class Driver():
 
     def _init_models(self, model_list):
         for model in model_list:
-            model_path = '.'.join([__package__, 'models', model])
-            module = utils.import_module(model_path)
+            model_path = '.'.join([__package__, 'models'])
+            module = utils.import_module(model_path, model)
 
             top_models.set_value(model, module)
 
@@ -112,8 +112,8 @@ class Driver():
         tables = []
 
         for model in model_list:
-            model_path = '.'.join([__package__, 'models', model])
-            module = utils.import_module(model_path)
+            model_path = '.'.join([__package__, 'models'])
+            module = utils.import_module(model_path, model)
             tables.append(module.__table__)
 
         tables_to_create = []
