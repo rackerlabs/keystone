@@ -87,6 +87,24 @@
       "revId": "2501e78dce506736649e2f04b2e57a9d3b21636a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+18\u003d",
+        "filename": "keystone/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-03T21:12:48Z",
+      "side": 1,
+      "message": "Stating the obvious: casual debugging output shouldn\u0027t be checked in at all.",
+      "parentUuid": "AAAADH///QM\u003d",
+      "revId": "2501e78dce506736649e2f04b2e57a9d3b21636a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
