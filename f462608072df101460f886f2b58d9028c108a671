@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH///AM\u003d",
+        "filename": "keystone/manage2/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-03T20:25:30Z",
+      "side": 1,
+      "message": "I wouldn\u0027t call that loopless ;) but it\u0027s definitely cleaner.",
+      "parentUuid": "AAAAC3//7Bo\u003d",
+      "revId": "f462608072df101460f886f2b58d9028c108a671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//7Bk\u003d",
         "filename": "keystone/manage2/__init__.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2011-12-22T17:51:22Z",
       "side": 1,
       "message": "Use enumerate() for this sort of iteration:\n\nfor pos, arg in enumerate(sys.argv):\n    if arg in module_names:\n        command \u003d sys.argv.pop(pos)\n        break",
+      "revId": "f462608072df101460f886f2b58d9028c108a671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH///AI\u003d",
+        "filename": "keystone/manage2/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-03T20:25:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAC3//7Bk\u003d",
       "revId": "f462608072df101460f886f2b58d9028c108a671",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH//+/U\u003d",
+        "filename": "keystone/test/unit/test_buffout.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-03T20:25:30Z",
+      "side": 1,
+      "message": "That\u0027s how I wrote it at first, and then expanded it... I don\u0027t have a preference between the two.",
+      "parentUuid": "AAAAC3//7A8\u003d",
+      "revId": "f462608072df101460f886f2b58d9028c108a671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//7Aw\u003d",
         "filename": "keystone/tools/buffout.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2011-12-22T17:51:22Z",
       "side": 1,
       "message": "Is the goal of this class to wipe out any data every time the start() method is called? Or would it make more sense to have the buffered content preserved, and add a clear() method to wipe the content?",
+      "revId": "f462608072df101460f886f2b58d9028c108a671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+/c\u003d",
+        "filename": "keystone/tools/buffout.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-03T20:25:30Z",
+      "side": 1,
+      "message": "I\u0027m not clear on what is (at risk for?) being wiped out when start() is called... are you suggesting the buffered content should be preserved within this class after stop() is called?",
+      "parentUuid": "AAAAC3//7Aw\u003d",
       "revId": "f462608072df101460f886f2b58d9028c108a671",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
