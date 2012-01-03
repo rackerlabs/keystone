@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADH//+1k\u003d",
+        "filename": "keystone/test/unit/test_buffout.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-03T21:18:36Z",
+      "side": 1,
+      "message": "It just seems like running setUp/tearDown 3 times instead of one would be slower. But it\u0027s really NBD.",
+      "parentUuid": "AAAADH//+/U\u003d",
+      "revId": "f462608072df101460f886f2b58d9028c108a671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAC3//7Aw\u003d",
         "filename": "keystone/tools/buffout.py",
         "patchSetId": 7
@@ -136,6 +154,24 @@
       "side": 1,
       "message": "I\u0027m not clear on what is (at risk for?) being wiped out when start() is called... are you suggesting the buffered content should be preserved within this class after stop() is called?",
       "parentUuid": "AAAAC3//7Aw\u003d",
+      "revId": "f462608072df101460f886f2b58d9028c108a671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+1w\u003d",
+        "filename": "keystone/tools/buffout.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-03T21:18:36Z",
+      "side": 1,
+      "message": "Yes. start() and stop() would simply control if output was captured or not; read() would return the content, and clear() would reset. Maybe I\u0027m just thinking of some general-purpose output buffer classes I\u0027ve worked with. These could be swapped in and out as needed, so that the output was directed to the appropriate object as needed. \n\nThis code is fine as it is as long as you don\u0027t need to maintain content between start() calls.",
+      "parentUuid": "AAAADH//+/c\u003d",
       "revId": "f462608072df101460f886f2b58d9028c108a671",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
