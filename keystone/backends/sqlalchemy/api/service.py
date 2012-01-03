@@ -25,6 +25,19 @@ class ServiceAPI(api.BaseServiceAPI):
     def __init__(self, *args, **kw):
         super(ServiceAPI, self).__init__(*args, **kw)
 
+    # pylint: disable=W0221
+    @staticmethod
+    def transpose(values):
+        """ Handles transposing field names from Keystone model to
+        sqlalchemy mode
+
+        Differences:
+            desc <-> description
+            id <-> uid (coming soon)
+        """
+        if 'description' in values:
+            values['desc'] = values.pop('description')
+
     @staticmethod
     def to_model(ref):
         """ Returns Keystone model object based on SQLAlchemy model"""
@@ -38,6 +51,18 @@ class ServiceAPI(api.BaseServiceAPI):
         service_ref.update(values)
         service_ref.save()
         return ServiceAPI.to_model(service_ref)
+
+    def update(self, id, values, session=None):
+        if not session:
+            session = get_session()
+
+        ServiceAPI.transpose(values)
+
+        with session.begin():
+            service_ref = session.query(models.Service).filter_by(id=id).\
+                    first()
+            service_ref.update(values)
+            service_ref.save(session=session)
 
     def get(self, id, session=None):
         if not session:

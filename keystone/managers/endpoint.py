@@ -54,3 +54,11 @@ class Manager(object):
     def get(self, endpoint_id):
         """ Returns Endpoint by ID """
         return self.driver.endpoint_get(endpoint_id)
+
+    def get_by_ids(self, endpoint_template_id, tenant_id):
+        """ Returns Endpoint by ID """
+        return self.driver.endpoint_get_by_ids(endpoint_template_id, tenant_id)
+
+    def get_all(self):
+        """ Returns all Endpoint Templates """
+        return self.driver.endpoint_get_all()
