@@ -16,7 +16,6 @@ class BackendTestCase(unittest.TestCase):
 
     def setUp(self, options=None):  # pylint: disable=W0221
         super(BackendTestCase, self).setUp()
-        # Set up root options if missing
         if options is None:
             options = {
             'backends': None,
@@ -38,6 +37,7 @@ class BackendTestCase(unittest.TestCase):
                 "sql_idle_timeout": "30"
                 }
 
+        # Init backends module constants (without initializing backends)
         # Init backends module constants (without initializing backends)
         no_backend_init = options.copy()
         no_backend_init['backends'] = None

@@ -62,17 +62,21 @@ from keystone import version
 logger = logging.getLogger(__name__)  # pylint: disable=C0103
 
 
-def service_app_factory(global_conf, **local_conf):
-    """paste.deploy app factory for creating OpenStack API server apps"""
+def build_conf(global_conf, **local_conf):
     conf = global_conf.copy()
     conf.update(local_conf)
+    return conf
+
+
+def service_app_factory(global_conf, **local_conf):
+    """paste.deploy app factory for creating OpenStack API server apps"""
+    conf = build_conf(global_conf, **local_conf)
     return ServiceApi(conf)
 
 
 def admin_app_factory(global_conf, **local_conf):
     """paste.deploy app factory for creating OpenStack API server apps"""
-    conf = global_conf.copy()
-    conf.update(local_conf)
+    conf = build_conf(global_conf, **local_conf)
     return AdminApi(conf)
 
 
