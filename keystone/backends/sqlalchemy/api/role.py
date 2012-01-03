@@ -76,6 +76,15 @@ class RoleAPI(api.BaseRoleAPI):
             role = session.query(models.Role).filter_by(id=id).first()
             session.delete(role)
 
+    def update(self, id, values, session=None):
+        if not session:
+            session = get_session()
+
+        with session.begin():
+            ref = session.query(models.Role).filter_by(id=id).first()
+            ref.update(values)
+            ref.save(session=session)
+
     def get(self, id, session=None):
         if not session:
             session = get_session()

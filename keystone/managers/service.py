@@ -40,6 +40,10 @@ class Manager(object):
         """ Returns service by name """
         return self.driver.get_by_name(name=name)
 
+    def get_all(self):
+        """ Returns all services """
+        return self.driver.get_all()
+
     def get_page(self, marker, limit):
         """ Get one page of services list """
         return self.driver.get_page(marker, limit)

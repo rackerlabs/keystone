@@ -40,6 +40,10 @@ class Manager(object):
         """ Returns role by name """
         return self.driver.get_by_name(name=name)
 
+    def get_all(self):
+        """ Returns all roles """
+        return self.driver.get_all()
+
     def get_page(self, marker, limit):
         """ Get one page of roles list """
         return self.driver.get_page(marker, limit)
@@ -59,7 +63,7 @@ class Manager(object):
     def get_by_service_get_page_markers(self, service_id, marker, limit):
         """ Calculate pagination markers for roles by service """
         return self.driver.get_by_service_get_page_markers(service_id, marker,
-                                                                        limit)
+                limit)
 
     def update(self, role):
         """ Update role """
