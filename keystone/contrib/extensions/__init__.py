@@ -31,13 +31,12 @@ class BaseExtensionConfigurer(object):
             CONFIG_EXTENSION_PROPERTY, DEFAULT_EXTENSIONS)
         for supported_extension in supported_extensions.split(','):
             self.extension_handlers = []
-            supported_extension = EXTENSION_PREFIX\
-            + extension_type + '.' + supported_extension.strip()\
-            + '.ExtensionHandler'
+            mod_name = EXTENSION_PREFIX\
+            + extension_type + '.' + supported_extension.strip()
             try:
-                extenion_handler = utils.import_module(supported_extension)()
-                extenion_handler.map_extension_methods(mapper, options)
-                self.extension_handlers.append(extenion_handler)
+                handler = utils.import_module(mod_name, 'ExtensionHandler')()
+                handler.map_extension_methods(mapper, options)
+                self.extension_handlers.append(handler)
             except Exception as err:
                 logging.exception("Could not load extension for " +\
                     extension_type + ':' + supported_extension + str(err))
