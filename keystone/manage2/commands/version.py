@@ -1,6 +1,3 @@
-"""Prints keystone's version information"""
-
-
 from keystone import version
 from keystone.manage2 import common
 
@@ -18,22 +15,21 @@ class Command(common.BaseCommand):
     if neither is specified.
     """
 
-    def get_api_version(self):
+    @staticmethod
+    def get_api_version():
         """Returns a complete API version string"""
         return ' '.join([version.API_VERSION, version.API_VERSION_STATUS])
 
-    def get_implementation_version(self):
+    @staticmethod
+    def get_implementation_version():
         """Returns a complete implementation version string"""
         return version.version()
 
-    @staticmethod
-    def run(args):
+    def run(self, args):
         """Process argparse args, and print results to stdout"""
-        cmd = Command()
-
         show_all = not (args.api or args.implementation)
 
         if args.api or show_all:
-            print 'API v%s' % cmd.get_api_version()
+            print 'API v%s' % Command.get_api_version()
         if args.implementation or show_all:
-            print 'Implementation v%s' % cmd.get_implementation_version()
+            print 'Implementation v%s' % Command.get_implementation_version()

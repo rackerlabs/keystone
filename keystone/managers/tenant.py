@@ -46,6 +46,10 @@ class Manager(object):
         """ Returns tenant by name """
         return self.driver.get_by_name(name=name)
 
+    def get_all(self):
+        """ Returns all tenants """
+        return self.driver.get_all()
+
     def get_page(self, marker, limit):
         """ Get one page of tenants """
         return self.driver.get_page(marker, limit)
