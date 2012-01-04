@@ -69,6 +69,24 @@
       "revId": "c26a1dfcf3f7d0b163f23926042b95f3bf501e9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+uM\u003d",
+        "filename": "keystone/common/template.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-04T07:04:55Z",
+      "side": 0,
+      "message": "We don\u0027t check or guarantee we got True or False.\n\nThis code came from bottlepy, so I\u0027m not that familiar with it (a good reason not to change it without a known bug)",
+      "parentUuid": "AAAADH//+uY\u003d",
+      "revId": "c26a1dfcf3f7d0b163f23926042b95f3bf501e9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
