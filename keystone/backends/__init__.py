@@ -36,5 +36,5 @@ def configure_backends(options):
     #Initialize common configs general to all backends.
     global SHOULD_HASH_PASSWORD
     if "hash-password" in options\
-        and ast.literal_eval(options["hash-password"]) == True:
+        and ast.literal_eval(options["hash-password"]):
         SHOULD_HASH_PASSWORD = options["hash-password"]
