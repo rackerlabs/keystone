@@ -105,6 +105,24 @@
       "revId": "c26a1dfcf3f7d0b163f23926042b95f3bf501e9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+pI\u003d",
+        "filename": "keystone/common/template.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-04T14:43:54Z",
+      "side": 0,
+      "message": "The change in line 324 is fine. I was only concerned about changing the logic and conditions under which line 327 gets evaluated.\nThat goes beyond \"PEP8 keystone cleanup\".\n\nI see your point about the filename being verified above and I appreciate your contribution.",
+      "parentUuid": "AAAADH//+t4\u003d",
+      "revId": "c26a1dfcf3f7d0b163f23926042b95f3bf501e9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
