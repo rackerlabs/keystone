@@ -16,6 +16,40 @@
       "revId": "ba8a7dd271a3d54dd1939664f5e56a920ed0f875",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+kc\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-04T16:25:25Z",
+      "side": 1,
+      "message": "\"#BUG\" isn\u0027t very helpful - either fix it or document what you can. No need to leave broken code commented out, either.",
+      "revId": "ba8a7dd271a3d54dd1939664f5e56a920ed0f875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+kY\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-04T16:25:25Z",
+      "side": 1,
+      "message": "This log statement is now unreachable?",
+      "revId": "ba8a7dd271a3d54dd1939664f5e56a920ed0f875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
