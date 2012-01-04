@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAADH//+vk\u003d",
+        "filename": "keystone/backends/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1801
+      },
+      "writtenOn": "2012-01-04T04:50:02Z",
+      "side": 1,
+      "message": "The backslashes are actually discouraged as a means of continuing long lines these days. Instead, the code should be wrapped in parens. See the following for more info:\n  http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#long-lines-continuations",
+      "revId": "fd59dc455c9f939a0788fcdcd1645f1763e90a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH//+wE\u003d",
         "filename": "keystone/backends/__init__.py",
         "patchSetId": 1
