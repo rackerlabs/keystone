@@ -16,6 +16,23 @@
       "revId": "c26a1dfcf3f7d0b163f23926042b95f3bf501e9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+vI\u003d",
+        "filename": "keystone/common/template.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-04T05:56:49Z",
+      "side": 0,
+      "message": "\u003e\u003e\u003e bool(os.path.basename(\u0027/\u0027))\nFalse\n\nThe second check is needed in case the filename is missing",
+      "revId": "c26a1dfcf3f7d0b163f23926042b95f3bf501e9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
