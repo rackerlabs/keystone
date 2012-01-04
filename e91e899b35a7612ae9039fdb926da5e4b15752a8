@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH//+yo\u003d",
+        "filename": "bin/keystone-control",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-04T00:19:59Z",
+      "side": 1,
+      "message": "Will this work with existing installations or will the directory need to be created?",
+      "revId": "e91e899b35a7612ae9039fdb926da5e4b15752a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
