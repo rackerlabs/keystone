@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH//+k4\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-04T16:21:20Z",
+      "side": 1,
+      "message": "It doesn\u0027t look like we\u0027re using the env anymore.",
+      "revId": "e0ffbc08e4724b81cb9d9bbeb09fce39977a56e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+ko\u003d",
+        "filename": "keystone/managers/endpoint_template.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-04T16:21:20Z",
+      "side": 1,
+      "message": "useless!",
+      "revId": "e0ffbc08e4724b81cb9d9bbeb09fce39977a56e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
