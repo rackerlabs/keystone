@@ -33,6 +33,24 @@
       "revId": "c26a1dfcf3f7d0b163f23926042b95f3bf501e9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+u4\u003d",
+        "filename": "keystone/common/template.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2012-01-04T06:03:41Z",
+      "side": 0,
+      "message": "oh now I get it. I think I have an idea to make it look better.",
+      "parentUuid": "AAAADH//+vI\u003d",
+      "revId": "c26a1dfcf3f7d0b163f23926042b95f3bf501e9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
