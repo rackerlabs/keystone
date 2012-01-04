@@ -41,6 +41,9 @@ from keystone.managers.user import Manager as UserManager
 from keystone.managers.role import Manager as RoleManager
 from keystone.managers.grant import Manager as GrantManager
 from keystone.managers.service import Manager as ServiceManager
+from keystone.managers.endpoint_template import Manager \
+        as EndpointTemplateManager
+from keystone.managers.endpoint import Manager as EndpointManager
 
 #Reference to Admin Role.
 ADMIN_ROLE_ID = None
@@ -71,6 +74,8 @@ class IdentityService(object):
         self.role_manager = RoleManager(options)
         self.grant_manager = GrantManager(options)
         self.service_manager = ServiceManager(options)
+        self.endpoint_template_manager = EndpointTemplateManager(options)
+        self.endpoint_manager = EndpointManager(options)
 
         global ADMIN_ROLE_NAME
         ADMIN_ROLE_NAME = options["keystone-admin-role"]
@@ -1109,7 +1114,8 @@ class IdentityService(object):
         dendpoint_template.version_id = endpoint_template.version_id
         dendpoint_template.version_list = endpoint_template.version_list
         dendpoint_template.version_info = endpoint_template.version_info
-        dendpoint_template = api.ENDPOINT_TEMPLATE.create(dendpoint_template)
+        dendpoint_template = self.endpoint_template_manager.create(
+                dendpoint_template)
         endpoint_template.id = dendpoint_template.id
         return endpoint_template
 
@@ -1119,7 +1125,8 @@ class IdentityService(object):
 
         if not isinstance(endpoint_template, EndpointTemplate):
             raise fault.BadRequestFault("Expecting a EndpointTemplate")
-        dendpoint_template = api.ENDPOINT_TEMPLATE.get(endpoint_template_id)
+        dendpoint_template = self.endpoint_template_manager.get(
+                endpoint_template_id)
         if not dendpoint_template:
             raise fault.ItemNotFoundFault(
                 "The endpoint template could not be found")
@@ -1152,8 +1159,8 @@ class IdentityService(object):
         dendpoint_template.version_id = endpoint_template.version_id
         dendpoint_template.version_list = endpoint_template.version_list
         dendpoint_template.version_info = endpoint_template.version_info
-        dendpoint_template = api.ENDPOINT_TEMPLATE.update(
-            endpoint_template_id, dendpoint_template)
+        dendpoint_template = self.endpoint_template_manager.update(
+                dendpoint_template)
         return EndpointTemplate(
             dendpoint_template.id,
             dendpoint_template.region,
@@ -1171,7 +1178,8 @@ class IdentityService(object):
 
     def delete_endpoint_template(self, admin_token, endpoint_template_id):
         user = self.validate_service_admin_token(admin_token)[1]
-        dendpoint_template = api.ENDPOINT_TEMPLATE.get(endpoint_template_id)
+        dendpoint_template = self.endpoint_template_manager.get(
+                endpoint_template_id)
         if not dendpoint_template:
             raise fault.ItemNotFoundFault(
                 "The endpoint template could not be found")
@@ -1192,18 +1200,20 @@ class IdentityService(object):
                     % dservice.name)
 
         #Delete Related endpoints
-        endpoints = api.ENDPOINT_TEMPLATE.\
+        endpoints = self.endpoint_manager.\
             endpoint_get_by_endpoint_template(endpoint_template_id)
         if endpoints is not None:
             for endpoint in endpoints:
-                api.ENDPOINT_TEMPLATE.endpoint_delete(endpoint.id)
-        api.ENDPOINT_TEMPLATE.delete(endpoint_template_id)
+                self.endpoint_manager.delete(endpoint.id)
+        self.endpoint_template_manager.delete(endpoint_template_id)
 
     def get_endpoint_templates(self, admin_token, marker, limit, url):
         self.validate_service_admin_token(admin_token)
-        dendpoint_templates = api.ENDPOINT_TEMPLATE.get_page(marker, limit)
+        dendpoint_templates = self.endpoint_template_manager.get_page(marker,
+                                                                      limit)
         ts = self.transform_endpoint_templates(dendpoint_templates)
-        prev, next = api.ENDPOINT_TEMPLATE.get_page_markers(marker, limit)
+        prev, next = self.endpoint_template_manager.get_page_markers(marker,
+                                                                     limit)
         links = self.get_links(url, prev, next, limit)
         return EndpointTemplates(ts, links)
 
@@ -1214,10 +1224,10 @@ class IdentityService(object):
         if dservice is None:
             raise fault.ItemNotFoundFault(
                 "No service with the id %s found." % service_id)
-        dendpoint_templates = api.ENDPOINT_TEMPLATE.\
+        dendpoint_templates = self.endpoint_template_manager.\
             get_by_service_get_page(service_id, marker, limit)
         ts = self.transform_endpoint_templates(dendpoint_templates)
-        prev, next = api.ENDPOINT_TEMPLATE.\
+        prev, next = self.endpoint_template_manager.\
             get_by_service_get_page_markers(service_id, marker, limit)
         links = self.get_links(url, prev, next, limit)
         return EndpointTemplates(ts, links)
@@ -1245,7 +1255,8 @@ class IdentityService(object):
     def get_endpoint_template(self, admin_token, endpoint_template_id):
         self.validate_service_admin_token(admin_token)
 
-        dendpoint_template = api.ENDPOINT_TEMPLATE.get(endpoint_template_id)
+        dendpoint_template = self.endpoint_template_manager.get(
+                endpoint_template_id)
         if not dendpoint_template:
             raise fault.ItemNotFoundFault(
                 "The endpoint template could not be found")
@@ -1280,11 +1291,10 @@ class IdentityService(object):
         ts = []
 
         dtenant_endpoints = \
-            api.ENDPOINT_TEMPLATE.\
-                endpoint_get_by_tenant_get_page(
-                    tenant_id, marker, limit)
+            self.endpoint_manager.endpoint_get_by_tenant_get_page(tenant_id,
+                                                                marker, limit)
         for dtenant_endpoint in dtenant_endpoints:
-            dendpoint_template = api.ENDPOINT_TEMPLATE.get(
+            dendpoint_template = self.endpoint_template_manager.get(
                 dtenant_endpoint.endpoint_template_id)
             dservice = self.service_manager.get(dendpoint_template.service_id)
             ts.append(Endpoint(
@@ -1303,7 +1313,7 @@ class IdentityService(object):
         links = []
         if ts.__len__():
             prev, next = \
-                api.ENDPOINT_TEMPLATE.endpoint_get_by_tenant_get_page_markers(
+                self.endpoint_manager.endpoint_get_by_tenant_get_page_markers(
                     tenant_id, marker, limit)
             links = self.get_links(url, prev, next, limit)
         return Endpoints(ts, links)
@@ -1315,14 +1325,15 @@ class IdentityService(object):
         if self.tenant_manager.get(tenant_id) is None:
             raise fault.ItemNotFoundFault("The tenant not found")
 
-        dendpoint_template = api.ENDPOINT_TEMPLATE.get(endpoint_template.id)
+        dendpoint_template = self.endpoint_template_manager.get(
+                endpoint_template.id)
         if not dendpoint_template:
             raise fault.ItemNotFoundFault(
                 "The endpoint template could not be found")
         dendpoint = models.Endpoints()
         dendpoint.tenant_id = tenant_id
         dendpoint.endpoint_template_id = endpoint_template.id
-        dendpoint = api.ENDPOINT_TEMPLATE.endpoint_add(dendpoint)
+        dendpoint = self.endpoint_manager.create(dendpoint)
         dservice = self.service_manager.get(dendpoint_template.service_id)
         dendpoint = Endpoint(
                             dendpoint.id,
@@ -1341,9 +1352,9 @@ class IdentityService(object):
 
     def delete_endpoint(self, admin_token, endpoint_id):
         self.validate_service_admin_token(admin_token)
-        if api.ENDPOINT_TEMPLATE.get(endpoint_id) is None:
+        if self.endpoint_manager.get(endpoint_id) is None:
             raise fault.ItemNotFoundFault("The Endpoint is not found.")
-        api.ENDPOINT_TEMPLATE.endpoint_delete(endpoint_id)
+        self.endpoint_manager.delete(endpoint_id)
         return None
 
     #Service Operations
@@ -1406,15 +1417,16 @@ class IdentityService(object):
             raise fault.ItemNotFoundFault("The service could not be found")
 
         #Delete Related Endpointtemplates and Endpoints.
-        endpoint_templates = api.ENDPOINT_TEMPLATE.get_by_service(service_id)
+        endpoint_templates = self.endpoint_template_manager.get_by_service(
+            service_id)
         if endpoint_templates is not None:
             for endpoint_template in endpoint_templates:
-                endpoints = api.ENDPOINT_TEMPLATE.\
+                endpoints = self.endpoint_manager.\
                     endpoint_get_by_endpoint_template(endpoint_template.id)
                 if endpoints is not None:
                     for endpoint in endpoints:
-                        api.ENDPOINT_TEMPLATE.endpoint_delete(endpoint.id)
-                api.ENDPOINT_TEMPLATE.delete(endpoint_template.id)
+                        self.endpoint_manager.delete(endpoint.id)
+                self.endpoint_template_manager.delete(endpoint_template.id)
         #Delete Related Role and RoleRefs
         roles = self.role_manager.get_by_service(service_id)
         if roles is not None:
