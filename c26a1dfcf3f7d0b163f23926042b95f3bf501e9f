@@ -87,6 +87,24 @@
       "revId": "c26a1dfcf3f7d0b163f23926042b95f3bf501e9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+t4\u003d",
+        "filename": "keystone/common/template.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2012-01-04T07:26:34Z",
+      "side": 0,
+      "message": "My point is that this piece of code violates PEP8. If it is not to be strictly followed, I don\u0027t see the point contributing to open-source code.\n\nAnd with all due respect, what is so complicated about this code that it should be kept this way?\n\nI know that downloaded is not guaranteed as True or False but letting it evaluate \"download\" covers what the original code should do. Also the file path is already checked if it is a file that exists.\n\nSo I\u0027m just suggesting for downloaded to be evaluated and let the already-verified filename get added to the string.",
+      "parentUuid": "AAAADH//+uM\u003d",
+      "revId": "c26a1dfcf3f7d0b163f23926042b95f3bf501e9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
