@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH//+wE\u003d",
+        "filename": "keystone/backends/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2012-01-04T04:30:08Z",
+      "side": 1,
+      "message": "The return value of literal_eval is an evaluation of a expression object to a Python expression. Therefore, it is trying to evaluate the return value rather than check if it is or isn\u0027t True",
+      "revId": "fd59dc455c9f939a0788fcdcd1645f1763e90a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+v8\u003d",
+        "filename": "keystone/backends/backendutils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2012-01-04T04:30:08Z",
+      "side": 1,
+      "message": "The super class of models.User is sqlalchemy\u0027s BASE and models.KeystoneBASE, both which only remain inside the models module. There won\u0027t be a case where they would be passed as values.",
+      "revId": "fd59dc455c9f939a0788fcdcd1645f1763e90a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+vw\u003d",
+        "filename": "keystone/test/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2012-01-04T04:30:08Z",
+      "side": 1,
+      "message": "isSsl is True or False.",
+      "revId": "fd59dc455c9f939a0788fcdcd1645f1763e90a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADH//+vs\u003d",
+        "filename": "tools/validate_json.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2012-01-04T04:30:08Z",
+      "side": 1,
+      "message": "if you look at the source code of read_file, only False is returned when permission is denied. Therefore, contents should be compared with False rather than being evaluated.",
+      "revId": "fd59dc455c9f939a0788fcdcd1645f1763e90a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH//+v0\u003d",
+        "filename": "keystone/common/template.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2012-01-04T04:30:08Z",
+      "side": 0,
+      "message": "I\u0027m not sure why download is first compared with True and then evaluated.\n\nSince download is passed as True or False, I thought it should be evaluated rather than compared with True.",
+      "revId": "c26a1dfcf3f7d0b163f23926042b95f3bf501e9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
