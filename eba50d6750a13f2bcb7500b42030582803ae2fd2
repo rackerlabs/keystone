@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADH//+Q0\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-01-05T01:27:04Z",
+      "side": 1,
+      "message": "For the middle-ware filters, shouldn\u0027t we be leveraging the service\u0027s native logger?\n\ndef get_logger(conf, service\u003dNone):\n    logger \u003d None\n    log_name \u003d \u0027keystone.middleware\u0027\n    if service:\n        if service \u003d\u003d \u0027swift\u0027:\n            try:\n                from swift.common.utils import get_logger\n                logger \u003d get_logger(conf, log_route\u003dlog_name)\n            except:\n                # unable to get the swift logger\n                # will create a default one later\n                pass\n        elif service \u003d\u003d \u0027nova\u0027:\n            try:\n                from nova import log as logging\n                logger \u003d logging.getLogger(log_name)\n            except:\n                # unable to get the nova logger\n                # will create a default later\n                pass\n        \n            # use default one\n    if not logger:\n            try:\n                logger \u003d logging.getLogger(log_name)\n            except:\n                # shouldn\u0027t happen, but what can we do?\n                pass\n\n    return logger",
+      "revId": "eba50d6750a13f2bcb7500b42030582803ae2fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
