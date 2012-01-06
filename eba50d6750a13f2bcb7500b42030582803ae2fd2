@@ -16,6 +16,24 @@
       "revId": "eba50d6750a13f2bcb7500b42030582803ae2fd2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADX///w0\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-06T06:31:05Z",
+      "side": 1,
+      "message": "I like the attempt to integrate well into the consuming service, but I\u0027m concerned about the drawbacks:\n- we have to hard code services (nova, swift, etc...)\n- our log events now have different sources depending on where we are running, so any central logging anyone implements won\u0027t have the same data for the what is effectively the same event...",
+      "parentUuid": "AAAADH//+Q0\u003d",
+      "revId": "eba50d6750a13f2bcb7500b42030582803ae2fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
