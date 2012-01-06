@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADX///pg\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-06T17:55:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADX///q4\u003d",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADX///r8\u003d",
         "filename": "keystone/backends/sqlalchemy/api/role.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-01-06T16:30:31Z",
       "side": 1,
       "message": "Simpler:\nvalues[\u0027desc\u0027] \u003d values.pop(\u0027description\u0027)",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADX///pc\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-06T17:55:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADX///r8\u003d",
       "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADX///pY\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-06T17:55:00Z",
+      "side": 1,
+      "message": "Agreed. I\u0027ve already split out the managers (Role and Grant manager) and sorted this module into role and grant functions. We\u0027ll get to this (maybe after E3)",
+      "parentUuid": "AAAADX///q0\u003d",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADX///r0\u003d",
         "filename": "keystone/backends/sqlalchemy/api/role.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2012-01-06T16:30:31Z",
       "side": 1,
       "message": "Purely stylistic: what possible rationale is there for the indentation on the continued line? The preferred method is 2 levels (8 spaces) inside of the preceding line, or, for those who have a compulsion to line things up, to some level that lines up with a relevant part of the preceding line. This does neither, and appears to be floating aimlessly.",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADX///pI\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-06T17:55:00Z",
+      "side": 1,
+      "message": "Done. Used the \"for those who have a compulsion to line things up\" approach :-)",
+      "parentUuid": "AAAADX///r0\u003d",
       "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADX///pA\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-06T17:55:00Z",
+      "side": 1,
+      "message": "Yep! Removed.",
+      "parentUuid": "AAAADX///rw\u003d",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADX///rs\u003d",
         "filename": "keystone/models.py",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2012-01-06T16:30:31Z",
       "side": 1,
       "message": "Cleaner:\n\nif issubclass(type, basestring):\n\nor:\n\nif type in (str, basestring):",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADX///o8\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-06T17:55:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADX///rs\u003d",
       "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADX///o0\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-06T17:55:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADX///ro\u003d",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADX///rA\u003d",
         "filename": "keystone/models.py",
         "patchSetId": 2
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADX///ok\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-06T17:55:00Z",
+      "side": 1,
+      "message": "Done - but used the approach for Role on line 667 which is where I was heading to clean these up.",
+      "parentUuid": "AAAADX///rA\u003d",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADX///qs\u003d",
         "filename": "keystone/test/unit/test_models_Role.py",
         "patchSetId": 2
@@ -149,6 +293,24 @@
       "writtenOn": "2012-01-06T16:31:29Z",
       "side": 1,
       "message": "PEP8: \"Modules should have short, all-lowercase names.  Underscores can be used in the module name if it improves readability.\"",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADX///oU\u003d",
+        "filename": "keystone/test/unit/test_models_Role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-06T17:55:00Z",
+      "side": 1,
+      "message": "Done. Renamed them all",
+      "parentUuid": "AAAADX///qs\u003d",
       "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -190,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADX///oQ\u003d",
+        "filename": "keystone/test/unit/test_models_Role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-06T17:55:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADX///qw\u003d",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADX///qo\u003d",
         "filename": "keystone/test/unit/test_models_Tenant.py",
         "patchSetId": 2
@@ -201,6 +381,24 @@
       "writtenOn": "2012-01-06T16:31:29Z",
       "side": 1,
       "message": "PEP8: \"Modules should have short, all-lowercase names.  Underscores can be used in the module name if it improves readability.\"",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADX///oM\u003d",
+        "filename": "keystone/test/unit/test_models_Tenant.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-06T17:55:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAADX///qo\u003d",
       "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
