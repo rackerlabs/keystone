@@ -22,12 +22,4 @@ from keystone.controllers.token import TokenController
 
 class ExtensionHandler(BaseExtensionHandler):
     def map_extension_methods(self, mapper, options):
-        token_controller = TokenController(options)
-
-        # Token Operations
-        mapper.connect("/tokens/{token_id}", controller=token_controller,
-                    action="validate_token",
-                    conditions=dict(method=["GET"]))
-        mapper.connect("/tokens/{tenant_id}",
-                    controller=token_controller,
-                    action="check_token", conditions=dict(method=["HEAD"]))
+        pass
