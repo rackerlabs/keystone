@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADX///r8\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-06T16:30:31Z",
+      "side": 1,
+      "message": "Simpler:\nvalues[\u0027desc\u0027] \u003d values.pop(\u0027description\u0027)",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADX///r0\u003d",
+        "filename": "keystone/backends/sqlalchemy/api/role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-06T16:30:31Z",
+      "side": 1,
+      "message": "Purely stylistic: what possible rationale is there for the indentation on the continued line? The preferred method is 2 levels (8 spaces) inside of the preceding line, or, for those who have a compulsion to line things up, to some level that lines up with a relevant part of the preceding line. This does neither, and appears to be floating aimlessly.",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADX///rw\u003d",
+        "filename": "keystone/logic/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-06T16:30:31Z",
+      "side": 1,
+      "message": "Is this debugging output?",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADX///rs\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-06T16:30:31Z",
+      "side": 1,
+      "message": "Cleaner:\n\nif issubclass(type, basestring):\n\nor:\n\nif type in (str, basestring):",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADX///ro\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-06T16:30:31Z",
+      "side": 1,
+      "message": "If \u0027value\u0027 is a dictionary, this won\u0027t work. An object is not the same as its type. I think that this is what you need:\n\nif isinstance(value, dict):",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADX///rA\u003d",
+        "filename": "keystone/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-06T16:30:31Z",
+      "side": 1,
+      "message": "How about refactoring out the common code in the next 3 methods into this method:\n\ndef _check_hints(self, hints):\n    if hints is None:\n        hints \u003d {}\n    if \u0027maps\u0027 not in hints:\n    hints[\u0027maps\u0027] \u003d {\"userId\": \"user_id\",\n            \"roleId\": \"role_id\",\n            \"tenantId\": \"tenant_id\"}\n    return hints\n\n...and then replace the code in those 3 methods with:\n\nhints \u003d self._check_hints(hints)",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAADX///qw\u003d",
+        "filename": "keystone/test/unit/test_models_Role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-06T16:30:31Z",
+      "side": 1,
+      "message": "Shouldn\u0027t there be a space either at the end of the string in the first line (after: v2.0\"), or at the beginning of the string in the second line (before: id\u003d)? Same comment applies here and lines 65-6",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

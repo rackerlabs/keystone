@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAADX///q8\u003d",
+        "filename": "keystone/test/unit/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-06T16:30:31Z",
+      "side": 0,
+      "message": "Why is the \u0027id\u0027 in first element changed to a string value, but this one is still an integer?",
+      "revId": "eac98b07b30b46edcc12b7b2f0789e294cac539b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
