@@ -188,7 +188,7 @@ class AuthProtocol(object):
         self.auth_host = conf.get('auth_host')
         self.auth_port = int(conf.get('auth_port'))
         self.auth_protocol = conf.get('auth_protocol', 'https')
-        self.auth_timeout = conf.get('auth_timeout', 30)
+        self.auth_timeout = float(conf.get('auth_timeout', 30))
 
         # where to tell clients to find the auth service (default to url
         # constructed based on endpoint we have for the service to use)
@@ -211,6 +211,7 @@ class AuthProtocol(object):
         if self.memcache_hosts:
             if self.cache is None:
                 self.cache = "keystone.cache"
+        self.osksvalidate = self._supports_osksvalidate()
 
     def __init__(self, app, conf):
         """ Common initialization code """
@@ -442,15 +443,24 @@ class AuthProtocol(object):
         headers = {"Content-type": "application/json",
                     "Accept": "application/json",
                     "X-Auth-Token": self.admin_token}
-                    ##TODO(ziad):we need to figure out how to auth to keystone
-                    #since validate_token is a priviledged call
-                    #Khaled's version uses creds to get a token
-                    # "X-Auth-Token": admin_token}
-                    # we're using a test token from the ini file for now
-        logger.debug("Connecting to %s://%s:%s to check claims" % (
-                self.auth_protocol, self.auth_host, self.auth_port))
+        if self.osksvalidate:
+            headers['X-Subject-Token'] = claims
+            path = '/v2.0/tokens/validate/%s' % self.serviceId_qs
+            LOG.debug("Connecting to %s://%s:%s to check claims using the"
+                      "OS-KSVALIDATE extension" % (self.auth_protocol,
+                            self.auth_host, self.auth_port))
+        else:
+            path = '/v2.0/tokens/%s%s' % (claims, self.serviceId_qs)
+            LOG.debug("Connecting to %s://%s:%s to check claims" % (
+                    self.auth_protocol, self.auth_host, self.auth_port))
+
+        ##TODO(ziad):we need to figure out how to auth to keystone
+        #since validate_token is a priviledged call
+        #Khaled's version uses creds to get a token
+        # "X-Auth-Token": admin_token}
+        # we're using a test token from the ini file for now
         conn = http_connect(self.auth_host, self.auth_port, 'GET',
-                            '/v2.0/tokens/%s%s' % (claims, self.serviceId_qs),
+                            path,
                             headers=headers,
                             ssl=(self.auth_protocol == 'https'),
                             key_file=self.key_file, cert_file=self.cert_file,
@@ -570,6 +580,28 @@ class AuthProtocol(object):
                 return Response(status=resp.status, body=data)(env,
                                                 start_response)
 
+    def _supports_osksvalidate(self):
+        """Check if target Keystone server supports OS-KSVALIDATE."""
+
+        headers = {"Accept": "application/json"}
+        LOG.debug("Connecting to %s://%s:%s to check extensions" % (
+                self.auth_protocol, self.auth_host, self.auth_port))
+        conn = http_connect(self.auth_host, self.auth_port, 'GET',
+                            '/v2.0/extensions/',
+                            headers=headers,
+                            ssl=(self.auth_protocol == 'https'),
+                            key_file=self.key_file, cert_file=self.cert_file,
+                            timeout=self.auth_timeout)
+        resp = conn.getresponse()
+        data = resp.read()
+
+        LOG.debug("Response received: %s" % resp.status)
+        if not str(resp.status).startswith('20'):
+            LOG.debug("Failed to detect extensions. Falling back to core API")
+            return False
+
+        return "OS-KSVALIDATE" in data
+
 
 def filter_factory(global_conf, **local_conf):
     """Returns a WSGI filter app for use with paste.deploy."""
@@ -587,10 +619,11 @@ def app_factory(global_conf, **local_conf):
     return AuthProtocol(None, conf)
 
 if __name__ == "__main__":
-    wsgiapp = loadapp("config:" + \
-        os.path.join(os.path.abspath(os.path.dirname(__file__)),
+    config_file = os.path.join(os.path.abspath(os.path.dirname(__file__)),
                      os.pardir,
                      os.pardir,
-                    "examples/paste/auth_token.ini"),
+                    "examples/paste/auth_token.ini")
+    LOG.debug("Initializing with config file: %s" % config_file)
+    wsgiapp = loadapp("config:%s" % config_file,
                     global_conf={"log_name": "auth_token.log"})
     wsgi.server(eventlet.listen(('', 8090)), wsgiapp)
