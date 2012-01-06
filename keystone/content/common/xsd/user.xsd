@@ -76,7 +76,7 @@
                     xml:lang="EN"
                     xmlns="http://www.w3.org/1999/xhtml">
                     <p>
-                        A true/false value that determines if the user may authenticate or not.
+                        A true/false value that determines if the user may authenticated or not.
                         If enabled is false, the user will not be able to authenticate.
                         How this value is stored or generated is dependent on the backend in use.
                     </p>
