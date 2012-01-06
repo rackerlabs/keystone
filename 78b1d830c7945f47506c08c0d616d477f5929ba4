@@ -172,6 +172,24 @@
     },
     {
       "key": {
+        "uuid": "AAAADX///qY\u003d",
+        "filename": "keystone/test/unit/test_models_Role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-06T16:34:04Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAADX///qw\u003d",
+      "revId": "78b1d830c7945f47506c08c0d616d477f5929ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADX///qo\u003d",
         "filename": "keystone/test/unit/test_models_Tenant.py",
         "patchSetId": 2
