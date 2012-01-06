@@ -2,6 +2,108 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAD3///+Q\u003d",
+        "filename": "keystone/frontends/normalizer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-06T22:42:22Z",
+      "side": 1,
+      "message": "...",
+      "revId": "eba50d6750a13f2bcb7500b42030582803ae2fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3///+8\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-06T22:42:22Z",
+      "side": 1,
+      "message": "arbitrary indentation?",
+      "revId": "eba50d6750a13f2bcb7500b42030582803ae2fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3///+4\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-06T22:42:22Z",
+      "side": 1,
+      "message": "more",
+      "revId": "eba50d6750a13f2bcb7500b42030582803ae2fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3///+0\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-06T22:42:22Z",
+      "side": 1,
+      "message": "more",
+      "revId": "eba50d6750a13f2bcb7500b42030582803ae2fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3///+w\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-06T22:42:22Z",
+      "side": 1,
+      "message": "more",
+      "revId": "eba50d6750a13f2bcb7500b42030582803ae2fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3///+s\u003d",
+        "filename": "keystone/manage/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-06T22:42:22Z",
+      "side": 1,
+      "message": "ahh",
+      "revId": "eba50d6750a13f2bcb7500b42030582803ae2fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADH//+Q0\u003d",
         "filename": "keystone/middleware/ec2_token.py",
         "patchSetId": 4
@@ -31,6 +133,40 @@
       "side": 1,
       "message": "I like the attempt to integrate well into the consuming service, but I\u0027m concerned about the drawbacks:\n- we have to hard code services (nova, swift, etc...)\n- our log events now have different sources depending on where we are running, so any central logging anyone implements won\u0027t have the same data for the what is effectively the same event...",
       "parentUuid": "AAAADH//+Q0\u003d",
+      "revId": "eba50d6750a13f2bcb7500b42030582803ae2fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3///+c\u003d",
+        "filename": "keystone/middleware/nova_auth_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-06T22:42:22Z",
+      "side": 1,
+      "message": "If your\u0027e going to name an exception, be specific (e.g. KeyError)",
+      "revId": "eba50d6750a13f2bcb7500b42030582803ae2fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3///+U\u003d",
+        "filename": "keystone/middleware/url.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-06T22:42:22Z",
+      "side": 1,
+      "message": "arbitrary indentation",
       "revId": "eba50d6750a13f2bcb7500b42030582803ae2fd2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
