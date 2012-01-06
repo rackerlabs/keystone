@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAADX///qg\u003d",
+        "filename": "keystone/test/functional/test_tenants.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-06T16:31:29Z",
+      "side": 0,
+      "message": "See _assertValidJsonTenant() above: # TODO(dolph): this is still a valid assertion in some cases\n\nI don\u0027t think we should completely remove this code, as it\u0027s still valid and needs future consideration. Completely removing it just arbitrarily reduces test coverage.",
+      "revId": "eac98b07b30b46edcc12b7b2f0789e294cac539b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAADX///q8\u003d",
         "filename": "keystone/test/unit/base.py",
         "patchSetId": 2
