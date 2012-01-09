@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAD3///y4\u003d",
+        "filename": "keystone/common/crypt.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-09T17:19:09Z",
+      "side": 1,
+      "message": "This file is here twice *and* isn\u0027t used?",
+      "revId": "8b06ffd00d184b8acc0634d0d5d82579db1a7820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3///ys\u003d",
+        "filename": "keystone/content/admin/OS-KSVALIDATE-admin.wadl",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-09T17:19:09Z",
+      "side": 1,
+      "message": "Should be spaces",
+      "revId": "8b06ffd00d184b8acc0634d0d5d82579db1a7820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3///y8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-09T17:19:09Z",
+      "side": 1,
+      "message": "variable name should reflect that this is a boolean -- but variable name is a noun",
+      "revId": "8b06ffd00d184b8acc0634d0d5d82579db1a7820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3///y0\u003d",
+        "filename": "keystone/middleware/crypt.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-09T17:19:09Z",
+      "side": 1,
+      "message": "This file is here twice *and* isn\u0027t used?",
+      "revId": "8b06ffd00d184b8acc0634d0d5d82579db1a7820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
