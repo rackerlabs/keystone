@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAD3///Ys\u003d",
+        "filename": "keystone/frontends/context.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-10T18:26:09Z",
+      "side": 1,
+      "message": "Hmm... you\u0027re correct. I copied that from the service module without thinking too much.\n\nBut that doesn\u0027t mean that you\u0027re not crazy. :)",
+      "parentUuid": "AAAAD3///ZE\u003d",
+      "revId": "e16364a1b09b30a1d461d9a8074913545a3e4ff3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAD3///ZA\u003d",
         "filename": "keystone/test/unit/test_context.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-01-10T18:11:06Z",
       "side": 1,
       "message": "One blank line between here and the keystone import...",
+      "revId": "e16364a1b09b30a1d461d9a8074913545a3e4ff3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3///Yw\u003d",
+        "filename": "keystone/test/unit/test_context.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-10T18:26:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAD3///ZA\u003d",
       "revId": "e16364a1b09b30a1d461d9a8074913545a3e4ff3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
