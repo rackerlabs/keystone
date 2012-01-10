@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAD3///ZE\u003d",
+        "filename": "keystone/frontends/context.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-01-10T18:11:06Z",
+      "side": 1,
+      "message": "Maybe I\u0027m crazy, but wouldn\u0027t ONE_DAY be a constant datetime of when this module was loaded into memory in the WSGI application pipeline?",
+      "revId": "e16364a1b09b30a1d461d9a8074913545a3e4ff3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3///ZA\u003d",
+        "filename": "keystone/test/unit/test_context.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-01-10T18:11:06Z",
+      "side": 1,
+      "message": "One blank line between here and the keystone import...",
+      "revId": "e16364a1b09b30a1d461d9a8074913545a3e4ff3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
