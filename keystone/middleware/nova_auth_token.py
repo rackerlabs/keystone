@@ -63,7 +63,10 @@ class KeystoneAuthShim(wsgi.Middleware):
     def __call__(self, req):
         # find or create user
         try:
-            user_id = req.headers.get('X_USER')
+            if 'X_USER_ID' in req.headers:
+                user_id = req.headers['X_USER_ID']
+            else:
+                user_id = req.headers['X_USER']
         except Exception as e:
             logger.exception("Unexpected error trying to get user from "
                              "request: %s" % e)

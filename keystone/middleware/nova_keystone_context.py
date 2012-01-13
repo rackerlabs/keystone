@@ -39,7 +39,10 @@ class NovaKeystoneContext(wsgi.Middleware):
     @webob.dec.wsgify(RequestClass=wsgi.Request)
     def __call__(self, req):
         try:
-            user_id = req.headers['X_USER']
+            if 'X_USER_ID' in req.headers:
+                user_id = req.headers['X_USER_ID']
+            else:
+                user_id = req.headers['X_USER']
         except KeyError:
             logger.debug("X_USER not found in request")
             return webob.exc.HTTPUnauthorized()
