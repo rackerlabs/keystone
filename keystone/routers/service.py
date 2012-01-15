@@ -45,6 +45,10 @@ class ServiceApi(wsgi.Router):
         mapper.connect("/ec2tokens", controller=auth_controller,
                        action="authenticate_ec2",
                        conditions=dict(method=["POST"]))
+        # TODO(yosshy): this should be deprecated
+        mapper.connect("/s3tokens", controller=auth_controller,
+                       action="authenticate_s3",
+                       conditions=dict(method=["POST"]))
         tenant_controller = TenantController(options, True)
         mapper.connect("/tenants",
                         controller=tenant_controller,
