@@ -80,6 +80,12 @@ class TokenController(wsgi.Controller):
         return utils.send_result(200, req,
             self.identity_service.authenticate_ec2(creds))
 
+    @utils.wrap_error
+    def authenticate_s3(self, req):
+        creds = utils.get_normalized_request_content(auth.S3Credentials, req)
+        return utils.send_result(200, req,
+            self.identity_service.authenticate_s3(creds))
+
     def _validate_token(self, req, token_id):
         """Validates the token, and that it belongs to the specified tenant"""
         belongs_to = req.GET.get('belongsTo')
