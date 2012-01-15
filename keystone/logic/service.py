@@ -187,6 +187,25 @@ class IdentityService(object):
         return self._authenticate(validate, creds.user_id,
                                              creds.tenant_id)
 
+    def authenticate_s3(self, credentials):
+        # Check credentials
+        if not isinstance(credentials, auth.S3Credentials):
+            raise fault.BadRequestFault("Expecting S3 Credentials!")
+
+        creds = self.credential_manager.get_by_access(credentials.access)
+        if not creds:
+            raise fault.UnauthorizedFault("No credentials found for %s"
+                                          % credentials.access)
+
+        def validate(duser):
+            signer = Signer(creds.secret)
+            signature = signer.generate(credentials, s3=True)
+            if signature == credentials.signature:
+                return True
+            return False
+
+        return self._authenticate(validate, creds.user_id, creds.tenant_id)
+
     def _authenticate(self, validate, user_id, tenant_id=None):
         LOG.debug("Authenticating user %s (tenant: %s)" % (user_id, tenant_id))
         if tenant_id:
