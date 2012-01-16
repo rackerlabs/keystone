@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAD3//93E\u003d",
+        "filename": "keystone/middleware/glance_auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-16T18:11:17Z",
+      "side": 1,
+      "message": "This entire block can be replaced with:\n\n    user_id \u003d req.headers.get(\u0027X_USER_ID\u0027) or req.headers.get(\u0027X_USER\u0027)\n\nWhich says the same thing and is a bit less redundant, taking advantage of the \u0027get\u0027 behavior.",
+      "revId": "9c6424efc610dc47f4474cb7aecdada6ee9fdb98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
