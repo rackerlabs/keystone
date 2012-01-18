@@ -38,7 +38,8 @@ class TestStaticFiles(common.ApiTestCase):
         self.assertResponseSuccessful(r)
 
     def test_json_sample(self):
-        r = self.service_request(path='/samples/auth.json')
+        headers = {'Accept': 'application/json'}
+        r = self.service_request(path='/samples/auth.json', headers=headers)
         self.assertResponseSuccessful(r)
 
     def test_stylesheet(self):
@@ -78,7 +79,8 @@ class TestAdminStaticFiles(common.FunctionalTestCase):
         self.assertResponseSuccessful(r)
 
     def test_json_sample(self):
-        r = self.admin_request(path='/samples/auth.json')
+        headers = {'Accept': 'application/json'}
+        r = self.admin_request(path='/samples/auth.json', headers=headers)
         self.assertResponseSuccessful(r)
 
     def test_stylesheet(self):
