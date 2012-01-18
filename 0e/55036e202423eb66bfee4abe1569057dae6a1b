@@ -1,0 +1,12 @@
+Verified+1: Jenkins
+Code-Review+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Ziad Sawalha <ziad.sawalha@rackspace.com>
+Code-Review+1: Jay Pipes <jaypipes@gmail.com>
+Code-Review+1: Kiall Mac Innes <kiall@managedit.ie>
+Approved+1: Mark McLoughlin <markmc@redhat.com>
+Code-Review+2: Mark McLoughlin <markmc@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 18 Jan 2012 15:45:38 +0000
+Reviewed-on: https://review.openstack.org/2840
+Project: openstack/keystone
+Branch: refs/heads/stable/diablo
