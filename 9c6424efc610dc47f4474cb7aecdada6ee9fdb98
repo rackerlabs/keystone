@@ -34,6 +34,23 @@
       "revId": "9c6424efc610dc47f4474cb7aecdada6ee9fdb98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3//8gY\u003d",
+        "filename": "keystone/middleware/nova_auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-01-19T17:44:15Z",
+      "side": 1,
+      "message": "related to https://bugs.launchpad.net/nova/+bug/917408\n\nnova_auth_token is going to be moving into the service\n\nhttps://review.openstack.org/#change,3135",
+      "revId": "9c6424efc610dc47f4474cb7aecdada6ee9fdb98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
