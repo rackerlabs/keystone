@@ -16,6 +16,24 @@
       "revId": "9c6424efc610dc47f4474cb7aecdada6ee9fdb98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAD3//8hU\u003d",
+        "filename": "keystone/middleware/glance_auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-19T17:40:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAD3//93E\u003d",
+      "revId": "9c6424efc610dc47f4474cb7aecdada6ee9fdb98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
