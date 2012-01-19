@@ -69,7 +69,7 @@ class KeystoneAuthShim(wsgi.Middleware):
                              "request: %s" % e)
             raise
         if not user_id:
-             return webob.exc.HTTPUnauthorized()
+            return webob.exc.HTTPUnauthorized()
 
         try:
             user_ref = self.auth.get_user(user_id)
