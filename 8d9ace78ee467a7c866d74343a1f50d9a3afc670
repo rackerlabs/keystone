@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAD3//8aE\u003d",
+        "filename": "keystone/tools/buffout.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-19T20:15:20Z",
+      "side": 0,
+      "message": "Should this not return False per https://review.openstack.org/#change,3187",
+      "revId": "8d9ace78ee467a7c866d74343a1f50d9a3afc670",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
