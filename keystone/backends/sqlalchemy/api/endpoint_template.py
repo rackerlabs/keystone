@@ -90,12 +90,12 @@ class EndpointTemplateAPI(api.BaseEndpointTemplateAPI):
                     filter("id>:marker").params(\
                     marker='%s' % marker).filter_by(\
                     service_id=service_id).order_by(\
-                    models.EndpointTemplates.id.desc()).limit(limit).all()
+                    models.EndpointTemplates.id.desc()).limit(int(limit)).all()
         else:
             return session.query(models.EndpointTemplates).filter_by(\
                                 service_id=service_id).order_by(\
                                 models.EndpointTemplates.id.desc()).\
-                                limit(limit).all()
+                                limit(int(limit)).all()
 
     # pylint: disable=R0912
     def get_by_service_get_page_markers(self, service_id, marker, \
@@ -117,7 +117,7 @@ class EndpointTemplateAPI(api.BaseEndpointTemplateAPI):
             filter_by(service_id=service_id).\
             params(marker='%s' % marker).\
             order_by(models.EndpointTemplates.id).\
-            limit(limit).\
+            limit(int(limit)).\
             all()
         prev_page = session.query(models.EndpointTemplates).\
             filter("id < :marker").\
@@ -154,11 +154,11 @@ class EndpointTemplateAPI(api.BaseEndpointTemplateAPI):
             return session.query(models.EndpointTemplates).\
                     filter("id>:marker").params(\
                     marker='%s' % marker).order_by(\
-                    models.EndpointTemplates.id.desc()).limit(limit).all()
+                    models.EndpointTemplates.id.desc()).limit(int(limit)).all()
         else:
             return session.query(models.EndpointTemplates).order_by(\
                                 models.EndpointTemplates.id.desc()).\
-                                limit(limit).all()
+                                limit(int(limit)).all()
 
     # pylint: disable=R0912
     def get_page_markers(self, marker, limit, session=None):
@@ -176,7 +176,7 @@ class EndpointTemplateAPI(api.BaseEndpointTemplateAPI):
             filter("id > :marker").\
             params(marker='%s' % marker).\
             order_by(models.EndpointTemplates.id).\
-            limit(limit).\
+            limit(int(limit)).\
             all()
         prev_page = session.query(models.EndpointTemplates).\
             filter("id < :marker").\
@@ -217,11 +217,11 @@ class EndpointTemplateAPI(api.BaseEndpointTemplateAPI):
                 filter(models.Endpoints.tenant_id == tenant_id).\
                 filter("id >= :marker").params(
                 marker='%s' % marker).order_by(
-                models.Endpoints.id).limit(limit).all()
+                models.Endpoints.id).limit(int(limit)).all()
         else:
             results = session.query(models.Endpoints).\
                 filter(models.Endpoints.tenant_id == tenant_id).\
-                order_by(models.Endpoints.id).limit(limit).all()
+                order_by(models.Endpoints.id).limit(int(limit)).all()
 
         if hasattr(api.TENANT, 'id_to_uid'):
             for result in results:
