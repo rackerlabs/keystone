@@ -21,11 +21,15 @@ import logging
 from lxml import etree
 import os
 import sys
+import tempfile
 from webob import Response
 
+from keystone import config
 import keystone.logic.types.fault as fault
 
 logger = logging.getLogger(__name__)  # pylint: disable=C0103
+
+CONF = config.CONF
 
 
 def is_xml_response(req):
@@ -191,6 +195,7 @@ def send_legacy_result(code, headers):
     resp = Response()
     if 'content-type' not in headers:
         headers['content-type'] = "text/plain"
+    resp.headers['Vary'] = 'X-Auth-Token'
 
     headers['Vary'] = 'X-Auth-Token'
 
@@ -248,3 +253,58 @@ def is_empty_string(value):
     if len(value.strip()) == 0:
         return True
     return False
+
+
+def write_temp_file(txt):
+    """
+    Writes the supplied text to a temporary file and returns the file path.
+
+    When the file is no longer needed, it is up to the calling program to
+    delete it.
+    """
+    fd, tmpname = tempfile.mkstemp()
+    os.close(fd)
+    with file(tmpname, "w") as fconf:
+        fconf.write(txt)
+    return tmpname
+
+
+def opt_to_conf(options, create_temp=False):
+    """
+    Takes a dict of options and either returns a string that represents the
+    equivalent CONF configuration file (when create_temp is False), or writes
+    the temp file and returns the name of that temp file. NOTE: it is up to
+    the calling program to delete the temp file when it is no longer needed.
+    """
+    def parse_opt(options, section=None):
+        out = []
+        subsections = []
+        if section is None:
+            section = "DEFAULT"
+        # Create the section header
+        out.append("[%s]" % section)
+        for key, val in options.iteritems():
+            if isinstance(val, dict):
+                # This is a subsection; parse recursively.
+                subsections.append(parse_opt(val, section=key))
+            else:
+                out.append("%s = %s" % (key.replace("-", "_"), val))
+
+        # Add the subsections
+        for subsection in subsections:
+            out.append("")
+            out.append(subsection)
+        return "\n".join(out)
+
+    txt = parse_opt(options)
+    if create_temp:
+        return write_temp_file(txt)
+    else:
+        return txt
+
+
+def set_configuration(options):
+    """ Given a dict of options, populates the config.CONF module to match."""
+    _config_file = opt_to_conf(options, create_temp=True)
+    CONF(config_files=[_config_file])
+    os.remove(_config_file)

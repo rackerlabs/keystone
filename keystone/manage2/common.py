@@ -13,6 +13,7 @@ from keystone.managers.service import Manager as ServiceManager
 from keystone.managers.tenant import Manager as TenantManager
 from keystone.managers.token import Manager as TokenManager
 from keystone.managers.user import Manager as UserManager
+from keystone import utils
 
 
 def arg(name, **kwargs):
@@ -44,16 +45,17 @@ def get_options():
 
 def init_managers(options):
     """Initializes backend storage and return managers"""
-    backends.configure_backends(options)
+    utils.set_configuration(options)
+    backends.configure_backends()
 
     managers = {}
-    managers['credential_manager'] = CredentialManager(options)
-    managers['token_manager'] = TokenManager(options)
-    managers['tenant_manager'] = TenantManager(options)
-    managers['endpoint_manager'] = EndpointManager(options)
-    managers['endpoint_template_manager'] = EndpointTemplateManager(options)
-    managers['user_manager'] = UserManager(options)
-    managers['role_manager'] = RoleManager(options)
-    managers['grant_manager'] = GrantManager(options)
-    managers['service_manager'] = ServiceManager(options)
+    managers['credential_manager'] = CredentialManager()
+    managers['token_manager'] = TokenManager()
+    managers['tenant_manager'] = TenantManager()
+    managers['endpoint_manager'] = EndpointManager()
+    managers['endpoint_template_manager'] = EndpointTemplateManager()
+    managers['user_manager'] = UserManager()
+    managers['role_manager'] = RoleManager()
+    managers['grant_manager'] = GrantManager()
+    managers['service_manager'] = ServiceManager()
     return managers
