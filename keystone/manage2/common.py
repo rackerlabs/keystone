@@ -1,6 +1,8 @@
 import optparse
+import sys
 
 from keystone import backends
+from keystone import config as new_config
 from keystone import version
 from keystone.common import config
 from keystone.managers.credential import Manager as CredentialManager
@@ -13,6 +15,7 @@ from keystone.managers.service import Manager as ServiceManager
 from keystone.managers.tenant import Manager as TenantManager
 from keystone.managers.token import Manager as TokenManager
 from keystone.managers.user import Manager as UserManager
+from keystone import utils
 
 
 def arg(name, **kwargs):
@@ -35,25 +38,28 @@ def get_options():
 
     # Parse command-line and load config
     (options, args) = config.parse_options(parser, [])
-    _config_file, conf = config.load_paste_config('admin', options, args)
 
-    config.setup_logging(options, conf)
-
-    return conf.global_conf
+    return options
 
 
-def init_managers(options):
+def init_managers():
     """Initializes backend storage and return managers"""
-    backends.configure_backends(options)
+    if new_config.CONF.backends is None:
+        # Get merged config and CLI options and admin-specific settings
+        options = get_options()
+        config_file = config.find_config_file(options, sys.argv[1:])
+        new_config.CONF(config_files=[config_file])
+
+    backends.configure_backends()
 
     managers = {}
-    managers['credential_manager'] = CredentialManager(options)
-    managers['token_manager'] = TokenManager(options)
-    managers['tenant_manager'] = TenantManager(options)
-    managers['endpoint_manager'] = EndpointManager(options)
-    managers['endpoint_template_manager'] = EndpointTemplateManager(options)
-    managers['user_manager'] = UserManager(options)
-    managers['role_manager'] = RoleManager(options)
-    managers['grant_manager'] = GrantManager(options)
-    managers['service_manager'] = ServiceManager(options)
+    managers['credential_manager'] = CredentialManager()
+    managers['token_manager'] = TokenManager()
+    managers['tenant_manager'] = TenantManager()
+    managers['endpoint_manager'] = EndpointManager()
+    managers['endpoint_template_manager'] = EndpointTemplateManager()
+    managers['user_manager'] = UserManager()
+    managers['role_manager'] = RoleManager()
+    managers['grant_manager'] = GrantManager()
+    managers['service_manager'] = ServiceManager()
     return managers

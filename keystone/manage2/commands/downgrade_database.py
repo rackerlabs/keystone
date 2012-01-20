@@ -11,7 +11,7 @@ class Command(base.BaseSqlalchemyCommand):
 
     def downgrade_database(self, version):
         """Downgrade database to the specified version"""
-        migration.downgrade(self.options, version=version)
+        migration.downgrade(version=version)
 
     def run(self, args):
         """Process argparse args, and print results to stdout"""

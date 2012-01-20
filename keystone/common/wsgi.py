@@ -92,16 +92,23 @@ class Server(object):
     """Server class to manage multiple WSGI sockets and applications."""
     started = False
 
-    def __init__(self, threads=1000):
+    def __init__(self, application=None, port=None, threads=1000):
+        self.application = application
+        self.port = port
         self.pool = eventlet.GreenPool(threads)
         self.socket_info = {}
         self.threads = {}
 
-    def start(self, application, port, host='0.0.0.0', key=None, backlog=128):
+    def start(self, application=None, port=None, host='0.0.0.0', key=None,
+            backlog=128):
         """Run a WSGI server with the given application."""
-        logger.debug("start server '%s' on %s:%s" % (key, host, port))
-        socket = eventlet.listen((host, port), backlog=backlog)
-        thread = self.pool.spawn(self._run, application, socket)
+        if application is not None:
+            self.application = application
+        if port is not None:
+            self.port = port
+        logger.debug("start server '%s' on %s:%s" % (key, host, self.port))
+        socket = eventlet.listen((host, self.port), backlog=backlog)
+        thread = self.pool.spawn(self._run, self.application, socket)
         if key:
             self.socket_info[key] = socket
             self.threads[key] = thread
@@ -118,8 +125,7 @@ class Server(object):
         logger.debug("_run called")
         eventlet_logger = logging.getLogger('eventlet.wsgi.server')
         eventlet.wsgi.server(socket, application, custom_pool=self.pool,
-                             log=WritableLogger(eventlet_logger,
-                             logging.root.level))
+                log=WritableLogger(eventlet_logger, logging.root.level))
 
 
 class SslServer(Server):
