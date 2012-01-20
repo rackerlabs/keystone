@@ -11,6 +11,7 @@ from xml.etree import ElementTree
 from keystone import server
 import keystone.backends.api as db_api
 from keystone.test import client as client_tests
+from keystone import utils
 
 logger = logging.getLogger(__name__)
 
@@ -218,8 +219,8 @@ class ApiTestCase(RestfulTestCase):
     Dict of configuration options to pass to the API controller
     """
     options = {
-        'backends': "keystone.backends.sqlalchemy",
-        'keystone.backends.sqlalchemy': {
+        'backends': "keystone:backends:sqlalchemy",
+        'keystone:backends:sqlalchemy': {
             # in-memory db
             'sql_connection': 'sqlite://',
             'verbose': False,
@@ -234,6 +235,8 @@ class ApiTestCase(RestfulTestCase):
         'keystone-service-admin-role': 'KeystoneServiceAdmin',
         'hash-password': 'True',
     }
+    # Populate the CONF module with these values
+    utils.set_configuration(options)
 
     def fixture_create_role(self, **kwargs):
         """
@@ -293,8 +296,8 @@ class ApiTestCase(RestfulTestCase):
         if self.use_server:
             return
 
-        self.service_api = server.ServiceApi(self.options)
-        self.admin_api = server.AdminApi(self.options)
+        self.service_api = server.ServiceApi()
+        self.admin_api = server.AdminApi()
 
         # ADMIN ROLE
         self.admin_role = self.fixture_create_role(

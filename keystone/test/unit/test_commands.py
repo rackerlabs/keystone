@@ -41,6 +41,7 @@ from keystone.manage2.commands import update_token
 from keystone.manage2.commands import update_user
 from keystone.manage2.commands import version
 from keystone.tools import buffout
+from keystone import utils
 
 
 LOGGER = logging.getLogger(__name__)
@@ -49,14 +50,16 @@ OPTIONS = {
     "keystone-service-admin-role": "KeystoneServiceAdmin",
     "keystone-admin-role": "KeystoneAdmin",
     "hash-password": "False",
-    'backends': 'keystone.backends.sqlalchemy',
-    'keystone.backends.sqlalchemy': {
+    'backends': 'keystone:backends:sqlalchemy',
+    'keystone:backends:sqlalchemy': {
         "sql_connection": "sqlite://",
         "backend_entities": ("['UserRoleAssociation', "
             "'Endpoints', 'Role', 'Tenant', 'User', "
             "'Credentials', 'EndpointTemplates', 'Token', "
             "'Service']"),
         "sql_idle_timeout": "30"}}
+# Configure the CONF module to match
+utils.set_configuration(OPTIONS)
 
 
 class CommandTestCase(unittest.TestCase):

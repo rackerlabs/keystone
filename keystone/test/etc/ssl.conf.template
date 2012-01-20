@@ -4,7 +4,7 @@ debug = False
 default_store = sqlite
 log_file = %(test_dir)s/keystone.log
 log_dir = %(test_dir)s
-backends = keystone.backends.sqlalchemy
+backends = keystone:backends:sqlalchemy
 extensions= osksadm, oskscatalog, hpidm
 service-header-mappings = {
     'nova' : 'X-Server-Management-Url',
@@ -24,7 +24,7 @@ keyfile = %(base_dir)s/examples/ssl/private/keystonekey.pem
 ca_certs = %(base_dir)s/examples/ssl/certs/ca.pem
 cert_required = True
 
-[keystone.backends.sqlalchemy]
+[keystone:backends:sqlalchemy]
 sql_connection = sqlite://
 sql_idle_timeout = 30
 backend_entities = ['Endpoints', 'Credentials',  'EndpointTemplates', 'Tenant', 'User', 'UserRoleAssociation', 'Role', 'Token', 'Service']
