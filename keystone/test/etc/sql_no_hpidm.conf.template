@@ -4,7 +4,7 @@ debug = False
 default_store = sqlite
 log_file = %(test_dir)s/keystone.log
 log_dir = %(test_dir)s
-backends = keystone.backends.sqlalchemy
+backends = keystone:backends:sqlalchemy
 extensions= osksadm, oskscatalog
 service-header-mappings = {
     'nova' : 'X-Server-Management-Url',
@@ -20,7 +20,7 @@ keystone-admin-role = Admin
 keystone-service-admin-role = KeystoneServiceAdmin
 hash-password = True
 
-[keystone.backends.sqlalchemy]
+[keystone:backends:sqlalchemy]
 sql_connection = sqlite://
 sql_idle_timeout = 30
 backend_entities = ['Endpoints', 'Credentials',  'EndpointTemplates', 'Tenant', 'User', 'UserRoleAssociation', 'Role', 'Token', 'Service']

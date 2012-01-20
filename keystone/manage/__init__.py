@@ -22,19 +22,27 @@
 Keystone Identity Server - CLI Management Interface
 """
 
-import sys
 import logging
 import optparse  # deprecated in 2.7, in favor of argparse
+import os
+import sys
+import tempfile
 
 from keystone import version
 import keystone.backends as db
 from keystone.backends.sqlalchemy import migration
+# Need to give it a different alias
+from keystone import config as new_config
 from keystone.common import config
 from keystone.logic.types import fault
 from keystone.manage import api
 from keystone import utils
 
 logger = logging.getLogger(__name__)
+
+# We're using two config systems here, so we need to be clear
+# which one we're working with.
+NEW_CONF = new_config.CONF
 
 
 # CLI feature set
@@ -88,14 +96,58 @@ def parse_args(args=None):
 
     # Parse command-line and load config
     (options, args) = config.parse_options(parser, args)
-    _config_file, conf = config.load_paste_config('admin', options, args)
+    _config_file, paste_conf = config.load_paste_config('admin', options, args)
 
-    config.setup_logging(options, conf)
+    config.setup_logging(options, paste_conf)
 
+    # We need to use the paste_conf settings to populate
+    # the NEW_CONF module before calling db.configure_backends().
+    create_new_config(paste_conf.global_conf)
     if not args or args[0] != 'database':
-        db.configure_backends(conf.global_conf)
-
+        db.configure_backends()
     return args
+
+
+def create_new_config(conf):
+    """
+    We need to extract out the values in the paste config and use them to
+    populate the new configuration that db.configure_backends() expects. This
+    is tricky since the values are duplicated in the paste_conf.
+    """
+    default_entries = []
+    backend_entries = []
+    backend_confs = []
+    backends = conf.get("backends", "").split(",")
+    for backend in [be for be in backends if be]:
+        backend_confs.append((backend.replace(".", ":"), conf.pop(backend)))
+    # Update the backends to the colon notation
+    conf["backends"] = conf["backends"].replace(".", ":")
+    default_keys = conf.keys()
+    default_entries = [(kk.replace("-", "_"), vv.replace("\n", "\n    "))
+            for kk, vv in conf.iteritems()
+            if not kk.startswith("__")]
+    # Create the conf file
+    out = ["[DEFAULT]"]
+    out.extend(["%s = %s" % (kk, vv) for kk, vv in default_entries])
+
+    for bconf_name, bconf_dict in backend_confs:
+        out.append("\n[%s]" % bconf_name)
+        # The paste config repeats the default keys in the backend sections,
+        # so we need to filter them out here.
+        bkeys = [key for key in bconf_dict.keys()
+                if key not in default_keys]
+        for bkey in bkeys:
+            bval = bconf_dict[bkey].replace("\n", "\n    ")
+            out.append("%s = %s" % (bkey, bval))
+
+    # This block creates a tempfile that the NEW_CONF object can read in.
+    NEW_CONF.reset()
+    fd, tmpname = tempfile.mkstemp()
+    os.close(fd)
+    with file(tmpname, "w") as fconf:
+        fconf.write("\n".join(out))
+    NEW_CONF(config_files=[tmpname])
+    os.remove(tmpname)
 
 
 def get_options(args=None):
@@ -141,8 +193,8 @@ def process(*args):
         if len(args) < min:
             raise optparse.OptParseError(msg)
 
-    optional_arg = (lambda args, x:
-        len(args) > x and str(args[x]).strip() or None)
+    def optional_arg(args, x):
+        return ((len(args) > x) and str(args[x]).strip()) or None
 
     if object_type == 'database':
         options = get_options(args)

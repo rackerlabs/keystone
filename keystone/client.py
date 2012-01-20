@@ -62,7 +62,6 @@ class ServiceClient(object):
         else:
             connection = httplib.HTTPConnection(self.auth_address)
         connection.request(verb, path, body=body, headers=headers)
-
         response = connection.getresponse()
         response.body = response.read()
         status_int = int(response.status)
@@ -168,6 +167,8 @@ class AdminClient(ServiceClient):
         }
 
         try:
+            from keystone import config
+            CONF = config.CONF
             response = self._http_request("GET", url, headers=headers)
         except keystone.common.exception.ClientError:
             return None
