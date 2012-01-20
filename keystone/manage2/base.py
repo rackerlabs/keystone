@@ -59,7 +59,7 @@ class BaseSqlalchemyCommand(BaseCommand):
     def __init__(self, options, *args, **kwargs):
         super(BaseSqlalchemyCommand, self).__init__(*args, **kwargs)
 
-        self.options = options['keystone.backends.sqlalchemy']
+        self.options = options['keystone:backends:sqlalchemy']
 
 
 # pylint: disable=E1101,W0223

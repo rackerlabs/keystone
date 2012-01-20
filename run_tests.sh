@@ -121,6 +121,8 @@ fi
 
 function run_tests {
   # Just run the test suites in current environment
+  echo $wrapper
+  echo $RUNTESTS
   ${wrapper} $RUNTESTS 2> run_tests.log
   # If we get some short import error right away, print the error log directly
   RESULT=$?

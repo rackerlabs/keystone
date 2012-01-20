@@ -26,46 +26,40 @@ calls from the request routers.
 import logging
 
 from keystone import utils
-from keystone.common import wsgi
+from keystone.controllers.base_controller import BaseController
 from keystone.logic import extension_reader
 from keystone.logic.types import auth
 from keystone.logic.types import fault
 from keystone.logic import service
-from . import get_marker_limit_and_url
 
 logger = logging.getLogger(__name__)  # pylint: disable=C0103
 
 
-class TokenController(wsgi.Controller):
+class TokenController(BaseController):
     """Controller for token related operations"""
 
-    def __init__(self, options):
-        self.options = options
-        self.identity_service = service.IdentityService(options)
+    def __init__(self):
+        self.identity_service = service.IdentityService()
         logger.debug("Token controller init with HP-IDM extension: %s" % \
-                extension_reader.is_extension_supported(self.options, 'hpidm'))
+                extension_reader.is_extension_supported('hpidm'))
 
     @utils.wrap_error
     def authenticate(self, req):
         credential_type = utils.detect_credential_type(req)
-
         if credential_type == "passwordCredentials":
             auth_with_credentials = utils.get_normalized_request_content(
                     auth.AuthWithPasswordCredentials, req)
             result = self.identity_service.authenticate(
                     auth_with_credentials)
             return utils.send_result(200, req, result)
-
         elif credential_type == "token":
             unscoped = utils.get_normalized_request_content(
                 auth.AuthWithUnscopedToken, req)
             result = self.identity_service.\
                 authenticate_with_unscoped_token(unscoped)
             return utils.send_result(200, req, result)
-
         elif credential_type in ["ec2Credentials", "OS-KSEC2-ec2Credentials"]:
             return self._authenticate_ec2(req)
-
         else:
             raise fault.BadRequestFault("Invalid credentials %s" %
                                         credential_type)
@@ -84,7 +78,7 @@ class TokenController(wsgi.Controller):
         """Validates the token, and that it belongs to the specified tenant"""
         belongs_to = req.GET.get('belongsTo')
         service_ids = None
-        if extension_reader.is_extension_supported(self.options, 'hpidm'):
+        if extension_reader.is_extension_supported('hpidm'):
             # service IDs are only relevant if hpidm extension is enabled
             service_ids = req.GET.get('HP-IDM-serviceId')
         return self.identity_service.validate_token(
@@ -109,7 +103,7 @@ class TokenController(wsgi.Controller):
 
     @utils.wrap_error
     def endpoints(self, req, token_id):
-        marker, limit, url = get_marker_limit_and_url(req)
+        marker, limit, url = self.get_marker_limit_and_url(req)
         return utils.send_result(200, req,
             self.identity_service.get_endpoints_for_token(
                 utils.get_auth_token(req),
