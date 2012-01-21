@@ -99,9 +99,9 @@ class ServiceAPI(api.BaseServiceAPI):
         if not session:
             session = get_session()
         result = session.query(models.Service).\
-        filter_by(name=name).\
-        filter_by(type=type).\
-        first()
+                filter_by(name=name).\
+                filter_by(type=type).\
+                first()
         return ServiceAPI.to_model(result)
 
     def get_all(self, session=None):
