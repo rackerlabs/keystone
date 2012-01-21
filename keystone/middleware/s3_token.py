@@ -1,6 +1,8 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
 
-# Copyright 2011 Akira YOSHIYAMA <yosshy@debian.or.jp>
+# Copyright 2010 United States Government as represented by the
+# Administrator of the National Aeronautics and Space Administration.
+# Copyright 2011,2012 Akira YOSHIYAMA <akirayoshiyama@gmail.com>
 # All Rights Reserved.
 #
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -88,7 +90,7 @@ class S3Token(object):
             return self.app
         try:
             account, signature = \
-                req.headers['Authorization'].split(' ')[-1].rsplit(':',1)
+                req.headers['Authorization'].split(' ')[-1].rsplit(':', 1)
             #del(req.headers['Authorization'])
         except Exception:
             return self.app
@@ -99,7 +101,7 @@ class S3Token(object):
         #    account = access
 
         # Authenticate the request.
-        creds = {'s3Credentials': {'access': account,
+        creds = {'OS-KSS3-s3Credentials': {'access': account,
                                     'signature': signature,
                                     'verb': req.method,
                                     'path': req.path,
@@ -107,13 +109,14 @@ class S3Token(object):
                                    }}
 
         if req.headers.get('Content-Type'):
-            creds['s3Credentials']['content_type'] = req.headers['Content-Type']
+            creds['s3Credentials']['content_type'] =
+            req.headers['Content-Type']
         if req.headers.get('Content-MD5'):
             creds['s3Credentials']['content_md5'] = req.headers['Content-MD5']
         xheaders = {}
         for key, value in req.headers.iteritems():
             if key.startswith('X-Amz'):
-                 xheaders[key.lower()] = value
+                xheaders[key.lower()] = value
         if xheaders:
             creds['s3Credentials']['xheaders'] = xheaders
 
@@ -124,7 +127,7 @@ class S3Token(object):
         else:
             conn = httplib.HTTPSConnection(self.auth_host, self.auth_port)
 
-        conn.request('POST', '/v2.0/s3tokens', body=creds_json, headers=headers)
+        conn.request('POST', '/v2.0/tokens', body=creds_json, headers=headers)
         response = conn.getresponse().read()
         conn.close()
 
@@ -147,6 +150,7 @@ class S3Token(object):
         req.headers['X-Auth-Token'] = token_id
         req.headers['X-Endpoint-Path'] = endpoint_path
         return self.app
+
 
 def filter_factory(global_conf, **local_conf):
     """Returns a WSGI filter app for use with paste.deploy."""

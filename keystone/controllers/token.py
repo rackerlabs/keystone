@@ -66,6 +66,9 @@ class TokenController(wsgi.Controller):
         elif credential_type in ["ec2Credentials", "OS-KSEC2-ec2Credentials"]:
             return self._authenticate_ec2(req)
 
+        elif credential_type in ["s3Credentials", "OS-KSS3-s3Credentials"]:
+            return self._authenticate_s3(req)
+
         else:
             raise fault.BadRequestFault("Invalid credentials %s" %
                                         credential_type)
@@ -82,6 +85,10 @@ class TokenController(wsgi.Controller):
 
     @utils.wrap_error
     def authenticate_s3(self, req):
+        return self._authenticate_s3(req)
+
+    def _authenticate_s3(self, req):
+        """Undecorated S3 handler"""
         creds = utils.get_normalized_request_content(auth.S3Credentials, req)
         return utils.send_result(200, req,
             self.identity_service.authenticate_s3(creds))

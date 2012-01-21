@@ -137,10 +137,12 @@ class Signer(object):
         LOG.debug('base64 encoded digest: %s', b64)
         return b64
 
-    def _calc_signature_s3(self, verb, expire, path, content_type, content_md5, xheaders):
+    def _calc_signature_s3(self, verb, expire, path, content_type, content_md5,
+                           xheaders):
         """Generate AWS signature for S3 string."""
         LOG.debug('using _calc_signature_s3')
-        string_to_sign = '%s\n%s\n%s\n%s\n' % (verb, content_md5, content_type, expire)
+        string_to_sign = '%s\n%s\n%s\n%s\n' % (
+                         verb, content_md5, content_type, expire)
         if xheaders:
             xheader_keys = xheaders.keys()
             xheader_keys.sort()

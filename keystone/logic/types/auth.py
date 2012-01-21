@@ -307,7 +307,8 @@ class S3Credentials(object):
 
      """
 
-    def __init__(self, access, signature, verb, path, expire, content_type, content_md5, xheaders):
+    def __init__(self, access, signature, verb, path, expire, content_type,
+                 content_md5, xheaders):
         self.access = access
         self.signature = signature
         self.verb = verb
@@ -323,8 +324,14 @@ class S3Credentials(object):
             dom = etree.Element("root")
             dom.append(etree.fromstring(xml_str))
             root = dom.find("{http://docs.openstack.org/identity/api/v2.0}"
-                            "S3Credentials")
-            if root == None:
+                            "auth")
+            xmlns = "http://docs.openstack.org/identity/api/ext/OS-KSS3/v1.0"
+            if root is None:
+                root = dom.find("{%s}s3Credentials" % xmlns)
+            else:
+                root = root.find("{%s}s3Credentials" % xmlns)
+
+            if root is None:
                 raise fault.BadRequestFault("Expecting s3Credentials")
             access = root.get("access")
             if access == None:
@@ -344,7 +351,8 @@ class S3Credentials(object):
             content_type = root.get("content_type", '')
             content_md5 = root.get("content_md5", '')
             xheaders = root.get("xheaders", None)
-            return S3Credentials(access, signature, verb, path, expire, content_type, content_md5, xheaders)
+            return S3Credentials(access, signature, verb, path, expire,
+                                 content_type, content_md5, xheaders)
         except etree.LxmlError as e:
             raise fault.BadRequestFault("Cannot parse password credentials",
                                         str(e))
@@ -352,10 +360,19 @@ class S3Credentials(object):
     @staticmethod
     def from_json(json_str):
         try:
-            obj = json.loads(json_str)
-            if not "s3Credentials" in obj:
-                raise fault.BadRequestFault("Expecting S3Credentials")
-            cred = obj["s3Credentials"]
+            root = json.loads(json_str)
+            if "auth" in root:
+                obj = root['auth']
+            else:
+                obj = root
+
+            if "OS-KSS3-s3Credentials" in obj:
+                cred = obj["OS-KSS3-s3Credentials"]
+            elif "s3Credentials" in obj:
+                cred = obj["s3Credentials"]
+            else:
+                raise fault.BadRequestFault("Expecting s3Credentials")
+
             # Check that fields are valid
             invalid = [key for key in cred if key not in\
                        ['username', 'access', 'signature', 'verb', 'expire',
@@ -381,10 +398,12 @@ class S3Credentials(object):
             content_type = cred.get("content_type", '')
             content_md5 = cred.get("content_md5", '')
             xheaders = cred.get("xheaders", None)
-            return S3Credentials(access, signature, verb, path, expire, content_type, content_md5, xheaders)
+            return S3Credentials(access, signature, verb, path, expire,
+                                 content_type, content_md5, xheaders)
         except (ValueError, TypeError) as e:
             raise fault.BadRequestFault("Cannot parse password credentials",
                                         str(e))
+
 
 class Tenant(object):
     """Provides the scope of a token"""

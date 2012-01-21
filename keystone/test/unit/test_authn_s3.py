@@ -29,11 +29,9 @@ LOGGER = logging.getLogger('test.unit.test_s3_authn')
 class S3AuthnMethods(base.ServiceAPITest):
 
     @jsonify
-    def test_authn_s3_success_json(self):
-        """
-        Test that good s3 credentials returns a 200 OK
-        """
-
+    def test_valid_authn_s3_success_json(self):
+        """Tests correct syntax with {"auth":} wrapper and extension """
+        url = "/tokens"
         access = "xpd285.access"
         secret = "345fgi.secret"
         kwargs = {
@@ -44,7 +42,134 @@ class S3AuthnMethods(base.ServiceAPITest):
                   "secret": secret,
                  }
         self.fixture_create_credentials(**kwargs)
-        url = "/s3tokens"
+        req = self.get_request('POST', url)
+        params = {
+            "x-amz-acl": "public-read-write",
+            "x-amz-server-side-encryption": "AES256",
+        }
+        credentials = {
+            "access": access,
+            "verb": "PUT",
+            "path": "/test.txt",
+            "expire": 0,
+            "content_type": "text/plain",
+            "content_md5": "1234567890abcdef",
+            "xheaders": params,
+            "signature": None,
+        }
+        sign = signer.Signer(secret)
+        obj_creds = auth.S3Credentials(**credentials)
+        credentials['signature'] = sign.generate(obj_creds, s3=True)
+        body = {
+            "auth": {
+                "OS-KSS3-s3Credentials": credentials,
+            }
+        }
+        req.body = json.dumps(body)
+        self.get_response()
+
+        expected = {
+            u'access': {
+                u'token': {
+                    u'id': self.auth_token_id,
+                    u'expires': self.expires.strftime("%Y-%m-%dT%H:%M:%S.%f")},
+                u'user': {
+                    u'id': unicode(self.auth_user['id']),
+                    u'name': self.auth_user['name'],
+                    u'roles': [{u'description': u'regular role',
+                        u'id': u'0',
+                        u'name': u'regular_role'}]}}}
+        self.assert_dict_equal(expected, json.loads(self.res.body))
+        self.status_ok()
+
+    @jsonify
+    def test_authn_s3_success_json(self):
+        """Tests syntax with {"auth":} wrapper """
+        self._auth_to_url(url="/s3tokens")
+
+    @jsonify
+    def test_authn_s3_success_json_contract(self):
+        """Tests syntax with {"auth":} wrapper """
+        self._auth_to_url(url="/tokens")
+
+    def _auth_to_url(self, url):
+        """
+        Test that good s3 credentials returns a 200 OK
+        """
+        access = "xpd285.access"
+        secret = "345fgi.secret"
+        kwargs = {
+                  "user_name": self.auth_user['name'],
+                  "tenant_id": self.auth_user['tenant_id'],
+                  "type": "EC2",
+                  "key": access,
+                  "secret": secret,
+                 }
+        self.fixture_create_credentials(**kwargs)
+        req = self.get_request('POST', url)
+        params = {
+            "x-amz-acl": "public-read-write",
+            "x-amz-server-side-encryption": "AES256",
+        }
+        credentials = {
+            "access": access,
+            "verb": "PUT",
+            "path": "/test.txt",
+            "expire": 0,
+            "content_type": "text/plain",
+            "content_md5": "1234567890abcdef",
+            "xheaders": params,
+            "signature": None,
+        }
+        sign = signer.Signer(secret)
+        obj_creds = auth.S3Credentials(**credentials)
+        credentials['signature'] = sign.generate(obj_creds, s3=True)
+        body = {
+            "auth": {
+                "s3Credentials": credentials,
+            }
+        }
+        req.body = json.dumps(body)
+        self.get_response()
+
+        expected = {
+            u'access': {
+                u'token': {
+                    u'id': self.auth_token_id,
+                    u'expires': self.expires.strftime("%Y-%m-%dT%H:%M:%S.%f")},
+                u'user': {
+                    u'id': unicode(self.auth_user['id']),
+                    u'name': self.auth_user['name'],
+                    u'roles': [{u'description': u'regular role',
+                        u'id': u'0',
+                        u'name': u'regular_role'}]}}}
+        self.assert_dict_equal(expected, json.loads(self.res.body))
+        self.status_ok()
+
+    @jsonify
+    def test_old_authn_s3_success_json(self):
+        """Tests old syntax without {"auth":} wrapper """
+        self._old_auth_to_url(url="/s3tokens")
+
+    @jsonify
+    def test_old_authn_s3_success_json_contract(self):
+        """Tests old syntax without {"auth":} wrapper """
+        self._old_auth_to_url(url="/tokens")
+
+    def _old_auth_to_url(self, url):
+        """
+        Test that old s3 credentials returns a 200 OK
+        """
+        access = "xpd285.access"
+        secret = "345fgi.secret"
+        kwargs = {
+                  "user_name": self.auth_user['name'],
+                  "tenant_id": self.auth_user['tenant_id'],
+                  "type": "EC2",
+                  "key": access,
+                  "secret": secret,
+                 }
+        self.fixture_create_credentials(**kwargs)
         req = self.get_request('POST', url)
         params = {
             "x-amz-acl": "public-read-write",
@@ -77,8 +202,9 @@ class S3AuthnMethods(base.ServiceAPITest):
                 u'user': {
                     u'id': unicode(self.auth_user['id']),
                     u'name': self.auth_user['name'],
-                    u'roles': []}}}
-
+                    u'roles': [{u'description': u'regular role',
+                        u'id': u'0',
+                        u'name': u'regular_role'}]}}}
         self.assert_dict_equal(expected, json.loads(self.res.body))
         self.status_ok()
 
