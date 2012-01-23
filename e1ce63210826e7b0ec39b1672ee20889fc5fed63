@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEH///5c\u003d",
+        "filename": "keystone/routers/service.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-23T15:12:59Z",
+      "side": 1,
+      "message": "The only reason /ec2tokens is there is because some clients already use it. Anyone modifying a client (to use s3, for example),. should remove the old ec2 code.\nWe should not introduce a now divergence from the core contract with this.",
+      "parentUuid": "AAAAEH///8E\u003d",
+      "revId": "e1ce63210826e7b0ec39b1672ee20889fc5fed63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAD3//7tk\u003d",
         "filename": "keystone/test/unit/test_authn_s3.py",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "The same as test_authn_ec2.py.\nSee below:\nhttps://github.com/openstack/keystone/blob/master/keystone/test/unit/test_authn_ec2.py#L268",
       "parentUuid": "AAAAD3//7tk\u003d",
+      "revId": "e1ce63210826e7b0ec39b1672ee20889fc5fed63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEH///5U\u003d",
+        "filename": "keystone/test/unit/test_authn_s3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2012-01-23T15:12:59Z",
+      "side": 1,
+      "message": "Same comment. The need for us to maintain /ec2tokens for compatibility does not exist for /s3tokens.",
+      "parentUuid": "AAAAEH///8I\u003d",
       "revId": "e1ce63210826e7b0ec39b1672ee20889fc5fed63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
