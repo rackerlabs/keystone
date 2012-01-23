@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEH///8E\u003d",
+        "filename": "keystone/routers/service.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 659
+      },
+      "writtenOn": "2012-01-23T11:15:46Z",
+      "side": 1,
+      "message": "I think /ec2tokens is the same with it.\nI want to remove /s3tokens when /ec2tokens is removed because these capabilities should be synchronized.",
+      "parentUuid": "AAAAD3//7tg\u003d",
+      "revId": "e1ce63210826e7b0ec39b1672ee20889fc5fed63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAD3//7tk\u003d",
         "filename": "keystone/test/unit/test_authn_s3.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2012-01-22T04:48:06Z",
       "side": 1,
       "message": "/tokens?",
+      "revId": "e1ce63210826e7b0ec39b1672ee20889fc5fed63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEH///8I\u003d",
+        "filename": "keystone/test/unit/test_authn_s3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 659
+      },
+      "writtenOn": "2012-01-23T11:15:46Z",
+      "side": 1,
+      "message": "The same as test_authn_ec2.py.\nSee below:\nhttps://github.com/openstack/keystone/blob/master/keystone/test/unit/test_authn_ec2.py#L268",
+      "parentUuid": "AAAAD3//7tk\u003d",
       "revId": "e1ce63210826e7b0ec39b1672ee20889fc5fed63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
