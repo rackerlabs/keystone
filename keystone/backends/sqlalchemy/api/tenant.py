@@ -43,11 +43,6 @@ class TenantAPI(api.BaseTenantAPI):
         if 'description' in values:
             values['desc'] = values['description']
             del values['description']
-        if 'enabled' in values:
-            if values['enabled'] in [1, 'true', 'True', True]:
-                values['enabled'] = 1
-            else:
-                values['enabled'] = 0
 
     @staticmethod
     def to_model(ref):
