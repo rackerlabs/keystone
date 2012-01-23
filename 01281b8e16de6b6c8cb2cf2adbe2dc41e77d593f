@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEH///mE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-23T21:43:52Z",
+      "side": 1,
+      "message": "This giant try/except block already appears twice... should there not be a function or decorator to wrap calls to http_connect?",
+      "revId": "01281b8e16de6b6c8cb2cf2adbe2dc41e77d593f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEH///nE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-23T21:43:52Z",
+      "side": 1,
+      "message": "Are exceptions not logged at the highest level anyway?\n\n    msg \u003d None\n    if exc.errno \u003d\u003d errno.ECONNREFUSED:\n        msg \u003d \"Keystone server not responding...\"\n    else:\n        msg \u003d \"Error trying to detect...\"\n    logger.exception(exc)\n    logger.error(msg)\n    raise KeystoneUnreachable(msg)",
+      "revId": "01281b8e16de6b6c8cb2cf2adbe2dc41e77d593f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEH///ms\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-23T21:43:52Z",
+      "side": 1,
+      "message": "Why is this one debug?\n\n    ... debug(\"Error ...",
+      "revId": "01281b8e16de6b6c8cb2cf2adbe2dc41e77d593f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEH///mY\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-23T21:43:52Z",
+      "side": 1,
+      "message": "These \u003d\u003d True and !\u003d True are a bit redundant ;)",
+      "revId": "01281b8e16de6b6c8cb2cf2adbe2dc41e77d593f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEH///mk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-23T21:43:52Z",
+      "side": 1,
+      "message": "8 extra columns of indentation?",
+      "revId": "01281b8e16de6b6c8cb2cf2adbe2dc41e77d593f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEH///l4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-01-23T21:43:52Z",
+      "side": 1,
+      "message": "What\u0027s 8090, anyway?",
+      "revId": "01281b8e16de6b6c8cb2cf2adbe2dc41e77d593f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
