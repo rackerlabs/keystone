@@ -1,7 +1,7 @@
 """
 Data migration to populate users.uid with existing users.id values.
 """
-# pylint: disable=C0103
+# pylint: disable=C0103,R0108
 
 
 import sqlalchemy

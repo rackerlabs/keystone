@@ -1,7 +1,7 @@
 """
 Schema migration to enforce uniqueness on tenants.uid
 """
-# pylint: disable=C0103
+# pylint: disable=C0103,R0108
 
 
 import sqlalchemy
