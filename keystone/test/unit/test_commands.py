@@ -1,6 +1,7 @@
 import argparse
 import datetime
 import logging
+import re
 import unittest2 as unittest
 import uuid
 
@@ -100,16 +101,10 @@ class CommandTestCase(unittest.TestCase):
     def assertTableContainsRow(self, table, row):
         """Assumes that row[0] is a unique identifier for the row"""
         # ensure we're comparing str to str
-        row = [str(col) for col in row]
+        row = ' | '.join([str(col) for col in row])
 
         # ensure the data we're looking for is *somewhere* in the table
-        self.assertIn(row[0], table)
-
-        # find the matching row
-        matching_row = [r for r in table.split("\n") if row[0] in r][0]
-        matching_row = [c for c in matching_row.split() if c.strip() != '|']
-
-        self.assertEquals(row, matching_row)
+        self.assertIn(row, re.sub("\s+", " ", table))
 
     def _create_user(self):
         # TODO(dolph): these ob.clear()'s need to be cleaned up
@@ -836,7 +831,7 @@ class TestCreateTokenCommand(CommandTestCase):
 
         self.run_cmd(list_tokens)
         self.assertTableContainsRow(self.ob.read(), [token_id, user_id,
-            str(None), self.tomorrow])
+            str(None), self.tomorrow[:-5]])
 
     def test_create_scoped_token(self):
         user_id = self._create_user()
@@ -851,7 +846,7 @@ class TestCreateTokenCommand(CommandTestCase):
 
         self.run_cmd(list_tokens)
         self.assertTableContainsRow(self.ob.read(), [token_id, user_id,
-            tenant_id, self.tomorrow])
+            tenant_id, self.tomorrow[:-5]])
 
     def test_create_expired_token(self):
         user_id = self._create_user()
@@ -866,7 +861,7 @@ class TestCreateTokenCommand(CommandTestCase):
 
         self.run_cmd(list_tokens)
         self.assertTableContainsRow(self.ob.read(), [token_id, user_id,
-            str(None), expiration])
+            str(None), expiration[:-5]])
 
     def test_create_specific_token_id(self):
         token_id = uuid.uuid4().hex
@@ -880,7 +875,7 @@ class TestCreateTokenCommand(CommandTestCase):
 
         self.run_cmd(list_tokens)
         self.assertTableContainsRow(self.ob.read(), [token_id, user_id,
-            str(None), self.tomorrow])
+            str(None), self.tomorrow[:-5]])
 
 
 class TestUpdateTokenCommand(CommandTestCase):
@@ -904,7 +899,7 @@ class TestUpdateTokenCommand(CommandTestCase):
 
         self.run_cmd(list_tokens)
         self.assertTableContainsRow(self.ob.read(), [token_id, user_id,
-            tenant_id, expiration])
+            tenant_id, expiration[:-5]])
 
 
 class TestListTokensCommand(CommandTestCase):
