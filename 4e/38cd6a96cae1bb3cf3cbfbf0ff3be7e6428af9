@@ -1,0 +1,10 @@
+Verified+1: Jenkins
+Code-Review+1: Dolph Mathews <dolph.mathews@gmail.com>
+Approved+1: Ziad Sawalha <ziad.sawalha@rackspace.com>
+Code-Review+2: Ziad Sawalha <ziad.sawalha@rackspace.com>
+Code-Review+1: Ed Leafe <ed@leafe.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 25 Jan 2012 17:18:44 +0000
+Reviewed-on: https://review.openstack.org/3403
+Project: openstack/keystone
+Branch: refs/heads/milestone-proposed
