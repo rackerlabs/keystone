@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEH//+MA\u003d",
+        "filename": "keystone/test/unit/test_commands.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-01-25T16:57:43Z",
+      "side": 0,
+      "message": "It would be cleaner to make a method that returns the calculated tomorrow, rather than repeating the same code 3 times. \nActually, this is an excellent use case for a property:\n\nclass TestCreateTokenCommand(CommandTestCase):\n\n    @property\n    def tomorrow(self):\n        return (datetime.datetime.utcnow() + datetime.timedelta(days\u003d1)).strftime(\u0027%Y-%m-%dT%H:%M\u0027)\n\nThen all the existing references to \u0027self.tomorrow\u0027 will still work, but it will get a fresh value each time.",
+      "revId": "b1581a1852142548814d72deb0eebee238b4fdbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
