@@ -1,0 +1,3 @@
+sql_connection.patch
+ftbfs_guard_main_call.patch
+keystone-ssl.patch

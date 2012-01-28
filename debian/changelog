@@ -1,0 +1,213 @@
+keystone (2012.1~e3-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+  * Dropped debian/patches/temp_fix_keystone_manage.patch: No longer needed.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 26 Jan 2012 10:53:46 -0500
+
+keystone (2012.1~e3~20120113.1511-0ubuntu1) precise; urgency=low
+
+  [Chuck Short]
+  * New upstream version.
+  * debian/control: Add python-migrate as a build depenedency. 
+    (LP: #909941)
+  * debian/keystone.dirs: Add cache directory for PTYHON_EGGS
+  * debian/control: Add ssl-cert for ssl certificates.
+  * debian/patches/keystone-ssl.patch: Point ssl config to the 
+    snakeoil certificates.
+  * debian/control: Add python-nose as a build dependency.
+
+  [Adam Gandleman]
+  * debian/python-keystone.postinst: Also install *.egg-info (LP: #907518) 
+  * debian/patches/temp_fix_keyston_manage.patch: Allow keystone to work 
+    with current snapshot.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 13 Jan 2012 10:09:46 +0100
+
+keystone (2012.1~e2-0ubuntu1) precise; urgency=low
+
+  * New upstream version.
+  * debian/control: Clean up dependencies. 
+  * debian/pydist-overrides: Dont install python-coverage.
+  * debian/python-keystone.install: Don't ship examples in python
+    packaging. (Debian Bug: #649907)
+  * debian/man/*: Add manpages.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 16 Dec 2011 15:38:05 -0500
+
+
+keystone (2012.1~e2~20111209.1405-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 09 Dec 2011 16:27:35 -0500
+
+keystone (2012.1~e2~20111202.1379-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    + Fix dependencies. 
+  * keystone.postinst:
+    + Fix bashism.
+    + Remove keystone-manage db sync.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 02 Dec 2011 09:40:35 -0500
+
+keystone (2012.1~e2~20111125.1340-0ubuntu1) precise; urgency=low
+
+  * New upstream release. 
+  * debian/control: Dropped dependency on python-pysqlite.
+  * debian/rules: Dont fail when building docs.
+  * debian/rules: Fix doc build.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 25 Nov 2011 11:19:34 -0500
+
+keystone (2012.1~e2~20111110.1301-0ubuntu2) precise; urgency=low
+
+  * debian/patches/ftbfs_guard_main_call.patch:
+    - Fix FTBFS by guarding a main() call to only run when the module is
+      run as __main__, not when imported during documentation generation.
+
+ -- Michael Terry <mterry@ubuntu.com>  Mon, 21 Nov 2011 16:43:45 -0500
+
+keystone (2012.1~e2~20111118.1330-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 18 Nov 2011 13:50:20 -0500
+
+keystone (2012.1~e2~20111110.1301-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+  * debian/control: 
+    + Added pep8 for tests.
+    + Updated run time dependencies.
+  * debian/keystone.postinst:
+    + Add keystone group.
+    + Setup permissions a bit better.
+    + Setup keystone db.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 11 Nov 2011 11:51:27 -0500
+
+keystone (1.0~d4~20111020.1244-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+  * Dropped:
+    + add-missing-extension-files.patch
+    + foreign_key.patch
+  * dh_python2 transition.
+  * Update dependencies.
+  * Dont fail if tests fail.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 27 Oct 2011 11:06:53 -0400
+
+keystone (1.0~d4~20110909.1108-0ubuntu4) precise; urgency=low
+
+  * debian/patches/sql_connection.patch: Correct keystone.db path, 
+    as identified by Atul Jha. (LP: #878282) 
+
+ -- Dave Walker (Daviey) <DaveWalker@ubuntu.com>  Fri, 21 Oct 2011 13:17:51 +0100
+
+keystone (1.0~d4~20110909.1108-0ubuntu3) oneiric; urgency=low
+
+  [Dustin Kirkland]
+  * debian/copyright:
+    - fix copyright file, replace s/glance/keystone/
+
+  [Juan Negron]
+  * Added debian/patches/foreign_key.patch:  Fixed bug which attempted to to
+    obtain a service_id by passing an Integer rather than a String to the
+    Column function in models.py. (LP: #861682)
+
+  [Brian Thomason]
+  * Removed "|| true" from test execution in debian/rules as it was masking a
+    failure.  After investigating the failure further, it was found that two
+    files were missing from the contrib/extensions/service/raxkey dir that were
+    a part of trunk at the time. (LP: #861813)
+    - added keystone/contrib/extensions/service/raxkey/extension.xml
+    - added keystone/contrib/extensions/service/raxkey/extension.json
+
+ -- Brian Thomason <brian.thomason@canonical.com>  Wed, 28 Sep 2011 15:30:19 -0400
+
+keystone (1.0~d4~20110909.1108-0ubuntu2) oneiric; urgency=low
+
+  [Chuck Short]
+  * Install configuration files. 
+  * debian/patches/sql_connection.patch: 
+    Specify a path for the sqlite database.
+  * debian/rules: Add get-origs-source.
+
+  [Juan L. Negron]
+  * debian/control, debian/keystone.install:
+    + Update dependencies for python-keystone.
+    + Reanamed logging config file to match upstream.
+      (LP: #860778)
+
+  [Monty Taylor]
+  * Added a conditional on dh_python2 so that the package works on lucid.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Tue, 27 Sep 2011 15:36:35 -0400
+
+keystone (1.0~d4~20110909.1108-0ubuntu1) UNRELEASED; urgency=low
+
+  * debian/rules:
+    + Add get-orig-source. 
+  * debian/keystone.install:
+    + Ship configuration files.
+  + debian/copyright:
+    + Change glance to keystone.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 27 Oct 2011 10:02:39 -0400
+
+keystone (1.0~d4~20110909.1108-0ubuntu2) oneiric; urgency=low
+
+  * Added a conditional on dh_python2 so that the package works on lucid.
+  * Added python-passlib build-depend. (LP: #862576)
+
+ -- Monty Taylor <mordred@inaugust.com>  Thu, 29 Sep 2011 11:56:36 -0700
+
+keystone (1.0~d4~20110909.1108-0ubuntu1) oneiric; urgency=low
+
+  [Chuck Short]
+  * New upstream release.
+  * debian/control:
+    + Bump standards to 3.9.2.
+    + Fix lintian warnings.
+    + Update maintainer.
+  * debian/rules: Dont fail to build if tests fail.
+  
+  [Dan Prince]
+  * Fix debian/rules file so it works with nodoc.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 09 Sep 2011 16:25:30 -0400
+
+keystone (1.0~d4~20110823.1078-0ubuntu0) UNRELEASED; urgency=low
+
+  * Add python-mox as a build depend.
+
+ -- Monty Taylor <mordred@inaugust.com>  Fri, 09 Sep 2011 11:00:27 -0700
+
+keystone (1.0~d4~20110819.1045-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream release.
+  * Removed fix_tests patch (don't need it any more)
+  * Fixed debian/watch file.
+  * Use root level run_tests now.
+  * We need a special version of webob.
+  * Added adduser depend.
+  * Added python-sphinx build depend.
+
+ -- Monty Taylor <mordred@inaugust.com>  Wed, 24 Aug 2011 09:05:05 -0700
+
+keystone (1.0~20110713.1-0ubuntu1~ppa1) UNRELEASED; urgency=low
+
+  * Add keystone-docs package.
+
+ -- Soren Hansen <soren@ubuntu.com>  Thu, 14 Jul 2011 10:47:13 +0200
+
+keystone (1.0~20110711.1-0ubuntu1~ppa1) oneiric; urgency=low
+
+  * Initial upload.
+
+ -- Soren Hansen <soren@ubuntu.com>  Wed, 25 May 2011 15:57:15 +0200
+
