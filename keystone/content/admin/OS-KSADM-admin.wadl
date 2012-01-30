@@ -26,7 +26,6 @@
 		">
 
     <grammars>
-        <include href="../common/xsd/api.xsd"/>
         <include href="../common/xsd/api-common.xsd"/>
         <include href="../common/xsd/OS-KSADM.xsd" />
     </grammars>
@@ -291,6 +290,7 @@
                 <doc xml:lang="EN">
                     <xsdxt:code href="../common/samples/userwithoutid.xml"/>
                 </doc>
+                <param name="user" style="plain" path="/identity:user" type="OS-KSADM:UserForCreate"/>
             </representation>
             <representation mediaType="application/json">
                 <doc xml:lang="EN">
@@ -368,7 +368,7 @@
                 <doc xml:lang="EN">
                     <xsdxt:code href="../common/samples/userwithenabledonly.xml"/>
                 </doc>
-                <param name="user" style="plain" path="/" type="OS-KSADM:UserWithOnlyEnabled"/></representation>
+                <param name="user" style="plain" path="/identity:user" type="OS-KSADM:UserWithOnlyEnabled"/></representation>
             <representation mediaType="application/json">
                 <doc xml:lang="EN">
                     <xsdxt:code href="../common/samples/userwithenabledonly.json"/>
