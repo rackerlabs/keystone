@@ -65,9 +65,9 @@ class TestQuantumMiddleware(common.MiddlewareTestCase):
                               client_tests.TEST_TARGET_SERVER_SERVICE_ADDRESS,
                               client_tests.TEST_TARGET_SERVER_SERVICE_PORT)),
                 'auth_version': '2.0',
-                'auth_admin_token': self.admin_token,
-                'auth_admin_user': self.admin_username,
-                'auth_admin_password': self.admin_password}
+                'admin_token': self.admin_token,
+                'admin_user': self.admin_username,
+                'admin_password': self.admin_password}
         super(TestQuantumMiddleware, self).setUp(quantum_auth_token, settings)
 
 
