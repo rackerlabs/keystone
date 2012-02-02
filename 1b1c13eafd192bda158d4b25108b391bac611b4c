@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn///08\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2012-02-02T17:03:18Z",
+      "side": 1,
+      "message": "Might as well remove this line, rather than just commenting it out…",
+      "revId": "1b1c13eafd192bda158d4b25108b391bac611b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn///04\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2012-02-02T17:03:18Z",
+      "side": 1,
+      "message": "I\u0027d like it if you could remove all the commented-out returns…",
+      "revId": "1b1c13eafd192bda158d4b25108b391bac611b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn///0s\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2012-02-02T17:03:18Z",
+      "side": 1,
+      "message": "I tend to prefer the \u0027{\u0027 be on the same line as the key, but that\u0027s just my style preference; I\u0027m not going to hold up the patch for *that*!",
+      "revId": "1b1c13eafd192bda158d4b25108b391bac611b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn///0o\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2012-02-02T17:03:18Z",
+      "side": 1,
+      "message": "I would like to see a trailing comma here…",
+      "revId": "1b1c13eafd192bda158d4b25108b391bac611b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn///0w\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2012-02-02T17:03:18Z",
+      "side": 1,
+      "message": "This backslash is not required and should go away.",
+      "revId": "1b1c13eafd192bda158d4b25108b391bac611b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn///0k\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2012-02-02T17:03:18Z",
+      "side": 1,
+      "message": "Why not default retry to True?  Then you don\u0027t need to change the call to _verify_claims() up above.",
+      "revId": "1b1c13eafd192bda158d4b25108b391bac611b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn///0g\u003d",
+        "filename": "keystone/middleware/quantum_auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2012-02-02T17:03:18Z",
+      "side": 1,
+      "message": "This worries me a little, only because users will have to update their configuration files.",
+      "revId": "1b1c13eafd192bda158d4b25108b391bac611b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
