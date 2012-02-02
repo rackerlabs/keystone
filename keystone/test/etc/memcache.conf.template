@@ -6,7 +6,7 @@ log_file = %(test_dir)s/keystone.log
 log_dir = %(test_dir)s
 backends = keystone.backends.sqlalchemy,keystone.backends.memcache
 extensions= osksadm, oskscatalog, hpidm
-service-header-mappings = {
+service_header_mappings = {
     'nova' : 'X-Server-Management-Url',
     'swift' : 'X-Storage-Url',
     'cdn' : 'X-CDN-Management-Url'}
@@ -16,8 +16,8 @@ service_ssl = False
 admin_host = 0.0.0.0
 admin_port = %(admin_port)s
 admin_ssl = False
-keystone-admin-role = Admin
-keystone-service-admin-role = KeystoneServiceAdmin
+keystone_admin_role = Admin
+keystone_service_admin_role = KeystoneServiceAdmin
 
 [keystone.backends.sqlalchemy]
 sql_connection = sqlite://
