@@ -1,0 +1,8 @@
+Verified+1: James E. Blair <corvus@inaugust.com>
+Approved+1: Mark McLoughlin <markmc@redhat.com>
+Code-Review+2: Mark McLoughlin <markmc@redhat.com>
+Submitted-by: James E. Blair <corvus@inaugust.com>
+Submitted-at: Fri, 03 Feb 2012 07:40:02 +0000
+Reviewed-on: https://review.openstack.org/3738
+Project: openstack/keystone
+Branch: refs/heads/stable/diablo
