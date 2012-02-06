@@ -68,8 +68,6 @@ class S3Token(object):
         """ Common initialization code """
 
         #TODO(ziad): maybe we refactor this into a superclass
-        self._init_protocol_common(app, conf)  # Applies to all protocols
-        self._init_protocol(conf)  # Specific to this protocol
         self.app = None
         self.auth_port = None
         self.auth_protocol = None
@@ -77,6 +75,8 @@ class S3Token(object):
         self.auth_host = None
         self.admin_token = None
         self.conf = None
+        self._init_protocol_common(app, conf)  # Applies to all protocols
+        self._init_protocol(conf)  # Specific to this protocol
 
     #@webob.dec.wsgify(RequestClass=webob.exc.Request)
     # pylint: disable=R0914
