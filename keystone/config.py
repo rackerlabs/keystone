@@ -156,3 +156,6 @@ register_str('driver', group='identity')
 register_str('driver', group='policy')
 register_str('driver', group='token')
 register_str('driver', group='ec2')
+
+# memcache options
+register_str('servers', group='memcache', default='localhost:11211')
