@@ -458,10 +458,10 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
         roleref_refs = client.roles.get_user_role_refs(
                 user_id=self.user_foo['id'])
         for roleref_ref in roleref_refs:
-          if (roleref_ref.roleId == self.role_useless['id'] and
-              roleref_ref.tenantId == self.tenant_baz['id']):
-            # use python's scope fall through to leave roleref_ref set
-            break
+            if (roleref_ref.roleId == self.role_useless['id'] and
+                    roleref_ref.tenantId == self.tenant_baz['id']):
+                # use python's scope fall through to leave roleref_ref set
+                break
 
         client.roles.remove_user_from_tenant(tenant_id=self.tenant_baz['id'],
                                              user_id=self.user_foo['id'],
