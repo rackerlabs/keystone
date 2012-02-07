@@ -1,9 +1,9 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
+
 import nose.exc
 
 from keystone import config
 from keystone import test
-from keystone.common import utils
 
 import default_fixtures
 import test_keystoneclient
