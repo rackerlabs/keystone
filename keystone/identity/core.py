@@ -172,6 +172,10 @@ class Driver(object):
         raise NotImplementedError()
 
     # metadata crud
+
+    def get_metadata(self, user_id, tenant_id):
+        raise NotImplementedError()
+
     def create_metadata(self, user_id, tenant_id, metadata):
         raise NotImplementedError()
 
