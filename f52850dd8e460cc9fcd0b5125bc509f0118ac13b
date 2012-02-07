@@ -16,6 +16,23 @@
       "revId": "f52850dd8e460cc9fcd0b5125bc509f0118ac13b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//+LY\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-07T03:41:48Z",
+      "side": 1,
+      "message": "assertTrue in 2.7",
+      "revId": "f52850dd8e460cc9fcd0b5125bc509f0118ac13b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
