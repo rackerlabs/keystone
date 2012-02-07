@@ -216,6 +216,8 @@ class TokenController(wsgi.Application):
             if username:
                 user_ref = self.identity_api.get_user_by_name(
                         context=context, user_name=username)
+                if (not user_ref):
+                    raise exception.Forbidden()
                 user_id = user_ref['id']
             else:
                 user_id = auth['passwordCredentials'].get('userId', None)
@@ -320,7 +322,10 @@ class TokenController(wsgi.Application):
 
         """
         # TODO(termie): this stuff should probably be moved to middleware
-        self.assert_admin(context)
+        try:
+            self.assert_admin(context)
+        except:
+            raise exception.Unauthorized()
 
         token_ref = self.token_api.get_token(context=context,
                                              token_id=token_id)
