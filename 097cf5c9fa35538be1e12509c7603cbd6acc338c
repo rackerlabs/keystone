@@ -51,6 +51,24 @@
       "revId": "097cf5c9fa35538be1e12509c7603cbd6acc338c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9aA\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-08T16:00:32Z",
+      "side": 1,
+      "message": "I might have made this change, then claimed to have not made it. Reverting...",
+      "parentUuid": "AAAAEn//9k0\u003d",
+      "revId": "097cf5c9fa35538be1e12509c7603cbd6acc338c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
