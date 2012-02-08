@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//9K0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T20:44:21Z",
+      "side": 1,
+      "message": "maybe bump the bug numbers down to the other lines so this is 50 chars long",
+      "revId": "c79f0044af1279a6b2553ab8681fe7f6be72dede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9Ko\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T20:44:21Z",
+      "side": 1,
+      "message": "alphabetize imports",
+      "revId": "c79f0044af1279a6b2553ab8681fe7f6be72dede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9Ks\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T20:44:21Z",
+      "side": 1,
+      "message": "while i am hoping to remove the need for this by moving render_response/render_exception into the wsgi file, this would normally be separated form the top two by a blank line",
+      "revId": "c79f0044af1279a6b2553ab8681fe7f6be72dede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9Mk\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T20:44:21Z",
+      "side": 1,
+      "message": "could this be moved to the common.wsgi module? and called render_exception?",
+      "revId": "c79f0044af1279a6b2553ab8681fe7f6be72dede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9MA\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T20:44:21Z",
+      "side": 1,
+      "message": "looks like my style preferences contradict what was decided in nova, so for now i suppose we should do it as is described in:\n\nhttps://github.com/openstack/keystone/blob/redux/HACKING.rst\n\nI think that style uses up far more whitespace than is required, however, so I hope to change it to my preferred style that looks closer to this: https://github.com/openstack/keystone/blob/redux/tests/test_backend.py#L109",
+      "revId": "c79f0044af1279a6b2553ab8681fe7f6be72dede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9K8\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T20:44:21Z",
+      "side": 1,
+      "message": "this import happens between the stdlib imports and the keystone imports (refer to HACKING)",
+      "revId": "c79f0044af1279a6b2553ab8681fe7f6be72dede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9K4\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T20:44:21Z",
+      "side": 1,
+      "message": "please alphabetize these",
+      "revId": "c79f0044af1279a6b2553ab8681fe7f6be72dede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9Ls\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T20:44:21Z",
+      "side": 1,
+      "message": "newlines are valid in json, are they not? and \"e\" in this case is an error object? Would it be easier to check that json.loads(resp.body) works?",
+      "revId": "c79f0044af1279a6b2553ab8681fe7f6be72dede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9Lk\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T20:44:21Z",
+      "side": 1,
+      "message": "is this supposed to check for more than one space in a row (or is this a tab character or something being rendered funny by gerrit)? that is also valid as far as i know.\n\nin fact, I would probably suggest that json errors be pretty printed since they are most likely going to be consumed by humans by curl\u0027ing a url after something failed",
+      "revId": "c79f0044af1279a6b2553ab8681fe7f6be72dede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9LE\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T20:44:21Z",
+      "side": 1,
+      "message": "half of the other tests have no empty newlines here, please do one way or the other :)",
+      "revId": "c79f0044af1279a6b2553ab8681fe7f6be72dede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
