@@ -1,4 +1,7 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
+
+# PLEASE_PEP8_FIX_ME
+
 import nose.exc
 
 from keystone import config

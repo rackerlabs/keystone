@@ -1,3 +1,5 @@
+# PLEASE_PEP8_FIX_ME
+
 class IdentityTests(object):
     def test_authenticate_bad_user(self):
         self.assertRaises(AssertionError,

@@ -1,3 +1,5 @@
+# PLEASE_PEP8_FIX_ME
+
 TENANTS = [
     {'id': 'bar', 'name': 'BAR'},
     {'id': 'baz', 'name': 'BAZ'},
