@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAEn//9j8\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "looks like we usually call this \"exception\" not exceptions (at least a quick check with nova and glance says so) and that feels better to me also",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//9mo\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 2
@@ -13,6 +30,313 @@
       "writtenOn": "2012-02-08T06:02:44Z",
       "side": 1,
       "message": "are all the exceptions bubbling up through here guaranteed to be exception.KeystoneError (or subclass)?\n\nSeems like we might want this core process outside of the Application base class for Keystone to preserve using a common core. Other OpenStack projects (nova) use a FaultWrapper to capture and propagate logging in the event of exception bubbling...(See nova/api/openstack/__init__.py)",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9j4\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "I think I am in agreement that this could probably be its own middleware or at least its own set of code rather than only existing as a try-except. Sounds like joe has an idea.",
+      "parentUuid": "AAAAEn//9mo\u003d",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9jw\u003d",
+        "filename": "keystone/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "can we just name this \"Error\" ?",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9jo\u003d",
+        "filename": "keystone/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "please put periods at the ends of things, it shows that you care :)\n\nusing the docstring for the error message template is a nice touch but i think we need more flexibility on setting the message than just sending in templated objects, I think we probably want to make the message overridable in the __init__ call, possibly only use the docstring as the \"default\" message",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9jQ\u003d",
+        "filename": "keystone/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "period plz",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9jI\u003d",
+        "filename": "keystone/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "in all honesty, i\u0027d rather have this part of the code be a function that produces a response from an exception, something like wsgi.render_exception(e), but we can talk about the pros and cons to that if you\u0027d like",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9jM\u003d",
+        "filename": "keystone/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "this newline doesn\u0027t need to be there",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9jA\u003d",
+        "filename": "keystone/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "may as well make all the quotes besides the docstrings into single quotes, you\u0027re using both kinds in here and may as well standardize",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9jU\u003d",
+        "filename": "keystone/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "I don\u0027t think this error message is going to be very useful in any situation except a key error, it seems that it will almost always be a custom message otherwise. We should either make it more specific to the key error and expect to override otherwise, or give it a couple more fields to describe what went wrong.\n\nAlso, please make the first line a short summary line and explain further in the rest of the message.",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9jE\u003d",
+        "filename": "keystone/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "add a new line, pls",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9jY\u003d",
+        "filename": "keystone/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "Again, this is fairly protocol specific, if we do anything like signed requests or extensions (i think even ec2 at this point might qualify) the X-Auth-Token is not really in play at the point where an Unauthorized exception might be thrown. If we want to give the helpful info about x-auth-token it should only be done where it is actually the correct info, but right now I think it is probably easier just to drop this section.",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9jc\u003d",
+        "filename": "keystone/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "This would be less specific to tokens and protocols if it just said \"You are not authorized to perform the requested action: %(action)s\" though I don\u0027t know how easy it will be to guess which action.\n\nAlso, most of the time we\u0027ll probably be throwing this error because you are required to be an admin, so may want to think about special casing that.",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9jk\u003d",
+        "filename": "keystone/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "i would ask not to use \"object\" as the name here, maybe \"target\" instead? Also it\u0027ll be easier grammatically if we flip it to say something closer to:\n\n\"Could not find: %(target)s\"\n\nRealistically though I think most of the time we\u0027d be overriding the message anyway to say \"Could not find user: %(user_id)s\" and so forth",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9jg\u003d",
+        "filename": "keystone/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "for doing these templataing calls, i think we would get more mileage by just saving **kw and templating that against the message, along the lines of:\n\n __init__(self, *args **kw): msg \u003d self._msg % kw",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9ik\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "same comment abotu exception vs exceptions",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9ig\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "single quotes pls",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9ic\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "indent to match parens pls",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9iY\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "here too, and i\u0027d usually put user_ref on its own line i think",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9iU\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T07:47:41Z",
+      "side": 1,
+      "message": "here too",
       "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
