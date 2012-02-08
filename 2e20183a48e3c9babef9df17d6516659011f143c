@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//9xI\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T00:05:10Z",
+      "side": 1,
+      "message": "we can probably put this in the memcache backend itself",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9wk\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T00:05:10Z",
+      "side": 1,
+      "message": "i think this is fine here, we can come up with a way to make the tests skip if no memcache is installed",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9w4\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T00:05:10Z",
+      "side": 1,
+      "message": "superfluous space",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9ww\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T00:05:10Z",
+      "side": 1,
+      "message": "why is this static?",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9wo\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T00:05:10Z",
+      "side": 1,
+      "message": "we can probably infer some expiry time from the expiration that might be in data, but i think this is a fine start",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9wc\u003d",
+        "filename": "tests/fakes.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T00:05:10Z",
+      "side": 1,
+      "message": "toss all this in common.memcache?",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9wM\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T00:05:10Z",
+      "side": 1,
+      "message": "we\u0027ve been just doing relative imports though maybe we should change that and since i am recommending moving that file\u0027s content anyway disregard this statement",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9wI\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T00:05:10Z",
+      "side": 1,
+      "message": "try: except ImportError:\n\nand set a SKIP global, check for that and raise nose.exc.SkipTests in setUp below?",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
