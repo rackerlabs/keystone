@@ -125,6 +125,10 @@ class Identity(kvs.Base, identity.Driver):
 
     # CRUD
     def create_user(self, user_id, user):
+        if self.get_user(user_id):
+            raise Exception('Duplicate id')
+        if self.get_user_by_name(user['name']):
+            raise Exception('Duplicate name')
         user = _ensure_hashed_password(user)
         self.db.set('user-%s' % user_id, user)
         self.db.set('user_name-%s' % user['name'], user)
@@ -154,6 +158,10 @@ class Identity(kvs.Base, identity.Driver):
         return None
 
     def create_tenant(self, tenant_id, tenant):
+        if self.get_tenant(tenant_id):
+            raise Exception('Duplicate id')
+        if self.get_tenant_by_name(tenant['name']):
+            raise Exception('Duplicate name')
         self.db.set('tenant-%s' % tenant_id, tenant)
         self.db.set('tenant_name-%s' % tenant['name'], tenant)
         return tenant
