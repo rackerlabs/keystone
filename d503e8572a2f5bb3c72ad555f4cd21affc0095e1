@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//8/E\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T23:15:26Z",
+      "side": 1,
+      "message": "i\u0027m not sure we need to throw an error here, right now we just make sure that the request doesn\u0027t die, doesn\u0027t seem to hurt us if something wasn\u0027t trying to send json and we didn\u0027t parse json, makes the order of the middleware a little less important too (allows people to send regular post data, for example)",
+      "revId": "d503e8572a2f5bb3c72ad555f4cd21affc0095e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8/I\u003d",
+        "filename": "tests/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T23:15:26Z",
+      "side": 1,
+      "message": "did you decide to make it skip if the wrong content-type is there? if so maybe we should add a test for htat",
+      "revId": "d503e8572a2f5bb3c72ad555f4cd21affc0095e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
