@@ -1,0 +1,11 @@
+Approved+1: James E. Blair <corvus@inaugust.com>
+Verified+1: Jenkins
+Approved+1: Joe Heck <heckj@mac.com>
+Code-Review+1: Joe Heck <heckj@mac.com>
+Approved+1: termie <github@anarkystic.com>
+Code-Review+2: termie <github@anarkystic.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 08 Feb 2012 10:09:58 +0000
+Reviewed-on: https://review.openstack.org/3573
+Project: openstack/keystone
+Branch: refs/heads/redux
