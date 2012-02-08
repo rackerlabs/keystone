@@ -16,6 +16,24 @@
       "revId": "3364905041dd133cef3512a0a3ee4a3aa161b798",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9Ic\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 144
+      },
+      "writtenOn": "2012-02-08T21:13:17Z",
+      "side": 0,
+      "message": "Yes, it does work for me - I tried it by hand in the python interpreter, and I wrote some tests in my utf8 branch so I just tried them as well and they work also.  I can split it into a separate patch if you\u0027d prefer, might be easier to track WTF is going on (and then we can merge it after my branch with the direct unit tests)... ?",
+      "parentUuid": "AAAAEn//9Jc\u003d",
+      "revId": "3364905041dd133cef3512a0a3ee4a3aa161b798",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
