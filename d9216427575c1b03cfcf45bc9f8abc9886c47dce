@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//9Tw\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T18:07:53Z",
+      "side": 1,
+      "message": "something weird happened here, guess it doesn\u0027t matter much since it is commented out though",
+      "revId": "d9216427575c1b03cfcf45bc9f8abc9886c47dce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9Tk\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T18:07:53Z",
+      "side": 1,
+      "message": "i think this can still be indented to match the parens instead of double indented, though it would be nice to start the second line off with \u0027and\u0027",
+      "revId": "d9216427575c1b03cfcf45bc9f8abc9886c47dce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9Tc\u003d",
+        "filename": "tests/test_legacy_compat.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T18:07:53Z",
+      "side": 1,
+      "message": "these don\u0027t usually go on lines by themselves, the original formatting was fine, just needed 4space indents",
+      "revId": "d9216427575c1b03cfcf45bc9f8abc9886c47dce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9TM\u003d",
+        "filename": "tests/test_legacy_compat.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T18:07:53Z",
+      "side": 1,
+      "message": "indent to match parens",
+      "revId": "d9216427575c1b03cfcf45bc9f8abc9886c47dce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9TI\u003d",
+        "filename": "tests/test_legacy_compat.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T18:07:53Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "d9216427575c1b03cfcf45bc9f8abc9886c47dce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9TE\u003d",
+        "filename": "tests/test_legacy_compat.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T18:07:53Z",
+      "side": 1,
+      "message": "please preserve the style of the original formatting",
+      "revId": "d9216427575c1b03cfcf45bc9f8abc9886c47dce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9TA\u003d",
+        "filename": "tests/test_legacy_compat.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T18:07:53Z",
+      "side": 1,
+      "message": "this got indented wrong",
+      "revId": "d9216427575c1b03cfcf45bc9f8abc9886c47dce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9S8\u003d",
+        "filename": "tests/test_legacy_compat.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T18:07:53Z",
+      "side": 1,
+      "message": "this too",
+      "revId": "d9216427575c1b03cfcf45bc9f8abc9886c47dce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
