@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//9NI\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1812
+      },
+      "writtenOn": "2012-02-08T20:18:38Z",
+      "side": 1,
+      "message": "this looks like an error",
+      "revId": "fa592caad050e552e0cdec1be0cdd1fcec75582e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9NE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1812
+      },
+      "writtenOn": "2012-02-08T20:18:38Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "fa592caad050e552e0cdec1be0cdd1fcec75582e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
