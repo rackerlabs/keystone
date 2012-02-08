@@ -34,6 +34,24 @@
       "revId": "3364905041dd133cef3512a0a3ee4a3aa161b798",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9HM\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T21:49:01Z",
+      "side": 0,
+      "message": "weird, well i\u0027ll take your word for it and see if my tests break afterwords :p thanks for hte unit tests, will merge those first",
+      "parentUuid": "AAAAEn//9Ic\u003d",
+      "revId": "3364905041dd133cef3512a0a3ee4a3aa161b798",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
