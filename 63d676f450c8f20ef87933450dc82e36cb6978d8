@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//9S0\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T18:10:36Z",
+      "side": 1,
+      "message": "usually (in this code base at least) this is above the config line above and doesn\u0027t include the .memcache",
+      "revId": "63d676f450c8f20ef87933450dc82e36cb6978d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
