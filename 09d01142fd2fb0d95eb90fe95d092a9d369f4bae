@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//9mo\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-08T06:02:44Z",
+      "side": 1,
+      "message": "are all the exceptions bubbling up through here guaranteed to be exception.KeystoneError (or subclass)?\n\nSeems like we might want this core process outside of the Application base class for Keystone to preserve using a common core. Other OpenStack projects (nova) use a FaultWrapper to capture and propagate logging in the event of exception bubbling...(See nova/api/openstack/__init__.py)",
+      "revId": "09d01142fd2fb0d95eb90fe95d092a9d369f4bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
