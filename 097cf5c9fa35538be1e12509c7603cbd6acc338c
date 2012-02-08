@@ -16,6 +16,41 @@
       "revId": "097cf5c9fa35538be1e12509c7603cbd6acc338c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9lQ\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T06:46:35Z",
+      "side": 1,
+      "message": "it is used in all the calls below, i think it is fine. I purposefully tried to keep much of the python code in the drivers simple in hopes of making it easier for newbies, but this is a pretty common way of doing memoization and initialization of a connection object",
+      "parentUuid": "AAAAEn//9lc\u003d",
+      "revId": "097cf5c9fa35538be1e12509c7603cbd6acc338c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9k0\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-08T06:46:35Z",
+      "side": 1,
+      "message": "well, the tests will all fail if that happens, didn\u0027t we just add memcache to pip-requires-test?",
+      "revId": "097cf5c9fa35538be1e12509c7603cbd6acc338c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
