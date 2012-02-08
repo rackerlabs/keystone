@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//9vo\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-08T00:43:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//9xI\u003d",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//9wk\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-02-08T00:05:10Z",
       "side": 1,
       "message": "i think this is fine here, we can come up with a way to make the tests skip if no memcache is installed",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9vk\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-08T00:43:03Z",
+      "side": 1,
+      "message": "10-4",
+      "parentUuid": "AAAAEn//9wk\u003d",
       "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//9vg\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-08T00:43:03Z",
+      "side": 1,
+      "message": "You\u0027re superfluous space.",
+      "parentUuid": "AAAAEn//9w4\u003d",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//9ww\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//9vc\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-08T00:43:03Z",
+      "side": 1,
+      "message": "I ended up removing the staticmethod decorator like you requested.",
+      "parentUuid": "AAAAEn//9ww\u003d",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//9wo\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2012-02-08T00:05:10Z",
       "side": 1,
       "message": "we can probably infer some expiry time from the expiration that might be in data, but i think this is a fine start",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9vY\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-08T00:43:03Z",
+      "side": 1,
+      "message": "I was going to do a second iteration after this patch that handles expiration",
+      "parentUuid": "AAAAEn//9wo\u003d",
       "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -132,6 +222,24 @@
       "writtenOn": "2012-02-08T00:05:10Z",
       "side": 1,
       "message": "try: except ImportError:\n\nand set a SKIP global, check for that and raise nose.exc.SkipTests in setUp below?",
+      "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//9vA\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-08T00:43:03Z",
+      "side": 1,
+      "message": "Agreed offline that python-memcached is a requirement",
+      "parentUuid": "AAAAEn//9wI\u003d",
       "revId": "2e20183a48e3c9babef9df17d6516659011f143c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
