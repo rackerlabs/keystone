@@ -1,5 +1,10 @@
+import time
+import datetime
+
 from keystone import test
 from keystone.token.backends import memcache as token_memcache
+
+import test_backend
 
 
 class MemcacheClient(object):
@@ -11,11 +16,16 @@ class MemcacheClient(object):
 
     def get(self, key):
         """Retrieves the value for a key or None."""
-        return self.cache.get(key)
+        obj = self.cache.get(key)
+        if obj is not None:
+            now = time.mktime(datetime.datetime.now().timetuple())
+            if obj[1] == 0 or obj[1] > now:
+                return obj[0]
 
-    def set(self, key, value):
+
+    def set(self, key, value, time=0):
         """Sets the value for a key."""
-        self.cache[key] = value
+        self.cache[key] = (value, time)
         return True
 
     def delete(self, key):
@@ -26,7 +36,7 @@ class MemcacheClient(object):
             pass
 
 
-class MemcacheToken(test.TestCase):
+class MemcacheToken(test.TestCase, test_backend.TokenTests):
     def setUp(self):
         super(MemcacheToken, self).setUp()
         fake_client = MemcacheClient()
