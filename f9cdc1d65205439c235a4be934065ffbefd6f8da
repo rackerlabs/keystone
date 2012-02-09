@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//8mQ\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T21:22:40Z",
+      "side": 1,
+      "message": "\":\" after token pls",
+      "revId": "f9cdc1d65205439c235a4be934065ffbefd6f8da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8lQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T21:22:40Z",
+      "side": 1,
+      "message": "seems better to catch just NotFound here? the TokenNotFound error is just a helper for the error message, it shouldn\u0027t be considered a first class data type",
+      "revId": "f9cdc1d65205439c235a4be934065ffbefd6f8da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8lM\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T21:22:40Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "f9cdc1d65205439c235a4be934065ffbefd6f8da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8lE\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T21:22:40Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "f9cdc1d65205439c235a4be934065ffbefd6f8da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8kM\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T21:22:40Z",
+      "side": 1,
+      "message": "extra \\n",
+      "revId": "f9cdc1d65205439c235a4be934065ffbefd6f8da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8kI\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T21:22:40Z",
+      "side": 1,
+      "message": "i am also on the fence with whether these should catch the base NotFound exception rather than this specific one, what thinks you?",
+      "revId": "f9cdc1d65205439c235a4be934065ffbefd6f8da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
