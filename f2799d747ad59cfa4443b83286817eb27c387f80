@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//8oA\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T19:42:19Z",
+      "side": 1,
+      "message": "indentypoo pls",
+      "revId": "f2799d747ad59cfa4443b83286817eb27c387f80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
