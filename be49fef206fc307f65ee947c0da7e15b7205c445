@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//8hA\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T22:45:05Z",
+      "side": 1,
+      "message": "this is a reversion too",
+      "revId": "be49fef206fc307f65ee947c0da7e15b7205c445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8hM\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T22:45:05Z",
+      "side": 1,
+      "message": "this section is probably a reversion, so it might end up conflicting, you\u0027ll probably need to rebase again if the other reviews land first",
+      "revId": "be49fef206fc307f65ee947c0da7e15b7205c445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8hU\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T22:45:05Z",
+      "side": 1,
+      "message": "i think this is going to conflict with tony\u0027s change, you may not want to touch this section",
+      "revId": "be49fef206fc307f65ee947c0da7e15b7205c445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8hY\u003d",
+        "filename": "tests/test_legacy_compat.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T22:45:05Z",
+      "side": 1,
+      "message": "actually, this whole file is being deleted, so not reviewing this",
+      "revId": "be49fef206fc307f65ee947c0da7e15b7205c445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8hc\u003d",
+        "filename": "tests/test_legacy_compat.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T22:45:05Z",
+      "side": 1,
+      "message": "this indenting doesn\u0027t seem to make sense for the \"new\" style either, could you just leave it alone?",
+      "revId": "be49fef206fc307f65ee947c0da7e15b7205c445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
