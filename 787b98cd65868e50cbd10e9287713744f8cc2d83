@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//87M\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T01:55:54Z",
+      "side": 1,
+      "message": "this whole function is, honestly, it is an interim measure until we add the policy stuff forrealz",
+      "revId": "787b98cd65868e50cbd10e9287713744f8cc2d83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
