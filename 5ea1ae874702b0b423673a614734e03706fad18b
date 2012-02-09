@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//8gI\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:19:37Z",
+      "side": 1,
+      "message": "here",
+      "revId": "5ea1ae874702b0b423673a614734e03706fad18b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8gE\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:19:37Z",
+      "side": 1,
+      "message": "here",
+      "revId": "5ea1ae874702b0b423673a614734e03706fad18b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8gA\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:19:37Z",
+      "side": 1,
+      "message": "here",
+      "revId": "5ea1ae874702b0b423673a614734e03706fad18b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8f0\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:19:37Z",
+      "side": 1,
+      "message": "too many whitespaces",
+      "revId": "5ea1ae874702b0b423673a614734e03706fad18b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8f8\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:19:37Z",
+      "side": 1,
+      "message": "here",
+      "revId": "5ea1ae874702b0b423673a614734e03706fad18b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8f4\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:19:37Z",
+      "side": 1,
+      "message": "here",
+      "revId": "5ea1ae874702b0b423673a614734e03706fad18b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8fw\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:19:37Z",
+      "side": 1,
+      "message": "here",
+      "revId": "5ea1ae874702b0b423673a614734e03706fad18b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8fs\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:19:37Z",
+      "side": 1,
+      "message": "here",
+      "revId": "5ea1ae874702b0b423673a614734e03706fad18b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
