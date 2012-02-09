@@ -1,6 +1,8 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
 
 from __future__ import absolute_import
+import copy
+import time
 
 import memcache
 
@@ -30,12 +32,18 @@ class Token(token.Driver):
 
     def get_token(self, token_id):
         ptk = self._prefix_token_id(token_id)
-        return self.client.get(ptk)
+        data = self.client.get(ptk)
+        print 'getting %s' % data
+        return data
 
     def create_token(self, token_id, data):
+        data_copy = copy.deepcopy(data)
+        if 'expires' not in data_copy:
+            data_copy['expires'] = self.get_default_expire_time()
+        expires_ts = time.mktime(data_copy['expires'].timetuple())
         ptk = self._prefix_token_id(token_id)
-        self.client.set(ptk, data)
-        return data
+        self.client.set(ptk, data_copy, expires_ts)
+        return copy.deepcopy(data_copy)
 
     def delete_token(self, token_id):
         ptk = self._prefix_token_id(token_id)

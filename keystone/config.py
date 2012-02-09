@@ -154,5 +154,8 @@ register_str('pool_timeout', group='sql')
 register_str('driver', group='catalog')
 register_str('driver', group='identity')
 register_str('driver', group='policy')
-register_str('driver', group='token')
 register_str('driver', group='ec2')
+
+
+register_str('driver', group='token')
+register_int('expiration', group='token', default=86400)

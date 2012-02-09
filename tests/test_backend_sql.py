@@ -30,8 +30,8 @@ class SqlToken(test.TestCase, test_backend.TokenTests):
     CONF(config_files=[test.etcdir('keystone.conf'),
                        test.testsdir('test_overrides.conf'),
                        test.testsdir('backend_sql.conf')])
-    sql_util.setup_test_database()
     self.token_api = token_sql.Token()
+    sql_util.setup_test_database()
 
 
 #class SqlCatalog(test_backend_kvs.KvsCatalog):

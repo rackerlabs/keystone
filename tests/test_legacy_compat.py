@@ -1,14 +1,12 @@
-import copy
+import datetime
 import json
 import os
-import sys
 
 from nose import exc
 
 from keystone import config
 from keystone import test
 from keystone.common import logging
-from keystone.common import utils
 
 
 CONF = config.CONF
@@ -69,7 +67,7 @@ class CompatTestCase(test.TestCase):
     self.token_123 = self.token_api.create_token(
         'ab48a9efdfedb23ty3494',
         dict(id='ab48a9efdfedb23ty3494',
-             expires='2010-11-01T03:32:15-05:00',
+             expires=datetime.datetime(year=2010),
              user=self.user_123,
              tenant=self.tenant_345,
              metadata=self.metadata_123))
