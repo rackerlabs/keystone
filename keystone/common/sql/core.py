@@ -9,6 +9,7 @@ import eventlet.db_pool
 import sqlalchemy as sql
 from sqlalchemy import types as sql_types
 from sqlalchemy.ext import declarative
+import sqlalchemy.sql.functions
 import sqlalchemy.orm
 import sqlalchemy.pool
 import sqlalchemy.engine.url
@@ -26,6 +27,7 @@ ModelBase = declarative.declarative_base()
 Column = sql.Column
 String = sql.String
 ForeignKey = sql.ForeignKey
+DateTime = sql.DateTime
 
 
 # Special Fields

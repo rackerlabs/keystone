@@ -1,6 +1,8 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
 
+import datetime
 import uuid
+
 
 class IdentityTests(object):
     def test_authenticate_bad_user(self):
@@ -216,3 +218,12 @@ class TokenTests(object):
         self.token_api.delete_token(token_id)
         deleted_data_ref = self.token_api.get_token(token_id)
         self.assertTrue(deleted_data_ref is None)
+
+    def test_expired_token(self):
+        token_id = uuid.uuid4().hex
+        expire_time =  datetime.datetime.now() - datetime.timedelta(minutes=1)
+        data = {'id': token_id, 'a': 'b', 'expire_at': expire_time}
+        data_ref = self.token_api.create_token(token_id, data)
+        self.assertDictEquals(data_ref, data)
+
+        self.assertTrue(self.token_api.get_token(token_id) is None)
