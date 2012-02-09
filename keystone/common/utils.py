@@ -35,6 +35,9 @@ CONF = config.CONF
 config.register_int('bcrypt_strength', default=12)
 
 
+ISO_TIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
+
+
 def import_class(import_str):
     """Returns a class from a string including module and class."""
     mod_str, _sep, class_str = import_str.rpartition('.')
@@ -199,3 +202,13 @@ def check_output(*popenargs, **kwargs):
 
 def git(*args):
     return check_output(['git'] + list(args))
+
+
+def isotime(dt_obj):
+    """Format datetime object as ISO compliant string.
+
+    :param dt_obj: datetime.datetime object
+    :returns: string representation of datetime object
+
+    """
+    return dt_obj.strftime(ISO_TIME_FORMAT)
