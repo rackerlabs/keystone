@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//88M\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-09T01:30:38Z",
+      "side": 1,
+      "message": "It would be extremely confusing for a client to submit broken json and not hear about it. I would really want to see a 400 if my expected call can\u0027t be understood.",
+      "parentUuid": "AAAAEn//8/E\u003d",
+      "revId": "d503e8572a2f5bb3c72ad555f4cd21affc0095e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//8/I\u003d",
         "filename": "tests/test_middleware.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-02-08T23:15:26Z",
       "side": 1,
       "message": "did you decide to make it skip if the wrong content-type is there? if so maybe we should add a test for htat",
+      "revId": "d503e8572a2f5bb3c72ad555f4cd21affc0095e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//88I\u003d",
+        "filename": "tests/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-09T01:30:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//8/I\u003d",
       "revId": "d503e8572a2f5bb3c72ad555f4cd21affc0095e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
