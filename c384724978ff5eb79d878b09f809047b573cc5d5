@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//8fI\u003d",
+        "filename": "tests/test_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:27:09Z",
+      "side": 1,
+      "message": "match indent to open parens?",
+      "revId": "c384724978ff5eb79d878b09f809047b573cc5d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
