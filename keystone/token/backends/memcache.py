@@ -1,6 +1,7 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
 
 from __future__ import absolute_import
+import time
 
 import memcache
 
@@ -33,8 +34,12 @@ class Token(token.Driver):
         return self.client.get(ptk)
 
     def create_token(self, token_id, data):
+        if 'expire_at' not in data:
+            data['expire_at'] = self.get_default_expire_time()
+        expire_at = data['expire_at']
+        expire_at_ts = time.mktime(expire_at.timetuple())
         ptk = self._prefix_token_id(token_id)
-        self.client.set(ptk, data)
+        self.client.set(ptk, data, expire_at_ts)
         return data
 
     def delete_token(self, token_id):

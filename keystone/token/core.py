@@ -2,6 +2,8 @@
 
 """Main entry point into the Token service."""
 
+import datetime
+
 from keystone import config
 from keystone.common import manager
 
@@ -66,3 +68,12 @@ class Driver(object):
 
         """
         raise NotImplementedError()
+
+    def get_default_expire_time(self):
+        """Determine when a token should expire basd on the config
+
+        :returns: datetime.datetime object
+
+        """
+        expire_delta = datetime.timedelta(seconds=CONF.token.expiration)
+        return datetime.datetime.now() + expire_delta
