@@ -163,9 +163,9 @@ class TokenController(wsgi.Application):
 
                 # If the user is disabled don't allow them to authenticate
                 if not user_ref.get('enabled', True):
-                    raise webob.exc.HTTPForbidden('User has been disabled')
+                    raise exception.UserDisabled()
             except AssertionError as e:
-                raise webob.exc.HTTPForbidden(e.message)
+                raise exception.Unauthorized(message=e.message)
 
             token_ref = self.token_api.create_token(
                     context, token_id, dict(expires='',
@@ -205,8 +205,8 @@ class TokenController(wsgi.Application):
 
             tenants = self.identity_api.get_tenants_for_user(context,
                                                              user_ref['id'])
-            if tenant_id:
-                assert tenant_id in tenants
+            if tenant_id and tenant_id not in tenants:
+                raise exception.Unauthorized()
 
             tenant_ref = self.identity_api.get_tenant(context=context,
                                                       tenant_id=tenant_id)
