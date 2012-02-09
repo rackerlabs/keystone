@@ -226,8 +226,7 @@ class TokenController(wsgi.Application):
                 raise webob.exc.HTTPForbidden(e.message)
 
             token_ref = self.token_api.create_token(
-                    context, token_id, dict(expires='',
-                                            id=token_id,
+                    context, token_id, dict(id=token_id,
                                             user=user_ref,
                                             tenant=tenant_ref,
                                             metadata=metadata_ref))
@@ -283,8 +282,7 @@ class TokenController(wsgi.Application):
                 catalog_ref = {}
 
             token_ref = self.token_api.create_token(
-                    context, token_id, dict(expires='',
-                                            id=token_id,
+                    context, token_id, dict(id=token_id,
                                             user=user_ref,
                                             tenant=tenant_ref,
                                             metadata=metadata_ref))
@@ -350,8 +348,11 @@ class TokenController(wsgi.Application):
     def _format_token(self, token_ref, roles_ref):
         user_ref = token_ref['user']
         metadata_ref = token_ref['metadata']
+        expires = token_ref['expires']
+        if expires is not None:
+            expires = utils.isotime(expires)
         o = {'access': {'token': {'id': token_ref['id'],
-                                  'expires': token_ref['expires']
+                                  'expires': expires,
                                   },
                         'user': {'id': user_ref['id'],
                                  'name': user_ref['name'],

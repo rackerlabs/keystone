@@ -1,5 +1,8 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
 
+import copy
+import datetime
+
 from keystone import token
 from keystone.common import sql
 
@@ -7,39 +10,51 @@ from keystone.common import sql
 class TokenModel(sql.ModelBase, sql.DictBase):
     __tablename__ = 'token'
     id = sql.Column(sql.String(64), primary_key=True)
+    expires = sql.Column(sql.DateTime(), default=None)
     extra = sql.Column(sql.JsonBlob())
 
     @classmethod
     def from_dict(cls, token_dict):
         # shove any non-indexed properties into extra
+        extra = copy.deepcopy(token_dict)
         data = {}
-        token_dict_copy = token_dict.copy()
-        data['id'] = token_dict_copy.pop('id')
-        data['extra'] = token_dict_copy
+        for k in ('id', 'expires'):
+            data[k] = extra.pop(k, None)
+        data['extra'] = extra
         return cls(**data)
 
     def to_dict(self):
-        extra_copy = self.extra.copy()
-        extra_copy['id'] = self.id
-        return extra_copy
+        out = copy.deepcopy(self.extra)
+        out['id'] = self.id
+        out['expires'] = self.expires
+        return out
 
 
 class Token(sql.Base, token.Driver):
     # Public interface
     def get_token(self, token_id):
         session = self.get_session()
-        token_ref = session.query(TokenModel).filter_by(id=token_id).first()
-        if not token_ref:
+        now = datetime.datetime.now()
+        token_ref = session.query(TokenModel)\
+                           .filter_by(id=token_id)\
+                           .first()
+        if not token_ref or (token_ref.expires and now > token_ref.expires):
             return
         return token_ref.to_dict()
 
     def create_token(self, token_id, data):
-        data['id'] = token_id
+        data_copy = copy.deepcopy(data)
+        if 'expires' not in data_copy:
+            data_copy['expires'] = self._get_default_expire_time()
+
+        token_ref = TokenModel.from_dict(data_copy)
+        token_ref.id = token_id
+
         session = self.get_session()
         with session.begin():
-            token_ref = TokenModel.from_dict(data)
             session.add(token_ref)
             session.flush()
+
         return token_ref.to_dict()
 
     def delete_token(self, token_id):
