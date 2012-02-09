@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//8g0\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T22:51:23Z",
+      "side": 1,
+      "message": "i assume this is to keep those other tests passing? or do we rely on assertion error? this should be either Unauthorized or NotAuthorized, no?",
+      "revId": "693be260eae66b99026874f2dbc0b5e94374659f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8gw\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T22:51:23Z",
+      "side": 1,
+      "message": "this should use exception.Unauthorized, I bewieve",
+      "revId": "693be260eae66b99026874f2dbc0b5e94374659f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
