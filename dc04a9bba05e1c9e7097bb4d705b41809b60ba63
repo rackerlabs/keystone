@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//8fQ\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:23:29Z",
+      "side": 1,
+      "message": "import webob, and later on use webob.Request",
+      "revId": "dc04a9bba05e1c9e7097bb4d705b41809b60ba63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8fU\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:23:29Z",
+      "side": 1,
+      "message": "newline between this and the __init__ method",
+      "revId": "dc04a9bba05e1c9e7097bb4d705b41809b60ba63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8fg\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:23:29Z",
+      "side": 1,
+      "message": "this ends up looking pretty weird, perhaps you want to say\n\nparts \u003d swift_utils.split_path(...)\nversion, account, container, obj \u003d parts",
+      "revId": "dc04a9bba05e1c9e7097bb4d705b41809b60ba63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8fk\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:23:29Z",
+      "side": 1,
+      "message": "could you make this stuff into two lines by doing some of the split and [-1] and rsplit stuff before hand with an intermediate variable?",
+      "revId": "dc04a9bba05e1c9e7097bb4d705b41809b60ba63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8fc\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:23:29Z",
+      "side": 1,
+      "message": "here",
+      "revId": "dc04a9bba05e1c9e7097bb4d705b41809b60ba63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8fY\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-09T23:23:29Z",
+      "side": 1,
+      "message": "here",
+      "revId": "dc04a9bba05e1c9e7097bb4d705b41809b60ba63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
