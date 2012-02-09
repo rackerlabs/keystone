@@ -40,12 +40,6 @@ class ExceptionTestCase(test.TestCase):
         e = exception.Unauthorized()
         self.assertValidJsonRendering(e)
 
-    def test_forbidden(self):
-        action = uuid.uuid4().hex
-        e = exception.Forbidden(action=action)
-        self.assertValidJsonRendering(e)
-        self.assertIn(action, str(e))
-
     def test_not_found(self):
         target = uuid.uuid4().hex
         e = exception.NotFound(target=target)

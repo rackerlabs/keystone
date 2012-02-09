@@ -42,10 +42,8 @@ class Unauthorized(Error):
     title = 'Not Authorized'
 
 
-class Forbidden(Error):
-    """You are not authorized to perform the requested action: %(action)s"""
-    code = 403
-    title = 'Not Authorized'
+class UserDisabled(Unauthorized):
+    """User has been disabled: %(username)s"""
 
 
 class NotFound(Error):

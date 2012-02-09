@@ -89,7 +89,7 @@ class KeystoneClientTests(object):
 
     def test_authenticate_invalid_tenant_id(self):
         from keystoneclient import exceptions as client_exceptions
-        self.assertRaises(client_exceptions.AuthorizationFailure,
+        self.assertRaises(client_exceptions.Unauthorized,
                           self._client,
                           username=self.user_foo['name'],
                           password=self.user_foo['password'],
@@ -113,7 +113,7 @@ class KeystoneClientTests(object):
         from keystoneclient import exceptions as client_exceptions
         client = self.get_client()
         token = client.auth_token
-        self.assertRaises(client_exceptions.AuthorizationFailure,
+        self.assertRaises(client_exceptions.Unauthorized,
                           self._client, token=token, tenant_id='baz')
 
     def test_authenticate_token_tenant_name(self):
@@ -205,7 +205,7 @@ class KeystoneClientTests(object):
                                    password=self.user_foo['password'])
         good_client.tenants.list()
 
-        self.assertRaises(client_exceptions.AuthorizationFailure,
+        self.assertRaises(client_exceptions.Unauthorized,
                           self._client,
                           username=self.user_foo['name'],
                           password='invalid')
