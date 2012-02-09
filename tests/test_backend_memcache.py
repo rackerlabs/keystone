@@ -1,5 +1,8 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
 
+import time
+import datetime
+
 from keystone import exception
 from keystone import test
 from keystone.token.backends import memcache as token_memcache
@@ -16,14 +19,16 @@ class MemcacheClient(object):
 
     def get(self, key):
         """Retrieves the value for a key or None."""
-        try:
-            return self.cache[key]
-        except KeyError:
+        obj = self.cache.get(key)
+        now = time.mktime(datetime.datetime.now().timetuple())
+        if obj and (obj[1] == 0 or obj[1] > now):
+            return obj[0]
+        else:
             raise exception.TokenNotFound(token_id=key)
 
-    def set(self, key, value):
+    def set(self, key, value, time=0):
         """Sets the value for a key."""
-        self.cache[key] = value
+        self.cache[key] = (value, time)
         return True
 
     def delete(self, key):
