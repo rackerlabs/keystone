@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//7+c\u003d",
+        "filename": "tests/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T22:26:15Z",
+      "side": 1,
+      "message": "probably want to pop this out of kwargs?",
+      "revId": "20d443de024a62fe5cf6712813bbc3de924592b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//7+U\u003d",
+        "filename": "tests/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T22:26:15Z",
+      "side": 1,
+      "message": "own line",
+      "revId": "20d443de024a62fe5cf6712813bbc3de924592b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//7+Q\u003d",
+        "filename": "tests/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T22:26:15Z",
+      "side": 1,
+      "message": "own line",
+      "revId": "20d443de024a62fe5cf6712813bbc3de924592b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
