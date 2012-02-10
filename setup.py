@@ -55,7 +55,7 @@ setup(
     url='http://www.openstack.org',
     include_package_data=True,
     packages=find_packages(exclude=['test', 'bin']),
-    scripts=['bin/keystone', 'bin/keystone-auth', 'bin/keystone-admin',
+    scripts=['bin/keystone-all', 'bin/keystone-auth', 'bin/keystone-admin',
              'bin/keystone-manage', 'bin/keystone-import',
              'bin/keystone-control'],
     zip_safe=False,

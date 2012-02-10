@@ -41,7 +41,7 @@ Having trouble? We'd like to help!
 
 ### Built-In commands:
 
-* bin/keystone  - Provides HTTP API for users and administrators
+* bin/keystone-all  - Provides HTTP API for users and administrators
 * bin/keystone-admin - Provides HTTP API for administrators
 * bin/keystone-service - Provides HTTP API for users
 * bin/keystone-manage - Provides command-line interface for managing all aspects of Keystone
@@ -50,7 +50,7 @@ Having trouble? We'd like to help!
 
 Starting both Admin and Service API endpoints:
 
-    $ ./bin/keystone
+    $ ./bin/keystone-all
 
 Starting the auth server only (exposes the Service API):
 
@@ -170,7 +170,7 @@ Assuming you added the test data using bin/sampledata, you can then use joeuser/
 
 3.  Start up the Keystone service:
 
-        $ cd ~/keystone/bin && ./keystone
+        $ cd ~/keystone/bin && ./keystone-all
         Starting the Legacy Authentication component
         Service API listening on 0.0.0.0:5000
         Admin API listening on 0.0.0.0:35357
