@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//76k\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:53:30Z",
+      "side": 1,
+      "message": "does ISO really mean anything anymore? these things have a million different formats anyway",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//76g\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:53:30Z",
+      "side": 1,
+      "message": "i feel like this stuff can go in the token core.py, probably driver also, but at least expiration",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//76c\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:53:30Z",
+      "side": 1,
+      "message": "pop the or onto this line and align with parens?",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//76Y\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:53:30Z",
+      "side": 1,
+      "message": "i hate typing this stuff out, is it possible to make this a util function?",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//76U\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:53:30Z",
+      "side": 1,
+      "message": "align these bad boys with the .query pls?",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//748\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:53:30Z",
+      "side": 1,
+      "message": "basd and period pls.",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//744\u003d",
+        "filename": "tests/test_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:53:30Z",
+      "side": 1,
+      "message": "singly",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
