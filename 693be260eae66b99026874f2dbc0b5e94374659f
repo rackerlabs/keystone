@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//8Os\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-10T18:20:50Z",
+      "side": 1,
+      "message": "I wanted to use AssertionError for two reasons:\n\n* The name of the method is \u0027assert_admin\u0027\n* We are already raising an AssertionError if the policy check fails\n\nHowever, it might make sense to use Unauthorized, as a TokenNotFound exception indicates a larger problem than someone not being an admin. I went ahead and converted it to Unauthorized",
+      "parentUuid": "AAAAEn//8g0\u003d",
+      "revId": "693be260eae66b99026874f2dbc0b5e94374659f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//8gw\u003d",
         "filename": "keystone/contrib/ec2/core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2012-02-09T22:51:23Z",
       "side": 1,
       "message": "this should use exception.Unauthorized, I bewieve",
+      "revId": "693be260eae66b99026874f2dbc0b5e94374659f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//8Oo\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-10T18:20:50Z",
+      "side": 1,
+      "message": "Yep.",
+      "parentUuid": "AAAAEn//8gw\u003d",
       "revId": "693be260eae66b99026874f2dbc0b5e94374659f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
