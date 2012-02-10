@@ -1,0 +1,9 @@
+Verified+1: Jenkins
+Code-Review+2: anotherjesse
+Approved+1: termie <github@anarkystic.com>
+Code-Review+2: termie <github@anarkystic.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 10 Feb 2012 19:46:03 +0000
+Reviewed-on: https://review.openstack.org/3980
+Project: openstack/keystone
+Branch: refs/heads/redux
