@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//77s\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:02:18Z",
+      "side": 1,
+      "message": "newline between stdlib imports and third-party imports, plz",
+      "revId": "b87857ff09ab16d7d74def7adf528a7604e9a57c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//774\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:02:18Z",
+      "side": 1,
+      "message": "insert a newline betwen this and the __init__ pls",
+      "revId": "b87857ff09ab16d7d74def7adf528a7604e9a57c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//778\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:02:18Z",
+      "side": 1,
+      "message": "single quotes plz",
+      "revId": "b87857ff09ab16d7d74def7adf528a7604e9a57c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//78A\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:02:18Z",
+      "side": 1,
+      "message": "single quotes pls",
+      "revId": "b87857ff09ab16d7d74def7adf528a7604e9a57c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//78M\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:02:18Z",
+      "side": 1,
+      "message": "extra space",
+      "revId": "b87857ff09ab16d7d74def7adf528a7604e9a57c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//78I\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:02:18Z",
+      "side": 1,
+      "message": "single quotes plz",
+      "revId": "b87857ff09ab16d7d74def7adf528a7604e9a57c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//78E\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-10T23:02:18Z",
+      "side": 1,
+      "message": "single quotes pls",
+      "revId": "b87857ff09ab16d7d74def7adf528a7604e9a57c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
