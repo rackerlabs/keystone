@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//74Y\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-11T00:12:31Z",
+      "side": 1,
+      "message": "http://en.wikipedia.org/wiki/ISO_8601",
+      "parentUuid": "AAAAEn//76k\u003d",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//76g\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2012-02-10T23:53:30Z",
       "side": 1,
       "message": "i feel like this stuff can go in the token core.py, probably driver also, but at least expiration",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//73s\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-11T00:12:31Z",
+      "side": 1,
+      "message": "Ok, reverted the change in this file and moved expiration to token.core",
+      "parentUuid": "AAAAEn//76g\u003d",
       "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//74U\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-11T00:12:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//76c\u003d",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//76Y\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2012-02-10T23:53:30Z",
       "side": 1,
       "message": "i hate typing this stuff out, is it possible to make this a util function?",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//74M\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-11T00:12:31Z",
+      "side": 1,
+      "message": "Done. See keystone.common.utils.unixtime",
+      "parentUuid": "AAAAEn//76Y\u003d",
       "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//730\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-11T00:12:31Z",
+      "side": 1,
+      "message": "Yep, don\u0027t know why my brain decided to do that.",
+      "parentUuid": "AAAAEn//76U\u003d",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//748\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2012-02-10T23:53:30Z",
       "side": 1,
       "message": "basd and period pls.",
+      "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//73k\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-11T00:12:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//748\u003d",
       "revId": "7ae1554cccf4afc6427806e609943c827b4a09f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
