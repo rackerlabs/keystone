@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//72o\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-11T00:18:30Z",
+      "side": 1,
+      "message": "I originally had it that way, but then passing any unexpected query string arguments would throw a TypeError as not all methods use **kwargs. One could argue that we should disallow unexpected arguments, but keystoneclient is already passing a \u0027fresh\u0027 param (stupid cache-busting artifact from original cloud servers client). I\u0027m inclined to leave it like this unless you\u0027re compelled to do otherwise.",
+      "parentUuid": "AAAAEn//77Q\u003d",
+      "revId": "0a97311e5a3fab84d750ec5dbf4272cc01cb29b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//77M\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-02-10T23:14:08Z",
       "side": 1,
       "message": "i\u0027m a **kw man",
+      "revId": "0a97311e5a3fab84d750ec5dbf4272cc01cb29b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//724\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-11T00:18:30Z",
+      "side": 1,
+      "message": "Good to know.",
+      "parentUuid": "AAAAEn//77M\u003d",
       "revId": "0a97311e5a3fab84d750ec5dbf4272cc01cb29b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//720\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-11T00:18:30Z",
+      "side": 1,
+      "message": "Yep, I\u0027m planning on doing that when we add pagination to another resource.",
+      "parentUuid": "AAAAEn//77E\u003d",
+      "revId": "0a97311e5a3fab84d750ec5dbf4272cc01cb29b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//77A\u003d",
         "filename": "tests/test_keystoneclient.py",
         "patchSetId": 1
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//72w\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-11T00:18:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//77A\u003d",
+      "revId": "0a97311e5a3fab84d750ec5dbf4272cc01cb29b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//768\u003d",
         "filename": "tests/test_wsgi.py",
         "patchSetId": 1
@@ -81,6 +153,24 @@
       "writtenOn": "2012-02-10T23:14:08Z",
       "side": 1,
       "message": "blank line \u0027twixt stdlib and 3rdparty",
+      "revId": "0a97311e5a3fab84d750ec5dbf4272cc01cb29b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//72s\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-11T00:18:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//768\u003d",
       "revId": "0a97311e5a3fab84d750ec5dbf4272cc01cb29b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
