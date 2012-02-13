@@ -87,6 +87,8 @@ class SwiftAuth(object):
         self.reseller_prefix = conf.get('reseller_prefix', 'AUTH').strip()
         self.operator_roles = conf.get('operator_roles',
                                        'admin, SwiftOperator')
+        self.reseller_admin_role = conf.get('reseller_admin_role',
+                                           'ResellerAdmin')
         config_is_admin = conf.get('is_admin', "false").lower()
         self.is_admin = config_is_admin in ('true', 't', '1', 'on', 'yes', 'y')
         cfg_synchosts = conf.get('allowed_sync_hosts', '127.0.0.1')
@@ -135,12 +137,22 @@ class SwiftAuth(object):
         except ValueError:
             return webob.exc.HTTPNotFound(request=req)
 
+        user_groups = env_identity.get('roles', [])
+
+        # Give uncondional access to a user with the reseller_admin
+        # group.
+        if self.reseller_admin_role in user_groups:
+            msg = 'User %s has reseller admin authorizing'
+            self.logger.debug(msg % tenant[0])
+            req.environ['swift_owner'] = True
+            return
+
+        # Check if a user try to access to an account different than
+        # assigned by the token
         if not self._reseller_check(account, tenant[0]):
             log_msg = 'tenant mismatch: %s != %s' % (account, tenant[0])
             self.logger.debug(log_msg)
             return self.denied_response(req)
-
-        user_groups = env_identity.get('roles', [])
 
         # Check the groups the user is belonging to. If the user is
         # part of the group defined in the config variable
@@ -149,7 +161,7 @@ class SwiftAuth(object):
         for group in self.operator_roles.split(','):
             group = group.strip()
             if group in user_groups:
-                log_msg = "allow user in group %s as account admin" % group
+                log_msg = 'allow user in group %s as account admin' % group
                 self.logger.debug(log_msg)
                 req.environ['swift_owner'] = True
                 return
