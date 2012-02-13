@@ -1,0 +1,10 @@
+Verified+1: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: termie <github@anarkystic.com>
+Approved+1: Brian Waldon <brian.waldon@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 13 Feb 2012 21:11:11 +0000
+Reviewed-on: https://review.openstack.org/3969
+Project: openstack/keystone
+Branch: refs/heads/redux
