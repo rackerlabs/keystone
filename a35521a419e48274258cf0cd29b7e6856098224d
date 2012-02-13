@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//7Zk\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-13T21:02:23Z",
+      "side": 1,
+      "message": "bleepbloop",
+      "revId": "a35521a419e48274258cf0cd29b7e6856098224d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//7ZU\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-13T21:02:23Z",
+      "side": 1,
+      "message": "I\u0027d rather check this on the return result than make it part of the sql query, the id is already a unique primary key field and the lookup for those is instant",
+      "revId": "a35521a419e48274258cf0cd29b7e6856098224d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
