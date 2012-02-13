@@ -263,6 +263,14 @@ Then, run:
     python setup.py build
     sudo python setup.py install
 
+## LDAP Setup on RHEL6.2
+
+Using RHN:
+
+    sudo yum install openldap-devel
+
+This is to allow building `python-ldap` in the venv.
+
 # Relevant Standards and Technologies
 
 [Overlap of Identity Technologies](https://sites.google.com/site/oauthgoog/Overlap)
