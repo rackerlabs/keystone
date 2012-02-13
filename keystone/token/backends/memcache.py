@@ -27,7 +27,7 @@ class Token(token.Driver):
         return self._memcache_client
 
     def _prefix_token_id(self, token_id):
-        return 'token-%s' % token_id
+        return 'token-%s' % str(token_id)
 
     def get_token(self, token_id):
         ptk = self._prefix_token_id(token_id)
