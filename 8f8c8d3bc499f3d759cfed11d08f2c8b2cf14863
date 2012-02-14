@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//62M\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-14T20:30:37Z",
+      "side": 1,
+      "message": "letting this slide so that this patch will finally land",
+      "revId": "8f8c8d3bc499f3d759cfed11d08f2c8b2cf14863",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
