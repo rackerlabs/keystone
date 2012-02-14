@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//6y4\u003d",
+        "filename": "docs/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-14T21:00:24Z",
+      "side": 1,
+      "message": "as soon as the catalog patch lands, there are two more functions: \n\nimport_legacy $old_db_string which will attempt to import the data from a legacy keystone install into a current keystone database\n\nexport_legacy_catalog $old_db_string which will dump the legacy database\u0027s endpoint templates in a format that keystone will accept",
+      "revId": "43d50bcf29b77372d8291c4fcc85085d11d94870",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//6yk\u003d",
+        "filename": "docs/source/man/keystone-manage.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-14T21:00:24Z",
+      "side": 1,
+      "message": "same thing here",
+      "revId": "43d50bcf29b77372d8291c4fcc85085d11d94870",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
