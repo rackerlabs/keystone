@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//7Kk\u003d",
+        "filename": "tests/legacy_essex.mysql",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-14T02:08:39Z",
+      "side": 1,
+      "message": "no creds?",
+      "revId": "d8d806965e4b5725641b1d62076d34d960a714e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//7Ks\u003d",
+        "filename": "tests/legacy_essex.mysql",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-14T02:08:39Z",
+      "side": 1,
+      "message": "no endpoints?",
+      "revId": "d8d806965e4b5725641b1d62076d34d960a714e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
