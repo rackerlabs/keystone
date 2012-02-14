@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//624\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-14T20:22:09Z",
+      "side": 1,
+      "message": "we should be fine here as long as everything coming in to the system is unicode, which i am pretty sure is happening right now because of the stuff in our middleware, but this is a little scary, usually one does a smart_utf8 or whatnot helper function that makes sure that it only calls the stuff on byestrings\n\nAAAANYWAY, i think this is fine for now but wanted to plant the seed",
+      "revId": "e1a9a1f06f83f9795e03d726a9e41db6dd9b9a9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
