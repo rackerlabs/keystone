@@ -1,0 +1,8 @@
+Verified+1: Jenkins
+Approved+1: anotherjesse
+Code-Review+2: anotherjesse
+Submitted-by: Jenkins
+Submitted-at: Tue, 14 Feb 2012 22:26:49 +0000
+Reviewed-on: https://review.openstack.org/3942
+Project: openstack/keystone
+Branch: refs/heads/redux
