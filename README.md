@@ -269,7 +269,7 @@ Using RHN:
 
     sudo yum install openldap-devel
 
-It appears the package `python-ldap` needs this to work.
+This is to allow building `python-ldap` in the venv.
 
 # Relevant Standards and Technologies
 
