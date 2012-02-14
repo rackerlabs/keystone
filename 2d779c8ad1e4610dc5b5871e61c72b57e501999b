@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//7Mg\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-02-14T01:51:09Z",
+      "side": 1,
+      "message": "hmm, this should probably be removed?",
+      "revId": "2d779c8ad1e4610dc5b5871e61c72b57e501999b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
