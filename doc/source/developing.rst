@@ -26,6 +26,20 @@ Running a development instance
 Setting up a virtualenv
 -----------------------
 
+Prerequisites
+^^^^^^^^^^^^^
+
+LDAP Setup on RHEL6.2
+
+With RHN enabled run the command::
+
+    $ sudo yum install openldap-devel
+
+This is to allow building `python-ldap` in the venv.
+
+Setup
+^^^^^
+
 We recommend establishing a virtualenv to run keystone within. To establish
 this environment, use the command::
 
