@@ -1,0 +1,15 @@
+Verified+1: James E. Blair <corvus@inaugust.com>
+Approved+1: Ziad Sawalha <ziad.sawalha@rackspace.com>
+Code-Review+2: Ziad Sawalha <ziad.sawalha@rackspace.com>
+Code-Review+1: Chuck Short <chuck.short@canonical.com>
+Code-Review+1: Jason Cannavale
+Code-Review+2: anotherjesse
+Code-Review+1: Chmouel Boudjnah <chmouel@chmouel.com>
+Code-Review+1: Justin Shepherd <jshepher@rackspace.com>
+Code-Review+2: Brian Waldon <brian.waldon@rackspace.com>
+Code-Review+1: ayoung
+Submitted-by: James E. Blair <corvus@inaugust.com>
+Submitted-at: Thu, 16 Feb 2012 01:47:35 +0000
+Reviewed-on: https://review.openstack.org/4170
+Project: openstack/keystone
+Branch: refs/heads/master
