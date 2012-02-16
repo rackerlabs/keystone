@@ -1090,7 +1090,7 @@ class CommonConfigOpts(ConfigOpts):
         ]
 
     logging_cli_opts = [
-        StrOpt('log-config',
+        StrOpt('log_config',
                metavar='PATH',
                help='If this option is specified, the logging configuration '
                     'file specified is used and overrides any other logging '
