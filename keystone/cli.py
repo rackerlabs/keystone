@@ -16,10 +16,7 @@
 
 from __future__ import absolute_import
 
-import json
-import logging
 import sys
-import StringIO
 import textwrap
 
 import cli.app
@@ -37,10 +34,6 @@ class BaseApp(cli.log.LoggingApp):
     def __init__(self, *args, **kw):
         kw.setdefault('name', self.__class__.__name__.lower())
         super(BaseApp, self).__init__(*args, **kw)
-
-    def add_default_params(self):
-        for args, kw in DEFAULT_PARAMS:
-            self.add_param(*args, **kw)
 
     def _parse_keyvalues(self, args):
         kv = {}
