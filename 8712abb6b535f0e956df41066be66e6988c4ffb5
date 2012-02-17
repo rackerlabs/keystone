@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//5bg\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-17T18:31:06Z",
+      "side": 0,
+      "message": "DEFAULT_PARAMS here is undefined, and add_default_params didn\u0027t even seem to be used",
+      "revId": "8712abb6b535f0e956df41066be66e6988c4ffb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
