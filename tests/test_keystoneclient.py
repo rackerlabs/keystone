@@ -24,6 +24,7 @@ import default_fixtures
 
 OPENSTACK_REPO = 'https://review.openstack.org/p/openstack'
 KEYSTONECLIENT_REPO = '%s/python-keystoneclient.git' % OPENSTACK_REPO
+KEYSTONECLIENT_BRANCH = 'master'
 
 
 class CompatTestCase(test.TestCase):
@@ -138,7 +139,6 @@ class KeystoneClientTests(object):
         token = client.auth_token
         token_client = self._client(token=token, tenant_name='BAR')
         tenants = token_client.tenants.list()
-        self.assertEquals(tenants[0].id, self.tenant_bar['id'])
         self.assertEquals(tenants[0].id, self.tenant_bar['id'])
 
     def test_authenticate_and_delete_token(self):
@@ -454,24 +454,26 @@ class KeystoneClientTests(object):
 
 class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
     def get_checkout(self):
-        return KEYSTONECLIENT_REPO, 'master'
+        return KEYSTONECLIENT_REPO, KEYSTONECLIENT_BRANCH
 
-    def test_tenant_add_and_remove_user(self):
+    def test_tenant_add_and_remove_user_role(self):
         client = self.get_client()
         client.roles.add_user_role(tenant=self.tenant_baz['id'],
                                    user=self.user_foo['id'],
                                    role=self.role_useless['id'])
-        tenant_refs = client.tenants.list()
-        self.assert_(self.tenant_baz['id'] in
-                     [x.id for x in tenant_refs])
+        roles = client.roles.roles_for_user(user=self.user_foo['id'],
+                                            tenant=self.tenant_baz['id'])
+        self.assert_(self.role_useless['id'] in
+                     [r.id for r in roles])
 
         client.roles.remove_user_role(tenant=self.tenant_baz['id'],
                                       user=self.user_foo['id'],
                                       role=self.role_useless['id'])
+        roles = client.roles.roles_for_user(user=self.user_foo['id'],
+                                            tenant=self.tenant_baz['id'])
+        self.assert_(self.role_useless['id'] not in
+                     [r.id for r in roles])
 
-        tenant_refs = client.tenants.list()
-        self.assert_(self.tenant_baz['id'] not in
-                     [x.id for x in tenant_refs])
 
     def test_tenant_list_marker(self):
         client = self.get_client()
@@ -524,6 +526,19 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
                           client.tenants.list, limit='a')
         self.assertRaises(client_exceptions.BadRequest,
                           client.tenants.list, limit=-1)
+
+    def test_tenant_list_all(self):
+        client = self.get_client()
+
+        # Add two arbitrary tenants to user for testing purposes
+        for i in range(2):
+            tenant_id = uuid.uuid4().hex
+            tenant = {'name': 'tenant-%s' % tenant_id, 'id': tenant_id}
+            self.identity_api.create_tenant(tenant_id, tenant)
+            self.identity_api.add_user_to_tenant(tenant_id, self.user_foo['id'])
+
+        tenants_all = client.tenants.list()
+        self.assertEqual(len(tenants_all), 3)
 
     def test_roles_get_by_user(self):
         client = self.get_client()
