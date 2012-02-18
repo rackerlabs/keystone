@@ -151,7 +151,8 @@ class TestCase(unittest.TestCase):
         # TODO(termie): doing something from json, probably based on Django's
         #               loaddata will be much preferred.
         for tenant in fixtures.TENANTS:
-            rv = self.identity_api.create_tenant(tenant['id'], tenant)
+            tenant_copy = tenant.copy()
+            rv = self.identity_api.create_tenant(tenant['id'], tenant_copy)
             setattr(self, 'tenant_%s' % tenant['id'], rv)
 
         for user in fixtures.USERS:

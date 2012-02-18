@@ -245,7 +245,14 @@ class TenantController(wsgi.Application):
 
         Doesn't care about token scopedness.
 
+        Handle ?name= query string if present and get tenant by name.
+
         """
+        # Handle get tenant by name
+        name = context['query_string'].get('name')
+        if name:
+            return self.get_tenant_by_name(context, name)
+
         try:
             token_ref = self.token_api.get_token(context=context,
                                                  token_id=context['token_id'])
@@ -266,12 +273,25 @@ class TenantController(wsgi.Application):
         }
         return self._format_tenant_list(tenant_refs, **params)
 
+    def get_tenant_by_name(self, context, tenant_name):
+        tenant = self.identity_api.get_tenant_by_name(context, tenant_name)
+        if not tenant:
+            raise exception.NotFound(target=tenant_name)
+        return {'tenant': tenant}
+
     def get_tenant(self, context, tenant_id):
+        """Handle ?type=name query string if present."""
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
+
+        # Handle get tenant by name
+        q_type = context['query_string'].get('type')
+        if q_type == 'name':
+            return self.get_tenant_by_name(context, name)
+
         tenant = self.identity_api.get_tenant(context, tenant_id)
         if not tenant:
-            return webob.exc.HTTPNotFound()
+            raise exception.NotFound(target=tenant_id)
         return {'tenant': tenant}
 
     # CRUD Extension

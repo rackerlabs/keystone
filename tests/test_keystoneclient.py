@@ -24,6 +24,7 @@ import default_fixtures
 
 OPENSTACK_REPO = 'https://review.openstack.org/p/openstack'
 KEYSTONECLIENT_REPO = '%s/python-keystoneclient.git' % OPENSTACK_REPO
+KEYSTONECLIENT_BRANCH = 'master'
 
 
 class CompatTestCase(test.TestCase):
@@ -138,7 +139,6 @@ class KeystoneClientTests(object):
         token = client.auth_token
         token_client = self._client(token=token, tenant_name='BAR')
         tenants = token_client.tenants.list()
-        self.assertEquals(tenants[0].id, self.tenant_bar['id'])
         self.assertEquals(tenants[0].id, self.tenant_bar['id'])
 
     def test_authenticate_and_delete_token(self):
@@ -454,7 +454,7 @@ class KeystoneClientTests(object):
 
 class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
     def get_checkout(self):
-        return KEYSTONECLIENT_REPO, 'master'
+        return KEYSTONECLIENT_REPO, KEYSTONECLIENT_BRANCH
 
     def test_tenant_add_and_remove_user(self):
         client = self.get_client()
