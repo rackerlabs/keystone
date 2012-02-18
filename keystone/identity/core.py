@@ -194,7 +194,7 @@ class PublicRouter(wsgi.ComposableRouter):
         tenant_controller = TenantController()
         mapper.connect('/tenants',
                        controller=tenant_controller,
-                       action='get_tenants_for_token',
+                       action='get_tenants',
                        conditions=dict(methods=['GET']))
 
 
@@ -204,7 +204,7 @@ class AdminRouter(wsgi.ComposableRouter):
         tenant_controller = TenantController()
         mapper.connect('/tenants',
                        controller=tenant_controller,
-                       action='get_tenants_for_token',
+                       action='get_tenants',
                        conditions=dict(method=['GET']))
         mapper.connect('/tenants/{tenant_id}',
                        controller=tenant_controller,
@@ -237,13 +237,15 @@ class TenantController(wsgi.Application):
         self.token_api = token.Manager()
         super(TenantController, self).__init__()
 
-    def get_tenants_for_token(self, context, **kw):
+    def get_tenants(self, context, **kw):
         """Get valid tenants for token based on token used to authenticate.
 
         Pulls the token from the context, validates it and gets the valid
         tenants for the user in the token.
 
         Doesn't care about token scopedness.
+
+        Select tenant by name if ?name= is given.
 
         """
         try:
@@ -252,18 +254,28 @@ class TenantController(wsgi.Application):
         except exception.NotFound:
             raise exception.Unauthorized()
 
-        user_ref = token_ref['user']
-        tenant_ids = self.identity_api.get_tenants_for_user(
-                context, user_ref['id'])
         tenant_refs = []
-        for tenant_id in tenant_ids:
-            tenant_refs.append(self.identity_api.get_tenant(
-                    context=context,
-                    tenant_id=tenant_id))
-        params = {
-            'limit': context['query_string'].get('limit'),
-            'marker': context['query_string'].get('marker'),
-        }
+        params = {}
+        name = context['query_string'].get('name')
+
+        if name:
+            tenant = self.identity_api.get_tenant_by_name(context, name)
+            if not tenant:
+                msg = 'Tenant not found: %s' % name
+                raise webob.exc.HTTPNotFound(explanation=msg)
+            tenant_refs.append(tenant)
+        else:
+            user_ref = token_ref['user']
+            tenant_ids = self.identity_api.get_tenants_for_user(
+                    context, user_ref['id'])
+            for tenant_id in tenant_ids:
+                tenant_refs.append(self.identity_api.get_tenant(
+                        context=context,
+                        tenant_id=tenant_id))
+            params = {
+                'limit': context['query_string'].get('limit'),
+                'marker': context['query_string'].get('marker'),
+            }
         return self._format_tenant_list(tenant_refs, **params)
 
     def get_tenant(self, context, tenant_id):
