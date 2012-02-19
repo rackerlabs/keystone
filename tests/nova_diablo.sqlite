@@ -1,0 +1,77 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE users (
+	created_at DATETIME, 
+	updated_at DATETIME, 
+	deleted_at DATETIME, 
+	deleted BOOLEAN, 
+	id VARCHAR(255) NOT NULL, 
+	name VARCHAR(255), 
+	access_key VARCHAR(255), 
+	secret_key VARCHAR(255), 
+	is_admin BOOLEAN, 
+	PRIMARY KEY (id), 
+	CHECK (is_admin IN (0, 1)), 
+	CHECK (deleted IN (0, 1))
+);
+INSERT INTO "users" VALUES('2012-02-13 23:40:46.389614',NULL,NULL,0,'testuser',NULL,'myaccess','mysecret',0);
+INSERT INTO "users" VALUES('2012-02-13 23:41:03.594911',NULL,NULL,0,'testadmin',NULL,'myaccess','mysecret',1);
+INSERT INTO "users" VALUES('2012-02-13 23:41:03.594911',NULL,NULL,0,'testuser2','Test User 2','myaccess2','mysecret2',0);
+INSERT INTO "users" VALUES('2012-02-13 23:41:03.594911',NULL,NULL,0,'testuser3',NULL,'myaccess3','mysecret3',0);
+INSERT INTO "users" VALUES('2012-02-13 23:41:03.594911',NULL,NULL,1,'testdeleted',NULL,'myaccess','mysecret',1);
+CREATE TABLE projects (
+	created_at DATETIME, 
+	updated_at DATETIME, 
+	deleted_at DATETIME, 
+	deleted BOOLEAN, 
+	id VARCHAR(255) NOT NULL, 
+	name VARCHAR(255), 
+	description VARCHAR(255), 
+	project_manager VARCHAR(255), 
+	PRIMARY KEY (id), 
+	CHECK (deleted IN (0, 1)), 
+	FOREIGN KEY(project_manager) REFERENCES users (id)
+);
+INSERT INTO "projects" VALUES('2012-02-13 23:41:47.478720',NULL,NULL,0,'userproject','userproject','mydescription','testuser');
+INSERT INTO "projects" VALUES('2012-02-13 23:41:47.478720',NULL,NULL,0,'adminproject','adminproject','mydescription','testadmin');
+INSERT INTO "projects" VALUES('2012-02-13 23:41:47.478720',NULL,NULL,0,'user2project','user2project','mydescription','testuser2');
+INSERT INTO "projects" VALUES('2012-02-13 23:41:47.478720',NULL,NULL,1,'userprojectdeleted','userproject','mydescription','testuser');
+CREATE TABLE user_project_association (
+	created_at DATETIME, 
+	updated_at DATETIME, 
+	deleted_at DATETIME, 
+	deleted BOOLEAN, 
+	user_id VARCHAR(255) NOT NULL, 
+	project_id VARCHAR(255) NOT NULL, 
+	PRIMARY KEY (user_id, project_id), 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(project_id) REFERENCES projects (id), 
+	CHECK (deleted IN (0, 1))
+);
+INSERT INTO "user_project_association" VALUES('2012-02-13 23:41:47.504391',NULL,NULL,0,'testuser','userproject');
+INSERT INTO "user_project_association" VALUES('2012-02-13 23:41:47.504391',NULL,NULL,0,'testadmin','adminproject');
+INSERT INTO "user_project_association" VALUES('2012-02-13 23:41:47.504391',NULL,NULL,0,'testuser2','userproject');
+INSERT INTO "user_project_association" VALUES('2012-02-13 23:41:47.504391',NULL,NULL,0,'testuser2','user2project');
+INSERT INTO "user_project_association" VALUES('2012-02-13 23:41:47.504391',NULL,NULL,0,'testuser3','userproject');
+INSERT INTO "user_project_association" VALUES('2012-02-13 23:41:47.504391',NULL,NULL,1,'testuser9','userproject');
+CREATE TABLE user_project_role_association (
+	created_at DATETIME, 
+	updated_at DATETIME, 
+	deleted_at DATETIME, 
+	deleted BOOLEAN, 
+	user_id VARCHAR(255) NOT NULL, 
+	project_id VARCHAR(255) NOT NULL, 
+	role VARCHAR(255) NOT NULL, 
+	PRIMARY KEY (user_id, project_id, role), 
+	CHECK (deleted IN (0, 1)), 
+	FOREIGN KEY(user_id, project_id) REFERENCES user_project_association (user_id, project_id)
+);
+INSERT INTO "user_project_role_association" VALUES('2012-02-13 23:43:01.174194',NULL,NULL,0,'testuser','userproject','sysadmin');
+INSERT INTO "user_project_role_association" VALUES('2012-02-13 23:43:01.174194',NULL,NULL,0,'testuser','userproject','netadmin');
+INSERT INTO "user_project_role_association" VALUES('2012-02-13 23:43:01.174194',NULL,NULL,0,'testadmin','adminproject','sysadmin');
+INSERT INTO "user_project_role_association" VALUES('2012-02-13 23:43:01.174194',NULL,NULL,0,'testuser2','userproject','sysadmin');
+INSERT INTO "user_project_role_association" VALUES('2012-02-13 23:43:01.174194',NULL,NULL,0,'testuser2','user2project','sysadmin');
+INSERT INTO "user_project_role_association" VALUES('2012-02-13 23:43:01.174194',NULL,NULL,0,'testuser2','user2project','netadmin');
+INSERT INTO "user_project_role_association" VALUES('2012-02-13 23:43:01.174194',NULL,NULL,0,'testuser3','userproject','newrole');
+INSERT INTO "user_project_role_association" VALUES('2012-02-13 23:43:01.174194',NULL,NULL,1,'testuser9','userproject','sysadmin');
+COMMIT;

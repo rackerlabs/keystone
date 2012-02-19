@@ -104,9 +104,45 @@ class ExportLegacyCatalog(BaseApp):
         print '\n'.join(migration.dump_catalog())
 
 
+class ExportNovaAuth(BaseApp):
+    """Export auth data from a nova database."""
+
+    name = 'export_nova_auth'
+
+    def __init__(self, *args, **kw):
+        super(ExportNovaAuth, self).__init__(*args, **kw)
+        self.add_param('nova_db', nargs=1,
+                       help='Connection string for nova auth database')
+
+    def main(self):
+        from keystone.common.sql import nova
+        nova_db = self.params.nova_db[0]
+        print json.dumps(nova.export_auth(nova_db))
+
+
+class ImportNovaAuth(BaseApp):
+    """Import a dump of nova auth data into keystone."""
+
+    name = 'import_nova_auth'
+
+    def __init__(self, *args, **kw):
+        super(ImportNovaAuth, self).__init__(*args, **kw)
+        self.add_param('dump_file', nargs=1,
+                       help=('File containing output of'
+                             '\'export_nova_auth\' command'))
+
+    def main(self):
+        from keystone.common.sql import nova
+        dump_file = self.params.dump_file[0]
+        dump_data = json.loads(open(dump_file).read())
+        nova.import_auth(dump_data)
+
+
 CMDS = {'db_sync': DbSync,
         'import_legacy': ImportLegacy,
         'export_legacy_catalog': ExportLegacyCatalog,
+        'export_nova_auth': ExportNovaAuth,
+        'import_nova_auth': ImportNovaAuth,
         }
 
 
