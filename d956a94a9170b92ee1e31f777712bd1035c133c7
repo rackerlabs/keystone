@@ -16,6 +16,24 @@
       "revId": "d956a94a9170b92ee1e31f777712bd1035c133c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//46c\u003d",
+        "filename": "docs/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-19T19:14:52Z",
+      "side": 1,
+      "message": "I used \u0027note\u0027 instead of \u0027warning\u0027 since the contents changed a bit.",
+      "parentUuid": "AAAAEn//47A\u003d",
+      "revId": "d956a94a9170b92ee1e31f777712bd1035c133c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
