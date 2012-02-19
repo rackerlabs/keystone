@@ -28,5 +28,5 @@ pylint # static code analysis
 pep8==0.6.1 # checks for PEP8 code style compliance
 mox # mock object framework
 
--e git+https://review.openstack.org/p/openstack/python-keystoneclient.git#egg=python-keystoneclient
--e git+https://review.openstack.org/p/openstack-dev/openstack-nose.git#egg=openstack.nose_plugin
+-e git+http://review.openstack.org/p/openstack/python-keystoneclient.git#egg=python-keystoneclient
+-e git+http://review.openstack.org/p/openstack-dev/openstack-nose.git#egg=openstack.nose_plugin

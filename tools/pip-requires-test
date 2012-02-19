@@ -17,7 +17,7 @@ nosexcover
 # for python-keystoneclient
 httplib2
 pep8
--e git+https://github.com/openstack/python-keystoneclient.git#egg=python-keystoneclient
+-e git+http://github.com/openstack/python-keystoneclient.git#egg=python-keystoneclient
 
 # for python-novaclient
 prettytable
