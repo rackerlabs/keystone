@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//47A\u003d",
+        "filename": "docs/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-19T17:46:02Z",
+      "side": 1,
+      "message": "This would show up better in the docs if it was styled as a warning:\n\n.. warning::\n   Users imported will all need to have their passwords set! The export process does not transfer the passwords.",
+      "revId": "d956a94a9170b92ee1e31f777712bd1035c133c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
