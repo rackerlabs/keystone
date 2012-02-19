@@ -123,7 +123,7 @@ Use the following command to import your old data::
 Specify db_url as the connection string that was present in your old
 keystone.conf file.
 
-Step 3: Import your legacy service catalog
+Step 4: Import your legacy service catalog
 ------------------------------------------
 While the older keystone stored the service catalog in the database,
 the updated version configures the service catalog using a template file.
@@ -139,6 +139,55 @@ To import your legacy catalog, run this command::
 After executing this command, you will need to restart the keystone service to
 see your changes.
 
+Migrating from Nova Auth
+========================
+Migration of users, projects (now called tenants), roles and EC2 credentials
+is supported for the following versions of Nova:
+
+* stable/diablo
+
+To migrate from Nova, use the following steps:
+
+Step 1: Export your data from Nova
+----------------------------------
+Use the following command to export your data::
+
+    keystone-manage export_nova_auth [db_url, e.g. 'mysql://root@foobar/nova'] > /path/to/dump
+
+Specify db_url as the connection string that is present in your Nova
+config file. This command will output a JSON blob representing your
+Nova auth information. It is important to redirect the output to a 
+file so it can be imported in the next step.
+
+Step 2: db_sync your new, empty database
+----------------------------------------
+Run the following command to configure the most recent schema in your new
+keystone installation::
+
+    keystone-manage db_sync
+
+Step 3: Import your data to Keystone
+------------------------------------
+To import your Nova auth data from a dump file created with 
+``export_nova_auth``, run this command::
+
+    keystone-manage import_nova_auth [dump_file, e.g. /path/to/dump]
+
+Caveats
+-------
+1) Users will be added without a password. This renders them unable to
+authenticate against Keystone. You must explicitly set a password for each
+user.
+
+2) Users in the Nova auth system have a single set of EC2 credentials that
+works with all projects (tenants) that user can access. In Keystone, these 
+credentials are scoped to a single user/tenant pair. In order to use the 
+same secret keys from Nova, you must prefix each corresponding access key 
+with the id of the project used in Nova. For example, if had access
+to the 'Beta' project in your Nova installation with the access/secret 
+keys 'XXX'/'YYY', you should use 'Beta:XXX'/'YYY' in Keystone. These 
+credentials are active once your migration is complete.
+
 Initializing Keystone
 =====================
 
@@ -148,6 +197,8 @@ through the normal REST api.  At the moment, the following calls are supported:
 * ``db_sync``: Sync the database.
 * ``import_legacy``: Import a legacy (pre-essex) version of the db.
 * ``export_legacy_catalog``: Export service catalog from a legacy (pre-essex) db.
+* ``export_nova_auth``: Dump authentication and authorization data from a Nova db.
+* ``import_nova_auth``: Load auth data from a dump of a Nova db created with nova-manage.
 
 
 Generally, the following is the first step after a source installation::
