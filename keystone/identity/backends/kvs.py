@@ -113,6 +113,11 @@ class Identity(kvs.Base, identity.Driver):
         user_ref = self._get_user(user_id)
         return user_ref.get('tenants', [])
 
+    def get_users_for_tenant(self, tenant_id):
+        user_ids = self.db.get('user_list', [])
+        return [x for x in user_ids
+                if tenant_id in self._get_user(x)['tenants']]
+
     def get_roles_for_user_and_tenant(self, user_id, tenant_id):
         metadata_ref = self.get_metadata(user_id, tenant_id)
         if not metadata_ref:

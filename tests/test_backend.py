@@ -220,6 +220,12 @@ class IdentityTests(object):
         tenant_ref = self.identity_api.get_tenant('fake2')
         self.assert_(tenant_ref is None)
 
+    def test_get_users_for_tenant(self):
+        user_ids = self.identity_api.get_users_for_tenant(
+                self.tenant_bar['id'])
+        self.assert_(user_ids[0] == self.user_foo['id'])
+        user_ids = self.identity_api.get_users_for_tenant('fred')
+        self.assert_(len(user_ids) == 0)
 
 class TokenTests(object):
     def test_token_crud(self):
