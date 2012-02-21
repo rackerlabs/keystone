@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//4cc\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-21T16:45:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4j4\u003d",
+      "revId": "bf7873df690cfd773a5ecaf1802dfaa1da5f5d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4jg\u003d",
         "filename": "tests/test_content_types.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-02-21T04:15:55Z",
       "side": 1,
       "message": "can\u0027t we make this a subclass of CompatTestCase (test_keystoneclient) so that we can re-use the tests and expand on that set to cover the XML variation with a subclass there?\n\nThis looks remarkably similar to that code...",
+      "revId": "bf7873df690cfd773a5ecaf1802dfaa1da5f5d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4cE\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-21T16:45:20Z",
+      "side": 1,
+      "message": "It is a bit similar (in that it fires up the wsgi app), but the client doesn\u0027t support XML, and even if it did, it would abstract that away from the end user by exposing dictionaries / popo\u0027s. These tests interact directly with wsgi over http because they need to control \u0026 assert the request/response headers and actual body content.",
+      "parentUuid": "AAAAEn//4jg\u003d",
       "revId": "bf7873df690cfd773a5ecaf1802dfaa1da5f5d73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +117,24 @@
       "writtenOn": "2012-02-21T04:15:55Z",
       "side": 1,
       "message": "what\u0027s the value of these tests outside of test_keystoneclient, which actively uses the client to test the API. If these have independent tests, let\u0027s refactor to use the same tests against multiple backends using the subclass mechanism we have set up already instead of introducing separate tests in multiple places that cover the same thing.",
+      "revId": "bf7873df690cfd773a5ecaf1802dfaa1da5f5d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4cM\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-21T16:45:20Z",
+      "side": 1,
+      "message": "Differences: 1) these tests cover xml, 2) these tests make (hopefully) detailed assertions about all of the content being returned, and 3) these tests don\u0027t make assertions about the behavior of keystone.",
+      "parentUuid": "AAAAEn//4jc\u003d",
       "revId": "bf7873df690cfd773a5ecaf1802dfaa1da5f5d73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
