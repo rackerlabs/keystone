@@ -11,8 +11,5 @@ setup(name='keystone',
       packages=find_packages(exclude=['test', 'bin']),
       scripts=['bin/keystone-all', 'bin/keystone-manage'],
       zip_safe=False,
-      install_requires=['setuptools', 'python-keystoneclient'],
-      data_files=[
-          ('keystone/common/sql/migrate_repo',
-           ['keystone/common/sql/migrate_repo/migrate.cfg'])]
+      install_requires=['setuptools', 'python-keystoneclient']
       )
