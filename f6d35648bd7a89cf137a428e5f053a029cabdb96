@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//4Lg\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-21T22:49:34Z",
+      "side": 1,
+      "message": "It still makes sense to respect limit (in this case limit\u003d0 is the only thing that matters) even if name is provided. Can you move this line up to 258?",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
