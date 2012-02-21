@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//4S8\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-21T21:07:38Z",
+      "side": 0,
+      "message": "This is going to cause some weirdness if we allow a marker to be passed in alongside a name query string. I\u0027m assuming there will only every be a single tenant returned with a name filter, so when the actual pagination code looks for a marker, it\u0027s not going to find it (since it looks in the list of tenants). We might be able to treat this for now by defining params above the conditional and only adding marker if you make it into the else.",
+      "revId": "6919b05149d42986091de5f96f429dd736e99ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
