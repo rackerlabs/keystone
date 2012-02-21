@@ -235,6 +235,14 @@ class Identity(sql.Base, identity.Driver):
 
         return [x.tenant_id for x in membership_refs]
 
+    def get_users_for_tenant(self, tenant_id):
+        session = self.get_session()
+        membership_refs = session.query(UserTenantMembership)\
+                          .filter_by(tenant_id=tenant_id)\
+                          .all()
+
+        return [x.user_id for x in membership_refs]
+
     def get_roles_for_user_and_tenant(self, user_id, tenant_id):
         metadata_ref = self.get_metadata(user_id, tenant_id)
         if not metadata_ref:

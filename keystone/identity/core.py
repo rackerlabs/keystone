@@ -132,6 +132,14 @@ class Driver(object):
         """
         raise NotImplementedError()
 
+    def get_users_for_tenant(self, tenant_id):
+        """Get the users associated with a given tenant.
+
+        Returns: a list of user ids.
+
+        """
+        raise NotImplementedError()
+
     def get_roles_for_user_and_tenant(self, user_id, tenant_id):
         """Get the roles associated with a user within given tenant.
 
@@ -297,9 +305,12 @@ class TenantController(wsgi.Application):
         self.assert_admin(context)
         self.identity_api.delete_tenant(context, tenant_id)
 
-    def get_tenant_users(self, context, **kw):
+    def get_users_for_tenant(self, context, tenant_id, **kw):
         self.assert_admin(context)
-        raise NotImplementedError()
+        user_refs = [self.identity_api.get_user(context, x)
+                for x in self.identity_api.get_users_for_tenant(
+                        context, tenant_id)]
+        return {'users': user_refs}
 
     def _format_tenant_list(self, tenant_refs, **kwargs):
         marker = kwargs.get('marker')
