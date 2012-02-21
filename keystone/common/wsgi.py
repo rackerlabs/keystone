@@ -181,7 +181,9 @@ class Application(BaseApplication):
             logging.warning(e)
             return render_exception(e)
 
-        if result is None or type(result) is str or type(result) is unicode:
+        if result is None:
+            return render_response(result, status=(204, 'No Content'))
+        elif type(result) is str or type(result) is unicode:
             return result
         elif isinstance(result, webob.Response):
             return result
