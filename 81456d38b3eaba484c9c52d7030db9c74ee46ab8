@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//4hw\u003d",
+        "filename": "etc/keystone.conf.ldap",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-02-21T09:49:41Z",
+      "side": 1,
+      "message": "Instead of separate sample config file, maybe better to add commented out lines into keystone.conf ?",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
