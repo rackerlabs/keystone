@@ -16,6 +16,363 @@
       "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Xw\u003d",
+        "filename": "etc/keystone.conf.ldap",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "What about other schema? They should be configurable as well. Not all LDAP deployments are exactly the same. AD schema are very different from OpenLDAP or Novell. At the very least, we should make objectclasses, attribute to identify username (i.e. uid, cn, or samaccountname?), search scope (subtree or onelevel?), search filter configurable.\n\nFurthermore, SSL is a must for any LDAP authentication. No security auditor will let you get away with deploying this in a production environment knowing LDAP bind will be going over the clear.\n\nAlso, you may want to think about supporting local caching to boost performance. LDAP data are highly static, which are perfect candidates for caching.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4YI\u003d",
+        "filename": "etc/keystone.conf.ldap",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "You may want to obfuscate user (especially LDAP administrator) password.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4XQ\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "Either do something with the error or don\u0027t catch it. Otherwise, it will fall into the block hole and we may never know what happened. :)",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4XM\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "Either do something with the error or don\u0027t catch it. Otherwise, it will fall into the block hole and we may never know what happened. :)",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4XA\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "You way want to make objectclass, username attribute, search scope, and search filter configurable. No all LDAP deployments are exactly the same. Active Directory, for example, is using samaccountname attribute for username.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Ws\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "Active Directory does not use \u0027groupOfNames\u0027. :)",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Wk\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "You may want to support both cases: member and memberOf.\n\n\"memberOf\" needs to be resolved from the user objectclass.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4WI\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "Search filter needs to be configurable as well.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4WM\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "Search scope needs to be configurable. Otherwise, we won\u0027t be able to support nested containers. For example, if we have two containers for the marketing department, dc\u003dcom,dc\u003dacme,o\u003dmarketing,o\u003dus-west and dc\u003dcom,dc\u003dacme,o\u003dmarketing,o\u003dus-east, of we do a \"base\" search on dc\u003dcom,dc\u003dacme,o\u003dmarketing we won\u0027t find anything.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4V8\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "How do you handle LDAP referrals?",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Sc\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "pep8 failed? :)",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4R8\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "pep8 failed?",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Ro\u003d",
+        "filename": "keystone/identity/backends/ldap/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "These should be configurable. We are making assumptions on the schema which may or may not be valid.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Rg\u003d",
+        "filename": "keystone/identity/backends/ldap/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "What is the purpose of this? You seem to catch the exception then raise the same one.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4RY\u003d",
+        "filename": "keystone/identity/backends/ldap/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "Search scope and filter should be configurable.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4RM\u003d",
+        "filename": "keystone/identity/backends/ldap/tenant.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "Schema should be configurable.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4RA\u003d",
+        "filename": "keystone/identity/backends/ldap/tenant.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "May want to support the \u0027memberOf\u0027 use case as well.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Q8\u003d",
+        "filename": "keystone/identity/backends/ldap/tenant.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "Is string-based exception still supported?",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Qw\u003d",
+        "filename": "keystone/identity/backends/ldap/user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "Schema should be configurable.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Qo\u003d",
+        "filename": "keystone/identity/backends/ldap/user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "Do something with the exception or don\u0027t catch it.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4QQ\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-02-21T21:43:18Z",
+      "side": 1,
+      "message": "If two-way SSL is hooked up, there\u0027s no need for admin token in token validation.",
+      "revId": "81456d38b3eaba484c9c52d7030db9c74ee46ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
