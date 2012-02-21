@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//4dg\u003d",
+        "filename": "MANIFEST.in",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 360
+      },
+      "writtenOn": "2012-02-21T16:01:55Z",
+      "side": 1,
+      "message": "Should this be \u0027graft\u0027?",
+      "revId": "c9a3775ad65f2f3ad7743c72b7eb5f997f50d1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
