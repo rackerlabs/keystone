@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//4j4\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-21T04:15:55Z",
+      "side": 1,
+      "message": "lxml needs to be added to pip-depends and pip-depends-test",
+      "revId": "bf7873df690cfd773a5ecaf1802dfaa1da5f5d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4jg\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-21T04:15:55Z",
+      "side": 1,
+      "message": "can\u0027t we make this a subclass of CompatTestCase (test_keystoneclient) so that we can re-use the tests and expand on that set to cover the XML variation with a subclass there?\n\nThis looks remarkably similar to that code...",
+      "revId": "bf7873df690cfd773a5ecaf1802dfaa1da5f5d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4js\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-21T04:15:55Z",
+      "side": 1,
+      "message": "probably want to do your \"TODO\" there",
+      "revId": "bf7873df690cfd773a5ecaf1802dfaa1da5f5d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4jo\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-21T04:15:55Z",
+      "side": 1,
+      "message": "ditto re: TODO",
+      "revId": "bf7873df690cfd773a5ecaf1802dfaa1da5f5d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4jc\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-21T04:15:55Z",
+      "side": 1,
+      "message": "what\u0027s the value of these tests outside of test_keystoneclient, which actively uses the client to test the API. If these have independent tests, let\u0027s refactor to use the same tests against multiple backends using the subclass mechanism we have set up already instead of introducing separate tests in multiple places that cover the same thing.",
+      "revId": "bf7873df690cfd773a5ecaf1802dfaa1da5f5d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
