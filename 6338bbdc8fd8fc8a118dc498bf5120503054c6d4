@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3+I\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T02:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4CM\u003d",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4CI\u003d",
         "filename": "keystone/common/sql/nova.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2012-02-22T01:18:17Z",
       "side": 1,
       "message": "alphabetize",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3+E\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T02:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4CI\u003d",
       "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//39E\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T02:40:24Z",
+      "side": 1,
+      "message": "This is a simple migration - there\u0027s one method that accepts a dictionary of data and does a very specific thing with it. I find shared state in processes like this to add to the confusion. It might not seem ugly (in thought) to create a class with shared dictionaries and have each internal method look to those, but if I kept this code and used global dictionaries to share state, everybody would be up in arms about it (even though they\u0027re roughly equivalent for our purpose here). I think this approach is much more straightforward, and I\u0027ve broken up each logical subroutine to make it easy to follow.",
+      "parentUuid": "AAAAEn//4CY\u003d",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4CU\u003d",
         "filename": "keystone/common/sql/nova.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2012-02-22T01:18:17Z",
       "side": 1,
       "message": "_generate_uuid() probably",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//39A\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T02:40:24Z",
+      "side": 1,
+      "message": "I think I forgot that I wrote that helper at this point :/",
+      "parentUuid": "AAAAEn//4CU\u003d",
       "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//388\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T02:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4CQ\u003d",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4CA\u003d",
         "filename": "tests/test_migrate_nova_auth.py",
         "patchSetId": 5
@@ -98,6 +188,24 @@
       "writtenOn": "2012-02-22T01:18:17Z",
       "side": 1,
       "message": "sort these pls, single level imports before multi-level and so on",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//384\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T02:40:24Z",
+      "side": 1,
+      "message": "These are in alphabetical order by full module name. Please see HACKING.rst.",
+      "parentUuid": "AAAAEn//4CA\u003d",
       "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//38s\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T02:40:24Z",
+      "side": 1,
+      "message": "Meh, whatever. Done",
+      "parentUuid": "AAAAEn//4Bo\u003d",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4B4\u003d",
         "filename": "tests/test_migrate_nova_auth.py",
         "patchSetId": 5
@@ -132,6 +258,24 @@
       "writtenOn": "2012-02-22T01:18:17Z",
       "side": 1,
       "message": "can we just say password if we are loading the password key?",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//38k\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T02:40:24Z",
+      "side": 1,
+      "message": "I don\u0027t think I follow you. Do you want me to raise allow the code to raise a NameError in the authenticate call rather than define it as None here?",
+      "parentUuid": "AAAAEn//4B4\u003d",
       "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//38Y\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T02:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4Bs\u003d",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4Bw\u003d",
         "filename": "tests/test_migrate_nova_auth.py",
         "patchSetId": 5
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//38c\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T02:40:24Z",
+      "side": 1,
+      "message": "I over-indented it because it lined up directly below the \u0027self\u0027. Fixed.",
+      "parentUuid": "AAAAEn//4Bw\u003d",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4B0\u003d",
         "filename": "tests/test_migrate_nova_auth.py",
         "patchSetId": 5
@@ -183,6 +363,24 @@
       "writtenOn": "2012-02-22T01:18:17Z",
       "side": 1,
       "message": "not necessary to escape the newline",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//38g\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T02:40:24Z",
+      "side": 1,
+      "message": "Done. Also fixed indent below.",
+      "parentUuid": "AAAAEn//4B0\u003d",
       "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
