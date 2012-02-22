@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3cg\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "I assume you mean \u00270\u0027 and \u00271\u0027 (strings), but I think the spec wants \u0027true\u0027 and \u0027false\u0027 [citation needed], and I\u0027d rather not encourage people to implement something other than spec, unless it comes up in bugs.",
+      "parentUuid": "AAAAEn//4IQ\u003d",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4IM\u003d",
         "filename": "keystone/common/serializer.py",
         "patchSetId": 3
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3cQ\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4G0\u003d",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4Fg\u003d",
         "filename": "keystone/common/serializer.py",
         "patchSetId": 3
@@ -81,6 +117,24 @@
       "writtenOn": "2012-02-22T00:50:21Z",
       "side": 1,
       "message": "i\u0027d almost rather turn this giant switch into a class (or callable class), that has a bunch of protected submethods for each of these cases, like \n\nif isinstance(d, list):\n  self._populate_list(element, d)\nelse:\n  for k, v in dict.iteritems():\n    if isinstance(v, dict):\n      self._populate_dict(element, k, v)\n\nand so on, just because large switches become pretty difficult to read, so factoring out the work actually being done make it at least possible to follow which conditions trigger which behavior",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3bg\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "I thought about doing that when I started but blew it off. I\u0027ll refactor.",
+      "parentUuid": "AAAAEn//4Fg\u003d",
       "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3bk\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4GU\u003d",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4GA\u003d",
         "filename": "keystone/common/serializer.py",
         "patchSetId": 3
@@ -115,6 +187,24 @@
       "writtenOn": "2012-02-22T00:50:21Z",
       "side": 1,
       "message": "could we kill this line",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3bo\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4GA\u003d",
       "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3bs\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4GE\u003d",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4FY\u003d",
         "filename": "keystone/common/serializer.py",
         "patchSetId": 3
@@ -149,6 +257,24 @@
       "writtenOn": "2012-02-22T00:50:21Z",
       "side": 1,
       "message": "to to",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3bw\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4FY\u003d",
       "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +298,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3b0\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4Fc\u003d",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4FU\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 3
@@ -183,6 +327,24 @@
       "writtenOn": "2012-02-22T00:50:21Z",
       "side": 1,
       "message": "cute",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3ac\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4FU\u003d",
       "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +368,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3aY\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Possibly; is there another test module that I can add them to?",
+      "parentUuid": "AAAAEn//4FQ\u003d",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4FM\u003d",
         "filename": "tests/test_content_types.py",
         "patchSetId": 3
@@ -217,6 +397,24 @@
       "writtenOn": "2012-02-22T00:50:21Z",
       "side": 1,
       "message": "this should be at the top of the class def",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3aM\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4FM\u003d",
       "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +438,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3ZY\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4FI\u003d",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4FA\u003d",
         "filename": "tests/test_content_types.py",
         "patchSetId": 3
@@ -251,6 +467,24 @@
       "writtenOn": "2012-02-22T00:50:21Z",
       "side": 1,
       "message": "i\u0027d also make this into a separate method",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Yw\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4FA\u003d",
       "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +508,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3Yk\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4E4\u003d",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4E0\u003d",
         "filename": "tests/test_content_types.py",
         "patchSetId": 3
@@ -285,6 +537,24 @@
       "writtenOn": "2012-02-22T00:50:21Z",
       "side": 1,
       "message": "ditto",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Yo\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4E0\u003d",
       "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +595,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3YY\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "There\u0027s a multiple choice response implemented, but nothing for a particular version (a subset of the multiple choice response) -- should probably open a new bug, but I cited the most closely related issue instead.",
+      "parentUuid": "AAAAEn//4Es\u003d",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4Eo\u003d",
         "filename": "tests/test_content_types.py",
         "patchSetId": 3
@@ -359,6 +647,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3Tw\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4Ek\u003d",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4Ec\u003d",
         "filename": "tests/test_content_types.py",
         "patchSetId": 3
@@ -376,6 +682,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3YU\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Yeah, I don\u0027t really like how I ended up organizing it. I didn\u0027t think about mixins though -- good call.",
+      "parentUuid": "AAAAEn//4Ec\u003d",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4EU\u003d",
         "filename": "tests/test_middleware.py",
         "patchSetId": 3
@@ -387,6 +711,24 @@
       "writtenOn": "2012-02-22T00:50:21Z",
       "side": 1,
       "message": "newline between stdlib and thirdparty imports",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Y0\u003d",
+        "filename": "tests/test_middleware.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T23:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//4EU\u003d",
       "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
