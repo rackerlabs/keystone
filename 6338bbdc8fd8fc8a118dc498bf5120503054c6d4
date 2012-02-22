@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3N4\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:47:37Z",
+      "side": 1,
+      "message": "do you think we should rewrite the other import to be this way? i feel like they should look the same since there is no reason for them not to (they are roughly equivalent, legacy has an additional method for dumping the catalog)",
+      "parentUuid": "AAAAEn//39E\u003d",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4CU\u003d",
         "filename": "keystone/common/sql/nova.py",
         "patchSetId": 5
@@ -212,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3Nk\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:47:37Z",
+      "side": 1,
+      "message": "then hacking gets an update, please see all other files in this project",
+      "parentUuid": "AAAAEn//384\u003d",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4Bo\u003d",
         "filename": "tests/test_migrate_nova_auth.py",
         "patchSetId": 5
@@ -276,6 +312,24 @@
       "side": 1,
       "message": "I don\u0027t think I follow you. Do you want me to raise allow the code to raise a NameError in the authenticate call rather than define it as None here?",
       "parentUuid": "AAAAEn//4B4\u003d",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3NQ\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:47:37Z",
+      "side": 1,
+      "message": "name the variable password, as in password \u003d None",
+      "parentUuid": "AAAAEn//38k\u003d",
       "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
