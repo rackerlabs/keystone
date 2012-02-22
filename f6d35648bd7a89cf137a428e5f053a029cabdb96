@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAEn//4BM\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:37:21Z",
+      "side": 1,
+      "message": "these should be two separate calls, the public version returns tenants scoped to your token, the admin version returns everything (this is legacy behavior :( )\n\nyou look like you are only changing the public one so i\u0027d leave the name as it is",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4BE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:37:21Z",
+      "side": 1,
+      "message": "is this really supposed to only return one tenant if the ?name option is given? what a silly api",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4BA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:37:21Z",
+      "side": 1,
+      "message": "we have custom exceptions now, see common.exception",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4Lg\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 2
@@ -13,6 +64,74 @@
       "writtenOn": "2012-02-21T22:49:34Z",
       "side": 1,
       "message": "It still makes sense to respect limit (in this case limit\u003d0 is the only thing that matters) even if name is provided. Can you move this line up to 258?",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4A8\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:37:21Z",
+      "side": 1,
+      "message": "please use the style from user below",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Aw\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:37:21Z",
+      "side": 1,
+      "message": "we check two different versions, no? so this isn\u0027t really much of a constant to have :/",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4A0\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:37:21Z",
+      "side": 1,
+      "message": "why were these changes made? why aren\u0027t we testing the tenants afterwards?",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4A4\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:37:21Z",
+      "side": 1,
+      "message": "this is listing for a user still, not all tenants",
       "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
