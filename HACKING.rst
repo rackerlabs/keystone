@@ -57,12 +57,12 @@ Example::
   import eventlet
   import webob.exc
 
-  import nova.api.ec2
+  from nova import test
   from nova.api import openstack
   from nova.auth import users
-  import nova.flags
   from nova.endpoint import cloud
-  from nova import test
+  import nova.flags
+  import nova.api.ec2
 
 
 Docstrings
