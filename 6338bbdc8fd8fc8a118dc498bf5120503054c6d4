@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3Mk\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T22:56:50Z",
+      "side": 1,
+      "message": "We definitely could take the time to rewrite it, but I don\u0027t think we would be adding much value by doing so. The time has already been spent to get it where it is, and we can understand it, so let\u0027s just leave it.\n\nAdditionally, I think it would make sense to move these modules out of keystone.common. This isn\u0027t necessarily \u0027common\u0027 code.",
+      "parentUuid": "AAAAEn//3N4\u003d",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4CU\u003d",
         "filename": "keystone/common/sql/nova.py",
         "patchSetId": 5
@@ -248,6 +266,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3Mc\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T22:56:50Z",
+      "side": 1,
+      "message": "I really don\u0027t want to explain why you\u0027re wrong in this review. Feel free to approach me offline.",
+      "parentUuid": "AAAAEn//3Nk\u003d",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4Bo\u003d",
         "filename": "tests/test_migrate_nova_auth.py",
         "patchSetId": 5
@@ -330,6 +366,24 @@
       "side": 1,
       "message": "name the variable password, as in password \u003d None",
       "parentUuid": "AAAAEn//38k\u003d",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3MU\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T22:56:50Z",
+      "side": 1,
+      "message": "Oh. Done.",
+      "parentUuid": "AAAAEn//3NQ\u003d",
       "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
