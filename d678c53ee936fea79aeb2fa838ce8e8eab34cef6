@@ -1,0 +1,1041 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//3g0\u003d",
+        "filename": "etc/keystone.conf.ldap",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "it would be nice to limit this file to the ldap section and the sections that need to be overridden, looks like identity too (the config files can be stacked)",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3gk\u003d",
+        "filename": "etc/keystone.conf.ldap",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "can these can be changed to something more generic?",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3gc\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "instead of putting this in __init__.py, please make a core.py file and possibly import it in this file",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3gE\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "please read the HACKING doc for our code style guidelines, but imports follow the pattern:\n\nstdlib imports\n\\n\nthirdparty imports\n\\n\nimports from keystone\n\\n\n\\n\n... start of the code ...\n\n\nand are alphabetized, examples given in HACKING",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3gA\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "should be two newlines per HACKING",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3f8\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "two newlines between toplevel elements (per HACKING)",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3fw\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "when defining constants, please do them before function and class definitions (adding this to HACKING)",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Qw\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "We don\u0027t capitalilze the whole API, this would be BaseLdapApi",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3fk\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "commented out code should either be removed or have a comment next to it explaining why it should remain but be commented out",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3fs\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3fc\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "commented out",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3fY\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "commented out",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3fM\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "commented out",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3fE\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "too many newlines",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3fo\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3fA\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "two many newlines",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3e4\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "commented out",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3e8\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "trailing whitepsace",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3T4\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "we usually use the word \"ensure\" for this type of method (ensure_unique)",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3ew\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "do you know what this is disabling? it seems to claim that something is not callable but doesn\u0027t seem applicable, could probably be removed",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3eo\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "the pylint disabling above can be removed if this is turned into a list comprehension such as\n\n[self._ldap_res_to_model(x) for x in self._ldap_get_all(filter)]\n\nthough filter should probably be named filter_ with a trailing underscore since filter is a built in function",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3UE\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "most of these page things probably can go away unless it is something very ldap specific, we have naive paging already and this paging code should probably be torn out and re-written anyway",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3ek\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "same here, you can do\n\n[x for x in list if key(x) \u003e marker][:limit]\n\nthough i would probably replace the usage of \"e\" with \"x\" everywhere in this function, since \"e\" is commonly used to refer to an exception instance",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3eg\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "likewise with these e\u0027s",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3UQ\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "this could be done as i, item in enumerate(lst):",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3cc\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "warnings like this tend to mean you are doing something wrong, and should be fixed rather than disabled, in this case it appears that the warning means you are using a fall-through from the for loop to set the value of i, the quick workaround would be to say i \u003d 0 before the for loop above, though since you\u0027re doing a fall-through you should probably comment saying that you expect that variable to be set by the for-loop",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Qs\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "this would be LdapWrapper",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Tk\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "what do the _s on all these functions mean?",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3TM\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "this becomes a really difficult to read expression, do you think you could break it up into a couple lines?",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3S4\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "if \"typ\" means type, you can do \"type_\" or \"kind\" to make this easier to read",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3TU\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "this becomes a really difficult to read expression, do you think you could break it up into a couple lines?",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3TY\u003d",
+        "filename": "keystone/common/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "this becomes a really difficult to read expression, do you think you could break it up into a couple lines?",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3S0\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "new line between third party and project imports",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Sw\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "needs another newline",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Ss\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "usually global constants are ALL_CAPS",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Sc\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "maps don\u0027t really get used in python, we use list comprehensions instead",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3SU\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "this is indented unusually, pls refer to \"Dictionaries/Lists\" in HACKING",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Qk\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "FakeLdap",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3SI\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "is it ignored? it seems to do a lot of stuff",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3SA\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "it is usually nice to put a blank newline after control structures, so a newline here, and probably one before the try: above and probably before the next \"if\" below",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Sk\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Ro\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "a newline after this raise would also be nice",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Rk\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "and after this one",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3RE\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "newline above this shoudl stay",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Q8\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "is the normal way of hashing an ldap password? seems like we\u0027d just use the normal hash_password call...",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Q0\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "lots of trailing whitespace thorughout this file, and this line has extra whitespace and is import objects instead of modules (refer ot HACKING)",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3PQ\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "import modules not objects (per HACKING)",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3PU\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "too many newlines",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3PY\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "extra newline here",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Pc\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "these newlines are not needed",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Qc\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "perhaps just use the CONF.ldap.url instead of assigning to an instance attribute as well",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3QQ\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "CONF doesn\u0027t need to be passed, it is available globally",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3QM\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "only one newline needed",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3QI\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "only one newline needed",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3QA\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "this looks indented oddly",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3QE\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "only one newline needed",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3P8\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "commented out code (and below)",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Pw\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "this might look easier as \n\nroles \u003d [x.role_id for x in assignments if x.user_id \u003d\u003d user_id]",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Ps\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "tenant_list \u003d [x.id for x in self.tenant.get_user_tenants(user_id)]",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Pk\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "no outer parens necessary",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Pg\u003d",
+        "filename": "keystone/identity/backends/ldap/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T22:18:03Z",
+      "side": 1,
+      "message": "likewise",
+      "revId": "d678c53ee936fea79aeb2fa838ce8e8eab34cef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
