@@ -1,0 +1,395 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//4Ik\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "please add periods to all of these, i won\u0027t mention the rest",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4IQ\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "probably add 1 here?",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4IM\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "probably add 0 here?",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4G0\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "can we wrap this in parens instead of escaping a newline",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Fg\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "i\u0027d almost rather turn this giant switch into a class (or callable class), that has a bunch of protected submethods for each of these cases, like \n\nif isinstance(d, list):\n  self._populate_list(element, d)\nelse:\n  for k, v in dict.iteritems():\n    if isinstance(v, dict):\n      self._populate_dict(element, k, v)\n\nand so on, just because large switches become pretty difficult to read, so factoring out the work actually being done make it at least possible to follow which conditions trigger which behavior",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4GU\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "maybe we can check that the last letter is \"s\" ? this seems a little broad",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4GA\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "could we kill this line",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4GE\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "could we kill this line",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4FY\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "to to",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Fc\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "should this be unicode()ed too?",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4FU\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "cute",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4FQ\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "are these things that would be useful in test.TestCase?",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4FM\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "this should be at the top of the class def",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4FI\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "maybe factor this into a separate function, since this is getting a little long anyway\n\nbody \u003d self._to_content_type(body, self.content_type)",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4FA\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "i\u0027d also make this into a separate method",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4E4\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "probably make a helper for this too, self._public_port()",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4E0\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Ew\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "should all these applicable to both ones be on the super class?",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Es\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "i think this is fixed already",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Eo\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "i think this is fixed already",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Ek\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "could you rename all these tests to use the same names as the methods they are hitting on the controller? i.e. user_details below is get_user",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Ec\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "if this is extending all the json tests, it might make sense to put those in the superclass also, and make that class a mixin, similar to how we do test_backend.py",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4EU\u003d",
+        "filename": "tests/test_middleware.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T00:50:21Z",
+      "side": 1,
+      "message": "newline between stdlib and thirdparty imports",
+      "revId": "f86c78606faa54a4f72e12af7645eaa9d2a699e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
