@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//4Bc\u003d",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:23:46Z",
+      "side": 1,
+      "message": "may as well rename this to match the call name",
+      "revId": "5d07d6144a556d254ab31136e4486cd2337aa5a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Bg\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:23:46Z",
+      "side": 1,
+      "message": "may as well rename this to match the call name :)",
+      "revId": "5d07d6144a556d254ab31136e4486cd2337aa5a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
