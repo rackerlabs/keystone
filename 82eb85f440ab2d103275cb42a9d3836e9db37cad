@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//3t0\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-02-22T16:05:30Z",
+      "side": 1,
+      "message": "might be better as:\n\n elif isinstance(result, basestring):",
+      "revId": "82eb85f440ab2d103275cb42a9d3836e9db37cad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3tw\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-02-22T16:05:30Z",
+      "side": 1,
+      "message": "Why are we asserting here?",
+      "revId": "82eb85f440ab2d103275cb42a9d3836e9db37cad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
