@@ -133,9 +133,9 @@ class AuthProtocol(object):
         # where to tell clients to find the auth service (default to url
         # constructed based on endpoint we have for the service to use)
         self.auth_location = conf.get('auth_uri',
-                                        '%s://%s:%s' % (self.auth_protocol,
-                                        self.auth_host,
-                                        self.auth_port))
+                                      '%s://%s:%s' % (self.auth_protocol,
+                                                      self.auth_host,
+                                                      self.auth_port))
 
         # Credentials used to verify this component with the Auth service since
         # validating tokens is a privileged call
@@ -156,7 +156,7 @@ class AuthProtocol(object):
         #Prep headers to forward request to local or remote downstream service
         proxy_headers = env.copy()
         for header in proxy_headers.iterkeys():
-            if header[0:5] == 'HTTP_':
+            if header.startswith('HTTP_'):
                 proxy_headers[header[5:]] = proxy_headers[header]
                 del proxy_headers[header]
 
@@ -168,7 +168,9 @@ class AuthProtocol(object):
                 #Configured to allow downstream service to make final decision.
                 #So mark status as Invalid and forward the request downstream
                 self._decorate_request('X_IDENTITY_STATUS',
-                    'Invalid', env, proxy_headers)
+                                       'Invalid',
+                                       env,
+                                       proxy_headers)
             else:
                 #Respond to client as appropriate for this auth protocol
                 return self._reject_request(env, start_response)
@@ -180,13 +182,17 @@ class AuthProtocol(object):
                 if self.delay_auth_decision:
                     # Downstream service will receive call still and decide
                     self._decorate_request('X_IDENTITY_STATUS',
-                        'Invalid', env, proxy_headers)
+                                           'Invalid',
+                                           env,
+                                           proxy_headers)
                 else:
                     #Respond to client as appropriate for this auth protocol
                     return self._reject_claims(env, start_response)
             else:
                 self._decorate_request('X_IDENTITY_STATUS',
-                    'Confirmed', env, proxy_headers)
+                                       'Confirmed',
+                                       env,
+                                       proxy_headers)
 
             #Collect information about valid claims
             if valid:
@@ -194,31 +200,40 @@ class AuthProtocol(object):
 
                 # Store authentication data
                 if claims:
-                    self._decorate_request('X_AUTHORIZATION', 'Proxy %s' %
-                        claims['user'], env, proxy_headers)
+                    self._decorate_request('X_AUTHORIZATION',
+                                           'Proxy %s' % claims['user'],
+                                           env,
+                                           proxy_headers)
 
                     # For legacy compatibility before we had ID and Name
                     self._decorate_request('X_TENANT',
-                        claims['tenant'], env, proxy_headers)
+                                           claims['tenant'],
+                                           env,
+                                           proxy_headers)
 
                     # Services should use these
                     self._decorate_request('X_TENANT_NAME',
-                        claims.get('tenant_name', claims['tenant']),
-                        env, proxy_headers)
+                                           claims.get('tenant_name',
+                                                      claims['tenant']),
+                                           env,
+                                           proxy_headers)
                     self._decorate_request('X_TENANT_ID',
-                        claims['tenant'], env, proxy_headers)
+                                           claims['tenant'],
+                                           env,
+                                           proxy_headers)
 
                     self._decorate_request('X_USER',
-                        claims['user'], env, proxy_headers)
-                    if 'roles' in claims and len(claims['roles']) > 0:
-                        if claims['roles'] != None:
-                            roles = ''
-                            for role in claims['roles']:
-                                if len(roles) > 0:
-                                    roles += ','
-                                roles += role
-                            self._decorate_request('X_ROLE',
-                                roles, env, proxy_headers)
+                                           claims['user'],
+                                           env,
+                                           proxy_headers)
+                    # NOTE(lzyeval): claims has a key 'roles' which is
+                    #                guaranteed to be a list (see note below)
+                    roles = ','.join(filter(lambda x: x, claims['roles']))
+                    if roles:
+                        self._decorate_request('X_ROLE',
+                                               roles,
+                                               env,
+                                               proxy_headers)
 
                     # NOTE(todd): unused
                     self.expanded = True
@@ -238,10 +253,12 @@ class AuthProtocol(object):
         params = {'passwordCredentials': {'username': username,
                                           'password': password,
                                           'tenantId': '1'}}
-        conn = httplib.HTTPConnection('%s:%s' \
-            % (self.auth_host, self.auth_port))
-        conn.request('POST', '/v2.0/tokens', json.dumps(params), \
-            headers=headers)
+        conn = httplib.HTTPConnection('%s:%s' % (self.auth_host,
+                                                 self.auth_port))
+        conn.request('POST',
+                     '/v2.0/tokens',
+                     json.dumps(params),
+                     headers=headers)
         response = conn.getresponse()
         data = response.read()
         return data
@@ -253,15 +270,15 @@ class AuthProtocol(object):
 
     def _reject_request(self, env, start_response):
         """Redirect client to auth server"""
-        return webob.exc.HTTPUnauthorized('Authentication required',
-                    [('WWW-Authenticate',
-                      "Keystone uri='%s'" % self.auth_location)])(env,
-                                                        start_response)
+        headers = [('WWW-Authenticate',
+                    "Keystone uri='%s'" % self.auth_location)]
+        rep = webob.exc.HTTPUnauthorized('Authentication required', headers)
+        return rep(env, start_response)
 
     def _reject_claims(self, env, start_response):
         """Client sent bad claims"""
-        return webob.exc.HTTPUnauthorized()(env,
-            start_response)
+        rep = webob.exc.HTTPUnauthorized()
+        return rep(env, start_response)
 
     def _get_admin_auth_token(self, username, password):
         """
@@ -304,15 +321,18 @@ class AuthProtocol(object):
         # since this is a priviledged op,m we need to auth ourselves
         # by using an admin token
         headers = {'Content-type': 'application/json',
-                    'Accept': 'application/json',
-                    'X-Auth-Token': self.admin_token}
-                    ##TODO(ziad):we need to figure out how to auth to keystone
-                    #since validate_token is a priviledged call
-                    #Khaled's version uses creds to get a token
-                    # 'X-Auth-Token': admin_token}
-                    # we're using a test token from the ini file for now
-        conn = http_connect(self.auth_host, self.auth_port, 'GET',
-                            '/v2.0/tokens/%s' % claims, headers=headers)
+                   'Accept': 'application/json',
+                   'X-Auth-Token': self.admin_token}
+                   ##TODO(ziad):we need to figure out how to auth to keystone
+                   #since validate_token is a priviledged call
+                   #Khaled's version uses creds to get a token
+                   # 'X-Auth-Token': admin_token}
+                   # we're using a test token from the ini file for now
+        conn = http_connect(self.auth_host,
+                            self.auth_port,
+                            'GET',
+                            '/v2.0/tokens/%s' % claims,
+                            headers=headers)
         resp = conn.getresponse()
         # data = resp.read()
         conn.close()
@@ -333,15 +353,18 @@ class AuthProtocol(object):
         # Valid token. Get user data and put it in to the call
         # so the downstream service can use it
         headers = {'Content-type': 'application/json',
-                    'Accept': 'application/json',
-                    'X-Auth-Token': self.admin_token}
-                    ##TODO(ziad):we need to figure out how to auth to keystone
-                    #since validate_token is a priviledged call
-                    #Khaled's version uses creds to get a token
-                    # 'X-Auth-Token': admin_token}
-                    # we're using a test token from the ini file for now
-        conn = http_connect(self.auth_host, self.auth_port, 'GET',
-                            '/v2.0/tokens/%s' % claims, headers=headers)
+                   'Accept': 'application/json',
+                   'X-Auth-Token': self.admin_token}
+                   ##TODO(ziad):we need to figure out how to auth to keystone
+                   #since validate_token is a priviledged call
+                   #Khaled's version uses creds to get a token
+                   # 'X-Auth-Token': admin_token}
+                   # we're using a test token from the ini file for now
+        conn = http_connect(self.auth_host,
+                            self.auth_port,
+                            'GET',
+                            '/v2.0/tokens/%s' % claims,
+                            headers=headers)
         resp = conn.getresponse()
         data = resp.read()
         conn.close()
@@ -350,26 +373,25 @@ class AuthProtocol(object):
             raise LookupError('Unable to locate claims: %s' % resp.status)
 
         token_info = json.loads(data)
-        roles = []
-        role_refs = token_info['access']['user']['roles']
-        if role_refs != None:
-            for role_ref in role_refs:
-                # Nova looks for the non case-sensitive role 'Admin'
-                # to determine admin-ness
-                roles.append(role_ref['name'])
+        _access_user = token_info['access']['user']
+        _access_token = token_info['access']['token']
+        # Nova looks for the non case-sensitive role 'Admin'
+        # to determine admin-ness
+        # NOTE(lzyeval): roles is always a list
+        roles = map(lambda y: y['name'], _access_user.get('roles', []))
 
         try:
-            tenant = token_info['access']['token']['tenant']['id']
-            tenant_name = token_info['access']['token']['tenant']['name']
+            tenant = _access_token['tenant']['id']
+            tenant_name = _access_token['tenant']['name']
         except:
             tenant = None
             tenant_name = None
         if not tenant:
-            tenant = token_info['access']['user'].get('tenantId')
-            tenant_name = token_info['access']['user'].get('tenantName')
-        verified_claims = {'user': token_info['access']['user']['username'],
-                    'tenant': tenant,
-                    'roles': roles}
+            tenant = _access_user.get('tenantId')
+            tenant_name = _access_user.get('tenantName')
+        verified_claims = {'user': _access_user['username'],
+                           'tenant': tenant,
+                           'roles': roles}
         if tenant_name:
             verified_claims['tenantName'] = tenant_name
         return verified_claims
@@ -408,7 +430,7 @@ class AuthProtocol(object):
             if resp.status == 401 or resp.status == 305:
                 # Add our own headers to the list
                 headers = [('WWW_AUTHENTICATE',
-                   "Keystone uri='%s'" % self.auth_location)]
+                            "Keystone uri='%s'" % self.auth_location)]
                 return webob.Response(status=resp.status,
                                       body=data,
                                       headerlist=headers)(env, start_response)
@@ -433,10 +455,10 @@ def app_factory(global_conf, **local_conf):
     return AuthProtocol(None, conf)
 
 if __name__ == '__main__':
-    app = deploy.loadapp('config:' + \
-        os.path.join(os.path.abspath(os.path.dirname(__file__)),
-                     os.pardir,
-                     os.pardir,
-                    'examples/paste/auth_token.ini'),
-                    global_conf={'log_name': 'auth_token.log'})
+    _app_path = os.path.join(os.path.abspath(os.path.dirname(__file__)),
+                             os.pardir,
+                             os.pardir,
+                             'examples/paste/auth_token.ini')
+    app = deploy.loadapp('config:%s' % _app_path,
+                         global_conf={'log_name': 'auth_token.log'})
     wsgi.server(eventlet.listen(('', 8090)), app)
