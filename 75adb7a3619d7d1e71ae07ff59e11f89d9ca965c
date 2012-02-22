@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//3Kk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "if we could bump this to one arg per line pls",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Kg\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "here too",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Kc\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3KY\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "here",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3KU\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "here",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3KQ\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "here",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3KM\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "here",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3KI\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "here",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3KE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "here",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3KA\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "here",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3J4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "make this into two statements, pls",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3J0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "two statements, pls",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Jw\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "here",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Js\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:08:09Z",
+      "side": 1,
+      "message": "here",
+      "revId": "75adb7a3619d7d1e71ae07ff59e11f89d9ca965c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
