@@ -16,6 +16,24 @@
       "revId": "2b2ccf53a52f51112503276120014707adc50f1a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3MI\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-22T22:56:56Z",
+      "side": 1,
+      "message": "*sigh*",
+      "parentUuid": "AAAAEn//3NE\u003d",
+      "revId": "2b2ccf53a52f51112503276120014707adc50f1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
