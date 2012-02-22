@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//380\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 970
+      },
+      "writtenOn": "2012-02-22T02:53:31Z",
+      "side": 1,
+      "message": "Agreed, its not clean.  Would you rather this be in the form of an extension?  If I were writing the API I\u0027d make ?name an optional quesry string to GET /tenant/{id-or-name}.",
+      "parentUuid": "AAAAEn//4BE\u003d",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4BA\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2012-02-22T01:37:21Z",
       "side": 1,
       "message": "we have custom exceptions now, see common.exception",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//38w\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 970
+      },
+      "writtenOn": "2012-02-22T02:53:31Z",
+      "side": 1,
+      "message": "Roger",
+      "parentUuid": "AAAAEn//4BA\u003d",
       "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3+g\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 970
+      },
+      "writtenOn": "2012-02-22T02:53:31Z",
+      "side": 1,
+      "message": "If the tests are going to depend on outside code, making them a bit more flexible to select the desired client branch to test with seems useful.  Maybe my devstack is showing here...",
+      "parentUuid": "AAAAEn//4Aw\u003d",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4A0\u003d",
         "filename": "tests/test_keystoneclient.py",
         "patchSetId": 2
@@ -121,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//398\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 970
+      },
+      "writtenOn": "2012-02-22T02:53:31Z",
+      "side": 1,
+      "message": "This is left over from tenants.list() returning all tenants being part of this branch.  I\u0027ll move it to that branch now that they\u0027re split.",
+      "parentUuid": "AAAAEn//4A0\u003d",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//4A4\u003d",
         "filename": "tests/test_keystoneclient.py",
         "patchSetId": 2
@@ -132,6 +204,24 @@
       "writtenOn": "2012-02-22T01:37:21Z",
       "side": 1,
       "message": "this is listing for a user still, not all tenants",
+      "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//39o\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 970
+      },
+      "writtenOn": "2012-02-22T02:53:31Z",
+      "side": 1,
+      "message": "same as above, is meant for list() returning all tenants, will move",
+      "parentUuid": "AAAAEn//4A4\u003d",
       "revId": "f6d35648bd7a89cf137a428e5f053a029cabdb96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
