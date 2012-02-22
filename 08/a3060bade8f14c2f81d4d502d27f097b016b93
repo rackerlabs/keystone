@@ -1,0 +1,10 @@
+Verified+1: Jenkins
+Code-Review+2: Joe Heck <heckj@mac.com>
+Code-Review+2: Jay Pipes <jaypipes@gmail.com>
+Approved+1: anotherjesse <anotherjesse@gmail.com>
+Code-Review+2: anotherjesse <anotherjesse@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 22 Feb 2012 23:14:08 +0000
+Reviewed-on: https://review.openstack.org/4427
+Project: openstack/keystone
+Branch: refs/heads/master
