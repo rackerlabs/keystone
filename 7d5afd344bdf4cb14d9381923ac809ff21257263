@@ -16,6 +16,24 @@
       "revId": "7d5afd344bdf4cb14d9381923ac809ff21257263",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3GY\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T23:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//3IU\u003d",
+      "revId": "7d5afd344bdf4cb14d9381923ac809ff21257263",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
