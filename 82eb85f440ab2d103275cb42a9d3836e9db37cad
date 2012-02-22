@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//3dg\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T19:55:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//3t0\u003d",
+      "revId": "82eb85f440ab2d103275cb42a9d3836e9db37cad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3d0\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T19:55:18Z",
+      "side": 1,
+      "message": "This particular assert could be returned, but is being tracked by a different bug.",
+      "revId": "82eb85f440ab2d103275cb42a9d3836e9db37cad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//3tw\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 1
@@ -30,6 +65,24 @@
       "writtenOn": "2012-02-22T16:05:30Z",
       "side": 1,
       "message": "Why are we asserting here?",
+      "revId": "82eb85f440ab2d103275cb42a9d3836e9db37cad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3eA\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-22T19:55:18Z",
+      "side": 1,
+      "message": "This *should* never assert false, if no token is found by the backend, a 404 is raised and bubbled up. If a token is found, it asserts true.\n\nThe assert is actually unnecessary, but I figured \"get_token\" without doing something with it wasn\u0027t very clear.",
+      "parentUuid": "AAAAEn//3tw\u003d",
       "revId": "82eb85f440ab2d103275cb42a9d3836e9db37cad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
