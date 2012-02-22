@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//4CM\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:18:17Z",
+      "side": 1,
+      "message": "dot :)",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4CI\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:18:17Z",
+      "side": 1,
+      "message": "alphabetize",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4CY\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:18:17Z",
+      "side": 1,
+      "message": "any reason you chose to do this as a function rather than a class (in a similar way to the legacy migration code) ?\n\nI prefer wrapping multi-stage operations like this into a class most of the time, i find a certain amount of shared state makes the operation less scary looking and can help distinguish between setup, utility function and step",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4CU\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:18:17Z",
+      "side": 1,
+      "message": "_generate_uuid() probably",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4CQ\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:18:17Z",
+      "side": 1,
+      "message": "here too",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4CA\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:18:17Z",
+      "side": 1,
+      "message": "sort these pls, single level imports before multi-level and so on",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Bo\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:18:17Z",
+      "side": 1,
+      "message": "tiny, but one generally does iteritems",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4B4\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:18:17Z",
+      "side": 1,
+      "message": "can we just say password if we are loading the password key?",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Bs\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:18:17Z",
+      "side": 1,
+      "message": "tiny, but one generally does iteritems()",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4Bw\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:18:17Z",
+      "side": 1,
+      "message": "this indent seems a bit much, i think you only need to double-indent",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//4B0\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-22T01:18:17Z",
+      "side": 1,
+      "message": "not necessary to escape the newline",
+      "revId": "6338bbdc8fd8fc8a118dc498bf5120503054c6d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
