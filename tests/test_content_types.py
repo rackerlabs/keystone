@@ -242,6 +242,25 @@ class ContentAssertionsMixin(object):
         self.assertIsNotNone(error.get('title'))
         self.assertIsNotNone(error.get('message'))
 
+    def assertValidExtension(self, extension):
+        """Applicable to XML and JSON.
+
+        However, navigating extension links differs between content types.
+        They need to be validated seperately with assertValidExtensionLink.
+
+        """
+        self.assertIsNotNone(extension)
+        self.assertIsNotNone(extension.get('name'))
+        self.assertIsNotNone(extension.get('namespace'))
+        self.assertIsNotNone(extension.get('alias'))
+        self.assertIsNotNone(extension.get('updated'))
+
+    def assertValidExtensionLink(self, link):
+        """Applicable to XML and JSON."""
+        self.assertIsNotNone(link.get('rel'))
+        self.assertIsNotNone(link.get('type'))
+        self.assertIsNotNone(link.get('href'))
+
     def assertValidTenant(self, tenant):
         """Applicable to XML and JSON."""
         self.assertIsNotNone(tenant.get('id'))
@@ -256,6 +275,7 @@ class ContentAssertionsMixin(object):
         """Applicable to XML and JSON."""
         self.assertIsNotNone(tenant.get('id'))
         self.assertIsNotNone(tenant.get('name'))
+
 
 
 class JsonContentAssertionsMixin(ContentAssertionsMixin):
@@ -343,6 +363,25 @@ class JsonContentAssertionsMixin(ContentAssertionsMixin):
     def assertValidVersionResponse(self, r):
         raise NotImplementedError()
 
+    def assertValidExtension(self, extension):
+        super(JsonContentAssertionsMixin, self).assertValidExtension(extension)
+
+        self.assertIsNotNone(extension.get('description'))
+        self.assertIsNotNone(extension.get('links'))
+        self.assertTrue(len(extension.get('links')))
+        for link in extension.get('links'):
+            self.assertValidExtensionLink(link)
+
+    def assertValidExtensionListResponse(self, r):
+        self.assertIsNotNone(r.body.get('extensions'))
+        self.assertIsNotNone(r.body['extensions'].get('values'))
+        self.assertTrue(len(r.body['extensions'].get('values')))
+        for extension in r.body['extensions']['values']:
+            self.assertValidExtension(extension)
+
+    def assertValidExtensionResponse(self, r):
+        self.assertValidExtension(r.body.get('extension'))
+
 
 class XmlContentAssertionsMixin(ContentAssertionsMixin):
     """XML-specific content assertions."""
@@ -379,6 +418,29 @@ class XmlContentAssertionsMixin(ContentAssertionsMixin):
 
     def assertValidVersionResponse(self, r):
         raise NotImplementedError()
+
+    def assertValidExtension(self, extension):
+        super(XmlContentAssertionsMixin, self).assertValidExtension(extension)
+
+        self.assertIsNotNone(extension.find(self._tag('description')))
+        self.assertTrue(extension.find(self._tag('description')).text)
+        self.assertTrue(len(extension.findall(self._tag('link'))))
+        for link in extension.findall(self._tag('link')):
+            self.assertValidExtensionLink(link)
+
+    def assertValidExtensionListResponse(self, r):
+        xml = r.body
+        self.assertEqual(xml.tag, self._tag('extensions'))
+
+        self.assertTrue(len(xml.findall(self._tag('extension'))))
+        for extension in xml.findall(self._tag('extension')):
+            self.assertValidExtension(extension)
+
+    def assertValidExtensionResponse(self, r):
+        xml = r.body
+        self.assertEqual(xml.tag, self._tag('extension'))
+
+        self.assertValidExtension(xml)
 
     def assertValidTokenCatalogResponse(self, r):
         xml = r.body
@@ -474,14 +536,26 @@ class CoreApiTests(object):
         self.assertValidVersionResponse(r)
 
     def test_public_extensions(self):
-        raise nose.exc.SkipTest('Blocked by bug 928054')
-
         self.public_request(path='/v2.0/extensions',)
 
-    def test_admin_extensions(self):
-        raise nose.exc.SkipTest('Blocked by bug 928054')
+        # TODO(dolph): can't test this without any public extensions defined
+        # self.assertValidExtensionListResponse(r)
 
-        self.admin_request(path='/v2.0/extensions',)
+    def test_admin_extensions(self):
+        r = self.admin_request(path='/v2.0/extensions',)
+        self.assertValidExtensionListResponse(r)
+
+    def test_admin_extensions_404(self):
+        self.admin_request(path='/v2.0/extensions/invalid-extension',
+                expected_status=404)
+
+    def test_public_osksadm_extension_404(self):
+        self.public_request(path='/v2.0/extensions/OS-KSADM',
+                expected_status=404)
+
+    def test_admin_osksadm_extension(self):
+        r = self.admin_request(path='/v2.0/extensions/OS-KSADM')
+        self.assertValidExtensionResponse(r)
 
     def test_authenticate(self):
         r = self.public_request(method='POST', path='/v2.0/tokens', body={
