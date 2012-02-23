@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//3EY\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-23T00:26:39Z",
+      "side": 1,
+      "message": "one more space",
+      "revId": "0e9cd7a356b773ed1f201c9f7be250285b4e7a74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3Dk\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-23T00:26:39Z",
+      "side": 1,
+      "message": "roles !\u003d groups",
+      "revId": "0e9cd7a356b773ed1f201c9f7be250285b4e7a74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3D4\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-23T00:26:39Z",
+      "side": 1,
+      "message": "unconditional, and could we refer to roles as roles instead of as groups?",
+      "revId": "0e9cd7a356b773ed1f201c9f7be250285b4e7a74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//3DY\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-23T00:26:39Z",
+      "side": 1,
+      "message": "\"Check if a user is trying to access an account that does not match their token\"",
+      "revId": "0e9cd7a356b773ed1f201c9f7be250285b4e7a74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
