@@ -63,11 +63,15 @@ HTTP_X_AUTHORIZATION
     the client identity being passed in
 
 """
+
+import datetime
 import httplib
 import json
 import os
+import time
 
 import eventlet
+from dateutil import parser
 from eventlet import wsgi
 from paste import deploy
 from urlparse import urlparse
@@ -78,6 +82,10 @@ from webob.exc import HTTPUnauthorized
 from keystone.common.bufferedhttp import http_connect_raw as http_connect
 
 PROTOCOL_NAME = 'Token Authentication'
+# The time format of the 'expires' property of a token
+EXPIRE_TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%f'
+#TODO(chmou): Should this be configurable?
+MAX_CACHE_TIME = 86400
 
 
 class AuthProtocol(object):
@@ -128,6 +136,14 @@ class AuthProtocol(object):
         self.admin_token = conf.get('admin_token')
         self.admin_user = conf.get('admin_user')
         self.admin_password = conf.get('admin_password')
+        # TODO(chmou): Extract the caching code to its own middleware
+        # like done in Swift (and unified it?)
+        self.cache = conf.get('cache', None)
+        self.memcache_hosts = conf.get('memcache_hosts', None)
+        # This is to allow override the caching system example
+        # for swift middleware to use swift caching system.
+        if self.memcache_hosts and not self.cache:
+            self.cache = 'keystone.cache'
 
     def __init__(self, app, conf):
         """ Common initialization code """
@@ -138,6 +154,14 @@ class AuthProtocol(object):
 
     def __call__(self, env, start_response):
         """ Handle incoming request. Authenticate. And send downstream. """
+        if self.memcache_hosts:
+            # TODO(chmou): This will only be used if the configuration calls
+            # for memcache, should we just not do caching if we can't import or
+            # raise?
+            import memcache
+            if not env.get(self.cache, None):
+                memcache_client = memcache.Client([self.memcache_hosts])
+                env[self.cache] = memcache_client
 
         #Prep headers to forward request to local or remote downstream service
         proxy_headers = env.copy()
@@ -160,7 +184,7 @@ class AuthProtocol(object):
                 return self._reject_request(env, start_response)
         else:
             # this request is presenting claims. Let's validate them
-            valid = self._validate_claims(claims)
+            valid = self._validate_claims(env, claims)
             if not valid:
                 # Keystone rejected claim
                 if self.delay_auth_decision:
@@ -176,7 +200,7 @@ class AuthProtocol(object):
 
             #Collect information about valid claims
             if valid:
-                claims = self._expound_claims(claims)
+                claims = self._expound_claims(env, claims)
 
                 # Store authentication data
                 if claims:
@@ -232,6 +256,40 @@ class AuthProtocol(object):
         data = response.read()
         return data
 
+    def _convert_date(self, date):
+        """Convert datetime to unix timestamp for caching."""
+        return time.mktime(parser.parse(date).utctimetuple())
+
+    def _cache_get(self, env, token):
+        """Return cached claim (expiration and validity) from cache."""
+        cache = env.get(self.cache, None)
+        if not cache:
+            return
+        key = 'tokens/%s' % (token)
+        cached_claims = cache.get(key)
+        if cached_claims:
+            claims, expires, valid = cached_claims
+            return (claims, expires, valid)
+
+    def _cache_put(self, env, token, claims, valid):
+        """Put a claim into the cache."""
+        cache = env.get(self.cache, None)
+        if cache and claims:
+            key = 'tokens/%s' % (token)
+            if 'timeout' in cache.set.func_code.co_varnames:
+                # swift cache
+                expires = self._convert_date(claims['expires'])
+                cache.set(key, (claims, expires, valid),
+                          timeout=expires - time.time())
+            else:
+                # normal memcache client
+                expires = self._convert_date(claims['expires'])
+                timeout = expires - time.time()
+                if timeout > MAX_CACHE_TIME or not valid:
+                    # Limit cache to one day (and cache bad tokens for a day)
+                    timeout = MAX_CACHE_TIME
+                cache.set(key, (claims, expires, valid), time=timeout)
+
     def _get_claims(self, env):
         """Get claims from request"""
         claims = env.get('HTTP_X_AUTH_TOKEN', env.get('HTTP_X_STORAGE_TOKEN'))
@@ -277,8 +335,15 @@ class AuthProtocol(object):
         data = response.read()
         return json.loads(data)["access"]["token"]["id"]
 
-    def _validate_claims(self, claims, retry=True):
-        """Validate claims, and provide identity information isf applicable """
+    def _validate_claims(self, env, claims, retry=True):
+        """Validate claims, and provide identity information if applicable."""
+
+        cached_claims = self._cache_get(env, claims)
+        if cached_claims:
+            claims, expires, valid = cached_claims
+            if valid and expires >= time.time():
+                # Valid and not expired
+                return claims
 
         # Step 1: We need to auth with the keystone service, so get an
         # admin token
@@ -308,14 +373,26 @@ class AuthProtocol(object):
                 self.admin_token = None
                 return self._validate_claims(env, claims, False)
             else:
-                return False
+                if self.cache:
+                    expires = datetime.strftime(time.time(),
+                                                EXPIRE_TIME_FORMAT)
+                    self._cache_put(env, claims,
+                                    claims={'expires': expires},
+                                    valid=False)
         else:
             #TODO(Ziad): there is an optimization we can do here. We have just
             #received data from Keystone that we can use instead of making
             #another call in _expound_claims
             return True
 
-    def _expound_claims(self, claims):
+    def _expound_claims(self, env, claims):
+        cached_claims = self._cache_get(env, claims)
+        if cached_claims:
+            claims, expires, valid = cached_claims
+            if valid and expires >= time.time():
+                # Valid and not expired
+                return claims
+
         # Valid token. Get user data and put it in to the call
         # so the downstream service can use it
         headers = {'Content-type': 'application/json',
@@ -350,14 +427,27 @@ class AuthProtocol(object):
         except:
             tenant = None
             tenant_name = None
+
         if not tenant:
             tenant = token_info['access']['user'].get('tenantId')
             tenant_name = token_info['access']['user'].get('tenantName')
+
         verified_claims = {'user': token_info['access']['user']['username'],
                     'tenant': tenant,
-                    'roles': roles}
+                    'roles': roles,
+                    'expires': token_info['access']['token']['expires']}
         if tenant_name:
             verified_claims['tenantName'] = tenant_name
+
+        # Check if token has expired
+        expires = self._convert_date(verified_claims['expires'])
+        if expires <= time.time():
+            if self.cache:
+                self._cache_put(env, claims, verified_claims, valid=False)
+                return
+
+        if self.cache:
+            self._cache_put(env, claims, verified_claims, valid=True)
         return verified_claims
 
     def _decorate_request(self, index, value, env, proxy_headers):

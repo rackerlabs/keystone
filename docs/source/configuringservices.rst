@@ -153,12 +153,14 @@ rather than it's built in 'tempauth'.
 
     [filter:tokenauth]
     paste.filter_factory = keystone.middleware.auth_token:filter_factory
+    service_protocol = http
     service_port = 5000
     service_host = 127.0.0.1
     auth_port = 35357
     auth_host = 127.0.0.1
     auth_token = ADMIN
     admin_token = ADMIN
+    cache = swift.cache
 
     [filter:cache]
     use = egg:swift#memcache
