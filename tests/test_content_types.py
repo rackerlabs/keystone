@@ -343,6 +343,23 @@ class JsonContentAssertionsMixin(ContentAssertionsMixin):
     def assertValidVersionResponse(self, r):
         raise NotImplementedError()
 
+    def assertValidExtensionsResponse(self, r):
+        self.assertIsNotNone(r.body.get('extensions'))
+        self.assertIsNotNone(r.body['extensions'].get('values'))
+        self.assertTrue(len(r.body['extensions'].get('values')))
+        for extension in r.body['extensions']['values']:
+            self.assertIsNotNone(extension.get('name'))
+            self.assertIsNotNone(extension.get('namespace'))
+            self.assertIsNotNone(extension.get('alias'))
+            self.assertIsNotNone(extension.get('updated'))
+            self.assertIsNotNone(extension.get('description'))
+            self.assertIsNotNone(extension.get('links'))
+            self.assertTrue(len(extension.get('links')))
+            for link in extension.get('links'):
+                self.assertIsNotNone(link.get('rel'))
+                self.assertIsNotNone(link.get('type'))
+                self.assertIsNotNone(link.get('href'))
+
 
 class XmlContentAssertionsMixin(ContentAssertionsMixin):
     """XML-specific content assertions."""
@@ -379,6 +396,28 @@ class XmlContentAssertionsMixin(ContentAssertionsMixin):
 
     def assertValidVersionResponse(self, r):
         raise NotImplementedError()
+
+    def assertValidExtensionsResponse(self, r):
+        xml = r.body
+        self.assertEqual(xml.tag, self._tag('extensions'))
+
+        self.assertTrue(len(xml.findall(self._tag('extension'))))
+        for extension in xml.findall(self._tag('extension')):
+            # validate service endpoint
+            self.assertIsNotNone(extension.get('name'))
+            self.assertIsNotNone(extension.get('namespace'))
+            self.assertIsNotNone(extension.get('alias'))
+            self.assertIsNotNone(extension.get('updated'))
+
+            self.assertIsNotNone(extension.find(self._tag('description')))
+            self.assertTrue(extension.find(self._tag('description')).text)
+
+            self.assertTrue(len(extension.findall(self._tag('link'))))
+            for link in extension.findall(self._tag('link')):
+                self.assertIsNotNone(link.get('rel'))
+                self.assertIsNotNone(link.get('type'))
+                self.assertIsNotNone(link.get('href'))
+
 
     def assertValidTokenCatalogResponse(self, r):
         xml = r.body
@@ -474,14 +513,12 @@ class CoreApiTests(object):
         self.assertValidVersionResponse(r)
 
     def test_public_extensions(self):
-        raise nose.exc.SkipTest('Blocked by bug 928054')
-
-        self.public_request(path='/v2.0/extensions',)
+        r = self.public_request(path='/v2.0/extensions',)
+        self.assertValidExtensionsResponse(r)
 
     def test_admin_extensions(self):
-        raise nose.exc.SkipTest('Blocked by bug 928054')
-
-        self.admin_request(path='/v2.0/extensions',)
+        r = self.admin_request(path='/v2.0/extensions',)
+        self.assertValidExtensionsResponse(r)
 
     def test_authenticate(self):
         r = self.public_request(method='POST', path='/v2.0/tokens', body={
