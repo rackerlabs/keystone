@@ -440,7 +440,31 @@ class ExtensionsController(wsgi.Application):
         super(ExtensionsController, self).__init__()
 
     def get_extensions_info(self, context):
-        raise NotImplementedError()
+        return {
+            'extensions': {
+                'values': [
+                    {
+                        'name': 'Openstack Keystone Admin',
+                        'namespace': ('http://docs.openstack.org/identity/api'
+                            '/ext/OS-KSADM/v1.0'),
+                        'alias': 'OS-KSADM',
+                        'updated': '2011-08-19T13:25:27-06:00',
+                        'description': ('Openstack extensions to Keystone '
+                            'v2.0 API enabling Admin Operations.'),
+                        'links': [
+                            {
+                                'rel': 'describedby',
+                                # TODO(dolph): link needs to be revised after
+                                #              bug 928059 merges
+                                'type': 'text/html',
+                                'href': ('https://github.com/openstack/'
+                                    'identity-api'),
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
 
 
 def public_app_factory(global_conf, **local_conf):
