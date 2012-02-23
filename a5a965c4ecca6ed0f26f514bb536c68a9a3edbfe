@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//2oU\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-23T22:18:00Z",
+      "side": 1,
+      "message": "You need to order these imports based on the rules in HACKING.",
+      "revId": "a5a965c4ecca6ed0f26f514bb536c68a9a3edbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2og\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-23T22:18:00Z",
+      "side": 1,
+      "message": "Is there a reason these models don\u0027t conform to the rest of the examples we have in the code? We have been placing any non-indexed fields in an \u0027extra\u0027 JsonBlob field. It looks like description might be a field we won\u0027t index and therefore would belong there.",
+      "revId": "a5a965c4ecca6ed0f26f514bb536c68a9a3edbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2oc\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-23T22:18:00Z",
+      "side": 1,
+      "message": "Same \u0027extra\u0027 field should be used here for the url fields.",
+      "revId": "a5a965c4ecca6ed0f26f514bb536c68a9a3edbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2oY\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-23T22:18:00Z",
+      "side": 1,
+      "message": "single quotes please",
+      "revId": "a5a965c4ecca6ed0f26f514bb536c68a9a3edbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2oM\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-23T22:18:00Z",
+      "side": 1,
+      "message": "You don\u0027t need to define this function since you inherit DictBase.",
+      "revId": "a5a965c4ecca6ed0f26f514bb536c68a9a3edbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2oA\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-23T22:18:00Z",
+      "side": 1,
+      "message": "This function is misleading. It\u0027s only used once so it would make sense to get rid of it and just call to_dict in its place.",
+      "revId": "a5a965c4ecca6ed0f26f514bb536c68a9a3edbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2nw\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-23T22:18:00Z",
+      "side": 1,
+      "message": "Why did you need to prefix these variables with an underscore?",
+      "revId": "a5a965c4ecca6ed0f26f514bb536c68a9a3edbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2nc\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-23T22:18:00Z",
+      "side": 1,
+      "message": "This would be clearer if you just broke this line up. First line calls query() and the second calls filter and first on the returned query object.",
+      "revId": "a5a965c4ecca6ed0f26f514bb536c68a9a3edbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2nY\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-23T22:18:00Z",
+      "side": 1,
+      "message": "single quotes please",
+      "revId": "a5a965c4ecca6ed0f26f514bb536c68a9a3edbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2nU\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-23T22:18:00Z",
+      "side": 1,
+      "message": "You don\u0027t need leading/trailing spaces, and please add a period at the end of the sentence",
+      "revId": "a5a965c4ecca6ed0f26f514bb536c68a9a3edbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2nQ\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-23T22:18:00Z",
+      "side": 1,
+      "message": "Same goes here:\n\n* why prefix with an underscore\n* this will look better if you break it into two lines",
+      "revId": "a5a965c4ecca6ed0f26f514bb536c68a9a3edbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2nM\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-23T22:18:00Z",
+      "side": 1,
+      "message": "Single quotes please.",
+      "revId": "a5a965c4ecca6ed0f26f514bb536c68a9a3edbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
