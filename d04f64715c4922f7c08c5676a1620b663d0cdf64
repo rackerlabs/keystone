@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//2l0\u003d",
+        "filename": "tests/test_authors.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 748
+      },
+      "writtenOn": "2012-02-23T22:50:07Z",
+      "side": 1,
+      "message": "is this meant to be glance-core?",
+      "revId": "d04f64715c4922f7c08c5676a1620b663d0cdf64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
