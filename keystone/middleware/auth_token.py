@@ -212,26 +212,6 @@ class AuthProtocol(object):
         #Send request downstream
         return self._forward_request(env, start_response, proxy_headers)
 
-    # NOTE(todd): unused
-    def get_admin_auth_token(self, username, password):
-        """
-        This function gets an admin auth token to be used by this service to
-        validate a user's token. Validate_token is a priviledged call so
-        it needs to be authenticated by a service that is calling it
-        """
-        headers = {'Content-type': 'application/json',
-                   'Accept': 'application/json'}
-        params = {'passwordCredentials': {'username': username,
-                                          'password': password,
-                                          'tenantId': '1'}}
-        conn = httplib.HTTPConnection('%s:%s' \
-            % (self.auth_host, self.auth_port))
-        conn.request('POST', '/v2.0/tokens', json.dumps(params), \
-            headers=headers)
-        response = conn.getresponse()
-        data = response.read()
-        return data
-
     def _get_claims(self, env):
         """Get claims from request"""
         claims = env.get('HTTP_X_AUTH_TOKEN', env.get('HTTP_X_STORAGE_TOKEN'))
@@ -264,6 +244,7 @@ class AuthProtocol(object):
                     "username": username,
                     "password": password,
                     }
+                   "tenantName": "admin",
                    }
                   }
         if self.auth_protocol == "http":
