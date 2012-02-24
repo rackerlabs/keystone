@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//2Rs\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-24T18:49:26Z",
+      "side": 1,
+      "message": "Why are you removing catalog_api from the User manager?",
+      "revId": "c73020b6435c45ba51fa646ab457da965e02c208",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
