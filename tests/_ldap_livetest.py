@@ -50,7 +50,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                            test.testsdir('test_overrides.conf'),
                            test.testsdir('backend_liveldap.conf')])
         clear_live_database()
-        self.identity_api = identity_ldap.Identity()
+        self.identity_api = identity_ldap.Identity(CONF)
         self.load_fixtures(default_fixtures)
         self.user_foo = {'id': 'foo',
                          'name': 'FOO',
