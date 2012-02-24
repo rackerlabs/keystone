@@ -2,7 +2,6 @@
 
 import functools
 
-from keystone import config
 from keystone.common import utils
 
 
@@ -19,8 +18,13 @@ class Manager(object):
 
     """
 
-    def __init__(self, driver_name):
-        self.driver = utils.import_object(driver_name)
+    def __init__(self, conf, opt_group, driver_opt):
+        self.conf = conf
+        self.conf.register_group(opt_group)
+        self.conf.register_opt(driver_opt, group=opt_group)
+
+        driver_name = conf[opt_group.name][driver_opt.name]
+        self.driver = utils.import_object(driver_name, conf)
 
     def __getattr__(self, name):
         """Forward calls to the underlying driver."""

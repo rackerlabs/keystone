@@ -16,22 +16,15 @@
 
 import copy
 
-from keystone import identity
+from keystone.common import passwd
 from keystone.common import sql
-from keystone.common import utils
 from keystone.common.sql import migration
+from keystone import identity
 
 
 def _filter_user(user_ref):
     if user_ref:
         user_ref.pop('password', None)
-    return user_ref
-
-
-def _ensure_hashed_password(user_ref):
-    pw = user_ref.get('password', None)
-    if pw is not None:
-        user_ref['password'] = utils.hash_password(pw)
     return user_ref
 
 
@@ -115,9 +108,14 @@ class UserTenantMembership(sql.ModelBase, sql.DictBase):
 
 
 class Identity(sql.Base, identity.Driver):
+
+    def __init__(self, conf):
+        sql.Base.__init__(self, conf)
+        identity.Driver.__init__(self, conf)
+
     # Internal interface to manage the database
     def db_sync(self):
-        migration.db_sync()
+        migration.db_sync(self.conf)
 
     # Identity interface
     def authenticate(self, user_id=None, tenant_id=None, password=None):
@@ -131,7 +129,7 @@ class Identity(sql.Base, identity.Driver):
         tenant_ref = None
         metadata_ref = None
         if (not user_ref
-            or not utils.check_password(password, user_ref.get('password'))):
+            or not passwd.check_password(password, user_ref.get('password'))):
             raise AssertionError('Invalid user / password')
 
         tenants = self.get_tenants_for_user(user_id)
@@ -281,9 +279,15 @@ class Identity(sql.Base, identity.Driver):
         else:
             self.create_metadata(user_id, tenant_id, metadata_ref)
 
+    def _ensure_hashed_password(self, user_ref):
+        pw = user_ref.get('password', None)
+        if pw is not None:
+            user_ref['password'] = passwd.hash_password(self.conf, pw)
+        return user_ref
+
     # CRUD
     def create_user(self, user_id, user):
-        user = _ensure_hashed_password(user)
+        user = self._ensure_hashed_password(user)
         session = self.get_session()
         with session.begin():
             user_ref = User.from_dict(user)
@@ -296,7 +300,7 @@ class Identity(sql.Base, identity.Driver):
         with session.begin():
             user_ref = session.query(User).filter_by(id=user_id).first()
             old_user_dict = user_ref.to_dict()
-            user = _ensure_hashed_password(user)
+            user = self._ensure_hashed_password(user)
             for k in user:
                 old_user_dict[k] = user[k]
             new_user = User.from_dict(old_user_dict)

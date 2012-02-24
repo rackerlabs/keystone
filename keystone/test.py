@@ -23,6 +23,8 @@ import time
 from paste import deploy
 
 from keystone import config
+from keystone import identity
+from keystone import token
 from keystone.common import kvs
 from keystone.common import logging
 from keystone.common import utils
@@ -33,7 +35,6 @@ ROOTDIR = os.path.dirname(os.path.dirname(__file__))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
 TESTSDIR = os.path.join(ROOTDIR, 'tests')
 ETCDIR = os.path.join(ROOTDIR, 'etc')
-CONF = config.CONF
 
 
 cd = os.chdir
@@ -118,40 +119,33 @@ class TestCase(unittest.TestCase):
         super(TestCase, self).__init__(*args, **kw)
         self._paths = []
         self._memo = {}
-        self._overrides = []
 
-    def setUp(self):
+    def setUp(self, conf_files=None):
+        if conf_files is None:
+            conf_files = [etcdir('keystone.conf'),
+                          testsdir('test_overrides.conf')]
+        self.config(conf_files)
         super(TestCase, self).setUp()
-        self.config()
 
-    def config(self):
-        CONF(config_files=[etcdir('keystone.conf'),
-                           testsdir('test_overrides.conf')])
+    def config(self, conf_files):
+        self.conf = config.KeystoneConfigOpts(default_config_files=conf_files)
+        self.conf()
 
     def tearDown(self):
         for path in self._paths:
             if path in sys.path:
                 sys.path.remove(path)
         kvs.INMEMDB.clear()
-        self.reset_opts()
         super(TestCase, self).tearDown()
 
     def opt(self, **kw):
         for k, v in kw.iteritems():
-            CONF.set_override(k, v)
-        self._overrides.append(k)
-
-    def reset_opts(self):
-        for k in self._overrides:
-            CONF.set_override(k, None)
-        self._overrides = []
-        CONF.reset()
+            self.conf.set_override(k, v)
 
     def load_backends(self):
         """Hacky shortcut to load the backends for data manipulation."""
-        self.identity_api = utils.import_object(CONF.identity.driver)
-        self.token_api = utils.import_object(CONF.token.driver)
-        self.catalog_api = utils.import_object(CONF.catalog.driver)
+        self.identity_api = identity.Manager(self.conf).driver
+        self.token_api = token.Manager(self.conf).driver
 
     def load_fixtures(self, fixtures):
         """Hacky basic and naive fixture loading based on a python module.
@@ -192,27 +186,27 @@ class TestCase(unittest.TestCase):
                                        metadata['tenant_id']), rv)
 
     def _paste_config(self, config):
-        if not config.startswith('config:'):
-            test_path = os.path.join(TESTSDIR, config)
-            etc_path = os.path.join(ROOTDIR, 'etc', config)
-            for path in [test_path, etc_path]:
-                if os.path.exists('%s.conf' % path):
-                    return 'config:%s.conf' % path
-        return config
+        test_path = os.path.join(TESTSDIR, config)
+        etc_path = os.path.join(ROOTDIR, 'etc', config)
+        for path in [test_path, etc_path]:
+            if os.path.exists('%s.conf' % path):
+                return '%s.conf' % path
+        raise RuntimeError('No %s.conf file found in %s or %s' %
+                           (config, TESTSDIR, ROOTDIR))
 
     def loadapp(self, config, name='main'):
-        return deploy.loadapp(self._paste_config(config), name=name)
+        paste_config_file = self._paste_config(config)
+        return wsgi.paste_deploy_app(paste_config_file, name, self.conf)
 
-    def appconfig(self, config):
-        return deploy.appconfig(self._paste_config(config))
-
-    def serveapp(self, config, name=None):
+    def serveapp(self, config, name):
         app = self.loadapp(config, name=name)
         server = wsgi.Server(app, 0)
         server.start(key='socket')
 
         # Service catalog tests need to know the port we ran on.
         port = server.socket_info['socket'][1]
+        wsgi.get_public_port(self.conf)
+        wsgi.get_admin_port(self.conf)
         self.opt(public_port=port, admin_port=port)
         return server
 

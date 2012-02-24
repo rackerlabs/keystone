@@ -20,12 +20,9 @@ import uuid
 
 import webob.exc
 
-from keystone import config
 from keystone.common import manager
 from keystone.common import wsgi
-
-
-CONF = config.CONF
+from keystone.openstack.common import cfg
 
 
 class Manager(manager.Manager):
@@ -36,13 +33,18 @@ class Manager(manager.Manager):
 
     """
 
-    def __init__(self):
-        super(Manager, self).__init__(CONF.catalog.driver)
+    opt_group = cfg.OptGroup('catalog')
+    driver_opt = cfg.StrOpt(
+        'driver',
+        default='keystone.catalog.backends.templated.TemplatedCatalog')
+
+    def __init__(self, conf):
+        super(Manager, self).__init__(conf, self.opt_group, self.driver_opt)
 
 
 class ServiceController(wsgi.Application):
-    def __init__(self):
-        self.catalog_api = Manager()
+    def __init__(self, conf):
+        self.catalog_api = Manager(conf)
         super(ServiceController, self).__init__()
 
     # CRUD extensions
