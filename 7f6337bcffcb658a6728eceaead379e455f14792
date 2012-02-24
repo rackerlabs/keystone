@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//2Sc\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-24T18:22:12Z",
+      "side": 1,
+      "message": "just a question - what\u0027s the \u0027swift cache\u0027? I\u0027m not familiar with their codebase or how that would be configured instead of memcache? Not sure why this if/else exists and how the choice is being made.",
+      "revId": "7f6337bcffcb658a6728eceaead379e455f14792",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2SY\u003d",
+        "filename": "tools/pip-requires",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-24T18:22:12Z",
+      "side": 1,
+      "message": "can this be:\n\npython-dateutil\u003d\u003e1.5?",
+      "revId": "7f6337bcffcb658a6728eceaead379e455f14792",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
