@@ -1,0 +1,9 @@
+Verified+1: Jenkins
+Approved+1: Vish Ishaya <vishvananda@gmail.com>
+Code-Review+2: Vish Ishaya <vishvananda@gmail.com>
+Code-Review+2: Brian Waldon <brian.waldon@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 24 Feb 2012 22:01:31 +0000
+Reviewed-on: https://review.openstack.org/4519
+Project: openstack/keystone
+Branch: refs/heads/master
