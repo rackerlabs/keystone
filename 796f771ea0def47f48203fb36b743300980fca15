@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//2fY\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-02-24T00:58:19Z",
+      "side": 1,
+      "message": "Thanks for pointing out why this was necessary. It looks like the call to this function is using an id, though, not a ref. It would make sense to drop this function and rename \u0027get_service_by_id\u0027 to \u0027get_service\u0027.",
+      "revId": "796f771ea0def47f48203fb36b743300980fca15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
