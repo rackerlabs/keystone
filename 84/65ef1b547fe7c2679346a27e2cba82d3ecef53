@@ -1,0 +1,9 @@
+Verified+1: Jenkins
+Code-Review+2: Dan Prince <dprince@redhat.com>
+Approved+1: Brian Lamar <brian.lamar@rackspace.com>
+Code-Review+2: Brian Lamar <brian.lamar@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 24 Feb 2012 15:29:38 +0000
+Reviewed-on: https://review.openstack.org/4502
+Project: openstack/keystone
+Branch: refs/heads/master
