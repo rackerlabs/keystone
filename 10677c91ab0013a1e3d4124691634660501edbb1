@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//2Fw\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-25T04:27:07Z",
+      "side": 1,
+      "message": "try -\u003e tries",
+      "revId": "10677c91ab0013a1e3d4124691634660501edbb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2Fs\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-25T04:27:07Z",
+      "side": 1,
+      "message": "no capital s",
+      "revId": "10677c91ab0013a1e3d4124691634660501edbb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
