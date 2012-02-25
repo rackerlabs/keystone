@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//2Js\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-25T01:26:55Z",
+      "side": 1,
+      "message": "list comprehensions are generally preferred to map calls (map raises a pylint warning)",
+      "revId": "bf86d952ab3699588e4fb758de355b90b7b3596d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2Jo\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-25T01:26:55Z",
+      "side": 1,
+      "message": "could you put parens around the xmlns or XMLNS part, pls? it looks kinda scary otherwise",
+      "revId": "bf86d952ab3699588e4fb758de355b90b7b3596d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2Jk\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-25T01:26:55Z",
+      "side": 1,
+      "message": "one item per line, double indented",
+      "revId": "bf86d952ab3699588e4fb758de355b90b7b3596d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2Jg\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-25T01:26:55Z",
+      "side": 1,
+      "message": "indent to parens",
+      "revId": "bf86d952ab3699588e4fb758de355b90b7b3596d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2JY\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-25T01:26:55Z",
+      "side": 1,
+      "message": "honestly i probably wouldn\u0027t have separated these assertions from the test case, i just think the testcases that were shared by both xml and json should be a mixin to the test case.\n\nbasically i think this adds significantly more complexity than just putting the shared tests in a shared object, we don\u0027t need an entire mixin system, we\u0027re not going for normal form or componentization patterns, the only reason it even matters that the shared tests are treated as a mixin is because we don\u0027t want them to get run on their own\n\nso, ContentAssertionsMixin would be part of CoreApiTests(object)\n\nand you\u0027d have a JsonApiTests(test.TestCase, CoreApiTests) with the contents of the JsonContentAssertionsMixin code inside that.",
+      "revId": "bf86d952ab3699588e4fb758de355b90b7b3596d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2Ic\u003d",
+        "filename": "tests/test_serializer.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-25T01:26:55Z",
+      "side": 1,
+      "message": "flip the order of these two imports pls",
+      "revId": "bf86d952ab3699588e4fb758de355b90b7b3596d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//2IQ\u003d",
+        "filename": "tests/test_versions.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-25T01:26:55Z",
+      "side": 1,
+      "message": "normally i would think this is a weird indent but yeah everything else in the file is this way so we can fix them all at some point in the future",
+      "revId": "bf86d952ab3699588e4fb758de355b90b7b3596d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
