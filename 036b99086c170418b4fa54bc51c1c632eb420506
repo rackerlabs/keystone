@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//2GI\u003d",
+        "filename": "keystone/common/bufferedhttp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-25T04:24:48Z",
+      "side": 1,
+      "message": "this change is sort of okay from syntax fixing, but honestly this file is so messed up that i don\u0027t think it is worth your time to pay much attention to this unless we want to clean it all up",
+      "revId": "036b99086c170418b4fa54bc51c1c632eb420506",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
