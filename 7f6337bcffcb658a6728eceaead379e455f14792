@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAEn//2Ew\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-25T04:59:00Z",
+      "side": 1,
+      "message": "well, we probably want to import it during init at least",
+      "revId": "7f6337bcffcb658a6728eceaead379e455f14792",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//2Sc\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 1
