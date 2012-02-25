@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//2F4\u003d",
+        "filename": "tests/test_authors.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-25T04:25:42Z",
+      "side": 1,
+      "message": "alphabetize pls",
+      "revId": "9dae7bba34bcf4a1da2aeaaa93e24cd62c46219d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
