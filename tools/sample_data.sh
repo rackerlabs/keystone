@@ -20,6 +20,18 @@
 # invisible_to_admin   demo      Member
 
 TOOLS_DIR=$(cd $(dirname "$0") && pwd)
+if [[ -r $TOOLS_DIR/../etc/keystone.conf ]]; then
+    KEYSTONE_CONF=$TOOLS_DIR/../etc/keystone.conf
+    EC2RC="$TOOLS_DIR/../etc/ec2rc"
+    QUANTUM_DIR="$TOOLS_DIR/../../quantum"
+    SWIFT_DIR="$TOOLS_DIR/../../swift"
+else
+    # default locations for packaged installation
+    KEYSTONE_CONF="/etc/keystone/keystone.conf"
+    EC2RC="/etc/keystone/ec2rc"
+    QUANTUM_DIR="/etc/quantum"
+    SWIFT_DIR="/etc/swift"
+fi
 
 # Please set this, it is ONLY A SAMPLE PASSWORD!
 ADMIN_PASSWORD=${ADMIN_PASSWORD:-secrete}
@@ -29,9 +41,9 @@ if [[ "$ADMIN_PASSWORD" == "secrete" ]]; then
 fi
 
 # Extract some info from Keystone's configuration file
-if [[ -r $TOOLS_DIR/../etc/keystone.conf ]]; then
-    CONFIG_SERVICE_TOKEN=$(sed 's/[[:space:]]//g' $TOOLS_DIR/../etc/keystone.conf | grep ^admin_token= | cut -d'=' -f2)
-    CONFIG_ADMIN_PORT=$(sed 's/[[:space:]]//g' $TOOLS_DIR/../etc/keystone.conf | grep ^admin_port= | cut -d'=' -f2)
+if [[ -r $KEYSTONE_CONF ]]; then
+    CONFIG_SERVICE_TOKEN=$(sed 's/[[:space:]]//g' $KEYSTONE_CONF | grep ^admin_token= | cut -d'=' -f2)
+    CONFIG_ADMIN_PORT=$(sed 's/[[:space:]]//g' $KEYSTONE_CONF | grep ^admin_port= | cut -d'=' -f2)
 fi
 
 export SERVICE_TOKEN=${SERVICE_TOKEN:-$CONFIG_SERVICE_TOKEN}
@@ -106,13 +118,13 @@ keystone service-create --name=swift \
                         --type="nova-volume" \
                         --description="Nova Volume Service"
 
-if [[ -d "$TOOLS_DIR/../../swift" ]]; then
+if [[ -d "$SWIFT_DIR" ]]; then
     keystone service-create --name=swift \
                             --type="object-store" \
                             --description="Swift Service"
 fi
 
-if [[ -d "$TOOLD_DIR/../../quantum" ]]; then
+if [[ -d "$QUANTUM_DIR" ]]; then
     keystone service-create --name=quantum \
                             --type=network \
                             --description="Quantum Service"
@@ -129,7 +141,7 @@ DEMO_ACCESS=`echo "$RESULT" | grep access | awk '{print $4}'`
 DEMO_SECRET=`echo "$RESULT" | grep secret | awk '{print $4}'`
 
 # write the secret and access to ec2rc
-cat > $TOOLS_DIR/../etc/ec2rc <<EOF
+cat > $EC2RC <<EOF
 ADMIN_ACCESS=$ADMIN_ACCESS
 ADMIN_SECRET=$ADMIN_SECRET
 DEMO_ACCESS=$DEMO_ACCESS
