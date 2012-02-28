@@ -25,4 +25,5 @@ pep8
 prettytable
 
 # Optional backend: LDAP
-python-ldap==2.3.13 # authenticate against an existing LDAP server
+# authenticate against an existing LDAP server
+python-ldap
