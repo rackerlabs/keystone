@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//00o\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-28T23:30:23Z",
+      "side": 1,
+      "message": "could we name this something more meaningful? This doesn\u0027t even return what strcmp() returns. Maybe strequal_const_time()?",
+      "revId": "e9e8482aca54f4510e2a3b8a2e6f1ee30e47c8dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
