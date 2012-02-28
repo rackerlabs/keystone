@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//02c\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-28T22:34:05Z",
+      "side": 1,
+      "message": "move this to the line above, pls, then somebody else can approve",
+      "revId": "701b0def9380326b8e711b865605e94d4eb91e5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
