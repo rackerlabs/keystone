@@ -61,3 +61,8 @@ class UtilsTestCase(test.TestCase):
         output = utils.isotime(dt)
         expected = '1987-10-13T01:02:03Z'
         self.assertEqual(output, expected)
+
+    def test_strcmp_const_time(self):
+        self.assertTrue(utils.strcmp_const_time('abc123', 'abc123'))
+        self.assertFalse(utils.strcmp_const_time('a', 'aaaaa'))
+        self.assertFalse(utils.strcmp_const_time('ABC123', 'abc123'))
