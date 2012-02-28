@@ -21,6 +21,7 @@ import webob
 from keystone import config
 from keystone import middleware
 from keystone import test
+from keystone.middleware import compression
 
 
 CONF = config.CONF
@@ -28,20 +29,29 @@ CONF = config.CONF
 
 def make_request(**kwargs):
     accept = kwargs.pop('accept', None)
+    accept_encoding = kwargs.pop('accept_encoding', None)
     method = kwargs.pop('method', 'GET')
     body = kwargs.pop('body', None)
+
     req = webob.Request.blank('/', **kwargs)
     req.method = method
     if body is not None:
         req.body = body
     if accept is not None:
         req.accept = accept
+    if accept_encoding is not None:
+        req.headers['Accept-Encoding'] = accept_encoding
     return req
 
 
 def make_response(**kwargs):
+    content_encoding = kwargs.pop('content_encoding', None)
     body = kwargs.pop('body', None)
-    return webob.Response(body)
+
+    resp = webob.Response(body)
+    if content_encoding is not None:
+        resp.headers['Content-Encoding'] = content_encoding
+    return resp
 
 
 class TokenAuthMiddlewareTest(test.TestCase):
@@ -155,3 +165,47 @@ class XmlBodyMiddlewareTest(test.TestCase):
         middleware.XmlBodyMiddleware(None).process_request(req)
         self.assertEqual(req.body, body)
         self.assertEqual(req.content_type, content_type)
+
+
+class CompressionMiddlewareTest(test.TestCase):
+    def test_compression_not_requested(self):
+        body = 'a' * 1000
+        req = make_request()
+        resp = make_response(body=body)
+        compression.ContentCompressionMiddleware(None).process_response(req,
+                                                                        resp)
+
+        self.assertIsNone(resp.headers.get('Content-Encoding'))
+        self.assertEqual(body, resp.body)
+
+    def test_response_too_small_to_compress(self):
+        body = 'a' * 100
+        req = make_request(accept_encoding='gzip')
+        resp = make_response(body=body)
+        compression.ContentCompressionMiddleware(None).process_response(req,
+                                                                        resp)
+
+        self.assertIsNone(resp.headers.get('Content-Encoding'))
+        self.assertEqual(body, resp.body)
+
+    def test_response_encoding_already_set(self):
+        encoding = 'binary'
+        body = bin(1234567890)
+        req = make_request(accept_encoding='gzip')
+        resp = make_response(body=body, content_encoding=encoding)
+        compression.ContentCompressionMiddleware(None).process_response(req,
+                                                                        resp)
+
+        self.assertEqual('binary', resp.headers.get('Content-Encoding'))
+        self.assertEqual(body, resp.body)
+
+    def test_compression(self):
+        body = 'a' * 1000
+        req = make_request(accept_encoding='gzip')
+        resp = make_response(body=body)
+        compression.ContentCompressionMiddleware(None).process_response(req,
+                                                                        resp)
+
+        self.assertEqual('gzip', resp.headers.get('Content-Encoding'))
+        self.assertTrue(len(body) > len(resp.body))
+        self.assertEqual(body, compression.decompress(resp.body))
