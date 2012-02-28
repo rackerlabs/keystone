@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//1Y8\u003d",
+        "filename": "tools/test-requires",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-28T01:54:21Z",
+      "side": 1,
+      "message": "needs to be python-ldap\u003d\u003d2.3.13 to work on os x",
+      "revId": "11a58eebf5e134f71b739db6196f0549a10b254d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
