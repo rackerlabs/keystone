@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//1Cc\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-28T18:15:14Z",
+      "side": 1,
+      "message": "would you put the final } on the next line and line it up?",
+      "revId": "e950cf29ae4d756cba540cb1f9415e4ea1b43c2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
