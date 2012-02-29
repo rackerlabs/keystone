@@ -16,6 +16,24 @@
       "revId": "e1c64f95a7d25de5aef2563002540193e26da3fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0kM\u003d",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-02-29T07:27:28Z",
+      "side": 1,
+      "message": "Thanks for catching this, it\u0027s verbatim copy from original below.",
+      "parentUuid": "AAAAEn//0v8\u003d",
+      "revId": "e1c64f95a7d25de5aef2563002540193e26da3fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
