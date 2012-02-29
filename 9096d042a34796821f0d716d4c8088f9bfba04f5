@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//0Ns\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-02-29T20:25:52Z",
+      "side": 1,
+      "message": "I think these conditions for when the user_token is invalid vs when the admin_token is invalid, vs when the service is just failing is still wrong ...",
+      "revId": "9096d042a34796821f0d716d4c8088f9bfba04f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
