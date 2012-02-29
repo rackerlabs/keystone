@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//0VA\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 970
+      },
+      "writtenOn": "2012-02-29T18:51:00Z",
+      "side": 1,
+      "message": "Jay, we use of service_ and auth_ to describe the api endpoints in the config file.  Would using servce in two different ways here confusing?",
+      "parentUuid": "AAAAEn//0Ys\u003d",
+      "revId": "e4b1f5323b080f2771e63a3746581b31a9f9b478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//0YU\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 11
