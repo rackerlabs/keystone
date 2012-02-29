@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//0mo\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-29T05:55:07Z",
+      "side": 1,
+      "message": "can this just drop in under line 187, since it\u0027s all \"we know we have user_data\" and we\u0027re just decorating the request?\n\nGet rid of the extraneous else?",
+      "revId": "65d93e30dda1e4a88f6888d44cf15e20adad2330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0mc\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-29T05:55:07Z",
+      "side": 1,
+      "message": "should also catch ValueError here - invalid json coming back will raise ValueError.\n\nWould love to send a debugging log message through the owning service at this point as well, but I don\u0027t see logging anywhere in here. Is that evil to add?",
+      "revId": "65d93e30dda1e4a88f6888d44cf15e20adad2330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0mY\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-29T05:55:07Z",
+      "side": 1,
+      "message": "would ideally love a warning log message to the owning service that an admin_token couldn\u0027t be identified - not for the user, just the sysadmin running the service. Again - no logging in this module so far...",
+      "revId": "65d93e30dda1e4a88f6888d44cf15e20adad2330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0mI\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-29T05:55:07Z",
+      "side": 1,
+      "message": "retry\u003dFalse for last parameter (since it\u0027s named in the method)?",
+      "revId": "65d93e30dda1e4a88f6888d44cf15e20adad2330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0mA\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-29T05:55:07Z",
+      "side": 1,
+      "message": "doctoring would be good to identify exactly what\u0027s expected of this method, especially that we\u0027re expecting \"data\" to be valid JSON",
+      "revId": "65d93e30dda1e4a88f6888d44cf15e20adad2330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
