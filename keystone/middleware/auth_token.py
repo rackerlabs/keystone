@@ -50,9 +50,6 @@ HTTP_X_STORAGE_TOKEN
 Used for communication between components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-www-authenticate
-    only used if this component is being used remotely
-
 HTTP_AUTHORIZATION
     basic auth password used to validate the connection
 
@@ -65,52 +62,28 @@ HTTP_X_AUTHORIZATION
 """
 import httplib
 import json
-import os
 
-import eventlet
-from eventlet import wsgi
-from paste import deploy
-from urlparse import urlparse
 import webob
 import webob.exc
-from webob.exc import HTTPUnauthorized
 
 from keystone.common.bufferedhttp import http_connect_raw as http_connect
 
-ADMIN_TENANTNAME = 'admin'
 PROTOCOL_NAME = 'Token Authentication'
 
 
 class AuthProtocol(object):
     """Auth Middleware that handles authenticating client calls"""
 
-    def _init_protocol_common(self, app, conf):
+    def __init__(self, app, conf):
         """ Common initialization code"""
         print 'Starting the %s component' % PROTOCOL_NAME
 
         self.conf = conf
         self.app = app
-        #if app is set, then we are in a WSGI pipeline and requests get passed
-        # on to app. If it is not set, this component should forward requests
-
-        # where to find the OpenStack service (if not in local WSGI chain)
-        # these settings are only used if this component is acting as a proxy
-        # and the OpenSTack service is running remotely
-        self.service_protocol = conf.get('service_protocol', 'https')
-        self.service_host = conf.get('service_host')
-        self.service_port = int(conf.get('service_port'))
-        self.service_url = '%s://%s:%s' % (self.service_protocol,
-                                           self.service_host,
-                                           self.service_port)
-        # used to verify this component with the OpenStack service or PAPIAuth
-        self.service_pass = conf.get('service_pass')
 
         # delay_auth_decision means we still allow unauthenticated requests
         # through and we let the downstream service make the final decision
         self.delay_auth_decision = int(conf.get('delay_auth_decision', 0))
-
-    def _init_protocol(self, conf):
-        """ Protocol specific initialization """
 
         # where to find the auth service (we use this to validate tokens)
         self.auth_host = conf.get('auth_host')
@@ -126,116 +99,68 @@ class AuthProtocol(object):
 
         # Credentials used to verify this component with the Auth service since
         # validating tokens is a privileged call
-        self.admin_token = conf.get('admin_token')
+        self._admin_token = conf.get('admin_token')
         self.admin_user = conf.get('admin_user')
         self.admin_password = conf.get('admin_password')
-
-    def __init__(self, app, conf):
-        """ Common initialization code """
-
-        #TODO(ziad): maybe we refactor this into a superclass
-        self._init_protocol_common(app, conf)  # Applies to all protocols
-        self._init_protocol(conf)  # Specific to this protocol
+        self.admin_tenant_name = conf.get('admin_tenant_name', 'admin')
 
     def __call__(self, env, start_response):
         """ Handle incoming request. Authenticate. And send downstream. """
 
-        #Prep headers to forward request to local or remote downstream service
-        proxy_headers = env.copy()
-        for header in proxy_headers.iterkeys():
-            if header.startswith('HTTP_'):
-                proxy_headers[header[5:]] = proxy_headers[header]
-                del proxy_headers[header]
+        # Grab the token from the request
+        user_token = self._get_user_token(env)
 
-        #Look for authentication claims
-        claims = self._get_claims(env)
-        if not claims:
-            #No claim(s) provided
+        # we can't validate without an admin token
+        # FIXME(ja): we should make self.admin_token throw
+        # an exception - then we don't need to check here?
+        if not self.admin_token:
+            # FIXME(ja): log that we can't get an auth token?
+            resp = webob.exc.HTTPServiceUnavailable()
+            return resp(env, start_response)
+
+        # validate the provided token
+        token_info = self._validate_user_token(user_token)
+
+        # extract data from the token
+        if token_info:
+            user_data = self._extract_user_data(token_info)
+
+        # abort if we weren't able to validate the token
+        if not (user_token and token_info):
             if self.delay_auth_decision:
-                #Configured to allow downstream service to make final decision.
-                #So mark status as Invalid and forward the request downstream
-                self._decorate_request('X_IDENTITY_STATUS',
-                                       'Invalid',
-                                       env,
-                                       proxy_headers)
-            else:
-                #Respond to client as appropriate for this auth protocol
-                return self._reject_request(env, start_response)
-        else:
-            # this request is presenting claims. Let's validate them
-            valid = self._validate_claims(claims)
-            if not valid:
-                # Keystone rejected claim
-                if self.delay_auth_decision:
-                    # Downstream service will receive call still and decide
-                    self._decorate_request('X_IDENTITY_STATUS',
-                                           'Invalid',
-                                           env,
-                                           proxy_headers)
-                else:
-                    #Respond to client as appropriate for this auth protocol
-                    return self._reject_claims(env, start_response)
-            else:
-                self._decorate_request('X_IDENTITY_STATUS',
-                                       'Confirmed',
-                                       env,
-                                       proxy_headers)
+                # Allow downstream service to make final decision.
+                # Mark status as Invalid and forward the request downstream
+                self._decorate_request({'X_IDENTITY_STATUS': 'Invalid'},
+                                       env)
+                return self.app(env, start_response)
+            # Respond to client as appropriate for this auth protocol
+            return self._reject_request(env, start_response)
 
-            #Collect information about valid claims
-            if valid:
-                claims = self._expound_claims(claims)
+        # NOTE(ja): Decorate the request with user information
+        # X_AUTHORIZATION: unsure?
+        # X_TENANT: For legacy compatibility before we had ID and Name
+        # X_TENANT_NAME: why do we fall back to the tenant_id?
 
-                # Store authentication data
-                if claims:
-                    self._decorate_request('X_AUTHORIZATION',
-                                           'Proxy %s' % claims['user'],
-                                           env,
-                                           proxy_headers)
+        # Services can count on: X_TENANT_NAME, X_TENANT_ID, X_USER,
+        # X_USER_ID, X_ROLE
 
-                    # For legacy compatibility before we had ID and Name
-                    self._decorate_request('X_TENANT',
-                                           claims['tenant'],
-                                           env,
-                                           proxy_headers)
+        info = {
+            'X_IDENTITY_STATUS': 'Confirmed',
+            'X_AUTHORIZATION': 'Proxy %s' % user_data['user'],
+            'X_TENANT': user_data['tenant'],
+            'X_TENANT_NAME': user_data.get('tenantName', user_data['tenant']),
+            'X_TENANT_ID': user_data['tenant'],
+            'X_USER': user_data['userName'],
+            'X_USER_ID': user_data['user'],
+            'X_ROLE': ','.join(user_data['roles']),
+        }
+        self._decorate_request(info, env)
 
-                    # Services should use these
-                    self._decorate_request('X_TENANT_NAME',
-                                           claims.get('tenantName',
-                                                      claims['tenant']),
-                                           env,
-                                           proxy_headers)
-                    self._decorate_request('X_TENANT_ID',
-                                           claims['tenant'],
-                                           env,
-                                           proxy_headers)
+        return self.app(env, start_response)
 
-                    self._decorate_request('X_USER',
-                                           claims['userName'],
-                                           env,
-                                           proxy_headers)
-                    self._decorate_request('X_USER_ID',
-                                           claims['user'],
-                                           env,
-                                           proxy_headers)
-
-                    # NOTE(lzyeval): claims has a key 'roles' which is
-                    #                guaranteed to be a list (see note below)
-                    roles = ','.join(filter(lambda x: x, claims['roles']))
-                    self._decorate_request('X_ROLE',
-                                           roles,
-                                           env,
-                                           proxy_headers)
-
-                    # NOTE(todd): unused
-                    self.expanded = True
-
-        #Send request downstream
-        return self._forward_request(env, start_response, proxy_headers)
-
-    def _get_claims(self, env):
-        """Get claims from request"""
-        claims = env.get('HTTP_X_AUTH_TOKEN', env.get('HTTP_X_STORAGE_TOKEN'))
-        return claims
+    def _get_user_token(self, env):
+        """Get token id from request"""
+        return env.get('HTTP_X_AUTH_TOKEN', env.get('HTTP_X_STORAGE_TOKEN'))
 
     def _reject_request(self, env, start_response):
         """Redirect client to auth server"""
@@ -244,30 +169,40 @@ class AuthProtocol(object):
         resp = webob.exc.HTTPUnauthorized('Authentication required', headers)
         return resp(env, start_response)
 
-    def _reject_claims(self, env, start_response):
-        """Client sent bad claims"""
+    def _reject_token(self, env, start_response):
+        """Client sent bad token"""
         resp = webob.exc.HTTPUnauthorized()
         return resp(env, start_response)
 
-    def _get_admin_auth_token(self, username, password):
+    @property
+    def admin_token(self):
         """
         This function gets an admin auth token to be used by this service to
         validate a user's token. Validate_token is a priviledged call so
         it needs to be authenticated by a service that is calling it
         """
+
+        # FIXME(ja): there is more ways to fail/throw exceptions than
+        #            KeyError.  We should be VERY verbose with why this
+        #            is failing because this function is fundamental breakage
+        #            of component configuration.
+
+        if self._admin_token:
+            return self._admin_token
+
         headers = {
-            "Content-type": "application/json",
-            "Accept": "application/json",
-            }
+            'Content-type': 'application/json',
+            'Accept': 'application/json',
+        }
         params = {
-            "auth": {
-                "passwordCredentials": {
-                    "username": username,
-                    "password": password,
-                    },
-                "tenantName": ADMIN_TENANTNAME,
-                }
+            'auth': {
+                'passwordCredentials': {
+                    'username': self.admin_user,
+                    'password': self.admin_password,
+                },
+                'tenantName': self.admin_tenant_name,
             }
+        }
         if self.auth_protocol == "http":
             conn = httplib.HTTPConnection(self.auth_host, self.auth_port)
         else:
@@ -282,146 +217,88 @@ class AuthProtocol(object):
         data = response.read()
         conn.close()
         try:
-            return json.loads(data)["access"]["token"]["id"]
+            self._admin_token = json.loads(data)['access']['token']['id']
         except KeyError:
-            return None
+            return
 
-    def _validate_claims(self, claims, retry=True):
-        """Validate claims, and provide identity information isf applicable """
+        # FIXME(ja): bug 942984: returning causes the codepath to return
+        # unauthorized.  We have a worse situation here - we are unable to
+        # retrieve an admin token!  We should error log the fact and the
+        # user needs sent 503 (service unavailable) - not 401 unauthorized
 
-        # Step 1: We need to auth with the keystone service, so get an
-        # admin token
-        if not self.admin_token:
-            self.admin_token = self._get_admin_auth_token(self.admin_user,
-                                                          self.admin_password)
+        return self._admin_token
 
-        # Step 2: validate the user's token with the auth service
-        # since this is a priviledged op,m we need to auth ourselves
-        # by using an admin token
+    def _validate_user_token(self, user_token, retry=True):
+        """Validate token, and provide identity information if applicable."""
+
+        if not user_token:
+            return
+
+        # validate the user's token with the auth service
+        # since this is a priviledged operation, we need to provide
+        # an admin token
         headers = {
             'Content-type': 'application/json',
             'Accept': 'application/json',
             'X-Auth-Token': self.admin_token,
-            }
-            ##TODO(ziad):we need to figure out how to auth to keystone
-            #since validate_token is a priviledged call
-            #Khaled's version uses creds to get a token
-            # 'X-Auth-Token': admin_token}
-            # we're using a test token from the ini file for now
+        }
+
         conn = http_connect(self.auth_host,
                             self.auth_port,
                             'GET',
-                            '/v2.0/tokens/%s' % claims,
-                            headers=headers)
-        resp = conn.getresponse()
-        # data = resp.read()
-        conn.close()
-
-        if not str(resp.status).startswith('20'):
-            if retry:
-                self.admin_token = None
-                return self._validate_claims(claims, False)
-            else:
-                return False
-        else:
-            #TODO(Ziad): there is an optimization we can do here. We have just
-            #received data from Keystone that we can use instead of making
-            #another call in _expound_claims
-            return True
-
-    def _expound_claims(self, claims):
-        # Valid token. Get user data and put it in to the call
-        # so the downstream service can use it
-        headers = {
-            'Content-type': 'application/json',
-            'Accept': 'application/json',
-            'X-Auth-Token': self.admin_token,
-            }
-            ##TODO(ziad):we need to figure out how to auth to keystone
-            #since validate_token is a priviledged call
-            #Khaled's version uses creds to get a token
-            # 'X-Auth-Token': admin_token}
-            # we're using a test token from the ini file for now
-        conn = http_connect(self.auth_host,
-                            self.auth_port,
-                            'GET',
-                            '/v2.0/tokens/%s' % claims,
+                            '/v2.0/tokens/%s' % user_token,
                             headers=headers)
         resp = conn.getresponse()
         data = resp.read()
         conn.close()
 
-        if not str(resp.status).startswith('20'):
-            raise LookupError('Unable to locate claims: %s' % resp.status)
+        # if token is valid return the response text
+        if 200 <= resp.status < 300:
+            return data
+        # if token is unauthorized return
+        # FIXME(ja): I'm assuming the 404 status means that user_token is
+        #            invalid - not that the admin_token is invalid
+        if resp.status == 404:
+            return False
+        # retry if applicable
+        if retry:
+            # FIXME(ja): we should only get a new admin_token if the service
+            #            tells us that our token is expired.
+            self._admin_token = None
+            return self._validate_user_token(user_token, False)
 
+    def _extract_user_data(self, data):
         token_info = json.loads(data)
-        access_user = token_info['access']['user']
-        access_token = token_info['access']['token']
-        # Nova looks for the non case-sensitive role 'admin'
-        # to determine admin-ness
-        # NOTE(lzyeval): roles is always a list
-        roles = map(lambda y: y['name'], access_user.get('roles', []))
+        user = token_info['access']['user']
+        token = token_info['access']['token']
 
+        info = {
+            'user': user['id'],
+            'userName': user['username'],
+            'tenant': None,
+            'roles': [],
+        }
+
+        info['roles'] = [r['name'] for r in user.get('roles', [])]
+
+        # FIXME(ja): comment on why we are checking both places! (is
+        # one an older way of doing it?)
         try:
-            tenant = access_token['tenant']['id']
-            tenant_name = access_token['tenant']['name']
+            info['tenant'] = token['tenant']['id']
+            info['tenantName'] = token['tenant']['name']
         except:
-            tenant = None
-            tenant_name = None
-        if not tenant:
-            tenant = access_user.get('tenantId')
-            tenant_name = access_user.get('tenantName')
-        verified_claims = {
-            'user': access_user['id'],
-            'userName': access_user['username'],
-            'tenant': tenant,
-            'roles': roles,
-            }
-        if tenant_name:
-            verified_claims['tenantName'] = tenant_name
-        return verified_claims
+            info['tenant'] = user.get('tenantId')
+            info['tenantName'] = user.get('tenantName')
+        # FIXME(ja): if no tenant, legacy auth_token set tenant to None and
+        #            had no tenantName. I'm replicating the same for now
+        if info['tenantName'] is None:
+            del info['tenantName']
+        return info
 
-    def _decorate_request(self, index, value, env, proxy_headers):
+    def _decorate_request(self, values, env):
         """Add headers to request"""
-        proxy_headers[index] = value
-        env['HTTP_%s' % index] = value
-
-    def _forward_request(self, env, start_response, proxy_headers):
-        """Token/Auth processed & claims added to headers"""
-        self._decorate_request('AUTHORIZATION',
-            'Basic %s' % self.service_pass, env, proxy_headers)
-        #now decide how to pass on the call
-        if self.app:
-            # Pass to downstream WSGI component
-            return self.app(env, start_response)
-            #.custom_start_response)
-        else:
-            # We are forwarding to a remote service (no downstream WSGI app)
-            req = webob.Request(proxy_headers)
-            parsed = urlparse(req.url)
-
-            conn = http_connect(self.service_host,
-                                self.service_port,
-                                req.method,
-                                parsed.path,
-                                proxy_headers,
-                                ssl=(self.service_protocol == 'https'))
-            resp = conn.getresponse()
-            data = resp.read()
-
-            #TODO(ziad): use a more sophisticated proxy
-            # we are rewriting the headers now
-
-            if resp.status == 401 or resp.status == 305:
-                # Add our own headers to the list
-                headers = [('WWW_AUTHENTICATE',
-                            "Keystone uri='%s'" % self.auth_location)]
-                return webob.Response(status=resp.status,
-                                      body=data,
-                                      headerlist=headers)(env, start_response)
-            else:
-                return webob.Response(status=resp.status,
-                                      body=data)(env, start_response)
+        for (k, v) in values.iteritems():
+            env['HTTP_%s' % k] = v
 
 
 def filter_factory(global_conf, **local_conf):
@@ -438,12 +315,3 @@ def app_factory(global_conf, **local_conf):
     conf = global_conf.copy()
     conf.update(local_conf)
     return AuthProtocol(None, conf)
-
-if __name__ == '__main__':
-    app_path = os.path.join(os.path.abspath(os.path.dirname(__file__)),
-                             os.pardir,
-                             os.pardir,
-                             'examples/paste/auth_token.ini')
-    app = deploy.loadapp('config:%s' % app_path,
-                         global_conf={'log_name': 'auth_token.log'})
-    wsgi.server(eventlet.listen(('', 8090)), app)
