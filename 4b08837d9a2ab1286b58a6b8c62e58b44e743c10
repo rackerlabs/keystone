@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//0P0\u003d",
+        "filename": "openstack-common.conf",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-29T20:07:58Z",
+      "side": 1,
+      "message": "this shouldn\u0027t have a space between cfg, and setup, correct?\n\n(just looked funny to me)",
+      "revId": "4b08837d9a2ab1286b58a6b8c62e58b44e743c10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
