@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//0lc\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-02-29T06:02:56Z",
+      "side": 1,
+      "message": "I want to rework this entire section - the ifs are too damn tall/deep\n\nIt is unreadable",
+      "parentUuid": "AAAAEn//0mo\u003d",
+      "revId": "65d93e30dda1e4a88f6888d44cf15e20adad2330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//0mc\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//0lo\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-02-29T06:02:56Z",
+      "side": 1,
+      "message": "I think there are lots of ways this method can fail and isn\u0027t caught (the http request above ...)  \n\nThis isn\u0027t a regression since it was like this in the original code, but I\u0027ll add a comment to the top of the function to fix this!",
+      "parentUuid": "AAAAEn//0mc\u003d",
+      "revId": "65d93e30dda1e4a88f6888d44cf15e20adad2330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//0mY\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2012-02-29T05:55:07Z",
       "side": 1,
       "message": "would ideally love a warning log message to the owning service that an admin_token couldn\u0027t be identified - not for the user, just the sysadmin running the service. Again - no logging in this module so far...",
+      "revId": "65d93e30dda1e4a88f6888d44cf15e20adad2330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0lg\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-02-29T06:02:56Z",
+      "side": 1,
+      "message": "I think it should be log critical (or error or whatever).  I need termie/bcwaldon\u0027s advice on doing it the right way",
+      "parentUuid": "AAAAEn//0mY\u003d",
       "revId": "65d93e30dda1e4a88f6888d44cf15e20adad2330",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
