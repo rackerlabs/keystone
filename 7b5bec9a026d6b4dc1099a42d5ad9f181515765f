@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//0jY\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-02-29T07:49:09Z",
+      "side": 1,
+      "message": "I\u0027m thinking we shouldn\u0027t fallback then...",
+      "parentUuid": "AAAAEn//0jo\u003d",
+      "revId": "7b5bec9a026d6b4dc1099a42d5ad9f181515765f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//0jk\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 7
@@ -81,6 +99,24 @@
       "writtenOn": "2012-02-29T07:41:41Z",
       "side": 1,
       "message": "Could this be..?\n\n    @property\n    def admin_token(self):",
+      "revId": "7b5bec9a026d6b4dc1099a42d5ad9f181515765f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0jU\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-02-29T07:49:09Z",
+      "side": 1,
+      "message": "it could.",
+      "parentUuid": "AAAAEn//0jk\u003d",
       "revId": "7b5bec9a026d6b4dc1099a42d5ad9f181515765f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
