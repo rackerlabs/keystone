@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//0Us\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-29T18:55:18Z",
+      "side": 1,
+      "message": "felt weird to say policy.backends.policy.Policy :/",
+      "parentUuid": "AAAAEn//0bs\u003d",
+      "revId": "fe4f1b390804b82feda504b106a78f9d68a0b7bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//0bE\u003d",
         "filename": "keystone/common/policy.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-02-29T17:37:28Z",
       "side": 1,
       "message": "is combined a special keyword here, or an example? That is, could this rule could also be named as \"rule:example\"?",
+      "revId": "fe4f1b390804b82feda504b106a78f9d68a0b7bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0Uk\u003d",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-29T18:55:18Z",
+      "side": 1,
+      "message": "aye, this whole file is copied directly from nova though, so it was kinda on the \"openstack common\" watch list",
+      "parentUuid": "AAAAEn//0bE\u003d",
       "revId": "fe4f1b390804b82feda504b106a78f9d68a0b7bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +117,24 @@
       "writtenOn": "2012-02-29T17:37:28Z",
       "side": 1,
       "message": "method signature doesn\u0027t match keystone.common.policy enforce()",
+      "revId": "fe4f1b390804b82feda504b106a78f9d68a0b7bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0UU\u003d",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-02-29T18:55:18Z",
+      "side": 1,
+      "message": "it\u0027s not supposed to, the enforce call there is post-brain, it is just given rules and things to check them against (nova does the same thing as here), I agree that it is somewhat misleading to point at it in the docs but I wasn\u0027t sure what a better lazy option was, ideas?",
+      "parentUuid": "AAAAEn//0ag\u003d",
       "revId": "fe4f1b390804b82feda504b106a78f9d68a0b7bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
