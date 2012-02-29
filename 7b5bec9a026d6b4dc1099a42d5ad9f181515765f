@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//0kA\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-29T07:41:41Z",
+      "side": 1,
+      "message": "I think this is sanitizing the request from potentially falsified headers?",
+      "revId": "7b5bec9a026d6b4dc1099a42d5ad9f181515765f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0j8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-29T07:41:41Z",
+      "side": 1,
+      "message": ".pop(header)",
+      "revId": "7b5bec9a026d6b4dc1099a42d5ad9f181515765f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0jw\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-29T07:41:41Z",
+      "side": 1,
+      "message": "I don\u0027t know what this is either...",
+      "revId": "7b5bec9a026d6b4dc1099a42d5ad9f181515765f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0jo\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-29T07:41:41Z",
+      "side": 1,
+      "message": "I think that was a bug at some point in keystone heavy; don\u0027t remember the outcome",
+      "revId": "7b5bec9a026d6b4dc1099a42d5ad9f181515765f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0jk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-29T07:41:41Z",
+      "side": 1,
+      "message": "Could this be..?\n\n    @property\n    def admin_token(self):",
+      "revId": "7b5bec9a026d6b4dc1099a42d5ad9f181515765f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
