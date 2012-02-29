@@ -115,6 +115,16 @@ class Identity(identity.Driver):
                 return None
         return _filter_user(user_ref)
 
+    def get_user_by_name(self, user_name):
+        user_ref = self.user.get_by_name(user_name)
+        if not user_ref:
+            return None
+        tenants = self.tenant.get_user_tenants(user_ref['id'])
+        user_ref['tenants'] = []
+        for tenant in tenants:
+            user_ref['tenants'].append(tenant['id'])
+        return _filter_user(user_ref)
+
     def get_metadata(self, user_id, tenant_id):
         if not self.get_tenant(tenant_id):
             return None
