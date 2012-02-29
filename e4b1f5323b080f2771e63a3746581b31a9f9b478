@@ -212,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//0N0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-02-29T20:24:35Z",
+      "side": 1,
+      "message": "1)\n\nI don\u0027t like how this works (yet).  It kinda is doing the right thing, but because it requires this comment it isn\u0027t fixed yet.  \n\nIn _validate_user_token, headers[\u0027X-Auth-Token\u0027] is set to self.admin_token, which is a property.  That causes the function admin_token (above) to run which tries to get and return a new token.\n\nI agree the bug is still here.  I think the conditions for retry/... are wrong.\n\n2)\n\nagree.  Need someone\u0027s help or pointers for how to do logging in a wsgi middleware",
+      "parentUuid": "AAAAEn//0Xw\u003d",
+      "revId": "e4b1f5323b080f2771e63a3746581b31a9f9b478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//0XQ\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 11
