@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//0Ts\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-02-29T19:05:55Z",
+      "side": 1,
+      "message": "I think having everything be consistent is, of course, the best prescription. I guess I\u0027m trying to push for having admin_XXX refer to things that are admin-related, and I view admin-related actions as being performed by a human and service-related (privileged API calls/escalated calls) as being performed by a service (as in this case...)\n\nThat said, it\u0027s not something I\u0027d hold up this patch for... if we wanted to keep it as admin_XXX I suppose I can live with that :)",
+      "parentUuid": "AAAAEn//0VA\u003d",
+      "revId": "e4b1f5323b080f2771e63a3746581b31a9f9b478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//0YU\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 11
