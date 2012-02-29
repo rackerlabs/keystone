@@ -33,3 +33,8 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.policy.driver)
+
+
+class Driver(object):
+    def enforce(context, credentials, action, target):
+        raise NotImplementedError()
