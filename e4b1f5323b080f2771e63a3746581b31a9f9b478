@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//0O4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-02-29T20:17:48Z",
+      "side": 1,
+      "message": "Dean - actually service_ was used to describe a downstream openstack service if you ran auth_token in http proxy mode...  which we aren\u0027t going to support",
+      "parentUuid": "AAAAEn//0VA\u003d",
+      "revId": "e4b1f5323b080f2771e63a3746581b31a9f9b478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//0YU\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 11
@@ -83,6 +101,24 @@
       "writtenOn": "2012-02-29T18:17:33Z",
       "side": 1,
       "message": "No, I think properties should not throw exceptions. I think it\u0027s better to make a note here that the property checks for local existence and if not present, the service user and password are used to get a token that can be used to validate the user\u0027s token. If such service user validation does not succeed, service_token (admin_token here..) will be None.",
+      "revId": "e4b1f5323b080f2771e63a3746581b31a9f9b478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0O0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-02-29T20:17:48Z",
+      "side": 1,
+      "message": "k - I\u0027m not a python expert.  I\u0027ll defer to you guys",
+      "parentUuid": "AAAAEn//0YU\u003d",
       "revId": "e4b1f5323b080f2771e63a3746581b31a9f9b478",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -106,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//0Os\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-02-29T20:17:48Z",
+      "side": 1,
+      "message": "agree!  I\u0027m unsure how to add logging in a sane way - I\u0027m going to get bcwaldon or others to help with this",
+      "parentUuid": "AAAAEn//0YE\u003d",
+      "revId": "e4b1f5323b080f2771e63a3746581b31a9f9b478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//0X8\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 11
@@ -117,6 +171,24 @@
       "writtenOn": "2012-02-29T18:17:33Z",
       "side": 1,
       "message": "This comment is now addressed and can be removed...",
+      "revId": "e4b1f5323b080f2771e63a3746581b31a9f9b478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0Ok\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-02-29T20:17:48Z",
+      "side": 1,
+      "message": "actually the bug still exists - the admin_token could timeout and we would require a new one.  When we go to get a new one the service could be down or our password could be wrong",
+      "parentUuid": "AAAAEn//0X8\u003d",
       "revId": "e4b1f5323b080f2771e63a3746581b31a9f9b478",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
