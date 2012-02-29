@@ -15,23 +15,9 @@
 # under the License.
 
 
-from keystone.common import logging
+from keystone import policy
 
 
-class TrivialTrue(object):
-    def can_haz(self, target, credentials):
+class TrivialTrue(policy.Driver):
+    def enforce(self, credentials, action, target):
         return True
-
-
-class SimpleMatch(object):
-    def can_haz(self, target, credentials):
-        """Check whether key-values in target are present in credentials."""
-        # TODO(termie): handle ANDs, probably by providing a tuple instead of a
-        #               string
-        for requirement in target:
-            key, match = requirement.split(':', 1)
-            check = credentials.get(key)
-            if check is None or isinstance(check, basestring):
-                check = [check]
-            if match in check:
-                return True
