@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//0bs\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-29T17:37:28Z",
+      "side": 1,
+      "message": "you just want to say you\u0027ve been doing brain surgery, don\u0027t you?",
+      "revId": "fe4f1b390804b82feda504b106a78f9d68a0b7bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0bE\u003d",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-29T17:37:28Z",
+      "side": 1,
+      "message": "is combined a special keyword here, or an example? That is, could this rule could also be named as \"rule:example\"?",
+      "revId": "fe4f1b390804b82feda504b106a78f9d68a0b7bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0bU\u003d",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-29T17:37:28Z",
+      "side": 1,
+      "message": "would like to add some debug logging for when a match fails a rule, not seeing a clear spot to include it with the recursive call.",
+      "revId": "fe4f1b390804b82feda504b106a78f9d68a0b7bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0bg\u003d",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-29T17:37:28Z",
+      "side": 1,
+      "message": "could we add here:\n  log.debug(\u0027role %s not found, failing check\", match.lower())\n\nin the case of failure to make debugging the policy.json file a bit easier?",
+      "revId": "fe4f1b390804b82feda504b106a78f9d68a0b7bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0ag\u003d",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-02-29T17:37:28Z",
+      "side": 1,
+      "message": "method signature doesn\u0027t match keystone.common.policy enforce()",
+      "revId": "fe4f1b390804b82feda504b106a78f9d68a0b7bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
