@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAEn//0NE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-29T20:40:48Z",
+      "side": 1,
+      "message": "http://wiki.openstack.org/openstack-authn#xauth-header",
+      "revId": "9096d042a34796821f0d716d4c8088f9bfba04f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//0Ns\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 12
@@ -13,6 +30,74 @@
       "writtenOn": "2012-02-29T20:25:52Z",
       "side": 1,
       "message": "I think these conditions for when the user_token is invalid vs when the admin_token is invalid, vs when the service is just failing is still wrong ...",
+      "revId": "9096d042a34796821f0d716d4c8088f9bfba04f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0NI\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-29T20:40:48Z",
+      "side": 1,
+      "message": "This info dict is probably the ugliest part of auth_token now (besides not using keystoneclient, yet). Suggestions:\n\n    tenant -\u003e tenantId\n    roles -\u003e roleNames",
+      "revId": "9096d042a34796821f0d716d4c8088f9bfba04f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0NQ\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-29T20:40:48Z",
+      "side": 1,
+      "message": "this is diablo\u0027s spec \u0026 stable/diablo\u0027s implementation",
+      "revId": "9096d042a34796821f0d716d4c8088f9bfba04f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0NU\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-29T20:40:48Z",
+      "side": 1,
+      "message": "this is diablo\u0027s implementation",
+      "revId": "9096d042a34796821f0d716d4c8088f9bfba04f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//0M4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-02-29T20:40:48Z",
+      "side": 1,
+      "message": "docstring should be revised",
       "revId": "9096d042a34796821f0d716d4c8088f9bfba04f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
