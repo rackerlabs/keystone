@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//zps\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T21:17:10Z",
+      "side": 1,
+      "message": "Looks like the correct format http://docutils.sourceforge.net/docs/user/rst/quickref.html#definition-lists",
+      "parentUuid": "AAAAEn//zq4\u003d",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//zqk\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 19
@@ -115,6 +133,24 @@
       "writtenOn": "2012-03-01T21:11:29Z",
       "side": 1,
       "message": "headers usually look like X-Identity-Status, why is this one different?",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zpk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T21:17:10Z",
+      "side": 1,
+      "message": "They go straight to env vars, now that auth_token can\u0027t stand alone",
+      "parentUuid": "AAAAEn//zqs\u003d",
       "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
