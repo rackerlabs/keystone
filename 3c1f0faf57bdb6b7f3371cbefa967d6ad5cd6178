@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//zu8\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T19:55:58Z",
+      "side": 1,
+      "message": "Unless someone has a better suggestion? I think it needs to be distinct from diablo\u0027s keystone.db to avoid confusion",
+      "revId": "3c1f0faf57bdb6b7f3371cbefa967d6ad5cd6178",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
