@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAEn//zmg\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-01T21:50:02Z",
+      "side": 1,
+      "message": "I don\u0027t think this section makes sense anymore (was releveant to proxy mode) - thoughts dolph?",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zms\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-01T21:50:02Z",
+      "side": 1,
+      "message": "X_AUTHORIZATION was a auth token proxy mode thing - I think it can be removed - dolph?",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//zmY\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 20
@@ -13,6 +47,91 @@
       "writtenOn": "2012-03-01T21:49:17Z",
       "side": 1,
       "message": "do you prefer logger over LOG? I do too, maybe we should add that to HACKING?",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zl8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-01T21:50:02Z",
+      "side": 1,
+      "message": "move this into the get_http_connection function?",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zm8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-01T21:50:02Z",
+      "side": 1,
+      "message": "missing X-User-Name",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zm0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-01T21:50:02Z",
+      "side": 1,
+      "message": "missing X-Roles",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zmc\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-01T21:50:02Z",
+      "side": 1,
+      "message": "User_Name -\u003e User-Name",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zl0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-01T21:50:02Z",
+      "side": 1,
+      "message": "should this do:\n\n    env_key \u003d self._header_to_env_var(k)\n    if env_key in env:\n        del env[env_key]",
       "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
