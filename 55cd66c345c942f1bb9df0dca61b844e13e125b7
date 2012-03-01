@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//zls\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-01T22:07:39Z",
+      "side": 1,
+      "message": "logger makes more sense, but I also like using all caps...",
+      "parentUuid": "AAAAEn//zmY\u003d",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//zl8\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 20
@@ -64,6 +82,24 @@
       "writtenOn": "2012-03-01T21:50:02Z",
       "side": 1,
       "message": "move this into the get_http_connection function?",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zlk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-01T22:07:39Z",
+      "side": 1,
+      "message": "I\u0027m hesitant to do that as the connection class will always be the same. I don\u0027t want to go through this conditional every time we need a new connection.",
+      "parentUuid": "AAAAEn//zl8\u003d",
       "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//zlg\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-01T22:07:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//zm8\u003d",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//zm0\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 20
@@ -98,6 +152,24 @@
       "writtenOn": "2012-03-01T21:50:02Z",
       "side": 1,
       "message": "missing X-Roles",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zlc\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-01T22:07:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAEn//zm0\u003d",
       "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -132,6 +204,24 @@
       "writtenOn": "2012-03-01T21:50:02Z",
       "side": 1,
       "message": "should this do:\n\n    env_key \u003d self._header_to_env_var(k)\n    if env_key in env:\n        del env[env_key]",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zlY\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-01T22:07:39Z",
+      "side": 1,
+      "message": "Sure, that\u0027s cleaner. Fixed in all three methods.",
+      "parentUuid": "AAAAEn//zl0\u003d",
       "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
