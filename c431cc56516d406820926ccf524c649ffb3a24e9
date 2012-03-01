@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//zog\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T21:27:15Z",
+      "side": 1,
+      "message": "Yes, but deprecated support for X-Role is missing there.",
+      "parentUuid": "AAAAEn//zpU\u003d",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//zrM\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 19
@@ -187,6 +205,24 @@
       "side": 1,
       "message": "if termie\u0027s suggestion to make _add_header replace(\u0027-\u0027,\u0027_\u0027).upper() then we can do it either way...\n\nX-Identity-Status preferred?",
       "parentUuid": "AAAAEn//zpk\u003d",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zoY\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T21:27:15Z",
+      "side": 1,
+      "message": "I don\u0027t have a style preference, but termie\u0027s suggestion avoids bugs.",
+      "parentUuid": "AAAAEn//zpE\u003d",
       "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
