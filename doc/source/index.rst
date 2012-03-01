@@ -43,6 +43,7 @@ Getting Started
 
     setup
     configuration
+    migration
     configuringservices
     community
 
