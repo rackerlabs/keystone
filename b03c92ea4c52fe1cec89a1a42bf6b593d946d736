@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//zhU\u003d",
+        "filename": "doc/source/migration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T23:23:57Z",
+      "side": 1,
+      "message": "I don\u0027t know enough about this to speak for the nova side -- like, how do you do a db dump? Are there docs we can point to for stuff like that?",
+      "revId": "b03c92ea4c52fe1cec89a1a42bf6b593d946d736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
