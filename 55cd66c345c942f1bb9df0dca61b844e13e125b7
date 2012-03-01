@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//zmY\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:49:17Z",
+      "side": 1,
+      "message": "do you prefer logger over LOG? I do too, maybe we should add that to HACKING?",
+      "revId": "55cd66c345c942f1bb9df0dca61b844e13e125b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
