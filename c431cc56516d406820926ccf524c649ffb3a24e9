@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//zq4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:11:29Z",
+      "side": 1,
+      "message": "do these get turned into dd/dt in rst? I forget, if not we may want to use whatever format would do that",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zrc\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:11:29Z",
+      "side": 1,
+      "message": ".",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zqw\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:11:29Z",
+      "side": 1,
+      "message": "single quotes here and everywhere pls",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zqs\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:11:29Z",
+      "side": 1,
+      "message": "headers usually look like X-Identity-Status, why is this one different?",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zrY\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:11:29Z",
+      "side": 1,
+      "message": ".",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zrU\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:11:29Z",
+      "side": 1,
+      "message": ".",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zrQ\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:11:29Z",
+      "side": 1,
+      "message": ".",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zqg\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:11:29Z",
+      "side": 1,
+      "message": "while i see what we\u0027re doing here with the httplib class, wouldn\u0027t it be easier to have a method called \"client\" or \"http_client\" or \"get_connection\" or something else? explicitly stating httplib seems out of place since what you are really trying to get is a connection object",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zqA\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:11:29Z",
+      "side": 1,
+      "message": "wouldn\u0027t this dict access fail if there is no token?",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zp8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:11:29Z",
+      "side": 1,
+      "message": "logging doesn\u0027t need to use % for string replacement, pls just use a comma instead",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zrI\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:11:29Z",
+      "side": 1,
+      "message": "no parens needed",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zp4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T21:11:29Z",
+      "side": 1,
+      "message": "to keep in line with how headers are usually referred to, I think this should probably do a k \u003d k.replace(\u0027-\u0027, \u0027_\u0027).upper()",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
