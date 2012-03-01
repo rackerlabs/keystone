@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAEn//zqo\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T21:13:18Z",
+      "side": 1,
+      "message": "Sometime around e2 or e3, Keystone standardized \u0026 documented the following variables:\n\n    X-Identity-Status\n    X-Authorization\n    X-Tenant-Id\n    X-Tenant-Name\n    X-User-Id\n    X-User-Name\n    X-Roles\n\nBut continued to support the following for compatibility:\n\n    X-User (duplicates X-User-Name)\n    X-Tenant (duplicates X-Tenant-Id)\n    X-Role (duplicates X-Roles)\n\nOne of the other auth projects at Rackspace followed that standardized list... I\u0027d recommend doing the same here.",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//zq4\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 19
@@ -13,6 +30,40 @@
       "writtenOn": "2012-03-01T21:11:29Z",
       "side": 1,
       "message": "do these get turned into dd/dt in rst? I forget, if not we may want to use whatever format would do that",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zqk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T21:13:18Z",
+      "side": 1,
+      "message": "X_USER_NAME",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zrM\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T21:13:18Z",
+      "side": 1,
+      "message": "X_ROLE*S*",
       "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -166,6 +217,74 @@
       "writtenOn": "2012-03-01T21:11:29Z",
       "side": 1,
       "message": "logging doesn\u0027t need to use % for string replacement, pls just use a comma instead",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zrA\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T21:13:18Z",
+      "side": 1,
+      "message": "X_USER_NAME",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zrE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T21:13:18Z",
+      "side": 1,
+      "message": "X_ROLE*S*",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zq8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T21:13:18Z",
+      "side": 1,
+      "message": "Also deprecated:\n\n    X_USER\n    X_ROLE",
+      "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zq0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-01T21:13:18Z",
+      "side": 1,
+      "message": "Same stuff here",
       "revId": "c431cc56516d406820926ccf524c649ffb3a24e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
