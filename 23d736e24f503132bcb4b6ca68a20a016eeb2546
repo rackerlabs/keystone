@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//z70\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-01T05:43:22Z",
+      "side": 1,
+      "message": "tenants is not a field on users, it is only a field that is stored in the kvs backend but not exposed to the frontend, so i don\u0027t think this stuff needs to be in here",
+      "revId": "23d736e24f503132bcb4b6ca68a20a016eeb2546",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
