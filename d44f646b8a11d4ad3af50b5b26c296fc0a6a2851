@@ -16,6 +16,24 @@
       "revId": "d44f646b8a11d4ad3af50b5b26c296fc0a6a2851",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zF0\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-02T19:45:49Z",
+      "side": 1,
+      "message": "my thought was that it should be different than pre-redux, to avoid confusion and potential conflicts out of the box. i\u0027m definitely open to other names, or using keystone.db if i\u0027m the only one worried about it :P",
+      "parentUuid": "AAAAEn//zH4\u003d",
+      "revId": "d44f646b8a11d4ad3af50b5b26c296fc0a6a2851",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
