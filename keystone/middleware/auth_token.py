@@ -99,6 +99,7 @@ HTTP_X_ROLE
 import httplib
 import json
 import logging
+import urlparse
 
 import webob
 import webob.exc
@@ -129,18 +130,25 @@ class AuthProtocol(object):
 
         # where to find the auth service (we use this to validate tokens)
         self.auth_host = conf.get('auth_host')
-        self.auth_port = int(conf.get('auth_port'))
+        self.auth_port = int(conf.get('auth_port', 35357))
 
         auth_protocol = conf.get('auth_protocol', 'https')
-        if auth_protocol == 'http':
-            self.http_client_class = httplib.HTTPConnection
-        else:
-            self.http_client_class = httplib.HTTPSConnection
-
         default_auth_uri = '%s://%s:%s' % (auth_protocol,
                                            self.auth_host,
                                            self.auth_port)
         self.auth_uri = conf.get('auth_uri', default_auth_uri)
+        cfg_auth_uri = conf.get('auth_uri')
+        if cfg_auth_uri:
+            parsed = urlparse.urlparse(cfg_auth_uri)
+            auth_protocol, self.auth_host = (parsed.scheme,
+                                             parsed.hostname)
+            if parsed.port:
+                self.auth_port = parsed.port
+
+        if auth_protocol == 'http':
+            self.http_client_class = httplib.HTTPConnection
+        else:
+            self.http_client_class = httplib.HTTPSConnection
 
         # Credentials used to verify this component with the Auth service since
         # validating tokens is a privileged call
