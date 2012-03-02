@@ -99,6 +99,7 @@ HTTP_X_ROLE
 import httplib
 import json
 import logging
+import urlparse
 
 import webob
 import webob.exc
@@ -127,20 +128,33 @@ class AuthProtocol(object):
         # through and we let the downstream service make the final decision
         self.delay_auth_decision = int(conf.get('delay_auth_decision', 0))
 
-        # where to find the auth service (we use this to validate tokens)
-        self.auth_host = conf.get('auth_host')
-        self.auth_port = int(conf.get('auth_port'))
+        # The default port for authentication
+        self.auth_port = int(conf.get('auth_port', 35357))
 
-        auth_protocol = conf.get('auth_protocol', 'https')
+        # If a user has specifed a auth_uri use that for validating the tokens
+        # if not we'll try to use the auth_protocol/host/port variables.
+        # NOTE(chmou): If the user has specified a auth_uri without
+        # port we will use the default auth_port.
+        self.auth_uri = conf.get('auth_uri')
+        if self.auth_uri:
+            parsed = urlparse.urlparse(self.auth_uri)
+            auth_protocol, self.auth_host = (parsed.scheme,
+                                             parsed.hostname)
+            if parsed.port:
+                self.auth_port = parsed.port
+        else:
+            auth_protocol = conf.get('auth_protocol', 'https')
+            # NOTE(chmou): Should we raise an exception if auth_host
+            # is empty?
+            self.auth_host = conf.get('auth_host')
+            self.auth_uri = '%s://%s:%s' % (auth_protocol,
+                                            self.auth_host,
+                                            self.auth_port)
+
         if auth_protocol == 'http':
             self.http_client_class = httplib.HTTPConnection
         else:
             self.http_client_class = httplib.HTTPSConnection
-
-        default_auth_uri = '%s://%s:%s' % (auth_protocol,
-                                           self.auth_host,
-                                           self.auth_port)
-        self.auth_uri = conf.get('auth_uri', default_auth_uri)
 
         # Credentials used to verify this component with the Auth service since
         # validating tokens is a privileged call
