@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//zPE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-02T17:09:41Z",
+      "side": 1,
+      "message": "A day seems too long - given that a token only lasts a day.\n\nHow about 5 minutes (or an hour)",
+      "revId": "add5478d245018fa7354de0c2e9909d186034dd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zO8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-02T17:09:41Z",
+      "side": 1,
+      "message": "self.cache \u003d memcache.Client ...",
+      "revId": "add5478d245018fa7354de0c2e9909d186034dd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zO0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-02T17:09:41Z",
+      "side": 1,
+      "message": "env isn\u0027t used anywhere in the _cache methods.  So we have no need to send it into _validate_user_token",
+      "revId": "add5478d245018fa7354de0c2e9909d186034dd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zOw\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-02T17:09:41Z",
+      "side": 1,
+      "message": "perhaps call _cache_store_invalid?",
+      "revId": "add5478d245018fa7354de0c2e9909d186034dd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zOs\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-02T17:09:41Z",
+      "side": 1,
+      "message": "none of the _cache methods use env, please remove",
+      "revId": "add5478d245018fa7354de0c2e9909d186034dd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
