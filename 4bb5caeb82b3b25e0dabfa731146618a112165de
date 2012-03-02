@@ -16,6 +16,24 @@
       "revId": "4bb5caeb82b3b25e0dabfa731146618a112165de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zVI\u003d",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-02T10:59:25Z",
+      "side": 1,
+      "message": "But wouldn\u0027t that revert the logic here: even when started from git checkout, it would use system-wide /etc/keystone/keystone.conf ? IMHO logic should be:\n\n- if started from git, use keystone.conf from git\n\n- otherwise try system-wide conf, assuming packaged installation.",
+      "parentUuid": "AAAAEn//z24\u003d",
+      "revId": "4bb5caeb82b3b25e0dabfa731146618a112165de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
