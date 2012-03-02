@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//zFk\u003d",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-02T19:55:48Z",
+      "side": 1,
+      "message": "Should this print statement be removed or replaced by a logging call?",
+      "revId": "5ab4e9415263f43f43e6ee968ae2e4dd824be2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zFg\u003d",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-02T19:55:48Z",
+      "side": 1,
+      "message": "Consider using \u0027.get()/if not value\u0027 instead of \u0027try/except KeyError\u0027.",
+      "revId": "5ab4e9415263f43f43e6ee968ae2e4dd824be2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zFc\u003d",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-02T19:55:48Z",
+      "side": 1,
+      "message": "Consider replacing lines 183-185 with the following:\n\nreturn value \u003d\u003d cred_dict.get(key)",
+      "revId": "5ab4e9415263f43f43e6ee968ae2e4dd824be2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zGE\u003d",
+        "filename": "tests/test_policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-02T19:55:48Z",
+      "side": 1,
+      "message": "Consider not using _ to indicate a throw-away value.  _ is used to denote the last assigned value in pdb and is also an alias to gettext.",
+      "revId": "5ab4e9415263f43f43e6ee968ae2e4dd824be2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
