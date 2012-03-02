@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//zNk\u003d",
+        "filename": "doc/source/migration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-02T17:31:54Z",
+      "side": 1,
+      "message": "bug 928053 included in e4 re-implemented Catalog SQL backend, but I don\u0027t see legacy export/import support in merged patch https://review.openstack.org/4464",
+      "revId": "780470d206c4ab274e7254e112d63bf153c78b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zNI\u003d",
+        "filename": "doc/source/migration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-02T17:31:54Z",
+      "side": 1,
+      "message": "(from doc/source/configuration.rst \"Migrating from Nova Auth\") nova-manage\n\n export auth \u003e /path/to/dump",
+      "revId": "780470d206c4ab274e7254e112d63bf153c78b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
