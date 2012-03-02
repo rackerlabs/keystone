@@ -96,9 +96,11 @@ HTTP_X_ROLE
 
 """
 
+import datetime
 import httplib
 import json
 import logging
+import time
 
 import webob
 import webob.exc
@@ -149,6 +151,17 @@ class AuthProtocol(object):
         self.admin_password = conf.get('admin_password')
         self.admin_tenant_name = conf.get('admin_tenant_name', 'admin')
 
+        # Token caching via memcache
+        self.cache = None
+        memcache_hosts = conf.get('memcache_hosts')
+        # By default the token will be cached for one day.
+        self.token_cache_time = conf.get('token_cache_time', 86400)
+        if memcache_hosts:
+            import memcache
+            logger.info('Using memcache for caching token')
+            memcache_client = memcache.Client(memcache_hosts.split(','))
+            self.cache = memcache_client
+
     def __call__(self, env, start_response):
         """Handle incoming request.
 
@@ -160,7 +173,7 @@ class AuthProtocol(object):
         try:
             self._remove_auth_headers(env)
             user_token = self._get_user_token_from_header(env)
-            token_info = self._validate_user_token(user_token)
+            token_info = self._validate_user_token(env, user_token)
             user_headers = self._build_user_headers(token_info)
             self._add_headers(env, user_headers)
             return self.app(env, start_response)
@@ -311,7 +324,7 @@ class AuthProtocol(object):
         except (AssertionError, KeyError):
             raise ServiceError('invalid json response')
 
-    def _validate_user_token(self, user_token, retry=True):
+    def _validate_user_token(self, env, user_token, retry=True):
         """Authenticate user token with keystone.
 
         :param user_token: user's token id
@@ -323,16 +336,27 @@ class AuthProtocol(object):
         :raise ServiceError if unable to authenticate token
 
         """
+        cached = self._cache_get(env, user_token)
+        if cached:
+            cache_claims, cache_expires, token_valid = cached
+            if token_valid and cache_expires >= time.time():
+                logger.debug('Using token from memcache')
+                return cache_claims
+            elif not token_valid and cache_expires >= time.time():
+                msg = 'Token from cache set as invalid.'
+                raise InvalidUserToken(msg)
         headers = {'X-Auth-Token': self.get_admin_token()}
         response, data = self._json_request('GET',
                                             '/v2.0/tokens/%s' % user_token,
                                             additional_headers=headers)
 
         if response.status == 200:
+            self._cache_put(env, user_token, data, valid=True)
             return data
         if response.status == 404:
             # FIXME(ja): I'm assuming the 404 status means that user_token is
             #            invalid - not that the admin_token is invalid
+            self._cache_store_invalid(env, user_token)
             raise InvalidUserToken('Token authorization failed')
         if response.status == 401:
             logger.info('Keystone rejected admin token, resetting')
@@ -342,7 +366,7 @@ class AuthProtocol(object):
                          response.status)
         if retry:
             logger.info('Retrying validation')
-            return self._validate_user_token(user_token, False)
+            return self._validate_user_token(env, user_token, False)
         else:
             raise InvalidUserToken()
 
@@ -424,6 +448,47 @@ class AuthProtocol(object):
         """Get http header from environment."""
         env_key = self._header_to_env_var(key)
         return env.get(env_key, default)
+
+    def _cache_get(self, env, token):
+        """Return cached claim (expiration and validity) from cache."""
+        if self.cache and token:
+            key = 'tokens/%s' % (token)
+            cached_claims = self.cache.get(key)
+            if cached_claims:
+                claims, expires, valid = cached_claims
+                return (claims, expires, valid)
+
+    def _cache_put(self, env, token, claims, valid):
+        """Put a claim into the cache."""
+        if self.cache and claims:
+            key = 'tokens/%s' % (token)
+            if 'access' in claims and 'token' in claims['access']:
+                expires = claims['access']['token']['expires']
+                # avoid using the datetime parser external library by
+                # doing the parsing ourselves.
+                if expires.endswith('Z'):
+                    expires = expires.replace('Z', '')
+                expires = datetime.datetime.strptime(expires,
+                                                     '%Y-%m-%dT%H:%M:%S')
+                expires = time.mktime(expires.utctimetuple())
+            else:
+                return
+            timeout = expires - time.time()
+            if timeout > self.token_cache_time or not valid:
+                # Limit caching for one day
+                timeout = self.token_cache_time
+            logger.debug('Storing token in memcache')
+            self.cache.set(key, (claims, expires, valid), time=timeout)
+
+    def _cache_store_invalid(self, env, token):
+        """Store invalid token in cache as invalid token."""
+        delta = datetime.timedelta(seconds=self.token_cache_time)
+        expires = datetime.datetime.now() + delta
+        expires = expires.strftime('%Y-%m-%dT%H:%M:%S')
+        self._cache_put(env,
+                        token,
+                        claims={'access': {'token': {'expires': expires}}},
+                        valid=False)
 
 
 def filter_factory(global_conf, **local_conf):
