@@ -27,20 +27,14 @@ you may need to consider.
 Preparing Your Essex Deployment
 ===============================
 
-By default, Essex is configured to use an in-memory backend (``kvs``) instead
-of a SQL backend. To change this, modify your new ``etc/keystone.conf`` from
-it's default value::
-
-    [identity]
-    driver = keystone.identity.backends.kvs.Identity
-
-... to instead use a SQL driver::
+Ensure Keystone is configured to use a SQL backend in your
+``etc/keystone.conf``::
 
     [identity]
     driver = keystone.identity.backends.sql.Identity
 
-You may also want to configure your ``[sql]`` settings to better reflect your
-environment::
+Optionally, you may also want the default ``[sql]`` settings to better
+reflect your environment::
 
     [sql]
     connection = sqlite:///openstack-keystone.db
