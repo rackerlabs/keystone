@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//zNM\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-02T17:30:57Z",
+      "side": 1,
+      "message": "perhaps the original:\n\n    self.auth_host \u003d conf.get(\u0027auth_host\u0027)\n    self.auth_port \u003d ...\n    ...\n    self.auth_uri\n\ncould be in an else block (if cfg_auth_uri not set)",
+      "revId": "dd58d9e990acd164a1742ce67ba26b9904cd849c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
