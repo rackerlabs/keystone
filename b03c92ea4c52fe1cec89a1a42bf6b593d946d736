@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//zWI\u003d",
+        "filename": "doc/source/migration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-02T10:30:33Z",
+      "side": 1,
+      "message": "It\u0027s described in keystone\u0027s configuration.rst \"Migrating from Nova Auth\" section:\n\n nova-manage export auth \u003e /path/to/dump\n\nThere\u0027s also section \"Migrating from legacy versions of keystone\", shouldn\u0027t those two be moved/merged here and have link in configuration.rst ?",
+      "parentUuid": "AAAAEn//zhU\u003d",
+      "revId": "b03c92ea4c52fe1cec89a1a42bf6b593d946d736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//zhM\u003d",
         "filename": "keystone/cli.py",
         "patchSetId": 3
