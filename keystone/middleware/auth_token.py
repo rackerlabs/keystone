@@ -96,9 +96,11 @@ HTTP_X_ROLE
 
 """
 
+import datetime
 import httplib
 import json
 import logging
+import time
 
 import webob
 import webob.exc
@@ -148,6 +150,16 @@ class AuthProtocol(object):
         self.admin_user = conf.get('admin_user')
         self.admin_password = conf.get('admin_password')
         self.admin_tenant_name = conf.get('admin_tenant_name', 'admin')
+
+        # Token caching via memcache
+        self.cache = None
+        memcache_hosts = conf.get('memcache_hosts')
+        # By default the token will be cached for 5 minutes
+        self.token_cache_time = conf.get('token_cache_time', 300)
+        if memcache_hosts:
+            import memcache
+            logger.info('Using memcache for caching token')
+            self.cache = memcache.Client(memcache_hosts.split(','))
 
     def __call__(self, env, start_response):
         """Handle incoming request.
@@ -323,16 +335,27 @@ class AuthProtocol(object):
         :raise ServiceError if unable to authenticate token
 
         """
+        cached = self._cache_get(user_token)
+        if cached:
+            data, cache_expires, token_valid = cached
+            if token_valid and cache_expires >= time.time():
+                logger.debug('Using token from memcache')
+                return data
+            elif not token_valid and cache_expires >= time.time():
+                msg = 'Skipping invalid token set in cache'
+                raise InvalidUserToken(msg)
         headers = {'X-Auth-Token': self.get_admin_token()}
         response, data = self._json_request('GET',
                                             '/v2.0/tokens/%s' % user_token,
                                             additional_headers=headers)
 
         if response.status == 200:
+            self._cache_put(user_token, data, valid=True)
             return data
         if response.status == 404:
             # FIXME(ja): I'm assuming the 404 status means that user_token is
             #            invalid - not that the admin_token is invalid
+            self._cache_store_invalid(user_token)
             raise InvalidUserToken('Token authorization failed')
         if response.status == 401:
             logger.info('Keystone rejected admin token, resetting')
@@ -424,6 +447,46 @@ class AuthProtocol(object):
         """Get http header from environment."""
         env_key = self._header_to_env_var(key)
         return env.get(env_key, default)
+
+    def _cache_get(self, token):
+        """Return auth datas (expiration and validity) from cache."""
+        if self.cache and token:
+            key = 'tokens/%s' % (token)
+            cached = self.cache.get(key)
+            if cached:
+                data, expires, valid = cached
+                return (data, expires, valid)
+
+    def _cache_put(self, token, data, valid):
+        """Put auth datas into the cache."""
+        if self.cache and data:
+            key = 'tokens/%s' % (token)
+            if 'access' in data and 'token' in data['access']:
+                expires = data['access']['token']['expires']
+                # avoid using the datetime parser external library by
+                # doing the parsing ourselves.
+                if expires.endswith('Z'):
+                    expires = expires.replace('Z', '')
+                expires = datetime.datetime.strptime(expires,
+                                                     '%Y-%m-%dT%H:%M:%S')
+                expires = time.mktime(expires.utctimetuple())
+            else:
+                return
+            timeout = expires - time.time()
+            if timeout > self.token_cache_time or not valid:
+                # Limit caching for one day
+                timeout = self.token_cache_time
+            logger.debug('Storing token in memcache')
+            self.cache.set(key, (data, expires, valid), time=timeout)
+
+    def _cache_store_invalid(self, token):
+        """Store invalid token in cache as invalid token."""
+        delta = datetime.timedelta(seconds=self.token_cache_time)
+        expires = datetime.datetime.now() + delta
+        expires = expires.strftime('%Y-%m-%dT%H:%M:%S')
+        self._cache_put(token,
+                        data={'access': {'token': {'expires': expires}}},
+                        valid=False)
 
 
 def filter_factory(global_conf, **local_conf):
