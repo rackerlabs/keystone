@@ -250,7 +250,7 @@ class KeystoneClientTests(object):
         client = self.get_client(admin=True)
         user = client.users.create(name=test_username,
                                    password='password',
-                                   email='user1@test.com')
+                                   email='user1@example.com')
         self.assertEquals(user.name, test_username)
 
         user = client.users.get(user=user.id)
@@ -258,8 +258,8 @@ class KeystoneClientTests(object):
 
         user = client.users.update(user=user,
                                    name=test_username,
-                                   email='user2@test.com')
-        self.assertEquals(user.email, 'user2@test.com')
+                                   email='user2@example.com')
+        self.assertEquals(user.email, 'user2@example.com')
 
         # NOTE(termie): update_enabled doesn't return anything, probably a bug
         client.users.update_enabled(user=user, enabled=False)
@@ -289,9 +289,17 @@ class KeystoneClientTests(object):
         # Test creating a user with a tenant (auto-add to tenant)
         user2 = client.users.create(name=test_username,
                                     password='password',
-                                    email='user1@test.com',
+                                    email='user1@example.com',
                                     tenant_id='bar')
         self.assertEquals(user2.name, test_username)
+
+        user2_client = self._client(username=test_username,
+                                    password='password',
+                                    admin=True)
+        user2_client.users.update_password(user2.id, "password2")
+        user2_client.users.update(user2.id, email="user2@example.com")
+        user2 = client.users.get(user2.id)
+        self.assertEqual(user2.email, "user2@example.com")
 
     def test_user_list(self):
         client = self.get_client(admin=True)
@@ -426,7 +434,7 @@ class KeystoneClientTests(object):
                           two.users.create,
                           name='oops',
                           password='password',
-                          email='oops@test.com')
+                          email='oops@example.com')
         self.assertRaises(exception,
                           two.users.delete,
                           user=self.user_foo['id'])
@@ -586,14 +594,14 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
         client = self.get_client(admin=True)
         user = client.users.create(name=test_username,
                                    password='password',
-                                   email='user1@test.com')
+                                   email='user1@example.com')
         self.assertEquals(user.name, test_username)
 
         user = client.users.get(user=user.id)
         self.assertEquals(user.name, test_username)
 
-        user = client.users.update_email(user=user, email='user2@test.com')
-        self.assertEquals(user.email, 'user2@test.com')
+        user = client.users.update_email(user=user, email='user2@example.com')
+        self.assertEquals(user.email, 'user2@example.com')
 
         # NOTE(termie): update_enabled doesn't return anything, probably a bug
         client.users.update_enabled(user=user, enabled=False)

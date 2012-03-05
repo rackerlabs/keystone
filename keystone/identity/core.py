@@ -386,7 +386,15 @@ class UserController(wsgi.Application):
 
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
-        self.assert_admin(context)
+        try:
+            user_token_ref = self.token_api.get_token(
+                    context=context, token_id=context['token_id'])
+            req_user_id = user_token_ref['user'].get('id')
+        except exception.TokenNotFound:
+            req_user_id = None
+        # Allow a user to update their own information.
+        if req_user_id != user_id:
+            self.assert_admin(context)
         user_ref = self.identity_api.update_user(context, user_id, user)
         return {'user': user_ref}
 
