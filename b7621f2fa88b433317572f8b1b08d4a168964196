@@ -16,6 +16,24 @@
       "revId": "b7621f2fa88b433317572f8b1b08d4a168964196",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//yOk\u003d",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-03-05T17:57:08Z",
+      "side": 1,
+      "message": "Dean, I think using /etc/* anything for devstack by default is a bit overzealous and invasive. Would it be possible for all services started by devstack to use the --config-file\u003dPATH options so that people running stack.sh are always assured they know which configuration file the server is using on startup?",
+      "parentUuid": "AAAAEn//yO0\u003d",
+      "revId": "b7621f2fa88b433317572f8b1b08d4a168964196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
