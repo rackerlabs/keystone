@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//yO0\u003d",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 970
+      },
+      "writtenOn": "2012-03-05T17:53:08Z",
+      "side": 1,
+      "message": "I would still rather test for /etc/keystone/keystone.conf because if it exists it will be configured.  Using the location shipped in the source should be a fallback, not the first choice.\n\nFWIW, devstack will be changing over to use /etc/\u003cservice\u003e config files soon (Nova and Swift already do).",
+      "revId": "b7621f2fa88b433317572f8b1b08d4a168964196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
