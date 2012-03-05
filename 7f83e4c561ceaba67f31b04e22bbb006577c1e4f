@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//yDM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/manage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-05T20:36:21Z",
+      "side": 1,
+      "message": "technically nothing in this file is ours, it is all generated code",
+      "revId": "7f83e4c561ceaba67f31b04e22bbb006577c1e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
