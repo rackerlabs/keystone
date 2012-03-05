@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAEn//zHY\u003d",
+        "filename": "doc/source/migration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-05T20:52:27Z",
+      "side": 1,
+      "message": "... you\u0027re changing this in another patch",
+      "revId": "780470d206c4ab274e7254e112d63bf153c78b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//zHc\u003d",
+        "filename": "doc/source/migration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-05T20:52:27Z",
+      "side": 1,
+      "message": "i don\u0027t like the name openstack-keystone for the db, can we do keystone instead?",
+      "revId": "780470d206c4ab274e7254e112d63bf153c78b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//zNk\u003d",
         "filename": "doc/source/migration.rst",
         "patchSetId": 5
