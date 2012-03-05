@@ -386,7 +386,29 @@ class UserController(wsgi.Application):
 
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
-        self.assert_admin(context)
+        try:
+            # Check first for admin-ness
+            self.assert_admin(context)
+        except:
+            # If they're not an admin, we might still allow the user to update
+            # a subset of their own identity.
+            try:
+                user_token_ref = self.token_api.get_token(
+                        context=context, token_id=context['token_id'])
+                req_user = user_token_ref['user']
+            except exception.TokenNotFound:
+                req_user = {"id": None}
+            # Construct the allowed subset of the identity.
+            if req_user.get("id") == user_id:
+                subset = {"id": user_id,
+                          "email": user.get("email", req_user["email"])}
+                if "password" in user:
+                    subset["password"] = user["password"]
+                user = subset
+            else:
+                # If they requesting user isn't the user they're trying to
+                # update and isn't an admin, re-raise the admin assertion.
+                raise
         user_ref = self.identity_api.update_user(context, user_id, user)
         return {'user': user_ref}
 
