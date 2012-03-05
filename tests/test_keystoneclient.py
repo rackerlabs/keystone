@@ -22,17 +22,9 @@ from keystone import test
 
 import default_fixtures
 
-OPENSTACK_REPO = 'https://review.openstack.org/p/openstack'
-KEYSTONECLIENT_REPO = '%s/python-keystoneclient.git' % OPENSTACK_REPO
-
-
 class CompatTestCase(test.TestCase):
     def setUp(self):
         super(CompatTestCase, self).setUp()
-
-        revdir = test.checkout_vendor(*self.get_checkout())
-        self.add_path(revdir)
-        self.clear_module('keystoneclient')
 
         self.load_backends()
         self.load_fixtures(default_fixtures)
@@ -464,9 +456,6 @@ class KeystoneClientTests(object):
 
 
 class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
-    def get_checkout(self):
-        return KEYSTONECLIENT_REPO, 'master'
-
     def test_tenant_add_and_remove_user(self):
         client = self.get_client(admin=True)
         client.roles.add_user_role(tenant=self.tenant_baz['id'],
@@ -540,9 +529,6 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
 
 
 class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
-    def get_checkout(self):
-        return KEYSTONECLIENT_REPO, 'essex-3'
-
     def test_tenant_add_and_remove_user(self):
         client = self.get_client(admin=True)
         client.roles.add_user_to_tenant(tenant_id=self.tenant_baz['id'],
