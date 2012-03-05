@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//yBI\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-05T21:03:55Z",
+      "side": 1,
+      "message": "isn\u0027t \"bind_ip\" or \"bind_address\" or somethign with \"bind\" more common than \"listen\" ?",
+      "revId": "11dfd7811aceeb89faeeb2f8f0c249ec64fc5a2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
