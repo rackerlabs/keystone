@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//yPo\u003d",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-05T17:30:23Z",
+      "side": 1,
+      "message": "s/Settings/Setting/",
+      "revId": "4e602d508ad2763687e71fdd7988a5a78b76d06d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
