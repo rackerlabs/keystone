@@ -52,6 +52,24 @@
       "revId": "b7621f2fa88b433317572f8b1b08d4a168964196",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xeQ\u003d",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1155
+      },
+      "writtenOn": "2012-03-06T18:30:53Z",
+      "side": 1,
+      "message": "I think that inverting the test logic, as dean suggests, is more likely to behave as a user expects.  Jay, I definitely share the your sentiment about using devstack + --configfile.  But there are also usability issues with taking that route.  For example, nova-manage does not work reliably if you don\u0027t have a conf file in /etc/nova.",
+      "parentUuid": "AAAAEn//xww\u003d",
+      "revId": "b7621f2fa88b433317572f8b1b08d4a168964196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
