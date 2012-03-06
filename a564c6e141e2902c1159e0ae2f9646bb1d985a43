@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//xd4\u003d",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-06T18:42:49Z",
+      "side": 1,
+      "message": "this is common code",
+      "parentUuid": "AAAAEn//xrc\u003d",
+      "revId": "a564c6e141e2902c1159e0ae2f9646bb1d985a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//xrs\u003d",
         "filename": "keystone/policy/backends/brain.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2012-03-06T15:06:03Z",
       "side": 1,
       "message": "Can we get this down to a single exception type?",
+      "revId": "a564c6e141e2902c1159e0ae2f9646bb1d985a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xd8\u003d",
+        "filename": "keystone/policy/backends/brain.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-06T18:42:49Z",
+      "side": 1,
+      "message": "... it is a single exception type.\n\nAre you referring to raising the Forbidden exception? Again, common.policy is a _common_ code, not keystone specific, we catch the exceptions from it and raise our own",
+      "parentUuid": "AAAAEn//xrs\u003d",
       "revId": "a564c6e141e2902c1159e0ae2f9646bb1d985a43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//xeA\u003d",
+        "filename": "keystone/policy/backends/brain.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-06T18:42:49Z",
+      "side": 1,
+      "message": "first off \"Brain\" is the name of the class in nova\u0027s code, where this is largely copied from, the only particularly appropriate name for this class here besides it would be \"Policy\" as that conforms to the naming scheme of most of the rest of the drivers.\n\nthis class needs to exist because it is a driver, like all the other drivers in the system, there is already a pattern in use that loads \"driver\" classes and proxies calls to them.\n\nwhat isn\u0027t needed here is the __init__ call since it doesn\u0027t do anything (i just habitually type one out at the beginning in case I want to add any additional setup), the class must also have a method named enforce, and while I could simply assign the enforce function to it, it seems likely that we\u0027ll be adding extra state in the driver at some point (realistically i would have moved the enforce function to be a method on this class, but I was trying to stay as close to nova\u0027s implementation as possible)",
+      "parentUuid": "AAAAEn//xrw\u003d",
+      "revId": "a564c6e141e2902c1159e0ae2f9646bb1d985a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//xrg\u003d",
         "filename": "keystone/policy/core.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2012-03-06T15:06:03Z",
       "side": 1,
       "message": "Instead of building an abstract framework for policy,  lets build the first, reference implementation, and then let the complexity emerge.  This is yet another class that I suspect we do not really need, at least not yet.",
+      "revId": "a564c6e141e2902c1159e0ae2f9646bb1d985a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xdo\u003d",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-06T18:42:49Z",
+      "side": 1,
+      "message": "that\u0027s not what is going on here, take a look at the rest of the system, this is the pattern we use for services, the next step in this process is to provide access to this service via an api",
+      "parentUuid": "AAAAEn//xrg\u003d",
       "revId": "a564c6e141e2902c1159e0ae2f9646bb1d985a43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

@@ -16,6 +16,24 @@
       "revId": "a18b3f29c4a977977e6bf29d1edcba43d5e6005b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xds\u003d",
+        "filename": "keystone/policy/backends/simple.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-06T18:42:49Z",
+      "side": 0,
+      "message": "sure",
+      "parentUuid": "AAAAEn//xrk\u003d",
+      "revId": "a18b3f29c4a977977e6bf29d1edcba43d5e6005b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
