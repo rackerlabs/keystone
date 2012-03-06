@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//xrc\u003d",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-03-06T15:06:03Z",
+      "side": 1,
+      "message": "This is really a \"RulesCheck\"\n  not a \"Brain\"",
+      "revId": "a564c6e141e2902c1159e0ae2f9646bb1d985a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xrs\u003d",
+        "filename": "keystone/policy/backends/brain.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-03-06T15:06:03Z",
+      "side": 1,
+      "message": "Can we get this down to a single exception type?",
+      "revId": "a564c6e141e2902c1159e0ae2f9646bb1d985a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xrw\u003d",
+        "filename": "keystone/policy/backends/brain.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-03-06T15:06:03Z",
+      "side": 1,
+      "message": "The way you have written this class, it does not actually seem necessary.  What is the behavior you are looking to swap  by changing the implementation?  Brain is,  of course, a horrible class name:  too cutesy,  and not really descriptive,  but I understand if you have trouble coming up with a better one,  I\u0027m guessing because this is not really a class but instead a function.\n\nIf I understand correctly,  this is supposed to be  an implementation of the Strategy pattern,  so you can choose different ways to enforce the rules.  However,  this is really a rules engine,  and just tells some other class  whether a given action is valid or not.  Gatekeeper, Guard,  or Monitor are all more descriptive names for this class.",
+      "revId": "a564c6e141e2902c1159e0ae2f9646bb1d985a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xrg\u003d",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-03-06T15:06:03Z",
+      "side": 1,
+      "message": "Instead of building an abstract framework for policy,  lets build the first, reference implementation, and then let the complexity emerge.  This is yet another class that I suspect we do not really need, at least not yet.",
+      "revId": "a564c6e141e2902c1159e0ae2f9646bb1d985a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

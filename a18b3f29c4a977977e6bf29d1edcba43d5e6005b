@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//xrk\u003d",
+        "filename": "keystone/policy/backends/simple.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-03-06T15:06:03Z",
+      "side": 0,
+      "message": "I suspect that this is not necessary.  We can drop this whole file.",
+      "revId": "a18b3f29c4a977977e6bf29d1edcba43d5e6005b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
