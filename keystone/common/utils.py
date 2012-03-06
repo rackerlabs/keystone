@@ -255,9 +255,7 @@ def auth_str_equal(s1, s2):
     used when doing a comparison for authentication purposes to help guard
     against timing attacks.
     """
-    if len(s1) != len(s2):
-        return False
     result = 0
     for (a, b) in zip(s1, s2):
         result |= ord(a) ^ ord(b)
-    return result == 0
+    return len(s1) == len(s2) and result == 0
