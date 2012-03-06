@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//xoU\u003d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-06T16:51:58Z",
+      "side": 1,
+      "message": "we\u0027ve been pretty inconsistent on how we\u0027re getting the logging pieces. LOG \u003d, logger \u003d, and now log \u003d. I personally prefer LOG \u003d ... since it\u0027s outside of the methods and acts like a constant object in use through the code. HACKING.rst implies LOG \u003d is the preferred pattern.\n\nEverywhere else we\u0027re following OpenStack\u0027s general theme of naming the specific logging, so while I personally like using __name__, it doesn\u0027t match with the openstack style to date, so I think this should be \"keystone.catalog.backends.templated\". Leads to Copy/Paste errors, I know - but it follows the pattern.",
+      "revId": "1feb14214a284e4598c5b677a37cd25bdded32b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xoE\u003d",
+        "filename": "keystone/common/logging.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-06T16:51:58Z",
+      "side": 1,
+      "message": "critical --\u003e all",
+      "revId": "1feb14214a284e4598c5b677a37cd25bdded32b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
