@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//x2E\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-06T01:02:02Z",
+      "side": 1,
+      "message": "perhaps we should specify the field that are set-able explicitly..  \n\nThis might let you set your default tenant..\n\nif req_user_id \u003d\u003d user_id:\n   user \u003d # only params allowed to be set",
+      "revId": "95dd2cc07687f85889d025ae8c5b7f2f6bb944ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
