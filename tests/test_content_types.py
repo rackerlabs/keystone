@@ -352,6 +352,17 @@ class CoreApiTests(object):
             token=token)
         self.assertValidAuthenticationResponse(r)
 
+    def test_validate_token_belongs_to(self):
+        token = self.get_scoped_token()
+        r = self.admin_request(
+            path='/v2.0/tokens/%(token_id)s?belongs_to=%(belongs_to)s' % {
+            'token_id': token,
+            'belongs_to':self.tenant_bar['id'],
+             },
+             token=token)
+        self.assertValidServiceCatalogResponse(r)
+        self.assertValidAuthenticationResponse(r)
+
     def test_validate_token_head(self):
         """The same call as above, except using HEAD.
 
@@ -448,6 +459,9 @@ class JsonTestCase(RestfulTestCase, CoreApiTests):
     def assertValidExtensionResponse(self, r):
         self.assertValidExtension(r.body.get('extension'))
 
+    def assertValidServiceCatalogResponse(self, r):
+        self.assertIsNotNone(r.body['access'].get('serviceCatalog'))
+ 
     def assertValidAuthenticationResponse(self, r):
         self.assertIsNotNone(r.body.get('access'))
         self.assertIsNotNone(r.body['access'].get('token'))
@@ -627,6 +641,11 @@ class XmlTestCase(RestfulTestCase, CoreApiTests):
         for role in r.body.findall(self._tag('role')):
             self.assertValidRole(role)
 
+    def assertValidServiceCatalogResponse(self, r):
+        xml = r.body
+        serviceCatalog = xml.find(self._tag('serviceCatalog'))
+        self.assertIsNotNone(serviceCatalog)
+ 
     def assertValidAuthenticationResponse(self, r):
         xml = r.body
         self.assertEqual(xml.tag, self._tag('access'))
