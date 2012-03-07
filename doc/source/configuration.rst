@@ -595,3 +595,39 @@ example::
 
     $ keystone service-delete 08741d8ed88242ca88d1f61484a0fe3b
 
+
+Configuring the LDAP Identity Provider
+===========================================================
+
+As an alternative to the SQL Databse backing store, Keystone can Use a 
+Directory server to provide the Identity service.  An example Schema 
+for openstack would look like this::
+
+  dn: cn=openstack,cn=org
+  dc: openstack
+  objectClass: dcObject
+  objectClass: organizationalUnit
+  ou: openstack
+  
+  dn: ou=Groups,cn=openstack,cn=org
+  objectClass: top
+  objectClass: organizationalUnit
+  ou: groups
+  
+  dn: ou=Users,cn=openstack,cn=org
+  objectClass: top
+  objectClass: organizationalUnit
+  ou: users
+  
+  dn: ou=Roles,cn=openstack,cn=org
+  objectClass: top
+  objectClass: organizationalUnit
+  ou: users
+
+The corresponding entries in the configuration file are::
+
+  [ldap]
+  url = ldap://localhost
+  suffix = dc=openstack,dc=org
+  user = dc=Manager,dc=openstack,dc=org
+  password = badpassword
