@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//xIk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-07T00:06:03Z",
+      "side": 1,
+      "message": "sqlite:///keystone.db",
+      "revId": "7d8ebf7a160e378c1fc9f45f4f759689496120ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xIo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-07T00:06:03Z",
+      "side": 1,
+      "message": ":35357",
+      "revId": "7d8ebf7a160e378c1fc9f45f4f759689496120ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xI4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-07T00:06:03Z",
+      "side": 1,
+      "message": "user-update         Update user\u0027s name, email, and enabled status",
+      "revId": "7d8ebf7a160e378c1fc9f45f4f759689496120ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xJM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-07T00:06:03Z",
+      "side": 1,
+      "message": "user-role-add       Add role to user",
+      "revId": "7d8ebf7a160e378c1fc9f45f4f759689496120ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xJI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-07T00:06:03Z",
+      "side": 1,
+      "message": "user-role-remove    Remove role from user",
+      "revId": "7d8ebf7a160e378c1fc9f45f4f759689496120ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//xJA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-07T00:06:03Z",
+      "side": 1,
+      "message": "service-create      Add service to Service Catalog",
+      "revId": "7d8ebf7a160e378c1fc9f45f4f759689496120ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
