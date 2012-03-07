@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//w1c\u003d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2012-03-07T14:36:17Z",
+      "side": 1,
+      "message": "Is there any reason to spell out the module name here instead of using __name__? For example, is it a style guide requirement?",
+      "revId": "fd4e9616ddca4dbd0c4f0545c376167b966eae8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
