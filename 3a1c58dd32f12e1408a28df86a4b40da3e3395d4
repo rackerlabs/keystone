@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//w1o\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2012-03-07T14:30:26Z",
+      "side": 1,
+      "message": "What type of exception is expected here? Is there a specific authorization exception for not being an admin user?",
+      "revId": "3a1c58dd32f12e1408a28df86a4b40da3e3395d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
