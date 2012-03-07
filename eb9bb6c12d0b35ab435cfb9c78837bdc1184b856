@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//wsQ\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-07T20:39:04Z",
+      "side": 1,
+      "message": "maybe move catalog_ref \u003d None above the if statement so we can drop the else?",
+      "revId": "eb9bb6c12d0b35ab435cfb9c78837bdc1184b856",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//wsE\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-07T20:39:04Z",
+      "side": 1,
+      "message": "i\u0027d maybe do this is somethign more like: \n\npath \u003d \u0027/v2.0/tokens/%s/?belongs_to\u003d%s\u0027 % (token, self.tenant_bar[\u0027id\u0027])\n\nabove\n\nand then path\u003dpath in here\n\nthe indenting is a little funky as it stands",
+      "revId": "eb9bb6c12d0b35ab435cfb9c78837bdc1184b856",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
