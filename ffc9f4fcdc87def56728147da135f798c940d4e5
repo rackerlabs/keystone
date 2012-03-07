@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//wz0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-07T16:05:14Z",
+      "side": 1,
+      "message": "gerrit expects a line break here",
+      "revId": "ffc9f4fcdc87def56728147da135f798c940d4e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//w0Q\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-07T16:05:14Z",
+      "side": 1,
+      "message": "nix this",
+      "revId": "ffc9f4fcdc87def56728147da135f798c940d4e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//w0E\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-07T16:05:14Z",
+      "side": 1,
+      "message": "and then:\n\n    self.assertValidAuthenticationResponse(r, require_service_catalog\u003dTrue)",
+      "revId": "ffc9f4fcdc87def56728147da135f798c940d4e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//w0M\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-07T16:05:14Z",
+      "side": 1,
+      "message": "drop this method (the response isn\u0027t a service catalog anyway)",
+      "revId": "ffc9f4fcdc87def56728147da135f798c940d4e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//w0c\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-07T16:05:14Z",
+      "side": 1,
+      "message": "pep8",
+      "revId": "ffc9f4fcdc87def56728147da135f798c940d4e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//w0U\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-07T16:05:14Z",
+      "side": 1,
+      "message": "require_service_catalog\u003dFalse or expect_* or something?",
+      "revId": "ffc9f4fcdc87def56728147da135f798c940d4e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//w0Y\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-07T16:05:14Z",
+      "side": 1,
+      "message": "the authentication response already validates the service catalog, if it\u0027s present (optional by contract). But:\n\n    if require_service_catalog or ...",
+      "revId": "ffc9f4fcdc87def56728147da135f798c940d4e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
