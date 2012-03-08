@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//wZ4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-08T16:17:52Z",
+      "side": 1,
+      "message": "same fate as user-disable/enable (see below)",
+      "revId": "189c894fe4197f21cc0a448852a8254226b90103",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//wZ0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-08T16:17:52Z",
+      "side": 1,
+      "message": "same fate as user-disable/enable",
+      "revId": "189c894fe4197f21cc0a448852a8254226b90103",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//waE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-08T16:17:52Z",
+      "side": 1,
+      "message": "This no longer exists; it\u0027s part of user-update now.\n\nShould still have an example of how to enable/disable a user though",
+      "revId": "189c894fe4197f21cc0a448852a8254226b90103",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//waA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-08T16:17:52Z",
+      "side": 1,
+      "message": "This no longer exists; it\u0027s part of user-update now.",
+      "revId": "189c894fe4197f21cc0a448852a8254226b90103",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
