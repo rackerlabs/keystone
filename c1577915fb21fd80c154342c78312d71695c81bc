@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//wZU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-08T16:19:21Z",
+      "side": 1,
+      "message": "twice due to bug 928564\nbut probably better to fix that bug instead of documenting it :)",
+      "revId": "c1577915fb21fd80c154342c78312d71695c81bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
