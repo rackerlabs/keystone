@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//weM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-08T06:20:22Z",
+      "side": 1,
+      "message": "i thought you ended up naming this just \"keystone\"?",
+      "revId": "9f297b61b26bc2f9550ac5b0fa5bc10f887cf220",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
