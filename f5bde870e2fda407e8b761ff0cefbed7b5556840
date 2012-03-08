@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//wPM\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-08T19:34:00Z",
+      "side": 1,
+      "message": "We need to standardize on something for this config variable name. In Jesse\u0027s review for caching in the nova metadata service, he uses memcached_servers, here we use memcache_hosts. Let\u0027s pick one and use it in both places.",
+      "revId": "f5bde870e2fda407e8b761ff0cefbed7b5556840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
