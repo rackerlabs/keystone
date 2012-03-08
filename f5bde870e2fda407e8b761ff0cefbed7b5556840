@@ -16,6 +16,125 @@
       "revId": "f5bde870e2fda407e8b761ff0cefbed7b5556840",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//wF0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-08T22:29:01Z",
+      "side": 1,
+      "message": "capital If",
+      "revId": "f5bde870e2fda407e8b761ff0cefbed7b5556840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//wF4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-08T22:29:01Z",
+      "side": 1,
+      "message": "period.",
+      "revId": "f5bde870e2fda407e8b761ff0cefbed7b5556840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//wFw\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-08T22:29:01Z",
+      "side": 1,
+      "message": "capital Stores",
+      "revId": "f5bde870e2fda407e8b761ff0cefbed7b5556840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//wGU\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-08T22:29:01Z",
+      "side": 1,
+      "message": "this \"\"\" goes on the next line",
+      "revId": "f5bde870e2fda407e8b761ff0cefbed7b5556840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//wGA\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-08T22:29:01Z",
+      "side": 1,
+      "message": "you can do this as\n\nif \u0027token\u0027 in data.get(\u0027access\u0027, {}):",
+      "revId": "f5bde870e2fda407e8b761ff0cefbed7b5556840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//wGY\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-08T22:29:01Z",
+      "side": 1,
+      "message": "you don\u0027t need to check this, you can just do the replace",
+      "revId": "f5bde870e2fda407e8b761ff0cefbed7b5556840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//wFk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-08T22:29:01Z",
+      "side": 1,
+      "message": "don\u0027t you have to say *timestamp.utctimetuple() to get this to work? or maybe the interface to mktime has updated?",
+      "revId": "f5bde870e2fda407e8b761ff0cefbed7b5556840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
