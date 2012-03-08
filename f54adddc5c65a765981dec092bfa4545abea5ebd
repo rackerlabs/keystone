@@ -33,6 +33,24 @@
       "revId": "f54adddc5c65a765981dec092bfa4545abea5ebd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//wGc\u003d",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-08T22:27:45Z",
+      "side": 1,
+      "message": "Not only not neccessay but it won\u0027t work since Templated Catalog backend doesn\u0027t implement endpoint operations, endpoint-create fails with 500 \u0027TemplatedCatalog\u0027 object has no attribute \u0027service_exists\u0027\nand even endpoint-list \u0027TemplatedCatalog\u0027 object has no attribute \u0027list_endpoints\u0027\n\nSo I\u0027d put \"Do not use with Templated Catalog backend (default).\"",
+      "parentUuid": "AAAAEn//wNk\u003d",
+      "revId": "f54adddc5c65a765981dec092bfa4545abea5ebd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
