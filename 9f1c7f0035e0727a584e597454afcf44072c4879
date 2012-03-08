@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//wEM\u003d",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-08T22:43:28Z",
+      "side": 1,
+      "message": "looks past 80 chars (sorry)",
+      "revId": "9f1c7f0035e0727a584e597454afcf44072c4879",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
