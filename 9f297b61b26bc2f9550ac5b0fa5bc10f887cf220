@@ -16,6 +16,24 @@
       "revId": "9f297b61b26bc2f9550ac5b0fa5bc10f887cf220",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//wao\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-08T16:04:57Z",
+      "side": 1,
+      "message": "True fact.",
+      "parentUuid": "AAAAEn//weM\u003d",
+      "revId": "9f297b61b26bc2f9550ac5b0fa5bc10f887cf220",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
