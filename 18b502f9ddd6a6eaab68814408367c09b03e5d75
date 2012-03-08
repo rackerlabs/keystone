@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//wN0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-08T20:13:34Z",
+      "side": 1,
+      "message": "please make this 50 characters or less and set this as the first line of the commit message, the bug is less useful than the message :)",
+      "revId": "18b502f9ddd6a6eaab68814408367c09b03e5d75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
