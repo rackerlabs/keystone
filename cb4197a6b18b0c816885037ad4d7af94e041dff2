@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//wMQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-08T20:47:56Z",
+      "side": 1,
+      "message": "in the future (or right now) if you could make the first line of the commit the message saying what it does and subsequent lines (after a newline) say things like \"fixes lp#309230\" that\u0027d be grand",
+      "revId": "cb4197a6b18b0c816885037ad4d7af94e041dff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
