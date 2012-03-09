@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//vn0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-09T23:14:43Z",
+      "side": 1,
+      "message": "Jesse: Do you want to make this \u0027memcached_servers\u0027, or update your other review with \u0027memcache_servers\u0027?",
+      "revId": "3acb4f8cb0721f1206c7855ff02c521267558d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//vmw\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-09T23:14:43Z",
+      "side": 1,
+      "message": "Can we allow for an in-memory cache as well? We can do it in a subsequent review if you like.",
+      "revId": "3acb4f8cb0721f1206c7855ff02c521267558d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//vnk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-09T23:14:43Z",
+      "side": 1,
+      "message": "This seems like an error condition. We shouldn\u0027t ever get a 200 back from Keystone then try to cache and not find a token in the response. Maybe you could at least log a warning...",
+      "revId": "3acb4f8cb0721f1206c7855ff02c521267558d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//vnE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-09T23:14:43Z",
+      "side": 1,
+      "message": "The Identity API is allowed to return any ISO8601-compliant timestamp, so I doubt this function will work well enough. I understand we don\u0027t want to add a third-party library, but this seems like a bigger problem.",
+      "revId": "3acb4f8cb0721f1206c7855ff02c521267558d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
