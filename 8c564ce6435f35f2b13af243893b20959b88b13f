@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//vqE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-09T22:13:33Z",
+      "side": 1,
+      "message": "it makes more sense when it is:\n\n   if now \u003c expires:\n       return valid\n\nso - yeah.  fixed this bug",
+      "parentUuid": "AAAAEn//v6M\u003d",
+      "revId": "8c564ce6435f35f2b13af243893b20959b88b13f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//v6I\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2012-03-09T13:48:54Z",
       "side": 1,
       "message": "we are storing the token in memcache for token_cache_time when keystone stores it for 1 day, why don\u0027t we keep it for as long keystone stores it ?",
+      "revId": "8c564ce6435f35f2b13af243893b20959b88b13f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//vqA\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-09T22:13:33Z",
+      "side": 1,
+      "message": "mostly worried about eventual consistency of a keystone backend ... if the token is returned 404 because it hasn\u0027t been sent to this keystone endpoint yet - but is in 5 minutes.",
+      "parentUuid": "AAAAEn//v6I\u003d",
       "revId": "8c564ce6435f35f2b13af243893b20959b88b13f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
