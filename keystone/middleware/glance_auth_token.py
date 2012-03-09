@@ -52,9 +52,9 @@ class KeystoneContextMiddleware(context.ContextMiddleware):
         # OK, let's extract the information we need
         auth_tok = req.headers.get('X_AUTH_TOKEN',
                                    req.headers.get('X_STORAGE_TOKEN'))
-        user = req.headers.get('X_USER')
-        tenant = req.headers.get('X_TENANT')
-        roles = [r.strip() for r in req.headers.get('X_ROLE', '').split(',')]
+        user = req.headers.get('X_USER_ID')
+        tenant = req.headers.get('X_TENANT_ID')
+        roles = [r.strip() for r in req.headers.get('X_ROLES', '').split(',')]
         is_admin = 'admin' in roles
 
         # Construct the context
