@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAEn//v6M\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-03-09T13:48:54Z",
+      "side": 1,
+      "message": "I think this is wrong as this always show the token as expired. paste example here, this is the same token and it think on the second time that it has expired when it has not http://pastie.org/pastes/3555860/text?key\u003dk4kc9mqtagnk7s2vgb6qg",
+      "revId": "8c564ce6435f35f2b13af243893b20959b88b13f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//v6I\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-03-09T13:48:54Z",
+      "side": 1,
+      "message": "we are storing the token in memcache for token_cache_time when keystone stores it for 1 day, why don\u0027t we keep it for as long keystone stores it ?",
+      "revId": "8c564ce6435f35f2b13af243893b20959b88b13f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
