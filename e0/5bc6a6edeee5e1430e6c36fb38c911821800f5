@@ -1,0 +1,8 @@
+Verified+1: Jenkins
+Approved+1: anotherjesse <anotherjesse@gmail.com>
+Code-Review+2: anotherjesse <anotherjesse@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 09 Mar 2012 20:57:05 +0000
+Reviewed-on: https://review.openstack.org/4757
+Project: openstack/keystone
+Branch: refs/heads/master
