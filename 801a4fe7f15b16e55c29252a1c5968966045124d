@@ -16,6 +16,24 @@
       "revId": "801a4fe7f15b16e55c29252a1c5968966045124d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3///7A\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-10T22:24:42Z",
+      "side": 1,
+      "message": "So I wrote the fake to return an empty body with a 404 response. The code blew up because it *always* expects a json body. I wanted to gracefully handle a a failure of the keystone server to provide a json response while still allowing the calling code to see the http status. Do you buy that?",
+      "parentUuid": "AAAAE3///7U\u003d",
+      "revId": "801a4fe7f15b16e55c29252a1c5968966045124d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
