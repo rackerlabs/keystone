@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3///7U\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-03-10T22:10:11Z",
+      "side": 1,
+      "message": "Shouldn\u0027t be raise ServiceError here?, as if it\u0027s not a json encoded there is def a problem?",
+      "revId": "801a4fe7f15b16e55c29252a1c5968966045124d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
