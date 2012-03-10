@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//veE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-10T03:47:15Z",
+      "side": 1,
+      "message": "going to go with memcache_servers",
+      "parentUuid": "AAAAEn//vn0\u003d",
+      "revId": "3acb4f8cb0721f1206c7855ff02c521267558d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//vmw\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2012-03-09T23:14:43Z",
       "side": 1,
       "message": "Can we allow for an in-memory cache as well? We can do it in a subsequent review if you like.",
+      "revId": "3acb4f8cb0721f1206c7855ff02c521267558d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//vjU\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-10T03:47:15Z",
+      "side": 1,
+      "message": "I want to ... but in a later patch since we don\u0027t yet know the in-memory cache strategy for nova / openstack",
+      "parentUuid": "AAAAEn//vmw\u003d",
       "revId": "3acb4f8cb0721f1206c7855ff02c521267558d93",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAEn//vdw\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-10T03:47:15Z",
+      "side": 1,
+      "message": "added logger.error(\u0027invalid token format\u0027)",
+      "parentUuid": "AAAAEn//vnk\u003d",
+      "revId": "3acb4f8cb0721f1206c7855ff02c521267558d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAEn//vnE\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2012-03-09T23:14:43Z",
       "side": 1,
       "message": "The Identity API is allowed to return any ISO8601-compliant timestamp, so I doubt this function will work well enough. I understand we don\u0027t want to add a third-party library, but this seems like a bigger problem.",
+      "revId": "3acb4f8cb0721f1206c7855ff02c521267558d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAEn//vdo\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-10T03:47:15Z",
+      "side": 1,
+      "message": "not sure about this - chmouel?",
+      "parentUuid": "AAAAEn//vnE\u003d",
       "revId": "3acb4f8cb0721f1206c7855ff02c521267558d93",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
