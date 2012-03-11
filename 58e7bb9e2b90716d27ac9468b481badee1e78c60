@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3///xA\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-11T19:37:14Z",
+      "side": 1,
+      "message": "pep8 violation - need an extra line here",
+      "revId": "58e7bb9e2b90716d27ac9468b481badee1e78c60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3///w8\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-11T19:37:14Z",
+      "side": 1,
+      "message": "pep8 - need another line here too",
+      "revId": "58e7bb9e2b90716d27ac9468b481badee1e78c60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
