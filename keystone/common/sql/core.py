@@ -28,6 +28,7 @@ import sqlalchemy.pool
 import sqlalchemy.engine.url
 
 from keystone import config
+from keystone.common import logging
 
 
 CONF = config.CONF
@@ -93,9 +94,33 @@ class DictBase(object):
         #local.update(joined)
         #return local.iteritems()
 
+class MySQLPingListener(object):
+
+
+    """
+    Ensures that MySQL connections checked out of the
+    pool are alive.
+
+    Borrowed from:
+    http://groups.google.com/group/sqlalchemy/msg/a4ce563d802c929f
+    """
+
+    def checkout(self, dbapi_con, con_record, con_proxy):
+        from sqlalchemy.exc import DisconnectionError
+        try:
+            dbapi_con.cursor().execute('select now()')
+        except dbapi_con.OperationalError, ex:
+            if ex.args[0] in (2006, 2013, 2014, 2045, 2055):
+                logging.warn('Got mysql server has gone away: %s', ex)
+                raise DisconnectionError("Database server went away")
+            else:
+                raise
+
 
 # Backends
 class Base(object):
+
+
     _MAKER = None
     _ENGINE = None
 
@@ -108,9 +133,6 @@ class Base(object):
                                          expire_on_commit)
 
         session = self._MAKER()
-        # TODO(termie): we may want to do something similar
-        #session.query = nova.exception.wrap_db_error(session.query)
-        #session.flush = nova.exception.wrap_db_error(session.flush)
         return session
 
     def get_engine(self):
@@ -124,6 +146,9 @@ class Base(object):
 
         if 'sqlite' in connection_dict.drivername:
             engine_args['poolclass'] = sqlalchemy.pool.NullPool
+
+        if 'mysql' in connection_dict.drivername:
+            engine_args['listeners'] = [MySQLPingListener()]
 
         return sql.create_engine(CONF.sql.connection, **engine_args)
 
