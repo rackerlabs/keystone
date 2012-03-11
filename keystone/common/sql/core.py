@@ -17,6 +17,7 @@
 """SQL backends for the various services."""
 
 
+import logging
 import json
 
 import eventlet.db_pool
@@ -30,6 +31,7 @@ import sqlalchemy.engine.url
 from keystone import config
 
 
+LOG = logging.getLogger('keystone.common.sql.core')
 CONF = config.CONF
 
 
@@ -94,6 +96,24 @@ class DictBase(object):
         #return local.iteritems()
 
 
+class DBError(Exception):
+    """Wraps an implementation specific exception."""
+    def __init__(self, inner_exception=None):
+        self.inner_exception = inner_exception
+        super(DBError, self).__init__(str(inner_exception))
+
+
+def wrap_db_error(f):
+    def _wrap(*args, **kwargs):
+        try:
+            return f(*args, **kwargs)
+        except Exception, e:
+            LOG.exception('DB exception wrapped.')
+            raise DBError(e)
+    _wrap.func_name = f.func_name
+    return _wrap
+
+
 # Backends
 class Base(object):
     _MAKER = None
@@ -108,9 +128,10 @@ class Base(object):
                                          expire_on_commit)
 
         session = self._MAKER()
-        # TODO(termie): we may want to do something similar
-        #session.query = nova.exception.wrap_db_error(session.query)
-        #session.flush = nova.exception.wrap_db_error(session.flush)
+        session.query = wrap_db_error(session.query)
+        session.flush = wrap_db_error(session.flush)
+        session.filter_by = wrap_db_error(session.flush)
+        session.first = wrap_db_error(session.flush)
         return session
 
     def get_engine(self):

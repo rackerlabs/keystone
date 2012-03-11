@@ -17,6 +17,7 @@
 import copy
 
 from keystone import identity
+from keystone.common import logging
 from keystone.common import sql
 from keystone.common import utils
 from keystone.common.sql import migration
@@ -143,6 +144,7 @@ class Identity(sql.Base, identity.Driver):
             metadata_ref = {}
         return (_filter_user(user_ref), tenant_ref, metadata_ref)
 
+    @logging.log_error
     def get_tenant(self, tenant_id):
         session = self.get_session()
         tenant_ref = session.query(Tenant).filter_by(id=tenant_id).first()
@@ -150,6 +152,7 @@ class Identity(sql.Base, identity.Driver):
             return
         return tenant_ref.to_dict()
 
+    @logging.log_error
     def get_tenant_by_name(self, tenant_name):
         session = self.get_session()
         tenant_ref = session.query(Tenant).filter_by(name=tenant_name).first()
@@ -157,6 +160,7 @@ class Identity(sql.Base, identity.Driver):
             return
         return tenant_ref.to_dict()
 
+    @logging.log_error
     def get_tenant_users(self, tenant_id):
         session = self.get_session()
         user_refs = session.query(User)\
@@ -165,6 +169,7 @@ class Identity(sql.Base, identity.Driver):
                 .all()
         return [_filter_user(user_ref.to_dict()) for user_ref in user_refs]
 
+    @logging.log_error
     def _get_user(self, user_id):
         session = self.get_session()
         user_ref = session.query(User).filter_by(id=user_id).first()
@@ -172,6 +177,7 @@ class Identity(sql.Base, identity.Driver):
             return
         return user_ref.to_dict()
 
+    @logging.log_error
     def _get_user_by_name(self, user_name):
         session = self.get_session()
         user_ref = session.query(User).filter_by(name=user_name).first()
@@ -185,6 +191,7 @@ class Identity(sql.Base, identity.Driver):
     def get_user_by_name(self, user_name):
         return _filter_user(self._get_user_by_name(user_name))
 
+    @logging.log_error
     def get_metadata(self, user_id, tenant_id):
         session = self.get_session()
         metadata_ref = session.query(Metadata)\
@@ -193,22 +200,26 @@ class Identity(sql.Base, identity.Driver):
                               .first()
         return getattr(metadata_ref, 'data', None)
 
+    @logging.log_error
     def get_role(self, role_id):
         session = self.get_session()
         role_ref = session.query(Role).filter_by(id=role_id).first()
         return role_ref
 
+    @logging.log_error
     def list_users(self):
         session = self.get_session()
         user_refs = session.query(User)
         return [_filter_user(x.to_dict()) for x in user_refs]
 
+    @logging.log_error
     def list_roles(self):
         session = self.get_session()
         role_refs = session.query(Role)
         return list(role_refs)
 
     # These should probably be part of the high-level API
+    @logging.log_error
     def add_user_to_tenant(self, tenant_id, user_id):
         session = self.get_session()
         q = session.query(UserTenantMembership)\
@@ -223,6 +234,7 @@ class Identity(sql.Base, identity.Driver):
                                              tenant_id=tenant_id))
             session.flush()
 
+    @logging.log_error
     def remove_user_from_tenant(self, tenant_id, user_id):
         session = self.get_session()
         membership_ref = session.query(UserTenantMembership)\
@@ -233,11 +245,13 @@ class Identity(sql.Base, identity.Driver):
             session.delete(membership_ref)
             session.flush()
 
+    @logging.log_error
     def get_tenants(self):
         session = self.get_session()
         tenant_refs = session.query(Tenant).all()
         return [tenant_ref.to_dict() for tenant_ref in tenant_refs]
 
+    @logging.log_error
     def get_tenants_for_user(self, user_id):
         session = self.get_session()
         membership_refs = session.query(UserTenantMembership)\
@@ -280,6 +294,7 @@ class Identity(sql.Base, identity.Driver):
             self.create_metadata(user_id, tenant_id, metadata_ref)
 
     # CRUD
+    @logging.log_error
     def create_user(self, user_id, user):
         user = _ensure_hashed_password(user)
         session = self.get_session()
@@ -289,6 +304,7 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return user_ref.to_dict()
 
+    @logging.log_error
     def update_user(self, user_id, user):
         session = self.get_session()
         with session.begin():
@@ -304,6 +320,7 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return user_ref
 
+    @logging.log_error
     def delete_user(self, user_id):
         session = self.get_session()
         user_ref = session.query(User).filter_by(id=user_id).first()
@@ -311,6 +328,7 @@ class Identity(sql.Base, identity.Driver):
             session.delete(user_ref)
             session.flush()
 
+    @logging.log_error
     def create_tenant(self, tenant_id, tenant):
         session = self.get_session()
         with session.begin():
@@ -319,6 +337,7 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return tenant_ref.to_dict()
 
+    @logging.log_error
     def update_tenant(self, tenant_id, tenant):
         session = self.get_session()
         with session.begin():
@@ -333,6 +352,7 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return tenant_ref
 
+    @logging.log_error
     def delete_tenant(self, tenant_id):
         session = self.get_session()
         tenant_ref = session.query(Tenant).filter_by(id=tenant_id).first()
@@ -340,6 +360,7 @@ class Identity(sql.Base, identity.Driver):
             session.delete(tenant_ref)
             session.flush()
 
+    @logging.log_error
     def create_metadata(self, user_id, tenant_id, metadata):
         session = self.get_session()
         with session.begin():
@@ -349,6 +370,7 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return metadata
 
+    @logging.log_error
     def update_metadata(self, user_id, tenant_id, metadata):
         session = self.get_session()
         with session.begin():
@@ -363,10 +385,12 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return metadata_ref
 
+    @logging.log_error
     def delete_metadata(self, user_id, tenant_id):
         self.db.delete('metadata-%s-%s' % (tenant_id, user_id))
         return None
 
+    @logging.log_error
     def create_role(self, role_id, role):
         session = self.get_session()
         with session.begin():
@@ -374,6 +398,7 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return role
 
+    @logging.log_error
     def update_role(self, role_id, role):
         session = self.get_session()
         with session.begin():
@@ -383,6 +408,7 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return role_ref
 
+    @logging.log_error
     def delete_role(self, role_id):
         session = self.get_session()
         role_ref = session.query(Role).filter_by(id=role_id).first()

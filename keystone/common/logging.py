@@ -72,6 +72,18 @@ def log_debug(f):
     return wrapper
 
 
+def log_error(f):
+    @functools.wraps(f)
+    def wrapper(*args, **kwargs):
+        try:
+            rv = f(*args, **kwargs)
+        except Exception as err:
+            logging.debug(traceback.format_exc(err))
+            raise err
+        return rv
+    return wrapper
+
+
 def fail_gracefully(f):
     """Logs exceptions and aborts."""
     @functools.wraps(f)
