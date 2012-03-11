@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAE3///x8\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2634
+      },
+      "writtenOn": "2012-03-11T16:53:51Z",
+      "side": 1,
+      "message": "ping() will send \"select now()\" sql statement to mysql server indeed.\n\nif we use ping, we should four lines:\n\n            try:\n                dbapi_con.ping(False)\n            except TypeError:\n                dbapi_con.ping()",
+      "parentUuid": "AAAAE3///yQ\u003d",
+      "revId": "bd575cf810a56ad618368ab0e21ed7c28455720a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAE3///yM\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 1
