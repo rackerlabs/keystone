@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3///YE\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-12T20:57:15Z",
+      "side": 1,
+      "message": "Maybe add comments explaining mysql error codes, so they don\u0027t look like magic numbers:\n2006 MySQL server has gone away\n  http://dev.mysql.com/doc/refman/5.6/en/error-messages-client.html#error_cr_server_gone_error\n2013 Lost connection to MySQL server during query\n  http://dev.mysql.com/doc/refman/5.6/en/error-messages-client.html#error_cr_server_lost\n2014 Commands out of sync; you can\u0027t run this command now\n  http://dev.mysql.com/doc/refman/5.6/en/error-messages-client.html#error_cr_commands_out_of_sync\n2045 Can\u0027t open shared memory; no answer from server (%lu)\n  http://dev.mysql.com/doc/refman/5.6/en/error-messages-client.html#error_cr_shared_memory_connect_abandoned_error\n2055 Lost connection to MySQL server at \u0027%s\u0027, system error: %d\n  http://dev.mysql.com/doc/refman/5.6/en/error-messages-client.html#error_cr_server_lost_extended",
+      "revId": "ebb8c25d7c862e89be009a8c11fb975b0cf2c3a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
