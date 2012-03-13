@@ -22,6 +22,7 @@ import textwrap
 
 from keystone import config
 from keystone.common import utils
+from keystone.openstack.common import cfg
 
 
 class BaseApp(object):
@@ -44,7 +45,18 @@ class DbSync(BaseApp):
 
     name = 'db_sync'
 
+    def register_opt(self, group, default):
+        opt_group = cfg.OptGroup(group)
+        d = 'keystone.' + group + '.backends.' + default
+        driver_opt = cfg.StrOpt('driver', default=d)
+        self.conf.register_group(opt_group)
+        self.conf.register_opt(driver_opt, group=opt_group)
+
     def main(self):
+        self.register_opt('identity', 'sql.Identity')
+        self.register_opt('catalog', 'templated.TemplatedCatalog')
+        self.register_opt('policy', 'rules.Policy')
+        self.register_opt('token', 'kvs.Token')
         for k in ['identity', 'catalog', 'policy', 'token']:
             driver = utils.import_object(self.conf[k].driver, self.conf)
             if hasattr(driver, 'db_sync'):
