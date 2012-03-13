@@ -209,7 +209,9 @@ class Application(BaseApplication):
                 raise exception.Unauthorized()
             creds = user_token_ref['metadata'].copy()
             creds['user_id'] = user_token_ref['user'].get('id')
-            creds['tenant_id'] = user_token_ref['tenant'].get('id')
+            # A token might not have a tenant
+            if hasattr(user_token_ref, 'tenant'):
+                creds['tenant_id'] = user_token_ref['tenant'].get('id')
             # NOTE(vish): this is pretty inefficient
             creds['roles'] = [self.identity_api.get_role(context, role)['name']
                               for role in creds.get('roles', [])]
