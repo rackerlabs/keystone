@@ -71,3 +71,7 @@ class NotFound(Error):
 
 class TokenNotFound(NotFound):
     """Could not find token: %(token_id)s"""
+
+
+class ServiceNotFound(NotFound):
+    """Could not find service: %(service_id)s"""
