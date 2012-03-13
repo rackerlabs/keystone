@@ -67,7 +67,7 @@ class MemcacheToken(test.TestCase, test_backend.TokenTests):
     def setUp(self):
         super(MemcacheToken, self).setUp()
         fake_client = MemcacheClient()
-        self.token_api = token_memcache.Token(client=fake_client)
+        self.token_api = token_memcache.Token(self.conf, client=fake_client)
 
     def test_get_unicode(self):
         token_id = unicode(uuid.uuid4().hex)

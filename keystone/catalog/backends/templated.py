@@ -14,15 +14,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone import config
 from keystone.common import logging
 from keystone.catalog.backends import kvs
+from keystone.openstack.common import cfg
 
 
 LOG = logging.getLogger('keystone.catalog.backends.templated')
-
-CONF = config.CONF
-config.register_str('template_file', group='catalog')
 
 
 def parse_templates(template_lines):
@@ -84,12 +81,17 @@ class TemplatedCatalog(kvs.Catalog):
 
     """
 
-    def __init__(self, templates=None):
+    template_opt = cfg.StrOpt('template_file',
+                              default='./etc/default_catalog.templates')
+    compute_port_opt = cfg.StrOpt('compute_port', default=8774)
+
+    def __init__(self, conf, templates=None):
+        kvs.Catalog.__init__(self, conf)
         if templates:
             self.templates = templates
         else:
-            self._load_templates(CONF.catalog.template_file)
-        super(TemplatedCatalog, self).__init__()
+            conf.register_opt(self.template_opt, group='catalog')
+            self._load_templates(conf.catalog.template_file)
 
     def _load_templates(self, template_file):
         try:
@@ -99,7 +101,8 @@ class TemplatedCatalog(kvs.Catalog):
             raise
 
     def get_catalog(self, user_id, tenant_id, metadata=None):
-        d = dict(CONF.iteritems())
+        self.conf.register_opt(self.compute_port_opt)
+        d = dict(self.conf.iteritems())
         d.update({'tenant_id': tenant_id,
                   'user_id': user_id})
 

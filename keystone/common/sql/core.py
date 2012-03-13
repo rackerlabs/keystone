@@ -28,11 +28,8 @@ import sqlalchemy.orm
 import sqlalchemy.pool
 import sqlalchemy.engine.url
 
-from keystone import config
+from keystone.common.sql import opts
 from keystone.common import logging
-
-
-CONF = config.CONF
 
 
 ModelBase = declarative.declarative_base()
@@ -134,6 +131,9 @@ class Base(object):
     _MAKER = None
     _ENGINE = None
 
+    def __init__(self, conf):
+        self.conf = conf
+
     def get_session(self, autocommit=True, expire_on_commit=False):
         """Return a SQLAlchemy session."""
         if self._MAKER is None or self._ENGINE is None:
@@ -147,9 +147,12 @@ class Base(object):
 
     def get_engine(self):
         """Return a SQLAlchemy engine."""
-        connection_dict = sql.engine.url.make_url(CONF.sql.connection)
+        sql_connection = opts.get_sql_connection(self.conf)
+        sql_idle_timeout = opts.get_sql_idle_timeout(self.conf)
 
-        engine_args = {'pool_recycle': CONF.sql.idle_timeout,
+        connection_dict = sql.engine.url.make_url(sql_connection)
+
+        engine_args = {'pool_recycle': sql_idle_timeout,
                        'echo': False,
                        'convert_unicode': True
                        }
@@ -160,7 +163,7 @@ class Base(object):
         if 'mysql' in connection_dict.drivername:
             engine_args['listeners'] = [MySQLPingListener()]
 
-        return sql.create_engine(CONF.sql.connection, **engine_args)
+        return sql.create_engine(sql_connection, **engine_args)
 
     def get_maker(self, engine, autocommit=True, expire_on_commit=False):
         """Return a SQLAlchemy sessionmaker using the given engine."""

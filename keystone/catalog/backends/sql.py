@@ -25,9 +25,6 @@ from keystone.common import sql
 from keystone.common.sql import migration
 
 
-CONF = config.CONF
-
-
 class Service(sql.ModelBase, sql.DictBase):
     __tablename__ = 'service'
     id = sql.Column(sql.String(64), primary_key=True)
@@ -78,6 +75,11 @@ class Endpoint(sql.ModelBase, sql.DictBase):
 
 
 class Catalog(sql.Base, catalog.Driver):
+
+    def __init__(self, conf):
+        sql.Base.__init__(self, conf)
+        catalog.Driver.__init__(self, conf)
+
     def db_sync(self):
         migration.db_sync()
 
@@ -144,7 +146,7 @@ class Catalog(sql.Base, catalog.Driver):
         return [e['id'] for e in list(endpoints)]
 
     def get_catalog(self, user_id, tenant_id, metadata=None):
-        d = dict(CONF.iteritems())
+        d = dict(self.conf.iteritems())
         d.update({'tenant_id': tenant_id,
                   'user_id': user_id})
         catalog = {}
