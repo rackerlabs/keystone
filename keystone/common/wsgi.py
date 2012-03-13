@@ -179,6 +179,8 @@ class Application(BaseApplication):
 
         try:
             result = method(context, **params)
+        except NotImplementedError:
+            return webob.exc.HTTPNotImplemented()
         except exception.Error as e:
             logging.warning(e)
             return render_exception(e)
