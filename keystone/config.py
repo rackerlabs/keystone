@@ -25,24 +25,10 @@ from keystone.openstack.common import cfg
 gettext.install('keystone', unicode=1)
 
 
-class ConfigMixin(object):
-    def __call__(self, config_files=None, *args, **kw):
-        if config_files is not None:
-            self._opts['config_file']['opt'].default = config_files
-        kw.setdefault('args', [])
-        return super(ConfigMixin, self).__call__(*args, **kw)
+class KeystoneConfigOpts(cfg.CommonConfigOpts):
 
-    def set_usage(self, usage):
-        self.usage = usage
-        self._oparser.usage = usage
-
-
-class Config(ConfigMixin, cfg.ConfigOpts):
-    pass
-
-
-class CommonConfig(ConfigMixin, cfg.CommonConfigOpts):
-    pass
+    def __init__(self, **kwargs):
+        super(KeystoneConfigOpts, self).__init__(project='keystone', **kwargs)
 
 
 def setup_logging(conf):
@@ -90,94 +76,3 @@ def setup_logging(conf):
 
     handler.setFormatter(formatter)
     root_logger.addHandler(handler)
-
-
-def register_str(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = _ensure_group(kw, conf)
-    return conf.register_opt(cfg.StrOpt(*args, **kw), group=group)
-
-
-def register_cli_str(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = _ensure_group(kw, conf)
-    return conf.register_cli_opt(cfg.StrOpt(*args, **kw), group=group)
-
-
-def register_bool(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = _ensure_group(kw, conf)
-    return conf.register_opt(cfg.BoolOpt(*args, **kw), group=group)
-
-
-def register_cli_bool(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = _ensure_group(kw, conf)
-    return conf.register_cli_opt(cfg.BoolOpt(*args, **kw), group=group)
-
-
-def register_int(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = _ensure_group(kw, conf)
-    return conf.register_opt(cfg.IntOpt(*args, **kw), group=group)
-
-
-def register_cli_int(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = _ensure_group(kw, conf)
-    return conf.register_cli_opt(cfg.IntOpt(*args, **kw), group=group)
-
-
-def _ensure_group(kw, conf):
-    group = kw.pop('group', None)
-    if group:
-        conf.register_group(cfg.OptGroup(name=group))
-    return group
-
-
-CONF = CommonConfig(project='keystone')
-
-
-register_str('admin_token', default='ADMIN')
-register_str('bind_host', default='0.0.0.0')
-register_str('compute_port')
-register_str('admin_port')
-register_str('public_port')
-
-
-# sql options
-register_str('connection', group='sql')
-register_str('idle_timeout', group='sql')
-register_str('min_pool_size', group='sql')
-register_str('max_pool_size', group='sql')
-register_str('pool_timeout', group='sql')
-
-
-register_str('driver', group='catalog')
-register_str('driver', group='identity')
-register_str('driver', group='policy')
-register_str('driver', group='token')
-register_str('driver', group='ec2')
-
-
-#ldap
-register_str('url', group='ldap')
-register_str('user', group='ldap')
-register_str('password', group='ldap')
-register_str('suffix', group='ldap')
-register_bool('use_dumb_member', group='ldap')
-
-register_str('user_tree_dn', group='ldap')
-register_str('user_objectclass', group='ldap')
-register_str('user_id_attribute', group='ldap')
-
-register_str('tenant_tree_dn', group='ldap')
-register_str('tenant_objectclass', group='ldap')
-register_str('tenant_id_attribute', group='ldap')
-register_str('tenant_member_attribute', group='ldap')
-
-
-register_str('role_tree_dn', group='ldap')
-register_str('role_objectclass', group='ldap')
-register_str('role_id_attribute', group='ldap')
-register_str('role_member_attribute', group='ldap')

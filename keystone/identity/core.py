@@ -22,15 +22,12 @@ import urlparse
 
 import webob.exc
 
-from keystone import config
 from keystone import exception
 from keystone import policy
 from keystone import token
 from keystone.common import manager
 from keystone.common import wsgi
-
-
-CONF = config.CONF
+from keystone.openstack.common import cfg
 
 
 class Manager(manager.Manager):
@@ -41,12 +38,19 @@ class Manager(manager.Manager):
 
     """
 
-    def __init__(self):
-        super(Manager, self).__init__(CONF.identity.driver)
+    opt_group = cfg.OptGroup('identity')
+    driver_opt = cfg.StrOpt('driver',
+                            default='keystone.identity.backends.sql.Identity')
+
+    def __init__(self, conf):
+        super(Manager, self).__init__(conf, self.opt_group, self.driver_opt)
 
 
 class Driver(object):
     """Interface description for an Identity driver."""
+
+    def __init__(self, conf):
+        self.conf = conf
 
     def authenticate(self, user_id=None, tenant_id=None, password=None):
         """Authenticate a given user, tenant and password.
@@ -197,7 +201,7 @@ class Driver(object):
 
 class PublicRouter(wsgi.ComposableRouter):
     def add_routes(self, mapper):
-        tenant_controller = TenantController()
+        tenant_controller = TenantController(self.conf)
         mapper.connect('/tenants',
                        controller=tenant_controller,
                        action='get_tenants_for_token',
@@ -207,7 +211,7 @@ class PublicRouter(wsgi.ComposableRouter):
 class AdminRouter(wsgi.ComposableRouter):
     def add_routes(self, mapper):
         # Tenant Operations
-        tenant_controller = TenantController()
+        tenant_controller = TenantController(self.conf)
         mapper.connect('/tenants',
                        controller=tenant_controller,
                        action='get_all_tenants',
@@ -218,14 +222,14 @@ class AdminRouter(wsgi.ComposableRouter):
                        conditions=dict(method=['GET']))
 
         # User Operations
-        user_controller = UserController()
+        user_controller = UserController(self.conf)
         mapper.connect('/users/{user_id}',
                        controller=user_controller,
                        action='get_user',
                        conditions=dict(method=['GET']))
 
         # Role Operations
-        roles_controller = RoleController()
+        roles_controller = RoleController(self.conf)
         mapper.connect('/tenants/{tenant_id}/users/{user_id}/roles',
                        controller=roles_controller,
                        action='get_user_roles',
@@ -237,10 +241,10 @@ class AdminRouter(wsgi.ComposableRouter):
 
 
 class TenantController(wsgi.Application):
-    def __init__(self):
-        self.identity_api = Manager()
-        self.policy_api = policy.Manager()
-        self.token_api = token.Manager()
+    def __init__(self, conf):
+        self.identity_api = Manager(conf)
+        self.policy_api = policy.Manager(conf)
+        self.token_api = token.Manager(conf)
         super(TenantController, self).__init__()
 
     def get_all_tenants(self, context, **kw):
@@ -351,10 +355,10 @@ class TenantController(wsgi.Application):
 
 
 class UserController(wsgi.Application):
-    def __init__(self):
-        self.identity_api = Manager()
-        self.policy_api = policy.Manager()
-        self.token_api = token.Manager()
+    def __init__(self, conf):
+        self.identity_api = Manager(conf)
+        self.policy_api = policy.Manager(conf)
+        self.token_api = token.Manager(conf)
         super(UserController, self).__init__()
 
     def get_user(self, context, user_id):
@@ -410,10 +414,10 @@ class UserController(wsgi.Application):
 
 
 class RoleController(wsgi.Application):
-    def __init__(self):
-        self.identity_api = Manager()
-        self.token_api = token.Manager()
-        self.policy_api = policy.Manager()
+    def __init__(self, conf):
+        self.identity_api = Manager(conf)
+        self.token_api = token.Manager(conf)
+        self.policy_api = policy.Manager(conf)
         super(RoleController, self).__init__()
 
     # COMPAT(essex-3)

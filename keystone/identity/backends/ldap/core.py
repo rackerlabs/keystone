@@ -19,16 +19,13 @@ import uuid
 import ldap
 from ldap import filter as ldap_filter
 
-from keystone import config
 from keystone import exception
 from keystone import identity
 from keystone.common import ldap as common_ldap
-from keystone.common import utils
-from keystone.common.ldap import fakeldap
+from keystone.common import passwd
 from keystone.identity import models
-
-
-CONF = config.CONF
+from keystone.common.ldap import fakeldap
+from keystone.openstack.common import cfg
 
 
 def _filter_user(user_ref):
@@ -40,32 +37,56 @@ def _filter_user(user_ref):
 def _ensure_hashed_password(user_ref):
     pw = user_ref.get('password', None)
     if pw is not None:
-        pw = utils.ldap_hash_password(pw)
+        pw = passwd.ldap_hash_password(pw)
         user_ref['password'] = pw
     return user_ref
 
 
 class Identity(identity.Driver):
-    def __init__(self):
-        super(Identity, self).__init__()
-        self.LDAP_URL = CONF.ldap.url
-        self.LDAP_USER = CONF.ldap.user
-        self.LDAP_PASSWORD = CONF.ldap.password
-        self.suffix = CONF.ldap.suffix
 
-        self.user = UserApi(CONF)
-        self.tenant = TenantApi(CONF)
-        self.role = RoleApi(CONF)
+    ldap_opt_group = cfg.OptGroup('ldap')
+    ldap_opts = [
+        cfg.StrOpt('url', default='ldap://localhost'),
+        cfg.StrOpt('user', default='dc=Manager,dc=example,dc=com'),
+        cfg.StrOpt('password', default='freeipa4all'),
+        cfg.StrOpt('suffix', default='dc=example,dc=com'),
+        cfg.BoolOpt('use_dumb_member', default=False),
+
+        cfg.StrOpt('user_tree_dn', default='dc=example,dc=com,ou=Users'),
+        cfg.StrOpt('user_objectclass', default='inetOrgPerson'),
+        cfg.StrOpt('user_id_attribute', default='cn'),
+
+        cfg.StrOpt('tenant_tree_dn', default='dc=example,dc=com,ou=Groups'),
+        cfg.StrOpt('tenant_objectclass', default='groupOfNames'),
+        cfg.StrOpt('tenant_id_attribute', default='cn'),
+        cfg.StrOpt('tenant_member_attribute', default='member'),
+
+
+        cfg.StrOpt('role_tree_dn', default='dc=example,dc=com,ou=Roles'),
+        cfg.StrOpt('role_objectclass', default='organizationalRole'),
+        cfg.StrOpt('role_id_attribute', default='cn'),
+        cfg.StrOpt('role_member_attribute', default='roleOccupant'),
+        ]
+
+    def __init__(self, conf):
+        super(Identity, self).__init__(conf)
+
+        self.conf.register_group(self.ldap_opt_group)
+        self.conf.register_opts(self.ldap_opts, group=self.ldap_opt_group)
+
+        self.user = UserApi(self.conf)
+        self.tenant = TenantApi(self.conf)
+        self.role = RoleApi(self.conf)
 
     def get_connection(self, user=None, password=None):
-        if self.LDAP_URL.startswith('fake://'):
-            conn = fakeldap.FakeLdap(self.LDAP_URL)
+        if self.conf.ldap_url.startswith('fake://'):
+            conn = fakeldap.FakeLdap(self.conf.ldap_url)
         else:
-            conn = common_ldap.LDAPWrapper(self.LDAP_URL)
+            conn = common_ldap.LDAPWrapper(self.conf.ldap_url)
         if user is None:
-            user = self.LDAP_USER
+            user = self.conf.ldap_user
         if password is None:
-            password = self.LDAP_PASSWORD
+            password = self.conf.ldap_password
         conn.simple_bind_s(user, password)
         return conn
 
@@ -237,10 +258,7 @@ class ApiShimMixin(object):
 
 # TODO(termie): turn this into a data object and move logic to driver
 class UserApi(common_ldap.BaseLdap, ApiShimMixin):
-    DEFAULT_OU = 'ou=Users'
     DEFAULT_STRUCTURAL_CLASSES = ['person']
-    DEFAULT_ID_ATTRIBUTE = 'cn'
-    DEFAULT_OBJECTCLASS = 'inetOrgPerson'
     options_name = 'user'
     attribute_mapping = {'password': 'userPassword',
                          #'email': 'mail',
@@ -355,16 +373,12 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
 
     def check_password(self, user_id, password):
         user = self.get(user_id)
-        return utils.check_password(password, user.password)
+        return passwd.check_password(password, user.password)
 
 
 # TODO(termie): turn this into a data object and move logic to driver
 class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
-    DEFAULT_OU = 'ou=Groups'
     DEFAULT_STRUCTURAL_CLASSES = []
-    DEFAULT_OBJECTCLASS = 'groupOfNames'
-    DEFAULT_ID_ATTRIBUTE = 'cn'
-    DEFAULT_MEMBER_ATTRIBUTE = 'member'
     options_name = 'tenant'
     attribute_mapping = {'description': 'desc', 'name': 'ou'}
     model = models.Tenant
@@ -372,8 +386,7 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
     def __init__(self, conf):
         super(TenantApi, self).__init__(conf)
         self.api = ApiShim(conf)
-        self.member_attribute = (getattr(conf.ldap, 'tenant_member_attribute')
-                                 or self.DEFAULT_MEMBER_ATTRIBUTE)
+        self.member_attribute = conf.ldap.tenant_member_attribute
 
     def get_by_name(self, name, filter=None):  # pylint: disable=W0221,W0613
         search_filter = ('(%s=%s)'
@@ -483,11 +496,8 @@ class UserRoleAssociation(object):
 
 # TODO(termie): turn this into a data object and move logic to driver
 class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
-    DEFAULT_OU = 'ou=Roles'
     DEFAULT_STRUCTURAL_CLASSES = []
     options_name = 'role'
-    DEFAULT_OBJECTCLASS = 'organizationalRole'
-    DEFAULT_MEMBER_ATTRIBUTE = 'roleOccupant'
     attribute_mapping = {'name': 'cn',
                          #'serviceId': 'service_id',
                          }
@@ -496,8 +506,7 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
     def __init__(self, conf):
         super(RoleApi, self).__init__(conf)
         self.api = ApiShim(conf)
-        self.member_attribute = (getattr(conf.ldap, 'role_member_attribute')
-                                 or self.DEFAULT_MEMBER_ATTRIBUTE)
+        self.member_attribute = conf.ldap.role_member_attribute
 
     @staticmethod
     def _create_ref(role_id, tenant_id, user_id):

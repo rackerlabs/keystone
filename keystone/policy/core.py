@@ -16,12 +16,9 @@
 
 """Main entry point into the Policy service."""
 
-from keystone import config
 from keystone import exception
 from keystone.common import manager
-
-
-CONF = config.CONF
+from keystone.openstack.common import cfg
 
 
 class Manager(manager.Manager):
@@ -32,11 +29,20 @@ class Manager(manager.Manager):
 
     """
 
-    def __init__(self):
-        super(Manager, self).__init__(CONF.policy.driver)
+    opt_group = cfg.OptGroup('policy')
+    driver_opt = cfg.StrOpt(
+        'driver',
+        default='keystone.policy.backends.rules.Policy')
+
+    def __init__(self, conf):
+        super(Manager, self).__init__(conf, self.opt_group, self.driver_opt)
 
 
 class Driver(object):
+
+    def __init__(self, conf):
+        self.conf = conf
+
     def enforce(context, credentials, action, target):
         """Verify that a user is authorized to perform action.
 

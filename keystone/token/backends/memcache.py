@@ -19,18 +19,23 @@ import copy
 
 import memcache
 
-from keystone import config
 from keystone import exception
 from keystone import token
 from keystone.common import utils
-
-
-CONF = config.CONF
-config.register_str('servers', group='memcache', default='localhost:11211')
+from keystone.openstack.common import cfg
 
 
 class Token(token.Driver):
-    def __init__(self, client=None):
+
+    opt_group = cfg.OptGroup('memcache')
+    servers_opt = cfg.StrOpt('servers', default='localhost:11211')
+
+    def __init__(self, conf, client=None):
+        token.Driver.__init__(self, conf)
+
+        self.conf.register_group(self.opt_group)
+        self.conf.register_opt(self.servers_opt, group='memcache')
+
         self._memcache_client = client
 
     @property
@@ -38,7 +43,7 @@ class Token(token.Driver):
         return self._memcache_client or self._get_memcache_client()
 
     def _get_memcache_client(self):
-        memcache_servers = CONF.memcache.servers.split(',')
+        memcache_servers = self.conf.memcache.servers.split(',')
         self._memcache_client = memcache.Client(memcache_servers, debug=0)
         return self._memcache_client
 
