@@ -14,10 +14,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import logging
-
 import ldap
 
+from keystone.common import logging
 from keystone.common.ldap import fakeldap
 
 
