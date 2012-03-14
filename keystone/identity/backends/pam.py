@@ -16,7 +16,37 @@
 
 from __future__ import absolute_import
 
-import pam
+try:
+    import pam
+except ImportError:
+    pam = None
+    import PAM
+
+
+def authenticate_compat(username, password):
+    def _pam_conv(auth, query_list):
+        resp = []
+
+        for query, q_type in query_list:
+            if q_type in [PAM.PAM_PROMPT_ECHO_ON, PAM.PAM_PROMPT_ECHO_OFF]:
+                resp.append((password, 0))
+            elif q_type in [PAM.PAM_PROMPT_ERROR_MSG, PAM.PAM_PROMPT_TEXT_INFO]:
+                resp.append(('', 0));
+
+        return resp
+
+    auth = PAM.pam()
+    auth.start('passwd')
+    auth.set_item(PAM.PAM_USER, username)
+    auth.set_item(PAM.PAM_CONV, _pam_conv)
+
+    try:
+        auth.authenticate()
+        auth.acct_mgmt()
+    except PAM.error, (resp, code):
+        raise AssertionError('Invalid user / password (%s)' % resp)
+
+    return True
 
 
 class PamIdentity(object):
@@ -26,7 +56,8 @@ class PamIdentity(object):
     """
 
     def authenticate(self, username, password, **kwargs):
-        if pam.authenticate(username, password):
+        auth = pam.authenticate if pam else authenticate_compat
+        if auth(username, password):
             metadata = {}
             if username == 'root':
                 metadata['is_admin'] == True
