@@ -16,6 +16,24 @@
       "revId": "a047922763a7143a71fc3211c28514ac0e8c8f7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//+QM\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-14T20:37:20Z",
+      "side": 1,
+      "message": "Because that was the format started in Nova and (I believed) the standard in OpenStack.",
+      "parentUuid": "AAAAE3//+S8\u003d",
+      "revId": "a047922763a7143a71fc3211c28514ac0e8c8f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
