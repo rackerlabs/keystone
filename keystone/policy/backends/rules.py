@@ -95,7 +95,7 @@ def enforce(credentials, action, target):
     try:
         common_policy.enforce(match_list, target, credentials)
     except common_policy.NotAuthorized:
-        raise exception.Forbidden(action=action)
+        raise exception.ForbiddenAction(action=action)
 
 
 class Policy(policy.Driver):
