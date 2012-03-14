@@ -1,0 +1,9 @@
+Verified+1: Jenkins
+Approved+1: anotherjesse <anotherjesse@gmail.com>
+Code-Review+2: anotherjesse <anotherjesse@gmail.com>
+Code-Review+2: Brian Waldon <brian.waldon@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 14 Mar 2012 16:54:00 +0000
+Reviewed-on: https://review.openstack.org/5322
+Project: openstack/keystone
+Branch: refs/heads/master
