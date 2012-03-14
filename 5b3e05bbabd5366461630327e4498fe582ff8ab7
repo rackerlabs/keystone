@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//+iI\u003d",
+        "filename": "doc/source/middleware_architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-14T16:31:21Z",
+      "side": 0,
+      "message": "You can remove this whole section. It duplicates information from above.",
+      "revId": "5b3e05bbabd5366461630327e4498fe582ff8ab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

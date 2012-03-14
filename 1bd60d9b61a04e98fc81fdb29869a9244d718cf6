@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//+iE\u003d",
+        "filename": "doc/source/middleware_architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-14T16:31:21Z",
+      "side": 1,
+      "message": "typo here, remove the leading \u0027i\u0027",
+      "revId": "1bd60d9b61a04e98fc81fdb29869a9244d718cf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
