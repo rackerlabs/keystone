@@ -16,6 +16,24 @@
       "revId": "4fe9c3846eeb64ff4795929ecf6b8fe481a0d892",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//+WE\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-14T18:54:52Z",
+      "side": 1,
+      "message": "It\u0027s entirely driven on the keystone service side - that setup needs to be built out a little more to describe the SQL backend and the commands that go along with it.",
+      "parentUuid": "AAAAE3//+ZY\u003d",
+      "revId": "4fe9c3846eeb64ff4795929ecf6b8fe481a0d892",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
