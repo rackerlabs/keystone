@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//+gU\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-14T17:02:00Z",
+      "side": 1,
+      "message": "I\u0027d rather not special case NotImplemented, and instead, create a new keystone.exception.NotImplementedError with a useful error message... everywhere we raise NotImplementedError it should then be a keystone.exception.",
+      "revId": "6316cfac941a1c402ce51878e48e4f223bb668ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
