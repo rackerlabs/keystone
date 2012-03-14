@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//+Mg\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-14T21:44:55Z",
+      "side": 0,
+      "message": "Let\u0027s change ADMIN here to be more obviously a token",
+      "revId": "b03c2047815ff341547d2d9792dfd392148d277a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -34,6 +34,23 @@
       "revId": "4fe9c3846eeb64ff4795929ecf6b8fe481a0d892",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//+Mc\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-14T21:44:55Z",
+      "side": 1,
+      "message": "\u0027admin\u0027 or \u0027Admin\u0027?",
+      "revId": "4fe9c3846eeb64ff4795929ecf6b8fe481a0d892",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
