@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//+cQ\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 964
+      },
+      "writtenOn": "2012-03-14T17:53:30Z",
+      "side": 1,
+      "message": "Does this end of line need a \\ ?",
+      "revId": "acadb73e996198f68e6f528019416053f1f32543",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
