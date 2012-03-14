@@ -18,12 +18,6 @@
 Configuring Services to work with Keystone
 ==========================================
 
-.. toctree::
-   :maxdepth: 1
-
-    nova-api-paste
-    middleware_architecture
-
 Once Keystone is installed and running (see :doc:`configuration`), services
 need to be configured to work with it. To do this, we primarily install and
 configure middleware for the OpenStack service to handle authentication tasks
@@ -39,7 +33,7 @@ In general:
 
 The middleware will pass those data down to the service as headers. More
 details on the architecture of that setup is described in
-:doc:`middleware_architecture`
+:doc:`middlewarearchitecture`
 
 Setting up credentials
 ======================
@@ -52,24 +46,73 @@ need to define an authorization token. This is configured in ``keystone.conf``
 file under the section ``[DEFAULT]``. In the sample file provided with the
 keystone project, the line defining this token is
 
-	[DEFAULT]
-	admin_token = ADMIN
+    [DEFAULT]
+    admin_token = ADMIN
 
 This configured token is a "shared secret" between keystone and other
-openstack services (for example: nova, swift, glance, or horizon), and will
-need to be set the same between those services in order for keystone services
-to function correctly.
+openstack services, and is used by the client to communicate with the API to
+create tenants, users, roles, etc.
 
 Setting up tenants, users, and roles
 ------------------------------------
 
 You need to minimally define a tenant, user, and role to link the tenant and
 user as the most basic set of details to get other services authenticating
-and authorizing with keystone. See doc:`configuration` for a walk through on
-how to create tenants, users, and roles.
+and authorizing with keystone.
+
+You will also want to create service accounts for nova, glance, swift, etc. to
+be able to use to authenticate users against keystone. The ``auth_token``
+middleware supports using either the shared secret described above as
+`admin_token` or service accounts.
+
+See doc:`configuration` for a walk through on how to create tenants, users,
+and roles.
 
 Setting up services
 ===================
+
+Creating Service Accounts
+-------------------------
+
+To configure the OpenStack services with service accounts, we need to create
+a service tenant, and then accounts for each of the services. We then assign
+those service accounts an admin role on the service tenant. This allows them
+to validate tokens - and authenticate and authorize user requests.
+
+Create the `service` tenant named 'service'. The name can be whatever you
+choose::
+
+    keystone tenant-create --name=service
+
+This returns a UUID of the tenant - keep that, you'll need it when creating
+the users and specifying the roles.
+
+Create service accounts for nova, glance, swift, and quantum (or whatever
+subset is relevant to your deployment)::
+
+    keystone user-create --name=nova \
+                         --pass=Sekr3tPass \
+                         --tenant_id=[the uuid of the tenant]
+                         --email=nova@nothing.com
+
+Repeat this for each service you want to enable. Email is a required field
+in keystone right now, but not used in relation to the service accounts. Each
+of these commands will also return a UUID of the user. Keep those to assign
+the admin role.
+
+For adding the a role to the service accounts, you'll need to know the UUID
+of the role you want to add. If you don't have them handy, you can look it
+up quickly with::
+
+    keystone role-list
+
+Once you have it, assign the service accounts to the Admin role. This is all
+assuming that you've already created the basic roles and settings as described
+in :doc:`configuration`::
+
+    keystone user-role-add --tenant_id=[uuid of the service tenant] \
+                           --user=[uuid of the service account] \
+                           --role=[uuid of the Admin role]
 
 Defining Services
 -----------------
@@ -79,7 +122,15 @@ where relevant API endpoints exist for OpenStack Services. The OpenStack
 Dashboard, in particular, uses this heavily - and this **must** be configured
 for the OpenStack Dashboard to properly function.
 
-Here's how we define the services::
+The endpoints for these services are defined in a template, an example of
+which is in the project as the file ``etc/default_catalog.templates``.
+
+Keystone supports two means of defining the services, one is the catalog
+template, as described above - in which case everything is detailed in that
+template.
+
+The other is a SQL backend for the catalog service, in which case after
+keystone is online, you need to add the services to the catalog::
 
     keystone service-create --name=nova \
                                    --type=compute \
@@ -97,8 +148,6 @@ Here's how we define the services::
                                    --type=object-store \
                                    --description="Swift Service"
 
-The endpoints for these services are defined in a template, an example of
-which is in the project as the file ``etc/default_catalog.templates``.
 
 Setting Up Middleware
 =====================
@@ -107,7 +156,8 @@ Keystone Auth-Token Middleware
 --------------------------------
 
 The Keystone auth_token middleware is a WSGI component that can be inserted in
-the WSGI pipeline to handle authenticating tokens with Keystone.
+the WSGI pipeline to handle authenticating tokens with Keystone. You can
+get more details of the middleware in :doc:`middlewarearchitecture`.
 
 Configuring Nova to use Keystone
 --------------------------------
@@ -283,4 +333,6 @@ Here is an example paste config filter that makes use of the 'admin_user' and
     admin_user = admin
     admin_password = keystone123
 
-It should be noted that when using this option an 'admin' tenant/role relationship is required. The admin user is granted access to to the 'admin' role via the 'admin' tenant.
+It should be noted that when using this option an 'admin' tenant/role
+relationship is required. The admin user is granted access to to the 'admin'
+role via the 'admin' tenant.

@@ -62,7 +62,7 @@ Developers Documentation
 
    developing
    architecture
-   middleware_architecture
+   middlewarearchitecture
    api_curl_examples
 
 Code Documentation
