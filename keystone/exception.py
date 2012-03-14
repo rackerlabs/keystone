@@ -71,3 +71,13 @@ class NotFound(Error):
 
 class TokenNotFound(NotFound):
     """Could not find token: %(token_id)s"""
+
+
+class UnexpectedError(Error):
+    """An unexpected error prevented the server from fulfilling your request.
+
+    %(exception)s
+
+    """
+    code = 404
+    title = 'Not Found'
