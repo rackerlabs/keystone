@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//+ZY\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 964
+      },
+      "writtenOn": "2012-03-14T18:02:31Z",
+      "side": 1,
+      "message": "Can you also add a note about \n[catalog]\ndriver \u003d keystone.catalog.backends.sql.Catalog\n\nor is it the [driver] in keystone.conf that enforces the service catalog lookup?",
+      "revId": "4fe9c3846eeb64ff4795929ecf6b8fe481a0d892",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
