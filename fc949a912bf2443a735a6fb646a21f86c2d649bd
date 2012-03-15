@@ -16,6 +16,23 @@
       "revId": "fc949a912bf2443a735a6fb646a21f86c2d649bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//+BE\u003d",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 964
+      },
+      "writtenOn": "2012-03-15T02:37:33Z",
+      "side": 1,
+      "message": "and :doc:`configuration` to create users, roles, and tenants.\n\nright?",
+      "revId": "fc949a912bf2443a735a6fb646a21f86c2d649bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
