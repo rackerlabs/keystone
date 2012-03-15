@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//+Bs\u003d",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2012-03-15T02:17:02Z",
+      "side": 1,
+      "message": "I think you need a install -r tools/pip-requires",
+      "revId": "fc949a912bf2443a735a6fb646a21f86c2d649bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
