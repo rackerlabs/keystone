@@ -16,6 +16,24 @@
       "revId": "218721a27a0c916ed1c4560ac0d183b0eab05456",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//9To\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2012-03-16T13:36:27Z",
+      "side": 1,
+      "message": "Having the server set in keystone.conf doesn\u0027t cause the memcache token driver to be enabled. Unless you set:\n\n  [token]\n  driver \u003d keystone.token.backends.memcache.Token\n\nthen the config value is ignored\n\nI\u0027m totally up for commenting out the config values in the default config file, but it actually makes sense to do that for all values - I had planned to do that sometime later",
+      "parentUuid": "AAAAE3//9a4\u003d",
+      "revId": "218721a27a0c916ed1c4560ac0d183b0eab05456",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
