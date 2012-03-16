@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//9a4\u003d",
+        "filename": "etc/keystone.conf",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-16T03:26:29Z",
+      "side": 1,
+      "message": "we don\u0027t want this as a default on in the code, as it enables memcache if it exists - effectively adding a dependency that should be a deploy decision. Fine with in the config as example, as long as it\u0027s commented out for now.",
+      "revId": "218721a27a0c916ed1c4560ac0d183b0eab05456",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
