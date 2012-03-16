@@ -55,8 +55,11 @@ class S3Token(object):
     def __call__(self, environ, start_response):
         """Handle incoming request. authenticate and send downstream."""
         req = webob.Request(environ)
-        parts = swift_utils.split_path(req.path, 1, 4, True)
-        version, account, container, obj = parts
+        try:
+            parts = swift_utils.split_path(req.path, 1, 4, True)
+            version, account, container, obj = parts
+        except ValueError:
+            return webob.exc.HTTPNotFound()(environ, start_response)
 
         # Read request signature and access id.
         if not 'Authorization' in req.headers:
