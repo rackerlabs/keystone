@@ -69,6 +69,12 @@ class NotFound(Error):
     title = 'Not Found'
 
 
+class Conflict(Error):
+    """The request could not be completed due to a conflict."""
+    code = 409
+    title = 'Conflicting Request'
+
+
 class NotImplemented(Error):
     """The action you have requested has not been implemented."""
     code = 501

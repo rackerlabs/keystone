@@ -16,10 +16,12 @@
 
 import copy
 
+from keystone import exception
 from keystone import identity
 from keystone.common import sql
 from keystone.common import utils
 from keystone.common.sql import migration
+from sqlalchemy.exc import IntegrityError
 
 
 def _filter_user(user_ref):
@@ -316,7 +318,10 @@ class Identity(sql.Base, identity.Driver):
         with session.begin():
             tenant_ref = Tenant.from_dict(tenant)
             session.add(tenant_ref)
-            session.flush()
+            try:
+                session.flush()
+            except IntegrityError:
+                raise exception.Conflict('Duplicate name')
         return tenant_ref.to_dict()
 
     def update_tenant(self, tenant_id, tenant):

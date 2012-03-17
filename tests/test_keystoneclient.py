@@ -19,6 +19,7 @@ import uuid
 import nose.exc
 
 from keystone import test
+from keystone import exception
 
 import default_fixtures
 
@@ -509,6 +510,22 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
                                       role=self.role_useless['id'])
         user_refs = client.tenants.list_users(tenant=self.tenant_baz['id'])
         self.assert_(self.user_foo['id'] not in [x.id for x in user_refs])
+
+    def test_tenant_add_duplicate_name_fails(self):
+        from keystoneclient import exceptions as client_exceptions
+
+        client = self.get_client(admin=True)
+        tenant_id = uuid.uuid4().hex
+        tenant = {'name': 'tenant-%s' % tenant_id, 'id': tenant_id}
+        self.identity_api.create_tenant(tenant_id, tenant) 
+        # Add tenant with duplicate name
+        tmp_id = uuid.uuid4().hex
+        tenant = {'name': 'tenant-%s' % tenant_id, 'id': tmp_id}
+        #self.identity_api.create_tenant(tmp_id, tenant)
+        #self.assertRaises(client_exceptions.Conflict,
+        #                  self.identity_api.create_tenant, tmp_id, tenant)
+        self.assertRaises(exception.Conflict,
+                          self.identity_api.create_tenant, tmp_id, tenant)
 
     def test_tenant_list_marker(self):
         client = self.get_client()
