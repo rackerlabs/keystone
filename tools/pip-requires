@@ -10,3 +10,4 @@ sqlalchemy
 sqlalchemy-migrate
 passlib
 lxml
+iso8601
