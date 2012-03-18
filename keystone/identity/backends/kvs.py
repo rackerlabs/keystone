@@ -230,6 +230,13 @@ class Identity(kvs.Base, identity.Driver):
         return None
 
     def create_role(self, role_id, role):
+        role_ref = self.get_role(role_id)
+        if role_ref:
+            raise Exception('Duplicate id')
+        role_refs = self.list_roles()
+        for role_ref in role_refs:
+            if role['name'] == role_ref['name']:
+                raise Exception('Duplicate name')
         self.db.set('role-%s' % role_id, role)
         role_list = set(self.db.get('role_list', []))
         role_list.add(role_id)
@@ -237,7 +244,18 @@ class Identity(kvs.Base, identity.Driver):
         return role
 
     def update_role(self, role_id, role):
-        self.db.set('role-%s' % role_id, role)
+        role_refs = self.list_roles()
+        old_role_ref = None
+        for role_ref in role_refs:
+            if role['name'] == role_ref['name'] and role_id != role_ref['id']:
+                raise Exception('Duplicate name')
+            if role_id == role_ref['id']:
+                old_role_ref = role_ref
+        if old_role_ref:
+            role['id'] = role_id
+            self.db.set('role-%s' % role_id, role)
+        else:
+            raise Exception('Invalid role')
         return role
 
     def delete_role(self, role_id):
