@@ -178,6 +178,11 @@ class Identity(identity.Driver):
         return {}
 
     def create_role(self, role_id, role):
+        role_ref = self.get_role(role_id)
+        if role_ref:
+            raise Exception('Duplicate id')
+        if self.role.get_by_name(role['name']):
+            raise Exception('Duplicate name')
         return self.role.create(role)
 
     def delete_role(self, role_id):
@@ -542,7 +547,13 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
 
     # pylint: disable=W0221
     def get_by_name(self, name, filter=None):
-        return self.get(name, filter)
+        roles = self.get_all('(%s=%s)' %
+                             (self.attribute_mapping['name'],
+                              ldap_filter.escape_filter_chars(name)))
+        try:
+            return roles[0]
+        except IndexError:
+            return None
 
     def add_user(self, role_id, user_id, tenant_id=None):
         user = self.user_api.get(user_id)

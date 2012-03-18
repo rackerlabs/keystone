@@ -135,7 +135,25 @@ class IdentityTests(object):
         role_ref = self.identity_api.get_role(
                 role_id=self.role_keystone_admin['id'])
         self.assertDictEquals(role_ref, self.role_keystone_admin)
-
+        
+    def test_create_duplicate_role_name_fails(self):
+        role = {'id':'fake1',
+                'name':'fake1name'}
+        self.identity_api.create_role('fake1',role)
+        role['id'] = 'fake2'
+        self.assertRaises(Exception,self.identity_api.create_role,'fake2',role)
+    
+    def test_rename_duplicate_role_name_failes(self):
+        role1 = {'id':'fake1',
+                'name':'fake1name'}
+        role2 = {'id':'fake2',
+                'name':'fake2name'}        
+        self.identity_api.create_role('fake1',role1)
+        self.identity_api.create_role('fake2',role2)
+        role1['name'] = 'fake2name'
+        self.assertRaises(Exception,self.identity_api.update_role,'fake1',role1)
+       
+        
     def test_create_duplicate_user_id_fails(self):
         user = {'id': 'fake1',
                 'name': 'fake1',
