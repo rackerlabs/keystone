@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//8vM\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-19T16:15:39Z",
+      "side": 1,
+      "message": "I understand what you\u0027re saying, but I imagine this would be too vague if I didn\u0027t.\n\n    Instead of connecting to Swift here, as you would with other\n    services, we are connecting directly to Keystone.",
+      "revId": "b9bb533c2c39b0fa2e4272ecd2a2c452b01ad426",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
