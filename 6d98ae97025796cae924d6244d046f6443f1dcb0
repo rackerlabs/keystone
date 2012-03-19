@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//8hI\u003d",
+        "filename": "etc/logging.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1420
+      },
+      "writtenOn": "2012-03-19T20:36:36Z",
+      "side": 1,
+      "message": "Should this default to \u0027a\u0027 instead of \u0027w\u0027 to avoid logfiles being truncated on service restart?",
+      "revId": "6d98ae97025796cae924d6244d046f6443f1dcb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
