@@ -1,0 +1,12 @@
+Verified+1: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Jay Pipes <jaypipes@gmail.com>
+Code-Review+2: anotherjesse <anotherjesse@gmail.com>
+Approved+1: Brian Waldon <brian.waldon@rackspace.com>
+Code-Review+1: eglynn
+Submitted-by: Jenkins
+Submitted-at: Mon, 19 Mar 2012 16:15:25 +0000
+Reviewed-on: https://review.openstack.org/5473
+Project: openstack/keystone
+Branch: refs/heads/master
