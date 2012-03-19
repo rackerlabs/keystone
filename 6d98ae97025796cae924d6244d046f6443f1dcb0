@@ -16,6 +16,24 @@
       "revId": "6d98ae97025796cae924d6244d046f6443f1dcb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//8cs\u003d",
+        "filename": "etc/logging.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-19T21:37:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAE3//8hI\u003d",
+      "revId": "6d98ae97025796cae924d6244d046f6443f1dcb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
