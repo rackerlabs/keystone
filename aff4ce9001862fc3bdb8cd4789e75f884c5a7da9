@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//77M\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-20T22:31:32Z",
+      "side": 1,
+      "message": "i think we should get rid of all these hanging commas",
+      "revId": "aff4ce9001862fc3bdb8cd4789e75f884c5a7da9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//77E\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-20T22:31:32Z",
+      "side": 1,
+      "message": "lets get rid of all these hanging commas",
+      "revId": "aff4ce9001862fc3bdb8cd4789e75f884c5a7da9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
