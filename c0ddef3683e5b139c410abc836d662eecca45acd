@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//8EE\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-20T17:44:24Z",
+      "side": 1,
+      "message": "This is a little self-contradictory.\n\n    Create a `service` tenant, typically named `service` (however, the name can be whatever you choose)::",
+      "revId": "c0ddef3683e5b139c410abc836d662eecca45acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//8Dg\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-20T17:44:24Z",
+      "side": 1,
+      "message": "This should be a consistent, broad change if it\u0027s going to be made.",
+      "revId": "c0ddef3683e5b139c410abc836d662eecca45acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//8Do\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-20T17:44:24Z",
+      "side": 1,
+      "message": "I `Admin` thought this wasn\u0027t capitalized?",
+      "revId": "c0ddef3683e5b139c410abc836d662eecca45acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
