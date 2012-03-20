@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//8SA\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-20T04:45:50Z",
+      "side": 1,
+      "message": "Would you mind using \u0027user\u0027 instead of \u0027account\u0027? It\u0027s not obvious what an account is in the context of users and tenants.",
+      "revId": "153969617bfff57b5778d1d47c3274a1d5a5fae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//8R0\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-03-20T04:45:50Z",
+      "side": 1,
+      "message": "Drop \u0027the\u0027",
+      "revId": "153969617bfff57b5778d1d47c3274a1d5a5fae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
