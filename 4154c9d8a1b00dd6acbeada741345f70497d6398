@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//78I\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-20T22:13:02Z",
+      "side": 1,
+      "message": "does \"is authorizing it\" mean \"will authorize it\" ?",
+      "revId": "4154c9d8a1b00dd6acbeada741345f70497d6398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
