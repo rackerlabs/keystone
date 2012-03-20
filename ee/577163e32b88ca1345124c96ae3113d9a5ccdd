@@ -1,0 +1,11 @@
+Verified+1: Jenkins
+Approved+1: Joe Heck <heckj@mac.com>
+Code-Review+2: Joe Heck <heckj@mac.com>
+Code-Review+1: Chuck Short <chuck.short@canonical.com>
+Code-Review+2: Brian Waldon <brian.waldon@rackspace.com>
+Code-Review+1: Adam Gandelman <adam.gandelman@canonical.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 20 Mar 2012 16:59:17 +0000
+Reviewed-on: https://review.openstack.org/5528
+Project: openstack/keystone
+Branch: refs/heads/master
