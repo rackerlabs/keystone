@@ -370,7 +370,7 @@ class CoreApiTests(object):
         token = self.get_scoped_token()
         path = ('/v2.0/tokens/%s?belongsTo=%s'
                  % (token, self.tenant_bar['name']))
-        r = self.admin_request(path=path,token=token)
+        r = self.admin_request(path=path, token=token)
         self.assertValidAuthenticationResponse(r,
                                                require_service_catalog=True)
 
