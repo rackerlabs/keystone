@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//8M8\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-20T11:36:25Z",
+      "side": 1,
+      "message": "Strictly speaking, this should be -I test_keystoneclient.* or -I test_keystoneclient but luckily, it works as is. From nostests(1):\n\n -I\u003dREGEX, --ignore-files\u003dREGEX\n   Completely ignore any file that matches this regular expression.",
+      "revId": "259d9380e835d03d7358e4d953404b8207b8e8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
