@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//764\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-20T22:37:34Z",
+      "side": 1,
+      "message": "single quotes plz",
+      "revId": "6eb6fd4c3d19baba9aa61cc89a8283a90a90193e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//760\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-20T22:37:34Z",
+      "side": 1,
+      "message": "read",
+      "revId": "6eb6fd4c3d19baba9aa61cc89a8283a90a90193e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//754\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-20T22:37:34Z",
+      "side": 1,
+      "message": "could you put a newline and a comment between each part of this? it looks like 5 or 6 different tests happening in here",
+      "revId": "6eb6fd4c3d19baba9aa61cc89a8283a90a90193e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//750\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-20T22:37:34Z",
+      "side": 1,
+      "message": "weird indenting here",
+      "revId": "6eb6fd4c3d19baba9aa61cc89a8283a90a90193e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//75w\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-20T22:37:34Z",
+      "side": 1,
+      "message": "weird indenting",
+      "revId": "6eb6fd4c3d19baba9aa61cc89a8283a90a90193e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//75o\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-20T22:37:34Z",
+      "side": 1,
+      "message": "two newlines",
+      "revId": "6eb6fd4c3d19baba9aa61cc89a8283a90a90193e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
