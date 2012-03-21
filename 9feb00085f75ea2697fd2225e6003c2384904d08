@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//7mE\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-21T18:35:51Z",
+      "side": 1,
+      "message": "all existing get_service implementations already raise exception.ServiceNotFound so this if statement could be removed?",
+      "revId": "9feb00085f75ea2697fd2225e6003c2384904d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
