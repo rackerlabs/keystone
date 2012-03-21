@@ -54,6 +54,9 @@ def testsdir(*p):
     return os.path.join(TESTSDIR, *p)
 
 
+OPENSTACK_REPO = 'https://review.openstack.org/p/openstack'
+
+
 def checkout_vendor(repo, rev):
     # TODO(termie): this function is a good target for some optimizations :PERF
     name = repo.split('/')[-1]
