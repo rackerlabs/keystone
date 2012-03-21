@@ -97,15 +97,17 @@ class SwiftAuth(object):
     def __call__(self, environ, start_response):
         identity = self._keystone_identity(environ)
 
-        if not identity:
-            environ['swift.authorize'] = self.denied_response
-            return self.app(environ, start_response)
+        if identity:
+            self.logger.debug('Using identity: %r' % (identity))
+            environ['keystone.identity'] = identity
+            environ['REMOTE_USER'] = identity.get('tenant')
+            environ['swift.authorize'] = self.authorize
+        else:
+            self.logger.debug('Authorizing as anonymous')
+            environ['swift.authorize'] = self.authorize_anonymous
 
-        self.logger.debug("Using identity: %r" % (identity))
-        environ['keystone.identity'] = identity
-        environ['REMOTE_USER'] = identity.get('tenant')
-        environ['swift.authorize'] = self.authorize
         environ['swift.clean_acl'] = swift_acl.clean_acl
+
         return self.app(environ, start_response)
 
     def _keystone_identity(self, environ):
@@ -121,9 +123,12 @@ class SwiftAuth(object):
                     'roles': roles}
         return identity
 
+    def _get_account_for_tenant(self, tenant_id):
+        return '%s%s' % (self.reseller_prefix, tenant_id)
+
     def _reseller_check(self, account, tenant_id):
         """Check reseller prefix."""
-        return account == '%s%s' % (self.reseller_prefix, tenant_id)
+        return account == self._get_account_for_tenant(tenant_id)
 
     def authorize(self, req):
         env = req.environ
@@ -171,26 +176,13 @@ class SwiftAuth(object):
             req.environ['swift_owner'] = True
             return
 
-        # Allow container sync.
-        if (req.environ.get('swift_sync_key')
-            and req.environ['swift_sync_key'] ==
-                req.headers.get('x-container-sync-key', None)
-            and 'x-timestamp' in req.headers
-            and (req.remote_addr in self.allowed_sync_hosts
-                 or swift_utils.get_remote_client(req)
-                 in self.allowed_sync_hosts)):
-            log_msg = 'allowing proxy %s for container-sync' % req.remote_addr
-            self.logger.debug(log_msg)
-            return
-
-        # Check if referrer is allowed.
         referrers, roles = swift_acl.parse_acl(getattr(req, 'acl', None))
-        if swift_acl.referrer_allowed(req.referer, referrers):
-            #TODO(chmou): convert .rlistings to Keystone type role.
-            if obj or '.rlistings' in roles:
-                log_msg = 'authorizing %s via referer ACL' % req.referrer
-                self.logger.debug(log_msg)
-                return
+
+        authorized = self._authorize_unconfirmed_identity(req, obj, referrers,
+                                                          roles)
+        if authorized:
+            return
+        elif authorized is not None:
             return self.denied_response(req)
 
         # Allow ACL at individual user level (tenant:user format)
@@ -207,6 +199,57 @@ class SwiftAuth(object):
                 return
 
         return self.denied_response(req)
+
+    def authorize_anonymous(self, req):
+        """
+        Authorize an anonymous request.
+
+        :returns: None if authorization is granted, an error page otherwise.
+        """
+        try:
+            part = swift_utils.split_path(req.path, 1, 4, True)
+            version, account, container, obj = part
+        except ValueError:
+            return webob.exc.HTTPNotFound(request=req)
+
+        is_authoritative_authz = (account and
+                                  account.startswith(self.reseller_prefix))
+        if not is_authoritative_authz:
+            return self.denied_response(req)
+
+        referrers, roles = swift_acl.parse_acl(getattr(req, 'acl', None))
+        authorized = self._authorize_unconfirmed_identity(req, obj, referrers,
+                                                          roles)
+        if not authorized:
+            return self.denied_response(req)
+
+    def _authorize_unconfirmed_identity(self, req, obj, referrers, roles):
+        """"
+        Perform authorization for access that does not require a
+        confirmed identity.
+
+        :returns: A boolean if authorization is granted or denied.  None if
+                  a determination could not be made.
+        """
+        # Allow container sync.
+        if (req.environ.get('swift_sync_key')
+            and req.environ['swift_sync_key'] ==
+                req.headers.get('x-container-sync-key', None)
+            and 'x-timestamp' in req.headers
+            and (req.remote_addr in self.allowed_sync_hosts
+                 or swift_utils.get_remote_client(req)
+                 in self.allowed_sync_hosts)):
+            log_msg = 'allowing proxy %s for container-sync' % req.remote_addr
+            self.logger.debug(log_msg)
+            return True
+
+        # Check if referrer is allowed.
+        if swift_acl.referrer_allowed(req.referer, referrers):
+            if obj or '.rlistings' in roles:
+                log_msg = 'authorizing %s via referer ACL' % req.referrer
+                self.logger.debug(log_msg)
+                return True
+            return False
 
     def denied_response(self, req):
         """Deny WSGI Response.
