@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAE3//7ig\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-21T20:30:00Z",
+      "side": 1,
+      "message": "I share your concern at this approach, but all other auth middleware (devauth/tempauth/swauth) already does this.  I would like to see swift_auth be consistent with the other offerings, and it seemed like a lot more work to get licence to update the other middleware.  Thoughts?",
+      "parentUuid": "AAAAE3//7oU\u003d",
+      "revId": "0fa2dd7e932c5d198e2e796cf053a15e72836c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAE3//7oM\u003d",
         "filename": "tests/test_swift_auth_middleware.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-03-21T17:20:13Z",
       "side": 1,
       "message": "these are great tests that will mostly get ignored if swift isn\u0027t installed - and most folks won\u0027t have that as a default when developing with keystone. Look at revising this whole case to be like tests/test_keystoneclient.py that downloads swift and runs these integration tests.",
+      "revId": "0fa2dd7e932c5d198e2e796cf053a15e72836c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//7ho\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-21T20:30:00Z",
+      "side": 1,
+      "message": "I\u0027m with you on having these tests run all the time.  I posted as much to the mailing list a few days ago, and Chmouel said that he and termie had agreed for simplicity to skip the tests if swift weren\u0027t installed.\n\nSince I have your attention, is there a reason that swift_auth isn\u0027t simply maintained in swift?  The only interface between keystone and swift would appear to be the HTTP_X headers, which are easy enough to document, and swift_auth\u0027s authz behaviour is really swift\u0027s responsibility anyway.\n\nIf you would prefer to see swift_auth persist in keystone, would you prefer to have this module use keystone.test.checkout_vendor as test_keystoneclient does to ensure that swift is present?  Is that preferable to using stubs?",
+      "parentUuid": "AAAAE3//7oM\u003d",
       "revId": "0fa2dd7e932c5d198e2e796cf053a15e72836c53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
