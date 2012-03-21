@@ -165,7 +165,7 @@ class Driver(object):
     def update_tenant(self, tenant_id, tenant):
         raise exception.NotImplemented()
 
-    def delete_tenant(self, tenant_id, tenant):
+    def delete_tenant(self, tenant_id):
         raise exception.NotImplemented()
 
     # metadata crud
@@ -179,7 +179,7 @@ class Driver(object):
     def update_metadata(self, user_id, tenant_id, metadata):
         raise exception.NotImplemented()
 
-    def delete_metadata(self, user_id, tenant_id, metadata):
+    def delete_metadata(self, user_id, tenant_id):
         raise exception.NotImplemented()
 
     # role crud

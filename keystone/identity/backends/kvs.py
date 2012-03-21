@@ -184,6 +184,8 @@ class Identity(kvs.Base, identity.Driver):
 
     def delete_user(self, user_id):
         old_user = self.db.get('user-%s' % user_id)
+        if old_user is None:
+            raise exception.UserNotFound(user_id=user_id)
         self.db.delete('user_name-%s' % old_user['name'])
         self.db.delete('user-%s' % user_id)
         user_list = set(self.db.get('user_list', []))
@@ -220,6 +222,8 @@ class Identity(kvs.Base, identity.Driver):
 
     def delete_tenant(self, tenant_id):
         old_tenant = self.db.get('tenant-%s' % tenant_id)
+        if old_tenant is None:
+            raise exception.TenantNotFound(tenant_id=tenant_id)
         self.db.delete('tenant_name-%s' % old_tenant['name'])
         self.db.delete('tenant-%s' % tenant_id)
         return None
@@ -269,6 +273,9 @@ class Identity(kvs.Base, identity.Driver):
         return role
 
     def delete_role(self, role_id):
+        role_ref = self.db.get('role-%s' % role_id)
+        if role_ref is None:
+            raise exception.RoleNotFound(role_id=role_id)
         self.db.delete('role-%s' % role_id)
         role_list = set(self.db.get('role_list', []))
         role_list.remove(role_id)

@@ -128,7 +128,7 @@ class PamIdentity(identity.Driver):
     def update_tenant(self, tenant_id, tenant):
         raise NotImplementedError()
 
-    def delete_tenant(self, tenant_id, tenant):
+    def delete_tenant(self, tenant_id):
         raise NotImplementedError()
 
     def get_metadata(self, user_id, tenant_id):
