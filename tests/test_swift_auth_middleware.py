@@ -46,7 +46,20 @@ class FakeApp(object):
                               body=body)(env, start_response)
 
 
-class SwiftAuth(unittest.TestCase):
+def _get_identity(tenant_id='tenant_id', tenant_name='tenant_name',
+                  user='user', roles=''):
+    return swift_auth.Identity(tenant_id, tenant_name, user, roles)
+
+
+class TestIdentity(unittest.TestCase):
+
+    def test_header_marshalling(self):
+        new_identity = swift_auth.Identity.from_headers(
+            _get_identity().to_headers())
+        self.assertEqual(_get_identity(), new_identity)
+
+
+class TestSwiftAuth(unittest.TestCase):
     def setUp(self):
         if skip:
             raise nose.SkipTest('no swift detected')
@@ -57,21 +70,22 @@ class SwiftAuth(unittest.TestCase):
             path = '/v1/%s/c/o' % self.test_auth._get_account_for_tenant('foo')
         return webob.Request.blank(path, headers=headers, **kwargs)
 
-    def _get_identity_headers(self, status='Confirmed', tenant_id='1',
-                          tenant_name='acct', user='usr', role=''):
-        return dict(X_IDENTITY_STATUS=status,
-                    X_TENANT_ID=tenant_id,
-                    X_TENANT_NAME=tenant_name,
-                    X_ROLE=role,
-                    X_USER=user)
+    def _get_identity_headers(self, status=None, tenant_id='1',
+                              tenant_name='acct', user='usr', roles=''):
+        if not status:
+            status = swift_auth.Identity.CONFIRMED
+        identity = _get_identity(tenant_id, tenant_name, user, roles)
+        headers = identity.to_headers(prefix='X_')
+        headers.update(X_IDENTITY_STATUS=status)
+        return headers
 
     def _get_successful_middleware(self):
         response_iter = iter([('200 OK', {}, '')])
         return swift_auth.filter_factory({})(FakeApp(response_iter))
 
     def test_confirmed_identity_is_authorized(self):
-        role = self.test_auth.reseller_admin_role
-        headers = self._get_identity_headers(role=role)
+        roles = self.test_auth.reseller_admin_role
+        headers = self._get_identity_headers(roles=roles)
         req = self._make_request('/v1/AUTH_acct/c', headers)
         resp = req.get_response(self._get_successful_middleware())
         self.assertEqual(resp.status_int, 200)
@@ -113,25 +127,19 @@ class TestAuthorize(unittest.TestCase):
 
     def _get_account(self, identity=None):
         if not identity:
-            identity = self._get_identity()
-        return self.test_auth._get_account_for_tenant(identity['tenant'][0])
-
-    def _get_identity(self, tenant_id='tenant_id',
-                      tenant_name='tenant_name', user='user', roles=None):
-        if not roles:
-            roles = []
-        return dict(tenant=(tenant_id, tenant_name), user=user, roles=roles)
+            identity = _get_identity()
+        return self.test_auth._get_account_for_tenant(identity.tenant_id)
 
     def _check_authenticate(self, account=None, identity=None, headers=None,
                             exception=None, acl=None, env=None, path=None):
         if not identity:
-            identity = self._get_identity()
+            identity = _get_identity()
         if not account:
             account = self._get_account(identity)
         if not path:
             path = '/v1/%s/c' % account
         default_env = {'keystone.identity': identity,
-                       'REMOTE_USER': identity['tenant']}
+                       'REMOTE_USER': identity.remote_user}
         if env:
             default_env.update(env)
         req = self._make_request(path, headers=headers, environ=default_env)
@@ -151,20 +159,20 @@ class TestAuthorize(unittest.TestCase):
                                  exception=webob.exc.HTTPForbidden)
 
     def test_authorize_succeeds_for_reseller_admin(self):
-        roles =[self.test_auth.reseller_admin_role]
-        identity = self._get_identity(roles=roles)
+        roles = self.test_auth.reseller_admin_role
+        identity = _get_identity(roles=roles)
         req = self._check_authenticate(identity=identity)
         self.assertTrue(req.environ.get('swift_owner'))
 
     def test_authorize_succeeds_as_owner_for_operator_role(self):
         roles = self.test_auth.operator_roles.split(',')[0]
-        identity = self._get_identity(roles=roles)
+        identity = _get_identity(roles=roles)
         req = self._check_authenticate(identity=identity)
         self.assertTrue(req.environ.get('swift_owner'))
 
     def _check_authorize_for_tenant_owner_match(self, exception=None):
-        identity = self._get_identity()
-        identity['user'] = identity['tenant'][1]
+        identity = _get_identity()
+        identity.user = identity.tenant_name
         req = self._check_authenticate(identity=identity, exception=exception)
         expected = bool(exception is None)
         self.assertEqual(bool(req.environ.get('swift_owner')), expected)
@@ -204,12 +212,12 @@ class TestAuthorize(unittest.TestCase):
 
     def test_authorize_succeeds_for_user_role_in_roles(self):
         acl = 'allowme'
-        identity = self._get_identity(roles=[acl])
+        identity = _get_identity(roles=acl)
         self._check_authenticate(identity=identity, acl=acl)
 
     def test_authorize_succeeds_for_tenant_user_in_roles(self):
-        identity = self._get_identity()
-        acl = '%s:%s' % (identity['tenant'][1], identity['user'])
+        identity = _get_identity()
+        acl = identity.tenant_user
         self._check_authenticate(identity=identity, acl=acl)
 
 
