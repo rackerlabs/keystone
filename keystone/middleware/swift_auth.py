@@ -110,7 +110,7 @@ class SwiftAuth(object):
         if identity:
             self.logger.debug('Using identity: %r' % (identity))
             environ['keystone.identity'] = identity
-            environ['REMOTE_USER'] = identity.get('tenant')
+            environ['REMOTE_USER'] = identity.remote_user
             environ['swift.authorize'] = self.authorize
         else:
             self.logger.debug('Authorizing as anonymous')
@@ -122,16 +122,8 @@ class SwiftAuth(object):
 
     def _keystone_identity(self, environ):
         """Extract the identity from the Keystone auth component."""
-        if environ.get('HTTP_X_IDENTITY_STATUS') != 'Confirmed':
-            return
-        roles = []
-        if 'HTTP_X_ROLE' in environ:
-            roles = environ['HTTP_X_ROLE'].split(',')
-        identity = {'user': environ.get('HTTP_X_USER'),
-                    'tenant': (environ.get('HTTP_X_TENANT_ID'),
-                               environ.get('HTTP_X_TENANT_NAME')),
-                    'roles': roles}
-        return identity
+        if environ.get('HTTP_X_IDENTITY_STATUS') == Identity.CONFIRMED:
+            return Identity.from_env(environ)
 
     def _get_account_for_tenant(self, tenant_id):
         return '%s%s' % (self.reseller_prefix, tenant_id)
@@ -141,9 +133,7 @@ class SwiftAuth(object):
         return account == self._get_account_for_tenant(tenant_id)
 
     def authorize(self, req):
-        env = req.environ
-        env_identity = env.get('keystone.identity', {})
-        tenant_id, tenant_name = env_identity.get('tenant')
+        identity = req.environ['keystone.identity']
 
         try:
             part = swift_utils.split_path(req.path, 1, 4, True)
@@ -151,20 +141,19 @@ class SwiftAuth(object):
         except ValueError:
             return webob.exc.HTTPNotFound(request=req)
 
-        user_roles = env_identity.get('roles', [])
-
         # Give unconditional access to a user with the reseller_admin
         # role.
-        if self.reseller_admin_role in user_roles:
+        if self.reseller_admin_role in identity.roles:
             msg = 'User %s has reseller admin authorizing'
-            self.logger.debug(msg % tenant_id)
+            self.logger.debug(msg % identity.tenant_id)
             req.environ['swift_owner'] = True
             return
 
         # Check if a user tries to access an account that does not match their
         # token
-        if not self._reseller_check(account, tenant_id):
-            log_msg = 'tenant mismatch: %s != %s' % (account, tenant_id)
+        if not self._reseller_check(account, identity.tenant_id):
+            log_msg = 'tenant mismatch: %s != %s' % (account,
+                                                     identity.tenant_id)
             self.logger.debug(log_msg)
             return self.denied_response(req)
 
@@ -174,15 +163,14 @@ class SwiftAuth(object):
         # promoted as an admin of the account/tenant.
         for role in self.operator_roles.split(','):
             role = role.strip()
-            if role in user_roles:
+            if role in identity.roles:
                 log_msg = 'allow user with role %s as account admin' % (role)
                 self.logger.debug(log_msg)
                 req.environ['swift_owner'] = True
                 return
 
         # If user is of the same name of the tenant then make owner of it.
-        user = env_identity.get('user', '')
-        if self.is_admin and user == tenant_name:
+        if self.is_admin and identity.user_name == identity.tenant_name:
             req.environ['swift_owner'] = True
             return
 
@@ -196,16 +184,16 @@ class SwiftAuth(object):
             return self.denied_response(req)
 
         # Allow ACL at individual user level (tenant:user format)
-        if '%s:%s' % (tenant_name, user) in roles:
-            log_msg = 'user %s:%s allowed in ACL authorizing'
-            self.logger.debug(log_msg % (tenant_name, user))
+        if identity.tenant_user in roles:
+            log_msg = 'user %s allowed in ACL authorizing'
+            self.logger.debug(log_msg % identity.tenant_user)
             return
 
         # Check if we have the role in the userroles and allow it
-        for user_role in user_roles:
+        for user_role in identity.roles:
             if user_role in roles:
-                log_msg = 'user %s:%s allowed in ACL: %s authorizing'
-                self.logger.debug(log_msg % (tenant_name, user, user_role))
+                log_msg = 'user %s allowed in ACL: %s authorizing'
+                self.logger.debug(log_msg % (identity.tenant_user, user_role))
                 return
 
         return self.denied_response(req)
@@ -234,7 +222,7 @@ class SwiftAuth(object):
             return self.denied_response(req)
 
     def _authorize_unconfirmed_identity(self, req, obj, referrers, roles):
-        """"
+        """
         Perform authorization for access that does not require a
         confirmed identity.
 
@@ -271,6 +259,74 @@ class SwiftAuth(object):
             return webob.exc.HTTPForbidden(request=req)
         else:
             return webob.exc.HTTPUnauthorized(request=req)
+
+
+class Identity(object):
+
+    CONFIRMED = 'Confirmed'
+
+    ENV_PREFIX = 'HTTP_X_'
+
+    HEADER_PREFIX = 'X_'
+
+    @classmethod
+    def _load(cls, value_map, key_prefix):
+        env_ids = 'TENANT_ID TENANT_NAME USER_ID USER_NAME ROLES'.split()
+        args = [value_map.get('%s%s' % (key_prefix, x), '') for x in env_ids]
+        return cls(*args)
+
+    @classmethod
+    def from_env(cls, env):
+        return cls._load(env, cls.ENV_PREFIX)
+
+    @classmethod
+    def from_headers(cls, env):
+        return cls._load(env, cls.HEADER_PREFIX)
+
+    def __init__(self, tenant_id, tenant_name, user_id, user_name, roles):
+        self.tenant_id = tenant_id
+        self.tenant_name = tenant_name
+        self.user_id = user_id
+        self.user_name = user_name
+        self.roles = roles.split(',')
+
+    def __eq__(self, other):
+        return repr(self) == repr(other)
+
+    def __repr__(self):
+        return ('<Identity tenant_id="%s" tenant_name="%s" '
+                'user_id="%s" user_name="%s" roles="%s">' %
+                (self.tenant_id, self.tenant_name, self.user_id,
+                 self.user_name, self.str_roles))
+
+    def _dump(self, key_prefix):
+        value_map = {
+            'TENANT_ID': self.tenant_id,
+            'TENANT_NAME': self.tenant_name,
+            'USER_ID': self.user_id,
+            'USER_NAME': self.user_name,
+            'ROLES': self.str_roles,
+            }
+        return dict(('%s%s' % (key_prefix, k), v)
+                    for k, v in value_map.iteritems())
+
+    @property
+    def remote_user(self):
+        return (self.tenant_id, self.tenant_name)
+
+    @property
+    def str_roles(self):
+        return ','.join(self.roles)
+
+    @property
+    def tenant_user(self):
+        return '%s:%s' % (self.tenant_name, self.user_name)
+
+    def to_env(self):
+        return self._dump(self.ENV_PREFIX)
+
+    def to_headers(self):
+        return self._dump(self.HEADER_PREFIX)
 
 
 def filter_factory(global_conf, **local_conf):
