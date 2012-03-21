@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//7oU\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-21T17:20:13Z",
+      "side": 1,
+      "message": "I really don\u0027t want to manipulate the config to fix errors that flow in from there? It just hides issues and makes debugging them far more difficult in the future.\n\nIf this is an issue, it should be highlighted in the docs that the \"_\" is required",
+      "revId": "0fa2dd7e932c5d198e2e796cf053a15e72836c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//7oM\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-21T17:20:13Z",
+      "side": 1,
+      "message": "these are great tests that will mostly get ignored if swift isn\u0027t installed - and most folks won\u0027t have that as a default when developing with keystone. Look at revising this whole case to be like tests/test_keystoneclient.py that downloads swift and runs these integration tests.",
+      "revId": "0fa2dd7e932c5d198e2e796cf053a15e72836c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
