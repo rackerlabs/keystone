@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//7pA\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-03-21T16:48:31Z",
+      "side": 1,
+      "message": "Where is that \"service_exists\" method coming from? I don\u0027t see it in any catalog backend...",
+      "revId": "009d661a7e06ad72ab39b93433839bf567755ece",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
