@@ -605,41 +605,84 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
 
     def test_user_create_update_delete(self):
         from keystoneclient import exceptions as client_exceptions
-
-        test_username = 'new_user'
         client = self.get_client(admin=True)
-        user = client.users.create(name=test_username,
-                                   password='password',
-                                   email='user1@test.com')
-        self.assertEquals(user.name, test_username)
+
+        # get non-existant
+        self.assertRaises(client_exceptions.NotFound,
+                          client.users.get,
+                          user=uuid.uuid4().hex)
+
+        # create & read
+        user_name = uuid.uuid4().hex
+        user_pass = uuid.uuid4().hex
+        user_email = uuid.uuid4().hex
+        user_enabled = False
+        user = client.users.create(name=user_name,
+                                   password=user_pass,
+                                   email=user_email,
+                                   enabled=user_enabled)
+        self.assertEquals(user.name, user_name)
+        self.assertEquals(user.email, user_email)
+        self.assertEquals(user.enabled, user_enabled)
 
         user = client.users.get(user=user.id)
-        self.assertEquals(user.name, test_username)
+        self.assertEquals(user.name, user_name)
+        self.assertEquals(user.email, user_email)
+        self.assertEquals(user.enabled, user_enabled)
 
-        user = client.users.update_email(user=user, email='user2@test.com')
-        self.assertEquals(user.email, 'user2@test.com')
+        # update non-existant
+        self.assertRaises(client_exceptions.NotFound,
+                          client.users.update_email,
+                          user=uuid.uuid4().hex,
+                          email=uuid.uuid4().hex)
+
+        # update & read
+        user_email = uuid.uuid4().hex
+        user = client.users.update_email(user=user, email=user_email)
+        self.assertEquals(user.name, user_name)
+        self.assertEquals(user.email, user_email)
+        self.assertEquals(user.enabled, user_enabled)
+
+        user = client.users.get(user=user.id)
+        self.assertEquals(user.name, user_name)
+        self.assertEquals(user.email, user_email)
+        self.assertEquals(user.enabled, user_enabled)
+
+        # authorization will fail because user is disabled
+        self.assertRaises(client_exceptions.AuthorizationFailure,
+                          self._client,
+                          username=user_name,
+                          password=user_pass)
 
         # NOTE(termie): update_enabled doesn't return anything, probably a bug
-        client.users.update_enabled(user=user, enabled=False)
+        user_enabled = True
+        client.users.update_enabled(user=user, enabled=user_enabled)
+
         user = client.users.get(user.id)
-        self.assertFalse(user.enabled)
+        self.assertEquals(user.name, user_name)
+        self.assertEquals(user.email, user_email)
+        self.assertEquals(user.enabled, user_enabled)
 
-        self.assertRaises(client_exceptions.AuthorizationFailure,
-                  self._client,
-                  username=test_username,
-                  password='password')
-        client.users.update_enabled(user, True)
+        # authentication should now succeed
+        self._client(username=user_name, password=user_pass)
 
-        user = client.users.update_password(user=user, password='password2')
+        # update the password
+        user_pass = uuid.uuid4().hex
+        user = client.users.update_password(user=user, password=user_pass)
 
-        self._client(username=test_username,
-                     password='password2')
+        # authentication with new password
+        self._client(username=user_name, password=user_pass)
 
         user = client.users.update_tenant(user=user, tenant='bar')
         # TODO(ja): once keystonelight supports default tenant
         #           when you login without specifying tenant, the
         #           token should be scoped to tenant 'bar'
 
+        # delete & read
         client.users.delete(user.id)
-        self.assertRaises(client_exceptions.NotFound, client.users.get,
+        self.assertRaises(client_exceptions.NotFound,
+                          client.users.get,
+                          user.id)
+        self.assertRaises(client_exceptions.NotFound,
+                          client.users.delete,
                           user.id)

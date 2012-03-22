@@ -173,6 +173,8 @@ class Identity(kvs.Base, identity.Driver):
                 raise exception.Conflict(type='user', details=msg)
         # get the old name and delete it too
         old_user = self.db.get('user-%s' % user_id)
+        if old_user is None:
+            raise exception.UserNotFound(user_id=user_id)
         new_user = old_user.copy()
         user = _ensure_hashed_password(user)
         new_user.update(user)
