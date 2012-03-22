@@ -16,6 +16,24 @@
       "revId": "6db7d3e07f58ee3ccfca09f5b1ff68a43ebbb153",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//7aI\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-22T00:48:34Z",
+      "side": 1,
+      "message": "I agree - the authorization code could use a refactor.  Each auth check would ideally be broken into a function accepting a context, the first successful/unsuccessful auth would return immediately, with an indeterminate result allowing subsequent checks to run.\n\nThis change, though, is only intended to add support for anonymous access, so I would suggest a major refactor is out of scope.  I\u0027ll start work on another change to implement your suggestion.",
+      "parentUuid": "AAAAE3//7ag\u003d",
+      "revId": "6db7d3e07f58ee3ccfca09f5b1ff68a43ebbb153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
