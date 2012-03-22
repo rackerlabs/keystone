@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAE3//7aY\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-22T00:42:14Z",
+      "side": 1,
+      "message": "It can\u0027t be None in the general case - auth_token ensures that HTTP_X_ROLES is at least an empty string, and from_headers() defaults to an empty string as well.",
+      "parentUuid": "AAAAE3//7bQ\u003d",
+      "revId": "7bd7dd89782da3fb7401cdff87e48109fff8d985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAE3//7bM\u003d",
         "filename": "keystone/middleware/swift_auth.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-03-22T00:35:19Z",
       "side": 1,
       "message": "isn\u0027t this line a pep8 violation?",
+      "revId": "7bd7dd89782da3fb7401cdff87e48109fff8d985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//7as\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-22T00:42:14Z",
+      "side": 1,
+      "message": "Not that I\u0027m aware of, and it passes the pep8 check.  Do you have a reference for the violation?",
+      "parentUuid": "AAAAE3//7bM\u003d",
       "revId": "7bd7dd89782da3fb7401cdff87e48109fff8d985",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
