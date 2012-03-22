@@ -204,6 +204,19 @@ class Ec2Controller(wsgi.Application):
         """
         if not self._is_admin(context):
             self._assert_identity(context, user_id)
+
+        user_ref = self.identity_api.get_user(
+            context=context,
+            user_id=user_id)
+        if not user_ref:
+            raise exception.UserNotFound(user_id=user_id)
+
+        tenant_ref = self.identity_api.get_tenant(
+            context=context,
+            tenant_id=tenant_id)
+        if not tenant_ref:
+            raise exception.TenantNotFound(tenant_id=tenant_id)
+
         cred_ref = {'user_id': user_id,
                     'tenant_id': tenant_id,
                     'access': uuid.uuid4().hex,
