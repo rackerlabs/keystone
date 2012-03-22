@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//7ag\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 748
+      },
+      "writtenOn": "2012-03-22T00:40:50Z",
+      "side": 1,
+      "message": "I am not a huge fan of many exit points in a function, it makes the code difficult to read and it could lead to errors. This function is not very long so I guess it\u0027s fine, but if it grows in complexity it begs a refactoring; being a sensitive function (it\u0027s about to grant/deny access) you want to be sure that it does what it\u0027s meant to do and following different control flows could become hard.",
+      "revId": "6db7d3e07f58ee3ccfca09f5b1ff68a43ebbb153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
