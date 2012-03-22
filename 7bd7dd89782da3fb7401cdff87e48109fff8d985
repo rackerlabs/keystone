@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAE3//7aA\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 748
+      },
+      "writtenOn": "2012-03-22T00:52:29Z",
+      "side": 1,
+      "message": "no, I didn\u0027t run the check, I think I read the line wrong, sorry :)",
+      "parentUuid": "AAAAE3//7as\u003d",
+      "revId": "7bd7dd89782da3fb7401cdff87e48109fff8d985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAE3//7bI\u003d",
         "filename": "tests/test_swift_auth_middleware.py",
         "patchSetId": 2
