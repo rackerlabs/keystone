@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAE3//7Z0\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-22T01:17:38Z",
+      "side": 1,
+      "message": "Ok, I\u0027ll remove it.",
+      "parentUuid": "AAAAE3//7bw\u003d",
+      "revId": "0fa2dd7e932c5d198e2e796cf053a15e72836c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAE3//7oM\u003d",
         "filename": "tests/test_swift_auth_middleware.py",
         "patchSetId": 2
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "I\u0027m okay with skipping it if Chmouel and Termie agreed on that point. I\u0027m not sure why the middleware for other projects is maintained in keystone other than some historical precedent to keep the APIs consistent and a single place to update pieces.\n\nIdeally, I\u0027d love to have tempest fully operational as a means of driving multiple config integration tests, which would ideally gate changes that would prevent us from accidentally breaking this kind of code. Until that\u0027s happening, I\u0027m strongly in favor of the built-in integration testing that we\u0027ve slapped down to make sure that middleware code is driven properly.\n\nBecause this code reaches deeply into swift, I\u0027d think the checkout_vendor would be how to make it happen. If we could break out the dependencies, it may be more more feasible to do it with stubs. I\u0027m ignorant on the specifics of what stubs does and doesn\u0027t do, I so I can\u0027t provide any super useful input on that front though. Something I need to dig into a learn more about.",
       "parentUuid": "AAAAE3//7ho\u003d",
+      "revId": "0fa2dd7e932c5d198e2e796cf053a15e72836c53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//7Zs\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-22T01:17:38Z",
+      "side": 1,
+      "message": "I\u0027ll work on getting checkout_vendor working.",
+      "parentUuid": "AAAAE3//7bg\u003d",
       "revId": "0fa2dd7e932c5d198e2e796cf053a15e72836c53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
