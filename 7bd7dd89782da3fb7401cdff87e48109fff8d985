@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAE3//7bQ\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 748
+      },
+      "writtenOn": "2012-03-22T00:35:19Z",
+      "side": 1,
+      "message": "could roles be None in the most general case? If so, this blows up",
+      "revId": "7bd7dd89782da3fb7401cdff87e48109fff8d985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//7bM\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 748
+      },
+      "writtenOn": "2012-03-22T00:35:19Z",
+      "side": 1,
+      "message": "isn\u0027t this line a pep8 violation?",
+      "revId": "7bd7dd89782da3fb7401cdff87e48109fff8d985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAE3//7bI\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 748
+      },
+      "writtenOn": "2012-03-22T00:35:19Z",
+      "side": 1,
+      "message": "why an empty string? See my comment in connection to this.",
+      "revId": "7bd7dd89782da3fb7401cdff87e48109fff8d985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
