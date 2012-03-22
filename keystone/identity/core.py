@@ -374,7 +374,10 @@ class UserController(wsgi.Application):
     def create_user(self, context, user):
         user = self._normalize_dict(user)
         self.assert_admin(context)
-        tenant_id = user.get('tenantId', None)
+        tenant_id = user.get('tenantId')
+        if (tenant_id is not None
+                and not self.identity_api.get_tenant(context, tenant_id)):
+            raise exception.TenantNotFound(tenant_id=tenant_id)
         user_id = uuid.uuid4().hex
         user_ref = user.copy()
         user_ref['id'] = user_id
@@ -387,6 +390,10 @@ class UserController(wsgi.Application):
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
         self.assert_admin(context)
+        tenant_id = user.get('tenantId')
+        if (tenant_id is not None and
+                not self.identity_api.get_tenant(context, tenant_id)):
+            raise exception.TenantNotFound(tenant_id=tenant_id)
         user_ref = self.identity_api.update_user(context, user_id, user)
         return {'user': user_ref}
 
@@ -404,6 +411,9 @@ class UserController(wsgi.Application):
         """Update the default tenant."""
         # ensure that we're a member of that tenant
         tenant_id = user.get('tenantId')
+        if (tenant_id is not None and
+                not self.identity_api.get_tenant(context, tenant_id)):
+            raise exception.TenantNotFound(tenant_id=tenant_id)
         self.identity_api.add_user_to_tenant(context, tenant_id, user_id)
         return self.update_user(context, user_id, user)
 

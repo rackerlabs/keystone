@@ -617,6 +617,16 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
         user_pass = uuid.uuid4().hex
         user_email = uuid.uuid4().hex
         user_enabled = False
+
+        # invalid tenant ID should be validated
+        self.assertRaises(client_exceptions.NotFound,
+                          client.users.create,
+                          name=user_name,
+                          tenant_id=uuid.uuid4().hex,
+                          password=user_pass,
+                          email=user_email,
+                          enabled=user_enabled)
+
         user = client.users.create(name=user_name,
                                    password=user_pass,
                                    email=user_email,
@@ -672,6 +682,12 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
 
         # authentication with new password
         self._client(username=user_name, password=user_pass)
+
+        # assign a default tenant
+        self.assertRaises(client_exceptions.NotFound,
+                          client.users.update_tenant,
+                          user=user,
+                          tenant=uuid.uuid4().hex)
 
         user = client.users.update_tenant(user=user, tenant='bar')
         # TODO(ja): once keystonelight supports default tenant
