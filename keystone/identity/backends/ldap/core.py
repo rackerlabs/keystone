@@ -185,6 +185,8 @@ class Identity(identity.Driver):
         return self.role.create(role)
 
     def delete_role(self, role_id):
+        if self.get_role(role_id) is None:
+            raise exception.RoleNotFound(role_id=role_id)
         return self.role.delete(role_id)
 
 

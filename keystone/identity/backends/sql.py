@@ -409,5 +409,7 @@ class Identity(sql.Base, identity.Driver):
     def delete_role(self, role_id):
         session = self.get_session()
         role_ref = session.query(Role).filter_by(id=role_id).first()
+        if role_ref is None:
+            raise exception.RoleNotFound(role_id=role_id)
         with session.begin():
             session.delete(role_ref)

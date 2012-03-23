@@ -151,6 +151,11 @@ class IdentityTests(object):
                 role_id=self.role_keystone_admin['id'])
         self.assertDictEquals(role_ref, self.role_keystone_admin)
 
+    def test_role_delete_404(self):
+        self.assertRaises(exception.RoleNotFound,
+                          self.identity_api.delete_role,
+                          uuid.uuid4().hex)
+
     def test_create_duplicate_role_name_fails(self):
         role = {'id': 'fake1',
                 'name': 'fake1name'}

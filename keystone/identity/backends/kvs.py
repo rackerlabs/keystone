@@ -97,8 +97,7 @@ class Identity(kvs.Base, identity.Driver):
         return self.db.get('metadata-%s-%s' % (tenant_id, user_id)) or {}
 
     def get_role(self, role_id):
-        role_ref = self.db.get('role-%s' % role_id)
-        return role_ref
+        return self.db.get('role-%s' % role_id)
 
     def list_users(self):
         user_ids = self.db.get('user_list', [])
@@ -269,6 +268,8 @@ class Identity(kvs.Base, identity.Driver):
         return role
 
     def delete_role(self, role_id):
+        if self.get_role(role_id) is None:
+            raise exception.RoleNotFound(role_id=role_id)
         self.db.delete('role-%s' % role_id)
         role_list = set(self.db.get('role_list', []))
         role_list.remove(role_id)
