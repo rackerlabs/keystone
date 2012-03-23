@@ -332,7 +332,7 @@ class KeystoneClientTests(object):
         role = client.roles.get(role='keystone_admin')
         self.assertEquals(role.id, 'keystone_admin')
 
-    def test_role_create_and_delete(self):
+    def test_role_crud(self):
         from keystoneclient import exceptions as client_exceptions
 
         test_role = 'new_role'
@@ -345,8 +345,23 @@ class KeystoneClientTests(object):
 
         client.roles.delete(role=role.id)
 
-        self.assertRaises(client_exceptions.NotFound, client.roles.get,
+        self.assertRaises(client_exceptions.NotFound,
+                          client.roles.delete,
                           role=role.id)
+        self.assertRaises(client_exceptions.NotFound,
+                          client.roles.get,
+                          role=role.id)
+
+    def test_role_404(self):
+        from keystoneclient import exceptions as client_exceptions
+
+        client = self.get_client(admin=True)
+        self.assertRaises(client_exceptions.NotFound,
+                          client.roles.get,
+                          role=uuid.uuid4().hex)
+        self.assertRaises(client_exceptions.NotFound,
+                          client.roles.delete,
+                          role=uuid.uuid4().hex)
 
     def test_role_list(self):
         client = self.get_client(admin=True)

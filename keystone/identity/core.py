@@ -449,7 +449,8 @@ class RoleController(wsgi.Application):
 
     def delete_role(self, context, role_id):
         self.assert_admin(context)
-        role_ref = self.identity_api.delete_role(context, role_id)
+        self.get_role(context, role_id)
+        self.identity_api.delete_role(context, role_id)
 
     def get_roles(self, context):
         self.assert_admin(context)
