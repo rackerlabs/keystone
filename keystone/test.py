@@ -189,6 +189,11 @@ class TestCase(unittest.TestCase):
             for service in fixtures.SERVICES:
                 rv = self.catalog_api.create_service(service['id'], service)
                 setattr(self, 'service_%s' % service['id'], rv)
+            package_name = str(self.catalog_api.__class__)
+            if(package_name.find('keystone.catalog.backends.sql.Catalog') != -1):
+                for endpoint in fixtures.ENDPOINTS:
+                    rv = self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+                    setattr(self, 'endpoint_%s' % endpoint['id'], rv)
 
         if hasattr(self, 'identity_api'):
             for tenant in fixtures.TENANTS:
