@@ -60,3 +60,30 @@ SERVICES = [
         'description': 'OpenStack Image service'
     },
 ]
+
+ENDPOINTS = [
+    {
+        'id': 'COMPUTE_IMAGE_ID',
+        'region': 'RegionOne',
+        'service_id': 'IMAGE_ID',
+        'adminurl': 'http://localhost:9292/v1',
+        'internalurl': 'http://localhost:9292/v1',
+        'publicurl': 'http://localhost:9292/v1'
+    },
+    {
+        'id': 'COMPUTE_ENDPOINT_ID',
+        'region': 'RegionOne',
+        'service_id': 'COMPUTE_ID',
+        'adminurl': 'http://localhost:$(compute_port)s/v1.1/$(tenant_id)s',
+        'internalurl': 'http://localhost:$(compute_port)s/v1.1/$(tenant_id)s',
+        'publicurl': 'http://localhost:$(compute_port)s/v1.1/$(tenant_id)s'
+    },
+    {
+        'id': 'IDENTITY_ENDPOINT_ID',
+        'region': 'RegionOne',
+        'service_id': 'IDENTITY_ID',
+        'adminurl': 'http://localhost:$(admin_port)s/v2.0',
+        'internalurl': 'http://localhost:$(public_port)s/v2.0',
+        'publicurl': 'http://localhost:$(public_port)s/v2.0'
+    },
+]
