@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH///WY\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-03-24T09:42:59Z",
+      "side": 1,
+      "message": "This comment should be dropped.",
+      "revId": "f3af6918639013a5219a6192d5777e9437e20afa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
