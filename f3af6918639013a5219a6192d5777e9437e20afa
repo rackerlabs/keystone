@@ -16,6 +16,24 @@
       "revId": "f3af6918639013a5219a6192d5777e9437e20afa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH///V0\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-24T19:00:04Z",
+      "side": 1,
+      "message": "I\u0027ve dropped the comment and test in the subsequent change that introduces anonymous access:\n\nhttps://review.openstack.org/#change,5603",
+      "parentUuid": "AAAAFH///WY\u003d",
+      "revId": "f3af6918639013a5219a6192d5777e9437e20afa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
