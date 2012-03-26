@@ -93,6 +93,7 @@ HTTP_X_ROLE
 import httplib
 import json
 import logging
+from string import Template
 import time
 
 import webob
@@ -184,9 +185,12 @@ class AuthProtocol(object):
                 LOG.info('Invalid user token - rejecting request')
                 return self._reject_request(env, start_response)
 
-        except ServiceError, e:
+        except ServiceError as e:
             LOG.critical('Unable to obtain admin token: %s' % e)
-            resp = webob.exc.HTTPServiceUnavailable()
+            my_body_template = '''{"error": {"message": "${explanation}"}}'''
+            resp = webob.exc.HTTPUnauthorized(body_template=my_body_template)
+            resp.plain_template_obj = Template('''${body}''')
+            resp.explanation = 'Unable to obtain admin token'
             return resp(env, start_response)
 
     def _remove_auth_headers(self, env):
