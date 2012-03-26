@@ -187,6 +187,7 @@ class AuthProtocol(object):
         except ServiceError, e:
             LOG.critical('Unable to obtain admin token: %s' % e)
             resp = webob.exc.HTTPServiceUnavailable()
+            resp.explanation = ('Unable to obtain admin token')
             return resp(env, start_response)
 
     def _remove_auth_headers(self, env):
