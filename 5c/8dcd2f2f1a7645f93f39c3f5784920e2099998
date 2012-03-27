@@ -1,0 +1,8 @@
+Verified+1: Jenkins
+Approved+1: termie <github@anarkystic.com>
+Code-Review+2: termie <github@anarkystic.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 27 Mar 2012 23:55:13 +0000
+Reviewed-on: https://review.openstack.org/5734
+Project: openstack/keystone
+Branch: refs/heads/master
