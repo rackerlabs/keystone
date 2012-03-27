@@ -1,0 +1,10 @@
+Verified+1: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Approved+1: anotherjesse <anotherjesse@gmail.com>
+Code-Review+2: anotherjesse <anotherjesse@gmail.com>
+Code-Review+2: termie <github@anarkystic.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 27 Mar 2012 00:00:07 +0000
+Reviewed-on: https://review.openstack.org/5348
+Project: openstack/keystone
+Branch: refs/heads/master
