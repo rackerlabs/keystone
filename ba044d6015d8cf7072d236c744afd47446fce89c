@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//+ZA\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-27T23:06:06Z",
+      "side": 1,
+      "message": "remove this whitespace?",
+      "revId": "ba044d6015d8cf7072d236c744afd47446fce89c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+Y4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-27T23:06:06Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "ba044d6015d8cf7072d236c744afd47446fce89c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+Ys\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-27T23:06:06Z",
+      "side": 1,
+      "message": "ditch whitespace here?",
+      "revId": "ba044d6015d8cf7072d236c744afd47446fce89c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+Yw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-27T23:06:06Z",
+      "side": 1,
+      "message": "ditch whitespace here?",
+      "revId": "ba044d6015d8cf7072d236c744afd47446fce89c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
