@@ -1,0 +1,10 @@
+Code-Review+1: Monty Taylor <mordred@inaugust.com>
+Verified+1: Jenkins
+Code-Review+1: Dan Prince <dprince@redhat.com>
+Approved+1: Dave Walker <Dave.Walker@canonical.com>
+Code-Review+2: Dave Walker <Dave.Walker@canonical.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 27 Mar 2012 22:10:24 +0000
+Reviewed-on: https://review.openstack.org/5868
+Project: openstack/keystone
+Branch: refs/heads/stable/diablo
