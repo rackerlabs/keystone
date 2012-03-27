@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//+j4\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-27T18:25:39Z",
+      "side": 1,
+      "message": "This is a little hard to read; I\u0027d prefer:\n\n    from keystone.catalog.backends import sql\n    if isinstance(self.catalog_api, sql.Catalog):\n        # load fixtures",
+      "revId": "59cc7f22a4136251bda44f0470fc31b9d021fb95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
