@@ -457,6 +457,9 @@ example::
 Users
 -----
 
+Users can be associated with more than one tenant. Each tenant - user pairing 
+must have at least one role associated with it.
+
 ``user-create``
 ^^^^^^^^^^^^^^^
 
