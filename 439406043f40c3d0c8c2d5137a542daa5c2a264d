@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//+wA\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-27T01:25:32Z",
+      "side": 1,
+      "message": "this bit in the (\u0027.r:*\u0027) means nothing to me. What does it reference?",
+      "revId": "439406043f40c3d0c8c2d5137a542daa5c2a264d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
