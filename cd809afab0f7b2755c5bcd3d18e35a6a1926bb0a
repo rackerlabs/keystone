@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAFH//+XU\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2874
+      },
+      "writtenOn": "2012-03-27T23:51:56Z",
+      "side": 1,
+      "message": "What is the good order here if I import Template?  Regarding not fan of using string, HTTPUnauthorized, like any other webob.exc.HTTPxxx response, uses Template to format its body. If I need to output the json here, to use what it wants is the best and simplest way.",
+      "revId": "cd809afab0f7b2755c5bcd3d18e35a6a1926bb0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAFH//+iI\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 2
@@ -47,6 +64,23 @@
       "writtenOn": "2012-03-27T19:00:56Z",
       "side": 1,
       "message": "this is missing an error title and code",
+      "revId": "cd809afab0f7b2755c5bcd3d18e35a6a1926bb0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+W8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 2874
+      },
+      "writtenOn": "2012-03-27T23:51:56Z",
+      "side": 1,
+      "message": "Error title and code  are HTTPUnauthorized\u0027s constructor. we don\u0027t need to modify them.",
       "revId": "cd809afab0f7b2755c5bcd3d18e35a6a1926bb0a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -82,6 +116,23 @@
       "side": 1,
       "message": "I agree with Dolph - we need to make debugging more useful, but this should be exposed to the sysadmin running auth_token, not the user trying to access it. \n\nThis is a great message to have in additional logging - I\u0027d suggest \"WARN\".",
       "parentUuid": "AAAAFH//+h4\u003d",
+      "revId": "cd809afab0f7b2755c5bcd3d18e35a6a1926bb0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+W0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 2874
+      },
+      "writtenOn": "2012-03-27T23:51:56Z",
+      "side": 1,
+      "message": "If you insist we use the HTTPServiceUnavailable, at least we have to format its body so that novaclient can show it.",
       "revId": "cd809afab0f7b2755c5bcd3d18e35a6a1926bb0a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
