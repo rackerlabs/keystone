@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//+fU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-27T20:21:04Z",
+      "side": 1,
+      "message": "Change sort of duplicates what\u0027s already written here",
+      "revId": "decc3aaadf62cbaaed280dd8238d6270154a4df9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+fQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-27T20:21:04Z",
+      "side": 1,
+      "message": "I\u0027d take issue with the word \"must\": a default user-tenant relationship has no explicit role.",
+      "revId": "decc3aaadf62cbaaed280dd8238d6270154a4df9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
