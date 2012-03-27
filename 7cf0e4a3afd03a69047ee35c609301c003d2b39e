@@ -16,6 +16,24 @@
       "revId": "7cf0e4a3afd03a69047ee35c609301c003d2b39e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+jI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-27T18:49:57Z",
+      "side": 1,
+      "message": "I completely agree; my goal with this series was to make the CLI behave as expected as quickly as possible, and write the relevant test coverage, so we have *a* fix on hand, because I think this is RC-relevant (a giant pile of medium priority bugs \u003d\u003d one critical user experience bug).\n\nI went down the path of doing this all in drivers (and testing from test_backends), but it got a bit complex. Doing the validation in the controllers proved to be a solid shortcut until I have time to refactor this responsibility into each backend.",
+      "parentUuid": "AAAAFH//+xE\u003d",
+      "revId": "7cf0e4a3afd03a69047ee35c609301c003d2b39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
