@@ -67,6 +67,24 @@
       "revId": "cd809afab0f7b2755c5bcd3d18e35a6a1926bb0a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+bc\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-27T22:31:21Z",
+      "side": 1,
+      "message": "I agree with Dolph - we need to make debugging more useful, but this should be exposed to the sysadmin running auth_token, not the user trying to access it. \n\nThis is a great message to have in additional logging - I\u0027d suggest \"WARN\".",
+      "parentUuid": "AAAAFH//+h4\u003d",
+      "revId": "cd809afab0f7b2755c5bcd3d18e35a6a1926bb0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
