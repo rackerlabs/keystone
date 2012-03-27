@@ -34,6 +34,40 @@
       "revId": "7cf0e4a3afd03a69047ee35c609301c003d2b39e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+Yg\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-27T23:16:24Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "7cf0e4a3afd03a69047ee35c609301c003d2b39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+Yc\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-27T23:16:24Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "7cf0e4a3afd03a69047ee35c609301c003d2b39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
