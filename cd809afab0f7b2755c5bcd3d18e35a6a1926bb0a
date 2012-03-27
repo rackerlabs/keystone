@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//+iM\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-27T19:00:56Z",
+      "side": 1,
+      "message": "json is already imported...",
+      "revId": "cd809afab0f7b2755c5bcd3d18e35a6a1926bb0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+iU\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-27T19:00:56Z",
+      "side": 1,
+      "message": "Import out of order; not a fan of using string.Template for json",
+      "revId": "cd809afab0f7b2755c5bcd3d18e35a6a1926bb0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+iI\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-27T19:00:56Z",
+      "side": 1,
+      "message": "this is missing an error title and code",
+      "revId": "cd809afab0f7b2755c5bcd3d18e35a6a1926bb0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+h4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-03-27T19:00:56Z",
+      "side": 1,
+      "message": "Do we actually want to expose the problem (that middleware is unable to auth with keystone\u0027s admin api)? ServiceUnavailable seems appropriate for the user side, IMO",
+      "revId": "cd809afab0f7b2755c5bcd3d18e35a6a1926bb0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
