@@ -16,6 +16,24 @@
       "revId": "439406043f40c3d0c8c2d5137a542daa5c2a264d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//+vk\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-03-27T01:33:10Z",
+      "side": 1,
+      "message": "It\u0027s a swift acl to allow anonymous access by granting read permission \u0027.r\u0027 to all referrers \u0027*\u0027.  \n\nReference: http://swift.openstack.org/misc.html#module-swift.common.middleware.acl",
+      "parentUuid": "AAAAFH//+wA\u003d",
+      "revId": "439406043f40c3d0c8c2d5137a542daa5c2a264d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
