@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//+xE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-03-27T01:03:48Z",
+      "side": 1,
+      "message": "does the identity API raise an exception if the get_tenant() does exist? Seems like the contract for the driver should be that it pitches an exception.TenantNotFound rather than return None.\n\nThoughts?",
+      "revId": "7cf0e4a3afd03a69047ee35c609301c003d2b39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
