@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//+ZQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-03-27T23:03:55Z",
+      "side": 1,
+      "message": "perhaps drop the newlines above all these",
+      "revId": "564d0bfe14b493c8a99d1732204a136cf4865f1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
