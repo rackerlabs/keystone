@@ -63,16 +63,14 @@ class Identity(kvs.Base, identity.Driver):
         return (_filter_user(user_ref), tenant_ref, metadata_ref)
 
     def get_tenant(self, tenant_id):
-        tenant_ref = self.db.get('tenant-%s' % tenant_id)
-        return tenant_ref
+        return self.db.get('tenant-%s' % tenant_id)
 
     def get_tenants(self):
         tenant_keys = filter(lambda x: x.startswith("tenant-"), self.db.keys())
         return [self.db.get(key) for key in tenant_keys]
 
     def get_tenant_by_name(self, tenant_name):
-        tenant_ref = self.db.get('tenant_name-%s' % tenant_name)
-        return tenant_ref
+        return self.db.get('tenant_name-%s' % tenant_name)
 
     def get_tenant_users(self, tenant_id):
         user_keys = filter(lambda x: x.startswith("user-"), self.db.keys())
@@ -80,12 +78,10 @@ class Identity(kvs.Base, identity.Driver):
         return filter(lambda x: tenant_id in x['tenants'], user_refs)
 
     def _get_user(self, user_id):
-        user_ref = self.db.get('user-%s' % user_id)
-        return user_ref
+        return self.db.get('user-%s' % user_id)
 
     def _get_user_by_name(self, user_name):
-        user_ref = self.db.get('user_name-%s' % user_name)
-        return user_ref
+        return self.db.get('user_name-%s' % user_name)
 
     def get_user(self, user_id):
         return _filter_user(self._get_user(user_id))
@@ -176,6 +172,8 @@ class Identity(kvs.Base, identity.Driver):
                 raise exception.Conflict(type='user', details=msg)
         # get the old name and delete it too
         old_user = self.db.get('user-%s' % user_id)
+        if old_user is None:
+            raise exception.UserNotFound(user_id=user_id)
         new_user = old_user.copy()
         user = _ensure_hashed_password(user)
         new_user.update(user)
@@ -187,12 +185,13 @@ class Identity(kvs.Base, identity.Driver):
 
     def delete_user(self, user_id):
         old_user = self.db.get('user-%s' % user_id)
+        if old_user is None:
+            raise exception.UserNotFound(user_id=user_id)
         self.db.delete('user_name-%s' % old_user['name'])
         self.db.delete('user-%s' % user_id)
         user_list = set(self.db.get('user_list', []))
         user_list.remove(user_id)
         self.db.set('user_list', list(user_list))
-        return None
 
     def create_tenant(self, tenant_id, tenant):
         if self.get_tenant(tenant_id):
@@ -213,6 +212,8 @@ class Identity(kvs.Base, identity.Driver):
                 raise exception.Conflict(type='tenant', details=msg)
         # get the old name and delete it too
         old_tenant = self.db.get('tenant-%s' % tenant_id)
+        if old_tenant is None:
+            raise exception.TenantNotFound(tenant_id=tenant_id)
         new_tenant = old_tenant.copy()
         new_tenant.update(tenant)
         new_tenant['id'] = tenant_id
@@ -223,9 +224,10 @@ class Identity(kvs.Base, identity.Driver):
 
     def delete_tenant(self, tenant_id):
         old_tenant = self.db.get('tenant-%s' % tenant_id)
+        if old_tenant is None:
+            raise exception.TenantNotFound(tenant_id=tenant_id)
         self.db.delete('tenant_name-%s' % old_tenant['name'])
         self.db.delete('tenant-%s' % tenant_id)
-        return None
 
     def create_metadata(self, user_id, tenant_id, metadata):
         self.db.set('metadata-%s-%s' % (tenant_id, user_id), metadata)
@@ -237,15 +239,12 @@ class Identity(kvs.Base, identity.Driver):
 
     def delete_metadata(self, user_id, tenant_id):
         self.db.delete('metadata-%s-%s' % (tenant_id, user_id))
-        return None
 
     def create_role(self, role_id, role):
-        role_ref = self.get_role(role_id)
-        if role_ref:
+        if self.get_role(role_id):
             msg = 'Duplicate ID, %s.' % role_id
             raise exception.Conflict(type='role', details=msg)
-        role_refs = self.list_roles()
-        for role_ref in role_refs:
+        for role_ref in self.list_roles():
             if role['name'] == role_ref['name']:
                 msg = 'Duplicate name, %s.' % role['name']
                 raise exception.Conflict(type='role', details=msg)
@@ -256,24 +255,24 @@ class Identity(kvs.Base, identity.Driver):
         return role
 
     def update_role(self, role_id, role):
-        role_refs = self.list_roles()
         old_role_ref = None
-        for role_ref in role_refs:
+        for role_ref in self.list_roles():
             if role['name'] == role_ref['name'] and role_id != role_ref['id']:
                 msg = 'Duplicate name, %s.' % role['name']
                 raise exception.Conflict(type='role', details=msg)
             if role_id == role_ref['id']:
                 old_role_ref = role_ref
-        if old_role_ref:
-            role['id'] = role_id
-            self.db.set('role-%s' % role_id, role)
-        else:
+        if old_role_ref is None:
             raise exception.RoleNotFound(role_id=role_id)
+        new_role = old_role_ref.copy()
+        new_role.update(role)
+        new_role['id'] = role_id
+        self.db.set('role-%s' % role_id, new_role)
         return role
 
     def delete_role(self, role_id):
-        self.db.delete('role-%s' % role_id)
+        if not self.db.delete('role-%s' % role_id):
+            raise exception.RoleNotFound(role_id=role_id)
         role_list = set(self.db.get('role_list', []))
         role_list.remove(role_id)
         self.db.set('role_list', list(role_list))
-        return None

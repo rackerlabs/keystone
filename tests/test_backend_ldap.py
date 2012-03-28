@@ -14,9 +14,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import nose.exc
+import uuid
 
 from keystone import config
+from keystone import exception
 from keystone import test
 from keystone.common.ldap import fakeldap
 from keystone.identity.backends import ldap as identity_ldap
@@ -45,3 +46,8 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
 
     def tearDown(self):
         test.TestCase.tearDown(self)
+
+    def test_delete_tenant_404(self):
+        self.assertRaises(exception.NotImplemented,
+                          self.identity_api.delete_tenant,
+                          uuid.uuid4().hex)

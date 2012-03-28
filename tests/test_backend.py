@@ -293,7 +293,6 @@ class IdentityTests(object):
         self.assertDictEquals(role_ref, new_role)
         self.identity_api.delete_role(role_id)
         role_ref = self.identity_api.get_role(role_id)
-        print role_ref
         self.assertIsNone(role_ref)
 
     def test_add_user_to_tenant(self):
@@ -301,6 +300,16 @@ class IdentityTests(object):
         self.identity_api.add_user_to_tenant(tenant_id, 'foo')
         tenants = self.identity_api.get_tenants_for_user('foo')
         self.assertIn(tenant_id, tenants)
+
+    def test_delete_tenant_404(self):
+        self.assertRaises(exception.TenantNotFound,
+                          self.identity_api.delete_tenant,
+                          uuid.uuid4().hex)
+
+    def test_delete_role_404(self):
+        self.assertRaises(exception.RoleNotFound,
+                          self.identity_api.delete_role,
+                          uuid.uuid4().hex)
 
 
 class TokenTests(object):
@@ -342,7 +351,6 @@ class TokenTests(object):
 
 
 class CatalogTests(object):
-
     def test_service_crud(self):
         new_service = {'id': 'MY_SERVICE', 'type': 'myservice',
             'name': 'My Service', 'description': 'My description'}

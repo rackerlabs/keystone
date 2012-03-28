@@ -165,11 +165,10 @@ class Driver(object):
     def update_tenant(self, tenant_id, tenant):
         raise exception.NotImplemented()
 
-    def delete_tenant(self, tenant_id, tenant):
+    def delete_tenant(self, tenant_id):
         raise exception.NotImplemented()
 
     # metadata crud
-
     def get_metadata(self, user_id, tenant_id):
         raise exception.NotImplemented()
 
@@ -179,7 +178,7 @@ class Driver(object):
     def update_metadata(self, user_id, tenant_id, metadata):
         raise exception.NotImplemented()
 
-    def delete_metadata(self, user_id, tenant_id, metadata):
+    def delete_metadata(self, user_id, tenant_id):
         raise exception.NotImplemented()
 
     # role crud
@@ -293,29 +292,19 @@ class TenantController(wsgi.Application):
     def create_tenant(self, context, tenant):
         tenant_ref = self._normalize_dict(tenant)
         self.assert_admin(context)
-        tenant_id = (tenant_ref.get('id')
-                     and tenant_ref.get('id')
-                     or uuid.uuid4().hex)
-        tenant_ref['id'] = tenant_id
-
+        tenant_ref['id'] = tenant_ref.get('id', uuid.uuid4().hex)
         tenant = self.identity_api.create_tenant(
-                context, tenant_id, tenant_ref)
+                context, tenant_ref['id'], tenant_ref)
         return {'tenant': tenant}
 
     def update_tenant(self, context, tenant_id, tenant):
         self.assert_admin(context)
-        if self.identity_api.get_tenant(context, tenant_id) is None:
-            raise exception.TenantNotFound(tenant_id=tenant_id)
-
         tenant_ref = self.identity_api.update_tenant(
                 context, tenant_id, tenant)
         return {'tenant': tenant_ref}
 
-    def delete_tenant(self, context, tenant_id, **kw):
+    def delete_tenant(self, context, tenant_id):
         self.assert_admin(context)
-        if self.identity_api.get_tenant(context, tenant_id) is None:
-            raise exception.TenantNotFound(tenant_id=tenant_id)
-
         self.identity_api.delete_tenant(context, tenant_id)
 
     def get_tenant_users(self, context, tenant_id, **kw):
@@ -401,17 +390,11 @@ class UserController(wsgi.Application):
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
         self.assert_admin(context)
-        if self.identity_api.get_user(context, user_id) is None:
-            raise exception.UserNotFound(user_id=user_id)
-
         user_ref = self.identity_api.update_user(context, user_id, user)
         return {'user': user_ref}
 
     def delete_user(self, context, user_id):
         self.assert_admin(context)
-        if self.identity_api.get_user(context, user_id) is None:
-            raise exception.UserNotFound(user_id=user_id)
-
         self.identity_api.delete_user(context, user_id)
 
     def set_user_enabled(self, context, user_id, user):
@@ -477,7 +460,6 @@ class RoleController(wsgi.Application):
 
     def delete_role(self, context, role_id):
         self.assert_admin(context)
-        self.get_role(context, role_id)
         self.identity_api.delete_role(context, role_id)
 
     def get_roles(self, context):

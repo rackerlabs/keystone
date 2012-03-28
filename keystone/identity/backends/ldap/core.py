@@ -185,7 +185,10 @@ class Identity(identity.Driver):
         return self.role.create(role)
 
     def delete_role(self, role_id):
-        return self.role.delete(role_id)
+        try:
+            return self.role.delete(role_id)
+        except ldap.NO_SUCH_OBJECT:
+            raise exception.RoleNotFound(role_id=role_id)
 
 
 # TODO(termie): remove this and move cross-api calls into driver

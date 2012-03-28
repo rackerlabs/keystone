@@ -40,7 +40,5 @@ class Token(kvs.Base, token.Driver):
         return copy.deepcopy(data_copy)
 
     def delete_token(self, token_id):
-        try:
-            return self.db.delete('token-%s' % token_id)
-        except KeyError:
+        if not self.db.delete('token-%s' % token_id):
             raise exception.TokenNotFound(token_id=token_id)
