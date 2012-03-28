@@ -14,7 +14,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import uuid
+
 from keystone import config
+from keystone import exception
 from keystone import test
 from keystone.common.sql import util as sql_util
 from keystone.identity.backends import sql as identity_sql
@@ -36,17 +39,6 @@ class SqlIdentity(test.TestCase, test_backend.IdentityTests):
         sql_util.setup_test_database()
         self.identity_api = identity_sql.Identity()
         self.load_fixtures(default_fixtures)
-
-    def test_delete_user_with_tenant_association(self):
-        user = {'id': 'fake',
-                'name': 'fakeuser',
-                'password': 'passwd'}
-        self.identity_api.create_user('fake', user)
-        self.identity_api.add_user_to_tenant(self.tenant_bar['id'],
-                                             user['id'])
-        self.identity_api.delete_user(user['id'])
-        tenants = self.identity_api.get_tenants_for_user(user['id'])
-        self.assertEquals(tenants, [])
 
 
 class SqlToken(test.TestCase, test_backend.TokenTests):

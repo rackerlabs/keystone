@@ -124,6 +124,9 @@ class Driver(object):
     def get_all_tenants(self):
         raise exception.NotImplemented()
 
+    def get_tenant_users(self, tenant_id):
+        raise exception.NotImplemented()
+
     def get_tenants_for_user(self, user_id):
         """Get the tenants associated with a given user.
 
@@ -165,11 +168,10 @@ class Driver(object):
     def update_tenant(self, tenant_id, tenant):
         raise exception.NotImplemented()
 
-    def delete_tenant(self, tenant_id, tenant):
+    def delete_tenant(self, tenant_id):
         raise exception.NotImplemented()
 
     # metadata crud
-
     def get_metadata(self, user_id, tenant_id):
         raise exception.NotImplemented()
 
@@ -179,7 +181,7 @@ class Driver(object):
     def update_metadata(self, user_id, tenant_id, metadata):
         raise exception.NotImplemented()
 
-    def delete_metadata(self, user_id, tenant_id, metadata):
+    def delete_metadata(self, user_id, tenant_id):
         raise exception.NotImplemented()
 
     # role crud
@@ -283,46 +285,29 @@ class TenantController(wsgi.Application):
     def get_tenant(self, context, tenant_id):
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
-        tenant = self.identity_api.get_tenant(context, tenant_id)
-        if tenant is None:
-            raise exception.TenantNotFound(tenant_id=tenant_id)
-
-        return {'tenant': tenant}
+        return {'tenant': self.identity_api.get_tenant(context, tenant_id)}
 
     # CRUD Extension
     def create_tenant(self, context, tenant):
         tenant_ref = self._normalize_dict(tenant)
         self.assert_admin(context)
-        tenant_id = (tenant_ref.get('id')
-                     and tenant_ref.get('id')
-                     or uuid.uuid4().hex)
-        tenant_ref['id'] = tenant_id
-
+        tenant_ref['id'] = tenant_ref.get('id', uuid.uuid4().hex)
         tenant = self.identity_api.create_tenant(
-                context, tenant_id, tenant_ref)
+                context, tenant_ref['id'], tenant_ref)
         return {'tenant': tenant}
 
     def update_tenant(self, context, tenant_id, tenant):
         self.assert_admin(context)
-        if self.identity_api.get_tenant(context, tenant_id) is None:
-            raise exception.TenantNotFound(tenant_id=tenant_id)
-
         tenant_ref = self.identity_api.update_tenant(
                 context, tenant_id, tenant)
         return {'tenant': tenant_ref}
 
-    def delete_tenant(self, context, tenant_id, **kw):
+    def delete_tenant(self, context, tenant_id):
         self.assert_admin(context)
-        if self.identity_api.get_tenant(context, tenant_id) is None:
-            raise exception.TenantNotFound(tenant_id=tenant_id)
-
         self.identity_api.delete_tenant(context, tenant_id)
 
     def get_tenant_users(self, context, tenant_id, **kw):
         self.assert_admin(context)
-        if self.identity_api.get_tenant(context, tenant_id) is None:
-            raise exception.TenantNotFound(tenant_id=tenant_id)
-
         user_refs = self.identity_api.get_tenant_users(context, tenant_id)
         return {'users': user_refs}
 
@@ -368,18 +353,13 @@ class UserController(wsgi.Application):
 
     def get_user(self, context, user_id):
         self.assert_admin(context)
-        user_ref = self.identity_api.get_user(context, user_id)
-        if not user_ref:
-            raise exception.UserNotFound(user_id=user_id)
-
-        return {'user': user_ref}
+        return {'user': self.identity_api.get_user(context, user_id)}
 
     def get_users(self, context):
         # NOTE(termie): i can't imagine that this really wants all the data
         #               about every single user in the system...
         self.assert_admin(context)
-        user_refs = self.identity_api.list_users(context)
-        return {'users': user_refs}
+        return {'users': self.identity_api.list_users(context)}
 
     # CRUD extension
     def create_user(self, context, user):
@@ -401,17 +381,11 @@ class UserController(wsgi.Application):
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
         self.assert_admin(context)
-        if self.identity_api.get_user(context, user_id) is None:
-            raise exception.UserNotFound(user_id=user_id)
-
         user_ref = self.identity_api.update_user(context, user_id, user)
         return {'user': user_ref}
 
     def delete_user(self, context, user_id):
         self.assert_admin(context)
-        if self.identity_api.get_user(context, user_id) is None:
-            raise exception.UserNotFound(user_id=user_id)
-
         self.identity_api.delete_user(context, user_id)
 
     def set_user_enabled(self, context, user_id, user):
@@ -447,13 +421,6 @@ class RoleController(wsgi.Application):
             raise exception.NotImplemented(message='User roles not supported: '
                                                    'tenant ID required')
 
-        user = self.identity_api.get_user(context, user_id)
-        if user is None:
-            raise exception.UserNotFound(user_id=user_id)
-        tenant = self.identity_api.get_tenant(context, tenant_id)
-        if tenant is None:
-            raise exception.TenantNotFound(tenant_id=tenant_id)
-
         roles = self.identity_api.get_roles_for_user_and_tenant(
                 context, user_id, tenant_id)
         return {'roles': [self.identity_api.get_role(context, x)
@@ -462,10 +429,7 @@ class RoleController(wsgi.Application):
     # CRUD extension
     def get_role(self, context, role_id):
         self.assert_admin(context)
-        role_ref = self.identity_api.get_role(context, role_id)
-        if not role_ref:
-            raise exception.RoleNotFound(role_id=role_id)
-        return {'role': role_ref}
+        return {'role': self.identity_api.get_role(context, role_id)}
 
     def create_role(self, context, role):
         role = self._normalize_dict(role)
@@ -477,14 +441,11 @@ class RoleController(wsgi.Application):
 
     def delete_role(self, context, role_id):
         self.assert_admin(context)
-        self.get_role(context, role_id)
         self.identity_api.delete_role(context, role_id)
 
     def get_roles(self, context):
         self.assert_admin(context)
-        roles = self.identity_api.list_roles(context)
-        # TODO(termie): probably inefficient at some point
-        return {'roles': roles}
+        return {'roles': self.identity_api.list_roles(context)}
 
     def add_role_to_user(self, context, user_id, role_id, tenant_id=None):
         """Add a role to a user and tenant pair.
@@ -497,12 +458,6 @@ class RoleController(wsgi.Application):
         if tenant_id is None:
             raise exception.NotImplemented(message='User roles not supported: '
                                                    'tenant_id required')
-        if self.identity_api.get_user(context, user_id) is None:
-            raise exception.UserNotFound(user_id=user_id)
-        if self.identity_api.get_tenant(context, tenant_id) is None:
-            raise exception.TenantNotFound(tenant_id=tenant_id)
-        if self.identity_api.get_role(context, role_id) is None:
-            raise exception.RoleNotFound(role_id=role_id)
 
         # This still has the weird legacy semantics that adding a role to
         # a user also adds them to a tenant
@@ -523,12 +478,6 @@ class RoleController(wsgi.Application):
         if tenant_id is None:
             raise exception.NotImplemented(message='User roles not supported: '
                                                    'tenant_id required')
-        if self.identity_api.get_user(context, user_id) is None:
-            raise exception.UserNotFound(user_id=user_id)
-        if self.identity_api.get_tenant(context, tenant_id) is None:
-            raise exception.TenantNotFound(tenant_id=tenant_id)
-        if self.identity_api.get_role(context, role_id) is None:
-            raise exception.RoleNotFound(role_id=role_id)
 
         # This still has the weird legacy semantics that adding a role to
         # a user also adds them to a tenant, so we must follow up on that

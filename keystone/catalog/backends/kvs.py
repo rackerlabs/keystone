@@ -23,13 +23,17 @@ from keystone.common import kvs
 class Catalog(kvs.Base, catalog.Driver):
     # Public interface
     def get_catalog(self, user_id, tenant_id, metadata=None):
-        return self.db.get('catalog-%s-%s' % (tenant_id, user_id))
+        try:
+            return self.db.get('catalog-%s-%s' % (tenant_id, user_id))
+        except exception.NotFound:
+            # FIXME(dolph): this could be more specific?
+            raise exception.NotFound('Catalog not found for user and tenant')
 
     def get_service(self, service_id):
-        res = self.db.get('service-%s' % service_id)
-        if not res:
+        try:
+            return self.db.get('service-%s' % service_id)
+        except exception.NotFound:
             raise exception.ServiceNotFound(service_id=service_id)
-        return res
 
     def list_services(self):
         return self.db.get('service_list', [])
@@ -46,14 +50,13 @@ class Catalog(kvs.Base, catalog.Driver):
         return service
 
     def delete_service(self, service_id):
-        if not self.db.get('service-%s' % service_id):
+        try:
+            self.db.delete('service-%s' % service_id)
+        except exception.NotFound:
             raise exception.ServiceNotFound(service_id=service_id)
-
-        self.db.delete('service-%s' % service_id)
         service_list = set(self.db.get('service_list', []))
         service_list.remove(service_id)
         self.db.set('service_list', list(service_list))
-        return None
 
     # Private interface
     def _create_catalog(self, user_id, tenant_id, data):
