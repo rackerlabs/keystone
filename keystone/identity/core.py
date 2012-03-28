@@ -304,9 +304,6 @@ class TenantController(wsgi.Application):
 
     def update_tenant(self, context, tenant_id, tenant):
         self.assert_admin(context)
-        if self.identity_api.get_tenant(context, tenant_id) is None:
-            raise exception.TenantNotFound(tenant_id=tenant_id)
-
         tenant_ref = self.identity_api.update_tenant(
                 context, tenant_id, tenant)
         return {'tenant': tenant_ref}
@@ -398,9 +395,6 @@ class UserController(wsgi.Application):
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
         self.assert_admin(context)
-        if self.identity_api.get_user(context, user_id) is None:
-            raise exception.UserNotFound(user_id=user_id)
-
         user_ref = self.identity_api.update_user(context, user_id, user)
         return {'user': user_ref}
 

@@ -176,6 +176,8 @@ class Identity(kvs.Base, identity.Driver):
                 raise exception.Conflict(type='user', details=msg)
         # get the old name and delete it too
         old_user = self.db.get('user-%s' % user_id)
+        if old_user is None:
+            raise exception.UserNotFound(user_id=user_id)
         new_user = old_user.copy()
         user = _ensure_hashed_password(user)
         new_user.update(user)
@@ -215,6 +217,8 @@ class Identity(kvs.Base, identity.Driver):
                 raise exception.Conflict(type='tenant', details=msg)
         # get the old name and delete it too
         old_tenant = self.db.get('tenant-%s' % tenant_id)
+        if old_tenant is None:
+            raise exception.TenantNotFound(tenant_id=tenant_id)
         new_tenant = old_tenant.copy()
         new_tenant.update(tenant)
         new_tenant['id'] = tenant_id
@@ -268,11 +272,10 @@ class Identity(kvs.Base, identity.Driver):
                 raise exception.Conflict(type='role', details=msg)
             if role_id == role_ref['id']:
                 old_role_ref = role_ref
-        if old_role_ref:
-            role['id'] = role_id
-            self.db.set('role-%s' % role_id, role)
-        else:
+        if old_role_ref is None:
             raise exception.RoleNotFound(role_id=role_id)
+        role['id'] = role_id
+        self.db.set('role-%s' % role_id, role)
         return role
 
     def delete_role(self, role_id):

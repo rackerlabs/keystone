@@ -313,6 +313,8 @@ class Identity(sql.Base, identity.Driver):
         session = self.get_session()
         with session.begin():
             user_ref = session.query(User).filter_by(id=user_id).first()
+            if user_ref is None:
+                raise exception.UserNotFound(user_id=user_id)
             old_user_dict = user_ref.to_dict()
             user = _ensure_hashed_password(user)
             for k in user:
@@ -345,6 +347,8 @@ class Identity(sql.Base, identity.Driver):
         session = self.get_session()
         with session.begin():
             tenant_ref = session.query(Tenant).filter_by(id=tenant_id).first()
+            if tenant_ref is None:
+                raise exception.TenantNotFound(tenant_id=tenant_id)
             old_tenant_dict = tenant_ref.to_dict()
             for k in tenant:
                 old_tenant_dict[k] = tenant[k]
@@ -404,6 +408,8 @@ class Identity(sql.Base, identity.Driver):
         session = self.get_session()
         with session.begin():
             role_ref = session.query(Role).filter_by(id=role_id).first()
+            if role_ref is None:
+                raise exception.RoleNotFound(role_id=role_id)
             for k in role:
                 role_ref[k] = role[k]
             session.flush()
