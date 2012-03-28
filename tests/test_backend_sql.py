@@ -19,6 +19,7 @@ from keystone import test
 from keystone.common.sql import util as sql_util
 from keystone.identity.backends import sql as identity_sql
 from keystone.token.backends import sql as token_sql
+from keystone.catalog.backends import sql as catalog_sql
 
 import test_backend
 import default_fixtures
@@ -48,25 +49,29 @@ class SqlToken(test.TestCase, test_backend.TokenTests):
         self.token_api = token_sql.Token()
 
 
-#class SqlCatalog(test_backend_kvs.KvsCatalog):
-#  def setUp(self):
-#    super(SqlCatalog, self).setUp()
-#    self.catalog_api = sql.SqlCatalog()
-#    self._load_fixtures()
+class SqlCatalog(test.TestCase, test_backend.CatalogTests):
+    def setUp(self):
+        super(SqlCatalog, self).setUp()
+        CONF(config_files=[test.etcdir('keystone.conf'),
+                           test.testsdir('test_overrides.conf'),
+                           test.testsdir('backend_sql.conf')])
+        d = dict(CONF.iteritems())
+        self.compute_port = d['compute_port']
+        sql_util.setup_test_database()
+        self.catalog_api = catalog_sql.Catalog()
+        self.load_fixtures(default_fixtures)
+        self.load_endpoints_fixtures(default_fixtures)
 
-#  def _load_fixtures(self):
-#    self.catalog_foobar = self.catalog_api._create_catalog(
-#        'foo', 'bar',
-#        {'RegionFoo': {'service_bar': {'foo': 'bar'}}})
+    def load_endpoints_fixtures(self, fixtures):
+        for endpoint in fixtures.ENDPOINTS:
+            rv = self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+            setattr(self, 'endpoint_%s' % endpoint['id'], rv)
 
-#  def test_get_catalog_bad_user(self):
-#    catalog_ref = self.catalog_api.get_catalog('foo' + 'WRONG', 'bar')
-#    self.assert_(catalog_ref is None)
-
-#  def test_get_catalog_bad_tenant(self):
-#    catalog_ref = self.catalog_api.get_catalog('foo', 'bar' + 'WRONG')
-#    self.assert_(catalog_ref is None)
-
-#  def test_get_catalog(self):
-#    catalog_ref = self.catalog_api.get_catalog('foo', 'bar')
-#    self.assertDictEquals(catalog_ref, self.catalog_foobar)
+    def test_get_catalog(self):
+        catalog_ref = self.catalog_api.get_catalog('foo', 'bar')
+        url = catalog_ref['RegionOne']['compute']['publicURL']
+        self.assertEqual(url, 'http://localhost:8774/v1.1/bar')
+        url = catalog_ref['RegionOne']['image']['publicURL']
+        self.assertEqual(url, 'http://localhost:9292/v1')
+        url = catalog_ref['RegionOne']['identity']['publicURL']
+        self.assertEqual(url, 'http://localhost:5000/v2.0')
