@@ -23,7 +23,12 @@ class DictKvs(dict):
             self[key] = value[:]
 
     def delete(self, key):
-        del self[key]
+        """Deletes an item, returning True on success, False otherwise."""
+        try:
+            del self[key]
+            return True
+        except KeyError:
+            return False
 
 
 INMEMDB = DictKvs()

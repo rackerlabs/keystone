@@ -46,10 +46,8 @@ class Catalog(kvs.Base, catalog.Driver):
         return service
 
     def delete_service(self, service_id):
-        if not self.db.get('service-%s' % service_id):
+        if not self.db.delete('service-%s' % service_id):
             raise exception.ServiceNotFound(service_id=service_id)
-
-        self.db.delete('service-%s' % service_id)
         service_list = set(self.db.get('service_list', []))
         service_list.remove(service_id)
         self.db.set('service_list', list(service_list))
