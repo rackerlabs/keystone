@@ -313,9 +313,6 @@ class TenantController(wsgi.Application):
 
     def delete_tenant(self, context, tenant_id, **kw):
         self.assert_admin(context)
-        if self.identity_api.get_tenant(context, tenant_id) is None:
-            raise exception.TenantNotFound(tenant_id=tenant_id)
-
         self.identity_api.delete_tenant(context, tenant_id)
 
     def get_tenant_users(self, context, tenant_id, **kw):
@@ -409,9 +406,6 @@ class UserController(wsgi.Application):
 
     def delete_user(self, context, user_id):
         self.assert_admin(context)
-        if self.identity_api.get_user(context, user_id) is None:
-            raise exception.UserNotFound(user_id=user_id)
-
         self.identity_api.delete_user(context, user_id)
 
     def set_user_enabled(self, context, user_id, user):
@@ -477,7 +471,6 @@ class RoleController(wsgi.Application):
 
     def delete_role(self, context, role_id):
         self.assert_admin(context)
-        self.get_role(context, role_id)
         self.identity_api.delete_role(context, role_id)
 
     def get_roles(self, context):
