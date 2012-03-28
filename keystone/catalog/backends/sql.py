@@ -15,9 +15,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import sqlalchemy.exc
-import webob.exc
-
 from keystone import catalog
 from keystone import config
 from keystone import exception
@@ -96,11 +93,9 @@ class Catalog(sql.Base, catalog.Driver):
 
     def delete_service(self, service_id):
         session = self.get_session()
-        service_ref = session.query(Service).filter_by(id=service_id).first()
-        if not service_ref:
-            raise exception.ServiceNotFound(service_id=service_id)
         with session.begin():
-            session.delete(service_ref)
+            if not session.query(Service).filter_by(id=service_id).delete():
+                raise exception.ServiceNotFound(service_id=service_id)
             session.flush()
 
     def create_service(self, service_id, service_ref):

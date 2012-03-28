@@ -326,9 +326,9 @@ class Identity(sql.Base, identity.Driver):
 
     def delete_user(self, user_id):
         session = self.get_session()
-        user_ref = session.query(User).filter_by(id=user_id).first()
         with session.begin():
-            session.delete(user_ref)
+            if not session.query(User).filter_by(id=user_id).delete():
+                raise exception.UserNotFound(user_id=user_id)
             session.flush()
 
     @handle_conflicts(type='tenant')
@@ -357,9 +357,9 @@ class Identity(sql.Base, identity.Driver):
 
     def delete_tenant(self, tenant_id):
         session = self.get_session()
-        tenant_ref = session.query(Tenant).filter_by(id=tenant_id).first()
         with session.begin():
-            session.delete(tenant_ref)
+            if not session.query(Tenant).filter_by(id=tenant_id).delete():
+                raise exception.TenantNotFound(tenant_id=tenant_id)
             session.flush()
 
     @handle_conflicts(type='metadata')
@@ -411,6 +411,7 @@ class Identity(sql.Base, identity.Driver):
 
     def delete_role(self, role_id):
         session = self.get_session()
-        role_ref = session.query(Role).filter_by(id=role_id).first()
         with session.begin():
-            session.delete(role_ref)
+            if not session.query(Role).filter_by(id=role_id).delete():
+                raise exception.RoleNotFound(role_id=role_id)
+            session.flush()
