@@ -475,7 +475,11 @@ def render_response(body=None, status=(200, 'OK'), headers=None):
     resp = webob.Response()
     resp.status = '%s %s' % status
     resp.headerlist = headers or [('Content-Type', 'application/json'),
-                                  ('Vary', 'X-Auth-Token')]
+                                  ('Vary', 'X-Auth-Token'),
+                                  # Cross-Origin Resource Sharing (CORS)
+                                  # support.
+                                  # c.f. http://www.w3.org/TR/cors/
+                                  ('Access-Control-Allow-Origin', '*')]
 
     if body is not None:
         resp.body = json.dumps(body, cls=utils.SmarterEncoder)

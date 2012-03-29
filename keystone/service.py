@@ -90,6 +90,10 @@ class PublicRouter(wsgi.ComposingRouter):
                        controller=auth_controller,
                        action='authenticate',
                        conditions=dict(method=['POST']))
+        mapper.connect('/tokens',
+                       controller=auth_controller,
+                       action='get_options',
+                       conditions=dict(method=['OPTIONS']))
 
         # Miscellaneous
         extensions_controller = PublicExtensionsController()
@@ -495,6 +499,19 @@ class TokenController(wsgi.Application):
                 services[service] = new_service_ref
 
         return services.values()
+
+    def get_options(self, context):
+        """Return supprted methods"""
+        # Cross-Origin Resource Sharing (CORS) support.
+        # c.f. http://www.w3.org/TR/cors/
+        headers = [('Vary', 'X-Auth-Token'),
+                   ('Access-Control-Allow-Origin', '*'),
+                   ('Access-Control-Allow-Headers',
+                    'Origin, HTTP_X_AUTH_TOKEN, Content-Type, Accept'),
+                   ('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'),
+                   ('Allow', 'GET, POST, OPTIONS')]
+        print "get_options"
+        return wsgi.render_response(headers=headers)
 
 
 class ExtensionsController(wsgi.Application):

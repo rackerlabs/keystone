@@ -143,6 +143,7 @@ class RestfulTestCase(test.TestCase):
     def assertValidResponseHeaders(self, response):
         """Ensures that response headers appear as expected."""
         self.assertIn('X-Auth-Token', response.getheader('Vary'))
+        self.assertIn('*', response.getheader('Access-Control-Allow-Origin'))
 
     def _to_content_type(self, body, headers, content_type=None):
         """Attempt to encode JSON and XML automatically."""
@@ -301,6 +302,14 @@ class CoreApiTests(object):
         self.assertIsNotNone(tenant.get('id'))
         self.assertIsNotNone(tenant.get('name'))
 
+    def assertValidOptions(self, response):
+        """Applicable to XML and JSON."""
+        self.assertIn('Origin, HTTP_X_AUTH_TOKEN, Content-Type, Accept',
+                      response.getheader('Access-Control-Allow-Headers'))
+        self.assertIn('GET, POST, OPTIONS',
+                      response.getheader('Access-Control-Allow-Methods'))
+        self.assertIn('GET, POST, OPTIONS', response.getheader('Allow'))
+
     def test_public_multiple_choice(self):
         r = self.public_request(path='/', expected_status=300)
         self.assertValidMultipleChoiceResponse(r)
@@ -437,6 +446,10 @@ class CoreApiTests(object):
     def test_error_response(self):
         """This triggers assertValidErrorResponse by convention."""
         self.public_request(path='/v2.0/tenants', expected_status=401)
+
+    def test_get_options(self):
+        r = self.public_request(method='OPTIONS', path='/v2.0/tokens')
+        self.assertValidOptions(r)
 
 
 class JsonTestCase(RestfulTestCase, CoreApiTests):
