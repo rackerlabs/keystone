@@ -16,10 +16,10 @@ if os.path.exists(os.path.join(possible_topdir,
                                '__init__.py')):
     sys.path.insert(0, possible_topdir)
 
-from paste import deploy
-
 from keystone import config
 from keystone.common import wsgi
+
+from paste import deploy
 
 
 CONF = config.CONF
