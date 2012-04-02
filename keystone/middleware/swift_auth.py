@@ -125,7 +125,10 @@ class SwiftAuth(object):
         return identity
 
     def _get_account_for_tenant(self, tenant_id):
-        return '%s%s' % (self.reseller_prefix, tenant_id)
+        if self.reseller_prefix.endswith("_"):
+            return '%s%s' % (self.reseller_prefix, tenant_id)
+        else:
+            return '%s_%s' % (self.reseller_prefix, tenant_id)
 
     def _reseller_check(self, account, tenant_id):
         """Check reseller prefix."""
