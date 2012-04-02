@@ -409,8 +409,14 @@ class UserController(wsgi.Application):
 
     def delete_user(self, context, user_id):
         self.assert_admin(context)
-        if self.identity_api.get_user(context, user_id) is None:
+        user = self.identity_api.get_user(context, user_id)
+        if user is None:
             raise exception.UserNotFound(user_id=user_id)
+
+        tenant_ids = self.identity_api.get_tenants_for_user(context,
+                                                            user['id'])
+        for t in tenant_ids:
+            self.identity_api.remove_user_from_tenant(context, t, user['id'])
 
         self.identity_api.delete_user(context, user_id)
 
