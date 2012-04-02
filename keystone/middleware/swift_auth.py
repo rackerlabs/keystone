@@ -82,6 +82,8 @@ class SwiftAuth(object):
         self.conf = conf
         self.logger = swift_utils.get_logger(conf, log_route='keystoneauth')
         self.reseller_prefix = conf.get('reseller_prefix', 'AUTH').strip()
+        if self.reseller_prefix and self.reseller_prefix[-1] != '_':
+            self.reseller_prefix += '_'
         self.operator_roles = conf.get('operator_roles',
                                        'admin, swiftoperator')
         self.reseller_admin_role = conf.get('reseller_admin_role',
