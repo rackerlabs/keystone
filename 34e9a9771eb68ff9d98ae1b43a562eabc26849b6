@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//8tE\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-02T21:12:12Z",
+      "side": 1,
+      "message": "i don\u0027t know that this should be a fatal error, possibly just a warning, if we had some sensible defaults shouldn\u0027t existing without a config file be fine?",
+      "revId": "34e9a9771eb68ff9d98ae1b43a562eabc26849b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
