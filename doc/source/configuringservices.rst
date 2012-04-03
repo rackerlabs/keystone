@@ -246,7 +246,7 @@ S3 api.
    (`/etc/swift/swift-proxy.conf` to use S3token and Swift3
    middleware.
 
-   Here's an example::
+   Here's an example that will by default communicate with keystone via https ::
 
     [DEFAULT]
     bind_port = 8080
@@ -277,15 +277,17 @@ S3 api.
 
     [filter:s3token]
     paste.filter_factory = keystone.middleware.s3_token:filter_factory
+    # Set auth_protocol = http if you don't use SSL.
+    # auth_protocol = http
     auth_port = 35357
     auth_host = 127.0.0.1
-    auth_protocol = http
 
     [filter:authtoken]
     paste.filter_factory = keystone.middleware.auth_token:filter_factory
+    # Set auth_protocol = http if you don't use SSL.
+    # auth_protocol = http
     auth_port = 35357
     auth_host = 127.0.0.1
-    auth_protocol = http
     auth_token = ADMIN
     admin_token = ADMIN
 
