@@ -13,6 +13,8 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+
+from keystone import exception
 from keystone import test
 from keystone.identity.backends import kvs as identity_kvs
 from keystone.token.backends import kvs as token_kvs
@@ -27,6 +29,65 @@ class KvsIdentity(test.TestCase, test_backend.IdentityTests):
         super(KvsIdentity, self).setUp()
         self.identity_api = identity_kvs.Identity(db={})
         self.load_fixtures(default_fixtures)
+
+    def test_create_tenant_long_name_fails(self):
+        tenant = {'id': 'fake1', 'name': 'a' * 65}
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_tenant,
+                          'fake1',
+                          tenant)
+
+    def test_create_tenant_blank_name_fails(self):
+        tenant = {'id': 'fake1', 'name': ''}
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_tenant,
+                          'fake1',
+                          tenant)
+
+    def test_create_tenant_invalid_name_fails(self):
+        tenant = {'id': 'fake1', 'name': None}
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_tenant,
+                          'fake1',
+                          tenant)
+        tenant = {'id': 'fake1', 'name': 123}
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_tenant,
+                          'fake1',
+                          tenant)
+
+    def test_update_tenant_blank_name_fails(self):
+        tenant = {'id': 'fake1', 'name': 'fake1'}
+        self.identity_api.create_tenant('fake1', tenant)
+        tenant['name'] = ''
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_tenant,
+                          'fake1',
+                          tenant)
+
+    def test_update_tenant_long_name_fails(self):
+        tenant = {'id': 'fake1', 'name': 'fake1'}
+        self.identity_api.create_tenant('fake1', tenant)
+        tenant['name'] = 'a' * 65
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_tenant,
+                          'fake1',
+                          tenant)
+
+    def test_update_tenant_invalid_name_fails(self):
+        tenant = {'id': 'fake1', 'name': 'fake1'}
+        self.identity_api.create_tenant('fake1', tenant)
+        tenant['name'] = None
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_tenant,
+                          'fake1',
+                          tenant)
+
+        tenant['name'] = 123
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_tenant,
+                          'fake1',
+                          tenant)
 
 
 class KvsToken(test.TestCase, test_backend.TokenTests):
