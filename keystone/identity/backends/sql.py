@@ -122,10 +122,10 @@ class UserTenantMembership(sql.ModelBase, sql.DictBase):
     """Tenant membership join table."""
     __tablename__ = 'user_tenant_membership'
     user_id = sql.Column(sql.String(64),
-                         sql.ForeignKey('user.id'),
+                         sql.ForeignKey('user.id', onupdate="CASCADE", ondelete="CASCADE"),
                          primary_key=True)
     tenant_id = sql.Column(sql.String(64),
-                           sql.ForeignKey('tenant.id'),
+                           sql.ForeignKey('tenant.id', onupdate="CASCADE", ondelete="CASCADE"),
                            primary_key=True)
 
 
