@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//8P4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-03T20:53:18Z",
+      "side": 1,
+      "message": "while this is a generally okay check, the approach i\u0027d prefer to use for validations of this nature are more as follows:\n\ncreate a module, keystone/clean.py\n\nin clean you\u0027ll have some basic checks like this one, which could be done as something like\n\ndef require_length(...) \n\nor could be represented as a regex (use a \\w{min,max} style thing)\n\nThen, within that same file add specific ones like \n\ndef user_name(...):\n  do all the checks for a user name\n\ndef tenant_name(...):\n  do all the checks for a tenant name\n\nand upon entering a tenant_create one would say\n\ntenant_name \u003d clean.tenant_name(tenant[\u0027name\u0027])\n\nthrow an error if it is an unrecoverable problem, otherwise normalize appropriately and return the new value\n\n\nsome examples of this style here: http://code.google.com/p/jaikuengine/source/browse/trunk/common/clean.py",
+      "revId": "bd7ee7eb2a8cf555d0a4ec6fed5f25bde84a8ca9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
