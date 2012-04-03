@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//8Nc\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 748
+      },
+      "writtenOn": "2012-04-03T21:55:05Z",
+      "side": 1,
+      "message": "typo",
+      "revId": "a53b273592624e62caa9e1db1a2457109415cfba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//8NU\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 748
+      },
+      "writtenOn": "2012-04-03T21:55:05Z",
+      "side": 1,
+      "message": "do you need the brackets here?",
+      "revId": "a53b273592624e62caa9e1db1a2457109415cfba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//8NY\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 748
+      },
+      "writtenOn": "2012-04-03T21:55:05Z",
+      "side": 1,
+      "message": "this does not really give any more meaning to what the class\u0027s name already does; I\u0027d save the extra line",
+      "revId": "a53b273592624e62caa9e1db1a2457109415cfba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
