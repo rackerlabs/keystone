@@ -50,6 +50,27 @@ def handle_conflicts(type='object'):
     return decorator
 
 
+def _validate_property(property_name, value, mandatory=False,
+                       max_len=64):
+    """
+    Validate the length of the property value, raise ValidationError 400 if
+    length of value exceeds max_len or value not specified for mandatory.
+    """
+    if mandatory and not value:
+        msg = _("%s cannot be empty.") % property_name
+        raise exception.ValidationError(msg)
+    if value:
+        try:
+            value = value.strip()
+        except AttributeError:
+            msg = _("%s is not a string or unicode") % property_name
+            raise exception.ValidationError(msg)
+        if len(value) > max_len:
+            msg = _("%(property_name)s should not be greater than "\
+                    "%(max_len)s characters.") % locals()
+            raise exception.ValidationError(msg)
+
+
 class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     id = sql.Column(sql.String(64), primary_key=True)
@@ -333,6 +354,8 @@ class Identity(sql.Base, identity.Driver):
 
     @handle_conflicts(type='tenant')
     def create_tenant(self, tenant_id, tenant):
+        _validate_property(_("Tenant name"), tenant['name'], True)
+        tenant['name'] = tenant['name'].strip()
         session = self.get_session()
         with session.begin():
             tenant_ref = Tenant.from_dict(tenant)
@@ -342,6 +365,9 @@ class Identity(sql.Base, identity.Driver):
 
     @handle_conflicts(type='tenant')
     def update_tenant(self, tenant_id, tenant):
+        if 'name' in tenant:
+            _validate_property(_("Tenant name"), tenant['name'], True)
+            tenant['name'] = tenant['name'].strip()
         session = self.get_session()
         with session.begin():
             tenant_ref = session.query(Tenant).filter_by(id=tenant_id).first()
