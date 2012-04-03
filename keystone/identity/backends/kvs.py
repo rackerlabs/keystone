@@ -155,6 +155,7 @@ class Identity(kvs.Base, identity.Driver):
 
     # CRUD
     def create_user(self, user_id, user):
+        user['name'] = clean.user_name(user['name'])
         if self.get_user(user_id):
             msg = 'Duplicate ID, %s.' % user_id
             raise exception.Conflict(type='user', details=msg)
@@ -171,6 +172,7 @@ class Identity(kvs.Base, identity.Driver):
 
     def update_user(self, user_id, user):
         if 'name' in user:
+            user['name'] = clean.user_name(user['name'])
             existing = self.db.get('user_name-%s' % user['name'])
             if existing and user_id != existing['id']:
                 msg = 'Duplicate name, %s.' % user['name']
