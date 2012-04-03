@@ -16,6 +16,24 @@
       "revId": "34e9a9771eb68ff9d98ae1b43a562eabc26849b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//8Y4\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-03T17:22:58Z",
+      "side": 1,
+      "message": "Agree, but until then, we\u0027re throwing a completely useless error message.",
+      "parentUuid": "AAAAFH//8tE\u003d",
+      "revId": "34e9a9771eb68ff9d98ae1b43a562eabc26849b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
