@@ -94,6 +94,65 @@ class SqlIdentity(test.TestCase, test_backend.IdentityTests):
         #                  self.identity_api.get_role,
         #                  role['id'])
 
+    def test_create_tenant_long_name_fails(self):
+        tenant = {'id': 'fake1', 'name': 'a' * 65}
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_tenant,
+                          'fake1',
+                          tenant)
+
+    def test_create_tenant_blank_name_fails(self):
+        tenant = {'id': 'fake1', 'name': ''}
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_tenant,
+                          'fake1',
+                          tenant)
+
+    def test_create_tenant_invalid_name_fails(self):
+        tenant = {'id': 'fake1', 'name': None}
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_tenant,
+                          'fake1',
+                          tenant)
+        tenant = {'id': 'fake1', 'name': 123}
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_tenant,
+                          'fake1',
+                          tenant)
+
+    def test_update_tenant_blank_name_fails(self):
+        tenant = {'id': 'fake1', 'name': 'fake1'}
+        self.identity_api.create_tenant('fake1', tenant)
+        tenant['name'] = ''
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_tenant,
+                          'fake1',
+                          tenant)
+
+    def test_update_tenant_long_name_fails(self):
+        tenant = {'id': 'fake1', 'name': 'fake1'}
+        self.identity_api.create_tenant('fake1', tenant)
+        tenant['name'] = 'a' * 65
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_tenant,
+                          'fake1',
+                          tenant)
+
+    def test_update_tenant_invalid_name_fails(self):
+        tenant = {'id': 'fake1', 'name': 'fake1'}
+        self.identity_api.create_tenant('fake1', tenant)
+        tenant['name'] = None
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_tenant,
+                          'fake1',
+                          tenant)
+
+        tenant['name'] = 123
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_tenant,
+                          'fake1',
+                          tenant)
+
 
 class SqlToken(test.TestCase, test_backend.TokenTests):
     def setUp(self):
