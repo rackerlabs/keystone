@@ -203,7 +203,7 @@ rather than it's built in 'tempauth'.
     paste.filter_factory = keystone.middleware.auth_token:filter_factory
     # Delaying the auth decision is required to support token-less
     # usage for anonymous referrers ('.r:*').
-    delay_auth_decision = true
+    # delay_auth_decision = true
     service_port = 5000
     service_host = 127.0.0.1
     auth_port = 35357
@@ -285,11 +285,13 @@ S3 api.
 
     [filter:authtoken]
     paste.filter_factory = keystone.middleware.auth_token:filter_factory
+    # Delaying the auth decision is required to support token-less
+    # usage for anonymous referrers ('.r:*').
+    # delay_auth_decision = true
     service_port = 5000
     service_host = 127.0.0.1
     auth_port = 35357
     auth_host = 127.0.0.1
-    auth_protocol = http
     auth_token = ADMIN
     admin_token = ADMIN
 
