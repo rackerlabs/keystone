@@ -17,8 +17,9 @@
 import copy
 import functools
 
-from keystone import identity
+from keystone import clean
 from keystone import exception
+from keystone import identity
 from keystone.common import sql
 from keystone.common import utils
 from keystone.common.sql import migration
@@ -301,6 +302,7 @@ class Identity(sql.Base, identity.Driver):
     @handle_conflicts(type='user')
     def create_user(self, user_id, user):
         user = _ensure_hashed_password(user)
+        user['name'] = clean.clean_user_name(user['name'])
         session = self.get_session()
         with session.begin():
             user_ref = User.from_dict(user)
@@ -310,6 +312,8 @@ class Identity(sql.Base, identity.Driver):
 
     @handle_conflicts(type='user')
     def update_user(self, user_id, user):
+        if 'name' in user:
+            user['name'] = clean.clean_user_name(user['name'])
         session = self.get_session()
         with session.begin():
             user_ref = session.query(User).filter_by(id=user_id).first()

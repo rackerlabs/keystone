@@ -15,6 +15,7 @@
 # under the License.
 
 from keystone import config
+from keystone import exception
 from keystone import test
 from keystone.common.sql import util as sql_util
 from keystone.identity.backends import sql as identity_sql
@@ -47,6 +48,38 @@ class SqlIdentity(test.TestCase, test_backend.IdentityTests):
         self.identity_api.delete_user(user['id'])
         tenants = self.identity_api.get_tenants_for_user(user['id'])
         self.assertEquals(tenants, [])
+
+    def test_create_user_long_name_fails(self):
+        user = {'id': 'fake1', 'name': 'a' * 65}
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_user,
+                          'fake1',
+                          user)
+
+    def test_create_user_blank_name_fails(self):
+        user = {'id': 'fake1', 'name': ''}
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_user,
+                          'fake1',
+                          user)
+
+    def test_update_user_blank_name_fails(self):
+        user = {'id': 'fake1', 'name': 'fake1'}
+        self.identity_api.create_user('fake1', user)
+        user['name'] = ''
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_user,
+                          'fake1',
+                          user)
+
+    def test_update_user_long_name_fails(self):
+        user = {'id': 'fake1', 'name': 'fake1'}
+        self.identity_api.create_user('fake1', user)
+        user['name'] = 'a' * 65
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_user,
+                          'fake1',
+                          user)
 
 
 class SqlToken(test.TestCase, test_backend.TokenTests):
