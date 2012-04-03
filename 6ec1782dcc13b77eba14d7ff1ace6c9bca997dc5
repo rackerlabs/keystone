@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//8g0\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-03T12:48:39Z",
+      "side": 1,
+      "message": "Can this be a link? \"See the documentation\" -- it\u0027s not very specific as to \"what\" documentation I should refer to.",
+      "revId": "6ec1782dcc13b77eba14d7ff1ace6c9bca997dc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
