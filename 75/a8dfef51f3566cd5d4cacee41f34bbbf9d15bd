@@ -1,0 +1,9 @@
+Verified+1: Jenkins
+Code-Review+1: Vish Ishaya <vishvananda@gmail.com>
+Approved+1: Devin Carlen <devin@openstack.org>
+Code-Review+2: Devin Carlen <devin@openstack.org>
+Submitted-by: Jenkins
+Submitted-at: Wed, 04 Apr 2012 01:54:54 +0000
+Reviewed-on: https://review.openstack.org/6109
+Project: openstack/keystone
+Branch: refs/heads/master
