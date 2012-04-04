@@ -366,7 +366,15 @@ class Identity(sql.Base, identity.Driver):
     def delete_tenant(self, tenant_id):
         session = self.get_session()
         tenant_ref = session.query(Tenant).filter_by(id=tenant_id).first()
+        membership_refs = session.query(UserTenantMembership)\
+                          .filter_by(tenant_id=tenant_id)\
+                          .all()
+
         with session.begin():
+            if membership_refs:
+                for membership_ref in membership_refs:
+                    session.delete(membership_ref)
+
             session.delete(tenant_ref)
             session.flush()
 

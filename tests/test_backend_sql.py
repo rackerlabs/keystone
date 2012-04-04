@@ -48,6 +48,21 @@ class SqlIdentity(test.TestCase, test_backend.IdentityTests):
         tenants = self.identity_api.get_tenants_for_user(user['id'])
         self.assertEquals(tenants, [])
 
+    def test_delete_tenant_with_user_association(self):
+        tenant = {'id': 'fake',
+                  'name': 'faketenant'}
+        self.identity_api.create_tenant('fake', tenant)
+        user = {'id': 'fake',
+                'name': 'fakeuser',
+                'password': 'passwd'}
+        self.identity_api.create_user('fake', user)
+        self.identity_api.add_user_to_tenant(tenant['id'],
+                                             user['id'])
+        self.identity_api.delete_tenant(tenant['id'])
+        tenants = self.identity_api.get_tenants_for_user(user['id'])
+        self.identity_api.delete_user(user['id'])
+        self.assertEquals(tenants, [])
+
 
 class SqlToken(test.TestCase, test_backend.TokenTests):
     def setUp(self):
