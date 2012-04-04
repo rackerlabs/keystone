@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//77g\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-04T18:31:37Z",
+      "side": 1,
+      "message": "the bug is not an appropriate first line of the commit, please put a short (less than 50 characters) summary of what is being changed as the first line, then a newline, then say \"Fixes bug 966749\"",
+      "revId": "8ba360d6076669f59a3eb81edeb73845321ae35c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
