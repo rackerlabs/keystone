@@ -34,20 +34,25 @@ class FakeHTTPResponse(object):
     def __init__(self, status, body):
         self.status = status
         self.body = body
+        self.reason = ""
 
     def read(self):
         return self.body
 
 
 class FakeHTTPConnection(object):
+    status = 201
+
     def __init__(self, *args):
         pass
 
     def request(self, method, path, **kwargs):
+        if self.status == 503:
+            raise Exception
         ret = {'access': {'token': {'id': 'TOKEN_ID',
                                     'tenant': {'id':  'TENANT_ID'}}}}
         body = json.dumps(ret)
-        status = 201
+        status = self.status
         self.resp = FakeHTTPResponse(status, body)
 
     def getresponse(self):
@@ -107,6 +112,24 @@ class S3TokenMiddlewareTest(test.TestCase):
         req.headers['Authorization'] = 'badboy'
         req.headers['X-Storage-Token'] = 'token'
         self.middleware(req.environ, self._start_fake_response)
+        self.assertEqual(self.response_status, 400)
+
+    def test_bad_token(self):
+        req = webob.Request.blank('/v1/AUTH_cfa/c/o')
+        req.headers['Authorization'] = 'access:signature'
+        req.headers['X-Storage-Token'] = 'token'
+        self.middleware.http_client_class.status = 403
+        self.middleware(req.environ, self._start_fake_response)
+        self.assertEqual(self.response_status, 401)
+
+    def test_fail_to_connect_to_keystone(self):
+        req = webob.Request.blank('/v1/AUTH_cfa/c/o')
+        req.headers['Authorization'] = 'access:signature'
+        req.headers['X-Storage-Token'] = 'token'
+        self.middleware.http_client_class.status = 503
+        self.middleware(req.environ, self._start_fake_response)
+        # TODO(chmou): Need to find out what is the S3 equivalent of
+        # 503 ServiceNotAvailable
         self.assertEqual(self.response_status, 400)
 
     def test_authorized(self):
