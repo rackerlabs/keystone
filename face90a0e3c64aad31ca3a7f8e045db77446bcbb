@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//74U\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-04T20:58:07Z",
+      "side": 1,
+      "message": "i usually put a newline between this part and the rest #nit\n\nalso, greenlet would be after a newline after the system libs (why do we even import greenlet?)",
+      "revId": "face90a0e3c64aad31ca3a7f8e045db77446bcbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
