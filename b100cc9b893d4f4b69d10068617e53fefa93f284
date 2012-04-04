@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFH//77Y\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-04T18:45:33Z",
+      "side": 1,
+      "message": "this is not an appropriate summary of this commit, please use the first line of the commit message to provide a short (less than 50 chars) summary of what is being changed, then a blank line, then use the other lines to refer to bugs and provide a longer description",
+      "revId": "b100cc9b893d4f4b69d10068617e53fefa93f284",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//77U\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-04T18:45:33Z",
+      "side": 1,
+      "message": "we shouldn\u0027t be using foreign keys at all, they are a crutch that are not available everywhere",
+      "revId": "b100cc9b893d4f4b69d10068617e53fefa93f284",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFH//77Q\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-04T18:45:33Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "b100cc9b893d4f4b69d10068617e53fefa93f284",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
