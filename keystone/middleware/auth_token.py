@@ -94,6 +94,7 @@ import httplib
 import json
 import logging
 import time
+import urllib2
 
 import webob
 import webob.exc
@@ -340,6 +341,8 @@ class AuthProtocol(object):
         :raise ServiceError if unable to authenticate token
 
         """
+        user_token = urllib2.quote(user_token)
+
         cached = self._cache_get(user_token)
         if cached:
             return cached

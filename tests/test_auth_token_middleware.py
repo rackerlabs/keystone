@@ -26,6 +26,25 @@ from keystone import test
 
 # JSON responses keyed by token ID
 TOKEN_RESPONSES = {
+    'valid%20token': {
+        'access': {
+            'token': {
+                'id': 'valid-token',
+                'tenant': {
+                    'id': 'tenant_id1',
+                    'name': 'tenant_name1',
+                },
+            },
+            'user': {
+                'id': 'user_id1',
+                'name': 'user_name1',
+                'roles': [
+                    {'name': 'role1'},
+                    {'name': 'role2'},
+                ],
+            },
+        },
+    },
     'valid-token': {
         'access': {
             'token': {
@@ -289,6 +308,13 @@ class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
         self.assertEqual(self.response_status, 401)
         self.assertEqual(self.response_headers['WWW-Authenticate'],
                          'Keystone uri=\'https://keystone.example.com:1234\'')
+
+    def test_request_token_quoted(self):
+        req = webob.Request.blank('/')
+        # Should get quoted to valid%20token and due valid for us.
+        req.headers['X-Auth-Token'] = 'valid token'
+        self.middleware(req.environ, self.start_fake_response)
+        self.assertEqual(self.response_status, 200)
 
     def test_memcache(self):
         req = webob.Request.blank('/')
