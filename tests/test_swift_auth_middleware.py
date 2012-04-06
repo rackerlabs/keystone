@@ -13,10 +13,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import logging
+
+import stubout
 import unittest2 as unittest
 import webob
 
+from swift.common import utils as swift_utils
+
 from keystone.middleware import swift_auth
+
+
+def setUpModule(self):
+    self.stubs = stubout.StubOutForTesting()
+    # Stub out swift_utils.get_logger.  get_logger tries to configure
+    # syslogging to '/dev/log', which will fail on OS X.
+    LOG = logging.getLogger('keystone.middleware.swift_auth')
+    def fake_get_logger(config, log_route=None):
+        return LOG
+    self.stubs.Set(swift_utils, 'get_logger', fake_get_logger)
+
+
+def tearDownModule(self):
+    self.stubs.UnsetAll()
 
 
 class FakeApp(object):
