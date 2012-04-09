@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFX///G0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-09T18:04:42Z",
+      "side": 1,
+      "message": "please keep your summary line under 50 chars",
+      "revId": "a89ffa384f6bf39aa8ee67d54fffb092bd306a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFX///Gw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-09T18:04:42Z",
+      "side": 1,
+      "message": "it is a nice thing to word wrap text at, like, 60 or 72 chars\n\nalso, there should be no spaces around your data structures",
+      "revId": "a89ffa384f6bf39aa8ee67d54fffb092bd306a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAFX///Gs\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-09T18:04:42Z",
+      "side": 1,
+      "message": "i would probably remove the newline here and add one before the return",
+      "revId": "a89ffa384f6bf39aa8ee67d54fffb092bd306a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
