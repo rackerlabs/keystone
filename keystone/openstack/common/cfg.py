@@ -213,6 +213,7 @@ import optparse
 import os
 import string
 import sys
+import syslog
 
 
 class Error(Exception):
@@ -284,6 +285,7 @@ class ConfigFilesNotFoundError(Error):
         self.config_files = config_files
 
     def __str__(self):
+        syslog.syslog(syslog.LOG_ERR, 'Unable to read keystone config file')
         return ('Failed to read some config files: %s' %
                 string.join(self.config_files, ','))
 
