@@ -213,6 +213,7 @@ import optparse
 import os
 import string
 import sys
+import syslog
 
 
 class Error(Exception):
@@ -1075,6 +1076,8 @@ class ConfigOpts(collections.Mapping):
 
         if read_ok != config_files:
             not_read_ok = filter(lambda f: f not in read_ok, config_files)
+            file = string.join(not_read_ok, ',')
+            syslog.syslog(syslog.LOG_ERR, ('Unable to read %s file' % file))
             raise ConfigFilesNotFoundError(not_read_ok)
 
     class GroupAttr(collections.Mapping):
