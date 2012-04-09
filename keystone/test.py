@@ -131,7 +131,7 @@ class TestCase(unittest.TestCase):
         self.stubs = stubout.StubOutForTesting()
 
     def config(self):
-        CONF(config_files=[etcdir('keystone.conf'),
+        CONF(config_files=[etcdir('keystone.conf.sample'),
                            testsdir('test_overrides.conf')])
 
     def tearDown(self):
