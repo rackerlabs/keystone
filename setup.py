@@ -23,6 +23,7 @@ from keystone.openstack.common.setup import parse_requirements
 from keystone.openstack.common.setup import parse_dependency_links
 from keystone.openstack.common.setup import write_requirements
 from keystone.openstack.common.setup import write_git_changelog
+from keystone.openstack.common.setup import generate_authors
 
 
 class local_sdist(sdist):
@@ -54,6 +55,7 @@ requires = parse_requirements()
 depend_links = parse_dependency_links()
 
 write_requirements()
+generate_authors()
 
 setup(name='keystone',
       version='2012.2',
