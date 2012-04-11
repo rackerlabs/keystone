@@ -244,6 +244,15 @@ class TenantController(wsgi.Application):
     def get_all_tenants(self, context, **kw):
         """Gets a list of all tenants for an admin user."""
         self.assert_admin(context)
+
+        name = context['query_string'].get('name')
+        if name:
+            tenant = self.identity_api.get_tenant_by_name(context, name)
+            if tenant is None:
+                raise exception.TenantNotFound(tenant_id=name)
+
+            return {'tenant': tenant}
+
         tenant_refs = self.identity_api.get_tenants(context)
         params = {
             'limit': context['query_string'].get('limit'),
@@ -378,6 +387,15 @@ class UserController(wsgi.Application):
         # NOTE(termie): i can't imagine that this really wants all the data
         #               about every single user in the system...
         self.assert_admin(context)
+
+        name = context['query_string'].get('name')
+        if name:
+            user_ref = self.identity_api.get_user_by_name(context,
+                    user_name=name)
+            if not user_ref:
+                raise exception.UserNotFound(user_id=name)
+            return {'user': user_ref}
+
         user_refs = self.identity_api.list_users(context)
         return {'users': user_refs}
 
