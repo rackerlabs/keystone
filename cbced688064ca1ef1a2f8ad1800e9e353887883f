@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAFX//+AQ\u003d",
+        "filename": "setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2012-04-11T20:36:19Z",
+      "side": 1,
+      "message": "I think this should be in local_sdist instead of just in the root.",
+      "revId": "cbced688064ca1ef1a2f8ad1800e9e353887883f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
