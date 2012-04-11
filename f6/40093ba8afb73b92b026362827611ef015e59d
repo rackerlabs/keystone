@@ -1,0 +1,9 @@
+Verified+1: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Approved+1: Brian Waldon <brian.waldon@rackspace.com>
+Code-Review+2: Brian Waldon <brian.waldon@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 11 Apr 2012 16:49:16 +0000
+Reviewed-on: https://review.openstack.org/6387
+Project: openstack/keystone
+Branch: refs/heads/master
