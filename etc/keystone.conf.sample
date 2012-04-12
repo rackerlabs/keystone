@@ -7,6 +7,7 @@ compute_port = 8774
 verbose = True
 debug = True
 #log_config = ./etc/logging.conf.sample
+#onready = systemd-notify --ready
 
 # ================= Syslog Options ============================
 # Send logs to syslog (/dev/log) instead of to file specified
