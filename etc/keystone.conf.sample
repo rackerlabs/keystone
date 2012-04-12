@@ -7,6 +7,9 @@ compute_port = 8774
 verbose = True
 debug = True
 #log_config = ./etc/logging.conf.sample
+#onready allows you to run a command when the process is ready to serve 
+#for example to have it notify using systemd, one could set 
+#onready = systemd-notify --ready
 
 # ================= Syslog Options ============================
 # Send logs to syslog (/dev/log) instead of to file specified
