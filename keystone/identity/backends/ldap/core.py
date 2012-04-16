@@ -104,6 +104,9 @@ class Identity(identity.Driver):
     def get_tenant(self, tenant_id):
         return self.tenant.get(tenant_id)
 
+    def get_tenants(self):
+        return self.tenant.get_all()
+
     def get_tenant_by_name(self, tenant_name):
         return self.tenant.get_by_name(tenant_name)
 
@@ -118,6 +121,9 @@ class Identity(identity.Driver):
         if (not user_ref):
                 return None
         return _filter_user(user_ref)
+
+    def list_users(self):
+        return self.user.get_all()
 
     def get_user_by_name(self, user_name):
         user_ref = self.user.get_by_name(user_name)
@@ -136,6 +142,9 @@ class Identity(identity.Driver):
 
     def get_role(self, role_id):
         return self.role.get(role_id)
+
+    def list_roles(self):
+        return self.role.get_all()
 
     # These should probably be part of the high-level API
     def add_user_to_tenant(self, tenant_id, user_id):
