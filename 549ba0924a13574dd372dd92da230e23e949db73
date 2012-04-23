@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAGn//+wA\u003d",
+        "filename": "keystone/openstack/common/cfg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1079,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-23T16:49:56Z",
+      "side": 1,
+      "message": "I was under the impression we were avoiding the use of importing the string package (obviously this file disagrees with me, but...):\n\n    \u0027,\u0027.join(not_read_ok)",
+      "revId": "549ba0924a13574dd372dd92da230e23e949db73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
