@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAGn//+0Q\u003d",
+        "filename": "keystone/openstack/common/cfg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-23T15:17:32Z",
+      "side": 1,
+      "message": "Can this be all on one line?\n\n    sub-classes, e.g.::",
+      "revId": "c8564f67679375c647fa19a179c65c2943b71330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAGn//+0A\u003d",
+        "filename": "keystone/openstack/common/cfg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-23T15:17:32Z",
+      "side": 1,
+      "message": "Can this be named build_parse_exc or something, to indicate that it\u0027s intentionally returning and *not* raising an exception? Caught me off guard as-is. docstring would work too.",
+      "revId": "c8564f67679375c647fa19a179c65c2943b71330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
