@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAGn//+MY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-04-24T18:44:17Z",
+      "side": 1,
+      "message": "No, it provides the right message:\ncurl http://localhost:35357/v2.0/tenants?name\u003dadminss -H \u0027x-auth-token: ADMIN\u0027\n\n{\"error\": {\"message\": \"Could not find tenant: adminss\", \"code\": 404, \"title\": \"Not Found\"}}",
+      "parentUuid": "AAAAGn//+Nk\u003d",
+      "revId": "3e07c835f51a6a767dc195b7c53b615351e7b326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAGn//+NQ\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 2
@@ -115,6 +133,24 @@
       "writtenOn": "2012-04-24T18:28:06Z",
       "side": 1,
       "message": "Won\u0027t providing the name in place of the user_id make for a confusing error message?",
+      "revId": "3e07c835f51a6a767dc195b7c53b615351e7b326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAGn//+MI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-04-24T18:44:17Z",
+      "side": 1,
+      "message": "Same as tenants:\ncurl http://localhost:35357/v2.0/users?name\u003dadminss -H \u0027x-auth-token: ADMIN\u0027\n\n{\"error\": {\"message\": \"Could not find user: adminss\", \"code\": 404, \"title\": \"Not Found\"}}",
+      "parentUuid": "AAAAGn//+Ng\u003d",
       "revId": "3e07c835f51a6a767dc195b7c53b615351e7b326",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
