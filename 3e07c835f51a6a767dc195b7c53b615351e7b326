@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAGn//+No\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-04-24T18:28:06Z",
+      "side": 1,
+      "message": "Consider using implicit boolean conversion.",
+      "revId": "3e07c835f51a6a767dc195b7c53b615351e7b326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAGn//+Nk\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-04-24T18:28:06Z",
+      "side": 1,
+      "message": "Won\u0027t providing the name in place of the tenant_id make for a confusing error message?",
+      "revId": "3e07c835f51a6a767dc195b7c53b615351e7b326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAGn//+Nw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-04-24T18:28:06Z",
+      "side": 1,
+      "message": "PEP8 vertical alignment",
+      "revId": "3e07c835f51a6a767dc195b7c53b615351e7b326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAGn//+Ng\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-04-24T18:28:06Z",
+      "side": 1,
+      "message": "Won\u0027t providing the name in place of the user_id make for a confusing error message?",
+      "revId": "3e07c835f51a6a767dc195b7c53b615351e7b326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
