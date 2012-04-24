@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAG3///9E\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-24T20:21:33Z",
+      "side": 1,
+      "message": "I spent some time thinking about this as well. I\u0027m working on a pretty big patch heavily utilizing these exceptions, and I know I\u0027ve done (which is really ugly):\n\n    raise exception.TenantNotFound(tenant_id\u003dtenant_name)",
+      "revId": "37964b71f00206ff4c33a89abd64ec58c1d255db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
