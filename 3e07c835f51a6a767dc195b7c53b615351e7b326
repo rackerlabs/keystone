@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAGn//+NU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-24T18:29:40Z",
+      "side": 1,
+      "message": "I\u0027d like to see this block extracted, since it\u0027s obviously deviating from the enclosing function `get_all_tenants`:\n\n    if context[\u0027query_string\u0027].get(\u0027name\u0027):\n        return self.get_tenant_by_name(context)",
+      "revId": "3e07c835f51a6a767dc195b7c53b615351e7b326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAGn//+No\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 2
@@ -30,6 +47,23 @@
       "writtenOn": "2012-04-24T18:28:06Z",
       "side": 1,
       "message": "Won\u0027t providing the name in place of the tenant_id make for a confusing error message?",
+      "revId": "3e07c835f51a6a767dc195b7c53b615351e7b326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAGn//+NQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-24T18:29:40Z",
+      "side": 1,
+      "message": "Same as above, except `get_user_by_name`",
       "revId": "3e07c835f51a6a767dc195b7c53b615351e7b326",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
