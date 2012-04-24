@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAGn//+NA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-24T18:30:35Z",
+      "side": 1,
+      "message": "Should be 50 chars or less I believe. Expand in a summary paragraph below when appropriate",
+      "revId": "3e07c835f51a6a767dc195b7c53b615351e7b326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAGn//+NU\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 2
