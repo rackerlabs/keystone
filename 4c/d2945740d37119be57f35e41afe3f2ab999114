@@ -1,0 +1,10 @@
+Verified+1: Jenkins
+Approved+1: termie <github@anarkystic.com>
+Code-Review+2: termie <github@anarkystic.com>
+Code-Review+2: Brian Waldon <brian.waldon@rackspace.com>
+Code-Review+1: Ionut Artarisi <iartarisi@suse.cz>
+Submitted-by: Jenkins
+Submitted-at: Wed, 25 Apr 2012 18:12:41 +0000
+Reviewed-on: https://review.openstack.org/6403
+Project: openstack/keystone
+Branch: refs/heads/master
