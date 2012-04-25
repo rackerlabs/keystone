@@ -1,0 +1,11 @@
+Verified+1: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Approved+1: termie <github@anarkystic.com>
+Code-Review+2: termie <github@anarkystic.com>
+Code-Review+1: Chmouel Boudjnah <launchpad@chmouel.com>
+Code-Review+1: Joe Gordon <jogo@cloudscaling.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 25 Apr 2012 18:20:44 +0000
+Reviewed-on: https://review.openstack.org/6723
+Project: openstack/keystone
+Branch: refs/heads/master
