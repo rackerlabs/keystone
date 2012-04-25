@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHH///w8\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-25T16:31:28Z",
+      "side": 1,
+      "message": "this seems misleading (as does somewhat the line above it): this is not the default value, it is an example value, upon reading this i would suspect that the default value is the command mentioned (and it should not be the default value)",
+      "revId": "90a40a9c1378ab78dce7ba32f7283aa221a83a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
