@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHH///vQ\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-25T16:52:37Z",
+      "side": 1,
+      "message": "period at the end of this sentence, please.",
+      "revId": "8fac18783b43b97571346653131a58c8dfb5c19f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH///vM\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-25T16:52:37Z",
+      "side": 1,
+      "message": "also this one.",
+      "revId": "8fac18783b43b97571346653131a58c8dfb5c19f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH///vE\u003d",
+        "filename": "setup.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-25T16:52:37Z",
+      "side": 1,
+      "message": "this looks like it should be the first on this list of imports",
+      "revId": "8fac18783b43b97571346653131a58c8dfb5c19f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
