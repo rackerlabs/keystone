@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHH///wc\u003d",
+        "filename": "keystone/clean.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-25T16:40:36Z",
+      "side": 1,
+      "message": "escaping newlines is not necessary when inside parens, and though you\u0027ll be removing the i18n, you can still put these in parens like so:\n\n  (\"asdasdasdasdasdasdasdasdas\"\n   \"asdasdsdfsdfsdfsdfs\") % locals()",
+      "revId": "8c713fc76350496421e140ee603da36d43835b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH///wk\u003d",
+        "filename": "keystone/clean.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-25T16:40:36Z",
+      "side": 1,
+      "message": "this method would be called \"tenant_name\"",
+      "revId": "8c713fc76350496421e140ee603da36d43835b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH///wg\u003d",
+        "filename": "keystone/clean.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-04-25T16:40:36Z",
+      "side": 1,
+      "message": "while nice to have, we don\u0027t do any i18n currently so please remove these wherever they\u0027ve been used",
+      "revId": "8c713fc76350496421e140ee603da36d43835b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
