@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHH//+fU\u003d",
+        "filename": "setup.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-30T14:15:21Z",
+      "side": 1,
+      "message": "generate_authors should be imported here (alphabetically)",
+      "revId": "55b609bf3b70c337f33b69463c0078f02caf4de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
