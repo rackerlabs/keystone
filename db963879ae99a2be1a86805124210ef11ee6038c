@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHH//+bw\u003d",
+        "filename": "tests/test_backend_kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-04-30T15:32:06Z",
+      "side": 1,
+      "message": "instead of duplicating these tests in test_backend_kvs and test_backend_sql, it would make more sense to put them in test_backend, and then explicitly skip or show that they\u0027re functional (or not) in the remaining backends (test_backend_ldap).\n\nThis would reduce the test duplication and encourage other upcoming backends to support this as a default a bit more easily.",
+      "revId": "db963879ae99a2be1a86805124210ef11ee6038c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
