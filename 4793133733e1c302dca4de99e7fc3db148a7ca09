@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHH//+a8\u003d",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-04-30T16:03:03Z",
+      "side": 1,
+      "message": "why \"catch and release\" adding the explanatory text here - wouldn\u0027t it make more sense to do that at the driver/plugin level as well?",
+      "revId": "4793133733e1c302dca4de99e7fc3db148a7ca09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//+a0\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-04-30T16:03:03Z",
+      "side": 1,
+      "message": "in the layer above, you\u0027re catching \"NotFound\", yet here we\u0027re throwing ServiceNotFound, a subclass. Shouldn\u0027t this be consistent?",
+      "revId": "4793133733e1c302dca4de99e7fc3db148a7ca09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
