@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHH//+fw\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-30T14:09:47Z",
+      "side": 0,
+      "message": "`action` should have been `title`; moved the whole exception class so that everything is in order by HTTP status code.",
+      "revId": "d65147bda724d6b38df934686647284932c3c46f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
