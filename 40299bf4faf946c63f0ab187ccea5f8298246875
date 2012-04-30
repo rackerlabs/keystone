@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHH//+eU\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-30T14:33:56Z",
+      "side": 1,
+      "message": "I\u0027d like to see line 43 wrapped a try/except, with something like `logging.exception(\"Failed to execute onready command\")`.\n\nIn other words, if anything about the external call fails, it\u0027s probably the user\u0027s fault, they should be notified, and keystone shouldn\u0027t be expected halt.",
+      "revId": "40299bf4faf946c63f0ab187ccea5f8298246875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//+fA\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-04-30T14:33:56Z",
+      "side": 1,
+      "message": "Should have a line break above line 10, since this is a multi-line comment.\n\nNeed a space between the # and comment on lines 10 \u0026 11 to help distinguish between comments and unused options.\n\nAlso, trailing whitespace.",
+      "revId": "40299bf4faf946c63f0ab187ccea5f8298246875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
