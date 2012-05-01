@@ -19,6 +19,7 @@ import nose.exc
 from keystone import config
 from keystone import test
 from keystone.common.ldap import fakeldap
+from keystone.catalog.backends import templated as catalog_ldap
 from keystone.identity.backends import ldap as identity_ldap
 
 import default_fixtures
@@ -40,6 +41,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                            test.testsdir('test_overrides.conf'),
                            test.testsdir('backend_ldap.conf')])
         clear_database()
+        self.catalog_api = catalog_ldap.TemplatedCatalog()
         self.identity_api = identity_ldap.Identity()
         self.load_fixtures(default_fixtures)
 

@@ -200,6 +200,55 @@ and Tenants and a many-to-one relationship between Extras and User-Tenant pairs,
 the actual backend implementations take varying levels of advantage of that
 functionality.
 
+Roles
+-----
+
+Keystone supports both service-agnostic and service-specific roles. Roles in
+Keystone are uniquely identified by the combination of role names and optional
+service IDs.
+
+By default, roles in Keystone are service-agnostic, which means they span
+all services. A role can be granted to a user for a given tenant. For example,
+user ``Joe`` has ``Admin`` role for tenant ``XYZ``. However, this also means
+``Joe`` is ``Admin`` for all the services for tenant ``XYZ``. In some deployments
+this is considered a security vulnerability because there is a need to limit
+``Joe`` to ``Admin`` for ``Nova`` service only for tenant ``XYZ``.
+This problem can be mitigated by the use of service-specific roles.
+In other words, roles defined for a specific service. With the service-specific
+roles, we can effectively isolate a role for a given service.
+For example, user ``Joe`` has ``Admin`` role for ``Nova`` service for tenant
+``XYZ``. ``Joe`` is no longer ``Admin`` for Swift, Glance, or Quantum service
+for tenant ``XYZ``.
+
+During token validation, Keystone clients may ask Keystone to filter the roles
+to be returned by optionally including ``serviceId`` query string, in the same
+manner as tenant validation (by optionally including the ``belongsTo`` query string).
+``serviceId`` may consist of one or more comma-delimited service ID's.
+For example::
+
+    GET /v2.0/tokens/abc123?belongsTo=XYZ&serviceId=123,456
+
+If ``serviceId`` is present and if there are no roles matching the given service IDs,
+token validation would return a 401 (unauthorized).
+
+To create a service-specific role definition::
+
+    POST /v2.0/OS-KSADM/roles
+
+    {
+      "role": {
+        "name": "Admin",
+        "service_id": "123"
+      }
+    }
+
+To list all roles::
+
+    GET /v2.0/OS-KSADM/roles
+
+To list the service-specific roles for one or more services::
+
+    GET /v2.0/OS-KSADM/roles?serviceId=123,456
 
 ----------------
 Approach to CRUD

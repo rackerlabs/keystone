@@ -162,6 +162,20 @@ class IdentityTests(object):
                           'fake2',
                           role)
 
+    def test_create_duplicate_role_name_service_id_fails(self):
+        new_service = {'id': 'MY_ROLE_SERVICE', 'type': 'myservice',
+            'name': 'My Service', 'description': 'My description'}
+        res = self.catalog_api.create_service(new_service['id'], new_service)
+        role = {'id': 'fake1',
+                'name': 'fake1name',
+                'service_id': new_service['id']}
+        self.identity_api.create_role('fake1', role)
+        role['id'] = 'fake2'
+        self.assertRaises(exception.Conflict,
+                          self.identity_api.create_role,
+                          'fake2',
+                          role)
+
     def test_rename_duplicate_role_name_fails(self):
         role1 = {'id': 'fake1',
                 'name': 'fake1name'}

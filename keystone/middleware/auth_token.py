@@ -159,6 +159,9 @@ class AuthProtocol(object):
             except NameError as e:
                 LOG.warn('disabled caching due to missing libraries %s', e)
 
+        # service roles validation
+        self.service_ids = conf.get('service_ids')
+
     def __call__(self, env, start_response):
         """Handle incoming request.
 
@@ -344,9 +347,15 @@ class AuthProtocol(object):
         if cached:
             return cached
 
+        # service roles validation if needed
+        query_string = ''
+        if self.service_ids:
+            query_string = '?serviceId=%s' % (self.service_ids)
+
         headers = {'X-Auth-Token': self.get_admin_token()}
         response, data = self._json_request('GET',
-                                            '/v2.0/tokens/%s' % user_token,
+                                            '/v2.0/tokens/%s%s' % (user_token,
+                                            query_string),
                                             additional_headers=headers)
 
         if response.status == 200:

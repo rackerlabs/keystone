@@ -119,6 +119,13 @@ in :doc:`configuration`::
                            --user=[uuid of the service account] \
                            --role=[uuid of the Admin role]
 
+Notice the Admin role, specified above, is service agnostic. This implies
+the user is recognized as Admin by all services for the given tenant.
+(i.e. user is Admin for Nova, EC2, Glance, Swift, etc.) If you want Admin
+to be specific to a service, you will need to define service-specific roles
+and grant them accordingly. See `Defining Service Roles`_ for more
+details.
+
 Defining Services
 -----------------
 
@@ -153,6 +160,35 @@ keystone is online, you need to add the services to the catalog::
                                    --type=object-store \
                                    --description="Swift Service"
 
+
+Defining Service Roles
+----------------------
+
+By default, roles in Keystone are service-agnostic, which means they span
+all services. A role can be granted to a user for a given tenant. For example,
+user ``Joe`` has ``Admin`` role for tenant ``XYZ``. However, this also means
+``Joe`` is ``Admin`` for all the services for tenant ``XYZ``. In some deployments
+this is a considered security vulnerability because there is a need to limit
+``Joe`` to ``Admin`` for ``Nova`` service only for tenant ``XYZ``.
+This problem can be mitigated by the use of service-specific roles.
+In other words, roles defined for a specific service. With the service-specific
+roles, we can effectively isolate a role for a given service.
+For example, user ``Joe`` has ``Admin`` role for ``Nova`` service for tenant
+``XYZ``. ``Joe`` is no longer ``Admin`` for Swift, Glance, or Quantum service
+for tenant ``XYZ``.
+
+To create a service-specific role, you will first need to know the ID of the service you
+want to create the role for. If you don't have it handy, you can look it
+up quickly with::
+
+    keystone service-list
+
+Then create the service-specific role with the ID of the service::
+
+    keystone role-create --name=admin --service_id=08741d8ed88242ca88d1f61484a0fe3b
+
+Once your service-specific role is created, you can assign it to users, just like
+the service-agnostic roles.
 
 Setting Up Middleware
 =====================

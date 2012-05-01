@@ -133,6 +133,8 @@ a WSGI component. Example for the auth_token middleware::
     admin_tenant_name = service
     ;Uncomment next line and check ip:port to use memcached to cache tokens
     ;memcache_servers = 127.0.0.1:11211
+    ;Uncomment next line and specify the service IDs for service-specific role validation
+    ;service_ids = <comma-delimited service ID's>
 
 Configuration Options
 ---------------------
@@ -166,6 +168,19 @@ supports memcache based caching.
   cacheing
 * ``token_cache_time``: (optional, default 300 seconds) Only valid if
   memcache_servers is defined.
+
+Service-Specific Role Validation
+--------------------------------
+
+The middleware is designed to protect services like Nova, Swift, Glance, etc. During
+token validation, it may decide to reject the request if the user does not have
+a role for a given service. For instance, when there's a request for service to
+Nova API server which would required Nova Admin privilege, there's no reason to
+allow the operation to proceed if user does not have any Nova roles. The middleware
+may be configured to enable servicei-specific roles validation. If service IDs
+are specified, the middleware will send them along to Keystone for token validation.
+
+* ``service_ids``: (optonal) comma-delimited list of service ID's
 
 Exchanging User Information
 ===========================

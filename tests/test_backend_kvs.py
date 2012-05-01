@@ -14,6 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 from keystone import test
+from keystone.catalog.backends import kvs as catalog_kvs
 from keystone.identity.backends import kvs as identity_kvs
 from keystone.token.backends import kvs as token_kvs
 from keystone.catalog.backends import kvs as catalog_kvs
@@ -25,6 +26,7 @@ import default_fixtures
 class KvsIdentity(test.TestCase, test_backend.IdentityTests):
     def setUp(self):
         super(KvsIdentity, self).setUp()
+        self.catalog_api = catalog_kvs.Catalog(db={})
         self.identity_api = identity_kvs.Identity(db={})
         self.load_fixtures(default_fixtures)
 
