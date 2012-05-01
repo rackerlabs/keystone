@@ -1,0 +1,11 @@
+Code-Review+2: Monty Taylor <mordred@inaugust.com>
+Verified+1: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Approved+1: termie <github@anarkystic.com>
+Code-Review+2: termie <github@anarkystic.com>
+Code-Review+1: Maru Newby <mnewby@internap.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 01 May 2012 17:15:10 +0000
+Reviewed-on: https://review.openstack.org/6421
+Project: openstack/keystone
+Branch: refs/heads/master
