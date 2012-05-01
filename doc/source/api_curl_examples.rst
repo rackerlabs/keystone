@@ -246,6 +246,47 @@ If the token is valid, returns::
         }
     }
 
+GET /tokens/{token_id}?serviceId={service_id_list}}
+===================================================
+
+.. note::
+
+    This call refers to a token known to be valid, ``887665443383838`` in this case.
+    Service ID ``1`` and ``2`` are known to be valid as well. The ``serviceId`` parameter
+    may consist of one or more comma-delimited service ID's.
+
+Validate a token with optional service-specific roles filtering::
+
+    $ curl -H "X-Auth-Token:999888777666" http://localhost:35357/v2.0/tokens/887665443383838?serviceId=1,2
+
+If the token is valid and there's at least one role matches the given service ID's, returns::
+
+    {
+        "access":{
+            "token":{
+                "expires":"2012-02-05T00:00:00",
+                "id":"887665443383838",
+                "tenant":{
+                    "id":"1",
+                    "name":"customer-x"
+                }
+            },
+            "user":{
+                "name":"joeuser",
+                "tenantName":"customer-x",
+                "id":"1",
+                "roles":[
+                    {
+                        "serviceId":"1",
+                        "id":"3",
+                        "name":"Member"
+                    }
+                ],
+                "tenantId":"1"
+            }
+        }
+    }
+
 HEAD /tokens/{token_id}
 =======================
 
@@ -255,6 +296,21 @@ by definition, returns no response body::
     $ curl -I -H "X-Auth-Token:999888777666" http://localhost:35357/v2.0/tokens/887665443383838
 
 ... which returns ``200``, indicating the token is valid::
+
+    HTTP/1.1 200 OK
+    Content-Length: 0
+    Content-Type: None
+    Date: Tue, 08 Nov 2011 23:07:44 GMT
+
+HEAD /tokens/{token_id}?serviceId={service_id_list}
+===================================================
+
+Validate token with optionally service-specific roles filtering::
+
+    $ curl -I -H "X-Auth-Token:999888777666" http://localhost:35357/v2.0/tokens/887665443383838?serviceId=1,2
+
+... which returns ``200``, indicating the token is valid and at least
+one service-specific role matches the given service ID's::
 
     HTTP/1.1 200 OK
     Content-Length: 0

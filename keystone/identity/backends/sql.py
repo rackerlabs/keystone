@@ -19,6 +19,7 @@ import functools
 
 from keystone import identity
 from keystone import exception
+from keystone.catalog.backends.sql import Service
 from keystone.common import sql
 from keystone.common import utils
 from keystone.common.sql import migration
@@ -35,6 +36,13 @@ def _ensure_hashed_password(user_ref):
     if pw is not None:
         user_ref['password'] = utils.hash_password(pw)
     return user_ref
+
+
+def _remove_null_service_id_from_role(role):
+    if 'service_id' in role and\
+       (role['service_id'] is None or role['service_id'].lower() == 'none'):
+            del role['service_id']
+    return role
 
 
 def handle_conflicts(type='object'):
@@ -104,7 +112,10 @@ class Tenant(sql.ModelBase, sql.DictBase):
 class Role(sql.ModelBase, sql.DictBase):
     __tablename__ = 'role'
     id = sql.Column(sql.String(64), primary_key=True)
-    name = sql.Column(sql.String(64), unique=True, nullable=False)
+    name = sql.Column(sql.String(64), nullable=False)
+    service_id = sql.Column(sql.String(64), sql.ForeignKey('service.id'))
+    __table_args__ = (
+        sql.UniqueConstraint("name", "service_id"),)
 
 
 class Metadata(sql.ModelBase, sql.DictBase):
@@ -208,19 +219,37 @@ class Identity(sql.Base, identity.Driver):
                               .first()
         return getattr(metadata_ref, 'data', {})
 
+    def get_role_by_name_and_service(self, role_name, service_id=None):
+        session = self.get_session()
+        role_ref = session.query(Role)\
+                          .filter_by(name=role_name)\
+                          .filter_by(service_id=service_id)\
+                          .first()
+        if not role_ref:
+            return
+        return _remove_null_service_id_from_role(role_ref.to_dict())
+
     def get_role(self, role_id):
         session = self.get_session()
-        return session.query(Role).filter_by(id=role_id).first()
+        role_ref = session.query(Role).filter_by(id=role_id).first()
+        if not role_ref:
+            return
+        return _remove_null_service_id_from_role(role_ref.to_dict())
 
     def list_users(self):
         session = self.get_session()
         user_refs = session.query(User)
         return [_filter_user(x.to_dict()) for x in user_refs]
 
-    def list_roles(self):
+    def list_roles(self, service_id=None):
         session = self.get_session()
-        role_refs = session.query(Role)
-        return list(role_refs)
+        if service_id is not None:
+            role_refs = session.query(Role)\
+                              .filter_by(service_id=service_id)
+        else:
+            role_refs = session.query(Role)
+        return [_remove_null_service_id_from_role(x.to_dict())\
+                   for x in role_refs]
 
     # These should probably be part of the high-level API
     def add_user_to_tenant(self, tenant_id, user_id):
@@ -420,23 +449,40 @@ class Identity(sql.Base, identity.Driver):
         self.db.delete('metadata-%s-%s' % (tenant_id, user_id))
         return None
 
+    def _check_duplicate_role(self, role):
+        # do the explicit duplicate record check since
+        # unique contraint enforcement is only effective if
+        # service_id is not null
+        service_id = role.get('service_id', None)
+        role_refs = self.get_role_by_name_and_service(
+                        role['name'],
+                        service_id)
+        if role_refs and len(role_refs) > 0:
+            msg = 'Duplicate name, %s' % (role['name'])
+            if service_id is not None:
+                msg = msg + ', and service_id, %s.'\
+                          % (service_id)
+            raise exception.Conflict(type='role', details=msg)
+
     @handle_conflicts(type='role')
     def create_role(self, role_id, role):
+        self._check_duplicate_role(role)
         session = self.get_session()
         with session.begin():
             session.add(Role(**role))
             session.flush()
-        return role
+        return _remove_null_service_id_from_role(role)
 
     @handle_conflicts(type='role')
     def update_role(self, role_id, role):
+        self._check_duplicate_role(role)
         session = self.get_session()
         with session.begin():
             role_ref = session.query(Role).filter_by(id=role_id).first()
             for k in role:
                 role_ref[k] = role[k]
             session.flush()
-        return role_ref
+        return _remove_null_service_id_from_role(role_ref.to_dict())
 
     def delete_role(self, role_id):
         session = self.get_session()
