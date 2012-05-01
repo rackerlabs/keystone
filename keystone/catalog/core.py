@@ -115,6 +115,7 @@ class Driver(object):
 
 class ServiceController(wsgi.Application):
     def __init__(self):
+        self.identity_api = identity.Manager()
         self.catalog_api = Manager()
         super(ServiceController, self).__init__()
 
@@ -132,10 +133,20 @@ class ServiceController(wsgi.Application):
             raise exception.ServiceNotFound(service_id=service_id)
         return {'OS-KSADM:service': service_ref}
 
+    def _delete_service_roles(self, context, service_id):
+        """Remove all the service roles
+        """
+        roles_ref = self.identity_api.list_roles(context,
+                        service_id=service_id)
+        for role in roles_ref:
+            self.identity_api.delete_role(context, role_id=role['id'])
+
     def delete_service(self, context, service_id):
         service_ref = self.catalog_api.get_service(context, service_id)
         if not service_ref:
             raise exception.ServiceNotFound(service_id=service_id)
+        # nuke all the service roles first
+        self._delete_service_roles(context, service_id)
         self.catalog_api.delete_service(context, service_id)
 
     def create_service(self, context, OS_KSADM_service):

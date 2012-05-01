@@ -378,6 +378,40 @@ class TokenController(wsgi.Application):
         """
         belongs_to = context['query_string'].get("belongsTo")
         assert self._get_token_ref(context, token_id, belongs_to)
+        service_id = context['query_string'].get("serviceId")
+        if service_id is not None:
+            # make sure we have at least one service role
+            self._get_roles_from_token_ref(context, token_ref, service_id)
+
+    def _get_roles_from_token_ref(self, context, token_ref, service_id=None):
+        """Get the roles belong to the user.
+
+        Optionally filtred by service IDs.
+
+        Return the filtered roles.
+        """
+        metadata_ref = token_ref['metadata']
+        roles_ref = []
+        for role_id in metadata_ref.get('roles', []):
+            roles_ref.append(self.identity_api.get_role(context, role_id))
+        roles_ref = self._filter_roles_by_service_id(roles_ref, service_id)
+        logging.debug('ROLES_REF after service_id filtering: %s', roles_ref)
+        if service_id is not None:
+            assert len(roles_ref) > 0
+        return roles_ref
+
+    def _filter_roles_by_service_id(self, roles_ref, service_id=None):
+        """Filter the roles by optional service IDs.
+
+        If service IDs are present, filter the roles by the service IDs.
+
+        Return the filtered roles.
+        """
+        if service_id is not None:
+            service_ids = service_id.split(',')
+            return [x for x in roles_ref if 'service_id' in x and\
+                       x['service_id'] in service_ids]
+        return roles_ref
 
     # admin only
     def validate_token(self, context, token_id):
@@ -395,9 +429,9 @@ class TokenController(wsgi.Application):
         #               the return for metadata
         # fill out the roles in the metadata
         metadata_ref = token_ref['metadata']
-        roles_ref = []
-        for role_id in metadata_ref.get('roles', []):
-            roles_ref.append(self.identity_api.get_role(context, role_id))
+        service_id = context['query_string'].get("serviceId")
+        roles_ref = self._get_roles_from_token_ref(context,
+                        token_ref, service_id)
 
         # Get a service catalog if belongs_to is not none
         # This is needed for on-behalf-of requests

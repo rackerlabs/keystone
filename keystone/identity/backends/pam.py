@@ -83,13 +83,16 @@ class PamIdentity(identity.Driver):
     def get_user_by_name(self, user_name):
         return {'id': user_name, 'name': user_name}
 
+    def get_role_by_name_and_service(self, role_name, service_id):
+        raise NotImplementedError()
+
     def get_role(self, role_id):
         raise NotImplementedError()
 
     def list_users(self):
         raise NotImplementedError()
 
-    def list_roles(self):
+    def list_roles(self, service_id=None):
         raise NotImplementedError()
 
     def add_user_to_tenant(self, tenant_id, user_id):

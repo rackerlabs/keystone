@@ -532,12 +532,16 @@ example::
 Roles
 -----
 
+Keystone supports both service agnostic and service specific roles. Roles in
+Keystone are uniquely identified by the combination of role names and optional service IDs.
+
 ``role-create``
 ^^^^^^^^^^^^^^^
 
 arguments
 
 * name
+* service_id  Service ID for creating a service role (Optional)
 
 example::
 
@@ -556,6 +560,10 @@ example::
 
 ``role-list``
 ^^^^^^^^^^^^^
+
+arguments
+
+* service_id	Service ID filter (Optional)
 
 example::
 

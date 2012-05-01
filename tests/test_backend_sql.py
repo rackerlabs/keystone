@@ -20,6 +20,7 @@ from keystone import config
 from keystone import exception
 from keystone import test
 from keystone.common.sql import util as sql_util
+from keystone.catalog.backends import sql as catalog_sql
 from keystone.identity.backends import sql as identity_sql
 from keystone.token.backends import sql as token_sql
 
@@ -37,6 +38,7 @@ class SqlIdentity(test.TestCase, test_backend.IdentityTests):
                            test.testsdir('test_overrides.conf'),
                            test.testsdir('backend_sql.conf')])
         sql_util.setup_test_database()
+        self.catalog_api = catalog_sql.Catalog()
         self.identity_api = identity_sql.Identity()
         self.load_fixtures(default_fixtures)
 
@@ -49,7 +51,72 @@ class SqlIdentity(test.TestCase, test_backend.IdentityTests):
                                              user['id'])
         self.identity_api.delete_user(user['id'])
         tenants = self.identity_api.get_tenants_for_user(user['id'])
-        self.assertEquals(tenants, [])
+        self.assertEqual(tenants, [])
+
+    def test_create_duplicate_role_name_diff_service_id_ok(self):
+        new_service = {'id': 'MY_ROLE_SERVICE', 'type': 'myservice',
+            'name': 'My Service', 'description': 'My description'}
+        res = self.catalog_api.create_service(new_service['id'], new_service)
+        role = {'id': 'fake1',
+                'name': 'fake1name',
+                'service_id': new_service['id']}
+        self.identity_api.create_role('fake1', role)
+        role['id'] = 'fake2'
+        del role['service_id']
+        self.identity_api.create_role('fake2', role)
+
+    def test_get_roles_with_no_service_id_filter(self):
+        new_service = {'id': 'FOR_ROLE_SERVICE_ID_TEST', 'type': 'myservice',
+            'name': 'My Service', 'description': 'My description'}
+        res = self.catalog_api.create_service(new_service['id'], new_service)
+        role1 = {'id': 'fake1',
+                'name': 'fake1name',
+                'service_id': new_service['id']}
+        role2 = {'id': 'fake2',
+                'name': 'fake2name'}
+        self.identity_api.create_role('fake1', role1)
+        self.identity_api.create_role('fake2', role2)
+        roles = self.identity_api.list_roles()
+        self.assertTrue(role1 in roles)
+        self.assertTrue(role2 in roles)
+
+    def test_get_roles_with_with_service_id_filter(self):
+        new_service = {'id': 'FOR_ROLE_SERVICE_ID_TEST', 'type': 'myservice',
+            'name': 'My Service', 'description': 'My description'}
+        res = self.catalog_api.create_service(new_service['id'], new_service)
+        role1 = {'id': 'fake1',
+                'name': 'fake1name',
+                'service_id': new_service['id']}
+        role2 = {'id': 'fake2',
+                'name': 'fake2name',
+                'service_id': new_service['id']}
+        role3 = {'id': 'fake3',
+                'name': 'fake3name'}
+        self.identity_api.create_role('fake1', role1)
+        self.identity_api.create_role('fake2', role2)
+        self.identity_api.create_role('fake3', role3)
+        roles = self.identity_api.list_roles(service_id=new_service['id'])
+        self.assertEqual(2, len(roles))
+        self.assertTrue(role1 in roles)
+        self.assertTrue(role2 in roles)
+
+    def test_get_role_by_name_and_service(self):
+        new_service = {'id': 'FOR_ROLE_SERVICE_ID_TEST', 'type': 'myservice',
+            'name': 'My Service', 'description': 'My description'}
+        res = self.catalog_api.create_service(new_service['id'], new_service)
+        role1 = {'id': 'fake1',
+                'name': 'fake1name',
+                'service_id': new_service['id']}
+        role2 = {'id': 'fake2',
+                'name': 'fake1name'}
+        self.identity_api.create_role('fake1', role1)
+        self.identity_api.create_role('fake2', role2)
+        role1_r = self.identity_api.get_role_by_name_and_service(
+                    role_name=role1['name'], service_id=new_service['id'])
+        role2_r = self.identity_api.get_role_by_name_and_service(
+                    role_name=role2['name'])
+        self.assertDictEqual(role1, role1_r)
+        self.assertDictEqual(role2, role2_r)
 
     def test_create_null_user_name(self):
         user = {'id': uuid.uuid4().hex,
