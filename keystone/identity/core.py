@@ -27,6 +27,12 @@ from keystone import token
 from keystone.common import manager
 from keystone.common import wsgi
 
+# need to do this because of circular dependency:
+# keystone.catalog depends on keystone.identity
+# but keystone.identity also depends on keystone.catalog
+# to validate the service_id for service role creation
+import keystone
+
 
 CONF = config.CONF
 
@@ -94,6 +100,14 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    def get_role_by_name_and_service(self, role_name, service_id):
+        """Get a role by name and service_id.
+
+        Returns: user_ref or None.
+
+        """
+        raise exception.NotImplemented()
+
     def list_users(self):
         """List all users in the system.
 
@@ -105,8 +119,8 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_roles(self):
-        """List all roles in the system.
+    def list_roles(self, service_id):
+        """List all roles in the system. Optionally filtered by service_id
 
         Returns: a list of role_refs or an empty list.
 
@@ -431,6 +445,7 @@ class UserController(wsgi.Application):
 class RoleController(wsgi.Application):
     def __init__(self):
         self.identity_api = Manager()
+        self.catalog_api = keystone.catalog.Manager()
         self.token_api = token.Manager()
         self.policy_api = policy.Manager()
         super(RoleController, self).__init__()
@@ -472,6 +487,12 @@ class RoleController(wsgi.Application):
         self.assert_admin(context)
         role_id = uuid.uuid4().hex
         role['id'] = role_id
+        if role.get('service_id', None) is not None:
+            # validate service_id
+            service = self.catalog_api.get_service(context, role['service_id'])
+            if service is None:
+                msg = 'invalid service_id %s' % (role['service_id'])
+                raise exception.ValidationError(message=msg)
         role_ref = self.identity_api.create_role(context, role_id, role)
         return {'role': role_ref}
 
@@ -482,7 +503,8 @@ class RoleController(wsgi.Application):
 
     def get_roles(self, context):
         self.assert_admin(context)
-        roles = self.identity_api.list_roles(context)
+        service_id = context['query_string'].get('serviceId')
+        roles = self.identity_api.list_roles(context, service_id=service_id)
         # TODO(termie): probably inefficient at some point
         return {'roles': roles}
 
