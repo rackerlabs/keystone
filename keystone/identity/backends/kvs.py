@@ -96,6 +96,9 @@ class Identity(kvs.Base, identity.Driver):
     def get_metadata(self, user_id, tenant_id):
         return self.db.get('metadata-%s-%s' % (tenant_id, user_id)) or {}
 
+    def get_role_by_name_and_service(self, role_name, service_id):
+        raise NotImplementedError()
+
     def get_role(self, role_id):
         return self.db.get('role-%s' % role_id)
 
@@ -103,7 +106,7 @@ class Identity(kvs.Base, identity.Driver):
         user_ids = self.db.get('user_list', [])
         return [self.get_user(x) for x in user_ids]
 
-    def list_roles(self):
+    def list_roles(self, service_id=None):
         role_ids = self.db.get('role_list', [])
         return [self.get_role(x) for x in role_ids]
 

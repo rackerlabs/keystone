@@ -246,6 +246,46 @@ If the token is valid, returns::
         }
     }
 
+GET /tokens/{token_id}?serviceId={service IDs}
+==============================================
+
+.. note::
+
+    This call refers to a token known to be valid, ``887665443383838`` in this case.
+    Service ID ``1`` is known to be valid as well.
+
+Validate a token with optional service role filtering::
+
+    $ curl -H "X-Auth-Token:999888777666" http://localhost:35357/v2.0/tokens/887665443383838?serviceId=1
+
+If the token is valid, returns::
+
+    {
+        "access":{
+            "token":{
+                "expires":"2012-02-05T00:00:00",
+                "id":"887665443383838",
+                "tenant":{
+                    "id":"1",
+                    "name":"customer-x"
+                }
+            },
+            "user":{
+                "name":"joeuser",
+                "tenantName":"customer-x",
+                "id":"1",
+                "roles":[
+                    {
+                        "serviceId":"1",
+                        "id":"3",
+                        "name":"Member"
+                    }
+                ],
+                "tenantId":"1"
+            }
+        }
+    }
+
 HEAD /tokens/{token_id}
 =======================
 
@@ -255,6 +295,24 @@ by definition, returns no response body::
     $ curl -I -H "X-Auth-Token:999888777666" http://localhost:35357/v2.0/tokens/887665443383838
 
 ... which returns ``200``, indicating the token is valid::
+
+    HTTP/1.1 200 OK
+    Content-Length: 0
+    Content-Type: None
+    Date: Tue, 08 Nov 2011 23:07:44 GMT
+
+HEAD /tokens/{token_id}?serviceId={service IDs}
+===============================================
+
+Validate token with optionally service role filtering.
+
+This is a high-performance variant of the GET call documented above, which
+by definition, returns no response body::
+
+    $ curl -I -H "X-Auth-Token:999888777666" http://localhost:35357/v2.0/tokens/887665443383838?serviceId=1
+
+... which returns ``200``, indicating the token is valid and there exist at least
+one service roles matches the given service IDs::
 
     HTTP/1.1 200 OK
     Content-Length: 0

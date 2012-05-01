@@ -18,6 +18,7 @@ import re
 
 import sqlalchemy
 
+from keystone.catalog.backends import sql as catalog_sql
 from keystone.identity.backends import sql as identity_sql
 
 
@@ -50,6 +51,8 @@ class LegacyMigration(object):
         self.db = sqlalchemy.create_engine(db_string)
         self.identity_driver = identity_sql.Identity()
         self.identity_driver.db_sync()
+        self.catalog_driver = catalog_sql.Catalog()
+        self.catalog_driver.db_sync()
         self._data = {}
         self._user_map = {}
         self._tenant_map = {}
@@ -126,7 +129,8 @@ class LegacyMigration(object):
         for x in self._data['roles']:
             # map
             new_dict = {'id': x['id'],
-                        'name': x.get('name', x['id'])}
+                        'name': x.get('name', x['id']),
+                        'service_id': x.get('service_id', None)}
             # track internal ids
             self._role_map[x.get('id')] = new_dict['id']
             # create
