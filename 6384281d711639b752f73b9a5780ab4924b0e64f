@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHH//9bc\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2012-05-02T15:53:07Z",
+      "side": 1,
+      "message": "Is using backslashes like that common in other parts of the code?",
+      "revId": "6384281d711639b752f73b9a5780ab4924b0e64f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
