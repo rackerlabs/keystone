@@ -16,6 +16,24 @@
       "revId": "6384281d711639b752f73b9a5780ab4924b0e64f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//9TI\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1446
+      },
+      "writtenOn": "2012-05-02T20:32:08Z",
+      "side": 1,
+      "message": "It was used here because it was used in line 330 above in a related patch, which was accepted. \nAlso used in:\nkeystone/contrib/ec2/backends/sql.py\nkeystone/token/backends/sql.py",
+      "parentUuid": "AAAAHH//9bc\u003d",
+      "revId": "6384281d711639b752f73b9a5780ab4924b0e64f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
