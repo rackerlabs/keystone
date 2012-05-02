@@ -25,9 +25,9 @@ from keystone.common import wsgi
 CONF = config.CONF
 
 
-def create_server(conf, name, host, port):
+def create_server(conf, name, host, port, workers):
     app = deploy.loadapp('config:%s' % conf, name=name)
-    return wsgi.Server(app, host=host, port=port)
+    return wsgi.Server(app, host=host, port=port, workers=workers)
 
 
 def serve(*servers):
@@ -68,12 +68,20 @@ if __name__ == '__main__':
     options = deploy.appconfig('config:%s' % CONF.config_file[0])
 
     servers = []
+
+    # Work around KVS doesn't support multiprocess issue
+    if CONF.token.driver == 'keystone.token.backends.kvs.Token':
+        CONF.public_workers = 0
+        CONF.admin_workers = 0
+
     servers.append(create_server(CONF.config_file[0],
                                  'admin',
                                  CONF.bind_host,
-                                 int(CONF.admin_port)))
+                                 int(CONF.admin_port),
+                                 int(CONF.admin_workers)))
     servers.append(create_server(CONF.config_file[0],
                                  'main',
                                  CONF.bind_host,
-                                 int(CONF.public_port)))
+                                 int(CONF.public_port),
+                                 int(CONF.public_workers)))
     serve(*servers)
