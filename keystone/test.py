@@ -236,9 +236,9 @@ class TestCase(unittest.TestCase):
     def appconfig(self, config):
         return deploy.appconfig(self._paste_config(config))
 
-    def serveapp(self, config, name=None):
+    def serveapp(self, config, workers=None, name=None):
         app = self.loadapp(config, name=name)
-        server = wsgi.Server(app, host="127.0.0.1", port=0)
+        server = wsgi.Server(app, host="127.0.0.1", port=0, workers=workers)
         server.start(key='socket')
 
         # Service catalog tests need to know the port we ran on.

@@ -143,6 +143,8 @@ register_str('bind_host', default='0.0.0.0')
 register_str('compute_port')
 register_str('admin_port')
 register_str('public_port')
+register_int('admin_workers', default=0)
+register_int('public_workers', default=0)
 
 
 # sql options
