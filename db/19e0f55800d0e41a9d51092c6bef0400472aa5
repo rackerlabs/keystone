@@ -1,0 +1,9 @@
+Verified+1: Jenkins
+Code-Review+2: Joe Heck <heckj@mac.com>
+Approved+1: Devin Carlen <devin@openstack.org>
+Code-Review+2: Devin Carlen <devin@openstack.org>
+Submitted-by: Jenkins
+Submitted-at: Wed, 02 May 2012 20:57:33 +0000
+Reviewed-on: https://review.openstack.org/6999
+Project: openstack/keystone
+Branch: refs/heads/master
