@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHH//89U\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-03T17:11:00Z",
+      "side": 1,
+      "message": "Fixed this myself in https://review.openstack.org/#/c/7070",
+      "revId": "e5f1544990e5e92cb5cb18d7be27f5fd0940d694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//89o\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-03T17:11:00Z",
+      "side": 1,
+      "message": "Hyphens should be the same length as the subtitle.",
+      "revId": "e5f1544990e5e92cb5cb18d7be27f5fd0940d694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//89s\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-03T17:11:00Z",
+      "side": 1,
+      "message": "Trailing whitespace; don\u0027t reference bugs in docs (and if you did, it should be an actual link).",
+      "revId": "e5f1544990e5e92cb5cb18d7be27f5fd0940d694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//884\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-03T17:11:00Z",
+      "side": 1,
+      "message": "This paragraph is flooded with smart quotes from a word processor. Please replace them all with standard double quotation marks.",
+      "revId": "e5f1544990e5e92cb5cb18d7be27f5fd0940d694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//89Q\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-03T17:11:00Z",
+      "side": 1,
+      "message": "For example::",
+      "revId": "e5f1544990e5e92cb5cb18d7be27f5fd0940d694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//89M\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-03T17:11:00Z",
+      "side": 1,
+      "message": "indent the example 4 spaces",
+      "revId": "e5f1544990e5e92cb5cb18d7be27f5fd0940d694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//89I\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-03T17:11:00Z",
+      "side": 1,
+      "message": "... definition::\n\nthen indent the example 4 spaces",
+      "revId": "e5f1544990e5e92cb5cb18d7be27f5fd0940d694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//89E\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-03T17:11:00Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "e5f1544990e5e92cb5cb18d7be27f5fd0940d694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//888\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-03T17:11:00Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "e5f1544990e5e92cb5cb18d7be27f5fd0940d694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
