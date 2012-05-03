@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHH//8vI\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-05-03T20:53:30Z",
+      "side": 1,
+      "message": "maybe remove the newline?",
+      "revId": "ae9e29a30959192b470d864d46303b37f188f78d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//8vE\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2012-05-03T20:53:30Z",
+      "side": 1,
+      "message": "maybe remove the newline?",
+      "revId": "ae9e29a30959192b470d864d46303b37f188f78d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
