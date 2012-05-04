@@ -104,6 +104,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX///4Y\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2012-05-04T15:45:30Z",
+      "side": 1,
+      "message": "We should return a 401 (unauthorized)",
+      "parentUuid": "AAAAHX///9c\u003d",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX///9Y\u003d",
         "filename": "doc/source/configuringservices.rst",
         "patchSetId": 5
