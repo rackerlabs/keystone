@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX///94\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-04T13:05:47Z",
+      "side": 1,
+      "message": "I think it would be best to use a UUID token in the example here instead of the integer one above... would make the example more realistic.",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///9o\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-04T13:05:47Z",
+      "side": 1,
+      "message": "s/considered security/considered a security/",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///90\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-04T13:05:47Z",
+      "side": 1,
+      "message": "Teeny nit: some whitespace on end of above two lines...",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///9k\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-04T13:05:47Z",
+      "side": 1,
+      "message": "To keep with the semantics of the first sentence of the previous paragraph, I would say \"service-specific roles\" here instead of \"service roles\"",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///9g\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-04T13:05:47Z",
+      "side": 1,
+      "message": "s/no roles match/no roles matching/",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///9c\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-04T13:05:47Z",
+      "side": 1,
+      "message": "s/would failed/would return a 404/\n\nIs 404 correct?",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///9Y\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-04T13:05:47Z",
+      "side": 1,
+      "message": "little whitespace at end...",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///9U\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-04T13:05:47Z",
+      "side": 1,
+      "message": "I would suggest that it might be more efficient to add a delete_roles_for_service() call directly to the identity API instead of calling delete_role() for each role in list_roles(service_id\u003dservice_id)... Would enable the SQL generated (for the SQL backend at least) to be a single DELETE statement instead of many...",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///84\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-04T13:05:47Z",
+      "side": 1,
+      "message": "It seems pretty harsh to just assert here, but looking at the existing code, it looks like that is the pattern used... so no biggie I guess",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
