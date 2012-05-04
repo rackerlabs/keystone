@@ -4,6 +4,7 @@
 import greenlet
 import logging
 import os
+import signal
 import sys
 
 # If ../keystone/__init__.py exists, add ../ to Python search path, so that
@@ -30,12 +31,20 @@ def create_server(conf, name, host, port):
     return wsgi.Server(app, host=host, port=port)
 
 
+def sigint_handler(signal, frame):
+    """Exits at SIGINT signal."""
+    logging.debug('SIGINT received, stopping servers.')
+    sys.exit(0)
+
+
 def serve(*servers):
     for server in servers:
         logging.debug("starting server %s on port %s",
                       server.application,
                       server.port)
         server.start()
+
+    signal.signal(signal.SIGINT, sigint_handler)
 
     for server in servers:
         try:
