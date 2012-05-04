@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX///ws\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:33:44Z",
+      "side": 1,
+      "message": "Any reason to wait to do this til after starting servers?\n\ne.g. *if* we started 3 servers, and the third one took forever to start, we could still exit with a single ctrl+c",
+      "revId": "26198b6d9b9f4f1987b0f5fde57194d732134cc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
