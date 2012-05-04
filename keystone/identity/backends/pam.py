@@ -63,7 +63,7 @@ class PamIdentity(identity.Driver):
         if auth(user_id, password):
             metadata = {}
             if user_id == 'root':
-                metadata['is_admin'] == True
+                metadata['is_admin'] = True
 
             tenant = {'id': user_id, 'name': user_id}
 
