@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAHX///zg\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "Do we have a convention for describing a set a little more formally? {service_id_list} ? I would also assume the list is comma delimited, although the examples do not illustrate it either way.",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX///94\u003d",
         "filename": "doc/source/api_curl_examples.rst",
         "patchSetId": 5
@@ -19,6 +36,126 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX///zk\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "+1, although integers are still used pretty heavily throughout these examples :-/",
+      "parentUuid": "AAAAHX///94\u003d",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///zU\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "This should explain what \"service role filtering\" is/does.",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///zc\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///zY\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "I wouldn\u0027t bother duplicating this paragraph (also, this version has a grammar diff).",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///zM\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "service-agnostic and service-specific",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///zA\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "service-agnostic",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///y8\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "smart quotes remain, please find/replace them all",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX///9o\u003d",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 5
@@ -30,6 +167,23 @@
       "writtenOn": "2012-05-04T13:05:47Z",
       "side": 1,
       "message": "s/considered security/considered a security/",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///y4\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "Still not a fan of linking to bugs from docs. Instead, explain briefly why end-users would consider this a \"vulnerability\" and why they should use this feature.",
       "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +224,75 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX///zQ\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "Jay\u0027s suggestion makes more sense to me, and would apply to the curl examples page as well",
+      "parentUuid": "AAAAHX///9k\u003d",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///y0\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "Capabilities as in the RBAC sense, or are we still talking about roles?",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///yw\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "putting this in parens would improve the readability\n\n    (by optionally including the ``belongsTo`` query string)",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///ys\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "A few changes:\n\n    may consist of one or more comma-delimited service ID\u0027s.",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX///9g\u003d",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 5
@@ -81,6 +304,23 @@
       "writtenOn": "2012-05-04T13:05:47Z",
       "side": 1,
       "message": "s/no roles match/no roles matching/",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///yk\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "Worth being a bit more verbose here, IMO:\n\n    If the ``serviceId` paramater is present",
       "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +362,108 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX///yc\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "Ignoring extension prefixes, I would assume this call would simply be:\n\n    GET /services/{service_id}/roles\n\ni.e. I don\u0027t see the use case for a comma delimited list here.",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///yY\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "service-agnostic, service-specific",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///yU\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "service-agnostic\n\ns/Which/This implies the user is recognized as Admin by/",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///yQ\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "given tenant (i.e. user [...] Swift, etc).",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///yM\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "Again, \"\u003crole\u003e for \u003cservice_type\u003e\" sounds like awkward phrasing to me. I\u0027d suggest the same fix as above, I suppose.",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///yA\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "smart quotes",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX///9Y\u003d",
         "filename": "doc/source/configuringservices.rst",
         "patchSetId": 5
@@ -133,6 +475,210 @@
       "writtenOn": "2012-05-04T13:05:47Z",
       "side": 1,
       "message": "little whitespace at end...",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///yE\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "Don\u0027t like bugs in docs",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///x8\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "s/first you\u0027ll/you will first/\n\ns/UUID/ID/g -- not everyone implements UUID\u0027s",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///x4\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "Then, create a service-specific role",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///x0\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "Once your service-specific role is created, you can assign it to users just like service-agnostic roles.",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///xw\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "service-specific role validation",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///xs\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "Service-Specific Role Validation",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///xo\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "s/Middleware/The middleware/ -- not *all* middleware ;)",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///xk\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "s/any role/a role/\n\ns/Middleware is deployed with/the middleware is deployed in front of/",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///xc\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "I don\u0027t understand this line at all, starting with \"and there a request.\"",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///xY\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "service-specific role validation",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///xU\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "If one or more service ID\u0027s",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///xQ\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:20:30Z",
+      "side": 1,
+      "message": "(optional) comma-delimited list of service ID\u0027s",
       "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
