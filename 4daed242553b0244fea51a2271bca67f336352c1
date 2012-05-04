@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX///wQ\u003d",
+        "filename": "keystone/contrib/keystone_bash_completion.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-04T18:41:46Z",
+      "side": 1,
+      "message": "Licensing issue?",
+      "revId": "4daed242553b0244fea51a2271bca67f336352c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
