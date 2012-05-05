@@ -259,6 +259,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX///p4\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-05T00:20:23Z",
+      "side": 1,
+      "message": "I\u0027ll take out \"capabilities\" to avoid RBAC confusion as words are very important in Keystone. (Please don\u0027t ask me to change all occurrences of \"tenant\" to \"project\". :))",
+      "parentUuid": "AAAAHX///y0\u003d",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX///yw\u003d",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 5
@@ -362,6 +380,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX///p0\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-05T00:20:23Z",
+      "side": 1,
+      "message": "401 that is.",
+      "parentUuid": "AAAAHX///4Y\u003d",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX///yc\u003d",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 5
@@ -373,6 +409,24 @@
       "writtenOn": "2012-05-04T18:20:30Z",
       "side": 1,
       "message": "Ignoring extension prefixes, I would assume this call would simply be:\n\n    GET /services/{service_id}/roles\n\ni.e. I don\u0027t see the use case for a comma delimited list here.",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///ps\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-05T00:20:23Z",
+      "side": 1,
+      "message": "Yes. I would like to see this core API in Folsom.",
+      "parentUuid": "AAAAHX///yc\u003d",
       "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -702,6 +756,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX///o0\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-05T00:20:23Z",
+      "side": 1,
+      "message": "The sql backend seemed to follow the one delete at a time pattern.",
+      "parentUuid": "AAAAHX///9U\u003d",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX///84\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 5
@@ -713,6 +785,24 @@
       "writtenOn": "2012-05-04T13:05:47Z",
       "side": 1,
       "message": "It seems pretty harsh to just assert here, but looking at the existing code, it looks like that is the pattern used... so no biggie I guess",
+      "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///o4\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-05T00:20:23Z",
+      "side": 1,
+      "message": "I didn\u0027t want to mess with karma. But hey ... :)",
+      "parentUuid": "AAAAHX///84\u003d",
       "revId": "952ba141adafa8f5a50b9d48a22fbba61e3d913b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
