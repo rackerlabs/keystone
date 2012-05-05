@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHH//9K4\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2012-05-05T17:46:54Z",
+      "side": 1,
+      "message": "Agree, LOG.warn() is more appropriate.",
+      "parentUuid": "AAAAHH//9cY\u003d",
+      "revId": "b40b17333bb6b3684638ebaa0f15f4c325bb2344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHH//9cQ\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-05-02T15:19:49Z",
       "side": 1,
       "message": "although you have the default in the init, it would be good to have default\u003d0 for this and public_workers",
+      "revId": "b40b17333bb6b3684638ebaa0f15f4c325bb2344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHH//9K0\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2012-05-05T17:46:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHH//9cQ\u003d",
       "revId": "b40b17333bb6b3684638ebaa0f15f4c325bb2344",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
