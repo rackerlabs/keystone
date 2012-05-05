@@ -134,6 +134,7 @@ class AuthProtocol(object):
         default_auth_uri = '%s://%s:%s' % (auth_protocol,
                                            self.auth_host,
                                            self.auth_port)
+        self.auth_admin_prefix = conf.get('auth_admin_prefix', '')
         self.auth_uri = conf.get('auth_uri', default_auth_uri)
 
         # Credentials used to verify this component with the Auth service since
@@ -281,8 +282,9 @@ class AuthProtocol(object):
         if body:
             kwargs['body'] = json.dumps(body)
 
+        full_path = self.auth_admin_prefix + path
         try:
-            conn.request(method, path, **kwargs)
+            conn.request(method, full_path, **kwargs)
             response = conn.getresponse()
             body = response.read()
         except Exception, e:
