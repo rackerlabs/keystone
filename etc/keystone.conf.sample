@@ -53,6 +53,13 @@ driver = keystone.policy.backends.rules.Policy
 [ec2]
 driver = keystone.contrib.ec2.backends.kvs.Ec2
 
+[security]
+driver = keystone.contrib.security.backends.sql.Security
+actions = ['keystone.contrib.security.actions.Log_multiple_401',
+           'keystone.contrib.security.actions.Store_4xx_5xx_responses',]
+expiration = 300
+tolerance = 5
+
 [filter:debug]
 paste.filter_factory = keystone.common.wsgi:Debug.factory
 
@@ -74,6 +81,9 @@ paste.filter_factory = keystone.contrib.admin_crud:CrudExtension.factory
 [filter:ec2_extension]
 paste.filter_factory = keystone.contrib.ec2:Ec2Extension.factory
 
+[filter:security]
+paste.filter_factory = keystone.contrib.security:SecurityMiddleware.factory
+
 [app:public_service]
 paste.app_factory = keystone.service:public_app_factory
 
@@ -81,10 +91,10 @@ paste.app_factory = keystone.service:public_app_factory
 paste.app_factory = keystone.service:admin_app_factory
 
 [pipeline:public_api]
-pipeline = token_auth admin_token_auth xml_body json_body debug ec2_extension public_service
+pipeline = token_auth admin_token_auth security xml_body json_body debug ec2_extension public_service
 
 [pipeline:admin_api]
-pipeline = token_auth admin_token_auth xml_body json_body debug ec2_extension crud_extension admin_service
+pipeline = token_auth admin_token_auth security xml_body json_body debug ec2_extension crud_extension admin_service
 
 [app:public_version_service]
 paste.app_factory = keystone.service:public_version_app_factory
