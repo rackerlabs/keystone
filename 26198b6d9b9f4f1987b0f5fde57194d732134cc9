@@ -16,6 +16,24 @@
       "revId": "26198b6d9b9f4f1987b0f5fde57194d732134cc9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX///Fg\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-05-07T21:46:53Z",
+      "side": 1,
+      "message": "No, It\u0027s not really needed, as you said it would better done before starting servers.",
+      "parentUuid": "AAAAHX///ws\u003d",
+      "revId": "26198b6d9b9f4f1987b0f5fde57194d732134cc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
