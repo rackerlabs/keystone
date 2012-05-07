@@ -126,7 +126,6 @@ a WSGI component. Example for the auth_token middleware::
     auth_host = 127.0.0.1
     auth_port = 35357
     auth_protocol = http
-    auth_uri = http://127.0.0.1:5000/
     admin_token = Super999Sekret888Password777
     admin_user = admin
     admin_password = SuperSekretPassword
