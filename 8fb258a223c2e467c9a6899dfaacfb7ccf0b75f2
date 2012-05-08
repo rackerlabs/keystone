@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//+7k\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2012-05-08T01:06:54Z",
+      "side": 1,
+      "message": "Should this method be added to ldap/core.py as well for consistency of Driver interface?",
+      "revId": "8fb258a223c2e467c9a6899dfaacfb7ccf0b75f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
