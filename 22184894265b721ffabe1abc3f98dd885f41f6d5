@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//+vo\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-08T13:16:00Z",
+      "side": 1,
+      "message": "This is currently being handled by overriding the specific tests in the specific test_backend_* modules. I don\u0027t want to have two different approaches to skip tests per backend...",
+      "revId": "22184894265b721ffabe1abc3f98dd885f41f6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
