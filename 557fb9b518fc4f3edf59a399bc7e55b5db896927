@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//+DE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-09T17:19:19Z",
+      "side": 1,
+      "message": "Should this state be logged, at least once?  If someone chooses a backend that doesn\u0027t invalidate tokens, it might be useful to have an indication in the logs that this is so.",
+      "revId": "557fb9b518fc4f3edf59a399bc7e55b5db896927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//+Go\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 1
