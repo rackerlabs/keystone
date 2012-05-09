@@ -228,6 +228,12 @@ class Application(BaseApplication):
                      for (k, v) in d.iteritems()])
 
     def assert_admin(self, context):
+        """Ensure the user is an admin.
+
+        :raises exception.Unauthorized: invalid token/user/tenant
+        :raises exception.Forbidden: valid user but not admin
+
+        """
         if not context['is_admin']:
             try:
                 user_token_ref = self.token_api.get_token(
