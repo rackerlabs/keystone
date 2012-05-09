@@ -41,14 +41,14 @@ class MultiprocessKeystoneTestCase(test.TestCase):
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
-        self.public_server = self.serveapp('keystone', workers=1, name='main')
-        self.admin_server = self.serveapp('keystone', workers=1, name='admin')
+        self.public_server = self.serveapp('keystone', workers=2, name='main')
+        self.admin_server = self.serveapp('keystone', workers=2, name='admin')
 
         self.base_url = self._public_url()
 
         LOG.info(self.base_url)
 
-        self.user = self.user_foo['id']
+        self.user = self.user_foo['name']
         self.password = self.user_foo['password']
         self.tenant_id = self.tenant_bar['id']
 
@@ -88,19 +88,18 @@ class MultiprocessKeystoneTestCase(test.TestCase):
             headers=headers,
             body=json.dumps(body))
 
-        # load_fixtures() doesn't work?
-        self.assertEqual(response.status, 401)
-        #res_body = json.loads(content)
-        #self.assertTrue(res_body['access']['token']['id'])
-        #self.assertTrue(res_body['access']['token']['tenant']['id'],
-        #    self.tenant_id)
-        #self.assertTrue(res_body['access']['user']['name'],
-        #    self.user)
+        self.assertEqual(response.status, 200)
+        res_body = json.loads(content)
+        self.assertTrue(res_body['access']['token']['id'])
+        self.assertTrue(res_body['access']['token']['tenant']['id'],
+            self.tenant_id)
+        self.assertTrue(res_body['access']['user']['name'],
+            self.user)
 
     def _public_url(self):
         public_port = self.public_server.socket_info['socket'][1]
-        return "http://localhost:%s/v2.0" % public_port
+        return "http://localhost:%s/v2.0/tokens" % public_port
 
     def _admin_url(self):
         admin_port = self.admin_server.socket_info['socket'][1]
-        return "http://localhost:%s/v2.0" % admin_port
+        return "http://localhost:%s/v2.0/tokens" % admin_port
