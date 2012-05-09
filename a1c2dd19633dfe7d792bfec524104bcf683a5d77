@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//+G8\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-09T16:04:38Z",
+      "side": 0,
+      "message": "Can be removed, AFAIK.",
+      "revId": "a1c2dd19633dfe7d792bfec524104bcf683a5d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//+HA\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-09T16:04:38Z",
+      "side": 0,
+      "message": "Can be removed.",
+      "revId": "a1c2dd19633dfe7d792bfec524104bcf683a5d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//+G4\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-09T16:04:38Z",
+      "side": 0,
+      "message": "Given my suggestions below, I think this would be the most up-to-date example.",
+      "revId": "a1c2dd19633dfe7d792bfec524104bcf683a5d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//+HM\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-09T16:04:38Z",
+      "side": 0,
+      "message": "This should not be removed.",
+      "revId": "a1c2dd19633dfe7d792bfec524104bcf683a5d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//+HE\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-09T16:04:38Z",
+      "side": 0,
+      "message": "This can either be removed, or documented as \"not preferred, given a valid admin_user, admin_password, \u0026 admin_tenant_name.\" It could also be kept if we want to maintain backwards compatibility between the docs and essex, but I think that\u0027d be confusing here.",
+      "revId": "a1c2dd19633dfe7d792bfec524104bcf683a5d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
