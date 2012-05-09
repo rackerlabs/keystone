@@ -87,6 +87,16 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    def list_tokens(self, user_id):
+        """Returns a list of current token_id's for a user
+
+        :param user_id: identity of the user
+        :type user_id: string
+        :returns: list.
+
+        """
+        raise exception.NotImplemented()
+
     def _get_default_expire_time(self):
         """Determine when a token should expire based on the config.
 

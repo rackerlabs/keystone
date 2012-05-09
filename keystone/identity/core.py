@@ -418,6 +418,13 @@ class UserController(wsgi.Application):
         return self.update_user(context, user_id, user)
 
     def set_user_password(self, context, user_id, user):
+        try:
+            for token_id in self.token_api.list_tokens(context, user_id):
+                self.token_api.delete_token(context, token_id)
+        except exception.NotImplemented:
+            # silently catch this, the password has been changed but tokens
+            # remain valid for backends that can't list tokens for users
+            pass
         return self.update_user(context, user_id, user)
 
     def update_user_tenant(self, context, user_id, user):
