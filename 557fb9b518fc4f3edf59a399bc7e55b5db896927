@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//+Gs\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-09T16:18:06Z",
+      "side": 1,
+      "message": "I\u0027d rather this be done only after the user was updated successfully.",
+      "revId": "557fb9b518fc4f3edf59a399bc7e55b5db896927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//+Go\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-09T16:18:06Z",
+      "side": 1,
+      "message": "Why do we have to get all unexpired tokens, and then walk them in python?",
+      "revId": "557fb9b518fc4f3edf59a399bc7e55b5db896927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//+Gk\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-09T16:18:06Z",
+      "side": 1,
+      "message": "specify list of token_refs or list of token_id\u0027s -- we have both types of calls in various drivers",
+      "revId": "557fb9b518fc4f3edf59a399bc7e55b5db896927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//+GU\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-09T16:18:06Z",
+      "side": 1,
+      "message": "Given that it\u0027s really an implementation issue as to how/why tokens become invalid, and the test doesn\u0027t care about that:\n\nSuggestion: test_change_password_invalidates_token\n\nAlso, it only tests that a single token is invalidated, not plural.",
+      "revId": "557fb9b518fc4f3edf59a399bc7e55b5db896927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//+GI\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-09T16:18:06Z",
+      "side": 1,
+      "message": "Should be single quotes; but personally, I\u0027d rather see all our tests using generated data (uuid\u0027s) to reduce the risk of experiencing confusing test failures when writing new tests.",
+      "revId": "557fb9b518fc4f3edf59a399bc7e55b5db896927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//+F8\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-09T16:18:06Z",
+      "side": 1,
+      "message": "Continue line breaking between these args",
+      "revId": "557fb9b518fc4f3edf59a399bc7e55b5db896927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
