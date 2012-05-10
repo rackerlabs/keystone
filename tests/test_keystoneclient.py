@@ -309,6 +309,29 @@ class KeystoneClientTests(object):
                           client.tokens.authenticate,
                           token=token_id)
 
+    def test_user_update_user_passwd(self):
+        client = self.get_client(self.user_foo)
+        user_foo = self.user_foo.copy()
+
+        # test a user can update own password
+        password = uuid.uuid4().hex
+        client.users.update_password(user=user_foo['id'], password=password)
+
+        user_foo['password'] = password
+        client = self.get_client(user_foo)
+        client.authenticate()
+
+    def test_user_cant_update_other_user_passwd(self):
+        from keystoneclient import exceptions as client_exceptions
+
+        client = self.get_client(self.user_foo)
+
+        # test a user can't update passwords of others
+        self.assertRaises(client_exceptions.Forbidden,
+                client.users.update_password,
+                user=self.user_two['id'],
+                password=uuid.uuid4().hex)
+
     def test_user_create_update_delete(self):
         from keystoneclient import exceptions as client_exceptions
 
