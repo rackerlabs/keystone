@@ -16,6 +16,24 @@
       "revId": "d786ea4cb68d0b1fb771cf206229af3b501db746",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//9rk\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2012-05-10T13:52:26Z",
+      "side": 1,
+      "message": "From HACKING:\n\n  - Do not write \"except:\", use \"except Exception:\" at the very least\n\n:-)",
+      "parentUuid": "AAAAHX//9sI\u003d",
+      "revId": "d786ea4cb68d0b1fb771cf206229af3b501db746",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
