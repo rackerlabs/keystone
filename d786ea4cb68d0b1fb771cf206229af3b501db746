@@ -34,6 +34,24 @@
       "revId": "d786ea4cb68d0b1fb771cf206229af3b501db746",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//9F4\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-11T12:39:31Z",
+      "side": 1,
+      "message": "Fair enough! :) the \"as e\" should still be dropped, as it\u0027s unused",
+      "parentUuid": "AAAAHX//9rk\u003d",
+      "revId": "d786ea4cb68d0b1fb771cf206229af3b501db746",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
