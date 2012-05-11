@@ -314,6 +314,13 @@ class TokenController(wsgi.Application):
 
             user_ref = old_token_ref['user']
 
+            # If the user is disabled don't allow them to authenticate
+            current_user_ref = self.identity_api.get_user(
+                                                    context=context,
+                                                    user_id=user_ref['id'])
+            if not current_user_ref.get('enabled', True):
+                raise exception.Forbidden(message='User has been disabled')
+
             tenants = self.identity_api.get_tenants_for_user(context,
                                                              user_ref['id'])
             if tenant_id:

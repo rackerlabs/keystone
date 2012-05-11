@@ -418,7 +418,16 @@ class UserController(wsgi.Application):
         self.identity_api.delete_user(context, user_id)
 
     def set_user_enabled(self, context, user_id, user):
-        return self.update_user(context, user_id, user)
+        user_ref = self.update_user(context, user_id, user)
+        try:
+            for token_id in self.token_api.list_tokens(context, user_id):
+                self.token_api.delete_token(context, token_id)
+        except exception.NotImplemented:
+            # The password has been changed but tokens remain valid for
+            # backends that can't list tokens for users
+            LOG.warning('User %s disabled, but existing tokens remain '
+                        'valid' % user_id)
+        return user_ref
 
     def set_user_password(self, context, user_id, user):
         user_ref = self.update_user(context, user_id, user)
