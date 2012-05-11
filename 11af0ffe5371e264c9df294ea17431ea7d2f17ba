@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//9Eo\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-11T13:46:24Z",
+      "side": 1,
+      "message": "use single quotes; also, \"tokens have remained valid\" -\u003e \"but existing tokens remain valid\"",
+      "revId": "11af0ffe5371e264c9df294ea17431ea7d2f17ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//9D0\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-11T13:46:24Z",
+      "side": 1,
+      "message": "indent to match the quotes per https://github.com/openstack/keystone/blob/master/HACKING.rst#calling-methods",
+      "revId": "11af0ffe5371e264c9df294ea17431ea7d2f17ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//9Dw\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-11T13:46:24Z",
+      "side": 1,
+      "message": "use single quotes throughout",
+      "revId": "11af0ffe5371e264c9df294ea17431ea7d2f17ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//9Do\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-11T13:46:24Z",
+      "side": 1,
+      "message": "single quotes",
+      "revId": "11af0ffe5371e264c9df294ea17431ea7d2f17ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
