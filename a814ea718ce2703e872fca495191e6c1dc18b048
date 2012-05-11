@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//8/Y\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-11T15:13:29Z",
+      "side": 1,
+      "message": "copy/pasta issue :)",
+      "revId": "a814ea718ce2703e872fca495191e6c1dc18b048",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//8/U\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-11T15:13:29Z",
+      "side": 1,
+      "message": "Do we want to expose that the user is disabled?",
+      "revId": "a814ea718ce2703e872fca495191e6c1dc18b048",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//8/Q\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-11T15:13:29Z",
+      "side": 1,
+      "message": "Should also test that a fresh auth now raises 403 forbidden",
+      "revId": "a814ea718ce2703e872fca495191e6c1dc18b048",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
