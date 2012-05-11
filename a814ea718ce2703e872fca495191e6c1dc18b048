@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//8+I\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1926
+      },
+      "writtenOn": "2012-05-11T15:21:10Z",
+      "side": 1,
+      "message": "this is whats done for username/password auth \nhttps://github.com/openstack/keystone/blob/master/keystone/service.py#L278\nshould I change both to a less revealing status?",
+      "parentUuid": "AAAAHX//8/U\u003d",
+      "revId": "a814ea718ce2703e872fca495191e6c1dc18b048",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//8/Q\u003d",
         "filename": "tests/test_keystoneclient.py",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2012-05-11T15:13:29Z",
       "side": 1,
       "message": "Should also test that a fresh auth now raises 403 forbidden",
+      "revId": "a814ea718ce2703e872fca495191e6c1dc18b048",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//8+Y\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1926
+      },
+      "writtenOn": "2012-05-11T15:21:10Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "AAAAHX//8/Q\u003d",
       "revId": "a814ea718ce2703e872fca495191e6c1dc18b048",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
