@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//8dQ\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2012-05-14T11:52:51Z",
+      "side": 1,
+      "message": "self.delay_auth_decision \u003d (conf.get(\u0027delay_auth_decision\u0027, False)\n                            in (\u0027true\u0027, \u0027t\u0027, \u00271\u0027, \u0027on\u0027, \u0027yes\u0027, \u0027y\u0027))\n\nWouldn\u0027t this look better?",
+      "revId": "1478573a2c70646395afb8f082fa4cdbd1425d33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
