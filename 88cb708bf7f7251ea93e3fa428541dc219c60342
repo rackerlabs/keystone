@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//7kU\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:22:06Z",
+      "side": 1,
+      "message": "a middleware overriding \u003d\u003e an overriding middleware\n\nie: tempurl -\u003e i.e. tempurl",
+      "revId": "88cb708bf7f7251ea93e3fa428541dc219c60342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7kQ\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:22:06Z",
+      "side": 1,
+      "message": "Consider leaving this as an if statement since the previous conditional is unrelated to this one.",
+      "revId": "88cb708bf7f7251ea93e3fa428541dc219c60342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7kw\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:22:06Z",
+      "side": 1,
+      "message": "Unrelated formatting change",
+      "revId": "88cb708bf7f7251ea93e3fa428541dc219c60342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7ks\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:22:06Z",
+      "side": 1,
+      "message": "Unrelated formatting change",
+      "revId": "88cb708bf7f7251ea93e3fa428541dc219c60342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
