@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//7ag\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T22:45:28Z",
+      "side": 1,
+      "message": "I agree with you, no action required.  Keystone isn\u0027t following HACKING with respect to import ordering, so might as well maintain consistency.",
+      "parentUuid": "AAAAHX//7bA\u003d",
+      "revId": "c43390978e279d072ef6dc5e322af19594f1f695",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//7jo\u003d",
         "filename": "keystone/contrib/user_crud/core.py",
         "patchSetId": 1
@@ -135,6 +153,24 @@
       "writtenOn": "2012-05-15T22:38:05Z",
       "side": 1,
       "message": "Need to import logging...",
+      "revId": "c43390978e279d072ef6dc5e322af19594f1f695",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7aY\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T22:45:28Z",
+      "side": 1,
+      "message": "Good call.   And initialize LOG.",
+      "parentUuid": "AAAAHX//7bI\u003d",
       "revId": "c43390978e279d072ef6dc5e322af19594f1f695",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
