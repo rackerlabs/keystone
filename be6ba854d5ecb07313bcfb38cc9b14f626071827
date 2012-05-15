@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//7lo\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:13:18Z",
+      "side": 1,
+      "message": "token \u003d\u003e tokens",
+      "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7lg\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:13:18Z",
+      "side": 1,
+      "message": "example having this \u003d\u003e example, ensure that the following is",
+      "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7ls\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:13:18Z",
+      "side": 1,
+      "message": "and \u003d\u003e and the\nin \u003d\u003e is in\n\nalong \u003d\u003e along with",
+      "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7lQ\u003d",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:13:18Z",
+      "side": 1,
+      "message": "allow \u003d\u003e provides\nused \u003d\u003e configured",
+      "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7lM\u003d",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:13:18Z",
+      "side": 1,
+      "message": "use \u003d\u003e uses\nas for \u003d\u003e used by",
+      "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7lA\u003d",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:13:18Z",
+      "side": 1,
+      "message": "those \u003d\u003e the required credentials",
+      "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
