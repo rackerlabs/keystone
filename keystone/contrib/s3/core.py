@@ -16,7 +16,11 @@
 
 """Main entry point into the S3 Credentials service.
 
-TODO-DOCS
+This service allow S3 token validation for services used with the s3_token
+middleware to authorize S3 requests.
+
+This service use the same credentials as for EC2. Refer to the documentation
+for the EC2 module for how to generate those.
 """
 
 import base64

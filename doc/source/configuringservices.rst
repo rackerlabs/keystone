@@ -242,9 +242,20 @@ Configuring Swift with S3 emulation to use Keystone
 Keystone support validating S3 tokens using the same tokens as the
 generated EC2 tokens. When you have generated a pair of EC2 access
 token and secret you can access your swift cluster directly with the
-S3 api.
+S3 API.
 
-1. Configure the paste file for swift-proxy
+1. Make sure you have the S3 service to validate S3 token in your keystone.conf
+   admin_api pipeline. For example having this in your `keystone.conf`::
+
+    [filter:s3_extension]
+    paste.filter_factory = keystone.contrib.s3:S3Extension.factory
+
+and s3_extension filter in the admin_api pipeline along the other filters::
+
+    [pipeline:admin_api]
+    pipeline = token_auth [....] ec2_extension s3_extension [...]
+
+2. Configure the paste file for swift-proxy
    (`/etc/swift/swift-proxy.conf` to use S3token and Swift3
    middleware.
 
@@ -293,7 +304,7 @@ S3 api.
     auth_token = ADMIN
     admin_token = ADMIN
 
-2. You can then access directly your Swift via the S3 API, here's an
+3. You can then access directly your Swift via the S3 API, here's an
    example with the `boto` library::
 
     import boto
