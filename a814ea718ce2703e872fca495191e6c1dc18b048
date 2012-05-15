@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//76o\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-05-15T06:43:50Z",
+      "side": 1,
+      "message": "I think we want to just report \"unauthorized\" to the user and log \"User disabled\" to the local system so that a system admin/operator can figure out *why* they were denied auth.",
+      "parentUuid": "AAAAHX//8+I\u003d",
+      "revId": "a814ea718ce2703e872fca495191e6c1dc18b048",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//8/Q\u003d",
         "filename": "tests/test_keystoneclient.py",
         "patchSetId": 1
