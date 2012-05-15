@@ -37,6 +37,57 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//7j0\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:42:02Z",
+      "side": 1,
+      "message": "import ordering (use entire path in determining ordering)",
+      "revId": "c43390978e279d072ef6dc5e322af19594f1f695",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7jo\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:42:02Z",
+      "side": 1,
+      "message": "Consider the following one-liner rather than adding a function:\n\nreturn dict((k, v) for k, v in map.iteritems() if k in keys_allowed)",
+      "revId": "c43390978e279d072ef6dc5e322af19594f1f695",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7js\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:42:02Z",
+      "side": 1,
+      "message": "PEP8 vertical alignment",
+      "revId": "c43390978e279d072ef6dc5e322af19594f1f695",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//73A\u003d",
         "filename": "keystone/contrib/user_crud/core.py",
         "patchSetId": 1
@@ -66,6 +117,57 @@
       "side": 1,
       "message": "The API call I\u0027ve added mimics the Admin API call, so diablo clients that could previously only update a password as an admin user will now be able to do so as a non admin user.",
       "parentUuid": "AAAAHX//73A\u003d",
+      "revId": "c43390978e279d072ef6dc5e322af19594f1f695",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7j8\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:42:02Z",
+      "side": 1,
+      "message": "PEP8 vertical alignment",
+      "revId": "c43390978e279d072ef6dc5e322af19594f1f695",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7j4\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:42:02Z",
+      "side": 1,
+      "message": "PEP8 vertical alignment",
+      "revId": "c43390978e279d072ef6dc5e322af19594f1f695",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7jk\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T19:42:02Z",
+      "side": 1,
+      "message": "PEP8 vertical alignment",
       "revId": "c43390978e279d072ef6dc5e322af19594f1f695",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
