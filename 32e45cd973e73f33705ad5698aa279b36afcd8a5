@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//7Y4\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-15T23:50:18Z",
+      "side": 1,
+      "message": "PEP8 vertical alignment (contents of parenthesis should line up).",
+      "revId": "32e45cd973e73f33705ad5698aa279b36afcd8a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
