@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//74o\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-05-15T08:49:58Z",
+      "side": 1,
+      "message": "/me repeat 5 time always use Emacs before committing :)",
+      "parentUuid": "AAAAHX//8JY\u003d",
+      "revId": "c8599567634cd30513216cbb12579b71c517ad67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//8JM\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-05-14T19:53:52Z",
       "side": 1,
       "message": "I know this module is intended to be dependency free, but having to manually marshal booleans is lame.",
+      "revId": "c8599567634cd30513216cbb12579b71c517ad67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//74s\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-05-15T08:49:58Z",
+      "side": 1,
+      "message": "I totally agree but was not sure how to do that otherwise I know in swift we have TRUE_VALUE boolean but can\u0027t really import it there and I dont think it would work to go in openstack.common",
+      "parentUuid": "AAAAHX//8JM\u003d",
       "revId": "c8599567634cd30513216cbb12579b71c517ad67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
