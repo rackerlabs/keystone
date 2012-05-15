@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//7oY\u003d",
+        "filename": "keystone/contrib/security/middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-15T18:57:27Z",
+      "side": 1,
+      "message": "need sensible defaults for all options",
+      "revId": "519c6e824124c5f2330f168c076fab346557feb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7oc\u003d",
+        "filename": "keystone/contrib/security/middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-15T18:57:27Z",
+      "side": 1,
+      "message": "Subject should be configurable",
+      "revId": "519c6e824124c5f2330f168c076fab346557feb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
