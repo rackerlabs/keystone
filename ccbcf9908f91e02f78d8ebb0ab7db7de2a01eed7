@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//7Cw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-16T17:19:54Z",
+      "side": 1,
+      "message": "nice :)",
+      "revId": "ccbcf9908f91e02f78d8ebb0ab7db7de2a01eed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7CY\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-16T17:19:54Z",
+      "side": 1,
+      "message": "You can actually remove the message kw; the class\u0027 docstring is used as the message by default.",
+      "revId": "ccbcf9908f91e02f78d8ebb0ab7db7de2a01eed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//7CQ\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-16T17:19:54Z",
+      "side": 1,
+      "message": "same as above; remove message kw",
+      "revId": "ccbcf9908f91e02f78d8ebb0ab7db7de2a01eed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
