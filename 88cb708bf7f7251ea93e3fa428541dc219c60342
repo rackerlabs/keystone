@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//7Ek\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-16T17:03:39Z",
+      "side": 1,
+      "message": "I\u0027m more afraid of the opposite scenario: non-functional changes grouped up with a functional change that doesn\u0027t belong.",
+      "parentUuid": "AAAAHX//7IU\u003d",
+      "revId": "88cb708bf7f7251ea93e3fa428541dc219c60342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//7ks\u003d",
         "filename": "tests/test_swift_auth_middleware.py",
         "patchSetId": 1
