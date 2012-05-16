@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//7IU\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-05-16T16:33:08Z",
+      "side": 1,
+      "message": "I know what the intent is, but the best practice would be to commit unrelated non-functional changes in a separate patch.  It\u0027s up to the keystone core reviewers whether they care, though.",
+      "parentUuid": "AAAAHX//7W8\u003d",
+      "revId": "88cb708bf7f7251ea93e3fa428541dc219c60342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//7ks\u003d",
         "filename": "tests/test_swift_auth_middleware.py",
         "patchSetId": 1
