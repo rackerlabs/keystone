@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//6Sc\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-18T14:52:36Z",
+      "side": 1,
+      "message": "Actually, both can be raised; so, both should be caught here!\n\ncommon.wsgi.Application.assert_admin() raises Unauthorized to say something went wrong with the auth (invalid token/user/tenant); subsequently, the policy engine can raise Forbidden if the user lacks the required authz (valid user, but not an admin, in this case).\n\nThe docstring here should also be updated to explain this.",
+      "revId": "e67a7cdf1db042d26a6bdc55540287a5b1d19c38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
