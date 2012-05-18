@@ -1,0 +1,9 @@
+Code-Review+2: Monty Taylor <mordred@inaugust.com>
+Verified+2: Jenkins
+Approved+1: Joe Heck <heckj@mac.com>
+Code-Review+2: Joe Heck <heckj@mac.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 18 May 2012 17:02:14 +0000
+Reviewed-on: https://review.openstack.org/7175
+Project: openstack/keystone
+Branch: refs/heads/master
