@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//5mg\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-21T19:04:49Z",
+      "side": 1,
+      "message": "Space isn\u0027t necessary at beginning; add a period.\n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#docstrings",
+      "revId": "6e6e2b9597d589862db47ebd2ed93b1c0ba1f098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
