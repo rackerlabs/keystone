@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//5vM\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 425
+      },
+      "writtenOn": "2012-05-21T12:13:53Z",
+      "side": 1,
+      "message": "I\u0027d change this to something like\n\n1. Ensure you have defined the S3 service in your `keystone.conf`.  First, define the filter as follows:\n\n    [filter:s3_extension]\n    paste.filter_factory \u003d keystone.contrib.s3:S3Extension.factory\n\nThen, ensure that the filter is being called by the admin_api pipeline, as follows:\n\n    [pipeline:admin_api]\n    pipeline \u003d token_auth [....] ec2_extension s3_extension [...]",
+      "revId": "7c1f38b42efcd98005f716cc13826b08c32dd532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
