@@ -16,6 +16,24 @@
       "revId": "7c1f38b42efcd98005f716cc13826b08c32dd532",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//5vE\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-05-21T12:18:58Z",
+      "side": 1,
+      "message": "Thanks, I need to keep the double colons (::) to tell rst that the next indented lines are code block.",
+      "parentUuid": "AAAAHX//5vM\u003d",
+      "revId": "7c1f38b42efcd98005f716cc13826b08c32dd532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
