@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//5v8\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-05-21T11:44:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHX//7lo\u003d",
+      "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//7lg\u003d",
         "filename": "doc/source/configuringservices.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-05-15T19:13:18Z",
       "side": 1,
       "message": "example having this \u003d\u003e example, ensure that the following is",
+      "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//5v4\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-05-21T11:44:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHX//7lg\u003d",
       "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//5v0\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-05-21T11:44:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHX//7ls\u003d",
+      "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//7lQ\u003d",
         "filename": "keystone/contrib/s3/core.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2012-05-15T19:13:18Z",
       "side": 1,
       "message": "allow \u003d\u003e provides\nused \u003d\u003e configured",
+      "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//5vs\u003d",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-05-21T11:44:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHX//7lQ\u003d",
       "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +170,24 @@
       "writtenOn": "2012-05-15T19:13:18Z",
       "side": 1,
       "message": "those \u003d\u003e the required credentials",
+      "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//5vw\u003d",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-05-21T11:44:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHX//7lA\u003d",
       "revId": "be6ba854d5ecb07313bcfb38cc9b14f626071827",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
