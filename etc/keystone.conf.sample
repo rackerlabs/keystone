@@ -59,6 +59,7 @@
 
 [identity]
 # driver = keystone.identity.backends.sql.Identity
+# auth_error_handler = keystone.contrib.handle_auth_error.AuthErrorHandler
 
 [catalog]
 # dynamic, sql-based backend (supports API/CLI-based management commands)
@@ -101,6 +102,18 @@
 # role_objectclass = organizationalRole
 # role_id_attribute = cn
 # role_member_attribute = roleOccupant
+
+[mail_401]
+expiration = 300
+tolerance = 5
+mail_manager = keystone.contrib.security.middleware.EventletMailer
+# host = localhost
+# user = sender@example.com
+# password = pass
+# use_tls = True
+# port = 25
+admin_emails = ['admin1@example.com', 'admin2@example.com']
+from_email = 'keystone@example.com'
 
 [filter:debug]
 paste.filter_factory = keystone.common.wsgi:Debug.factory
