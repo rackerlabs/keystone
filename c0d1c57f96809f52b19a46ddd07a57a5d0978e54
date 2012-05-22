@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//44E\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2012-05-22T23:38:01Z",
+      "side": 1,
+      "message": "Per feedback, I will update the log message into \u0027user \u003ctenant_name\u003e:\u003cuser\u003e or \u003ctenant_id\u003e:\u003cuser\u003e allowed in ACL authorizing\u0027",
+      "parentUuid": "AAAAHX//5C0\u003d",
+      "revId": "c0d1c57f96809f52b19a46ddd07a57a5d0978e54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//5NA\u003d",
         "filename": "tests/test_swift_auth_middleware.py",
         "patchSetId": 1
@@ -84,6 +102,24 @@
       "writtenOn": "2012-05-22T14:11:59Z",
       "side": 1,
       "message": "tenant should really be another dict to make these tests more explicit / easier to read",
+      "revId": "c0d1c57f96809f52b19a46ddd07a57a5d0978e54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//44I\u003d",
+        "filename": "tests/test_swift_auth_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2012-05-22T23:38:01Z",
+      "side": 1,
+      "message": "I agree with the comment. As I was in the middle of implementing the code change, found out that swift_auth middleware uses a tuple for the tenant information and it stores it in the environment. Changing it to dict might cause regression to other middleware expecting this format.",
+      "parentUuid": "AAAAHX//5NA\u003d",
       "revId": "c0d1c57f96809f52b19a46ddd07a57a5d0978e54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
