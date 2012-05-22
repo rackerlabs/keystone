@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//5HA\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-22T16:10:14Z",
+      "side": 1,
+      "message": "I think logging might be OK here since it correctly log the tenant and user information, whether tenant is identified by ID or name.",
+      "parentUuid": "AAAAHX//5NE\u003d",
+      "revId": "c0d1c57f96809f52b19a46ddd07a57a5d0978e54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//5NA\u003d",
         "filename": "tests/test_swift_auth_middleware.py",
         "patchSetId": 1
