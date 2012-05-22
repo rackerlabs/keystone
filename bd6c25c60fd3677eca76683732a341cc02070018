@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//4+I\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-22T21:37:19Z",
+      "side": 1,
+      "message": "extra curly brace on the end",
+      "revId": "bd6c25c60fd3677eca76683732a341cc02070018",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4+A\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-22T21:37:19Z",
+      "side": 1,
+      "message": "If the token is valid and at least one role matches a provided service ID,",
+      "revId": "bd6c25c60fd3677eca76683732a341cc02070018",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//498\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-22T21:37:19Z",
+      "side": 1,
+      "message": "matches a provided service ID",
+      "revId": "bd6c25c60fd3677eca76683732a341cc02070018",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//49o\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-05-22T21:37:19Z",
+      "side": 1,
+      "message": "I think this may answer one of my previous questions -- one middleware deployment may be protecting multiple services which \"trust\" each other, but which don\u0027t trust services not protected by that same middleware deployment?",
+      "revId": "bd6c25c60fd3677eca76683732a341cc02070018",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
