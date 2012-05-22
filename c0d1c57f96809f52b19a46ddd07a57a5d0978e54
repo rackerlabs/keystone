@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//5C0\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2012-05-22T18:15:07Z",
+      "side": 1,
+      "message": "Well I was thinking the same as well at first but I am taking the scenario where a User says :\n\nI can\u0027t log into the system and I am using TENANT_ID/USER etc..\n\nThe support admin would check in for TENANT_ID failure in the logs but cannot find them since it only has tenant_name, he would have to end-up to convert the tenant_id to tenant_name.",
+      "parentUuid": "AAAAHX//5HA\u003d",
+      "revId": "c0d1c57f96809f52b19a46ddd07a57a5d0978e54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//5NA\u003d",
         "filename": "tests/test_swift_auth_middleware.py",
         "patchSetId": 1
