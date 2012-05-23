@@ -14,6 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import sys
 import json
 
 import webob
@@ -312,6 +313,39 @@ class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
         self.middleware._cache.token_expiration = float(expired.strftime("%s"))
         self.middleware(req.environ, self.start_fake_response)
         self.assertEqual(len(self.middleware._cache.set_value), 2)
+
+class NoMemcacheAuthTokenMiddlewareTest(test.TestCase):
+    """Auth Token middleware should handle no memcache gracefully."""
+    def setUp(self):
+        try:
+            self.memcache_module = sys.modules['memcache']
+            del sys.modules['memcache']
+        except KeyError:
+            self.memcache_module = None
+
+        class NoMemcache(object):
+            def find_module(self, fullname, path):
+                if fullname.startswith('memcache'):
+                    raise ImportError
+
+        sys.meta_path.insert(0, NoMemcache())
+
+        conf = {
+            'admin_token': 'admin_token1',
+            'auth_host': 'keystone.example.com',
+            'auth_port': 1234,
+            'memcache_servers': 'localhost:11211',
+        }
+
+        self.middleware = auth_token.AuthProtocol(FakeApp(), conf)
+
+    def tearDown(self):
+        del sys.meta_path[0]
+        if self.memcache_module:
+            sys.modules['memcache'] = self.memcache_module
+
+    def test_nomemcache(self):
+        pass
 
 if __name__ == '__main__':
     import unittest
