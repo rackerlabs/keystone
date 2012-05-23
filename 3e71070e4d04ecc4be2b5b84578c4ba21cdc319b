@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//4yQ\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 425
+      },
+      "writtenOn": "2012-05-23T09:44:23Z",
+      "side": 1,
+      "message": "Can this be changed to read \u0027Keystone supports\u0027 rather than \u0027Keystone support\u0027",
+      "revId": "3e71070e4d04ecc4be2b5b84578c4ba21cdc319b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4x8\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 425
+      },
+      "writtenOn": "2012-05-23T09:44:23Z",
+      "side": 1,
+      "message": "Here\u0027s an example that by default communicates with keystone via https",
+      "revId": "3e71070e4d04ecc4be2b5b84578c4ba21cdc319b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4yI\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 425
+      },
+      "writtenOn": "2012-05-23T09:44:23Z",
+      "side": 1,
+      "message": "Or maybe something like:\n\n# uncomment the following line if you don\u0027t want to use SSL\n# auth_protocol \u003d http",
+      "revId": "3e71070e4d04ecc4be2b5b84578c4ba21cdc319b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4yE\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 425
+      },
+      "writtenOn": "2012-05-23T09:44:23Z",
+      "side": 1,
+      "message": "again maybe:\n\n# uncomment the following line if you don\u0027t want to use SSL\n# auth_protocol \u003d http",
+      "revId": "3e71070e4d04ecc4be2b5b84578c4ba21cdc319b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
