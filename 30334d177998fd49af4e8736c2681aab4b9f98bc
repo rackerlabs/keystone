@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//4to\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 425
+      },
+      "writtenOn": "2012-05-23T12:49:38Z",
+      "side": 1,
+      "message": "need to remove the extra dash\n\n* ``[s3]`` - Amazon S3 authentication driver configuration.",
+      "revId": "30334d177998fd49af4e8736c2681aab4b9f98bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
