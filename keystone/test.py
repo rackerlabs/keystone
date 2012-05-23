@@ -236,9 +236,13 @@ class TestCase(unittest.TestCase):
     def appconfig(self, config):
         return deploy.appconfig(self._paste_config(config))
 
-    def serveapp(self, config, name=None):
+    def serveapp(self, config, name=None, cert=None, key=None, ca=None,
+        cert_required=None):
         app = self.loadapp(config, name=name)
         server = wsgi.Server(app, host="127.0.0.1", port=0)
+        if cert is not None and ca is not None and key is not None:
+            server.set_ssl(certfile=cert, keyfile=key, ca_certs=ca,
+                cert_required=cert_required)
         server.start(key='socket')
 
         # Service catalog tests need to know the port we ran on.
