@@ -17,6 +17,7 @@
 import re
 
 import sqlalchemy
+from sqlalchemy.exc import IntegrityError
 
 from keystone.identity.backends import sql as identity_sql
 
@@ -62,6 +63,7 @@ class LegacyMigration(object):
         self._migrate_roles()
         self._migrate_user_roles()
         self._migrate_tokens()
+        self._migrate_ec2()
 
     def dump_catalog(self):
         """Generate the contents of a catalog templates file."""
@@ -153,3 +155,14 @@ class LegacyMigration(object):
 
     def _migrate_tokens(self):
         pass
+
+    def _migrate_ec2(self):
+        for x in self._data['credentials']:
+            new_dict = {'user_id' : x['user_id'],
+                        'tenant_id' : x['tenant_id'],
+                        'access' : x['key'],
+                        'secret' : x['secret']}
+            try:
+                self.identity_driver.create_ec2_credentials(new_dict)
+            except IntegrityError:
+                pass
