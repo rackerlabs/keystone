@@ -22,7 +22,6 @@ from keystone.common import logging
 from keystone.contrib.ec2.backends import sql as ec2_sql
 from keystone.identity.backends import sql as identity_sql
 
-
 LOG = logging.getLogger(__name__)
 
 
