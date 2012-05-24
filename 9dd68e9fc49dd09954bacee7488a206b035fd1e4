@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//4SM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-24T01:15:51Z",
+      "side": 1,
+      "message": "extra space",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4SI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-24T01:15:51Z",
+      "side": 1,
+      "message": "It may be beneficial to explicitly mention that all certificates and keys must be in Privacy Enhanced Mail (PEM) format.",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4SQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-24T01:15:51Z",
+      "side": 1,
+      "message": "Public certificate and its corresponding private key for the Keystone middleware/client.",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4R0\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-24T01:15:51Z",
+      "side": 1,
+      "message": "may want to do this\n\nself.cert_required \u003d (cert_required.lower() \u003d\u003d \u0027true\u0027)\n\nin case someone fat-fingered the \u0027True\u0027 :)",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4Rw\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-24T01:15:51Z",
+      "side": 1,
+      "message": "Would\n\nregister_bool()\n\nbe better since conf can do explicit checking for boolean? For example, what if someone misspell the \u0027True\u0027?",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4Rs\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-24T01:15:51Z",
+      "side": 1,
+      "message": "register_bool()?",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4Ro\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-05-24T01:15:51Z",
+      "side": 1,
+      "message": "you are implying that \u0027key\u0027 must not be None. Therefore, one can\u0027t have both certificate and key in the \u0027cert\u0027 file instead.",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
