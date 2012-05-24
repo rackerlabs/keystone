@@ -67,6 +67,23 @@
       "revId": "bd6c25c60fd3677eca76683732a341cc02070018",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4O4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2012-05-24T05:43:34Z",
+      "side": 1,
+      "message": "Are we supposed to get duplicate/conflict exception when updating a role with exact same role name and service id as the one found in database for that provided role id in update call. This could be the case when someone re-submit the same data again in update call. In case of insert, this makes sense but in update, i will expect this to be allowed if we are just updating existing record with its existing data.",
+      "revId": "bd6c25c60fd3677eca76683732a341cc02070018",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
