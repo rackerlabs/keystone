@@ -23,6 +23,33 @@ import iso8601
 from keystone.middleware import auth_token
 from keystone import test
 
+DEFAULT_TENANT_TOKEN = "\
+MIIEpwYJKoZIhvcNAQcCoIIEmDCCBJQCAQExCTAHBgUrDgMCGjCCA4gGCSqGSIb3\
+DQEHAaCCA3kEggN1eyJhY2Nlc3MiOiB7InRva2VuIjogeyJleHBpcmVzIjogIjIw\
+MTItMDYtMjFUMTg6MzQ6MTVaIiwgImlkIjogInBsYWNlaG9sZGVyIiwgInRlbmFu\
+dCI6IHsiZW5hYmxlZCI6IHRydWUsICJpZCI6ICJ0ZW5hbnRfaWQxIiwgIm5hbWUi\
+OiAidGVuYW50X25hbWUxIiwgImV4dHJhIjoge319fSwgInNlcnZpY2VDYXRhbG9n\
+IjogW3siZW5kcG9pbnRzIjogW3siYWRtaW5VUkwiOiAiaHR0cDovL2xvY2FsaG9z\
+dDo4Nzc0L3YxLjEvYmFyIiwgInJlZ2lvbiI6ICJSZWdpb25PbmUiLCAicHVibGlj\
+VVJMIjogImh0dHA6Ly9sb2NhbGhvc3Q6ODc3NC92MS4xL2JhciIsICJpbnRlcm5h\
+bFVSTCI6ICJodHRwOi8vbG9jYWxob3N0Ojg3NzQvdjEuMS9iYXIifV0sICJlbmRw\
+b2ludHNfbGlua3MiOiBbXSwgInR5cGUiOiAiY29tcHV0ZSIsICJuYW1lIjogIidD\
+b21wdXRlIFNlcnZpY2UnIn0sIHsiZW5kcG9pbnRzIjogW3siYWRtaW5VUkwiOiAi\
+aHR0cDovL2xvY2FsaG9zdDo0MDA2Mi92Mi4wIiwgInJlZ2lvbiI6ICJSZWdpb25P\
+bmUiLCAicHVibGljVVJMIjogImh0dHA6Ly9sb2NhbGhvc3Q6NDAwNjIvdjIuMCIs\
+ICJpbnRlcm5hbFVSTCI6ICJodHRwOi8vbG9jYWxob3N0OjQwMDYyL3YyLjAifV0s\
+ICJlbmRwb2ludHNfbGlua3MiOiBbXSwgInR5cGUiOiAiaWRlbnRpdHkiLCAibmFt\
+ZSI6ICInSWRlbnRpdHkgU2VydmljZScifV0sICJ1c2VyIjogeyJ1c2VybmFtZSI6\
+ICJGT08iLCAicm9sZXNfbGlua3MiOiBbXSwgImlkIjogInVzZXJfaWQxIiwgInJv\
+bGVzIjogW3sibmFtZSI6ICJyb2xlMSJ9LCB7Im5hbWUiOiAicm9sZTIifV0sICJu\
+YW1lIjogInVzZXJfbmFtZTEifSwgIm1ldGFkYXRhIjogeyJpc19hZG1pbiI6ICIx\
+IiwgInJvbGVzIjogWyJrZXlzdG9uZV9hZG1pbiJdfX19MYH3MIH0AgEBMFQwTzEV\
+MBMGA1UEChMMUmVkIEhhdCwgSW5jMREwDwYDVQQHEwhXZXN0Zm9yZDEWMBQGA1UE\
+CBMNTWFzc2FjaHVzZXR0czELMAkGA1UEBhMCVVMCAQEwBwYFKw4DAhowDQYJKoZI\
+hvcNAQEBBQAEgYAmeFCHw1jxA7EFPeT11AF0QvQxreGDpxgtDMCwy5Bew2/r/dYt\
+7vBDJpROJ9/yPLZQt0GbbDL6NISm9gk/+O3TDrJnIq3LAIBTc3D0ipUuF5PCxYPK\
+daXMWoIzCPw3sR53Mq2du1h8MkfQ1eEE8lgXjw2ParSJqaIEaR5xkdR4uQ=="
+
 
 # JSON responses keyed by token ID
 TOKEN_RESPONSES = {
@@ -46,10 +73,10 @@ TOKEN_RESPONSES = {
             'serviceCatalog': {}
         },
     },
-    'default-tenant-token': {
+    DEFAULT_TENANT_TOKEN : {
         'access': {
             'token': {
-                'id': 'default-tenant-token',
+                'id': DEFAULT_TENANT_TOKEN,
             },
             'user': {
                 'id': 'user_id1',
@@ -97,6 +124,8 @@ TOKEN_RESPONSES = {
 }
 
 
+
+
 class FakeMemcache(object):
     def __init__(self):
         self.set_key = None
@@ -104,7 +133,7 @@ class FakeMemcache(object):
         self.token_expiration = None
 
     def get(self, key):
-        data = TOKEN_RESPONSES['valid-token'].copy()
+        data = TOKEN_RESPONSES[DEFAULT_TENANT_TOKEN].copy()
         if not data or key != "tokens/%s" % (data['access']['token']['id']):
             return
         if not self.token_expiration:
@@ -182,9 +211,9 @@ class FakeApp(object):
             'HTTP_X_USER_ID': 'user_id1',
             'HTTP_X_USER_NAME': 'user_name1',
             'HTTP_X_ROLES': 'role1,role2',
-            'HTTP_X_USER': 'user_name1',  # deprecated (diablo-compat)
-            'HTTP_X_TENANT': 'tenant_name1',  # deprecated (diablo-compat)
-            'HTTP_X_ROLE': 'role1,role2',  # deprecated (diablo-compat)
+            'HTTP_X_USER': 'user_name1', # deprecated (diablo-compat)
+            'HTTP_X_TENANT': 'tenant_name1', # deprecated (diablo-compat)
+            'HTTP_X_ROLE': 'role1,role2', # deprecated (diablo-compat)
         }
         self.expected_env.update(expected_env)
 
@@ -198,6 +227,7 @@ class FakeApp(object):
 
 
 class BaseAuthTokenMiddlewareTest(test.TestCase):
+
     def setUp(self, expected_env=None):
         expected_env = expected_env or {}
 
@@ -205,6 +235,7 @@ class BaseAuthTokenMiddlewareTest(test.TestCase):
             'admin_token': 'admin_token1',
             'auth_host': 'keystone.example.com',
             'auth_port': 1234,
+            'signing_dir':'signing'
         }
 
         self.middleware = auth_token.AuthProtocol(FakeApp(expected_env), conf)
@@ -227,22 +258,15 @@ class DiabloAuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
         expected_env = {
             'HTTP_X_TENANT_ID': 'tenant_id1',
             'HTTP_X_TENANT_NAME': 'tenant_id1',
-            'HTTP_X_TENANT': 'tenant_id1',  # now deprecated (diablo-compat)
+            'HTTP_X_TENANT': 'tenant_id1', # now deprecated (diablo-compat)
         }
         super(DiabloAuthTokenMiddlewareTest, self).setUp(expected_env)
 
-    def test_diablo_response(self):
-        req = webob.Request.blank('/')
-        req.headers['X-Auth-Token'] = 'valid-diablo-token'
-        body = self.middleware(req.environ, self.start_fake_response)
-        self.assertEqual(self.response_status, 200)
-        self.assertEqual(body, ['SUCCESS'])
-
-
 class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
+
     def test_valid_request(self):
         req = webob.Request.blank('/')
-        req.headers['X-Auth-Token'] = 'valid-token'
+        req.headers['X-Auth-Token'] = DEFAULT_TENANT_TOKEN
         body = self.middleware(req.environ, self.start_fake_response)
         self.assertEqual(self.response_status, 200)
         self.assertTrue(req.headers.get('X-Service-Catalog'))
@@ -254,8 +278,10 @@ class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
         The implied scope is the user's tenant ID.
 
         """
+
+
         req = webob.Request.blank('/')
-        req.headers['X-Auth-Token'] = 'default-tenant-token'
+        req.headers['X-Auth-Token'] = DEFAULT_TENANT_TOKEN
         body = self.middleware(req.environ, self.start_fake_response)
         self.assertEqual(self.response_status, 200)
         self.assertEqual(body, ['SUCCESS'])
@@ -294,7 +320,7 @@ class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
 
     def test_memcache(self):
         req = webob.Request.blank('/')
-        req.headers['X-Auth-Token'] = 'valid-token'
+        req.headers['X-Auth-Token'] = DEFAULT_TENANT_TOKEN
         self.middleware._cache = FakeMemcache()
         self.middleware(req.environ, self.start_fake_response)
         self.assertEqual(self.middleware._cache.set_value, None)
@@ -308,7 +334,7 @@ class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
 
     def test_memcache_set_expired(self):
         req = webob.Request.blank('/')
-        req.headers['X-Auth-Token'] = 'valid-token'
+        req.headers['X-Auth-Token'] = DEFAULT_TENANT_TOKEN
         self.middleware._cache = FakeMemcache()
         expired = datetime.datetime.now() - datetime.timedelta(minutes=1)
         self.middleware._cache.token_expiration = float(expired.strftime("%s"))
