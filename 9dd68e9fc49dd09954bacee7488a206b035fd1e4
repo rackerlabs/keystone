@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//3/E\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2012-05-24T17:07:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHX//3/w\u003d",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//4SM\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-05-24T01:15:51Z",
       "side": 1,
       "message": "extra space",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4AU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2012-05-24T17:07:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHX//4SM\u003d",
       "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//4AY\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2012-05-24T17:07:35Z",
+      "side": 1,
+      "message": "I would like to leave the implementation details out... For a Keystone implementation written in Java, for example, the certs would in .jks for example.",
+      "parentUuid": "AAAAHX//4SI\u003d",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//4SQ\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2012-05-24T01:15:51Z",
       "side": 1,
       "message": "Public certificate and its corresponding private key for the Keystone middleware/client.",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4Ag\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2012-05-24T17:07:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHX//4SQ\u003d",
       "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//3/A\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2012-05-24T17:07:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHX//3/o\u003d",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//3/g\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2012-05-24T16:18:09Z",
       "side": 1,
       "message": "Ooops. This needs to be eventlet.ssl... Either that, or add ssl\u003dTrue to the monkey_patch call above.",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//3+s\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2012-05-24T17:07:35Z",
+      "side": 1,
+      "message": "Thanks, Jay.  The socket patching already patches ssl according to the eventlet documentation:  http://eventlet.net/doc/patching.html",
+      "parentUuid": "AAAAHX//3/g\u003d",
       "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//4AQ\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2012-05-24T17:07:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHX//4R0\u003d",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//4Rw\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 2
@@ -150,6 +276,24 @@
       "writtenOn": "2012-05-24T01:15:51Z",
       "side": 1,
       "message": "Would\n\nregister_bool()\n\nbe better since conf can do explicit checking for boolean? For example, what if someone misspell the \u0027True\u0027?",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//3+8\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2012-05-24T17:07:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHX//4Rw\u003d",
       "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -173,6 +317,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//3+4\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2012-05-24T17:07:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAHX//4Rs\u003d",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//4Ro\u003d",
         "filename": "keystone/test.py",
         "patchSetId": 2
@@ -184,6 +346,24 @@
       "writtenOn": "2012-05-24T01:15:51Z",
       "side": 1,
       "message": "you are implying that \u0027key\u0027 must not be None. Therefore, one can\u0027t have both certificate and key in the \u0027cert\u0027 file instead.",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//3+Q\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2012-05-24T17:07:35Z",
+      "side": 1,
+      "message": "That\u0027s correct.  Server-side private key must be secure and separated from the public key.",
+      "parentUuid": "AAAAHX//4Ro\u003d",
       "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
