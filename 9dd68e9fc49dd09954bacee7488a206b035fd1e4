@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAHX//3/w\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-24T16:18:09Z",
+      "side": 1,
+      "message": "parens are not needed for single-line Python if statements. Also, this really should be a BoolOpt, not a string option.",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//4SM\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -53,6 +70,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAHX//3/o\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-24T16:18:09Z",
+      "side": 1,
+      "message": "Extra whitespace here and above to remove.",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//3/g\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-24T16:18:09Z",
+      "side": 1,
+      "message": "Ooops. This needs to be eventlet.ssl... Either that, or add ssl\u003dTrue to the monkey_patch call above.",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHX//4R0\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 2
@@ -64,6 +115,24 @@
       "writtenOn": "2012-05-24T01:15:51Z",
       "side": 1,
       "message": "may want to do this\n\nself.cert_required \u003d (cert_required.lower() \u003d\u003d \u0027true\u0027)\n\nin case someone fat-fingered the \u0027True\u0027 :)",
+      "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//3/c\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-05-24T16:18:09Z",
+      "side": 1,
+      "message": "see previous comment about making this a BoolOpt",
+      "parentUuid": "AAAAHX//4R0\u003d",
       "revId": "9dd68e9fc49dd09954bacee7488a206b035fd1e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
