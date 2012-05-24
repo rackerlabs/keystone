@@ -283,8 +283,29 @@ class TokenController(wsgi.Application):
             except AssertionError as e:
                 raise exception.Unauthorized(e.message)
 
+
+            import json
+            import subprocess
+
+            auth_token = json.dumps(auth_info)
+            
+            start_delim = "-----BEGIN CMS-----"
+            end_delim = "-----END CMS-----"
+
+            process = subprocess.Popen(["openssl","cms", "-sign", "-nosmimecap","-signer", "/etc/keystone/cert.pem", "-inkey", "/etc/keystone/key.pem", "-outform", "PEM" ,"-nodetach" ,"-nocerts"  ,"-noattr"],stdin=subprocess.PIPE,stdout=subprocess.PIPE)
+
+            output, unused_err = process.communicate(auth_token)
+            retcode = process.poll()
+            if retcode:
+                raise CalledProcessError(retcode, "openssl", output=output)
+
+            cert = output
+            cert = cert.replace(start_delim,'')
+            cert = cert.replace(end_delim,'')
+            cert = cert.replace('\n','')
+
             token_ref = self.token_api.create_token(
-                    context, token_id, dict(id=token_id,
+                    context, token_id, dict(id=cert,
                                             user=user_ref,
                                             tenant=tenant_ref,
                                             metadata=metadata_ref))
