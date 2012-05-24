@@ -61,14 +61,9 @@ class PamIdentity(identity.Driver):
     def authenticate(self, user_id, tenant_id, password):
         auth = pam.authenticate if pam else PAM_authenticate
         if auth(user_id, password):
-            metadata = {}
-            if user_id == 'root':
-                metadata['is_admin'] = True
-
             tenant = {'id': user_id, 'name': user_id}
-
             user = {'id': user_id, 'name': user_id}
-
+            metadata = self.get_metadata(user_id, tenant_id)
             return (tenant, user, metadata)
 
     def get_tenant(self, tenant_id):
