@@ -1,0 +1,1 @@
+{"access": {"token": {"expires": "2012-06-02T14:47:34Z", "id": "placeholder", "tenant": {"enabled": true, "description": null, "name": "tenant_name1", "id": "tenant_id1"}}, "user": {"username": "user_name1", "roles_links": ["role1","role2"], "id": "user_id1", "roles": [{"name": "role1"}, {"name": "role2"}], "name": "user_name1"}}}
