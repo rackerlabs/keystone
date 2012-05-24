@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//4E4\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-05-24T14:35:18Z",
+      "side": 1,
+      "message": "These go to the top",
+      "revId": "e84f5bd81772938d7d5114a424bcf2308ff59767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4FA\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-05-24T14:35:18Z",
+      "side": 1,
+      "message": "This needs to have the expiry added",
+      "revId": "e84f5bd81772938d7d5114a424bcf2308ff59767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4E8\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-05-24T14:35:18Z",
+      "side": 1,
+      "message": "I need to remove Red spacwe",
+      "revId": "e84f5bd81772938d7d5114a424bcf2308ff59767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//4E0\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-05-24T14:35:18Z",
+      "side": 1,
+      "message": "Split this up over multiple lines.  Note the use of Popen is Monkeypatched by Eventlet",
+      "revId": "e84f5bd81772938d7d5114a424bcf2308ff59767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
