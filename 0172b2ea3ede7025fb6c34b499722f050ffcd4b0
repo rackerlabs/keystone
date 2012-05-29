@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//2f0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-05-29T20:27:14Z",
+      "side": 1,
+      "message": "hey raphael - could you include a short sentence description of what this is doing in addition to the bug reference?",
+      "revId": "0172b2ea3ede7025fb6c34b499722f050ffcd4b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHX//2fs\u003d",
+        "filename": "keystone/contrib/handle_auth_error/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-05-29T20:27:14Z",
+      "side": 1,
+      "message": "please be explicit about imports - use multiple lines if need be",
+      "revId": "0172b2ea3ede7025fb6c34b499722f050ffcd4b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
