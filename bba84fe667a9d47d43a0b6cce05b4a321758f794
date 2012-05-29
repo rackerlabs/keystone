@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHX//2rA\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-05-29T16:43:35Z",
+      "side": 1,
+      "message": "I like the idea of the test, but won\u0027t this lead to side effects for other tests where the memcache module will be missing? Seems like the sys.modules and memcache should be restored after messing with the system paths here.",
+      "revId": "bba84fe667a9d47d43a0b6cce05b4a321758f794",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
