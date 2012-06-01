@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHn//+bo\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-01T15:42:17Z",
+      "side": 0,
+      "message": "This had potential to slice from [3:2] for example, which doesn\u0027t make much sense here.",
+      "revId": "4bfa203ac433da1537d8da963bd7554d36f2add7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
