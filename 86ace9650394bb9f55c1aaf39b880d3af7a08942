@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHn//9q8\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-06-04T17:06:04Z",
+      "side": 1,
+      "message": "Hmmm, am I reading this correctly that pagination is being done in the Python code instead of as params to the SQL queries? If so, that is remarkably inefficient... does the SQL driver have the ability to override this method so it can be efficient? :(",
+      "revId": "86ace9650394bb9f55c1aaf39b880d3af7a08942",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
