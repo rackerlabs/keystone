@@ -16,6 +16,24 @@
       "revId": "86ace9650394bb9f55c1aaf39b880d3af7a08942",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHn//88I\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-05T13:56:56Z",
+      "side": 1,
+      "message": "Good catch... I opened a bug to follow up: https://bugs.launchpad.net/keystone/+bug/1009023\n\nFWIW, I\u0027m pretty sure keystone legacy handled this correctly with marker \u0026 limit being passed straight to sqlalchemy.",
+      "parentUuid": "AAAAHn//9q8\u003d",
+      "revId": "86ace9650394bb9f55c1aaf39b880d3af7a08942",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
