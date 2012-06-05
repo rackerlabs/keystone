@@ -15,10 +15,10 @@
 # under the License.
 
 import copy
-import datetime
 
 from keystone.common import kvs
 from keystone import exception
+from keystone.openstack.common import timeutils
 from keystone import token
 
 
@@ -27,7 +27,7 @@ class Token(kvs.Base, token.Driver):
     def get_token(self, token_id):
         token = self.db.get('token-%s' % token_id)
         if (token and (token['expires'] is None
-                       or token['expires'] > datetime.datetime.utcnow())):
+                       or token['expires'] > timeutils.utcnow())):
             return token
         else:
             raise exception.TokenNotFound(token_id=token_id)
@@ -47,7 +47,7 @@ class Token(kvs.Base, token.Driver):
 
     def list_tokens(self, user_id):
         tokens = []
-        now = datetime.datetime.utcnow()
+        now = timeutils.utcnow()
         for token, user_ref in self.db.items():
             if not token.startswith('token-'):
                 continue
