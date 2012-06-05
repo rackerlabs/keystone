@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHn//894\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-05T13:31:02Z",
+      "side": 1,
+      "message": "Hmm, on second glance, can you move lines 334-341 into test_nomemcache?\n\nAlso, is there any reason to store the result into self.middleware? Seems like the construction is all that matters here, unless you\u0027re going to make assertions against the resulting object.",
+      "revId": "fafdfdb665d9343a1897038bfbe6512927e489e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
