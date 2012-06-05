@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAHn//87I\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1926
+      },
+      "writtenOn": "2012-06-05T14:28:48Z",
+      "side": 1,
+      "message": "opps, will remove",
+      "parentUuid": "AAAAHn//89c\u003d",
+      "revId": "e27b54c39ce341cc558029c9ae6d417ab93d9a11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAHn//89U\u003d",
         "filename": "tests/test_keystoneclient.py",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2012-06-05T13:42:39Z",
       "side": 1,
       "message": "For sanity, can you also test:\n\n    self.assertEquals(foo_client.expires, foo_client2.expires)",
+      "revId": "e27b54c39ce341cc558029c9ae6d417ab93d9a11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHn//86I\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1926
+      },
+      "writtenOn": "2012-06-05T14:28:48Z",
+      "side": 1,
+      "message": "foo_client is type keystoneclient.v2_0.client.Client\nand doesn\u0027t have a expires attribute \n(confusion probably caused by me using the name foo_client2 for a different type to foo_client)\n\nnext version will make this clearer",
+      "parentUuid": "AAAAHn//89Y\u003d",
       "revId": "e27b54c39ce341cc558029c9ae6d417ab93d9a11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
