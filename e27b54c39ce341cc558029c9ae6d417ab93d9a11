@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAHn//89c\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-05T13:42:39Z",
+      "side": 1,
+      "message": "delete extra whitespace",
+      "revId": "e27b54c39ce341cc558029c9ae6d417ab93d9a11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHn//89U\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-05T13:42:39Z",
+      "side": 1,
+      "message": "can you name this something more meaningful like reauthenticated_client instead of just numbering them?",
+      "revId": "e27b54c39ce341cc558029c9ae6d417ab93d9a11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAHn//89Y\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-05T13:42:39Z",
+      "side": 1,
+      "message": "For sanity, can you also test:\n\n    self.assertEquals(foo_client.expires, foo_client2.expires)",
+      "revId": "e27b54c39ce341cc558029c9ae6d417ab93d9a11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
