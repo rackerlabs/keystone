@@ -14,6 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import os
 import uuid
 
 from keystone import config
@@ -28,6 +29,10 @@ import default_fixtures
 
 
 CONF = config.CONF
+
+# ensure that we tests are run against the  current Schema
+if os.path.exists('test.db.pristine'):
+    os.unlink('test.db.pristine')
 
 
 class SqlIdentity(test.TestCase, test_backend.IdentityTests):
