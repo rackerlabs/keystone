@@ -15,6 +15,7 @@
 # under the License.
 
 import os
+import shutil
 
 from keystone import config
 from keystone.common.sql import migration
@@ -29,4 +30,7 @@ def setup_test_database():
         os.unlink('test.db')
     except Exception:
         pass
-    migration.db_sync()
+    if os.path.exists('test.db.pristine'):
+        shutil.copyfile('test.db.pristine', 'test.db')
+    else:
+        migration.db_sync()
