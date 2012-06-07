@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAIH///UM\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-07T14:57:12Z",
+      "side": 1,
+      "message": "See the format for a multiline doc string: https://github.com/openstack/keystone/blob/master/HACKING.rst",
+      "revId": "ac3d63070e7cf100065d22a3124b7e93455bfca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAIH///UE\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-07T14:57:12Z",
+      "side": 1,
+      "message": "line break between function and docstring",
+      "revId": "ac3d63070e7cf100065d22a3124b7e93455bfca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAIH///T4\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-07T14:57:12Z",
+      "side": 1,
+      "message": "Some kind of message on the exception would be useful, e.g.:\n\n    raise ImportError(\u0027%s already imported\u0027 % module)",
+      "revId": "ac3d63070e7cf100065d22a3124b7e93455bfca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
