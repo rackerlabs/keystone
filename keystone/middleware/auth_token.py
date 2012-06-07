@@ -91,12 +91,13 @@ HTTP_X_ROLE
 """
 
 import httplib
-import json
 import logging
 import time
 
 import webob
 import webob.exc
+
+from keystone.openstack.common import jsonutils
 
 
 LOG = logging.getLogger(__name__)
@@ -288,7 +289,7 @@ class AuthProtocol(object):
             kwargs['headers'].update(additional_headers)
 
         if body:
-            kwargs['body'] = json.dumps(body)
+            kwargs['body'] = jsonutils.dumps(body)
 
         try:
             conn.request(method, path, **kwargs)
@@ -301,7 +302,7 @@ class AuthProtocol(object):
             conn.close()
 
         try:
-            data = json.loads(body)
+            data = jsonutils.loads(body)
         except ValueError:
             LOG.debug('Keystone did not return json-encoded body')
             data = {}
