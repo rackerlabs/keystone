@@ -50,6 +50,24 @@
       "revId": "ac3d63070e7cf100065d22a3124b7e93455bfca2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAIH///Pc\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1812
+      },
+      "writtenOn": "2012-06-07T15:51:18Z",
+      "side": 1,
+      "message": "I tried that, but it seems the python import machinery discards messages raised from find_module and just reraises a generic ImportError",
+      "parentUuid": "AAAAIH///T4\u003d",
+      "revId": "ac3d63070e7cf100065d22a3124b7e93455bfca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
