@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAIX///lU\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-08T18:58:16Z",
+      "side": 1,
+      "message": "HTTP_X_SERVICE_CATALOG should be doc\u0027d here too (and noted as optional?)",
+      "revId": "e85c3a3230923a93d75eac28012724e05f4da1fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
