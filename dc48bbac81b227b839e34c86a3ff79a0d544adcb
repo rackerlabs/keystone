@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAIX///Yo\u003d",
+        "filename": ".gitignore",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-09T16:07:56Z",
+      "side": 1,
+      "message": "This one is redundant with *.db on line 13, no?\n\nThis also makes me inclined to say the cached copy should be named test-pristine.db",
+      "revId": "dc48bbac81b227b839e34c86a3ff79a0d544adcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAIX///Ys\u003d",
+        "filename": "run_tests.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-09T16:07:56Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "revId": "dc48bbac81b227b839e34c86a3ff79a0d544adcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
