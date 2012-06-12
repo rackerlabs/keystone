@@ -37,6 +37,13 @@ from keystone.common import utils
 
 LOG = logging.getLogger(__name__)
 
+# Override the bad error handling in the BaseHTTPServer module
+try:
+    eventlet.wsgi.HttpProtocol.default_request_version = 'HTTP/1.1'
+except Exception:
+    # well, we tried
+    pass
+
 
 class WritableLogger(object):
     """A thin wrapper that responds to `write` and logs."""
@@ -328,7 +335,6 @@ class Debug(Middleware):
     about the request and response.
 
     """
-
     @webob.dec.wsgify(RequestClass=Request)
     def __call__(self, req):
         LOG.debug('%s %s %s', ('*' * 20), 'REQUEST ENVIRON', ('*' * 20))
