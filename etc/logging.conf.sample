@@ -8,12 +8,12 @@ keys=normal,normal_with_name,debug
 keys=production,file,devel
 
 [logger_root]
-level=WARNING
+level=DEBUG
 handlers=file
 
 [handler_production]
 class=handlers.SysLogHandler
-level=ERROR
+level=DEBUG
 formatter=normal_with_name
 args=(('localhost', handlers.SYSLOG_UDP_PORT), handlers.SysLogHandler.LOG_USER)
 
@@ -25,7 +25,7 @@ args=('keystone.log', 'a')
 
 [handler_devel]
 class=StreamHandler
-level=NOTSET
+level=DEBUG
 formatter=debug
 args=(sys.stdout,)
 
