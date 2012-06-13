@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAIn///3Q\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2012-06-13T23:46:20Z",
+      "side": 1,
+      "message": "I\u0027m now kinda confused.\n\nShouldn\u0027t the order be:\n keystone.common.kvs\n keystone.exception\n keystone.openstack.common.timeutils\n keystone.token\n\nOr is it:\n from keystone import exception\n from keystone import token\n from keystone.common import kvs\n from keystone.openstack.common import timeutils",
+      "parentUuid": "AAAAIn///9g\u003d",
+      "revId": "3c5037d260de75499ddcd3a9e0a6a99454ffcd8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAIn///9c\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 4
