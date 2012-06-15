@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: Dave Walker <Dave.Walker@canonical.com>
+Code-Review+1: Dave Walker <Dave.Walker@canonical.com>
+Code-Review+2: Mark McLoughlin <markmc@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 15 Jun 2012 16:22:08 +0000
+Reviewed-on: https://review.openstack.org/8573
+Project: openstack/keystone
+Branch: refs/heads/stable/essex
