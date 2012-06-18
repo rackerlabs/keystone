@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Approved+1: Joe Heck <heckj@mac.com>
+Code-Review+2: Joe Heck <heckj@mac.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 18 Jun 2012 15:56:06 +0000
+Reviewed-on: https://review.openstack.org/8621
+Project: openstack/keystone
+Branch: refs/heads/master
