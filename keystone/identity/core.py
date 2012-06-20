@@ -522,8 +522,8 @@ class UserController(wsgi.Application):
 class RoleController(wsgi.Application):
     def __init__(self):
         self.identity_api = Manager()
-        self.token_api = token.Manager()
         self.policy_api = policy.Manager()
+        self.token_api = token.Manager()
         super(RoleController, self).__init__()
 
     # COMPAT(essex-3)

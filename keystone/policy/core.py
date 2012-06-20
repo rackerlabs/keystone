@@ -16,7 +16,10 @@
 
 """Main entry point into the Policy service."""
 
+import uuid
+
 from keystone.common import manager
+from keystone.common import wsgi
 from keystone import config
 from keystone import exception
 
@@ -35,6 +38,24 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.policy.driver)
 
+    def get_policy(self, context, policy_id):
+        try:
+            return self.driver.get_policy(policy_id)
+        except exception.NotFound:
+            raise exception.PolicyNotFound(policy_id=policy_id)
+
+    def update_policy(self, context, policy_id, policy):
+        try:
+            return self.driver.update_policy(policy_id, policy)
+        except exception.NotFound:
+            raise exception.PolicyNotFound(policy_id=policy_id)
+
+    def delete_policy(self, context, policy_id):
+        try:
+            return self.driver.delete_policy(policy_id)
+        except exception.NotFound:
+            raise exception.PolicyNotFound(policy_id=policy_id)
+
 
 class Driver(object):
     def enforce(context, credentials, action, target):
@@ -44,3 +65,113 @@ class Driver(object):
         `keystone.common.policy.enforce`.
         """
         raise exception.NotImplemented()
+
+    def create_policy(self, policy_id, policy):
+        """Store a policy blob for a particular service.
+
+        :raises: keystone.exception.ServiceNotFound,
+                 keystone.exception.Conflict
+
+        """
+        raise exception.NotImplemented()
+
+    def get_all_policies(self):
+        """List all policies."""
+        raise exception.NotImplemented()
+
+    def get_policy(self, policy_id):
+        """Retrieve a specific policy blob.
+
+        :raises: keystone.exception.PolicyNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def update_policy(self, policy_id, policy):
+        """Update a policy blob.
+
+        :raises: keystone.exception.PolicyNotFound,
+                 keystone.exception.ServiceNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def delete_policy(self, policy_id):
+        """Remove a policy blob.
+
+        :raises: keystone.exception.PolicyNotFound
+
+        """
+        raise exception.NotImplemented()
+
+
+class PolicyController(wsgi.Application):
+    def __init__(self, catalog_api, identity_api, token_api):
+        self.catalog_api = catalog_api
+        self.identity_api = identity_api
+        self.policy_api = Manager()
+        self.token_api = token_api
+        super(PolicyController, self).__init__()
+
+    def _paginate(self, context, refs):
+        """Paginates a list of references by page & per_page query strings."""
+        page = context['query_string'].get('page', 1)
+        per_page = context['query_string'].get('per_page', 30)
+        return refs[per_page * (page - 1):per_page * page]
+
+    def _require_attribute(self, ref, attr):
+        """Ensures the reference contains the specified attribute."""
+        if ref.get(attr) is None or ref.get(attr) == '':
+            msg = '%s field is required and cannot be empty' % attr
+            raise exception.ValidationError(message=msg)
+
+    def _assign_unique_id(self, ref):
+        """Generates and assigns a unique identifer to a reference."""
+        ref = ref.copy()
+        ref['id'] = uuid.uuid4().hex
+        return ref
+
+    def _filter_by_attribute(self, context, refs, attr):
+        """Filters a list of references by query string value."""
+        if attr in context['query_string']:
+            value = context['query_string'][attr]
+            return [r for r in refs if r[attr] == value]
+        return refs
+
+    def create_policy(self, context, policy):
+        self.assert_admin(context)
+
+        ref = self._assign_unique_id(self._normalize_dict(policy))
+        self._require_attribute(ref, 'policy')
+        self._require_attribute(ref, 'type')
+        self._require_attribute(ref, 'service_id')
+
+        self.catalog_api.get_service(context, ref['service_id'])
+
+        ref = self.policy_api.create_policy(context, ref['id'], ref)
+        return {'policy': ref}
+
+    def get_all_policies(self, context):
+        self.assert_admin(context)
+        refs = self.policy_api.get_all_policies(context)
+        refs = self._filter_by_attribute(context, refs, 'service_id')
+        refs = self._filter_by_attribute(context, refs, 'type')
+        return {'policies': self._paginate(context, refs)}
+
+    def get_policy(self, context, policy_id):
+        self.assert_admin(context)
+        ref = self.policy_api.get_policy(context, policy_id)
+        return {'policy': ref}
+
+    def update_policy(self, context, policy_id, policy):
+        self.assert_admin(context)
+
+        if 'service_id' in policy:
+            self.catalog_api.get_service(context, policy['service_id'])
+
+        ref = self.policy_api.update_policy(context, policy_id, policy)
+        return {'policy': ref}
+
+    def delete_policy(self, context, policy_id):
+        self.assert_admin(context)
+        return self.policy_api.delete_policy(context, policy_id)

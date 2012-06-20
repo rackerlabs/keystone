@@ -21,6 +21,8 @@ from keystone import exception
 from keystone.identity.backends import kvs as identity_kvs
 from keystone import test
 from keystone.token.backends import kvs as token_kvs
+from keystone import policy
+from keystone.policy.backends import kvs as policy_kvs
 
 import default_fixtures
 import test_backend
@@ -84,3 +86,11 @@ class KvsCatalog(test.TestCase, test_backend.CatalogTests):
         self.assertRaises(exception.NotImplemented,
                           self.catalog_api.delete_endpoint,
                           uuid.uuid4().hex)
+
+
+class KvsPolicy(test.TestCase, test_backend.PolicyTests):
+    def setUp(self):
+        super(KvsPolicy, self).setUp()
+        self.policy_api = policy_kvs.Policy(db={})
+        self.policy_man = policy.Manager()
+        self.load_fixtures(default_fixtures)
