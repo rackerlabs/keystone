@@ -739,6 +739,59 @@ class KeystoneClientTests(object):
         # TODO(ja): MEMBERSHIP CRUD
         # TODO(ja): determine what else todo
 
+    def test_policy_crud(self):
+        from keystoneclient import exceptions as client_exceptions
+        client = self.get_client(admin=True)
+
+        policy_blob = uuid.uuid4().hex
+        policy_type = uuid.uuid4().hex
+        service = client.services.create(name=uuid.uuid4().hex,
+                                         service_type=uuid.uuid4().hex,
+                                         description=uuid.uuid4().hex)
+
+        # create
+        policy = client.policies.create(blob=policy_blob,
+                                        mime_type=policy_type,
+                                        service=service.id)
+        self.assertEquals(policy_blob, policy.policy)
+        self.assertEquals(policy_type, policy.type)
+        self.assertEquals(service.id, policy.service_id)
+
+        policy = client.policies.get(policy=policy.id)
+        self.assertEquals(policy_blob, policy.policy)
+        self.assertEquals(policy_type, policy.type)
+        self.assertEquals(service.id, policy.service_id)
+
+        service = [x for x in client.services.list() if x.id == service.id][0]
+        self.assertEquals(policy_blob, policy.policy)
+        self.assertEquals(policy_type, policy.type)
+        self.assertEquals(service.id, policy.service_id)
+
+        # update
+        policy_blob = uuid.uuid4().hex
+        policy_type = uuid.uuid4().hex
+        service = client.services.create(name=uuid.uuid4().hex,
+                                         service_type=uuid.uuid4().hex,
+                                         description=uuid.uuid4().hex)
+
+        policy = client.policies.update(policy=policy.id,
+                                        blob=policy_blob,
+                                        mime_type=policy_type,
+                                        service=service.id)
+
+        policy = client.policies.get(policy=policy.id)
+        self.assertEquals(policy_blob, policy.policy)
+        self.assertEquals(policy_type, policy.type)
+        self.assertEquals(service.id, policy.service_id)
+
+        # delete & read
+        client.policies.delete(policy=policy.id)
+        self.assertRaises(client_exceptions.NotFound,
+                          client.policies.get,
+                          policy=policy.id)
+        policies = [x for x in client.policies.list() if x.id == policy.id]
+        self.assertEquals(len(policies), 0)
+
 
 class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
     def get_checkout(self):
@@ -1038,4 +1091,7 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
         raise nose.exc.SkipTest('N/A')
 
     def test_endpoint_delete_404(self):
+        raise nose.exc.SkipTest('N/A')
+
+    def test_policy_crud(self):
         raise nose.exc.SkipTest('N/A')

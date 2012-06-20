@@ -639,3 +639,40 @@ class CatalogTests(object):
     def test_service_list(self):
         services = self.catalog_api.list_services()
         self.assertEqual(3, len(services))
+
+
+class PolicyTests(object):
+    def test_policy_crud(self):
+        ref = {
+            'id': uuid.uuid4().hex,
+            'policy': '{}',
+            'type': 'application/json',
+            'service_id': uuid.uuid4().hex,
+        }
+        res = self.policy_api.create_policy(ref['id'], ref)
+        self.assertDictEqual(res, ref)
+
+        self.policy_api.delete_policy(ref['id'])
+        self.assertRaises(exception.PolicyNotFound,
+                          self.policy_man.delete_policy, {}, ref['id'])
+        self.assertRaises(exception.PolicyNotFound,
+                          self.policy_man.get_policy, {}, ref['id'])
+
+    def test_get_policy_404(self):
+        self.assertRaises(exception.PolicyNotFound,
+                          self.policy_man.get_policy,
+                          {},
+                          uuid.uuid4().hex)
+
+    def test_update_policy_404(self):
+        self.assertRaises(exception.PolicyNotFound,
+                          self.policy_man.update_policy,
+                          {},
+                          uuid.uuid4().hex,
+                          {})
+
+    def test_delete_policy_404(self):
+        self.assertRaises(exception.PolicyNotFound,
+                          self.policy_man.delete_policy,
+                          {},
+                          uuid.uuid4().hex)
