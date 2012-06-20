@@ -16,8 +16,6 @@
 
 import json
 
-import webob.exc
-
 from keystone import config
 from keystone import exception
 from keystone.common import serializer
