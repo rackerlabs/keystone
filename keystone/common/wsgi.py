@@ -500,6 +500,8 @@ def render_response(body=None, status=(200, 'OK'), headers=None):
 
     if body is not None:
         resp.body = json.dumps(body, cls=utils.SmarterEncoder)
+    else:
+        resp.body = ''
 
     return resp
 
