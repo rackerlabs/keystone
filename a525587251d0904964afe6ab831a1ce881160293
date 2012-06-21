@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAI3///LA\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-21T00:50:34Z",
+      "side": 1,
+      "message": "These options should be documented in rst and keystone.conf.sample.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3///K8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-21T00:50:34Z",
+      "side": 1,
+      "message": "We have a dependency on keystone.common. Now sure how keystone middleware are distributed.You may want to double check setup.py to see all dependencies are satisfied.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3///K0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-21T00:50:34Z",
+      "side": 1,
+      "message": "These options should be documented in middleware doc.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3///K4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-21T00:50:34Z",
+      "side": 1,
+      "message": "raise Fubar(). :)",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3///Kk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-21T00:50:34Z",
+      "side": 1,
+      "message": "Wait. I thought we agreed on making PKI token configurable, no?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3///Kc\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-21T00:50:34Z",
+      "side": 1,
+      "message": "That\u0027s a lot of file I/O here. You may want to think about caching the certs.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3///KU\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-21T00:50:34Z",
+      "side": 1,
+      "message": "So the signed token is always in JSON format huh? No one cares about XML token info anymore? :)",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3///Kg\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-21T00:50:34Z",
+      "side": 1,
+      "message": "No data migration needed?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
