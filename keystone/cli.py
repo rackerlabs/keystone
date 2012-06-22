@@ -21,6 +21,7 @@ import sys
 import textwrap
 
 from keystone import config
+from keystone.common import openssl
 from keystone.openstack.common import importutils
 
 CONF = config.CONF
@@ -53,6 +54,17 @@ class DbSync(BaseApp):
             driver = importutils.import_object(getattr(CONF, k).driver)
             if hasattr(driver, 'db_sync'):
                 driver.db_sync()
+
+
+class CertificateSetup(BaseApp):
+    name = 'certificate_setup'
+
+    def __init__(self, *args, **kw):
+        super(CertificateSetup, self).__init__(*args, **kw)
+
+    def main(self):
+        conf_ssl = openssl.ConfigureSSL()
+        conf_ssl.run()
 
 
 class ImportLegacy(BaseApp):
@@ -110,6 +122,7 @@ CMDS = {'db_sync': DbSync,
         'import_legacy': ImportLegacy,
         'export_legacy_catalog': ExportLegacyCatalog,
         'import_nova_auth': ImportNovaAuth,
+        'certificate_setup': CertificateSetup,
         }
 
 
