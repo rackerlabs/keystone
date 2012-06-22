@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAI3//+Qo\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-22T19:18:43Z",
+      "side": 1,
+      "message": "I initially tried to do everything in auth_token,  but there was a need for local authentication in Keystone,  so I backed off it.  I think that long term it should go into Openstack common.",
+      "parentUuid": "AAAAI3///K8\u003d",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3///K0\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 6
@@ -87,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAI3//+Q0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-22T19:18:43Z",
+      "side": 1,
+      "message": "We had a few discussions.  The thing is,  the service can happily go on using the signed tokens the same as the existing tokens, but the reverse is not true.  So if we start using signed tokens,  we need to ensure that every token is a signed token.\n\nThe change made this way will update the remote systems once they import the new auth_token.py file,  preventing it to require human intervention in changing the paste config files by hand.  I think this is the right approach.",
+      "parentUuid": "AAAAI3///Kk\u003d",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3///Kc\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 6
@@ -98,6 +134,24 @@
       "writtenOn": "2012-06-21T00:50:34Z",
       "side": 1,
       "message": "That\u0027s a lot of file I/O here. You may want to think about caching the certs.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//+RA\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-22T19:18:43Z",
+      "side": 1,
+      "message": "Not really.  This will only be triggered once per remote service.  Caching it leads to a hold of other issues,  most significantly that it will require additional code or a server reset in order to update the certs.  I highly doubt this will be critical path.",
+      "parentUuid": "AAAAI3///Kc\u003d",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAI3//+Q4\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-22T19:18:43Z",
+      "side": 1,
+      "message": "I had to choose 1, and JSON is much less chatty, leading to smaller token size.",
+      "parentUuid": "AAAAI3///KU\u003d",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3///Kg\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 6
@@ -132,6 +204,24 @@
       "writtenOn": "2012-06-21T00:50:34Z",
       "side": 1,
       "message": "No data migration needed?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//+Qw\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-22T19:18:43Z",
+      "side": 1,
+      "message": "Migration will be required.",
+      "parentUuid": "AAAAI3///Kg\u003d",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
