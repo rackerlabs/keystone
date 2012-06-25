@@ -71,7 +71,7 @@ CREATE TABLE `endpoint_templates` (
 /*!40000 ALTER TABLE `endpoint_templates` DISABLE KEYS */;
 INSERT INTO `endpoint_templates` VALUES (1,'RegionOne',1,'http://10.4.128.10:8774/v1.1/%tenant_id%','http://10.4.128.10:8774/v1.1/%tenant_id%','http://10.4.128.10:8774/v1.1/%tenant_id%',1,1);
 INSERT INTO `endpoint_templates` VALUES (2,'RegionOne',2,'http://10.4.128.10:9292/v1.1/%tenant_id%','http://10.4.128.10:9292/v1.1/%tenant_id%','http://10.4.128.10:9292/v1.1/%tenant_id%',1,1);
-INSERT INTO `endpoint_templates` VALUES (3,'RegionOne',3,'http://10.4.128.10:5000/v2.0','http://10.4.128.10:35357/v2.0','http://10.4.128.10:5000/v2.0',1,1);
+INSERT INTO `endpoint_templates` VALUES (3,'RegionOne',3,'http://10.4.128.10:8770/v2.0','http://10.4.128.10:35357/v2.0','http://10.4.128.10:8770/v2.0',1,1);
 /*!40000 ALTER TABLE `endpoint_templates` ENABLE KEYS */;
 
 

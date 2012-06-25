@@ -95,7 +95,7 @@ in steps 3) and 4) may be commented out.
 2. Modify the protocol in 'auth_uri' to be 'https' as well, if the service API is configured
    for SSL::
 
-       auth_uri = https://localhost:5000/
+       auth_uri = https://localhost:8770/
 
 3. Set the location of the middleware certificate file (example)::
 

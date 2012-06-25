@@ -229,7 +229,7 @@ rather than its built in 'tempauth'.
 
 5. Verify that keystone is providing authentication to Swift
 
-    $ swift -V 2 -A http://localhost:5000/v2.0 -U admin:admin -K ADMIN stat
+    $ swift -V 2 -A http://localhost:8770/v2.0 -U admin:admin -K ADMIN stat
 
 .. NOTE::
    Instead of connecting to Swift here, as you would with other services, we

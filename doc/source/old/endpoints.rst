@@ -299,7 +299,7 @@ This creates a global endpoint (global means it gets applied to all tenants auto
 Now, when a user authenticates, they get that endpoint in their service catalog. Here's an example
 authentication request for use against tenant 1::
 
-    $ curl -H "Content-type: application/json" -d '{"auth":{"passwordCredentials":{"username":"joeuser","password":"secrete"}, "tenantId": "1"}}' http://localhost:5000/v2.0/tokens
+    $ curl -H "Content-type: application/json" -d '{"auth":{"passwordCredentials":{"username":"joeuser","password":"secrete"}, "tenantId": "1"}}' http://localhost:8770/v2.0/tokens
 
 The response is::
 

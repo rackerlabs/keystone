@@ -38,7 +38,7 @@ exist. This is often the case if Keystone is using an enterprise backend
 and the backend is managed through other entperrise tools and business
 processes. This core API is called the Service API and can be started
 separately from the more complete Admin API. By default, Keystone runs
-this API on port 5000. This is not an IANA assigned port and should not
+this API on port 8770. This is not an IANA assigned port and should not
 be relied upon (instead, use the Admin API on port 35357 to look for
 this endpoint - more on this later)
 
@@ -136,7 +136,7 @@ Here is an example showing how you can manually start the ``keystone-auth`` serv
     'swift' : 'X-Storage-Url',
     'cdn' : 'X-CDN-Management-Url'}
     keystone-legacy-auth: INFO     service_host         0.0.0.0
-    keystone-legacy-auth: INFO     service_port         5000
+    keystone-legacy-auth: INFO     service_port         8770
     keystone-legacy-auth: INFO     service_ssl          False
     keystone-legacy-auth: INFO     verbose              False
     keystone-legacy-auth: INFO     **************************************************
@@ -168,14 +168,14 @@ Here is an example showing how you can manually start the ``keystone-auth`` serv
     'swift' : 'X-Storage-Url',
     'cdn' : 'X-CDN-Management-Url'}
     admin       : INFO     service_host         0.0.0.0
-    admin       : INFO     service_port         5000
+    admin       : INFO     service_port         8770
     admin       : INFO     service_ssl          False
     admin       : INFO     verbose              False
     admin       : INFO     **************************************************
     Using config file: /Users/ziadsawalha/Documents/Code/keystone/etc/keystone.conf
-    Service API (ssl=False) listening on 0.0.0.0:5000
+    Service API (ssl=False) listening on 0.0.0.0:8770
     Admin API (ssl=False) listening on 0.0.0.0:35357
-    eventlet.wsgi.server: DEBUG    (77128) wsgi starting up on http://0.0.0.0:5000/
+    eventlet.wsgi.server: DEBUG    (77128) wsgi starting up on http://0.0.0.0:8770/
     eventlet.wsgi.server: DEBUG    (77128) wsgi starting up on http://0.0.0.0:35357/
 
     $ sudo keystone-registry keystone-registry.conf &

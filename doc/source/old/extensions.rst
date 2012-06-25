@@ -174,7 +174,7 @@ Which extensions are enabled?
 
 Discover which extensions are available (service API)::
 
-    curl http://localhost:5000/v2.0/extensions
+    curl http://localhost:8770/v2.0/extensions
 
 ... or (admin API)::
 

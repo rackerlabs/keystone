@@ -20,19 +20,19 @@ Service API Examples Using Curl
 ===============================
 
 The service API is defined to be a subset of the Admin API and, by
-default, runs on port 5000.
+default, runs on port 8770.
 
 GET /
 =====
 
 This call is identical to that documented for the Admin API, except
-that it uses port 5000, instead of port 35357, by default::
+that it uses port 8770, instead of port 35357, by default::
 
-    $ curl http://0.0.0.0:5000
+    $ curl http://0.0.0.0:8770
 
 or::
 
-    $ curl http://0.0.0.0:5000/v2.0/
+    $ curl http://0.0.0.0:8770/v2.0/
 
 See the `Admin API Examples Using Curl`_ for more info.
 
@@ -53,7 +53,7 @@ GET /tenants
 
 List all of the tenants your token can access::
 
-    $ curl -H "X-Auth-Token:887665443383838" http://localhost:5000/v2.0/tenants
+    $ curl -H "X-Auth-Token:887665443383838" http://localhost:8770/v2.0/tenants
 
 Returns::
 

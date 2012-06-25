@@ -39,7 +39,7 @@ class TestTemplatedCatalog(test.TestCase, test_backend.CatalogTests):
             },
             'identity': {
                 'adminURL': 'http://localhost:35357/v2.0',
-                'publicURL': 'http://localhost:5000/v2.0',
+                'publicURL': 'http://localhost:8770/v2.0',
                 'internalURL': 'http://localhost:35357/v2.0',
                 'name': "'Identity Service'"
             }
