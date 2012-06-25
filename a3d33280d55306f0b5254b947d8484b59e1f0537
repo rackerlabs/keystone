@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAI3//9Cg\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-25T22:12:13Z",
+      "side": 1,
+      "message": "Should it be named \"pki_setup\u0027 since you are setting up the entire private PKI?\n\nAlso, you may want to consider adding an option to import identity (in PKCS12?) since deployment may call for 3rd party CA issued certificates (i.e. VeriSign).",
+      "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//9BM\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-25T22:12:13Z",
+      "side": 1,
+      "message": "You mean DEFAULT_SUBJECT?",
+      "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//9Bw\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-25T22:12:13Z",
+      "side": 1,
+      "message": "You are hardcoding CA key size to 2048. May want to make it configurable.",
+      "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//9Bg\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-25T22:12:13Z",
+      "side": 1,
+      "message": "You are hardcoding password and certificate validity. May want to make them configurable.",
+      "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//9Bc\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-25T22:12:13Z",
+      "side": 1,
+      "message": "Same as above. May want to make the key size configurable.",
+      "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//9Ak\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-25T22:12:13Z",
+      "side": 1,
+      "message": "You probably want to set the umask here to make sure files created are strictly owned by Keystone.",
+      "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
