@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAI3//8gE\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-26T16:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAI3//9Cg\u003d",
+      "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3//9BM\u003d",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-06-25T22:12:13Z",
       "side": 1,
       "message": "You mean DEFAULT_SUBJECT?",
+      "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//8gc\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-26T16:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAI3//9BM\u003d",
       "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAI3//8gY\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-26T16:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAI3//9Bw\u003d",
+      "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3//9Bg\u003d",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2012-06-25T22:12:13Z",
       "side": 1,
       "message": "You are hardcoding password and certificate validity. May want to make them configurable.",
+      "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//8gU\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-26T16:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAI3//9Bg\u003d",
       "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAI3//8gQ\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-26T16:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAI3//9Bc\u003d",
+      "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3//9Ak\u003d",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2012-06-25T22:12:13Z",
       "side": 1,
       "message": "You probably want to set the umask here to make sure files created are strictly owned by Keystone.",
+      "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//8gM\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-26T16:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAI3//9Ak\u003d",
       "revId": "a3d33280d55306f0b5254b947d8484b59e1f0537",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
