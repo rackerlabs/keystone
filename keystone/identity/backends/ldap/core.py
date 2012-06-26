@@ -571,8 +571,9 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
             conn.modify_s(role_dn, [(ldap.MOD_ADD,
                                      self.member_attribute, user_dn)])
         except ldap.TYPE_OR_VALUE_EXISTS:
-            raise exception.Error('User %s already has role %s in tenant %s'
-                                  % (user_id, role_id, tenant_id))
+            msg = ('User %s already has role %s in tenant %s'
+                   % (user_id, role_id, tenant_id))
+            raise exception.Conflict(type='role grant', details=msg)
         except ldap.NO_SUCH_OBJECT:
             if tenant_id is None or self.get(role_id) is None:
                 raise Exception("Role %s not found" % (role_id,))
