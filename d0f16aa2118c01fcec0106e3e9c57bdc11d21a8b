@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAI3//764\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-06-27T02:30:53Z",
+      "side": 1,
+      "message": "Will these be documented or go into keystone.conf.sample at some point?",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
