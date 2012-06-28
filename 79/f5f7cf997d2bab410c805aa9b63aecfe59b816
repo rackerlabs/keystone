@@ -1,0 +1,11 @@
+Approved+1: James E. Blair <corvus@inaugust.com>
+Verified+2: Jenkins
+Code-Review+2: Joe Heck <heckj@mac.com>
+Approved+1: Devin Carlen <devin@openstack.org>
+Code-Review+2: Devin Carlen <devin@openstack.org>
+Verified+1: SmokeStack
+Submitted-by: Jenkins
+Submitted-at: Thu, 28 Jun 2012 14:05:13 +0000
+Reviewed-on: https://review.openstack.org/8856
+Project: openstack/keystone
+Branch: refs/heads/master
