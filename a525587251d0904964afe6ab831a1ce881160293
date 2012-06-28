@@ -243,6 +243,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAI3//59g\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 154
+      },
+      "writtenOn": "2012-06-28T18:30:57Z",
+      "side": 1,
+      "message": "One way to abstract the fact that a token is signed or not is to leave the auth_token filter as was before, and create another PKI filter that sits in front of the auth_token filter.  The PKI filter will inspect and see if the token is indeed signed.  If it is, then it will go on and verify it and short-circuit the auth_token filter.  If it is not, then it will just pass the token along to the auth_token filter to verify it the old-fashioned way.",
+      "parentUuid": "AAAAI3//+Q0\u003d",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3//6RI\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 6
