@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAI3//6UU\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "need copyright and doc string explaining what cms is",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6UQ\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "see hacking for 1-liner format (include a period too)",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6T4\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "extra whitespace",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3///LA\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 6
@@ -88,6 +139,75 @@
     },
     {
       "key": {
+        "uuid": "AAAAI3//6SE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "definitely need to raise something real/useful before merging",
+      "parentUuid": "AAAAI3///K4\u003d",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Ro\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "Can we remove the param then? I don\u0027t see anything using it (here)",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Rs\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "unencrypted",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Rc\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "who\u0027s this intended for? remove it?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3///Kk\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 6
@@ -117,6 +237,125 @@
       "side": 1,
       "message": "We had a few discussions.  The thing is,  the service can happily go on using the signed tokens the same as the existing tokens, but the reverse is not true.  So if we start using signed tokens,  we need to ensure that every token is a signed token.\n\nThe change made this way will update the remote systems once they import the new auth_token.py file,  preventing it to require human intervention in changing the paste config files by hand.  I think this is the right approach.",
       "parentUuid": "AAAAI3///Kk\u003d",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6RI\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "can we log this error instead of completely swallowing it? if we get back bad json or something, that\u0027s almost impossible to debug as-is",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6RE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "docstring format",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Qw\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "could easily refactor these two methods with a third like fetch_cert(self, type, file_name)",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6RA\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "what\u0027s the remaining todo here, exactly? also, \"TODO(ayoung): \" if you want to commit the todo",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Q8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Qs\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "import order",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Qg\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "import order",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -158,6 +397,75 @@
     },
     {
       "key": {
+        "uuid": "AAAAI3//6QE\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "ayoung: +1",
+      "parentUuid": "AAAAI3//+RA\u003d",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6N0\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "I know you didn\u0027t write this, but the assert should be replaced with a if/raise Unauthorized",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Nw\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "what\u0027s with the nested dicts? am i missing something?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Nk\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "placeholder?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3///KU\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 6
@@ -193,6 +501,109 @@
     },
     {
       "key": {
+        "uuid": "AAAAI3//6NY\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "requesting specific serialization formats is something i\u0027d like to see addressed as part of v3",
+      "parentUuid": "AAAAI3//+Q4\u003d",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6NI\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "you don\u0027t do anything with exist_token?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6M4\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "this whole method needs a lot of simplification, it\u0027s like playing cups",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6NA\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6M0\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "unicode or basestring?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Ms\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "o[\u0027access\u0027][\u0027metadata\u0027][\u0027is_admin\u0027] \u003d metadata_ref.get(\u0027is_admin\u0027, False) ?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3///Kg\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 6
@@ -222,6 +633,125 @@
       "side": 1,
       "message": "Migration will be required.",
       "parentUuid": "AAAAI3///Kg\u003d",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Mo\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "is this big enough?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Mg\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "doesn\u0027t match from_dict",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Mc\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "sha instead?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6MI\u003d",
+        "filename": "tests/signing/auth_token.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "is this supposed to be expired?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Lw\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "are you still using this one?",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6L4\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "extra whitespace",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAI3//6Ls\u003d",
+        "filename": "tests/test_overrides.conf",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-28T16:09:17Z",
+      "side": 1,
+      "message": "cleanup whitespace",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
