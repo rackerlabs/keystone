@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAJn///2k\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T15:23:49Z",
+      "side": 0,
+      "message": "This should not be removed.",
+      "revId": "d085f43875481c7d19cb08340b08e75b2202881a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

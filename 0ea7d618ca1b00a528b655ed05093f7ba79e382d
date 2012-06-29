@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAJn///2Q\u003d",
+        "filename": "keystone/common/sql/legacy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T15:23:49Z",
+      "side": 1,
+      "message": "A warning should be logged that data failed to be imported, what the data was, and why it failed.",
+      "revId": "0ea7d618ca1b00a528b655ed05093f7ba79e382d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///2g\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T15:23:49Z",
+      "side": 1,
+      "message": "import order is alphabetical by absolute package path, not alphabetical by import statement; previous import order was correct",
+      "revId": "0ea7d618ca1b00a528b655ed05093f7ba79e382d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///2U\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T15:23:49Z",
+      "side": 1,
+      "message": "This belongs in keystone.contrib.ec2.backends.sql",
+      "revId": "0ea7d618ca1b00a528b655ed05093f7ba79e382d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
