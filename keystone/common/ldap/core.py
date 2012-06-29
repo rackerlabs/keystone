@@ -95,19 +95,17 @@ class BaseLdap(object):
             self.structural_classes = self.DEFAULT_STRUCTURAL_CLASSES
         self.use_dumb_member = getattr(conf.ldap, 'use_dumb_member') or True
 
-    def get_connection(self, user=None, password=None):
+    def get_connection(self, user=self.LDAP_USER, password=self.LDAP_PASSWORD):
         if self.LDAP_URL.startswith('fake://'):
             conn = fakeldap.FakeLdap(self.LDAP_URL)
         else:
             conn = LdapWrapper(self.LDAP_URL)
 
-        if user is None:
-            user = self.LDAP_USER
+        # not all LDAP servers require authentication, so we don't bind
+        # if we don't have any user/pass
+        if user and password:
+            conn.simple_bind_s(user, password)
 
-        if password is None:
-            password = self.LDAP_PASSWORD
-
-        conn.simple_bind_s(user, password)
         return conn
 
     def _id_to_dn(self, id):
