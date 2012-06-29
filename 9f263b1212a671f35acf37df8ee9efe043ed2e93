@@ -16,6 +16,24 @@
       "revId": "9f263b1212a671f35acf37df8ee9efe043ed2e93",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///pc\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T18:26:50Z",
+      "side": 1,
+      "message": "No, it is intended.  Without it, previously this line did not fit into the 79 character limit,  but now that it is left justified,  it can be put on one line.",
+      "parentUuid": "AAAAJn///rM\u003d",
+      "revId": "9f263b1212a671f35acf37df8ee9efe043ed2e93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
