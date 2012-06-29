@@ -2,6 +2,125 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAJn///0c\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T16:02:31Z",
+      "side": 1,
+      "message": "add copyright?",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///0g\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T16:02:31Z",
+      "side": 1,
+      "message": "add an extra blank line between imports and vars",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///z4\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T16:02:31Z",
+      "side": 1,
+      "message": "indent is off",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///0k\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T16:02:31Z",
+      "side": 1,
+      "message": "group with other vars",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///0U\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T16:02:31Z",
+      "side": 1,
+      "message": "extra whitespace or add docstring",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///z0\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T16:02:31Z",
+      "side": 1,
+      "message": "pep8 on the dict",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///zU\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T16:02:31Z",
+      "side": 1,
+      "message": "should this be read in or a seperate docstring at least? maintaining all the manual line breaks and continuations looks like a nightmare",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3//764\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 2
@@ -13,6 +132,92 @@
       "writtenOn": "2012-06-27T02:30:53Z",
       "side": 1,
       "message": "Will these be documented or go into keystone.conf.sample at some point?",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///0A\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T16:02:31Z",
+      "side": 1,
+      "message": "I vote they should be in keystone.conf.sample with this merge",
+      "parentUuid": "AAAAI3//764\u003d",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///0E\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T16:02:31Z",
+      "side": 1,
+      "message": "hanging indent is off",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///zQ\u003d",
+        "filename": "tests/test_cert_setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T16:02:31Z",
+      "side": 1,
+      "message": "extra whitespace",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///zI\u003d",
+        "filename": "tests/test_cert_setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T16:02:31Z",
+      "side": 1,
+      "message": "is this necessary?",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///zM\u003d",
+        "filename": "tests/test_cert_setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-06-29T16:02:31Z",
+      "side": 1,
+      "message": "extra whitesapce",
       "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
