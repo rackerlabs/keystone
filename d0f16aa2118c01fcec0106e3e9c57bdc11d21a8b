@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAJn///sc\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T17:48:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAJn///0c\u003d",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAJn///0g\u003d",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-06-29T16:02:31Z",
       "side": 1,
       "message": "add an extra blank line between imports and vars",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///uo\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T17:48:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAJn///0g\u003d",
       "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAJn///us\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T17:48:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAJn///z4\u003d",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAJn///0k\u003d",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2012-06-29T16:02:31Z",
       "side": 1,
       "message": "group with other vars",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///uw\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T17:48:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAJn///0k\u003d",
       "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAJn///uI\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T17:48:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAJn///0U\u003d",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAJn///z0\u003d",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 2
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAJn///tk\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T17:48:17Z",
+      "side": 1,
+      "message": "Passes the pep8 test.  Moved the first {  to the second line because otherwise it violates the 79 column limit,  and it is much more readable with each element on a single line.  I think that is covered by \n\nhttp://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds\n\n Is there something else I missed here?",
+      "parentUuid": "AAAAJn///z0\u003d",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAJn///zU\u003d",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 2
@@ -115,6 +223,24 @@
       "writtenOn": "2012-06-29T16:02:31Z",
       "side": 1,
       "message": "should this be read in or a seperate docstring at least? maintaining all the manual line breaks and continuations looks like a nightmare",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///tA\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T17:48:17Z",
+      "side": 1,
+      "message": "Done as heredoc",
+      "parentUuid": "AAAAJn///zU\u003d",
       "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -156,6 +282,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAJn///vg\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T17:48:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAJn///0A\u003d",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAJn///0E\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 2
@@ -167,6 +311,24 @@
       "writtenOn": "2012-06-29T16:02:31Z",
       "side": 1,
       "message": "hanging indent is off",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///vc\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T17:48:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAJn///0E\u003d",
       "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -190,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAJn///wA\u003d",
+        "filename": "tests/test_cert_setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T17:48:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAJn///zQ\u003d",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAJn///zI\u003d",
         "filename": "tests/test_cert_setup.py",
         "patchSetId": 2
@@ -207,6 +387,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAJn///v8\u003d",
+        "filename": "tests/test_cert_setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T17:48:17Z",
+      "side": 1,
+      "message": "Nope.  Removed",
+      "parentUuid": "AAAAJn///zI\u003d",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAJn///zM\u003d",
         "filename": "tests/test_cert_setup.py",
         "patchSetId": 2
@@ -218,6 +416,24 @@
       "writtenOn": "2012-06-29T16:02:31Z",
       "side": 1,
       "message": "extra whitesapce",
+      "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///v4\u003d",
+        "filename": "tests/test_cert_setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-06-29T17:48:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAJn///zM\u003d",
       "revId": "d0f16aa2118c01fcec0106e3e9c57bdc11d21a8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
