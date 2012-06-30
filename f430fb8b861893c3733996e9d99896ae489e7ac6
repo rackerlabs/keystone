@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAJn///Os\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-06-30T18:46:15Z",
+      "side": 1,
+      "message": "I don\u0027t like silently overriding settings, you should at least log the issue and even you can abort the execution, so the user fix Keystone settings.",
+      "revId": "f430fb8b861893c3733996e9d99896ae489e7ac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///Og\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-06-30T18:46:15Z",
+      "side": 1,
+      "message": "This should be \u003e 1, shouldn\u0027t it? At least line 102 points out that.",
+      "revId": "f430fb8b861893c3733996e9d99896ae489e7ac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///Oc\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-06-30T18:46:15Z",
+      "side": 1,
+      "message": "I\u0027m no really sure how multiprocessing works here, but would this code run over and over If self.run_child() fails? Anyway you might want catch OSError on run_child fork.",
+      "revId": "f430fb8b861893c3733996e9d99896ae489e7ac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJn///OQ\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-06-30T18:46:15Z",
+      "side": 1,
+      "message": "This monkey patching is not the same done in the master, I think it should be the same unless you have a good reason for that.",
+      "revId": "f430fb8b861893c3733996e9d99896ae489e7ac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
