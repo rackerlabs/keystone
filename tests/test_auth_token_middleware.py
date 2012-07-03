@@ -14,6 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import string
+import webob
 import datetime
 import iso8601
 import webob
@@ -23,13 +25,75 @@ from keystone.openstack.common import jsonutils
 from keystone import config
 from keystone import test
 
+DEFAULT_UUID_TOKEN = "123456789ABCDEF123456789ABCDEF"
+
+DEFAULT_SIGNED_TOKEN = string.replace(
+    """MIIG7QYJKoZIhvcNAQcCoIIG3jCCBtoCAQExCTAHBgUrDgMCGjCCBc4GCSqGSIb3
+DQEHAaCCBb8EggW7eyJhY2Nlc3MiOiB7InNlcnZpY2VDYXRhbG9nIjogW3siZW5k
+cG9pbnRzIjogW3siYWRtaW5VUkwiOiAiaHR0cDovLzEyNy4wLjAuMTo4Nzc2L3Yx
+LzY0YjZmM2ZiY2M1MzQzNWU4YTYwZmNmODliYjY2MTdhIiwgInJlZ2lvbiI6ICJy
+ZWdpb25PbmUiLCAiaW50ZXJuYWxVUkwiOiAiaHR0cDovLzEyNy4wLjAuMTo4Nzc2
+L3YxLzY0YjZmM2ZiY2M1MzQzNWU4YTYwZmNmODliYjY2MTdhIiwgInB1YmxpY1VS
+TCI6ICJodHRwOi8vMTI3LjAuMC4xOjg3NzYvdjEvNjRiNmYzZmJjYzUzNDM1ZThh
+NjBmY2Y4OWJiNjYxN2EifV0sICJlbmRwb2ludHNfbGlua3MiOiBbXSwgInR5cGUi
+OiAidm9sdW1lIiwgIm5hbWUiOiAidm9sdW1lIn0sIHsiZW5kcG9pbnRzIjogW3si
+YWRtaW5VUkwiOiAiaHR0cDovLzEyNy4wLjAuMTo5MjkyL3YxIiwgInJlZ2lvbiI6
+ICJyZWdpb25PbmUiLCAiaW50ZXJuYWxVUkwiOiAiaHR0cDovLzEyNy4wLjAuMTo5
+MjkyL3YxIiwgInB1YmxpY1VSTCI6ICJodHRwOi8vMTI3LjAuMC4xOjkyOTIvdjEi
+fV0sICJlbmRwb2ludHNfbGlua3MiOiBbXSwgInR5cGUiOiAiaW1hZ2UiLCAibmFt
+ZSI6ICJnbGFuY2UifSwgeyJlbmRwb2ludHMiOiBbeyJhZG1pblVSTCI6ICJodHRw
+Oi8vMTI3LjAuMC4xOjg3NzQvdjEuMS82NGI2ZjNmYmNjNTM0MzVlOGE2MGZjZjg5
+YmI2NjE3YSIsICJyZWdpb24iOiAicmVnaW9uT25lIiwgImludGVybmFsVVJMIjog
+Imh0dHA6Ly8xMjcuMC4wLjE6ODc3NC92MS4xLzY0YjZmM2ZiY2M1MzQzNWU4YTYw
+ZmNmODliYjY2MTdhIiwgInB1YmxpY1VSTCI6ICJodHRwOi8vMTI3LjAuMC4xOjg3
+NzQvdjEuMS82NGI2ZjNmYmNjNTM0MzVlOGE2MGZjZjg5YmI2NjE3YSJ9XSwgImVu
+ZHBvaW50c19saW5rcyI6IFtdLCAidHlwZSI6ICJjb21wdXRlIiwgIm5hbWUiOiAi
+bm92YSJ9LCB7ImVuZHBvaW50cyI6IFt7ImFkbWluVVJMIjogImh0dHA6Ly8xMjcu
+MC4wLjE6MzUzNTcvdjIuMCIsICJyZWdpb24iOiAiUmVnaW9uT25lIiwgImludGVy
+bmFsVVJMIjogImh0dHA6Ly8xMjcuMC4wLjE6MzUzNTcvdjIuMCIsICJwdWJsaWNV
+UkwiOiAiaHR0cDovLzEyNy4wLjAuMTo1MDAwL3YyLjAifV0sICJlbmRwb2ludHNf
+bGlua3MiOiBbXSwgInR5cGUiOiAiaWRlbnRpdHkiLCAibmFtZSI6ICJrZXlzdG9u
+ZSJ9XSwidG9rZW4iOiB7ImV4cGlyZXMiOiAiMjAxMi0wNi0wMlQxNDo0NzozNFoi
+LCAiaWQiOiAicGxhY2Vob2xkZXIiLCAidGVuYW50IjogeyJlbmFibGVkIjogdHJ1
+ZSwgImRlc2NyaXB0aW9uIjogbnVsbCwgIm5hbWUiOiAidGVuYW50X25hbWUxIiwg
+ImlkIjogInRlbmFudF9pZDEifX0sICJ1c2VyIjogeyJ1c2VybmFtZSI6ICJ1c2Vy
+X25hbWUxIiwgInJvbGVzX2xpbmtzIjogWyJyb2xlMSIsInJvbGUyIl0sICJpZCI6
+ICJ1c2VyX2lkMSIsICJyb2xlcyI6IFt7Im5hbWUiOiAicm9sZTEifSwgeyJuYW1l
+IjogInJvbGUyIn1dLCAibmFtZSI6ICJ1c2VyX25hbWUxIn19fQ0KMYH3MIH0AgEB
+MFQwTzEVMBMGA1UEChMMUmVkIEhhdCwgSW5jMREwDwYDVQQHEwhXZXN0Zm9yZDEW
+MBQGA1UECBMNTWFzc2FjaHVzZXR0czELMAkGA1UEBhMCVVMCAQEwBwYFKw4DAhow
+DQYJKoZIhvcNAQEBBQAEgYAD6hPEpc/0wHe3rYDBFec52h7gxdbrTNEN7jmwdFto
+xw0QnucmCREh9IUikJ2ob0c0uUC6cmNPajD9aFkGWhvNswNH2W2BYzUiC3CHM7U0
+7nsIe3OOatqyUAyoQUhHZnIAx1tOgdPBVflnrtdIV1vkdqxednlJZ52Hxob2PP3h
+xg==""", "\n", "")
+
+
+INVALID_SIGNED_TOKEN = string.replace(
+    """AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+0000000000000000000000000000000000000000000000000000000000000000
+1111111111111111111111111111111111111111111111111111111111111111
+2222222222222222222222222222222222222222222222222222222222222222
+3333333333333333333333333333333333333333333333333333333333333333
+4444444444444444444444444444444444444444444444444444444444444444
+5555555555555555555555555555555555555555555555555555555555555555
+6666666666666666666666666666666666666666666666666666666666666666
+7777777777777777777777777777777777777777777777777777777777777777
+8888888888888888888888888888888888888888888888888888888888888888
+9999999999999999999999999999999999999999999999999999999999999999
+0000000000000000000000000000000000000000000000000000000000000000
+xg==""", "\n", "")
 
 # JSON responses keyed by token ID
 TOKEN_RESPONSES = {
-    'valid-token': {
+    DEFAULT_UUID_TOKEN: {
         'access': {
             'token': {
-                'id': 'valid-token',
+                'id': DEFAULT_UUID_TOKEN,
                 'tenant': {
                     'id': 'tenant_id1',
                     'name': 'tenant_name1',
@@ -46,10 +110,10 @@ TOKEN_RESPONSES = {
             'serviceCatalog': {}
         },
     },
-    'default-tenant-token': {
+    DEFAULT_SIGNED_TOKEN: {
         'access': {
             'token': {
-                'id': 'default-tenant-token',
+                'id': DEFAULT_SIGNED_TOKEN,
             },
             'user': {
                 'id': 'user_id1',
@@ -123,7 +187,7 @@ class FakeMemcache(object):
         self.token_expiration = None
 
     def get(self, key):
-        data = TOKEN_RESPONSES['valid-token'].copy()
+        data = TOKEN_RESPONSES[DEFAULT_SIGNED_TOKEN].copy()
         if not data or key != "tokens/%s" % (data['access']['token']['id']):
             return
         if not self.token_expiration:
@@ -220,6 +284,7 @@ class FakeApp(object):
 
 
 class BaseAuthTokenMiddlewareTest(test.TestCase):
+
     def setUp(self, expected_env=None):
         expected_env = expected_env or {}
 
@@ -228,6 +293,7 @@ class BaseAuthTokenMiddlewareTest(test.TestCase):
             'auth_host': 'keystone.example.com',
             'auth_port': 1234,
             'auth_admin_prefix': '/testadmin',
+            'signing_dir': 'signing'
         }
 
         self.middleware = auth_token.AuthProtocol(FakeApp(expected_env), conf)
@@ -250,28 +316,33 @@ class DiabloAuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
         expected_env = {
             'HTTP_X_TENANT_ID': 'tenant_id1',
             'HTTP_X_TENANT_NAME': 'tenant_id1',
-            'HTTP_X_TENANT': 'tenant_id1',  # now deprecated (diablo-compat)
+            # now deprecated (diablo-compat)
+            'HTTP_X_TENANT': 'tenant_id1',
         }
         super(DiabloAuthTokenMiddlewareTest, self).setUp(expected_env)
 
-    def test_diablo_response(self):
-        req = webob.Request.blank('/')
-        req.headers['X-Auth-Token'] = 'valid-diablo-token'
-        body = self.middleware(req.environ, self.start_fake_response)
-        self.assertEqual(self.response_status, 200)
-        self.assertEqual(body, ['SUCCESS'])
-
 
 class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
-    def test_valid_request(self):
+
+    def test_valid_uuid_request(self):
         req = webob.Request.blank('/')
-        req.headers['X-Auth-Token'] = 'valid-token'
+        req.headers['X-Auth-Token'] = DEFAULT_UUID_TOKEN
+        body = self.middleware(req.environ, self.start_fake_response)
+        self.assertEqual(self.response_status, 200)
+        catalog = req.headers.get('X-Service-Catalog')
+        self.assertTrue(req.headers.get('X-Service-Catalog'))
+        self.assertEqual(body, ['SUCCESS'])
+
+    def test_valid_signed_request(self):
+        req = webob.Request.blank('/')
+        req.headers['X-Auth-Token'] = DEFAULT_SIGNED_TOKEN
         body = self.middleware(req.environ, self.start_fake_response)
         self.assertEqual(self.middleware.conf['auth_admin_prefix'],
                          "/testadmin")
         self.assertEqual("/testadmin/v2.0/tokens/valid-token",
                          FakeHTTPConnection.last_requested_url)
         self.assertEqual(self.response_status, 200)
+        catalog = req.headers.get('X-Service-Catalog')
         self.assertTrue(req.headers.get('X-Service-Catalog'))
         self.assertEqual(body, ['SUCCESS'])
 
@@ -281,8 +352,9 @@ class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
         The implied scope is the user's tenant ID.
 
         """
+
         req = webob.Request.blank('/')
-        req.headers['X-Auth-Token'] = 'default-tenant-token'
+        req.headers['X-Auth-Token'] = DEFAULT_SIGNED_TOKEN
         body = self.middleware(req.environ, self.start_fake_response)
         self.assertEqual(self.response_status, 200)
         self.assertEqual(body, ['SUCCESS'])
@@ -296,9 +368,17 @@ class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
         self.assertEqual(self.response_headers['WWW-Authenticate'],
                          'Keystone uri=\'https://keystone.example.com:1234\'')
 
-    def test_request_invalid_token(self):
+    def test_request_invalid_uuid_token(self):
         req = webob.Request.blank('/')
         req.headers['X-Auth-Token'] = 'invalid-token'
+        self.middleware(req.environ, self.start_fake_response)
+        self.assertEqual(self.response_status, 401)
+        self.assertEqual(self.response_headers['WWW-Authenticate'],
+                         'Keystone uri=\'https://keystone.example.com:1234\'')
+
+    def test_request_invalid_signed_token(self):
+        req = webob.Request.blank('/')
+        req.headers['X-Auth-Token'] = INVALID_SIGNED_TOKEN
         self.middleware(req.environ, self.start_fake_response)
         self.assertEqual(self.response_status, 401)
         self.assertEqual(self.response_headers['WWW-Authenticate'],
@@ -321,7 +401,7 @@ class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
 
     def test_memcache(self):
         req = webob.Request.blank('/')
-        req.headers['X-Auth-Token'] = 'valid-token'
+        req.headers['X-Auth-Token'] = DEFAULT_SIGNED_TOKEN
         self.middleware._cache = FakeMemcache()
         self.middleware(req.environ, self.start_fake_response)
         self.assertEqual(self.middleware._cache.set_value, None)
@@ -335,7 +415,7 @@ class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
 
     def test_memcache_set_expired(self):
         req = webob.Request.blank('/')
-        req.headers['X-Auth-Token'] = 'valid-token'
+        req.headers['X-Auth-Token'] = DEFAULT_SIGNED_TOKEN
         self.middleware._cache = FakeMemcache()
         expired = datetime.datetime.now() - datetime.timedelta(minutes=1)
         self.middleware._cache.token_expiration = float(expired.strftime("%s"))
