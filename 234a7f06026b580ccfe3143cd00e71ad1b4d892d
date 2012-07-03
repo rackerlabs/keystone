@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAJ3//+QE\u003d",
+        "filename": "keystone/common/systemd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-03T18:18:54Z",
+      "side": 1,
+      "message": "I don\u0027t think the config example needs to be duplicated here",
+      "revId": "234a7f06026b580ccfe3143cd00e71ad1b4d892d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+QM\u003d",
+        "filename": "keystone/common/systemd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-03T18:18:54Z",
+      "side": 1,
+      "message": "import order",
+      "revId": "234a7f06026b580ccfe3143cd00e71ad1b4d892d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
