@@ -139,7 +139,7 @@ class _Win32Colorizer(object):
             'magenta': red | blue | bold,
             'cyan': green | blue | bold,
             'white': red | green | blue | bold
-            }
+        }
 
     def supported(cls, stream=sys.stdout):
         try:
@@ -337,7 +337,7 @@ if __name__ == '__main__':
     # If any argument looks like a test name but doesn't have "nova.tests" in
     # front of it, automatically add that so we don't have to type as much
     show_elapsed = True
-    do_monkeypatch = True
+    monkeypatch_thread = True
     argv = []
     for x in sys.argv:
         if x.startswith('test_'):
@@ -347,12 +347,12 @@ if __name__ == '__main__':
         elif x.startswith('--hide-elapsed'):
             show_elapsed = False
         elif x.startswith('--no-monkeypatch'):
-            do_monkeypatch = False
+            monkeypatch_thread = False
         else:
             argv.append(x)
-    if do_monkeypatch:
         eventlet.patcher.monkey_patch(all=False, socket=True, time=True,
-                                       thread=True)
+                                      thread=monkeypatch_thread)
+
     testdir = os.path.abspath(os.path.join("tests"))
     c = config.Config(stream=sys.stdout,
                       env=os.environ,
