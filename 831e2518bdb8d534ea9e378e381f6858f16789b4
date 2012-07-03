@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAJ3//+EI\u003d",
+        "filename": "keystone/middleware/swift_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-03T20:15:12Z",
+      "side": 1,
+      "message": "Do you want to include the id/name combo in the log message?",
+      "revId": "831e2518bdb8d534ea9e378e381f6858f16789b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
