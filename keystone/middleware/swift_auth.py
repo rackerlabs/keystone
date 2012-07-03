@@ -137,7 +137,8 @@ class SwiftAuth(object):
         roles = []
         if 'HTTP_X_ROLES' in environ:
             roles = environ['HTTP_X_ROLES'].split(',')
-        identity = {'user': environ.get('HTTP_X_USER_NAME'),
+        identity = {'user': (environ.get('HTTP_X_USER_ID'),
+                             environ.get('HTTP_X_USER_NAME')),
                     'tenant': (environ.get('HTTP_X_TENANT_ID'),
                                environ.get('HTTP_X_TENANT_NAME')),
                     'roles': roles}
@@ -154,6 +155,7 @@ class SwiftAuth(object):
         env = req.environ
         env_identity = env.get('keystone.identity', {})
         tenant_id, tenant_name = env_identity.get('tenant')
+        user_id, user_name = env_identity.get('user')
 
         try:
             part = swift_utils.split_path(req.path, 1, 4, True)
@@ -191,8 +193,7 @@ class SwiftAuth(object):
                 return
 
         # If user is of the same name of the tenant then make owner of it.
-        user = env_identity.get('user', '')
-        if self.is_admin and user == tenant_name:
+        if self.is_admin and user_name == tenant_name:
             req.environ['swift_owner'] = True
             return
 
@@ -205,19 +206,23 @@ class SwiftAuth(object):
         elif authorized is not None:
             return self.denied_response(req)
 
+        # Check if referrer is allowed.
         # Allow ACL at individual user level (tenant:user format)
         # For backward compatibility, check for ACL in tenant_id:user format
-        if ('%s:%s' % (tenant_name, user) in roles
-                or '%s:%s' % (tenant_id, user) in roles):
+        if ('%s:%s' % (tenant_name, user_name) in roles
+                or '%s:%s' % (tenant_id, user_id) in roles
+                or '%s:%s' % (tenant_id, user_name) in roles):
             log_msg = 'user %s:%s or %s:%s allowed in ACL authorizing'
-            self.logger.debug(log_msg % (tenant_name, user, tenant_id, user))
+            self.logger.debug(log_msg % (tenant_name, user_name, tenant_id,
+                              user_id))
             return
 
         # Check if we have the role in the userroles and allow it
         for user_role in user_roles:
             if user_role in roles:
                 log_msg = 'user %s:%s allowed in ACL: %s authorizing'
-                self.logger.debug(log_msg % (tenant_name, user, user_role))
+                self.logger.debug(log_msg % (tenant_name, user_name,
+                                  user_role))
                 return
 
         return self.denied_response(req)
@@ -265,7 +270,6 @@ class SwiftAuth(object):
             self.logger.debug(log_msg)
             return True
 
-        # Check if referrer is allowed.
         if swift_acl.referrer_allowed(req.referer, referrers):
             if obj or '.rlistings' in roles:
                 log_msg = 'authorizing %s via referer ACL' % req.referrer
