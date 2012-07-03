@@ -147,10 +147,6 @@ class SwiftAuth(object):
     def _get_account_for_tenant(self, tenant_id):
         return '%s%s' % (self.reseller_prefix, tenant_id)
 
-    def _reseller_check(self, account, tenant_id):
-        """Check reseller prefix."""
-        return account == self._get_account_for_tenant(tenant_id)
-
     def authorize(self, req):
         env = req.environ
         env_identity = env.get('keystone.identity', {})
@@ -172,13 +168,6 @@ class SwiftAuth(object):
             self.logger.debug(msg % tenant_id)
             req.environ['swift_owner'] = True
             return
-
-        # Check if a user tries to access an account that does not match their
-        # token
-        if not self._reseller_check(account, tenant_id):
-            log_msg = 'tenant mismatch: %s != %s' % (account, tenant_id)
-            self.logger.debug(log_msg)
-            return self.denied_response(req)
 
         # Check the roles the user is belonging to. If the user is
         # part of the role defined in the config variable
