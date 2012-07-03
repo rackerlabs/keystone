@@ -16,6 +16,24 @@
       "revId": "4202f7029b8ed8c5f7676b1934a31754184ddd7f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+lI\u003d",
+        "filename": "tools/test-requires",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2012-07-03T13:12:09Z",
+      "side": 1,
+      "message": "Yes and no. They are always supposed to support previous versions of the corresponding server API, but like normal libraries, they can indicate breaking code API changes by bumping the major number in their version number.\n\nAlso, since these are 0.x, it\u0027s assumed that a stable code API hasn\u0027t necessarily been adopted yet. Once it releases a 1.x, I imagine this can change to \u003e\u003d1,\u003c2",
+      "parentUuid": "AAAAJ3//+ts\u003d",
+      "revId": "4202f7029b8ed8c5f7676b1934a31754184ddd7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
