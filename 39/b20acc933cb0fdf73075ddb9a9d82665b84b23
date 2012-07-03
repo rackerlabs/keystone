@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Joe Heck <heckj@mac.com>
+Verified+1: SmokeStack
+Approved+1: ayoung
+Code-Review+2: ayoung
+Submitted-by: Jenkins
+Submitted-at: Tue, 03 Jul 2012 21:27:52 +0000
+Reviewed-on: https://review.openstack.org/9182
+Project: openstack/keystone
+Branch: refs/heads/master
