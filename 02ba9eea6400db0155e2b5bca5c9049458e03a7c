@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAJ3//+LM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-03T19:03:13Z",
+      "side": 1,
+      "message": "needs a 1 line summary \u003c 50 chars",
+      "revId": "02ba9eea6400db0155e2b5bca5c9049458e03a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+LE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-03T19:03:13Z",
+      "side": 1,
+      "message": "cite a bug number, blueprint, etc",
+      "revId": "02ba9eea6400db0155e2b5bca5c9049458e03a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+LI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-03T19:03:13Z",
+      "side": 1,
+      "message": "remove this",
+      "revId": "02ba9eea6400db0155e2b5bca5c9049458e03a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+Ks\u003d",
+        "filename": "ocf/keystone",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-03T19:03:13Z",
+      "side": 1,
+      "message": "Directly contradicts with the Openstack Contributor License Agreement (CLA) Grant of Copyright License.",
+      "revId": "02ba9eea6400db0155e2b5bca5c9049458e03a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
