@@ -13,7 +13,8 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-
+from datetime import datetime
+from datetime import timedelta
 import time
 import uuid
 import webob
@@ -345,9 +346,12 @@ class KeystoneClientTests(object):
         time.sleep(1.01)
         reauthenticated_token = foo_client.tokens.authenticate(
             token=foo_client.auth_token)
-
-        self.assertEquals(orig_token['expires'],
-                          reauthenticated_token.expires)
+        format = '%Y-%m-%dT%H:%M:%SZ'
+        time_difference = \
+            abs(datetime.strptime(orig_token['expires'], format) -
+                datetime.strptime(reauthenticated_token.expires, format))
+        time_delta = timedelta(seconds=2)
+        self.assertTrue(time_difference < time_delta)
 
     def test_user_create_update_delete(self):
         from keystoneclient import exceptions as client_exceptions
