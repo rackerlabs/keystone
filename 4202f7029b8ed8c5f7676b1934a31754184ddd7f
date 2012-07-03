@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAJ3//+ts\u003d",
+        "filename": "tools/test-requires",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-07-03T07:31:05Z",
+      "side": 1,
+      "message": "Why \u003c0.2 ?\nAren\u0027t client libraries supposed to be always backward compatible?",
+      "revId": "4202f7029b8ed8c5f7676b1934a31754184ddd7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
