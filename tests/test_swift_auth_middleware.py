@@ -67,12 +67,14 @@ class SwiftAuth(unittest.TestCase):
         return webob.Request.blank(path, headers=headers, **kwargs)
 
     def _get_identity_headers(self, status='Confirmed', tenant_id='1',
-                          tenant_name='acct', user='usr', role=''):
+                          tenant_name='acct', user_name='usr', user_id='2',
+                          role=''):
         return dict(X_IDENTITY_STATUS=status,
                     X_TENANT_ID=tenant_id,
                     X_TENANT_NAME=tenant_name,
                     X_ROLES=role,
-                    X_USER_NAME=user)
+                    X_USER_NAME=user_name,
+                    X_USER_ID=user_id)
 
     def _get_successful_middleware(self):
         response_iter = iter([('200 OK', {}, '')])
@@ -144,11 +146,12 @@ class TestAuthorize(unittest.TestCase):
             identity = self._get_identity()
         return self.test_auth._get_account_for_tenant(identity['tenant'][0])
 
-    def _get_identity(self, tenant_id='tenant_id',
-                      tenant_name='tenant_name', user='user', roles=None):
+    def _get_identity(self, tenant_id='tenant_id', tenant_name='tenant_name',
+                      user_id='2', user_name='user', roles=None):
         if not roles:
             roles = []
-        return dict(tenant=(tenant_id, tenant_name), user=user, roles=roles)
+        return dict(tenant=(tenant_id, tenant_name), user=(user_id, user_name),
+                    roles=roles)
 
     def _check_authenticate(self, account=None, identity=None, headers=None,
                             exception=None, acl=None, env=None, path=None):
@@ -191,8 +194,7 @@ class TestAuthorize(unittest.TestCase):
         self.assertTrue(req.environ.get('swift_owner'))
 
     def _check_authorize_for_tenant_owner_match(self, exception=None):
-        identity = self._get_identity()
-        identity['user'] = identity['tenant'][1]
+        identity = self._get_identity(user_name='blah', tenant_name='blah')
         req = self._check_authenticate(identity=identity, exception=exception)
         expected = bool(exception is None)
         self.assertEqual(bool(req.environ.get('swift_owner')), expected)
@@ -235,14 +237,21 @@ class TestAuthorize(unittest.TestCase):
         identity = self._get_identity(roles=[acl])
         self._check_authenticate(identity=identity, acl=acl)
 
-    def test_authorize_succeeds_for_tenant_name_user_in_roles(self):
+    def test_authorize_succeeds_for_tenant_name_user_name_in_roles(self):
         identity = self._get_identity()
-        acl = '%s:%s' % (identity['tenant'][1], identity['user'])
+        acl = '%s:%s' % (identity['tenant'][1], identity['user'][1])
         self._check_authenticate(identity=identity, acl=acl)
 
-    def test_authorize_succeeds_for_tenant_id_user_in_roles(self):
+    def test_authorize_succeeds_for_tenant_id_user_id_in_roles(self):
         identity = self._get_identity()
-        acl = '%s:%s' % (identity['tenant'][0], identity['user'])
+        # tenant_id:user_id
+        acl = '%s:%s' % (identity['tenant'][0], identity['user'][0])
+        self._check_authenticate(identity=identity, acl=acl)
+
+    def test_authorize_succeeds_for_tenant_id_user_name_in_roles(self):
+        identity = self._get_identity()
+        # tenant_id:user_name (we need this for legacy support?)
+        acl = '%s:%s' % (identity['tenant'][0], identity['user'][1])
         self._check_authenticate(identity=identity, acl=acl)
 
 if __name__ == '__main__':
