@@ -20,6 +20,8 @@ if os.path.exists(os.path.join(possible_topdir,
 from paste import deploy
 
 from keystone import config
+import eventlet
+eventlet.patcher.monkey_patch(all=False, socket=True, time=True, thread=True)
 from keystone.common import wsgi
 from keystone.common import utils
 
