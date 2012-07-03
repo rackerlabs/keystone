@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAJ3//+Ik\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "DRY - cms_verify and cms_sign are largely similar.  Consider extracting the common functionality and making it data-driven.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3//6UQ\u003d",
         "filename": "keystone/common/cms.py",
         "patchSetId": 6
@@ -30,6 +47,91 @@
       "writtenOn": "2012-06-28T16:09:17Z",
       "side": 1,
       "message": "see hacking for 1-liner format (include a period too)",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+Jk\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "contensts \u003d\u003e contents are in",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+JY\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "PEP8 vertical alignment - parameter lines should all line up, either indented or aligned to the opening bracket.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+JU\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Consider using implicit boolean conversion",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+JA\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "HACKING - multiline docstring formatting",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+Is\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "PEP8 vertical alignment",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +155,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAJ3//+IQ\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Please avoid unnecessary formatting changes - blank lines 113 and 144 were removed and should be added back.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3///LA\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 6
@@ -64,6 +183,40 @@
       "writtenOn": "2012-06-21T00:50:34Z",
       "side": 1,
       "message": "These options should be documented in rst and keystone.conf.sample.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+H4\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "PEP8 vertical alignment",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+H0\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "PEP8 vertical alignment",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +252,41 @@
       "side": 1,
       "message": "I initially tried to do everything in auth_token,  but there was a need for local authentication in Keystone,  so I backed off it.  I think that long term it should go into Openstack common.",
       "parentUuid": "AAAAI3///K8\u003d",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+Ho\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "auth_token isn\u0027t packaged separately from keystone, and the common case for distribution is simply installing keystone, so dependency on keystone.common doesn\u0027t seem too onerous.  \n\n+1 to eventual inclusion in openstack.common, though, for both auth_token and cms.",
+      "parentUuid": "AAAAI3//+Qo\u003d",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+Hg\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Please be consistent in comment formatting - the convention in Keystone appears to include a leading space.",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -157,6 +345,74 @@
     },
     {
       "key": {
+        "uuid": "AAAAJ3//+G8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Consider creating the directory with the desired mode.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+G0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Consider detecting the potential for an error state and handling it explicitly.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+Gs\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Please follow the sphinx format for this line and the one following (http://packages.python.org/an_example_pypi_project/sphinx.html):\n\n:returns:\n\n:raises:\n\nThis module, unfortunately, doesn\u0027t follow this convention consistently.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+Go\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": ", e \u003d\u003e as e",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3//6Ro\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 6
@@ -185,6 +441,23 @@
       "writtenOn": "2012-06-28T16:09:17Z",
       "side": 1,
       "message": "unencrypted",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+Gk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": ":return \u003d\u003e :returns:",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -278,6 +551,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAJ3//+F8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Consider simplifying this method to check/fetch the files proactively instead of requiring the complexity of a loop.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3//6RE\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 6
@@ -289,6 +579,40 @@
       "writtenOn": "2012-06-28T16:09:17Z",
       "side": 1,
       "message": "docstring format",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+GI\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "PEP8 indentation - this line should be indented 8 spaces, and the block contents should be indented 4 spaces.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+GE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "PEP8 indentation",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -329,6 +653,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAJ3//+F4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Consider using \u0027with\u0027 to simplify file access:\n\nwith open(self.signing_cert_file_name, \u0027w\u0027) as f:\n    f.write(data)",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAI3//6Q8\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 6
@@ -340,6 +681,23 @@
       "writtenOn": "2012-06-28T16:09:17Z",
       "side": 1,
       "message": "same as above",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+F0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 602,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Consider using \u0027with\u0027 to wrap file access.",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -374,6 +732,40 @@
       "writtenOn": "2012-06-28T16:09:17Z",
       "side": 1,
       "message": "import order",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+Fw\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Unnecessary blank line.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+Fs\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "#Certificates \u003d\u003e # Certificates\n\nveritfy \u003d\u003e verify\n\ntoekns \u003d\u003e tokens",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -427,6 +819,40 @@
       "side": 1,
       "message": "ayoung: +1",
       "parentUuid": "AAAAI3//+RA\u003d",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+Fo\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Consider using \u0027with\u0027 to wrap file access.",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+Fc\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Consider using \u0027with\u0027 to wrap file access.",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -753,6 +1179,57 @@
       "writtenOn": "2012-06-28T16:09:17Z",
       "side": 1,
       "message": "extra whitespace",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+FY\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": ":\u0027 \u003d\u003e : \u0027\n\nHACKING - include trailing commas in multiline dicts",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+FU\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "PEP8 - separate module-level definitions with 2 spaces",
+      "revId": "a525587251d0904964afe6ab831a1ce881160293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJ3//+FQ\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-03T19:56:57Z",
+      "side": 1,
+      "message": "Unnecessary blank lines",
       "revId": "a525587251d0904964afe6ab831a1ce881160293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
