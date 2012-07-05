@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAKH//+50\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-07-05T22:46:33Z",
+      "side": 1,
+      "message": "Missing whitespace around operator %",
+      "revId": "07ac9ab55b7fff0821e9e6efd1c562ccfde2b4a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH//+5w\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-07-05T22:46:33Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "07ac9ab55b7fff0821e9e6efd1c562ccfde2b4a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH//+5o\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 902,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-07-05T22:46:33Z",
+      "side": 1,
+      "message": "Same as before",
+      "revId": "07ac9ab55b7fff0821e9e6efd1c562ccfde2b4a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH//+5k\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-07-05T22:46:33Z",
+      "side": 1,
+      "message": "Again",
+      "revId": "07ac9ab55b7fff0821e9e6efd1c562ccfde2b4a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH//+5g\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-07-05T22:46:33Z",
+      "side": 1,
+      "message": "Trailing whitespace",
+      "revId": "07ac9ab55b7fff0821e9e6efd1c562ccfde2b4a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH//+5U\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-07-05T22:46:33Z",
+      "side": 1,
+      "message": "Same as before",
+      "revId": "07ac9ab55b7fff0821e9e6efd1c562ccfde2b4a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH//+5Q\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 933,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-07-05T22:46:33Z",
+      "side": 1,
+      "message": "Here too",
+      "revId": "07ac9ab55b7fff0821e9e6efd1c562ccfde2b4a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH//+5M\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 935,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-07-05T22:46:33Z",
+      "side": 1,
+      "message": "Blank line contains whitespace",
+      "revId": "07ac9ab55b7fff0821e9e6efd1c562ccfde2b4a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH//+5E\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-07-05T22:46:33Z",
+      "side": 1,
+      "message": "Two space before self.public instead of just one",
+      "revId": "07ac9ab55b7fff0821e9e6efd1c562ccfde2b4a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH//+5I\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 1188
+      },
+      "writtenOn": "2012-07-05T22:46:33Z",
+      "side": 1,
+      "message": "Blank line contains whitespace",
+      "revId": "07ac9ab55b7fff0821e9e6efd1c562ccfde2b4a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
