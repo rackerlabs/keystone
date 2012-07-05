@@ -16,6 +16,24 @@
       "revId": "6d6f61fd58cd9a32c70a01918dc95b5b8aa84999",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH///is\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-07-05T14:31:08Z",
+      "side": 1,
+      "message": "Now that I look at it, it is a mistake.  I was trying to minimize the changes to the run time code by putting the monkey patch as close to it as possible,  but there is no reason that it shouldn\u0027t go even earlier.  It just needs to happen before anything that might call on wsgi.  I\u0027ll fix and resubmuit",
+      "parentUuid": "AAAAJ3//9hI\u003d",
+      "revId": "6d6f61fd58cd9a32c70a01918dc95b5b8aa84999",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
