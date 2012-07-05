@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+1: Dolph Mathews <dolph.mathews@gmail.com>
+Approved+1: Joe Heck <heckj@mac.com>
+Code-Review+2: Joe Heck <heckj@mac.com>
+Code-Review+2: Devin Carlen <devin@openstack.org>
+Submitted-by: Jenkins
+Submitted-at: Thu, 05 Jul 2012 16:04:40 +0000
+Reviewed-on: https://review.openstack.org/9015
+Project: openstack/keystone
+Branch: refs/heads/stable/essex
