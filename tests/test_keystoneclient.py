@@ -16,10 +16,13 @@
 
 import time
 import uuid
+import webob
 
 import nose.exc
 
 from keystone import test
+from keystone.openstack.common import jsonutils
+
 
 import default_fixtures
 
@@ -857,6 +860,92 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
                                             tenant=self.tenant_bar['id'])
         self.assertTrue(len(roles) > 0)
 
+    def test_user_can_update_passwd(self):
+        client = self.get_client(self.user_two)
+
+        token_id = client.auth_token
+        new_password = uuid.uuid4().hex
+
+        # TODO(derekh) : Update to use keystoneclient when available
+        class FakeResponse(object):
+            def start_fake_response(self, status, headers):
+                self.response_status = int(status.split(' ', 1)[0])
+                self.response_headers = dict(headers)
+        responseobject = FakeResponse()
+
+        req = webob.Request.blank(
+            '/v2.0/users/%s/password' % self.user_two['id'],
+            headers={'X-Auth-Token': token_id})
+        req.method = 'PUT'
+        req.body = '{"user":{"password":"%s","original_password":"%s"}}' % \
+            (new_password, self.user_two['password'])
+        self.public_server.application(req.environ,
+                                       responseobject.start_fake_response)
+
+        self.user_two['password'] = new_password
+        self.get_client(self.user_two)
+
+    def test_user_cant_update_other_users_passwd(self):
+        from keystoneclient import exceptions as client_exceptions
+
+        client = self.get_client(self.user_two)
+
+        token_id = client.auth_token
+        new_password = uuid.uuid4().hex
+
+        # TODO(derekh) : Update to use keystoneclient when available
+        class FakeResponse(object):
+            def start_fake_response(self, status, headers):
+                self.response_status = int(status.split(' ', 1)[0])
+                self.response_headers = dict(headers)
+        responseobject = FakeResponse()
+
+        req = webob.Request.blank(
+            '/v2.0/users/%s/password' % self.user_foo['id'],
+            headers={'X-Auth-Token': token_id})
+        req.method = 'PUT'
+        req.body = '{"user":{"password":"%s","original_password":"%s"}}' % \
+            (new_password, self.user_two['password'])
+        self.public_server.application(req.environ,
+                                       responseobject.start_fake_response)
+        self.assertEquals(403, responseobject.response_status)
+
+        self.user_two['password'] = new_password
+        self.assertRaises(client_exceptions.Unauthorized,
+                          self.get_client, self.user_two)
+
+    def test_tokens_after_user_update_passwd(self):
+        from keystoneclient import exceptions as client_exceptions
+
+        client = self.get_client(self.user_two)
+
+        token_id = client.auth_token
+        new_password = uuid.uuid4().hex
+
+        # TODO(derekh) : Update to use keystoneclient when available
+        class FakeResponse(object):
+            def start_fake_response(self, status, headers):
+                self.response_status = int(status.split(' ', 1)[0])
+                self.response_headers = dict(headers)
+        responseobject = FakeResponse()
+
+        req = webob.Request.blank(
+            '/v2.0/users/%s/password' % self.user_two['id'],
+            headers={'X-Auth-Token': token_id})
+        req.method = 'PUT'
+        req.body = '{"user":{"password":"%s","original_password":"%s"}}' % \
+            (new_password, self.user_two['password'])
+
+        rv = self.public_server.application(
+            req.environ,
+            responseobject.start_fake_response)
+        responce_json = jsonutils.loads(rv.next())
+        new_token_id = responce_json['access']['token']['id']
+
+        self.assertRaises(client_exceptions.Unauthorized, client.tenants.list)
+        client.auth_token = new_token_id
+        client.tenants.list()
+
 
 class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
     def get_checkout(self):
@@ -868,16 +957,16 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
                                         user_id=self.user_foo['id'],
                                         role_id=self.role_useless['id'])
         role_refs = client.roles.get_user_role_refs(
-                user_id=self.user_foo['id'])
+            user_id=self.user_foo['id'])
         self.assert_(self.tenant_baz['id'] in [x.tenantId for x in role_refs])
 
         # get the "role_refs" so we get the proper id, this is how the clients
         # do it
         roleref_refs = client.roles.get_user_role_refs(
-                user_id=self.user_foo['id'])
+            user_id=self.user_foo['id'])
         for roleref_ref in roleref_refs:
             if (roleref_ref.roleId == self.role_useless['id']
-                and roleref_ref.tenantId == self.tenant_baz['id']):
+                    and roleref_ref.tenantId == self.tenant_baz['id']):
                 # use python's scope fall through to leave roleref_ref set
                 break
 
@@ -886,7 +975,7 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
                                              role_id=roleref_ref.id)
 
         role_refs = client.roles.get_user_role_refs(
-                user_id=self.user_foo['id'])
+            user_id=self.user_foo['id'])
         self.assert_(self.tenant_baz['id'] not in
                      [x.tenantId for x in role_refs])
 
@@ -923,9 +1012,9 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
         self.assertFalse(user.enabled)
 
         self.assertRaises(client_exceptions.Unauthorized,
-                  self._client,
-                  username=test_username,
-                  password='password')
+                          self._client,
+                          username=test_username,
+                          password='password')
         client.users.update_enabled(user, True)
 
         user = client.users.update_password(user=user, password='password2')
