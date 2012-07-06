@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAKH//+iM\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1926
+      },
+      "writtenOn": "2012-07-06T15:38:47Z",
+      "side": 1,
+      "message": "yup, will do",
+      "parentUuid": "AAAAKH//+x4\u003d",
+      "revId": "946bd4675ae8dfd80678184ea1903faf769cc314",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAKH//+yA\u003d",
         "filename": "keystone/contrib/user_crud/core.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAKH//+iI\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1926
+      },
+      "writtenOn": "2012-07-06T15:38:47Z",
+      "side": 1,
+      "message": "yup, agreed",
+      "parentUuid": "AAAAKH//+yA\u003d",
+      "revId": "946bd4675ae8dfd80678184ea1903faf769cc314",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAKH//+x0\u003d",
         "filename": "keystone/contrib/user_crud/core.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2012-07-06T02:52:11Z",
       "side": 1,
       "message": "Not sure why you want to log token_ref.",
+      "revId": "946bd4675ae8dfd80678184ea1903faf769cc314",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH//+hY\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1926
+      },
+      "writtenOn": "2012-07-06T15:38:47Z",
+      "side": 1,
+      "message": "It is also logged when created in TokenController.authenticate so it made sense to follow this precedence, actually I just noticed I should be logging new_token_ref.",
+      "parentUuid": "AAAAKH//+x0\u003d",
       "revId": "946bd4675ae8dfd80678184ea1903faf769cc314",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
