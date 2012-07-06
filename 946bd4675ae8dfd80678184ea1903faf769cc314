@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAKH//+x4\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-07-06T02:52:11Z",
+      "side": 1,
+      "message": "May want to check the user_ref here to make sure user status is still \"enabled\".",
+      "revId": "946bd4675ae8dfd80678184ea1903faf769cc314",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH//+yA\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-07-06T02:52:11Z",
+      "side": 1,
+      "message": "Seems like you are duplicating code. May want to consider using self.identity_api.set_user_password() instead. For example,\n\n# impersonate admin\n\nadmin_context \u003d copy.copy(context)\n\nadmin_context[\u0027is_admin\u0027] \u003d True\n\n# reset user password\n\nself.identity_api.set_user_password(context\u003dadmin_context, ...)",
+      "revId": "946bd4675ae8dfd80678184ea1903faf769cc314",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKH//+x0\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-07-06T02:52:11Z",
+      "side": 1,
+      "message": "Not sure why you want to log token_ref.",
+      "revId": "946bd4675ae8dfd80678184ea1903faf769cc314",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
