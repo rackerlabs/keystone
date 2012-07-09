@@ -41,17 +41,12 @@ class MemcacheClient(object):
     def get(self, key):
         """Retrieves the value for a key or None."""
         self.check_key(key)
-        obj = self.cache.get(key)
-        now = utils.unixtime(timeutils.utcnow())
-        if obj and (obj[1] == 0 or obj[1] > now):
-            return obj[0]
-        else:
-            raise exception.TokenNotFound(token_id=key)
+        return self.cache.get(key)
 
     def set(self, key, value, time=0):
         """Sets the value for a key."""
         self.check_key(key)
-        self.cache[key] = (value, time)
+        self.cache[key] = value
         return True
 
     def delete(self, key):

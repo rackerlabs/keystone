@@ -16,6 +16,7 @@
 
 from __future__ import absolute_import
 import copy
+import datetime
 
 import memcache
 
@@ -48,10 +49,11 @@ class Token(token.Driver):
     def get_token(self, token_id):
         ptk = self._prefix_token_id(token_id)
         token = self.client.get(ptk)
-        if token is None:
-            raise exception.TokenNotFound(token_id=token_id)
-
-        return token
+        if token:
+            expires = token.get('expires')
+            if not expires or expires > datetime.datetime.utcnow():
+                return token
+        raise exception.TokenNotFound(token_id=token_id)
 
     def create_token(self, token_id, data):
         data_copy = copy.deepcopy(data)
