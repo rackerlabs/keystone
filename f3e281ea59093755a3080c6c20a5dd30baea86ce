@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAKX///fA\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-09T17:19:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAKX///gk\u003d",
+      "revId": "f3e281ea59093755a3080c6c20a5dd30baea86ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAKX///go\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAKX///e8\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-09T17:19:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAKX///go\u003d",
+      "revId": "f3e281ea59093755a3080c6c20a5dd30baea86ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAKX///gI\u003d",
         "filename": "tests/test_backend_memcache.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2012-07-09T17:08:12Z",
       "side": 1,
       "message": "isn\u0027t this also changing the error that will be thrown on nonexistent token, or am I reading that wrong?",
+      "revId": "f3e281ea59093755a3080c6c20a5dd30baea86ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX///fs\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-07-09T17:19:21Z",
+      "side": 1,
+      "message": "The fake memcache client doesn\u0027t throw exception.TokenNotFound, that\u0027s the responsibility of the driver.",
+      "parentUuid": "AAAAKX///gI\u003d",
       "revId": "f3e281ea59093755a3080c6c20a5dd30baea86ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
