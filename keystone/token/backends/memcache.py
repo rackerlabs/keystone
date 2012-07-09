@@ -23,6 +23,7 @@ from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone import token
+from keystone.openstack.common import timeutils
 
 
 CONF = config.CONF
@@ -48,10 +49,11 @@ class Token(token.Driver):
     def get_token(self, token_id):
         ptk = self._prefix_token_id(token_id)
         token = self.client.get(ptk)
-        if token is None:
-            raise exception.TokenNotFound(token_id=token_id)
-
-        return token
+        if token:
+            expires = token.get('expires')
+            if not expires or expires > timeutils.utcnow():
+                return token
+        raise exception.TokenNotFound(token_id=token_id)
 
     def create_token(self, token_id, data):
         data_copy = copy.deepcopy(data)
