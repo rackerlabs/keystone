@@ -434,8 +434,9 @@ class TenantController(wsgi.Application):
             except (ValueError, AssertionError):
                 msg = 'Invalid limit value'
                 raise exception.ValidationError(message=msg)
-
-        tenant_refs = tenant_refs[page_idx:limit]
+            tenant_refs = tenant_refs[page_idx:limit + page_idx]
+        else:
+            tenant_refs = tenant_refs[page_idx:]
 
         for x in tenant_refs:
             if 'enabled' not in x:
