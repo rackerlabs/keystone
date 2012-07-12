@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAKX//8sI\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1132
+      },
+      "writtenOn": "2012-07-12T18:27:42Z",
+      "side": 1,
+      "message": "How about you move this above the Deprecated line?",
+      "revId": "2d494b116b86f88701f5e7e80708d2adbdf9ffae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
