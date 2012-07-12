@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Approved+1: Joe Heck <heckj@mac.com>
+Code-Review+2: Joe Heck <heckj@mac.com>
+Code-Review+1: Alex Meade <alex.meade@rackspace.com>
+Code-Review+2: Brian Waldon <brian.waldon@rackspace.com>
+Verified+1: SmokeStack
+Code-Review+2: ayoung
+Submitted-by: Jenkins
+Submitted-at: Thu, 12 Jul 2012 22:55:12 +0000
+Reviewed-on: https://review.openstack.org/9730
+Project: openstack/keystone
+Branch: refs/heads/master
