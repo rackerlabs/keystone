@@ -16,6 +16,57 @@
       "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//9Ko\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-07-12T05:16:03Z",
+      "side": 1,
+      "message": "I wonder if these two API\u0027s should be part of /credentials. Afterall, they are the credentials of Keystone itself. But not really a big deal one way or the other.",
+      "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//9Kk\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-07-12T05:16:03Z",
+      "side": 1,
+      "message": "What\u0027s the difference between these and the two on line 73-82.",
+      "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//9Ks\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-07-12T05:16:03Z",
+      "side": 1,
+      "message": "Should you be checking config.CONF.signing.disable_pki here? What does it really mean if someone present a signed token where disable_pki is True? Furthermore, when validating a PKI token at the backend, shouldn\u0027t we be getting the most up-to-date access info rather than using the information from the token itself. What if the user\u0027s role assignment has changed?",
+      "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
