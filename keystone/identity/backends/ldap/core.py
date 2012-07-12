@@ -167,6 +167,13 @@ class Identity(identity.Driver):
             tenant_list.append(tenant['id'])
         return tenant_list
 
+    def get_tenant_users(self, tenant_id):
+        self.get_tenant(tenant_id)
+        user_list = []
+        for user in self.tenant.get_users(tenant_id):
+            user_list.append(user)
+        return user_list
+
     def get_roles_for_user_and_tenant(self, user_id, tenant_id):
         self.get_user(user_id)
         self.get_tenant(tenant_id)
@@ -229,6 +236,30 @@ class Identity(identity.Driver):
             return self.role.delete(role_id)
         except ldap.NO_SUCH_OBJECT:
             raise exception.RoleNotFound(role_id=role_id)
+
+    def delete_tenant(self, tenant_id):
+        try:
+            return self.tenant.delete(tenant_id)
+        except ldap.NO_SUCH_OBJECT:
+            raise exception.TenantNotFound(tenant_id=tenant_id)
+
+    def delete_user(self, user_id):
+        try:
+            return self.user.delete(user_id)
+        except ldap.NO_SUCH_OBJECT:
+            raise exception.UserNotFound(user_id=user_id)
+
+    def remove_role_from_user_and_tenant(self, user_id, tenant_id, role_id):
+        return self.role.delete_user(role_id, user_id, tenant_id)
+
+    def remove_user_from_tenant(self, tenant_id, user_id):
+        self.get_user(user_id)
+        self.get_tenant(tenant_id)
+        return self.tenant.remove_user(tenant_id, user_id)
+
+    def update_role(self, role_id, role):
+        self.get_role(role_id)
+        self.role.update(role_id, role)
 
 
 # TODO(termie): remove this and move cross-api calls into driver
@@ -356,7 +387,7 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
 
     def delete(self, id):
         user = self.get(id)
-        if user.tenant_id:
+        if hasattr(user, 'tenant_id'):
             self.tenant_api.remove_user(user.tenant_id, id)
 
         super(UserApi, self).delete(id)
@@ -501,10 +532,13 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
 
     def remove_user(self, tenant_id, user_id):
         conn = self.get_connection()
-        conn.modify_s(self._id_to_dn(tenant_id),
-                      [(ldap.MOD_DELETE,
-                        self.member_attribute,
-                        self.user_api._id_to_dn(user_id))])
+        try:
+            conn.modify_s(self._id_to_dn(tenant_id),
+                          [(ldap.MOD_DELETE,
+                            self.member_attribute,
+                            self.user_api._id_to_dn(user_id))])
+        except ldap.NO_SUCH_ATTRIBUTE:
+            raise exception.NotFound(user_id)
 
     def get_users(self, tenant_id, role_id=None):
         tenant = self._ldap_get(tenant_id)
@@ -654,6 +688,30 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
             role_id=role_id,
             user_id=user_id,
             tenant_id=tenant_id)
+
+    def delete_user(self, role_id, user_id, tenant_id):
+        role_dn = self._subrole_id_to_dn(role_id, tenant_id)
+        conn = self.get_connection()
+        user_dn = self.user_api._id_to_dn(user_id)
+        try:
+            conn.modify_s(role_dn, [(ldap.MOD_DELETE,
+                                     self.member_attribute, user_dn)])
+        except ldap.NO_SUCH_OBJECT:
+            if tenant_id is None or self.get(role_id) is None:
+                raise Exception("Role %s not found" % (role_id,))
+
+            attrs = [('objectClass', [self.object_class]),
+                     (self.member_attribute, [user_dn])]
+
+            if self.use_dumb_member:
+                attrs[1][1].append(self.DUMB_MEMBER_DN)
+            try:
+                conn.add_s(role_dn, attrs)
+            except Exception as inst:
+                    raise inst
+
+        except ldap.NO_SUCH_ATTRIBUTE:
+            raise exception.NotFound(user_id)
 
     def get_by_service(self, service_id):
         roles = self.get_all('(service_id=%s)' %
@@ -874,3 +932,12 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                         role_id=role.id,
                         user_id=user_id)
         return None
+
+        def update(self, role_id, role):
+            if role['id'] != role_id:
+                raise exception.ValidationError('Cannot change role ID')
+            try:
+                old_obj = self.get(id)
+                super(RoleApi, self).update(id, role, old_obj)
+            except exception.NotFound:
+                raise exception.UserNotFound(user_id=id)
