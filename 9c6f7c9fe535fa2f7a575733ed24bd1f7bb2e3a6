@@ -140,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAKX//8YI\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-07-12T23:43:35Z",
+      "side": 1,
+      "message": "token validation is service API right? Not sure why you want to expose these for admin server. Seem redundant to me.",
+      "parentUuid": "AAAAKX//884\u003d",
+      "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAKX//9Ks\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 7
@@ -169,6 +187,24 @@
       "side": 1,
       "message": "Should not be checking,as disable_pki is for issuing tookens, not validating them.  Lets say you disable PKI tokens,  but there are still a bunch out there.  This allows them to process through the system and time out.  The same logic is used for the upgrade path:  even if we are now issuing signed tokens,  we probably stil have some UUID tokens out there that we still want to honor.\n\nIf role assignements are changed, then the tokens get removed from the database, and the authenticate call will fail.  It is not necessary to reproduce that here.",
       "parentUuid": "AAAAKX//9Ks\u003d",
+      "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//8YE\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-07-12T23:43:35Z",
+      "side": 1,
+      "message": "In that case, you may want to document what exactly does \"disable_pki\" means.\n\nAs for role assignment changes, consider this scenario\n\n1) user has roles \"abc\" and \"def\" for tenant \"xyz\"\n\n2) user authenticates and obtains a PKI token with an 8 hrs validity\n\n3) user removed from tenant \"xyz\"\n\n4) user calls validate token before the 8 hr window elapses\n\nThe code seems to suggest that user still get roles \"abc\" and \"def\" for tenant \"xyz\".",
+      "parentUuid": "AAAAKX//89U\u003d",
       "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
