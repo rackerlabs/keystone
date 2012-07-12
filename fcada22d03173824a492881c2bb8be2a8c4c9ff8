@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAKX//8jY\u003d",
+        "filename": "httpd/README",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-07-12T19:58:59Z",
+      "side": 1,
+      "message": "you\u0027ve got some extra whitespace lingering...",
+      "revId": "fcada22d03173824a492881c2bb8be2a8c4c9ff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
