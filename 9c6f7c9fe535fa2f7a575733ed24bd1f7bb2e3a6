@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAKX//89A\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-07-12T14:54:57Z",
+      "side": 1,
+      "message": "Potentially, but at some level, most things in Keystone are \"Credentials.\"",
+      "parentUuid": "AAAAKX//9Ko\u003d",
+      "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAKX//9Kk\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 7
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAKX//884\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-07-12T14:54:57Z",
+      "side": 1,
+      "message": "This way they show up for both admin and regular servers (ports 35757 and 5000)",
+      "parentUuid": "AAAAKX//9Kk\u003d",
+      "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAKX//9Ks\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 7
@@ -64,6 +100,24 @@
       "writtenOn": "2012-07-12T05:16:03Z",
       "side": 1,
       "message": "Should you be checking config.CONF.signing.disable_pki here? What does it really mean if someone present a signed token where disable_pki is True? Furthermore, when validating a PKI token at the backend, shouldn\u0027t we be getting the most up-to-date access info rather than using the information from the token itself. What if the user\u0027s role assignment has changed?",
+      "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//89U\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-07-12T14:54:57Z",
+      "side": 1,
+      "message": "Should not be checking,as disable_pki is for issuing tookens, not validating them.  Lets say you disable PKI tokens,  but there are still a bunch out there.  This allows them to process through the system and time out.  The same logic is used for the upgrade path:  even if we are now issuing signed tokens,  we probably stil have some UUID tokens out there that we still want to honor.\n\nIf role assignements are changed, then the tokens get removed from the database, and the authenticate call will fail.  It is not necessary to reproduce that here.",
+      "parentUuid": "AAAAKX//9Ks\u003d",
       "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
