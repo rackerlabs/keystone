@@ -158,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAKX//8Qc\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1926
+      },
+      "writtenOn": "2012-07-13T06:40:40Z",
+      "side": 1,
+      "message": "I suppose adding this to the public API means we could potentially now add services that don\u0027t need access to the admin api at all.",
+      "parentUuid": "AAAAKX//8YI\u003d",
+      "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAKX//9Ks\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 7
