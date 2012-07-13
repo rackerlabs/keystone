@@ -176,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAKX//76U\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-07-13T18:19:49Z",
+      "side": 1,
+      "message": "True, although in this case, I think being able to distribute a CA cert and Signing cert is inherently something you want to be able to do publically,  but also something that should be linked to the Admin API, thus having it in both.",
+      "parentUuid": "AAAAKX//8Qc\u003d",
+      "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAKX//9Ks\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 7
@@ -223,6 +241,24 @@
       "side": 1,
       "message": "In that case, you may want to document what exactly does \"disable_pki\" means.\n\nAs for role assignment changes, consider this scenario\n\n1) user has roles \"abc\" and \"def\" for tenant \"xyz\"\n\n2) user authenticates and obtains a PKI token with an 8 hrs validity\n\n3) user removed from tenant \"xyz\"\n\n4) user calls validate token before the 8 hr window elapses\n\nThe code seems to suggest that user still get roles \"abc\" and \"def\" for tenant \"xyz\".",
       "parentUuid": "AAAAKX//89U\u003d",
+      "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//76M\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-07-13T18:19:49Z",
+      "side": 1,
+      "message": "Yes,  that is true.  There will now be a lag between changes in auth and when tokens expire.  This is true in Kerberos, too, and has not proven to be a problem.",
+      "parentUuid": "AAAAKX//8YE\u003d",
       "revId": "9c6f7c9fe535fa2f7a575733ed24bd1f7bb2e3a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
