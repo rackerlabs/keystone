@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAKX//6mo\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T19:44:35Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "revId": "e31558e7b58b45c43493c3d7e6d55c3c2da4f9bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//6mk\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T19:44:35Z",
+      "side": 1,
+      "message": "(not sure if 70 \u0026 71 are supposed to be separate paragraphs given the line break between sentences?)",
+      "revId": "e31558e7b58b45c43493c3d7e6d55c3c2da4f9bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//6mg\u003d",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T19:44:35Z",
+      "side": 1,
+      "message": "good call",
+      "revId": "e31558e7b58b45c43493c3d7e6d55c3c2da4f9bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//6mY\u003d",
+        "filename": "httpd/keystone.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T19:44:35Z",
+      "side": 1,
+      "message": "extra whitespace?",
+      "revId": "e31558e7b58b45c43493c3d7e6d55c3c2da4f9bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
