@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAKX//64E\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:28:07Z",
+      "side": 1,
+      "message": "\u003d\u003d\u003d\u003d length doesn\u0027t match the title, which will throw a sphinx warning",
+      "revId": "5a6b3a0377401b077556fa3a16b6e5c4ea9e66aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//638\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:28:07Z",
+      "side": 1,
+      "message": "Replace the colon at the end with a period?",
+      "revId": "5a6b3a0377401b077556fa3a16b6e5c4ea9e66aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//64A\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:28:07Z",
+      "side": 1,
+      "message": "Need a double colon at the end",
+      "revId": "5a6b3a0377401b077556fa3a16b6e5c4ea9e66aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//634\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:28:07Z",
+      "side": 1,
+      "message": "Indent all this two more spaces?",
+      "revId": "5a6b3a0377401b077556fa3a16b6e5c4ea9e66aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//63Y\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:28:07Z",
+      "side": 1,
+      "message": "double colon at the end",
+      "revId": "5a6b3a0377401b077556fa3a16b6e5c4ea9e66aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//63U\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:28:07Z",
+      "side": 1,
+      "message": "double colon at the end",
+      "revId": "5a6b3a0377401b077556fa3a16b6e5c4ea9e66aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//63s\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:28:07Z",
+      "side": 1,
+      "message": "Surround the directory with ``double tildes`` along with ``main``, ``admin`` and ``keystone.py``",
+      "revId": "5a6b3a0377401b077556fa3a16b6e5c4ea9e66aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//63Q\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:28:07Z",
+      "side": 1,
+      "message": "double colon at the end",
+      "revId": "5a6b3a0377401b077556fa3a16b6e5c4ea9e66aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//63o\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:28:07Z",
+      "side": 1,
+      "message": "double tildes on this path too; double colon at the end",
+      "revId": "5a6b3a0377401b077556fa3a16b6e5c4ea9e66aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//63c\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:28:07Z",
+      "side": 1,
+      "message": "double tides here too",
+      "revId": "5a6b3a0377401b077556fa3a16b6e5c4ea9e66aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//63M\u003d",
+        "filename": "httpd/keystone.conf",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:28:07Z",
+      "side": 1,
+      "message": "extra whitespace?",
+      "revId": "5a6b3a0377401b077556fa3a16b6e5c4ea9e66aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
