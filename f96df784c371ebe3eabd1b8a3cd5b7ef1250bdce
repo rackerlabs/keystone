@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAKX//64Q\u003d",
+        "filename": "keystone/common/sql/legacy.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:19:31Z",
+      "side": 1,
+      "message": "import modules not objects; see HACKING",
+      "revId": "f96df784c371ebe3eabd1b8a3cd5b7ef1250bdce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
