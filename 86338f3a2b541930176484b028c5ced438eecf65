@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAKX//658\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:09:16Z",
+      "side": 1,
+      "message": "raise exception.RoleNotFound(role_id\u003drole_id)",
+      "revId": "86338f3a2b541930176484b028c5ced438eecf65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//654\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:09:16Z",
+      "side": 1,
+      "message": "unindent",
+      "revId": "86338f3a2b541930176484b028c5ced438eecf65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//650\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:09:16Z",
+      "side": 1,
+      "message": "raise exception.UserNotFound(user_id\u003duser_id) ?",
+      "revId": "86338f3a2b541930176484b028c5ced438eecf65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//65g\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 941,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:09:16Z",
+      "side": 1,
+      "message": "The try block can be reduced to:\n\n  super(RoleApi, self).update(id, role)\n\n... i.e. BaseLdap.update() gets old_obj for you if you don\u0027t pass it in... and there\u0027s not really a reason to get it here.",
+      "revId": "86338f3a2b541930176484b028c5ced438eecf65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//65Q\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-16T15:09:16Z",
+      "side": 1,
+      "message": "Either this test needs to be deleted (if it *was* testing something different than the test it\u0027s overriding) or the expected exception needs to change; as-is, this test is no longer testing anything related to what it\u0027s claiming to test.",
+      "revId": "86338f3a2b541930176484b028c5ced438eecf65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
