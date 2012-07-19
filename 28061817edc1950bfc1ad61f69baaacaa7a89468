@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAKX//4TI\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-07-19T15:59:32Z",
+      "side": 1,
+      "message": "Is it right to change the test, or should we be changing the value returned?  This is in effect changing the public API.  I think you are right that ValidationError is more correct, though.",
+      "revId": "28061817edc1950bfc1ad61f69baaacaa7a89468",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
