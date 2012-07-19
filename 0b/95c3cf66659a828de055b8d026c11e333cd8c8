@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Approved+1: Joe Heck <heckj@mac.com>
+Code-Review+2: Joe Heck <heckj@mac.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 19 Jul 2012 17:39:55 +0000
+Reviewed-on: https://review.openstack.org/7482
+Project: openstack/keystone
+Branch: refs/heads/stable/essex
