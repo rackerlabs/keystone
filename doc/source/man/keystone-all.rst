@@ -56,7 +56,7 @@ OPTIONS
                         (Optional) The syslog facility to use when logging to
                         syslog (defaults to LOG_USER)
   --use-syslog          Use syslog for logging.
-  --nouse-syslog        The inverse of --use-syslog
+  --nouse-syslog        The inverse of --use-syslog.
 
 FILES
 =====
