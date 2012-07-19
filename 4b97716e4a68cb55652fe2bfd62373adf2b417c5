@@ -16,6 +16,23 @@
       "revId": "4b97716e4a68cb55652fe2bfd62373adf2b417c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//4GQ\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-07-19T17:07:52Z",
+      "side": 0,
+      "message": "what am I missing - why delete these tests?",
+      "revId": "4b97716e4a68cb55652fe2bfd62373adf2b417c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
