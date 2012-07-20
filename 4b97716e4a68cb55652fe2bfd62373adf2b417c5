@@ -33,6 +33,24 @@
       "revId": "4b97716e4a68cb55652fe2bfd62373adf2b417c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//3aE\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-07-20T16:55:07Z",
+      "side": 0,
+      "message": "This particular one is implemented in the core test suite.  Most of the others you will noticte have self.assertRaises(exception.NotImplemented....\n\nThat was disguising the fact that these tests should actually fail.  Now that I have implemented them,  these overrides need to be removed.",
+      "parentUuid": "AAAAKX//4GQ\u003d",
+      "revId": "4b97716e4a68cb55652fe2bfd62373adf2b417c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
