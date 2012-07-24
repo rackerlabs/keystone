@@ -11,3 +11,4 @@ sqlalchemy-migrate
 passlib
 lxml
 iso8601>=0.1.4
+lepl
