@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAKX//07M\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/002_sqlite_upgrade.sql",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-07-24T19:04:50Z",
+      "side": 1,
+      "message": "lots of extra whitespace lurking around in here...",
+      "revId": "c572971ad65f6d7220271cd32198b1c6aedb28d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//07o\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-07-24T19:04:50Z",
+      "side": 1,
+      "message": "this -\u003e self",
+      "revId": "c572971ad65f6d7220271cd32198b1c6aedb28d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//07g\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-07-24T19:04:50Z",
+      "side": 1,
+      "message": "this -\u003e self",
+      "revId": "c572971ad65f6d7220271cd32198b1c6aedb28d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAKX//07Q\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-07-24T19:04:50Z",
+      "side": 1,
+      "message": "I think all the time pieces are stashed in openstack common bits these days...",
+      "revId": "c572971ad65f6d7220271cd32198b1c6aedb28d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
