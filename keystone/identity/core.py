@@ -16,6 +16,7 @@
 
 """Main entry point into the Identity service."""
 
+import lepl.apps.rfc3696
 import urllib
 import urlparse
 import uuid
@@ -472,6 +473,17 @@ class UserController(wsgi.Application):
         if not 'name' in user or not user['name']:
             msg = 'Name field is required and cannot be empty'
             raise exception.ValidationError(message=msg)
+
+        if not 'password' in user or not user['password']:
+            msg = 'Password field is required and cannot be empty'
+            raise exception.ValidationError(message=msg)
+
+        email_validator = lepl.apps.rfc3696.Email()
+
+        if 'email' in user and user['email']:
+            if not email_validator(user['email'].decode('utf-8')):
+                msg = 'Email is not valid'
+                raise exception.ValidationError(message=msg)
 
         tenant_id = user.get('tenantId', None)
         if (tenant_id is not None
