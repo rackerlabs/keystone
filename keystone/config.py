@@ -119,6 +119,9 @@ register_str('public_port', default=5000)
 register_str('onready')
 register_str('auth_admin_prefix', default='')
 
+#credential attribute
+register_int('max_pass_length', group='identity', default=10)
+
 #ssl options
 register_bool('enable', group='ssl', default=False)
 register_str('certfile', group='ssl', default=None)

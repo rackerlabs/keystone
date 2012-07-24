@@ -62,7 +62,8 @@
 
 [identity]
 # driver = keystone.identity.backends.sql.Identity
-
+# define maximum number of password length
+#max_pass_length = 10
 [catalog]
 # dynamic, sql-based backend (supports API/CLI-based management commands)
 # driver = keystone.catalog.backends.sql.Catalog

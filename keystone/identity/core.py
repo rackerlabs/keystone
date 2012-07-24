@@ -19,6 +19,7 @@
 import urllib
 import urlparse
 import uuid
+import re
 
 from keystone.common import logging
 from keystone.common import manager
@@ -471,6 +472,22 @@ class UserController(wsgi.Application):
 
         if not 'name' in user or not user['name']:
             msg = 'Name field is required and cannot be empty'
+            raise exception.ValidationError(message=msg)
+
+        if not 'password' in user or not user['password']:
+            msg = 'Password field is required and cannot be empty'
+            raise exception.ValidationError(message=msg)
+
+        if len(user['password'].
+               decode('utf-8')) > CONF.identity.max_pass_length:
+            msg = '''Password field should be
+                    less than %d''' % CONF.identity.max_pass_length
+            raise exception.ValidationError(message=msg)
+        email_format = '''^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.
+        ([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$'''
+
+        if re.match(email_format, user['email']) == None:
+            msg = 'Email field is not valid'
             raise exception.ValidationError(message=msg)
 
         tenant_id = user.get('tenantId', None)
