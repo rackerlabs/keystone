@@ -19,6 +19,7 @@
 import urllib
 import urlparse
 import uuid
+import lepl.apps.rfc3696
 
 from keystone.common import logging
 from keystone.common import manager
@@ -472,6 +473,23 @@ class UserController(wsgi.Application):
         if not 'name' in user or not user['name']:
             msg = 'Name field is required and cannot be empty'
             raise exception.ValidationError(message=msg)
+
+        if not 'password' in user or not user['password']:
+            msg = 'Password field is required and cannot be empty'
+            raise exception.ValidationError(message=msg)
+
+        if CONF.identity.max_pass_length and len(user['password'].
+               decode('utf-8')) > CONF.identity.max_pass_length:
+            msg = '''Password field should be
+                    less than %d''' % CONF.identity.max_pass_length
+            raise exception.ValidationError(message=msg)
+
+        email_validator = lepl.apps.rfc3696.Email()
+
+        if 'email' in user and user['email']:
+            if not email_validator(user['email'].decode('utf-8')):
+                msg = "Email is not valid"
+                raise exception.ValidationError(message=msg)
 
         tenant_id = user.get('tenantId', None)
         if (tenant_id is not None
