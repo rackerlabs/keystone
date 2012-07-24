@@ -17,7 +17,6 @@
 import time
 import uuid
 import webob
-
 import nose.exc
 
 from keystone import test
@@ -199,7 +198,7 @@ class KeystoneClientTests(object):
         user = {
             'name': uuid.uuid4().hex,
             'password': uuid.uuid4().hex,
-            'email': uuid.uuid4().hex,
+            'email': '%s@example.com' % uuid.uuid4().hex,
             'tenant_id': tenant['id'],
         }
         user_ref = admin_client.users.create(
@@ -353,7 +352,7 @@ class KeystoneClientTests(object):
         username = uuid.uuid4().hex
         passwd = uuid.uuid4().hex
         user = client.users.create(name=username, password=passwd,
-                                   email=uuid.uuid4().hex)
+                                   email='%s@example.com' % uuid.uuid4().hex)
 
         token_id = client.tokens.authenticate(username=username,
                                               password=passwd).id
@@ -453,6 +452,24 @@ class KeystoneClientTests(object):
                           client.users.create,
                           name="",
                           password=uuid.uuid4().hex,
+                          email='%s@example.com' % uuid.uuid4().hex)
+
+    def test_user_create_no_pass(self):
+        from keystoneclient import exceptions as client_exceptions
+        client = self.get_client(admin=True)
+        self.assertRaises(client_exceptions.BadRequest,
+                          client.users.create,
+                          name=uuid.uuid4().hex,
+                          password="",
+                          email='%s@example.com' % uuid.uuid4().hex)
+
+    def test_user_create_invalid_email(self):
+        from keystoneclient import exceptions as client_exceptions
+        client = self.get_client(admin=True)
+        self.assertRaises(client_exceptions.BadRequest,
+                          client.users.create,
+                          name=uuid.uuid4().hex,
+                          password=uuid.uuid4().hex,
                           email=uuid.uuid4().hex)
 
     def test_user_create_404(self):
@@ -462,7 +479,7 @@ class KeystoneClientTests(object):
                           client.users.create,
                           name=uuid.uuid4().hex,
                           password=uuid.uuid4().hex,
-                          email=uuid.uuid4().hex,
+                          email='%s@example.com' % uuid.uuid4().hex,
                           tenant_id=uuid.uuid4().hex)
 
     def test_user_get_404(self):
