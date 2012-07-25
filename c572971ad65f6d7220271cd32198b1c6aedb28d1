@@ -67,6 +67,24 @@
       "revId": "c572971ad65f6d7220271cd32198b1c6aedb28d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH///+0\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-07-25T16:55:49Z",
+      "side": 1,
+      "message": "Yes...but...I think I want to leave it this way.  That way, if the common ones change in a way that breaks the assumptions,  this unit test will catch it.",
+      "parentUuid": "AAAAKX//07Q\u003d",
+      "revId": "c572971ad65f6d7220271cd32198b1c6aedb28d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
