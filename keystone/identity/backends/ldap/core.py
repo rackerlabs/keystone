@@ -94,11 +94,10 @@ class Identity(identity.Driver):
 
         tenant_ref = self.get_tenant(tenant_id)
         metadata_ref = {}
-        # TODO(termie): this should probably be made into a get roles call
-        #if tenant_ref:
-        #    metadata_ref =  self.get_metadata(user_id, tenant_id)
-        #else:
-        #    metadata_ref = {}
+        if tenant_ref:
+             metadata_ref =  {'roles': self.get_metadata(user_id, tenant_id)}
+        else:
+             metadata_ref = {}
         return  (_filter_user(user_ref), tenant_ref, metadata_ref)
 
     def get_tenant(self, tenant_id):
