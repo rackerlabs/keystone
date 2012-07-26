@@ -80,6 +80,8 @@ class Identity(identity.Driver):
         if user_ref is None:
             raise AssertionError('Invalid user / password')
 
+        metadata_ref = {}
+
         try:
             conn = self.user.get_connection(self.user._id_to_dn(user_id),
                                             password)
@@ -88,17 +90,21 @@ class Identity(identity.Driver):
         except Exception:
             raise AssertionError('Invalid user / password')
 
-        tenants = self.get_tenants_for_user(user_id)
-        if tenant_id and tenant_id not in tenants:
-            raise AssertionError('Invalid tenant')
-
-        tenant_ref = self.get_tenant(tenant_id)
         metadata_ref = {}
-        # TODO(termie): this should probably be made into a get roles call
-        #if tenant_ref:
-        #    metadata_ref =  self.get_metadata(user_id, tenant_id)
-        #else:
-        #    metadata_ref = {}
+
+        try:
+            tenants = self.get_tenants_for_user(user_id)
+            if tenant_id and tenant_id not in tenants:
+                raise AssertionError('Invalid tenant')
+
+            tenant_ref = self.get_tenant(tenant_id)
+            roles = self.get_metadata(user_id, tenant_id)
+            if roles:
+                metadata_ref = {'roles': roles}
+        except exception.TenantNotFound:
+            tenant_ref = None
+            metadata_ref = {}
+
         return  (_filter_user(user_ref), tenant_ref, metadata_ref)
 
     def get_tenant(self, tenant_id):
