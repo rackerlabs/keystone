@@ -98,7 +98,7 @@ class Identity(identity.Driver):
             tenant_ref = self.get_tenant(tenant_id)
             roles = self.get_metadata(user_id, tenant_id)
             if roles:
-                metadata_ref = {'roles': roles}
+                metadata_ref = roles
         except exception.TenantNotFound:
             tenant_ref = None
 
@@ -132,8 +132,13 @@ class Identity(identity.Driver):
         if not self.get_tenant(tenant_id) or not self.get_user(user_id):
             return {}
 
-        metadata_ref = self.get_roles_for_user_and_tenant(user_id, tenant_id)
-        return metadata_ref or {}
+        roles = self.get_roles_for_user_and_tenant(user_id, tenant_id)
+        if roles:
+            metadata_ref = {'roles': roles}
+        else:
+            metadata_ref = {}
+
+        return metadata_ref
 
     def get_role(self, role_id):
         return self.role.get(role_id)
