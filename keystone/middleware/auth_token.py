@@ -33,7 +33,7 @@ Refer to: http://keystone.openstack.org/middlewarearchitecture.html
 HEADERS
 -------
 
-* Headers starting with HTTP\_ is a standard http header
+* Headers starting with HTTP_ is a standard http header
 * Headers starting with HTTP_X is an extended http header
 
 Coming in from initial call from client or customer
