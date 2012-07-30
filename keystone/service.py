@@ -467,9 +467,9 @@ class TokenController(wsgi.Application):
         Optionally, limited to a token owned by a specific tenant.
 
         """
+        self.assert_admin(context)
         # TODO(termie): this stuff should probably be moved to middleware
         if len(token_id) > cms.UUID_TOKEN_LENGTH:
-            self.assert_admin(context)
             data = json.loads(cms.cms_verify(cms.token_to_cms(token_id),
                                              config.CONF.signing.certfile,
                                              config.CONF.signing.ca_certs))
