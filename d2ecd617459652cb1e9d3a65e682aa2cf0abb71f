@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//9BM\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-30T16:28:08Z",
+      "side": 0,
+      "message": "Simplified references to the token_id",
+      "revId": "d2ecd617459652cb1e9d3a65e682aa2cf0abb71f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//9BA\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-30T16:28:08Z",
+      "side": 0,
+      "message": "@ayoung: did you mean to do something with \u0027expires\u0027?",
+      "revId": "d2ecd617459652cb1e9d3a65e682aa2cf0abb71f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

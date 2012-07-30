@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//9BI\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-30T16:28:08Z",
+      "side": 1,
+      "message": "@ayoung: you weren\u0027t doing anything with the token returned by get_token, which conflicts with the included comment -- did you mean to?",
+      "revId": "c118285f356ae1e4cbf738df604ce139d91edb09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//9BE\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-07-30T16:28:08Z",
+      "side": 1,
+      "message": "This should be done regardless of the if-condition",
+      "revId": "c118285f356ae1e4cbf738df604ce139d91edb09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
