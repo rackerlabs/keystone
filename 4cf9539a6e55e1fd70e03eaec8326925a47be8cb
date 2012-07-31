@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//8OI\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-07-31T13:31:24Z",
+      "side": 1,
+      "message": "Agreed, and in the first version I did that, then changed my mind just to make it search\u0026replace compatible with conf.get.",
+      "parentUuid": "AAAALH//8UE\u003d",
+      "revId": "4cf9539a6e55e1fd70e03eaec8326925a47be8cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//8T4\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 1
@@ -64,6 +82,24 @@
       "writtenOn": "2012-07-31T05:24:57Z",
       "side": 1,
       "message": "would prefer\n\n  if self.auth_uri is None:\n      self.auth_uri \u003d \u0027%s://%s:%s\u0027 % (self.auth_protocol, ....",
+      "revId": "4cf9539a6e55e1fd70e03eaec8326925a47be8cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//8N0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-07-31T13:31:24Z",
+      "side": 1,
+      "message": "Funnly enough, that was exactly what I first wrote.",
+      "parentUuid": "AAAALH//8Tk\u003d",
       "revId": "4cf9539a6e55e1fd70e03eaec8326925a47be8cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
