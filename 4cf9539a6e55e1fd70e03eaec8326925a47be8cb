@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//8UE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2012-07-31T05:24:57Z",
+      "side": 1,
+      "message": "Would prefer to avoid the default arg - in most cases, you should specify the default when declaring the option, so the arg would just encourage mis-use I think\n\nProbably best to move this method down lower in the file",
+      "revId": "4cf9539a6e55e1fd70e03eaec8326925a47be8cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//8T4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2012-07-31T05:24:57Z",
+      "side": 1,
+      "message": "Would need to support returning default here too",
+      "revId": "4cf9539a6e55e1fd70e03eaec8326925a47be8cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//8To\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2012-07-31T05:24:57Z",
+      "side": 1,
+      "message": "This should all happen at the module level. That\u0027s the common pattern",
+      "revId": "4cf9539a6e55e1fd70e03eaec8326925a47be8cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//8Tk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2012-07-31T05:24:57Z",
+      "side": 1,
+      "message": "would prefer\n\n  if self.auth_uri is None:\n      self.auth_uri \u003d \u0027%s://%s:%s\u0027 % (self.auth_protocol, ....",
+      "revId": "4cf9539a6e55e1fd70e03eaec8326925a47be8cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//8Tg\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2012-07-31T05:24:57Z",
+      "side": 1,
+      "message": "Again, construct the default value if _conf_get() returns None",
+      "revId": "4cf9539a6e55e1fd70e03eaec8326925a47be8cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//8Tc\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2012-07-31T05:24:57Z",
+      "side": 1,
+      "message": "No need for the default here, just fallback to the default from cfg",
+      "revId": "4cf9539a6e55e1fd70e03eaec8326925a47be8cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
