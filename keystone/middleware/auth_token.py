@@ -104,8 +104,10 @@ import webob
 import webob.exc
 
 from keystone.openstack.common import jsonutils
+from keystone.openstack.common import cfg
 from keystone.common import cms
 
+CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
 
 
@@ -120,20 +122,59 @@ class ServiceError(Exception):
 class AuthProtocol(object):
     """Auth Middleware that handles authenticating client calls."""
 
+    def _conf_get(self, name, default=None):
+        # try config from paste-deploy first
+        if name in self.conf:
+            return self.conf[name]
+        else:
+            val = CONF.keystone_authtoken[name]
+            if val is None:
+                return default
+            else:
+                return val
+
     def __init__(self, app, conf):
         LOG.info('Starting keystone auth_token middleware')
         self.conf = conf
         self.app = app
 
+        # alternative middleware configuration in the main application's
+        # configuration file e.g. in nova.conf
+        # [keystone_authtoken]
+        # auth_host = 127.0.0.1
+        # auth_port = 35357
+        # auth_protocol = http
+        # admin_tenant_name = admin
+        # admin_user = admin
+        # admin_password = badpassword
+        opts = [
+            cfg.StrOpt('auth_admin_prefix', default=''),
+            cfg.StrOpt('auth_host', default='127.0.0.1'),
+            cfg.IntOpt('auth_port', default=35357),
+            cfg.StrOpt('auth_protocol', default='https'),
+            cfg.StrOpt('auth_uri', default=None),
+                # default='$auth_protocol://$auth_host:$auth_port'
+            cfg.BoolOpt('delay_auth_decision', default=False),
+            cfg.StrOpt('admin_token'),
+            cfg.StrOpt('admin_user'),
+            cfg.StrOpt('admin_password'),
+            cfg.StrOpt('certfile'),
+            cfg.StrOpt('keyfile'),
+            cfg.StrOpt('admin_tenant_name', default='admin'),
+            cfg.ListOpt('memcache_servers'),
+            cfg.IntOpt('token_cache_time', default=300),
+        ]
+        CONF.register_opts(opts, group='keystone_authtoken')
+
         # delay_auth_decision means we still allow unauthenticated requests
         # through and we let the downstream service make the final decision
-        self.delay_auth_decision = (conf.get('delay_auth_decision', False)
+        self.delay_auth_decision = (_conf_get('delay_auth_decision')
                                     in ('true', 't', '1', 'on', 'yes', 'y'))
 
         # where to find the auth service (we use this to validate tokens)
-        self.auth_host = conf.get('auth_host')
-        self.auth_port = int(conf.get('auth_port', 35357))
-        self.auth_protocol = conf.get('auth_protocol', 'https')
+        self.auth_host = _conf_get('auth_host')
+        self.auth_port = int(_conf_get('auth_port')
+        self.auth_protocol = _conf_get('auth_protocol')
         if self.auth_protocol == 'http':
             self.http_client_class = httplib.HTTPConnection
         else:
@@ -142,16 +183,16 @@ class AuthProtocol(object):
         default_auth_uri = '%s://%s:%s' % (self.auth_protocol,
                                            self.auth_host,
                                            self.auth_port)
-        self.auth_admin_prefix = conf.get('auth_admin_prefix', '')
-        self.auth_uri = conf.get('auth_uri', default_auth_uri)
+        self.auth_admin_prefix = _conf_get('auth_admin_prefix', '')
+        self.auth_uri = _conf_get('auth_uri', default_auth_uri)
 
         # SSL
-        self.cert_file = conf.get('certfile')
-        self.key_file = conf.get('keyfile')
+        self.cert_file = _conf_get('certfile')
+        self.key_file = _conf_get('keyfile')
 
         #signing
         default_signing_dir = '/tmp/keystone-signing-%s' % os.environ['USER']
-        self.signing_dirname = conf.get('signing_dir', default_signing_dir)
+        self.signing_dirname = _conf_get('signing_dir', default_signing_dir)
         if (os.path.exists(self.signing_dirname) and
                 not os.access(self.signing_dirname, os.W_OK)):
                 raise "TODO: Need to find an Exception to raise here."
@@ -168,17 +209,17 @@ class AuthProtocol(object):
 
         # Credentials used to verify this component with the Auth service since
         # validating tokens is a privileged call
-        self.admin_token = conf.get('admin_token')
-        self.admin_user = conf.get('admin_user')
-        self.admin_password = conf.get('admin_password')
-        self.admin_tenant_name = conf.get('admin_tenant_name', 'admin')
+        self.admin_token = _conf_get('admin_token')
+        self.admin_user = _conf_get('admin_user')
+        self.admin_password = _conf_get('admin_password')
+        self.admin_tenant_name = _conf_get('admin_tenant_name', 'admin')
 
         # Token caching via memcache
         self._cache = None
         self._iso8601 = None
-        memcache_servers = conf.get('memcache_servers')
+        memcache_servers = _conf_get('memcache_servers')
         # By default the token will be cached for 5 minutes
-        self.token_cache_time = conf.get('token_cache_time', 300)
+        self.token_cache_time = _conf_get('token_cache_time', 300)
         if memcache_servers:
             try:
                 import memcache
