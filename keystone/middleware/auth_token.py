@@ -150,7 +150,7 @@ class AuthProtocol(object):
         self.key_file = conf.get('keyfile')
 
         #signing
-        default_signing_dir = '/tmp/keystone-signing-%s' % os.environ['USER']
+        default_signing_dir = '%s/keystone-signing' % os.environ['HOME']
         self.signing_dirname = conf.get('signing_dir', default_signing_dir)
         if (os.path.exists(self.signing_dirname) and
                 not os.access(self.signing_dirname, os.W_OK)):
