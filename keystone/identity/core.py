@@ -300,6 +300,10 @@ class PublicRouter(wsgi.ComposableRouter):
                        conditions=dict(method=['GET']))
 
 
+class PublicV3Router(PublicRouter):
+    pass
+
+
 class AdminRouter(wsgi.ComposableRouter):
     def add_routes(self, mapper):
         # Tenant Operations
@@ -330,6 +334,10 @@ class AdminRouter(wsgi.ComposableRouter):
                        controller=roles_controller,
                        action='get_user_roles',
                        conditions=dict(method=['GET']))
+
+
+class AdminV3Router(AdminRouter):
+    pass
 
 
 class TenantController(wsgi.Application):

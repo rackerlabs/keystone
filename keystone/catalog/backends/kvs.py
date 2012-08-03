@@ -47,6 +47,30 @@ class Catalog(kvs.Base, catalog.Driver):
         service_list.remove(service_id)
         self.db.set('service_list', list(service_list))
 
+    def get_endpoint(self, endpoint_id):
+        return self.db.get('endpoint-%s' % endpoint_id)
+
+    def list_endpoints(self):
+        return self.db.get('endpoint_list', [])
+
+    def create_endpoint(self, endpoint_id, endpoint):
+        self.get_service(endpoint['service_id'])
+        self.db.set('endpoint-%s' % endpoint_id, endpoint)
+        endpoint_list = set(self.db.get('endpoint_list', []))
+        endpoint_list.add(endpoint_id)
+        self.db.set('endpoint_list', list(endpoint_list))
+        return endpoint
+
+    def update_endpoint(self, endpoint_id, endpoint):
+        self.db.set('endpoint-%s' % endpoint_id, endpoint)
+        return endpoint
+
+    def delete_endpoint(self, endpoint_id):
+        self.db.delete('endpoint-%s' % endpoint_id)
+        endpoint_list = set(self.db.get('endpoint_list', []))
+        endpoint_list.remove(endpoint_id)
+        self.db.set('endpoint_list', list(endpoint_list))
+
     # Private interface
     def _create_catalog(self, user_id, tenant_id, data):
         self.db.set('catalog-%s-%s' % (tenant_id, user_id), data)

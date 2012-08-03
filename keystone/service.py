@@ -42,6 +42,25 @@ class AdminRouter(wsgi.ComposingRouter):
                        controller=version_controller,
                        action='get_version')
 
+        self.connect_mapper(mapper)
+
+        # Miscellaneous Operations
+        extensions_controller = AdminExtensionsController()
+        mapper.connect('/extensions',
+                       controller=extensions_controller,
+                       action='get_extensions_info',
+                       conditions=dict(method=['GET']))
+        mapper.connect('/extensions/{extension_alias}',
+                       controller=extensions_controller,
+                       action='get_extension_info',
+                       conditions=dict(method=['GET']))
+
+        super(AdminRouter, self).__init__(mapper, self.get_routers())
+
+    def get_routers(self):
+        return [identity.AdminRouter()]
+
+    def connect_mapper(self, mapper):
         # Token Operations
         auth_controller = TokenController()
         mapper.connect('/tokens',
@@ -65,7 +84,7 @@ class AdminRouter(wsgi.ComposingRouter):
                        action='endpoints',
                        conditions=dict(method=['GET']))
 
-        #Certificates used for veritfy auth toekns
+        # Certificates used to verify auth toekns
         mapper.connect('/certificates/ca',
                        controller=auth_controller,
                        action='ca_cert',
@@ -76,19 +95,36 @@ class AdminRouter(wsgi.ComposingRouter):
                        action='signing_cert',
                        conditions=dict(method=['GET']))
 
-        # Miscellaneous Operations
-        extensions_controller = AdminExtensionsController()
-        mapper.connect('/extensions',
-                       controller=extensions_controller,
-                       action='get_extensions_info',
+
+class AdminV3Router(AdminRouter):
+    def get_routers(self):
+        return [identity.AdminV3Router()]
+
+    def connect_mapper(self, mapper):
+        # Token Operations
+        auth_controller = TokenController()
+        mapper.connect('/tokens',
+                       controller=auth_controller,
+                       action='authenticate',
+                       conditions=dict(method=['POST']))
+        """
+        mapper.connect('/tokens/{token_id}',
+                       controller=auth_controller,
+                       action='validate_token',
                        conditions=dict(method=['GET']))
-        mapper.connect('/extensions/{extension_alias}',
-                       controller=extensions_controller,
-                       action='get_extension_info',
+        mapper.connect('/tokens/{token_id}',
+                       controller=auth_controller,
+                       action='validate_token_head',
+                       conditions=dict(method=['HEAD']))
+        mapper.connect('/tokens/{token_id}',
+                       controller=auth_controller,
+                       action='delete_token',
+                       conditions=dict(method=['DELETE']))
+        mapper.connect('/tokens/{token_id}/endpoints',
+                       controller=auth_controller,
+                       action='endpoints',
                        conditions=dict(method=['GET']))
-        identity_router = identity.AdminRouter()
-        routers = [identity_router]
-        super(AdminRouter, self).__init__(mapper, routers)
+        """
 
 
 class PublicRouter(wsgi.ComposingRouter):
@@ -100,6 +136,25 @@ class PublicRouter(wsgi.ComposingRouter):
                        controller=version_controller,
                        action='get_version')
 
+        self.connect_mapper(mapper)
+
+        # Miscellaneous
+        extensions_controller = PublicExtensionsController()
+        mapper.connect('/extensions',
+                       controller=extensions_controller,
+                       action='get_extensions_info',
+                       conditions=dict(method=['GET']))
+        mapper.connect('/extensions/{extension_alias}',
+                       controller=extensions_controller,
+                       action='get_extension_info',
+                       conditions=dict(method=['GET']))
+
+        super(PublicRouter, self).__init__(mapper, self.get_routers())
+
+    def get_routers(self):
+        return [identity.PublicRouter()]
+
+    def connect_mapper(self, mapper):
         # Token Operations
         auth_controller = TokenController()
         mapper.connect('/tokens',
@@ -117,21 +172,10 @@ class PublicRouter(wsgi.ComposingRouter):
                        action='signing_cert',
                        conditions=dict(method=['GET']))
 
-        # Miscellaneous
-        extensions_controller = PublicExtensionsController()
-        mapper.connect('/extensions',
-                       controller=extensions_controller,
-                       action='get_extensions_info',
-                       conditions=dict(method=['GET']))
-        mapper.connect('/extensions/{extension_alias}',
-                       controller=extensions_controller,
-                       action='get_extension_info',
-                       conditions=dict(method=['GET']))
 
-        identity_router = identity.PublicRouter()
-        routers = [identity_router]
-
-        super(PublicRouter, self).__init__(mapper, routers)
+class PublicV3Router(PublicRouter):
+    def get_routers(self):
+        return [identity.PublicV3Router()]
 
 
 class PublicVersionRouter(wsgi.ComposingRouter):
@@ -159,7 +203,7 @@ class AdminVersionRouter(wsgi.ComposingRouter):
 class VersionController(wsgi.Application):
     def __init__(self, version_type):
         self.catalog_api = catalog.Manager()
-        self.url_key = "%sURL" % version_type
+        self.url_key = '%sURL' % version_type
 
         super(VersionController, self).__init__()
 
@@ -214,21 +258,20 @@ class VersionController(wsgi.Application):
                 }
             ]
         }
-
         return versions
 
     def get_versions(self, context):
         versions = self._get_versions_list(context)
         return wsgi.render_response(status=(300, 'Multiple Choices'), body={
-            "versions": {
-                "values": versions.values()
+            'versions': {
+                'values': versions.values()
             }
         })
 
     def get_version(self, context):
         versions = self._get_versions_list(context)
         return wsgi.render_response(body={
-            "version": versions['v2.0']
+            'version': versions['v2.0']
         })
 
 
@@ -675,10 +718,24 @@ def public_app_factory(global_conf, **local_conf):
 
 
 @logging.fail_gracefully
+def public_v3_app_factory(global_conf, **local_conf):
+    conf = global_conf.copy()
+    conf.update(local_conf)
+    return PublicV3Router()
+
+
+@logging.fail_gracefully
 def admin_app_factory(global_conf, **local_conf):
     conf = global_conf.copy()
     conf.update(local_conf)
     return AdminRouter()
+
+
+@logging.fail_gracefully
+def admin_v3_app_factory(global_conf, **local_conf):
+    conf = global_conf.copy()
+    conf.update(local_conf)
+    return AdminV3Router()
 
 
 @logging.fail_gracefully

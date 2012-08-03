@@ -17,6 +17,8 @@
 from keystone import catalog
 from keystone.common import wsgi
 from keystone import identity
+from keystone import policy
+from keystone import token
 
 
 class CrudExtension(wsgi.ExtensionRouter):
@@ -214,4 +216,112 @@ class CrudExtension(wsgi.ExtensionRouter):
             '/OS-KSADM/roles/{role_id}',
             controller=role_controller,
             action='delete_role',
+            conditions=dict(method=['DELETE']))
+
+
+class CrudExtensionV3(CrudExtension):
+    def add_routes(self, mapper):
+        super(CrudExtensionV3, self).add_routes(mapper)
+
+        catalog_api = catalog.Manager()
+        identity_api = identity.Manager()
+        policy_api = policy.Manager()
+        token_api = token.Manager()
+
+        # Policy Operations
+
+        policy_controller = policy.PolicyControllerV3(
+            catalog_api=catalog_api,
+            identity_api=identity_api,
+            policy_api=policy_api,
+            token_api=token_api)
+
+        mapper.connect(
+            '/policies',
+            controller=policy_controller,
+            action='create_policy',
+            conditions=dict(method=['POST']))
+        mapper.connect(
+            '/policies',
+            controller=policy_controller,
+            action='list_policies',
+            conditions=dict(method=['GET']))
+        mapper.connect(
+            '/policies/{policy_id}',
+            controller=policy_controller,
+            action='get_policy',
+            conditions=dict(method=['GET']))
+        mapper.connect(
+            '/policies/{policy_id}',
+            controller=policy_controller,
+            action='update_policy',
+            conditions=dict(method=['PATCH']))
+        mapper.connect(
+            '/policies/{policy_id}',
+            controller=policy_controller,
+            action='delete_policy',
+            conditions=dict(method=['DELETE']))
+
+        # Catalog
+
+        service_controller = catalog.ServiceControllerV3(
+            catalog_api=catalog_api,
+            identity_api=identity_api,
+            policy_api=policy_api,
+            token_api=token_api)
+        endpoint_controller = catalog.EndpointControllerV3(
+            catalog_api=catalog_api,
+            identity_api=identity_api,
+            policy_api=policy_api,
+            token_api=token_api)
+
+        mapper.connect(
+            '/services',
+            controller=service_controller,
+            action='create_service',
+            conditions=dict(method=['POST']))
+        mapper.connect(
+            '/services',
+            controller=service_controller,
+            action='list_services',
+            conditions=dict(method=['GET']))
+        mapper.connect(
+            '/services/{service_id}',
+            controller=service_controller,
+            action='get_service',
+            conditions=dict(method=['GET']))
+        mapper.connect(
+            '/services/{service_id}',
+            controller=service_controller,
+            action='update_service',
+            conditions=dict(method=['PATCH']))
+        mapper.connect(
+            '/services/{service_id}',
+            controller=service_controller,
+            action='delete_service',
+            conditions=dict(method=['DELETE']))
+        mapper.connect(
+            '/services/{service_id}/endpoints',
+            controller=endpoint_controller,
+            action='create_endpoint',
+            conditions=dict(method=['POST']))
+        mapper.connect(
+            '/services/{service_id}/endpoints',
+            controller=endpoint_controller,
+            action='list_endpoints',
+            conditions=dict(method=['GET']))
+        mapper.connect(
+            '/services/{service_id}/endpoints/{endpoint_id}',
+            controller=endpoint_controller,
+            action='get_endpoint',
+            conditions=dict(method=['GET']))
+        mapper.connect(
+            '/services/{service_id}/endpoints/{endpoint_id}',
+            controller=endpoint_controller,
+            action='update_endpoint',
+            conditions=dict(method=['PATCH']))
+        mapper.connect(
+            '/services/{service_id}/endpoints/{endpoint_id}',
+            controller=endpoint_controller,
+            action='delete_endpoint',
             conditions=dict(method=['DELETE']))
