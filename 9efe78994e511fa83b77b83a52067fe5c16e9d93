@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//5dg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-03T15:16:06Z",
+      "side": 1,
+      "message": "BP should be cited as:\n\n  Implements bp create-user-validation\n\n(using the bp url slug instead of the bp title)",
+      "revId": "9efe78994e511fa83b77b83a52067fe5c16e9d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//5eE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-03T15:16:06Z",
+      "side": 1,
+      "message": "import order",
+      "revId": "9efe78994e511fa83b77b83a52067fe5c16e9d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//5d4\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-03T15:16:06Z",
+      "side": 1,
+      "message": "doesn\u0027t need to be a docstring (?) -- stick with single quotes",
+      "revId": "9efe78994e511fa83b77b83a52067fe5c16e9d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//5eA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-03T15:16:06Z",
+      "side": 1,
+      "message": "use single quotes",
+      "revId": "9efe78994e511fa83b77b83a52067fe5c16e9d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//5ds\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-03T15:16:06Z",
+      "side": 1,
+      "message": "unnecessary whitespace?",
+      "revId": "9efe78994e511fa83b77b83a52067fe5c16e9d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//5dw\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-03T15:16:06Z",
+      "side": 1,
+      "message": "single quotes; recommend using example.com instead of a real domain",
+      "revId": "9efe78994e511fa83b77b83a52067fe5c16e9d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//5d0\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-03T15:16:06Z",
+      "side": 1,
+      "message": "single quotes",
+      "revId": "9efe78994e511fa83b77b83a52067fe5c16e9d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
