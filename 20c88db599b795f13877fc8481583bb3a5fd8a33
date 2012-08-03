@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//5cs\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2012-08-03T15:20:38Z",
+      "side": 1,
+      "message": "I don\u0027t see a _conf_get() function other than the method on this class. Should all of these calls to _conf_get() be self._conf_get()?",
+      "revId": "20c88db599b795f13877fc8481583bb3a5fd8a33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
