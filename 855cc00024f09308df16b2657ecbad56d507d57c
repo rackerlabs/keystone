@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//2ho\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 812,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-08-07T19:18:37Z",
+      "side": 1,
+      "message": "extra white space here...",
+      "revId": "855cc00024f09308df16b2657ecbad56d507d57c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
