@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//1z0\u003d",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-08-08T13:48:42Z",
+      "side": 1,
+      "message": "Should this be a stand alone patch?",
+      "revId": "46c57aff1d83e73579d444175b56e37b906df446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//1zw\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-08-08T13:48:42Z",
+      "side": 1,
+      "message": "This seems to duplicate the list_services functionality, with a slightly different output format.  Is this the right level of abstraction?",
+      "revId": "46c57aff1d83e73579d444175b56e37b906df446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
