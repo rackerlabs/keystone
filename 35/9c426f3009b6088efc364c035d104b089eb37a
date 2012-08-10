@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Approved+1: Mark McLoughlin <markmc@redhat.com>
+Code-Review+2: Mark McLoughlin <markmc@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 10 Aug 2012 10:34:03 +0000
+Reviewed-on: https://review.openstack.org/11125
+Project: openstack/keystone
+Branch: refs/heads/stable/essex
