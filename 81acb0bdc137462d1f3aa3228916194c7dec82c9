@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//zTo\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-10T21:15:11Z",
+      "side": 1,
+      "message": "Does 94-96 need to be in the try block? I would assume not.",
+      "revId": "81acb0bdc137462d1f3aa3228916194c7dec82c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//zTs\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-10T21:15:11Z",
+      "side": 1,
+      "message": "99-101 can be reduced to:\n\n    metadata_ref \u003d self.get_metadata(user_id, tenant_id)",
+      "revId": "81acb0bdc137462d1f3aa3228916194c7dec82c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
