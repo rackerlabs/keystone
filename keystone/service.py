@@ -429,7 +429,7 @@ class TokenController(wsgi.Application):
         service_catalog = self._format_catalog(catalog_ref)
         token_data['access']['serviceCatalog'] = service_catalog
 
-        if config.CONF.signing.disable_pki:
+        if not config.CONF.signing.pki_security:
             token_id = uuid.uuid4().hex
         else:
             token_id = cms.cms_sign_text(json.dumps(token_data),
