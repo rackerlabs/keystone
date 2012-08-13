@@ -16,6 +16,24 @@
       "revId": "37ff759707f64ee4f4eafee8448ece36b96173e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//xd8\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 4190
+      },
+      "writtenOn": "2012-08-13T18:53:54Z",
+      "side": 1,
+      "message": "No. Delete(False) on a query operates directly on the SQL server and does not touch the SQLAlchemy session. When the with: block is exited the session is automatically synchronised.",
+      "parentUuid": "AAAALH//xnA\u003d",
+      "revId": "37ff759707f64ee4f4eafee8448ece36b96173e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
