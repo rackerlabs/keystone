@@ -344,7 +344,7 @@ class TokenController(wsgi.Application):
                 old_token_ref = self.token_api.get_token(context=context,
                                                          token_id=old_token)
             except exception.NotFound:
-                raise exception.Unauthorized()
+                raise exception.Unauthorized("Token not found.")
 
             user_ref = old_token_ref['user']
             user_id = user_ref['id']
