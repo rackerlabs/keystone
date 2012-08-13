@@ -315,13 +315,13 @@ class TokenController(wsgi.Application):
 
                 # If the user is disabled don't allow them to authenticate
                 if not user_ref.get('enabled', True):
-                    LOG.warning('User %s is disabled' % user_id)
-                    raise exception.Unauthorized()
+                    raise exception.Unauthorized('User %s is disabled'
+                                                 % user_id)
 
                 # If the tenant is disabled don't allow them to authenticate
                 if tenant_ref and not tenant_ref.get('enabled', True):
-                    LOG.warning('Tenant %s is disabled' % tenant_id)
-                    raise exception.Unauthorized()
+                    raise exception.Unauthorized(
+                        'Tenant %s is disabled' % tenant_id)
             except AssertionError as e:
                 raise exception.Unauthorized(e.message)
             auth_token_data = dict(zip(['user', 'tenant', 'metadata'],
@@ -344,7 +344,7 @@ class TokenController(wsgi.Application):
                 old_token_ref = self.token_api.get_token(context=context,
                                                          token_id=old_token)
             except exception.NotFound:
-                raise exception.Unauthorized()
+                raise exception.Unauthorized("Token not found.")
 
             user_ref = old_token_ref['user']
             user_id = user_ref['id']
