@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//wKs\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-08-14T18:09:58Z",
+      "side": 1,
+      "message": "We are going 5to use a slightly different scheme here:  token_format, which will either be UUID or PKI",
+      "revId": "eadc47a8af3dd2a6addba4ca86d6202449b7771e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
