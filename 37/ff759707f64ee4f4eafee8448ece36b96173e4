@@ -1,0 +1,10 @@
+Code-Review+1: Monty Taylor <mordred@inaugust.com>
+Verified+2: Jenkins
+Code-Review+2: Joe Heck <heckj@mac.com>
+Approved+1: Brian Lamar <brian.lamar@rackspace.com>
+Code-Review+2: Brian Lamar <brian.lamar@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 14 Aug 2012 02:41:20 +0000
+Reviewed-on: https://review.openstack.org/11237
+Project: openstack/keystone
+Branch: refs/heads/master
