@@ -33,6 +33,23 @@
       "revId": "46c57aff1d83e73579d444175b56e37b906df446",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//wf4\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-08-14T15:48:16Z",
+      "side": 1,
+      "message": "get_all_endpoints and list_endpoints read (to me) to be identical methods. Why do we have both? Shouldn\u0027t list_endpoints do what we need?",
+      "revId": "46c57aff1d83e73579d444175b56e37b906df446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
