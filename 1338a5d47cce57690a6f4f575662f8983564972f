@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//wKg\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-14T18:13:03Z",
+      "side": 1,
+      "message": "Log immediately here if you\u0027d like, but we\u0027ve previously decided that we do NOT want to expose to the *client* specifically WHY authentication has failed.",
+      "revId": "1338a5d47cce57690a6f4f575662f8983564972f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//wKY\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-14T18:13:03Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "1338a5d47cce57690a6f4f575662f8983564972f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
