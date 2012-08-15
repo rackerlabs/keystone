@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//vRI\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1119
+      },
+      "writtenOn": "2012-08-15T09:13:06Z",
+      "side": 1,
+      "message": "Are we OK with raising this message to the user?",
+      "revId": "924577a0787882a00c8a35dc8c5b981dad6c53b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
