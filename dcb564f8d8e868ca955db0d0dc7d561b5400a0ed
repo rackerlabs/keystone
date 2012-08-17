@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//s74\u003d",
+        "filename": "ocf/keystone",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-08-17T16:25:56Z",
+      "side": 1,
+      "message": "Whitespace here and below",
+      "revId": "dcb564f8d8e868ca955db0d0dc7d561b5400a0ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
