@@ -307,7 +307,7 @@ class AuthProtocol(object):
                                           self.key_file,
                                           self.cert_file)
 
-    def _http_request(self, method, path):
+    def _http_request(self, method, path, additional_headers=None):
         """HTTP request helper used to make unspecified content type requests.
 
         :param method: http method
@@ -317,9 +317,12 @@ class AuthProtocol(object):
 
         """
         conn = self._get_http_connection()
+        kwargs = {}
+        if additional_headers:
+            kwargs['headers'] = additional_headers
 
         try:
-            conn.request(method, path)
+            conn.request(method, path, **kwargs)
             response = conn.getresponse()
             body = response.read()
         except Exception, e:
@@ -716,10 +719,14 @@ class AuthProtocol(object):
             f.write(value)
 
     def fetch_revocation_list(self):
-        response, data = self._http_request('GET', '/v2.0/tokens/revoked')
+        headers = {'X-Auth-Token': self.get_admin_token()}
+        response, data = self._json_request('GET', '/v2.0/tokens/revoked',
+                                            additional_headers=headers)
         if response.status != 200:
             raise ServiceError('Unable to fetch token revocation list.')
-        return self.cms_verify(data)
+        if (not 'signed' in data):
+            raise ServiceError('Revocation list inmproperly formatted.')
+        return self.cms_verify(data['signed'])
 
     def fetch_signing_cert(self):
         response, data = self._http_request('GET',
