@@ -16,6 +16,41 @@
       "revId": "fdb906aaae5e6c6571db5a687727a256d4518891",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//srU\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-08-17T21:55:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALH//xoU\u003d",
+      "revId": "fdb906aaae5e6c6571db5a687727a256d4518891",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//srM\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-08-17T21:55:03Z",
+      "side": 1,
+      "message": "fixed a pep8 violation here as well.",
+      "revId": "fdb906aaae5e6c6571db5a687727a256d4518891",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
