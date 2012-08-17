@@ -47,7 +47,7 @@ def setUpModule(self):
     with open(os.path.join(signing_path, 'revocation_list.json')) as f:
         self.REVOCATION_LIST = jsonutils.loads(f.read())
     with open(os.path.join(signing_path, 'revocation_list.pem')) as f:
-        self.SIGNED_REVOCATION_LIST = f.read()
+        self.SIGNED_REVOCATION_LIST = jsonutils.dumps({'signed': f.read()})
 
     self.TOKEN_RESPONSES[self.SIGNED_TOKEN_SCOPED] = {
         'access': {
