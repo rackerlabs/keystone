@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Approved+1: Joe Heck <heckj@mac.com>
+Code-Review+2: Joe Heck <heckj@mac.com>
+Approved+1: Thierry Carrez <thierry@openstack.org>
+Code-Review+2: Thierry Carrez <thierry@openstack.org>
+Submitted-by: Jenkins
+Submitted-at: Fri, 17 Aug 2012 13:09:30 +0000
+Reviewed-on: https://review.openstack.org/11505
+Project: openstack/keystone
+Branch: refs/heads/milestone-proposed
