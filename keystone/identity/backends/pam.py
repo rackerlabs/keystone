@@ -104,6 +104,9 @@ class PamIdentity(identity.Driver):
     def get_tenants_for_user(self, user_id):
         return [user_id]
 
+    def get_roles_for_user(self, user_id):
+        raise NotImplementedError()
+
     def get_roles_for_user_and_tenant(self, user_id, tenant_id):
         raise NotImplementedError()
 

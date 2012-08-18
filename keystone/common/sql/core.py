@@ -88,8 +88,12 @@ class DictBase(object):
 
         Includes attributes from joins.
 
+        To add extra attributes to response during render_response(),such as
+        tenantName
         """
-        return dict([(k, getattr(self, k)) for k in self])
+        return dict((k, v) for k, v in self.__dict__.iteritems()
+                    if k[0] != '_')
+        #return dict([(k, getattr(self, k)) for k in self])
         #local = dict(self)
         #joined = dict([(k, v) for k, v in self.__dict__.iteritems()
         #               if not k[0] == '_'])

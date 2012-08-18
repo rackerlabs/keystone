@@ -154,6 +154,20 @@ class Identity(kvs.Base, identity.Driver):
         user_ref = self._get_user(user_id)
         return user_ref.get('tenants', [])
 
+    def get_roles_for_user(self, user_id):
+        self.get_user(user_id)
+        #get all metadatas
+        _metadata_refs = dict((k, v) for k, v in self.db.items() if
+                              k.startswith("metadata-"))
+        metadata_refs = []
+        #get metadatas matching given user_id
+        for k, v in _metadata_refs.items():
+            _, _tenant_id, _user_id = k.split('-')
+            if user_id == _user_id:
+                metadata_refs.append((_tenant_id, v))
+        return [(tenant_id, data.get('roles', []))
+                for tenant_id, data in metadata_refs]
+
     def get_roles_for_user_and_tenant(self, user_id, tenant_id):
         self.get_user(user_id)
         self.get_tenant(tenant_id)

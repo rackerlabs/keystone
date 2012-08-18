@@ -299,6 +299,15 @@ class Identity(sql.Base, identity.Driver):
                                  .all()
         return [x.tenant_id for x in membership_refs]
 
+    def get_roles_for_user(self, user_id):
+        self.get_user(user_id)
+        session = self.get_session()
+        metadata_refs = session.query(Metadata)\
+                               .filter_by(user_id=user_id)\
+                               .all()
+        return [(tenant_id, metadata.get('roles', []))
+                for tenant_id, metadata in metadata_refs]
+
     def get_roles_for_user_and_tenant(self, user_id, tenant_id):
         self.get_user(user_id)
         self.get_tenant(tenant_id)
