@@ -173,6 +173,15 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    def get_roles_for_user(self, user_id):
+        """Get the role list and associated tenant of the user
+
+        :returns: a list of role ids and associated tenant name
+        :raises: keystone.exception.UserNotFound
+
+        """
+        raise exception.NotImplemented()
+
     def get_roles_for_user_and_tenant(self, user_id, tenant_id):
         """Get the roles associated with a user within given tenant.
 
@@ -538,8 +547,17 @@ class RoleController(wsgi.Application):
         """
         self.assert_admin(context)
         if tenant_id is None:
-            raise exception.NotImplemented(message='User roles not supported: '
-                                                   'tenant ID required')
+            _result = self.identity_api.get_roles_for_user(context, user_id)
+            result = {'roles': []}
+            for tenant_id, roles in _result:
+                for role in roles:
+                    tenant_ref = self.identity_api.get_tenant(context,
+                                                              tenant_id)
+                    role_ref = self.identity_api.get_role(context,
+                                                          role)
+                    role_ref['tenantName'] = tenant_ref.get('name')
+                    result['roles'].append(role_ref)
+            return result
 
         roles = self.identity_api.get_roles_for_user_and_tenant(
             context, user_id, tenant_id)
