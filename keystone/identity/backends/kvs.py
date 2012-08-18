@@ -36,6 +36,17 @@ def _ensure_hashed_password(user_ref):
     return user_ref
 
 
+def _metadata_match_user_id(db, key):
+    metadata_refs = dict((k, v) for k, v in db.items() if
+                         k.startswith("metadata-"))
+    result = []
+    for k, v in metadata_refs.items():
+        _, tenant_id, user_id = k.split('-')
+        if user_id == key:
+            result.append((tenant_id, v))
+    return result
+
+
 class Identity(kvs.Base, identity.Driver):
     # Public interface
     def authenticate(self, user_id=None, tenant_id=None, password=None):
@@ -112,9 +123,12 @@ class Identity(kvs.Base, identity.Driver):
     def get_user_by_name(self, user_name):
         return _filter_user(self._get_user_by_name(user_name))
 
-    def get_metadata(self, user_id, tenant_id):
+    def get_metadata(self, user_id, tenant_id=None):
         try:
-            return self.db.get('metadata-%s-%s' % (tenant_id, user_id))
+            if tenant_id is not None:
+                return self.db.get('metadata-%s-%s' % (tenant_id, user_id))
+            else:
+                return _metadata_match_user_id(self.db, user_id)
         except exception.NotFound:
             raise exception.MetadataNotFound()
 
@@ -153,6 +167,15 @@ class Identity(kvs.Base, identity.Driver):
     def get_tenants_for_user(self, user_id):
         user_ref = self._get_user(user_id)
         return user_ref.get('tenants', [])
+
+    def get_roles_for_user(self, user_id):
+        self.get_user(user_id)
+        try:
+            metadata_refs = self.get_metadata(user_id)
+        except exception.MetadataNotFound:
+            metadata_refs = {}
+        return [(tenant_id, data.get('roles', []))
+                for tenant_id, data in metadata_refs]
 
     def get_roles_for_user_and_tenant(self, user_id, tenant_id):
         self.get_user(user_id)

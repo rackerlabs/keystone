@@ -429,8 +429,6 @@ class CoreApiTests(object):
         self.assertValidTenantResponse(r)
 
     def test_get_user_roles(self):
-        raise nose.exc.SkipTest('Blocked by bug 933565')
-
         token = self.get_scoped_token()
         r = self.admin_request(
             path='/v2.0/users/%(user_id)s/roles' % {

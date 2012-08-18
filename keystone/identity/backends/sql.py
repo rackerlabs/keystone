@@ -228,15 +228,24 @@ class Identity(sql.Base, identity.Driver):
     def get_user_by_name(self, user_name):
         return _filter_user(self._get_user_by_name(user_name))
 
-    def get_metadata(self, user_id, tenant_id):
+    def get_metadata(self, user_id, tenant_id=None):
         session = self.get_session()
-        metadata_ref = session.query(Metadata)\
-                              .filter_by(user_id=user_id)\
-                              .filter_by(tenant_id=tenant_id)\
-                              .first()
-        if metadata_ref is None:
-            raise exception.MetadataNotFound()
-        return metadata_ref.data
+        if tenant_id is not None:
+            metadata_ref = session.query(Metadata)\
+                                  .filter_by(user_id=user_id)\
+                                  .filter_by(tenant_id=tenant_id)\
+                                  .first()
+            if not metadata_ref:
+                raise exception.MetadataNotFound()
+            return metadata_ref.data
+        else:
+            metadata_refs = session.query(Metadata)\
+                                   .filter_by(user_id=user_id)\
+                                   .all()
+            if not metadata_refs:
+                raise exception.MetadataNotFound()
+            return [(metadata.tenant_id, metadata.data)
+                    for metadata in metadata_refs]
 
     def get_role(self, role_id):
         session = self.get_session()
@@ -298,6 +307,15 @@ class Identity(sql.Base, identity.Driver):
                                  .filter_by(user_id=user_id)\
                                  .all()
         return [x.tenant_id for x in membership_refs]
+
+    def get_roles_for_user(self, user_id):
+        self.get_user(user_id)
+        try:
+            metadata_refs = self.get_metadata(user_id)
+        except exception.MetadataNotFound:
+            metadata_refs = []
+        return [(tenant_id, metadata.get('roles', []))
+                for tenant_id, metadata in metadata_refs]
 
     def get_roles_for_user_and_tenant(self, user_id, tenant_id):
         self.get_user(user_id)
