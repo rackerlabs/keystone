@@ -174,6 +174,9 @@ class Identity(identity.Driver):
             user_list.append(user)
         return user_list
 
+    def get_roles_for_user(self, user_id):
+        raise NotImplementedError()
+
     def get_roles_for_user_and_tenant(self, user_id, tenant_id):
         self.get_user(user_id)
         self.get_tenant(tenant_id)
