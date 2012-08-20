@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//r/Y\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-20T15:36:33Z",
+      "side": 1,
+      "message": "Easier to read as:\n\n    if k[0] !\u003d \u0027_\u0027",
+      "revId": "6744aaad56ffd2913757601d6764f4311a1cc340",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//r/U\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-20T15:36:33Z",
+      "side": 1,
+      "message": "Can you add a doc string to explain what this does? Neither the function name nor local var names make it obvious.\n\nIs this even used in more than one place? Should it need to be an extracted function?",
+      "revId": "6744aaad56ffd2913757601d6764f4311a1cc340",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//r/Q\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-20T15:36:33Z",
+      "side": 1,
+      "message": "Instead:\n\n    raise exception.NotImplemented()",
+      "revId": "6744aaad56ffd2913757601d6764f4311a1cc340",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//r/I\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-20T15:36:33Z",
+      "side": 1,
+      "message": "So this can now return either a single ref OR a list? Not cool.",
+      "revId": "6744aaad56ffd2913757601d6764f4311a1cc340",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//r/E\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-20T15:36:33Z",
+      "side": 1,
+      "message": "\"associated tenant of the user\"? Based on what association? Please revise to be more specific.",
+      "revId": "6744aaad56ffd2913757601d6764f4311a1cc340",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//r/A\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-20T15:36:33Z",
+      "side": 1,
+      "message": "What\u0027s an \"all role\"?",
+      "revId": "6744aaad56ffd2913757601d6764f4311a1cc340",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
