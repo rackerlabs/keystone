@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//qGw\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-08-22T18:27:44Z",
+      "side": 1,
+      "message": "Consider using implicit boolean conversion (if not CONF) in empty/False vs None do not matter.",
+      "revId": "53c5800cca2e83f386732b86a08b0e48764d6e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//qG0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-08-22T18:27:44Z",
+      "side": 1,
+      "message": "Is there a reason to leave this comment here?  The format already appears on line 200.",
+      "revId": "53c5800cca2e83f386732b86a08b0e48764d6e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//qFE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-08-22T18:27:44Z",
+      "side": 1,
+      "message": "This issue is unrelated to the change under review, but consider making an explicit conversion to int() as is done with auth_port on line 190.",
+      "revId": "53c5800cca2e83f386732b86a08b0e48764d6e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//qE0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-08-22T18:27:44Z",
+      "side": 1,
+      "message": "Consider removing the optional \u0027default\u0027 parameter since defaults are now effectively defined via the cfg.*Opt classes instead of in the method calls.",
+      "revId": "53c5800cca2e83f386732b86a08b0e48764d6e3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
