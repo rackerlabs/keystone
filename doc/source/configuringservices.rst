@@ -167,7 +167,7 @@ get more details of the middleware in :doc:`middlewarearchitecture`.
 Configuring Nova to use Keystone
 --------------------------------
 
-When configuring Nova, it is important to create a admin service token for
+When configuring Nova, it is important to create an admin service token for
 the service (from the Configuration step above) and include that as the key
 'admin_token' in Nova's api-paste.ini.
 
