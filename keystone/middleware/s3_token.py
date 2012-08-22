@@ -136,7 +136,7 @@ class S3Token(object):
         token = req.headers.get('X-Auth-Token',
                                 req.headers.get('X-Storage-Token'))
         if not token:
-            msg = 'You did not specify a auth or a storage token. skipping.'
+            msg = 'You did not specify an auth or a storage token. skipping.'
             self.logger.debug(msg)
             return self.app(environ, start_response)
 

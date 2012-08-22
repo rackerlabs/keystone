@@ -1338,7 +1338,7 @@ class ConfigOpts(collections.Mapping):
             return value
 
     def _get_group(self, group_or_name, autocreate=False):
-        """Looks up a OptGroup object.
+        """Looks up an OptGroup object.
 
         Helper function to return an OptGroup given a parameter which can
         either be the group's name or an OptGroup object.
