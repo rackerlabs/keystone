@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//qJI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-08-22T17:43:08Z",
+      "side": 1,
+      "message": "Consider changing the summary to \u0027Fix auth_token to fetch revocation list as admin.\u0027",
+      "revId": "1aa60308af92277e87746f0c6458e018959b3f17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//qI0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-08-22T17:43:08Z",
+      "side": 1,
+      "message": "Consider ensuring that the lines of the commit description are less than 80 chars for readability.",
+      "revId": "1aa60308af92277e87746f0c6458e018959b3f17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//qIE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-08-22T17:43:08Z",
+      "side": 1,
+      "message": "Consider separating the bug link from the change-id with a blank line for readability.",
+      "revId": "1aa60308af92277e87746f0c6458e018959b3f17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
