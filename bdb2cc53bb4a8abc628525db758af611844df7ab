@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//qFk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-08-22T18:12:57Z",
+      "side": 1,
+      "message": "if we get back a python dict that doesn\u0027t have the key \"signed\", we\u0027re going to blow up here with a key error. Do we need to do response format validation before assuming that key is here?",
+      "revId": "bdb2cc53bb4a8abc628525db758af611844df7ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
