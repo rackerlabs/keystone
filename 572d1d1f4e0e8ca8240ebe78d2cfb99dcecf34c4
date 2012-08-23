@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//pZY\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-23T12:59:48Z",
+      "side": 1,
+      "message": "If this was just headers\u003dNone, then you could just call it as:\n\n  _http_request(\u0027GET\u0027, \u0027.../tokens\u0027, headers\u003d{ whatever })\n\nDrop lines 320-322 completely, and replace the **kwargs in 325 with ..., headers\u003dheaders)",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pZU\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-23T12:59:48Z",
+      "side": 1,
+      "message": "Should also doc the new param",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pZQ\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-23T12:59:48Z",
+      "side": 1,
+      "message": "headers\u003dheaders",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pZM\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-23T12:59:48Z",
+      "side": 1,
+      "message": "While you\u0027re here, add a space at the beginning",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pZI\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-23T12:59:48Z",
+      "side": 1,
+      "message": "Title Case on \"IN\"",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pZA\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-23T12:59:48Z",
+      "side": 1,
+      "message": "Doesn\u0027t this mean order of test execution now matters?",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pY4\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-23T12:59:48Z",
+      "side": 1,
+      "message": "This is already being called on line 111... undo this whole change",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pY0\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-23T12:59:48Z",
+      "side": 1,
+      "message": "This is already being called on line 111... undo this whole change",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pYk\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-23T12:59:48Z",
+      "side": 1,
+      "message": "Both of these tests should probably go into CoreApiTests, or into a new class that inherits from RestfulTestCase if you don\u0027t want to call it \"core\" yet.",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pYs\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-23T12:59:48Z",
+      "side": 1,
+      "message": "There *should* also be an XML version of this assertion in XmlTestCase",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
