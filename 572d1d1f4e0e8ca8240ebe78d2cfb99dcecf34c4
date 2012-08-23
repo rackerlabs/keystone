@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//pTg\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-08-23T14:52:54Z",
+      "side": 1,
+      "message": "going to drop this, as the fetch is now JSON",
+      "parentUuid": "AAAALH//pZY\u003d",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//pZU\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2012-08-23T12:59:48Z",
       "side": 1,
       "message": "headers\u003dheaders",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pTk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-08-23T14:52:54Z",
+      "side": 1,
+      "message": "No longer needed, as the fetch is now a JSON fetch, and admin is already supported there.",
+      "parentUuid": "AAAALH//pZQ\u003d",
       "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//pTE\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-08-23T14:52:54Z",
+      "side": 1,
+      "message": "It does not seem to be, as the tests that used the valid signature came after this one in the run order.  However, to be safe, I will explicitly reset it in setup.",
+      "parentUuid": "AAAALH//pZA\u003d",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//pY4\u003d",
         "filename": "tests/test_content_types.py",
         "patchSetId": 6
@@ -155,6 +209,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//pTA\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-08-23T14:52:54Z",
+      "side": 1,
+      "message": "Agreed, but all of the other JSON tests fall into the same category.  That should be a stand alone effort.",
+      "parentUuid": "AAAALH//pYk\u003d",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//pYs\u003d",
         "filename": "tests/test_content_types.py",
         "patchSetId": 6
@@ -166,6 +238,24 @@
       "writtenOn": "2012-08-23T12:59:48Z",
       "side": 1,
       "message": "There *should* also be an XML version of this assertion in XmlTestCase",
+      "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pS8\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-08-23T14:52:54Z",
+      "side": 1,
+      "message": "Lets make that a TODO, as nothing will be using it yet.",
+      "parentUuid": "AAAALH//pYs\u003d",
       "revId": "572d1d1f4e0e8ca8240ebe78d2cfb99dcecf34c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
