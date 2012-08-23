@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//pN8\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-08-23T16:34:27Z",
+      "side": 1,
+      "message": "Suggestion only - these parenthesis are unnecessary and can be removed.",
+      "revId": "3fa4ba537e7d297aeb63554231d041da7ad2476f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pOA\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 781,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-08-23T16:34:27Z",
+      "side": 1,
+      "message": "inmproperly \u003d\u003e improperly",
+      "revId": "3fa4ba537e7d297aeb63554231d041da7ad2476f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pN4\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-08-23T16:34:27Z",
+      "side": 1,
+      "message": "This change appears unnecessary (self.send_valid_revocation_list is unused) and should probably be reverted.",
+      "revId": "3fa4ba537e7d297aeb63554231d041da7ad2476f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pKw\u003d",
+        "filename": "tests/test_auth_token_middleware.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-08-23T16:34:27Z",
+      "side": 1,
+      "message": "The use of globals() is almost always a bad sign - I apologize for missing it in a previous review.  This comment is suggestion only, but consider removing this line and creating a \u0027get_revocation_list\u0027 method on FakedHTTPConnection as follows:\n\n@classmethod\ndef get_revocation_list(cls):\n   return VALID_SIGNED_REVOCATION_LIST\n\nThis method would be used on line 258 to retrieve the revocation list as part of the request, and could be overridden in test_invalid_revocation_list_raises_service_error without having to resort to globals() manipulation.\n\nThe override (replacing line 486) would be via mox (unless by some stroke of luck mock is an option?):\n\nself.mox.StubOutWithMock(FakeHTTPConnection, \u0027get_revocation_list\u0027)\n\nFakeHTTPConnection.get_revocation_list().AndReturn(\u0027{}\u0027)\n\nself.mox.ReplayAll()",
+      "revId": "3fa4ba537e7d297aeb63554231d041da7ad2476f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
