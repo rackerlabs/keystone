@@ -34,6 +34,24 @@
       "revId": "174964498ba098f206d27119ce58d9fa6f43d302",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pU0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-23T14:20:36Z",
+      "side": 1,
+      "message": "Ah missed that, thanks for the clarification.",
+      "parentUuid": "AAAALH//pVE\u003d",
+      "revId": "174964498ba098f206d27119ce58d9fa6f43d302",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
