@@ -16,6 +16,24 @@
       "revId": "174964498ba098f206d27119ce58d9fa6f43d302",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//pVE\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-08-23T14:17:28Z",
+      "side": 1,
+      "message": "No, default from cfg applies, _conf_get tries parameter from paste INI first, then from global CONF and if it\u0027s not there, cfg will return default 300\nline 157: cfg.IntOpt(\u0027token_cache_time\u0027, default\u003d300)",
+      "parentUuid": "AAAALH//pXQ\u003d",
+      "revId": "174964498ba098f206d27119ce58d9fa6f43d302",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
