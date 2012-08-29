@@ -709,18 +709,21 @@ class CatalogTests(object):
             'service_id': uuid.uuid4().hex,
         }
         self.assertRaises(exception.ServiceNotFound,
-                          self.catalog_api.create_endpoint,
+                          self.catalog_man.create_endpoint,
+                          {},
                           endpoint['id'],
                           endpoint)
 
     def test_get_endpoint_404(self):
         self.assertRaises(exception.EndpointNotFound,
-                          self.catalog_api.get_endpoint,
+                          self.catalog_man.get_endpoint,
+                          {},
                           uuid.uuid4().hex)
 
     def test_delete_endpoint_404(self):
         self.assertRaises(exception.EndpointNotFound,
-                          self.catalog_api.delete_endpoint,
+                          self.catalog_man.delete_endpoint,
+                          {},
                           uuid.uuid4().hex)
 
     def test_service_list(self):
