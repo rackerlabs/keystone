@@ -15,6 +15,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import sqlalchemy
+
 from keystone import catalog
 from keystone.common import sql
 from keystone.common.sql import migration
@@ -30,22 +32,7 @@ class Service(sql.ModelBase, sql.DictBase):
     id = sql.Column(sql.String(64), primary_key=True)
     type = sql.Column(sql.String(255))
     extra = sql.Column(sql.JsonBlob())
-
-    @classmethod
-    def from_dict(cls, service_dict):
-        extra = {}
-        for k, v in service_dict.copy().iteritems():
-            if k not in ['id', 'type', 'extra']:
-                extra[k] = service_dict.pop(k)
-
-        service_dict['extra'] = extra
-        return cls(**service_dict)
-
-    def to_dict(self):
-        extra_copy = self.extra.copy()
-        extra_copy['id'] = self.id
-        extra_copy['type'] = self.type
-        return extra_copy
+    attributes = ['id', 'type']
 
 
 class Endpoint(sql.ModelBase, sql.DictBase):
@@ -56,22 +43,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
                             sql.ForeignKey('service.id'),
                             nullable=False)
     extra = sql.Column(sql.JsonBlob())
-
-    @classmethod
-    def from_dict(cls, endpoint_dict):
-        extra = {}
-        for k, v in endpoint_dict.copy().iteritems():
-            if k not in ['id', 'region', 'service_id', 'extra']:
-                extra[k] = endpoint_dict.pop(k)
-        endpoint_dict['extra'] = extra
-        return cls(**endpoint_dict)
-
-    def to_dict(self):
-        extra_copy = self.extra.copy()
-        extra_copy['id'] = self.id
-        extra_copy['region'] = self.region
-        extra_copy['service_id'] = self.service_id
-        return extra_copy
+    attributes = ['id', 'region', 'service_id']
 
 
 class Catalog(sql.Base, catalog.Driver):
@@ -84,10 +56,16 @@ class Catalog(sql.Base, catalog.Driver):
         services = session.query(Service)
         return [s['id'] for s in list(services)]
 
+    def get_all_services(self):
+        session = self.get_session()
+        services = session.query(Service).all()
+        return [s.to_dict() for s in list(services)]
+
     def get_service(self, service_id):
         session = self.get_session()
-        service_ref = session.query(Service).filter_by(id=service_id).first()
-        if not service_ref:
+        try:
+            service_ref = session.query(Service).filter_by(id=service_id).one()
+        except sqlalchemy.orm.exc.NoResultFound:
             raise exception.ServiceNotFound(service_id=service_id)
         return service_ref.to_dict()
 
@@ -105,6 +83,21 @@ class Catalog(sql.Base, catalog.Driver):
             session.add(service)
             session.flush()
         return service.to_dict()
+
+    def update_service(self, service_id, service_ref):
+        session = self.get_session()
+        with session.begin():
+            try:
+                ref = session.query(Service).filter_by(id=service_id).one()
+            except sqlalchemy.orm.exc.NoResultFound:
+                raise exception.ServiceNotFound(service_id=service_id)
+            old_dict = ref.to_dict()
+            old_dict.update(service_ref)
+            new_service = Service.from_dict(old_dict)
+            ref.type = new_service.type
+            ref.extra = new_service.extra
+            session.flush()
+        return ref.to_dict()
 
     # Endpoints
     def create_endpoint(self, endpoint_id, endpoint_ref):
@@ -125,16 +118,37 @@ class Catalog(sql.Base, catalog.Driver):
 
     def get_endpoint(self, endpoint_id):
         session = self.get_session()
-        endpoint_ref = session.query(Endpoint)
-        endpoint_ref = endpoint_ref.filter_by(id=endpoint_id).first()
-        if not endpoint_ref:
+        try:
+            ref = session.query(Endpoint).filter_by(id=endpoint_id).one()
+        except sqlalchemy.orm.exc.NoResultFound:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
-        return endpoint_ref.to_dict()
+        return ref.to_dict()
 
     def list_endpoints(self):
         session = self.get_session()
         endpoints = session.query(Endpoint)
         return [e['id'] for e in list(endpoints)]
+
+    def get_all_endpoints(self):
+        session = self.get_session()
+        endpoints = session.query(Endpoint)
+        return [e.to_dict() for e in list(endpoints)]
+
+    def update_endpoint(self, endpoint_id, endpoint_ref):
+        session = self.get_session()
+        with session.begin():
+            try:
+                ref = session.query(Endpoint).filter_by(id=endpoint_id).one()
+            except sqlalchemy.orm.exc.NoResultFound:
+                raise exception.EndpointNotFound(endpoint_id=endpoint_id)
+            old_dict = ref.to_dict()
+            old_dict.update(endpoint_ref)
+            new_endpoint = Endpoint.from_dict(old_dict)
+            ref.service_id = new_endpoint.service_id
+            ref.region = new_endpoint.region
+            ref.extra = new_endpoint.extra
+            session.flush()
+        return ref.to_dict()
 
     def get_catalog(self, user_id, tenant_id, metadata=None):
         d = dict(CONF.iteritems())
