@@ -33,6 +33,179 @@ from keystone import token
 LOG = logging.getLogger(__name__)
 
 
+class V3Router(wsgi.ComposingRouter):
+    def crud_routes(self, mapper, controller, collection_key, key):
+        collection_path = '/%(collection_key)s' % {
+            'collection_key': collection_key}
+        entity_path = '/%(collection_key)s/{%(key)s_id}' % {
+            'collection_key': collection_key,
+            'key': key}
+
+        mapper.connect(
+            collection_path,
+            controller=controller,
+            action='create_%s' % key,
+            conditions=dict(method=['POST']))
+        mapper.connect(
+            collection_path,
+            controller=controller,
+            action='list_%s' % collection_key,
+            conditions=dict(method=['GET']))
+        mapper.connect(
+            entity_path,
+            controller=controller,
+            action='get_%s' % key,
+            conditions=dict(method=['GET']))
+        mapper.connect(
+            entity_path,
+            controller=controller,
+            action='update_%s' % key,
+            conditions=dict(method=['PATCH']))
+        mapper.connect(
+            entity_path,
+            controller=controller,
+            action='delete_%s' % key,
+            conditions=dict(method=['DELETE']))
+
+    def __init__(self):
+        mapper = routes.Mapper()
+
+        apis = dict(
+            catalog_api=catalog.Manager(),
+            identity_api=identity.Manager(),
+            policy_api=policy.Manager(),
+            token_api=token.Manager())
+
+        # Catalog
+
+        self.crud_routes(
+            mapper,
+            catalog.ServiceControllerV3(**apis),
+            'services',
+            'service')
+
+        self.crud_routes(
+            mapper,
+            catalog.EndpointControllerV3(**apis),
+            'endpoints',
+            'endpoint')
+
+        # Identity
+
+        self.crud_routes(
+            mapper,
+            identity.DomainControllerV3(**apis),
+            'domains',
+            'domain')
+
+        project_controller = identity.ProjectControllerV3(**apis)
+        self.crud_routes(
+            mapper,
+            project_controller,
+            'projects',
+            'project')
+        mapper.connect(
+            '/users/{user_id}/projects',
+            controller=project_controller,
+            action='list_user_projects',
+            conditions=dict(method=['GET']))
+
+        self.crud_routes(
+            mapper,
+            identity.UserControllerV3(**apis),
+            'users',
+            'user')
+
+        self.crud_routes(
+            mapper,
+            identity.CredentialControllerV3(**apis),
+            'credentials',
+            'credential')
+
+        role_controller = identity.RoleControllerV3(**apis)
+        self.crud_routes(
+            mapper,
+            role_controller,
+            'roles',
+            'role')
+        mapper.connect(
+            '/projects/{project_id}/users/{user_id}/roles/{role_id}',
+            controller=role_controller,
+            action='create_grant',
+            conditions=dict(method=['PUT']))
+        mapper.connect(
+            '/projects/{project_id}/users/{user_id}/roles/{role_id}',
+            controller=role_controller,
+            action='check_grant',
+            conditions=dict(method=['HEAD']))
+        mapper.connect(
+            '/projects/{project_id}/users/{user_id}/roles',
+            controller=role_controller,
+            action='list_grants',
+            conditions=dict(method=['GET']))
+        mapper.connect(
+            '/projects/{project_id}/users/{user_id}/roles/{role_id}',
+            controller=role_controller,
+            action='revoke_grant',
+            conditions=dict(method=['DELETE']))
+        mapper.connect(
+            '/domains/{domain_id}/users/{user_id}/roles/{role_id}',
+            controller=role_controller,
+            action='create_grant',
+            conditions=dict(method=['PUT']))
+        mapper.connect(
+            '/domains/{domain_id}/users/{user_id}/roles/{role_id}',
+            controller=role_controller,
+            action='check_grant',
+            conditions=dict(method=['HEAD']))
+        mapper.connect(
+            '/domains/{domain_id}/users/{user_id}/roles',
+            controller=role_controller,
+            action='list_grants',
+            conditions=dict(method=['GET']))
+        mapper.connect(
+            '/domains/{domain_id}/users/{user_id}/roles/{role_id}',
+            controller=role_controller,
+            action='revoke_grant',
+            conditions=dict(method=['DELETE']))
+
+        # Policy
+
+        policy_controller = policy.PolicyControllerV3(**apis)
+        self.crud_routes(
+            mapper,
+            policy_controller,
+            'policies',
+            'policy')
+
+        # Token
+
+        """
+        # v2.0 LEGACY
+        mapper.connect('/tokens/{token_id}',
+                       controller=auth_controller,
+                       action='validate_token',
+                       conditions=dict(method=['GET']))
+        mapper.connect('/tokens/{token_id}',
+                       controller=auth_controller,
+                       action='validate_token_head',
+                       conditions=dict(method=['HEAD']))
+        mapper.connect('/tokens/{token_id}',
+                       controller=auth_controller,
+                       action='delete_token',
+                       conditions=dict(method=['DELETE']))
+        mapper.connect('/tokens/{token_id}/endpoints',
+                       controller=auth_controller,
+                       action='endpoints',
+                       conditions=dict(method=['GET']))
+        """
+
+        super(V3Router, self).__init__(mapper, self.get_routers())
+
+    def get_routers(self):
+        return []
+
+
 class AdminRouter(wsgi.ComposingRouter):
     def __init__(self):
         mapper = routes.Mapper()
@@ -42,6 +215,25 @@ class AdminRouter(wsgi.ComposingRouter):
                        controller=version_controller,
                        action='get_version')
 
+        self.connect_mapper(mapper)
+
+        # Miscellaneous Operations
+        extensions_controller = AdminExtensionsController()
+        mapper.connect('/extensions',
+                       controller=extensions_controller,
+                       action='get_extensions_info',
+                       conditions=dict(method=['GET']))
+        mapper.connect('/extensions/{extension_alias}',
+                       controller=extensions_controller,
+                       action='get_extension_info',
+                       conditions=dict(method=['GET']))
+
+        super(AdminRouter, self).__init__(mapper, self.get_routers())
+
+    def get_routers(self):
+        return [identity.AdminRouter()]
+
+    def connect_mapper(self, mapper):
         # Token Operations
         auth_controller = TokenController()
         mapper.connect('/tokens',
@@ -80,20 +272,6 @@ class AdminRouter(wsgi.ComposingRouter):
                        action='signing_cert',
                        conditions=dict(method=['GET']))
 
-        # Miscellaneous Operations
-        extensions_controller = AdminExtensionsController()
-        mapper.connect('/extensions',
-                       controller=extensions_controller,
-                       action='get_extensions_info',
-                       conditions=dict(method=['GET']))
-        mapper.connect('/extensions/{extension_alias}',
-                       controller=extensions_controller,
-                       action='get_extension_info',
-                       conditions=dict(method=['GET']))
-        identity_router = identity.AdminRouter()
-        routers = [identity_router]
-        super(AdminRouter, self).__init__(mapper, routers)
-
 
 class PublicRouter(wsgi.ComposingRouter):
     def __init__(self):
@@ -104,6 +282,25 @@ class PublicRouter(wsgi.ComposingRouter):
                        controller=version_controller,
                        action='get_version')
 
+        self.connect_mapper(mapper)
+
+        # Miscellaneous
+        extensions_controller = PublicExtensionsController()
+        mapper.connect('/extensions',
+                       controller=extensions_controller,
+                       action='get_extensions_info',
+                       conditions=dict(method=['GET']))
+        mapper.connect('/extensions/{extension_alias}',
+                       controller=extensions_controller,
+                       action='get_extension_info',
+                       conditions=dict(method=['GET']))
+
+        super(PublicRouter, self).__init__(mapper, self.get_routers())
+
+    def get_routers(self):
+        return [identity.PublicRouter()]
+
+    def connect_mapper(self, mapper):
         # Token Operations
         auth_controller = TokenController()
         mapper.connect('/tokens',
@@ -120,22 +317,6 @@ class PublicRouter(wsgi.ComposingRouter):
                        controller=auth_controller,
                        action='signing_cert',
                        conditions=dict(method=['GET']))
-
-        # Miscellaneous
-        extensions_controller = PublicExtensionsController()
-        mapper.connect('/extensions',
-                       controller=extensions_controller,
-                       action='get_extensions_info',
-                       conditions=dict(method=['GET']))
-        mapper.connect('/extensions/{extension_alias}',
-                       controller=extensions_controller,
-                       action='get_extension_info',
-                       conditions=dict(method=['GET']))
-
-        identity_router = identity.PublicRouter()
-        routers = [identity_router]
-
-        super(PublicRouter, self).__init__(mapper, routers)
 
 
 class PublicVersionRouter(wsgi.ComposingRouter):
@@ -717,3 +898,10 @@ def admin_version_app_factory(global_conf, **local_conf):
     conf = global_conf.copy()
     conf.update(local_conf)
     return AdminVersionRouter()
+
+
+@logging.fail_gracefully
+def v3_app_factory(global_conf, **local_conf):
+    conf = global_conf.copy()
+    conf.update(local_conf)
+    return V3Router()
