@@ -71,22 +71,6 @@ class KvsCatalog(test.TestCase, test_backend.CatalogTests):
         catalog_ref = self.catalog_api.get_catalog('foo', 'bar')
         self.assertDictEqual(catalog_ref, self.catalog_foobar)
 
-    def test_create_endpoint_404(self):
-        self.assertRaises(exception.NotImplemented,
-                          self.catalog_api.create_endpoint,
-                          uuid.uuid4().hex,
-                          {})
-
-    def test_get_endpoint_404(self):
-        self.assertRaises(exception.NotImplemented,
-                          self.catalog_api.get_endpoint,
-                          uuid.uuid4().hex)
-
-    def test_delete_endpoint_404(self):
-        self.assertRaises(exception.NotImplemented,
-                          self.catalog_api.delete_endpoint,
-                          uuid.uuid4().hex)
-
 
 class KvsPolicy(test.TestCase, test_backend.PolicyTests):
     def setUp(self):
