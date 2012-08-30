@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//kWQ\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-30T16:35:27Z",
+      "side": 1,
+      "message": "Nice catch, that\u0027d make maintenance much simpler.",
+      "parentUuid": "AAAALH//kXg\u003d",
+      "revId": "a1d2cb7b97464d7d6c6f2bebfd93cf33f6a0bbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//kX8\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-08-30T16:22:12Z",
       "side": 1,
       "message": "Why warning? is_admin should be legit.",
+      "revId": "a1d2cb7b97464d7d6c6f2bebfd93cf33f6a0bbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//kWc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-08-30T16:35:27Z",
+      "side": 1,
+      "message": "I like the idea of spamming people who are using the static auth_token -- it\u0027s not something anyone should use in a real deployment past setup because no authentication is performed, and therefore real authorization can take place.",
+      "parentUuid": "AAAALH//kX8\u003d",
       "revId": "a1d2cb7b97464d7d6c6f2bebfd93cf33f6a0bbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
