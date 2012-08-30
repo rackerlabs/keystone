@@ -1,3 +1,59 @@
 {
-    "admin_required": [["role:admin"], ["is_admin:1"]]
+    "admin_required": [["role:admin"], ["is_admin:1"]],
+
+    "identity:get_service": [["role:admin"]],
+    "identity:list_services": [["role:admin"]],
+    "identity:create_service": [["role:admin"]],
+    "identity:update_service": [["role:admin"]],
+    "identity:delete_service": [["role:admin"]],
+
+    "identity:get_endpoint": [["role:admin"]],
+    "identity:list_endpoints": [["role:admin"]],
+    "identity:create_endpoint": [["role:admin"]],
+    "identity:update_endpoint": [["role:admin"]],
+    "identity:delete_endpoint": [["role:admin"]],
+
+    "identity:get_domain": [["role:admin"]],
+    "identity:list_domains": [["role:admin"]],
+    "identity:create_domain": [["role:admin"]],
+    "identity:update_domain": [["role:admin"]],
+    "identity:delete_domain": [["role:admin"]],
+
+    "identity:get_project": [["role:admin"]],
+    "identity:list_projects": [["role:admin"]],
+    "identity:list_user_projects": [["role:admin"], ["user_id:%(user_id)s"]],
+    "identity:create_project": [["role:admin"]],
+    "identity:update_project": [["role:admin"]],
+    "identity:delete_project": [["role:admin"]],
+
+    "identity:get_user": [["role:admin"]],
+    "identity:list_users": [["role:admin"]],
+    "identity:create_user": [["role:admin"]],
+    "identity:update_user": [["role:admin"]],
+    "identity:delete_user": [["role:admin"]],
+
+    "identity:get_credential": [["role:admin"]],
+    "identity:list_credentials": [["role:admin"]],
+    "identity:create_credential": [["role:admin"]],
+    "identity:update_credential": [["role:admin"]],
+    "identity:delete_credential": [["role:admin"]],
+
+    "identity:get_role": [["role:admin"]],
+    "identity:list_roles": [["role:admin"]],
+    "identity:create_role": [["role:admin"]],
+    "identity:update_roles": [["role:admin"]],
+    "identity:delete_roles": [["role:admin"]],
+
+    "identity:check_grant": [["role:admin"]],
+    "identity:list_grants": [["role:admin"]],
+    "identity:create_grant": [["role:admin"]],
+    "identity:revoke_grant": [["role:admin"]],
+
+    "identity:get_policy": [["role:admin"]],
+    "identity:list_policies": [["role:admin"]],
+    "identity:create_policy": [["role:admin"]],
+    "identity:update_policy": [["role:admin"]],
+    "identity:delete_policy": [["role:admin"]],
+
+    "identity:get_versions": []
 }
