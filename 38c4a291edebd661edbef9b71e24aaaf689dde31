@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//jno\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-08-31T13:21:48Z",
+      "side": 1,
+      "message": "Need a copyright header :)",
+      "revId": "38c4a291edebd661edbef9b71e24aaaf689dde31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//jng\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-08-31T13:21:48Z",
+      "side": 1,
+      "message": "Does Keystone i18n its error strings? If so, this needs it...",
+      "revId": "38c4a291edebd661edbef9b71e24aaaf689dde31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//jnY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 995,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-08-31T13:21:48Z",
+      "side": 1,
+      "message": "Same i18n comment",
+      "revId": "38c4a291edebd661edbef9b71e24aaaf689dde31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//jnI\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2012-08-31T13:21:48Z",
+      "side": 1,
+      "message": "This seems to be a lot of copy/paste code with the PublicExtensionsController code below... any way this is duplicate code and could use a single controller for extensions?",
+      "revId": "38c4a291edebd661edbef9b71e24aaaf689dde31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
