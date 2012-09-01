@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//i3A\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-01T00:32:23Z",
+      "side": 1,
+      "message": "(Suggestion only) Code golf!\n\nnew_d \u003d d.copy()\n\nnew_d[\u0027extra\u0027] \u003d dict((k, new_d.pop(k)) for k in d.iterkeys() \n  if k not in cls.attributes and k !\u003d \u0027extra\u0027)\n\nreturn cls(**new_d)",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//i28\u003d",
+        "filename": "keystone/policy/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-01T00:32:23Z",
+      "side": 1,
+      "message": "(Suggestion only) Consider catching a specific exception (NotFound) or logging the one that is raised to aid in debugging.",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//i2s\u003d",
+        "filename": "keystone/policy/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-01T00:32:23Z",
+      "side": 1,
+      "message": "(Suggestion only) Consider avoiding converting to set and back:\n\npolicy_list \u003d self.db.get(\u0027policy_list\u0027, [])\nif policy_id not in policy_list:\n  policy_list.append(policy_id)",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//i2o\u003d",
+        "filename": "keystone/policy/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-01T00:32:23Z",
+      "side": 1,
+      "message": "Wouldn\u0027t old_policy.copy() carry over the id?",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//i2g\u003d",
+        "filename": "keystone/policy/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-01T00:32:23Z",
+      "side": 1,
+      "message": "(Suggestion only) Consider avoiding converting from set and back - the addition of a duplicate policy doesn\u0027t appear possible.",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//i2Y\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-01T00:32:23Z",
+      "side": 1,
+      "message": "(Suggestion only) Consider preferring implicit boolean conversion (applies to line 79 too).",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//i2M\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-01T00:32:23Z",
+      "side": 1,
+      "message": "(Suggestion only) Consider replacing these two lines with:\n\nold_dict.update(policy)",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//i1s\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-01T00:32:23Z",
+      "side": 1,
+      "message": "(Suggestion only) Consider:\n\n- setting the common data (policy_id, ref) at the class (attributes) or instance (setUp) level\n- extracting the comparison assertions (lines 753-756, repeated many times) into a helper method\n- creating separate tests for each of the commented blocks - it\u0027s generally preferable to isolate functionality under test.",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//i1Y\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-01T00:32:23Z",
+      "side": 1,
+      "message": "(Suggestion only) Consider simplifying (DRY):\n\nfor id_ in [\u0027id\u0027, \u0027name\u0027..]\n  self.assertIsNotNone(entity.get(id_))",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
