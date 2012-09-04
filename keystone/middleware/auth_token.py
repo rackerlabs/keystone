@@ -107,6 +107,7 @@ import webob.exc
 from keystone.openstack.common import jsonutils
 from keystone.common import cms
 from keystone.common import utils
+from keystone.common.memcached import MemcacheRing
 from keystone.openstack.common import timeutils
 
 CONF = None
@@ -246,10 +247,10 @@ class AuthProtocol(object):
             datetime.timedelta(seconds=0)
         if memcache_servers:
             try:
-                import memcache
                 import iso8601
                 LOG.info('Using memcache for caching token')
-                self._cache = memcache.Client(memcache_servers.split(','))
+                self._cache = MemcacheRing(
+                    [s.strip() for s in memcache_servers.split(',')])
                 self._iso8601 = iso8601
             except ImportError as e:
                 LOG.warn('disabled caching due to missing libraries %s', e)
@@ -627,7 +628,7 @@ class AuthProtocol(object):
             LOG.debug('Storing %s token in memcache', token)
             self._cache.set(key,
                             (data, expires),
-                            time=self.token_cache_time)
+                            timeout=self.token_cache_time)
 
     def _cache_store_invalid(self, token):
         """Store invalid token in cache."""
@@ -636,7 +637,7 @@ class AuthProtocol(object):
             LOG.debug('Marking token %s as unauthorized in memcache', token)
             self._cache.set(key,
                             'invalid',
-                            time=self.token_cache_time)
+                            timeout=self.token_cache_time)
 
     def cert_file_missing(self, called_proc_err, file_name):
         return (called_proc_err.output.find(file_name)
