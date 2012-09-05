@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//g8g\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/004_undo_token_id_hash.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-05T03:16:51Z",
+      "side": 1,
+      "message": "clever",
+      "revId": "a9ee611c434556f1406255f4e002f894196301ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
