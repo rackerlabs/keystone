@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//fu4\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "Should be remove this one?",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fuA\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "User\u0027s credential can be assigned/associated with multiple projects. I don\u0027t think having \"project_id\" allows that.\n\nWe may want to create a separate joint table for credential-project.",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fuY\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "How do we even effectively and efficiently do searches on \"extra\"? Or \"extra\" even searchable?\n\nAlso, we need an \"enabled\" field so we can disable/suspend a domain at once.",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//ft0\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "I would say no for two reasons.\n\n1) we can looking user-project associate via role grant\n2) user\u0027s default project is already in the user table",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fto\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "Are we going to rename all occurrences of \"tenant_id\" to \"project_id\" at some point?",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//ftk\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "May need to refactor to make it more clear. Perhaps have two separate functions? get_project_metadata() and get_domain_metadata()?",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fs8\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "Do we need \"is_new\"? (len(metadata_ref[\u0027roles\u0027]) \u003d\u003d 1) would have the same effect right? Anyway, no big deal.",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fs4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "Do we need to account for exception.MetadataNotFound exception here?",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fs0\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "Do we need to account for exception.MetadataNotFound exception here?",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fsk\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "I am not sure if I understand this logic. If MetadataNotFound, there\u0027s no grant to remove right?",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//frU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "Should we cleanup all tokens scoped to this project as well?",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//frM\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "We also need to cleanup all the resources contained in this domain. Projects, users, etc.",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fqw\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "User\u0027s default project_id could appear twice in project_ids list, if there\u0027s also exist a role grant for the same project_id, we should check to see if it exist first before adding it to the project_ids list.",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fqs\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fqo\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 570,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-06T06:15:12Z",
+      "side": 1,
+      "message": "Create the user in a domain?",
+      "revId": "1a9fe247a2e621215aa363acc90e65e3cb730c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
