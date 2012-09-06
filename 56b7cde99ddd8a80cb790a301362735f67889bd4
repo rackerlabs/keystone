@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//fPc\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-06T19:49:31Z",
+      "side": 1,
+      "message": "(Suggestion only) Consider returning \u0027tokens\u0027 rather than defining the default value twice.",
+      "revId": "56b7cde99ddd8a80cb790a301362735f67889bd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fPg\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-06T19:49:31Z",
+      "side": 1,
+      "message": "(Suggestion only) Consider testing all 3 token list states - empty, 1 token, more than 1 token.",
+      "revId": "56b7cde99ddd8a80cb790a301362735f67889bd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
