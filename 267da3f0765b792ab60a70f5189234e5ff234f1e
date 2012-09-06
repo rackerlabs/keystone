@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//few\u003d",
+        "filename": ".gitignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2750
+      },
+      "writtenOn": "2012-09-06T15:42:21Z",
+      "side": 1,
+      "message": "shouldn\u0027t that be .pydevproject (t)",
+      "revId": "267da3f0765b792ab60a70f5189234e5ff234f1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
