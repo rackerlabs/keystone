@@ -67,6 +67,14 @@ class Token(token.Driver):
             expires_ts = utils.unixtime(data_copy['expires'])
             kwargs['time'] = expires_ts
         self.client.set(ptk, data_copy, **kwargs)
+        if 'id' in data['user']:
+            user_id = data['user']['id']
+            user_record = self.client.get('usertokens-%s' % user_id)
+            if user_record:
+                user_record.append(token_id)
+            else:
+                user_record = [token_id]
+            self.client.set('usertokens-%s' % user_id, user_record)
         return copy.deepcopy(data_copy)
 
     def _add_to_revocation_list(self, data):
@@ -85,6 +93,20 @@ class Token(token.Driver):
         result = self.client.delete(ptk)
         self._add_to_revocation_list(data)
         return result
+
+    def list_tokens(self, user_id):
+        tokens = []
+        user_record = self.client.get('usertokens-%s' % user_id)
+        if not user_record:
+            return []
+        for token_id in user_record:
+            ptk = self._prefix_token_id(token_id)
+            token = self.client.get(ptk)
+            if token is None:
+                user_record.remove(token_id)
+            else:
+                tokens.append(token_id)
+        return tokens
 
     def list_revoked_tokens(self):
         list_json = self.client.get(self.revocation_key)

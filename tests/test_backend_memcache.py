@@ -80,6 +80,7 @@ class MemcacheToken(test.TestCase, test_backend.TokenTests):
 
     def test_get_unicode(self):
         token_id = unicode(uuid.uuid4().hex)
-        data = {'id': token_id, 'a': 'b'}
+        data = {'id': token_id, 'a': 'b',
+                'user': {'id': 'testuserid'}}
         self.token_api.create_token(token_id, data)
         self.token_api.get_token(token_id)
