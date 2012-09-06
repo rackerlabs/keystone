@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//fa0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-06T17:10:25Z",
+      "side": 1,
+      "message": "Is this bug number correct?  When I click the link I get an error page.",
+      "revId": "9028d7f978bd79f192e2b0d753126c5c5258eb12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fao\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-06T17:10:25Z",
+      "side": 1,
+      "message": "There is a race condition between this line and line 77 that could result in 2 or more simultaneous attempts to create a token not having their token ids added to the usertoken entry.  The only way to atomically append to a value is by using memcache\u0027s append() function - see _add_to_revocation_list for an example.",
+      "revId": "9028d7f978bd79f192e2b0d753126c5c5258eb12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//fak\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-06T17:10:25Z",
+      "side": 1,
+      "message": "(Suggestion only) Consider returning \u0027tokens\u0027 instead.",
+      "revId": "9028d7f978bd79f192e2b0d753126c5c5258eb12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//faY\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-06T17:10:25Z",
+      "side": 1,
+      "message": "There is no good way to update the memcache entry (and in fact it is not even being attempted), so it\u0027s not clear why this removal is necessary.",
+      "revId": "9028d7f978bd79f192e2b0d753126c5c5258eb12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
