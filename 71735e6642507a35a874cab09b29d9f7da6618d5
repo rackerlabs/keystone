@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//eQ0\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2035
+      },
+      "writtenOn": "2012-09-07T20:07:21Z",
+      "side": 1,
+      "message": "(Suggestion only) Isn\u0027t token_id already a string?",
+      "revId": "71735e6642507a35a874cab09b29d9f7da6618d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
