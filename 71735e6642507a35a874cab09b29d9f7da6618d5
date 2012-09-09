@@ -16,6 +16,58 @@
       "revId": "71735e6642507a35a874cab09b29d9f7da6618d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//do8\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-09T03:49:46Z",
+      "side": 1,
+      "message": "good question - what else would it be here? also, single quotes",
+      "parentUuid": "AAAALH//eQ0\u003d",
+      "revId": "71735e6642507a35a874cab09b29d9f7da6618d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//do0\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-09T03:49:46Z",
+      "side": 1,
+      "message": "i assume self.set() returns true already? so just return self.set()?",
+      "revId": "71735e6642507a35a874cab09b29d9f7da6618d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//do4\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-09T03:49:46Z",
+      "side": 1,
+      "message": "would prefer to drop the whole else block here",
+      "revId": "71735e6642507a35a874cab09b29d9f7da6618d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
