@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//dB4\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-09-10T15:50:49Z",
+      "side": 1,
+      "message": "Why is this under v3.0?  Shouldn\u0027t Legacy be V2.0, and on a different router?",
+      "revId": "399cb4cc71c5d48f58a668e0233396de97e65f89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
