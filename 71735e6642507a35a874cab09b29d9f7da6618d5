@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//c/s\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-09-10T15:49:44Z",
+      "side": 1,
+      "message": "This part is not in the master commit fixing this issue, but came from other unrelated commit 7b70818954c2bc80bbfbb7679e0de9a483ee0c61\n\nAs such IMHO it should be fixed in master first, but is not critical for the stable branch.",
+      "parentUuid": "AAAALH//do0\u003d",
+      "revId": "71735e6642507a35a874cab09b29d9f7da6618d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//do4\u003d",
         "filename": "tests/test_backend_memcache.py",
         "patchSetId": 3
@@ -65,6 +83,24 @@
       "writtenOn": "2012-09-09T03:49:46Z",
       "side": 1,
       "message": "would prefer to drop the whole else block here",
+      "revId": "71735e6642507a35a874cab09b29d9f7da6618d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//c/c\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-09-10T15:49:44Z",
+      "side": 1,
+      "message": "Agreed, this was done in commit 7b70818954c2bc80bbfbb7679e0de9a483ee0c61\nwhere above append() chunk came from, so it would make this backport from master consistent.",
+      "parentUuid": "AAAALH//do4\u003d",
       "revId": "71735e6642507a35a874cab09b29d9f7da6618d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
