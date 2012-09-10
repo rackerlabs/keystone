@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//fC4\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-10T20:09:25Z",
+      "side": 1,
+      "message": "Do we need to make sure \u0027service_id\u0027 is legit here?",
+      "revId": "1bf290883c5d48cf5801c3d4e288a8d7d101b55d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
