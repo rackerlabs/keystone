@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//boE\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-11T21:42:17Z",
+      "side": 1,
+      "message": "Not sure if any of the attributes in extra are searchable, performance could be an issue.",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bn0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/004_add_policy_table.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-11T21:42:17Z",
+      "side": 1,
+      "message": "What are these statements for?",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//i28\u003d",
         "filename": "keystone/policy/backends/kvs.py",
         "patchSetId": 3
@@ -30,6 +64,24 @@
       "writtenOn": "2012-09-01T00:32:23Z",
       "side": 1,
       "message": "(Suggestion only) Consider catching a specific exception (NotFound) or logging the one that is raised to aid in debugging.",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bng\u003d",
+        "filename": "keystone/policy/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-11T21:42:17Z",
+      "side": 1,
+      "message": "Or at least log the exception. Otherwise, we never know what happened when things go heywired. :)",
+      "parentUuid": "AAAALH//i28\u003d",
       "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +139,23 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//bm8\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-11T21:42:17Z",
+      "side": 1,
+      "message": "May want to consider using a joint table instead. That way, multiple endpoints can share a policy.",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//i2Y\u003d",
         "filename": "keystone/policy/backends/sql.py",
         "patchSetId": 3
@@ -138,6 +207,57 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//bkk\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-11T21:42:17Z",
+      "side": 1,
+      "message": "1) may want to refactor the CRUD tests so that each operation have its own test case. Easier to maintain as well.\n2) we have a generic CRUD API invocation at the controller, I wonder if we could do the same for the test code. That way we could eliminate a bunch of duplicate code. For example,\n\nclass BaseCRUDTests(object):\n    def setUp(self, resource):\n        self.id \u003d uuid.uuid4().hex\n        self.api \u003d self.policy_api\n        self.resource \u003d resource\n\n    def test_create(self):\n        create_api \u003d getattr(self.api, \u0027create_%s\u0027 % (self.resource))\n        res \u003d create_api(id, ref)\n        self.assertDictEqual(self.ref, res)\n\nclass PolicyCRUDTests(BaseCRUDTests):\n    def setUp(self)\n        super(PolicyCRUDTests, self).setUp(\u0027policy\u0027)\n        self.ref \u003d {...setup policy ref here...}",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bkE\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-11T21:42:17Z",
+      "side": 1,
+      "message": "May want to refactor the CRUD tests into separate test cases. Easier to maintain.",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bjk\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-11T21:42:17Z",
+      "side": 1,
+      "message": "ref \u003d self.new_ref()\n\nI see a pattern for a decorator. :)",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//i1Y\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 3
@@ -149,6 +269,23 @@
       "writtenOn": "2012-09-01T00:32:23Z",
       "side": 1,
       "message": "(Suggestion only) Consider simplifying (DRY):\n\nfor id_ in [\u0027id\u0027, \u0027name\u0027..]\n  self.assertIsNotNone(entity.get(id_))",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bjw\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-09-11T21:42:17Z",
+      "side": 1,
+      "message": "self.assertDictEqual()?",
       "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
