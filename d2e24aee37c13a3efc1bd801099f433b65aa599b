@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//bxU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-11T18:13:14Z",
+      "side": 1,
+      "message": "doc build will throw a warning on this -- add two more \u003d\u0027s",
+      "revId": "d2e24aee37c13a3efc1bd801099f433b65aa599b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bxM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-11T18:13:14Z",
+      "side": 1,
+      "message": "Can you make this a proper link? `memcached \u003chttp://memcached.org\u003e` I think",
+      "revId": "d2e24aee37c13a3efc1bd801099f433b65aa599b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bxI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-11T18:13:14Z",
+      "side": 1,
+      "message": "``auth_token``",
+      "revId": "d2e24aee37c13a3efc1bd801099f433b65aa599b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bxA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-11T18:13:14Z",
+      "side": 1,
+      "message": "and -\u003e whereas?",
+      "revId": "d2e24aee37c13a3efc1bd801099f433b65aa599b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bw8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-11T18:13:14Z",
+      "side": 1,
+      "message": "\"... is to behave as expected.\" ?",
+      "revId": "d2e24aee37c13a3efc1bd801099f433b65aa599b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
