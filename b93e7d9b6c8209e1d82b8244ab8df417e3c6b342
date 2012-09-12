@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//bcI\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2012-09-12T02:36:29Z",
+      "side": 1,
+      "message": "the default value of \"seconds\" is 0",
+      "revId": "b93e7d9b6c8209e1d82b8244ab8df417e3c6b342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
