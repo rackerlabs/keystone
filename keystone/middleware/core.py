@@ -20,9 +20,7 @@ from keystone import config
 from keystone import exception
 from keystone.openstack.common import jsonutils
 
-
 CONF = config.CONF
-
 
 # Header used to transmit the auth token
 AUTH_TOKEN_HEADER = 'X-Auth-Token'
@@ -137,7 +135,8 @@ class XmlBodyMiddleware(wsgi.Middleware):
         incoming_xml = 'application/xml' in str(request.content_type)
         if incoming_xml and request.body:
             request.content_type = 'application/json'
-            request.body = jsonutils.dumps(serializer.from_xml(request.body))
+            b = serializer.from_xml(request.body)
+            request.body = jsonutils.dumps(b)
 
     def process_response(self, request, response):
         """Transform the response from JSON to XML."""
