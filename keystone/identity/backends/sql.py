@@ -202,10 +202,10 @@ class Identity(sql.Base, identity.Driver):
         session = self.get_session()
         self.get_tenant(tenant_id)
         user_refs = session.query(User)\
-            .join(UserTenantMembership)\
-            .filter(UserTenantMembership.tenant_id ==
-                    tenant_id)\
-            .all()
+                           .join(UserTenantMembership)\
+                           .filter(UserTenantMembership.tenant_id ==
+                                   tenant_id)\
+                           .all()
         return [_filter_user(user_ref.to_dict()) for user_ref in user_refs]
 
     def _get_user(self, user_id):
@@ -387,9 +387,11 @@ class Identity(sql.Base, identity.Driver):
         session = self.get_session()
         with session.begin():
             session.query(UserTenantMembership)\
-                   .filter_by(user_id=user_id).delete(False)
+                   .filter_by(user_id=user_id)\
+                   .delete(False)
             session.query(Metadata)\
-                   .filter_by(user_id=user_id).delete(False)
+                   .filter_by(user_id=user_id)\
+                   .delete(False)
             if not session.query(User).filter_by(id=user_id).delete(False):
                 raise exception.UserNotFound(user_id=user_id)
 
@@ -426,9 +428,11 @@ class Identity(sql.Base, identity.Driver):
         session = self.get_session()
         with session.begin():
             session.query(UserTenantMembership)\
-                   .filter_by(tenant_id=tenant_id).delete(False)
+                   .filter_by(tenant_id=tenant_id)\
+                   .delete(False)
             session.query(Metadata)\
-                   .filter_by(tenant_id=tenant_id).delete(False)
+                   .filter_by(tenant_id=tenant_id)\
+                   .delete(False)
             if not session.query(Tenant).filter_by(id=tenant_id).delete(False):
                 raise exception.TenantNotFound(tenant_id=tenant_id)
 
