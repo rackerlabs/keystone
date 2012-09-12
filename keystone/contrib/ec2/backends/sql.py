@@ -36,7 +36,8 @@ class Ec2(sql.Base):
     def get_credential(self, credential_id):
         session = self.get_session()
         credential_ref = session.query(Ec2Credential)\
-                                .filter_by(access=credential_id).first()
+                                .filter_by(access=credential_id)\
+                                .first()
         if not credential_ref:
             return
         return credential_ref.to_dict()
@@ -59,7 +60,8 @@ class Ec2(sql.Base):
     def delete_credential(self, credential_id):
         session = self.get_session()
         credential_ref = session.query(Ec2Credential)\
-                                .filter_by(access=credential_id).first()
+                                .filter_by(access=credential_id)\
+                                .first()
         with session.begin():
             session.delete(credential_ref)
             session.flush()
