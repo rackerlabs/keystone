@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//bDU\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-12T15:16:05Z",
+      "side": 1,
+      "message": "There are more namespaces (i.e. other extensions) that could be supported in this manner. Can you make this implementation more generic, e.g.:\n\n    XMLNS_LIST \u003d [\n        {\n            \u0027value\u0027: \u0027\u0027http://docs.openstack.org/identity/api/v2.0\u0027,\n         }, {\n            \u0027prefix\u0027: \u0027OS-KSADM\u0027,\n            \u0027value\u0027: \u0027http://docs.openstack.org/identity/api/ext/OS-KSADM/v1.0\u0027,\n         },\n    ]\n\nAnd then instead of hardcoding the reference in _tag_name, iterate over the list above and prefix appropriately.",
+      "revId": "18a59789f8db9512c9ab3078fefe5c2b5c15cd7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bDI\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-12T15:16:05Z",
+      "side": 1,
+      "message": "see HACKING for appropriate docstring format",
+      "revId": "18a59789f8db9512c9ab3078fefe5c2b5c15cd7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bDM\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-12T15:16:05Z",
+      "side": 1,
+      "message": "iterate over the list here",
+      "revId": "18a59789f8db9512c9ab3078fefe5c2b5c15cd7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bD0\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-12T15:16:05Z",
+      "side": 1,
+      "message": "The default value of namespace is defined twice, as False. I don\u0027t see a reason it needs to be defined more than once?",
+      "revId": "18a59789f8db9512c9ab3078fefe5c2b5c15cd7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//bDQ\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-12T15:16:05Z",
+      "side": 1,
+      "message": "iterate over the list here",
+      "revId": "18a59789f8db9512c9ab3078fefe5c2b5c15cd7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
