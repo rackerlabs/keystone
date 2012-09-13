@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAALH//Z1U\u003d",
+        "filename": "keystone/contrib/ec2/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-13T16:29:15Z",
+      "side": 1,
+      "message": "I thought your goal was to remove backslashes? You\u0027re adding them here and ignoring existing backslashes in several places.",
+      "revId": "b93e7d9b6c8209e1d82b8244ab8df417e3c6b342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//bcI\u003d",
         "filename": "keystone/middleware/auth_token.py",
         "patchSetId": 1
