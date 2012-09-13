@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//Zzo\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-13T17:01:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALH//Z0k\u003d",
+      "revId": "284300730eb625f5d357fc71c5d7d6c2799c391f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//Z0c\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-09-13T16:48:00Z",
       "side": 1,
       "message": "a quick docstring here would be really good - the method name is pretty self explanatory, but it would be great to note the difference between providing tenant_id and not here.\n\nReplicate the docstring from Driver method of same name?",
+      "revId": "284300730eb625f5d357fc71c5d7d6c2799c391f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//Zzg\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-13T17:01:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALH//Z0c\u003d",
       "revId": "284300730eb625f5d357fc71c5d7d6c2799c391f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
