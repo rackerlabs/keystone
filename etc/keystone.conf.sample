@@ -107,6 +107,7 @@
 # password = None
 # suffix = cn=example,cn=com
 # use_dumb_member = False
+# dumb_member = cn=dumb,dc=nonexistent
 
 # user_tree_dn = ou=Users,dc=example,dc=com
 # user_objectclass = inetOrgPerson

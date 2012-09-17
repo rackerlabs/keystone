@@ -162,6 +162,7 @@ register_str('user', group='ldap', default='dc=Manager,dc=example,dc=com')
 register_str('password', group='ldap', default='freeipa4all')
 register_str('suffix', group='ldap', default='cn=example,cn=com')
 register_bool('use_dumb_member', group='ldap', default=False)
+register_str('dumb_member', group='ldap', default='cn=dumb,dc=nonexistent')
 register_str('user_name_attribute', group='ldap', default='sn')
 
 

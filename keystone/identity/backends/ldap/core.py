@@ -522,7 +522,7 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
         tenant = self._ldap_get(id)
         members = tenant[1].get(self.member_attribute, [])
         if self.use_dumb_member:
-            empty = members == [self.DUMB_MEMBER_DN]
+            empty = members == [self.dumb_member]
         else:
             empty = len(members) == 0
         return empty and len(self.role_api.get_role_assignments(id)) == 0
@@ -560,7 +560,7 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
         if not role_id:
             # Get users who have default tenant mapping
             for user_dn in tenant[1].get(self.member_attribute, []):
-                if self.use_dumb_member and user_dn == self.DUMB_MEMBER_DN:
+                if self.use_dumb_member and user_dn == self.dumb_member:
                     continue
                 user_id = self.user_api.get(self.user_api._dn_to_id(user_dn))
                 if not (user_id in res):
@@ -687,7 +687,7 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                      (self.member_attribute, [user_dn])]
 
             if self.use_dumb_member:
-                attrs[1][1].append(self.DUMB_MEMBER_DN)
+                attrs[1][1].append(self.dumb_member)
             try:
                 conn.add_s(role_dn, attrs)
             except Exception as inst:
@@ -713,7 +713,7 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                      (self.member_attribute, [user_dn])]
 
             if self.use_dumb_member:
-                attrs[1][1].append(self.DUMB_MEMBER_DN)
+                attrs[1][1].append(self.dumb_member)
             try:
                 conn.add_s(role_dn, attrs)
             except Exception as inst:
@@ -750,7 +750,7 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
             except KeyError:
                 continue
             for user_dn in user_dns:
-                if self.use_dumb_member and user_dn == self.DUMB_MEMBER_DN:
+                if self.use_dumb_member and user_dn == self.dumb_member:
                     continue
                 user_id = self.user_api._dn_to_id(user_dn)
                 role_id = self._dn_to_id(role_dn)
@@ -883,7 +883,7 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                 continue
 
             for user_dn in user_dns:
-                if self.use_dumb_member and user_dn == self.DUMB_MEMBER_DN:
+                if self.use_dumb_member and user_dn == self.dumb_member:
                     continue
                 user_id = self.user_api._dn_to_id(user_dn)
                 tenant_id = None
