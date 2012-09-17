@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//YUQ\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-17T16:24:02Z",
+      "side": 1,
+      "message": ".add(), sets don\u0027t have .append()",
+      "revId": "f6c9c945ec26d85b7f59ad6b7d2095af3f8a6c7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
