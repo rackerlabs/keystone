@@ -556,7 +556,7 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
 
     def get_users(self, tenant_id, role_id=None):
         tenant = self._ldap_get(tenant_id)
-        res = []
+        res = set()
         if not role_id:
             # Get users who have default tenant mapping
             for user_dn in tenant[1].get(self.member_attribute, []):
@@ -569,7 +569,7 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
         for rolegrant in rolegrants:
             if role_id is None or rolegrant.role_id == role_id:
                 res.append(self.user_api.get(rolegrant.user_id))
-        return res
+        return list(res)
 
     def delete(self, id):
         super(TenantApi, self).delete(id)
