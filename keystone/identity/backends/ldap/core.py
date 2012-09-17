@@ -489,15 +489,12 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
     def __init__(self, conf):
         super(TenantApi, self).__init__(conf)
         self.api = ApiShim(conf)
-        self.attribute_mapping['name'] = (
-                getattr(conf.ldap, 'tenant_name_attribute') or
-                self.DEFAULT_NAME_ATTRIBUTE)
-        self.attribute_mapping['description'] = (
-                getattr(conf.ldap, 'tenant_desc_attribute') or
-                self.DEFAULT_DESC_ATTRIBUTE)
-        self.member_attribute = (
-                getattr(conf.ldap, 'tenant_member_attribute') or
-                self.DEFAULT_MEMBER_ATTRIBUTE)
+        self.attribute_mapping['name'] = (getattr(conf.ldap,
+            'tenant_name_attribute') or self.DEFAULT_NAME_ATTRIBUTE)
+        self.attribute_mapping['description'] = (getattr(conf.ldap,
+            'tenant_desc_attribute') or self.DEFAULT_DESC_ATTRIBUTE)
+        self.member_attribute = (getattr(conf.ldap, 'tenant_member_attribute')
+                                 or self.DEFAULT_MEMBER_ATTRIBUTE)
         self.attribute_ignore = (getattr(conf.ldap, 'tenant_attribute_ignore')
                                  or self.DEFAULT_ATTRIBUTE_IGNORE)
 
@@ -640,9 +637,8 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
     def __init__(self, conf):
         super(RoleApi, self).__init__(conf)
         self.api = ApiShim(conf)
-        self.attribute_mapping['name'] = (
-                getattr(conf.ldap, 'role_name_attribute') or
-                self.DEFAULT_NAME_ATTRIBUTE)
+        self.attribute_mapping['name'] = (getattr(conf.ldap,
+            'role_name_attribute') or self.DEFAULT_NAME_ATTRIBUTE)
         self.member_attribute = (getattr(conf.ldap, 'role_member_attribute')
                                  or self.DEFAULT_MEMBER_ATTRIBUTE)
         self.attribute_ignore = (getattr(conf.ldap, 'role_attribute_ignore')
