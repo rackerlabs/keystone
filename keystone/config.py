@@ -89,13 +89,13 @@ def register_cli_str(*args, **kw):
 
 def register_list(*args, **kw):
     conf = kw.pop('conf', CONF)
-    group = _ensure_group(kw, conf)
+    group = kw.pop('group', None)
     return conf.register_opt(cfg.ListOpt(*args, **kw), group=group)
 
 
 def register_cli_list(*args, **kw):
     conf = kw.pop('conf', CONF)
-    group = _ensure_group(kw, conf)
+    group = kw.pop('group', None)
     return conf.register_cli_opt(cfg.ListOpt(*args, **kw), group=group)
 
 
@@ -195,6 +195,7 @@ register_list('tenant_attribute_ignore', group='ldap', default='enabled')
 register_str('role_tree_dn', group='ldap', default=None)
 register_str('role_objectclass', group='ldap', default='organizationalRole')
 register_str('role_id_attribute', group='ldap', default='cn')
+register_str('role_name_attribute', group='ldap', default='ou')
 register_str('role_member_attribute', group='ldap', default='roleOccupant')
 register_list('role_attribute_ignore', group='ldap', default='')
 

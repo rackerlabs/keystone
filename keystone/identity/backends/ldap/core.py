@@ -628,6 +628,7 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
     DEFAULT_OBJECTCLASS = 'organizationalRole'
     DEFAULT_NAME_ATTRIBUTE = 'ou'
     DEFAULT_MEMBER_ATTRIBUTE = 'roleOccupant'
+    DEFAULT_ATTRIBUTE_IGNORE = []
     attribute_mapping = {'name': 'cn',
                          #'serviceId': 'service_id',
                          }
