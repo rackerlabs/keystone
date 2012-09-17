@@ -641,7 +641,7 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
         super(RoleApi, self).__init__(conf)
         self.api = ApiShim(conf)
         self.attribute_mapping['name'] = (
-                  getattr(conf.ldap, 'role_name_attribute') or 
+                  getattr(conf.ldap, 'role_name_attribute') or
                   self.DEFAULT_NAME_ATTRIBUTE)
         self.member_attribute = (getattr(conf.ldap, 'role_member_attribute')
                                  or self.DEFAULT_MEMBER_ATTRIBUTE)
