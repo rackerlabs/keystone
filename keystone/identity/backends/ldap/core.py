@@ -331,6 +331,9 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
     DEFAULT_STRUCTURAL_CLASSES = ['person']
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_OBJECTCLASS = 'inetOrgPerson'
+    DEFAULT_NAME_ATTRIBUTE = 'sn'
+    DEFAULT_MAIL_ATTRIBUTE = 'mail'
+    DEFAULT_PASSWORD_ATTRIBUTE = 'userPassword'
     options_name = 'user'
     attribute_mapping = {'password': 'userPassword',
                          'email': 'mail',
@@ -346,7 +349,15 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
 
     def __init__(self, conf):
         super(UserApi, self).__init__(conf)
-        self.attribute_mapping['name'] = conf.ldap.user_name_attribute
+        self.attribute_mapping['name'] = (getattr(conf.ldap,
+                                                  'user_name_attribute')
+                                          or self.DEFAULT_NAME_ATTRIBUTE)
+        self.attribute_mapping['email'] = (getattr(conf.ldap,
+                                                   'user_mail_attribute')
+                                           or self.DEFAULT_NAME_ATTRIBUTE)
+        self.attribute_mapping['password'] = (getattr(conf.ldap,
+                                                      'user_pwd_attribute')
+                                              or self.DEFAULT_NAME_ATTRIBUTE)
         self.api = ApiShim(conf)
 
     def get(self, id, filter=None):
@@ -411,8 +422,9 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
             self.role_api.rolegrant_delete(ref.id)
 
     def get_by_email(self, email):
-        users = self.get_all('(mail=%s)' %
-                             (ldap_filter.escape_filter_chars(email),))
+        users = self.get_all('(%s=%s)' %
+                             (self.attribute_mapping['email'],
+                              ldap_filter.escape_filter_chars(email),))
         try:
             return users[0]
         except IndexError:
