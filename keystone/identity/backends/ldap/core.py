@@ -477,17 +477,22 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
     DEFAULT_OBJECTCLASS = 'groupOfNames'
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_MEMBER_ATTRIBUTE = 'member'
+    DEFAULT_NAME_ATTRIBUTE = 'ou'
+    DEFAULT_DESC_ATTRIBUTE = 'desc'
     options_name = 'tenant'
-    attribute_mapping = {'name': 'ou', 'tenantId': 'cn'}
+    attribute_mapping = {'name': 'ou', 'description': 'desc', 'tenantId': 'cn'}
     attribute_ignore = ['enabled']
     model = models.Tenant
 
     def __init__(self, conf):
         super(TenantApi, self).__init__(conf)
         self.api = ApiShim(conf)
-        self.attribute_mapping['name'] = conf.ldap.tenant_name_attribute
-        self.member_attribute = (getattr(conf.ldap, 'tenant_member_attribute')
-                                 or self.DEFAULT_MEMBER_ATTRIBUTE)
+        self.attribute_mapping['name'] = (getattr(conf.ldap,
+             'tenant_name_attribute') or self.DEFAULT_NAME_ATTRIBUTE)
+        self.attribute_mapping['description'] = (getattr(conf.ldap,
+             'tenant_desc_attribute') or self.DEFAULT_DESC_ATTRIBUTE)
+        self.member_attribute = (getattr(conf.ldap,
+             'tenant_member_attribute') or self.DEFAULT_MEMBER_ATTRIBUTE)
 
     def get(self, id, filter=None):
         """Replaces exception.NotFound with exception.TenantNotFound."""

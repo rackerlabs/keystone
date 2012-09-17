@@ -121,6 +121,7 @@
 # tenant_id_attribute = cn
 # tenant_member_attribute = member
 # tenant_name_attribute = ou
+# tenant_desc_attribute = desc
 
 # role_tree_dn = ou=Roles,dc=example,dc=com
 # role_objectclass = organizationalRole
