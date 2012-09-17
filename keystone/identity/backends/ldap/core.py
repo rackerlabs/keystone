@@ -334,6 +334,7 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
     DEFAULT_NAME_ATTRIBUTE = 'sn'
     DEFAULT_MAIL_ATTRIBUTE = 'mail'
     DEFAULT_PASSWORD_ATTRIBUTE = 'userPassword'
+    DEFAULT_ATTRIBUTE_IGNORE = ['tenantId', 'enabled', 'tenants']
     options_name = 'user'
     attribute_mapping = {'password': 'userPassword',
                          'email': 'mail',
@@ -344,7 +345,6 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
     # be part of any objectclass.
     # in the future, we need to provide a way for the end user to
     # indicate the field to use and what it indicates
-    attribute_ignore = ['tenantId', 'enabled', 'tenants']
     model = models.User
 
     def __init__(self, conf):
@@ -358,6 +358,8 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
         self.attribute_mapping['password'] = (getattr(conf.ldap,
                                                       'user_pwd_attribute')
                                               or self.DEFAULT_NAME_ATTRIBUTE)
+        self.attribute_ignore = (getattr(conf.ldap, 'user_attribute_ignore')
+                                 or self.DEFAULT_ATTRIBUTE_IGNORE)
         self.api = ApiShim(conf)
 
     def get(self, id, filter=None):
@@ -493,6 +495,8 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
              'tenant_desc_attribute') or self.DEFAULT_DESC_ATTRIBUTE)
         self.member_attribute = (getattr(conf.ldap,
              'tenant_member_attribute') or self.DEFAULT_MEMBER_ATTRIBUTE)
+        self.attribute_ignore = (getattr(conf.ldap, 'tenant_attribute_ignore')
+                                 or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def get(self, id, filter=None):
         """Replaces exception.NotFound with exception.TenantNotFound."""
@@ -622,6 +626,7 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
     DEFAULT_STRUCTURAL_CLASSES = []
     options_name = 'role'
     DEFAULT_OBJECTCLASS = 'organizationalRole'
+    DEFAULT_NAME_ATTRIBUTE = 'ou'
     DEFAULT_MEMBER_ATTRIBUTE = 'roleOccupant'
     attribute_mapping = {'name': 'cn',
                          #'serviceId': 'service_id',
@@ -631,8 +636,12 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
     def __init__(self, conf):
         super(RoleApi, self).__init__(conf)
         self.api = ApiShim(conf)
+        self.attribute_mapping['name'] = (getattr(conf.ldap,
+             'role_name_attribute') or self.DEFAULT_NAME_ATTRIBUTE)
         self.member_attribute = (getattr(conf.ldap, 'role_member_attribute')
                                  or self.DEFAULT_MEMBER_ATTRIBUTE)
+        self.attribute_ignore = (getattr(conf.ldap, 'role_attribute_ignore')
+                                 or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     @staticmethod
     def _create_ref(role_id, tenant_id, user_id):

@@ -87,6 +87,18 @@ def register_cli_str(*args, **kw):
     return conf.register_cli_opt(cfg.StrOpt(*args, **kw), group=group)
 
 
+def register_list(*args, **kw):
+    conf = kw.pop('conf', CONF)
+    group = _ensure_group(kw, conf)
+    return conf.register_opt(cfg.ListOpt(*args, **kw), group=group)
+
+
+def register_cli_list(*args, **kw):
+    conf = kw.pop('conf', CONF)
+    group = _ensure_group(kw, conf)
+    return conf.register_cli_opt(cfg.ListOpt(*args, **kw), group=group)
+
+
 def register_bool(*args, **kw):
     conf = kw.pop('conf', CONF)
     group = kw.pop('group', None)
@@ -170,6 +182,7 @@ register_str('user_id_attribute', group='ldap', default='cn')
 register_str('user_name_attribute', group='ldap', default='sn')
 register_str('user_mail_attribute', group='ldap', default='mail')
 register_str('user_pwd_attribute', group='ldap', default='userPassword')
+register_list('user_attribute_ignore', group='ldap', default='enable,tenants')
 
 register_str('tenant_tree_dn', group='ldap', default=None)
 register_str('tenant_objectclass', group='ldap', default='groupOfNames')
@@ -177,11 +190,13 @@ register_str('tenant_id_attribute', group='ldap', default='cn')
 register_str('tenant_member_attribute', group='ldap', default='member')
 register_str('tenant_name_attribute', group='ldap', default='ou')
 register_str('tenant_desc_attribute', group='ldap', default='desc')
+register_list('tenant_attribute_ignore', group='ldap', default='enabled')
 
 register_str('role_tree_dn', group='ldap', default=None)
 register_str('role_objectclass', group='ldap', default='organizationalRole')
 register_str('role_id_attribute', group='ldap', default='cn')
 register_str('role_member_attribute', group='ldap', default='roleOccupant')
+register_list('role_attribute_ignore', group='ldap', default='')
 
 #pam
 register_str('url', group='pam', default=None)
