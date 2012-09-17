@@ -113,6 +113,8 @@
 # user_objectclass = inetOrgPerson
 # user_id_attribute = cn
 # user_name_attribute = sn
+# user_mail_attribute = mail
+# user_pwd_attribute = userPassword
 
 # tenant_tree_dn = ou=Groups,dc=example,dc=com
 # tenant_objectclass = groupOfNames
