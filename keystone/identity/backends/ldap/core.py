@@ -562,13 +562,17 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
             for user_dn in tenant[1].get(self.member_attribute, []):
                 if self.use_dumb_member and user_dn == self.DUMB_MEMBER_DN:
                     continue
-                res.append(self.user_api.get(self.user_api._dn_to_id(user_dn)))
+                user_id = self.user_api.get(self.user_api._dn_to_id(user_dn))
+                if not (user_id in res):
+                    res.append(user_id)
 
         # Get users who are explicitly mapped via a tenant
         rolegrants = self.role_api.get_role_assignments(tenant_id)
         for rolegrant in rolegrants:
             if role_id is None or rolegrant.role_id == role_id:
-                res.append(self.user_api.get(rolegrant.user_id))
+                user_id = self.user_api.get(rolegrant.user_id)
+                if not (user_id in res):
+                    res.append(user_id)
         return res
 
     def delete(self, id):

@@ -624,6 +624,15 @@ class IdentityTests(object):
         for test_tenant in default_fixtures.TENANTS:
             self.assertTrue(x for x in tenants if x['id'] == test_tenant['id'])
 
+    def test_tenant_list_users_duplicated(self):
+        self.identity_api.add_user_to_tenant(self.tenant_bar['id'],
+                                             self.user_foo['id'])
+        self.identity_api.add_role_to_user_and_tenant(self.user_foo['id'],
+                                                      self.tenant_bar['id'],
+                                                      'keystone_admin')
+        users = self.identity_api.get_tenant_users(self.tenant_bar['id'])
+        self.assertEqual(1, len(users))
+
 
 class TokenTests(object):
     def test_token_crud(self):
