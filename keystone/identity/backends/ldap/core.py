@@ -481,9 +481,9 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
     DEFAULT_MEMBER_ATTRIBUTE = 'member'
     DEFAULT_NAME_ATTRIBUTE = 'ou'
     DEFAULT_DESC_ATTRIBUTE = 'desc'
+    DEFAULT_ATTRIBUTE_IGNORE = ['enabled']
     options_name = 'tenant'
     attribute_mapping = {'name': 'ou', 'description': 'desc', 'tenantId': 'cn'}
-    attribute_ignore = ['enabled']
     model = models.Tenant
 
     def __init__(self, conf):
