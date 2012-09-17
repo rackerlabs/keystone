@@ -176,7 +176,7 @@ register_str('tenant_objectclass', group='ldap', default='groupOfNames')
 register_str('tenant_id_attribute', group='ldap', default='cn')
 register_str('tenant_member_attribute', group='ldap', default='member')
 register_str('tenant_name_attribute', group='ldap', default='ou')
-retister_str('tenant_desc_attribute' group='ldap', default='desc')
+register_str('tenant_desc_attribute' group='ldap', default='desc')
 
 register_str('role_tree_dn', group='ldap', default=None)
 register_str('role_objectclass', group='ldap', default='organizationalRole')
