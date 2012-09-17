@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//YZo\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-17T15:38:40Z",
+      "side": 1,
+      "message": "res \u003d set()",
+      "revId": "bbf46093d03be125c4bea3c23d84ea753e0df72c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//YZc\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-17T15:38:40Z",
+      "side": 1,
+      "message": "res.add(self.user_api.get(...))",
+      "revId": "bbf46093d03be125c4bea3c23d84ea753e0df72c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//YZg\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-17T15:38:40Z",
+      "side": 1,
+      "message": "res.add(self.user_api.get(...))",
+      "revId": "bbf46093d03be125c4bea3c23d84ea753e0df72c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//YZk\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-17T15:38:40Z",
+      "side": 1,
+      "message": "return list(res)",
+      "revId": "bbf46093d03be125c4bea3c23d84ea753e0df72c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
