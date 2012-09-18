@@ -107,22 +107,30 @@
 # password = None
 # suffix = cn=example,cn=com
 # use_dumb_member = False
+# dumb_member = cn=dumb,dc=nonexistent
 
 # user_tree_dn = ou=Users,dc=example,dc=com
 # user_objectclass = inetOrgPerson
 # user_id_attribute = cn
 # user_name_attribute = sn
+# user_mail_attribute = mail
+# user_pass_attribute = userPassword
+# user_attribute_ignore= tenant_id,enable,tenants
 
 # tenant_tree_dn = ou=Groups,dc=example,dc=com
 # tenant_objectclass = groupOfNames
 # tenant_id_attribute = cn
 # tenant_member_attribute = member
 # tenant_name_attribute = ou
+# tenant_description_attribute = description
+# tenant_attribute_ignore = enabled
 
 # role_tree_dn = ou=Roles,dc=example,dc=com
 # role_objectclass = organizationalRole
 # role_id_attribute = cn
+# role_name_attribute = ou
 # role_member_attribute = roleOccupant
+# role_attribute_ignore =
 
 [filter:debug]
 paste.filter_factory = keystone.common.wsgi:Debug.factory
