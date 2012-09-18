@@ -94,6 +94,8 @@ class BaseLdap(object):
 
             self.structural_classes = self.DEFAULT_STRUCTURAL_CLASSES
         self.use_dumb_member = getattr(conf.ldap, 'use_dumb_member') or True
+        self.dumb_member = (getattr(conf.ldap, 'dumb_member') or
+                            self.DUMB_MEMBER_DN)
 
     def get_connection(self, user=None, password=None):
         if self.LDAP_URL.startswith('fake://'):
@@ -174,7 +176,7 @@ class BaseLdap(object):
                 attrs.append((attr_type, [v]))
 
         if 'groupOfNames' in object_classes and self.use_dumb_member:
-            attrs.append(('member', [self.DUMB_MEMBER_DN]))
+            attrs.append(('member', [self.dumb_member]))
 
         conn.add_s(self._id_to_dn(values['id']), attrs)
         return values
