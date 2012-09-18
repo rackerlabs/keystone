@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//YDU\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "I\u0027m always down for some code golf.\n\nDone.",
+      "parentUuid": "AAAALH//i3A\u003d",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//boE\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//YDM\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "The idea of \u0027extra\u0027 is that it\u0027s a sort of blob container for non-indexed attributes.",
+      "parentUuid": "AAAALH//boE\u003d",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//bn0\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/004_add_policy_table.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2012-09-11T21:42:17Z",
       "side": 1,
       "message": "What are these statements for?",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//YC4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/004_add_policy_table.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "it\u0027s just sqlalchemy migrate\u0027s boilerplate",
+      "parentUuid": "AAAALH//bn0\u003d",
       "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//YCU\u003d",
+        "filename": "keystone/policy/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "the normal case here is that a not found *is* raised -- the exceptional case is when a NotFound is *not* raised (an existing object is returned), in which case we need to ultimately return 409 Conflict\n\nDone",
+      "parentUuid": "AAAALH//bng\u003d",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//i2s\u003d",
         "filename": "keystone/policy/backends/kvs.py",
         "patchSetId": 3
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//YCE\u003d",
+        "filename": "keystone/policy/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "not sure i\u0027m comfortable avoiding the use of sets because i\u0027m not sure why they were used in the existing drivers? I\u0027ve always assumed it was to avoid a race condition or something... I\u0027d be happy to drop their use if you\u0027re more confident than I :)",
+      "parentUuid": "AAAALH//i2s\u003d",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//i2o\u003d",
         "filename": "keystone/policy/backends/kvs.py",
         "patchSetId": 3
@@ -116,6 +206,24 @@
       "writtenOn": "2012-09-01T00:32:23Z",
       "side": 1,
       "message": "Wouldn\u0027t old_policy.copy() carry over the id?",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//YCc\u003d",
+        "filename": "keystone/policy/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "this prevents the user from changing the policy ID... since the ID *could* be passed in twice (as policy_id and policy[\u0027id\u0027])",
+      "parentUuid": "AAAALH//i2o\u003d",
       "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -173,6 +281,41 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//YBQ\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "took a second look at this, and i\u0027m instead going to call one() instead of first() which raises a sqlalchemy exception we catch -- seems to be a more applicable pattern.\n\nDone",
+      "parentUuid": "AAAALH//i2Y\u003d",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//YBI\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "updating this",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//i2M\u003d",
         "filename": "keystone/policy/backends/sql.py",
         "patchSetId": 3
@@ -184,6 +327,41 @@
       "writtenOn": "2012-09-01T00:32:23Z",
       "side": 1,
       "message": "(Suggestion only) Consider replacing these two lines with:\n\nold_dict.update(policy)",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//YBM\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALH//i2M\u003d",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//YBE\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "updating this",
       "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -207,6 +385,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//X00\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALH//i1s\u003d",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//bkk\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 3
@@ -218,6 +414,24 @@
       "writtenOn": "2012-09-11T21:42:17Z",
       "side": 1,
       "message": "1) may want to refactor the CRUD tests so that each operation have its own test case. Easier to maintain as well.\n2) we have a generic CRUD API invocation at the controller, I wonder if we could do the same for the test code. That way we could eliminate a bunch of duplicate code. For example,\n\nclass BaseCRUDTests(object):\n    def setUp(self, resource):\n        self.id \u003d uuid.uuid4().hex\n        self.api \u003d self.policy_api\n        self.resource \u003d resource\n\n    def test_create(self):\n        create_api \u003d getattr(self.api, \u0027create_%s\u0027 % (self.resource))\n        res \u003d create_api(id, ref)\n        self.assertDictEqual(self.ref, res)\n\nclass PolicyCRUDTests(BaseCRUDTests):\n    def setUp(self)\n        super(PolicyCRUDTests, self).setUp(\u0027policy\u0027)\n        self.ref \u003d {...setup policy ref here...}",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//X0w\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "That\u0027s basically how I wrote the equivalent tests in the keystoneclient project. I\u0027m breaking up the tests here a bit more in the mean time.",
+      "parentUuid": "AAAALH//bkk\u003d",
       "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -241,6 +455,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//X0o\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "In this case, I disagree. Since the client tests are much more like system tests than unit tests, I\u0027d rather they read as real-world use cases that we need to support.",
+      "parentUuid": "AAAALH//bkE\u003d",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//bjk\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 3
@@ -252,6 +484,24 @@
       "writtenOn": "2012-09-11T21:42:17Z",
       "side": 1,
       "message": "ref \u003d self.new_ref()\n\nI see a pattern for a decorator. :)",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//X0c\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "not sure the indirection of a single line of code is worth implementing a decorator, unless you see something more that can be extracted?",
+      "parentUuid": "AAAALH//bjk\u003d",
       "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -275,6 +525,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//Xzc\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "Done - avoided doing this before because I didn\u0027t know you could provide an optional message (otherwise you wouldn\u0027t know which key failed).",
+      "parentUuid": "AAAALH//i1Y\u003d",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//bjw\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 3
@@ -286,6 +554,24 @@
       "writtenOn": "2012-09-11T21:42:17Z",
       "side": 1,
       "message": "self.assertDictEqual()?",
+      "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//XzY\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-18T00:34:39Z",
+      "side": 1,
+      "message": "Personally, I hate the diffs it produces :-/",
+      "parentUuid": "AAAALH//bjw\u003d",
       "revId": "2ec82f686ab629d6d352f4ab07239359ccfab261",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
