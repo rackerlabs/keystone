@@ -65,3 +65,46 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         user_api = identity_ldap.UserApi(CONF)
         self.assertTrue(user_api)
         self.assertEquals(user_api.tree_dn, "ou=Users,%s" % CONF.ldap.suffix)
+
+    def test_user_filter(self):
+        self.config([test.etcdir('keystone.conf.sample'),
+                     test.testsdir('test_overrides.conf'),
+                     test.testsdir('backend_ldap.conf')])
+        self.identity_api = identity_ldap.Identity()
+        user_ref = self.identity_api.get_user(self.user_foo['id'])
+        self.user_foo.pop('password')
+        self.assertDictEqual(user_ref, self.user_foo)
+
+        CONF.ldap.user_filter = '(CN=DOES_NOT_MATCH)'
+        self.identity_api = identity_ldap.Identity()
+        self.assertRaises(exception.UserNotFound,
+                          self.identity_api.get_user,
+                          self.user_foo['id'])
+
+    def test_tenant_filter(self):
+        self.config([test.etcdir('keystone.conf.sample'),
+                     test.testsdir('test_overrides.conf'),
+                     test.testsdir('backend_ldap.conf')])
+        self.identity_api = identity_ldap.Identity()
+        tenant_ref = self.identity_api.get_tenant(self.tenant_bar['id'])
+        self.assertDictEqual(tenant_ref, self.tenant_bar)
+
+        CONF.ldap.tenant_filter = '(CN=DOES_NOT_MATCH)'
+        self.identity_api = identity_ldap.Identity()
+        self.assertRaises(exception.TenantNotFound,
+                          self.identity_api.get_tenant,
+                          self.tenant_bar['id'])
+
+    def test_role_filter(self):
+        self.config([test.etcdir('keystone.conf.sample'),
+                     test.testsdir('test_overrides.conf'),
+                     test.testsdir('backend_ldap.conf')])
+        self.identity_api = identity_ldap.Identity()
+        role_ref = self.identity_api.get_role(self.role_useless['id'])
+        self.assertDictEqual(role_ref, self.role_useless)
+
+        CONF.ldap.role_filter = '(CN=DOES_NOT_MATCH)'
+        self.identity_api = identity_ldap.Identity()
+        self.assertRaises(exception.RoleNotFound,
+                          self.identity_api.get_role,
+                          self.role_useless['id'])
