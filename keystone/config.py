@@ -167,16 +167,19 @@ register_str('user_name_attribute', group='ldap', default='sn')
 
 
 register_str('user_tree_dn', group='ldap', default=None)
+register_str('user_filter', group='ldap', default=None)
 register_str('user_objectclass', group='ldap', default='inetOrgPerson')
 register_str('user_id_attribute', group='ldap', default='cn')
 
 register_str('tenant_tree_dn', group='ldap', default=None)
+register_str('tenant_filter', group='ldap', default=None)
 register_str('tenant_objectclass', group='ldap', default='groupOfNames')
 register_str('tenant_id_attribute', group='ldap', default='cn')
 register_str('tenant_member_attribute', group='ldap', default='member')
 register_str('tenant_name_attribute', group='ldap', default='ou')
 
 register_str('role_tree_dn', group='ldap', default=None)
+register_str('role_filter', group='ldap', default=None)
 register_str('role_objectclass', group='ldap', default='organizationalRole')
 register_str('role_id_attribute', group='ldap', default='cn')
 register_str('role_member_attribute', group='ldap', default='roleOccupant')

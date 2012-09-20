@@ -64,6 +64,7 @@ class BaseLdap(object):
     DEFAULT_STRUCTURAL_CLASSES = None
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_OBJECTCLASS = None
+    DEFAULT_FILTER = None
     DUMB_MEMBER_DN = 'cn=dumb,dc=nonexistent'
     options_name = None
     model = None
@@ -91,6 +92,9 @@ class BaseLdap(object):
             objclass = '%s_objectclass' % self.options_name
             self.object_class = (getattr(conf.ldap, objclass)
                                  or self.DEFAULT_OBJECTCLASS)
+
+            filter = '%s_filter' % self.options_name
+            self.filter = getattr(conf.ldap, filter) or self.DEFAULT_FILTER
 
             self.structural_classes = self.DEFAULT_STRUCTURAL_CLASSES
         self.use_dumb_member = getattr(conf.ldap, 'use_dumb_member') or True
@@ -182,9 +186,10 @@ class BaseLdap(object):
     def _ldap_get(self, id, filter=None):
         conn = self.get_connection()
         query = '(objectClass=%s)' % self.object_class
-        if filter is not None:
-            query = '(&%s%s)' % (filter, query)
-
+        if (filter is not None or self.filter is not None):
+            localfilter = self.filter if self.filter is not None else ''
+            paramfilter = filter if filter is not None else ''
+            query = '(&%s%s%s)' % (localfilter, paramfilter, query)
         try:
             res = conn.search_s(self._id_to_dn(id), ldap.SCOPE_BASE, query)
         except ldap.NO_SUCH_OBJECT:
@@ -197,9 +202,11 @@ class BaseLdap(object):
 
     def _ldap_get_all(self, filter=None):
         conn = self.get_connection()
-        query = '(objectClass=%s)' % (self.object_class,)
-        if filter is not None:
-            query = '(&%s%s)' % (filter, query)
+        query = '(objectClass=%s)' % self.object_class
+        if (filter is not None or self.filter is not None):
+            localfilter = self.filter if self.filter is not None else ''
+            paramfilter = filter if filter is not None else ''
+            query = '(&%s%s%s)' % (localfilter, paramfilter, query)
         try:
             return conn.search_s(self.tree_dn, ldap.SCOPE_ONELEVEL, query)
         except ldap.NO_SUCH_OBJECT:
