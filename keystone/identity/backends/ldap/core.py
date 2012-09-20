@@ -53,6 +53,9 @@ class Identity(identity.Driver):
         self.LDAP_USER = CONF.ldap.user
         self.LDAP_PASSWORD = CONF.ldap.password
         self.suffix = CONF.ldap.suffix
+        self.allow_user_create = CONF.ldap.allow_user_create
+        self.allow_user_update = CONF.ldap.allow_user_update
+        self.allow_user_delete = CONF.ldap.allow_user_delete
 
         self.user = UserApi(CONF)
         self.tenant = TenantApi(CONF)
@@ -201,10 +204,16 @@ class Identity(identity.Driver):
 
     # CRUD
     def create_user(self, user_id, user):
+        if not self.allow_user_create:
+            msg = 'LDAP backend does not allow user create'
+            raise exception.ForbiddenAction(msg)
         user['name'] = clean.user_name(user['name'])
         return self.user.create(user)
 
     def update_user(self, user_id, user):
+        if not self.allow_user_update:
+            msg = 'LDAP backend does not allow user update'
+            raise exception.ForbiddenAction(msg)
         if 'name' in user:
             user['name'] = clean.user_name(user['name'])
         return self.user.update(user_id, user)
@@ -256,6 +265,9 @@ class Identity(identity.Driver):
             raise exception.TenantNotFound(tenant_id=tenant_id)
 
     def delete_user(self, user_id):
+        if not self.allow_user_delete:
+            msg = 'LDAP backend does not allow user delete'
+            raise exception.ForbiddenAction(msg)
         try:
             return self.user.delete(user_id)
         except ldap.NO_SUCH_OBJECT:
