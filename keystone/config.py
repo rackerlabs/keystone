@@ -163,7 +163,9 @@ register_str('password', group='ldap', default='freeipa4all')
 register_str('suffix', group='ldap', default='cn=example,cn=com')
 register_bool('use_dumb_member', group='ldap', default=False)
 register_str('user_name_attribute', group='ldap', default='sn')
-
+register_bool('allow_user_create', group='ldap', default=True)
+register_bool('allow_user_update', group='ldap', default=True)
+register_bool('allow_user_delete', group='ldap', default=True)
 
 register_str('user_tree_dn', group='ldap', default=None)
 register_str('user_objectclass', group='ldap', default='inetOrgPerson')
