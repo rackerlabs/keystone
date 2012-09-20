@@ -53,6 +53,7 @@ class Identity(identity.Driver):
         self.LDAP_USER = CONF.ldap.user
         self.LDAP_PASSWORD = CONF.ldap.password
         self.suffix = CONF.ldap.suffix
+        self.userFilter = CONF.ldap.user_filter
 
         self.user = UserApi(CONF)
         self.tenant = TenantApi(CONF)
@@ -127,7 +128,7 @@ class Identity(identity.Driver):
 
     def _get_user(self, user_id):
         try:
-            return self.user.get(user_id)
+            return self.user.get(user_id, self.userFilter)
         except exception.NotFound:
             raise exception.UserNotFound(user_id=user_id)
 
@@ -135,11 +136,12 @@ class Identity(identity.Driver):
         return _filter_user(self._get_user(user_id))
 
     def list_users(self):
-        return self.user.get_all()
+        return self.user.get_all(self.userFilter)
 
     def get_user_by_name(self, user_name):
         try:
-            return _filter_user(self.user.get_by_name(user_name))
+            return _filter_user(self.user.get_by_name(user_name,
+                                                      self.userFilter))
         except exception.NotFound:
             raise exception.UserNotFound(user_id=user_name)
 
@@ -357,9 +359,11 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
             raise exception.UserNotFound(user_id=id)
 
     def get_by_name(self, name, filter=None):
-        users = self.get_all('(%s=%s)' %
-                             (self.attribute_mapping['name'],
+        query = ('(%s=%s)' % (self.attribute_mapping['name'],
                               ldap_filter.escape_filter_chars(name)))
+        if filter is not None:
+            query = '(&%s%s)' % (filter, query)
+        users = self.get_all(query)
         try:
             return users[0]
         except IndexError:
@@ -411,8 +415,11 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
             self.role_api.rolegrant_delete(ref.id)
 
     def get_by_email(self, email):
-        users = self.get_all('(mail=%s)' %
-                             (ldap_filter.escape_filter_chars(email),))
+        query = ('(%s=%s)' % (self.attribute_mapping['mail'],
+                              ldap_filter.escape_filter_chars(email)))
+        if filter is not None:
+            query = '(&%s%s)' % (filter, query)
+        users = self.get_all(query)
         try:
             return users[0]
         except IndexError:

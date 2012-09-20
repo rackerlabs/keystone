@@ -166,6 +166,7 @@ register_str('user_name_attribute', group='ldap', default='sn')
 
 
 register_str('user_tree_dn', group='ldap', default=None)
+register_str('user_filter', group='ldap', default=None)
 register_str('user_objectclass', group='ldap', default='inetOrgPerson')
 register_str('user_id_attribute', group='ldap', default='cn')
 
