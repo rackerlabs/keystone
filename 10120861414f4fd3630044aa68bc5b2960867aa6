@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//R8Q\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-26T09:29:14Z",
+      "side": 1,
+      "message": "just looked at the build failures -- i believe this line can/should be safely reverted to split(\u0027,\u0027)",
+      "revId": "10120861414f4fd3630044aa68bc5b2960867aa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
