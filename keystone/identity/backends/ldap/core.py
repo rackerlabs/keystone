@@ -572,7 +572,7 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
         return list(res)
 
     def delete(self, id):
-        super(TenantApi, self).delete(id)
+        super(TenantApi, self).deleteTree(id)
 
     def update(self, id, values):
         try:
