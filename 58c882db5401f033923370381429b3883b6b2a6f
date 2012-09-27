@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//Qu0\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-09-27T21:19:35Z",
+      "side": 1,
+      "message": "(suggestion) I believe this will behave the same:\n\n    do_monkeypatch \u003d not os.getenv(\u0027SKIP_MONKEYPATCH\u0027)",
+      "revId": "58c882db5401f033923370381429b3883b6b2a6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
