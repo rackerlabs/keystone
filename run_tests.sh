@@ -24,6 +24,7 @@ function usage {
   echo "  -N, --no-virtual-env     Don't use virtualenv.  Run tests in local environment"
   echo "  -r, --recreate-db        Recreate the test database (deprecated, as this is now the default)."
   echo "  -n, --no-recreate-db     Don't recreate the test database."
+  echo "  -M, --no-monkeypatch     Don't do the eventlet monkeypatch."
   echo "  -x, --stop               Stop running tests after the first error or failure."
   echo "  -f, --force              Force a clean re-build of the virtual environment. Useful when dependencies have been added."
   echo "  -p, --pep8               Just run pep8"
@@ -46,6 +47,9 @@ function process_option {
     -N|--no-virtual-env) always_venv=0; never_venv=1;;
     -r|--recreate-db) recreate_db=1;;
     -n|--no-recreate-db) recreate_db=0;;
+    -M|--no-monkeypatch)
+        export SKIP_MONKEYPATCH=1
+        ;;
     -f|--force) force=1;;
     -p|--pep8) just_pep8=1;;
     -P|--no-pep8) no_pep8=1;;

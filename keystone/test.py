@@ -32,6 +32,12 @@ from keystone import config
 from keystone.openstack.common import importutils
 
 
+if not os.getenv('SKIP_MONKEYPATCH', False)
+    import eventlet
+
+    eventlet.patcher.monkey_patch(all=False, socket=True, time=True,
+                                  thread=do_monkeypatch)
+
 LOG = logging.getLogger(__name__)
 ROOTDIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
