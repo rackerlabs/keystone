@@ -25,6 +25,7 @@ LOG = logging.getLogger(__name__)
 
 
 LDAP_VALUES = {'TRUE': True, 'FALSE': False}
+CONTROL_TREEDELETE = '1.2.840.113556.1.4.805'
 
 
 def py2ldap(val):
@@ -288,6 +289,11 @@ class BaseLdap(object):
         conn = self.get_connection()
         conn.delete_s(self._id_to_dn(id))
 
+    def deleteTree(self, id):
+        conn = self.get_connection()
+        tree_delete_control = ldap.controls.LDAPControl(CONTROL_TREEDELETE, 0, None)
+        conn.delete_ext_s(self._id_to_dn(id), serverctrls=[tree_delete_control])
+
 
 class LdapWrapper(object):
     def __init__(self, url):
@@ -341,3 +347,7 @@ class LdapWrapper(object):
     def delete_s(self, dn):
         LOG.debug("LDAP delete: dn=%s", dn)
         return self.conn.delete_s(dn)
+
+    def delete_ext_s(self, dn, serverctrls):
+        LOG.debug("LDAP delete_ext: dn=%s, serverctrls=%s", dn, serverctrls)
+        return self.conn.delete_ext_s(dn,serverctrls)
