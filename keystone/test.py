@@ -19,6 +19,7 @@ import subprocess
 import sys
 import time
 
+import eventlet
 import mox
 from paste import deploy
 import stubout
@@ -32,8 +33,15 @@ from keystone import config
 from keystone.openstack.common import importutils
 
 
+do_monkeypatch = False
+if not os.getenv('SKIP_MONKEYPATCH', do_monkeypatch):
+    do_monkeypatch = True
+
+eventlet.patcher.monkey_patch(all=False, socket=True, time=True,
+                              thread=do_monkeypatch)
+
 LOG = logging.getLogger(__name__)
-ROOTDIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOTDIR = os.path.dirname(os.path.abspath(os.curdir))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
 TESTSDIR = os.path.join(ROOTDIR, 'tests')
 ETCDIR = os.path.join(ROOTDIR, 'etc')
