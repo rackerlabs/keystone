@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//Pn8\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2012-09-30T01:55:03Z",
+      "side": 1,
+      "message": "ACTUALLY - this isn\u0027t needed now that we\u0027re using nose and logcapture appropriately ... all of the log capture stuff should just work properly and run_tests.log can go away. The nova version of this script just has:\n\n${wrapper} $NOSETESTS",
+      "revId": "63aa36dccfd65fad46e510faab43c6915c4bd5d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
