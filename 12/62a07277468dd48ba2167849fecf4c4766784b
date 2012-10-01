@@ -1,0 +1,10 @@
+Code-Review+2: Monty Taylor <mordred@inaugust.com>
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Verified+1: SmokeStack
+Submitted-by: Jenkins
+Submitted-at: Mon, 01 Oct 2012 15:58:56 +0000
+Reviewed-on: https://review.openstack.org/13879
+Project: openstack/keystone
+Branch: refs/heads/master
