@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//Ouk\u003d",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-10-02T12:41:44Z",
+      "side": 1,
+      "message": "This should delete all endpoints before deleting the services, to maintain referential integrity",
+      "revId": "92d0313a734db9ce14ab2107acfb865a0d63c37d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//Oug\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-10-02T12:41:44Z",
+      "side": 1,
+      "message": "Delete all endpoints first.  Not all of the DBMS will automatically do a cascading delete.",
+      "revId": "92d0313a734db9ce14ab2107acfb865a0d63c37d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//OuQ\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-10-02T12:41:44Z",
+      "side": 1,
+      "message": "Please put in a test that confirms deleting the service deletes all endpoints.",
+      "revId": "92d0313a734db9ce14ab2107acfb865a0d63c37d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//OuY\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-10-02T12:41:44Z",
+      "side": 1,
+      "message": "Should test the negative here as well:  invalid formatted request gets an error.",
+      "revId": "92d0313a734db9ce14ab2107acfb865a0d63c37d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//OuU\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-10-02T12:41:44Z",
+      "side": 1,
+      "message": "Needs at least one negative test here, too.",
+      "revId": "92d0313a734db9ce14ab2107acfb865a0d63c37d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
