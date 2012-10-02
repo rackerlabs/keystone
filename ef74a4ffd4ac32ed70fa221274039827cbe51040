@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//OuI\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-10-02T16:49:09Z",
+      "side": 1,
+      "message": "Should this be a foreign key?",
+      "revId": "ef74a4ffd4ac32ed70fa221274039827cbe51040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//OuE\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-10-02T16:49:09Z",
+      "side": 1,
+      "message": "both of these ids should be foreign keys.",
+      "revId": "ef74a4ffd4ac32ed70fa221274039827cbe51040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//Ot8\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-10-02T16:49:09Z",
+      "side": 1,
+      "message": "This is not SQL specific.  Can we make authenticate driver agnostic, and either move to the base class, or out of the driver all together?",
+      "revId": "ef74a4ffd4ac32ed70fa221274039827cbe51040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//Ot0\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-10-02T16:49:09Z",
+      "side": 1,
+      "message": "Please move as much of this logic as possible to the base class.",
+      "revId": "ef74a4ffd4ac32ed70fa221274039827cbe51040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
