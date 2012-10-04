@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//NQw\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 4411
+      },
+      "writtenOn": "2012-10-04T21:13:56Z",
+      "side": 1,
+      "message": "Any reason you are using try..except for KeyErrors rather than doing a \u0027has_key\u0027 check ? something like;\n\nif ep.has_key(\"internalurl\") and ep[\u0027internalurl\u0027]:   \n    ep[\u0027internalurl\u0027].replace(\u0027$(\u0027, \u0027%(\u0027)\n\nsame goes for the other 3.",
+      "revId": "50eaade957dd89631b929da6f2962214e2cfbbb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
