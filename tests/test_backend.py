@@ -815,3 +815,35 @@ class CatalogTests(object):
     def test_service_list(self):
         services = self.catalog_api.list_services()
         self.assertEqual(3, len(services))
+
+    def test_get_catalog(self):
+        new_service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_service(
+            new_service['id'],
+            new_service.copy())
+        service_id = new_service['id']
+
+        new_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region': uuid.uuid4().hex,
+            'service_id': service_id,
+        }
+
+        self.catalog_api.create_endpoint(
+            new_endpoint['id'],
+            new_endpoint.copy())
+
+        catalog = self.catalog_api.get_catalog('user', 'tenant')
+
+        service_type = new_service['type']
+        region = new_endpoint['region']
+
+        self.assertEqual(catalog[region][service_type]['name'],
+                         new_service['name'])
+        self.assertEqual(catalog[region][service_type]['id'],
+                         new_endpoint['id'])

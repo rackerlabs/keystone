@@ -155,13 +155,19 @@ class Catalog(sql.Base, catalog.Driver):
 
             catalog[region][srv_type] = {}
 
-            internal_url = ep['internalurl'].replace('$(', '%(')
-            public_url = ep['publicurl'].replace('$(', '%(')
-            admin_url = ep['adminurl'].replace('$(', '%(')
+            if ep.has_key("internalurl") and ep['internalurl']:
+                internal_url = ep['internalurl'].replace('$(', '%(')
+                catalog[region][srv_type]['internalURL'] = internal_url % d
+
+            if ep.has_key("publicurl") and ep['publicurl']:
+                public_url = ep['publicurl'].replace('$(', '%(')
+                catalog[region][srv_type]['publicURL'] = public_url % d
+
+            if ep.has_key("adminurl") and ep['adminurl']:
+                admin_url = ep['adminurl'].replace('$(', '%(')
+                catalog[region][srv_type]['adminURL'] = admin_url % d
+
             catalog[region][srv_type]['id'] = ep['id']
             catalog[region][srv_type]['name'] = srv_name
-            catalog[region][srv_type]['publicURL'] = public_url % d
-            catalog[region][srv_type]['adminURL'] = admin_url % d
-            catalog[region][srv_type]['internalURL'] = internal_url % d
 
         return catalog
