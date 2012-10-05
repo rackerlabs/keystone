@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//MxE\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-05T16:59:49Z",
+      "side": 1,
+      "message": "use single quotes (see HACKING); can also simplify this as\n\n    if ep.get(\u0027internalurl\u0027) is not None:",
+      "revId": "c059f287e2c245dcdae48b28c1fa3f1d7942ec21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//MwM\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-05T16:59:49Z",
+      "side": 1,
+      "message": "public URL is specifically required by the API, so this change is potentially contract breaking if the user has not specified one. If a public URL is not provided, an empty string should at least be included in the catalog (a null value would be excluded from the xml transformation)",
+      "revId": "c059f287e2c245dcdae48b28c1fa3f1d7942ec21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
