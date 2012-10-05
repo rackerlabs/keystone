@@ -355,6 +355,17 @@ class Identity(kvs.Base, identity.Driver):
 
     def delete_role(self, role_id):
         try:
+            metadata_keys = filter(lambda x: x.startswith("metadata-"),
+                                   self.db.keys())
+            for key in metadata_keys:
+                tenant_id = key.split('-')[1]
+                user_id = key.split('-')[2]
+                try:
+                    self.remove_role_from_user_and_tenant(user_id,
+                                                          tenant_id,
+                                                          role_id)
+                except exception.RoleNotFound:
+                    pass
             self.db.delete('role-%s' % role_id)
         except exception.NotFound:
             raise exception.RoleNotFound(role_id=role_id)
