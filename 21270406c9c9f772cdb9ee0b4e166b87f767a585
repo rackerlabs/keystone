@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//MTI\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-06T19:36:22Z",
+      "side": 1,
+      "message": "you\u0027re still passing in `key\u003de` on these",
+      "revId": "21270406c9c9f772cdb9ee0b4e166b87f767a585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
