@@ -113,6 +113,11 @@ class Conflict(Error):
     title = 'Conflict'
 
 
+class MalformedEndpoint(Error):
+    """Malformed endpoint %(endpoint)s has unknown key %(key)s"""
+    code = 500
+
+
 class UnexpectedError(Error):
     """An unexpected error prevented the server from fulfilling your request.
 

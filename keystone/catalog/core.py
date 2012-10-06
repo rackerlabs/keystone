@@ -19,6 +19,7 @@
 
 import uuid
 
+from keystone.common import logging
 from keystone.common import manager
 from keystone.common import wsgi
 from keystone import config
@@ -29,6 +30,18 @@ from keystone import token
 
 
 CONF = config.CONF
+LOG = logging.getLogger(__name__)
+
+
+def format_url(url, data):
+    """Helper Method for all Backend Catalog's to Deal with URLS"""
+    try:
+        result = url % data
+    except KeyError as e:
+        LOG.error("Malformed endpoint %s - unknown key %s" %
+                  (url, str(e)))
+        raise exception.MalformedEndpoint(endpoint=url, key=e)
+    return result
 
 
 class Manager(manager.Manager):
