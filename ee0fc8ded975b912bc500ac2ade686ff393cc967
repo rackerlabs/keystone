@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALH//Mbc\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4411
+      },
+      "writtenOn": "2012-10-06T02:56:47Z",
+      "side": 1,
+      "message": "can do.",
+      "parentUuid": "AAAALH//McI\u003d",
+      "revId": "ee0fc8ded975b912bc500ac2ade686ff393cc967",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//McE\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-10-06T01:57:58Z",
       "side": 1,
       "message": "This should just extend UnexpectedError, and then you don\u0027t have to override anything but the docstring -- as is, I think this will render as a \"500 None\" error, because Error.title is not overridden.",
+      "revId": "ee0fc8ded975b912bc500ac2ade686ff393cc967",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//MbQ\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4411
+      },
+      "writtenOn": "2012-10-06T02:56:47Z",
+      "side": 1,
+      "message": "yup.. I should have put in the title. I will extended UnexpectedError though.",
+      "parentUuid": "AAAALH//McE\u003d",
       "revId": "ee0fc8ded975b912bc500ac2ade686ff393cc967",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
