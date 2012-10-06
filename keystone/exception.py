@@ -123,6 +123,10 @@ class UnexpectedError(Error):
     title = 'Internal Server Error'
 
 
+class MalformedEndpoint(UnexpectedError):
+    """Malformed endpoint %(endpoint)s has unknown key %(key)s"""
+
+
 class NotImplemented(Error):
     """The action you have requested has not been implemented."""
     code = 501
