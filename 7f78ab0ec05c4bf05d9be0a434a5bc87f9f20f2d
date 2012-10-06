@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//MYY\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-06T11:33:09Z",
+      "side": 1,
+      "message": "This entirety of the error message only applies to the original KeyError -- maybe just make it say\n\n    \"\"\"Malformed endpoint URL (see ERROR log for details): %(endpoint)s\"\"\"",
+      "revId": "7f78ab0ec05c4bf05d9be0a434a5bc87f9f20f2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
