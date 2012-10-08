@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//L6I\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4411
+      },
+      "writtenOn": "2012-10-08T14:10:46Z",
+      "side": 1,
+      "message": "this change can cause AttributeError to be flung if the url is None. Not sure how likely this is, and since all the jenkins passed, I am thinking this is more of a \u0027defensive coding suggestion\u0027. feel free to implement/ignore.\n\nmoving the replace in here though does cut down on repetitive code elsewhere so +1 there.",
+      "revId": "76f22f027f4c3e82fed456f398de72450b61cad5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
