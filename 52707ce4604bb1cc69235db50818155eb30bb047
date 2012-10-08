@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//L94\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-08T11:37:06Z",
+      "side": 1,
+      "message": "test_get_catalog_without_endpoints?",
+      "revId": "52707ce4604bb1cc69235db50818155eb30bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//L+E\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-08T11:37:06Z",
+      "side": 1,
+      "message": "assertEqual to \u0027\u0027",
+      "revId": "52707ce4604bb1cc69235db50818155eb30bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//L+A\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 868,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-08T11:37:06Z",
+      "side": 1,
+      "message": "assertIsNone or assertNotIn(\u0027adminURL\u0027, catalog[region][service_type])?",
+      "revId": "52707ce4604bb1cc69235db50818155eb30bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//L90\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 870,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-08T11:37:06Z",
+      "side": 1,
+      "message": "same as 868",
+      "revId": "52707ce4604bb1cc69235db50818155eb30bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
