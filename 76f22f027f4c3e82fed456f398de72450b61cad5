@@ -52,6 +52,24 @@
       "revId": "76f22f027f4c3e82fed456f398de72450b61cad5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//L3E\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-08T15:16:08Z",
+      "side": 1,
+      "message": "Hmm... if you caught AttributeError here (and silently returned None in that case), that would simplify the non-publicurl cases.",
+      "parentUuid": "AAAALH//L4U\u003d",
+      "revId": "76f22f027f4c3e82fed456f398de72450b61cad5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
