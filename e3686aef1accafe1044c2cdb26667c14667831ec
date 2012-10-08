@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//MCo\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-08T09:13:56Z",
+      "side": 1,
+      "message": "(suggested refactor) the .replace(\u0027$(\u0027, \u0027%(\u0027) stuff now belongs in core.format_url :), so this can be simplified as:\n\n    srv_type[\u0027publicURL\u0027] \u003d core.format_url(ep[\u0027publicurl\u0027], d)",
+      "revId": "e3686aef1accafe1044c2cdb26667c14667831ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
