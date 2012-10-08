@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//MI0\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 4411
+      },
+      "writtenOn": "2012-10-08T02:46:08Z",
+      "side": 1,
+      "message": "should the tests not be testing the publicURL, adminURL and internalURL ? The test now no longer accurately reflects the changes you made :(",
+      "revId": "2eb0456ddcf4308ea6d071f433f39efa2fa85c17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
