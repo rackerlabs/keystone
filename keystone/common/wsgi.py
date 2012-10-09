@@ -336,10 +336,14 @@ class Debug(Middleware):
     def __call__(self, req):
         LOG.debug('%s %s %s', ('*' * 20), 'REQUEST ENVIRON', ('*' * 20))
         for key, value in req.environ.items():
+            if key == 'openstack.params':
+                value = hide_password(value)
             LOG.debug('%s = %s', key, value)
         LOG.debug('')
         LOG.debug('%s %s %s', ('*' * 20), 'REQUEST BODY', ('*' * 20))
         for line in req.body_file:
+            if 'password' in line:
+                line = hide_password(line)
             LOG.debug(line)
         LOG.debug('')
 
@@ -359,6 +363,8 @@ class Debug(Middleware):
         """Iterator that prints the contents of a wrapper string."""
         LOG.debug('%s %s %s', ('*' * 20), 'RESPONSE BODY', ('*' * 20))
         for part in app_iter:
+            if 'password' in part:
+                part = hide_password(part)
             LOG.debug(part)
             yield part
 
@@ -518,3 +524,24 @@ def render_exception(error):
             'message': str(error),
         }
     })
+
+
+def hide_password(auth_dict):
+    """Hide the password from an auth dictionary in json or dict format"""
+    from copy import deepcopy
+    from keystone.openstack.common import jsonutils
+
+    if isinstance(auth_dict, dict):
+        d = deepcopy(auth_dict)
+    else:
+        d = jsonutils.loads(auth_dict)
+
+    try:
+        d['auth']['passwordCredentials']['password'] = 'hidden_for_debug'
+    except KeyError, TypeError:
+        pass
+
+    if isinstance(auth_dict, dict):
+        return d
+    else:
+        return jsonutils.dumps(d)
