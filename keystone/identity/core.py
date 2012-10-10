@@ -312,12 +312,20 @@ class AdminRouter(wsgi.ComposableRouter):
                        controller=tenant_controller,
                        action='get_tenant',
                        conditions=dict(method=['GET']))
+        mapper.connect('/tenants?name={tenant_name}',
+                       controller=tenant_controller,
+                       action='get_tenant_by_name',
+                       conditions=dict(method=['GET']))
 
         # User Operations
         user_controller = UserController()
         mapper.connect('/users/{user_id}',
                        controller=user_controller,
                        action='get_user',
+                       conditions=dict(method=['GET']))
+        mapper.connect('/users?name={user_name}',
+                       controller=user_controller,
+                       action='get_user_by_name',
                        conditions=dict(method=['GET']))
 
         # Role Operations
@@ -384,6 +392,11 @@ class TenantController(wsgi.Application):
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
         return {'tenant': self.identity_api.get_tenant(context, tenant_id)}
+
+    def get_tenant_by_name(self, context, tenant_name):
+        self.assert_admin(context)
+        return {'tenant': self.identity_api.get_tenant_by_name(
+            context, tenant_name)}
 
     # CRUD Extension
     def create_tenant(self, context, tenant):
@@ -465,6 +478,10 @@ class UserController(wsgi.Application):
         #               about every single user in the system...
         self.assert_admin(context)
         return {'users': self.identity_api.list_users(context)}
+
+    def get_user_by_name(self, context, user_name):
+        self.assert_admin(context)
+        return {'user': self.identity_api.get_user_by_name(context, user_name)}
 
     # CRUD extension
     def create_user(self, context, user):
