@@ -312,6 +312,10 @@ class AdminRouter(wsgi.ComposableRouter):
                        controller=tenant_controller,
                        action='get_tenant',
                        conditions=dict(method=['GET']))
+        mapper.connect('/tenants?name={tenant_name}',
+                       controller=tenant_controller,
+                       action='get_tenant_by_name',
+                       conditions=dict(method=['GET']))
 
         # User Operations
         user_controller = UserController()
@@ -384,6 +388,11 @@ class TenantController(wsgi.Application):
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
         return {'tenant': self.identity_api.get_tenant(context, tenant_id)}
+
+    def get_tenant_by_name(self, context, tenant_name):
+        self.assert_admin(context)
+        return {'tenant': self.identity_api.get_tenant_by_name(
+            context, tenant_name)}
 
     # CRUD Extension
     def create_tenant(self, context, tenant):
