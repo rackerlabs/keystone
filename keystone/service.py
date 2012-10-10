@@ -285,6 +285,9 @@ class TokenController(wsgi.Application):
         Alternatively, this call accepts auth with only a token and tenant
         that will return a token that is scoped to that tenant.
         """
+        if not auth:
+            msg = "'auth' section is required and cannot be empty"
+            raise exception.ValidationError(message=msg)
 
         if 'passwordCredentials' in auth:
             user_id = auth['passwordCredentials'].get('userId', None)
@@ -408,6 +411,9 @@ class TokenController(wsgi.Application):
             auth_token_data = dict(dict(user=current_user_ref,
                                         tenant=tenant_ref,
                                         metadata=metadata_ref))
+        else:
+            raise exception.ValidationError(
+                      attribute='passwordCredentials or token', target='auth')
 
         auth_token_data['expires'] = expiry
         auth_token_data['id'] = 'placeholder'
