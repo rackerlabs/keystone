@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//KbQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-10T01:56:41Z",
+      "side": 1,
+      "message": "cryptographic* (singular \u0026 lower case to match rest)\n\nPKI-based (hyphenated)",
+      "revId": "e31d1c85fc03b385443a74b84c07d9f106c2df85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//KbM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-10T01:56:41Z",
+      "side": 1,
+      "message": "add a blank line between section title \u0026 paragraph",
+      "revId": "e31d1c85fc03b385443a74b84c07d9f106c2df85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//Kbg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-10T01:56:41Z",
+      "side": 1,
+      "message": "zomg trailing whitespace disease",
+      "revId": "e31d1c85fc03b385443a74b84c07d9f106c2df85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//Kbk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-10T01:56:41Z",
+      "side": 1,
+      "message": "These files can be generated either using the ``keystone-manage pki_setup`` utility or using an external tool.",
+      "revId": "e31d1c85fc03b385443a74b84c07d9f106c2df85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//Kbo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-10T01:56:41Z",
+      "side": 1,
+      "message": "``[signing]``",
+      "revId": "e31d1c85fc03b385443a74b84c07d9f106c2df85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//Kbc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-10T01:56:41Z",
+      "side": 1,
+      "message": "never heard it called a stanza lol",
+      "revId": "e31d1c85fc03b385443a74b84c07d9f106c2df85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//KbY\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-10T01:56:41Z",
+      "side": 1,
+      "message": "Determines the algorithm used to generate tokens",
+      "revId": "e31d1c85fc03b385443a74b84c07d9f106c2df85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//Kbs\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-10T01:56:41Z",
+      "side": 1,
+      "message": "put double backticks around default values on all these (``UUID``, ``1024``, ``/file/path``, etc)",
+      "revId": "e31d1c85fc03b385443a74b84c07d9f106c2df85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//KbU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-10T01:56:41Z",
+      "side": 1,
+      "message": "None what?",
+      "revId": "e31d1c85fc03b385443a74b84c07d9f106c2df85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//KbE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-10T01:56:41Z",
+      "side": 1,
+      "message": "funky line length on this, unless it\u0027s just my browser",
+      "revId": "e31d1c85fc03b385443a74b84c07d9f106c2df85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//KbA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-10T01:56:41Z",
+      "side": 1,
+      "message": "properly secure ownership?",
+      "revId": "e31d1c85fc03b385443a74b84c07d9f106c2df85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//Kb0\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-10T01:56:41Z",
+      "side": 1,
+      "message": "hyphenate \"PKI-based\"? also trailing whitespace",
+      "revId": "e31d1c85fc03b385443a74b84c07d9f106c2df85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
