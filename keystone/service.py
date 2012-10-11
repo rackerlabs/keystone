@@ -300,6 +300,11 @@ class TokenController(wsgi.Application):
                 except exception.UserNotFound:
                     raise exception.Unauthorized()
 
+            if not user_id or not password:
+                raise exception.ValidationError(
+                    attribute='username and password',
+                    target='passwordCredentials')
+
             # more compat
             tenant_id = auth.get('tenantId', None)
             if tenant_name:
