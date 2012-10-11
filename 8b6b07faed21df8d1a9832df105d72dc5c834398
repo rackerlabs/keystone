@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//JU8\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-11T15:42:24Z",
+      "side": 1,
+      "message": "thanks for this explanation!",
+      "revId": "8b6b07faed21df8d1a9832df105d72dc5c834398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
