@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//InU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-12T15:34:38Z",
+      "side": 1,
+      "message": "you can completely drop the outer if-statement",
+      "revId": "c7edbb8d7fdbc45772173868ca74b2b073ef8936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//InQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-12T15:34:38Z",
+      "side": 1,
+      "message": "would prefer a line break before the assert_admin now, as well",
+      "revId": "c7edbb8d7fdbc45772173868ca74b2b073ef8936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//InE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-12T15:34:38Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "c7edbb8d7fdbc45772173868ca74b2b073ef8936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//InA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-12T15:34:38Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "c7edbb8d7fdbc45772173868ca74b2b073ef8936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
