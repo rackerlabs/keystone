@@ -185,8 +185,8 @@ class Application(BaseApplication):
     def __call__(self, req):
         arg_dict = req.environ['wsgiorg.routing_args'][1]
         action = arg_dict.pop('action')
-        del arg_dict['controller']
         LOG.debug('arg_dict: %s', arg_dict)
+        del arg_dict['controller']
 
         # allow middleware up the stack to provide context & params
         context = req.environ.get('openstack.context', {})
