@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//Hng\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-15T21:23:10Z",
+      "side": 1,
+      "message": "Use the existing message provided by ValidationError rather than overriding it",
+      "revId": "db6c30df81ef275837b08731061f2fc2efc8019f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
