@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//Hnc\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-15T21:19:09Z",
+      "side": 1,
+      "message": "This is re-implementing existing code; instead:\n\n    return render_exception(exception.NotFound(target\u003d\u0027requested resource\u0027))\n\nOr, preferably (if something is already catching keystone.exceptions from here):\n\n    raise exception.NotFound(target\u003d\u0027requested resource\u0027)",
+      "revId": "c251ee9e2f044f8a475e6591d5881868af1aae8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
