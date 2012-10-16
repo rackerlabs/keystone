@@ -36,8 +36,8 @@ CONF = config.CONF
 def _ensure_hashed_password(user_ref):
     pw = user_ref.get('password', None)
     if pw is not None:
-        pw = utils.ldap_hash_password(pw)
-        user_ref['password'] = pw
+        user_ref = user_ref.copy()
+        user_ref['password'] = utils.ldap_hash_password(pw)
     return user_ref
 
 
@@ -366,7 +366,7 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
 
     def create(self, values):
         self.affirm_unique(values)
-        _ensure_hashed_password(values)
+        values = _ensure_hashed_password(values)
         values = super(UserApi, self).create(values)
         tenant_id = values.get('tenant_id')
         if tenant_id is not None:
@@ -393,7 +393,7 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
                 if new_tenant:
                     self.tenant_api.add_user(new_tenant, id)
 
-        _ensure_hashed_password(values)
+        values = _ensure_hashed_password(values)
         super(UserApi, self).update(id, values, old_obj)
 
     def delete(self, id):

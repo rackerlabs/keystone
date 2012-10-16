@@ -29,6 +29,7 @@ from keystone.identity import filter_user
 def _ensure_hashed_password(user_ref):
     pw = user_ref.get('password', None)
     if pw is not None:
+        user_ref = user_ref.copy()
         user_ref['password'] = utils.hash_password(pw)
     return user_ref
 
@@ -57,13 +58,15 @@ class User(sql.ModelBase, sql.DictBase):
     def from_dict(cls, user_dict):
         # shove any non-indexed properties into extra
         extra = {}
-        for k, v in user_dict.copy().iteritems():
+        user = {}
+        for k, v in user_dict.iteritems():
             # TODO(termie): infer this somehow
-            if k not in ['id', 'name', 'extra']:
-                extra[k] = user_dict.pop(k)
+            if k in ['id', 'name', 'extra']:
+                user[k] = v
+            else:
+                extra[k] = v
 
-        user_dict['extra'] = extra
-        return cls(**user_dict)
+        return cls(extra=extra, **user)
 
     def to_dict(self):
         extra_copy = self.extra.copy()
@@ -87,8 +90,7 @@ class Tenant(sql.ModelBase, sql.DictBase):
             if k not in ['id', 'name', 'extra']:
                 extra[k] = tenant_dict.pop(k)
 
-        tenant_dict['extra'] = extra
-        return cls(**tenant_dict)
+        return cls(extra=extra, **tenant_dict)
 
     def to_dict(self):
         extra_copy = copy.deepcopy(self.extra)
@@ -353,7 +355,7 @@ class Identity(sql.Base, identity.Driver):
             user_ref = User.from_dict(user)
             session.add(user_ref)
             session.flush()
-        return user_ref.to_dict()
+        return filter_user(user_ref.to_dict())
 
     @handle_conflicts(type='user')
     def update_user(self, user_id, user):
