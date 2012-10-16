@@ -36,8 +36,8 @@ CONF = config.CONF
 def _ensure_hashed_password(user_ref):
     pw = user_ref.get('password', None)
     if pw is not None:
-        pw = utils.ldap_hash_password(pw)
-        user_ref['password'] = pw
+        user_ref = user_ref.copy()
+        user_ref['password'] = utils.ldap_hash_password(pw)
     return user_ref
 
 

@@ -25,6 +25,7 @@ from keystone.identity import filter_user
 def _ensure_hashed_password(user_ref):
     pw = user_ref.get('password', None)
     if pw is not None:
+        user_ref = user_ref.copy()
         user_ref['password'] = utils.hash_password(pw)
     return user_ref
 
@@ -212,7 +213,7 @@ class Identity(kvs.Base, identity.Driver):
         user_list = set(self.db.get('user_list', []))
         user_list.add(user_id)
         self.db.set('user_list', list(user_list))
-        return user
+        return filter_user(user)
 
     def update_user(self, user_id, user):
         if 'name' in user:
