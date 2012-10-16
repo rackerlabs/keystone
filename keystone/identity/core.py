@@ -34,6 +34,15 @@ CONF = config.CONF
 LOG = logging.getLogger(__name__)
 
 
+def filter_user(user_ref):
+    """Utility function for filtering out private attributes of a user dict"""
+    if user_ref:
+        user_ref = user_ref.copy()
+        user_ref.pop('password', None)
+        user_ref.pop('tenants', None)
+    return user_ref
+
+
 class Manager(manager.Manager):
     """Default pivot point for the Identity backend.
 
