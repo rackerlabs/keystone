@@ -62,8 +62,7 @@ class User(sql.ModelBase, sql.DictBase):
             if k not in ['id', 'name', 'extra']:
                 extra[k] = user_dict.pop(k)
 
-        user_dict['extra'] = extra
-        return cls(**user_dict)
+        return cls(extra=extra, **user_dict)
 
     def to_dict(self):
         extra_copy = self.extra.copy()
@@ -87,8 +86,7 @@ class Tenant(sql.ModelBase, sql.DictBase):
             if k not in ['id', 'name', 'extra']:
                 extra[k] = tenant_dict.pop(k)
 
-        tenant_dict['extra'] = extra
-        return cls(**tenant_dict)
+        return cls(extra=extra, **tenant_dict)
 
     def to_dict(self):
         extra_copy = copy.deepcopy(self.extra)
