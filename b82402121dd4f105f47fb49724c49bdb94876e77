@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//GUk\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-10-19T19:31:32Z",
+      "side": 1,
+      "message": "please ad params and returns to docstring since we\u0027re making it a first class operation in our internal Identity API",
+      "revId": "b82402121dd4f105f47fb49724c49bdb94876e77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
