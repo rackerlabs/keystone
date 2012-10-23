@@ -16,9 +16,9 @@
 
 import uuid
 
+from keystone.common import sql
 from keystone import catalog
 from keystone.catalog.backends import sql as catalog_sql
-from keystone.common.sql import util as sql_util
 from keystone import config
 from keystone import exception
 from keystone.identity.backends import sql as identity_sql
@@ -38,12 +38,13 @@ class SqlIdentity(test.TestCase, test_backend.IdentityTests):
         self.config([test.etcdir('keystone.conf.sample'),
                      test.testsdir('test_overrides.conf'),
                      test.testsdir('backend_sql.conf')])
-        sql_util.setup_test_database()
         self.identity_api = identity_sql.Identity()
+        self.identity_api.get_session()
+        sql.ModelBase.metadata.bind = self.identity_api._engine
+        sql.ModelBase.metadata.create_all(self.identity_api._engine)
         self.load_fixtures(default_fixtures)
 
     def tearDown(self):
-        sql_util.teardown_test_database()
         super(SqlIdentity, self).tearDown()
 
     def test_delete_user_with_tenant_association(self):
@@ -144,11 +145,9 @@ class SqlToken(test.TestCase, test_backend.TokenTests):
         self.config([test.etcdir('keystone.conf.sample'),
                      test.testsdir('test_overrides.conf'),
                      test.testsdir('backend_sql.conf')])
-        sql_util.setup_test_database()
         self.token_api = token_sql.Token()
 
     def tearDown(self):
-        sql_util.teardown_test_database()
         super(SqlToken, self).tearDown()
 
 
@@ -158,13 +157,16 @@ class SqlCatalog(test.TestCase, test_backend.CatalogTests):
         self.config([test.etcdir('keystone.conf.sample'),
                      test.testsdir('test_overrides.conf'),
                      test.testsdir('backend_sql.conf')])
-        sql_util.setup_test_database()
+
         self.catalog_api = catalog_sql.Catalog()
+        self.catalog_api.get_session()
+        sql.ModelBase.metadata.bind = self.catalog_api._engine
+        sql.ModelBase.metadata.create_all(self.catalog_api._engine)
+
         self.catalog_man = catalog.Manager()
         self.load_fixtures(default_fixtures)
 
     def tearDown(self):
-        sql_util.teardown_test_database()
         super(SqlCatalog, self).tearDown()
 
     def test_malformed_catalog_throws_error(self):
