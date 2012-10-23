@@ -177,3 +177,15 @@ class SqlCatalog(test.TestCase, test_backend.CatalogTests):
                                          "publicurl": badurl})
         with self.assertRaises(exception.MalformedEndpoint):
             self.catalog_api.get_catalog('fake-user', 'fake-tenant')
+
+    def test_no_optional_arguments_endpoint_create(self):
+        self.catalog_api.create_service('c', {"id": "c", "desc": "a1",
+                                        "name": "d"})
+        self.catalog_api.create_endpoint('d', {"id": "d", "region": None,
+                                         "service_id": "c", "adminurl": None,
+                                         "internalurl": None,
+                                         "publicurl": None})
+        try:
+            self.catalog_api.get_catalog(None, None)
+        except AttributeError:
+            self.fail("Attribute Error")
