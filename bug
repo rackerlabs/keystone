@@ -1,3 +1,0 @@
-auth_token middleware have twice cache for a valided token
-
-Fixes bug 1066875

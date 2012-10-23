@@ -661,7 +661,6 @@ class AuthProtocol(object):
                                             additional_headers=headers)
 
         if response.status == 200:
-            self._cache_put(user_token, data)
             return data
         if response.status == 404:
             # FIXME(ja): I'm assuming the 404 status means that user_token is
