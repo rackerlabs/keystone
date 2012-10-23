@@ -156,14 +156,32 @@ class Catalog(sql.Base, catalog.Driver):
 
             catalog[region][srv_type] = {}
 
-            internal_url = ep['internalurl'].replace('$(', '%(')
-            public_url = ep['publicurl'].replace('$(', '%(')
-            admin_url = ep['adminurl'].replace('$(', '%(')
+            internal_url = None
+            if ep['internalurl'] is not None:
+                internal_url = ep['internalurl'].replace('$(', '%(')
+
+            public_url = None
+            if ep['publicurl'] is not None:
+                public_url = ep['publicurl'].replace('$(', '%(')
+
+            admin_url = None
+            if ep['adminurl'] is not None:
+                admin_url = ep['adminurl'].replace('$(', '%(')
+
             srv_type = catalog[region][srv_type]
             srv_type['id'] = ep['id']
             srv_type['name'] = srv_name
-            srv_type['publicURL'] = core.format_url(public_url, d)
-            srv_type['adminURL'] = core.format_url(admin_url, d)
-            srv_type['internalURL'] = core.format_url(internal_url, d)
+
+            srv_type['publicURL'] = None
+            if public_url is not None:
+                srv_type['publicURL'] = core.format_url(public_url, d)
+            
+            srv_type['adminURL'] = None
+            if admin_url is not None:
+                srv_type['adminURL'] = core.format_url(admin_url, d)
+            
+            srv_type['internalURL'] = None
+            if internal_url is not None:
+                srv_type['internalURL'] = core.format_url(internal_url, d)
 
         return catalog
