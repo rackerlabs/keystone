@@ -1,3 +1,4 @@
+import collections
 import functools
 import uuid
 
@@ -27,43 +28,71 @@ def _build_policy_check_credentials(self, action, context, kwargs):
         raise exception.Unauthorized()
 
     creds = {}
-    token_data = token_ref['token_data']
+    if 'token_data' in token_ref:
+        #V3 Tokens
+        token_data = token_ref['token_data']
+        try:
+            creds['user_id'] = token_data['user']['id']
+        except AttributeError:
+            LOG.warning(_('RBAC: Invalid user'))
+            raise exception.Unauthorized()
 
-    try:
-        creds['user_id'] = token_data['user']['id']
-    except AttributeError:
-        LOG.warning(_('RBAC: Invalid user'))
-        raise exception.Unauthorized()
+        if 'project' in token_data:
+            creds['project_id'] = token_data['project']['id']
+        else:
+            LOG.debug(_('RBAC: Proceeding without project'))
 
-    if 'project' in token_data:
-        creds['project_id'] = token_data['project']['id']
+        if 'domain' in token_data:
+            creds['domain_id'] = token_data['domain']['id']
+
+        if 'roles' in token_data:
+            creds['roles'] = []
+            for role in token_data['roles']:
+                creds['roles'].append(role['name'])
     else:
-        LOG.debug(_('RBAC: Proceeding without project'))
-
-    if 'domain' in token_data:
-        creds['domain_id'] = token_data['domain']['id']
-
-    if 'roles' in token_data:
-        creds['roles'] = []
-        for role in token_data['roles']:
-            creds['roles'].append(role['name'])
+        #v2 Tokens
+        try:
+            token_ref = self.token_api.get_token(
+                context=context, token_id=context['token_id'])
+        except exception.TokenNotFound:
+            LOG.warning(_('RBAC: Invalid token'))
+            raise exception.Unauthorized()
+        creds = token_ref.get('metadata', {}).copy()
+        try:
+            creds['user_id'] = token_ref['user'].get('id')
+        except AttributeError:
+            LOG.warning(_('RBAC: Invalid user'))
+            raise exception.Unauthorized()
+        # NOTE(vish): this is pretty inefficient
+        creds['roles'] = [self.identity_api.get_role(context, role)['name']
+                          for role in creds.get('roles', [])]
 
     return creds
 
 
+def flatten(d, parent_key=''):
+    items = []
+    for k, v in d.items():
+        new_key = parent_key + '.' + k if parent_key else k
+        if isinstance(v, collections.MutableMapping):
+            items.extend(flatten(v, new_key).items())
+        else:
+            items.append((new_key, v))
+    return dict(items)
+
+
 def protected(f):
     """Wraps API calls with role based access controls (RBAC)."""
-
     @functools.wraps(f)
     def wrapper(self, context, **kwargs):
-        if not context['is_admin']:
+        if 'is_admin' in context and not context['is_admin']:
             action = 'identity:%s' % f.__name__
             creds = _build_policy_check_credentials(self, action,
                                                     context, kwargs)
             # Simply use the passed kwargs as the target dict, which
             # would typically include the prime key of a get/update/delete
             # call.
-            self.policy_api.enforce(context, creds, action, kwargs)
+            self.policy_api.enforce(context, creds, action, flatten(kwargs))
             LOG.debug(_('RBAC: Authorization granted'))
         else:
             LOG.warning(_('RBAC: Bypassing authorization'))
@@ -109,7 +138,8 @@ def filterprotected(*filters):
                 for key in kwargs:
                     target[key] = kwargs[key]
 
-                self.policy_api.enforce(context, creds, action, target)
+                self.policy_api.enforce(context, creds, action,
+                                        flatten(target))
 
                 LOG.debug(_('RBAC: Authorization granted'))
             else:
@@ -119,7 +149,8 @@ def filterprotected(*filters):
     return _filterprotected
 
 
-@dependency.requires('identity_api', 'policy_api', 'token_api')
+@dependency.requires('identity_api', 'policy_api', 'token_api',
+                     'trust_api', 'catalog_api')
 class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
 
