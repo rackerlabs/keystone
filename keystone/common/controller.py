@@ -59,7 +59,8 @@ def protected(f):
     return wrapper
 
 
-@dependency.requires('identity_api', 'policy_api', 'token_api')
+@dependency.requires('identity_api', 'policy_api', 'token_api',
+                     'trust_api', 'catalog_api')
 class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
 
