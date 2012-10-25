@@ -1343,6 +1343,43 @@ class TokenTests(object):
                                         for x in xrange(2)])
 
 
+class TrustTests(object):
+    def create_sample_trust(self, new_id):
+        trust_data = self.trust_api.create_trust(new_id,
+                                                 trustor=self.user_foo['id'],
+                                                 trustee=self.user_two['id'],
+                                                 tenant=self.tenant_bar['id'],
+                                                 roles=["r1", "r2", "r3"],
+                                                 endpoints=["e1", "e2", "e3"])
+        return trust_data
+
+    def test_delete_trust(self):
+        new_id = uuid.uuid4().hex
+        trust_data = self.create_sample_trust(new_id)
+        trust_id = trust_data['id']
+        self.assertIsNotNone(trust_data)
+        trust_data = self.trust_api.get_trust(trust_id)
+        self.assertEquals(new_id, trust_data['id'])
+        self.trust_api.delete_trust(trust_id)
+
+    def test_get_trust(self):
+        new_id = uuid.uuid4().hex
+        trust_data = self.create_sample_trust(new_id)
+        trust_id = trust_data['id']
+        self.assertIsNotNone(trust_data)
+        trust_data = self.trust_api.get_trust(trust_id)
+        self.assertEquals(new_id, trust_data['id'])
+
+    def test_create_trust(self):
+        new_id = uuid.uuid4().hex
+        trust_data = self.create_sample_trust(new_id)
+        self.assertEquals(new_id, trust_data['id'])
+        self.assertEquals(self.user_two['id'], trust_data['trustee'])
+        self.assertEquals(self.user_foo['id'], trust_data['trustor'])
+        self.assertEquals(["r1", "r2", "r3"], trust_data['roles'])
+        self.assertEquals(["e1", "e2", "e3"], trust_data['endpoints'])
+
+
 class CommonHelperTests(test.TestCase):
     def test_format_helper_raises_malformed_on_missing_key(self):
         with self.assertRaises(exception.MalformedEndpoint):

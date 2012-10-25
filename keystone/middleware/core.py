@@ -121,13 +121,18 @@ class JsonBodyMiddleware(wsgi.Middleware):
             if not params_parsed:
                 params_parsed = {}
 
-        params = {}
-        for k, v in params_parsed.iteritems():
-            if k in ('self', 'context'):
-                continue
-            if k.startswith('_'):
-                continue
-            params[k] = v
+        try:
+            params = {}
+            for k, v in params_parsed.iteritems():
+                if k in ('self', 'context'):
+                    continue
+                if k.startswith('_'):
+                    continue
+                params[k] = v
+        except Exception as e:
+            e = exception.ValidationError(attribute='valid JSON',
+                                          target='request body')
+            return wsgi.render_exception(e)
 
         request.environ[PARAMS_ENV] = params
 
