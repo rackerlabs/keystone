@@ -191,6 +191,8 @@ class Application(BaseApplication):
         # allow middleware up the stack to provide context & params
         context = req.environ.get('openstack.context', {})
         context['query_string'] = dict(req.params.iteritems())
+        if 'REMOTE_USER' in req.environ:
+            context['REMOTE_USER'] = req.environ['REMOTE_USER']
         params = req.environ.get('openstack.params', {})
         params.update(arg_dict)
 
