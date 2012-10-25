@@ -125,7 +125,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_tokens(self, user_id):
+    def list_tokens(self, user_id, tenant_id=None, trust_id=None):
         """Returns a list of current token_id's for a user
 
         :param user_id: identity of the user
