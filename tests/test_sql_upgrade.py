@@ -371,6 +371,17 @@ class SqlUpgradeTests(test.TestCase):
         self.assertEquals(0, count_member_roles(session))
         session.close()
 
+    def test_upgrade_trusts(self):
+        self.assertEqual(self.schema.version, 0, "DB is at version 0")
+        self.upgrade(17)
+        self.assertTableColumns("trust",
+                                ["id", "trustor", "trustee",
+                                 "tenant_id", "enabled", "extra"])
+        self.assertTableColumns("trust_role",
+                                ["trust_id", "role_id", "extra"])
+        self.assertTableColumns("trust_endpoint",
+                                ["trust_id", "endpoint_id", "extra"])
+
     def populate_user_table(self):
         user_table = sqlalchemy.Table('user',
                                       self.metadata,
