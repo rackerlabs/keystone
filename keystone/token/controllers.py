@@ -21,7 +21,7 @@ class ExternalAuthNotApplicable(Exception):
     pass
 
 
-@dependency.requires('catalog_api')
+@dependency.requires('catalog_api', 'trust_api', 'token_api')
 class Auth(controller.V2Controller):
     def ca_cert(self, context, auth=None):
         ca_file = open(CONF.signing.ca_certs, 'r')
@@ -199,8 +199,20 @@ class Auth(controller.V2Controller):
         except exception.NotFound as e:
             raise exception.Unauthorized(e)
 
+        #A trust token cannot be used to get another token
+        if 'trustee' in old_token_ref['metadata']:
+            raise exception.Unauthorized()
+
         user_ref = old_token_ref['user']
         user_id = user_ref['id']
+        if 'trust' in auth:
+            trust_ref = self.trust_api.get_trust(context, auth['trust'])
+            if user_id != trust_ref['trustee']:
+                raise exception.Unauthorized()
+            user_id = trust_ref['trustor']
+            tenant_id = trust_ref['tenant_id']
+        else:
+            tenant_id = self._get_project_id_from_auth(context, auth)
 
         current_user_ref = self.identity_api.get_user(context=context,
                                                       user_id=user_id)
@@ -218,6 +230,22 @@ class Auth(controller.V2Controller):
                                context, user_id, tenant_id))
 
         expiry = old_token_ref['expires']
+        if 'trust' in auth:
+            trust_roles = []
+            for role in trust_ref['roles']:
+                if not 'roles' in metadata_ref:
+                    raise exception.Unauthorized()
+                if role in metadata_ref['roles']:
+                    trust_roles.append(role)
+                else:
+                    raise exception.Unauthorized()
+            metadata_ref['roles'] = trust_roles
+            metadata_ref['trustee'] = trust_ref['trustee']
+
+        auth_token_data = self._get_auth_token_data(current_user_ref,
+                                                    tenant_ref,
+                                                    metadata_ref,
+                                                    expiry)
         return (current_user_ref, tenant_ref, metadata_ref, expiry)
 
     def _authenticate_local(self, context, auth):
@@ -570,7 +598,9 @@ class Auth(controller.V2Controller):
             else:
                 o['access']['metadata'] = {'is_admin': 0}
         if 'roles' in metadata_ref:
-                o['access']['metadata']['roles'] = metadata_ref['roles']
+            o['access']['metadata']['roles'] = metadata_ref['roles']
+        if 'trustee' in metadata_ref:
+            o['access']['metadata']['trustee'] = metadata_ref['trustee']
         return o
 
     @classmethod
