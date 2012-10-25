@@ -210,21 +210,32 @@ class User(controller.V2Controller):
                                                   default_tenant_id, user_id)
         return {'user': self._filter_domain_id(new_user_ref)}
 
+    def _delete_tokens_for_user(self, context, user_id, user):
+        if user.get('password') or not user.get('enabled', True):
+            try:
+                #First delete tokens that could get other tokens.
+                for token_id in self.token_api.list_tokens(context, user_id):
+                    self.token_api.delete_token(context, token_id)
+                #now delete trust tokens
+                for trust_id in (self.trust_api.list_trusts_for_trustee
+                                 (context, user_id)):
+                    token_list = self.token_api.list_tokens(context, userid,
+                                                            trust_id=trust_id)
+                    for token in token_list:
+                        self.token_api.delete_token(context, token)
+            except exception.NotImplemented:
+                # The users status has been changed but tokens remain valid for
+                # backends that can't list tokens for users
+                LOG.warning('User %s status has changed, but existing tokens '
+                            'remain valid' % user_id)
+
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
         self.assert_admin(context)
         user_ref = self.identity_api.update_user(context, user_id, user)
 
         # If the password was changed or the user was disabled we clear tokens
-        if user.get('password') or not user.get('enabled', True):
-            try:
-                for token_id in self.token_api.list_tokens(context, user_id):
-                    self.token_api.delete_token(context, token_id)
-            except exception.NotImplemented:
-                # The users status has been changed but tokens remain valid for
-                # backends that can't list tokens for users
-                LOG.warning('User %s status has changed, but existing tokens '
-                            'remain valid' % user_id)
+        self._delete_tokens_for_user(context, user_id, user)
         return {'user': self._filter_domain_id(user_ref)}
 
     def delete_user(self, context, user_id):

@@ -31,8 +31,17 @@ class Token(kvs.Base, token.Driver):
             ref = self.db.get('token-%s' % token_id)
         except exception.NotFound:
             raise exception.TokenNotFound(token_id=token_id)
-        if ref['expires'] is None or ref['expires'] > timeutils.utcnow():
-            return copy.deepcopy(ref)
+        now = timeutils.utcnow()
+        expiry = ref['expires']
+        try:
+            if expiry is None or expiry > now:
+                return copy.deepcopy(ref)
+        except TypeError as e:
+            #expiry is offset aware
+            #TODO stop making expiry offset aware
+            now = timeutils.parse_isotime(timeutils.isotime())
+            if expiry is None or expiry > now:
+                return copy.deepcopy(ref)
         else:
             raise exception.TokenNotFound(token_id=token_id)
 
@@ -41,6 +50,9 @@ class Token(kvs.Base, token.Driver):
         data_copy = copy.deepcopy(data)
         if 'expires' not in data:
             data_copy['expires'] = token.default_expire_time()
+        if 'trust_id' in data:
+            if data['trust_id'] is None:
+                data_copy.pop('trust_id')
         self.db.set('token-%s' % token_id, data_copy)
         return copy.deepcopy(data_copy)
 
@@ -53,7 +65,7 @@ class Token(kvs.Base, token.Driver):
         except exception.NotFound:
             raise exception.TokenNotFound(token_id=token_id)
 
-    def list_tokens(self, user_id, tenant_id=None):
+    def list_tokens(self, user_id, tenant_id=None, trust_id=None):
         tokens = []
         now = timeutils.utcnow()
         for token, ref in self.db.items():
@@ -71,6 +83,10 @@ class Token(kvs.Base, token.Driver):
                 if not tenant:
                     continue
                 if tenant.get('id') != tenant_id:
+                    continue
+            if trust_id is not None:
+                trust = ref.get('trust_id')
+                if not trust:
                     continue
             tokens.append(token.split('-', 1)[1])
         return tokens
