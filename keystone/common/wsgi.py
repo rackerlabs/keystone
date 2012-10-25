@@ -22,6 +22,7 @@
 
 import socket
 import sys
+import traceback
 
 import eventlet.wsgi
 import routes.middleware
@@ -345,11 +346,16 @@ class Middleware(Application):
 
     @webob.dec.wsgify(RequestClass=Request)
     def __call__(self, request):
-        response = self.process_request(request)
-        if response:
-            return response
-        response = request.get_response(self.application)
-        return self.process_response(request, response)
+        try:
+            response = self.process_request(request)
+            if response:
+                return response
+            response = request.get_response(self.application)
+            return self.process_response(request, response)
+        except:
+            type_, value_, traceback_ = sys.exc_info()
+            ex = traceback.format_exception(type_, value_, traceback_)
+            raise value_
 
 
 class Debug(Middleware):
