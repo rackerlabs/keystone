@@ -57,10 +57,7 @@ def provider(name):
 
 
 def provides(name, classdef):
-    if isinstance(classdef, str):
-        FACTORIES[name] = get_class(classdef)
-    else:
-        FACTORIES[name] = classdef
+    FACTORIES[name] = classdef
 
 
 def requires(*dependencies):
@@ -72,7 +69,11 @@ def requires(*dependencies):
         for dependency in self._dependencies:
             if dependency not in REGISTRY:
                 if dependency in FACTORIES:
-                    classimpl = FACTORIES[dependency]
+                    classdef = FACTORIES[dependency]
+                    if isinstance(classdef, str):
+                        classimpl = get_class(classdef)
+                    else:
+                        classimpl = classdef
                     REGISTRY[dependency] = classimpl()
                 else:
                     raise UnresolvableDependencyException(dependency)

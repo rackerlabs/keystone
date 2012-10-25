@@ -24,6 +24,9 @@ from keystone.openstack.common import timeutils
 from keystone import token
 
 
+handle_conflicts = sql.handle_conflicts
+
+
 class TokenModel(sql.ModelBase, sql.DictBase):
     __tablename__ = 'token'
     attributes = ['id', 'expires']
