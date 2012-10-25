@@ -452,6 +452,19 @@ class SqlUpgradeTests(test.TestCase):
         self.downgrade(16)
         self.assertEquals(0, count_member_roles())
 
+    def test_upgrade_trusts(self):
+        self.assertEqual(self.schema.version, 0, "DB is at version 0")
+        self.upgrade(18)
+        self.assertTableColumns("trust",
+                                ["id", "trustor_user_id",
+                                 "trustee_user_id",
+                                 "project_id", "deleted",
+                                 "expires", "extra"])
+        self.assertTableColumns("trust_role",
+                                ["trust_id", "role_id", "extra"])
+        self.assertTableColumns("trust_endpoint",
+                                ["trust_id", "endpoint_id", "extra"])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user

@@ -89,8 +89,8 @@ class RestfulTestCase(test.TestCase):
 
         # Initialize headers dictionary
         headers = {} if not headers else headers
-
-        connection = httplib.HTTPConnection(host, port, timeout=10)
+#TODO this change was just for debgging, remove prior to commit
+        connection = httplib.HTTPConnection(host, port, timeout=100000)
 
         # Perform the request
         connection.request(method, path, body, headers)
