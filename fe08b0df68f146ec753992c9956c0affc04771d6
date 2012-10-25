@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//8jY\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-25T15:53:54Z",
+      "side": 1,
+      "message": "the naming/usage of _inject_dummy_token was pretty confusing to me... would prefer to see something like this:\n\n    def assertEqualTokens(self, a, b):\n        def normalize(token):\n            token[\u0027access\u0027][\u0027token\u0027][\u0027id\u0027] \u003d \u0027dummy\u0027\n\n            # truncate to eliminate timing problems\n            issued \u003d token[\u0027access\u0027][\u0027token\u0027][\u0027issued_at\u0027]\n            token[\u0027access\u0027][\u0027token\u0027][\u0027issued_at\u0027] \u003d issued[:-8]\n\n            # truncate to eliminate timing problems\n            expires \u003d token[\u0027access\u0027][\u0027token\u0027][\u0027expires\u0027]\n            token[\u0027access\u0027][\u0027token\u0027][\u0027expires\u0027] \u003d expires[:-3]\n\n        return self.assertDictEqual(normalize(a), normalize(b))",
+      "revId": "fe08b0df68f146ec753992c9956c0affc04771d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
