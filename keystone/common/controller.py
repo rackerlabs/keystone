@@ -1,3 +1,4 @@
+import collections
 import functools
 import uuid
 
@@ -16,9 +17,19 @@ DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 def protected(f):
     """Wraps API calls with role based access controls (RBAC)."""
 
+    def flatten(d, parent_key=''):
+        items = []
+        for k, v in d.items():
+            new_key = parent_key + '.' + k if parent_key else k
+            if isinstance(v, collections.MutableMapping):
+                items.extend(flatten(v, new_key).items())
+            else:
+                items.append((new_key, v))
+        return dict(items)
+
     @functools.wraps(f)
     def wrapper(self, context, **kwargs):
-        if not context['is_admin']:
+        if 'is_admin' in context and not context['is_admin']:
             action = 'identity:%s' % f.__name__
 
             LOG.debug(_('RBAC: Authorizing %s(%s)') % (
@@ -49,7 +60,7 @@ def protected(f):
             creds['roles'] = [self.identity_api.get_role(context, role)['name']
                               for role in creds.get('roles', [])]
 
-            self.policy_api.enforce(context, creds, action, kwargs)
+            self.policy_api.enforce(context, creds, action, flatten(kwargs))
 
             LOG.debug(_('RBAC: Authorization granted'))
         else:
@@ -59,7 +70,8 @@ def protected(f):
     return wrapper
 
 
-@dependency.requires('identity_api', 'policy_api', 'token_api')
+@dependency.requires('identity_api', 'policy_api', 'token_api',
+                     'trust_api', 'catalog_api')
 class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
 

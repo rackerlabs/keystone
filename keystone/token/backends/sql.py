@@ -73,7 +73,7 @@ class Token(sql.Base, token.Driver):
             token_ref.valid = False
             session.flush()
 
-    def list_tokens(self, user_id, tenant_id=None):
+    def list_tokens(self, user_id, tenant_id=None, trust_id=None):
         session = self.get_session()
         tokens = []
         now = timeutils.utcnow()
@@ -92,6 +92,12 @@ class Token(sql.Base, token.Driver):
                 if not tenant:
                     continue
                 if tenant.get('id') != tenant_id:
+                    continue
+            if trust_id is not None:
+                trust = token_ref_dict.get('trust')
+                if not trust:
+                    continue
+                if trust.get('id') != tenant_id:
                     continue
             tokens.append(token_ref['id'])
         return tokens
