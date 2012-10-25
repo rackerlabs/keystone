@@ -116,7 +116,7 @@ function run_pep8 {
   ignore="$ignore_scripts,$ignore_files,$ignore_dirs"
   srcfiles="."
   # Just run PEP8 in current environment
-  ${wrapper} pep8 --repeat --show-pep8 --show-source \
+  ${wrapper} pep8  --repeat --show-pep8 --show-source \
     --exclude=${ignore} ${srcfiles} | tee pep8.txt
 }
 
