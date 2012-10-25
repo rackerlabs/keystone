@@ -19,7 +19,7 @@ class ExternalAuthNotApplicable(Exception):
     pass
 
 
-@dependency.requires('catalog_api')
+@dependency.requires('catalog_api', 'trust_api', 'token_api')
 class Auth(controller.V2Controller):
     def ca_cert(self, context, auth=None):
         ca_file = open(config.CONF.signing.ca_certs, 'r')
@@ -165,11 +165,17 @@ class Auth(controller.V2Controller):
 
         user_ref = old_token_ref['user']
         user_id = user_ref['id']
+        if 'trust' in auth:
+            trust_ref = self.trust_api.get_trust(context, auth['trust'])
+            if user_id != trust_ref['trustee']:
+                raise exception.Unauthorized()
+            user_id = trust_ref['trustor']
+            tenant_id = trust_ref['tenant_id']
+        else:
+            tenant_id = self._get_tenant_id_from_auth(context, auth)
 
         current_user_ref = self.identity_api.get_user(context=context,
                                                       user_id=user_id)
-
-        tenant_id = self._get_tenant_id_from_auth(context, auth)
 
         tenant_ref = self._get_tenant_ref(context, user_id, tenant_id)
         metadata_ref = self._get_metadata_ref(context, user_id, tenant_id)
@@ -183,6 +189,17 @@ class Auth(controller.V2Controller):
                                context, user_id, tenant_id))
 
         expiry = old_token_ref['expires']
+        if 'trust' in auth:
+            trust_roles = []
+            for role in trust_ref['roles']:
+                if not 'roles' in metadata_ref:
+                    raise exception.Unauthorized()
+                if role in metadata_ref['roles']:
+                    trust_roles.append(role)
+                else:
+                    raise exception.Unauthorized()
+            metadata_ref['roles'] = trust_roles
+
         auth_token_data = self._get_auth_token_data(current_user_ref,
                                                     tenant_ref,
                                                     metadata_ref,
