@@ -24,6 +24,7 @@ from keystone import identity
 from keystone import policy
 from keystone import routers
 from keystone import token
+from keystone import trust
 
 
 LOG = logging.getLogger(__name__)
@@ -79,7 +80,7 @@ def v3_app_factory(global_conf, **local_conf):
     conf.update(local_conf)
     mapper = routes.Mapper()
     v3routers = []
-    for module in [catalog, identity, policy]:
+    for module in [catalog, identity, policy, trust]:
         module.routers.append_v3_routers(mapper, v3routers)
     # TODO(ayoung): put token routes here
     return wsgi.ComposingRouter(mapper, v3routers)
