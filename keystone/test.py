@@ -36,6 +36,7 @@ from keystone import exception
 from keystone import identity
 from keystone import policy
 from keystone import token
+from keystone import trust
 
 
 do_monkeypatch = not os.getenv('STANDARD_THREADS')
@@ -71,6 +72,7 @@ def initialize_drivers():
     DRIVERS['identity_api'] = identity.Manager()
     DRIVERS['policy_api'] = policy.Manager()
     DRIVERS['token_api'] = token.Manager()
+    DRIVERS['trust_api'] = trust.Manager()
     return DRIVERS
 
 

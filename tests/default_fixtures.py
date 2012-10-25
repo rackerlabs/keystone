@@ -70,5 +70,12 @@ ROLES = [
     }, {
         'id': 'member',
         'name': 'Member',
+    }, {
+        'id': 'browser',
+        'name': 'Browser',
+    }, {
+        'id': 'writer',
+        'name': 'Writer',
     }
+
 ]

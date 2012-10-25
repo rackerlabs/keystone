@@ -327,6 +327,17 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableColumns('user_domain_metadata',
                                 ['user_id', 'domain_id', 'data'])
 
+    def test_upgrade_trusts(self):
+        self.assertEqual(self.schema.version, 0, "DB is at version 0")
+        self.upgrade(14)
+        self.assertTableColumns("trust",
+                                ["id", "trustor", "trustee",
+                                 "tenant_id", "extra"])
+        self.assertTableColumns("trust_role",
+                                ["trust_id", "role_id", "extra"])
+        self.assertTableColumns("trust_endpoint",
+                                ["trust_id", "endpoint_id", "extra"])
+
     def populate_user_table(self):
         for user in default_fixtures.USERS:
             extra = copy.deepcopy(user)
