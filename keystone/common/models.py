@@ -147,3 +147,16 @@ class Role(Model):
 
     required_keys = ('id', 'name')
     optional_keys = tuple()
+
+
+class Trust(Model):
+    """Trust object.
+
+    Required keys:
+        id
+        trustor
+        trusteetenant_id
+    """
+
+    required_keys = ('id', 'trustor', 'trustee', 'tenant_id')
+    optional_keys = tuple()
