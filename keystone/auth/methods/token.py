@@ -44,6 +44,9 @@ class Token(auth.AuthMethodHandler):
                                     token_ref['expires'])
             user_context['extras'].update(token_ref['token_data']['extras'])
             user_context['method_names'] += token_ref['token_data']['methods']
+            if 'trust' in token_ref['token_data']:
+                user_context['trust'] = token_ref['token_data']['trust']
+
         except AssertionError as e:
             LOG.error(e)
             raise exception.Unauthorized(e)
