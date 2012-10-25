@@ -15,6 +15,7 @@
 # under the License.
 
 """SQL backends for the various services."""
+import functools
 
 import sqlalchemy as sql
 import sqlalchemy.engine.url
@@ -26,6 +27,7 @@ from sqlalchemy import types as sql_types
 
 from keystone.common import logging
 from keystone import config
+from keystone import exception
 from keystone.openstack.common import jsonutils
 
 
@@ -218,3 +220,16 @@ class Base(object):
             bind=engine,
             autocommit=autocommit,
             expire_on_commit=expire_on_commit)
+
+
+def handle_conflicts(type='object'):
+    """Converts IntegrityError into HTTP 409 Conflict."""
+    def decorator(method):
+        @functools.wraps(method)
+        def wrapper(*args, **kwargs):
+            try:
+                return method(*args, **kwargs)
+            except IntegrityError as e:
+                raise exception.Conflict(type=type, details=str(e.orig))
+        return wrapper
+    return decorator
