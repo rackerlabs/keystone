@@ -231,6 +231,11 @@ class AuthInfo(object):
                                             target='authentication')
         return self.auth['authentication'][method]
 
+    def get_trust_id(self):
+        if 'trust' in self.auth['authentication']:
+            return self.auth['authentication']['trust']['id']
+        return None
+
     def get_scope(self):
         """ Get scope information.
 
@@ -266,6 +271,7 @@ class Auth(controller.V3Controller):
                 auth['scope'] = scope
             auth_info = AuthInfo(context, auth=auth)
             auth_context = {'extras': {}, 'method_names': []}
+            #TODO check for trust information in old token.
             self.authenticate(context, auth_info, auth_context)
             self._check_and_set_default_scoping(context, auth_info,
                                                 auth_context)
