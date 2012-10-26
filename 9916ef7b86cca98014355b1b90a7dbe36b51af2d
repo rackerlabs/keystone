@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//7N8\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-10-26T19:14:06Z",
+      "side": 1,
+      "message": "If parsing output, you want to set LC_ALL\u003dC in env, in subprocess.Popen call.",
+      "revId": "9916ef7b86cca98014355b1b90a7dbe36b51af2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
