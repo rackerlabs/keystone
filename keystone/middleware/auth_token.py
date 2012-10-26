@@ -224,8 +224,6 @@ class AuthProtocol(object):
         self.signing_cert_file_name = val
         val = '%s/cacert.pem' % self.signing_dirname
         self.ca_file_name = val
-        val = '%s/revoked.pem' % self.signing_dirname
-        self.revoked_file_name = val
 
         # Credentials used to verify this component with the Auth service since
         # validating tokens is a privileged call
@@ -241,7 +239,7 @@ class AuthProtocol(object):
         # By default the token will be cached for 5 minutes
         self.token_cache_time = int(self._conf_get('token_cache_time'))
         self._token_revocation_list = None
-        self._token_revocation_list_fetched_time = None
+        self.token_revocation_list_fetched_time = datetime.datetime.min
         cache_timeout = datetime.timedelta(seconds=0)
         self.token_revocation_list_cache_timeout = cache_timeout
         if memcache_servers:
@@ -482,7 +480,7 @@ class AuthProtocol(object):
                 data = self.verify_uuid_token(user_token, retry)
             self._cache_put(user_token, data)
             return data
-        except Exception as e:
+        except Exception:
             LOG.debug('Token validation failure.', exc_info=True)
             self._cache_store_invalid(user_token)
             LOG.warn("Authorization failed for token %s", user_token)
@@ -728,48 +726,13 @@ class AuthProtocol(object):
         return self.cms_verify(formatted)
 
     @property
-    def token_revocation_list_fetched_time(self):
-        if not self._token_revocation_list_fetched_time:
-            # If the fetched list has been written to disk, use its
-            # modification time.
-            if os.path.exists(self.revoked_file_name):
-                mtime = os.path.getmtime(self.revoked_file_name)
-                fetched_time = datetime.datetime.fromtimestamp(mtime)
-            # Otherwise the list will need to be fetched.
-            else:
-                fetched_time = datetime.datetime.min
-            self._token_revocation_list_fetched_time = fetched_time
-        return self._token_revocation_list_fetched_time
-
-    @token_revocation_list_fetched_time.setter
-    def token_revocation_list_fetched_time(self, value):
-        self._token_revocation_list_fetched_time = value
-
-    @property
     def token_revocation_list(self):
         timeout = (self.token_revocation_list_fetched_time +
                    self.token_revocation_list_cache_timeout)
-        list_is_current = timeutils.utcnow() < timeout
-        if list_is_current:
-            # Load the list from disk if required
-            if not self._token_revocation_list:
-                with open(self.revoked_file_name, 'r') as f:
-                    self._token_revocation_list = jsonutils.loads(f.read())
-        else:
-            self.token_revocation_list = self.fetch_revocation_list()
+        if timeutils.utcnow() > timeout:
+            self._token_revocation_list = self.fetch_revocation_list()
+            self.token_revocation_list_fetched_time = timeutils.utcnow()
         return self._token_revocation_list
-
-    @token_revocation_list.setter
-    def token_revocation_list(self, value):
-        """Save a revocation list to memory and to disk.
-
-        :param value: A json-encoded revocation list
-
-        """
-        self._token_revocation_list = jsonutils.loads(value)
-        self.token_revocation_list_fetched_time = timeutils.utcnow()
-        with open(self.revoked_file_name, 'w') as f:
-            f.write(value)
 
     def fetch_revocation_list(self):
         headers = {'X-Auth-Token': self.get_admin_token()}
@@ -779,7 +742,7 @@ class AuthProtocol(object):
             raise ServiceError('Unable to fetch token revocation list.')
         if (not 'signed' in data):
             raise ServiceError('Revocation list inmproperly formatted.')
-        return self.cms_verify(data['signed'])
+        return jsonutils.loads(self.cms_verify(data['signed']))
 
     def fetch_signing_cert(self):
         response, data = self._http_request('GET',
