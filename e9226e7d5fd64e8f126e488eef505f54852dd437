@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//7C4\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 2230
+      },
+      "writtenOn": "2012-10-26T21:30:36Z",
+      "side": 1,
+      "message": "As it currently stands, openstack.context[\u0027REMOTE_USER\u0027] can override the wsgi environment variable REMOTE_USER.\n\nThis should have an else clause which explicitly removes the REMOTE_USER key from context if not set in req.environ.",
+      "revId": "e9226e7d5fd64e8f126e488eef505f54852dd437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//7FI\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2230
+      },
+      "writtenOn": "2012-10-26T21:30:36Z",
+      "side": 1,
+      "message": "user_ref does not need to be defined.",
+      "revId": "e9226e7d5fd64e8f126e488eef505f54852dd437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//7FM\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 2230
+      },
+      "writtenOn": "2012-10-26T21:30:36Z",
+      "side": 1,
+      "message": "This check is pointless. This is always None.",
+      "revId": "e9226e7d5fd64e8f126e488eef505f54852dd437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
