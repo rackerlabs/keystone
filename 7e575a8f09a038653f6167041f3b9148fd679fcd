@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//5sE\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-29T20:12:51Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "revId": "7e575a8f09a038653f6167041f3b9148fd679fcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//5qQ\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-29T20:12:51Z",
+      "side": 1,
+      "message": "values.setdefault(\u0027enabled_nomask\u0027, self.enabled_default)",
+      "revId": "7e575a8f09a038653f6167041f3b9148fd679fcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//5qM\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-29T20:12:51Z",
+      "side": 1,
+      "message": "enabled shouldn\u0027t be a string, it should be a boolean..?",
+      "revId": "7e575a8f09a038653f6167041f3b9148fd679fcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
