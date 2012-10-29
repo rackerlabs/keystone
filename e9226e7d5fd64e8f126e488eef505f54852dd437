@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//6Io\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 5367
+      },
+      "writtenOn": "2012-10-29T13:58:02Z",
+      "side": 1,
+      "message": "Paul -- not following why we wouldn\u0027t define user_ref here as its used below in some of the if blocks?",
+      "parentUuid": "AAAALn//7FI\u003d",
+      "revId": "e9226e7d5fd64e8f126e488eef505f54852dd437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//7FM\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 5
@@ -65,6 +83,24 @@
       "writtenOn": "2012-10-26T21:30:36Z",
       "side": 1,
       "message": "This check is pointless. This is always None.",
+      "revId": "e9226e7d5fd64e8f126e488eef505f54852dd437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//6Iw\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 5367
+      },
+      "writtenOn": "2012-10-29T13:58:02Z",
+      "side": 1,
+      "message": "Paul -- Not follow your comment here.. Why is user_ref always None? The username can be in the request body even in the case of REMOTE_USER in which case we would have populated user_ref under if username try... above.",
+      "parentUuid": "AAAALn//7FM\u003d",
       "revId": "e9226e7d5fd64e8f126e488eef505f54852dd437",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
