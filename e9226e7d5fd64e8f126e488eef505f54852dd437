@@ -104,6 +104,24 @@
       "revId": "e9226e7d5fd64e8f126e488eef505f54852dd437",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//5xY\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 2230
+      },
+      "writtenOn": "2012-10-29T19:01:57Z",
+      "side": 1,
+      "message": "I\u0027m sorry, it looks like I was staring a bit TOO closely at the code. I\u0027m not sure why I came to that conclusion.",
+      "parentUuid": "AAAALn//6Iw\u003d",
+      "revId": "e9226e7d5fd64e8f126e488eef505f54852dd437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
