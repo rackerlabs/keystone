@@ -646,6 +646,38 @@ class IdentityTests(object):
             self.user_foo['id'], self.tenant_bar['id'])
         self.assertNotIn(role['id'], roles_ref)
 
+    def test_update_user_enable(self):
+        user = {'id': 'fake1', 'name': 'fake1', 'enabled': 'True'}
+        self.identity_api.create_user('fake1', user)
+        user_ref = self.identity_api.get_user('fake1')
+        self.assertEqual(user_ref['enabled'], 'True')
+
+        user['enabled'] = 'False'
+        self.identity_api.update_user('fake1', user)
+        user_ref = self.identity_api.get_user('fake1')
+        self.assertEqual(user_ref['enabled'], user['enabled'])
+
+        user['enabled'] = 'True'
+        self.identity_api.update_user('fake1', user)
+        user_ref = self.identity_api.get_user('fake1')
+        self.assertEqual(user_ref['enabled'], user['enabled'])
+
+    def test_update_tenant_enable(self):
+        tenant = {'id': 'fake1', 'name': 'fake1', 'enabled': 'True'}
+        self.identity_api.create_tenant('fake1', tenant)
+        tenant_ref = self.identity_api.get_tenant('fake1')
+        self.assertEqual(tenant_ref['enabled'], 'True')
+
+        tenant['enabled'] = 'False'
+        self.identity_api.update_tenant('fake1', tenant)
+        tenant_ref = self.identity_api.get_tenant('fake1')
+        self.assertEqual(tenant_ref['enabled'], tenant['enabled'])
+
+        tenant['enabled'] = 'True'
+        self.identity_api.update_tenant('fake1', tenant)
+        tenant_ref = self.identity_api.get_tenant('fake1')
+        self.assertEqual(tenant_ref['enabled'], tenant['enabled'])
+
 
 class TokenTests(object):
     def test_token_crud(self):
