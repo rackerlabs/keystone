@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//42Q\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-10-30T16:16:39Z",
+      "side": 1,
+      "message": "extraneous whitespace at end of line - PEP8 will catch you...",
+      "revId": "9cf1002834cd2b2facbcb9ccae29fececad26e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
