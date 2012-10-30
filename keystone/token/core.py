@@ -19,6 +19,7 @@
 import datetime
 
 from keystone.common import manager
+from keystone.common import cms
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import timeutils
@@ -51,6 +52,9 @@ class Manager(manager.Manager):
 
 class Driver(object):
     """Interface description for a Token driver."""
+
+    def token_to_key(self, token_id):
+        return cms.cms_hash_token(token_id)
 
     def get_token(self, token_id):
         """Get a token by id.
