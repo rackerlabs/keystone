@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAALn//3iw\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-31T17:21:34Z",
+      "side": 1,
+      "message": "since this supports \"all\" token types, can we just call it hash_token() or token_to_hash()?",
+      "revId": "edbc15c8af930b6a2a07752df47c30da1c252d71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//3hE\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 1
