@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//3ek\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-31T16:49:19Z",
+      "side": 1,
+      "message": "this is already imported, use identity.filter_user()\n\nHACKING also specifies importing modules, not objects",
+      "revId": "40356f3c4b94fbf1782e0dbf92c7b87f9bb3bd06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
