@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//3iM\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-10-31T16:14:17Z",
+      "side": 1,
+      "message": "This should be an assertRaises(exception.ValidationError ...)",
+      "revId": "1ec9b1150968d66b1f2da3a87505280259157114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
