@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//3Zo\u003d",
+        "filename": "keystone/openstack/common/iniparser.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-31T17:29:47Z",
+      "side": 1,
+      "message": "needs to be fixed in openstack-common",
+      "revId": "8d21d674940e3f44de8ba0ce8fcc97c8252ce353",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
