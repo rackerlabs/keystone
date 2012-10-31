@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//3Pk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1816
+      },
+      "writtenOn": "2012-10-31T19:20:46Z",
+      "side": 1,
+      "message": "Is this hashlib import a leftover? It doesn\u0027t appear to be used.",
+      "revId": "77fe063769530c252fe01b09d512ac6c674ea6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
