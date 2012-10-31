@@ -16,6 +16,24 @@
       "revId": "77fe063769530c252fe01b09d512ac6c674ea6ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//3PQ\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-10-31T19:23:19Z",
+      "side": 1,
+      "message": "Yes it was.  I changed to using the code in cms.  Removed.",
+      "parentUuid": "AAAALn//3Pk\u003d",
+      "revId": "77fe063769530c252fe01b09d512ac6c674ea6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
