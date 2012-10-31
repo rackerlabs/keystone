@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAALn//3bE\u003d",
+        "filename": "keystone/openstack/common/iniparser.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-10-31T17:19:21Z",
+      "side": 1,
+      "message": "needs to be changed in openstack-common",
+      "revId": "1ec9b1150968d66b1f2da3a87505280259157114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//3iM\u003d",
         "filename": "tests/test_service.py",
         "patchSetId": 6
