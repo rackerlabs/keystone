@@ -69,6 +69,7 @@ TOKEN_RESPONSES = {
         'access': {
             'token': {
                 'id': UUID_TOKEN_DEFAULT,
+                'expires': '2999-01-01T00:00:10Z',
                 'tenant': {
                     'id': 'tenant_id1',
                     'name': 'tenant_name1',
@@ -89,6 +90,7 @@ TOKEN_RESPONSES = {
         'access': {
             'token': {
                 'id': VALID_DIABLO_TOKEN,
+                'expires': '2999-01-01T00:00:10',
                 'tenantId': 'tenant_id1',
             },
             'user': {
@@ -105,6 +107,7 @@ TOKEN_RESPONSES = {
         'access': {
             'token': {
                 'id': UUID_TOKEN_UNSCOPED,
+                'expires': '2999-01-01T00:00:10Z',
             },
             'user': {
                 'id': 'user_id1',
@@ -120,6 +123,7 @@ TOKEN_RESPONSES = {
         'access': {
             'token': {
                 'id': 'valid-token',
+                'expires': '2999-01-01T00:00:10Z',
                 'tenant': {
                     'id': 'tenant_id1',
                     'name': 'tenant_name1',
