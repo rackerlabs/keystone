@@ -125,13 +125,28 @@ class Catalog(sql.Base, catalog.Driver):
                 raise exception.EndpointNotFound(endpoint_id=endpoint_id)
             session.flush()
 
-    def get_endpoint(self, endpoint_id):
+    def get_endpoint(self, endpoint_id, user_id=None, tenant_id=None):
         session = self.get_session()
         endpoint_ref = session.query(Endpoint)
         endpoint_ref = endpoint_ref.filter_by(id=endpoint_id).first()
         if not endpoint_ref:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
-        return endpoint_ref.to_dict()
+        endpoint_ref_dict = endpoint_ref.to_dict()
+
+        d = dict(CONF.iteritems())
+        d.update({'tenant_id': tenant_id,
+                  'user_id': user_id})
+
+        if "publicurl" in endpoint_ref_dict:
+            endpoint_ref_dict['publicurl'] = core.format_url(
+                endpoint_ref_dict['publicurl'], d)
+        if "internalurl" in endpoint_ref_dict:
+            endpoint_ref_dict['internalurl'] = core.format_url(
+                endpoint_ref_dict['internalurl'], d)
+        if "adminurl" in endpoint_ref_dict:
+            endpoint_ref_dict['adminurl'] = core.format_url(
+                endpoint_ref_dict['adminurl'], d)
+        return endpoint_ref_dict
 
     def list_endpoints(self):
         session = self.get_session()
