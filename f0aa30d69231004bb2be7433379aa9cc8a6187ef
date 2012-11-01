@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//2Rk\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-11-01T16:11:46Z",
+      "side": 1,
+      "message": "needs a docstring to explain what you\u0027re getting, even with a default implementation from cms.",
+      "revId": "f0aa30d69231004bb2be7433379aa9cc8a6187ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
