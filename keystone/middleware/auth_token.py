@@ -771,10 +771,16 @@ class AuthProtocol(object):
         with open(self.revoked_file_name, 'w') as f:
             f.write(value)
 
-    def fetch_revocation_list(self):
+    def fetch_revocation_list(self, retry=True):
         headers = {'X-Auth-Token': self.get_admin_token()}
         response, data = self._json_request('GET', '/v2.0/tokens/revoked',
                                             additional_headers=headers)
+        if response.status == 401:
+            if retry:
+                LOG.info('Keystone rejected admin token %s, resetting admin '
+                         'token', headers)
+                self.admin_token = None
+                return self.fetch_revocation_list(retry=False)
         if response.status != 200:
             raise ServiceError('Unable to fetch token revocation list.')
         if (not 'signed' in data):
