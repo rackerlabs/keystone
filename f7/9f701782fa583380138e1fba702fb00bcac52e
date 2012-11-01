@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Verified+1: SmokeStack
+Approved+1: ayoung
+Code-Review+2: ayoung
+Code-Review+1: Paul McMillan <paul.mcmillan@nebula.com>
+Code-Review+1: boden <boden@linux.vnet.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 01 Nov 2012 20:10:33 +0000
+Reviewed-on: https://review.openstack.org/14823
+Project: openstack/keystone
+Branch: refs/heads/master
