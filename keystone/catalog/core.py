@@ -91,9 +91,9 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
-    def get_endpoint(self, context, endpoint_id):
+    def get_endpoint(self, context, endpoint_id, user_id, tenant_id):
         try:
-            return self.driver.get_endpoint(endpoint_id)
+            return self.driver.get_endpoint(endpoint_id, user_id, tenant_id)
         except exception.NotFound:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
@@ -244,8 +244,16 @@ class EndpointController(wsgi.Application):
 
     def get_endpoints(self, context):
         self.assert_admin(context)
+        user_token_ref = self.token_api.get_token(context=context,
+                                                  token_id=context['token_id'])
+        user_id = user_token_ref['user'].get('id')
+        tenant_id = user_token_ref['tenant'].get('id')
+
         endpoint_list = self.catalog_api.list_endpoints(context)
-        endpoint_refs = [self.catalog_api.get_endpoint(context, e)
+        endpoint_refs = [self.catalog_api.get_endpoint(context,
+                                                       e,
+                                                       user_id,
+                                                       tenant_id)
                          for e in endpoint_list]
         return {'endpoints': endpoint_refs}
 

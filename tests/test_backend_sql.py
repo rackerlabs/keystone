@@ -210,6 +210,21 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
         self.assertEqual(catalog[region][service_type]['internalURL'],
                          None)
 
+    def test_endpoints_URLs(self):
+        self.catalog_api.create_service('c', {"id": "c", "desc": "a1",
+                                        "name": "d"})
+        generic_url = "http://127.0.0.1:8776/v1/$(tenant_id)s"
+        correct_url = "http://127.0.0.1:8776/v1/5"
+        self.catalog_api.create_endpoint('d', {"id": "d", "region": None,
+                                         "service_id": "c",
+                                         "adminurl": generic_url,
+                                         "internalurl": generic_url,
+                                         "publicurl": generic_url})
+        endpoint = self.catalog_api.get_endpoint("d", 5, 5)
+        self.assertEqual(endpoint['publicurl'], correct_url)
+        self.assertEqual(endpoint['adminurl'], correct_url)
+        self.assertEqual(endpoint['internalurl'], correct_url)
+
     def test_delete_service_with_endpoints(self):
         self.catalog_api.create_service('c', {"id": "c", "desc": "a1",
                                         "name": "d"})
