@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//Og4\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-01T15:04:40Z",
+      "side": 1,
+      "message": "Foreign Key",
+      "revId": "225d37880fcd38b9e5b6cb39002e7a5d44701c7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
