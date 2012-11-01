@@ -69,6 +69,7 @@ TOKEN_RESPONSES = {
         'access': {
             'token': {
                 'id': UUID_TOKEN_DEFAULT,
+                'expires': '2999-01-01T00:00:10Z',
                 'tenant': {
                     'id': 'tenant_id1',
                     'name': 'tenant_name1',
@@ -89,6 +90,7 @@ TOKEN_RESPONSES = {
         'access': {
             'token': {
                 'id': VALID_DIABLO_TOKEN,
+                'expires': '2999-01-01T00:00:10',
                 'tenantId': 'tenant_id1',
             },
             'user': {
@@ -105,6 +107,7 @@ TOKEN_RESPONSES = {
         'access': {
             'token': {
                 'id': UUID_TOKEN_UNSCOPED,
+                'expires': '2999-01-01T00:00:10Z',
             },
             'user': {
                 'id': 'user_id1',
@@ -120,6 +123,7 @@ TOKEN_RESPONSES = {
         'access': {
             'token': {
                 'id': 'valid-token',
+                'expires': '2999-01-01T00:00:10Z',
                 'tenant': {
                     'id': 'tenant_id1',
                     'name': 'tenant_name1',
@@ -565,3 +569,11 @@ class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
         self.assertEqual(self.response_status, 200)
         self.assertFalse(req.headers.get('X-Service-Catalog'))
         self.assertEqual(body, ['SUCCESS'])
+
+    def test_will_expire_soon(self):
+        tenseconds = datetime.datetime.utcnow() + datetime.timedelta(
+            seconds=10)
+        self.assertTrue(auth_token.will_expire_soon(tenseconds))
+        fortyseconds = datetime.datetime.utcnow() + datetime.timedelta(
+            seconds=40)
+        self.assertFalse(auth_token.will_expire_soon(fortyseconds))
