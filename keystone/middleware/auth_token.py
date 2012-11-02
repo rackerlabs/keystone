@@ -159,6 +159,11 @@ opts = [
 CONF.register_opts(opts, group='keystone_authtoken')
 
 
+def will_expire_soon(expiry):
+    soon = (datetime.datetime.now() + datetime.timedelta(seconds=30))
+    return expiry < soon
+
+
 class InvalidUserToken(Exception):
     pass
 
@@ -230,6 +235,7 @@ class AuthProtocol(object):
         # Credentials used to verify this component with the Auth service since
         # validating tokens is a privileged call
         self.admin_token = self._conf_get('admin_token')
+        self.admin_token_expiry = None
         self.admin_user = self._conf_get('admin_user')
         self.admin_password = self._conf_get('admin_password')
         self.admin_tenant_name = self._conf_get('admin_tenant_name')
@@ -349,8 +355,12 @@ class AuthProtocol(object):
         :raise ServiceError when unable to retrieve token from keystone
 
         """
+        if self.admin_token_expiry:
+            if will_expire_soon(self.admin_token_expiry):
+                self.admin_token = None
         if not self.admin_token:
-            self.admin_token = self._request_admin_token()
+            self.admin_token, self.admin_token_expiry =\
+                self._request_admin_token()
 
         return self.admin_token
 
@@ -455,8 +465,9 @@ class AuthProtocol(object):
 
         try:
             token = data['access']['token']['id']
+            expiry = timeutils.isotime(data['access']['token']['expires'])
             assert token
-            return token
+            return token, expiry
         except (AssertionError, KeyError):
             LOG.warn("Unexpected response from keystone service: %s", data)
             raise ServiceError('invalid json response')
