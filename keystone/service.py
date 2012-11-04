@@ -29,6 +29,8 @@ from keystone.openstack.common import timeutils
 from keystone import policy
 from keystone import token
 
+from eventlet import greenthread
+
 
 LOG = logging.getLogger(__name__)
 
@@ -351,29 +353,44 @@ class TokenController(wsgi.Application):
                 else:
                     # remote authentication already performed
                     if not user_ref:
-                        user_ref = self.identity_api.get_user(
+                        t_user_ref = greenthread.spawn(
+                            self.identity_api.get_user,
                             self.identity_api,
                             user_id)
                     if tenant_id:
                         if not tenant_ref:
-                            tenant_ref = self.identity_api.get_tenant(
+                            t_tenant_ref = greenthread.spawn(
+                                self.identity_api.get_tenant,
                                 self.identity_api,
                                 tenant_id)
                         metadata_ref = self.identity_api.get_metadata(
                             self.identity_api,
                             user_id,
                             tenant_id)
+
+                    if not user_ref:
+                        user_ref = t_user_ref.wait()
+                    if not tenant_ref:
+                        tenant_ref = t_tenant_ref.wait()
+
                     auth_info = (user_ref, tenant_ref, metadata_ref)
 
                 # If the user is disabled don't allow them to authenticate
-                if not user_ref.get('enabled', True):
+                t_get_user_ref = greenthread.spawn(user_ref.get,
+                                                   'enabled', True)
+                # If the tenant is disabled don't allow them to authenticate
+                t_get_tenant_ref = None
+                if tenant_ref:
+                    t_get_tenant_ref = greenthread.spawn(tenant_ref.get,
+                                                         'enabled', True)
+
+                if not t_get_user_ref.wait():
                     LOG.warning('User %s is disabled' % user_id)
                     raise exception.Unauthorized()
+                if t_get_tenant_ref and t_get_tenant_ref.wait():
+                        LOG.warning('Tenant %s is disabled' % tenant_id)
+                        raise exception.Unauthorized()
 
-                # If the tenant is disabled don't allow them to authenticate
-                if tenant_ref and not tenant_ref.get('enabled', True):
-                    LOG.warning('Tenant %s is disabled' % tenant_id)
-                    raise exception.Unauthorized()
             except AssertionError as e:
                 raise exception.Unauthorized(str(e))
             auth_token_data = dict(zip(['user', 'tenant', 'metadata'],
@@ -405,19 +422,34 @@ class TokenController(wsgi.Application):
             current_user_ref = self.identity_api.get_user(context=context,
                                                           user_id=user_id)
 
+            t_enabled_current_user_ref = greenthread.spawn(
+                                                current_user_ref.get,
+                                                'enabled',
+                                                True)
+
+            ## COLLECT ##
+            if tenant_name:
+                t_tenant_ref = greenthread.spawn(
+                                        self.identity_api.get_tenant_by_name,
+                                        context=context,
+                                        tenant_name=tenant_name)
+
+            t_tenants = greenthread.spawn(
+                            self.identity_api.get_tenants_for_user,
+                            context, user_id)
+
+            ## COLLECT ##
             # If the user is disabled don't allow them to authenticate
-            if not current_user_ref.get('enabled', True):
+            if t_enabled_current_user_ref.wait():
                 LOG.warning('User %s is disabled' % user_id)
                 raise exception.Unauthorized()
 
             if tenant_name:
-                tenant_ref = self.identity_api.get_tenant_by_name(
-                    context=context,
-                    tenant_name=tenant_name)
+                tenant_ref = t_tenant_ref.wait()
                 tenant_id = tenant_ref['id']
             else:
                 tenant_id = auth.get('tenantId', None)
-            tenants = self.identity_api.get_tenants_for_user(context, user_id)
+            tenants = t_tenants.wait()
 
             if tenant_id:
                 if not tenant_id in tenants:
@@ -464,9 +496,14 @@ class TokenController(wsgi.Application):
         auth_token_data['id'] = 'placeholder'
 
         roles_ref = []
+        t_roles_ref = []
         for role_id in metadata_ref.get('roles', []):
-            role_ref = self.identity_api.get_role(context, role_id)
-            roles_ref.append(dict(name=role_ref['name']))
+            t_roles_ref.append(greenthread.spawn(
+                                    self.identiy_api.get_role,
+                                    context,
+                                    role_id)
+        for t in t_roles_ref:
+            roles_ref.append(dict(name=t.wait()['name']))
 
         token_data = self._format_token(auth_token_data, roles_ref)
 
