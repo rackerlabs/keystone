@@ -26,11 +26,38 @@ class FakeIdentityManager(object):
         return {'id': 1, 'name': 'test', 'extra': ''}
 
 
+class ServiceBadRequests(test.TestCase):
+    def setUp(self):
+        super(ServiceBadRequests, self).setUp()
+        self.api = service.TokenController()
+
+
 class TokenControllerTest(test.TestCase):
     def setUp(self):
         super(TokenControllerTest, self).setUp()
         self.stubs.Set(identity, 'Manager', FakeIdentityManager)
         self.api = service.TokenController()
+
+    def test_no_external_auth(self):
+        self.assertRaises(
+            service.ExternalAuthNotApplicable,
+            self.api._authenticate_external,
+            {},
+            {})
+
+    def test_no_token_in_auth(self):
+        self.assertRaises(
+            exception.ValidationError,
+            self.api._authenticate_token,
+            None,
+            {})
+
+    def test_no_credentials_in_auth(self):
+        self.assertRaises(
+            exception.ValidationError,
+            self.api._authenticate_local,
+            None,
+            {})
 
     def test_authenticate_blank_password_credentials(self):
         """Verify sending empty json dict as passwordCredentials raises the
@@ -121,6 +148,15 @@ class RemoteUserTest(test.TestCase):
         remote_token = self.api.authenticate(
             {'REMOTE_USER': 'FOO'},
             self._build_user_auth('FOO', 'nosir', 'BAR'))
+        self.assertEqualTokens(local_token, remote_token)
+
+    def test_scoped_nometa_remote_authn(self):
+        local_token = self.api.authenticate(
+            {},
+            self._build_user_auth('NO_META', 'no_meta2', 'BAZ'))
+        remote_token = self.api.authenticate(
+            {'REMOTE_USER': 'NO_META'},
+            self._build_user_auth('NO_META', 'nosir', 'BAZ'))
         self.assertEqualTokens(local_token, remote_token)
 
     def test_scoped_remote_authn_invalid_user(self):
