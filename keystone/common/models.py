@@ -87,16 +87,16 @@ class User(Model):
     Required keys:
         id
         name
+        password
+        enabled (bool, default True)
 
     Optional keys:
-        password
         description
         email
-        enabled (bool, default True)
     """
 
-    required_keys = ('id', 'name')
-    optional_keys = ('password', 'description', 'email', 'enabled')
+    required_keys = ('id', 'name', 'password', 'enabled')
+    optional_keys = ('description', 'email')
 
 
 class Tenant(Model):
@@ -105,15 +105,15 @@ class Tenant(Model):
     Required keys:
         id
         name
-
-    Optional Keys:
         description
         enabled (bool, default True)
 
+    Optional Keys:
+
     """
 
-    required_keys = ('id', 'name')
-    optional_keys = ('description', 'enabled')
+    required_keys = ('id', 'name', 'description', 'enabled')
+    optional_keys = ()
 
 
 class Role(Model):
