@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//yUw\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-06T20:27:04Z",
+      "side": 1,
+      "message": "Can we get a consistent  return from the various _authenticate functions? Either: auth_token_data, (current_user_ref, tenant_ref, metadata_ref)  or just the tuple itself?  I think if we get a good contract of what is returned from one of them, it will make extensions easier.",
+      "revId": "b558c343ca4b901a02c9fc193c6fa922ccd1279f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
