@@ -39,9 +39,11 @@ def handle_conflicts(type='object'):
 
 class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
-    attributes = ['id', 'name']
+    attributes = ['id', 'name', 'password', 'enabled']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), unique=True, nullable=False)
+    password = sql.Column(sql.String(64))
+    enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
 
 
@@ -50,6 +52,8 @@ class Tenant(sql.ModelBase, sql.DictBase):
     attributes = ['id', 'name']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), unique=True, nullable=False)
+    description = sql.Column(sql.String(64))
+    enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
 
 
@@ -309,6 +313,7 @@ class Identity(sql.Base, identity.Driver):
     @handle_conflicts(type='user')
     def create_user(self, user_id, user):
         user['name'] = clean.user_name(user['name'])
+        user['enabled'] = True
         user = utils.hash_user_password(user)
         session = self.get_session()
         with session.begin():
@@ -335,6 +340,8 @@ class Identity(sql.Base, identity.Driver):
             new_user = User.from_dict(old_user_dict)
 
             user_ref.name = new_user.name
+            user_ref.enabled = new_user.enabled
+            user_ref.password = new_user.password
             user_ref.extra = new_user.extra
             session.flush()
         return identity.filter_user(user_ref.to_dict(include_extra_dict=True))

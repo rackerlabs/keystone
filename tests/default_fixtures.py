@@ -35,7 +35,8 @@ USERS = [
         'id': 'foo',
         'name': 'FOO',
         'password': 'foo2',
-        'tenants': ['bar']
+        'tenants': ['bar'],
+        'enabled': True
     }, {
         'id': 'two',
         'name': 'TWO',
