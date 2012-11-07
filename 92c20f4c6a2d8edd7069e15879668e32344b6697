@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//xl4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-11-07T05:11:17Z",
+      "side": 1,
+      "message": "probably easier to just put:\n\nblueprint: normalize-sql\n\nto link it up",
+      "revId": "92c20f4c6a2d8edd7069e15879668e32344b6697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
