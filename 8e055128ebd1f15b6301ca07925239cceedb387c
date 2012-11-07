@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//xGg\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-07T17:28:36Z",
+      "side": 1,
+      "message": "make this a docstr?",
+      "revId": "8e055128ebd1f15b6301ca07925239cceedb387c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//xGI\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-07T17:28:36Z",
+      "side": 1,
+      "message": "can we call this assertSomethingSomething so it looks more likea unittest assertion?",
+      "revId": "8e055128ebd1f15b6301ca07925239cceedb387c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//xF8\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-07T17:28:36Z",
+      "side": 1,
+      "message": "does len() not work here?",
+      "revId": "8e055128ebd1f15b6301ca07925239cceedb387c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//xGA\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-07T17:28:36Z",
+      "side": 1,
+      "message": "i assume this is supposed to be more generic than \u0027user_table\u0027?",
+      "revId": "8e055128ebd1f15b6301ca07925239cceedb387c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//xF4\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-07T17:28:36Z",
+      "side": 1,
+      "message": "assertTableExists(table_name) ?",
+      "revId": "8e055128ebd1f15b6301ca07925239cceedb387c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
