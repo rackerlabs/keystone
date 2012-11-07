@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//w5E\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-11-07T21:33:42Z",
+      "side": 1,
+      "message": "I\u0027d prefer to name this \"include_extra_dict\" (even if it is twice) - include_extra_twice isn\u0027t quite as meaningful to me in the methods where we\u0027re using it",
+      "revId": "a8f9cfacd8dff9fbc66344aec766c42d55dd36de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
