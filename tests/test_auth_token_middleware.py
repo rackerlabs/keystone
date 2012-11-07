@@ -51,6 +51,9 @@ VALID_SIGNED_REVOCATION_LIST = None
 UUID_TOKEN_DEFAULT = "ec6c0710ec2f471498484c1b53ab4f9d"
 UUID_TOKEN_NO_SERVICE_CATALOG = '8286720fbe4941e69fa8241723bb02df'
 UUID_TOKEN_UNSCOPED = '731f903721c14827be7b2dc912af7776'
+UUID_TOKEN_EXTENSIONS_ESSEX = '59bde65a45684167b992ee6a2eb1ff76'
+UUID_TOKEN_EXTENSIONS_PREDIABLO = '9319bbca38e9461faa67e22a23f6341c'
+UUID_TOKEN_EXTENSIONS_DEFAULTTENANT = '0e4dfd9356684f2e91dda197f4c2d915'
 VALID_DIABLO_TOKEN = 'b0cf19b55dbb4f20a6ee18e6c6cf1726'
 
 INVALID_SIGNED_TOKEN = string.replace(
@@ -79,6 +82,7 @@ TOKEN_RESPONSES = {
         'access': {
             'token': {
                 'id': UUID_TOKEN_DEFAULT,
+                'expires': 'Tuesday',
                 'tenant': {
                     'id': 'tenant_id1',
                     'name': 'tenant_name1',
@@ -143,6 +147,71 @@ TOKEN_RESPONSES = {
                     {'name': 'role2'},
                 ],
             }
+        },
+    },
+    UUID_TOKEN_EXTENSIONS_ESSEX: {
+        'access': {
+            'token': {
+                'id': 'essex-token',
+                'expires': 'Tuesday',
+                'tenant': {
+                    'id': 'tenant_id1',
+                    'name': 'tenant_name1',
+                    'tenant_ext': 'tenant_extension1',
+                },
+                'token_ext': 'token_extension1',
+            },
+            'user': {
+                'id': 'user_id1',
+                'name': 'user_name1',
+                'roles': [
+                    {'name': 'role1'},
+                    {'name': 'role2'},
+                ],
+                'user_ext': 'user_extension1',
+            },
+            'auth_ext': 'auth_extension1',
+        },
+    },
+    UUID_TOKEN_EXTENSIONS_PREDIABLO: {
+        'access': {
+            'token': {
+                'id': 'prediablo-token',
+                'expires': 'Tuesday',
+                'tenantId': 'tenant_id1',
+                'token_ext': 'token_extension1',
+            },
+            'user': {
+                'id': 'user_id1',
+                'name': 'user_name1',
+                'roles': [
+                    {'name': 'role1'},
+                    {'name': 'role2'},
+                ],
+                'user_ext': 'user_extension1',
+            },
+            'auth_ext': 'auth_extension1',
+        },
+    },
+    UUID_TOKEN_EXTENSIONS_DEFAULTTENANT: {
+        'access': {
+            'token': {
+                'id': 'defaulttenant-token',
+                'expires': 'Tuesday',
+                'token_ext': 'token_extension1',
+            },
+            'user': {
+                'id': 'user_id1',
+                'name': 'user_name1',
+                'tenantId': 'tenant_id1',
+                'tenantName': 'tenant_name1',
+                'roles': [
+                    {'name': 'role1'},
+                    {'name': 'role2'},
+                ],
+                'user_ext': 'user_extension1',
+            },
+            'auth_ext': 'auth_extension1',
         },
     },
 }
@@ -579,3 +648,75 @@ class AuthTokenMiddlewareTest(BaseAuthTokenMiddlewareTest):
         self.assertEqual(self.response_status, 200)
         self.assertFalse(req.headers.get('X-Service-Catalog'))
         self.assertEqual(body, ['SUCCESS'])
+
+    def test_request_prevent_extension_injection(self):
+        req = webob.Request.blank('/')
+        req.headers['X-User-Extension'] = '{}'
+        req.headers['X-Tenant-Extension'] = '{}'
+        req.headers['X-Token-Extension'] = '{}'
+        req.headers['X-Auth-Extension'] = '{}'
+        req.headers['X-Auth-Token'] = UUID_TOKEN_DEFAULT
+        body = self.middleware(req.environ, self.start_fake_response)
+        self.assertEqual(self.response_status, 200)
+        self.assertFalse(req.headers.get('X-User-Extension'))
+        self.assertFalse(req.headers.get('X-Tenant-Extension'))
+        self.assertFalse(req.headers.get('X-Token-Extension'))
+        self.assertFalse(req.headers.get('X-Auth-Extension'))
+        self.assertEqual(body, ['SUCCESS'])
+
+
+class AuthTokenExtensionEssexMiddlewareTest(BaseAuthTokenMiddlewareTest):
+    def setUp(self):
+        expected_env = {
+            'HTTP_X_USER_EXTENSION': '{"user_ext": "user_extension1"}',
+            'HTTP_X_TENANT_EXTENSION': '{"tenant_ext": "tenant_extension1"}',
+            'HTTP_X_TOKEN_EXTENSION': '{"token_ext": "token_extension1"}',
+            'HTTP_X_AUTH_EXTENSION': '{"auth_ext": "auth_extension1"}',
+        }
+        super(AuthTokenExtensionEssexMiddlewareTest, self).setUp(expected_env)
+
+    def test_valid_extension_environment(self):
+        req = webob.Request.blank('/')
+        req.headers['X-Auth-Token'] = UUID_TOKEN_EXTENSIONS_ESSEX
+        self.middleware(req.environ, self.start_fake_response)
+        self.assertEqual(self.response_status, 200)
+
+
+class AuthTokenExtensionPreDiabloMiddlewareTest(BaseAuthTokenMiddlewareTest):
+    def setUp(self):
+        # pre-diablo only had Tenant ID, which was also the Name
+        expected_env = {
+            'HTTP_X_TENANT_ID': 'tenant_id1',
+            'HTTP_X_TENANT_NAME': 'tenant_id1',
+            # now deprecated (diablo-compat)
+            'HTTP_X_TENANT': 'tenant_id1',
+            # extensions
+            'HTTP_X_USER_EXTENSION': '{"user_ext": "user_extension1"}',
+            'HTTP_X_TOKEN_EXTENSION': '{"token_ext": "token_extension1"}',
+            'HTTP_X_AUTH_EXTENSION': '{"auth_ext": "auth_extension1"}',
+        }
+        super(AuthTokenExtensionPreDiabloMiddlewareTest, self).\
+            setUp(expected_env)
+
+    def test_valid_extension_environment(self):
+        req = webob.Request.blank('/')
+        req.headers['X-Auth-Token'] = UUID_TOKEN_EXTENSIONS_PREDIABLO
+        self.middleware(req.environ, self.start_fake_response)
+        self.assertEqual(self.response_status, 200)
+
+
+class AuthTokenExtensionDefaultMiddlewareTest(BaseAuthTokenMiddlewareTest):
+    def setUp(self):
+        expected_env = {
+            'HTTP_X_USER_EXTENSION': '{"user_ext": "user_extension1"}',
+            'HTTP_X_TOKEN_EXTENSION': '{"token_ext": "token_extension1"}',
+            'HTTP_X_AUTH_EXTENSION': '{"auth_ext": "auth_extension1"}',
+        }
+        super(AuthTokenExtensionDefaultMiddlewareTest, self).\
+            setUp(expected_env)
+
+    def test_valid_extension_environment(self):
+        req = webob.Request.blank('/')
+        req.headers['X-Auth-Token'] = UUID_TOKEN_EXTENSIONS_DEFAULTTENANT
+        self.middleware(req.environ, self.start_fake_response)
+        self.assertEqual(self.response_status, 200)

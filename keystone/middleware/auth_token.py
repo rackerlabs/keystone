@@ -79,6 +79,19 @@ HTTP_X_ROLES
 HTTP_X_SERVICE_CATALOG
     json encoded keystone service catalog (optional).
 
+HTTP_X_USER_EXTENSION
+    json encoded user extension data (optional).
+
+HTTP_X_TENANT_EXTENSION
+    json encoded tenant extension data (optional).
+
+HTTP_X_TOKEN_EXTENSION
+    json encoded token extension data (optional).
+
+HTTP_X_AUTH_EXTENSION
+    json encoded extension data not related to user, tenant, or token
+    (optional).
+
 HTTP_X_TENANT
     *Deprecated* in favor of HTTP_X_TENANT_ID and HTTP_X_TENANT_NAME
     Keystone-assigned unique identifier, deprecated
@@ -309,6 +322,11 @@ class AuthProtocol(object):
             'X-User',
             'X-Tenant',
             'X-Role',
+            # Extension headers
+            'X-User-Extension',
+            'X-Tenant-Extension',
+            'X-Token-Extension',
+            'X-Auth-Extension',
         )
         LOG.debug('Removing headers from request environment: %s' %
                   ','.join(auth_headers))
@@ -489,6 +507,31 @@ class AuthProtocol(object):
             LOG.warn("Authorization failed for token %s", user_token)
             raise InvalidUserToken('Token authorization failed')
 
+    def _build_extension_header(self, header_dict, header_name,
+                                original, blacklist):
+        """Set an extension header.
+
+        Filters a dictionary to remove keys in blacklist; if any items
+        remain in the dictionary, sets a header with the given name on
+        the header dictionary to be the resulting dictionary, encoded
+        to JSON data.
+
+        :param header_dict: A dictionary collecting the headers.
+        :param header_name: The name of the extension header to add.
+        :param original: The dictionary potentially containing
+                         extension data.
+        :param blacklist: A set of the keys in original which should
+                          not be considered to be extension data.
+        """
+        # Check if we have any extension data
+        extension = dict((k, v) for k, v in original.items()
+                         if k not in blacklist)
+        if not extension:
+            return
+
+        # OK, add the appropriate extension header
+        header_dict[header_name] = jsonutils.dumps(extension)
+
     def _build_user_headers(self, token_info):
         """Convert token object into headers.
 
@@ -500,6 +543,12 @@ class AuthProtocol(object):
          * X_USER_NAME: name of user
          * X_ROLES: list of roles
          * X_SERVICE_CATALOG: service catalog
+
+        Optional headers that contain JSON-encoded extension data:
+         * X_USER_EXTENSION: extension data on the user
+         * X_TENANT_EXTENSION: extension data on the tenant
+         * X_TOKEN_EXTENSION: extension data on the token
+         * X_AUTH_EXTENSION: extension data on the auth response
 
         Additional (deprecated) headers include:
          * X_USER: name of user
@@ -514,19 +563,28 @@ class AuthProtocol(object):
         token = token_info['access']['token']
         roles = ','.join([role['name'] for role in user.get('roles', [])])
 
+        # Fields that have already been handled...
+        token_info_handled = set(['user', 'token'])
+        user_handled = set(['id', 'name', 'roles'])
+        tenant_handled = set(['id', 'name'])
+        token_handled = set(['id', 'expires'])
+
         def get_tenant_info():
             """Returns a (tenant_id, tenant_name) tuple from context."""
             def essex():
                 """Essex puts the tenant ID and name on the token."""
-                return (token['tenant']['id'], token['tenant']['name'])
+                return (token['tenant']['id'], token['tenant']['name'],
+                        token['tenant'], token_handled, ['tenant'])
 
             def pre_diablo():
                 """Pre-diablo, Keystone only provided tenantId."""
-                return (token['tenantId'], token['tenantId'])
+                return (token['tenantId'], token['tenantId'], {},
+                        token_handled, ['tenantId'])
 
             def default_tenant():
                 """Assume the user's default tenant."""
-                return (user['tenantId'], user['tenantName'])
+                return (user['tenantId'], user['tenantName'], {},
+                        user_handled, ['tenantId', 'tenantName'])
 
             for method in [essex, pre_diablo, default_tenant]:
                 try:
@@ -536,7 +594,8 @@ class AuthProtocol(object):
 
             raise InvalidUserToken('Unable to determine tenancy.')
 
-        tenant_id, tenant_name = get_tenant_info()
+        tenant_id, tenant_name, tenant, handled, fields = get_tenant_info()
+        handled |= set(fields)
 
         user_id = user['id']
         user_name = user['name']
@@ -559,6 +618,18 @@ class AuthProtocol(object):
             rval['X-Service-Catalog'] = jsonutils.dumps(catalog)
         except KeyError:
             pass
+        else:
+            token_info_handled.add('serviceCatalog')
+
+        # Add extension headers as required
+        self._build_extension_header(rval, 'X-User-Extension',
+                                     user, user_handled)
+        self._build_extension_header(rval, 'X-Tenant-Extension',
+                                     tenant, tenant_handled)
+        self._build_extension_header(rval, 'X-Token-Extension',
+                                     token, token_handled)
+        self._build_extension_header(rval, 'X-Auth-Extension',
+                                     token_info['access'], token_info_handled)
 
         return rval
 
