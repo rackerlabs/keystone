@@ -16,6 +16,24 @@
       "revId": "b558c343ca4b901a02c9fc193c6fa922ccd1279f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//xY0\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-07T09:12:42Z",
+      "side": 1,
+      "message": "Sure, this is something that I also do not like. I\u0027ll try to work on it today.",
+      "parentUuid": "AAAALn//yUw\u003d",
+      "revId": "b558c343ca4b901a02c9fc193c6fa922ccd1279f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
