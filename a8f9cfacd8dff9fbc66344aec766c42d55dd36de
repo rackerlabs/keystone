@@ -16,6 +16,24 @@
       "revId": "a8f9cfacd8dff9fbc66344aec766c42d55dd36de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//w4s\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-07T21:36:49Z",
+      "side": 1,
+      "message": "I intentionally named it something dumb to reflect the behavior, but I like _dict better :)",
+      "parentUuid": "AAAALn//w5E\u003d",
+      "revId": "a8f9cfacd8dff9fbc66344aec766c42d55dd36de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
