@@ -68,10 +68,21 @@ class DictBase(object):
 
         return cls(**new_d)
 
-    def to_dict(self):
+    def to_dict(self, include_extra_twice=False):
+        """Returns the model's attributes as a dictionary.
+
+        If include_extra_twice is True, 'extra' attributes are literally
+        included in the resulting dictionary twice, for backwards-compatibility
+        with a broken implementation.
+
+        """
         d = self.extra.copy()
         for attr in self.__class__.attributes:
             d[attr] = getattr(self, attr)
+
+        if include_extra_twice:
+            d['extra'] = self.extra.copy()
+
         return d
 
     def __setitem__(self, key, value):
