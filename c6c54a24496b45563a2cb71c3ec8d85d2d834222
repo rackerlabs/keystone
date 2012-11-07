@@ -69,6 +69,24 @@
       "revId": "c6c54a24496b45563a2cb71c3ec8d85d2d834222",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//w28\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-07T21:46:59Z",
+      "side": 1,
+      "message": "but then what do you do with \u0027handled\u0027?",
+      "parentUuid": "AAAALn//w4I\u003d",
+      "revId": "c6c54a24496b45563a2cb71c3ec8d85d2d834222",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
