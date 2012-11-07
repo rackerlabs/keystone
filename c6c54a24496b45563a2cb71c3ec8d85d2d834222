@@ -16,6 +16,24 @@
       "revId": "c6c54a24496b45563a2cb71c3ec8d85d2d834222",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//w4I\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2012-11-07T21:40:17Z",
+      "side": 1,
+      "message": "No, \"handled\" has either token_handled or user_handled assigned to it, and \"fields\" has assigned to it a list of fields consumed from the token or user.  It\u0027s how I have to handle the relatively complex backwards compatibility code in the get_tenant_info() inner function.",
+      "parentUuid": "AAAALn//w6Y\u003d",
+      "revId": "c6c54a24496b45563a2cb71c3ec8d85d2d834222",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
