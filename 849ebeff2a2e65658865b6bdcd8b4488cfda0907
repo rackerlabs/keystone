@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//wh8\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "LGO --\u003e LOG",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wiA\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "confused as to how/why it should get this far and not have already raised Unauthorized? (and obviously this isn\u0027t tested at all, because the typo in 496 would have been hit)",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//whs\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "what\u0027s the point of allowing token auth without an id? is that not a ValidationError?",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wgc\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "no reason to specify a default of empty string here, because the user may have intended to auth with an empty string. in other words, we can\u0027t distinguish between no password being provided (a validationerror) and an empty password string (a valid request).",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wgo\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "why would an empty password field raise a validationerror? it seems like that\u0027d be up to the driver to judge on user create / user update / auth",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//whc\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "just a bit more readable,\n\n    if \u0027REMOTE_USER\u0027 not in context:",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//whM\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "why initialize any of these?",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//whQ\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "you already tested for this in 649",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wg4\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "docstr indicates that this will return a valid tenantId, but:\n\nA) None is not a valid tenant_id\n\nB) tenant_id isn\u0027t tested to be a valid",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wgw\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 698,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "maybe merge this with the above method, so we only have to validate \u0026 fetch a tenant_ref once",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wkY\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "should differentiate between tenant_id and tenant_name",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wkk\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "if None is an expected value, the function should just accept kwargs with defaults of username\u003dNone, etc",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wkU\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "(without a docstr / reading the impl, i would have assume that \u0027tenant\u0027 here is a \u0027tenant_id\u0027, as it\u0027s the unique identifier _",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wkM\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "continuing the above, arguments like these make it difficult to read what\u0027s being tested at a glance, without knowing the impl of _build_user_auth",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wkA\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "would prefer to see uuid.uuid4().hex used to indicate arbitrary values -- I have absolutely no idea which of \u0027FOO\u0027, \u0027foo2\u0027 and \u0027foobar\u0027 are expected to be valid values.",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wj8\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "same here, what about this user is invalid such that auth should fail?",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wjo\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T03:59:53Z",
+      "side": 1,
+      "message": "what is \u0027nosir\u0027?",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
