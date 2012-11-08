@@ -22,8 +22,8 @@ from keystone.common import sql
 # these are to make sure all the models we care about are defined
 import keystone.catalog.backends.sql
 import keystone.contrib.ec2.backends.sql
-import keystone.identity.backends.sql
-#inentionally leave off token.  We bring it up to V1 here manually
+
+#inentionally leave off token and identity.  We bring it up to V1 here manually
 
 
 def upgrade(migrate_engine):
@@ -38,8 +38,39 @@ def upgrade(migrate_engine):
                   Column('id', sql.String(64), primary_key=True),
                   Column('expires', sql.DateTime()),
                   Column('extra', sql.JsonBlob()))
-
     token.create(migrate_engine, checkfirst=True)
+
+    user = Table('user', meta,
+                 Column('id', sql.String(64), primary_key=True),
+                 Column('name', sql.String(64), unique=True, nullable=False),
+                 Column('extra', sql.JsonBlob()))
+    user.create(migrate_engine, checkfirst=True)
+
+    tenant = Table('tenant', meta,
+                   Column('id', sql.String(64), primary_key=True),
+                   Column('name', sql.String(64), unique=True, nullable=False),
+                   Column('extra', sql.JsonBlob()))
+    tenant.create(migrate_engine, checkfirst=True)
+
+    role = Table('role', meta,
+                 Column('id', sql.String(64), primary_key=True),
+                 Column('name', sql.String(64), unique=True, nullable=False))
+    role.create(migrate_engine, checkfirst=True)
+
+    membership = Table('user_tenant_membership', meta,
+                       Column('user_id', sql.String(64),
+                              sql.ForeignKey('user.id'), nullable=False, ),
+                       Column('tenant_id', sql.String(64),
+                              sql.ForeignKey('tenant.id'), nullable=False))
+    membership.create(migrate_engine, checkfirst=True)
+
+    metadata = Table('metadata', meta,
+                     Column('user_id', sql.String(64), nullable=False,
+                            primary_key=True),
+                     Column('tenant_id', sql.String(64), nullable=False,
+                            primary_key=True),
+                     Column('data', sql.JsonBlob()))
+    metadata.create(migrate_engine, checkfirst=True)
 
 
 def downgrade(migrate_engine):
