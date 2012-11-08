@@ -16,6 +16,24 @@
       "revId": "14ec4c9e73e9e629eb0bcda139538fad917c6f5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wiw\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-08T03:34:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//wkw\u003d",
+      "revId": "14ec4c9e73e9e629eb0bcda139538fad917c6f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
