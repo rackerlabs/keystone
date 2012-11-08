@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//wQE\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//wh8\u003d",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//wiA\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2012-11-08T03:59:53Z",
       "side": 1,
       "message": "confused as to how/why it should get this far and not have already raised Unauthorized? (and obviously this isn\u0027t tested at all, because the typo in 496 would have been hit)",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wRE\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "You\u0027re right we should never arrive here.",
+      "parentUuid": "AAAALn//wiA\u003d",
       "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//wR0\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//whs\u003d",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//wgc\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2012-11-08T03:59:53Z",
       "side": 1,
       "message": "no reason to specify a default of empty string here, because the user may have intended to auth with an empty string. in other words, we can\u0027t distinguish between no password being provided (a validationerror) and an empty password string (a valid request).",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wRM\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//wgc\u003d",
       "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//wRQ\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//wgo\u003d",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//whc\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2012-11-08T03:59:53Z",
       "side": 1,
       "message": "just a bit more readable,\n\n    if \u0027REMOTE_USER\u0027 not in context:",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wRU\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//whc\u003d",
       "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//wRw\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//whM\u003d",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//whQ\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 4
@@ -132,6 +258,24 @@
       "writtenOn": "2012-11-08T03:59:53Z",
       "side": 1,
       "message": "you already tested for this in 649",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wRs\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//whQ\u003d",
       "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +333,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//wQs\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "This function was just renamed from the previous implementation. I agree with you though.",
+      "parentUuid": "AAAALn//wkY\u003d",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//wkk\u003d",
         "filename": "tests/test_service.py",
         "patchSetId": 4
@@ -200,6 +362,24 @@
       "writtenOn": "2012-11-08T03:59:53Z",
       "side": 1,
       "message": "if None is an expected value, the function should just accept kwargs with defaults of username\u003dNone, etc",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wPs\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//wkk\u003d",
       "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +403,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//wPo\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//wkU\u003d",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//wkM\u003d",
         "filename": "tests/test_service.py",
         "patchSetId": 4
@@ -234,6 +432,24 @@
       "writtenOn": "2012-11-08T03:59:53Z",
       "side": 1,
       "message": "continuing the above, arguments like these make it difficult to read what\u0027s being tested at a glance, without knowing the impl of _build_user_auth",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wQQ\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//wkM\u003d",
       "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +473,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//wQM\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//wkA\u003d",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//wj8\u003d",
         "filename": "tests/test_service.py",
         "patchSetId": 4
@@ -274,6 +508,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//wQI\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//wj8\u003d",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//wjo\u003d",
         "filename": "tests/test_service.py",
         "patchSetId": 4
@@ -285,6 +537,24 @@
       "writtenOn": "2012-11-08T03:59:53Z",
       "side": 1,
       "message": "what is \u0027nosir\u0027?",
+      "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wQw\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-08T10:45:03Z",
+      "side": 1,
+      "message": "I\u0027ve adjusted all of these.",
+      "parentUuid": "AAAALn//wjo\u003d",
       "revId": "849ebeff2a2e65658865b6bdcd8b4488cfda0907",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
