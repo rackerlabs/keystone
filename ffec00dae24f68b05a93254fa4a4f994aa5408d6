@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//v5M\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T16:53:38Z",
+      "side": 1,
+      "message": "update this to use the same pattern as you did for password, which is much more reliable (if username not in passwordcredentials and userId not in passwordcredentials... raise validationerror)\n\nthe separation of request validation from request processing looks good",
+      "revId": "ffec00dae24f68b05a93254fa4a4f994aa5408d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//v5U\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T16:53:38Z",
+      "side": 1,
+      "message": "extract, from",
+      "revId": "ffec00dae24f68b05a93254fa4a4f994aa5408d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//v5Q\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-08T16:53:38Z",
+      "side": 1,
+      "message": "blank line at end of multiline docstr (see HACKING)",
+      "revId": "ffec00dae24f68b05a93254fa4a4f994aa5408d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
