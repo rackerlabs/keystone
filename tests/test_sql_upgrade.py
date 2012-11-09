@@ -14,14 +14,18 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import copy
+import json
+
 from migrate.versioning import api as versioning_api
 import sqlalchemy
+from sqlalchemy.orm import sessionmaker
 
 from keystone.common import sql
 from keystone import config
 from keystone import test
 from keystone.common.sql import migration
-
+import default_fixtures
 
 CONF = config.CONF
 
@@ -41,6 +45,7 @@ class SqlUpgradeTests(test.TestCase):
         self.repo_path = migration._find_migrate_repo()
         self.schema = versioning_api.ControlledSchema.create(self.engine,
                                                              self.repo_path, 0)
+        self.sessionmaker = sessionmaker(bind=self.engine)
 
     def tearDown(self):
         super(SqlUpgradeTests, self).tearDown()
@@ -69,6 +74,17 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableColumns("user_tenant_membership",
                                 ["user_id", "tenant_id"])
         self.assertTableColumns("metadata", ["user_id", "tenant_id", "data"])
+        self.populate_user_table()
+
+    def populate_user_table(self):
+        session = self.sessionmaker()
+        for user in default_fixtures.USERS:
+            extra = copy.deepcopy(user)
+            extra.pop('id')
+            extra.pop('name')
+            session.execute("insert into user values ('%s', '%s', '%s')"
+                            % (user['id'], user['name'], json.dumps(extra)))
+        session.commit()
 
     def select_table(self, name):
         table = sqlalchemy.Table(name,
