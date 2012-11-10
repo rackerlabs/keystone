@@ -16,6 +16,24 @@
       "revId": "90a21eeb00843cca57ff148e12e74557757412a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//uCI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 360
+      },
+      "writtenOn": "2012-11-10T03:26:45Z",
+      "side": 1,
+      "message": "Good point. Will fix this up shortly.",
+      "parentUuid": "AAAALn//uWY\u003d",
+      "revId": "90a21eeb00843cca57ff148e12e74557757412a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
