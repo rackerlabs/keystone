@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH///oA\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-12T14:40:24Z",
+      "side": 1,
+      "message": "i imagine vendor/ should be added to --exlude",
+      "revId": "0542084d8598599a86203c7a5c96a260dddff93e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
