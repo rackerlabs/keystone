@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//9x8\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 5652
+      },
+      "writtenOn": "2012-11-13T22:09:28Z",
+      "side": 1,
+      "message": "Can you replace this with the simpler self.assertTrue(service_id in services) ?",
+      "revId": "ddffa443f4cc11bd04a9cc1fd9403804c80fa6ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
