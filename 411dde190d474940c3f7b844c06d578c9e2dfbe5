@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//+ME\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-11-13T17:09:11Z",
+      "side": 1,
+      "message": "dummy question - why false here? Does SQLAlchemy need the separate engines to test the upgrading paths?",
+      "revId": "411dde190d474940c3f7b844c06d578c9e2dfbe5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
