@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//+GY\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-11-13T17:40:24Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be enabled now?",
+      "revId": "a03b736f28409251b47ae51b1c124740a49b3e70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
