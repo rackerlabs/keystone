@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//+G8\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-11-13T17:39:08Z",
+      "side": 1,
+      "message": "this review has been abandoned... update?",
+      "revId": "07a6ccc82dd52fb6705ce39c378363831f17ba2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
