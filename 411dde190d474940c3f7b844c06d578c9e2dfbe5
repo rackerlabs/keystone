@@ -34,6 +34,24 @@
       "revId": "411dde190d474940c3f7b844c06d578c9e2dfbe5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//+K4\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-13T17:18:55Z",
+      "side": 1,
+      "message": "clarification: ... must be automatically built /if run from a wsgi server/ (otherwise, they will never be created)",
+      "parentUuid": "AAAAMH//+L0\u003d",
+      "revId": "411dde190d474940c3f7b844c06d578c9e2dfbe5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
