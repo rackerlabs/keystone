@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//+Rg\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-13T16:14:47Z",
+      "side": 1,
+      "message": "unused import?",
+      "revId": "534c5826d15e080ca516c9124de83638bd58505a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
