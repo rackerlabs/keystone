@@ -16,6 +16,24 @@
       "revId": "ddffa443f4cc11bd04a9cc1fd9403804c80fa6ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//9xw\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-13T22:14:54Z",
+      "side": 1,
+      "message": "nice catch; this was a more complicated assertion when i first wrote it :) but it can certainly be simplified now",
+      "parentUuid": "AAAAMH//9x8\u003d",
+      "revId": "ddffa443f4cc11bd04a9cc1fd9403804c80fa6ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
