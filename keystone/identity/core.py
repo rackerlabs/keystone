@@ -514,7 +514,7 @@ class TenantController(wsgi.Application):
             token_ref = self.token_api.get_token(context=context,
                                                  token_id=context['token_id'])
         except exception.NotFound:
-            LOG.warning("Authentication failed. Could not find token " +
+            LOG.warning(_("Authentication failed. Could not find token ") +
                         str(context['token_id']))
             raise exception.Unauthorized()
 
@@ -666,8 +666,8 @@ class UserController(wsgi.Application):
             except exception.NotImplemented:
                 # The users status has been changed but tokens remain valid for
                 # backends that can't list tokens for users
-                LOG.warning('User %s status has changed, but existing tokens '
-                            'remain valid' % user_id)
+                LOG.warning(_('User %s status has changed, but existing '
+                            'tokens remain valid') % user_id)
         return {'user': user_ref}
 
     def delete_user(self, context, user_id):

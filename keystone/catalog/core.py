@@ -41,17 +41,17 @@ def format_url(url, data):
     except AttributeError:
         return None
     except KeyError as e:
-        LOG.error("Malformed endpoint %s - unknown key %s" %
+        LOG.error(_("Malformed endpoint %s - unknown key %s") %
                   (url, str(e)))
         raise exception.MalformedEndpoint(endpoint=url)
     except TypeError as e:
-        LOG.error("Malformed endpoint %s - type mismatch %s \
-                  (are you missing brackets ?)" %
+        LOG.error(_("Malformed endpoint %s - type mismatch %s \
+                  (are you missing brackets ?)") %
                   (url, str(e)))
         raise exception.MalformedEndpoint(endpoint=url)
     except ValueError as e:
-        LOG.error("Malformed endpoint %s - incomplete format \
-                  (are you missing a type notifier ?)" % url)
+        LOG.error(_("Malformed endpoint %s - incomplete format \
+                  (are you missing a type notifier ?)") % url)
         raise exception.MalformedEndpoint(endpoint=url)
     return result
 

@@ -537,12 +537,12 @@ class TokenController(wsgi.Application):
 
                 # If the user is disabled don't allow them to authenticate
                 if not user_ref.get('enabled', True):
-                    LOG.warning('User %s is disabled' % user_id)
+                    LOG.warning(_('User %s is disabled') % user_id)
                     raise exception.Unauthorized()
 
                 # If the tenant is disabled don't allow them to authenticate
                 if tenant_ref and not tenant_ref.get('enabled', True):
-                    LOG.warning('Tenant %s is disabled' % tenant_id)
+                    LOG.warning(_('Tenant %s is disabled') % tenant_id)
                     raise exception.Unauthorized()
             except AssertionError as e:
                 raise exception.Unauthorized(str(e))
@@ -566,7 +566,7 @@ class TokenController(wsgi.Application):
                 old_token_ref = self.token_api.get_token(context=context,
                                                          token_id=old_token)
             except exception.NotFound:
-                LOG.warning("Token not found: " + str(old_token))
+                LOG.warning(_("Token not found: ") + str(old_token))
                 raise exception.Unauthorized()
 
             user_ref = old_token_ref['user']
@@ -577,7 +577,7 @@ class TokenController(wsgi.Application):
 
             # If the user is disabled don't allow them to authenticate
             if not current_user_ref.get('enabled', True):
-                LOG.warning('User %s is disabled' % user_id)
+                LOG.warning(_('User %s is disabled') % user_id)
                 raise exception.Unauthorized()
 
             if tenant_name:
@@ -591,7 +591,7 @@ class TokenController(wsgi.Application):
 
             if tenant_id:
                 if not tenant_id in tenants:
-                    LOG.warning('User %s is unauthorized for tenant %s'
+                    LOG.warning(_('User %s is unauthorized for tenant %s')
                                 % (user_id, tenant_id))
                     raise exception.Unauthorized()
 
@@ -609,7 +609,7 @@ class TokenController(wsgi.Application):
 
             # If the tenant is disabled don't allow them to authenticate
             if tenant_ref and not tenant_ref.get('enabled', True):
-                LOG.warning('Tenant %s is disabled' % tenant_id)
+                LOG.warning(_('Tenant %s is disabled') % tenant_id)
                 raise exception.Unauthorized()
 
             if tenant_ref:
@@ -651,9 +651,9 @@ class TokenController(wsgi.Application):
                                           config.CONF.signing.certfile,
                                           config.CONF.signing.keyfile)
         else:
-            raise exception.UnexpectedError(
+            raise exception.UnexpectedError(_(
                 'Invalid value for token_format: %s.'
-                '  Allowed values are PKI or UUID.' %
+                '  Allowed values are PKI or UUID.') %
                 config.CONF.signing.token_format)
         try:
             self.token_api.create_token(
