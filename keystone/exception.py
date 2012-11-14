@@ -15,6 +15,13 @@
 # under the License.
 import re
 
+from keystone.common import logging
+from keystone import config
+
+
+CONF = config.CONF
+LOG = logging.getLogger(__name__)
+
 
 class Error(StandardError):
     """Base error class.
@@ -27,7 +34,13 @@ class Error(StandardError):
 
     def __init__(self, message=None, **kwargs):
         """Use the doc string as the error message by default."""
-        message = message or self.__doc__ % kwargs
+
+        try:
+            message = message or self.__doc__ % kwargs
+        except KeyError:
+            LOG.warning('Missing expected exception kwargs')
+            message = self.__doc__
+
         super(Error, self).__init__(message)
 
     def __str__(self):
@@ -51,13 +64,28 @@ class ValidationError(Error):
     title = 'Bad Request'
 
 
-class Unauthorized(Error):
+class SecurityError(Error):
+    """Avoids exposing details of security failures, unless in debug mode."""
+    def __init__(self, message=None, **kwargs):
+        try:
+            if CONF.debug:
+                message = message or self.__doc__ % kwargs
+            else:
+                message = self.__doc__ % kwargs
+        except KeyError:
+            LOG.warning('Missing expected exception kwargs')
+            message = self.__doc__
+
+        super(SecurityError, self).__init__(message=message)
+
+
+class Unauthorized(SecurityError):
     """The request you have made requires authentication."""
     code = 401
     title = 'Not Authorized'
 
 
-class Forbidden(Error):
+class Forbidden(SecurityError):
     """You are not authorized to perform the requested action."""
     code = 403
     title = 'Not Authorized'
