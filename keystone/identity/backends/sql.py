@@ -114,7 +114,7 @@ class Identity(sql.Base, identity.Driver):
 
         """
         user_ref = None
-        tenant_ref = None
+        tenant_ref = {}
         metadata_ref = {}
 
         try:

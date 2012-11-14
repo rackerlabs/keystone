@@ -55,7 +55,6 @@ class IdentityTests(object):
         #               not be returned by the api
         self.user_foo.pop('password')
         self.assertDictEqual(user_ref, self.user_foo)
-        self.assert_(tenant_ref is None)
         self.assert_(not metadata_ref)
 
     def test_authenticate(self):
