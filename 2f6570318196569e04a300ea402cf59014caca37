@@ -16,6 +16,24 @@
       "revId": "2f6570318196569e04a300ea402cf59014caca37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//7Ls\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-15T17:13:54Z",
+      "side": 1,
+      "message": "nope! thanks",
+      "parentUuid": "AAAAMH//7Mw\u003d",
+      "revId": "2f6570318196569e04a300ea402cf59014caca37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
