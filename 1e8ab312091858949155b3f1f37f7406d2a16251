@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//6yw\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-15T20:33:56Z",
+      "side": 1,
+      "message": "not sure what you mean? the only function that could raise a NoResultFound is one(). However, looking at this code again, I\u0027m not actually sure the transaction is necessary, since it\u0027ll only result in a single UPDATE.",
+      "parentUuid": "AAAAMH//62w\u003d",
+      "revId": "1e8ab312091858949155b3f1f37f7406d2a16251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//634\u003d",
         "filename": "tests/test_v3_catalog.py",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2012-11-15T20:07:31Z",
       "side": 1,
       "message": "Status check?",
+      "revId": "1e8ab312091858949155b3f1f37f7406d2a16251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//6yU\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-15T20:33:56Z",
+      "side": 1,
+      "message": "hmm... a 2xx is already asserted by the test framework, but a assertValidDeletionResponse to check for a 204 No Content would definitely be useful.",
+      "parentUuid": "AAAAMH//634\u003d",
       "revId": "1e8ab312091858949155b3f1f37f7406d2a16251",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
