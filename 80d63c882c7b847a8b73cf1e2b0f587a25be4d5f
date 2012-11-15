@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//7T0\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-15T15:49:54Z",
+      "side": 1,
+      "message": "Won\u0027t this throw a key error? I am fairly sure that is why we were doing the original version of: if \u0027user not in ref",
+      "revId": "80d63c882c7b847a8b73cf1e2b0f587a25be4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
