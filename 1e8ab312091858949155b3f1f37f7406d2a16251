@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//62o\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-15T20:07:31Z",
+      "side": 1,
+      "message": "Safe indentation thing as below.",
+      "revId": "1e8ab312091858949155b3f1f37f7406d2a16251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//62w\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-15T20:07:31Z",
+      "side": 1,
+      "message": "Nesting looks off here.  I would put all of the logic inside the try/catch block.  That way, if we come up with other exceptions, we don\u0027t need to reindent for each one.",
+      "revId": "1e8ab312091858949155b3f1f37f7406d2a16251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//634\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-15T20:07:31Z",
+      "side": 1,
+      "message": "Status check?",
+      "revId": "1e8ab312091858949155b3f1f37f7406d2a16251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//64E\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-15T20:07:31Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this have some validation on the status?  200?",
+      "revId": "1e8ab312091858949155b3f1f37f7406d2a16251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
