@@ -34,6 +34,24 @@
       "revId": "80d63c882c7b847a8b73cf1e2b0f587a25be4d5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//7Sw\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-15T15:58:21Z",
+      "side": 1,
+      "message": "FWIW:\n\n    \u003e\u003e\u003e dict().get(\u0027x\u0027) is None\n    True",
+      "parentUuid": "AAAAMH//7TY\u003d",
+      "revId": "80d63c882c7b847a8b73cf1e2b0f587a25be4d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
