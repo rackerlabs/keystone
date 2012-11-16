@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: Joe Heck <heckj@mac.com>
+Code-Review+2: Joe Heck <heckj@mac.com>
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 16 Nov 2012 18:00:45 +0000
+Reviewed-on: https://review.openstack.org/16304
+Project: openstack/keystone
+Branch: refs/heads/stable/folsom
