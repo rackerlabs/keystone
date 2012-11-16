@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//5NA\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-11-16T18:55:11Z",
+      "side": 1,
+      "message": "agreed - allowing the user to be created with enabled\u003dTrue would be very worthwhile. I expect that means updating identity.core create_user() and the other backends to support setting that up front.",
+      "parentUuid": "AAAAMH//5O8\u003d",
+      "revId": "c3733c09a11296a52bab1f1d75f9a7376146925c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//5O4\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2012-11-16T18:41:38Z",
       "side": 1,
       "message": "Why do we set each of these values directly?  It seems like the from_dict code above should be extended to modify a pre-existing object, instead of creating a new one.",
+      "revId": "c3733c09a11296a52bab1f1d75f9a7376146925c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//5M0\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-11-16T18:55:11Z",
+      "side": 1,
+      "message": "I\u0027m not entirely sure on this code - Dolph will hopefully have a better answer. Maybe because previously they weren\u0027t guaranteed to be in that dict? (these changes would obviate that...)",
+      "parentUuid": "AAAAMH//5O4\u003d",
       "revId": "c3733c09a11296a52bab1f1d75f9a7376146925c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +117,24 @@
       "writtenOn": "2012-11-16T18:41:38Z",
       "side": 1,
       "message": "Note that this is a change to how the back end talks, but is more correct from a Python perspective, and also still marshalls correctly to other systems.",
+      "revId": "c3733c09a11296a52bab1f1d75f9a7376146925c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//5Mw\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-11-16T18:55:11Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAMH//5PI\u003d",
       "revId": "c3733c09a11296a52bab1f1d75f9a7376146925c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
