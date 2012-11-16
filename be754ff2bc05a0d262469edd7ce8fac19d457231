@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//50E\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2012-11-16T09:19:21Z",
+      "side": 1,
+      "message": "This is a regression from Change-Id: I45a1167a473df02a4461286b8a09723315018fcb\nwhere \u0027issued_at\u0027 was changed to timeutils.strtime()\n\nIt should use assertCloseEnoughForGovernmentWork instead of [:-8] truncation!",
+      "revId": "be754ff2bc05a0d262469edd7ce8fac19d457231",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
