@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//4l0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/006_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-17T04:09:11Z",
+      "side": 1,
+      "message": "Need to wire this up.  Should also test against mysql and postgres, a-la the Live LDAP tests.",
+      "revId": "aa9225f8f2f03b65e78873acb2c23037723681cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//4mA\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-17T04:09:11Z",
+      "side": 1,
+      "message": "This should provide for overloading.  It does not check that the value is a proper Boolean, but the SQL will fail if it is not convertable. Python is pretty forgivining when it comes to \"truthy\" values.",
+      "revId": "aa9225f8f2f03b65e78873acb2c23037723681cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//4l4\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-17T04:09:11Z",
+      "side": 1,
+      "message": "Actually, it would be good to drop this change, and put in an explicit test, to see if the Defaulting works.",
+      "revId": "aa9225f8f2f03b65e78873acb2c23037723681cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//4l8\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-17T04:09:11Z",
+      "side": 1,
+      "message": "Can\u0027t write a \"test downgrade\" due to the limitations of SQLite.",
+      "revId": "aa9225f8f2f03b65e78873acb2c23037723681cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
