@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//4eI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/006_add_policy_table.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-17T16:14:54Z",
+      "side": 1,
+      "message": "Please make this 007.  006 is going in first.  And lets face it, 007 is cooler.\n\nAlso, put a  test in to test_sql_upgrade.py",
+      "revId": "bbd218761e841eabc7560485574aa5944741219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//4eE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/006_add_policy_table.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-17T16:14:54Z",
+      "side": 1,
+      "message": "Needs a drop table.",
+      "revId": "bbd218761e841eabc7560485574aa5944741219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//4d8\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-17T16:14:54Z",
+      "side": 1,
+      "message": "I\u0027d like to get in the habit of having a single try/except block per function.  This one is easier to read like this:\ntry:\n    session \u003d self.get_session()\n    ref \u003d session.query(PolicyModel).filter_by(id\u003dpolicy_id).one()\n    return ref.to_dict()\nexcept sqlalchemy.orm.exc.NoResultFound:\n    raise exception.PolicyNotFound(policy_id\u003dpolicy_id)\n\n\nIt has the added benefit that, if we discover additional exceptions we need to deal with, they are only new except blocks, not re ordering the whole method.",
+      "revId": "bbd218761e841eabc7560485574aa5944741219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//4d0\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-17T16:14:54Z",
+      "side": 1,
+      "message": "seems to me the self.get_session ... commit logic could almost go in a decorator.",
+      "revId": "bbd218761e841eabc7560485574aa5944741219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//4dw\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-17T16:14:54Z",
+      "side": 1,
+      "message": "I wonder if we want to get away from this for the tests.  Each one adds a little bit of overhead.  Is there a way that we could use a wrapper and fetch them on demand?",
+      "revId": "bbd218761e841eabc7560485574aa5944741219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
