@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//3HI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/006_add_policy_table.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-19T19:45:04Z",
+      "side": 1,
+      "message": "keeping an eye on it, will rebase/rename as appropriate\n\nDone",
+      "parentUuid": "AAAAMH//4eI\u003d",
+      "revId": "bbd218761e841eabc7560485574aa5944741219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//4eE\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/006_add_policy_table.py",
         "patchSetId": 8
