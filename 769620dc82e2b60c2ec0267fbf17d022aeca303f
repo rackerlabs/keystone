@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//3U4\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-19T18:10:35Z",
+      "side": 1,
+      "message": "Nothing.  This is code that we carried over as part of the LDAP port, and it documents the fields required by any backend object.  The SQL code should incorporate this in the future.",
+      "parentUuid": "AAAAMH//3bw\u003d",
+      "revId": "769620dc82e2b60c2ec0267fbf17d022aeca303f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//3bY\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/006_normalize_identity.py",
         "patchSetId": 3
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//3Uc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/006_normalize_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-19T18:10:35Z",
+      "side": 1,
+      "message": "This could all be done inline, it just would require more code.  There is nothing gained by doing it as multiple steps.",
+      "parentUuid": "AAAAMH//3a8\u003d",
+      "revId": "769620dc82e2b60c2ec0267fbf17d022aeca303f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//3aY\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/006_normalize_identity.py",
         "patchSetId": 3
@@ -64,6 +100,24 @@
       "writtenOn": "2012-11-19T17:08:29Z",
       "side": 1,
       "message": "i\u0027ve never seen this used, is that order guaranteed somehow?",
+      "revId": "769620dc82e2b60c2ec0267fbf17d022aeca303f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//3UU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/006_normalize_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-19T18:10:35Z",
+      "side": 1,
+      "message": "The response is returned in the order of the columns from the table definition, so, while this is fragile, the order would only change if we were to change the schema.",
+      "parentUuid": "AAAAMH//3aY\u003d",
       "revId": "769620dc82e2b60c2ec0267fbf17d022aeca303f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
