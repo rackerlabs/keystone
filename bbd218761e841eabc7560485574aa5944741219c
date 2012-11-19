@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//3Tg\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-19T19:18:16Z",
+      "side": 1,
+      "message": "i *passionately* disagree: that makes it VERY unclear what would be throwing the exception. Exception handling should be *as specific as possible*.\n\nAs a counterpoint / example: if something new starts throwing an exception you\u0027re already catching for a different reason, it\u0027s likely that you\u0027ll suddenly be swallowing the exception rather than handling it properly *without ever knowing it.*",
+      "parentUuid": "AAAAMH//4d8\u003d",
+      "revId": "bbd218761e841eabc7560485574aa5944741219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//4d0\u003d",
         "filename": "keystone/policy/backends/sql.py",
         "patchSetId": 8
@@ -64,6 +82,24 @@
       "writtenOn": "2012-11-17T16:14:54Z",
       "side": 1,
       "message": "seems to me the self.get_session ... commit logic could almost go in a decorator.",
+      "revId": "bbd218761e841eabc7560485574aa5944741219c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//3TU\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-19T19:18:16Z",
+      "side": 1,
+      "message": "agree, @requires_session or something would be convenient",
+      "parentUuid": "AAAAMH//4d0\u003d",
       "revId": "bbd218761e841eabc7560485574aa5944741219c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
