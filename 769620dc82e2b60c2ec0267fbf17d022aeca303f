@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//3bw\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-19T17:08:29Z",
+      "side": 1,
+      "message": "doc string needs to be updated, but i\u0027m wondering why description and enabled need to be required? (i have no idea what required_keys / optional_keys actually affects?)",
+      "revId": "769620dc82e2b60c2ec0267fbf17d022aeca303f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//3bY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/006_normalize_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-19T17:08:29Z",
+      "side": 1,
+      "message": "nice improvement",
+      "revId": "769620dc82e2b60c2ec0267fbf17d022aeca303f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//3a8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/006_normalize_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-19T17:08:29Z",
+      "side": 1,
+      "message": "as a workaround, i\u0027d prefer data migrations to be performed separately from schema migrations... so:\n\n  006: schema migration to create new columns\n  007: data migration to move stuff over\n  008: schema migration to drop columns (can be an empty migration for sqlite?)",
+      "revId": "769620dc82e2b60c2ec0267fbf17d022aeca303f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//3aY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/006_normalize_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-19T17:08:29Z",
+      "side": 1,
+      "message": "i\u0027ve never seen this used, is that order guaranteed somehow?",
+      "revId": "769620dc82e2b60c2ec0267fbf17d022aeca303f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
