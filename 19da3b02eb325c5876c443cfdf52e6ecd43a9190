@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//1No\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/008_normalize_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-20T22:06:16Z",
+      "side": 1,
+      "message": "try uncommenting this and creating an *empty* sqlite downgrade file, e.g.\n\n  008_sqlite_downgrade.sql\n\nI\u0027m pretty sure sqlalchemy-migrate will run that instead of the python migration, but only for sqlite",
+      "revId": "19da3b02eb325c5876c443cfdf52e6ecd43a9190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
