@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//2cA\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-20T02:12:01Z",
+      "side": 1,
+      "message": "OK,  that should work.  I can revert this whole file.",
+      "parentUuid": "AAAAMH//3R8\u003d",
+      "revId": "769620dc82e2b60c2ec0267fbf17d022aeca303f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//3bY\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/006_normalize_identity.py",
         "patchSetId": 3
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "Sure there is: given that the data migration is the most likely to unexpectedly fail... if it does, not only do you fail in the middle of a data migration but you\u0027re also left with an inconsistent database state: one that exists \"between\" schema migrations. You also won\u0027t be able to successfully downgrade, as the last half of the schema migration hasn\u0027t been performed, so the downgrade will be attempting to downgrade something that hasn\u0027t been upgraded yet.\n\nProduction environments may also want to skip our data migrations in favor of doing something custom (such as re-implementing is_enabled and tailoring it to their own data), while accepting schema migrations as written. Splitting it up makes it much easier for them to do that.",
       "parentUuid": "AAAAMH//3Uc\u003d",
+      "revId": "769620dc82e2b60c2ec0267fbf17d022aeca303f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//2cM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/006_normalize_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-20T02:12:01Z",
+      "side": 1,
+      "message": "OK,  I can accept that.  I\u0027ll split it up.",
+      "parentUuid": "AAAAMH//3Ro\u003d",
       "revId": "769620dc82e2b60c2ec0267fbf17d022aeca303f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
