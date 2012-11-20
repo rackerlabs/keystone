@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//1Gc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/008_normalize_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-20T23:16:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//1No\u003d",
+      "revId": "19da3b02eb325c5876c443cfdf52e6ecd43a9190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//1Nc\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity_migration.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2012-11-20T22:10:39Z",
       "side": 1,
       "message": "new style:\n\n    str(enabled).lower()",
+      "revId": "19da3b02eb325c5876c443cfdf52e6ecd43a9190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//1Go\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity_migration.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-20T23:16:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//1Nc\u003d",
       "revId": "19da3b02eb325c5876c443cfdf52e6ecd43a9190",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//1Gk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity_migration.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-20T23:16:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//1Ng\u003d",
+      "revId": "19da3b02eb325c5876c443cfdf52e6ecd43a9190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//1NY\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 5
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//1Gg\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-20T23:16:45Z",
+      "side": 1,
+      "message": "It should go in an abstract base class that calls this function.  But not in this patch",
+      "parentUuid": "AAAAMH//1NY\u003d",
+      "revId": "19da3b02eb325c5876c443cfdf52e6ecd43a9190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//1NI\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 5
@@ -81,6 +153,24 @@
       "writtenOn": "2012-11-20T22:10:39Z",
       "side": 1,
       "message": "try filter_by(id\u003d\u0027foo\u0027), I think",
+      "revId": "19da3b02eb325c5876c443cfdf52e6ecd43a9190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//1HE\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-20T23:16:45Z",
+      "side": 1,
+      "message": "Nah, has to be straight sql for this to work.  That form works elsewhere.",
+      "parentUuid": "AAAAMH//1NI\u003d",
       "revId": "19da3b02eb325c5876c443cfdf52e6ecd43a9190",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
