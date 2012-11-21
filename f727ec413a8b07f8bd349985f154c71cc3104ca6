@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//zr4\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-21T22:57:12Z",
+      "side": 1,
+      "message": "curious why this is necessary?",
+      "revId": "f727ec413a8b07f8bd349985f154c71cc3104ca6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//zrw\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-21T22:57:12Z",
+      "side": 1,
+      "message": "update the message or just remove it (error message should be clear without it)",
+      "revId": "f727ec413a8b07f8bd349985f154c71cc3104ca6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
