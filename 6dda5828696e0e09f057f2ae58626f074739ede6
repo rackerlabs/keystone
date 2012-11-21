@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//0s0\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 3108
+      },
+      "writtenOn": "2012-11-21T08:24:48Z",
+      "side": 1,
+      "message": "You need to write the messages as this:\nLOG.error(\"Malformed endpoint %(url)s - unknown key %(keyerror)s\" %\n                {\"url\": url,\n                 \"keyerror\": str(e)})\n\nOr else, you will meet with error: \"Multiple positional placeholders\".",
+      "revId": "6dda5828696e0e09f057f2ae58626f074739ede6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//0sw\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 3108
+      },
+      "writtenOn": "2012-11-21T08:24:48Z",
+      "side": 1,
+      "message": "Same as the previous one.",
+      "revId": "6dda5828696e0e09f057f2ae58626f074739ede6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//0sc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 3108
+      },
+      "writtenOn": "2012-11-21T08:24:48Z",
+      "side": 1,
+      "message": "I prefer not to translate debug msg.",
+      "revId": "6dda5828696e0e09f057f2ae58626f074739ede6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//0sY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 3108
+      },
+      "writtenOn": "2012-11-21T08:24:48Z",
+      "side": 1,
+      "message": "I prefer to not translate debug messages.",
+      "revId": "6dda5828696e0e09f057f2ae58626f074739ede6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
