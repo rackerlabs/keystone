@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//xOU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/008_normalize_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-26T17:53:49Z",
+      "side": 1,
+      "message": "AFAIK, our passwords are always 119 chars after being hashed",
+      "revId": "26839c2af47294b8130c0da86ce7800dc19a0254",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//xNE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/008_sqlite_downgrade.sql",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-26T17:53:49Z",
+      "side": 1,
+      "message": "whitespace; also, is it necessary to have something in this file? add a comment if so.",
+      "revId": "26839c2af47294b8130c0da86ce7800dc19a0254",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//xNA\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-26T17:53:49Z",
+      "side": 1,
+      "message": "This conflicts with your migration; it should probably be sql.String(119)",
+      "revId": "26839c2af47294b8130c0da86ce7800dc19a0254",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//xM8\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-26T17:53:49Z",
+      "side": 1,
+      "message": "This conflicts with your migration, String(128)",
+      "revId": "26839c2af47294b8130c0da86ce7800dc19a0254",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
