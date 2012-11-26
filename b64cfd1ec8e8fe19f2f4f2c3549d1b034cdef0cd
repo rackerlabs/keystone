@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//xOc\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-11-26T17:35:01Z",
+      "side": 1,
+      "message": "this looses the option to print out what commands are available and doesn\u0027t print out general usage if too few options are made available.\n\nWith the new setup, is there a way to at least do the equiv of \"keystone-manage --help\" to show output here?",
+      "revId": "b64cfd1ec8e8fe19f2f4f2c3549d1b034cdef0cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
