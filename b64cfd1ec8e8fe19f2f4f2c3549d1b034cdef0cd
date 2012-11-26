@@ -16,6 +16,24 @@
       "revId": "b64cfd1ec8e8fe19f2f4f2c3549d1b034cdef0cd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//w/4\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-26T19:35:08Z",
+      "side": 1,
+      "message": "keystone-manage --help actually works better for me after this change (before, it only showed options, but not the subcommands).\n\nHowever, erroneous commands, such as \"keystone-manage asdf\" provided better feedback before, IMO (namely because the command descriptions were previously included with the error feedback).",
+      "parentUuid": "AAAAMH//xOc\u003d",
+      "revId": "b64cfd1ec8e8fe19f2f4f2c3549d1b034cdef0cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
