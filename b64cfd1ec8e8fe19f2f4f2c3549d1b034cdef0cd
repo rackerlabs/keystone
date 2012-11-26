@@ -34,6 +34,24 @@
       "revId": "b64cfd1ec8e8fe19f2f4f2c3549d1b034cdef0cd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//w/Q\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2012-11-26T19:39:35Z",
+      "side": 1,
+      "message": "Right, we\u0027re just using stock argparse help support for all this\n\nSo:\n\n  $\u003e keystone-manage foo\n  usage: keystone-manage COMMAND\n  keystone-manage: error: argument command: invalid choice: \u0027foo\u0027 (choose from \u0027db_sync\u0027, \u0027export_legacy_catalog\u0027, \u0027import_legacy\u0027, \u0027import_nova_auth\u0027, \u0027pki_setup\u0027)\n\n  $\u003e keystone-manage --help\n  usage: keystone-manage COMMAND\n\n  optional arguments:\n  ...\n  Commands:\n    {db_sync,export_legacy_catalog,import_legacy,import_nova_auth,pki_setup}\n                          Available commands\n      db_sync             Sync the database.\n      export_legacy_catalog\n                        Export the service catalog from a legacy database.\n      import_legacy       Import a legacy database.\n      import_nova_auth    Import a dump of nova auth data into keystone.\n      pki_setup           Set up Key pairs and certificates for token signing\n                          and verification.\n\n  $\u003e keystone-manage import_legacy --help\n  usage: keystone-manage COMMAND import_legacy [-h] old_db\n\n  positional arguments:\n    old_db\n\n  optional arguments:\n    -h, --help  show this help message and exit",
+      "parentUuid": "AAAAMH//w/4\u003d",
+      "revId": "b64cfd1ec8e8fe19f2f4f2c3549d1b034cdef0cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
