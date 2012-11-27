@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//vnE\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-27T17:22:37Z",
+      "side": 1,
+      "message": "one blank line instead of two (I think RST will choke on two without the trailing whitespace?)",
+      "revId": "6bf835fe6274115857262f696868112b4fdc6e1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//vnI\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-27T17:22:37Z",
+      "side": 1,
+      "message": "remove trailing whitespace",
+      "revId": "6bf835fe6274115857262f696868112b4fdc6e1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//vng\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-27T17:22:37Z",
+      "side": 1,
+      "message": "However, as with HTTPD authentication,",
+      "revId": "6bf835fe6274115857262f696868112b4fdc6e1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//vnw\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-27T17:22:37Z",
+      "side": 1,
+      "message": "raise exception.Unauthorized(\u0027Invalid user\u0027) is preferred (no kwargs)",
+      "revId": "6bf835fe6274115857262f696868112b4fdc6e1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//vnY\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-27T17:22:37Z",
+      "side": 1,
+      "message": "remove double space between \u0027your\u0027 and \u0027configuration\u0027",
+      "revId": "6bf835fe6274115857262f696868112b4fdc6e1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//vnM\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-27T17:22:37Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "6bf835fe6274115857262f696868112b4fdc6e1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
