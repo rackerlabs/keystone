@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//wHA\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-27T09:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//wzc\u003d",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//w08\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-11-26T21:10:15Z",
       "side": 1,
       "message": "additional authentication methods different from -\u003e external authentication methods in addition to",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//wG8\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-27T09:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//w08\u003d",
       "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//wG4\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-27T09:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//w0E\u003d",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//w1I\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2012-11-26T21:10:15Z",
       "side": 1,
       "message": "many ways -\u003e many methods",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//wG0\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-27T09:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//w1I\u003d",
       "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//wGw\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-27T09:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//w0M\u003d",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//w0o\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 1
@@ -122,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//wGs\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-27T09:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//w0o\u003d",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//w0k\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 1
@@ -133,6 +241,24 @@
       "writtenOn": "2012-11-26T21:10:15Z",
       "side": 1,
       "message": "variable -\u003e WSGI environment variable",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//wGo\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-27T09:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//w0k\u003d",
       "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -174,6 +300,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//wGk\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-27T09:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//w0Q\u003d",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//wFU\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-27T09:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//wPk\u003d",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//wPY\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 1
@@ -191,6 +353,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//wFY\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-27T09:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//wPY\u003d",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//wzo\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 1
@@ -202,6 +382,24 @@
       "writtenOn": "2012-11-26T21:10:15Z",
       "side": 1,
       "message": "Instead of copy/pasting the entire current pipeline, you can explain where in the pipeline it should be placed, and why (and show a corresponding snippet of the pipeline, such as:\n\n     pipeline \u003d [...] something_required_upstream [...] my_auth [...] something_required_downstream [...]",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//wFc\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-11-27T09:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//wzo\u003d",
       "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
