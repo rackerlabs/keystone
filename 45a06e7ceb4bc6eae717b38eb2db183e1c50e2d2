@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//wPo\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-27T03:33:18Z",
+      "side": 1,
+      "message": "\"in addition to validating against the Identity backend....\"",
+      "parentUuid": "AAAAMH//w0M\u003d",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//w0o\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 1
@@ -132,6 +150,41 @@
       "writtenOn": "2012-11-26T21:10:15Z",
       "side": 1,
       "message": "I\u0027m not clear on what this last sentence is suggesting",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//wPk\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-27T03:33:18Z",
+      "side": 1,
+      "message": "I think the doc needs to state the robustness and review that the Apache modules have undergone over the years, and that implementing custom module has a higher risk of exploit that using a comparable Apache module.",
+      "parentUuid": "AAAAMH//w0Q\u003d",
+      "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//wPY\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-27T03:33:18Z",
+      "side": 1,
+      "message": "\"This task \" should be \"if you find you must implement a custom authentication mechanism, you will need to create a WSGI middleware pipeline component.",
       "revId": "45a06e7ceb4bc6eae717b38eb2db183e1c50e2d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
