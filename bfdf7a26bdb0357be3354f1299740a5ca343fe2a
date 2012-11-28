@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//ufA\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1561
+      },
+      "writtenOn": "2012-11-28T15:40:23Z",
+      "side": 1,
+      "message": "This is a bug in the test that I fixed in the master patch.  It should be:\n\n    self.opt_in_group(\u0027signing\u0027, token_format\u003d\u0027UUID\u0027)\n\nOtherwise, this config change affects other tests.",
+      "revId": "bfdf7a26bdb0357be3354f1299740a5ca343fe2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
