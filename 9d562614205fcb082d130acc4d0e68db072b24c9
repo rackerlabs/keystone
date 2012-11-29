@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//tt8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-29T00:08:29Z",
+      "side": 1,
+      "message": "remove or update",
+      "revId": "9d562614205fcb082d130acc4d0e68db072b24c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//ttw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-29T00:08:29Z",
+      "side": 1,
+      "message": "add a line break above (surprised this didn\u0027t trip pep8..?)",
+      "revId": "9d562614205fcb082d130acc4d0e68db072b24c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//tt4\u003d",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-29T00:08:29Z",
+      "side": 1,
+      "message": "remove or update",
+      "revId": "9d562614205fcb082d130acc4d0e68db072b24c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
