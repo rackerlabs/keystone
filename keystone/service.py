@@ -29,6 +29,10 @@ from keystone.openstack.common import timeutils
 from keystone import policy
 from keystone import token
 
+import keystone.catalog.controllers
+import keystone.identity.controllers
+import keystone.identity.routers
+
 
 LOG = logging.getLogger(__name__)
 
@@ -80,13 +84,13 @@ class V3Router(wsgi.ComposingRouter):
 
         self.crud_routes(
             mapper,
-            catalog.ServiceControllerV3(**apis),
+            catalog.controllers.ServiceControllerV3(**apis),
             'services',
             'service')
 
         self.crud_routes(
             mapper,
-            catalog.EndpointControllerV3(**apis),
+            catalog.controllers.EndpointControllerV3(**apis),
             'endpoints',
             'endpoint')
 
