@@ -16,6 +16,24 @@
       "revId": "d5b606bff4c0e55cf33c6150b926ad1461050352",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//sjg\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-29T22:15:06Z",
+      "side": 1,
+      "message": "I didn\u0027t rename those files, but the stuff I left in core was the domain model.  I suspect that core should be renamed domain.   \n\neach of the subsystems has a domain model (manager and driver) and a set of controllers.  The controllers need to be able to talk to the domain model of the other subsystems.   I could remove the controllers.py from the __init__ file, but then I end up modifying everything that was previously \n\nfrom keystone import identity\nand\nfrom keystone import catalog\n\nI can change core to domain, but I don\u0027t think that answers your question.  \n\nRoutes need to know about multiple controllers.  Controllers need to know about multiple domain models.  I am not sure which should own the top level name of the subsystem, I suspect both. \n\nOne potential solution would be to move the Manager and Driver classes into  backends/core.py",
+      "parentUuid": "AAAAMH//sxA\u003d",
+      "revId": "d5b606bff4c0e55cf33c6150b926ad1461050352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
