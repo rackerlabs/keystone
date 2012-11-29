@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAMH//ttU\u003d",
+        "filename": "keystone/identity/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-29T00:11:12Z",
+      "side": 1,
+      "message": "also curious which of these aren\u0027t necessary (if any) -- i\u0027d rather not dilute the meaning of \u0027core\u0027 modules",
+      "revId": "9d562614205fcb082d130acc4d0e68db072b24c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//tt8\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 1
