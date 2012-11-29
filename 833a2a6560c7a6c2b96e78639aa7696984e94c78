@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//tBA\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-29T17:08:07Z",
+      "side": 1,
+      "message": "No need to write a custom error message:\n\n    raise exception.ValidationError(attribute\u003d\u0027string\u0027, target\u003d\u0027password\u0027)",
+      "revId": "833a2a6560c7a6c2b96e78639aa7696984e94c78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
