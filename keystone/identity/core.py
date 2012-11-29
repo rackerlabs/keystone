@@ -633,6 +633,7 @@ class UserController(wsgi.Application):
     # CRUD extension
     def create_user(self, context, user):
         user = self._normalize_dict(user)
+        user = self._unicode_dict(user, ["password"])
         self.assert_admin(context)
 
         if not 'name' in user or not user['name']:

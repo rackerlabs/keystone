@@ -241,6 +241,10 @@ class Application(BaseApplication):
         return dict([(self._normalize_arg(k), v)
                      for (k, v) in d.iteritems()])
 
+    def _unicode_dict(self, d, l):
+        return dict([(k, unicode(v)) if k in l else (k, v)
+                     for (k, v) in d.iteritems()])
+
     def assert_admin(self, context):
         if not context['is_admin']:
             try:
