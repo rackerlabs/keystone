@@ -20,6 +20,8 @@ import json
 
 from keystone import config
 from keystone import catalog
+from keystone.catalog import controllers as catalog_controllers
+
 from keystone.common import cms
 from keystone.common import logging
 from keystone.common import wsgi
@@ -80,13 +82,13 @@ class V3Router(wsgi.ComposingRouter):
 
         self.crud_routes(
             mapper,
-            catalog.ServiceControllerV3(**apis),
+            catalog_controllers.ServiceControllerV3(**apis),
             'services',
             'service')
 
         self.crud_routes(
             mapper,
-            catalog.EndpointControllerV3(**apis),
+            catalog_controllers.EndpointControllerV3(**apis),
             'endpoints',
             'endpoint')
 
