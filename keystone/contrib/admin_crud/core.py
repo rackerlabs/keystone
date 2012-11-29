@@ -14,7 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone import catalog
+from keystone.catalog import controllers as catalog_controllers
 from keystone.common import wsgi
 from keystone import identity
 
@@ -30,8 +30,8 @@ class CrudExtension(wsgi.ExtensionRouter):
         tenant_controller = identity.TenantController()
         user_controller = identity.UserController()
         role_controller = identity.RoleController()
-        service_controller = catalog.ServiceController()
-        endpoint_controller = catalog.EndpointController()
+        service_controller = catalog_controllers.ServiceController()
+        endpoint_controller = catalog_controllers.EndpointController()
 
         # Tenant Operations
         mapper.connect(
