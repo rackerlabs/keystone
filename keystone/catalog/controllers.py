@@ -26,9 +26,9 @@ from keystone.common import manager
 from keystone.common import wsgi
 from keystone import config
 from keystone import exception
-from keystone import identity
+from keystone.identity import core as identity_core
 from keystone import policy
-from keystone import token
+from keystone.token import core as token_core
 
 
 CONF = config.CONF
@@ -38,9 +38,9 @@ LOG = logging.getLogger(__name__)
 class ServiceController(wsgi.Application):
     def __init__(self):
         self.catalog_api = core.Manager()
-        self.identity_api = identity.Manager()
+        self.identity_api = identity_core.Manager()
         self.policy_api = policy.Manager()
-        self.token_api = token.Manager()
+        self.token_api = token_core.Manager()
         super(ServiceController, self).__init__()
 
     def get_services(self, context):
@@ -70,9 +70,9 @@ class ServiceController(wsgi.Application):
 class EndpointController(wsgi.Application):
     def __init__(self):
         self.catalog_api = core.Manager()
-        self.identity_api = identity.Manager()
+        self.identity_api = identity_core.Manager()
         self.policy_api = policy.Manager()
-        self.token_api = token.Manager()
+        self.token_api = token_core.Manager()
         super(EndpointController, self).__init__()
 
     def get_endpoints(self, context):
