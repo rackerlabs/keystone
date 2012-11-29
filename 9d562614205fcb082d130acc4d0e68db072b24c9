@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//tM8\u003d",
+        "filename": "keystone/identity/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-29T15:30:56Z",
+      "side": 1,
+      "message": "An external python file can always link to the individual pieces.  I might be tempted to rename \u0027core\u0027 to \u0027domain\u0027.  This is to maintain the current contract of importing all of the the identity pieces.",
+      "parentUuid": "AAAAMH//ttU\u003d",
+      "revId": "9d562614205fcb082d130acc4d0e68db072b24c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//tt8\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-11-29T00:08:29Z",
       "side": 1,
       "message": "remove or update",
+      "revId": "9d562614205fcb082d130acc4d0e68db072b24c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//tMw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-29T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//tt8\u003d",
       "revId": "9d562614205fcb082d130acc4d0e68db072b24c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//tMs\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-29T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//ttw\u003d",
+      "revId": "9d562614205fcb082d130acc4d0e68db072b24c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//tt4\u003d",
         "filename": "keystone/identity/routers.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2012-11-29T00:08:29Z",
       "side": 1,
       "message": "remove or update",
+      "revId": "9d562614205fcb082d130acc4d0e68db072b24c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//tMo\u003d",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-29T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//tt4\u003d",
       "revId": "9d562614205fcb082d130acc4d0e68db072b24c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
