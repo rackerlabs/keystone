@@ -26,6 +26,8 @@ from keystone.common import logging
 from keystone.common import wsgi
 from keystone import exception
 from keystone import identity
+from keystone.identity import routers as identity_routers
+from keystone.identity import controllers as identity_controllers
 from keystone.openstack.common import timeutils
 from keystone import policy
 from keystone import token
@@ -95,11 +97,11 @@ class V3Router(wsgi.ComposingRouter):
 
         self.crud_routes(
             mapper,
-            identity.DomainControllerV3(**apis),
+            identity_controllers.DomainControllerV3(**apis),
             'domains',
             'domain')
 
-        project_controller = identity.ProjectControllerV3(**apis)
+        project_controller = identity_controllers.ProjectControllerV3(**apis)
         self.crud_routes(
             mapper,
             project_controller,
@@ -113,17 +115,17 @@ class V3Router(wsgi.ComposingRouter):
 
         self.crud_routes(
             mapper,
-            identity.UserControllerV3(**apis),
+            identity_controllers.UserControllerV3(**apis),
             'users',
             'user')
 
         self.crud_routes(
             mapper,
-            identity.CredentialControllerV3(**apis),
+            identity_controllers.CredentialControllerV3(**apis),
             'credentials',
             'credential')
 
-        role_controller = identity.RoleControllerV3(**apis)
+        role_controller = identity_controllers.RoleControllerV3(**apis)
         self.crud_routes(
             mapper,
             role_controller,
@@ -261,7 +263,7 @@ class AdminRouter(wsgi.ComposingRouter):
                        controller=extensions_controller,
                        action='get_extension_info',
                        conditions=dict(method=['GET']))
-        identity_router = identity.AdminRouter()
+        identity_router = identity_routers.AdminRouter()
         routers = [identity_router]
         super(AdminRouter, self).__init__(mapper, routers)
 
@@ -303,7 +305,7 @@ class PublicRouter(wsgi.ComposingRouter):
                        action='get_extension_info',
                        conditions=dict(method=['GET']))
 
-        identity_router = identity.PublicRouter()
+        identity_router = identity_routers.PublicRouter()
         routers = [identity_router]
 
         super(PublicRouter, self).__init__(mapper, routers)

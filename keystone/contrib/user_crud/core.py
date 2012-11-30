@@ -21,7 +21,7 @@ from keystone import exception
 from keystone.common import logging
 from keystone.common import wsgi
 from keystone.identity import Manager as IdentityManager
-from keystone.identity import UserController as UserManager
+from keystone.identity.controllers import UserController as UserManager
 from keystone.token import Manager as TokenManager
 
 
