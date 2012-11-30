@@ -25,6 +25,9 @@ from keystone import policy
 from keystone import token
 
 
+INTERFACES = ['public', 'internal', 'admin']
+
+
 class Service(wsgi.Application):
     def __init__(self):
         self.catalog_api = core.Manager()
@@ -68,16 +71,34 @@ class Endpoint(wsgi.Application):
     def get_endpoints(self, context):
         self.assert_admin(context)
         endpoint_list = self.catalog_api.list_endpoints(context)
-        return {'endpoints': endpoint_list}
+        fake_endpoints = {}
+        for endpoint in endpoint_list:
+            url = endpoint['url']
+            if endpoint['id'] not in fake_endpoints:
+                fake_endpoints[endpoint['id']] = endpoint.copy()
+            fake_endpoints[endpoint['id']]['%surl' % endpoint['interface']] = \
+                url
+        return {'endpoints': fake_endpoints.values()}
 
     def create_endpoint(self, context, endpoint):
+        """Creates 3 endpoint refs as seen in the v3 API."""
         self.assert_admin(context)
+
+        fake_endpoint_ref = endpoint.copy()
+
+        urls = dict((i, endpoint.pop('%surl' % i)) for i in INTERFACES)
         endpoint_id = uuid.uuid4().hex
-        endpoint_ref = endpoint.copy()
-        endpoint_ref['id'] = endpoint_id
-        new_endpoint_ref = self.catalog_api.create_endpoint(
-            context, endpoint_id, endpoint_ref)
-        return {'endpoint': new_endpoint_ref}
+        for interface, url in urls.iteritems():
+            endpoint_ref = endpoint.copy()
+            endpoint_ref['id'] = endpoint_id
+            endpoint_ref['interface'] = interface
+            endpoint_ref['url'] = url
+
+            self.catalog_api.create_endpoint(
+                context, endpoint_ref['id'], endpoint_ref)
+
+        fake_endpoint_ref['id'] = endpoint_id
+        return {'endpoint': fake_endpoint_ref}
 
     def delete_endpoint(self, context, endpoint_id):
         self.assert_admin(context)
