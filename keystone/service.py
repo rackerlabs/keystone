@@ -25,9 +25,10 @@ from keystone.common import logging
 from keystone.common import wsgi
 from keystone import exception
 from keystone import identity
+from keystone import token
+
 from keystone.openstack.common import timeutils
 from keystone import policy
-from keystone import token
 
 import keystone.catalog.controllers
 import keystone.identity.controllers
