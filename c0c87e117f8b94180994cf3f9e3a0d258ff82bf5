@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//r8Q\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-30T15:31:24Z",
+      "side": 1,
+      "message": "White space",
+      "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//r8I\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-30T15:31:24Z",
+      "side": 1,
+      "message": "event-\u003eeven",
+      "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//r8E\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-30T15:31:24Z",
+      "side": 1,
+      "message": "\"it is preferable to use the modules from the HTTPD server.   Authentication modules in web servers...\"",
+      "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//r8A\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-30T15:31:24Z",
+      "side": 1,
+      "message": "usage -\u003e use in live systems,",
+      "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//r78\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-30T15:31:24Z",
+      "side": 1,
+      "message": "\"the same authentication as an existing Apache module introduces a security risk.\"",
+      "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//r7k\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-11-30T15:31:24Z",
+      "side": 1,
+      "message": "Leave this in for now, but after this commit,  add your sample Middleware Auth into keystone/contrib, and then update the documentation to refer to this.  We could potentially use the middleware in contrib for testing purposes inside of eventlet.",
+      "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
