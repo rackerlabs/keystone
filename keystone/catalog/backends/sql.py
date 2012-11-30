@@ -36,12 +36,14 @@ class Service(sql.ModelBase, sql.DictBase):
 
 class Endpoint(sql.ModelBase, sql.DictBase):
     __tablename__ = 'endpoint'
-    attributes = ['id', 'region', 'service_id']
+    attributes = ['id', 'interface', 'region', 'service_id', 'url']
     id = sql.Column(sql.String(64), primary_key=True)
+    interface = sql.Column(sql.String(8), primary_key=True)
     region = sql.Column('region', sql.String(255))
     service_id = sql.Column(sql.String(64),
                             sql.ForeignKey('service.id'),
                             nullable=False)
+    url = sql.Column(sql.String(255))
     extra = sql.Column(sql.JsonBlob())
 
 
@@ -88,7 +90,9 @@ class Catalog(sql.Base, catalog.Driver):
             old_dict = ref.to_dict()
             old_dict.update(service_ref)
             new_service = Service.from_dict(old_dict)
-            ref.type = new_service.type
+            for attr in Service.attributes:
+                if attr != 'id':
+                    setattr(ref, attr, getattr(new_service, attr))
             ref.extra = new_service.extra
             session.flush()
         return ref.to_dict()
@@ -132,8 +136,9 @@ class Catalog(sql.Base, catalog.Driver):
             old_dict = ref.to_dict()
             old_dict.update(endpoint_ref)
             new_endpoint = Endpoint.from_dict(old_dict)
-            ref.service_id = new_endpoint.service_id
-            ref.region = new_endpoint.region
+            for attr in Endpoint.attributes:
+                if attr != 'id':
+                    setattr(ref, attr, getattr(new_endpoint, attr))
             ref.extra = new_endpoint.extra
             session.flush()
         return ref.to_dict()
