@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//rjg\u003d",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-30T19:20:31Z",
+      "side": 1,
+      "message": "made some comments on the identity review that apply here as well",
+      "revId": "7ddc8aedca64e8af681f8ee089f94e0a183c8ae3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
