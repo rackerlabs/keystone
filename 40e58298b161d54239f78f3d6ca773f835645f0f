@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//rj4\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-30T19:18:53Z",
+      "side": 1,
+      "message": "can you fix this controller as manager stuff? that\u0027s not right",
+      "revId": "40e58298b161d54239f78f3d6ca773f835645f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//rj0\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-30T19:18:53Z",
+      "side": 1,
+      "message": "controller !\u003d manager",
+      "revId": "40e58298b161d54239f78f3d6ca773f835645f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//rjs\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-11-30T19:18:53Z",
+      "side": 1,
+      "message": "would identity.controllers.DomainControllerV3 work here without the new imports above?",
+      "revId": "40e58298b161d54239f78f3d6ca773f835645f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
