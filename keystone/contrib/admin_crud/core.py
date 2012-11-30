@@ -16,7 +16,7 @@
 
 from keystone.catalog import controllers as catalog_controllers
 from keystone.common import wsgi
-from keystone import identity
+from keystone.identity import controllers as identity_controllers
 
 
 class CrudExtension(wsgi.ExtensionRouter):
@@ -27,9 +27,9 @@ class CrudExtension(wsgi.ExtensionRouter):
     """
 
     def add_routes(self, mapper):
-        tenant_controller = identity.TenantController()
-        user_controller = identity.UserController()
-        role_controller = identity.RoleController()
+        tenant_controller = identity_controllers.TenantController()
+        user_controller = identity_controllers.UserController()
+        role_controller = identity_controllers.RoleController()
         service_controller = catalog_controllers.ServiceController()
         endpoint_controller = catalog_controllers.EndpointController()
 
