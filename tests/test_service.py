@@ -16,6 +16,7 @@ import time
 import uuid
 
 import default_fixtures
+import keystone.token.controllers
 
 from keystone import config
 from keystone import exception
@@ -55,7 +56,7 @@ class TokenControllerTest(test.TestCase):
         super(TokenControllerTest, self).setUp()
         self.identity_api = kvs_identity.Identity()
         self.load_fixtures(default_fixtures)
-        self.api = service.TokenController()
+        self.api = keystone.token.controllers.TokenController()
 
     def assertEqualTokens(self, a, b):
         """Assert that two tokens are equal.
@@ -86,7 +87,7 @@ class AuthBadRequests(TokenControllerTest):
         """Verify that _authenticate_external() raises exception if
         not applicable"""
         self.assertRaises(
-            service.ExternalAuthNotApplicable,
+            keystone.token.controllers.ExternalAuthNotApplicable,
             self.api._authenticate_external,
             {}, {})
 
@@ -308,7 +309,7 @@ class TokenExpirationTest(test.TestCase):
         super(TokenExpirationTest, self).setUp()
         self.identity_api = kvs_identity.Identity()
         self.load_fixtures(default_fixtures)
-        self.api = service.TokenController()
+        self.api = keystone.token.controllers.TokenController()
 
     def _maintain_token_expiration(self):
         """Token expiration should be maintained after re-auth & validation."""
