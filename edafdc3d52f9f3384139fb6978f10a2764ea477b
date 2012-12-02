@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX///90\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-12-02T19:22:34Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be disappearing with this change?",
+      "revId": "edafdc3d52f9f3384139fb6978f10a2764ea477b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
