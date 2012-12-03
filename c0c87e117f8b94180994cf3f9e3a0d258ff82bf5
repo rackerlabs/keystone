@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX///uo\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-12-03T09:22:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//r8Q\u003d",
+      "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//r8I\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2012-11-30T19:24:05Z",
       "side": 1,
       "message": "nice catch",
+      "parentUuid": "AAAAMH//r8I\u003d",
+      "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX///uk\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-12-03T09:22:58Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAAMH//r8I\u003d",
       "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX///ug\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-12-03T09:22:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//r8E\u003d",
+      "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//r8A\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 3
@@ -117,6 +171,24 @@
       "writtenOn": "2012-11-30T19:24:05Z",
       "side": 1,
       "message": "+1; \"production systems\" maybe?",
+      "parentUuid": "AAAAMH//r8A\u003d",
+      "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX///uc\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-12-03T09:22:58Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAAMH//r8A\u003d",
       "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -159,6 +231,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX///uY\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-12-03T09:22:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//r78\u003d",
+      "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//r7k\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 3
@@ -188,6 +278,24 @@
       "side": 1,
       "message": "if it goes into a new location, it needs to be removed here as well",
       "parentUuid": "AAAAMH//r7k\u003d",
+      "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX///uU\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2012-12-03T09:22:58Z",
+      "side": 1,
+      "message": "Good idea. I\u0027ll try to submit something in the next few days.",
+      "parentUuid": "AAAAMH//rjE\u003d",
       "revId": "c0c87e117f8b94180994cf3f9e3a0d258ff82bf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
