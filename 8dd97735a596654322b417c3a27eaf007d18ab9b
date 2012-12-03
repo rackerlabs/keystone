@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX///tM\u003d",
+        "filename": "keystone/identity/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-03T09:48:46Z",
+      "side": 0,
+      "message": "awesome",
+      "revId": "8dd97735a596654322b417c3a27eaf007d18ab9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
