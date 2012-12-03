@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX///sk\u003d",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-03T09:52:56Z",
+      "side": 0,
+      "message": "restore this old import?",
+      "revId": "5b73757de94a30b7cc8566e2bf429c1aecd5c320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
