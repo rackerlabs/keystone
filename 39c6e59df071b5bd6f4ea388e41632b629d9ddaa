@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX///Ws\u003d",
+        "filename": "tests/test_cascade_delete.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-03T16:41:50Z",
+      "side": 1,
+      "message": "generally speaking, import modules not attributes",
+      "revId": "39c6e59df071b5bd6f4ea388e41632b629d9ddaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX///Wg\u003d",
+        "filename": "tests/test_cascade_delete.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-03T16:41:50Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "39c6e59df071b5bd6f4ea388e41632b629d9ddaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX///XE\u003d",
+        "filename": "tests/test_cascade_delete.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-03T16:41:50Z",
+      "side": 1,
+      "message": "assertSomethingSomething, add a docstr explaining what\u0027s being tested\n\nshould user_id be renamed to something more generic? it\u0027s not clear if it\u0027s intended to only check user_id\u0027s or just filter on any type of column\u003dvalue",
+      "revId": "39c6e59df071b5bd6f4ea388e41632b629d9ddaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX///XA\u003d",
+        "filename": "tests/test_cascade_delete.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-03T16:41:50Z",
+      "side": 1,
+      "message": ".count() instead of .all()",
+      "revId": "39c6e59df071b5bd6f4ea388e41632b629d9ddaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX///W0\u003d",
+        "filename": "tests/test_cascade_delete.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-03T16:41:50Z",
+      "side": 1,
+      "message": "get_role_id_by_name",
+      "revId": "39c6e59df071b5bd6f4ea388e41632b629d9ddaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX///Wo\u003d",
+        "filename": "tests/test_cascade_delete.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-03T16:41:50Z",
+      "side": 1,
+      "message": "should be done as part of setUp?",
+      "revId": "39c6e59df071b5bd6f4ea388e41632b629d9ddaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
