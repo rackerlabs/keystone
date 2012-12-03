@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX///ro\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-03T10:13:15Z",
+      "side": 1,
+      "message": "is add -\u003e is to add",
+      "revId": "51011b28786ae8963a87080c9545c382c073ed2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX///rk\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-03T10:13:15Z",
+      "side": 1,
+      "message": "comma after ``keystone.middleware.MyMiddlewareAuth``",
+      "revId": "51011b28786ae8963a87080c9545c382c073ed2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX///rg\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-03T10:13:15Z",
+      "side": 1,
+      "message": "require -\u003e consume (maybe?)",
+      "revId": "51011b28786ae8963a87080c9545c382c073ed2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX///rc\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-03T10:13:15Z",
+      "side": 1,
+      "message": "Your modified pipeline might look like this::",
+      "revId": "51011b28786ae8963a87080c9545c382c073ed2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
