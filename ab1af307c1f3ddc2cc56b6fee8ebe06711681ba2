@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//9fo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-12-04T20:01:45Z",
+      "side": 1,
+      "message": "probably just want:\n\n    bug 1085247",
+      "revId": "ab1af307c1f3ddc2cc56b6fee8ebe06711681ba2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//9fU\u003d",
+        "filename": "tools/test-requires",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2012-12-04T20:01:45Z",
+      "side": 1,
+      "message": "these changes seem very separate from the documentation bug - why in this review?",
+      "revId": "ab1af307c1f3ddc2cc56b6fee8ebe06711681ba2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
