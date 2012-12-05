@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+1: guang-yee
+Verified+1: SmokeStack
+Approved+1: ayoung
+Code-Review+2: ayoung
+Code-Review+1: daisy-ycguo <guoyingc@cn.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 05 Dec 2012 21:21:39 +0000
+Reviewed-on: https://review.openstack.org/16114
+Project: openstack/keystone
+Branch: refs/heads/master
