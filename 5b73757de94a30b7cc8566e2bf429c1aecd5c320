@@ -16,6 +16,24 @@
       "revId": "5b73757de94a30b7cc8566e2bf429c1aecd5c320",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX///FM\u003d",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-05T19:08:13Z",
+      "side": 0,
+      "message": "Actually, I think the explicit import is correct.  If I did restore the old import, it would only work based on a side effect from a different file, and would break in some unit tests that imported only this file directly.",
+      "parentUuid": "AAAAMX///sk\u003d",
+      "revId": "5b73757de94a30b7cc8566e2bf429c1aecd5c320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

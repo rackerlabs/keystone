@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX///FI\u003d",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-05T19:08:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMX///sg\u003d",
+      "revId": "8dd97735a596654322b417c3a27eaf007d18ab9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX///sc\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2012-12-03T09:52:56Z",
       "side": 1,
       "message": "Missed this in the dependent review... remove these and depend on from \u0027keystone import catalog\u0027 to get access to catalog.controllers",
+      "revId": "8dd97735a596654322b417c3a27eaf007d18ab9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//8ak\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-05T19:08:13Z",
+      "side": 1,
+      "message": "OK, these have an interesting side effefct:  they make catalog.controllers resolve, not just here, but anywhere in the project, due to how the caching of modules work.  I am going to revert to importing as catalog_controllers as that is the only thing that works regardless of how imports are done, and works without too much magic. \n\nThis will continue to change as the refactoring continues.  eventually, controllers and managers will split.",
+      "parentUuid": "AAAAMX///sc\u003d",
       "revId": "8dd97735a596654322b417c3a27eaf007d18ab9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
