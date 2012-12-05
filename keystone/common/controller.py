@@ -3,10 +3,22 @@ import functools
 
 from keystone.common import logging
 from keystone.common import wsgi
+from keystone import catalog
 from keystone import exception
+from keystone import identity
+from keystone import policy
+from keystone import token
 
 
 LOG = logging.getLogger(__name__)
+
+
+class APIs():
+    def __init__(self):
+        self.identity = identity.Manager()
+        self.policy = policy.Manager()
+        self.token = token.Manager()
+        self.catalog = catalog.Manager()
 
 
 def protected(f):
@@ -58,11 +70,8 @@ def protected(f):
 class V3Controller(wsgi.Application):
     """Base controller class for Identity API v3."""
 
-    def __init__(self, catalog_api, identity_api, token_api, policy_api):
-        self.catalog_api = catalog_api
-        self.identity_api = identity_api
-        self.policy_api = policy_api
-        self.token_api = token_api
+    def __init__(self):
+        self.apis = APIs()
         super(V3Controller, self).__init__()
 
     def _paginate(self, context, refs):

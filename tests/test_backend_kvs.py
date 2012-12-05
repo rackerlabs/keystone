@@ -15,7 +15,7 @@
 # under the License.
 import uuid
 
-from keystone import catalog
+from keystone.catalog import core as catalog
 from keystone.catalog.backends import kvs as catalog_kvs
 from keystone import exception
 from keystone.identity.backends import kvs as identity_kvs
