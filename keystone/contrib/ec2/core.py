@@ -44,8 +44,8 @@ from keystone import config
 from keystone import exception
 from keystone import identity
 from keystone import policy
-from keystone import service
 from keystone import token
+from keystone.token import controllers as token_controllers
 
 
 CONF = config.CONF
@@ -194,7 +194,7 @@ class Ec2Controller(wsgi.Application):
         # TODO(termie): i don't think the ec2 middleware currently expects a
         #               full return, but it contains a note saying that it
         #               would be better to expect a full return
-        token_controller = service.TokenController()
+        token_controller = token_controllers.TokenController()
         return token_controller._format_authenticate(
             token_ref, roles_ref, catalog_ref)
 
