@@ -21,7 +21,9 @@ from keystone import exception
 from keystone.common import logging
 from keystone.common import wsgi
 from keystone import identity
-from keystone import token
+from keystone.identity import controllers
+
+from keystone.token import core as token
 
 
 LOG = logging.getLogger(__name__)
@@ -31,7 +33,7 @@ class UserController(wsgi.Application):
     def __init__(self):
         self.identity_api = identity.Manager()
         self.token_api = token.Manager()
-        self.user_controller = identity.controllers.User()
+        self.user_controller = controllers.User()
 
     def set_user_password(self, context, user_id, user):
         token_id = context.get('token_id')
