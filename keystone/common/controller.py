@@ -58,11 +58,7 @@ def protected(f):
 class V3Controller(wsgi.Application):
     """Base controller class for Identity API v3."""
 
-    def __init__(self, catalog_api, identity_api, token_api, policy_api):
-        self.catalog_api = catalog_api
-        self.identity_api = identity_api
-        self.policy_api = policy_api
-        self.token_api = token_api
+    def __init__(self):
         super(V3Controller, self).__init__()
 
     def _paginate(self, context, refs):

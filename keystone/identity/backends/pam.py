@@ -22,7 +22,7 @@ except ImportError:
     pam = None
     import PAM
 
-from keystone import identity
+from keystone.identity import core as identity
 
 
 def PAM_authenticate(username, password):

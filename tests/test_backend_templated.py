@@ -16,7 +16,7 @@
 
 import os
 
-from keystone import catalog
+from keystone.catalog import core as catalog
 from keystone.catalog.backends import templated as catalog_templated
 from keystone import exception
 from keystone import test

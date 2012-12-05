@@ -15,7 +15,7 @@
 # under the License.
 
 
-from keystone import catalog
+from keystone.catalog import core as catalog
 from keystone.common import kvs
 
 

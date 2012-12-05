@@ -19,7 +19,7 @@ import copy
 from keystone.common import kvs
 from keystone import exception
 from keystone.openstack.common import timeutils
-from keystone import token
+from keystone.token import core as token
 
 
 class Token(kvs.Base, token.Driver):
