@@ -15,7 +15,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone import catalog
 from keystone.catalog import core
 from keystone.common import sql
 from keystone.common.sql import migration
@@ -45,7 +44,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
 
 
-class Catalog(sql.Base, catalog.Driver):
+class Catalog(sql.Base, core.Driver):
     def db_sync(self):
         migration.db_sync()
 
