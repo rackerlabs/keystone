@@ -14,5 +14,4 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone.catalog.core import *
 from keystone.catalog import controllers

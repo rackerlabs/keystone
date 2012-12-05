@@ -23,7 +23,7 @@ from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import jsonutils
-from keystone import token
+from keystone.token import core as token
 
 
 CONF = config.CONF

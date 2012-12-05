@@ -21,7 +21,7 @@ from keystone.common import sql
 from keystone.common.sql import migration
 from keystone.common import utils
 from keystone import exception
-from keystone import identity
+from keystone.identity import core as identity
 
 
 def handle_conflicts(type='object'):

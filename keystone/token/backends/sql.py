@@ -21,7 +21,7 @@ import datetime
 from keystone.common import sql
 from keystone import exception
 from keystone.openstack.common import timeutils
-from keystone import token
+from keystone.token import core as token
 
 
 class TokenModel(sql.ModelBase, sql.DictBase):

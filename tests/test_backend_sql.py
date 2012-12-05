@@ -17,13 +17,13 @@
 import uuid
 
 from keystone.common import sql
-from keystone import catalog
+from keystone.catalog import core as catalog
 from keystone import config
 from keystone import exception
-from keystone import identity
+from keystone.identity import core as identity
 from keystone import policy
 from keystone import test
-from keystone import token
+from keystone.token import core as token
 
 import default_fixtures
 import test_backend

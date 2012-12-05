@@ -16,9 +16,9 @@
 
 from keystone import config
 from keystone import exception
-from keystone import identity
+from keystone.identity import core as identity
 from keystone import policy
-from keystone import token
+from keystone.token import core as token
 from keystone.common import logging
 from keystone.common import manager
 from keystone.common import wsgi

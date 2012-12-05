@@ -20,9 +20,17 @@ import uuid
 from keystone.catalog import core
 from keystone.common import controller
 from keystone.common import wsgi
-from keystone import identity
+from keystone.identity import core as identity
 from keystone import policy
-from keystone import token
+from keystone.token import core as token
+
+
+class APIs():
+    def __init__(self):
+        self.catalog = core.Manager()
+        self.identity = identity.Manager()
+        self.policy = policy.Manager()
+        self.token = token.Manager()
 
 
 class Service(wsgi.Application):
@@ -85,58 +93,68 @@ class Endpoint(wsgi.Application):
 
 
 class ServiceV3(controller.V3Controller):
+
+    def __init__(self):
+        self.apis = APIs()
+        super(ServiceV3, self).__init__()
+
     @controller.protected
     def create_service(self, context, service):
         ref = self._assign_unique_id(self._normalize_dict(service))
         self._require_attribute(ref, 'type')
 
-        ref = self.catalog_api.create_service(context, ref['id'], ref)
+        ref = self.apis.catalog.create_service(context, ref['id'], ref)
         return {'service': ref}
 
     @controller.protected
     def list_services(self, context):
-        refs = self.catalog_api.list_services(context)
+        refs = self.apis.catalog.list_services(context)
         refs = self._filter_by_attribute(context, refs, 'type')
         return {'services': self._paginate(context, refs)}
 
     @controller.protected
     def get_service(self, context, service_id):
-        ref = self.catalog_api.get_service(context, service_id)
+        ref = self.apis.catalog.get_service(context, service_id)
         return {'service': ref}
 
     @controller.protected
     def update_service(self, context, service_id, service):
         self._require_matching_id(service_id, service)
 
-        ref = self.catalog_api.update_service(context, service_id, service)
+        ref = self.apis.catalog.update_service(context, service_id, service)
         return {'service': ref}
 
     @controller.protected
     def delete_service(self, context, service_id):
-        return self.catalog_api.delete_service(context, service_id)
+        return self.apis.catalog.delete_service(context, service_id)
 
 
 class EndpointV3(controller.V3Controller):
+
+    def __init__(self):
+        self.apis = APIs()
+        super(EndpointV3, self).__init__()
+
     @controller.protected
     def create_endpoint(self, context, endpoint):
         ref = self._assign_unique_id(self._normalize_dict(endpoint))
         self._require_attribute(ref, 'service_id')
         self._require_attribute(ref, 'interface')
-        self.catalog_api.get_service(context, ref['service_id'])
+        self.apis.catalog.get_service(context, ref['service_id'])
 
-        ref = self.catalog_api.create_endpoint(context, ref['id'], ref)
+        ref = self.apis.catalog.create_endpoint(context, ref['id'], ref)
         return {'endpoint': ref}
 
     @controller.protected
     def list_endpoints(self, context):
-        refs = self.catalog_api.list_endpoints(context)
+        refs = self.apis.catalog.list_endpoints(context)
         refs = self._filter_by_attribute(context, refs, 'service_id')
         refs = self._filter_by_attribute(context, refs, 'interface')
         return {'endpoints': self._paginate(context, refs)}
 
     @controller.protected
     def get_endpoint(self, context, endpoint_id):
-        ref = self.catalog_api.get_endpoint(context, endpoint_id)
+        ref = self.apis.catalog.get_endpoint(context, endpoint_id)
         return {'endpoint': ref}
 
     @controller.protected
@@ -144,11 +162,87 @@ class EndpointV3(controller.V3Controller):
         self._require_matching_id(endpoint_id, endpoint)
 
         if 'service_id' in endpoint:
-            self.catalog_api.get_service(context, endpoint['service_id'])
+            self.apis.catalog.get_service(context, endpoint['service_id'])
 
-        ref = self.catalog_api.update_endpoint(context, endpoint_id, endpoint)
+        ref = self.apis.catalog.update_endpoint(context, endpoint_id, endpoint)
         return {'endpoint': ref}
 
     @controller.protected
     def delete_endpoint(self, context, endpoint_id):
-        return self.catalog_api.delete_endpoint(context, endpoint_id)
+        return self.apis.catalog.delete_endpoint(context, endpoint_id)
+
+
+class VersionController(wsgi.Application):
+    def __init__(self, version_type):
+        self.catalog_api = core.Manager()
+        self.url_key = '%sURL' % version_type
+
+        super(VersionController, self).__init__()
+
+    def _get_identity_url(self, context):
+        catalog_ref = self.catalog_api.get_catalog(context=context,
+                                                   user_id=None,
+                                                   tenant_id=None)
+        for region, region_ref in catalog_ref.iteritems():
+            for service, service_ref in region_ref.iteritems():
+                if service == 'identity':
+                    return service_ref[self.url_key]
+
+        raise exception.NotImplemented()
+
+    def _get_versions_list(self, context):
+        """The list of versions is dependent on the context."""
+        identity_url = self._get_identity_url(context)
+        if not identity_url.endswith('/'):
+            identity_url = identity_url + '/'
+
+        versions = {}
+        versions['v2.0'] = {
+            'id': 'v2.0',
+            'status': 'beta',
+            'updated': '2011-11-19T00:00:00Z',
+            'links': [
+                {
+                    'rel': 'self',
+                    'href': identity_url,
+                }, {
+                    'rel': 'describedby',
+                    'type': 'text/html',
+                    'href': 'http://docs.openstack.org/api/openstack-'
+                            'identity-service/2.0/content/'
+                }, {
+                    'rel': 'describedby',
+                    'type': 'application/pdf',
+                    'href': 'http://docs.openstack.org/api/openstack-'
+                            'identity-service/2.0/identity-dev-guide-'
+                            '2.0.pdf'
+                }
+            ],
+            'media-types': [
+                {
+                    'base': 'application/json',
+                    'type': 'application/vnd.openstack.identity-v2.0'
+                            '+json'
+                }, {
+                    'base': 'application/xml',
+                    'type': 'application/vnd.openstack.identity-v2.0'
+                            '+xml'
+                }
+            ]
+        }
+
+        return versions
+
+    def get_versions(self, context):
+        versions = self._get_versions_list(context)
+        return wsgi.render_response(status=(300, 'Multiple Choices'), body={
+            'versions': {
+                'values': versions.values()
+            }
+        })
+
+    def get_version(self, context):
+        versions = self._get_versions_list(context)
+        return wsgi.render_response(body={
+            'version': versions['v2.0']
+        })
