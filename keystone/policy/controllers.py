@@ -15,6 +15,7 @@
 # under the License.
 
 from keystone.common import controller
+from keystone.policy import core
 
 
 class PolicyV3(controller.V3Controller):
@@ -24,25 +25,25 @@ class PolicyV3(controller.V3Controller):
         self._require_attribute(ref, 'blob')
         self._require_attribute(ref, 'type')
 
-        ref = self.policy_api.create_policy(context, ref['id'], ref)
+        ref = self.apis.policy.create_policy(context, ref['id'], ref)
         return {'policy': ref}
 
     @controller.protected
     def list_policies(self, context):
-        refs = self.policy_api.list_policies(context)
+        refs = self.apis.policy.list_policies(context)
         refs = self._filter_by_attribute(context, refs, 'type')
         return {'policies': self._paginate(context, refs)}
 
     @controller.protected
     def get_policy(self, context, policy_id):
-        ref = self.policy_api.get_policy(context, policy_id)
+        ref = self.apis.policy.get_policy(context, policy_id)
         return {'policy': ref}
 
     @controller.protected
     def update_policy(self, context, policy_id, policy):
-        ref = self.policy_api.update_policy(context, policy_id, policy)
+        ref = self.apis.policy.update_policy(context, policy_id, policy)
         return {'policy': ref}
 
     @controller.protected
     def delete_policy(self, context, policy_id):
-        return self.policy_api.delete_policy(context, policy_id)
+        return self.apis.policy.delete_policy(context, policy_id)
