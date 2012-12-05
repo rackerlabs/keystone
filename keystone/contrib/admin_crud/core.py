@@ -27,9 +27,9 @@ class CrudExtension(wsgi.ExtensionRouter):
     """
 
     def add_routes(self, mapper):
-        tenant_controller = identity.TenantController()
-        user_controller = identity.UserController()
-        role_controller = identity.RoleController()
+        tenant_controller = identity.controllers.TenantController()
+        user_controller = identity.controllers.UserController()
+        role_controller = identity.controllers.RoleController()
         service_controller = catalog.ServiceController()
         endpoint_controller = catalog.EndpointController()
 

@@ -16,22 +16,11 @@
 
 """WSGI Routers for the Identity service."""
 
-import urllib
-import urlparse
-import uuid
-
-from keystone.common import controller
-from keystone.common import logging
-from keystone.common import manager
 from keystone.common import wsgi
-from keystone import config
-from keystone import exception
-from keystone import policy
-from keystone import token
-from keystone.identity import core, controllers
+from keystone.identity import controllers
 
 
-class PublicRouter(wsgi.ComposableRouter):
+class Public(wsgi.ComposableRouter):
     def add_routes(self, mapper):
         tenant_controller = controllers.TenantController()
         mapper.connect('/tenants',
@@ -40,7 +29,7 @@ class PublicRouter(wsgi.ComposableRouter):
                        conditions=dict(method=['GET']))
 
 
-class AdminRouter(wsgi.ComposableRouter):
+class Admin(wsgi.ComposableRouter):
     def add_routes(self, mapper):
         # Tenant Operations
         tenant_controller = controllers.TenantController()

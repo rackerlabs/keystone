@@ -22,7 +22,6 @@ import uuid
 
 from keystone.common import controller
 from keystone.common import logging
-from keystone.common import manager
 from keystone.common import wsgi
 from keystone import config
 from keystone import exception
@@ -32,7 +31,6 @@ from keystone.identity import core
 
 
 CONF = config.CONF
-
 LOG = logging.getLogger(__name__)
 
 
