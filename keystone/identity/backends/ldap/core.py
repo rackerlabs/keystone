@@ -144,6 +144,12 @@ class Identity(identity.Driver):
         except exception.NotFound:
             raise exception.RoleNotFound(role_id=role_id)
 
+    def get_role_by_name(self, role_name):
+        try:
+            return self.role.get_by_name(role_name)
+        except exception.NotFound:
+            raise exception.RoleNotFound(role_id=role_name)
+
     def list_roles(self):
         return self.role.get_all()
 

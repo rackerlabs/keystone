@@ -419,6 +419,15 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    def get_role_by_name(self, user_name):
+        """Get a role by name.
+
+        :returns: role_ref
+        :raises: keystone.exception.UserNotFound
+
+        """
+        raise exception.NotImplemented()
+
     def update_role(self, role_id, role):
         """Updates an existing role.
 

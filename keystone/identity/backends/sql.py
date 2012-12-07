@@ -723,6 +723,13 @@ class Identity(sql.Base, identity.Driver):
             raise exception.RoleNotFound(role_id=role_id)
         return ref.to_dict()
 
+    def get_role_by_name(self, role_name):
+        session = self.get_session()
+        role_ref = session.query(Role).filter_by(name=role_name).first()
+        if not role_ref:
+            raise exception.RoleNotFound(role_id=role_name)
+        return role_ref.to_dict()
+
     @handle_conflicts(type='role')
     def update_role(self, role_id, role):
         session = self.get_session()
