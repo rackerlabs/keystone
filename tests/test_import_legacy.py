@@ -16,7 +16,10 @@
 
 import os
 
-import sqlite3
+try:
+    import sqlite3
+except ImportError:
+    from pysqlite2 import dbapi2 as sqlite3
 #import sqlalchemy
 
 from keystone.catalog.backends import templated as catalog_templated
