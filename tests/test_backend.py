@@ -1121,8 +1121,7 @@ class IdentityTests(object):
         self.assertDictEqual(role_ref_dict, role)
 
         role['name'] = uuid.uuid4().hex
-        self.identity_api.update_role(role['id'], role)
-        role_ref = self.identity_api.get_role(role['id'])
+        role_ref = self.identity_api.update_role(role['id'], role)
         role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
         self.assertDictEqual(role_ref_dict, role)
 
@@ -1630,8 +1629,7 @@ class IdentityTests(object):
         self.assertDictEqual(group_ref, group)
 
         group['name'] = uuid.uuid4().hex
-        self.identity_api.update_group(group['id'], group)
-        group_ref = self.identity_api.get_group(group['id'])
+        group_ref = self.identity_api.update_group(group['id'], group)
         self.assertDictEqual(group_ref, group)
 
         self.identity_api.delete_group(group['id'])
@@ -1647,8 +1645,10 @@ class IdentityTests(object):
         self.assertDictEqual(project_ref, project)
 
         project['name'] = uuid.uuid4().hex
-        self.identity_api.update_project(project['id'], project)
-        project_ref = self.identity_api.get_project(project['id'])
+        project_ref = self.identity_api.update_project(project['id'], project)
+        extra = project_ref.pop('extra', None)  # SQL backend adds this
+        if extra is not None:
+            self.assertDictEqual(extra, {})
         self.assertDictEqual(project_ref, project)
 
         self.identity_api.delete_project(project['id'])
@@ -1664,8 +1664,7 @@ class IdentityTests(object):
         self.assertDictEqual(domain_ref, domain)
 
         domain['name'] = uuid.uuid4().hex
-        self.identity_api.update_domain(domain['id'], domain)
-        domain_ref = self.identity_api.get_domain(domain['id'])
+        domain_ref = self.identity_api.update_domain(domain['id'], domain)
         self.assertDictEqual(domain_ref, domain)
 
         self.identity_api.delete_domain(domain['id'])
@@ -1683,10 +1682,16 @@ class IdentityTests(object):
         self.assertDictEqual(user_ref_dict, user)
 
         user['password'] = uuid.uuid4().hex
-        self.identity_api.update_user(user['id'], user)
-        user_ref = self.identity_api.get_user(user['id'])
+        user_ref = self.identity_api.update_user(user['id'], user)
         del user['password']
-        user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
+        extra = user_ref.pop('extra', None)  # SQL backend adds this
+        if extra is not None:
+            self.assertDictEqual(extra, {})
+        groups = user_ref.pop('groups', None)  # KVS backend adds this
+        if groups is not None:
+            self.assertListEqual(groups, [])
+        user_ref_dict = dict((x, user_ref[x]) for x in user_ref
+                             if x != 'password')
         self.assertDictEqual(user_ref_dict, user)
 
         self.identity_api.delete_user(user['id'])
