@@ -1121,8 +1121,7 @@ class IdentityTests(object):
         self.assertDictEqual(role_ref_dict, role)
 
         role['name'] = uuid.uuid4().hex
-        self.identity_api.update_role(role['id'], role)
-        role_ref = self.identity_api.get_role(role['id'])
+        role_ref = self.identity_api.update_role(role['id'], role)
         role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
         self.assertDictEqual(role_ref_dict, role)
 
@@ -1647,8 +1646,8 @@ class IdentityTests(object):
         self.assertDictEqual(project_ref, project)
 
         project['name'] = uuid.uuid4().hex
-        self.identity_api.update_project(project['id'], project)
-        project_ref = self.identity_api.get_project(project['id'])
+        project_ref = self.identity_api.update_project(project['id'], project)
+        project_ref.pop('extra', None)  # SQL backend adds this
         self.assertDictEqual(project_ref, project)
 
         self.identity_api.delete_project(project['id'])
