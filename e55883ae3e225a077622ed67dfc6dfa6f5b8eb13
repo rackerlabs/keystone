@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//4ow\u003d",
+        "filename": "tests/test_import_legacy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-10T21:15:59Z",
+      "side": 1,
+      "message": "from below:\n\n    import sqlite3 as dbapi",
+      "revId": "e55883ae3e225a077622ed67dfc6dfa6f5b8eb13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//4o0\u003d",
+        "filename": "tests/test_import_legacy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-10T21:15:59Z",
+      "side": 1,
+      "message": "the name pysqlite uses for this module is actually better, IMO:\n\n    from pysqlite2 import dbapi2 as dbapi",
+      "revId": "e55883ae3e225a077622ed67dfc6dfa6f5b8eb13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//4oo\u003d",
+        "filename": "tests/test_import_legacy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-10T21:15:59Z",
+      "side": 1,
+      "message": "remove this old import as well, i assume it\u0027s a relic of trying to use sqlalchemy to obtain a db connection.",
+      "revId": "e55883ae3e225a077622ed67dfc6dfa6f5b8eb13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//4os\u003d",
+        "filename": "tests/test_import_legacy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-10T21:15:59Z",
+      "side": 1,
+      "message": "and then:\n\n    conn \u003d dbapi.connect(db_path)",
+      "revId": "e55883ae3e225a077622ed67dfc6dfa6f5b8eb13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
