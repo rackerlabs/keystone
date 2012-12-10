@@ -45,6 +45,8 @@ from keystone import config
 from keystone import exception
 from keystone import token
 
+from keystoneclient.contrib.ec2.utils import Ec2Signer
+
 
 CONF = config.CONF
 
@@ -98,7 +100,7 @@ class Ec2Extension(wsgi.ExtensionRouter):
 @dependency.requires('catalog_api', 'ec2_api')
 class Ec2Controller(controller.V2Controller):
     def check_signature(self, creds_ref, credentials):
-        signer = utils.Ec2Signer(creds_ref['secret'])
+        signer = Ec2Signer(creds_ref['secret'])
         signature = signer.generate(credentials)
         if utils.auth_str_equal(credentials['signature'], signature):
             return
