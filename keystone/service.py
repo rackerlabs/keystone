@@ -631,7 +631,7 @@ class TokenController(wsgi.Application):
             raise exception.Unauthorized(e)
         (user_ref, tenant_ref, metadata_ref) = auth_info
 
-        expiry = self.token_api._get_default_expire_time(context=context)
+        expiry = token.default_expire_time()
         auth_token_data = self._get_auth_token_data(user_ref,
                                                     tenant_ref,
                                                     metadata_ref,
@@ -660,7 +660,7 @@ class TokenController(wsgi.Application):
         tenant_ref = self._get_tenant_ref(context, user_id, tenant_id)
         metadata_ref = self._get_metadata_ref(context, user_id, tenant_id)
 
-        expiry = self.token_api._get_default_expire_time(context=context)
+        expiry = token.default_expire_time()
         auth_token_data = self._get_auth_token_data(user_ref,
                                                     tenant_ref,
                                                     metadata_ref,
