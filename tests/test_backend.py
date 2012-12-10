@@ -1303,10 +1303,10 @@ class IdentityTests(object):
         self.assertDictEqual(role_ref_dict, role)
 
         role['name'] = uuid.uuid4().hex
-        self.identity_api.update_role(role['id'], role)
+        role_ref = self.identity_api.update_role(role['id'], role)
+        self.assertDictEqual(role_ref, role)
         role_ref = self.identity_api.get_role(role['id'])
-        role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
-        self.assertDictEqual(role_ref_dict, role)
+        self.assertDictEqual(role_ref, role)
 
         self.identity_api.delete_role(role['id'])
         self.assertRaises(exception.RoleNotFound,
@@ -1812,7 +1812,8 @@ class IdentityTests(object):
         self.assertDictContainsSubset(group_ref, group)
 
         group['name'] = uuid.uuid4().hex
-        self.identity_api.update_group(group['id'], group)
+        group_ref = self.identity_api.update_group(group['id'], group)
+        self.assertDictContainsSubset(group_ref, group)
         group_ref = self.identity_api.get_group(group['id'])
         self.assertDictContainsSubset(group_ref, group)
 
@@ -1885,7 +1886,8 @@ class IdentityTests(object):
         self.assertDictContainsSubset(project_ref, project)
 
         project['name'] = uuid.uuid4().hex
-        self.identity_api.update_project(project['id'], project)
+        project_ref = self.identity_api.update_project(project['id'], project)
+        self.assertDictContainsSubset(project_ref, project)
         project_ref = self.identity_api.get_project(project['id'])
         self.assertDictContainsSubset(project_ref, project)
 
@@ -1902,7 +1904,8 @@ class IdentityTests(object):
         self.assertDictEqual(domain_ref, domain)
 
         domain['name'] = uuid.uuid4().hex
-        self.identity_api.update_domain(domain['id'], domain)
+        domain_ref = self.identity_api.update_domain(domain['id'], domain)
+        self.assertDictEqual(domain_ref, domain)
         domain_ref = self.identity_api.get_domain(domain['id'])
         self.assertDictEqual(domain_ref, domain)
 
@@ -1921,11 +1924,11 @@ class IdentityTests(object):
         self.assertDictContainsSubset(user_ref_dict, user)
 
         user['password'] = uuid.uuid4().hex
-        self.identity_api.update_user(user['id'], user)
-        user_ref = self.identity_api.get_user(user['id'])
+        user_ref = self.identity_api.update_user(user['id'], user)
         del user['password']
-        user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
-        self.assertDictContainsSubset(user_ref_dict, user)
+        self.assertDictContainsSubset(user_ref, user)
+        user_ref = self.identity_api.get_user(user['id'])
+        self.assertDictContainsSubset(user_ref, user)
 
         self.identity_api.delete_user(user['id'])
         self.assertRaises(exception.UserNotFound,
