@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//33k\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Agreed. But I didn\u0027t feel like it warranted its own module.  It makes the argument perhaps that the controllers are more closely linked to the routers than the core elements, and perhaps routers and controllers should be in a package together instead of routers in on, and controllers and core in another.",
+      "parentUuid": "AAAAMX//3/E\u003d",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//3/U\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2012-12-11T14:15:05Z",
       "side": 1,
       "message": "extend object",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//33g\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMX//3/U\u003d",
       "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//33Y\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "No, this was more a vestige of the refactoring, and can be reversed.  I did feel it was slightly better self documenting this way:  contrast\n\nself.identity_api\n\nwith \n\nself.api.identity\n\nIt did make it easier to migrate the responsibility for building the set of APIs around, as it was originally done in service.py.  For a while, until I figured how I was triggereing the to the circular depenedency, I was building these in the individual controllers as well.",
+      "parentUuid": "AAAAMX//3/M\u003d",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//3/A\u003d",
         "filename": "keystone/contrib/ec2/core.py",
         "patchSetId": 7
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//33U\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "I don\u0027t particularly like this pattern, but it seems to be a necessary evil.\n\nIf token.controllers is in the namespace, we have a circular dependency.  Core and controllers cannot be in the same namespace, because controllers need to point at multiple core files.  This is one of the few places where a file needs to talk to both a core and a controller file.\n\nWe might be able to change this to:\n\nfrom keystone.token import controllers as token, and then we can reference token.core that way.",
+      "parentUuid": "AAAAMX//3/A\u003d",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//3+w\u003d",
         "filename": "keystone/contrib/ec2/core.py",
         "patchSetId": 7
@@ -81,6 +153,24 @@
       "writtenOn": "2012-12-11T14:15:05Z",
       "side": 1,
       "message": "token_controller \u003d token.controllers.Token()",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//328\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "can\u0027t do that.",
+      "parentUuid": "AAAAMX//3+w\u003d",
       "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//32g\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Done. Thought I got all of these.",
+      "parentUuid": "AAAAMX//3+g\u003d",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//3+Y\u003d",
         "filename": "keystone/contrib/user_crud/core.py",
         "patchSetId": 7
@@ -189,6 +297,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//32c\u003d",
+        "filename": "keystone/extensions.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMX//3+A\u003d",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//394\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 7
@@ -200,6 +326,24 @@
       "writtenOn": "2012-12-11T14:15:05Z",
       "side": 1,
       "message": "?!",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//32Q\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMX//394\u003d",
       "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +367,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//32E\u003d",
+        "filename": "keystone/routers/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Wasn\u0027t origianlly sure if this was going to be empty.  Does it hurt to have it here?",
+      "parentUuid": "AAAAMX//39M\u003d",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//39I\u003d",
         "filename": "keystone/routers/catalog.py",
         "patchSetId": 7
@@ -234,6 +396,24 @@
       "writtenOn": "2012-12-11T14:15:05Z",
       "side": 1,
       "message": "http://routes.readthedocs.org/en/latest/ ? is this even used here?",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//32A\u003d",
+        "filename": "keystone/routers/catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMX//39I\u003d",
       "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +437,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//31U\u003d",
+        "filename": "keystone/routers/crud.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMX//388\u003d",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//39A\u003d",
         "filename": "keystone/routers/crud.py",
         "patchSetId": 7
@@ -268,6 +466,24 @@
       "writtenOn": "2012-12-11T14:15:05Z",
       "side": 1,
       "message": "unused",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//31Y\u003d",
+        "filename": "keystone/routers/crud.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMX//39A\u003d",
       "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +524,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//31I\u003d",
+        "filename": "keystone/routers/identity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "crud is an odd name, period.",
+      "parentUuid": "AAAAMX//38s\u003d",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//38g\u003d",
         "filename": "keystone/routers/identity.py",
         "patchSetId": 7
@@ -319,6 +553,24 @@
       "writtenOn": "2012-12-11T14:15:05Z",
       "side": 1,
       "message": "awful function name lol",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//31E\u003d",
+        "filename": "keystone/routers/identity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Yeah, who would come up with something like that?",
+      "parentUuid": "AAAAMX//38g\u003d",
       "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -342,6 +594,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//304\u003d",
+        "filename": "keystone/routers/token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMX//38I\u003d",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//38U\u003d",
         "filename": "keystone/routers/token.py",
         "patchSetId": 7
@@ -353,6 +623,24 @@
       "writtenOn": "2012-12-11T14:15:05Z",
       "side": 1,
       "message": "unused",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//300\u003d",
+        "filename": "keystone/routers/token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMX//38U\u003d",
       "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -393,6 +681,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//3zc\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Fixed the text to make it a little clearer.  This is A standard that I am trying to enforce moving forward.",
+      "parentUuid": "AAAAMX//378\u003d",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//37Y\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 7
@@ -404,6 +710,24 @@
       "writtenOn": "2012-12-11T14:15:05Z",
       "side": 1,
       "message": "Token?",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//3zE\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Moved over from service.py.  I\u0027m wondering if the token module should be better called the auth module, but I could see that being confusing as well.  Trusts or Delegation are also possible names.",
+      "parentUuid": "AAAAMX//37Y\u003d",
       "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -427,6 +751,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//3zQ\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "This is not V3.  This code moved over unchanged.",
+      "parentUuid": "AAAAMX//37I\u003d",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//37E\u003d",
         "filename": "tests/test_backend_kvs.py",
         "patchSetId": 7
@@ -438,6 +780,24 @@
       "writtenOn": "2012-12-11T14:15:05Z",
       "side": 1,
       "message": "restore",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//3y8\u003d",
+        "filename": "tests/test_backend_kvs.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMX//37E\u003d",
       "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -461,6 +821,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//3y4\u003d",
+        "filename": "tests/test_backend_templated.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMX//36s\u003d",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//36g\u003d",
         "filename": "tests/test_service.py",
         "patchSetId": 7
@@ -472,6 +850,24 @@
       "writtenOn": "2012-12-11T14:15:05Z",
       "side": 1,
       "message": "there are a lot of \u0027controllers\u0027; this should be namespaced",
+      "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//3y0\u003d",
+        "filename": "tests/test_service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-11T15:54:02Z",
+      "side": 1,
+      "message": "Agreed, but we need to work out how that should look.",
+      "parentUuid": "AAAAMX//36g\u003d",
       "revId": "c0967193c679b2dacbc0b94245d43f7882d4e5b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
