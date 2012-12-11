@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//3/c\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-11T14:15:05Z",
+      "side": 0,
+      "message": "interesting catch... two sides to this coin: A) it makes sense for modules internal to the catalog package to simply \u0027import core\u0027, if they want to do an explicit import; B) it sets a bad example for people wanting to write their own drivers (they should be doing from keystone import catalog and implementing catalog.Driver, not importing core and extending core.Driver).\n\nEither way, I\u0027m glad to have the redundant explicit import eliminated.",
+      "revId": "a800fae22c627e89a09ffc35b95dd072416da14a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//39Y\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-11T14:15:05Z",
+      "side": 0,
+      "message": "my bad, nice catch",
+      "revId": "a800fae22c627e89a09ffc35b95dd072416da14a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//39U\u003d",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-11T14:15:05Z",
+      "side": 0,
+      "message": "haven\u0027t seen where you moved this stuff to yet, but i find this surprising",
+      "revId": "a800fae22c627e89a09ffc35b95dd072416da14a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//38E\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-11T14:15:05Z",
+      "side": 0,
+      "message": "restore whitespace",
+      "revId": "a800fae22c627e89a09ffc35b95dd072416da14a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
