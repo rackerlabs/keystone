@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//2GU\u003d",
+        "filename": "tests/test_s3_token_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-12T21:49:43Z",
+      "side": 1,
+      "message": "The hardcoded value it\u0027s checking for threw me off \u0026 took me a second to figure out...\n\nInstead, extend FakeHTTPConnection, override request(), and always return your malformed body. Then put your test method into a new unittest.TestCase that sets up self.middleware.http_client_class as your extended FakeHTTPConnection class.",
+      "revId": "977fb8345bf2ab4ae0745b5276f099d0a20954d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//2HA\u003d",
+        "filename": "tests/test_s3_token_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-12T21:49:43Z",
+      "side": 1,
+      "message": "is credentials -\u003e access supposed to be backward?",
+      "revId": "977fb8345bf2ab4ae0745b5276f099d0a20954d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
