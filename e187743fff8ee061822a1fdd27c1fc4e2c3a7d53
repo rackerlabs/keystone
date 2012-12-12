@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//2H0\u003d",
+        "filename": "tests/test_contrib_s3_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-12T21:41:42Z",
+      "side": 1,
+      "message": "line break",
+      "revId": "e187743fff8ee061822a1fdd27c1fc4e2c3a7d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//2IM\u003d",
+        "filename": "tests/test_contrib_s3_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-12T21:41:42Z",
+      "side": 1,
+      "message": "it\u0027s may be kind of obvious here, but can you use uuid.uuid4().hex to illustrate that \u0027signature\u0027 is getting an arbitrary value?",
+      "revId": "e187743fff8ee061822a1fdd27c1fc4e2c3a7d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
