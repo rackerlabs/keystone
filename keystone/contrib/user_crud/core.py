@@ -18,20 +18,26 @@ import copy
 import uuid
 
 from keystone import exception
+from keystone.common import controller
 from keystone.common import logging
 from keystone.common import wsgi
+from keystone import catalog
 from keystone import identity
+from keystone import policy
 from keystone import token
 
 
 LOG = logging.getLogger(__name__)
 
 
-class UserController(wsgi.Application):
+class UserController(controller.V2Controller):
     def __init__(self):
-        self.identity_api = identity.Manager()
-        self.token_api = token.Manager()
-        self.user_controller = identity.controllers.User()
+        apis = dict(catalog_api=catalog.Manager(),
+                    identity_api=identity.Manager(),
+                    policy_api=policy.Manager(),
+                    token_api=token.Manager())
+        self.user_controller = identity.controllers.User(**apis)
+        super(UserController, self).__init__(**apis)
 
     def set_user_password(self, context, user_id, user):
         token_id = context.get('token_id')

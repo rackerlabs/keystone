@@ -20,18 +20,9 @@ import uuid
 from keystone.catalog import core
 from keystone.common import controller
 from keystone.common import wsgi
-from keystone import identity
-from keystone import policy
-from keystone import token
 
 
-class Service(wsgi.Application):
-    def __init__(self):
-        self.catalog_api = core.Manager()
-        self.identity_api = identity.Manager()
-        self.policy_api = policy.Manager()
-        self.token_api = token.Manager()
-        super(Service, self).__init__()
+class Service(controller.V2Controller):
 
     def get_services(self, context):
         self.assert_admin(context)
@@ -57,14 +48,7 @@ class Service(wsgi.Application):
         return {'OS-KSADM:service': new_service_ref}
 
 
-class Endpoint(wsgi.Application):
-    def __init__(self):
-        self.catalog_api = core.Manager()
-        self.identity_api = identity.Manager()
-        self.policy_api = policy.Manager()
-        self.token_api = token.Manager()
-        super(Endpoint, self).__init__()
-
+class Endpoint(controller.V2Controller):
     def get_endpoints(self, context):
         self.assert_admin(context)
         endpoint_list = self.catalog_api.list_endpoints(context)
@@ -152,3 +136,79 @@ class EndpointV3(controller.V3Controller):
     @controller.protected
     def delete_endpoint(self, context, endpoint_id):
         return self.catalog_api.delete_endpoint(context, endpoint_id)
+
+
+class VersionController(wsgi.Application):
+    def __init__(self, version_type):
+        self.catalog_api = core.Manager()
+        self.url_key = '%sURL' % version_type
+
+        super(VersionController, self).__init__()
+
+    def _get_identity_url(self, context):
+        catalog_ref = self.catalog_api.get_catalog(context=context,
+                                                   user_id=None,
+                                                   tenant_id=None)
+        for region, region_ref in catalog_ref.iteritems():
+            for service, service_ref in region_ref.iteritems():
+                if service == 'identity':
+                    return service_ref[self.url_key]
+
+        raise exception.NotImplemented()
+
+    def _get_versions_list(self, context):
+        """The list of versions is dependent on the context."""
+        identity_url = self._get_identity_url(context)
+        if not identity_url.endswith('/'):
+            identity_url = identity_url + '/'
+
+        versions = {}
+        versions['v2.0'] = {
+            'id': 'v2.0',
+            'status': 'beta',
+            'updated': '2011-11-19T00:00:00Z',
+            'links': [
+                {
+                    'rel': 'self',
+                    'href': identity_url,
+                }, {
+                    'rel': 'describedby',
+                    'type': 'text/html',
+                    'href': 'http://docs.openstack.org/api/openstack-'
+                            'identity-service/2.0/content/'
+                }, {
+                    'rel': 'describedby',
+                    'type': 'application/pdf',
+                    'href': 'http://docs.openstack.org/api/openstack-'
+                            'identity-service/2.0/identity-dev-guide-'
+                            '2.0.pdf'
+                }
+            ],
+            'media-types': [
+                {
+                    'base': 'application/json',
+                    'type': 'application/vnd.openstack.identity-v2.0'
+                            '+json'
+                }, {
+                    'base': 'application/xml',
+                    'type': 'application/vnd.openstack.identity-v2.0'
+                            '+xml'
+                }
+            ]
+        }
+
+        return versions
+
+    def get_versions(self, context):
+        versions = self._get_versions_list(context)
+        return wsgi.render_response(status=(300, 'Multiple Choices'), body={
+            'versions': {
+                'values': versions.values()
+            }
+        })
+
+    def get_version(self, context):
+        versions = self._get_versions_list(context)
+        return wsgi.render_response(body={
+            'version': versions['v2.0']
+        })
