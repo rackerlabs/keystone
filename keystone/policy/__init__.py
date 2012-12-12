@@ -16,3 +16,4 @@
 
 from keystone.policy.core import *
 from keystone.policy import controllers
+from keystone.policy import routers
