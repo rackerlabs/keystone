@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//2h0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-12T17:03:41Z",
+      "side": 1,
+      "message": "Do the imports here.  Spreading it out over two files buys us nothing, and we don\u0027t make the APIs swappable, just the back ends.",
+      "revId": "4e2be8a8880f03b1c6d1dc663d7259dbb45ddf67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//2hw\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-12T17:03:41Z",
+      "side": 1,
+      "message": "Do this in the controllers file.  No need to copy this code everywhere, and it will make it harder to maintain.",
+      "revId": "4e2be8a8880f03b1c6d1dc663d7259dbb45ddf67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
