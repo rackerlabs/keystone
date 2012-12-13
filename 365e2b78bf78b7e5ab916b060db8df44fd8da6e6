@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//1aA\u003d",
+        "filename": "tests/test_contrib_s3_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-13T12:45:11Z",
+      "side": 1,
+      "message": "unittest2 provides assertIsNone, as well",
+      "revId": "365e2b78bf78b7e5ab916b060db8df44fd8da6e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
