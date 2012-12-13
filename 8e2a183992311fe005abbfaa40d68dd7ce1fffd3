@@ -16,6 +16,24 @@
       "revId": "8e2a183992311fe005abbfaa40d68dd7ce1fffd3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//1w8\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-13T01:59:39Z",
+      "side": 1,
+      "message": "I asked myself the same question. I don\u0027t have a great answer, but here are my thoughts...\n\nI\u0027d say no to the Driver / Manager because drivers don\u0027t need to implement or override them and no to the Controller because they\u0027re not bound to the web layer nor should they vary by API version.\n\nI stuck them here mostly just because catalog has a similar module level function (format_url)... if anything, I\u0027d say keystone.token.utils or something would be appropriate... my only hesitation with a utils module is that default_expire_time() pulls from config, and I would find that very unexpected for a utility module (I would expect such a module to be importable without requiring any supporting code / configuration).\n\nI\u0027m also not opposed to modules within a package importing their own \u0027core\u0027 module directly, other than it setting a potentially bad example for those implementing their own drivers (who shouldn\u0027t be importing core externally).",
+      "parentUuid": "AAAAMX//14Q\u003d",
+      "revId": "8e2a183992311fe005abbfaa40d68dd7ce1fffd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
