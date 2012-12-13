@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//0oc\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-12-13T23:41:55Z",
+      "side": 1,
+      "message": "why change the default from 1 to 3?",
+      "revId": "f74aab2463ccc9549c07175ed82015f23ad2694c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
