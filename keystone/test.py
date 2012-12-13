@@ -231,6 +231,12 @@ class TestCase(NoModule, unittest.TestCase):
                     self.identity_api.add_user_to_tenant(tenant_id, user['id'])
                 setattr(self, 'user_%s' % user['id'], user_copy)
 
+            for group in fixtures.GROUPS:
+                group_copy = group.copy()
+                rv = self.identity_api.create_group(group['id'],
+                                                    group_copy.copy())
+                setattr(self, 'group_%s' % group['id'], group_copy)
+
             for role in fixtures.ROLES:
                 rv = self.identity_api.create_role(role['id'], role)
                 setattr(self, 'role_%s' % role['id'], rv)

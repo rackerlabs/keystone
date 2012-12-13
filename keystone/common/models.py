@@ -99,6 +99,24 @@ class User(Model):
     optional_keys = ('password', 'description', 'email', 'enabled')
 
 
+class Group(Model):
+    """Group object.
+
+    Required keys:
+        id
+        name
+
+    Optional keys:
+        domain_id
+        description
+
+    """
+
+    required_keys = ('id', 'name')
+    optional_keys = ('description')
+#   optional_keys = ('domain_id', 'description')
+
+
 class Tenant(Model):
     """Tenant object.
 

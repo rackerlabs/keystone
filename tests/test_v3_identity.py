@@ -4,7 +4,7 @@ import test_v3
 
 
 class IdentityTestCase(test_v3.RestfulTestCase):
-    """Test domains, projects, users, credential & role CRUD"""
+    """Test domains, projects, users, groups, credential & role CRUD"""
 
     def setUp(self):
         super(IdentityTestCase, self).setUp()
@@ -32,6 +32,15 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.identity_api.create_user(
             self.user_id,
             self.user.copy())
+
+        self.group_id = uuid.uuid4().hex
+        self.group = self.new_group_ref(
+            domain_id=self.domain_id)
+#        self.group.pop(['enabled'])
+        self.group['id'] = self.group_id
+        self.identity_api.create_group(
+            self.group_id,
+            self.group.copy())
 
         self.credential_id = uuid.uuid4().hex
         self.credential = self.new_credential_ref(
@@ -115,6 +124,27 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         if ref:
             self.assertEqual(ref['domain_id'], entity['domain_id'])
             self.assertEqual(ref['email'], entity['email'])
+        return entity
+
+    # group validation
+
+    def assertValidGroupListResponse(self, resp, ref):
+        return self.assertValidListResponse(
+            resp,
+            'groups',
+            self.assertValidGroup,
+            ref)
+
+    def assertValidGroupResponse(self, resp, ref):
+        return self.assertValidResponse(
+            resp,
+            'group',
+            self.assertValidGroup,
+            ref)
+
+    def assertValidGroup(self, entity, ref=None):
+        if ref:
+            pass
         return entity
 
     # credential validation
@@ -273,6 +303,41 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.delete('/users/%(user_id)s' % {
             'user_id': self.user_id})
 
+    # group crud tests
+
+    def test_create_group(self):
+        """POST /groups"""
+        ref = self.new_group_ref(domain_id=self.domain_id)
+        r = self.post(
+            '/groups',
+            body={'group': ref})
+        return self.assertValidGroupResponse(r, ref)
+
+    def test_list_groups(self):
+        """GET /groups"""
+        r = self.get('/groups')
+        self.assertValidGroupListResponse(r, self.group)
+
+    def test_get_group(self):
+        """GET /groups/{group_id}"""
+        r = self.get('/groups/%(group_id)s' % {
+            'group_id': self.group_id})
+        self.assertValidGroupResponse(r, self.group)
+
+    def test_update_group(self):
+        """PATCH /groups/{group_id}"""
+        group = self.new_group_ref(domain_id=self.domain_id)
+        del group['id']
+        r = self.patch('/groups/%(group_id)s' % {
+            'group_id': self.group_id},
+            body={'group': group})
+        self.assertValidGroupResponse(r, group)
+
+    def test_delete_group(self):
+        """DELETE /groups/{group_id}"""
+        self.delete('/groups/%(group_id)s' % {
+            'group_id': self.group_id})
+
     # credential crud tests
 
     def test_list_credentials(self):
@@ -347,3 +412,63 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         """DELETE /roles/{role_id}"""
         self.delete('/roles/%(role_id)s' % {
             'role_id': self.role_id})
+
+    def test_create_user_project_grant(self):
+        """PUT /projects/{project_id}/users/{user_id}/roles/{role_id}"""
+        self.put('/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+            'project_id': self.project_id,
+            'user_id': self.user_id,
+            'role_id': self.role_id})
+        # TODO (henry-nash) Add validation checks
+
+    def test_create_group_project_grant(self):
+        """PUT /projects/{project_id}/groups/{group_id}/roles/{role_id}"""
+        self.put('/projects/%(project_id)s/groups/%(group_id)s/roles/%(role_id)s' % {
+            'project_id': self.project_id,
+            'group_id': self.group_id,
+            'role_id': self.role_id})
+        # TODO (henry-nash) Add validation checks
+
+    # TODO (henry-nash) below are an initial set of tests for grants - more required
+    
+    def test_create_group_domain_grant(self):
+        """PUT /domains/{domain_id}/groups/{group_id}/roles/{role_id}"""
+        self.put('/domains/%(domain_id)s/groups/%(group_id)s/roles/%(role_id)s' % {
+            'domain_id': self.domain_id,
+            'group_id': self.group_id,
+            'role_id': self.role_id})
+        # TODO (henry-nash) Add validation checks
+ 
+    def test_list_user_project_grants(self):
+        """GET /projects/{project_id}/users/{user_id}/roles"""
+        self.put('/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+            'project_id': self.project_id,
+            'user_id': self.user_id,
+            'role_id': self.role_id})
+        self.get('/projects/%(project_id)s/users/%(user_id)s/roles' % {
+            'project_id': self.project_id,
+            'user_id': self.user_id})
+        # TODO (henry-nash) Add validation checks
+
+    def test_list_group_project_grants(self):
+        """GET /projects/{project_id}/groups/{group_id}/roles"""
+        self.put('/projects/%(project_id)s/groups/%(group_id)s/roles/%(role_id)s' % {
+            'project_id': self.project_id,
+            'group_id': self.group_id,
+            'role_id': self.role_id})
+        self.get('/projects/%(project_id)s/groups/%(group_id)s/roles' % {
+            'project_id': self.project_id,
+            'group_id': self.group_id})
+        # TODO (henry-nash) Add validation checks
+
+    def test_delete_group_project_grant(self):
+        """DELETE /projects/{project_id}/groups/{group_id}/roles/{role_id}"""
+        self.put('/projects/%(project_id)s/groups/%(group_id)s/roles/%(role_id)s' % {
+            'project_id': self.project_id,
+            'group_id': self.group_id,
+            'role_id': self.role_id})
+        self.delete('/projects/%(project_id)s/groups/%(group_id)s/roles/%(role_id)s' % {
+            'project_id': self.project_id,
+            'group_id': self.group_id,
+            'role_id': self.role_id})
+        # TODO (henry-nash) Add validation checks
