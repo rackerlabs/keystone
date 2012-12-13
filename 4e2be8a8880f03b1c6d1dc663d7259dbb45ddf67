@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//1Lg\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-13T16:13:13Z",
+      "side": 0,
+      "message": "This is just a code style change.",
+      "revId": "4e2be8a8880f03b1c6d1dc663d7259dbb45ddf67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
