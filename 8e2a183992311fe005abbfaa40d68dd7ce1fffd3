@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//14Q\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-13T00:34:23Z",
+      "side": 1,
+      "message": "Would it make more sense to move these two functions into the Manager or Driver and then the modules would all have access to them without importing core?",
+      "revId": "8e2a183992311fe005abbfaa40d68dd7ce1fffd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
