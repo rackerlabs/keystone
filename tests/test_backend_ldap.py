@@ -395,3 +395,26 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         self.identity_api.update_user('fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], True)
+
+# TODO (henry-nash) These need to be removed when the full LDAP implementation
+# is submitted - see BugL #1092187
+    def test_group_crud(self):
+        pass
+
+    def test_add_user_to_group(self):
+        pass
+
+    def test_add_user_to_group_404(self):
+        pass
+
+    def test_check_user_in_group(self):
+        pass
+
+    def test_check_user_not_in_group(self):
+        pass
+
+    def test_remove_user_from_group(self):
+        pass
+
+    def test_remove_user_from_group_404(self):
+        pass
