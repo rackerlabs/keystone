@@ -55,6 +55,18 @@ USERS = [
     }
 ]
 
+GROUPS = [
+    {
+        'id': 'gbaz',
+        'domain_id': 'gbazdom',
+        'name': 'gBAZ',
+    }, {
+        'id': 'gbar',
+        'domain_id': 'gbardom',
+        'name': 'gBAR',
+        'description': 'very descriptive',
+    }
+]
 METADATA = [
     {
         'user_id': 'foo',

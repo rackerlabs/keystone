@@ -97,9 +97,13 @@ class Identity(kvs.Base, identity.Driver):
     def get_user_by_name(self, user_name):
         return identity.filter_user(self._get_user_by_name(user_name))
 
-    def get_metadata(self, user_id, tenant_id):
+    def get_metadata(self, user_id=None, tenant_id=None,
+                     domain_id=None, group_id=None):
         try:
-            return self.db.get('metadata-%s-%s' % (tenant_id, user_id))
+            if user_id:
+                return self.db.get('metadata-%s-%s' % (tenant_id, user_id))
+            else:
+                return self.db.get('metadata-%s-%s' % (tenant_id, group_id))
         except exception.NotFound:
             raise exception.MetadataNotFound()
 
@@ -227,6 +231,35 @@ class Identity(kvs.Base, identity.Driver):
         self.db.set('user-%s' % user_id, new_user)
         self.db.set('user_name-%s' % new_user['name'], new_user)
         return new_user
+
+    def add_user_to_group(self, group_id, user_id):
+        self.get_group(group_id)
+        user_ref = self._get_user(user_id)
+        groups = set(user_ref.get('groups', []))
+        groups.add(group_id)
+        self.update_user(user_id, {'groups': list(groups)})
+
+    def remove_user_from_group(self, group_id, user_id):
+        self.get_group(group_id)
+        user_ref = self._get_user(user_id)
+        groups = set(user_ref.get('groups', []))
+        try:
+            groups.remove(group_id)
+        except KeyError:
+            raise exception.NotFound('User not found in group')
+        self.update_user(user_id, {'groups': list(groups)})
+
+    def list_users_in_group(self, group_id):
+        self.get_group(group_id)
+        user_keys = filter(lambda x: x.startswith("group-"), self.db.keys())
+        user_refs = [self.db.get(key) for key in user_keys]
+        group_ids = filter(lambda x: group_id in x['groups'], user_refs)
+        return [self.get_group(x) for x in group_ids]
+
+    def list_groups_for_user(self, user_id):
+        user_ref = self._get_user(user_id)
+        group_ids = user_ref.get('groups', [])
+        return [self.get_group(x) for x in group_ids]
 
     def delete_user(self, user_id):
         try:
@@ -382,3 +415,31 @@ class Identity(kvs.Base, identity.Driver):
         domain_list = set(self.db.get('domain_list', []))
         domain_list.remove(domain_id)
         self.db.set('domain_list', list(domain_list))
+
+    # group crud
+
+    def create_group(self, group_id, group):
+        self.db.set('group-%s' % group_id, group)
+        group_list = set(self.db.get('group_list', []))
+        group_list.add(group_id)
+        self.db.set('group_list', list(group_list))
+        return group
+
+    def list_groups(self):
+        return self.db.get('group_list', [])
+
+    def get_group(self, group_id):
+        try:
+            return self.db.get('group-%s' % group_id)
+        except exception.NotFound:
+            raise exception.GroupNotFound(group_id=group_id)
+
+    def update_group(self, group_id, group):
+        self.db.set('group-%s' % group_id, group)
+        return group
+
+    def delete_group(self, group_id):
+        self.db.delete('group-%s' % group_id)
+        group_list = set(self.db.get('group_list', []))
+        group_list.remove(group_id)
+        self.db.set('group_list', list(group_list))

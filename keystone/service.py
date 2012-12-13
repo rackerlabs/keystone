@@ -111,6 +111,24 @@ class V3Router(wsgi.ComposingRouter):
             'users',
             'user')
 
+        mapper.connect(
+            '/groups/{group_id}/users',
+            controller=project_controller,
+            action='list_users_in_group',
+            conditions=dict(method=['GET']))
+
+        self.crud_routes(
+            mapper,
+            identity.controllers.GroupV3(**apis),
+            'groups',
+            'group')
+
+        mapper.connect(
+            '/users/{user_id}/groups',
+            controller=project_controller,
+            action='list_groups_for_user',
+            conditions=dict(method=['GET']))
+
         self.crud_routes(
             mapper,
             identity.controllers.CredentialV3(**apis),
@@ -129,7 +147,17 @@ class V3Router(wsgi.ComposingRouter):
             action='create_grant',
             conditions=dict(method=['PUT']))
         mapper.connect(
+            '/projects/{project_id}/groups/{group_id}/roles/{role_id}',
+            controller=role_controller,
+            action='create_grant',
+            conditions=dict(method=['PUT']))
+        mapper.connect(
             '/projects/{project_id}/users/{user_id}/roles/{role_id}',
+            controller=role_controller,
+            action='check_grant',
+            conditions=dict(method=['HEAD']))
+        mapper.connect(
+            '/projects/{project_id}/groups/{group_id}/roles/{role_id}',
             controller=role_controller,
             action='check_grant',
             conditions=dict(method=['HEAD']))
@@ -139,7 +167,17 @@ class V3Router(wsgi.ComposingRouter):
             action='list_grants',
             conditions=dict(method=['GET']))
         mapper.connect(
+            '/projects/{project_id}/groups/{group_id}/roles',
+            controller=role_controller,
+            action='list_grants',
+            conditions=dict(method=['GET']))
+        mapper.connect(
             '/projects/{project_id}/users/{user_id}/roles/{role_id}',
+            controller=role_controller,
+            action='revoke_grant',
+            conditions=dict(method=['DELETE']))
+        mapper.connect(
+            '/projects/{project_id}/groups/{group_id}/roles/{role_id}',
             controller=role_controller,
             action='revoke_grant',
             conditions=dict(method=['DELETE']))
@@ -149,7 +187,17 @@ class V3Router(wsgi.ComposingRouter):
             action='create_grant',
             conditions=dict(method=['PUT']))
         mapper.connect(
+            '/domains/{domain_id}/groups/{group_id}/roles/{role_id}',
+            controller=role_controller,
+            action='create_grant',
+            conditions=dict(method=['PUT']))
+        mapper.connect(
             '/domains/{domain_id}/users/{user_id}/roles/{role_id}',
+            controller=role_controller,
+            action='check_grant',
+            conditions=dict(method=['HEAD']))
+        mapper.connect(
+            '/domains/{domain_id}/groups/{group_id}/roles/{role_id}',
             controller=role_controller,
             action='check_grant',
             conditions=dict(method=['HEAD']))
@@ -159,7 +207,17 @@ class V3Router(wsgi.ComposingRouter):
             action='list_grants',
             conditions=dict(method=['GET']))
         mapper.connect(
+            '/domains/{domain_id}/groups/{group_id}/roles',
+            controller=role_controller,
+            action='list_grants',
+            conditions=dict(method=['GET']))
+        mapper.connect(
             '/domains/{domain_id}/users/{user_id}/roles/{role_id}',
+            controller=role_controller,
+            action='revoke_grant',
+            conditions=dict(method=['DELETE']))
+        mapper.connect(
+            '/domains/{domain_id}/groups/{group_id}/roles/{role_id}',
             controller=role_controller,
             action='revoke_grant',
             conditions=dict(method=['DELETE']))

@@ -63,6 +63,11 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             ref['project_id'] = project_id
         return ref
 
+    def new_group_ref(self, domain_id):
+        ref = self.new_ref()
+#        ref['domain_id'] = domain_id
+        return ref
+
     def new_credential_ref(self, user_id, project_id=None):
         ref = self.new_ref()
         ref['user_id'] = user_id
@@ -116,6 +121,9 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
     def post(self, path, **kwargs):
         return self.v3_request(method='POST', path=path, **kwargs)
+
+    def put(self, path, **kwargs):
+        return self.v3_request(method='PUT', path=path, **kwargs)
 
     def patch(self, path, **kwargs):
         return self.v3_request(method='PATCH', path=path, **kwargs)

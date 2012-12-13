@@ -85,14 +85,14 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableExists('policy')
         self.assertTableColumns('policy', ['id', 'type', 'blob', 'extra'])
 
-    def test_upgrade_7_to_9(self):
+    def test_upgrade_7_to_10(self):
 
         self.assertEqual(self.schema.version, 0)
         self._migrate(self.repo_path, 7)
         self.populate_user_table()
         self.populate_tenant_table()
-        self._migrate(self.repo_path, 9)
-        self.assertEqual(self.schema.version, 9)
+        self._migrate(self.repo_path, 10)
+        self.assertEqual(self.schema.version, 10)
         self.assertTableColumns("user",
                                 ["id", "name", "extra", "password",
                                  "enabled"])
@@ -117,11 +117,15 @@ class SqlUpgradeTests(test.TestCase):
                                         autoload=True)
         a_tenant = session.query(tenant_table).filter("id='baz'").one()
         self.assertEqual(a_tenant.description, 'description')
+        self.assertTableExists('group')
+        self.assertTableExists('group_project_metadata')
+        self.assertTableExists('group_domain_metadata')
+        self.assertTableExists('user_group_membership')
         session.commit()
 
-    def test_downgrade_9_to_7(self):
+    def test_downgrade_10_to_7(self):
         self.assertEqual(self.schema.version, 0)
-        self._migrate(self.repo_path, 9)
+        self._migrate(self.repo_path, 10)
         self._migrate(self.repo_path, 7, False)
 
     def test_downgrade_to_0(self):

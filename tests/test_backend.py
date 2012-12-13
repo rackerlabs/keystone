@@ -696,6 +696,73 @@ class IdentityTests(object):
         tenant_ref = self.identity_api.get_tenant('fake1')
         self.assertEqual(tenant_ref['enabled'], tenant['enabled'])
 
+    def test_add_user_to_group(self):
+        self.identity_api.add_user_to_group(self.group_gbar['id'],
+                                            self.user_foo['id'])
+        groups = self.identity_api.list_groups_for_user(self.user_foo['id'])
+
+        found = False
+        for x in groups:
+            if (x['id'] == self.group_gbar['id']):
+                found = True
+        self.assertTrue(found)
+
+    def test_add_user_to_group_404(self):
+        self.assertRaises(exception.GroupNotFound,
+                          self.identity_api.add_user_to_group,
+                          uuid.uuid4().hex,
+                          self.user_foo['id'])
+
+        self.assertRaises(exception.UserNotFound,
+                          self.identity_api.add_user_to_group,
+                          self.group_gbar['id'],
+                          uuid.uuid4().hex)
+
+    def test_remove_user_from_group(self):
+        self.identity_api.add_user_to_group(self.group_gbar['id'],
+                                            self.user_foo['id'])
+        agroups = self.identity_api.list_groups_for_user(self.user_foo['id'])
+        self.identity_api.remove_user_from_group(self.group_gbar['id'],
+                                                 self.user_foo['id'])
+        groups = self.identity_api.list_groups_for_user(self.user_foo['id'])
+        for x in groups:
+            self.assertFalse(x['id'] == self.group_gbar['id'])
+
+    def test_remove_user_from_group_404(self):
+        self.assertRaises(exception.NotFound,
+                          self.identity_api.remove_user_from_group,
+                          uuid.uuid4().hex,
+                          self.user_foo['id'])
+
+        self.assertRaises(exception.NotFound,
+                          self.identity_api.remove_user_from_group,
+                          self.group_gbar['id'],
+                          uuid.uuid4().hex)
+
+        self.assertRaises(exception.NotFound,
+                          self.identity_api.remove_user_from_group,
+                          self.group_gbaz['id'],
+                          self.user_foo['id'])
+
+    def test_group_crud(self):
+        group = {'id': uuid.uuid4().hex, 'domain_id': uuid.uuid4().hex,
+                 'name': uuid.uuid4().hex}
+        self.identity_api.create_group(group['id'], group)
+        group_ref = self.identity_api.get_group(group['id'])
+        group_ref_dict = dict((x, group_ref[x]) for x in group_ref)
+        self.assertDictEqual(group_ref_dict, group)
+
+        group['name'] = uuid.uuid4().hex
+        self.identity_api.update_group(group['id'], group)
+        group_ref = self.identity_api.get_group(group['id'])
+        group_ref_dict = dict((x, group_ref[x]) for x in group_ref)
+        self.assertDictEqual(group_ref_dict, group)
+
+        self.identity_api.delete_group(group['id'])
+        self.assertRaises(exception.GroupNotFound,
+                          self.identity_api.get_group,
+                          group['id'])
+
 
 class TokenTests(object):
     def test_token_crud(self):
