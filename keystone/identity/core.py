@@ -318,6 +318,14 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    def list_users_in_group(self, group_id, group):
+        """List all users in a group.
+
+        :returns: a list of user_refs or an empty list.
+
+        """
+        raise exception.NotImplemented()
+
     def get_user(self, user_id):
         """Get a user by ID.
 
@@ -332,6 +340,32 @@ class Driver(object):
 
         :raises: keystone.exception.UserNotFound,
                  keystone.exception.Conflict
+
+        """
+        raise exception.NotImplemented()
+
+    def add_user_to_group(self, user_id, group_id):
+        """Adds a user to a group.
+
+        :raises: keystone.exception.UserNotFound,
+                 keystone.exception.GroupNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def check_user_in_group(self, user_id, group_id):
+        """Checks if a user is a member of a group.
+
+        :raises: keystone.exception.UserNotFound,
+                 keystone.exception.GroupNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def remove_user_from_group(self, user_id, group_id):
+        """Removes a user from a group.
+
+        :raises: keystone.exception.NotFound
 
         """
         raise exception.NotImplemented()
@@ -428,6 +462,58 @@ class Driver(object):
         """Deletes an existing role.
 
         :raises: keystone.exception.RoleNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    # group crud
+
+    def create_group(self, group_id, group):
+        """Creates a new group.
+
+        :raises: keystone.exception.Conflict
+
+        """
+        raise exception.NotImplemented()
+
+    def list_groups(self):
+        """List all groups in the system.
+
+        :returns: a list of group_refs or an empty list.
+
+        """
+        raise exception.NotImplemented()
+
+    def list_groups_for_user(self, user_id, user):
+        """List all groups a user is in
+
+        :returns: a list of group_refs or an empty list.
+
+        """
+        raise exception.NotImplemented()
+
+    def get_group(self, group_id):
+        """Get a group by ID.
+
+        :returns: group_ref
+        :raises: keystone.exception.GroupNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def update_group(self, group_id, group):
+        """Updates an existing group.
+
+        :raises: keystone.exceptionGroupNotFound,
+                 keystone.exception.Conflict
+
+        """
+        raise exception.NotImplemented()
+
+    def delete_group(self, group_id):
+        """Deletes an existing group.
+
+        :raises: keystone.exception.GroupNotFound
 
         """
         raise exception.NotImplemented()
