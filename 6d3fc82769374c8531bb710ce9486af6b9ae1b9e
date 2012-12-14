@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//zpc\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T20:06:56Z",
+      "side": 1,
+      "message": "yeah... we can\u0027t pair v3-created endpoints together to create v2 endpoints, and without a publicurl, it\u0027s invalid. so, they won\u0027t have a legacy_endpoint_id in the db",
+      "parentUuid": "AAAAMX//z0E\u003d",
+      "revId": "6d3fc82769374c8531bb710ce9486af6b9ae1b9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//0hw\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 5
