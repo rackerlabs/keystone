@@ -564,6 +564,37 @@ class IdentityTests(object):
                           domain_id=new_domain['id'],
                           role_id='member')
 
+    def test_remove_non_existing_role_from_user_and_tenant(self):
+        role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_role(role['id'], role)
+        self.identity_api.add_role_to_user_and_tenant(
+            self.user_foo['id'], self.tenant_bar['id'], role['id'])
+        self.assertRaises(exception.NotFound,
+                          self.identity_api.remove_role_from_user_and_tenant,
+                          self.user_foo['id'],
+                          self.tenant_bar['id'],
+                          'None_existing_role_id')
+
+    def test_remove_role_from_user_and_non_existing_tenant(self):
+        role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_role(role['id'], role)
+        self.identity_api.add_role_to_user_and_tenant(
+            self.user_foo['id'], self.tenant_bar['id'], role['id'])
+        self.assertRaises(exception.NotFound,
+                          self.identity_api.remove_role_from_user_and_tenant,
+                          self.user_foo['id'],
+                          'None_existing_tenant_id',
+                          role['id'])
+
+    def test_remove_non_existing_role_from_user_and_tenant(self):
+        role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_role(role['id'], role)
+        self.assertRaises(exception.NotFound,
+                          self.identity_api.remove_role_from_user_and_tenant,
+                          self.user_foo['id'],
+                          self.tenant_bar['id'],
+                          role['id'])
+
     def test_role_crud(self):
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_role(role['id'], role)
