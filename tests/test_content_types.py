@@ -451,6 +451,26 @@ class CoreApiTests(object):
             token=token)
         self.assertValidTenantResponse(r)
 
+    def test_delete_tenant_by_name(self):
+        token = self.get_scoped_token()
+        r = self.admin_request(
+            method='DELETE',
+            path='/v2.0/tenants?name=%(tenant_name)s' % {
+                'tenant_name': self.tenant_bar['name'],
+            },
+            token=token,
+            expected_status=204)
+
+    def test_delete_tenant_by_name_404(self):
+        token = self.get_scoped_token()
+        r = self.admin_request(
+            method='DELETE',
+            path='/v2.0/tenants?name=%(tenant_name)s' % {
+                'tenant_name': uuid.uuid4().hex,
+            },
+            token=token,
+            expected_status=404)
+
     def test_get_user_roles(self):
         raise nose.exc.SkipTest('Blocked by bug 933565')
 
