@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//0oU\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-12-14T00:58:12Z",
+      "side": 1,
+      "message": "Is 255 limit for URL good enough?",
+      "revId": "6d3fc82769374c8531bb710ce9486af6b9ae1b9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//0hw\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-12-14T00:58:12Z",
+      "side": 1,
+      "message": "should it be\n\nlegacy_ep[\u0027%sURL\u0027 % endpoint[\u0027interface\u0027]] \u003d endpoint[\u0027url\u0027]\n\nlike \u0027internalURL\u0027?",
+      "revId": "6d3fc82769374c8531bb710ce9486af6b9ae1b9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//0hs\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-12-14T00:58:12Z",
+      "side": 1,
+      "message": "Same as above\n\n%URL",
+      "revId": "6d3fc82769374c8531bb710ce9486af6b9ae1b9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//0hU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/010_endpoints_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-12-14T00:58:12Z",
+      "side": 1,
+      "message": "255 may not be enough for some URLs.",
+      "revId": "6d3fc82769374c8531bb710ce9486af6b9ae1b9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
