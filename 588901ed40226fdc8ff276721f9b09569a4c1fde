@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//zoQ\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "keystone.controllers?",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zoE\u003d",
+        "filename": "keystone/catalog/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "these really don\u0027t belong here :(",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zoA\u003d",
+        "filename": "keystone/catalog/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "append_v3_routers?",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zn8\u003d",
+        "filename": "keystone/common/crud.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "keystone.common.routers?",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zn4\u003d",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "previous import order was correct (common comes after catalog)",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zns\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "maybe this class should extend identity.controlllers.User instead of maintaining a reference to it?",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zno\u003d",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "really surprised that this controller wants to call another controller rather than the driver",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//znk\u003d",
+        "filename": "keystone/extensions.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "keystone.routers.Extensions",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zng\u003d",
+        "filename": "keystone/extensions.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "this is not specific to an api or backend, so keystone.controllers makes the most sense",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//znc\u003d",
+        "filename": "keystone/extensions.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "keystone.controllers.PublicExtensions",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//znY\u003d",
+        "filename": "keystone/extensions.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "keystone.controllers.AdminExtensions",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//znQ\u003d",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "from keystone.common import routers",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//znM\u003d",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "routers.RouterV3 or routers.V3Router?",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//znI\u003d",
+        "filename": "keystone/policy/__init__.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "cool",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//znA\u003d",
+        "filename": "keystone/policy/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "module name doesn\u0027t make sense, considering this contains no routers",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//znE\u003d",
+        "filename": "keystone/policy/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "append_v3_routers",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zms\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "import order",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zmg\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "move this up to before the imports to make this the module docstr",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zmU\u003d",
+        "filename": "keystone/token/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "Token?",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zmQ\u003d",
+        "filename": "keystone/token/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "Token?",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zmI\u003d",
+        "filename": "keystone/token/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 1,
+      "message": "could make apis an argument here instead",
+      "revId": "588901ed40226fdc8ff276721f9b09569a4c1fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

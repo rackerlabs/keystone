@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//znU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 0,
+      "message": "all this deleting is awesome, btw :P",
+      "revId": "4e2be8a8880f03b1c6d1dc663d7259dbb45ddf67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zmk\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T21:08:09Z",
+      "side": 0,
+      "message": "restore whitespace",
+      "revId": "4e2be8a8880f03b1c6d1dc663d7259dbb45ddf67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
