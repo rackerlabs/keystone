@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//z0E\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-14T19:40:30Z",
+      "side": 1,
+      "message": "Why should new endpoints not show up in the legacy list?  Are they going to break things if they do?",
+      "revId": "6d3fc82769374c8531bb710ce9486af6b9ae1b9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//0hw\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 5
@@ -100,6 +117,23 @@
       "writtenOn": "2012-12-14T00:58:12Z",
       "side": 1,
       "message": "255 may not be enough for some URLs.",
+      "revId": "6d3fc82769374c8531bb710ce9486af6b9ae1b9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zzs\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-14T19:40:30Z",
+      "side": 1,
+      "message": "This is fine, but I don\u0027t know if we need to keep bumping the top number up, so long as we keep testing the other downgrades.  If so, we should probably find a way to upgrade to the highest number automatically.",
       "revId": "6d3fc82769374c8531bb710ce9486af6b9ae1b9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
