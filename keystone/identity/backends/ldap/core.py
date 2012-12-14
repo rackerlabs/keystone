@@ -716,8 +716,10 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                                  self.tenant_api._id_to_dn(tenant_id))
 
     def get(self, id, filter=None):
-        model = super(RoleApi, self).get(id, filter)
-        return model
+        try:
+            return super(RoleApi, self).get(id, filter)
+        except exception.NotFound:
+            raise exception.RoleNotFound(role_id=id)
 
     def create(self, values):
         #values['id'] = values['name']
@@ -774,18 +776,11 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
             conn.modify_s(role_dn, [(ldap.MOD_DELETE,
                                      self.member_attribute, user_dn)])
         except ldap.NO_SUCH_OBJECT:
-            if tenant_id is None or self.get(role_id) is None:
+            if tenant_id is None:  # we tried to look for role itself
                 raise exception.RoleNotFound(role_id=role_id)
-            attrs = [('objectClass', [self.object_class]),
-                     (self.member_attribute, [user_dn])]
-
-            if self.use_dumb_member:
-                attrs[1][1].append(self.dumb_member)
-            try:
-                conn.add_s(role_dn, attrs)
-            except Exception as inst:
-                raise inst
-
+            self.get(role_id)  # proper raises RoleNotFound
+            self.tenant_api.get(tenant_id)  # proper raises TenantNotFound
+            raise exception.UserNotFound(user_id=user_id)
         except ldap.NO_SUCH_ATTRIBUTE:
             raise exception.UserNotFound(user_id=user_id)
 
