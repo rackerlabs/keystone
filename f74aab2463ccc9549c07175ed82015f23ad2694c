@@ -16,6 +16,24 @@
       "revId": "f74aab2463ccc9549c07175ed82015f23ad2694c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//0CQ\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T14:41:34Z",
+      "side": 1,
+      "message": "see the referenced bug; it\u0027s causing transient failures on both jenkins and smokestack as it\u0027s currently too tight. I saw a delta at ~1.9 seconds :(",
+      "parentUuid": "AAAAMX//0oc\u003d",
+      "revId": "f74aab2463ccc9549c07175ed82015f23ad2694c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
