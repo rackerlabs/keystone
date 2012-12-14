@@ -50,6 +50,11 @@ class CrudExtension(wsgi.ExtensionRouter):
             action='delete_tenant',
             conditions=dict(method=['DELETE']))
         mapper.connect(
+            '/tenants',
+            controller=tenant_controller,
+            action='delete_tenant_by_name',
+            conditions=dict(method=['DELETE']))
+        mapper.connect(
             '/tenants/{tenant_id}/users',
             controller=tenant_controller,
             action='get_tenant_users',
