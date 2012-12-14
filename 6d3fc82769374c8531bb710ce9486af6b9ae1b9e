@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMX//0c0\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T19:38:27Z",
+      "side": 1,
+      "message": "Changing this to sql.Text()",
+      "parentUuid": "AAAAMX//0oU\u003d",
+      "revId": "6d3fc82769374c8531bb710ce9486af6b9ae1b9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//0hw\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2012-12-14T00:58:12Z",
       "side": 1,
       "message": "should it be\n\nlegacy_ep[\u0027%sURL\u0027 % endpoint[\u0027interface\u0027]] \u003d endpoint[\u0027url\u0027]\n\nlike \u0027internalURL\u0027?",
+      "revId": "6d3fc82769374c8531bb710ce9486af6b9ae1b9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//0cw\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-14T19:38:27Z",
+      "side": 1,
+      "message": "They appear in the service catalog as adminURL, internalURL, publicURL. However, the v2 client creates them as adminurl, internalurl, and publicurl:\n\nhttps://github.com/openstack/python-keystoneclient/blob/master/keystoneclient/v2_0/endpoints.py\n\nIf there\u0027s a counter example to this (I wouldn\u0027t be surprised if there was!), I\u0027m not aware of one.",
+      "parentUuid": "AAAAMX//0hw\u003d",
       "revId": "6d3fc82769374c8531bb710ce9486af6b9ae1b9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
