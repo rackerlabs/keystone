@@ -117,6 +117,13 @@ class Tenant(wsgi.Application):
         self.assert_admin(context)
         self.identity_api.delete_tenant(context, tenant_id)
 
+    def delete_tenant_by_name(self, context):
+        self.assert_admin(context)
+        tenant = self.get_tenant_by_name(
+                context, context['query_string'].get('name'))
+        tenant_id = tenant['tenant']['id']
+        self.delete_tenant(context, tenant_id)
+
     def get_tenant_users(self, context, tenant_id, **kw):
         self.assert_admin(context)
         user_refs = self.identity_api.get_tenant_users(context, tenant_id)

@@ -205,6 +205,14 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    def delete_tenant_by_name(self, tenant_name):
+        """Deletes an existing tenant by name.
+
+        :raises: keystone.exception.TenantNotFound
+
+        """
+        raise exception.NotImplemented()
+
     # metadata crud
     def get_metadata(self, user_id, tenant_id):
         raise exception.NotImplemented()
