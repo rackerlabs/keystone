@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//z2A\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-12-14T18:15:14Z",
+      "side": 1,
+      "message": "Might want to remove the commented out lines in the final version.",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//zys\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-12-14T18:15:14Z",
+      "side": 1,
+      "message": "To many if .. elif ..\n\nTime to refactor?",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
