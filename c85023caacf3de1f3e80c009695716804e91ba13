@@ -16,6 +16,24 @@
       "revId": "c85023caacf3de1f3e80c009695716804e91ba13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///PY\u003d",
+        "filename": "keystone/common/router.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2012-12-17T18:38:26Z",
+      "side": 1,
+      "message": "Java beautification tools format the import orders nicely. I wonder if there are any on the Python side.",
+      "parentUuid": "AAAAM3///e0\u003d",
+      "revId": "c85023caacf3de1f3e80c009695716804e91ba13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
