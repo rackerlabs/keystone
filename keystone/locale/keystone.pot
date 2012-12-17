@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: keystone 2013.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-12-14 00:01+0000\n"
+"POT-Creation-Date: 2012-12-17 00:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,6 +127,10 @@ msgstr ""
 #: keystone/common/wsgi.py:217
 #, python-format
 msgid "Authorization failed. %s from %s"
+msgstr ""
+
+#: keystone/common/wsgi.py:430
+msgid "The resource could not be found."
 msgstr ""
 
 #: keystone/common/ldap/core.py:171
