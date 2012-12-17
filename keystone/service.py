@@ -23,6 +23,7 @@ from keystone import exception
 from keystone import identity
 from keystone import policy
 from keystone import token
+from keystone import mapping
 
 
 LOG = logging.getLogger(__name__)
@@ -70,6 +71,44 @@ class V3Router(wsgi.ComposingRouter):
             identity_api=identity.Manager(),
             policy_api=policy.Manager(),
             token_api=token.Manager())
+
+        # Mapping
+
+        self.crud_routes(
+            mapper,
+            mapping.controllers.OrgMappingController(),
+            'org_attribute_sets',
+            'org_attribute_set')
+
+        self.crud_routes(
+            mapper,
+            mapping.controllers.OrgMappingController(),
+            'org_attributes',
+            'org_attribute')
+
+        self.crud_routes(
+            mapper,
+            mapping.controllers.OrgMappingController(),
+            'org_attribute_associations',
+            'org_attribute_association')
+
+        self.crud_routes(
+            mapper,
+            mapping.controllers.OsMappingController(),
+            'os_attribute_sets',
+            'os_attribute_set')
+
+        self.crud_routes(
+            mapper,
+            mapping.controllers.OsMappingController(),
+            'os_attribute_associations',
+            'os_attribute_association')
+
+        self.crud_routes(
+            mapper,
+            mapping.controllers.AttributeMappingController(),
+            'mappings',
+            'mapping')
 
         # Catalog
 
@@ -263,6 +302,7 @@ class AdminRouter(wsgi.ComposingRouter):
                        conditions=dict(method=['GET']))
         identity_router = identity.routers.Admin()
         routers = [identity_router]
+
         super(AdminRouter, self).__init__(mapper, routers)
 
 

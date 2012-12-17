@@ -207,6 +207,7 @@ class TestCase(NoModule, unittest.TestCase):
         self.token_api = importutils.import_object(CONF.token.driver)
         self.catalog_api = importutils.import_object(CONF.catalog.driver)
         self.policy_api = importutils.import_object(CONF.policy.driver)
+        self.mapping_api = importutils.import_object(CONF.mapping.driver)
 
     def load_fixtures(self, fixtures):
         """Hacky basic and naive fixture loading based on a python module.
