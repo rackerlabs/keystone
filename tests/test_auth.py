@@ -60,11 +60,7 @@ class AuthTest(test.TestCase):
         self.identity_api = kvs_identity.Identity()
         self.load_fixtures(default_fixtures)
 
-        self.api = token.controllers.Auth(
-            catalog_api=catalog.Manager(),
-            identity_api=identity.Manager(),
-            policy_api=policy.Manager(),
-            token_api=token.Manager())
+        self.api = token.controllers.Auth()
 
     def assertEqualTokens(self, a, b):
         """Assert that two tokens are equal.

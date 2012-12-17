@@ -58,11 +58,19 @@ def protected(f):
 class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
 
-    def __init__(self, catalog_api, identity_api, policy_api, token_api):
-        self.catalog_api = catalog_api
-        self.identity_api = identity_api
-        self.policy_api = policy_api
-        self.token_api = token_api
+    def __init__(self):
+        #To avoid circular dependencies, the imports for the domain modules
+        # are not processed when this file is initially imported.
+
+        from keystone import catalog
+        from keystone import identity
+        from keystone import policy
+        from keystone import token
+
+        self.catalog_api = catalog.Manager()
+        self.identity_api = identity.Manager()
+        self.policy_api = policy.Manager()
+        self.token_api = token.Manager()
         super(V2Controller, self).__init__()
 
 
