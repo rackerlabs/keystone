@@ -19,6 +19,262 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3///KU\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAMX//z2A\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///J4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/010_add_group_tables.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "i think version 12 is the latest version claimed, so this will need to be renamed after rebasing",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///J0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/010_add_group_tables.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "why is this commented out?",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///Jw\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "you added domain_id here but didn\u0027t use it?",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///Jg\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "add description; domain_id will go here as well",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///Jk\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "you can remove this, it\u0027s necessary for consistency if nothing else",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///Io\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "UserProjectGrant",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///Ig\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "You can abstract this to a BaseGrant class or something, that simply defines role_id and overrides to_dict",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///Is\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "feel free to rename this object to UserDomainGrant",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///JE\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "GroupProjectGrant",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///I4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "replace \u0027data\u0027 with role_id; see below",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///JA\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "GroupDomainGrant",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///JI\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "Instead of following the \"metadata\" pattern, I\u0027d prefer this to be normalized as: group_id, domain_id, role_id\n\nThe existing metadata table needs to be migrated to this pattern as well.",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///Ic\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "I don\u0027t think the bug is here; the bug is that this exception is being exposed to the API, rather than being caught at the controller/manager and transformed to a default value.\n\nAlso, is there a bug for this?",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///IA\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "on the above comment, this is how calls to get_metadata  should be handled",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMX//zys\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 2
@@ -30,6 +286,176 @@
       "writtenOn": "2012-12-14T18:15:14Z",
       "side": 1,
       "message": "To many if .. elif ..\n\nTime to refactor?",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3///AU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "can you rewrite these as seen in delete_tenant?\n\n  q \u003d session.query()\n  q \u003d q.whatever()\n\nand then you can extract stuff like:\n\n  metadata_ref \u003d q.first()",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+3c\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "would vastly prefer to eliminate load_fixtures() since these have to be loaded for so many tests... if you can, do this kind of work explicitly in the setUp for the subset of tests your need them for",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+34\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "you shouldn\u0027t need the .copy(), as the driver shouldn\u0027t manipulate the reference you pass in",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+3Y\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "this definitely belongs in its own method rather than appearing in all 3 cases; i assume this will be implemented prior to merge?",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+24\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "also need to pull all domain group roles!",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+2s\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "^^",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+2w\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "as mentioned, avoid this if possible!",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+2Y\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "isolate your tests in new test methods, e.g. test_upgrade_9_to_10 / test_downgrade_10_to_9",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+2M\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "hrm, were role grants not tested? oops :\u0027(",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+2A\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-17T22:12:42Z",
+      "side": 1,
+      "message": "i didn\u0027t think you were addressing enabling/disabling groups?",
       "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
