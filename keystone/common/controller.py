@@ -1,6 +1,7 @@
 import uuid
 import functools
 
+from keystone import apis
 from keystone.common import logging
 from keystone.common import wsgi
 from keystone import exception
@@ -58,11 +59,12 @@ def protected(f):
 class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
 
-    def __init__(self, catalog_api, identity_api, policy_api, token_api):
-        self.catalog_api = catalog_api
-        self.identity_api = identity_api
-        self.policy_api = policy_api
-        self.token_api = token_api
+    def __init__(self):
+        mods = apis.get_apis()
+        self.catalog_api = mods['catalog_api']
+        self.identity_api = mods['identity_api']
+        self.policy_api = mods['policy_api']
+        self.token_api = mods['token_api']
         super(V2Controller, self).__init__()
 
 
