@@ -35,7 +35,7 @@ from keystone import catalog
 from keystone import identity
 from keystone import policy
 from keystone import token
-
+from keystone import mapping
 
 do_monkeypatch = not os.getenv('STANDARD_THREADS')
 eventlet.patcher.monkey_patch(all=False, socket=True, time=True,
@@ -70,6 +70,7 @@ def initialize_drivers():
     DRIVERS['identity_api'] = identity.Manager()
     DRIVERS['policy_api'] = policy.Manager()
     DRIVERS['token_api'] = token.Manager()
+    DRIVERS['mapping_api'] = mapping.Manager()
     return DRIVERS
 
 

@@ -35,6 +35,31 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             'description': uuid.uuid4().hex,
             'enabled': True}
 
+    def new_org_attribute_set_ref(self):
+        ref = self.new_ref()
+        return ref
+
+    def new_org_attribute_ref(self):
+        ref = self.new_ref()
+        ref['type'] = uuid.uuid4().hex
+        return ref
+
+    def new_os_attribute_set_ref(self):
+        ref = self.new_ref()
+        return ref
+
+    def new_org_attribute_association_ref(self):
+        ref = self.new_ref()
+        return ref
+
+    def new_os_attribute_association_ref(self):
+        ref = self.new_ref()
+        return ref
+
+    def new_attribute_mapping_ref(self):
+        ref = self.new_ref()
+        return ref
+
     def new_service_ref(self):
         ref = self.new_ref()
         ref['type'] = uuid.uuid4().hex
