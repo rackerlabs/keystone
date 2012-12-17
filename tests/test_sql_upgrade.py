@@ -116,6 +116,30 @@ class SqlUpgradeTests(test.TestCase):
         self.assertEqual(a_tenant.description, 'description')
         session.commit()
 
+    def test_upgrade_13_to_14(self):
+
+        self.assertEqual(self.schema.version, 0)
+        self.upgrade(13)
+        self.upgrade(14)
+        self.assertEqual(self.schema.version, 14)
+        self.assertTableColumns("org_attribute_set",
+                                ["id", "extra"])
+        self.assertTableColumns("org_attribute",
+                                ["id", "type", "value", "extra"])
+        self.assertTableColumns("os_attribute_set",
+                                ["id", "extra"])
+        self.assertTableColumns("os_attribute_association",
+                                ["attribute_id",
+                                 "os_attribute_set_id", "type"])
+        self.assertTableColumns("attribute_mapping",
+                                ["id", "os_attribute_set_id",
+                                 "org_attribute_set_id", "extra"])
+
+    def test_downgrade_14_to_13(self):
+        self.assertEqual(self.schema.version, 0)
+        self.upgrade(14)
+        self.downgrade(13)
+
     def test_downgrade_9_to_7(self):
         self.upgrade(9)
         self.downgrade(7)
