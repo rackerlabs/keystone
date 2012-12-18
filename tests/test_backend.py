@@ -1523,7 +1523,16 @@ class IdentityTests(object):
                           tenant)
 
     def test_create_user_long_name_fails(self):
-        user = {'id': 'fake1', 'name': 'a' * 65,
+        user = {'id': 'fake1', 'name': 'a' * (CONF.max_user_length + 1),
+                'domain_id': DEFAULT_DOMAIN_ID}
+        self.assertRaises(exception.ValidationError,
+                          self.identity_man.create_user, EMPTY_CONTEXT,
+                          'fake1',
+                          user)
+
+    def test_create_user_long_name_fails_changing_max_length(self):
+        CONF.max_user_length = 128
+        user = {'id': 'fake1', 'name': 'a' * 129,
                 'domain_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
                           self.identity_man.create_user, EMPTY_CONTEXT,
@@ -1569,7 +1578,7 @@ class IdentityTests(object):
         user = {'id': 'fake1', 'name': 'fake1',
                 'domain_id': DEFAULT_DOMAIN_ID}
         self.identity_man.create_user(EMPTY_CONTEXT, 'fake1', user)
-        user['name'] = 'a' * 65
+        user['name'] = 'a' * 129
         self.assertRaises(exception.ValidationError,
                           self.identity_api.update_user,
                           'fake1',

@@ -14,10 +14,15 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import config
 from keystone import exception
 
 
-def check_length(property_name, value, min_length=1, max_length=64):
+CONF = config.CONF
+
+
+def check_length(property_name, value,
+                 min_length=1, max_length=CONF.max_param_size):
     if len(value) < min_length:
         if min_length == 1:
             msg = _("%s cannot be empty.") % property_name
@@ -44,10 +49,12 @@ def check_enabled(property_name, enabled):
     return bool(enabled)
 
 
-def check_name(property_name, name):
+def check_name(property_name, name,
+               min_length=1, max_length=CONF.max_param_size):
     check_type('%s name' % property_name, name, basestring, 'str or unicode')
     name = name.strip()
-    check_length('%s name' % property_name, name)
+    check_length('%s name' % property_name, name,
+                 min_length=min_length, max_length=max_length)
     return name
 
 
@@ -60,7 +67,7 @@ def project_name(name):
 
 
 def user_name(name):
-    return check_name('User', name)
+    return check_name('User', name, max_length=CONF.max_user_length)
 
 
 def user_enabled(enabled):
