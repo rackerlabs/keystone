@@ -504,6 +504,39 @@ class SqlUpgradeTests(test.TestCase):
         insert.execute(d)
         session.commit()
 
+    def test_upgrade_26_to_27(self):
+        self.upgrade(27)
+
+        user_table = self.select_table("user")
+        self.assertEquals(user_table.c.name.type.length, 255)
+
+    def test_downgrade_27_to_26(self):
+        self.upgrade(27)
+        session = self.Session()
+        # NOTE(aloga): we need a different metadata object
+        user_table = sqlalchemy.Table('user',
+                                      sqlalchemy.MetaData(),
+                                      autoload=True,
+                                      autoload_with=self.engine)
+        user_id = uuid.uuid4().hex
+        ins = user_table.insert().values(
+            {'id': user_id,
+             'name': 'a' * 255,
+             'password': uuid.uuid4().hex,
+             'enabled': True,
+             'domain_id': uuid.uuid4().hex,
+             'extra': '{}'})
+        session.execute(ins)
+        session.commit()
+
+        self.downgrade(26)
+        # Check that username has been truncated
+        r = session.query(user_table.c.name).filter("id='%s'" % user_id).one()
+        self.assertEquals(len(r[0]), 64)
+
+        user_table = self.select_table("user")
+        self.assertEquals(user_table.c.name.type.length, 64)
+
     def test_downgrade_to_0(self):
         self.upgrade(self.max_version)
         self.downgrade(0)
