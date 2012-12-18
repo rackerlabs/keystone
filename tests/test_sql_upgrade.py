@@ -496,6 +496,30 @@ class SqlUpgradeTests(test.TestCase):
         insert.execute(d)
         session.commit()
 
+    def test_upgrade_22_to_23(self):
+        self.assertEqual(self.schema.version, 0)
+
+        self.upgrade(22)
+        self.assertEqual(self.schema.version, 22, "DB is at version 22")
+
+        self.upgrade(23)
+        self.assertEqual(self.schema.version, 23, "DB is at version 23")
+
+        user_table = self.select_table("user")
+        self.assertEquals(user_table.c.name.type.length, 128)
+
+    def test_downgrade_23_to_22(self):
+        self.assertEqual(self.schema.version, 0)
+
+        self.upgrade(23)
+        self.assertEqual(self.schema.version, 23, "DB is at version 23")
+
+        self.downgrade(22)
+        self.assertEqual(self.schema.version, 22, "DB is at version 22")
+
+        user_table = self.select_table("user")
+        self.assertEquals(user_table.c.name.type.length, 64)
+
     def test_downgrade_to_0(self):
         self.upgrade(self.max_version)
         self.downgrade(0)
