@@ -38,10 +38,11 @@ def check_type(property_name, value, expected_type, display_expected_type):
         raise exception.ValidationError(msg)
 
 
-def check_name(property_name, name):
+def check_name(property_name, name, min_length=1, max_length=64):
     check_type('%s name' % property_name, name, basestring, 'str or unicode')
     name = name.strip()
-    check_length('%s name' % property_name, name)
+    check_length('%s name' % property_name, name,
+                 min_length=min_length, max_length=max_length)
     return name
 
 
@@ -54,7 +55,7 @@ def project_name(name):
 
 
 def user_name(name):
-    return check_name('User', name)
+    return check_name('User', name, max_length=128)
 
 
 def group_name(name):
