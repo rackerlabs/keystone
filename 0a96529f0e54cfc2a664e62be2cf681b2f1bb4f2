@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//9os\u003d",
+        "filename": "keystone/mapping/routes.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-18T18:59:39Z",
+      "side": 1,
+      "message": "corresponding identity-api review needs to be reviewed \u0026 merged first (i don\u0027t see one?)",
+      "revId": "0a96529f0e54cfc2a664e62be2cf681b2f1bb4f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//+EQ\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 1
