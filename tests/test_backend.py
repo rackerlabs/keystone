@@ -1502,7 +1502,7 @@ class IdentityTests(object):
                           tenant)
 
     def test_create_user_long_name_fails(self):
-        user = {'id': 'fake1', 'name': 'a' * 65,
+        user = {'id': 'fake1', 'name': 'a' * 256,
                 'domain_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
@@ -1574,8 +1574,8 @@ class IdentityTests(object):
     def test_update_user_long_name_fails(self):
         user = {'id': 'fake1', 'name': 'fake1',
                 'domain_id': DEFAULT_DOMAIN_ID}
-        self.identity_api.create_user('fake1', user)
-        user['name'] = 'a' * 65
+        self.identity_man.create_user(EMPTY_CONTEXT, 'fake1', user)
+        user['name'] = 'a' * 256
         self.assertRaises(exception.ValidationError,
                           self.identity_api.update_user,
                           'fake1',
