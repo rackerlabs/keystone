@@ -98,11 +98,10 @@ class SqlModels(SqlTests):
 
     def test_user_model(self):
         cols = (("id", sql.String, 64),
-                ("name", sql.String, 64),
+                ("name", sql.String, 255),
                 ("password", sql.String, 128),
                 ("domain_id", sql.String, 64),
                 ("enabled", sql.Boolean, None),
-                # NOTE(aloga): sql.JsonBlob's impl is sql.Text
                 ("extra", sql.Text, None),
         )
         self._test_table_against_model("user", cols)
@@ -112,7 +111,6 @@ class SqlModels(SqlTests):
                 ("name", sql.String, 64),
                 ("description", sql.Text, None),
                 ("domain_id", sql.String, 64),
-                # NOTE(aloga): sql.JsonBlob's impl is sql.Text
                 ("extra", sql.Text, None),
         )
         self._test_table_against_model("group", cols)
@@ -130,7 +128,6 @@ class SqlModels(SqlTests):
                 ("description", sql.Text, None),
                 ("domain_id", sql.String, 64),
                 ("enabled", sql.Boolean, None),
-                # NOTE(aloga): sql.JsonBlob's impl is sql.Text
                 ("extra", sql.Text, None),
         )
         self._test_table_against_model("project", cols)
@@ -174,6 +171,7 @@ class SqlModels(SqlTests):
                 ("user_id", sql.String, 64),
         )
         self._test_table_against_model("user_group_membership", cols)
+
 
 class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_password_hashed(self):
