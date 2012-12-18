@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//+Fs\u003d",
+        "filename": "keystone/mapping/backends/1",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-18T15:42:35Z",
+      "side": 1,
+      "message": "I think this file is misnamed.  Also, don\u0027t import objects, import packages, IAW the hacking file.",
+      "revId": "0a96529f0e54cfc2a664e62be2cf681b2f1bb4f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+FI\u003d",
+        "filename": "keystone/mapping/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-18T15:42:35Z",
+      "side": 1,
+      "message": "You can\u0027t do this.  Since Mapping and Tenants are in different modules, you have to use the public APIs, and not the SQL Backend.  You probably want to do logic like thist (multiple module) in the controller and not in the driver.\n\nIt might be necessary to build a generic framework for querying the other python objects, but I suspect the right thing would be to assume you get a a Driver object, and then you specify the method to call on the driver, and the key for the result.",
+      "revId": "0a96529f0e54cfc2a664e62be2cf681b2f1bb4f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+EQ\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-18T15:42:35Z",
+      "side": 1,
+      "message": "See the module refactoring that just merged.  This code should move to mapping/routers.py append_v3_routers",
+      "revId": "0a96529f0e54cfc2a664e62be2cf681b2f1bb4f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
