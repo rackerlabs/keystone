@@ -104,6 +104,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//70g\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T23:23:00Z",
+      "side": 1,
+      "message": "hmm... i think you can also eliminate the first except block, in favor of just allow LOG.exception() to do all the hard work:\n\n  \u003e\u003e\u003e import logging\n  \u003e\u003e\u003e try:\n  ...   raise BaseException()\n  ... except:\n  ...   logging.exception(\u0027oh noes\u0027)\n  ... \n  ERROR:root:oh noes\n  Traceback (most recent call last):\n    File \"\u003cstdin\u003e\", line 2, in \u003cmodule\u003e\n  BaseException",
+      "revId": "18ef241c0cd1a04dcc60bd4e526ef93ebcee3150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//74Q\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 1
