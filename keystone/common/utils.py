@@ -293,12 +293,13 @@ def hash_signed_token(signed_text):
     hash_.update(signed_text)
     return hash_.hexdigest()
 
+
 # at some point, if this is accepted by keystone, this should probably move
 # into an area common to all of openstack
 def setup_remote_pydev_debug():
     if CONF.debug_url:
-        error_msg = ('Error setting up the debug environment.  Verify that the '
-                     'option --debug-url has the format <host>:<port> and '
+        error_msg = ('Error setting up the debug environment.  Verify that the'
+                     ' option --debug-url has the format <host>:<port> and '
                      'that a debugger processes is listening on that port.')
 
         try:
@@ -320,4 +321,3 @@ def setup_remote_pydev_debug():
             LOG.error(_(error_msg))
             raise
     return False
-
