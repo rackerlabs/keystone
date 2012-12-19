@@ -125,6 +125,8 @@ def register_cli_int(*args, **kw):
 
 register_cli_bool('standard-threads', default=False)
 
+register_cli_str('debug-url', default=None)
+
 register_str('admin_token', default='ADMIN')
 register_str('bind_host', default='0.0.0.0')
 register_str('compute_port', default=8774)

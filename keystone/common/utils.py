@@ -292,3 +292,32 @@ def hash_signed_token(signed_text):
     hash_ = hashlib.md5()
     hash_.update(signed_text)
     return hash_.hexdigest()
+
+
+# at some point, if this is accepted by keystone, this should probably move
+# into an area common to all of openstack
+def setup_remote_pydev_debug():
+    if CONF.debug_url:
+        error_msg = ('Error setting up the debug environment.  Verify that the'
+                     ' option --debug-url has the format <host>:<port> and '
+                     'that a debugger processes is listening on that port.')
+
+        try:
+            from pydev import pydevd
+
+            (host, port_s) = CONF.debug_url.split(":")
+            port = int(port_s)
+            pydevd.settrace(host,
+                            port=port,
+                            stdoutToServer=True,
+                            stderrToServer=True)
+            return True
+        except Exception, ex:
+            LOG.error(_('exception %s. %s' % (ex, error_msg)))
+            raise
+        except:
+            # this second clause is needed because some of the called code is
+            # raising old style objects
+            LOG.error(_(error_msg))
+            raise
+    return False
