@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//+CI\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3///KU\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3///J4\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/010_add_group_tables.py",
         "patchSetId": 2
@@ -88,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//+Aw\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "The overall domain implementation seems incomplete in general (i.e. there is no support v3 role grants on domains) -hence I don\u0027t yet use the domain parameter.  Once we get this in, I\u0027d be happy to go back and add general support for domain grants (both user and domain)",
+      "parentUuid": "AAAAM3///Jw\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3///Jg\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 2
@@ -99,6 +135,24 @@
       "writtenOn": "2012-12-17T22:12:42Z",
       "side": 1,
       "message": "add description; domain_id will go here as well",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//9wY\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3///Jg\u003d",
       "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//9wU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3///Jk\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3///Io\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 2
@@ -133,6 +205,24 @@
       "writtenOn": "2012-12-17T22:12:42Z",
       "side": 1,
       "message": "UserProjectGrant",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//8g4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3///Io\u003d",
       "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -156,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//8fg\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3///Ig\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3///Is\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 2
@@ -167,6 +275,24 @@
       "writtenOn": "2012-12-17T22:12:42Z",
       "side": 1,
       "message": "feel free to rename this object to UserDomainGrant",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//8gs\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3///Is\u003d",
       "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -190,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//8go\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3///JE\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3///I4\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 2
@@ -201,6 +345,24 @@
       "writtenOn": "2012-12-17T22:12:42Z",
       "side": 1,
       "message": "replace \u0027data\u0027 with role_id; see below",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//8gY\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "See my comment below",
+      "parentUuid": "AAAAM3///I4\u003d",
       "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -224,6 +386,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//8gk\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3///JA\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3///JI\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 2
@@ -235,6 +415,24 @@
       "writtenOn": "2012-12-17T22:12:42Z",
       "side": 1,
       "message": "Instead of following the \"metadata\" pattern, I\u0027d prefer this to be normalized as: group_id, domain_id, role_id\n\nThe existing metadata table needs to be migrated to this pattern as well.",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//8gg\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Perhaps we could merge these changes in first, then I will go back in and do a common refactor?",
+      "parentUuid": "AAAAM3///JI\u003d",
       "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -258,6 +456,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//8d8\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Agreed. Bug #1092200 raised and assigned to me :-)",
+      "parentUuid": "AAAAM3///Ic\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3///IA\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 2
@@ -269,6 +485,24 @@
       "writtenOn": "2012-12-17T22:12:42Z",
       "side": 1,
       "message": "on the above comment, this is how calls to get_metadata  should be handled",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//8dw\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Yep - agreed",
+      "parentUuid": "AAAAM3///IA\u003d",
       "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -292,6 +526,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//8bQ\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Probably.  Dolph has requested we move away form the whole metadata idea...and have more normalized tables....so I\u0027m going to come back and look at this as a refactor.  I\u0027ll keep this in mind too.",
+      "parentUuid": "AAAAMX//zys\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3///AU\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 2
@@ -303,6 +555,24 @@
       "writtenOn": "2012-12-17T22:12:42Z",
       "side": 1,
       "message": "can you rewrite these as seen in delete_tenant?\n\n  q \u003d session.query()\n  q \u003d q.whatever()\n\nand then you can extract stuff like:\n\n  metadata_ref \u003d q.first()",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//8cI\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3///AU\u003d",
       "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -326,6 +596,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//91g\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "I\u0027ll look at that.",
+      "parentUuid": "AAAAM3//+3c\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//+34\u003d",
         "filename": "keystone/test.py",
         "patchSetId": 2
@@ -337,6 +625,24 @@
       "writtenOn": "2012-12-17T22:12:42Z",
       "side": 1,
       "message": "you shouldn\u0027t need the .copy(), as the driver shouldn\u0027t manipulate the reference you pass in",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//91s\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//+34\u003d",
       "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -360,6 +666,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//91c\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//+3Y\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//+24\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 2
@@ -371,6 +695,24 @@
       "writtenOn": "2012-12-17T22:12:42Z",
       "side": 1,
       "message": "also need to pull all domain group roles!",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//91M\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "I was waiting on response to modified proposal on domain role assignment (which would effect such code): https://blueprints.launchpad.net/keystone/+spec/domain-role-assignment",
+      "parentUuid": "AAAAM3//+24\u003d",
       "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -411,6 +753,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//91A\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Ok, let me look at it",
+      "parentUuid": "AAAAM3//+2w\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//+2Y\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 2
@@ -422,6 +782,24 @@
       "writtenOn": "2012-12-17T22:12:42Z",
       "side": 1,
       "message": "isolate your tests in new test methods, e.g. test_upgrade_9_to_10 / test_downgrade_10_to_9",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//904\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//+2Y\u003d",
       "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -445,6 +823,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//90s\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "I\u0027ll help here",
+      "parentUuid": "AAAAM3//+2M\u003d",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//+2A\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 2
@@ -456,6 +852,24 @@
       "writtenOn": "2012-12-17T22:12:42Z",
       "side": 1,
       "message": "i didn\u0027t think you were addressing enabling/disabling groups?",
+      "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//90c\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-19T17:11:10Z",
+      "side": 1,
+      "message": "sorry, test code, will remove",
+      "parentUuid": "AAAAM3//+2A\u003d",
       "revId": "0e523643e2129abf03d22ced36501b1be26bfecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
