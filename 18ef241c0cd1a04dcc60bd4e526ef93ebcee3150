@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//74k\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T23:14:12Z",
+      "side": 1,
+      "message": "can you not just set standard_threads \u003d True in your config file?",
+      "revId": "18ef241c0cd1a04dcc60bd4e526ef93ebcee3150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//74Y\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T23:14:12Z",
+      "side": 1,
+      "message": "please remove the comment (would definitely rather see this go straight to oslo though)",
+      "revId": "18ef241c0cd1a04dcc60bd4e526ef93ebcee3150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//73I\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T23:14:12Z",
+      "side": 1,
+      "message": "since this is proprietary to pydev, would something like pydev_debug_url be more appropriate?",
+      "revId": "18ef241c0cd1a04dcc60bd4e526ef93ebcee3150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//72s\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T23:14:12Z",
+      "side": 1,
+      "message": "might also want to break this into two variables (e.g. --pydev-debug-host --pydev-debug-port), as \"host:port\" isn\u0027t really a valid URL (e.g. there\u0027s no protocol)",
+      "revId": "18ef241c0cd1a04dcc60bd4e526ef93ebcee3150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//74I\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T23:14:12Z",
+      "side": 1,
+      "message": "please use new style exceptions, e.g.:\n\n  except Exception as e:",
+      "revId": "18ef241c0cd1a04dcc60bd4e526ef93ebcee3150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//73Y\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T23:14:12Z",
+      "side": 1,
+      "message": "LOG.exception(_(error_msg))",
+      "revId": "18ef241c0cd1a04dcc60bd4e526ef93ebcee3150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//74Q\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T23:14:12Z",
+      "side": 1,
+      "message": "return statement seems unnecessary, just let the function return None",
+      "revId": "18ef241c0cd1a04dcc60bd4e526ef93ebcee3150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
