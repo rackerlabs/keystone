@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//8p4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T13:34:43Z",
+      "side": 1,
+      "message": "doing imports inside a function is a giant red flag that you\u0027ve created a circular dependency and that you\u0027re trying to hide it.",
+      "revId": "0ad31442a44d91362c6001d58de04a4d257ca45c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//8qo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T13:34:43Z",
+      "side": 1,
+      "message": "all controllers are now determining the concrete objects they require. this is tight coupling.",
+      "revId": "0ad31442a44d91362c6001d58de04a4d257ca45c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//8qw\u003d",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T13:34:43Z",
+      "side": 1,
+      "message": "note that the controllers no longer require any sort of dependency injection",
+      "revId": "0ad31442a44d91362c6001d58de04a4d257ca45c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

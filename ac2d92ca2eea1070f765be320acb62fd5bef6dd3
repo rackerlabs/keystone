@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//8q0\u003d",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T13:34:43Z",
+      "side": 0,
+      "message": "this is the most basic form of dependency injection - the router is providing a concrete implementation of a dependency that the controller requires (something that implements the driver interface)\n\nif you wanted, you could also inject a mock object.\n\nthis is a loose coupling between the controllers and the drivers they require.",
+      "revId": "ac2d92ca2eea1070f765be320acb62fd5bef6dd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//8qs\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T13:34:43Z",
+      "side": 0,
+      "message": "this could almost be mistaken for a dependency registry.\n\nif you wanted to \"centralize the registration of modules\" this is a **great** starting point for creating an actual dependency registry.",
+      "revId": "ac2d92ca2eea1070f765be320acb62fd5bef6dd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
