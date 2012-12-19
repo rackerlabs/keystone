@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//8C4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T20:51:58Z",
+      "side": 1,
+      "message": "Did the best I could in patch 2; the only dependency that I could remove was catalog_api, just because everything needs to authenticate requests (which itself requires token_api + identity_api + policy_api).\n\nSo, the controllers in patch #2 that explicitly require catalog_api now list it as a dependency.",
+      "parentUuid": "AAAAM3//8KM\u003d",
+      "revId": "7d4a2d0d83f627203959f397b37e513abe16ebf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//8J4\u003d",
         "filename": "keystone/contrib/admin_crud/core.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//8Jg\u003d",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T20:51:58Z",
+      "side": 1,
+      "message": "you definitely could",
+      "parentUuid": "AAAAM3//8J4\u003d",
+      "revId": "7d4a2d0d83f627203959f397b37e513abe16ebf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//8K0\u003d",
         "filename": "tests/test_injection.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2012-12-19T19:47:14Z",
       "side": 1,
       "message": "I understand why you used these, but lets not have trademark issues.",
+      "revId": "7d4a2d0d83f627203959f397b37e513abe16ebf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//8JM\u003d",
+        "filename": "tests/test_injection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-19T20:51:58Z",
+      "side": 1,
+      "message": "ha ;) will change them to be more generic",
+      "parentUuid": "AAAAM3//8K0\u003d",
       "revId": "7d4a2d0d83f627203959f397b37e513abe16ebf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
