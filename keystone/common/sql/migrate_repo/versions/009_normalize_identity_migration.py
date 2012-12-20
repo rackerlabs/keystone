@@ -45,14 +45,17 @@ def downgrade_user_table(meta, migrate_engine):
         extra_parsed = json.loads(extra)
         extra_parsed['password'] = password
         extra_parsed['enabled'] = "%r" % enabled
-        user_data.append((password,
-                          json.dumps(extra_parsed),
-                          is_enabled(enabled), id))
+        user_record = {'id': id,
+                       'extra':  json.dumps(extra_parsed)}
+        user_data.append(user_record)
     for user in user_data:
-        session.execute("update user "
-                        "set extra = '%s' "
-                        "where id = '%s'" %
-                        user)
+        try:
+            session.execute("update user "
+                            "set extra = '%(extra)s' "
+                            "where id = '%(id)s'" %
+                            user)
+        except Exception as e:
+            pass
 
     session.commit()
 
@@ -63,17 +66,17 @@ def downgrade_tenant_table(meta, migrate_engine):
     session = maker()
     tenant_data = []
     for a_tenant in session.query(tenant_table):
-        id, name, extra, password, enabled = a_tenant
+        id, name, extra, description, enabled = a_tenant
         extra_parsed = json.loads(extra)
         extra_parsed['description'] = description
         extra_parsed['enabled'] = "%r" % enabled
-        tenant_data.append((password,
-                            json.dumps(extra_parsed),
-                            is_enabled(enabled), id))
+        tenant_record = {'id': id,
+                         'extra': json.dumps(extra_parsed)}
+        tenant_data.append(tenant_record)
     for tenant in tenant_data:
         session.execute("update tenant "
-                        "set extra = '%s' "
-                        "where id = '%s'" %
+                        "set extra = '%(extra)s' "
+                        "where id = '%(id)s'" %
                         tenant)
 
     session.commit()
