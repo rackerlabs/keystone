@@ -28,3 +28,5 @@ netifaces
 
 # For translations processing
 Babel
+
+requests<1.0
