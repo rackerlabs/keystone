@@ -13,7 +13,15 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-
+"""
+To run these tests against a live database:
+1. Modify the file backend_sql to use a connection to your database
+2. Set up a blank, live database.
+3. run the tests using
+    ./run_tests.sh -N  test_sql_upgrade
+    WARNING:  Do not do this against a Database that you need.
+    The Database will be wiped out
+"""
 import copy
 import json
 import uuid
@@ -32,8 +40,10 @@ CONF = config.CONF
 
 
 class SqlUpgradeTests(test.TestCase):
+
     def setUp(self):
         super(SqlUpgradeTests, self).setUp()
+
         self.config([test.etcdir('keystone.conf.sample'),
                      test.testsdir('test_overrides.conf'),
                      test.testsdir('backend_sql.conf')])
@@ -54,6 +64,15 @@ class SqlUpgradeTests(test.TestCase):
 
     def tearDown(self):
         super(SqlUpgradeTests, self).tearDown()
+        try:
+            table = sqlalchemy.Table("migrate_version", self.metadata,
+                                     autoload=True)
+            self.downgrade(0)
+            table.drop(self.engine, checkfirst=True)
+        except:
+            #TODO this is only required because one of the downgrade fails.
+            #Fix it
+            pass
 
     def test_blank_db_to_start(self):
         self.assertTableDoesNotExist('user')
