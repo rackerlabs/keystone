@@ -32,11 +32,15 @@ CONF = config.CONF
 
 
 class SqlUpgradeTests(test.TestCase):
-    def setUp(self):
-        super(SqlUpgradeTests, self).setUp()
+
+    def do_config(self):
         self.config([test.etcdir('keystone.conf.sample'),
                      test.testsdir('test_overrides.conf'),
                      test.testsdir('backend_sql.conf')])
+
+    def setUp(self):
+        super(SqlUpgradeTests, self).setUp()
+        self.do_config()
 
         # create and share a single sqlalchemy engine for testing
         base = sql.Base()
