@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//7pM\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2012-12-20T02:50:20Z",
+      "side": 1,
+      "message": "Note to other reviewers. pydev is not something you can expect to get via pip.  It is the eclipse based development environment.  The late import is to make sure we don\u0027t require this import .",
+      "revId": "be1d317bcda9f6e790f206db2aeab1a150562b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
