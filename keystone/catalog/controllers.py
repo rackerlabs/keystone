@@ -61,7 +61,8 @@ class Endpoint(controller.V2Controller):
         self.assert_admin(context)
         legacy_endpoints = {}
         for endpoint in self.catalog_api.list_endpoints(context):
-            if not endpoint['legacy_endpoint_id']:
+            if 'legacy_endpoint_id' not in endpoint or \
+               not endpoint['legacy_endpoint_id']:
                 # endpoints created in v3 should not appear on the v2 API
                 continue
 
