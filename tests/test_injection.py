@@ -16,7 +16,6 @@
 
 import unittest2 as unittest
 import uuid
-
 from keystone.common import dependency
 
 
@@ -26,10 +25,11 @@ class TestDependencyInjection(unittest.TestCase):
             def do_work(self):
                 assert False
 
-        @dependency.provider('first_api')
         class FirstImplementation(Interface):
             def do_work(self):
                 return True
+
+        dependency.provides('first_api', FirstImplementation)
 
         @dependency.provider('second_api')
         class SecondImplementation(Interface):
@@ -43,14 +43,13 @@ class TestDependencyInjection(unittest.TestCase):
                 assert self.second_api.do_work()
 
         # initialize dependency providers
-        first_api = FirstImplementation()
         second_api = SecondImplementation()
 
         # ... sometime later, initialize a dependency consumer
         consumer = Consumer()
 
         # the expected dependencies should be available to the consumer
-        self.assertIs(consumer.first_api, first_api)
+        self.assertIs(consumer.first_api, dependency.REGISTRY['first_api'])
         self.assertIs(consumer.second_api, second_api)
         self.assertIsInstance(consumer.first_api, Interface)
         self.assertIsInstance(consumer.second_api, Interface)
@@ -114,3 +113,40 @@ class TestDependencyInjection(unittest.TestCase):
 
         with self.assertRaises(dependency.UnresolvableDependencyException):
             Consumer()
+
+    def test_register_string(self):
+        dependency.provides('identity_api',
+                            "keystone.identity.backends.kvs.Identity")
+
+        @dependency.requires('identity_api')
+        class IdentityConsumer(object):
+            def do_work_with_dependencies(self):
+                assert self.identity_api is not None
+
+        consumer = IdentityConsumer()
+
+    def test_chaining(self):
+        class Step1(object):
+            def __init__(self):
+                self.thing_was_called = False
+
+            def do_thing(self):
+                self.thing_was_called = True
+
+        @dependency.requires("step_1")
+        class Step2(object):
+            def do_thing(self):
+                self.step_1.do_thing()
+                self.thing_was_called = True
+
+        @dependency.requires("step_2")
+        class Step3(object):
+            def do_thing(self):
+                self.step_2.do_thing()
+
+        dependency.provides("step_1", Step1)
+        dependency.provides("step_2", Step2)
+
+        step_3 = Step3()
+        step_3.do_thing()
+        self.assertTrue(dependency.REGISTRY['step_1'].thing_was_called)
