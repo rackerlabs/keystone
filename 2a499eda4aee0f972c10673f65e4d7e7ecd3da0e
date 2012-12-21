@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//6CE\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-21T17:27:58Z",
+      "side": 1,
+      "message": "dependencies constructors can\u0027t have arguments?",
+      "revId": "2a499eda4aee0f972c10673f65e4d7e7ecd3da0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
