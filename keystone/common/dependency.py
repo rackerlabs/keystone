@@ -1,5 +1,4 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
-
 # Copyright 2012 OpenStack LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -13,14 +12,32 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+import sys
 
 REGISTRY = {}
+
+FACTORIES = {}
 
 
 class UnresolvableDependencyException(Exception):
     def __init__(self, name):
         msg = 'Unregistered dependency: %s' % name
         super(UnresolvableDependencyException, self).__init__(msg)
+
+
+"""
+http://stackoverflow.com/questions/452969/\
+does-python-have-an-equivalent-to-java-class-forname
+"""
+
+
+def get_class(kls):
+    parts = kls.split('.')
+    module = ".".join(parts[:-1])
+    m = __import__(module)
+    for comp in parts[1:]:
+        m = getattr(m, comp)
+    return m
 
 
 def provider(name):
@@ -36,8 +53,11 @@ def provider(name):
 
         cls.__init__ = wrapped(cls.__init__)
         return cls
-
     return wrapper
+
+
+def provides(name, classdef):
+    FACTORIES[name] = classdef
 
 
 def requires(*dependencies):
@@ -48,7 +68,15 @@ def requires(*dependencies):
 
         for dependency in self._dependencies:
             if dependency not in REGISTRY:
-                raise UnresolvableDependencyException(dependency)
+                if dependency in FACTORIES:
+                    classdef = FACTORIES[dependency]
+                    if isinstance(classdef, str):
+                        classimpl = get_class(classdef)
+                    else:
+                        classimpl = classdef
+                    REGISTRY[dependency] = classimpl()
+                else:
+                    raise UnresolvableDependencyException(dependency)
             setattr(self, dependency, REGISTRY[dependency])
 
     def wrapped(cls):
