@@ -26,10 +26,11 @@ class TestDependencyInjection(unittest.TestCase):
             def do_work(self):
                 assert False
 
-        @dependency.provider('first_api')
         class FirstImplementation(Interface):
             def do_work(self):
                 return True
+
+        dependency.provider('first_api',FirstImplementation)
 
         @dependency.provider('second_api')
         class SecondImplementation(Interface):
@@ -43,14 +44,14 @@ class TestDependencyInjection(unittest.TestCase):
                 assert self.second_api.do_work()
 
         # initialize dependency providers
-        first_api = FirstImplementation()
+        
         second_api = SecondImplementation()
 
         # ... sometime later, initialize a dependency consumer
         consumer = Consumer()
 
         # the expected dependencies should be available to the consumer
-        self.assertIs(consumer.first_api, first_api)
+        self.assertIs(consumer.first_api, dependency.REGISTRY['first_api'])
         self.assertIs(consumer.second_api, second_api)
         self.assertIsInstance(consumer.first_api, Interface)
         self.assertIsInstance(consumer.second_api, Interface)

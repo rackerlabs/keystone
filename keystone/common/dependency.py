@@ -16,6 +16,7 @@
 
 REGISTRY = {}
 
+FACTORIES = {}
 
 class UnresolvableDependencyException(Exception):
     def __init__(self, name):
@@ -23,7 +24,7 @@ class UnresolvableDependencyException(Exception):
         super(UnresolvableDependencyException, self).__init__(msg)
 
 
-def provider(name):
+def provider(name, classdef=None):
     """Register the wrapped dependency provider under the specified name."""
     def wrapper(cls):
         def wrapped(init):
@@ -36,7 +37,8 @@ def provider(name):
 
         cls.__init__ = wrapped(cls.__init__)
         return cls
-
+    if classdef:
+        FACTORIES[name] = classdef
     return wrapper
 
 
@@ -48,7 +50,12 @@ def requires(*dependencies):
 
         for dependency in self._dependencies:
             if dependency not in REGISTRY:
-                raise UnresolvableDependencyException(dependency)
+                if dependency in FACTORIES:
+                    classimpl =  FACTORIES[dependency]
+                    instance = classimpl()
+                    REGISTRY[dependency] = instance
+                else:
+                    raise UnresolvableDependencyException(dependency)
             setattr(self, dependency, REGISTRY[dependency])
 
     def wrapped(cls):
