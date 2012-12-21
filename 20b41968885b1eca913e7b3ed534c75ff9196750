@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//6KM\u003d",
+        "filename": "tests/backend_livesql.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-21T16:25:50Z",
+      "side": 1,
+      "message": "all you should have to specify is a new sql connection string, and inherit everything else from backend_sql.conf",
+      "revId": "20b41968885b1eca913e7b3ed534c75ff9196750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
