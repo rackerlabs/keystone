@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//6QA\u003d",
+        "filename": "keystone/mapping/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2012-12-21T11:49:51Z",
+      "side": 1,
+      "message": "So I think we need the three types here: users, projects \u0026 domains - this matches our v3 nomenclature. We should not use the \"tenant\" term.  We need to store the mappings for groups-roles-domains just like we do group-roles-projects.  The other thing we need to decide is whether the meaning domain role assignment is encoded here (i.e. it is likely to be able to mean either this is a real assignment at the domain level (e.g. to enable some Domain Admin function) or as a shorthand for assigning that role to all enclosed projects.  See blueprint https://blueprints.launchpad.net/keystone/+spec/domain-role-assignment",
+      "revId": "0a96529f0e54cfc2a664e62be2cf681b2f1bb4f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//9os\u003d",
         "filename": "keystone/mapping/routes.py",
         "patchSetId": 1
