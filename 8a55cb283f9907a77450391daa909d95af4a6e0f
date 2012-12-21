@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//56g\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-21T18:30:18Z",
+      "side": 1,
+      "message": "^^",
+      "revId": "8a55cb283f9907a77450391daa909d95af4a6e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//568\u003d",
+        "filename": "tests/test_injection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-21T18:30:18Z",
+      "side": 1,
+      "message": "you\u0027re also overloading a decorator method that is named as such",
+      "revId": "8a55cb283f9907a77450391daa909d95af4a6e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//57Y\u003d",
+        "filename": "tests/test_injection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-21T18:30:18Z",
+      "side": 1,
+      "message": "this use case doesn\u0027t make sense to me because it\u0027s so specific ... FirstImplementation can\u0027t be externally configured, it can only be instantiated with default kwargs",
+      "revId": "8a55cb283f9907a77450391daa909d95af4a6e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//57E\u003d",
+        "filename": "tests/test_injection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-21T18:30:18Z",
+      "side": 1,
+      "message": "same problem as above",
+      "revId": "8a55cb283f9907a77450391daa909d95af4a6e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
