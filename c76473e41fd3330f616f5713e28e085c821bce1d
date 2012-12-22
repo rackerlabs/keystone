@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//5q4\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-22T01:29:17Z",
+      "side": 1,
+      "message": "I\u0027m not sure this is actually a bug (I don\u0027t see how this code would raise an exception if the db was in sync with the code), but if it is a bug, the simplest fix would be:\n\n  if not endpoint.get(\u0027legacy_endpoint_id\u0027):",
+      "revId": "c76473e41fd3330f616f5713e28e085c821bce1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
