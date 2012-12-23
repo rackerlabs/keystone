@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//5SQ\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2012-12-23T23:55:48Z",
+      "side": 1,
+      "message": "I assume tools/flakes.py needs to exist first?",
+      "revId": "29b4655d55ef2aad8f33ee8f8422b768d6a8f104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
