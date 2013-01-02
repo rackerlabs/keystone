@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//2Pc\u003d",
+        "filename": "tools/pip-requires",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-02T16:40:44Z",
+      "side": 0,
+      "message": "i think you just removed the newline at the end of the file?",
+      "revId": "ec9c84c497ad7ca802e3bfc52842018b259a3ad9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
