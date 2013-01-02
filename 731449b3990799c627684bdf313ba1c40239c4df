@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//1qY\u003d",
+        "filename": "tools/test-requires",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-02T21:26:11Z",
+      "side": 1,
+      "message": "just noticed that it should also go here with the other keystoneclient dependencies (i think we need to keep httplib2 here for testing against essex keystoneclient?).",
+      "revId": "731449b3990799c627684bdf313ba1c40239c4df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
