@@ -20,8 +20,8 @@ import argparse
 import sys
 import textwrap
 
-from keystone import config
 from keystone.common import openssl
+from keystone import config
 from keystone.openstack.common import cfg
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
