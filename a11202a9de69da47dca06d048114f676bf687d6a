@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//0SA\u003d",
+        "filename": "tests/test_injection.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-03T23:12:57Z",
+      "side": 1,
+      "message": "Would this work?\n\ndependency.provides(\u0027first_api\u0027, \u0027FirstImplementation\u0027)\n\nOr is that a valid usage?",
+      "revId": "a11202a9de69da47dca06d048114f676bf687d6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
