@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//1SY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/013_add_group_tables.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-03T21:51:00Z",
+      "side": 1,
+      "message": "Don\u0027t you need to drop the join tables first?",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//0bQ\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-03T21:51:00Z",
+      "side": 1,
+      "message": "i18n?\n\nraise exception.NotFound(_(\u0027User not found in group\u0027))",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//0bI\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-03T21:51:00Z",
+      "side": 1,
+      "message": "i18n?",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//0bE\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1114,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-03T21:51:00Z",
+      "side": 1,
+      "message": "i18n?",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//0aw\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-03T21:51:00Z",
+      "side": 1,
+      "message": "Looks like you are duplicating code here. Can you do this instead?\n\ntry:\n    self.check_user_in_group(user_id, group_id)\nexcept exception.NotFound:\n   ... add user to group",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//0ao\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 777,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-03T21:51:00Z",
+      "side": 1,
+      "message": "Same as above. May want to consider self.check_user_in_group() instead of duplicating code.",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//0ag\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-03T21:51:00Z",
+      "side": 1,
+      "message": "Don\u0027t we have to cleanup UserGroupMembership as well or is that being done higher up?",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
