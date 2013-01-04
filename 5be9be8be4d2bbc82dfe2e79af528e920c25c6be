@@ -274,6 +274,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//yy8\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T21:05:21Z",
+      "side": 1,
+      "message": "sets is deprecated as of 2.6 in favor of using the builtin data structures",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//zXs\u003d",
         "filename": "tests/test_auth.py",
         "patchSetId": 8
