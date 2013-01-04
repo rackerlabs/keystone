@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//0Qg\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-04T00:21:34Z",
+      "side": 1,
+      "message": "The domain_id argument isn\u0027t used. Is this intentional?",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//0bQ\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 8
@@ -47,6 +64,40 @@
       "writtenOn": "2013-01-03T21:51:00Z",
       "side": 1,
       "message": "i18n?",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//0N4\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-04T00:21:34Z",
+      "side": 1,
+      "message": "here\u0027s another case where domain_id isn\u0027t used. Is this intentional?",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//0N0\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-04T00:21:34Z",
+      "side": 1,
+      "message": "This function wasn\u0027t updated with group_id like the other metadata functions. Is this intentional?",
       "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
