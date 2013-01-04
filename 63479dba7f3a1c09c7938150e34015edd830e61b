@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//zZ8\u003d",
+        "filename": "tests/_db_livetest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T16:08:30Z",
+      "side": 1,
+      "message": "clean up the imports, please",
+      "revId": "63479dba7f3a1c09c7938150e34015edd830e61b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zZw\u003d",
+        "filename": "tests/_db_livetest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T16:08:30Z",
+      "side": 1,
+      "message": "per the comment on line 40:\n\n  SqlLiveUPgradeTests -\u003e MySqlUpgradeTests",
+      "revId": "63479dba7f3a1c09c7938150e34015edd830e61b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zZg\u003d",
+        "filename": "tests/_db_livetest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T16:08:30Z",
+      "side": 1,
+      "message": "as this whole file is specifically testing mysql, and testing postgres would require an additional *.conf file... can we call this backend_mysql.conf (and rename this file accordingly)?\n\nAlso, rather than avoiding the normal naming convention for test files, you should be able to raise a nose SkipTest exception from here if a connection can\u0027t be made to mysql (I think nova follows a similar pattern?)",
+      "revId": "63479dba7f3a1c09c7938150e34015edd830e61b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zaY\u003d",
+        "filename": "tests/backend_livesql.conf",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T16:08:30Z",
+      "side": 1,
+      "message": "can this be an account without a password?",
+      "revId": "63479dba7f3a1c09c7938150e34015edd830e61b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
