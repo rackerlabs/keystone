@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//zFA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "this doesn\u0027t belong here and is redundant with the @dependency.provider annotation in keystone.catalog.core, for example",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zE4\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "cool; this could be it\u0027s own change though",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zEk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/013_add_trust_tables.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "would prefer these names to reflect what they are... trustor_id, at the very least",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zEo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/013_add_trust_tables.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "project_id here, since the foreign table needs a rename anyway?",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zEQ\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "trust_api?",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zEM\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "this doesn\u0027t look like it\u0027s used",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zEI\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "token_api should be inherited from V2Controller; not sure about trust_api",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zD0\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "Not sure what the \"API\" in this class name is referring to? it\u0027s a model",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zDw\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "these comments indicate the column names should be more explicit (trustor_user_id or whatever)",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zDY\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "it can be populated by the API user, making this comment inaccurate",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zDA\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "no list_trusts?",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zDU\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "i prefer @sql.handle_conflicts like you did in the other backends",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zDE\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "what does the False do here? Can it be a keyword arg instead?\n\n  q.delete(do_whatever\u003dFalse)",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zC4\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "I assume this is all WIP, based on the implementation",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zC0\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "period at the end of the line; line break after the one line summary",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zCw\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "trust_ref?",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zCs\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-04T19:27:17Z",
+      "side": 1,
+      "message": "TrustNotFound?",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
