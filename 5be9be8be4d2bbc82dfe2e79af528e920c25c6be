@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//z4s\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/013_add_group_tables.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "yes, good catch - I just saw ayoung\u0027s fix to the domain tables downgrade, so had this on this list",
+      "parentUuid": "AAAAM3//1SY\u003d",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//0Qg\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2013-01-04T00:21:34Z",
       "side": 1,
       "message": "The domain_id argument isn\u0027t used. Is this intentional?",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zm4\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "Domain grants are not yet supported (for users or groups) in the kvs backend - this will be added when we fix bug #1093248",
+      "parentUuid": "AAAAM3//0Qg\u003d",
       "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//zms\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//0bQ\u003d",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//0bI\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2013-01-03T21:51:00Z",
       "side": 1,
       "message": "i18n?",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zmo\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//0bI\u003d",
       "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//zmw\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "as above",
+      "parentUuid": "AAAAM3//0N4\u003d",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//0N0\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 8
@@ -98,6 +188,24 @@
       "writtenOn": "2013-01-04T00:21:34Z",
       "side": 1,
       "message": "This function wasn\u0027t updated with group_id like the other metadata functions. Is this intentional?",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zl8\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "True...since it doesn\u0027t appear to be called from anywhere...a candidate for removal if, once we have added all the v3 functionality to here, that it is still not needed.",
+      "parentUuid": "AAAAM3//0N0\u003d",
       "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//yP0\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1054,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "Yes, bug raised to track it",
+      "parentUuid": "AAAAM3//zh8\u003d",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//zjQ\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 8
@@ -132,6 +258,24 @@
       "writtenOn": "2013-01-04T16:38:18Z",
       "side": 1,
       "message": "There\u0027s a default for the conf setting so should not have \u0027or self.DEFAULT_MEMBER_ATTRIBUTE\u0027. This same comment applies to other conf settings that have a default.",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//yO0\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "Was just trying to be consistent for how the other API entities are handled in this file.  When we come back an implement this fully, will take a look at them.",
+      "parentUuid": "AAAAM3//zjQ\u003d",
       "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//zl4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1114,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//0bE\u003d",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//zhk\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 8
@@ -166,6 +328,24 @@
       "writtenOn": "2013-01-04T16:38:18Z",
       "side": 1,
       "message": "In 013_add_group_tables.py, the extra column is sql.Text(), whereas here it\u0027s sql.JsonBlob(). Must the types be the same? This same comment applies to the group_project_metadata and group_domain_metadata data columns in the classes below.",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//yOM\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "JsonBlob() is a decorated sql.Text()....and the standard way all the other tables are defined is to use Text() in the table creation/migration files.",
+      "parentUuid": "AAAAM3//zhk\u003d",
       "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//yOI\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//zhY\u003d",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//zg0\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 8
@@ -200,6 +398,24 @@
       "writtenOn": "2013-01-04T16:38:18Z",
       "side": 1,
       "message": "Is it worth it to \"rename to user_project_metadata\" with this change? (or rename it to user_project_grant instead of user_project_metadata)",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//yNw\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "So good idea - however, Dolph has asked that we refactor all these metadata tables to normalize them (e.g. user_id/group_id/role_id attributes).  So one this change is in I will come back and do that refractor...and do the migrations as well - hence don\u0027t think it was worth changing this name until we do that",
+      "parentUuid": "AAAAM3//zg0\u003d",
       "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//yNE\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "Good catch, missed that update.",
+      "parentUuid": "AAAAM3//zgs\u003d",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//0aw\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 8
@@ -234,6 +468,24 @@
       "writtenOn": "2013-01-03T21:51:00Z",
       "side": 1,
       "message": "Looks like you are duplicating code here. Can you do this instead?\n\ntry:\n    self.check_user_in_group(user_id, group_id)\nexcept exception.NotFound:\n   ... add user to group",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//zkA\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "Good idea...although it\u0027s a little more complicated than that, since as well as NotFound, you might get UserNotFound or GroupNotFound (from the get_user and get_group calls) - both of which are derived from the NotFound class....making the exception filtering tricky....so I considered the code saving to be not worth it.",
+      "parentUuid": "AAAAM3//0aw\u003d",
       "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//zj8\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 777,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "AAAAM3//0ao\u003d",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//0ag\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 8
@@ -268,6 +538,24 @@
       "writtenOn": "2013-01-03T21:51:00Z",
       "side": 1,
       "message": "Don\u0027t we have to cleanup UserGroupMembership as well or is that being done higher up?",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//ziw\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "Nice catch....also required for delete user",
+      "parentUuid": "AAAAM3//0ag\u003d",
       "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +596,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//yM0\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//zXs\u003d",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//zWs\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 8
@@ -319,6 +625,24 @@
       "writtenOn": "2013-01-04T16:38:18Z",
       "side": 1,
       "message": "Should there be tests for a user that\u0027s not allowed to create / delete / change a group?",
+      "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//yQg\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 911,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-05T01:36:18Z",
+      "side": 1,
+      "message": "Do you mean test the RBAC for a user that does not have the role assignment to execute a create/delete/change group?  If so, then although I agree we need this - I don\u0027t think we have any of those tests yet for any of the apis.  I suggest I raise a separate bug for that area?",
+      "parentUuid": "AAAAM3//zWs\u003d",
       "revId": "5be9be8be4d2bbc82dfe2e79af528e920c25c6be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
