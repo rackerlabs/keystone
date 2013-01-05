@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//yCQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-05T03:52:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//zFA\u003d",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//zE4\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//yCM\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-05T03:52:42Z",
+      "side": 1,
+      "message": "Wanted to share it for the Trusts tables, so this refactoring is timely.",
+      "parentUuid": "AAAAM3//zE4\u003d",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//zEk\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/013_add_trust_tables.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2013-01-04T19:27:17Z",
       "side": 1,
       "message": "would prefer these names to reflect what they are... trustor_id, at the very least",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//yAE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/013_add_trust_tables.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-05T03:52:42Z",
+      "side": 1,
+      "message": "Will don, but want to post most of my changes first.  I\u0027ll get this prior to removing WIP",
+      "parentUuid": "AAAAM3//zEk\u003d",
       "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//yCA\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-05T03:52:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//zEQ\u003d",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//zEM\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 2
@@ -98,6 +170,24 @@
       "writtenOn": "2013-01-04T19:27:17Z",
       "side": 1,
       "message": "this doesn\u0027t look like it\u0027s used",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//yB8\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-05T03:52:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//zEM\u003d",
       "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -132,6 +222,24 @@
       "writtenOn": "2013-01-04T19:27:17Z",
       "side": 1,
       "message": "Not sure what the \"API\" in this class name is referring to? it\u0027s a model",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//yBM\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-05T03:52:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//zD0\u003d",
       "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +314,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//yBA\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-05T03:52:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//zDU\u003d",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//zDE\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 2
@@ -223,6 +349,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//yAQ\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-05T03:52:42Z",
+      "side": 1,
+      "message": "Done: synchronize_session\u003dFalse: \n\nThis seems to be the preferred way, and should be the default. \n\nhttp://docs.sqlalchemy.org/en/rel_0_7/orm/query.html\n\n\nFalse - don’t synchronize the session. This option is the most efficient and is reliable once the session is expired, which typically occurs after a commit(), or explicitly using expire_all(). Before the expiration, objects may still remain in the session which were in fact deleted which can lead to confusing results if they are accessed via get() or already loaded collections.",
+      "parentUuid": "AAAAM3//zDE\u003d",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//zC4\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 2
@@ -234,6 +378,24 @@
       "writtenOn": "2013-01-04T19:27:17Z",
       "side": 1,
       "message": "I assume this is all WIP, based on the implementation",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//yAk\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-05T03:52:42Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "AAAAM3//zC4\u003d",
       "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -285,6 +447,24 @@
       "writtenOn": "2013-01-04T19:27:17Z",
       "side": 1,
       "message": "TrustNotFound?",
+      "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//yAg\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-05T03:52:42Z",
+      "side": 1,
+      "message": "Actually, The exceptions should be only due to Illegal access:  only the trustor can create a trust, but I don\u0027t have that enforced yet.",
+      "parentUuid": "AAAAM3//zCs\u003d",
       "revId": "dd0bed9110ea60e5b36cdb31c8b8e2eddcf29b08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
