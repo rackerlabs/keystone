@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//wQM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/013_add_group_tables.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-07T21:21:31Z",
+      "side": 1,
+      "message": "remove line 94",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//wQI\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-07T21:21:31Z",
+      "side": 1,
+      "message": "domain_id is not used?",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//wCo\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-07T21:21:31Z",
+      "side": 1,
+      "message": "Same thing:\n\n  new_user.setdefault(\u0027groups\u0027, [])",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//wCk\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-07T21:21:31Z",
+      "side": 1,
+      "message": "same question about domain_id",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//wCY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-07T21:21:31Z",
+      "side": 1,
+      "message": "new metadata signatures need to be documented here",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//vuw\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-07T21:21:31Z",
+      "side": 1,
+      "message": "\"add_additional\" is kind of redundant ;P\n\n  def _append_roles(self, metadata, additional_metadata)?",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//vuY\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-07T21:21:31Z",
+      "side": 1,
+      "message": "Instead of re-implementing set behaviors:\n\n  first \u003d set(metadata.get(\u0027roles\u0027, []))\n  second \u003d set(additional_metadata.get(\u0027roles\u0027, []))\n  metadata[\u0027roles\u0027] \u003d list(first.union(second))",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
