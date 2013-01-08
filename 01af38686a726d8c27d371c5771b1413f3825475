@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//vng\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/013_add_group_tables.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-08T01:34:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//wQM\u003d",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//wQI\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2013-01-07T21:21:31Z",
       "side": 1,
       "message": "domain_id is not used?",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//vjs\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-08T01:34:27Z",
+      "side": 1,
+      "message": "So this was raised in a previous round of this review - domain grants (even for users) were missing entirely from the kvs backend.  There is already a bug listed that we need to come back and fix this (I\u0027ll be doing that once this initial code is in)",
+      "parentUuid": "AAAAM3//wQI\u003d",
       "revId": "01af38686a726d8c27d371c5771b1413f3825475",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//vjk\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-08T01:34:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//wCo\u003d",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//wCk\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2013-01-07T21:21:31Z",
       "side": 1,
       "message": "same question about domain_id",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//vjo\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-08T01:34:27Z",
+      "side": 1,
+      "message": "se earlier reply",
+      "parentUuid": "AAAAM3//wCk\u003d",
       "revId": "01af38686a726d8c27d371c5771b1413f3825475",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//vi0\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-08T01:34:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//wCY\u003d",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//vuw\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 10
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//vik\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-08T01:34:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//vuw\u003d",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//vuY\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 10
@@ -115,6 +223,24 @@
       "writtenOn": "2013-01-07T21:21:31Z",
       "side": 1,
       "message": "Instead of re-implementing set behaviors:\n\n  first \u003d set(metadata.get(\u0027roles\u0027, []))\n  second \u003d set(additional_metadata.get(\u0027roles\u0027, []))\n  metadata[\u0027roles\u0027] \u003d list(first.union(second))",
+      "revId": "01af38686a726d8c27d371c5771b1413f3825475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//viU\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-08T01:34:27Z",
+      "side": 1,
+      "message": "Sure.  Although maybe I mis-understood your comment on a previous review - when you said that sets were depreciated from 2.6?",
+      "parentUuid": "AAAAM3//vuY\u003d",
       "revId": "01af38686a726d8c27d371c5771b1413f3825475",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
