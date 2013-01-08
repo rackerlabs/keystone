@@ -289,3 +289,7 @@ register_bool('group_allow_delete', group='ldap', default=True)
 register_str('url', group='pam', default=None)
 register_str('userid', group='pam', default=None)
 register_str('password', group='pam', default=None)
+
+#authn_handlers
+register_list('methods', group='auth',
+              default=['password', 'token'])

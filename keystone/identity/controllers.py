@@ -483,6 +483,11 @@ class ProjectV3(controller.V3Controller):
         return ProjectV3.wrap_member(context, ref)
 
     @controller.protected
+    def get_project_by_name(self, context, project_name):
+        return {'project': self.identity_api.get_project_by_name(
+            context, project_name)}
+
+    @controller.protected
     def update_project(self, context, project_id, project):
         self._require_matching_id(project_id, project)
 
