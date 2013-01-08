@@ -1,0 +1,188 @@
+# vim: tabstop=4 shiftwidth=4 softtabstop=4
+
+# Copyright 2013 OpenStack LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+"""Token Factory"""
+
+import datetime
+import json
+import uuid
+import webob
+
+from keystone.common import cms
+from keystone.common import dependency
+from keystone.common import manager
+from keystone.common import utils
+from keystone import catalog
+from keystone import config
+from keystone import exception
+from keystone import identity
+from keystone import token as token_module
+from keystone.openstack.common import jsonutils
+from keystone.openstack.common import timeutils
+
+
+CONF = config.CONF
+
+
+class TokenDataHelper(object):
+    """Token data helper."""
+    def __init__(self, context):
+        self.identity_api = identity.Manager()
+        self.catalog_api = catalog.Manager()
+        self.context = context
+
+    def _populate_scope(self, token_data, domain_id, project_id):
+        if domain_id:
+            token_data['domain'] = self.identity_api.get_domain(
+                self.context, domain_id)
+        if project_id:
+            token_data['project'] = self.identity_api.get_project(
+                self.context, project_id)
+
+    def _get_project_roles_for_user(self, user_id, project_id):
+        roles = \
+            self.identity_api.get_roles_for_user_and_project(self.context,
+                                                             user_id,
+                                                             project_id)
+        roles_ref = []
+        for role_id in roles:
+            role_ref = self.identity_api.get_role(self.context, role_id)
+            role_ref.setdefault('project_id', project_id)
+            roles_ref.append(role_ref)
+        # user have no project roles, therefore access denied
+        if len(roles_ref) == 0:
+            raise exception.Unauthorized('User have no access to project')
+        return roles_ref
+
+    def _get_roles_for_user(self, user_id, domain_id, project_id):
+        if domain_id:
+            # TODO(gyee): get domain roles
+            pass
+        if project_id:
+            return self._get_project_roles_for_user(user_id, project_id)
+
+    def _populate_user(self, token_data, user_id, domain_id, project_id):
+        user_ref = self.identity_api.get_user(self.context,
+                                              user_id)
+        token_data['user'] = user_ref
+        token_data['user']['roles'] = self._get_roles_for_user(user_id,
+                                                               domain_id,
+                                                               project_id)
+        # (gyee): no idea wtf's roles_links. setting it because its in the spec
+        token_data['user']['roles_links'] = []
+
+    def _populate_service_catalog(self, token_data, user_id,
+                                  domain_id, project_id):
+        service_catalog = self.catalog_api.get_v3_catalog(self.context,
+                                                          user_id,
+                                                          project_id)
+        # TODO(gyee): v3 service catalog is not quite completed yet
+        token_data['services'] = service_catalog
+
+    def _populate_token(self, token_data, expires=None):
+        if expires:
+            token_data['token'] = {'expires': expires}
+        else:
+            token_data['token'] = {'expires':
+                                   token_module.default_expire_time()}
+
+    def get_token_data(self, user_id, method_names, extras,
+                       domain_id=None, project_id=None, expires=None):
+        token_data = {'methods': method_names,
+                      'extras': extras}
+        self._populate_scope(token_data, domain_id, project_id)
+        self._populate_user(token_data, user_id, domain_id, project_id)
+        self._populate_service_catalog(token_data, user_id, domain_id,
+                                       project_id)
+        self._populate_token(token_data, expires)
+        return token_data
+
+
+def recreate_token_data(context, token_data, expires=None):
+    """ Recreate token from an existing token.
+
+    Repopulate the ephemeral data and return the new token data.
+
+    """
+    domain_id = (token_data['domain']['id'] if 'domain' in token_data
+                 else None)
+    project_id = (token_data['project']['id'] if 'project' in token_data
+                  else None)
+    new_expires = (expires if expires else token_data['token']['expires'])
+    token_data_helper = TokenDataHelper(context)
+    return token_data_helper.get_token_data(token_data['user']['id'],
+                                            token_data['methods'],
+                                            token_data['extras'],
+                                            domain_id,
+                                            project_id,
+                                            new_expires)
+
+
+def create_token(context, auth_context, auth_info):
+    token_data_helper = TokenDataHelper(context)
+    (domain_id, project_id) = auth_info.get_scope()
+    method_names = set(auth_info.get_method_names() +
+                       auth_context.get('method_names', []))
+    token_data = token_data_helper.get_token_data(auth_context['user_id'],
+                                                  method_names,
+                                                  auth_context['extras'],
+                                                  domain_id,
+                                                  project_id,
+                                                  auth_context.get('expires',
+                                                                   None))
+    if CONF.signing.token_format == 'UUID':
+        token_id = uuid.uuid4().hex
+    elif CONF.signing.token_format == 'PKI':
+        token_id = cms.cms_sign_token(json.dumps(token_data),
+                                      CONF.signing.certfile,
+                                      CONF.signing.keyfile)
+    else:
+        raise exception.UnexpectedError(
+            'Invalid value for token_format: %s.'
+            '  Allowed values are PKI or UUID.' %
+            CONF.signing.token_format)
+    token_api = token_module.Manager()
+    try:
+        data = {'key': token_id,
+                'id': token_id,
+                'expires': token_data['token']['expires'],
+                'token_data': token_data}
+        token_api.create_token(context, token_id, data)
+    except Exception as e:
+        # an identical token may have been created already.
+        # if so, return the token_data as it is also identical
+        try:
+            token_api.get_token(context=context,
+                                token_id=token_id)
+        except exception.TokenNotFound:
+            raise e
+
+    return (token_id, token_data)
+
+
+def render_token_data_response(token_id, token_data):
+    """ Render token data HTTP response.
+
+    Stash token ID into the X-Auth-Token header.
+
+    """
+    headers = [('X-Auth-Token', token_id)]
+    headers.append(('Content-Type', 'application/json'))
+    status = (200, 'OK')
+    body = jsonutils.dumps(token_data, cls=utils.SmarterEncoder)
+    return webob.Response(body=body,
+                          status='%s %s' % status,
+                          headerlist=headers)

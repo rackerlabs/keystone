@@ -114,6 +114,22 @@ class Unauthorized(SecurityError):
     title = 'Not Authorized'
 
 
+class AuthMethodNotSupported(SecurityError):
+    """ Need to authenticate with one or more supported methods. """
+    code = 401
+    title = 'Not Authorized'
+    authentication = {'methods': CONF.auth.methods}
+
+
+class AdditionalAuthRequired(SecurityError):
+    """ Additional authentications steps required. """
+    code = 401
+    title = 'Not Authorized'
+
+    def __init__(self, auth_response):
+        self.authentication = auth_response
+
+
 class Forbidden(SecurityError):
     """You are not authorized to perform the requested action."""
     code = 403
