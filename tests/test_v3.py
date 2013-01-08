@@ -4,6 +4,7 @@ from keystone.common.sql import util as sql_util
 from keystone import test
 from keystone import config
 
+import default_fixtures
 import test_content_types
 
 
@@ -19,6 +20,10 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             test.testsdir('backend_sql_disk.conf')])
         sql_util.setup_test_database()
         self.load_backends()
+        self.load_fixtures(default_fixtures)
+        self.identity_api.add_role_to_user_and_project(
+            self.user_foo['id'], self.tenant_bar['id'],
+            self.role_admin['id'])
         self.public_server = self.serveapp('keystone', name='main')
         self.admin_server = self.serveapp('keystone', name='admin')
 
@@ -92,22 +97,29 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
     def get_scoped_token(self):
         """Convenience method so that we can test authenticated requests."""
-        # FIXME(dolph): should use real auth
-        return 'ADMIN'
-
         r = self.admin_request(
             method='POST',
-            path='/v3/tokens',
+            path='/v3/auth/tokens',
             body={
-                'auth': {
-                    'passwordCredentials': {
-                        'username': self.user_foo['name'],
-                        'password': self.user_foo['password'],
-                    },
-                    'tenantId': self.tenant_bar['id'],
+                'authentication': {
+                    'methods': ['password'],
+                    'password': {
+                        'user': {
+                            'name': self.user_foo['name'],
+                            'password': self.user_foo['password'],
+                            'domain': {
+                                'id': self.user_foo['domain_id']
+                            }
+                        }
+                    }
                 },
+                'scope': {
+                    'project': {
+                        'id': self.tenant_bar['id'],
+                    }
+                }
             })
-        return r.body['access']['token']['id']
+        return r.getheader('X-Subject-Token')
 
     def v3_request(self, path, **kwargs):
         path = '/v3' + path
@@ -182,7 +194,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         If a reference is provided, the entity will also be compared against
         the reference.
         """
-        keys = ['name', 'description', 'enabled']
+        keys = ['name']
 
         for k in ['id'] + keys:
             msg = '%s unexpectedly None in %s' % (k, entity)
