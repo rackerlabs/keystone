@@ -75,6 +75,7 @@ values are organized into the following sections:
 * ``[policy]`` - policy system driver configuration for RBAC
 * ``[signing]`` - cryptographic signatures for PKI based tokens
 * ``[ssl]`` - SSL configuration
+* ``[auth]`` - Authentication plug-in configuration
 
 The Keystone configuration file is expected to be named ``keystone.conf``.
 When starting keystone, you can specify a different configuration file to
@@ -87,6 +88,44 @@ order:
 * ``/etc/keystone/``
 * ``/etc/``
 
+
+Authentication Plug-in
+----------------------
+Keystone support authentication plug-ins. Authentication plug-in modules are
+specified in the ``[auth]`` section of the configuration file. However, an
+authentication plug-in may also have its own section in the configuration
+file. It is up to the plug-in to register their own configuration options.
+
+* ``methods`` - comma-delimited list of authentication plug-in names
+* ``<plug-in name>`` - specify the class which handles to authentication method, in the same manner as one would specify a backend driver.
+
+Keystone provides two authentication methods by default. ``password`` handles password authentication and ``token`` handles token authentication.
+
+How To Implement An Authentication-Plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+All authentication plug-in must extends keystone.auth.core.AuthMethodHandler
+class and implements the authenticate() method. It is expecting the following
+parameters.
+
+* ``context`` - Keystone context
+* ``auth_info`` - AuthInfo object which encapsulates the ``authenticate`` data.
+* ``auth_context`` - user authentication context, a dictionary shared by all plug-ins. It contains an ``method_names`` and ``extras`` by default. ``method_names`` is a list and ``extras`` is a dictionary.
+
+If success, authenticate() must provide a valid ``user_id`` in ``auth_context``.
+``method_name`` is used to convey any additional authentication methods in case
+authentication is for re-scoping. For example, if the authentication is for
+re-scoping, a plug-in must append the previous method names into
+``method_names``. Also, plug-in may add any additional information into
+``extras``. Anything in ``extras`` will be conveyed in the token's ``extras``
+field.
+
+The authenticate() method must return None on successful authentication. If
+authentication require multiple steps, the authenticate() method must return
+the payload for the next authentication step.
+
+If authentication is unsuccessful, the authenticate() method must raise an
+Unauthorized exception.
 
 Certificates for PKI
 --------------------

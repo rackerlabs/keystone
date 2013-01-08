@@ -540,10 +540,22 @@ def render_response(body=None, status=None, headers=None):
 
 def render_exception(error):
     """Forms a WSGI response based on the current error."""
-    return render_response(status=(error.code, error.title), body={
-        'error': {
-            'code': error.code,
-            'title': error.title,
-            'message': str(error),
-        }
-    })
+    is_auth_exception = (isinstance(error, exception.AdditionalAuthRequired) or
+                         isinstance(error, exception.AuthMethodNotSupported))
+    if is_auth_exception:
+        return render_response(status=(error.code, error.title), body={
+            'error': {
+                'code': error.code,
+                'title': error.title,
+                'message': str(error),
+            },
+            'authentication': error.authentication
+        })
+    else:
+        return render_response(status=(error.code, error.title), body={
+            'error': {
+                'code': error.code,
+                'title': error.title,
+                'message': str(error),
+            }
+        })
