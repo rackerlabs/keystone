@@ -92,46 +92,55 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
     def get_scoped_token(self):
         """Convenience method so that we can test authenticated requests."""
-        # FIXME(dolph): should use real auth
-        return 'ADMIN'
-
         r = self.admin_request(
             method='POST',
-            path='/v3/tokens',
+            path='/v3/auth/tokens',
+            token='ADMIN',
             body={
-                'auth': {
-                    'passwordCredentials': {
-                        'username': self.user_foo['name'],
-                        'password': self.user_foo['password'],
-                    },
-                    'tenantId': self.tenant_bar['id'],
+                'authentication': {
+                    'methods': ['password'],
+                    'password': {
+                        'user': {
+                            'name': self.user_foo['name'],
+                            'password': self.user_foo['password'],
+                            'domain': {
+                                'id': self.user_foo['domain_id']
+                            }
+                        }
+                    }
                 },
+                'scope': {
+                    'project': {
+                        'id': self.tenant_bar['id'],
+                    }
+                }
             })
-        return r.body['access']['token']['id']
+        return r.getheader('X-Subject-Token')
 
-    def v3_request(self, path, **kwargs):
+    def v3_request(self, path, is_admin=True, **kwargs):
+        token = 'ADMIN' if is_admin else self.get_scoped_token()
         path = '/v3' + path
         return self.admin_request(
             path=path,
-            token=self.get_scoped_token(),
+            token=token,
             **kwargs)
 
-    def get(self, path, **kwargs):
+    def get(self, path, is_admin=True, **kwargs):
         return self.v3_request(method='GET', path=path, **kwargs)
 
-    def head(self, path, **kwargs):
+    def head(self, path, is_admin=True, **kwargs):
         return self.v3_request(method='HEAD', path=path, **kwargs)
 
-    def post(self, path, **kwargs):
+    def post(self, path, is_admin=True, **kwargs):
         return self.v3_request(method='POST', path=path, **kwargs)
 
-    def put(self, path, **kwargs):
+    def put(self, path, is_admin=True, **kwargs):
         return self.v3_request(method='PUT', path=path, **kwargs)
 
-    def patch(self, path, **kwargs):
+    def patch(self, path, is_admin=True, **kwargs):
         return self.v3_request(method='PATCH', path=path, **kwargs)
 
-    def delete(self, path, **kwargs):
+    def delete(self, path, is_admin=True, **kwargs):
         return self.v3_request(method='DELETE', path=path, **kwargs)
 
     def assertValidListResponse(self, resp, key, entity_validator, ref=None,
