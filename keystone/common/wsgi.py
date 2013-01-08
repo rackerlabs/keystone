@@ -230,6 +230,10 @@ class Application(BaseApplication):
             LOG.warning(_("Authorization failed. %s from %s")
                         % (e, req.environ['REMOTE_ADDR']))
             return render_exception(e)
+        except (exception.AuthMethodNotSupported,
+                exception.AdditionalAuthRequired) as e:
+            LOG.warning(e)
+            return render_auth_exception(e)
         except exception.Error as e:
             LOG.warning(e)
             return render_exception(e)
@@ -542,4 +546,16 @@ def render_exception(error):
             'title': error.title,
             'message': str(error),
         }
+    })
+
+
+def render_auth_exception(error):
+    """Forms a WSGI response based on the current error."""
+    return render_response(status=(error.code, error.title), body={
+        'error': {
+            'code': error.code,
+            'title': error.title,
+            'message': str(error),
+        },
+        'authentication': error.authentication
     })

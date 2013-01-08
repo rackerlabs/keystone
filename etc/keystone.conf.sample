@@ -181,6 +181,15 @@
 # group_allow_update = True
 # group_allow_delete = True
 
+[authn]
+methods = password token
+
+[password_method]
+driver = keystone.auth.methods.password.Password
+
+[token_method]
+driver = keystone.auth.methods.token
+
 [filter:debug]
 paste.filter_factory = keystone.common.wsgi:Debug.factory
 
