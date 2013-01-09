@@ -119,6 +119,15 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             body={'endpoint': ref})
         self.assertValidEndpointResponse(r, ref)
 
+    def test_create_endpoint_400(self):
+        """POST /endpoints"""
+        import exceptions
+        ref = self.new_endpoint_ref(service_id=self.service_id)
+        ref["region"] = "0" * 256
+        self.assertRaises(exceptions.AssertionError, self.post,
+            '/endpoints',
+            body={'endpoint': ref})
+
     def test_get_endpoint(self):
         """GET /endpoints/{endpoint_id}"""
         r = self.get(
