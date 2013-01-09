@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//r9M\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-09T16:05:53Z",
+      "side": 1,
+      "message": "cls_ -\u003e cls?",
+      "revId": "f719295104003517cd206985964a95a801a3970f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//r9E\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-09T16:05:53Z",
+      "side": 1,
+      "message": "not sure what this comment is referring to?",
+      "revId": "f719295104003517cd206985964a95a801a3970f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//r9A\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-09T16:05:53Z",
+      "side": 1,
+      "message": "comment is redundant with the code",
+      "revId": "f719295104003517cd206985964a95a801a3970f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//r/s\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-09T16:05:53Z",
+      "side": 1,
+      "message": "Exceeded",
+      "revId": "f719295104003517cd206985964a95a801a3970f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//r/o\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-09T16:05:53Z",
+      "side": 1,
+      "message": "the -\u003e The",
+      "revId": "f719295104003517cd206985964a95a801a3970f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//r+g\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-09T16:05:53Z",
+      "side": 1,
+      "message": "this class can be merged with the class above, as Catalog is meant to include services + endpoints",
+      "revId": "f719295104003517cd206985964a95a801a3970f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//r98\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-09T16:05:53Z",
+      "side": 1,
+      "message": "instead of checking for an assertion error, add expected_status\u003d400 to the self.post() call",
+      "revId": "f719295104003517cd206985964a95a801a3970f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
