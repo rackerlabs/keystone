@@ -114,8 +114,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
         CONF.debug = False
 
         risky_info = uuid.uuid4().hex
-
-        e = exception.ForbiddenAction(message=risky_info)
+        e = exception.ForbiddenAction(message=risky_info, action='foo')
         self.assertValidJsonRendering(e)
         self.assertNotIn(risky_info, str(e))
 
