@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//rhY\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-09T19:32:00Z",
+      "side": 1,
+      "message": "Interesting catch... when I first saw this code, I didn\u0027t see a use case for providing both message \u0026 action, as they would never be rendered together.\n\nI do have a nit here though-- can you generate \u0027action\u0027 with a uuid to illustrate that it\u0027s an arbitrary value, and then check that it\u0027s present in the json output? e.g.:\n\n  self.assertIn(action, str(e))",
+      "revId": "86fc4b4bc4e5756df73e72fc44ccf4137e07e8f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
