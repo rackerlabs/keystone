@@ -264,6 +264,27 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
         self.assertIsNone(catalog_endpoint.get('adminURL'))
         self.assertIsNone(catalog_endpoint.get('internalURL'))
 
+    def test_create_endpoint_400(self):
+        service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_service(service['id'], service.copy())
+
+        malformed_url = "http://192.168.1.104:$(compute_port)s/v2/$(tenant)s"
+        endpoint = {
+            'id': uuid.uuid4().hex,
+            'region': "0" * 256,
+            'service_id': service['id'],
+            'interface': 'public',
+            'url': malformed_url,
+        }
+
+        with self.assertRaises(exception.StringLengthExceed):
+            self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+
 
 class SqlPolicy(SqlTests, test_backend.PolicyTests):
     pass
