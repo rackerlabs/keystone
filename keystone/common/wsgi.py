@@ -20,6 +20,7 @@
 
 """Utility methods for working with WSGI servers."""
 
+import socket
 import sys
 
 import eventlet.wsgi
@@ -74,7 +75,16 @@ class Server(object):
                   {'arg0': sys.argv[0],
                    'host': self.host,
                    'port': self.port})
-        socket = eventlet.listen((self.host, self.port), backlog=backlog)
+
+        try:
+            socket.inet_pton(socket.AF_INET6, self.host)
+            family = socket.AF_INET6
+        except Exception:
+            family = socket.AF_INET
+
+        socket = eventlet.listen((self.host, self.port),
+                                 family,
+                                 backlog=backlog)
         if key:
             self.socket_info[key] = socket.getsockname()
         # SSL is enabled
