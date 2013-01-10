@@ -20,6 +20,7 @@
 
 """Utility methods for working with WSGI servers."""
 
+import socket
 import sys
 
 import eventlet.wsgi
@@ -60,11 +61,11 @@ class Server(object):
 
     def __init__(self, application, host=None, port=None, threads=1000):
         self.application = application
-        self.host = host or '0.0.0.0'
-        self.port = port or 0
+        self._host = host or '0.0.0.0'
+        self._port = port or 0
         self.pool = eventlet.GreenPool(threads)
         self.socket_info = {}
-        self.greenthread = None
+        self._server = None
         self.do_ssl = False
         self.cert_required = False
 
@@ -72,25 +73,45 @@ class Server(object):
         """Run a WSGI server with the given application."""
         LOG.debug(_('Starting %(arg0)s on %(host)s:%(port)s') %
                   {'arg0': sys.argv[0],
-                   'host': self.host,
-                   'port': self.port})
-        socket = eventlet.listen((self.host, self.port), backlog=backlog)
+                   'host': self._host,
+                   'port': self._port})
+
+        bind_addr = (self._host, self._port)
+        # TODO(dims): eventlet's green dns/socket module does not actually
+        # support IPv6 in getaddrinfo(). We need to get around this in the
+        # future or monitor upstream for a fix
+        try:
+            info = socket.getaddrinfo(self._host,
+                                      self._port,
+                                      socket.AF_UNSPEC,
+                                      socket.SOCK_STREAM)[0]
+            family = info[0]
+            bind_addr = info[-1]
+        except socket.gaierror:
+            LOG.debug(_('Ignoring exception during getaddrinfo : %s') % e)
+            family = socket.AF_INET
+
+        self._socket = eventlet.listen(bind_addr,
+                                       family,
+                                       backlog=backlog)
         if key:
-            self.socket_info[key] = socket.getsockname()
+            self.socket_info[key] = self._socket.getsockname()[0:2]
         # SSL is enabled
         if self.do_ssl:
             if self.cert_required:
                 cert_reqs = ssl.CERT_REQUIRED
             else:
                 cert_reqs = ssl.CERT_NONE
-            sslsocket = eventlet.wrap_ssl(socket, certfile=self.certfile,
+            sslsocket = eventlet.wrap_ssl(self._socket, certfile=self.certfile,
                                           keyfile=self.keyfile,
                                           server_side=True,
                                           cert_reqs=cert_reqs,
                                           ca_certs=self.ca_certs)
-            socket = sslsocket
+            self._socket = sslsocket
 
-        self.greenthread = self.pool.spawn(self._run, self.application, socket)
+        self._server = self.pool.spawn(self._run,
+                                       self.application,
+                                       self._socket)
 
     def set_ssl(self, certfile, keyfile=None, ca_certs=None,
                 cert_required=True):
@@ -100,16 +121,37 @@ class Server(object):
         self.cert_required = cert_required
         self.do_ssl = True
 
+    @property
+    def host(self):
+        return self._socket.getsockname()[0] if self._socket else self._host
+
+    @property
+    def port(self):
+        return self._socket.getsockname()[1] if self._socket else self._port
+
     def kill(self):
-        if self.greenthread:
-            self.greenthread.kill()
+        """Stop this server.
+
+        This is not a very nice action, as currently the method by which a
+        server is stopped is by killing its eventlet.
+
+        :returns: None
+
+        """
+        if self._server is not None:
+            # Resize pool to stop new requests from being processed
+            self.pool.resize(0)
+            self._server.kill()
 
     def wait(self):
-        """Wait until all servers have completed running."""
-        try:
-            self.pool.waitall()
-        except KeyboardInterrupt:
-            pass
+        """Block, until the server has stopped.
+
+        Waits on the server's eventlet to finish, then returns.
+
+        :returns: None
+
+        """
+        self._server.wait()
 
     def _run(self, application, socket):
         """Start a WSGI server in a new green thread."""
