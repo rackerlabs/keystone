@@ -189,6 +189,9 @@ paste.filter_factory = keystone.middleware:NormalizingFilter.factory
 [filter:stats_monitoring]
 paste.filter_factory = keystone.contrib.stats:StatsMiddleware.factory
 
+[filter:sizelimit]
+paste.filter_factory = keystone.common.sizelimit:StatsMiddleware.factory
+
 [filter:stats_reporting]
 paste.filter_factory = keystone.contrib.stats:StatsExtension.factory
 
