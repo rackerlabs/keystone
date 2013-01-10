@@ -76,3 +76,28 @@ class ApplicationTest(test.TestCase):
         self.assertEqual(resp.body, '')
         self.assertEqual(resp.headers.get('Content-Length'), '0')
         self.assertEqual(resp.headers.get('Content-Type'), None)
+
+
+class TestWSGIServer(test.TestCase):
+    """WSGI server tests."""
+
+    def test_no_app(self):
+        server = wsgi.Server("test_app", None)
+        self.assertEquals("test_app", server.name)
+
+    def test_start_random_port(self):
+        server = wsgi.Server("test_random_port", None,
+                                  host="127.0.0.1", port=0)
+        server.start()
+        self.assertNotEqual(0, server.port)
+        server.stop()
+        server.wait()
+
+    def test_start_random_port_with_ipv6(self):
+        server = wsgi.Server("test_random_port", None,
+            host="::1", port=0)
+        server.start()
+        self.assertEqual("::1", server.host)
+        self.assertNotEqual(0, server.port)
+        server.stop()
+        server.wait()
