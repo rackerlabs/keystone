@@ -82,16 +82,20 @@ class Endpoint(controller.V2Controller):
         self.assert_admin(context)
 
         legacy_endpoint_ref = endpoint.copy()
-
-        urls = dict((i, endpoint.pop('%surl' % i)) for i in INTERFACES)
         legacy_endpoint_id = uuid.uuid4().hex
-        for interface, url in urls.iteritems():
+
+        endpoint_refs = []
+        for interface in INTERFACES:
+            self._require_attribute(endpoint, "%surl" % interface)
+            url = endpoint.pop("%surl" % interface)
             endpoint_ref = endpoint.copy()
             endpoint_ref['id'] = uuid.uuid4().hex
             endpoint_ref['legacy_endpoint_id'] = legacy_endpoint_id
             endpoint_ref['interface'] = interface
             endpoint_ref['url'] = url
+            endpoint_refs.append(endpoint_ref)
 
+        for endpoint_ref in endpoint_refs:
             self.catalog_api.create_endpoint(
                 context, endpoint_ref['id'], endpoint_ref)
 
