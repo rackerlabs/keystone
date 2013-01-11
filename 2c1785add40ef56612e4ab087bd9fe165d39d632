@@ -16,6 +16,24 @@
       "revId": "2c1785add40ef56612e4ab087bd9fe165d39d632",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//oeE\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-11T21:15:12Z",
+      "side": 1,
+      "message": "HTTP 401 is used as \"you are neither authenticated or authorized\"; HTTP 403 is used as \"you are authenticated but not permitted to perform this action\"; HTTP 400 generally means \"your request makes no sense, please check it and try again.\" In this case, we understood the request, but it is not permitted, and thus HTTP 403 Forbidden.",
+      "parentUuid": "AAAAM3//ooY\u003d",
+      "revId": "2c1785add40ef56612e4ab087bd9fe165d39d632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
