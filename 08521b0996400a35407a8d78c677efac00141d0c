@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//opE\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-11T20:01:07Z",
+      "side": 1,
+      "message": "this definitely needs a docstr explaining what it does (it\u0027s a lot of code to shuffle through, and a one line summary would be extremely beneficial)",
+      "revId": "08521b0996400a35407a8d78c677efac00141d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//ook\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-11T20:01:07Z",
+      "side": 1,
+      "message": "i *think* this belongs in test_backend.CatalogTests (it\u0027s not specific to SQL)",
+      "revId": "08521b0996400a35407a8d78c677efac00141d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//ooc\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-11T20:01:07Z",
+      "side": 1,
+      "message": "this one definitely belongs here",
+      "revId": "08521b0996400a35407a8d78c677efac00141d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//onM\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-11T20:01:07Z",
+      "side": 1,
+      "message": "This overwrites test_content_types.assertValidErrorResponse and is redundant with expected_status\u003d400 below (which uses assertResponseStatus anyway). I believe this whole def can/should be removed.",
+      "revId": "08521b0996400a35407a8d78c677efac00141d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//onE\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-11T20:01:07Z",
+      "side": 1,
+      "message": "remove unused import",
+      "revId": "08521b0996400a35407a8d78c677efac00141d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
