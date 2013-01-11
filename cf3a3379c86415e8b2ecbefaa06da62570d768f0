@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//ogI\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-11T21:01:38Z",
+      "side": 0,
+      "message": "the pop() was intentionally removed from the loop so that all urls would be split off of the endpoint object prior to making copies of the endpoint for persistence; that part of the change needs to be reverted back",
+      "revId": "cf3a3379c86415e8b2ecbefaa06da62570d768f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

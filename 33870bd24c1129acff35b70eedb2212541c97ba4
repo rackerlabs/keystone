@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//ogg\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-11T21:01:38Z",
+      "side": 1,
+      "message": "self._require_attribute(endpoint, \u0027publicurl\u0027)",
+      "revId": "33870bd24c1129acff35b70eedb2212541c97ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//oi4\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-11T21:01:38Z",
+      "side": 1,
+      "message": "The only one that\u0027s actually _required_ according to the v2 spec is publicurl, which can be check externally:\n\n  if \u0027%surl\u0027 % interface in endpoint:\n    # everything else in this loop",
+      "revId": "33870bd24c1129acff35b70eedb2212541c97ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//oio\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-11T21:01:38Z",
+      "side": 1,
+      "message": "cool",
+      "revId": "33870bd24c1129acff35b70eedb2212541c97ba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
