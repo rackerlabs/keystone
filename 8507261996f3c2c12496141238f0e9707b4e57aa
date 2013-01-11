@@ -16,6 +16,23 @@
       "revId": "8507261996f3c2c12496141238f0e9707b4e57aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//oj8\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-11T20:18:58Z",
+      "side": 1,
+      "message": "suggestion - change the text of the warning to the comment and remove the comment, like \u0027\u0027missing exception kwargs - if you if you see this, please raise a bug report\u0027.\n\nshould the message also be logged in the _FATAL_EXCEPTION_FORMAT_ERRORS case? In case the exception is caught somewhere and ignored.\n\ncould remove the else: since the raise will break out of the message, and it\u0027s confusing because it skips not just the code in the else: but also the super() call below (or move the super() call into the else block).",
+      "revId": "8507261996f3c2c12496141238f0e9707b4e57aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
