@@ -83,7 +83,9 @@ class Endpoint(controller.V2Controller):
 
         legacy_endpoint_ref = endpoint.copy()
 
+        # pop all urls off the endpoint so we don't persist them more than once
         urls = dict((i, endpoint.pop('%surl' % i)) for i in INTERFACES)
+
         legacy_endpoint_id = uuid.uuid4().hex
         for interface, url in urls.iteritems():
             endpoint_ref = endpoint.copy()
