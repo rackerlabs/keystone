@@ -442,3 +442,41 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
 
     def test_get_and_remove_role_grant_by_user_and_domain(self):
         pass
+
+
+class LDAPIdentityEnabledEmulation(LDAPIdentity):
+    def setUp(self):
+        super(LDAPIdentityEnabledEmulation, self).setUp()
+        self.config([test.etcdir('keystone.conf.sample'),
+                     test.testsdir('test_overrides.conf'),
+                     test.testsdir('backend_ldap.conf')])
+        CONF.ldap.user_enabled_emulation = True
+        CONF.ldap.tenant_enabled_emulation = True
+        clear_database()
+        self.identity_api = identity_ldap.Identity()
+        self.load_fixtures(default_fixtures)
+        for obj in [self.tenant_bar, self.tenant_baz, self.user_foo,
+                    self.user_two, self.user_badguy]:
+            obj.setdefault('enabled', True)
+
+    def test_authenticate_no_metadata(self):
+        user = {
+            'id': 'no_meta',
+            'name': 'NO_META',
+            'password': 'no_meta2',
+            'enabled': True,
+        }
+        self.identity_api.create_user(user['id'], user)
+        self.identity_api.add_user_to_project(self.tenant_baz['id'],
+                                              user['id'])
+        user_ref, tenant_ref, metadata_ref = self.identity_api.authenticate(
+            user_id=user['id'],
+            tenant_id=self.tenant_baz['id'],
+            password=user['password'])
+        # NOTE(termie): the password field is left in user_foo to make
+        #               it easier to authenticate in tests, but should
+        #               not be returned by the api
+        user.pop('password')
+        self.assertEquals(metadata_ref, {})
+        self.assertDictEqual(user_ref, user)
+        self.assertDictEqual(tenant_ref, self.tenant_baz)
