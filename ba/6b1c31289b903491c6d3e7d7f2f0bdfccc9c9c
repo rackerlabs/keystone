@@ -1,0 +1,12 @@
+Change-Id: Iba6b1c31289b903491c6d3e7d7f2f0bdfccc9c9c
+Verified+2: Jenkins
+Code-Review+2: Joe Heck <heckj@mac.com>
+Approved+1: guang-yee
+Code-Review+2: guang-yee
+Verified+1: SmokeStack
+Code-Review+1: blk-u <blk@acm.org>
+Submitted-by: Jenkins
+Submitted-at: Fri, 11 Jan 2013 20:59:07 +0000
+Reviewed-on: https://review.openstack.org/19005
+Project: openstack/keystone
+Branch: refs/heads/master
