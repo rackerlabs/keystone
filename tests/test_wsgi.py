@@ -14,11 +14,20 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import os
+import ssl
+import urllib2
 import webob
 
 from keystone.common import wsgi
+from keystone.openstack.common import cfg
 from keystone.openstack.common import jsonutils
 from keystone import test
+
+CONF = cfg.CONF
+
+TEST_VAR_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__),
+                               'var'))
 
 
 class ApplicationTest(test.TestCase):
@@ -95,3 +104,64 @@ class TestWSGIServer(test.TestCase):
         self.assertNotEqual(0, server.port)
         server.kill()
         server.wait()
+
+    def test_app(self):
+        greetings = 'Hello, World!!!'
+
+        def hello_world(env, start_response):
+            if env['PATH_INFO'] != '/':
+                start_response('404 Not Found',
+                               [('Content-Type', 'text/plain')])
+                return ['Not Found\r\n']
+            start_response('200 OK', [('Content-Type', 'text/plain')])
+            return [greetings]
+
+        server = wsgi.Server(hello_world, host="127.0.0.1", port=0)
+        server.start()
+
+        response = urllib2.urlopen('http://127.0.0.1:%d/' % server.port)
+        self.assertEquals(greetings, response.read())
+
+        server.kill()
+
+    def test_app_using_ssl(self):
+        CONF.set_default("ssl_cert_file",
+                         os.path.join(TEST_VAR_DIR, 'certificate.crt'))
+        CONF.set_default("ssl_key_file",
+                         os.path.join(TEST_VAR_DIR, 'privatekey.key'))
+
+        greetings = 'Hello, World!!!'
+
+        @webob.dec.wsgify
+        def hello_world(req):
+            return greetings
+
+        server = wsgi.Server(hello_world, host="127.0.0.1", port=0)
+        server.start()
+
+        response = urllib2.urlopen('https://127.0.0.1:%d/' % server.port)
+        self.assertEquals(greetings, response.read())
+
+        server.kill()
+
+    def test_app_using_ipv6_and_ssl(self):
+        CONF.set_default("ssl_cert_file",
+                         os.path.join(TEST_VAR_DIR, 'certificate.crt'))
+        CONF.set_default("ssl_key_file",
+                         os.path.join(TEST_VAR_DIR, 'privatekey.key'))
+
+        greetings = 'Hello, World!!!'
+
+        @webob.dec.wsgify
+        def hello_world(req):
+            return greetings
+
+        server = wsgi.Server(hello_world,
+                             host="::1",
+                             port=0)
+        server.start()
+
+        response = urllib2.urlopen('https://[::1]:%d/' % server.port)
+        self.assertEquals(greetings, response.read())
+
+        server.kill()
