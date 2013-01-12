@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//nsc\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-12T16:28:36Z",
+      "side": 1,
+      "message": "i feel like indexing into the above tuple is a tiny bit of unnecessary indirection; can you just pass in self._host or self.host here?",
+      "revId": "9d2f7e352f47ec1dc402c561e81dbe6bd57af463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//nsg\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-12T16:28:36Z",
+      "side": 1,
+      "message": "can this be more specific? I\u0027m guessing this could hide a misconfiguration that *should* result in a backtrace?",
+      "revId": "9d2f7e352f47ec1dc402c561e81dbe6bd57af463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//nsA\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-12T16:28:36Z",
+      "side": 1,
+      "message": "should self.wait() be called here, too?",
+      "revId": "9d2f7e352f47ec1dc402c561e81dbe6bd57af463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//nsU\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-12T16:28:36Z",
+      "side": 1,
+      "message": "i assume you don\u0027t mean to suppress stuff like keyboardinterrupt?\n\n  except Exception:",
+      "revId": "9d2f7e352f47ec1dc402c561e81dbe6bd57af463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//nsE\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-12T16:28:36Z",
+      "side": 1,
+      "message": "awesome",
+      "revId": "9d2f7e352f47ec1dc402c561e81dbe6bd57af463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
