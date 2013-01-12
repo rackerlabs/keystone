@@ -20,8 +20,11 @@
 
 """Utility methods for working with WSGI servers."""
 
+import os
 import socket
+import ssl
 import sys
+import time
 
 import eventlet.wsgi
 import routes.middleware
@@ -32,8 +35,20 @@ import webob.exc
 from keystone.common import logging
 from keystone.common import utils
 from keystone import exception
+from keystone.openstack.common import cfg
 from keystone.openstack.common import jsonutils
 
+
+socket_opts = [
+    cfg.IntOpt('backlog', default=4096),
+    cfg.IntOpt('tcp_keepidle', default=600),
+    cfg.StrOpt('ssl_ca_file'),
+    cfg.StrOpt('ssl_cert_file'),
+    cfg.StrOpt('ssl_key_file'),
+]
+
+CONF = cfg.CONF
+CONF.register_opts(socket_opts)
 
 LOG = logging.getLogger(__name__)
 
@@ -69,14 +84,8 @@ class Server(object):
         self.do_ssl = False
         self.cert_required = False
 
-    def start(self, key=None, backlog=128):
-        """Run a WSGI server with the given application."""
-        LOG.debug(_('Starting %(arg0)s on %(host)s:%(port)s') %
-                  {'arg0': sys.argv[0],
-                   'host': self._host,
-                   'port': self._port})
-
-        bind_addr = (self._host, self._port)
+    def _get_socket(self, host, port, backlog):
+        bind_addr = (host, port)
         # TODO(dims): eventlet's green dns/socket module does not actually
         # support IPv6 in getaddrinfo(). We need to get around this in the
         # future or monitor upstream for a fix
@@ -90,9 +99,79 @@ class Server(object):
         except Exception:
             family = socket.AF_INET
 
-        self._socket = eventlet.listen(bind_addr,
-                                       family,
-                                       backlog=backlog)
+        cert_file = CONF.ssl_cert_file
+        key_file = CONF.ssl_key_file
+        ca_file = CONF.ssl_ca_file
+        use_ssl = cert_file or key_file
+
+        if cert_file and not os.path.exists(cert_file):
+            raise RuntimeError(_("Unable to find cert_file : %s") % cert_file)
+
+        if ca_file and not os.path.exists(ca_file):
+            raise RuntimeError(_("Unable to find ca_file : %s") % ca_file)
+
+        if key_file and not os.path.exists(key_file):
+            raise RuntimeError(_("Unable to find key_file : %s") % key_file)
+
+        if use_ssl and (not cert_file or not key_file):
+            raise RuntimeError(_("When running server in SSL mode, you must "
+                                 "specify both a cert_file and key_file "
+                                 "option value in your configuration file"))
+
+        def wrap_ssl(sock):
+            ssl_kwargs = {
+                'server_side': True,
+                'certfile': cert_file,
+                'keyfile': key_file,
+                'cert_reqs': ssl.CERT_NONE,
+            }
+
+            if CONF.ssl_ca_file:
+                ssl_kwargs['ca_certs'] = ca_file
+                ssl_kwargs['cert_reqs'] = ssl.CERT_REQUIRED
+
+            return ssl.wrap_socket(sock, **ssl_kwargs)
+
+        sock = None
+        retry_until = time.time() + 30
+        while not sock and time.time() < retry_until:
+            try:
+                sock = eventlet.listen(bind_addr,
+                                       backlog=backlog,
+                                       family=family)
+                if use_ssl:
+                    sock = wrap_ssl(sock)
+
+            except socket.error, err:
+                if err.args[0] != errno.EADDRINUSE:
+                    raise
+                eventlet.sleep(0.1)
+        if not sock:
+            raise RuntimeError(_("Could not bind to %(host)s:%(port)s "
+                               "after trying for 30 seconds") %
+                               {'host': host, 'port': port})
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # sockets can hang around forever without keepalive
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
+
+        # This option isn't available in the OS X version of eventlet
+        if hasattr(socket, 'TCP_KEEPIDLE'):
+            sock.setsockopt(socket.IPPROTO_TCP,
+                            socket.TCP_KEEPIDLE,
+                            CONF.tcp_keepidle)
+
+        return sock
+
+    def start(self, key=None, backlog=128):
+        """Run a WSGI server with the given application."""
+        LOG.debug(_('Starting %(arg0)s on %(host)s:%(port)s') %
+                  {'arg0': sys.argv[0],
+                   'host': self._host,
+                   'port': self._port})
+
+        self._socket = self._get_socket(self._host,
+                                        self._port,
+                                        backlog=backlog)
         if key:
             self.socket_info[key] = self._socket.getsockname()[0:2]
         # SSL is enabled
