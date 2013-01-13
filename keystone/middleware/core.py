@@ -14,6 +14,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import webob.dec
+import webob.exc
+
 from keystone.common import serializer
 from keystone.common import wsgi
 from keystone import config
@@ -164,3 +167,19 @@ class NormalizingFilter(wsgi.Middleware):
         # Rewrites path to root if no path is given.
         elif not request.environ['PATH_INFO']:
             request.environ['PATH_INFO'] = '/'
+
+
+class RequestBodySizeLimiter(wsgi.Middleware):
+    """Limit the size of an incoming request."""
+
+    def __init__(self, *args, **kwargs):
+        super(RequestBodySizeLimiter, self).__init__(*args, **kwargs)
+
+    @webob.dec.wsgify(RequestClass=wsgi.Request)
+    def __call__(self, req):
+        if (req.content_length > CONF.max_request_body_size or
+                len(req.body) > CONF.max_request_body_size):
+            msg = _("Request is too large.")
+            raise webob.exc.HTTPBadRequest(explanation=msg)
+        else:
+            return self.application
