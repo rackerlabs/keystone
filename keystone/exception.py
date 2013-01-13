@@ -191,3 +191,9 @@ class NotImplemented(Error):
     """The action you have requested has not been implemented."""
     code = 501
     title = 'Not Implemented'
+
+
+class RequestTooLarge(Error):
+    """Request is too large."""
+    code = 413
+    title = 'Request is too large.'
