@@ -143,4 +143,4 @@ class Role(Model):
     """
 
     required_keys = ('id', 'name')
-    optional_keys = tuple()
+    optional_keys = ('description')

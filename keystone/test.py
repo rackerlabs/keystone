@@ -230,17 +230,17 @@ class TestCase(NoModule, unittest.TestCase):
         # TODO(termie): doing something from json, probably based on Django's
         #               loaddata will be much preferred.
         if hasattr(self, 'identity_api'):
-            for tenant in fixtures.TENANTS:
-                rv = self.identity_api.create_tenant(tenant['id'], tenant)
-                setattr(self, 'tenant_%s' % tenant['id'], rv)
+            for project in fixtures.PROJECTS:
+                rv = self.identity_api.create_project(project['id'], project)
+                setattr(self, 'project_%s' % project['id'], rv)
 
             for user in fixtures.USERS:
                 user_copy = user.copy()
-                tenants = user_copy.pop('tenants')
+                projects = user_copy.pop('projects')
                 rv = self.identity_api.create_user(user['id'],
                                                    user_copy.copy())
-                for tenant_id in tenants:
-                    self.identity_api.add_user_to_tenant(tenant_id, user['id'])
+                for project_id in projects:
+                    self.identity_api.add_user_to_project(project_id, user['id'])
                 setattr(self, 'user_%s' % user['id'], user_copy)
 
             for role in fixtures.ROLES:
@@ -252,13 +252,13 @@ class TestCase(NoModule, unittest.TestCase):
                 # TODO(termie): these will probably end up in the model anyway,
                 #               so this may be futile
                 del metadata_ref['user_id']
-                del metadata_ref['tenant_id']
+                del metadata_ref['project_id']
                 rv = self.identity_api.create_metadata(metadata['user_id'],
-                                                       metadata['tenant_id'],
+                                                       metadata['project_id'],
                                                        metadata_ref)
                 setattr(self,
                         'metadata_%s%s' % (metadata['user_id'],
-                                           metadata['tenant_id']), rv)
+                                           metadata['project_id']), rv)
 
     def _paste_config(self, config):
         if not config.startswith('config:'):

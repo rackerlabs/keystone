@@ -327,6 +327,20 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableColumns('user_domain_metadata',
                                 ['user_id', 'domain_id', 'data'])
 
+    def test_upgrade_default_roles(self):
+        def count_member_roles(session):
+            query_string = "select count(*) as c from role where name='Member_of_Project'"
+            return session.execute(query_string).fetchone()['c']
+
+        self.upgrade(13)
+        session = self.Session()
+        self.assertEquals(0, count_member_roles(session))
+        self.upgrade(14)
+        self.assertEquals(1, count_member_roles(session))
+        self.downgrade(13)
+        self.assertEquals(0, count_member_roles(session))
+        session.close()
+
     def populate_user_table(self):
         for user in default_fixtures.USERS:
             extra = copy.deepcopy(user)
