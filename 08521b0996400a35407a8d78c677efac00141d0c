@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//m+c\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6565
+      },
+      "writtenOn": "2013-01-14T03:20:11Z",
+      "side": 1,
+      "message": "It will raise a \u0027AttributeError\u0027 if do not define assertValidErrorResponse.",
+      "parentUuid": "AAAAM3//onM\u003d",
+      "revId": "08521b0996400a35407a8d78c677efac00141d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//onE\u003d",
         "filename": "tests/test_v3_catalog.py",
         "patchSetId": 4
