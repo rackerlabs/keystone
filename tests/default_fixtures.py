@@ -17,7 +17,7 @@
 # NOTE(dolph): please try to avoid additional fixtures if possible; test suite
 #              performance may be negatively affected.
 
-TENANTS = [
+PROJECTS = [
     {
         'id': 'bar',
         'name': 'BAR',
@@ -35,35 +35,42 @@ USERS = [
         'id': 'foo',
         'name': 'FOO',
         'password': 'foo2',
-        'tenants': ['bar']
+        'projects': ['bar']
     }, {
         'id': 'two',
         'name': 'TWO',
         'password': 'two2',
         'email': 'two@example.com',
         'enabled': True,
-        'tenant_id': 'baz',
-        'tenants': ['baz'],
+        'project_id': 'baz',
+        'projects': ['baz'],
     }, {
         'id': 'badguy',
         'name': 'BadGuy',
         'password': 'bad',
         'email': 'bad@guy.com',
         'enabled': False,
-        'tenant_id': 'baz',
-        'tenants': ['baz'],
+        'project_id': 'baz',
+        'projects': ['baz'],
     }
 ]
 
 METADATA = [
-    {
-        'user_id': 'foo',
-        'tenant_id': 'bar',
-        'extra': 'extra',
-    }
+#    {
+#        'user_id': 'foo',
+#        'project_id': 'bar',
+#        'extra': 'extra',
+#    }
 ]
 
+member_role_uuid ="9fe2ff9ee4384b1894a90878d3e92bab"
+
 ROLES = [
+    {
+         'id':member_role_uuid,
+         'name':'Member_of_Project',
+         'description':'Default Role for Project Membership',
+    },
     {
         'id': 'keystone_admin',
         'name': 'Keystone Admin',
