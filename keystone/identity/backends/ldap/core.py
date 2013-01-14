@@ -644,8 +644,9 @@ class TenantApi(common_ldap.BaseLdap, ApiShimMixin):
 class UserRoleAssociation(object):
     """Role Grant model."""
 
-    def __init__(self, user_id=None, role_id=None, tenant_id=None,
+    def __init__(self, id=None, user_id=None, role_id=None, tenant_id=None,
                  *args, **kw):
+        self.id = id
         self.user_id = str(user_id)
         self.role_id = role_id
         self.tenant_id = str(tenant_id)
