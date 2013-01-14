@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//mag\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5638
+      },
+      "writtenOn": "2013-01-14T16:26:06Z",
+      "side": 1,
+      "message": "will fix",
+      "parentUuid": "AAAAM3//nsc\u003d",
+      "revId": "9d2f7e352f47ec1dc402c561e81dbe6bd57af463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//nsg\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2013-01-12T16:28:36Z",
       "side": 1,
       "message": "can this be more specific? I\u0027m guessing this could hide a misconfiguration that *should* result in a backtrace?",
+      "revId": "9d2f7e352f47ec1dc402c561e81dbe6bd57af463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//maY\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5638
+      },
+      "writtenOn": "2013-01-14T16:26:06Z",
+      "side": 1,
+      "message": "will fix",
+      "parentUuid": "AAAAM3//nsg\u003d",
       "revId": "9d2f7e352f47ec1dc402c561e81dbe6bd57af463",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//mbE\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5638
+      },
+      "writtenOn": "2013-01-14T16:26:06Z",
+      "side": 1,
+      "message": "In oslo and else where kill/stop is followed by wait in existing code. I\u0027d like to leave it that way",
+      "parentUuid": "AAAAM3//nsA\u003d",
+      "revId": "9d2f7e352f47ec1dc402c561e81dbe6bd57af463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//nsU\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 13
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//mZc\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5638
+      },
+      "writtenOn": "2013-01-14T16:26:06Z",
+      "side": 1,
+      "message": "will fix",
+      "parentUuid": "AAAAM3//nsU\u003d",
+      "revId": "9d2f7e352f47ec1dc402c561e81dbe6bd57af463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//nsE\u003d",
         "filename": "tests/test_wsgi.py",
         "patchSetId": 13
@@ -81,6 +153,24 @@
       "writtenOn": "2013-01-12T16:28:36Z",
       "side": 1,
       "message": "awesome",
+      "revId": "9d2f7e352f47ec1dc402c561e81dbe6bd57af463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//mbM\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5638
+      },
+      "writtenOn": "2013-01-14T16:26:06Z",
+      "side": 1,
+      "message": "Thanks.",
+      "parentUuid": "AAAAM3//nsE\u003d",
       "revId": "9d2f7e352f47ec1dc402c561e81dbe6bd57af463",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
