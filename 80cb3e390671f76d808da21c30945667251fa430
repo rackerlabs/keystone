@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//mao\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-14T16:16:45Z",
+      "side": 1,
+      "message": "for consistency with the other exception classes, rename this to:\n\n  StringLengthExceeded",
+      "revId": "80cb3e390671f76d808da21c30945667251fa430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//maw\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-14T16:16:45Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "80cb3e390671f76d808da21c30945667251fa430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//ma0\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-14T16:16:45Z",
+      "side": 1,
+      "message": "the url doesn\u0027t matter here, so\n\n  \u0027url\u0027: uuid.uuid4().hex",
+      "revId": "80cb3e390671f76d808da21c30945667251fa430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//ma4\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-14T16:16:45Z",
+      "side": 1,
+      "message": "remove; you\u0027re not testing for malformed endpoints",
+      "revId": "80cb3e390671f76d808da21c30945667251fa430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//mas\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-14T16:16:45Z",
+      "side": 1,
+      "message": "the url value doesn\u0027t matter here, so:\n\n  \u0027url\u0027: uuid.uuid4().hex",
+      "revId": "80cb3e390671f76d808da21c30945667251fa430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
