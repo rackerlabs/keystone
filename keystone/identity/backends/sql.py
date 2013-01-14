@@ -390,11 +390,15 @@ class Identity(sql.Base, identity.Driver):
         query = session.query(UserTenantMembership)
         query = query.filter_by(user_id=user_id)
         query = query.filter_by(tenant_id=tenant_id)
+        query2 = session.query(UserProjectGrant).filter_by(user_id=user_id,
+                                                           tenant_id=tenant_id)
         membership_ref = query.first()
-        if membership_ref is None:
+        role_ref = query2.first()
+        if membership_ref is None and role_ref is None:
             raise exception.NotFound('User not found in tenant')
         with session.begin():
             session.delete(membership_ref)
+            query2.delete()
             session.flush()
 
     def get_tenants(self):
@@ -408,7 +412,15 @@ class Identity(sql.Base, identity.Driver):
         query = session.query(UserTenantMembership)
         query = query.filter_by(user_id=user_id)
         membership_refs = query.all()
-        return [x.tenant_id for x in membership_refs]
+        tenant_set = set()
+        for x in membership_refs:
+            tenant_set.add(x.tenant_id)
+        q = session.query(UserProjectGrant).filter_by(user_id=user_id)
+        for row in q.all():
+            tenant_set.add(row['tenant_id'])
+        session.flush()
+        tenant_list = list(tenant_set)
+        return  tenant_list
 
     def get_roles_for_user_and_tenant(self, user_id, tenant_id):
         self.get_user(user_id)
