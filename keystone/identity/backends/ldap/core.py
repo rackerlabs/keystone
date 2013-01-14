@@ -449,10 +449,10 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
         super(UserApi, self).delete(id)
 
         for ref in self.role_api.list_global_roles_for_user(id):
-            self.role_api.rolegrant_delete(ref.id)
+            self.role_api.delete_user(ref.role_id, ref.user_id, ref.tenant_id)
 
         for ref in self.role_api.list_tenant_roles_for_user(id):
-            self.role_api.rolegrant_delete(ref.id)
+            self.role_api.delete_user(ref.role_id, ref.user_id, ref.tenant_id)
 
     def get_by_email(self, email):
         query = ('(%s=%s)' % (self.attribute_mapping['mail'],
@@ -683,30 +683,6 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
         self.attribute_ignore = (getattr(conf.ldap, 'role_attribute_ignore')
                                  or self.DEFAULT_ATTRIBUTE_IGNORE)
 
-    @staticmethod
-    def _create_ref(role_id, tenant_id, user_id):
-        role_id = '' if role_id is None else str(role_id)
-        tenant_id = '' if tenant_id is None else str(tenant_id)
-        user_id = '' if user_id is None else str(user_id)
-        return '%d-%d-%s%s%s' % (len(role_id),
-                                 len(tenant_id),
-                                 role_id,
-                                 tenant_id,
-                                 user_id)
-
-    @staticmethod
-    def _explode_ref(rolegrant):
-        a = rolegrant.split('-', 2)
-        len_role = int(a[0])
-        len_tenant = int(a[1])
-        role_id = a[2][:len_role]
-        role_id = None if len(role_id) == 0 else str(role_id)
-        tenant_id = a[2][len_role:len_tenant + len_role]
-        tenant_id = None if len(tenant_id) == 0 else str(tenant_id)
-        user_id = a[2][len_tenant + len_role:]
-        user_id = None if len(user_id) == 0 else str(user_id)
-        return role_id, tenant_id, user_id
-
     def _subrole_id_to_dn(self, role_id, tenant_id):
         if tenant_id is None:
             return self._id_to_dn(role_id)
@@ -761,7 +737,6 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                     raise inst
 
         return UserRoleAssociation(
-            id=self._create_ref(role_id, tenant_id, user_id),
             role_id=role_id,
             user_id=user_id,
             tenant_id=tenant_id)
@@ -822,7 +797,6 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                 user_id = self.user_api._dn_to_id(user_dn)
                 role_id = self._dn_to_id(role_dn)
                 res.append(UserRoleAssociation(
-                    id=self._create_ref(role_id, tenant_id, user_id),
                     user_id=user_id,
                     role_id=role_id,
                     tenant_id=tenant_id))
@@ -833,7 +807,6 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
         user_dn = self.user_api._id_to_dn(user_id)
         roles = self.get_all('(%s=%s)' % (self.member_attribute, user_dn))
         return [UserRoleAssociation(
-                id=self._create_ref(role.id, None, user_id),
                 role_id=role.id,
                 user_id=user_id) for role in roles]
 
@@ -854,7 +827,6 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
             for role_dn, _ in roles:
                 role_id = self._dn_to_id(role_dn)
                 res.append(UserRoleAssociation(
-                    id=self._create_ref(role_id, tenant_id, user_id),
                     user_id=user_id,
                     role_id=role_id,
                     tenant_id=tenant_id))
@@ -871,60 +843,10 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                 role_id = self._dn_to_id(role_dn)
                 tenant_id = ldap.dn.str2dn(role_dn)[1][0][1]
                 res.append(UserRoleAssociation(
-                    id=self._create_ref(role_id, tenant_id, user_id),
                     user_id=user_id,
                     role_id=role_id,
                     tenant_id=tenant_id))
         return res
-
-    def rolegrant_get(self, id):
-        role_id, tenant_id, user_id = self._explode_ref(id)
-        user_dn = self.user_api._id_to_dn(user_id)
-        role_dn = self._subrole_id_to_dn(role_id, tenant_id)
-        query = '(&(objectClass=%s)(%s=%s))' % (self.object_class,
-                                                self.member_attribute,
-                                                user_dn)
-        conn = self.get_connection()
-        try:
-            res = conn.search_s(role_dn, ldap.SCOPE_BASE, query)
-        except ldap.NO_SUCH_OBJECT:
-            return None
-        if len(res) == 0:
-            return None
-        return UserRoleAssociation(id=id,
-                                   role_id=role_id,
-                                   tenant_id=tenant_id,
-                                   user_id=user_id)
-
-    def rolegrant_delete(self, id):
-        role_id, tenant_id, user_id = self._explode_ref(id)
-        user_dn = self.user_api._id_to_dn(user_id)
-        role_dn = self._subrole_id_to_dn(role_id, tenant_id)
-        conn = self.get_connection()
-        try:
-            conn.modify_s(role_dn, [(ldap.MOD_DELETE, '', [user_dn])])
-        except ldap.NO_SUCH_ATTRIBUTE:
-            raise exception.Error("No such user in role")
-
-    def rolegrant_get_page(self, marker, limit, user_id, tenant_id):
-        all_roles = []
-        if tenant_id is None:
-            all_roles += self.list_global_roles_for_user(user_id)
-        else:
-            for tenant in self.tenant_api.get_all():
-                all_roles += self.list_tenant_roles_for_user(user_id,
-                                                             tenant['id'])
-        return self._get_page(marker, limit, all_roles)
-
-    def rolegrant_get_page_markers(self, user_id, tenant_id, marker, limit):
-        all_roles = []
-        if tenant_id is None:
-            all_roles = self.list_global_roles_for_user(user_id)
-        else:
-            for tenant in self.tenant_api.get_all():
-                all_roles += self.list_tenant_roles_for_user(user_id,
-                                                             tenant['id'])
-        return self._get_page_markers(marker, limit, all_roles)
 
     def get_by_service_get_page(self, service_id, marker, limit):
         all_roles = self.get_by_service(service_id)
@@ -959,7 +881,6 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                         tenant_id = self.tenant_api._dn_to_id(tenant_dn)
                 role_id = self._dn_to_id(role_dn)
                 res.append(UserRoleAssociation(
-                    id=self._create_ref(role_id, tenant_id, user_id),
                     user_id=user_id,
                     role_id=role_id,
                     tenant_id=tenant_id))
@@ -978,50 +899,6 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                     raise inst
         except ldap.NO_SUCH_OBJECT:
             pass
-
-    def rolegrant_get_by_ids(self, user_id, role_id, tenant_id):
-        conn = self.get_connection()
-        user_dn = self.user_api._id_to_dn(user_id)
-        query = '(&(objectClass=%s)(%s=%s))' % (self.object_class,
-                                                self.member_attribute,
-                                                user_dn)
-
-        if tenant_id is not None:
-            tenant_dn = self.tenant_api._id_to_dn(tenant_id)
-            try:
-                roles = conn.search_s(tenant_dn, ldap.SCOPE_ONELEVEL, query)
-            except ldap.NO_SUCH_OBJECT:
-                return None
-
-            if len(roles) == 0:
-                return None
-
-            for role_dn, _ in roles:
-                ldap_role_id = self._dn_to_id(role_dn)
-                if role_id == ldap_role_id:
-                    res = UserRoleAssociation(
-                        id=self._create_ref(role_id, tenant_id, user_id),
-                        user_id=user_id,
-                        role_id=role_id,
-                        tenant_id=tenant_id)
-                    return res
-        else:
-            try:
-                roles = self.get_all('(%s=%s)' % (self.member_attribute,
-                                                  user_dn))
-            except ldap.NO_SUCH_OBJECT:
-                return None
-
-            if len(roles) == 0:
-                return None
-
-            for role in roles:
-                if role.id == role_id:
-                    return UserRoleAssociation(
-                        id=self._create_ref(role.id, None, user_id),
-                        role_id=role.id,
-                        user_id=user_id)
-        return None
 
     def update(self, role_id, role):
         if role['id'] != role_id:
