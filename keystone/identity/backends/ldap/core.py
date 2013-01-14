@@ -902,7 +902,8 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
         conn = self.get_connection()
         try:
-            conn.modify_s(role_dn, [(ldap.MOD_DELETE, '', [user_dn])])
+            conn.modify_s(role_dn, [(ldap.MOD_DELETE, self.member_attribute,
+                                     [user_dn])])
         except ldap.NO_SUCH_ATTRIBUTE:
             raise exception.Error("No such user in role")
 
