@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//l/Y\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-14T19:18:00Z",
+      "side": 1,
+      "message": "except socket.gaierror **as e**:",
+      "revId": "4819a6cb7086759dbc23b52448ab405c48155b2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//l/c\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-14T19:18:00Z",
+      "side": 1,
+      "message": "nice addition",
+      "revId": "4819a6cb7086759dbc23b52448ab405c48155b2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
