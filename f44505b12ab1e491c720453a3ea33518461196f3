@@ -121,6 +121,24 @@
       "revId": "f44505b12ab1e491c720453a3ea33518461196f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//lVI\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-15T01:13:33Z",
+      "side": 1,
+      "message": "Going to remove this change.  It won\u0027t affect the normal running of the unit tests, and will give us the data to fix the real problem in an additional commit.",
+      "parentUuid": "AAAAM3//os8\u003d",
+      "revId": "f44505b12ab1e491c720453a3ea33518461196f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
