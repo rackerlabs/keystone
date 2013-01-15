@@ -348,15 +348,15 @@ class LdapWrapper(object):
                            if kind != 'userPassword'
                            else ['****'])
                           for kind, values in ldap_attrs]
-            LOG.debug(_('LDAP add: dn=%s, attrs=%s', dn, sane_attrs))
+            LOG.debug(_('LDAP add: dn=%s, attrs=%s'), dn, sane_attrs)
         return self.conn.add_s(dn, ldap_attrs)
 
     def search_s(self, dn, scope, query):
         if LOG.isEnabledFor(logging.DEBUG):
-            LOG.debug(_('LDAP search: dn=%s, scope=%s, query=%s',
+            LOG.debug(_('LDAP search: dn=%s, scope=%s, query=%s'),
                       dn,
                       scope,
-                      query))
+                      query)
         res = self.conn.search_s(dn, scope, query)
 
         o = []
