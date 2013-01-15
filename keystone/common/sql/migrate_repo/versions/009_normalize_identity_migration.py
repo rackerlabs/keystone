@@ -41,17 +41,16 @@ def downgrade_user_table(meta, migrate_engine):
     session = maker()
     user_data = []
     for a_user in session.query(user_table):
-        id, name, extra, password, enabled = a_user
-        extra_parsed = json.loads(extra)
-        extra_parsed['password'] = password
-        extra_parsed['enabled'] = "%r" % enabled
-        user_data.append((password,
-                          json.dumps(extra_parsed),
-                          is_enabled(enabled), id))
+        extra_parsed = json.loads(a_user.extra)
+        extra_parsed['password'] = a_user.password
+        extra_parsed['enabled'] = "%r" % a_user.enabled
+        user_record = {'id': a_user.id,
+                       'extra':  json.dumps(extra_parsed)}
+        user_data.append(user_record)
     for user in user_data:
         session.execute("update user "
-                        "set extra = '%s' "
-                        "where id = '%s'" %
+                        "set extra = '%(extra)s' "
+                        "where id = '%(id)s'" %
                         user)
 
     session.commit()
@@ -63,17 +62,16 @@ def downgrade_tenant_table(meta, migrate_engine):
     session = maker()
     tenant_data = []
     for a_tenant in session.query(tenant_table):
-        id, name, extra, password, enabled = a_tenant
-        extra_parsed = json.loads(extra)
-        extra_parsed['description'] = description
-        extra_parsed['enabled'] = "%r" % enabled
-        tenant_data.append((password,
-                            json.dumps(extra_parsed),
-                            is_enabled(enabled), id))
+        extra_parsed = json.loads(a_tenant.extra)
+        extra_parsed['description'] = a_tenant.description
+        extra_parsed['enabled'] = "%r" % a_tenant.enabled
+        tenant_record = {'id': a_tenant.id,
+                         'extra': json.dumps(extra_parsed)}
+        tenant_data.append(tenant_record)
     for tenant in tenant_data:
         session.execute("update tenant "
-                        "set extra = '%s' "
-                        "where id = '%s'" %
+                        "set extra = '%(extra)s' "
+                        "where id = '%(id)s'" %
                         tenant)
 
     session.commit()
