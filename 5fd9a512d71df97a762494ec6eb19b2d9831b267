@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//iis\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/008_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T19:32:06Z",
+      "side": 1,
+      "message": "remove (no longer applies)",
+      "revId": "5fd9a512d71df97a762494ec6eb19b2d9831b267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//iio\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/008_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T19:32:06Z",
+      "side": 1,
+      "message": "I don\u0027t know if it would ever produce different output on a different engine, but sqlalchemy-migrate can handle this for you:\n\n  orig_user_table \u003d Table(\u0027user\u0027, meta, autoload\u003dTrue)\n  orig_user_table.rename(\u0027orig_user\u0027)",
+      "revId": "5fd9a512d71df97a762494ec6eb19b2d9831b267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//iiQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/008_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T19:32:06Z",
+      "side": 1,
+      "message": "and then you don\u0027t need to reload it here",
+      "revId": "5fd9a512d71df97a762494ec6eb19b2d9831b267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//iiU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/008_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T19:32:06Z",
+      "side": 1,
+      "message": "and then:\n\n  orig_user_table.drop()",
+      "revId": "5fd9a512d71df97a762494ec6eb19b2d9831b267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//iiA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/008_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T19:32:06Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "5fd9a512d71df97a762494ec6eb19b2d9831b267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
