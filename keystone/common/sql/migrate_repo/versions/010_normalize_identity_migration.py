@@ -32,10 +32,8 @@ def is_enabled(enabled):
     return bool(enabled)
 
 
-def downgrade_user_table(meta, migrate_engine):
+def downgrade_user_table(meta, migrate_engine, session):
     user_table = Table('user', meta, autoload=True)
-    maker = sessionmaker(bind=migrate_engine)
-    session = maker()
     for user in session.query(user_table).all():
         extra = json.loads(user.extra)
         extra['password'] = user.password
@@ -43,13 +41,10 @@ def downgrade_user_table(meta, migrate_engine):
         session.execute(
             'UPDATE `user` SET `extra`=:extra WHERE `id`=:id',
             {'id': user.id, 'extra': json.dumps(extra)})
-    session.commit()
 
 
-def downgrade_tenant_table(meta, migrate_engine):
+def downgrade_tenant_table(meta, migrate_engine, session):
     tenant_table = Table('tenant', meta, autoload=True)
-    maker = sessionmaker(bind=migrate_engine)
-    session = maker()
     for tenant in session.query(tenant_table).all():
         extra = json.loads(tenant.extra)
         extra['description'] = tenant.description
@@ -57,14 +52,10 @@ def downgrade_tenant_table(meta, migrate_engine):
         session.execute(
             'UPDATE `tenant` SET `extra`=:extra WHERE `id`=:id',
             {'id': tenant.id, 'extra': json.dumps(extra)})
-    session.commit()
 
 
-def upgrade_user_table(meta, migrate_engine):
+def upgrade_user_table(meta, migrate_engine, session):
     user_table = Table('user', meta, autoload=True)
-    maker = sessionmaker(bind=migrate_engine)
-    session = maker()
-
     for user in session.query(user_table).all():
         extra = json.loads(user.extra)
         password = extra.pop('password', None)
@@ -77,14 +68,10 @@ def upgrade_user_table(meta, migrate_engine):
                 'password': password,
                 'enabled': is_enabled(enabled),
                 'extra': json.dumps(extra)})
-    session.commit()
 
 
-def upgrade_tenant_table(meta, migrate_engine):
+def upgrade_tenant_table(meta, migrate_engine, session):
     tenant_table = Table('tenant', meta, autoload=True)
-
-    maker = sessionmaker(bind=migrate_engine)
-    session = maker()
     for tenant in session.query(tenant_table):
         extra = json.loads(tenant.extra)
         description = extra.pop('description', None)
@@ -97,18 +84,23 @@ def upgrade_tenant_table(meta, migrate_engine):
                 'description': description,
                 'enabled': is_enabled(enabled),
                 'extra': json.dumps(extra)})
-    session.commit()
 
 
 def upgrade(migrate_engine):
     meta = MetaData()
     meta.bind = migrate_engine
-    upgrade_user_table(meta, migrate_engine)
-    upgrade_tenant_table(meta, migrate_engine)
+    session = sessionmaker(bind=migrate_engine)()
+    upgrade_user_table(meta, migrate_engine, session)
+    upgrade_tenant_table(meta, migrate_engine, session)
+    session.commit()
+    session.close()
 
 
 def downgrade(migrate_engine):
     meta = MetaData()
     meta.bind = migrate_engine
-    downgrade_user_table(meta, migrate_engine)
-    downgrade_tenant_table(meta, migrate_engine)
+    session = sessionmaker(bind=migrate_engine)()
+    downgrade_user_table(meta, migrate_engine, session)
+    downgrade_tenant_table(meta, migrate_engine, session)
+    session.commit()
+    session.close()

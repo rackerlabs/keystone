@@ -106,7 +106,9 @@ class Identity(identity.Driver):
     def get_projects(self):
         return self.project.get_all()
 
-    def get_project_by_name(self, tenant_name):
+    def get_project_by_name(self, tenant_name, domain_id):
+        # TODO(henry-nash): Use domain_id once domains are implemented
+        # in LDAP backend
         try:
             return self.project.get_by_name(tenant_name)
         except exception.NotFound:
@@ -124,7 +126,9 @@ class Identity(identity.Driver):
     def list_users(self):
         return self.user.get_all()
 
-    def get_user_by_name(self, user_name):
+    def get_user_by_name(self, user_name, domain_id):
+        # TODO(henry-nash): Use domain_id once domains are implemented
+        # in LDAP backend
         try:
             return identity.filter_user(self.user.get_by_name(user_name))
         except exception.NotFound:
