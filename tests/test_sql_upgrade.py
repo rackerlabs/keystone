@@ -121,12 +121,12 @@ class SqlUpgradeTests(test.TestCase):
 
     def test_upgrade_7_to_9(self):
         self.upgrade(7)
-        self.populate_user_table()
+        self.populate_user_table(with_domain=True)
         self.populate_tenant_table()
         self.upgrade(9)
         self.assertTableColumns("user",
-                                ["id", "name", "extra", "password",
-                                 "enabled"])
+                                ["id", "name", "extra", "domain_id",
+                                 "password", "enabled"])
         self.assertTableColumns("tenant",
                                 ["id", "name", "extra", "description",
                                  "enabled"])
@@ -327,15 +327,19 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableColumns('user_domain_metadata',
                                 ['user_id', 'domain_id', 'data'])
 
-    def populate_user_table(self):
+    def populate_user_table(self, with_domain=False):
         for user in default_fixtures.USERS:
             extra = copy.deepcopy(user)
             extra.pop('id')
             extra.pop('name')
-            self.engine.execute("insert into user values ('%s', '%s', '%s')"
-                                % (user['id'],
-                                   user['name'],
-                                   json.dumps(extra)))
+            if with_domain:
+                self.engine.execute(
+                    "insert into user values ('%s', '%s', '%s', '%s')" %
+                    (user['id'], user['name'], None, json.dumps(extra)))
+            else:
+                self.engine.execute(
+                    "insert into user values ('%s', '%s', '%s')" %
+                    (user['id'], user['name'], json.dumps(extra)))
 
     def populate_tenant_table(self):
         for tenant in default_fixtures.TENANTS:

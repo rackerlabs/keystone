@@ -504,17 +504,79 @@ class IdentityTests(object):
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
-                    'password': 'secret', 'enabled': True}
+                    'password': uuid.uuid4().hex, 'enabled': True}
         self.identity_api.create_user(new_user['id'], new_user)
         self.identity_api.add_user_to_group(new_user['id'],
                                             new_group['id'])
+
         roles_ref = self.identity_api.list_grants(
             group_id=new_group['id'],
             domain_id=new_domain['id'])
         self.assertEquals(len(roles_ref), 0)
+
         self.identity_api.create_grant(group_id=new_group['id'],
                                        domain_id=new_domain['id'],
                                        role_id='member')
+
+        roles_ref = self.identity_api.list_grants(
+            group_id=new_group['id'],
+            domain_id=new_domain['id'])
+        self.assertDictEqual(roles_ref[0], self.role_member)
+
+        self.identity_api.delete_grant(group_id=new_group['id'],
+                                       domain_id=new_domain['id'],
+                                       role_id='member')
+        roles_ref = self.identity_api.list_grants(
+            group_id=new_group['id'],
+            domain_id=new_domain['id'])
+        self.assertEquals(len(roles_ref), 0)
+        self.assertRaises(exception.NotFound,
+                          self.identity_api.delete_grant,
+                          group_id=new_group['id'],
+                          domain_id=new_domain['id'],
+                          role_id='member')
+
+    def test_get_and_remove_correct_role_grant_from_a_mix(self):
+        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(new_domain['id'], new_domain)
+        new_project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                       'domain_id': new_domain['id']}
+        self.identity_api.create_project(new_project['id'], new_project)
+        new_group = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+                     'name': uuid.uuid4().hex}
+        self.identity_api.create_group(new_group['id'], new_group)
+        new_group2 = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+                      'name': uuid.uuid4().hex}
+        self.identity_api.create_group(new_group2['id'], new_group2)
+        new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
+                    'password': uuid.uuid4().hex, 'enabled': True}
+        self.identity_api.create_user(new_user['id'], new_user)
+        new_user2 = {'id': uuid.uuid4().hex, 'name': 'new_user2',
+                     'password': uuid.uuid4().hex, 'enabled': True}
+        self.identity_api.create_user(new_user2['id'], new_user2)
+        self.identity_api.add_user_to_group(new_user['id'],
+                                            new_group['id'])
+        # First check we have no grants
+        roles_ref = self.identity_api.list_grants(
+            group_id=new_group['id'],
+            domain_id=new_domain['id'])
+        self.assertEquals(len(roles_ref), 0)
+        # Now add the grant we are going to test for, and some others as
+        # well just to make sure we get back the right one
+        self.identity_api.create_grant(group_id=new_group['id'],
+                                       domain_id=new_domain['id'],
+                                       role_id='member')
+
+        self.identity_api.create_grant(group_id=new_group2['id'],
+                                       domain_id=new_domain['id'],
+                                       role_id='keystone_admin')
+        self.identity_api.create_grant(user_id=new_user2['id'],
+                                       domain_id=new_domain['id'],
+                                       role_id='keystone_admin')
+        self.identity_api.create_grant(group_id=new_group['id'],
+                                       project_id=new_project['id'],
+                                       role_id='keystone_admin')
+
         roles_ref = self.identity_api.list_grants(
             group_id=new_group['id'],
             domain_id=new_domain['id'])
@@ -1001,6 +1063,42 @@ class IdentityTests(object):
         self.assertRaises(exception.GroupNotFound,
                           self.identity_api.get_group,
                           group['id'])
+
+    def test_project_crud(self):
+        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_project(project['id'], project)
+        project_ref = self.identity_api.get_project(project['id'])
+        project_ref_dict = dict((x, project_ref[x]) for x in project_ref)
+        self.assertDictEqual(project_ref_dict, project)
+
+        project['name'] = uuid.uuid4().hex
+        self.identity_api.update_project(project['id'], project)
+        project_ref = self.identity_api.get_project(project['id'])
+        project_ref_dict = dict((x, project_ref[x]) for x in project_ref)
+        self.assertDictEqual(project_ref_dict, project)
+
+        self.identity_api.delete_project(project['id'])
+        self.assertRaises(exception.TenantNotFound,
+                          self.identity_api.get_project,
+                          project['id'])
+
+    def test_domain_crud(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(domain['id'], domain)
+        domain_ref = self.identity_api.get_domain(domain['id'])
+        domain_ref_dict = dict((x, domain_ref[x]) for x in domain_ref)
+        self.assertDictEqual(domain_ref_dict, domain)
+
+        domain['name'] = uuid.uuid4().hex
+        self.identity_api.update_domain(domain['id'], domain)
+        domain_ref = self.identity_api.get_domain(domain['id'])
+        domain_ref_dict = dict((x, domain_ref[x]) for x in domain_ref)
+        self.assertDictEqual(domain_ref_dict, domain)
+
+        self.identity_api.delete_domain(domain['id'])
+        self.assertRaises(exception.DomainNotFound,
+                          self.identity_api.get_domain,
+                          domain['id'])
 
 
 class TokenTests(object):
