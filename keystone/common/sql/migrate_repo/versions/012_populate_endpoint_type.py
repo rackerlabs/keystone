@@ -55,6 +55,7 @@ def upgrade(migrate_engine):
                     ', '.join([':%s' % k for k in endpoint.keys()])),
                 endpoint)
     session.commit()
+    session.close()
 
 
 def downgrade(migrate_engine):
@@ -95,3 +96,4 @@ def downgrade(migrate_engine):
                     legacy_table.name),
                 {'extra': json.dumps(extra), 'id': legacy_ref.id})
     session.commit()
+    session.close()
