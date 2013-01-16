@@ -409,6 +409,32 @@ class DomainV3(controller.V3Controller):
         self._require_matching_id(domain_id, domain)
 
         ref = self.identity_api.update_domain(context, domain_id, domain)
+
+        # disable owned users & projects when the API user specifically set
+        #     enabled=False
+        if not domain.get('enabled', True):
+            for user in self.identity_api.list_users(context):
+                # TODO(dolph): disable domain-scoped tokens
+                """
+                self.token_api.revoke_tokens(
+                    context,
+                    user_id=user['id'],
+                    domain_id=domain_id)
+                """
+                # revoke all tokens for users owned by this domain
+                if user.get('domain_id') == domain_id:
+                    self.token_api.revoke_tokens(
+                        context,
+                        user_id=user['id'])
+                else:
+                    # only revoke tokens on projects owned by this domain
+                    for project in self.identity_api.list_projects(context):
+                        if project.get('domain_id') == domain_id:
+                            self.token_api.revoke_tokens(
+                                context,
+                                user_id=user['id'],
+                                tenant_id=project['id'])
+
         return {'domain': ref}
 
     @controller.protected
@@ -477,6 +503,13 @@ class UserV3(controller.V3Controller):
         self._require_matching_id(user_id, user)
 
         ref = self.identity_api.update_user(context, user_id, user)
+
+        if user.get('password') or not user.get('enabled', True):
+            # revoke all tokens owned by this user
+            self.token_api.revoke_tokens(
+                context,
+                user_id=user['id'])
+
         return {'user': ref}
 
     @controller.protected
