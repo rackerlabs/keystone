@@ -65,6 +65,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_delete_user_with_tenant_association(self):
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
+                'domain_id': uuid.uuid4().hex,
                 'password': uuid.uuid4().hex}
         self.identity_api.create_user(user['id'], user)
         self.identity_api.add_user_to_tenant(self.tenant_bar['id'],
@@ -77,6 +78,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_create_null_user_name(self):
         user = {'id': uuid.uuid4().hex,
                 'name': None,
+                'domain_id': uuid.uuid4().hex,
                 'password': uuid.uuid4().hex}
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
@@ -91,7 +93,8 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
 
     def test_create_null_tenant_name(self):
         tenant = {'id': uuid.uuid4().hex,
-                  'name': None}
+                  'name': None,
+                  'domain_id': uuid.uuid4().hex}
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_tenant,
                           tenant['id'],
@@ -117,6 +120,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_delete_tenant_with_user_association(self):
         user = {'id': 'fake',
                 'name': 'fakeuser',
+                'domain_id': 'fakedomain',
                 'password': 'passwd'}
         self.identity_api.create_user('fake', user)
         self.identity_api.add_user_to_tenant(self.tenant_bar['id'],
@@ -128,6 +132,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_delete_user_with_metadata(self):
         user = {'id': 'fake',
                 'name': 'fakeuser',
+                'domain_id': 'fakedomain',
                 'password': 'passwd'}
         self.identity_api.create_user('fake', user)
         self.identity_api.create_metadata(user['id'],
@@ -142,6 +147,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_delete_tenant_with_metadata(self):
         user = {'id': 'fake',
                 'name': 'fakeuser',
+                'domain_id': 'fakedomain',
                 'password': 'passwd'}
         self.identity_api.create_user('fake', user)
         self.identity_api.create_metadata(user['id'],
@@ -169,6 +175,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         tenant = {
             'id': tenant_id,
             'name': uuid.uuid4().hex,
+            'domain_id': uuid.uuid4().hex,
             arbitrary_key: arbitrary_value}
         ref = self.identity_api.create_tenant(tenant_id, tenant)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
@@ -195,6 +202,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
+            'domain_id': uuid.uuid4().hex,
             'password': uuid.uuid4().hex,
             arbitrary_key: arbitrary_value}
         ref = self.identity_api.create_user(user_id, user)
