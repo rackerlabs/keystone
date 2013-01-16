@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//ixM\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1032
+      },
+      "writtenOn": "2013-01-16T17:26:35Z",
+      "side": 1,
+      "message": "Can this be discovered from keystone.common.sql.migration? Instead of hardcoded?",
+      "revId": "58b49a45dbe1d11eb5014a45f23cef4c33880093",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
