@@ -66,6 +66,7 @@ def upgrade_user_table(meta, migrate_engine):
     session = maker()
 
     for user in session.query(user_table).all():
+        print user.extra
         extra = json.loads(user.extra)
         password = extra.pop('password', None)
         enabled = extra.pop('enabled', True)
