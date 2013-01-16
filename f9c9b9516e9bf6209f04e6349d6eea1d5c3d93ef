@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//jok\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T02:33:51Z",
+      "side": 1,
+      "message": "super\u0027s tearDown should come at the end of this method so that things are torn down in the reverse order they are setUp",
+      "revId": "f9c9b9516e9bf6209f04e6349d6eea1d5c3d93ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
