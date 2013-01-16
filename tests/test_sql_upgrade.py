@@ -66,6 +66,13 @@ class SqlUpgradeTests(test.TestCase):
         version = migration.db_version()
         self.assertEqual(version, 0, "DB is at version 0")
 
+    def test_two_steps_forward_one_step_back(self):
+        """You should be able to cleanly undo a re-apply all migrations."""
+        for x in range(1, self.max_version + 1):
+            self.upgrade(x)
+            self.downgrade(x - 1)
+            self.upgrade(x)
+
     def assertTableColumns(self, table_name, expected_cols):
         """Asserts that the table contains the expected set of columns."""
         table = self.select_table(table_name)
