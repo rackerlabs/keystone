@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//iJg\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T23:20:48Z",
+      "side": 1,
+      "message": "I think it\u0027s semantically what we want in this case. Because it also raises exceptions when multiple matches are unexpectedly returned, it also prevents us from suppressing our own mistakes when we implement TopLevelDomains or whatever, and suddenly Domain names *aren\u0027t* unique ;)\n\nFor get by primary key, you can actually just do session.query(TableClass).get(some_id) which can be vastly superior because it prevents unnecessarily reloading objects from the database. I\u0027m not aware that we use it at all :(",
+      "parentUuid": "AAAAM3//ick\u003d",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//i38\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 1
@@ -206,6 +224,24 @@
       "side": 1,
       "message": "So I was not intending this to be part of the public api (so maybe that\u0027s part to of the problem, it shouldn\u0027t be here as a protected controller method).  It\u0027s for ease of use from the token controller to look up the id of a domain if the token specifies a domain name (the equivalent of the existing get_tenant_by_name()).  Of course, we could funnel that through list_domain, but thought it was better to have a direct call.",
       "parentUuid": "AAAAM3//i30\u003d",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//iJc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T23:20:48Z",
+      "side": 1,
+      "message": "I\u0027d make it unprotected and start the method name with an underscore then, to indicate that it\u0027s private and shouldn\u0027t be mapped to a router. I guarantee that someone will try, at some point.",
+      "parentUuid": "AAAAM3//ifg\u003d",
       "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
