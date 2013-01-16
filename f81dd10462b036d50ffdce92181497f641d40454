@@ -16,6 +16,24 @@
       "revId": "f81dd10462b036d50ffdce92181497f641d40454",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//iTs\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-01-16T21:21:04Z",
+      "side": 1,
+      "message": "It\u0027s the id of U.R.A. object. It\u0027s being used at least in UserApi.delete.",
+      "parentUuid": "AAAAM3//ibg\u003d",
+      "revId": "f81dd10462b036d50ffdce92181497f641d40454",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
