@@ -119,11 +119,11 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableExists('policy')
         self.assertTableColumns('policy', ['id', 'type', 'blob', 'extra'])
 
-    def test_upgrade_7_to_9(self):
-        self.upgrade(7)
+    def test_upgrade_8_to_10(self):
+        self.upgrade(8)
         self.populate_user_table()
         self.populate_tenant_table()
-        self.upgrade(9)
+        self.upgrade(10)
         self.assertTableColumns("user",
                                 ["id", "name", "extra", "password",
                                  "enabled"])
@@ -149,15 +149,15 @@ class SqlUpgradeTests(test.TestCase):
         self.assertEqual(a_tenant.description, 'description')
         session.commit()
 
-    def test_downgrade_9_to_7(self):
-        self.upgrade(7)
+    def test_downgrade_10_to_8(self):
+        self.upgrade(8)
         self.populate_user_table()
         self.populate_tenant_table()
-        self.upgrade(9)
-        self.downgrade(7)
+        self.upgrade(10)
+        self.downgrade(8)
 
-    def test_upgrade_9_to_12(self):
-        self.upgrade(9)
+    def test_upgrade_10_to_13(self):
+        self.upgrade(10)
 
         service_extra = {
             'name': uuid.uuid4().hex,
@@ -184,7 +184,7 @@ class SqlUpgradeTests(test.TestCase):
         self.insert_dict(session, 'endpoint', endpoint)
         session.commit()
 
-        self.upgrade(12)
+        self.upgrade(13)
 
         self.assertTableColumns(
             'service',
@@ -212,24 +212,24 @@ class SqlUpgradeTests(test.TestCase):
             self.assertEqual(ref.url, endpoint_extra['%surl' % interface])
             self.assertEqual(ref.extra, '{}')
 
-    def test_upgrade_12_to_13(self):
-        self.upgrade(12)
+    def test_upgrade_13_to_14(self):
         self.upgrade(13)
+        self.upgrade(14)
         self.assertTableExists('group')
         self.assertTableExists('group_project_metadata')
         self.assertTableExists('group_domain_metadata')
         self.assertTableExists('user_group_membership')
 
-    def test_downgrade_13_to_12(self):
-        self.upgrade(13)
-        self.downgrade(12)
+    def test_downgrade_14_to_13(self):
+        self.upgrade(14)
+        self.downgrade(13)
         self.assertTableDoesNotExist('group')
         self.assertTableDoesNotExist('group_project_metadata')
         self.assertTableDoesNotExist('group_domain_metadata')
         self.assertTableDoesNotExist('user_group_membership')
 
-    def test_downgrade_12_to_9(self):
-        self.upgrade(12)
+    def test_downgrade_13_to_10(self):
+        self.upgrade(13)
 
         service_extra = {
             'name': uuid.uuid4().hex,
@@ -271,7 +271,7 @@ class SqlUpgradeTests(test.TestCase):
             self.insert_dict(session, 'endpoint', endpoint)
         session.commit()
 
-        self.downgrade(8)
+        self.downgrade(9)
 
         self.assertTableColumns(
             'service',

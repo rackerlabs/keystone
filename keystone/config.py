@@ -138,6 +138,9 @@ register_str('auth_admin_prefix', default='')
 register_str('policy_file', default='policy.json')
 register_str('policy_default_rule', default=None)
 
+# identity
+register_str('default_domain_id', group='identity', default='default')
+
 #ssl options
 register_bool('enable', group='ssl', default=False)
 register_str('certfile', group='ssl', default=None)
