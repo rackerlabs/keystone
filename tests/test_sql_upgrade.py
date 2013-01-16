@@ -35,12 +35,13 @@ import sqlalchemy
 from keystone.common import sql
 from keystone.common.sql import migration
 from keystone import config
+from keystone import exception
 from keystone import test
 
-import default_fixtures
-
-
 CONF = config.CONF
+DEFAULT_DOMAIN_ID = CONF['identity']['default_domain_id']
+
+import default_fixtures
 
 
 class SqlUpgradeTests(test.TestCase):
@@ -56,22 +57,27 @@ class SqlUpgradeTests(test.TestCase):
         self.Session = base.get_sessionmaker(
             engine=self.engine,
             autocommit=False)
-        self.metadata = sqlalchemy.MetaData()
 
+        self.metadata = sqlalchemy.MetaData()
         # populate the engine with tables & fixtures
         self.metadata.bind = self.engine
+
         self.repo_path = migration._find_migrate_repo()
         self.schema = versioning_api.ControlledSchema.create(self.engine,
                                                              self.repo_path, 0)
 
         # auto-detect the highest available schema version in the migrate_repo
         self.max_version = self.schema.repository.version().version
+        # debug only - setting this to True in a test will stop the database
+        # from being torn down so you can inspect it after an assert failure
+        self.stop_tearDown = False
 
     def tearDown(self):
-        table = sqlalchemy.Table("migrate_version", self.metadata,
-                                 autoload=True)
-        self.downgrade(0)
-        table.drop(self.engine, checkfirst=True)
+        if not self.stop_tearDown:
+            table = sqlalchemy.Table("migrate_version", self.metadata,
+                                     autoload=True)
+            self.downgrade(0)
+            table.drop(self.engine, checkfirst=True)
         super(SqlUpgradeTests, self).tearDown()
 
     def test_blank_db_to_start(self):
@@ -125,8 +131,8 @@ class SqlUpgradeTests(test.TestCase):
         self.populate_tenant_table()
         self.upgrade(10)
         self.assertTableColumns("user",
-                                ["id", "name", "extra", "password",
-                                 "enabled"])
+                                ["id", "name", "extra",
+                                 "password", "enabled"])
         self.assertTableColumns("tenant",
                                 ["id", "name", "extra", "description",
                                  "enabled"])
@@ -148,13 +154,30 @@ class SqlUpgradeTests(test.TestCase):
         a_tenant = session.query(tenant_table).filter("id='baz'").one()
         self.assertEqual(a_tenant.description, 'description')
         session.commit()
+        session.close()
 
     def test_downgrade_10_to_8(self):
-        self.upgrade(8)
-        self.populate_user_table()
-        self.populate_tenant_table()
         self.upgrade(10)
+        self.populate_user_table(with_pass_enab=True)
+        self.populate_tenant_table(with_desc_enab=True)
         self.downgrade(8)
+        self.assertTableColumns('user',
+                                ['id', 'name', 'extra'])
+        self.assertTableColumns('tenant',
+                                ['id', 'name', 'extra'])
+        session = self.Session()
+        user_table = sqlalchemy.Table("user",
+                                      self.metadata,
+                                      autoload=True)
+        a_user = session.query(user_table).filter("id='badguy'").one()
+        self.assertEqual(a_user.name, default_fixtures.USERS[2]['name'])
+        tenant_table = sqlalchemy.Table("tenant",
+                                        self.metadata,
+                                        autoload=True)
+        a_tenant = session.query(tenant_table).filter("id='baz'").one()
+        self.assertEqual(a_tenant.name, default_fixtures.TENANTS[1]['name'])
+        session.commit()
+        session.close()
 
     def test_upgrade_10_to_13(self):
         self.upgrade(10)
@@ -183,6 +206,7 @@ class SqlUpgradeTests(test.TestCase):
         self.insert_dict(session, 'service', service)
         self.insert_dict(session, 'endpoint', endpoint)
         session.commit()
+        session.close()
 
         self.upgrade(13)
 
@@ -211,6 +235,8 @@ class SqlUpgradeTests(test.TestCase):
             self.assertEqual(ref.service_id, endpoint['service_id'])
             self.assertEqual(ref.url, endpoint_extra['%surl' % interface])
             self.assertEqual(ref.extra, '{}')
+        session.commit()
+        session.close()
 
     def assertTenantTables(self):
         self.assertTableExists('tenant')
@@ -231,6 +257,12 @@ class SqlUpgradeTests(test.TestCase):
         self.assertProjectTables()
 
     def test_downgrade_project_to_tenant(self):
+        # TODO(henry-nash): Debug why we need to re-load the tenant
+        # or user_tenant_membership ahead of upgrading to project
+        # in order for the assertProjectTables to work on sqlite
+        # (MySQL is fine without it)
+        self.upgrade(14)
+        self.assertTenantTables()
         self.upgrade(15)
         self.assertProjectTables()
         self.downgrade(14)
@@ -243,6 +275,59 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableExists('group_project_metadata')
         self.assertTableExists('group_domain_metadata')
         self.assertTableExists('user_group_membership')
+
+    def test_upgrade_14_to_16(self):
+        self.upgrade(14)
+        self.populate_user_table(with_pass_enab=True)
+        self.populate_tenant_table(with_desc_enab=True)
+        self.upgrade(16)
+        self.assertTableColumns("user",
+                                ["id", "name", "domain_id",
+                                 "password", "enabled", "extra"])
+        session = self.Session()
+        user_table = sqlalchemy.Table("user",
+                                      self.metadata,
+                                      autoload=True)
+        a_user = session.query(user_table).filter("id='foo'").one()
+        self.assertTrue(a_user.enabled)
+        self.assertEqual(a_user.domain_id, DEFAULT_DOMAIN_ID)
+        a_user = session.query(user_table).filter("id='badguy'").one()
+        self.assertEqual(a_user.name, default_fixtures.USERS[2]['name'])
+        self.assertEqual(a_user.domain_id, DEFAULT_DOMAIN_ID)
+        project_table = sqlalchemy.Table("project",
+                                         self.metadata,
+                                         autoload=True)
+        a_project = session.query(project_table).filter("id='baz'").one()
+        self.assertEqual(a_project.description,
+                         default_fixtures.TENANTS[1]['description'])
+        self.assertEqual(a_project.domain_id, DEFAULT_DOMAIN_ID)
+        session.commit()
+        session.close()
+
+    def test_downgrade_16_to_14(self):
+        self.upgrade(16)
+        self.populate_user_table(with_pass_enab_domain=True)
+        self.populate_tenant_table(with_desc_enab_domain=True)
+        self.downgrade(14)
+        self.assertTableColumns("user",
+                                ["id", "name", "extra",
+                                 "password", "enabled"])
+        session = self.Session()
+        user_table = sqlalchemy.Table("user",
+                                      self.metadata,
+                                      autoload=True)
+        a_user = session.query(user_table).filter("id='foo'").one()
+        self.assertTrue(a_user.enabled)
+        a_user = session.query(user_table).filter("id='badguy'").one()
+        self.assertEqual(a_user.name, default_fixtures.USERS[2]['name'])
+        tenant_table = sqlalchemy.Table("tenant",
+                                        self.metadata,
+                                        autoload=True)
+        a_tenant = session.query(tenant_table).filter("id='baz'").one()
+        self.assertEqual(a_tenant.description,
+                         default_fixtures.TENANTS[1]['description'])
+        session.commit()
+        session.close()
 
     def test_downgrade_14_to_13(self):
         self.upgrade(14)
@@ -294,6 +379,7 @@ class SqlUpgradeTests(test.TestCase):
             endpoint.update(common_endpoint_attrs)
             self.insert_dict(session, 'endpoint', endpoint)
         session.commit()
+        session.close()
 
         self.downgrade(9)
 
@@ -319,6 +405,8 @@ class SqlUpgradeTests(test.TestCase):
         for interface in ['public', 'internal', 'admin']:
             expected_url = endpoints[interface]['url']
             self.assertEqual(extra['%surl' % interface], expected_url)
+        session.commit()
+        session.close()
 
     def insert_dict(self, session, table_name, d):
         """Naively inserts key-value pairs into a table, given a dictionary."""
@@ -351,25 +439,62 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableColumns('user_domain_metadata',
                                 ['user_id', 'domain_id', 'data'])
 
-    def populate_user_table(self):
+    def populate_user_table(self, with_pass_enab=False,
+                            with_pass_enab_domain=False):
         for user in default_fixtures.USERS:
             extra = copy.deepcopy(user)
             extra.pop('id')
             extra.pop('name')
-            self.engine.execute("insert into user values ('%s', '%s', '%s')"
-                                % (user['id'],
-                                   user['name'],
-                                   json.dumps(extra)))
+            cmd_str = "insert into user values ('%s', '%s', " % (
+                user['id'],
+                user['name'])
 
-    def populate_tenant_table(self):
+            if with_pass_enab:
+                password = extra.pop('password', None)
+                enabled = extra.pop('enabled', True)
+                cmd_str += "'%s', '%s', %d)" % (
+                    json.dumps(extra), password, bool(enabled))
+            else:
+                if with_pass_enab_domain:
+                    password = extra.pop('password', None)
+                    enabled = extra.pop('enabled', True)
+                    extra.pop('domain_id')
+                    cmd_str += "'%s', '%s', %d, '%s')" % (
+                        user['domain_id'], password, bool(enabled),
+                        json.dumps(extra))
+                else:
+                    cmd_str += "'%s')" % json.dumps(extra)
+            self.engine.execute(cmd_str)
+
+    def populate_tenant_table(self, with_desc_enab=False,
+                              with_desc_enab_domain=False):
         for tenant in default_fixtures.TENANTS:
             extra = copy.deepcopy(tenant)
             extra.pop('id')
             extra.pop('name')
-            self.engine.execute("insert into tenant values ('%s', '%s', '%s')"
-                                % (tenant['id'],
-                                   tenant['name'],
-                                   json.dumps(extra)))
+            cmd_str = "insert into tenant values ('%s', '%s', " % (
+                tenant['id'],
+                tenant['name'])
+
+            if with_desc_enab:
+                desc = extra.pop('description', None)
+                enabled = extra.pop('enabled', True)
+                cmd_str += "'%s', '%s', %d)" % (
+                    json.dumps(extra), desc, bool(enabled))
+            else:
+                if with_desc_enab_domain:
+                    cmd_str = "insert into project values ('%s', '%s', " % (
+                        tenant['id'],
+                        tenant['name'])
+                    desc = extra.pop('description', None)
+                    enabled = extra.pop('enabled', True)
+                    extra.pop('domain_id')
+                    cmd_str += "'%s', '%s', %d, '%s')" % (
+                        tenant['domain_id'], desc, bool(enabled),
+                        json.dumps(extra))
+                else:
+                    cmd_str += "'%s')" % json.dumps(extra)
+            self.engine.execute(cmd_str)
 
     def select_table(self, name):
         table = sqlalchemy.Table(name,
@@ -380,16 +505,24 @@ class SqlUpgradeTests(test.TestCase):
 
     def assertTableExists(self, table_name):
         try:
-            #TODO ayoung: make quoting work for postgres
-            self.engine.execute("select count(*) from '%s'" % table_name)
-        except:
+            # TODO ayoung: make quoting work for postgres
+            # self.engine.execute("select count (*) from '%s'" % table_name)?
+            # although that does not appear to work for MySQL
+            self.select_table(table_name)
+        except sqlalchemy.exc.NoSuchTableError:
             raise AssertionError('Table "%s" does not exist' % table_name)
 
     def assertTableDoesNotExist(self, table_name):
         """Asserts that a given table exists cannot be selected by name."""
+        # Switch to a different metadata otherwise you might still
+        # detect renamed or dropped tables
         try:
-            self.assertTableExists(table_name)
-        except AssertionError:
+            temp_metadata = sqlalchemy.MetaData()
+            temp_metadata.bind = self.engine
+            table = sqlalchemy.Table(table_name,
+                                     temp_metadata,
+                                     autoload=True)
+        except sqlalchemy.exc.NoSuchTableError:
             pass
         else:
             raise AssertionError('Table "%s" already exists' % table_name)
