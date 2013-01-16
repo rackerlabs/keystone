@@ -409,6 +409,30 @@ class DomainV3(controller.V3Controller):
         self._require_matching_id(domain_id, domain)
 
         ref = self.identity_api.update_domain(context, domain_id, domain)
+
+        # disable owned users & projects when the API user specifically set
+        #     enabled=False
+        if not domain.get('enabled', True):
+            for project in self.identity_api.list_projects(context):
+                if project['domain_id'] == domain_id and project['enabled']:
+                    self.identity_api.update_project(
+                        context, project['id'], {'enabled': domain['enabled']})
+                    if not domain['enabled']:
+                        # FIXME(dolph): this should be way more efficient but
+                        #               we don't have an API that revokes by
+                        #               project_id only
+                        for user in self.identity_api.list_users(context):
+                            self.token_api.revoke_tokens(
+                                context,
+                                user_id=user['id'],
+                                tenant_id=project['id'])
+            for user in self.identity_api.list_users(context):
+                if user['domain_id'] == domain_id and user['enabled']:
+                    self.identity_api.update_user(
+                        context, user['id'], {'enabled': domain['enabled']})
+                    if not domain['enabled']:
+                        self.token_api.revoke_tokens(context, user_id=user_id)
+
         return {'domain': ref}
 
     @controller.protected
