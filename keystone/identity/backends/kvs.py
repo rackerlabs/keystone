@@ -101,9 +101,19 @@ class Identity(kvs.Base, identity.Driver):
                      domain_id=None, group_id=None):
         try:
             if user_id:
-                return self.db.get('metadata-%s-%s' % (tenant_id, user_id))
+                if tenant_id:
+                    return self.db.get('metadata-%s-%s' % (tenant_id,
+                                                           user_id))
+                else:
+                    return self.db.get('metadata-%s-%s' % (domain_id,
+                                                           user_id))
             else:
-                return self.db.get('metadata-%s-%s' % (tenant_id, group_id))
+                if tenant_id:
+                    return self.db.get('metadata-%s-%s' % (tenant_id,
+                                                           group_id))
+                else:
+                    return self.db.get('metadata-%s-%s' % (domain_id,
+                                                           group_id))
         except exception.NotFound:
             raise exception.MetadataNotFound()
 
@@ -338,18 +348,22 @@ class Identity(kvs.Base, identity.Driver):
 
     def create_metadata(self, user_id, tenant_id, metadata,
                         domain_id=None, group_id=None):
-        if user_id:
-            self.db.set('metadata-%s-%s' % (tenant_id, user_id), metadata)
-        else:
-            self.db.set('metadata-%s-%s' % (tenant_id, group_id), metadata)
-        return metadata
+
+        return self.update_metadata(user_id, tenant_id, metadata,
+                                    domain_id, group_id)
 
     def update_metadata(self, user_id, tenant_id, metadata,
                         domain_id=None, group_id=None):
         if user_id:
-            self.db.set('metadata-%s-%s' % (tenant_id, user_id), metadata)
+            if tenant_id:
+                self.db.set('metadata-%s-%s' % (tenant_id, user_id), metadata)
+            else:
+                self.db.set('metadata-%s-%s' % (domain_id, user_id), metadata)
         else:
-            self.db.set('metadata-%s-%s' % (tenant_id, group_id), metadata)
+            if tenant_id:
+                self.db.set('metadata-%s-%s' % (tenant_id, group_id), metadata)
+            else:
+                self.db.set('metadata-%s-%s' % (domain_id, group_id), metadata)
         return metadata
 
     def create_role(self, role_id, role):
@@ -497,10 +511,47 @@ class Identity(kvs.Base, identity.Driver):
         self.update_metadata(user_id, project_id, metadata_ref,
                              domain_id, group_id)
 
+    # project crud
+
+    def create_project(self, project_id, project):
+        return self.create_tenant(project_id, project)
+
+    def get_project(self, project_id):
+        return self.get_tenant(project_id)
+
+    def list_projects(self):
+        return self.get_tenants()
+
+    def update_project(self, project_id, project):
+        return self.update_tenant(project_id, project)
+
+    def delete_project(self, project_id):
+        return self.delete_tenant(project_id)
+
+    def list_user_projects(self, user_id):
+        return self.get_tenants_for_user(user_id)
+
     # domain crud
 
     def create_domain(self, domain_id, domain):
+        try:
+            self.get_domain(domain_id)
+        except exception.DomainNotFound:
+            pass
+        else:
+            msg = 'Duplicate ID, %s.' % domain_id
+            raise exception.Conflict(type='domain', details=msg)
+
+        try:
+            self.get_domain_by_name(domain['name'])
+        except exception.DomainNotFound:
+            pass
+        else:
+            msg = 'Duplicate name, %s.' % domain['name']
+            raise exception.Conflict(type='domain', details=msg)
+
         self.db.set('domain-%s' % domain_id, domain)
+        self.db.set('domain_name-%s' % domain['name'], domain)
         domain_list = set(self.db.get('domain_list', []))
         domain_list.add(domain_id)
         self.db.set('domain_list', list(domain_list))
@@ -510,14 +561,30 @@ class Identity(kvs.Base, identity.Driver):
         return self.db.get('domain_list', [])
 
     def get_domain(self, domain_id):
-        return self.db.get('domain-%s' % domain_id)
+        try:
+            return self.db.get('domain-%s' % domain_id)
+        except exception.NotFound:
+            raise exception.DomainNotFound(domain_id=domain_id)
+
+    def get_domain_by_name(self, domain_name):
+        try:
+            return self.db.get('domain_name-%s' % domain_name)
+        except exception.NotFound:
+            raise exception.DomainNotFound(domain_id=domain_name)
 
     def update_domain(self, domain_id, domain):
+        orig_domain = self.get_domain(domain_id)
+        domain['id'] = domain_id
         self.db.set('domain-%s' % domain_id, domain)
+        self.db.set('domain_name-%s' % domain['name'], domain)
+        if domain['name'] != orig_domain['name']:
+            self.db.delete('domain_name-%s' % orig_domain['name'])
         return domain
 
     def delete_domain(self, domain_id):
+        domain = self.get_domain(domain_id)
         self.db.delete('domain-%s' % domain_id)
+        self.db.delete('domain_name-%s' % domain['name'])
         domain_list = set(self.db.get('domain_list', []))
         domain_list.remove(domain_id)
         self.db.set('domain_list', list(domain_list))
