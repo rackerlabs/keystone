@@ -15,6 +15,10 @@
 # under the License.
 
 import sqlalchemy as sql
+# TODO(henry-nash): Remove next two items, since only required for
+# temp default domain
+import json
+from sqlalchemy import orm
 
 
 def upgrade(migrate_engine):
@@ -32,7 +36,28 @@ def upgrade(migrate_engine):
         sql.Column('extra', sql.Text()))
     domain_table.create(migrate_engine, checkfirst=True)
 
-    sql.Table('user', meta, autoload=True)
+    # TODO(henry-nash): Remove the addition of the default domain once Dolphm's
+    # change is in.
+
+    domain = {
+        'id': 'default',
+        'name': 'Default',
+        'enabled': True,
+        'extra': json.dumps({
+            'description': 'Owns users and tenants (i.e. projects) available '
+                           'on Identity API v2.'})}
+
+    session = orm.sessionmaker(bind=migrate_engine)()
+
+    session.execute(
+        'INSERT INTO `%s` (%s) VALUES (%s)' % (
+            domain_table.name,
+            ', '.join(['`%s`' % k for k in domain.keys()]),
+            ', '.join([':%s' % k for k in domain.keys()])),
+        domain)
+    session.commit()
+
+    user = sql.Table('user', meta, autoload=True)
     user_domain_metadata_table = sql.Table(
         'user_domain_metadata',
         meta,

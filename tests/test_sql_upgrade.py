@@ -35,12 +35,13 @@ import sqlalchemy
 from keystone.common import sql
 from keystone.common.sql import migration
 from keystone import config
+from keystone import exception
 from keystone import test
 
-import default_fixtures
-
-
 CONF = config.CONF
+DEFAULT_DOMAIN_ID = CONF['identity']['default_domain_id']
+
+import default_fixtures
 
 
 class SqlUpgradeTests(test.TestCase):
@@ -125,8 +126,8 @@ class SqlUpgradeTests(test.TestCase):
         self.populate_tenant_table()
         self.upgrade(9)
         self.assertTableColumns("user",
-                                ["id", "name", "extra", "password",
-                                 "enabled"])
+                                ["id", "name", "extra",
+                                 "password", "enabled"])
         self.assertTableColumns("tenant",
                                 ["id", "name", "extra", "description",
                                  "enabled"])
@@ -150,11 +151,26 @@ class SqlUpgradeTests(test.TestCase):
         session.commit()
 
     def test_downgrade_9_to_7(self):
-        self.upgrade(7)
-        self.populate_user_table()
-        self.populate_tenant_table()
         self.upgrade(9)
+        self.populate_user_table(with_pass_enab=True)
+        self.populate_tenant_table(with_desc_enab=True)
         self.downgrade(7)
+        self.assertTableColumns('user',
+                                ['id', 'name', 'extra'])
+        self.assertTableColumns('tenant',
+                                ['id', 'name', 'extra'])
+        session = self.Session()
+        user_table = sqlalchemy.Table("user",
+                                      self.metadata,
+                                      autoload=True)
+        a_user = session.query(user_table).filter("id='badguy'").one()
+        self.assertEqual(a_user.name, default_fixtures.USERS[2]['name'])
+        tenant_table = sqlalchemy.Table("tenant",
+                                        self.metadata,
+                                        autoload=True)
+        a_tenant = session.query(tenant_table).filter("id='baz'").one()
+        self.assertEqual(a_tenant.name, default_fixtures.TENANTS[1]['name'])
+        session.commit()
 
     def test_upgrade_9_to_12(self):
         self.upgrade(9)
@@ -244,6 +260,57 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableExists('group_domain_metadata')
         self.assertTableExists('user_group_membership')
 
+    def test_upgrade_13_to_15(self):
+        self.upgrade(13)
+        self.populate_user_table(with_pass_enab=True)
+        self.populate_tenant_table(with_desc_enab=True)
+        self.upgrade(15)
+        self.assertTableColumns("user",
+                                ["id", "name", "domain_id",
+                                 "password", "enabled", "extra"])
+        session = self.Session()
+        user_table = sqlalchemy.Table("user",
+                                      self.metadata,
+                                      autoload=True)
+        a_user = session.query(user_table).filter("id='foo'").one()
+        self.assertTrue(a_user.enabled)
+        self.assertEqual(a_user.domain_id, DEFAULT_DOMAIN_ID)
+        a_user = session.query(user_table).filter("id='badguy'").one()
+        self.assertEqual(a_user.name, default_fixtures.USERS[2]['name'])
+        self.assertEqual(a_user.domain_id, DEFAULT_DOMAIN_ID)
+        project_table = sqlalchemy.Table("project",
+                                         self.metadata,
+                                         autoload=True)
+        a_project = session.query(project_table).filter("id='baz'").one()
+        self.assertEqual(a_project.description,
+                         default_fixtures.TENANTS[1]['description'])
+        self.assertEqual(a_project.domain_id, DEFAULT_DOMAIN_ID)
+        session.commit()
+
+    def test_downgrade_15_to_13(self):
+        self.upgrade(15)
+        self.populate_user_table(with_pass_enab_domain=True)
+        self.populate_tenant_table(with_desc_enab_domain=True)
+        self.downgrade(13)
+        self.assertTableColumns("user",
+                                ["id", "name", "extra",
+                                 "password", "enabled"])
+        session = self.Session()
+        user_table = sqlalchemy.Table("user",
+                                      self.metadata,
+                                      autoload=True)
+        a_user = session.query(user_table).filter("id='foo'").one()
+        self.assertTrue(a_user.enabled)
+        a_user = session.query(user_table).filter("id='badguy'").one()
+        self.assertEqual(a_user.name, default_fixtures.USERS[2]['name'])
+        tenant_table = sqlalchemy.Table("tenant",
+                                        self.metadata,
+                                        autoload=True)
+        a_tenant = session.query(tenant_table).filter("id='baz'").one()
+        self.assertEqual(a_tenant.description,
+                         default_fixtures.TENANTS[1]['description'])
+        session.commit()
+
     def test_downgrade_13_to_12(self):
         self.upgrade(13)
         self.downgrade(12)
@@ -295,7 +362,7 @@ class SqlUpgradeTests(test.TestCase):
             self.insert_dict(session, 'endpoint', endpoint)
         session.commit()
 
-        self.downgrade(8)
+        self.downgrade(9)
 
         self.assertTableColumns(
             'service',
@@ -351,25 +418,62 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableColumns('user_domain_metadata',
                                 ['user_id', 'domain_id', 'data'])
 
-    def populate_user_table(self):
+    def populate_user_table(self, with_pass_enab=False,
+                            with_pass_enab_domain=False):
         for user in default_fixtures.USERS:
             extra = copy.deepcopy(user)
             extra.pop('id')
             extra.pop('name')
-            self.engine.execute("insert into user values ('%s', '%s', '%s')"
-                                % (user['id'],
-                                   user['name'],
-                                   json.dumps(extra)))
+            cmd_str = "insert into user values ('%s', '%s', " % (
+                user['id'],
+                user['name'])
 
-    def populate_tenant_table(self):
+            if with_pass_enab:
+                password = extra.pop('password', None)
+                enabled = extra.pop('enabled', True)
+                cmd_str += "'%s', '%s', %d)" % (
+                    json.dumps(extra), password, bool(enabled))
+            else:
+                if with_pass_enab_domain:
+                    password = extra.pop('password', None)
+                    enabled = extra.pop('enabled', True)
+                    extra.pop('domain_id')
+                    cmd_str += "'%s', '%s', %d, '%s')" % (
+                        user['domain_id'], password, bool(enabled),
+                        json.dumps(extra))
+                else:
+                    cmd_str += "'%s')" % json.dumps(extra)
+            self.engine.execute(cmd_str)
+
+    def populate_tenant_table(self, with_desc_enab=False,
+                              with_desc_enab_domain=False):
         for tenant in default_fixtures.TENANTS:
             extra = copy.deepcopy(tenant)
             extra.pop('id')
             extra.pop('name')
-            self.engine.execute("insert into tenant values ('%s', '%s', '%s')"
-                                % (tenant['id'],
-                                   tenant['name'],
-                                   json.dumps(extra)))
+            cmd_str = "insert into tenant values ('%s', '%s', " % (
+                tenant['id'],
+                tenant['name'])
+
+            if with_desc_enab:
+                desc = extra.pop('description', None)
+                enabled = extra.pop('enabled', True)
+                cmd_str += "'%s', '%s', %d)" % (
+                    json.dumps(extra), desc, bool(enabled))
+            else:
+                if with_desc_enab_domain:
+                    cmd_str = "insert into project values ('%s', '%s', " % (
+                        tenant['id'],
+                        tenant['name'])
+                    desc = extra.pop('description', None)
+                    enabled = extra.pop('enabled', True)
+                    extra.pop('domain_id')
+                    cmd_str += "'%s', '%s', %d, '%s')" % (
+                        tenant['domain_id'], desc, bool(enabled),
+                        json.dumps(extra))
+                else:
+                    cmd_str += "'%s')" % json.dumps(extra)
+            self.engine.execute(cmd_str)
 
     def select_table(self, name):
         table = sqlalchemy.Table(name,
