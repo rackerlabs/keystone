@@ -32,6 +32,9 @@ import default_fixtures
 CONF = config.CONF
 
 
+HIGHEST_MIGRATION_NUMBER = 13
+
+
 class SqlUpgradeTests(test.TestCase):
     def setUp(self):
         super(SqlUpgradeTests, self).setUp()
@@ -62,6 +65,13 @@ class SqlUpgradeTests(test.TestCase):
     def test_start_version_0(self):
         version = migration.db_version()
         self.assertEqual(version, 0, "DB is at version 0")
+
+    def test_two_steps_forward_one_step_back(self):
+        """You should be able to cleanly undo a re-apply all migrations."""
+        for x in range(1, HIGHEST_MIGRATION_NUMBER + 1):
+            self.upgrade(x)
+            self.downgrade(x - 1)
+            self.upgrade(x)
 
     def assertTableColumns(self, table_name, expected_cols):
         """Asserts that the table contains the expected set of columns."""
