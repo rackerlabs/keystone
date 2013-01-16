@@ -23,16 +23,19 @@ from keystone.contrib.ec2.backends import sql as ec2_sql
 from keystone.identity.backends import sql as identity_sql
 from keystone import test
 
-
 CONF = config.CONF
-
+DEFAULT_DOMAIN_ID = CONF['identity']['default_domain_id']
 
 FIXTURE = {
     'users': [
-        {'id': 'user1', 'name': 'uname1', 'password': 'acc1'},
-        {'id': 'user4', 'name': 'uname4', 'password': 'acc1'},
-        {'id': 'user2', 'name': 'uname2', 'password': 'acc2'},
-        {'id': 'user3', 'name': 'uname3', 'password': 'acc3'},
+        {'id': 'user1', 'name': 'uname1', 'password': 'acc1',
+         'domain_id': DEFAULT_DOMAIN_ID},
+        {'id': 'user4', 'name': 'uname4', 'password': 'acc1',
+         'domain_id': DEFAULT_DOMAIN_ID},
+        {'id': 'user2', 'name': 'uname2', 'password': 'acc2',
+         'domain_id': DEFAULT_DOMAIN_ID},
+        {'id': 'user3', 'name': 'uname3', 'password': 'acc3',
+         'domain_id': DEFAULT_DOMAIN_ID},
     ],
     'roles': ['role1', 'role2', 'role3'],
     'role_user_tenant_list': [
@@ -58,9 +61,12 @@ FIXTURE = {
         {'access_key': 'acc3', 'secret_key': 'sec3', 'user_id': 'user3'},
     ],
     'tenants': [
-        {'description': 'desc1', 'id': 'proj1', 'name': 'pname1'},
-        {'description': 'desc4', 'id': 'proj4', 'name': 'pname4'},
-        {'description': 'desc2', 'id': 'proj2', 'name': 'pname2'},
+        {'description': 'desc1', 'id': 'proj1', 'name': 'pname1',
+         'domain_id': DEFAULT_DOMAIN_ID},
+        {'description': 'desc4', 'id': 'proj4', 'name': 'pname4',
+         'domain_id': DEFAULT_DOMAIN_ID},
+        {'description': 'desc2', 'id': 'proj2', 'name': 'pname2',
+         'domain_id': DEFAULT_DOMAIN_ID},
     ],
 }
 

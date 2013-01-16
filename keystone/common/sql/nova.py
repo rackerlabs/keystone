@@ -51,6 +51,7 @@ def _create_projects(api, tenants):
         tenant_dict = {
             'id': _generate_uuid(),
             'name': tenant['id'],
+            'domain_id': tenant['domain_id'],
             'description': tenant['description'],
             'enabled': True,
         }
@@ -66,6 +67,7 @@ def _create_users(api, users):
         user_dict = {
             'id': _generate_uuid(),
             'name': user['id'],
+            'domain_id': user['domain_id'],
             'email': '',
             'password': user['password'],
             'enabled': True,

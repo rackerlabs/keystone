@@ -63,19 +63,26 @@ class Auth(controller.V2Controller):
 
         if "token" in auth:
             # Try to authenticate using a token
-            auth_token_data, auth_info = self._authenticate_token(
+            auth_info = self._authenticate_token(
                 context, auth)
         else:
             # Try external authentication
             try:
-                auth_token_data, auth_info = self._authenticate_external(
+                auth_info = self._authenticate_external(
                     context, auth)
             except ExternalAuthNotApplicable:
                 # Try local authentication
-                auth_token_data, auth_info = self._authenticate_local(
+                auth_info = self._authenticate_local(
                     context, auth)
 
-        user_ref, tenant_ref, metadata_ref = auth_info
+        user_ref, tenant_ref, metadata_ref, expiry = auth_info
+        user_ref = self._filter_domain_id(user_ref)
+        if tenant_ref:
+            tenant_ref = self._filter_domain_id(tenant_ref)
+        auth_token_data = self._get_auth_token_data(user_ref,
+                                                    tenant_ref,
+                                                    metadata_ref,
+                                                    expiry)
 
         # If the user is disabled don't allow them to authenticate
         if not user_ref.get('enabled', True):
@@ -198,21 +205,15 @@ class Auth(controller.V2Controller):
         tenant_ref = self._get_project_ref(context, user_id, tenant_id)
         metadata_ref = self._get_metadata_ref(context, user_id, tenant_id)
 
+        # TODO (henry-nash) If no tenant was specified, instead check
+        # for a domain and find any related user/group roles
+
         self._append_roles(metadata_ref,
                            self._get_group_metadata_ref(
                                context, user_id, tenant_id))
 
-        self._append_roles(metadata_ref,
-                           self._get_domain_metadata_ref(
-                               context, user_id, tenant_id))
-
         expiry = old_token_ref['expires']
-        auth_token_data = self._get_auth_token_data(current_user_ref,
-                                                    tenant_ref,
-                                                    metadata_ref,
-                                                    expiry)
-
-        return auth_token_data, (current_user_ref, tenant_ref, metadata_ref)
+        return (current_user_ref, tenant_ref, metadata_ref, expiry)
 
     def _authenticate_local(self, context, auth):
         """Try to authenticate against the identity backend.
@@ -258,21 +259,19 @@ class Auth(controller.V2Controller):
             raise exception.Unauthorized(e)
         (user_ref, tenant_ref, metadata_ref) = auth_info
 
+        # By now we will have authorized and if a tenant/project was
+        # specified, we will have obtained its metadata.  In this case
+        # we just need to add in any group roles.
+        #
+        # TODO (henry-nash) If no tenant was specified, instead check
+        # for a domain and find any related user/group roles
+
         self._append_roles(metadata_ref,
                            self._get_group_metadata_ref(
                                context, user_id, tenant_id))
 
-        self._append_roles(metadata_ref,
-                           self._get_domain_metadata_ref(
-                               context, user_id, tenant_id))
-
         expiry = core.default_expire_time()
-        auth_token_data = self._get_auth_token_data(user_ref,
-                                                    tenant_ref,
-                                                    metadata_ref,
-                                                    expiry)
-
-        return auth_token_data, (user_ref, tenant_ref, metadata_ref)
+        return (user_ref, tenant_ref, metadata_ref, expiry)
 
     def _authenticate_external(self, context, auth):
         """Try to authenticate an external user via REMOTE_USER variable.
@@ -295,21 +294,15 @@ class Auth(controller.V2Controller):
         tenant_ref = self._get_project_ref(context, user_id, tenant_id)
         metadata_ref = self._get_metadata_ref(context, user_id, tenant_id)
 
+        # TODO (henry-nash) If no tenant was specified, instead check
+        # for a domain and find any related user/group roles
+
         self._append_roles(metadata_ref,
                            self._get_group_metadata_ref(
                                context, user_id, tenant_id))
 
-        self._append_roles(metadata_ref,
-                           self._get_domain_metadata_ref(
-                               context, user_id, tenant_id))
-
         expiry = core.default_expire_time()
-        auth_token_data = self._get_auth_token_data(user_ref,
-                                                    tenant_ref,
-                                                    metadata_ref,
-                                                    expiry)
-
-        return auth_token_data, (user_ref, tenant_ref, metadata_ref)
+        return (user_ref, tenant_ref, metadata_ref, expiry)
 
     def _get_auth_token_data(self, user, tenant, metadata, expiry):
         return dict(dict(user=user,
@@ -333,6 +326,23 @@ class Auth(controller.V2Controller):
                 raise exception.Unauthorized(e)
         return tenant_id
 
+    def _get_domain_id_from_auth(self, context, auth):
+        """Extract domain information from auth dict.
+
+        Returns a valid domain_id if it exists, or None if not specified.
+        """
+        # TODO(henry-nash): Convert these to v3 format
+        domain_id = auth.get('domainId', None)
+        domain_name = auth.get('domainName', None)
+        if domain_name:
+            try:
+                domain_ref = self.identity_api._get_domain_by_name(
+                    context=context, domain_name=domain_name)
+                domain_id = domain_ref['id']
+            except exception.DomainNotFound as e:
+                raise exception.Unauthorized(e)
+        return domain_id
+
     def _get_project_ref(self, context, user_id, tenant_id):
         """Returns the tenant_ref for the user's tenant"""
         tenant_ref = None
@@ -352,42 +362,31 @@ class Auth(controller.V2Controller):
         return tenant_ref
 
     def _get_metadata_ref(self, context, user_id=None, tenant_id=None,
-                          group_id=None):
-        """Returns the metadata_ref for a user or group in a tenant"""
-        metadata_ref = {}
-        if tenant_id:
-            try:
-                if user_id:
-                    metadata_ref = self.identity_api.get_metadata(
-                        context=context,
-                        user_id=user_id,
-                        tenant_id=tenant_id)
-                elif group_id:
-                    metadata_ref = self.identity_api.get_metadata(
-                        context=context,
-                        group_id=group_id,
-                        tenant_id=tenant_id)
-            except exception.MetadataNotFound:
-                metadata_ref = {}
+                          domain_id=None, group_id=None):
+        """Returns metadata_ref for a user or group in a tenant or domain"""
 
+        metadata_ref = {}
+        if (user_id or group_id) and (tenant_id or domain_id):
+            try:
+                metadata_ref = self.identity_api.get_metadata(
+                    context=context, user_id=user_id, tenant_id=tenant_id,
+                    domain_id=domain_id, group_id=group_id)
+            except exception.MetadataNotFound:
+                pass
         return metadata_ref
 
-    def _get_group_metadata_ref(self, context, user_id, tenant_id):
-        """Return any metadata for this project due to group grants"""
+    def _get_group_metadata_ref(self, context, user_id,
+                                tenant_id=None, domain_id=None):
+        """Return any metadata for this project/domain due to group grants"""
         group_refs = self.identity_api.list_groups_for_user(context=context,
                                                             user_id=user_id)
         metadata_ref = {}
         for x in group_refs:
             metadata_ref.update(self._get_metadata_ref(context,
                                                        group_id=x['id'],
-                                                       tenant_id=tenant_id))
+                                                       tenant_id=tenant_id,
+                                                       domain_id=domain_id))
         return metadata_ref
-
-    def _get_domain_metadata_ref(self, context, user_id, tenant_id):
-        """Return any metadata for this project due to domain grants"""
-        # TODO (henry-nashe) Get the domain for this tenant...and then see if
-        # any domain grants apply.  Bug #1093248
-        return {}
 
     def _append_roles(self, metadata, additional_metadata):
         """
