@@ -87,6 +87,7 @@ class User(Model):
     Required keys:
         id
         name
+        domain_id
 
     Optional keys:
         password
@@ -95,7 +96,7 @@ class User(Model):
         enabled (bool, default True)
     """
 
-    required_keys = ('id', 'name')
+    required_keys = ('id', 'name', 'domain_id')
     optional_keys = ('password', 'description', 'email', 'enabled')
 
 

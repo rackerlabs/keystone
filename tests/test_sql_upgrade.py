@@ -41,6 +41,7 @@ import default_fixtures
 
 
 CONF = config.CONF
+DEFAULT_DOMAIN_ID = CONF['identity']['default_domain_id']
 
 
 class SqlUpgradeTests(test.TestCase):
@@ -125,8 +126,8 @@ class SqlUpgradeTests(test.TestCase):
         self.populate_tenant_table()
         self.upgrade(9)
         self.assertTableColumns("user",
-                                ["id", "name", "extra", "password",
-                                 "enabled"])
+                                ["id", "name", "extra",
+                                 "password", "enabled"])
         self.assertTableColumns("tenant",
                                 ["id", "name", "extra", "description",
                                  "enabled"])
@@ -219,6 +220,20 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableExists('group_project_metadata')
         self.assertTableExists('group_domain_metadata')
         self.assertTableExists('user_group_membership')
+
+    def test_upgrade_13_to_15(self):
+        self.upgrade(13)
+        self.upgrade(15)
+        self.assertTableColumns("user",
+                                ["id", "name","domain_id",
+                                 "password", "enabled", "extra"])
+
+    def test_downgrade_15_to_13(self):
+        self.upgrade(15)
+        self.downgrade(13)
+        self.assertTableColumns("user",
+                                ["id", "name", "extra",
+                                 "password", "enabled"])
 
     def test_downgrade_13_to_12(self):
         self.upgrade(13)
@@ -322,20 +337,24 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableColumns('credential', ['id', 'user_id', 'project_id',
                                                'blob', 'type', 'extra'])
         self.assertTableExists('domain')
-        self.assertTableColumns('domain', ['id', 'name', 'extra'])
+        self.assertTableColumns('domain', ['id', 'name', 'enabled', 'extra'])
         self.assertTableExists('user_domain_metadata')
         self.assertTableColumns('user_domain_metadata',
                                 ['user_id', 'domain_id', 'data'])
 
-    def populate_user_table(self):
+    def populate_user_table(self, with_domain=False):
         for user in default_fixtures.USERS:
             extra = copy.deepcopy(user)
             extra.pop('id')
             extra.pop('name')
-            self.engine.execute("insert into user values ('%s', '%s', '%s')"
-                                % (user['id'],
-                                   user['name'],
-                                   json.dumps(extra)))
+            if with_domain:
+                self.engine.execute(
+                    "insert into user values ('%s', '%s', '%s', '%s')" %
+                    (user['id'], user['name'], json.dumps(extra), None))
+            else:
+                self.engine.execute(
+                    "insert into user values ('%s', '%s', '%s')" %
+                    (user['id'], user['name'], json.dumps(extra)))
 
     def populate_tenant_table(self):
         for tenant in default_fixtures.TENANTS:

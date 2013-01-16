@@ -121,8 +121,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertIsNotNone(entity.get('email'))
         self.assertIsNone(entity.get('password'))
         if ref:
-            self.assertEqual(ref['domain_id'], entity['domain_id'])
             self.assertEqual(ref['email'], entity['email'])
+            if 'domain_id' in ref:
+                self.assertEqual(ref['domain_id'], entity['domain_id'])
+
         return entity
 
     # group validation
