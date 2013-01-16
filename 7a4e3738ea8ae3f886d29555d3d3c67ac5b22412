@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//ihs\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-01-16T19:53:02Z",
+      "side": 1,
+      "message": "How come your fix does not address the situation completely?  Is there a reason we desire dns/socket over the basic socket you now imported?",
+      "revId": "7a4e3738ea8ae3f886d29555d3d3c67ac5b22412",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//igI\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-01-16T19:53:02Z",
+      "side": 1,
+      "message": "Moving the defaults up for host and port most certainly looks cleaner",
+      "revId": "7a4e3738ea8ae3f886d29555d3d3c67ac5b22412",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
