@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//jck\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/007_add_domain_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-16T06:13:56Z",
+      "side": 1,
+      "message": "Finally!",
+      "revId": "dc13bc3bd66eab76f00d78da4d05d1cfdfe041b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//jcg\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-16T06:13:56Z",
+      "side": 1,
+      "message": "You don\u0027t need to do this! All we have to do is the prevent user from authenticating if his domain\u0027s been disabled, or scoped to a project in a domain that\u0027s been disabled. We just need to check this flag in authenticate().",
+      "revId": "dc13bc3bd66eab76f00d78da4d05d1cfdfe041b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
