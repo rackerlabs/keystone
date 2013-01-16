@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//i5g\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": "we don\u0027t want to require this? I think these are only used for ldap",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//i5c\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/007_add_domain_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": "pep8",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//i5U\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity_migration.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": "rebase this change on https://review.openstack.org/#/c/19788/ and you don\u0027t have to make any changes here",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//i4c\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": ".first() -\u003e .one()\n\n... and then wrap that call into a try/except, catching sql.NotFound.\n\none() has a slightly different behavior in that it raises an exception instead of returning None, and it\u0027ll also raise an exception if more than one result is found, which would appropriately result in a 500. (.first() suppresses that condition by simply returning the first result).",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//i38\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": "nice",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//i30\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": "-2! GET /domains?name\u003d{domain_name} should, according to it\u0027s semantics, return a collection... even if you know it\u0027s going to be a collection of one. So the implementation for this should go into list_domains rather than creating a new protected controller method, and would work there as short circuit logic.",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//i3w\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": "but domain_id \"will\" never be null..?",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//i24\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": "I\u0027m not sure why you want to do this in the outer try/except\u0027s except block, but what you wrote can be done in a one liner:\n\n  user_ref.pop(\u0027domain_id\u0027, None)\n\nwhich is also equivalent to:\n\n  if \u0027domain_id\u0027 in user_ref:\n    del user_ref[\u0027domain_id\u0027]\n\nYou also only want to filter it out for the v2 api, the v3 api should include the domain_id in user objects",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//i14\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": "pep8",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//i1Y\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": "those attributes will never be set like that... these are v2 style attributes... in v3, these will be:\n\n  \u0027domain\u0027: {\u0027id\u0027: \u0027abc\u0027}\n\nor \n\n  \u0027domain\u0027: {\u0027name\u0027: \u0027Abc\u0027}",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//i0w\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": "use uuid\u0027s and variable names instead of arbitrary values that readers must chase down",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//i1I\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": "you\u0027re doing a lot here... i feel like you should be writing a new test instead?",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//i0k\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T17:04:06Z",
+      "side": 1,
+      "message": "raise a skiptest and cite a bug number?",
+      "revId": "7fd3cb636ee2165cdb8204416e8c324e65739a5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
