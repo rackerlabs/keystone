@@ -41,7 +41,7 @@ def downgrade_user_table(meta, migrate_engine):
     session = maker()
     user_data = []
     for a_user in session.query(user_table):
-        id, name, extra, password, enabled = a_user
+        id, name, domain_id, extra, password, enabled = a_user
         extra_parsed = json.loads(extra)
         extra_parsed['password'] = password
         extra_parsed['enabled'] = "%r" % enabled
@@ -86,7 +86,7 @@ def upgrade_user_table(meta, migrate_engine):
 
     new_user_data = []
     for a_user in session.query(user_table):
-        id, name, extra, password, enabled = a_user
+        id, name, domain_id, extra, password, enabled = a_user
         extra_parsed = json.loads(extra)
         if 'password' in extra_parsed:
             password = extra_parsed['password']

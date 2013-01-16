@@ -442,3 +442,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
 
     def test_get_and_remove_role_grant_by_user_and_domain(self):
         pass
+
+    def test_domain_crud(self):
+        pass
+

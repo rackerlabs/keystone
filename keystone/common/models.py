@@ -93,10 +93,11 @@ class User(Model):
         description
         email
         enabled (bool, default True)
+        domain_id
     """
 
     required_keys = ('id', 'name')
-    optional_keys = ('password', 'description', 'email', 'enabled')
+    optional_keys = ('domain_id', 'password', 'description', 'email', 'enabled')
 
 
 class Group(Model):

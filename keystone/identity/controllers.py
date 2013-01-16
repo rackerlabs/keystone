@@ -175,17 +175,17 @@ class User(controller.V2Controller):
             msg = 'Name field is required and cannot be empty'
             raise exception.ValidationError(message=msg)
 
-        tenant_id = user.get('tenantId', None)
-        if (tenant_id is not None
-                and self.identity_api.get_tenant(context, tenant_id) is None):
-            raise exception.TenantNotFound(tenant_id=tenant_id)
+        default_tenant_id = user.get('tenantId', None)
+        if (default_tenant_id is not None
+                and self.identity_api.get_tenant(context, default_tenant_id) is None):
+            raise exception.TenantNotFound(tenant_id=default_tenant_id)
         user_id = uuid.uuid4().hex
         user_ref = user.copy()
         user_ref['id'] = user_id
         new_user_ref = self.identity_api.create_user(
             context, user_id, user_ref)
-        if tenant_id:
-            self.identity_api.add_user_to_tenant(context, tenant_id, user_id)
+        if default_tenant_id:
+            self.identity_api.add_user_to_tenant(context, default_tenant_id, user_id)
         return {'user': new_user_ref}
 
     def update_user(self, context, user_id, user):
@@ -219,8 +219,8 @@ class User(controller.V2Controller):
         """Update the default tenant."""
         self.assert_admin(context)
         # ensure that we're a member of that tenant
-        tenant_id = user.get('tenantId')
-        self.identity_api.add_user_to_tenant(context, tenant_id, user_id)
+        default_tenant_id = user.get('tenantId')
+        self.identity_api.add_user_to_tenant(context, default_tenant_id, user_id)
         return self.update_user(context, user_id, user)
 
 
@@ -402,6 +402,12 @@ class DomainV3(controller.V3Controller):
     @controller.protected
     def get_domain(self, context, domain_id):
         ref = self.identity_api.get_domain(context, domain_id)
+        return {'domain': ref}
+
+    @controller.protected
+    def get_domain_by_name(self, context, domain_name):
+        ref = self.identity_api.get_domain_by_name(
+                  context, domain_name)
         return {'domain': ref}
 
     @controller.protected
