@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//ias\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T20:32:52Z",
+      "side": 1,
+      "message": "or:\n\n  if values.get(\u0027id\u0027, id) !\u003d id:",
+      "revId": "19a76baf812a5f353c37b2102cf4b9767d61425e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//iaw\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-16T20:32:52Z",
+      "side": 1,
+      "message": "I think the TenantApi implements this behavior as:\n\n  super(TenantApi, self).update(id, values, old_obj)\n\nwould that not work here as well?",
+      "revId": "19a76baf812a5f353c37b2102cf4b9767d61425e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
