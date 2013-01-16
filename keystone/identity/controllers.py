@@ -150,7 +150,8 @@ class Tenant(controller.V2Controller):
 class User(controller.V2Controller):
     def get_user(self, context, user_id):
         self.assert_admin(context)
-        return {'user': self.identity_api.get_user(context, user_id)}
+        ref = self.identity_api.get_user(context, user_id)
+        return {'user': self._filter_domain_id(ref)}
 
     def get_users(self, context):
         # NOTE(termie): i can't imagine that this really wants all the data
@@ -160,11 +161,15 @@ class User(controller.V2Controller):
                 context, context['query_string'].get('name'))
 
         self.assert_admin(context)
-        return {'users': self.identity_api.list_users(context)}
+        user_list = self.identity_api.list_users(context)
+        for x in user_list:
+            self._filter_domain_id(x)
+        return {'users': user_list}
 
     def get_user_by_name(self, context, user_name):
         self.assert_admin(context)
-        return {'user': self.identity_api.get_user_by_name(context, user_name)}
+        ref = self.identity_api.get_user_by_name(context, user_name)
+        return {'user': self._filter_domain_id(ref)}
 
     # CRUD extension
     def create_user(self, context, user):
@@ -175,18 +180,20 @@ class User(controller.V2Controller):
             msg = 'Name field is required and cannot be empty'
             raise exception.ValidationError(message=msg)
 
-        tenant_id = user.get('tenantId', None)
-        if (tenant_id is not None
-                and self.identity_api.get_tenant(context, tenant_id) is None):
-            raise exception.TenantNotFound(tenant_id=tenant_id)
+        default_tenant_id = user.get('tenantId', None)
+        if (default_tenant_id is not None
+                and self.identity_api.get_tenant(context,
+                                                 default_tenant_id) is None):
+            raise exception.TenantNotFound(tenant_id=default_tenant_id)
         user_id = uuid.uuid4().hex
-        user_ref = user.copy()
+        user_ref = self._normalize_domain_id(user.copy(), context)
         user_ref['id'] = user_id
         new_user_ref = self.identity_api.create_user(
             context, user_id, user_ref)
-        if tenant_id:
-            self.identity_api.add_user_to_tenant(context, tenant_id, user_id)
-        return {'user': new_user_ref}
+        if default_tenant_id:
+            self.identity_api.add_user_to_tenant(context,
+                                                 default_tenant_id, user_id)
+        return {'user': self._filter_domain_id(new_user_ref)}
 
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
@@ -203,7 +210,7 @@ class User(controller.V2Controller):
                 # backends that can't list tokens for users
                 LOG.warning('User %s status has changed, but existing tokens '
                             'remain valid' % user_id)
-        return {'user': user_ref}
+        return {'user': self._filter_domain_id(user_ref)}
 
     def delete_user(self, context, user_id):
         self.assert_admin(context)
@@ -219,8 +226,9 @@ class User(controller.V2Controller):
         """Update the default tenant."""
         self.assert_admin(context)
         # ensure that we're a member of that tenant
-        tenant_id = user.get('tenantId')
-        self.identity_api.add_user_to_tenant(context, tenant_id, user_id)
+        default_tenant_id = user.get('tenantId')
+        self.identity_api.add_user_to_tenant(context,
+                                             default_tenant_id, user_id)
         return self.update_user(context, user_id, user)
 
 
@@ -397,6 +405,7 @@ class DomainV3(controller.V3Controller):
     @controller.protected
     def list_domains(self, context):
         refs = self.identity_api.list_domains(context)
+        refs = self._filter_by_attribute(context, refs, 'name')
         return {'domains': self._paginate(context, refs)}
 
     @controller.protected
@@ -414,6 +423,13 @@ class DomainV3(controller.V3Controller):
     @controller.protected
     def delete_domain(self, context, domain_id):
         return self.identity_api.delete_domain(context, domain_id)
+
+    # For use by token authentication - not for hooking to the identity
+    # router as a public api
+    def _get_domain_by_name(self, context, domain_name):
+        ref = self.identity_api.get_domain_by_name(
+            context, domain_name)
+        return {'domain': ref}
 
 
 class ProjectV3(controller.V3Controller):
@@ -454,6 +470,7 @@ class UserV3(controller.V3Controller):
     @controller.protected
     def create_user(self, context, user):
         ref = self._assign_unique_id(self._normalize_dict(user))
+        ref = self._normalize_domain_id(ref, context)
         ref = self.identity_api.create_user(context, ref['id'], ref)
         return {'user': ref}
 

@@ -34,11 +34,13 @@ USERS = [
     {
         'id': 'foo',
         'name': 'FOO',
+        'domain_id': 'Domain',
         'password': 'foo2',
         'tenants': ['bar']
     }, {
         'id': 'two',
         'name': 'TWO',
+        'domain_id': 'Domain',
         'password': 'two2',
         'email': 'two@example.com',
         'enabled': True,
@@ -47,6 +49,7 @@ USERS = [
     }, {
         'id': 'badguy',
         'name': 'BadGuy',
+        'domain_id': 'Domain',
         'password': 'bad',
         'email': 'bad@guy.com',
         'enabled': False,

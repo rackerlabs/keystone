@@ -39,9 +39,12 @@ def handle_conflicts(type='object'):
 
 class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
-    attributes = ['id', 'name', 'password', 'enabled']
+    attributes = ['id', 'name', 'domain_id', 'password', 'enabled']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), unique=True, nullable=False)
+    domain_id = sql.Column(sql.String(64),
+                           sql.ForeignKey('domain.id'),
+                           nullable=False)
     password = sql.Column(sql.String(128))
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
@@ -597,6 +600,14 @@ class Identity(sql.Base, identity.Driver):
         ref = session.query(Domain).filter_by(id=domain_id).first()
         if ref is None:
             raise exception.DomainNotFound(domain_id=domain_id)
+        return ref.to_dict()
+
+    def get_domain_by_name(self, domain_name):
+        session = self.get_session()
+        try:
+            ref = session.query(Domain).filter_by(name=domain_name).one()
+        except sql.NotFound:
+            raise exception.DomainNotFound(domain_id=domain_name)
         return ref.to_dict()
 
     @handle_conflicts(type='domain')

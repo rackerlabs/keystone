@@ -66,6 +66,18 @@ class V2Controller(wsgi.Application):
             msg = '%s field is required and cannot be empty' % attr
             raise exception.ValidationError(message=msg)
 
+    def _normalize_domain_id(self, ref, context):
+        """Fill in domain_id since v2 calls are not domain-aware."""
+        # TODO(henry-nash): Update with the CONF default domain
+        # once the default domain change is implemented
+        ref['domain_id'] = 'Henry\'s default'
+        return ref
+
+    def _filter_domain_id(self, ref):
+        """Remove domain_id since v2 calls are not domain-aware."""
+        ref.pop('domain_id', None)
+        return ref
+
 
 class V3Controller(V2Controller):
     """Base controller class for Identity API v3."""
@@ -93,3 +105,14 @@ class V3Controller(V2Controller):
             value = context['query_string'][attr]
             return [r for r in refs if r[attr] == value]
         return refs
+
+    def _normalize_domain_id(self, ref, context):
+        """Fill in domain_id if not specified in a v3 call."""
+        # TODO(henry-nash): Fish out the creating users' domain
+        if 'domain_id' not in ref:
+            ref['domain_id'] = 'Creating Users\' domain'
+        return ref
+
+    def _filter_domain_id(self, ref):
+        """Override v2 filter to let domain_id out for v3 calls."""
+        return ref
