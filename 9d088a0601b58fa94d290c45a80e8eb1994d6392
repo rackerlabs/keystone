@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//hNc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-17T16:31:26Z",
+      "side": 1,
+      "message": "If the default domain doesn\u0027t exist, should 404 Not Found be returned rather than 403 Forbidden?\n\nShould the check for if the domain is the default domain be in the identity_api.delete_domain function instead?\n\nLooking at the exception.ForbiddenAction class, the message that\u0027s going to be returned to the user is: \"You are not authorized to perform the requested action: %(action)s\"... but in this case it\u0027s not that you\u0027re not authorized. The message should be clearer.",
+      "revId": "9d088a0601b58fa94d290c45a80e8eb1994d6392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
