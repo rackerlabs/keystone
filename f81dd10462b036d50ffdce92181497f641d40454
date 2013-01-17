@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3//grk\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-01-17T21:37:48Z",
+      "side": 1,
+      "message": "The usage of UserRoleAssociation.id",
+      "revId": "f81dd10462b036d50ffdce92181497f641d40454",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//grg\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-01-17T21:37:48Z",
+      "side": 1,
+      "message": "The usage of UserRoleAssociation.id",
+      "revId": "f81dd10462b036d50ffdce92181497f641d40454",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//ibg\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 1
