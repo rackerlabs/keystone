@@ -51,6 +51,24 @@
       "revId": "9d088a0601b58fa94d290c45a80e8eb1994d6392",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//gqg\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-17T21:42:05Z",
+      "side": 1,
+      "message": "Migration only applies to the sql backend, so for a different backend it might not exist. Also, the comment above says that the default domain can be deleted by some manual process.",
+      "parentUuid": "AAAAM3//guo\u003d",
+      "revId": "9d088a0601b58fa94d290c45a80e8eb1994d6392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
