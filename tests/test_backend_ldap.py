@@ -442,3 +442,45 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
 
     def test_get_and_remove_role_grant_by_user_and_domain(self):
         pass
+
+    def test_get_and_remove_role_grant_by_group_and_cross_domain(self):
+        pass
+
+    def test_get_and_remove_role_grant_by_user_and_cross_domain(self):
+        pass
+
+    def test_role_grant_by_group_and_cross_domain_project(self):
+        pass
+
+    def test_role_grant_by_user_and_cross_domain_project(self):
+        pass
+
+    def test_multi_role_grant_by_user_group_on_project_domain(self):
+        pass
+
+    def test_delete_role_with_user_and_group_grants(self):
+        pass
+
+    def test_delete_user_with_group_project_domain_links(self):
+        pass
+
+    def test_delete_group_with_user_project_domain_links(self):
+        pass
+
+    def test_list_groups(self):
+        pass
+
+    def test_list_domains(self):
+        pass
+
+    def test_list_projects(self):
+        pass
+
+    def test_user_crud(self):
+        pass
+
+    def test_list_user_projects(self):
+        pass
+
+    def test_get_tenant_users(self):
+        pass
