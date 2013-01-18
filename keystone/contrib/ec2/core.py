@@ -172,8 +172,9 @@ class Ec2Controller(controller.V2Controller):
 
         catalog_ref = self.catalog_api.get_catalog(
             context=context,
-            user_id=user_ref['id'],
-            tenant_id=tenant_ref['id'],
+            user=user_ref,
+            project=tenant_ref,
+            domain=None,  # TODO(dolph): should include the domain ref here
             metadata=metadata_ref)
 
         token_ref = self.token_api.create_token(
