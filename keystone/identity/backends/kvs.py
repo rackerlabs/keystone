@@ -79,6 +79,9 @@ class Identity(kvs.Base, identity.Driver):
         user_refs = [self.db.get(key) for key in user_keys]
         return filter(lambda x: tenant_id in x['tenants'], user_refs)
 
+    def create_project(self, project_id, project):
+        return self.create_tenant(project_id, project)
+
     def _get_user(self, user_id):
         try:
             return self.db.get('user-%s' % user_id)
