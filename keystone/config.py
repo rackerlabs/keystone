@@ -180,6 +180,7 @@ register_str('driver', group='stats',
 
 
 #ldap
+register_bool('allow_self_signed_certs', group='ldap', default=False)
 register_str('url', group='ldap', default='ldap://localhost')
 register_str('user', group='ldap', default='dc=Manager,dc=example,dc=com')
 register_str('password', group='ldap', default='freeipa4all')
