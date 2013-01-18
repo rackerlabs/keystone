@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//fso\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-18T15:21:52Z",
+      "side": 1,
+      "message": "I don\u0027t see how ldap_modify could return NO_SUCH_OBJECT in any case other than the role_dn (the role) not existing. So the code below should just be raise exception.RoleNotFound. It doesn\u0027t have to check for TenantNotFound or UserNotFound.",
+      "revId": "d055db1ce513494a77dfa323d7f1ad1df541eef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//fsY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-18T15:21:52Z",
+      "side": 1,
+      "message": "This error should be saying that the user is not a member of the group and not 404 Not Found.",
+      "revId": "d055db1ce513494a77dfa323d7f1ad1df541eef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
