@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//fP8\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-18T20:37:38Z",
+      "side": 1,
+      "message": "Still need to fix these (henry-nash)",
+      "revId": "e913c98182ca98daeafeaeee670b1d7051e232e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
