@@ -92,8 +92,9 @@ class Auth(controller.V2Controller):
         if tenant_ref:
             catalog_ref = self.catalog_api.get_catalog(
                 context=context,
-                user_id=user_ref['id'],
-                tenant_id=tenant_ref['id'],
+                user=user_ref,
+                project=tenant_ref,
+                domain=None,  # TODO(dolph): domain_ref should be provided here
                 metadata=metadata_ref)
         else:
             catalog_ref = {}
@@ -434,10 +435,18 @@ class Auth(controller.V2Controller):
         # This is needed for on-behalf-of requests
         catalog_ref = None
         if token_ref.get('tenant'):
+            user_ref = self.identity_api.get_user(
+                context,
+                token_ref['user']['id'])
+            project_ref = self.identity_api.get_tenant(
+                context,
+                token_ref['tenant']['id'])
+            domain_ref = None  # TODO(dolph): domain should be looked up here
             catalog_ref = self.catalog_api.get_catalog(
                 context=context,
-                user_id=token_ref['user']['id'],
-                tenant_id=token_ref['tenant']['id'],
+                user=user_ref,
+                project=project_ref,
+                domain=domain_ref,
                 metadata=metadata_ref)
         return Auth.format_token(token_ref, roles_ref, catalog_ref)
 
@@ -471,10 +480,18 @@ class Auth(controller.V2Controller):
 
         catalog_ref = None
         if token_ref.get('tenant'):
+            user_ref = self.identity_api.get_user(
+                context,
+                token_ref['user']['id'])
+            project_ref = self.identity_api.get_tenant(
+                context,
+                token_ref['tenant']['id'])
+            domain_ref = None  # TODO(dolph): domain should be looked up here
             catalog_ref = self.catalog_api.get_catalog(
                 context=context,
-                user_id=token_ref['user']['id'],
-                tenant_id=token_ref['tenant']['id'],
+                user=user_ref,
+                project=project_ref,
+                domain=domain_ref,
                 metadata=token_ref['metadata'])
 
         return Auth.format_endpoint_list(catalog_ref)

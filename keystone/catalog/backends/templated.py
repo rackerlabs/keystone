@@ -109,10 +109,8 @@ class TemplatedCatalog(kvs.Catalog):
             LOG.critical(_('Unable to open template file %s') % template_file)
             raise
 
-    def get_catalog(self, user_id, tenant_id, metadata=None):
-        d = dict(CONF.iteritems())
-        d.update({'tenant_id': tenant_id,
-                  'user_id': user_id})
+    def get_catalog(self, user=None, project=None, domain=None, metadata=None):
+        d = core.get_endpoint_metadata(user, project, domain, metadata)
 
         o = {}
         for region, region_ref in self.templates.iteritems():
