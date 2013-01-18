@@ -58,11 +58,11 @@ class TestTemplatedCatalog(test.TestCase, test_backend.CatalogTests):
         self.load_fixtures(default_fixtures)
 
     def test_get_catalog(self):
-        catalog_ref = self.catalog_api.get_catalog('foo', 'bar')
+        catalog_ref = self.catalog_api.get_catalog(project={'id': 'bar'})
         self.assertDictEqual(catalog_ref, self.DEFAULT_FIXTURE)
 
     def test_malformed_catalog_throws_error(self):
         self.catalog_api.templates['RegionOne']['compute']['adminURL'] = \
             'http://localhost:$(compute_port)s/v1.1/$(tenant)s'
         with self.assertRaises(exception.MalformedEndpoint):
-            self.catalog_api.get_catalog('fake-user', 'fake-tenant')
+            self.catalog_api.get_catalog()

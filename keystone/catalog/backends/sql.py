@@ -143,10 +143,8 @@ class Catalog(sql.Base, catalog.Driver):
             session.flush()
         return ref.to_dict()
 
-    def get_catalog(self, user_id, tenant_id, metadata=None):
-        d = dict(CONF.iteritems())
-        d.update({'tenant_id': tenant_id,
-                  'user_id': user_id})
+    def get_catalog(self, user=None, project=None, domain=None, metadata=None):
+        d = core.get_endpoint_metadata(user, project, domain, metadata)
 
         catalog = {}
         services = {}

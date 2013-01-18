@@ -21,8 +21,8 @@ from keystone.common import kvs
 
 class Catalog(kvs.Base, catalog.Driver):
     # Public interface
-    def get_catalog(self, user_id, tenant_id, metadata=None):
-        return self.db.get('catalog-%s-%s' % (tenant_id, user_id))
+    def get_catalog(self, user=None, project=None, domain=None, metadata=None):
+        return self.db.get('catalog-%s-%s' % (project['id'], user['id']))
 
     # service crud
 
@@ -80,7 +80,7 @@ class Catalog(kvs.Base, catalog.Driver):
         endpoint_list.remove(endpoint_id)
         self.db.set('endpoint_list', list(endpoint_list))
 
-    # Private interface
+    # Private interface (only used by test framework)
     def _create_catalog(self, user_id, tenant_id, data):
         self.db.set('catalog-%s-%s' % (tenant_id, user_id), data)
         return data

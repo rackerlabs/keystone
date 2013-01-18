@@ -236,7 +236,7 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
         self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
 
         with self.assertRaises(exception.MalformedEndpoint):
-            self.catalog_api.get_catalog('fake-user', 'fake-tenant')
+            self.catalog_api.get_catalog()
 
     def test_get_catalog_with_empty_public_url(self):
         service = {
@@ -256,7 +256,7 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
         }
         self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
 
-        catalog = self.catalog_api.get_catalog('user', 'tenant')
+        catalog = self.catalog_api.get_catalog()
         catalog_endpoint = catalog[endpoint['region']][service['type']]
         self.assertEqual(catalog_endpoint['name'], service['name'])
         self.assertEqual(catalog_endpoint['id'], endpoint['id'])

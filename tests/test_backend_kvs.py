@@ -57,14 +57,16 @@ class KvsCatalog(test.TestCase, test_backend.CatalogTests):
         # FIXME(dolph): exceptions should be UserNotFound and TenantNotFound
         self.assertRaises(exception.NotFound,
                           self.catalog_api.get_catalog,
-                          uuid.uuid4().hex,
-                          'bar')
+                          user={'id': uuid.uuid4().hex},
+                          project={'id': 'bar'})
 
         self.assertRaises(exception.NotFound,
                           self.catalog_api.get_catalog,
-                          'foo',
-                          uuid.uuid4().hex)
+                          user={'id': 'foo'},
+                          project={'id': uuid.uuid4().hex})
 
     def test_get_catalog(self):
-        catalog_ref = self.catalog_api.get_catalog('foo', 'bar')
+        catalog_ref = self.catalog_api.get_catalog(
+            user={'id': 'foo'},
+            project={'id': 'bar'})
         self.assertDictEqual(catalog_ref, self.catalog_foobar)

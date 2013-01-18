@@ -17,6 +17,8 @@
 
 """Main entry point into the Catalog service."""
 
+import urllib
+
 from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import manager
@@ -50,6 +52,56 @@ def format_url(url, data):
                   (are you missing a type notifier ?)") % url)
         raise exception.MalformedEndpoint(endpoint=url)
     return result
+
+
+def get_endpoint_metadata(user=None, project=None, domain=None, metadata=None):
+    """Collects contextual metadata for an endpoint.
+
+    - Metadata of the project is not allowed to overwrite metadata of the
+        domain.
+    - Metadata of the user is not allowed to overwrite metadata of the
+        project or domain.
+    - Extra metadata is allowed to overwrite user, project and domain metadata
+    - Metadata from the deployment configuration overrides everything else.
+
+    Returns a dictionary of URL-quoted JSON values.
+
+    """
+    # default each to an empty dict
+    user = user if user is not None else dict()
+    project = project if project is not None else dict()
+    domain = domain if domain is not None else dict()
+
+    # copy this dict so we can safely manipulate it
+    metadata = dict(metadata) if metadata is not None else dict()
+
+    # avoid collisions between keys
+    for k, v in user.iteritems():
+        metadata['user_%s' % k] = v
+    for k, v in project.iteritems():
+        metadata['project_%s' % k] = v
+    for k, v in domain.iteritems():
+        metadata['domain_%s' % k] = v
+
+    # provide backwards compatibility for v2 tenants
+    if 'project_id' in metadata:
+        metadata['tenant_id'] = metadata['project_id']
+
+    # override contextual metadata with deployment configuration
+    metadata.update(dict(CONF.iteritems()))
+
+    # make everything url-friendly
+    for k, v in dict(metadata).iteritems():
+        try:
+            metadata[k] = urllib.quote(str(v))
+        except Exception:
+            # if it can't be encoded, then it shouldn't be included
+            metadata.pop(k)
+
+    # removing anything sensitive
+    metadata.pop('admin_token')
+
+    return metadata
 
 
 @dependency.provider('catalog_api')
@@ -95,9 +147,10 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
-    def get_catalog(self, context, user_id, tenant_id, metadata=None):
+    def get_catalog(self, context, user=None, project=None, domain=None,
+                    metadata=None):
         try:
-            return self.driver.get_catalog(user_id, tenant_id, metadata)
+            return self.driver.get_catalog(user, project, domain, metadata)
         except exception.NotFound:
             raise exception.NotFound('Catalog not found for user and tenant')
 
@@ -190,8 +243,8 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def get_catalog(self, user_id, tenant_id, metadata=None):
-        """Retreive and format the current service catalog.
+    def get_catalog(self, user=None, project=None, domain=None, metadata=None):
+        """Retrieve and format the current service catalog.
 
         Example::
 
