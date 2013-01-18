@@ -79,6 +79,9 @@ class BaseLdap(object):
         self.LDAP_USER = conf.ldap.user
         self.LDAP_PASSWORD = conf.ldap.password
 
+        if conf.ldap.allow_self_signed_certs:
+            ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, ldap.OPT_X_TLS_ALLOW)
+
         if self.options_name is not None:
             self.suffix = conf.ldap.suffix
             if self.suffix is None:

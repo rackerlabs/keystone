@@ -115,6 +115,7 @@
 # suffix = cn=example,cn=com
 # use_dumb_member = False
 # allow_subtree_delete = False
+# allow_self_signed_certs = False
 # dumb_member = cn=dumb,dc=example,dc=com
 
 # user_tree_dn = ou=Users,dc=example,dc=com
