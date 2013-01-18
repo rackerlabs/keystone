@@ -414,6 +414,10 @@ class Router(object):
           mapper.connect(None, '/v1.0/{path_info:.*}', controller=BlogApp())
 
         """
+        # make routes' internal logging be quiet
+        routes_logger = logging.getLogger('routes.middleware')
+        routes_logger.setLevel(logging.ERROR)
+
         self.map = mapper
         self._router = routes.middleware.RoutesMiddleware(self._dispatch,
                                                           self.map)
