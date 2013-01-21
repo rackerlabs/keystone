@@ -50,7 +50,7 @@ msgstr "Nem található a megadott naplózásbeállító fájl: %s"
 msgid "Invalid syslog facility"
 msgstr "Érvénytelen rendszernapló szolgáltatás"
 
-#: keystone/test.py:103
+#: keystone/tests/core.py:103
 #, python-format
 msgid "Failed to checkout %s"
 msgstr "Nem sikerült %s kiiktatása"

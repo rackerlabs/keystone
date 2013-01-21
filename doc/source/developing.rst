@@ -88,8 +88,8 @@ Test Structure
 --------------
 
 ``./run_test.sh`` uses its python cohort (``run_tests.py``) to iterate
-through the ``tests`` directory, using Nosetest to collect the tests and
-invoke them using an OpenStack custom test running that displays the tests
+through the ``keystone/tests`` directory, using Nosetest to collect the tests
+and invoke them using an OpenStack custom test running that displays the tests
 as well as the time taken to run those tests.
 
 Not all of the tests in the tests directory are strictly unit tests. Keystone

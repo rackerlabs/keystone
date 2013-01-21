@@ -24,6 +24,6 @@ build/
 dist/
 etc/keystone.conf
 etc/logging.conf
-tests/test.db.pristine
+keystone/tests/test.db.pristine
 .project
 .pydevproject

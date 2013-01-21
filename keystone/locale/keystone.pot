@@ -46,7 +46,7 @@ msgstr ""
 msgid "Invalid syslog facility"
 msgstr ""
 
-#: keystone/test.py:106
+#: keystone/tests/core.py:106
 #, python-format
 msgid "Failed to checkout %s"
 msgstr ""

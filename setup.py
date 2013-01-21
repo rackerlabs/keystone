@@ -33,7 +33,7 @@ setuptools.setup(
     author_email='openstack@lists.launchpad.net',
     url='http://www.openstack.org',
     cmdclass=setup.get_cmdclass(),
-    packages=setuptools.find_packages(exclude=['test', 'bin']),
+    packages=setuptools.find_packages(exclude=['bin']),
     include_package_data=True,
     scripts=['bin/keystone-all', 'bin/keystone-manage'],
     zip_safe=False,
