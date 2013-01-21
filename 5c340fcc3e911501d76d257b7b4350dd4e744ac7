@@ -16,6 +16,24 @@
       "revId": "5c340fcc3e911501d76d257b7b4350dd4e744ac7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//dy0\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-21T15:18:00Z",
+      "side": 1,
+      "message": "Because this class is well tested, complicated, and not changing *that* much between v2 --\u003e v3, I\u0027m thinking we should just extend this class to implement the differences.\n\nHowever, both v2 and v3 will still be able to retrieve a domain, as they\u0027ll both be working with projects... the reason I left the comment slightly vague is because we need to figure out which domain should be provided. On v2, do you always use the project\u0027s domain? On v3, do you use the authorized domain if it\u0027s a domain-scoped token, and the authorized project\u0027s domain if it\u0027s a project-scoped token?\n\nIt sounds like you don\u0027t want to provide a domain at all if it\u0027s not a domain-scoped token? If so, we\u0027ll need somehow need to dynamically switch between domain/project-scoped service catalogs, or simply suppress MalformedEndpointUrl exceptions from bubbling back to the API?",
+      "parentUuid": "AAAAM3//eHA\u003d",
+      "revId": "5c340fcc3e911501d76d257b7b4350dd4e744ac7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
