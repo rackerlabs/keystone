@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//dCY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-21T22:45:06Z",
+      "side": 1,
+      "message": "wooow i can\u0027t believe we\u0027ve overlooked this one for so long",
+      "revId": "5b6bda71979592a53865a5d80bc696d984cc0985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//dCU\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-21T22:45:06Z",
+      "side": 1,
+      "message": "the comment in parens should be moved up to belong with debug",
+      "revId": "5b6bda71979592a53865a5d80bc696d984cc0985",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
