@@ -52,6 +52,24 @@
       "revId": "5c340fcc3e911501d76d257b7b4350dd4e744ac7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//dMI\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-21T21:42:44Z",
+      "side": 1,
+      "message": "In the case of a project-scoped token, I misspoke a bit: you actually have the project\u0027s domain available as %(project_domain_id)s and the user\u0027s domain available as %(user_domain_id)s. Either of those domain\u0027s attributes would only be included if you passed that specific domain_ref here, but we\u0027re not passing either at the moment. In a domain-scoped auth, you\u0027d definitely pass one. I\u0027m not sure which you should pass here, if either.\n\nThe get_catalog() call doesn\u0027t expect one, either way, but the endpoint URL\u0027s people create may only be applicable to project-scoped auth or domain-scoped auth as a result, and I\u0027m not sure how we\u0027d tell the difference between them today (without simply suppressing MalformedEndpointUrls).",
+      "parentUuid": "AAAAM3//dcY\u003d",
+      "revId": "5c340fcc3e911501d76d257b7b4350dd4e744ac7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
