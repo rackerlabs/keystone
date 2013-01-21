@@ -23,6 +23,6 @@ AUTHORS
 build/
 dist/
 etc/keystone.conf
-tests/test.db.pristine
+keystone/tests/test.db.pristine
 .project
 .pydevproject

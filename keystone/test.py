@@ -45,7 +45,7 @@ eventlet.patcher.monkey_patch(all=False, socket=True, time=True,
 LOG = logging.getLogger(__name__)
 ROOTDIR = os.path.dirname(os.path.abspath(os.curdir))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
-TESTSDIR = os.path.join(ROOTDIR, 'tests')
+TESTSDIR = os.path.join(ROOTDIR, 'keystone', 'tests')
 ETCDIR = os.path.join(ROOTDIR, 'etc')
 CONF = config.CONF
 DRIVERS = {}
