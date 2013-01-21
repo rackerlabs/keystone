@@ -34,6 +34,24 @@
       "revId": "5c340fcc3e911501d76d257b7b4350dd4e744ac7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//dcY\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-21T20:44:26Z",
+      "side": 1,
+      "message": "So I agree we could, with minor additions, use this class for v2 and v3.  \n\nI\u0027m not entirely clear on the use of inserting items into the endpoint url achieves (I just need some education)....although I assume that for v2, no domain info is included in the catalog.  For v3, I would assume:\n- A domain-scoped token would have that domain in the url, and no project info\n- A project-scoped token would have the project info included....and would that not include the project\u0027s domain anyway (since it is an attribute)?",
+      "parentUuid": "AAAAM3//dy0\u003d",
+      "revId": "5c340fcc3e911501d76d257b7b4350dd4e744ac7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
