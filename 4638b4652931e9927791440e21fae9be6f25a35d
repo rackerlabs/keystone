@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//dBY\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-21T22:56:34Z",
+      "side": 1,
+      "message": "(nit) the rest of this file is in order by status code, so this should come directly after Conflict",
+      "revId": "4638b4652931e9927791440e21fae9be6f25a35d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
