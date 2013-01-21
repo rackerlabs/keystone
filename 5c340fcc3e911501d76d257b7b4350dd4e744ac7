@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//eHA\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-21T09:37:16Z",
+      "side": 1,
+      "message": "I assume we will shortly end of with a v2 and v3 version of this Auth controller, and the Domain will only be set in the v3 case?  If so , maybe add that to the comment?",
+      "revId": "5c340fcc3e911501d76d257b7b4350dd4e744ac7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
