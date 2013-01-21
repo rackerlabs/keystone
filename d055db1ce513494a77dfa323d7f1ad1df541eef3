@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//c+Y\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-01-21T23:18:31Z",
+      "side": 1,
+      "message": "ldap_modify can raise NO_SUCH_OBJECT if the role itself exists but never were granted to any user in this tenant.\nrole_dn is DN like cn\u003dmyrole,cn\u003dthetenant,\u003ctenant_tree_dn\u003e\n\nAbsence of such object might mean that:\n- either there is no such tenant at all\n- or there is no such role at all\n- or this user hadn\u0027t been granted this role in this tenant (and no user ever had).\n\nSQL backend raises RoleNotFound for all these cases. I think, more precise error diagnosis is better.",
+      "parentUuid": "AAAAM3//fso\u003d",
+      "revId": "d055db1ce513494a77dfa323d7f1ad1df541eef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//fsY\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-01-18T15:21:52Z",
       "side": 1,
       "message": "This error should be saying that the user is not a member of the group and not 404 Not Found.",
+      "revId": "d055db1ce513494a77dfa323d7f1ad1df541eef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//c8E\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-01-21T23:18:31Z",
+      "side": 1,
+      "message": "SQL backend raises RoleNotFound with modified message. May be we should use that here.",
+      "parentUuid": "AAAAM3//fsY\u003d",
       "revId": "d055db1ce513494a77dfa323d7f1ad1df541eef3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
