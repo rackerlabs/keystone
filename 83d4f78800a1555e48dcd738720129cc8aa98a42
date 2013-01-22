@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//coE\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-22T05:37:48Z",
+      "side": 1,
+      "message": "I think we should document what default_domain_id is and the consequences of modifying it. Like if you change the default_domain_id after data migration, there will be severe impacts.",
+      "revId": "83d4f78800a1555e48dcd738720129cc8aa98a42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
