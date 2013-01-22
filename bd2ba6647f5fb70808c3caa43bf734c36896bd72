@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//cn8\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-22T05:39:31Z",
+      "side": 1,
+      "message": "Not a big fan of hardcoding stuff. Should we at least make the log level configurable?",
+      "revId": "bd2ba6647f5fb70808c3caa43bf734c36896bd72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
