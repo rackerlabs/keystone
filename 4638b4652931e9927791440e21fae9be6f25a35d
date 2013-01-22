@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//c2g\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 360
+      },
+      "writtenOn": "2013-01-22T00:54:20Z",
+      "side": 1,
+      "message": "Well... it could but just because you ask to read X number of bytes doesn\u0027t mean you\u0027ll actually get them right? I suppose I\u0027d rather bytes_read always be correct in this regard.",
+      "parentUuid": "AAAAM3//c7U\u003d",
+      "revId": "4638b4652931e9927791440e21fae9be6f25a35d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//dBY\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 2
@@ -48,6 +66,24 @@
       "writtenOn": "2013-01-21T22:56:34Z",
       "side": 1,
       "message": "(nit) the rest of this file is in order by status code, so this should come directly after Conflict",
+      "revId": "4638b4652931e9927791440e21fae9be6f25a35d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//c2Q\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 360
+      },
+      "writtenOn": "2013-01-22T00:54:20Z",
+      "side": 1,
+      "message": "I\u0027ll fix this in the next patchset.",
+      "parentUuid": "AAAAM3//dBY\u003d",
       "revId": "4638b4652931e9927791440e21fae9be6f25a35d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//c1w\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 360
+      },
+      "writtenOn": "2013-01-22T00:54:20Z",
+      "side": 1,
+      "message": "I suppose I was relying on the webob pydoc here:\n\n    webob.is_body_readable is a flag that tells us\n    that we can read the input stream even though\n    CONTENT_LENGTH is missing.",
+      "parentUuid": "AAAAM3//c8Q\u003d",
+      "revId": "4638b4652931e9927791440e21fae9be6f25a35d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//dBA\u003d",
         "filename": "tests/test_sizelimit.py",
         "patchSetId": 2
@@ -82,6 +136,24 @@
       "writtenOn": "2013-01-21T23:54:36Z",
       "side": 1,
       "message": "We should have tests using \"chunked\" transfer coding, both valid and invalid cases.",
+      "revId": "4638b4652931e9927791440e21fae9be6f25a35d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//c1Y\u003d",
+        "filename": "tests/test_sizelimit.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 360
+      },
+      "writtenOn": "2013-01-22T00:54:20Z",
+      "side": 1,
+      "message": "The code here just deals with limiting the request size... so chunking or not chunking is irrelevant right? All we care about is how big an incoming request is (in bytes) and whether or not there is a \u0027content-length\u0027 header.",
+      "parentUuid": "AAAAM3//dBA\u003d",
       "revId": "4638b4652931e9927791440e21fae9be6f25a35d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
