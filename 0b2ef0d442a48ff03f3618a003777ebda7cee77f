@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//bg0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-01-22T20:54:08Z",
+      "side": 1,
+      "message": "I have been working with ayoung on adding silent install and config of openldap for keystone (in devstack).  We had the following description for groups:\n\ndn: ou\u003dGroups,dc\u003dopenstack,dc\u003dorg\nobjectClass: top\nobjectClass: organizationalUnit\nou: groups\n\nNot sure if it is a big deal or not but our ObjectClass choice does not match your comment",
+      "revId": "0b2ef0d442a48ff03f3618a003777ebda7cee77f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
