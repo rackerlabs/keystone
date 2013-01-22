@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//cjI\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 858,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-22T08:33:49Z",
+      "side": 1,
+      "message": "Perhaps also check you only have 2 of them (as an alternative to checking that all other the other grants are NOT in the list)?",
+      "revId": "791a653a625c743e7d0ee2fec602fdd09efef44b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//cjE\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1119,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-22T08:33:49Z",
+      "side": 1,
+      "message": "check if only 2 groups returned?\n(same comment for the other similar tests)",
+      "revId": "791a653a625c743e7d0ee2fec602fdd09efef44b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
