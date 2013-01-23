@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Z08\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T20:58:34Z",
+      "side": 1,
+      "message": "the more i think about this, the more i think we should ignore the user\u0027s domain_id... this sort of assumes that the user has and is using a role grant on their own domain.\n\nUsing this instead assumes the token\u0027s domain-scoped authorization:\n\n  token_ref[\u0027domain\u0027][\u0027id\u0027]\n\nI\u0027m not sure how to handle a static admin_token creating a user / project / group though. You have to be able to allow the admin_token user to specify a domain for the user / project / group, I think?",
+      "revId": "727b438465d1729d98924b1a23c5b3415f0e5610",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
