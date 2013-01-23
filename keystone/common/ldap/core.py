@@ -16,6 +16,7 @@
 
 import ldap
 
+from ldap import controls
 from keystone.common.ldap import fakeldap
 from keystone.common import logging
 from keystone import exception
@@ -78,6 +79,7 @@ class BaseLdap(object):
         self.LDAP_URL = conf.ldap.url
         self.LDAP_USER = conf.ldap.user
         self.LDAP_PASSWORD = conf.ldap.password
+        self.page_size = conf.ldap.page_size
 
         if self.options_name is not None:
             self.suffix = conf.ldap.suffix
@@ -118,7 +120,8 @@ class BaseLdap(object):
         if self.LDAP_URL.startswith('fake://'):
             conn = fakeldap.FakeLdap(self.LDAP_URL)
         else:
-            conn = LdapWrapper(self.LDAP_URL)
+            conn = LdapWrapper(self.LDAP_URL,
+                               self.page_size)
 
         if user is None:
             user = self.LDAP_USER
@@ -324,17 +327,18 @@ class BaseLdap(object):
 
     def deleteTree(self, id):
         conn = self.get_connection()
-        tree_delete_control = ldap.controls.LDAPControl(CONTROL_TREEDELETE,
-                                                        0,
-                                                        None)
+        tree_delete_control = controls.LDAPControl(CONTROL_TREEDELETE,
+                                                   0,
+                                                   None)
         conn.delete_ext_s(self._id_to_dn(id),
                           serverctrls=[tree_delete_control])
 
 
 class LdapWrapper(object):
-    def __init__(self, url):
+    def __init__(self, url, page_size):
         LOG.debug(_("LDAP init: url=%s"), url)
         self.conn = ldap.initialize(url)
+        self.page_size = page_size
 
     def simple_bind_s(self, user, password):
         LOG.debug(_("LDAP bind: dn=%s"), user)
@@ -357,7 +361,39 @@ class LdapWrapper(object):
                       dn,
                       scope,
                       query)
-        res = self.conn.search_s(dn, scope, query)
+        if self.page_size:
+            res = []
+            lc = controls.SimplePagedResultsControl(ldap.LDAP_CONTROL_PAGE_OID,
+                                                    True,
+                                                    (self.page_size, ''))
+            msgid = self.conn.search_ext(dn, scope, query, serverctrls=[lc])
+            # Endless loop request pages on ldap server until it has no data
+            while True:
+                # Request to the ldap server a page with 'page_size' entries
+                rtype, rdata, rmsgid, serverctrls = self.conn.result3(msgid)
+                # Receive the data
+                res.extend(rdata)
+                pctrls = [c for c in serverctrls
+                          if c.controlType == ldap.LDAP_CONTROL_PAGE_OID]
+                if pctrls:
+                    # LDAP server supports pagination
+                    est, cookie = pctrls[0].controlValue
+                    if cookie:
+                        # There is more data still on the server
+                        # so we request another page
+                        lc.controlValue = (self.page_size, cookie)
+                        msgid = self.conn.search_ext(dn,
+                                                     scope,
+                                                     query,
+                                                     serverctrls=[lc])
+                    else:
+                        # Exit condition no more data on server
+                        break
+                else:
+                    LOG.warning(_("LDAP Server ignores RFC 2696 control"))
+                    break
+        else:
+            res = self.conn.search_s(dn, scope, query)
 
         o = []
         for dn, attrs in res:
