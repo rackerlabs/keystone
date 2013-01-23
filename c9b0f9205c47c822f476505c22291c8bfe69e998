@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Zw8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T21:32:54Z",
+      "side": 1,
+      "message": "it is extremely inefficient, but that\u0027s certainly a do-able improvement",
+      "parentUuid": "AAAAM3//aCo\u003d",
+      "revId": "c9b0f9205c47c822f476505c22291c8bfe69e998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Z/8\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-01-23T19:26:29Z",
       "side": 1,
       "message": "Should the domain be considered to be invalid and the authentication rejected if the user\u0027s domain isn\u0027t found (user_domain_ref is None)?",
+      "revId": "c9b0f9205c47c822f476505c22291c8bfe69e998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Zw4\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T21:32:54Z",
+      "side": 1,
+      "message": "yes, but not yet because we don\u0027t have the migration in place to support that logic",
+      "parentUuid": "AAAAM3//Z/8\u003d",
       "revId": "c9b0f9205c47c822f476505c22291c8bfe69e998",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
