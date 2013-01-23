@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Zuw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T22:06:13Z",
+      "side": 1,
+      "message": "+1; 0 or None both sound like good defaults here",
+      "parentUuid": "AAAAM3//Z3o\u003d",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Z4E\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-01-23T20:40:58Z",
       "side": 1,
       "message": "openstack coding standards say that you should import packages and not classes, see https://github.com/openstack/python-keystoneclient/blob/master/HACKING",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Zuo\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T22:06:13Z",
+      "side": 1,
+      "message": "from ldap import coding; and put it after the \u0027import ldap\u0027",
+      "parentUuid": "AAAAM3//Z4E\u003d",
       "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Zuk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T22:06:13Z",
+      "side": 1,
+      "message": "it\u0027s weird that their uppercase too\n\n  self.url\n  self.username\n  self.password\n  self.page_size",
+      "parentUuid": "AAAAM3//Z3A\u003d",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Z28\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Zu8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T22:06:13Z",
+      "side": 1,
+      "message": "haha",
+      "parentUuid": "AAAAM3//Z28\u003d",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Z20\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -81,6 +153,75 @@
       "writtenOn": "2013-01-23T20:40:58Z",
       "side": 1,
       "message": "this must fail PEP8 checks? there\u0027s no spaces after ,.",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//ZuE\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T22:06:13Z",
+      "side": 1,
+      "message": "it will",
+      "parentUuid": "AAAAM3//Z20\u003d",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Ztw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T22:06:13Z",
+      "side": 1,
+      "message": "add a comment explaining why the endless loop is necessary / what the exit conditions are -- it set off red flags at first",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Zt0\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T22:06:13Z",
+      "side": 1,
+      "message": "Log a warning instead, use i18n, and refer to a specific server (not sure if it should be LDAP_URL or whatever):\n\n  LOG.warning(_(\u0027%s ignores RFC 2696 control.\u0027) % self.url)",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Zts\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T22:06:13Z",
+      "side": 1,
+      "message": "I\u0027m happy to defer to the community on whether paging should be enabled or not, but I assume it should? If people don\u0027t want paging they can specify a page_size \u003d 0, or page_size \u003d None",
       "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
