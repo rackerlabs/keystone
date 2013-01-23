@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Z/4\u003d",
+        "filename": "keystone/clean.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T19:24:53Z",
+      "side": 1,
+      "message": "feel free to extract this into it\u0027s own patch",
+      "revId": "7c6ed36a14c26333d14a747e55489c09be6a24d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Z/w\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/014_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T19:24:53Z",
+      "side": 1,
+      "message": "generate randomly or use something easily memorable and/or configurable (e.g. default_domain_id\u003d\u0027default\u0027)",
+      "revId": "7c6ed36a14c26333d14a747e55489c09be6a24d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Z/s\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/014_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T19:24:53Z",
+      "side": 1,
+      "message": "yay",
+      "revId": "7c6ed36a14c26333d14a747e55489c09be6a24d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Z/o\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/014_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T19:24:53Z",
+      "side": 1,
+      "message": "i don\u0027t think we need any extra metadata on this relationship? v3 api doesn\u0027t even support providing a body with the create request",
+      "revId": "7c6ed36a14c26333d14a747e55489c09be6a24d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Z/k\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/014_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T19:24:53Z",
+      "side": 1,
+      "message": "would prefer something simpler, and lowercase I think... e.g. \u0027member\u0027 to correspond with the ever-popular \u0027admin\u0027 role",
+      "revId": "7c6ed36a14c26333d14a747e55489c09be6a24d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Z/c\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/014_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T19:24:53Z",
+      "side": 1,
+      "message": "adding description in here twice? i assume it\u0027s not an indexed column",
+      "revId": "7c6ed36a14c26333d14a747e55489c09be6a24d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Z/Y\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T19:24:53Z",
+      "side": 1,
+      "message": "you can delete my TODO comments here too; this change could also be extracted to stand on its own",
+      "revId": "7c6ed36a14c26333d14a747e55489c09be6a24d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Z/E\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T19:24:53Z",
+      "side": 1,
+      "message": "much better name",
+      "revId": "7c6ed36a14c26333d14a747e55489c09be6a24d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Z+8\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-23T19:24:53Z",
+      "side": 1,
+      "message": "add TODO\u0027s to rename the other _metadata tables as well",
+      "revId": "7c6ed36a14c26333d14a747e55489c09be6a24d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
