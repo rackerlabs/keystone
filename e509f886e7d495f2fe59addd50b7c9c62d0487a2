@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Z3o\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-23T20:40:58Z",
+      "side": 1,
+      "message": "I\u0027d prefer that there\u0027s a single option, page_size, which if set to 0 indicates no paging. Also, document the configuration options so that people can use this new feature correctly.",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Z4E\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-23T20:40:58Z",
+      "side": 1,
+      "message": "openstack coding standards say that you should import packages and not classes, see https://github.com/openstack/python-keystoneclient/blob/master/HACKING",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Z3A\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-23T20:40:58Z",
+      "side": 1,
+      "message": "Remove LDAP_ from the name of these variables. It\u0027s already in a class with Ldap in the name. This is getting close to Smurf Naming Convention (http://www.codinghorror.com/blog/2012/07/new-programming-jargon.html).",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Z28\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-23T20:40:58Z",
+      "side": 1,
+      "message": "remove (), this is python.",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Z20\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-23T20:40:58Z",
+      "side": 1,
+      "message": "this must fail PEP8 checks? there\u0027s no spaces after ,.",
+      "revId": "e509f886e7d495f2fe59addd50b7c9c62d0487a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
