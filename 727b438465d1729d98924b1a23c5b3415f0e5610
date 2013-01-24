@@ -16,6 +16,24 @@
       "revId": "727b438465d1729d98924b1a23c5b3415f0e5610",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Y/Q\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-01-24T11:54:21Z",
+      "side": 1,
+      "message": "Done.\nAnd agree that I think we have to still let the domain_id be passed in as an optional parameter, to allow for the admin case (or if we ever have multi-domain tokens)",
+      "parentUuid": "AAAAM3//Z08\u003d",
+      "revId": "727b438465d1729d98924b1a23c5b3415f0e5610",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
