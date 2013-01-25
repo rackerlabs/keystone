@@ -800,6 +800,25 @@ class IdentityTests(object):
         for test_user in default_fixtures.USERS:
             self.assertTrue(x for x in users if x['id'] == test_user['id'])
 
+    def test_list_users_with_role_in_tenant(self):
+        users = self.identity_api.list_users()
+        roles = self.identity_api.list_roles()
+        tenants = self.identity_api.get_tenants()
+        for r in roles:
+            for t in tenants:
+                self.assertEqual(
+                    [],
+                    self.identity_api.list_users_with_role_in_tenant(
+                        r['id'], t['id']))
+        tenant = {'id': 'fake1', 'name': 'fake1'}
+        self.identity_api.create_tenant('fake1', tenant)
+        self.identity_api.add_role_to_user_and_tenant(
+            self.user_foo['id'], tenant['id'], 'member')
+        res = self.identity_api.list_users_with_role_in_tenant('member',
+                                                               'fake1')
+        self.assertEqual(len(res), 1)
+        self.assertEqual(res[0]['id'], 'foo')
+
     def test_list_roles(self):
         roles = self.identity_api.list_roles()
         for test_role in default_fixtures.ROLES:
