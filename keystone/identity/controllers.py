@@ -497,7 +497,15 @@ class UserV3(controller.V3Controller):
 
     @controller.protected
     def list_users(self, context):
-        refs = self.identity_api.list_users(context)
+        if ('role' in context['query_string'] and
+                'tenant' in context['query_string']):
+            role = context['query_string']['role']
+            tenant = context['query_string']['tenant']
+            refs = self.identity_api.list_users_with_role_in_tenant(context,
+                                                                    role,
+                                                                    tenant)
+        else:
+            refs = self.identity_api.list_users(context)
         return {'users': self._paginate(context, refs)}
 
     @controller.protected
