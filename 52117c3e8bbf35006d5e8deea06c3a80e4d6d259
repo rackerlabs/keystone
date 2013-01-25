@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//XBc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-25T17:20:16Z",
+      "side": 1,
+      "message": "Applications should set the LDAP protocol version, see the note here: http://www.python-ldap.org/doc/html/ldap.html#object-attributes , under LDAPObject.protocol_version. I think it\u0027s especially the case if we\u0027re going to use LDAP v3 features such as controls.",
+      "revId": "52117c3e8bbf35006d5e8deea06c3a80e4d6d259",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//XBY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-25T17:20:16Z",
+      "side": 1,
+      "message": "is it worth it to provide some more information with this message? Here\u0027s my stab at a more usable message:\n\nLDAP Server does not support paging. Disable paging in your keystone.conf file to avoid this message.\n\nAlso, is it worth it to only print this error once (set self.page_size \u003d 0 for subsequent searches).",
+      "revId": "52117c3e8bbf35006d5e8deea06c3a80e4d6d259",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
