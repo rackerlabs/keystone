@@ -16,6 +16,24 @@
       "revId": "1ab16556c37458cdfba3bf0e1c6c018a0d999fa0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//XtE\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-25T03:07:15Z",
+      "side": 1,
+      "message": "Was done for debugging purposes, and will be removed prior to removing the WIP tag",
+      "parentUuid": "AAAAM3//Z7E\u003d",
+      "revId": "1ab16556c37458cdfba3bf0e1c6c018a0d999fa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
