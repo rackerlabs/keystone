@@ -342,4 +342,4 @@ class Ec2Controller(controller.V2Controller):
             context=context,
             tenant_id=tenant_id)
         if not tenant_ref:
-            raise exception.TenantNotFound(tenant_id=tenant_id)
+            raise exception.ProjectNotFound(tenant_id=tenant_id)
