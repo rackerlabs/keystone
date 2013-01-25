@@ -124,6 +124,22 @@ class Identity(identity.Driver):
     def list_users(self):
         return self.user.get_all()
 
+    def list_users_with_role_in_tenant(self, role_id, tenant_id):
+        self.get_tenant(tenant_id)
+        self.get_role(role_id)
+        user_refs = self.user.get_all()
+        results = []
+
+        for user in user_refs:
+            try:
+                metadata_ref = self.get_metadata(user['id'], tenant_id)
+            except exception.MetadataNotFound:
+                pass
+            else:
+                if role_id in metadata_ref.get('roles', []):
+                    results.append(user)
+        return [identity.filter_user(x) for x in results]
+
     def get_user_by_name(self, user_name):
         try:
             return identity.filter_user(self.user.get_by_name(user_name))
