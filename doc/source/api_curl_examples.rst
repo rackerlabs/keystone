@@ -402,6 +402,38 @@ Returns::
         ]
     }
 
+GET /users
+====================
+
+List users::
+
+    $ curl -H "X-Auth-Token:999888777666" http://localhost:35357/v2.0/users
+
+Returns::
+
+    {
+        "users":[
+            {
+                "id": "u1000",
+                "username": "jqsmith",
+                "email": "john.smith@example.org",
+                "enabled": true
+            },
+            {
+                "id": "u1001",
+                "username": "jqsmith",
+                "email": "john.smith@example.org",
+                "enabled": true
+            }
+        ],
+        "users_links":[]
+    }
+
+List users with role in tenant::
+
+    $ curl -H "X-Auth-Token:999888777666" http://localhost:35357/v2.0/users?role=42&tenant=24
+
+
 GET /users/{user_id}
 ====================
 

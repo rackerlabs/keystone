@@ -695,6 +695,23 @@ class Identity(sql.Base, identity.Driver):
         user_refs = session.query(User)
         return [identity.filter_user(x.to_dict()) for x in user_refs]
 
+    def list_users_with_role_in_tenant(self, role_id, tenant_id):
+        session = self.get_session()
+        self.get_tenant(tenant_id)
+        self.get_role(role_id)
+        user_refs = session.query(User)
+        results = []
+
+        for user in user_refs:
+            try:
+                metadata_ref = self.get_metadata(user.id, tenant_id)
+            except exception.MetadataNotFound:
+                pass
+            else:
+                if role_id in metadata_ref.get('roles', []):
+                    results.append(user)
+        return [identity.filter_user(x.to_dict()) for x in results]
+
     def _get_user(self, user_id):
         session = self.get_session()
         user_ref = session.query(User).filter_by(id=user_id).first()

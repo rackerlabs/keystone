@@ -89,6 +89,9 @@ class PamIdentity(identity.Driver):
     def list_users(self):
         raise NotImplementedError()
 
+    def list_users_with_role_in_tenant(self, role_id, tenant_id):
+        raise NotImplementedError()
+
     def list_roles(self):
         raise NotImplementedError()
 

@@ -155,16 +155,19 @@ class User(controller.V2Controller):
     def get_users(self, context):
         # NOTE(termie): i can't imagine that this really wants all the data
         #               about every single user in the system...
+        self.assert_admin(context)
         if 'name' in context['query_string']:
-            return self.get_user_by_name(
-                context, context['query_string'].get('name'))
-
-        self.assert_admin(context)
-        return {'users': self.identity_api.list_users(context)}
-
-    def get_user_by_name(self, context, user_name):
-        self.assert_admin(context)
-        return {'user': self.identity_api.get_user_by_name(context, user_name)}
+            user_name = context['query_string']['name']
+            return {'user': self.identity_api.get_user_by_name(context,
+                                                               user_name)}
+        elif ('role' in context['query_string'] and
+              'tenant' in context['query_string']):
+            role = context['query_string']['role']
+            tenant = context['query_string']['tenant']
+            return {'users': self.identity_api.list_users_with_role_in_tenant(
+                context, role, tenant)}
+        else:
+            return {'users': self.identity_api.list_users(context)}
 
     # CRUD extension
     def create_user(self, context, user):
@@ -459,7 +462,15 @@ class UserV3(controller.V3Controller):
 
     @controller.protected
     def list_users(self, context):
-        refs = self.identity_api.list_users(context)
+        if ('role' in context['query_string'] and
+                'tenant' in context['query_string']):
+            role = context['query_string']['role']
+            tenant = context['query_string']['tenant']
+            refs = self.identity_api.list_users_with_role_in_tenant(context,
+                                                                    role,
+                                                                    tenant)
+        else:
+            refs = self.identity_api.list_users(context)
         return {'users': self._paginate(context, refs)}
 
     @controller.protected
