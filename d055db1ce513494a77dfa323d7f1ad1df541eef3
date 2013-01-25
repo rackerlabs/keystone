@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Wsw\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-25T20:29:20Z",
+      "side": 1,
+      "message": "better yet, use:\n\n  uuid.uuid4().hex\n\nto explicitly illustrate that the actual value is arbitrary.",
+      "parentUuid": "AAAAM3//Zmg\u003d",
+      "revId": "d055db1ce513494a77dfa323d7f1ad1df541eef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Zmk\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 3
@@ -106,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Wss\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-25T20:29:20Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "AAAAM3//Zmk\u003d",
+      "revId": "d055db1ce513494a77dfa323d7f1ad1df541eef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//ZmM\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 3
@@ -117,6 +153,24 @@
       "writtenOn": "2013-01-23T23:02:52Z",
       "side": 1,
       "message": "how come you couldn\u0027t use Non_existing_role_id like you do on 576?  Would be nice to keep consistent",
+      "revId": "d055db1ce513494a77dfa323d7f1ad1df541eef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Wso\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-25T20:29:20Z",
+      "side": 1,
+      "message": "this is referencing a valid role, created at the top of this test",
+      "parentUuid": "AAAAM3//ZmM\u003d",
       "revId": "d055db1ce513494a77dfa323d7f1ad1df541eef3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
