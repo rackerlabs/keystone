@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//VLU\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-28T19:14:15Z",
+      "side": 1,
+      "message": "raises ProjectNotFound",
+      "revId": "dde77f1e6b33bf7b1ab30a2dbe38daf1bea1aa30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//VLE\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-28T19:14:15Z",
+      "side": 1,
+      "message": "ProjectNotFound expects project_id.",
+      "revId": "dde77f1e6b33bf7b1ab30a2dbe38daf1bea1aa30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//VJw\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 633,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-28T19:14:15Z",
+      "side": 1,
+      "message": "what does the xx prefix mean?",
+      "revId": "dde77f1e6b33bf7b1ab30a2dbe38daf1bea1aa30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

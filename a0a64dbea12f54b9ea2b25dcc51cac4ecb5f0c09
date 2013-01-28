@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//VKc\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-28T19:14:15Z",
+      "side": 0,
+      "message": "TenantAPI -\u003e ProjectApi\n\n(Is this comment still relevant? Maybe it can be removed.)",
+      "revId": "a0a64dbea12f54b9ea2b25dcc51cac4ecb5f0c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//VJQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-28T19:14:15Z",
+      "side": 0,
+      "message": "I\u0027m guessing this should be ProjectNotFound.",
+      "revId": "a0a64dbea12f54b9ea2b25dcc51cac4ecb5f0c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
