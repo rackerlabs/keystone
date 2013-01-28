@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//VWw\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-28T18:03:49Z",
+      "side": 1,
+      "message": "would prefer this file live in keystone.tests as keystone.tests.core or something",
+      "revId": "369100a574410984e17bfed3558b056fd60f9d00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
