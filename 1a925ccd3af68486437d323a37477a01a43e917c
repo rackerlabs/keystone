@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//VmU\u003d",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-28T13:46:53Z",
+      "side": 1,
+      "message": "Well, I\u0027m changing all the implementations of it in this patch and changing the signature in the driver... Beyond that, no one has come forward to say they\u0027ve completely implemented their own driver for any backend, so, AFAIK, there\u0027s no outside implementations to be worried about.",
+      "parentUuid": "AAAAM3//Xzk\u003d",
+      "revId": "1a925ccd3af68486437d323a37477a01a43e917c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Xv0\u003d",
         "filename": "keystone/contrib/ec2/core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-01-25T02:13:43Z",
       "side": 1,
       "message": "Why is it OK to ignore domain for now? Is it because the domain code is not implemented yet?",
+      "revId": "1a925ccd3af68486437d323a37477a01a43e917c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//VmQ\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-28T13:46:53Z",
+      "side": 1,
+      "message": "the get_catalog() call doesn\u0027t actually require any arguments (they\u0027re all optional). I\u0027m specifically passing None here (the default) just so it\u0027s clear that something should be passed in eventually.\n\nAnd yes, there\u0027s not actually a domain in this context to pass in yet.",
+      "parentUuid": "AAAAM3//Xv0\u003d",
       "revId": "1a925ccd3af68486437d323a37477a01a43e917c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
