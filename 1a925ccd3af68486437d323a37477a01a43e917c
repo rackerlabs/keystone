@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//VgQ\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-28T15:48:35Z",
+      "side": 1,
+      "message": "Can we please please please not use the term metadata?  There has to be a better term.",
+      "revId": "1a925ccd3af68486437d323a37477a01a43e917c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Xv0\u003d",
         "filename": "keystone/contrib/ec2/core.py",
         "patchSetId": 3
@@ -66,6 +83,23 @@
       "side": 1,
       "message": "the get_catalog() call doesn\u0027t actually require any arguments (they\u0027re all optional). I\u0027m specifically passing None here (the default) just so it\u0027s clear that something should be passed in eventually.\n\nAnd yes, there\u0027s not actually a domain in this context to pass in yet.",
       "parentUuid": "AAAAM3//Xv0\u003d",
+      "revId": "1a925ccd3af68486437d323a37477a01a43e917c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//VfU\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-28T15:48:35Z",
+      "side": 1,
+      "message": "Why do we need to look this data up upon validation?  To make sure it has not changed?  If the use no longer has a tenant association, the token would be revoked.  Otherwise, we should be returning the information from the token that was already signed.  We should not be gathering more data.  If we do this,  there will be a difference between what is returned from validating a signed token offline versus online.",
       "revId": "1a925ccd3af68486437d323a37477a01a43e917c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
