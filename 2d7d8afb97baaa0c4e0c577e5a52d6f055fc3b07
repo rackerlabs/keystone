@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//VDI\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-28T20:06:04Z",
+      "side": 1,
+      "message": "The parameter to this function is tenant_id and not user_id, so this line should be tenant_id and not user_id.",
+      "revId": "2d7d8afb97baaa0c4e0c577e5a52d6f055fc3b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//VDQ\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-28T20:06:04Z",
+      "side": 1,
+      "message": "comment I was trying to make was that the tenant_id named parameter should be project_id.\n\nraise exception.ProjectNotFound(tenant_id\u003dtenant_id)\n-\u003e\nraise exception.ProjectNotFound(project_id\u003dtenant_id)\n\nBecause the ProjectNotFound text has %(project_id)s",
+      "revId": "2d7d8afb97baaa0c4e0c577e5a52d6f055fc3b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//VC4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-28T20:06:04Z",
+      "side": 1,
+      "message": "this change seems unrelated.",
+      "revId": "2d7d8afb97baaa0c4e0c577e5a52d6f055fc3b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
