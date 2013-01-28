@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//VHg\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-28T19:29:55Z",
+      "side": 1,
+      "message": "Good catch",
+      "parentUuid": "AAAAM3//VPI\u003d",
+      "revId": "a0a64dbea12f54b9ea2b25dcc51cac4ecb5f0c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//VOE\u003d",
         "filename": "keystone/contrib/ec2/core.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2013-01-28T18:42:52Z",
       "side": 1,
       "message": "ProjectNotFound expects project_id parameter, not tenant_id.",
+      "revId": "a0a64dbea12f54b9ea2b25dcc51cac4ecb5f0c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//VHk\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-01-28T19:29:55Z",
+      "side": 1,
+      "message": "Correct.  We are changing over from Tenant to Project, but we cannot break the existing APIs.  Thus, while we accept tenantId, and will do so for a while, the exception is ProjectNotFound.",
+      "parentUuid": "AAAAM3//VOE\u003d",
       "revId": "a0a64dbea12f54b9ea2b25dcc51cac4ecb5f0c09",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
