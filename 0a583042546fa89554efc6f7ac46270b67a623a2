@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//TqI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-29T16:54:36Z",
+      "side": 1,
+      "message": "this looks like it should be it\u0027s own resource",
+      "revId": "0a583042546fa89554efc6f7ac46270b67a623a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
