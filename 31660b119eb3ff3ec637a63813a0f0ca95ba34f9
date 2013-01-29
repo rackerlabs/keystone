@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Uo4\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-29T00:38:38Z",
+      "side": 1,
+      "message": "TenantNotFound is still relevant in v2 right? Is this error message ever returned to the v2 clients? If so, we may want to keep it around till v2 is deprecated?",
+      "revId": "31660b119eb3ff3ec637a63813a0f0ca95ba34f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//UoY\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-29T00:38:38Z",
+      "side": 1,
+      "message": "May want to remove the TODO comments as it is no longer relevant.",
+      "revId": "31660b119eb3ff3ec637a63813a0f0ca95ba34f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Un4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-01-29T00:38:38Z",
+      "side": 1,
+      "message": "This table is needed for v2 but not v3, no? If only for v2, then no need to rename.",
+      "revId": "31660b119eb3ff3ec637a63813a0f0ca95ba34f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
