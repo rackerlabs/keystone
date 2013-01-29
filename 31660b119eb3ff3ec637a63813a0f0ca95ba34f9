@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Th0\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-29T17:45:09Z",
+      "side": 1,
+      "message": "the only difference is the terminology returned in error messages, \u0027tenant\u0027 vs \u0027project\u0027. Considering that it\u0027s an error message that\u0027s not machine readable, I\u0027m fine with changing it for v2.",
+      "parentUuid": "AAAAM3//Uo4\u003d",
+      "revId": "31660b119eb3ff3ec637a63813a0f0ca95ba34f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//UoY\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Thw\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-29T17:45:09Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAM3//UoY\u003d",
+      "revId": "31660b119eb3ff3ec637a63813a0f0ca95ba34f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Un4\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2013-01-29T00:38:38Z",
       "side": 1,
       "message": "This table is needed for v2 but not v3, no? If only for v2, then no need to rename.",
+      "revId": "31660b119eb3ff3ec637a63813a0f0ca95ba34f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Tho\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-29T17:45:09Z",
+      "side": 1,
+      "message": "actual table name has already changed, and we need to get the data *out* of that table so that we can reflect that data in v3",
+      "parentUuid": "AAAAM3//Un4\u003d",
       "revId": "31660b119eb3ff3ec637a63813a0f0ca95ba34f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
