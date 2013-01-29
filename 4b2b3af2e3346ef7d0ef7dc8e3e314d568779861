@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//TBI\u003d",
+        "filename": "keystone/common/sql/legacy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-29T20:59:26Z",
+      "side": 1,
+      "message": "this migration needs to be rewritten along with removing the user_project_membership table and the add_user_to_project driver calls",
+      "parentUuid": "AAAAM3//TH8\u003d",
+      "revId": "4b2b3af2e3346ef7d0ef7dc8e3e314d568779861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//THo\u003d",
         "filename": "keystone/common/sql/nova.py",
         "patchSetId": 4
