@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//RlE\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-01-30T17:42:35Z",
+      "side": 1,
+      "message": "if you\u0027re setting constant above, might as well use it here instead of checking conf.ldap.allow_self_signed_certs",
+      "revId": "8d29999e396041eac50b5b6ecd432eb4e511a34a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
