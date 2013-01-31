@@ -18,6 +18,8 @@ General
 - Do not name anything the same name as a built-in or reserved word
 - When defining global constants, define them before functions and classes
 - Avoid using "double quotes" where you can reasonably use 'single quotes'
+- Use "X not in Y" instead of "Y not in X" when testing for membership in a
+  collection
 
 
 TODO vs FIXME
