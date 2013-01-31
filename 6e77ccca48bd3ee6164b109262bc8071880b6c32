@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//PWI\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-31T20:15:01Z",
+      "side": 1,
+      "message": "document these in etc/keystone.conf.sample",
+      "revId": "6e77ccca48bd3ee6164b109262bc8071880b6c32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//PWg\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-31T20:15:01Z",
+      "side": 1,
+      "message": "this will run all of the tests in LDAPIdentity under a slightly different configuration... I assume that\u0027s not intended?",
+      "revId": "6e77ccca48bd3ee6164b109262bc8071880b6c32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//PWc\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-31T20:15:01Z",
+      "side": 1,
+      "message": "is there anything special about this test to ldap? can it live in test_backend instead?",
+      "revId": "6e77ccca48bd3ee6164b109262bc8071880b6c32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
