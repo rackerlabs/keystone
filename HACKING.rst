@@ -18,6 +18,16 @@ General
 - Do not name anything the same name as a built-in or reserved word
 - When defining global constants, define them before functions and classes
 - Avoid using "double quotes" where you can reasonably use 'single quotes'
+- Use the "not in" operator for collection membership evaluation. Example::
+
+    if not X in Y:  # BAD, hard to understand
+        pass
+
+    if X not in Y:  # OKAY, intuitive
+        pass
+
+    if not (X in Y or X is Z):  # OKAY, still better than all those 'not's
+        pass
 
 
 TODO vs FIXME
