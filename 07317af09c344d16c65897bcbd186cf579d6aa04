@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//P1U\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-31T15:13:24Z",
+      "side": 1,
+      "message": "collection membership evaluation -\u003e for evaluating membership in a collection",
+      "revId": "07317af09c344d16c65897bcbd186cf579d6aa04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//P1Y\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-31T15:13:24Z",
+      "side": 1,
+      "message": "hard to understand -\u003e intended behavior is ambiguous",
+      "revId": "07317af09c344d16c65897bcbd186cf579d6aa04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//P0w\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-01-31T15:13:24Z",
+      "side": 1,
+      "message": "-1 for this example: it\u0027s not as relevant as the above two and touches on another issue without explaining it... unless you change the second \u0027is\u0027 to an \u0027in\u0027\n\nRegardless, I\u0027d suggest adding a second rule:\n\n  - Use the \"X is not Y\" operator when testing for unequal identities, rather than \"not X is Y\"",
+      "revId": "07317af09c344d16c65897bcbd186cf579d6aa04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
