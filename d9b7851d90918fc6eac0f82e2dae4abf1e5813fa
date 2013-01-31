@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//PiA\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-01-31T18:55:15Z",
+      "side": 1,
+      "message": "wondering how this should work if the attribute_mapping is empty (which is the default for this class). Per the LDAP spec, the client should send a \u00271.1\u0027 attribute to indicate return no attributes. Should this code be converting an empty attribute_mapping to [\u00271.1\u0027]? Maybe that translation happens in the ldap-python library.",
+      "revId": "d9b7851d90918fc6eac0f82e2dae4abf1e5813fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
