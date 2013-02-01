@@ -128,7 +128,8 @@ class MigrateNovaAuth(test.TestCase):
 
         roles = self.identity_api.list_roles()
         role_names = set([role['name'] for role in roles])
-        self.assertEqual(role_names, set(['role2', 'role1', 'role3']))
+        self.assertEqual(role_names, set(['role2', 'role1', 'role3',
+                                          'Member_of_Project']))
 
         assignment_map = {
             'user1': {'proj1': ['role1', 'role2']},
@@ -146,5 +147,7 @@ class MigrateNovaAuth(test.TestCase):
                     user['id'], tenant['id'])
                 actual = [self.identity_api.get_role(role_id)['name']
                           for role_id in roles]
+                if actual.__contains__('Member_of_Project'):
+                    actual.remove('Member_of_Project')
                 expected = old_project_map.get(tenant_name, [])
                 self.assertEqual(set(actual), set(expected))
