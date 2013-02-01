@@ -171,7 +171,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             resp,
             'roles',
             self.assertValidRole,
-            ref)
+            ref,
+            ['name', 'description'])
 
     def assertValidRoleResponse(self, resp, ref):
         return self.assertValidResponse(

@@ -26,6 +26,11 @@ TENANTS = [
         'name': 'BAZ',
         'description': 'description',
         'enabled': True,
+    }, {
+        'id': 'mtu',
+        'name': 'MTU',
+        'description': 'description',
+        'enabled': True,
     }
 ]
 
@@ -36,7 +41,13 @@ USERS = [
         'name': 'FOO',
         'password': 'foo2',
         'tenants': ['bar']
-    }, {
+    },{
+        'id': 'sna',
+        'name': 'SNA',
+        'password': 'snafu',
+        'enabled': True,
+        'tenants': ['bar']
+    },{
         'id': 'two',
         'name': 'TWO',
         'password': 'two2',
@@ -57,9 +68,8 @@ USERS = [
 
 METADATA = [
     {
-        'user_id': 'foo',
-        'tenant_id': 'bar',
-        'extra': 'extra',
+        'user_id': 'sna',
+        'tenant_id': 'mtu',
     }
 ]
 
@@ -70,5 +80,8 @@ ROLES = [
     }, {
         'id': 'member',
         'name': 'Member',
+    }, {
+        'id': 'other',
+        'name': 'Other',
     }
 ]

@@ -121,23 +121,6 @@ class Identity(kvs.Base, identity.Driver):
         role_ids = self.db.get('role_list', [])
         return [self.get_role(x) for x in role_ids]
 
-    # These should probably be part of the high-level API
-    def add_user_to_project(self, tenant_id, user_id):
-        self.get_project(tenant_id)
-        user_ref = self._get_user(user_id)
-        tenants = set(user_ref.get('tenants', []))
-        tenants.add(tenant_id)
-        self.update_user(user_id, {'tenants': list(tenants)})
-
-    def remove_user_from_project(self, tenant_id, user_id):
-        self.get_project(tenant_id)
-        user_ref = self._get_user(user_id)
-        tenants = set(user_ref.get('tenants', []))
-        try:
-            tenants.remove(tenant_id)
-        except KeyError:
-            raise exception.NotFound('User not found in tenant')
-        self.update_user(user_id, {'tenants': list(tenants)})
 
     def get_projects_for_user(self, user_id):
         user_ref = self._get_user(user_id)
@@ -154,6 +137,10 @@ class Identity(kvs.Base, identity.Driver):
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         self.get_user(user_id)
+        user_ref = self._get_user(user_id)
+        tenants = set(user_ref.get('tenants', []))
+        tenants.add(tenant_id)
+        user_ref['tenants'] = list(tenants)
         self.get_project(tenant_id)
         self.get_role(role_id)
         try:
@@ -181,7 +168,16 @@ class Identity(kvs.Base, identity.Driver):
 
         roles.remove(role_id)
         metadata_ref['roles'] = list(roles)
-        self.update_metadata(user_id, tenant_id, metadata_ref)
+
+        if (len(roles) == 0):
+            self.db.delete('metadata-%s-%s' % (tenant_id, user_id))
+            user_ref = self._get_user(user_id)
+            tenants = set(user_ref.get('tenants', []))
+            tenants.remove(tenant_id)
+            user_ref['tenants'] = list(tenants)
+            self.update_user(user_id, user_ref)
+        else:
+            self.update_metadata(user_id, tenant_id, metadata_ref)
 
     # CRUD
     def create_user(self, user_id, user):

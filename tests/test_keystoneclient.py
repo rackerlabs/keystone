@@ -327,7 +327,7 @@ class KeystoneClientTests(object):
     def test_tenant_list(self):
         client = self.get_client()
         tenants = client.tenants.list()
-        self.assertEquals(len(tenants), 1)
+        self.assertEquals(len(tenants), 2)
 
         # Admin endpoint should return *all* tenants
         client = self.get_client(admin=True)
@@ -802,16 +802,19 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
 
     def test_tenant_add_and_remove_user(self):
         client = self.get_client(admin=True)
-        client.roles.add_user_role(tenant=self.tenant_baz['id'],
+        client.roles.add_user_role(tenant=self.tenant_bar['id'],
                                    user=self.user_two['id'],
-                                   role=self.role_member['id'])
-        user_refs = client.tenants.list_users(tenant=self.tenant_baz['id'])
+                                   role=self.role_other['id'])
+        user_refs = client.tenants.list_users(tenant=self.tenant_bar['id'])
         self.assert_(self.user_two['id'] in [x.id for x in user_refs])
-        client.roles.remove_user_role(tenant=self.tenant_baz['id'],
+        client.roles.remove_user_role(tenant=self.tenant_bar['id'],
                                       user=self.user_two['id'],
-                                      role=self.role_member['id'])
-        user_refs = client.tenants.list_users(tenant=self.tenant_baz['id'])
-        self.assert_(self.user_two['id'] not in [x.id for x in user_refs])
+                                      role=self.role_other['id'])
+        roles = client.roles.roles_for_user(user=self.user_foo['id'],
+                                    tenant=self.tenant_bar['id'])
+        self.assertNotIn(self.role_other['id'], roles)
+        user_refs = client.tenants.list_users(tenant=self.tenant_bar['id'])
+        self.assertNotIn(self.user_two['id'], [x.id for x in user_refs])
 
     def test_user_role_add_404(self):
         from keystoneclient import exceptions as client_exceptions
@@ -868,10 +871,10 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
                                                   self.user_foo['id'])
 
         tenants = client.tenants.list()
-        self.assertEqual(len(tenants), 3)
+        self.assertEqual(len(tenants), 4)
 
         tenants_marker = client.tenants.list(marker=tenants[0].id)
-        self.assertEqual(len(tenants_marker), 2)
+        self.assertEqual(len(tenants_marker), 3)
         self.assertEqual(tenants[1].name, tenants_marker[0].name)
         self.assertEqual(tenants[2].name, tenants_marker[1].name)
 
@@ -1009,7 +1012,7 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
 
     def test_tenant_add_and_remove_user(self):
         client = self.get_client(admin=True)
-        client.roles.add_user_to_tenant(tenant_id=self.tenant_baz['id'],
+        client.roles.add_user_to_tenant(tenant_id=self.tenant_bar['id'],
                                         user_id=self.user_two['id'],
                                         role_id=self.role_member['id'])
         role_refs = client.roles.get_user_role_refs(
@@ -1026,7 +1029,7 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
                 # use python's scope fall through to leave roleref_ref set
                 break
 
-        client.roles.remove_user_from_tenant(tenant_id=self.tenant_baz['id'],
+        client.roles.remove_user_from_tenant(tenant_id=self.tenant_bar['id'],
                                              user_id=self.user_two['id'],
                                              role_id=roleref_ref.id)
 
