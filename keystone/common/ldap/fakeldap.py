@@ -41,6 +41,11 @@ SCOPE_NAMES = {
 
 
 LOG = logging.getLogger(__name__)
+#This was generating uneceesary output at run time.
+#If you need debugging output for fakeladp, comment out the following line.
+#since this file should not show up in a live deployment, it does not make
+#sense to have logging for it in log.config.
+LOG.level = LOG.error
 
 
 def _match_query(query, attrs):

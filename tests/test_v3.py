@@ -135,7 +135,8 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         return self.v3_request(method='DELETE', path=path, **kwargs)
 
     def assertValidListResponse(self, resp, key, entity_validator, ref=None,
-                                expected_length=None):
+                                expected_length=None,
+                                entity_keys=None):
         """Make assertions common to all API list responses.
 
         If a reference is provided, it's ID will be searched for in the
@@ -160,7 +161,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
         for entity in entities:
             self.assertIsNotNone(entity)
-            self.assertValidEntity(entity)
+            self.assertValidEntity(entity, entity_keys=entity_keys)
             entity_validator(entity)
         if ref:
             entity = [x for x in entities if x['id'] == ref['id']][0]
@@ -168,24 +169,27 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             entity_validator(entity, ref)
         return entities
 
-    def assertValidResponse(self, resp, key, entity_validator, ref):
+    def assertValidResponse(self, resp, key, entity_validator, ref,
+                            entity_keys=None):
         """Make assertions common to all API responses."""
         entity = resp.body.get(key)
         self.assertIsNotNone(entity)
-        self.assertValidEntity(entity, ref)
+        self.assertValidEntity(entity, ref, entity_keys=entity_keys)
         entity_validator(entity, ref)
         return entity
 
-    def assertValidEntity(self, entity, ref=None):
+    def assertValidEntity(self, entity, ref=None, entity_keys=None):
         """Make assertions common to all API entities.
 
         If a reference is provided, the entity will also be compared against
         the reference.
         """
-        keys = ['name', 'description', 'enabled']
+        keys = entity_keys
+        if keys is None:
+            keys = ['name', 'description', 'enabled']
 
         for k in ['id'] + keys:
-            msg = '%s unnexpectedly None in %s' % (k, entity)
+            msg = '%s unexpectedly None in %s' % (k, entity)
             self.assertIsNotNone(entity.get(k), msg)
 
         self.assertIsNotNone(entity.get('links'))

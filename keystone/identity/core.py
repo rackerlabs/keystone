@@ -102,22 +102,38 @@ class Driver(object):
         raise exception.NotImplemented()
 
     def add_user_to_project(self, tenant_id, user_id):
-        """Add user to a tenant without an explicit role relationship.
+            """Add user to a tenant without an explicit role relationship.
 
-        :raises: keystone.exception.ProjectNotFound,
-                 keystone.exception.UserNotFound
+            :raises: keystone.exception.ProjectNotFound,
+                     keystone.exception.UserNotFound
 
-        """
-        raise exception.NotImplemented()
+            """
+            try:
+                self.get_role(config.CONF.member_role_id)
+            except exception.RoleNotFound:
+                role = {'id': config.CONF.member_role_id,
+                        'name': "Member_of_Project",
+                        'description': 'Default Role for Project Membership',
+                        'extra': "{'description':"
+                                "'Default Role for Project Membership'}"
+                        }
+                self.create_role(config.CONF.member_role_id, role)
+            self.add_role_to_user_and_project(user_id,
+                                              tenant_id,
+                                              config.CONF.member_role_id)
 
     def remove_user_from_project(self, tenant_id, user_id):
-        """Remove user from a tenant without an explicit role relationship.
+        """Remove user from a tenant
 
         :raises: keystone.exception.ProjectNotFound,
                  keystone.exception.UserNotFound
 
         """
-        raise exception.NotImplemented()
+        roles = self.get_roles_for_user_and_project(user_id, tenant_id)
+        if not roles:
+            raise exception.NotFound(tenant_id)
+        for role_id in roles:
+            self.remove_role_from_user_and_project(user_id, tenant_id, role_id)
 
     def get_all_projects(self):
         """FIXME(dolph): Lists all tenants in the system? I'm not sure how this
