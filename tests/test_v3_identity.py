@@ -171,6 +171,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             resp,
             'roles',
             self.assertValidRole,
+            entity_keys=['name', 'description'],
             **kwargs)
 
     def assertValidRoleResponse(self, resp, ref):

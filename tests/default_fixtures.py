@@ -34,6 +34,12 @@ TENANTS = [
         'domain_id': DEFAULT_DOMAIN_ID,
         'description': 'description',
         'enabled': True,
+    }, {
+        'id': 'mtu',
+        'name': 'MTU',
+        'description': 'description',
+        'enabled': True,
+        'domain_id': DEFAULT_DOMAIN_ID
     }
 ]
 
@@ -63,14 +69,20 @@ USERS = [
         'enabled': False,
         'tenant_id': 'baz',
         'tenants': ['baz'],
+    }, {
+        'id': 'sna',
+        'name': 'SNA',
+        'domain_id': DEFAULT_DOMAIN_ID,
+        'password': 'snafu',
+        'enabled': True,
+        'tenants': ['bar']
     }
 ]
 
 METADATA = [
     {
-        'user_id': 'foo',
-        'tenant_id': 'bar',
-        'extra': 'extra',
+        'user_id': 'sna',
+        'tenant_id': 'mtu',
     }
 ]
 
@@ -81,5 +93,8 @@ ROLES = [
     }, {
         'id': 'member',
         'name': 'Member',
+    }, {
+        'id': 'other',
+        'name': 'Other',
     }
 ]
