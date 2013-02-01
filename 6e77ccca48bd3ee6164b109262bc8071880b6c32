@@ -104,6 +104,24 @@
       "revId": "6e77ccca48bd3ee6164b109262bc8071880b6c32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//NxY\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-01T21:17:30Z",
+      "side": 1,
+      "message": "If there\u0027s no \u0027enabled\u0027 field when the object is created, mixin adds the object to the list of enabled ones thus setting \u0027enabled\u0027 to True. So when another call retrieves the object, it will always have \u0027enabled\u0027 field.\n\nThis test used to create user using a dict without \u0027enabled\u0027 field, and tried to compare the ref returned by backend with this dict. The comparison failed because backend inserted \u0027enabled\u0027: True into it.\n\nSo, it\u0027s only the test was failing, no need to do any changes in controllers.",
+      "parentUuid": "AAAAM3//Nz4\u003d",
+      "revId": "6e77ccca48bd3ee6164b109262bc8071880b6c32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
