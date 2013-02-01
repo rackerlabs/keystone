@@ -86,6 +86,24 @@
       "revId": "6e77ccca48bd3ee6164b109262bc8071880b6c32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Nz4\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-01T20:42:09Z",
+      "side": 1,
+      "message": "hmm, if enabled is not specified, it should be assumed to be true from an API perspective.\n\nIf a client does not specify enabled when creating a user on the API with the LDAP backend, would this change cause it to fail? If so, perhaps we should default enabled to True at the controller  level in both v2 and v3?",
+      "parentUuid": "AAAAM3//PUk\u003d",
+      "revId": "6e77ccca48bd3ee6164b109262bc8071880b6c32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
