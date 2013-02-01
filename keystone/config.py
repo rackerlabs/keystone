@@ -144,6 +144,8 @@ register_int('max_request_body_size', default=114688)
 register_int('max_param_size', default=64)
 # we allow tokens to be a bit larger to accomidate PKI
 register_int('max_token_size', default=8192)
+register_str('member_role_id',
+             default='9fe2ff9ee4384b1894a90878d3e92bab')
 
 # identity
 register_str('default_domain_id', group='identity', default='default')

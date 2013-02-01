@@ -148,18 +148,9 @@ class Identity(identity.Driver):
     def list_roles(self):
         return self.role.get_all()
 
-    # These should probably be part of the high-level API
-    def add_user_to_project(self, tenant_id, user_id):
-        self.get_project(tenant_id)
-        self.get_user(user_id)
-        return self.project.add_user(tenant_id, user_id)
-
     def get_projects_for_user(self, user_id):
         self.get_user(user_id)
-        tenant_list = []
-        for tenant in self.project.get_user_projects(user_id):
-            tenant_list.append(tenant['id'])
-        return tenant_list
+        return self.project.get_user_projects(user_id)
 
     def get_project_users(self, tenant_id):
         self.get_project(tenant_id)
@@ -248,11 +239,6 @@ class Identity(identity.Driver):
 
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         return self.role.delete_user(role_id, user_id, tenant_id)
-
-    def remove_user_from_project(self, tenant_id, user_id):
-        self.get_user(user_id)
-        self.get_project(tenant_id)
-        return self.project.remove_user(tenant_id, user_id)
 
     def update_role(self, role_id, role):
         self.get_role(role_id)
@@ -553,10 +539,11 @@ class ProjectApi(common_ldap.BaseLdap, ApiShimMixin):
 
         Always includes default tenants.
         """
-        user_dn = self.user_api._id_to_dn(user_id)
-        query = '(%s=%s)' % (self.member_attribute, user_dn)
-        memberships = self.get_all(query)
-        return memberships
+        associations = self.role_api.list_project_roles_for_user(user_id)
+        memberships = set()
+        for assoc in associations:
+            memberships.add(assoc.project_id)
+        return list(memberships)
 
     def list_for_user_get_page(self, user, marker, limit):
         return self._get_page(marker,
