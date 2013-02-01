@@ -43,9 +43,9 @@ def upgrade(migrate_engine):
     session = orm.sessionmaker(bind=migrate_engine)()
 
     session.execute(
-        'INSERT INTO `%s` (%s) VALUES (%s)' % (
+        'INSERT INTO %s (%s) VALUES (%s)' % (
             domain_table.name,
-            ', '.join(['`%s`' % k for k in domain.keys()]),
+            ', '.join(['"%s"' % k for k in domain.keys()]),
             ', '.join([':%s' % k for k in domain.keys()])),
         domain)
     session.commit()
@@ -59,5 +59,5 @@ def downgrade(migrate_engine):
     sql.Table('domain', meta, autoload=True)
     session = orm.sessionmaker(bind=migrate_engine)()
     session.execute(
-        'DELETE FROM `domain` WHERE `id`=:id', {'id': DEFAULT_DOMAIN_ID})
+        'DELETE FROM domain WHERE id=:id', {'id': DEFAULT_DOMAIN_ID})
     session.commit()
