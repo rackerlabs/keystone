@@ -16,6 +16,24 @@
       "revId": "086b40a3742f81ea375aa6551742cc01f9bd7fbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//NDs\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2013-02-03T00:13:58Z",
+      "side": 1,
+      "message": "I don\u0027t know - the nt support was added separately from the version update code.",
+      "parentUuid": "AAAAM3//iSM\u003d",
+      "revId": "086b40a3742f81ea375aa6551742cc01f9bd7fbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
