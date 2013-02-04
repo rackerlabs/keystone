@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//LMM\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-04T20:21:02Z",
+      "side": 1,
+      "message": "it looks like you can use the \u0027member\u0027 role already defined in this file -- especially because the new role is only being used in 1 test.",
+      "revId": "ed6a7ccce6f15b737eb46a5e030f59217941522d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
