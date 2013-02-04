@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//K8s\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-04T22:28:04Z",
+      "side": 1,
+      "message": "maybe we should have something in HACKING.rst that says \u0027consider if using .get() would be more concise.\u0027",
+      "revId": "4cd7abaa350cc7b465b90a26e87f5c73e32a2d1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
