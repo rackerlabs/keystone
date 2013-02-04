@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//K9w\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-04T22:19:00Z",
+      "side": 1,
+      "message": "This sets a global option for all LDAP connections, not just whatever this object is. Would it make more sense to set a global option outside of any particular object? I\u0027m worried that a connection might somehow get made before a BaseLdap is created and then wouldn\u0027t get the option, but then a BaseLdap gets created and now every connection created since then gets the option.\n\nI\u0027d be happier if this was either done:\na) on startup, e.g., in \u0027main()\u0027, so it\u0027s more obvious that all LDAP connections will get this option, or\nb) on each individual connection rather than globally.\n\nI slightly prefer the individual connection approach... seems more flexible.",
+      "revId": "060b69af10013aad89e1bdc2da3ac7c8fd655cde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
