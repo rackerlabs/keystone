@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//LB8\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-04T21:45:58Z",
+      "side": 1,
+      "message": "Would it be better to move this check outside the if / else? (so would also check if not paste_config if CONF.config_file.) Maybe CONF.config_file[0] could be falsy. The code didn\u0027t check for it before, but would at least have less code in this else clause.",
+      "revId": "c669a6c583cdd4dd746fea6fc2c56ae4e7bf82c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//LCM\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-04T21:45:58Z",
+      "side": 1,
+      "message": "(nit) could we print out a more useful error message? like, \u0027The keystone.conf file could not be found in the configuration directories.\u0027",
+      "revId": "c669a6c583cdd4dd746fea6fc2c56ae4e7bf82c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
