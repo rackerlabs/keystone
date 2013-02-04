@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//LAk\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-04T21:53:06Z",
+      "side": 1,
+      "message": "Are you trying to make it so that routes.middleware never prints anything? I didn\u0027t find an OFF, but there\u0027s a CRITICAL level above ERROR. Maybe you could set a filter or something to discard log messages completely. If not, maybe change the comment to say \"make routes\u0027 internal logging be quieter (only ERROR messages)\"",
+      "revId": "86b56c927036b04c603cc52668854750cd53e86c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
