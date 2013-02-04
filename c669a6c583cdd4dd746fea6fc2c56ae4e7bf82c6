@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//K8U\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-04T22:32:55Z",
+      "side": 1,
+      "message": "i don\u0027t believe moving the \u0027if not paste_config\u0027 check outside the if / else makes a difference given the simplicity of the check.  it doesn\u0027t check the validity of paste_config but rather if any value exists.",
+      "parentUuid": "AAAAM3//LB8\u003d",
+      "revId": "c669a6c583cdd4dd746fea6fc2c56ae4e7bf82c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//LCM\u003d",
         "filename": "bin/keystone-all",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-04T21:45:58Z",
       "side": 1,
       "message": "(nit) could we print out a more useful error message? like, \u0027The keystone.conf file could not be found in the configuration directories.\u0027",
+      "revId": "c669a6c583cdd4dd746fea6fc2c56ae4e7bf82c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//K7k\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-04T22:32:55Z",
+      "side": 1,
+      "message": "will update with more useful error message.",
+      "parentUuid": "AAAAM3//LCM\u003d",
       "revId": "c669a6c583cdd4dd746fea6fc2c56ae4e7bf82c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
