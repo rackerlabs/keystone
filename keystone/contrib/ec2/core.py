@@ -104,11 +104,11 @@ class Ec2Controller(controller.V2Controller):
             return
         # NOTE(vish): Some libraries don't use the port when signing
         #             requests, so try again without port.
-        elif ':' in credentials['signature']:
+        elif ':' in credentials['host']:
             hostname, _port = credentials['host'].split(':')
             credentials['host'] = hostname
             signature = signer.generate(credentials)
-            if not utils.auth_str_equal(credentials.signature, signature):
+            if not utils.auth_str_equal(credentials['signature'], signature):
                 raise exception.Unauthorized(message='Invalid EC2 signature.')
         else:
             raise exception.Unauthorized(message='EC2 signature not supplied.')
