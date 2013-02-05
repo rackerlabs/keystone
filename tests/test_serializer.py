@@ -165,3 +165,16 @@ class XmlSerializerTestCase(test.TestCase):
         """
 
         self.assertEqualIgnoreWhitespace(serializer.to_xml(d), xml)
+
+    def test_container_serialization(self):
+        d = {'user': {'id': 1, 'name': 'fdfd', 'roles': [{'id': '1'}]}}
+        xml = """
+            <?xml version="1.0" encoding="UTF-8"?>
+            <user xmlns="http://docs.openstack.org/identity/api/v2.0" id="1"
+                name="fdfd">
+              <roles xmlns="http://docs.openstack.org/identity/api/v2.0">
+                <role id="1"/>
+              </roles>
+            </user>
+        """
+        self.assertEqualIgnoreWhitespace(serializer.to_xml(d), xml)
