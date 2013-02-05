@@ -52,6 +52,24 @@
       "revId": "4cd7abaa350cc7b465b90a26e87f5c73e32a2d1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//KlU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T03:13:37Z",
+      "side": 1,
+      "message": "You\u0027re correct; my point is simply that \u0027k not in d\u0027 is not equivalent to \u0027not d.get(k)\u0027 for all use cases, so I wouldn\u0027t want to add preference between for one into HACKING.",
+      "parentUuid": "AAAAM3//KrU\u003d",
+      "revId": "4cd7abaa350cc7b465b90a26e87f5c73e32a2d1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
