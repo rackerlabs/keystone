@@ -173,6 +173,8 @@ class XmlSerializer(object):
             # unnecessary in XML
             name = element.tag[:-1]
         elif k[-1] == 's':
+            container = etree.Element(k, xmlns=XMLNS)
+            element.append(container)
             name = k[:-1]
         else:
             name = k
