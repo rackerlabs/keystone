@@ -183,6 +183,10 @@ class XmlSerializer(object):
             # so the list itself can have attributes, which is
             # unnecessary in XML
             name = element.tag[:-1]
+        elif k == 'roles':
+            container = etree.Element(k, xmlns=XMLNS)
+            element.append(container)
+            name = 'role'
         elif k[-1] == 's':
             name = k[:-1]
         else:
