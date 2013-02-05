@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Kkg\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T03:22:58Z",
+      "side": 1,
+      "message": "From HACKING:\n\n  Long lines should be wrapped in parentheses in preference to using a backslash for line continuation.\n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#general",
+      "revId": "8c83a8eb1c6d6eccca9ba033045aaccdec5d26ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
