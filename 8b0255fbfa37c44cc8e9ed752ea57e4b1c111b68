@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//I9s\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T20:50:46Z",
+      "side": 1,
+      "message": "good catch, they are definitely missing below",
+      "parentUuid": "AAAAM3//JX4\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Jps\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
         "patchSetId": 10
@@ -200,6 +218,24 @@
       "writtenOn": "2013-02-05T20:43:01Z",
       "side": 1,
       "message": "assuming this should be domain_name\u003ddomain_name",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//I+E\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T20:50:46Z",
+      "side": 1,
+      "message": "We don\u0027t have [Object]NotFoundByName exceptions, so we\u0027ve simply abused the original error messages which were intended for ID\u0027s. The error messages make sense at the end of the day, so it\u0027s just an issue of refactoring, outside the scope of this change.",
+      "parentUuid": "AAAAM3//JFQ\u003d",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
