@@ -16,6 +16,24 @@
       "revId": "86b56c927036b04c603cc52668854750cd53e86c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//KrY\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T01:33:29Z",
+      "side": 1,
+      "message": "now that you mention it, I\u0027d prefer to step it down to WARNING or even INFO... the goal was mainly to eliminate DEBUG messages",
+      "parentUuid": "AAAAM3//LAk\u003d",
+      "revId": "86b56c927036b04c603cc52668854750cd53e86c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
