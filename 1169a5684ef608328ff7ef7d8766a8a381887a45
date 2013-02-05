@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Kfk\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-05T05:31:37Z",
+      "side": 1,
+      "message": "might want to comment this regular expression so it is easier to understand",
+      "revId": "1169a5684ef608328ff7ef7d8766a8a381887a45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//KfY\u003d",
+        "filename": "keystone/openstack/common/version.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-05T05:31:37Z",
+      "side": 1,
+      "message": "typo in comments",
+      "revId": "1169a5684ef608328ff7ef7d8766a8a381887a45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
