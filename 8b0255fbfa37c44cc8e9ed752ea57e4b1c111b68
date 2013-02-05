@@ -1,0 +1,327 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//JsE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "we shouldn\u0027t be assuming the default domain on v3...\n\nis_admin is set to true as a result of using the static admin_token, correct?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//JrM\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "this should be a FIXME at the very least\n\nwill project-scoped tokens and \"unscoped\" tokens not reach this block?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Jpw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "HACKING nit -- use single quotes where possible; there\u0027s lots of double quotes added here",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Jps\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "user_table.drop() ?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Jls\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "looks like the indentation on default was correct before",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Jlc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "why commit and close, but only in the downgrade? i would assume that you especially don\u0027t need close()",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//JiQ\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "tenant.get(\u0027domain_id\u0027, DEFAULT_DOMAIN_ID) ?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//JiI\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "same question as above",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//JeI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "don\u0027t you need to normalize the domain_id, so that it only looks for projects in the default domain?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//JeA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "i think we should pop() the domain_id here, if one is provided, so that it cannot be manipulated by the v2 api ... or raise a 400",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Jd8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "filter domain id on result list",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Jd0\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "filter domain id out?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Jdc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "assume default domain id?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Jc8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "make this a \"\"\"doc string\"\"\" inside the function",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//JcM\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "i\u0027m not clear on why you\u0027re checking a domain id / name in a v2 context at all?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//JcE\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "2 line breaks here",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//JcA\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "2 line breaks here",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Jas\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1138,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "if you\u0027re just trying to copy it, there\u0027s a couple shorter methods:\n\n  \u003e\u003e\u003e d \u003d dict()\n  \u003e\u003e\u003e id(d)\n  140595792556880\n  \u003e\u003e\u003e id(d.copy())\n  140595792572144\n  \u003e\u003e\u003e id(dict(d))\n  140595792571712\n\nbut i don\u0027t see a reason to copy it?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//JaQ\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T17:10:40Z",
+      "side": 1,
+      "message": "i don\u0027t think this file should have any changes at all, as this represents what nova auth looked like",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
