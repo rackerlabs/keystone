@@ -70,6 +70,24 @@
       "revId": "4cd7abaa350cc7b465b90a26e87f5c73e32a2d1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//KkQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2013-02-05T03:26:50Z",
+      "side": 1,
+      "message": "Ah, understood. Yes we almost made that mistake to a patch in Quantum.",
+      "parentUuid": "AAAAM3//KlU\u003d",
+      "revId": "4cd7abaa350cc7b465b90a26e87f5c73e32a2d1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
