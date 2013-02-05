@@ -788,7 +788,7 @@ class XmlTestCase(RestfulTestCase, CoreApiTests):
     def assertValidUserResponse(self, r):
         xml = r.body
         self.assertEqual(xml.tag, self._tag('user'))
-
+        self.assertTrue(len(r.body.findall(self._tag('roles'))))
         self.assertValidUser(xml)
 
     def assertValidRoleListResponse(self, r):
