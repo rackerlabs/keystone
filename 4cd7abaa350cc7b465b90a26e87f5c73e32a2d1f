@@ -16,6 +16,24 @@
       "revId": "4cd7abaa350cc7b465b90a26e87f5c73e32a2d1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Ks0\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-05T01:26:08Z",
+      "side": 1,
+      "message": "i can\u0027t think of a reason why that wouldn\u0027t work here, but it\u0027s not quite a universal substitute for \u0027not in\u0027, e.g.:\n\n  \u003e\u003e\u003e d \u003d dict()\n  \u003e\u003e\u003e k \u003d object()\n  \u003e\u003e\u003e k not in d\n  True\n  \u003e\u003e\u003e not d.get(k)\n  True\n  \u003e\u003e\u003e d[k] \u003d None\n  \u003e\u003e\u003e k not in d\n  False\n  \u003e\u003e\u003e not d.get(k)\n  True",
+      "parentUuid": "AAAAM3//K8s\u003d",
+      "revId": "4cd7abaa350cc7b465b90a26e87f5c73e32a2d1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
