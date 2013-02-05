@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Approved+1: Thierry Carrez <thierry@openstack.org>
+Code-Review+2: Thierry Carrez <thierry@openstack.org>
+Submitted-by: Jenkins
+Submitted-at: Tue, 05 Feb 2013 16:17:24 +0000
+Reviewed-on: https://review.openstack.org/21215
+Project: openstack/keystone
+Branch: refs/heads/stable/folsom
