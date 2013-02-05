@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//JX4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-05T20:43:01Z",
+      "side": 1,
+      "message": "do the password/enabled attributes need to be copied if its not used in final table? is it just for the sake of completeness?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Jps\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
         "patchSetId": 10
@@ -64,6 +81,23 @@
       "writtenOn": "2013-02-05T17:10:40Z",
       "side": 1,
       "message": "user_table.drop() ?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//JXg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-05T20:43:01Z",
+      "side": 1,
+      "message": "same thing, except for description/enabled.",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -132,6 +166,40 @@
       "writtenOn": "2013-02-05T17:10:40Z",
       "side": 1,
       "message": "same question as above",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//JFI\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-05T20:43:01Z",
+      "side": 1,
+      "message": "domain_name\u003ddomain_name",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//JFQ\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-05T20:43:01Z",
+      "side": 1,
+      "message": "assuming this should be domain_name\u003ddomain_name",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
