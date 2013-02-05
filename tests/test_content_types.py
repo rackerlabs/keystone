@@ -577,6 +577,7 @@ class JsonTestCase(RestfulTestCase, CoreApiTests):
         # validate user
         self.assertIsNotNone(r.body['access']['user'].get('id'))
         self.assertIsNotNone(r.body['access']['user'].get('name'))
+        self.assertIsNotNone(r.body['access']['user'].get('roles'))
 
         serviceCatalog = r.body['access'].get('serviceCatalog')
         # validate service catalog
@@ -841,6 +842,9 @@ class XmlTestCase(RestfulTestCase, CoreApiTests):
         self.assertIsNotNone(user.get('id'))
         self.assertIsNotNone(user.get('name'))
 
+        self.assertIsNotNone(user.find(self._tag('roles')))
+        self.assertIsNone(user.find(self._tag('role')))
+
         serviceCatalog = xml.find(self._tag('serviceCatalog'))
         # validate the serviceCatalog
         if require_service_catalog:
@@ -856,6 +860,7 @@ class XmlTestCase(RestfulTestCase, CoreApiTests):
                 for endpoint in service.findall(self._tag('endpoint')):
                     # validate service endpoint
                     self.assertIsNotNone(endpoint.get('publicURL'))
+
 
     def assertValidTenantListResponse(self, r):
         xml = r.body
