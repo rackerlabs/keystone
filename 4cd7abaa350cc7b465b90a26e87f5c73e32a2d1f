@@ -34,6 +34,24 @@
       "revId": "4cd7abaa350cc7b465b90a26e87f5c73e32a2d1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//KrU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2013-02-05T01:37:17Z",
+      "side": 1,
+      "message": "Dolph, I don\u0027t quite understand your point. I also think line 93 is identical to \"if not tenant_ref.get(\u0027name\u0027)\"",
+      "parentUuid": "AAAAM3//Ks0\u003d",
+      "revId": "4cd7abaa350cc7b465b90a26e87f5c73e32a2d1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
