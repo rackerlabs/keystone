@@ -1865,6 +1865,50 @@ class IdentityTests(object):
         user_projects = self.identity_api.list_user_projects(user1['id'])
         self.assertEquals(len(user_projects), 2)
 
+    def test_update_user_api(self):
+        user = {'id': 'fake1', 'name': 'fake1', 'enabled': True,
+                'domain_id': DEFAULT_DOMAIN_ID}
+        self.identity_api.create_user(user['id'], user)
+        user['enabled'] = False
+        user_ref = self.identity_api.update_user(user['id'], user)
+        self.assert_(user_ref is not None)
+        self.assertEqual(user_ref['id'], user['id'])
+        self.assertEqual(user_ref['name'], user['name'])
+        self.assertEqual(user_ref['enabled'], user['enabled'])
+
+    def test_update_project_api(self):
+        project = {'id': 'fake1', 'name': 'fake1', 'enabled': True,
+                   'domain_id': DEFAULT_DOMAIN_ID}
+        self.identity_api.create_project(project['id'], project)
+        project['enabled'] = False
+        project_ref = self.identity_api.update_project(project['id'],
+                                                       project)
+        self.assert_(project_ref is not None)
+        self.assertEqual(project_ref['id'], project['id'])
+        self.assertEqual(project_ref['name'], project['name'])
+        self.assertEqual(project_ref['enabled'], project['enabled'])
+
+    def test_update_role_api(self):
+        role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_role(role['id'], role)
+        role['name'] = uuid.uuid4().hex
+        role_ref = self.identity_api.update_role(role['id'], role)
+        self.assert_(role_ref is not None)
+        self.assertEqual(role_ref['id'], role['id'])
+        self.assertEqual(role_ref['name'], role['name'])
+
+    def test_update_group_api(self):
+        group = {'id': uuid.uuid4().hex,
+                 'domain_id': uuid.uuid4().hex,
+                 'name': uuid.uuid4().hex}
+        self.identity_api.create_group(group['id'], group)
+        group['domain_id'] = uuid.uuid4().hex
+        group_ref = self.identity_api.update_group(group['id'], group)
+        self.assert_(group_ref is not None)
+        self.assertEqual(group_ref['id'], group['id'])
+        self.assertEqual(group_ref['name'], group['name'])
+        self.assertEqual(group_ref['domain_id'], group['domain_id'])
+
 
 class TokenTests(object):
     def test_token_crud(self):

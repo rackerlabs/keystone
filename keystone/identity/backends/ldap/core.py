@@ -239,7 +239,7 @@ class Identity(identity.Driver):
 
     def update_role(self, role_id, role):
         self.get_role(role_id)
-        self.role.update(role_id, role)
+        return self.role.update(role_id, role)
 
     def create_group(self, group_id, group):
         group['name'] = clean.group_name(group['name'])
@@ -630,6 +630,7 @@ class ProjectApi(common_ldap.BaseLdap, ApiShimMixin):
             msg = 'Changing Name not supported by LDAP'
             raise exception.NotImplemented(message=msg)
         super(ProjectApi, self).update(id, values, old_obj)
+        return self.get(id)
 
 
 class UserRoleAssociation(object):
@@ -882,6 +883,7 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
             pass
         try:
             super(RoleApi, self).update(role_id, role)
+            return self.get(role_id)
         except exception.NotFound:
             raise exception.RoleNotFound(role_id=role_id)
 
@@ -967,3 +969,4 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
             msg = _('Changing Name not supported by LDAP')
             raise exception.NotImplemented(message=msg)
         super(GroupApi, self).update(id, values, old_obj)
+        return self.get(id)
