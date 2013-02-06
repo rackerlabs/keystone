@@ -313,6 +313,7 @@ class BaseLdap(object):
         if modlist:
             conn = self.get_connection()
             conn.modify_s(self._id_to_dn(id), modlist)
+        return values
 
     def delete(self, id):
         if not self.allow_delete:

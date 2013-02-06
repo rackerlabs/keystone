@@ -115,7 +115,7 @@ class Group(Model):
     """
 
     required_keys = ('id', 'name', 'domain_id')
-    optional_keys = ('description')
+    optional_keys = ('description', 'enabled')
 
 
 class Project(Model):
