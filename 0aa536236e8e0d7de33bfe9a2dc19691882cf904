@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//H4M\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T14:50:28Z",
+      "side": 1,
+      "message": "that\u0027s unnexpected... thanks for the comment\n\nwhy didn\u0027t tests fail before? (i assume this is covered...)",
+      "revId": "0aa536236e8e0d7de33bfe9a2dc19691882cf904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
