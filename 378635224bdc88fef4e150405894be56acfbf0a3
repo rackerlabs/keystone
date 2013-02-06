@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//G2o\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-06T23:11:11Z",
+      "side": 1,
+      "message": "why did you change from next to pop?",
+      "revId": "378635224bdc88fef4e150405894be56acfbf0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
