@@ -256,7 +256,7 @@ class Identity(identity.Driver):
 
     def update_role(self, role_id, role):
         self.get_role(role_id)
-        self.role.update(role_id, role)
+        return self.role.update(role_id, role)
 
     def create_group(self, group_id, group):
         group['name'] = clean.group_name(group['name'])
@@ -437,7 +437,7 @@ class UserApi(common_ldap.BaseLdap, ApiShimMixin):
         if self.enabled_mask:
             values['enabled_nomask'] = old_obj['enabled_nomask']
             self.mask_enabled_attribute(values)
-        super(UserApi, self).update(id, values, old_obj)
+        return super(UserApi, self).update(id, values, old_obj)
 
     def delete(self, id):
         user = self.get(id)
@@ -638,7 +638,7 @@ class ProjectApi(common_ldap.BaseLdap, ApiShimMixin):
         if old_obj['name'] != values['name']:
             msg = 'Changing Name not supported by LDAP'
             raise exception.NotImplemented(message=msg)
-        super(ProjectApi, self).update(id, values, old_obj)
+        return super(ProjectApi, self).update(id, values, old_obj)
 
 
 class UserRoleAssociation(object):
@@ -1042,7 +1042,7 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
         except exception.NotFound:
             pass
         try:
-            super(RoleApi, self).update(role_id, role)
+            return super(RoleApi, self).update(role_id, role)
         except exception.NotFound:
             raise exception.RoleNotFound(role_id=role_id)
 
@@ -1124,4 +1124,4 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
         if old_obj['name'] != values['name']:
             msg = _('Changing Name not supported by LDAP')
             raise exception.NotImplemented(message=msg)
-        super(GroupApi, self).update(id, values, old_obj)
+        return super(GroupApi, self).update(id, values, old_obj)
