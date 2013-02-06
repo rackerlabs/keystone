@@ -638,7 +638,7 @@ class ProjectApi(common_ldap.BaseLdap, ApiShimMixin):
         if old_obj['name'] != values['name']:
             msg = 'Changing Name not supported by LDAP'
             raise exception.NotImplemented(message=msg)
-        super(ProjectApi, self).update(id, values, old_obj)
+        return super(ProjectApi, self).update(id, values, old_obj)
 
 
 class UserRoleAssociation(object):
