@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//H4k\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T14:47:44Z",
+      "side": 1,
+      "message": "you\u0027ll also need to make corresponding changes to the json assertions to ensure they validated equally",
+      "revId": "9adbf6f316a3471ee8f9cdb7422bd7ddeb4207df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//H40\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T14:47:44Z",
+      "side": 1,
+      "message": "not every user response contains a list of roles",
+      "revId": "9adbf6f316a3471ee8f9cdb7422bd7ddeb4207df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//H4w\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T14:47:44Z",
+      "side": 1,
+      "message": "maybe extract these three lines into a method...",
+      "revId": "9adbf6f316a3471ee8f9cdb7422bd7ddeb4207df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//H4s\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T14:47:44Z",
+      "side": 1,
+      "message": "re-apply it here? (i\u0027m assuming you\u0027re working with the authentication response?)",
+      "revId": "9adbf6f316a3471ee8f9cdb7422bd7ddeb4207df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
