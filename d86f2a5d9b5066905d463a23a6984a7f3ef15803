@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Hws\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T16:22:06Z",
+      "side": 1,
+      "message": "checkout migration 8 (recently updated) for an even cleaner way to do inserts",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//HwQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T16:22:06Z",
+      "side": 1,
+      "message": "legacy_membership_table.drop()",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//HwI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T16:22:06Z",
+      "side": 1,
+      "message": "is this supposed to go here?",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Hv0\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T16:22:06Z",
+      "side": 1,
+      "message": "change this to `member_role_id`, as there\u0027s no specific reason why it can\u0027t be set to a non-uuid",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Hvo\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T16:22:06Z",
+      "side": 1,
+      "message": "after this change, why not just return self.project.get_user_projects(user_id)?",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//HvI\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T16:22:06Z",
+      "side": 1,
+      "message": "cool",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Huc\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T16:22:06Z",
+      "side": 1,
+      "message": "can we not just remove this method?",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//HuQ\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T16:22:06Z",
+      "side": 1,
+      "message": "CONF \u003d config.CONF",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Htk\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T16:22:06Z",
+      "side": 1,
+      "message": "i\u0027d rather pass in a list of keys to ignore, rather than whole new list, e.g.:\n\n  default_keys \u003d [\u0027name\u0027, \u0027description\u0027, \u0027enabled\u0027]\n  ignore_keys \u003d [\u0027enabled\u0027]\n\n  keys \u003d set(default_keys).difference(set(ignore_keys))",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Htg\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-06T16:22:06Z",
+      "side": 1,
+      "message": "since this is an optional kwarg:\n\n  ignore_keys\u003d[\u0027enabled\u0027]",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
