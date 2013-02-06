@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//HJ0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-06T20:29:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//HwQ\u003d",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//HwI\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2013-02-06T16:22:06Z",
       "side": 1,
       "message": "is this supposed to go here?",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//HJ8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-06T20:29:55Z",
+      "side": 1,
+      "message": "yes.  converting the tenant table to the project table.  Get rid of the tenant table, and restore in downgrade.",
+      "parentUuid": "AAAAM3//HwI\u003d",
       "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//HP4\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-06T20:29:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//Hv0\u003d",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Hvo\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 1
@@ -81,6 +135,24 @@
       "writtenOn": "2013-02-06T16:22:06Z",
       "side": 1,
       "message": "after this change, why not just return self.project.get_user_projects(user_id)?",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//HPM\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-06T20:29:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//Hvo\u003d",
       "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//HN8\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-06T20:29:55Z",
+      "side": 1,
+      "message": "It seems to be used by the KCAdmin  controller.  We can remove the method, but would have to port the logic over there to keep it compat.  Future work.",
+      "parentUuid": "AAAAM3//Huc\u003d",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//HuQ\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 1
@@ -132,6 +222,24 @@
       "writtenOn": "2013-02-06T16:22:06Z",
       "side": 1,
       "message": "CONF \u003d config.CONF",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//HNk\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-06T20:29:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//HuQ\u003d",
       "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//HM0\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-06T20:29:55Z",
+      "side": 1,
+      "message": "I think that the check is more useful if you explicitly provide the keys, as we could then use it for entities other than just the ones we have now.  It probably makes more sense to make the key list a non-optional parameter and then have a standard list.\n\nLet me know if this change is a must.",
+      "parentUuid": "AAAAM3//Htk\u003d",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Htg\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 1
@@ -166,6 +292,24 @@
       "writtenOn": "2013-02-06T16:22:06Z",
       "side": 1,
       "message": "since this is an optional kwarg:\n\n  ignore_keys\u003d[\u0027enabled\u0027]",
+      "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//HMI\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-06T20:29:55Z",
+      "side": 1,
+      "message": "I\u0027d like to make it non-optional...see other comment.",
+      "parentUuid": "AAAAM3//Htg\u003d",
       "revId": "d86f2a5d9b5066905d463a23a6984a7f3ef15803",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
