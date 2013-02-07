@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Approved+1: Thierry Carrez <thierry@openstack.org>
+Code-Review+2: Thierry Carrez <thierry@openstack.org>
+Approved+1: Dave Walker <Dave.Walker@canonical.com>
+Code-Review+2: Dave Walker <Dave.Walker@canonical.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 07 Feb 2013 14:21:42 +0000
+Reviewed-on: https://review.openstack.org/21216
+Project: openstack/keystone
+Branch: refs/heads/stable/essex
