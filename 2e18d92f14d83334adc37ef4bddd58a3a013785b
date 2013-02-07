@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//FFE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-07T20:08:19Z",
+      "side": 1,
+      "message": "you must deal with mysql as well.",
+      "revId": "2e18d92f14d83334adc37ef4bddd58a3a013785b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
