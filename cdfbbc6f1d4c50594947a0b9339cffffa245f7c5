@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Ew0\u003d",
+        "filename": "openstack-common.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-07T22:33:46Z",
+      "side": 1,
+      "message": "is there any desire to alphabetize this list?",
+      "revId": "cdfbbc6f1d4c50594947a0b9339cffffa245f7c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
