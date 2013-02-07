@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//EzA\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-07T22:15:05Z",
+      "side": 1,
+      "message": "just wondering if you considered putting the check for empty modlist in conn.modify_s (LdapWrapper) rather than requiring all callers to ensure modlist is not empty.",
+      "revId": "2930a289773c8c6124971bed66216db91d48c70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
