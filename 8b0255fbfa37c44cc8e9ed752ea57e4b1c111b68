@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//I7c\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "so this is in the cases of the static admin token when they have not specified a domain_id in the call.  I think that has to be the default domain?",
+      "parentUuid": "AAAAM3//JsE\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//JrM\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 10
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Hn4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "I\u0027ll change it to a FIXME.  I\u0027ll come back and re-visit this once we have settled on the various token scopes as part of the domain name spaces api re-work",
+      "parentUuid": "AAAAM3//JrM\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Jpw\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
         "patchSetId": 10
@@ -47,6 +83,24 @@
       "writtenOn": "2013-02-05T17:10:40Z",
       "side": 1,
       "message": "HACKING nit -- use single quotes where possible; there\u0027s lots of double quotes added here",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//I84\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//Jpw\u003d",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//I8w\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//I9s\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Jps\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
         "patchSetId": 10
@@ -99,6 +171,24 @@
       "writtenOn": "2013-02-05T17:10:40Z",
       "side": 1,
       "message": "user_table.drop() ?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//I8M\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "This does not seem reliable - causes hangs (with MySQL), using as many direct session.execute() cmds as possible seem s to prevent this",
+      "parentUuid": "AAAAM3//Jps\u003d",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//I8I\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//JXg\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Jls\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
         "patchSetId": 10
@@ -133,6 +241,24 @@
       "writtenOn": "2013-02-05T17:10:40Z",
       "side": 1,
       "message": "looks like the indentation on default was correct before",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//I8E\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//Jls\u003d",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -156,6 +282,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//I78\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "although I suspect it is benign here, the lack of closing sessions causes the MySQL engine to hang.  I don;t do this in upgrade since we don\u0027t do any session specific work",
+      "parentUuid": "AAAAM3//Jlc\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//JiQ\u003d",
         "filename": "keystone/common/sql/nova.py",
         "patchSetId": 10
@@ -167,6 +311,24 @@
       "writtenOn": "2013-02-05T17:10:40Z",
       "side": 1,
       "message": "tenant.get(\u0027domain_id\u0027, DEFAULT_DOMAIN_ID) ?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//I7I\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "ahh, nice idea",
+      "parentUuid": "AAAAM3//JiQ\u003d",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -190,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//I6M\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//JiI\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//JFI\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 10
@@ -201,6 +381,24 @@
       "writtenOn": "2013-02-05T20:43:01Z",
       "side": 1,
       "message": "domain_name\u003ddomain_name",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//I58\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Matches current \"abusive\" system report name errors, future refactor required",
+      "parentUuid": "AAAAM3//JFI\u003d",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -242,6 +440,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//I54\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Agree - future refactor required.",
+      "parentUuid": "AAAAM3//I+E\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//JeI\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 10
@@ -253,6 +469,24 @@
       "writtenOn": "2013-02-05T17:10:40Z",
       "side": 1,
       "message": "don\u0027t you need to normalize the domain_id, so that it only looks for projects in the default domain?",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Gps\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//JeI\u003d",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -276,6 +510,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//GpM\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//JeA\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Jd8\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 10
@@ -287,6 +539,24 @@
       "writtenOn": "2013-02-05T17:10:40Z",
       "side": 1,
       "message": "filter domain id on result list",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Gow\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "nice catch",
+      "parentUuid": "AAAAM3//Jd8\u003d",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -327,6 +597,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Gpo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//Jdc\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Jc8\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 10
@@ -338,6 +626,24 @@
       "writtenOn": "2013-02-05T17:10:40Z",
       "side": 1,
       "message": "make this a \"\"\"doc string\"\"\" inside the function",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Gpg\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//Jc8\u003d",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -361,6 +667,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//I5I\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "This will only be called in a v3 context....it\u0027s a placeholder function ready to plug into Guang\u0027s changes - I\u0027ll make that clearer..",
+      "parentUuid": "AAAAM3//JcM\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//JcE\u003d",
         "filename": "tests/default_fixtures.py",
         "patchSetId": 10
@@ -372,6 +696,24 @@
       "writtenOn": "2013-02-05T17:10:40Z",
       "side": 1,
       "message": "2 line breaks here",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//I5A\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//JcE\u003d",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -395,6 +737,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//I48\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//JcA\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Jas\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 10
@@ -412,6 +772,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Hmo\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1138,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//Jas\u003d",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//JaQ\u003d",
         "filename": "tests/test_migrate_nova_auth.py",
         "patchSetId": 10
@@ -423,6 +801,24 @@
       "writtenOn": "2013-02-05T17:10:40Z",
       "side": 1,
       "message": "i don\u0027t think this file should have any changes at all, as this represents what nova auth looked like",
+      "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//I6c\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-07T01:45:01Z",
+      "side": 1,
+      "message": "Yep, a better way to do this, agreed.",
+      "parentUuid": "AAAAM3//JaQ\u003d",
       "revId": "8b0255fbfa37c44cc8e9ed752ea57e4b1c111b68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
