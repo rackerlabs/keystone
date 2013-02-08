@@ -1432,8 +1432,7 @@ class IdentityTests(object):
     def test_get_projects(self):
         tenants = self.identity_api.get_projects()
         for test_project in default_fixtures.TENANTS:
-            self.assertTrue(x for x in tenants
-                            if x['id'] == test_project['id'])
+            self.assertIn(test_project['id'], tenants)
 
     def test_delete_project_with_role_assignments(self):
         tenant = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
