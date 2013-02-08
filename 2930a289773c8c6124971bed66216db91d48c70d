@@ -16,6 +16,24 @@
       "revId": "2930a289773c8c6124971bed66216db91d48c70d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D9E\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2013-02-08T13:37:53Z",
+      "side": 1,
+      "message": "I put it here because it is also applicable to fakeldap and LdapWrapper, but if you think that is better in the latter one.",
+      "parentUuid": "AAAAM3//EzA\u003d",
+      "revId": "2930a289773c8c6124971bed66216db91d48c70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
