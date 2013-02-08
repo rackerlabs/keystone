@@ -104,6 +104,9 @@ class Identity(identity.Driver):
             raise exception.ProjectNotFound(project_id=tenant_id)
 
     def get_projects(self):
+        return [project.get('id') for project in self.list_projects()]
+
+    def list_projects(self):
         return self.project.get_all()
 
     def get_project_by_name(self, tenant_name, domain_id):
