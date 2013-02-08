@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//DSQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T22:48:08Z",
+      "side": 1,
+      "message": "I think in this case, base_url is part of the HTTP response data. No escaping is needed.",
+      "parentUuid": "AAAAM3//Dgc\u003d",
+      "revId": "15739739419781128a9994eb28c1ab0ac0bf5e87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//DgM\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 2
