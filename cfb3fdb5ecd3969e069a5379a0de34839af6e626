@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Dqw\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T17:48:00Z",
+      "side": 1,
+      "message": "thank you for the cleanup",
+      "revId": "cfb3fdb5ecd3969e069a5379a0de34839af6e626",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
