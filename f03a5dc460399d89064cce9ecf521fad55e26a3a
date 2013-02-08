@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3//DzU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T17:42:43Z",
+      "side": 1,
+      "message": "something totally unnexpected shouldn\u0027t be caught here -- let it raise a proper 500 -- unless you\u0027re trying to suppress the security details? worth a thought",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Dyo\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T17:42:43Z",
+      "side": 1,
+      "message": "if you\u0027re giving the plugin full access to the list, you should just say the plugin is free to manipulate the list of methods as appropriate, and is expected to append itself to the list.\n\nif it should be a strict contract of append-only, it should return a new list to be appended",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//D8s\u003d",
         "filename": "keystone/auth/methods/password.py",
         "patchSetId": 2
