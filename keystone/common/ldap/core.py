@@ -120,12 +120,6 @@ class BaseLdap(object):
         else:
             conn = LdapWrapper(self.LDAP_URL)
 
-        if user is None:
-            user = self.LDAP_USER
-
-        if password is None:
-            password = self.LDAP_PASSWORD
-
         # not all LDAP servers require authentication, so we don't bind
         # if we don't have any user/pass
         if user and password:
