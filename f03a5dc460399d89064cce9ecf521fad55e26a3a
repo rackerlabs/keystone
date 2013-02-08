@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Dj0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "Yeah, conventional wisdom calls for not (accidentally) exposing the internal details of a security system to the clients via error messages.",
+      "parentUuid": "AAAAM3//DzU\u003d",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Dyo\u003d",
         "filename": "keystone/auth/core.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-08T17:42:43Z",
       "side": 1,
       "message": "if you\u0027re giving the plugin full access to the list, you should just say the plugin is free to manipulate the list of methods as appropriate, and is expected to append itself to the list.\n\nif it should be a strict contract of append-only, it should return a new list to be appended",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//DjY\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "plugins have full access to the list and they should make whatever modifications deemed necessary. This is a better approach because plugins may need to coordinate with one another to a certain degree. The downside is plugin can corrupted the context.\n\nMy experience is that any 3rd plugin to be deployed in an enterprise is subject to intense scrutiny anyway. Static analysis, code review, etc. The whole 9 yard.",
+      "parentUuid": "AAAAM3//Dyo\u003d",
       "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//DjU\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "I documented it in the abstract class interface.",
+      "parentUuid": "AAAAM3//D6c\u003d",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//D6g\u003d",
         "filename": "keystone/auth/methods/password.py",
         "patchSetId": 2
@@ -81,6 +135,24 @@
       "writtenOn": "2013-02-08T14:18:42Z",
       "side": 1,
       "message": "agree, FIXME?",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//DjM\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "Will do. :)",
+      "parentUuid": "AAAAM3//D6g\u003d",
       "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//DjI\u003d",
+        "filename": "keystone/auth/methods/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "I am having trouble with dependency injection. Will need to debug this further.",
+      "parentUuid": "AAAAM3//D88\u003d",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//D80\u003d",
         "filename": "keystone/auth/methods/token.py",
         "patchSetId": 2
@@ -132,6 +222,24 @@
       "writtenOn": "2013-02-08T14:18:42Z",
       "side": 1,
       "message": "is this really an error? seems like it could just quietly reraise... but i\u0027m also not clear on what would raise an assertion error here",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Di8\u003d",
+        "filename": "keystone/auth/methods/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "Yeah you\u0027re right. I don\u0027t think I need to catch this one.",
+      "parentUuid": "AAAAM3//D80\u003d",
       "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Dis\u003d",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "My understanding is that only the authentication part goes to /auth/tokens, the rest are still parked under /tokens. Do I need to update the spec?",
+      "parentUuid": "AAAAM3//D9A\u003d",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//D9I\u003d",
         "filename": "keystone/auth/routers.py",
         "patchSetId": 2
@@ -172,6 +298,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Di4\u003d",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "Good catch!",
+      "parentUuid": "AAAAM3//D9I\u003d",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//D9M\u003d",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 2
@@ -183,6 +327,24 @@
       "writtenOn": "2013-02-08T14:18:42Z",
       "side": 1,
       "message": "what\u0027s an endpoint name?",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//DiQ\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "Don\u0027t remember adding this code. Could\u0027ve been from a bad rebase. I\u0027ll double check.",
+      "parentUuid": "AAAAM3//D9M\u003d",
       "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +385,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//DiM\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "Make sense.",
+      "parentUuid": "AAAAM3//D9U\u003d",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//D+E\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 2
@@ -234,6 +414,24 @@
       "writtenOn": "2013-02-08T14:18:42Z",
       "side": 1,
       "message": "should these last two groups be registered dynamically? (ideally)",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Dhw\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "Sounds good.",
+      "parentUuid": "AAAAM3//D+E\u003d",
       "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +489,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Dho\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "Good catch!",
+      "parentUuid": "AAAAM3//D98\u003d",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//D9o\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 2
@@ -308,6 +524,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Dhc\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "I need them to test my stuff. Might as well do it in this patch.",
+      "parentUuid": "AAAAM3//D9o\u003d",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//D9s\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 2
@@ -319,6 +553,24 @@
       "writtenOn": "2013-02-08T14:18:42Z",
       "side": 1,
       "message": "-1; list projects should be filterable by name, but there\u0027s no reason to expose this at the controller level?",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//DhU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-08T19:27:44Z",
+      "side": 1,
+      "message": "Sure, I am OK with the filtering approach.",
+      "parentUuid": "AAAAM3//D9s\u003d",
       "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
