@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//D8s\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "ping me ... i\u0027m curious what the problem is",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D6c\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "i\u0027m curious about what the contract is that you expect plugins to fulfill... populate user_context if successful or raise?",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D6g\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "agree, FIXME?",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D8w\u003d",
+        "filename": "keystone/auth/methods/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "import order",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D88\u003d",
+        "filename": "keystone/auth/methods/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "@dependency.requires(\u0027token_api\u0027) instead",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D80\u003d",
+        "filename": "keystone/auth/methods/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "is this really an error? seems like it could just quietly reraise... but i\u0027m also not clear on what would raise an assertion error here",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D9A\u003d",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "i thought these were going to be on /auth/ or /auth/tokens or something",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D9I\u003d",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "revoke_token?",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D9M\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "what\u0027s an endpoint name?",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D9k\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "not sure this is valuable if these two exceptions extend exception.Unauthorized which is handled above",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D9U\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "share code with render_exception as much as possible... i\u0027d kinda rather see a `if isinstance(error, Unauthorized): append \u0027authentication\u0027...` instead",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D+E\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "should these last two groups be registered dynamically? (ideally)",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D+A\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "These can/should extend Unauthorized... and you\u0027ll get the code \u0026 title for free",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D94\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "I feel like the message could better reflect the fact that the attempted authorization method was not supported",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D98\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "!!! don\u0027t override __init__ without at least calling super(), this exception is probably unrenderable",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D9o\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "it looks like this change is worthy of a separate patch?",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D9s\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T14:18:42Z",
+      "side": 1,
+      "message": "-1; list projects should be filterable by name, but there\u0027s no reason to expose this at the controller level?",
+      "revId": "f03a5dc460399d89064cce9ecf521fad55e26a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
