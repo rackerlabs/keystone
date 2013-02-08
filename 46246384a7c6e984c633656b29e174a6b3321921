@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Dqc\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-08T17:49:46Z",
+      "side": 1,
+      "message": "it took me a little while to figure out what this was doing, would it be helpful to add a comment like \"# an empty new tenant_id means remove the user from the project\"?",
+      "revId": "46246384a7c6e984c633656b29e174a6b3321921",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
