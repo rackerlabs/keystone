@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//DrU\u003d",
+        "filename": "tools/install_venv_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-08T17:42:00Z",
+      "side": 1,
+      "message": "(nit) when I read ROOT, I assumed this meant /. maybe change ROOT to self.root.",
+      "revId": "d78218c6193282c9db255a81cc956f6f5b599c84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//DrQ\u003d",
+        "filename": "tools/install_venv_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-08T17:42:00Z",
+      "side": 1,
+      "message": "(nit) in other output, virtualenv is venv. Suggest changing virtualenv to venv, or change the other output from venv to virtualenv.",
+      "revId": "d78218c6193282c9db255a81cc956f6f5b599c84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
