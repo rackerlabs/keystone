@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//D8E\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2013-02-08T13:54:46Z",
+      "side": 1,
+      "message": "I understand it, but does it mean that an extra parameter for the protocol version (for backwards compatibility) that disables tree_deletion and paged_search ?",
+      "parentUuid": "AAAAM3//XBc\u003d",
+      "revId": "52117c3e8bbf35006d5e8deea06c3a80e4d6d259",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//XBY\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-01-25T17:20:16Z",
       "side": 1,
       "message": "is it worth it to provide some more information with this message? Here\u0027s my stab at a more usable message:\n\nLDAP Server does not support paging. Disable paging in your keystone.conf file to avoid this message.\n\nAlso, is it worth it to only print this error once (set self.page_size \u003d 0 for subsequent searches).",
+      "revId": "52117c3e8bbf35006d5e8deea06c3a80e4d6d259",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//D8A\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2013-02-08T13:54:46Z",
+      "side": 1,
+      "message": "I fully agree.",
+      "parentUuid": "AAAAM3//XBY\u003d",
       "revId": "52117c3e8bbf35006d5e8deea06c3a80e4d6d259",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
