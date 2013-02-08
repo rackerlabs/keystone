@@ -119,23 +119,10 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def get_all_projects(self):
-        """FIXME(dolph): Lists all tenants in the system? I'm not sure how this
-                         is different from get_projects, why get_projects isn't
-                         documented as part of the driver, or why it's called
-                         get_projects instead of list_projects (i.e. list_roles
-                         and list_users)...
-
-        :returns: a list of ... FIXME(dolph): tenant_refs or tenant_id's?
-
-        """
-        raise exception.NotImplemented()
-
     def get_project_users(self, tenant_id):
-        """FIXME(dolph): Lists all users with a relationship to the specified
-                         tenant?
+        """Lists all users with a relationship to the specified project.
 
-        :returns: a list of ... FIXME(dolph): user_refs or user_id's?
+        :returns: a list of user_refs or an empty set.
         :raises: keystone.exception.ProjectNotFound
 
         """
