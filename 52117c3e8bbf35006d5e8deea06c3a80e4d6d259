@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//DhY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-08T19:28:21Z",
+      "side": 1,
+      "message": "My opinion is that we shouldn\u0027t be concerned with supporting V2 servers. The V3 spec has been out for \u003e 10 years. I still think we should specify LDAP V3 version to the API because the docs say to do it.",
+      "parentUuid": "AAAAM3//D8E\u003d",
+      "revId": "52117c3e8bbf35006d5e8deea06c3a80e4d6d259",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//XBY\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
