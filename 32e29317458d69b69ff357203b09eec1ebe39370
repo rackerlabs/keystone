@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//DmI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T18:38:21Z",
+      "side": 1,
+      "message": "conflicting fix: https://review.openstack.org/#/c/20518/\n\nAt first glance, I prefer the fact that the other patch returns self.get(id) instead of just values -- that appears to be closer to how the other backends behave.",
+      "revId": "32e29317458d69b69ff357203b09eec1ebe39370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
