@@ -34,6 +34,24 @@
       "revId": "2930a289773c8c6124971bed66216db91d48c70d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Dic\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-08T19:23:27Z",
+      "side": 1,
+      "message": "I don\u0027t have a preference on whether it should be here or in the wrapper. I just wanted you to consider it if you hadn\u0027t already. It\u0027s easy to move later if this bites us again.",
+      "parentUuid": "AAAAM3//D9E\u003d",
+      "revId": "2930a289773c8c6124971bed66216db91d48c70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
