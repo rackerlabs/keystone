@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Dmo\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T18:26:08Z",
+      "side": 1,
+      "message": "serviceBAD should be a uuid as well",
+      "revId": "5342209a3dc0bf4e41cab87b894954526edcbffd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Dms\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-08T18:26:08Z",
+      "side": 1,
+      "message": "just fwiw, assertValidErrorResponse is called automatically on a 400+",
+      "revId": "5342209a3dc0bf4e41cab87b894954526edcbffd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
