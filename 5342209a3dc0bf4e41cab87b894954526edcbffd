@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Dk4\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-08T19:02:17Z",
+      "side": 1,
+      "message": "done, making it service(uuid) to avoid uuid starting with a number",
+      "parentUuid": "AAAAM3//Dmo\u003d",
+      "revId": "5342209a3dc0bf4e41cab87b894954526edcbffd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//Dms\u003d",
         "filename": "tests/test_content_types.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-08T18:26:08Z",
       "side": 1,
       "message": "just fwiw, assertValidErrorResponse is called automatically on a 400+",
+      "revId": "5342209a3dc0bf4e41cab87b894954526edcbffd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Dkw\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-08T19:02:17Z",
+      "side": 1,
+      "message": "sorry, not sure i follow. should i remove the assertValidErrorResponse? i copied the usage from other test cases so not surprised if i\u0027m using it incorrectly",
+      "parentUuid": "AAAAM3//Dms\u003d",
       "revId": "5342209a3dc0bf4e41cab87b894954526edcbffd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
