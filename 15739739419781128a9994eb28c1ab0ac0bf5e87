@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Dgc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-08T19:37:42Z",
+      "side": 1,
+      "message": "does this code need to escape special characters in path? (special characters are any characters not valid in a URL.)",
+      "revId": "15739739419781128a9994eb28c1ab0ac0bf5e87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//DgM\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-08T19:37:42Z",
+      "side": 1,
+      "message": "does this code need to escape special characters in collection_name?",
+      "revId": "15739739419781128a9994eb28c1ab0ac0bf5e87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//DgA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-08T19:37:42Z",
+      "side": 1,
+      "message": "escaping a url again.",
+      "revId": "15739739419781128a9994eb28c1ab0ac0bf5e87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
