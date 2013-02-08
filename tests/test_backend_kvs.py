@@ -33,24 +33,9 @@ class KvsIdentity(test.TestCase, test_backend.IdentityTests):
         self.load_fixtures(default_fixtures)
   
     def test_list_user_projects(self):
-        # FIXME(chungg): not implemented
+        # NOTE(chungg): not implemented
         pass
 
-    def test_list_projects(self):
-        # FIXME(chungg): not implemented
-        pass
-
-    def test_list_groups(self):
-        # FIXME(chungg): kvs implementation returns ids, sql returns obj
-        pass
-
-    def test_list_domains(self):
-        # FIXME(chungg): kvs implementation returns ids, sql returns obj
-        pass
-    
-    def test_get_project_users(self):
-        # FIXME(chungg): kvs implementation returns password with get_project_users
-        pass
 
 class KvsToken(test.TestCase, test_backend.TokenTests):
     def setUp(self):
