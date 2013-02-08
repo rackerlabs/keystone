@@ -64,8 +64,12 @@ class Identity(kvs.Base, identity.Driver):
             raise exception.ProjectNotFound(project_id=tenant_id)
 
     def get_projects(self):
-        tenant_keys = filter(lambda x: x.startswith("tenant-"), self.db.keys())
+        tenant_keys = filter(lambda x: x.startswith("tenant-"),
+                             self.db.keys())
         return [self.db.get(key) for key in tenant_keys]
+
+    def list_projects(self):
+        return self.get_projects()
 
     def get_project_by_name(self, tenant_name):
         try:
@@ -76,7 +80,8 @@ class Identity(kvs.Base, identity.Driver):
     def get_project_users(self, tenant_id):
         self.get_project(tenant_id)
         user_keys = filter(lambda x: x.startswith("user-"), self.db.keys())
-        user_refs = [self.db.get(key) for key in user_keys]
+        user_refs = [identity.filter_user(self.db.get(key))
+                     for key in user_keys]
         return filter(lambda x: tenant_id in x['tenants'], user_refs)
 
     def _get_user(self, user_id):
@@ -282,6 +287,10 @@ class Identity(kvs.Base, identity.Driver):
         user_list = set(self.db.get('user_list', []))
         user_list.remove(user_id)
         self.db.set('user_list', list(user_list))
+
+    def list_user_projects(self, user_id):
+        return [self.get_project(x)
+                for x in self.get_projects_for_user(user_id)]
 
     def create_project(self, tenant_id, tenant):
         tenant['name'] = clean.project_name(tenant['name'])
@@ -507,7 +516,8 @@ class Identity(kvs.Base, identity.Driver):
         return domain
 
     def list_domains(self):
-        return self.db.get('domain_list', [])
+        domain_ids = self.db.get('domain_list', [])
+        return [self.get_domain(x) for x in domain_ids]
 
     def get_domain(self, domain_id):
         return self.db.get('domain-%s' % domain_id)
@@ -532,7 +542,8 @@ class Identity(kvs.Base, identity.Driver):
         return group
 
     def list_groups(self):
-        return self.db.get('group_list', [])
+        group_ids = self.db.get('group_list', [])
+        return [self.get_group(x) for x in group_ids]
 
     def get_group(self, group_id):
         try:
