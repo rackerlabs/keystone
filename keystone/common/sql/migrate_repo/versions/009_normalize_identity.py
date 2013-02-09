@@ -17,10 +17,13 @@
 
 from sqlalchemy import Column, MetaData, String, Table, Text, types
 from sqlalchemy.orm import sessionmaker
+from keystone import config
+
+CONF = config.CONF
 
 
 #sqlite doesn't support dropping columns. Copy to a new table instead
-def downgrade_user_table(meta, migrate_engine):
+def downgrade_user_table_sqlite(meta, migrate_engine):
     maker = sessionmaker(bind=migrate_engine)
     session = maker()
     session.execute("ALTER TABLE user RENAME TO orig_user;")
@@ -43,7 +46,7 @@ def downgrade_user_table(meta, migrate_engine):
     session.execute("drop table orig_user;")
 
 
-def downgrade_tenant_table(meta, migrate_engine):
+def downgrade_tenant_table_sqlite(meta, migrate_engine):
     maker = sessionmaker(bind=migrate_engine)
     session = maker()
     session.execute("ALTER TABLE tenant RENAME TO orig_tenant;")
@@ -64,6 +67,19 @@ def downgrade_tenant_table(meta, migrate_engine):
                          'name': tenant.name,
                          'extra': tenant.extra})
     session.execute("drop table orig_tenant;")
+
+
+def downgrade_user_table(meta, migrate_engine):
+    user_table = Table('user', meta, autoload=True)
+    user_table.drop_column(Column("password", String(128)))
+    user_table.drop_column(Column("enabled", types.Boolean,
+                                  default=True))
+
+
+def downgrade_tenant_table(meta, migrate_engine):
+    tenant_table = Table('tenant', meta, autoload=True)
+    tenant_table.drop_column(Column("description", Text()))
+    tenant_table.drop_column(Column("enabled", types.Boolean))
 
 
 def upgrade_user_table(meta, migrate_engine):
@@ -89,5 +105,9 @@ def upgrade(migrate_engine):
 def downgrade(migrate_engine):
     meta = MetaData()
     meta.bind = migrate_engine
-    downgrade_user_table(meta, migrate_engine)
-    downgrade_tenant_table(meta, migrate_engine)
+    if CONF.sql.connection.startswith("sqlite"):
+        downgrade_user_table_sqlite(meta, migrate_engine)
+        downgrade_tenant_table_sqlite(meta, migrate_engine)
+    else:
+        downgrade_user_table(meta, migrate_engine)
+        downgrade_tenant_table(meta, migrate_engine)
