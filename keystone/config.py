@@ -19,7 +19,7 @@ import os
 import sys
 
 from keystone.common import logging
-from keystone.openstack.common import cfg
+from oslo.config import cfg
 
 
 gettext.install('keystone', unicode=1)
