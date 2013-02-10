@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//CWs\u003d",
+        "filename": "tests/test_contrib_s3_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-10T08:04:46Z",
+      "side": 1,
+      "message": "So this should work fine...I guess my only question is whether this should be loaded in initialize_drivers() in test.py? (Or whether we want to keep the contrib stuff out of the standard initialziaton code?  I\u0027d like another core contributor to comment on that.",
+      "revId": "94017094dd64b7ea960d7b4ba16604761b61b8ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
