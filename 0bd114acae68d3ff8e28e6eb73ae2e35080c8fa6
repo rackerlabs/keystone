@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//CAo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/010_normalize_identity_migration.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-10T22:32:11Z",
+      "side": 1,
+      "message": "This should be committed in the transaction upon session commit, but it seems to be non-deterministic.    Better to do it as the upgrade_* functions below.",
+      "revId": "0bd114acae68d3ff8e28e6eb73ae2e35080c8fa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//CAs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/010_normalize_identity_migration.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-10T22:32:11Z",
+      "side": 1,
+      "message": "This is the preferred way to do updates:   it does it inside a connection, and they get committed to the database in a deterministic manner.",
+      "revId": "0bd114acae68d3ff8e28e6eb73ae2e35080c8fa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//CAk\u003d",
+        "filename": "tests/backend_sql.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-10T22:32:11Z",
+      "side": 1,
+      "message": "Change this back to keystone from my UID",
+      "revId": "0bd114acae68d3ff8e28e6eb73ae2e35080c8fa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//CAc\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-10T22:32:11Z",
+      "side": 1,
+      "message": "This is an attempt to update the metadata after changes have been commited.  This call does not need to be done once per assert, but it is conservative.  Not convinced it has the needed effect, though.",
+      "revId": "0bd114acae68d3ff8e28e6eb73ae2e35080c8fa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//CAY\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-10T22:32:11Z",
+      "side": 1,
+      "message": "This can even bet executed as part of the transaction, not sure the effect it has.",
+      "revId": "0bd114acae68d3ff8e28e6eb73ae2e35080c8fa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
