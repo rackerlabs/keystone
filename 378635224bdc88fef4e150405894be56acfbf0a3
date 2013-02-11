@@ -16,6 +16,24 @@
       "revId": "378635224bdc88fef4e150405894be56acfbf0a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BVg\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T13:28:46Z",
+      "side": 1,
+      "message": "adding this middleware causes the application to return a list instead of a generator when you call it directly like this -- i\u0027m guessing it\u0027s due to evaluating the size of the response\n\nanyway, there\u0027s no .next() method available on lists... i imagine that you could also join the results together, e.g. \u0027\u0027.join(rv), but if that\u0027s required, i suspect that something else is wrong with the response lol",
+      "parentUuid": "AAAAM3//G2o\u003d",
+      "revId": "378635224bdc88fef4e150405894be56acfbf0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
