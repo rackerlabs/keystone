@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Aqg\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T18:42:56Z",
+      "side": 1,
+      "message": "well, i\u0027m thinking we\u0027ll end up with functions for both v2 tenant -\u003e v3 project and v2 user \u003c--\u003e v3 user (4 altogether)... it\u0027d be nice to have that abstraction now. two of those four can call _normalize_domain_id() and the other two can call _filter_domain_id()\n\ni\u0027m open to better names on the functions, but that\u0027s the least verbose + most specific naming i could come up with",
+      "parentUuid": "AAAAM3//A/4\u003d",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BJ8\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
         "patchSetId": 21
