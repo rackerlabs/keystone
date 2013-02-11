@@ -129,6 +129,8 @@
 # use_dumb_member = False
 # allow_subtree_delete = False
 # dumb_member = cn=dumb,dc=example,dc=com
+# get_one_scope = base
+# get_all_scope = one
 
 # user_tree_dn = ou=Users,dc=example,dc=com
 # user_filter =
