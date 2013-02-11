@@ -396,6 +396,46 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], True)
 
+    def test_configurable_ldap_get(self):
+        self.config([test.etcdir('keystone.conf.sample'),
+                     test.testsdir('test_overrides.conf'),
+                     test.testsdir('backend_ldap.conf')])
+        CONF.ldap.get_one_scope = 42
+        self.identity_api = identity_ldap.Identity()
+        user = self.identity_api.user
+
+        self.mox.StubOutWithMock(user, "get_connection")
+        self.mox.StubOutWithMock(user, "_ldap_res_to_model")
+        conn = self.mox.CreateMockAnything()
+        conn = user.get_connection().AndReturn(conn)
+        conn.search_s(user._id_to_dn('user_id'),
+                      42,
+                      '(&(objectClass=%s))' % user.object_class
+                      ).AndReturn([True])
+        user._ldap_res_to_model(True)
+        self.mox.ReplayAll()
+
+        user.get('user_id')
+        
+    def test_configurable_ldap_get_all(self):
+        self.config([test.etcdir('keystone.conf.sample'),
+                     test.testsdir('test_overrides.conf'),
+                     test.testsdir('backend_ldap.conf')])
+        CONF.ldap.get_all_scope = 42
+        clear_database()
+        self.identity_api = identity_ldap.Identity()
+
+        self.mox.StubOutWithMock(self.identity_api.user, "get_connection")
+        conn = self.mox.CreateMockAnything()
+        conn = self.identity_api.user.get_connection().AndReturn(conn)
+        conn.search_s(self.identity_api.user.tree_dn,
+                      42,
+                      '(&(filter=None)(objectClass=%s))'
+                      % self.identity_api.user.object_class).AndReturn([])
+        self.mox.ReplayAll()
+
+        self.identity_api.user.get_all('(filter=None)')
+
 # TODO (henry-nash) These need to be removed when the full LDAP implementation
 # is submitted - see BugL #1092187
     def test_group_crud(self):
