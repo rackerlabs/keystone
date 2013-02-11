@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//BI0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T15:26:43Z",
+      "side": 1,
+      "message": "you don\u0027t need CONF anymore",
+      "revId": "8d2dd44699e403564e431cdadcb58554f3c824d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BI4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T15:26:43Z",
+      "side": 1,
+      "message": "single quotes",
+      "revId": "8d2dd44699e403564e431cdadcb58554f3c824d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BJA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T15:26:43Z",
+      "side": 1,
+      "message": "hrm, so I lied... because this behavior is dependent on sqlite itself rather than the driver\u0027s implementation, using the engine name is more flexible:\n\n  if migrate_engine.name \u003d\u003d \u0027sqlite\u0027:",
+      "revId": "8d2dd44699e403564e431cdadcb58554f3c824d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
