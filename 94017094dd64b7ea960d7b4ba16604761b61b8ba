@@ -16,6 +16,24 @@
       "revId": "94017094dd64b7ea960d7b4ba16604761b61b8ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BTU\u003d",
+        "filename": "tests/test_contrib_s3_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T13:59:26Z",
+      "side": 1,
+      "message": "Good question -- I don\u0027t really have a preference. Does putting it into initialize_drivers() buy us anything?",
+      "parentUuid": "AAAAM3//CWs\u003d",
+      "revId": "94017094dd64b7ea960d7b4ba16604761b61b8ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
