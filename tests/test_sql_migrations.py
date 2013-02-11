@@ -43,9 +43,9 @@ import default_fixtures
 CONF = config.CONF
 
 
-class SqlUpgradeTests(test.TestCase):
+class SqlMigrationsTests(test.TestCase):
     def setUp(self):
-        super(SqlUpgradeTests, self).setUp()
+        super(SqlMigrationsTests, self).setUp()
         self.config([test.etcdir('keystone.conf.sample'),
                      test.testsdir('test_overrides.conf'),
                      test.testsdir('backend_sql.conf')])
@@ -72,7 +72,7 @@ class SqlUpgradeTests(test.TestCase):
                                  autoload=True)
         self.downgrade(0)
         table.drop(self.engine, checkfirst=True)
-        super(SqlUpgradeTests, self).tearDown()
+        super(SqlMigrationsTests, self).tearDown()
 
     def test_blank_db_to_start(self):
         self.assertTableDoesNotExist('user')
