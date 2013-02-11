@@ -15,15 +15,19 @@
 # under the License.
 """
 To run these tests against a live database:
-1. Modify the file `tests/backend_sql.conf` to use the connection for your
-   live database
+
+1. Modify the file ``tests/backend_sql.conf`` to use the connection for your
+   live database.
 2. Set up a blank, live database.
-3. run the tests using
-    ./run_tests.sh -N  test_sql_upgrade
-    WARNING::
+3. Run the tests using::
+
+       ./run_tests.sh -N test_sql_migrations
+
+   WARNING::
         Your database will be wiped.
-    Do not do this against a Database with valuable data as
-    all data will be lost.
+
+        Do not do this against a database with valuable data as all data will
+        be lost.
 """
 import copy
 import json
@@ -35,7 +39,6 @@ import sqlalchemy
 from keystone.common import sql
 from keystone.common.sql import migration
 from keystone import config
-from keystone import exception
 from keystone import test
 
 import default_fixtures
@@ -45,14 +48,14 @@ CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
 
-class SqlUpgradeTests(test.TestCase):
+class SqlMigrationsTests(test.TestCase):
 
     def initialize_sql(self):
         self.metadata = sqlalchemy.MetaData()
         self.metadata.bind = self.engine
 
     def setUp(self):
-        super(SqlUpgradeTests, self).setUp()
+        super(SqlMigrationsTests, self).setUp()
         self.config([test.etcdir('keystone.conf.sample'),
                      test.testsdir('test_overrides.conf'),
                      test.testsdir('backend_sql.conf')])
@@ -77,7 +80,7 @@ class SqlUpgradeTests(test.TestCase):
                                  autoload=True)
         self.downgrade(0)
         table.drop(self.engine, checkfirst=True)
-        super(SqlUpgradeTests, self).tearDown()
+        super(SqlMigrationsTests, self).tearDown()
 
     def test_blank_db_to_start(self):
         self.assertTableDoesNotExist('user')
