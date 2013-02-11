@@ -16,6 +16,24 @@
       "revId": "7fb7757958b249154da4b216483139a98385cafa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BFY\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-11T15:51:35Z",
+      "side": 1,
+      "message": "thanks for the explanation Dolph. i\u0027ll make the appropriate changes... seems like get_projects and list_projects are equivalent in sql backend as well.",
+      "parentUuid": "AAAAM3//BT8\u003d",
+      "revId": "7fb7757958b249154da4b216483139a98385cafa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
