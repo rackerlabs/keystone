@@ -26,6 +26,9 @@ LOG = logging.getLogger(__name__)
 
 LDAP_VALUES = {'TRUE': True, 'FALSE': False}
 CONTROL_TREEDELETE = '1.2.840.113556.1.4.805'
+LDAP_SCOPES = {'base': ldap.SCOPE_BASE,
+               'one': ldap.SCOPE_ONELEVEL,
+               'sub': ldap.SCOPE_SUBTREE}
 
 
 def py2ldap(val):
@@ -59,6 +62,14 @@ def safe_iter(attrs):
         yield attrs
 
 
+def ldap_scope(scope):
+    try:
+        return LDAP_SCOPES[scope]
+    except KeyError:
+        raise ValueError(_('Invalid LDAP scope: %s. Choose one of: '
+                           '"base", "one", and "sub".' % scope))
+
+
 class BaseLdap(object):
     DEFAULT_SUFFIX = "dc=example,dc=com"
     DEFAULT_OU = None
@@ -77,6 +88,8 @@ class BaseLdap(object):
         self.LDAP_URL = conf.ldap.url
         self.LDAP_USER = conf.ldap.user
         self.LDAP_PASSWORD = conf.ldap.password
+        self.LDAP_GET_ONE_SCOPE = ldap_scope(conf.ldap.get_one_scope)
+        self.LDAP_GET_ALL_SCOPE = ldap_scope(conf.ldap.get_all_scope)
 
         if self.options_name is not None:
             self.suffix = conf.ldap.suffix
@@ -206,10 +219,8 @@ class BaseLdap(object):
         query = '(&%s(objectClass=%s))' % (filter or self.filter or '',
                                            self.object_class)
         try:
-            res = conn.search_s(self._id_to_dn(id),
-                                ldap.SCOPE_BASE,
-                                query,
-                                self.attribute_mapping.values())
+            res = conn.search_s(self._id_to_dn(id), self.LDAP_GET_ONE_SCOPE,
+                                query, self.attribute_mapping.values())
         except ldap.NO_SUCH_OBJECT:
             return None
 
@@ -223,10 +234,8 @@ class BaseLdap(object):
         query = '(&%s(objectClass=%s))' % (filter or self.filter or '',
                                            self.object_class)
         try:
-            return conn.search_s(self.tree_dn,
-                                 ldap.SCOPE_ONELEVEL,
-                                 query,
-                                 self.attribute_mapping.values())
+            return conn.search_s(self.tree_dn, self.LDAP_GET_ALL_SCOPE,
+                                 query, self.attribute_mapping.values())
         except ldap.NO_SUCH_OBJECT:
             return []
 
