@@ -14,6 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import ldap
 import uuid
 
 from keystone.common.ldap import fakeldap
@@ -411,6 +412,46 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         self.mox.ReplayAll()
 
         user_api.get_connection(user=None, password=None)
+
+    def test_wrong_ldap_scope(self):
+        CONF.ldap.get_one_scope = uuid.uuid4().hex
+        self.assertRaisesRegexp(ValueError, 'Invalid LDAP scope: invalid. *',
+                                identity_ldap.Identity)
+
+    def test_configurable_ldap_get(self):
+        CONF.ldap.get_one_scope = 'sub'
+        self.identity_api = identity_ldap.Identity()
+        user = self.identity_api.user
+
+        self.mox.StubOutWithMock(user, "get_connection")
+        conn = self.mox.CreateMockAnything()
+        conn = user.get_connection().AndReturn(conn)
+        conn.search_s(user._id_to_dn('user_id'),
+                      ldap.SCOPE_SUBTREE,
+                      '(&(objectClass=%s))' % user.object_class,
+                      user.attribute_mapping.values()
+                      ).AndReturn([('uid=user_id', {'id': '1'})])
+        self.mox.ReplayAll()
+
+        self.assertDictEqual({'id': 'user_id'}, user.get('user_id'))
+
+    def test_configurable_ldap_get_all(self):
+        CONF.ldap.get_all_scope = 'sub'
+        clear_database()
+        self.identity_api = identity_ldap.Identity()
+        user = self.identity_api.user
+
+        self.mox.StubOutWithMock(user, "get_connection")
+        conn = self.mox.CreateMockAnything()
+        conn = user.get_connection().AndReturn(conn)
+        conn.search_s(user.tree_dn,
+                      ldap.SCOPE_SUBTREE,
+                      '(&(filter=None)(objectClass=%s))' % user.object_class,
+                      user.attribute_mapping.values()
+                      ).AndReturn([])
+        self.mox.ReplayAll()
+
+        self.assertListEqual([], user.get_all('(filter=None)'))
 
 # TODO (henry-nash) These need to be removed when the full LDAP implementation
 # is submitted - see BugL #1092187
