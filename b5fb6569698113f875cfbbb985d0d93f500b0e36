@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//AxQ\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T17:58:09Z",
+      "side": 1,
+      "message": "thanks",
+      "revId": "b5fb6569698113f875cfbbb985d0d93f500b0e36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
