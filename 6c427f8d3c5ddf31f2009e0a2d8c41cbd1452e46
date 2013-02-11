@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Bhk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T11:06:43Z",
+      "side": 1,
+      "message": "Is the reason to do this so because you are seeing instabilities in the .rename in some DB engines?  I\u0027m no longer seeing this in my patch (https://review.openstack.org/#/c/19820) now that I have combined our changes - however, see my TODO comment on test_downgrade_project_to_tenant().",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BhU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T11:06:43Z",
+      "side": 1,
+      "message": "(as an aside):\n\nsession \u003d sql.orm.sessionmaker(bind\u003dmigrate_engine)()\n\ncould be written instead, but go with your preference",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BhA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T11:06:43Z",
+      "side": 1,
+      "message": "So I assume user_project_metadata replaces the old \u0027metadata\u0027 table?  If so, don\u0027t we need to copy in the contents of \u0027metadata\u0027 as well and then drop it?",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BfU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T11:06:43Z",
+      "side": 1,
+      "message": "Although I think this is OK, is this meant to be a subtle change in what this function did when it was in the backends?  The flow seemed to originally be (e.g. in remove_role_from_user and delete_role_ref in the controller):\n\nIf no roles left for user in the project then\n    call remove_user_from_project()\n\n...and remove_user_from_project() would just delete the user-project membership entry.  In this version, remove_user_from_project() will delete all the roles, not just the one mirroring user-project membership",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
