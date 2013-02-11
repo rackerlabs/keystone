@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Ays\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T17:51:25Z",
+      "side": 1,
+      "message": "Falsey isn\u0027t really specific enough\n\n  self.assertNotIn(\u0027password\u0027, user)",
+      "revId": "55c27df3b11200573783bbd4697cbe76a8000c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Ax8\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 869,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T17:51:25Z",
+      "side": 1,
+      "message": "these variable names are impossible to follow (these are roles, not role-user-domains) -- all you\u0027re doing here is creating a bunch of roles, can you not just do it in a loop?\n\n  role_refs \u003d list()\n  for _ in range(too many):\n    role_ref \u003d { ... }\n    self.identity_api.create_role(...)\n    role_refs.append(role_ref)\n\nit\u0027s nearly impossible to tell what you\u0027re testing here as a result",
+      "revId": "55c27df3b11200573783bbd4697cbe76a8000c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Axo\u003d",
+        "filename": "tests/test_backend_kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T17:51:25Z",
+      "side": 1,
+      "message": "raise skiptests and cite a bug number so it\u0027s clear in the unit test results that these are NOT passes",
+      "revId": "55c27df3b11200573783bbd4697cbe76a8000c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
