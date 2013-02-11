@@ -19,6 +19,58 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//BCs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "i don\u0027t understand where all the session.commit()/close() calls are coming from either -- no other project does this and it really doesn\u0027t seem necessary",
+      "parentUuid": "AAAAM3//Bhk\u003d",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BCI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "can you just rename this to Member? end-users could apply it to domains as well, and the underscores are ugly, especially for something we\u0027re creating automatically",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BCE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "use sentence case, and definitely don\u0027t insert the description twice",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BhU\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
         "patchSetId": 4
@@ -30,6 +82,24 @@
       "writtenOn": "2013-02-11T11:06:43Z",
       "side": 1,
       "message": "(as an aside):\n\nsession \u003d sql.orm.sessionmaker(bind\u003dmigrate_engine)()\n\ncould be written instead, but go with your preference",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BCk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "+1 no need to keep the sessionmaker around",
+      "parentUuid": "AAAAM3//BhU\u003d",
       "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +123,177 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//BB8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "user_project_metadata represents the combined contents of  proper role grants and vacuous \"add user to project\" calls\n\ni\u0027m not clear on what you want to copy / where it should be going?",
+      "parentUuid": "AAAAM3//BhA\u003d",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BBM\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "still torn on whether we should do something like this, or default to \u0027member\u0027, and let the migration fail if such a role already exists. i don\u0027t think either solution is ideal",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BA4\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "same as below",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BA8\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "? don\u0027t call __contains__ directly\n\n  if tenant_id not in tenants:",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A8M\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "is this supposed to return a list of projects or project_id\u0027s?",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A7s\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "_()",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A7k\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "this will delete all roles, not just the specified one",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A7Y\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "delete the line and above comment",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A7E\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "just delete this function, it shouldn\u0027t be called",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A7A\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "delete this one too",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BfU\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
@@ -64,6 +305,57 @@
       "writtenOn": "2013-02-11T11:06:43Z",
       "side": 1,
       "message": "Although I think this is OK, is this meant to be a subtle change in what this function did when it was in the backends?  The flow seemed to originally be (e.g. in remove_role_from_user and delete_role_ref in the controller):\n\nIf no roles left for user in the project then\n    call remove_user_from_project()\n\n...and remove_user_from_project() would just delete the user-project membership entry.  In this version, remove_user_from_project() will delete all the roles, not just the one mirroring user-project membership",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A64\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "please re-use existing entities or create them in setUp methods specific to your tests",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A6g\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "specify exceptions to the convention rather than requiring a whole new convention to be provided\n\nin other words, change entity_keys to ignore_entity_keys and just pass in (\u0027enabled\u0027,)",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A6U\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T16:55:21Z",
+      "side": 1,
+      "message": "make it clear what you\u0027re trying to accomplish:\n\n  ignore_entity_keys\u003d(\u0027enabled\u0027,)",
       "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
