@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//BPM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-11T14:44:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//BS0\u003d",
+      "revId": "0bd114acae68d3ff8e28e6eb73ae2e35080c8fa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//CAo\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/010_normalize_identity_migration.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-10T22:32:11Z",
       "side": 1,
       "message": "This should be committed in the transaction upon session commit, but it seems to be non-deterministic.    Better to do it as the upgrade_* functions below.",
+      "revId": "0bd114acae68d3ff8e28e6eb73ae2e35080c8fa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BO8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/010_normalize_identity_migration.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-11T14:44:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//CAo\u003d",
       "revId": "0bd114acae68d3ff8e28e6eb73ae2e35080c8fa6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//BO0\u003d",
+        "filename": "tests/backend_sql.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-11T14:44:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//BSg\u003d",
+      "revId": "0bd114acae68d3ff8e28e6eb73ae2e35080c8fa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BSc\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 1
@@ -134,6 +188,24 @@
       "side": 1,
       "message": "what\u0027s the needed effect?",
       "parentUuid": "AAAAM3//CAc\u003d",
+      "revId": "0bd114acae68d3ff8e28e6eb73ae2e35080c8fa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BOk\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-11T14:44:51Z",
+      "side": 1,
+      "message": "Without this change, when testing, it fails to match the columns, due to the metadata being out of sync.  I thought it worked  for PG and Mysql, but just retested and PG fails as well.  I suspect that the metat data is not changed when the table schemas are altered through add_column.",
+      "parentUuid": "AAAAM3//BSQ\u003d",
       "revId": "0bd114acae68d3ff8e28e6eb73ae2e35080c8fa6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
