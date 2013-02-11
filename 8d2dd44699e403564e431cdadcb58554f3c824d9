@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//A34\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-11T17:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//BI4\u003d",
+      "revId": "8d2dd44699e403564e431cdadcb58554f3c824d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BJA\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2013-02-11T15:26:43Z",
       "side": 1,
       "message": "hrm, so I lied... because this behavior is dependent on sqlite itself rather than the driver\u0027s implementation, using the engine name is more flexible:\n\n  if migrate_engine.name \u003d\u003d \u0027sqlite\u0027:",
+      "revId": "8d2dd44699e403564e431cdadcb58554f3c824d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A30\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-11T17:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//BJA\u003d",
       "revId": "8d2dd44699e403564e431cdadcb58554f3c824d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +117,24 @@
       "writtenOn": "2013-02-11T15:43:24Z",
       "side": 1,
       "message": "henry-nash: +1 for the engine abstraction beyond this point",
+      "parentUuid": "AAAAM3//BG4\u003d",
+      "revId": "8d2dd44699e403564e431cdadcb58554f3c824d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A3k\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-11T17:17:03Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAAM3//BG4\u003d",
       "revId": "8d2dd44699e403564e431cdadcb58554f3c824d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
