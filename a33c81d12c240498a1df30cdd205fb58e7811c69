@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//BAg\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T18:33:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//BK0\u003d",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BHI\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-11T15:45:37Z",
       "side": 1,
       "message": "maybe worth a comment that this intentionally overrides any previously-set domain_id value",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BAk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T18:33:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//BHI\u003d",
       "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//A/4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T18:33:08Z",
+      "side": 1,
+      "message": "Understand the desire...do you mean just rename these functions to something like you suggest?",
+      "parentUuid": "AAAAM3//BGs\u003d",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BJ8\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
         "patchSetId": 21
@@ -64,6 +118,24 @@
       "writtenOn": "2013-02-11T15:45:37Z",
       "side": 1,
       "message": "use the insertion technique from migration 8:\n\n    domain \u003d { ... }\n    session \u003d orm.sessionmaker(bind\u003dmigrate_engine)()\n    domain_table.insert().execute(domain)\n    session.commit()",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Ayc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T18:33:08Z",
+      "side": 1,
+      "message": "...will be re-basing onto Adam\u0027s change...",
+      "parentUuid": "AAAAM3//BJ8\u003d",
       "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//AyA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/010_normalize_identity_migration.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T18:33:08Z",
+      "side": 1,
+      "message": "...will be re-basing onto Adam\u0027s change",
+      "parentUuid": "AAAAM3//BJg\u003d",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BH8\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
         "patchSetId": 21
@@ -98,6 +188,24 @@
       "writtenOn": "2013-02-11T15:45:37Z",
       "side": 1,
       "message": "this change is huge and \"normalize\" is vague -- can you include a module docstr to explain the gist",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A/k\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T18:33:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//BH8\u003d",
       "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//A/s\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T18:33:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//BII\u003d",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BHk\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 21
@@ -132,6 +258,24 @@
       "writtenOn": "2013-02-11T15:45:37Z",
       "side": 1,
       "message": "wrap\n\n  q.one()\n\nin a try/except (catching sql.NotFound) instead of using first()\n\nTwo projects with the same name in the same domain needs to raise an unhandled exception",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Atw\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T18:33:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//BHk\u003d",
       "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Atk\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T18:33:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//BHc\u003d",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BGI\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 21
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Atc\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T18:33:08Z",
+      "side": 1,
+      "message": "No competition intended....we were both working on this over the weekend with various patches at different levels...will be re-basing on Adam\u0027s change",
+      "parentUuid": "AAAAM3//BGI\u003d",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BGM\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 21
@@ -183,6 +363,24 @@
       "writtenOn": "2013-02-11T15:45:37Z",
       "side": 1,
       "message": "-2 undo",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//Arw\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T18:33:08Z",
+      "side": 1,
+      "message": "nice catch...had this in there before I really had the controller-level domain stuff done",
+      "parentUuid": "AAAAM3//BGM\u003d",
       "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
