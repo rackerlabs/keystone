@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//BT8\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T13:51:16Z",
+      "side": 1,
+      "message": "list_projects is intended to return a list of project refs, whereas get_projects is intended to return a list project ID\u0027s (and should be considered deprecated or only used internally within the driver) -- these two functions should not be equivalent.",
+      "revId": "7fb7757958b249154da4b216483139a98385cafa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
