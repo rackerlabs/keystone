@@ -247,6 +247,8 @@ register_str('suffix', group='ldap', default='cn=example,cn=com')
 register_bool('use_dumb_member', group='ldap', default=False)
 register_str('dumb_member', group='ldap', default='cn=dumb,dc=nonexistent')
 register_bool('allow_subtree_delete', group='ldap', default=False)
+register_str('get_one_scope', group='ldap', default='base')
+register_str('get_all_scope', group='ldap', default='single')
 
 register_str('user_tree_dn', group='ldap', default=None)
 register_str('user_filter', group='ldap', default=None)
