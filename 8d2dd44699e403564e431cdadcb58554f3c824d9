@@ -50,6 +50,23 @@
       "revId": "8d2dd44699e403564e431cdadcb58554f3c824d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//BG4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-11T15:41:14Z",
+      "side": 1,
+      "message": "So in my version of this change (see https://review.openstack.org/#/c/19820/) I called the two sets of functions:\nupgrade....table_with_col_drop()\nupgrade....table_with_copy() \n...rather than putting the engine name in the function name.  However, I can include that when I merge up once this in.",
+      "revId": "8d2dd44699e403564e431cdadcb58554f3c824d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
