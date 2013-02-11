@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//A3s\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-11T17:16:21Z",
+      "side": 1,
+      "message": "Unfortunately it\u0027s not that easy; there are 3 possible values for these fields: 0, 1, 2 (i.e. BASE, ONELEVEL and SUBTREE). [1]\n\nI agree about exposing implementation details though. \n\nDo you think implementing something like register_enum would be a good idea? Or just using some predefined strings like \u0027base\u0027, \u0027onelevel\u0027 and \u0027subtree\u0027 and then checking them in BaseLdap\u0027s constructor?\n\n[1] http://www.python-ldap.org/doc/html/ldapurl.html?highlight\u003dscope#constants",
+      "parentUuid": "AAAAM3//A5E\u003d",
+      "revId": "11a46aeebdc54f21a37b3b5394ea256c92c96d98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//A48\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-11T17:05:08Z",
       "side": 1,
       "message": "remove the calls to self.config(); they\u0027re all being removed in another patch",
+      "revId": "11a46aeebdc54f21a37b3b5394ea256c92c96d98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A3o\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-11T17:16:21Z",
+      "side": 1,
+      "message": "thanks for reminding me of that. The other patch is actually mine as well :)",
+      "parentUuid": "AAAAM3//A48\u003d",
       "revId": "11a46aeebdc54f21a37b3b5394ea256c92c96d98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
