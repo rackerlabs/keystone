@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//A5E\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T17:05:08Z",
+      "side": 1,
+      "message": "register_bool\u0027s here with corresponding False / True values and then convert to ints in the driver... no need to expose driver implementation details to the user and force ourselves to handle values like -1 and +2",
+      "revId": "11a46aeebdc54f21a37b3b5394ea256c92c96d98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A48\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T17:05:08Z",
+      "side": 1,
+      "message": "remove the calls to self.config(); they\u0027re all being removed in another patch",
+      "revId": "11a46aeebdc54f21a37b3b5394ea256c92c96d98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//A40\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-11T17:05:08Z",
+      "side": 1,
+      "message": "can you assert anything about the response?",
+      "revId": "11a46aeebdc54f21a37b3b5394ea256c92c96d98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
