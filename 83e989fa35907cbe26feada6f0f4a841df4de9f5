@@ -33,6 +33,24 @@
       "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++Tg\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T19:59:14Z",
+      "side": 1,
+      "message": "that\u0027s not how --help renders for me, but I think any syntax will be accepted by argparse, i.e. the following could all equivalent without doing any special configuration with argparse:\n\n  -k value\n  -k\u003dvalue\n  -k\u003d\"value\"\n  --key value\n  --key\u003dvalue\n  --key\u003d\"value\"",
+      "parentUuid": "AAAAM3/++ms\u003d",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
