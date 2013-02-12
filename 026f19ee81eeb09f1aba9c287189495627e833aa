@@ -71,6 +71,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/++ug\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-12T17:30:52Z",
+      "side": 1,
+      "message": "fyi, in the backend prep change (https://review.openstack.org/#/c/19820/) this function now takes a domain_id as an additional parameter",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/++8A\u003d",
         "filename": "keystone/auth/core.py",
         "patchSetId": 3
@@ -219,6 +236,24 @@
       "side": 1,
       "message": "But we also have get_user_by_name()? I am trying to do the same for projects. Should we get rid of get_user_by_name() as well?",
       "parentUuid": "AAAAM3/++7A\u003d",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++nc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-12T17:30:52Z",
+      "side": 1,
+      "message": "...not in the v3 controllers we don\u0027t...so agree with Dolph, lets not set these up for external exposure",
+      "parentUuid": "AAAAM3/++28\u003d",
       "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
