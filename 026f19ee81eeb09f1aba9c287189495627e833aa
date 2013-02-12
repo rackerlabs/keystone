@@ -260,6 +260,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/++UM\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T19:56:43Z",
+      "side": 1,
+      "message": "+1 ^^ get user/tenant by name are exposed in v2 as part of the (I think) OS-KSADM contract, but this call wouldn\u0027t even make sense in v3",
+      "parentUuid": "AAAAM3/++nc\u003d",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/++8I\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 3
