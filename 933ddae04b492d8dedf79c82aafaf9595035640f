@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+/Dk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "blank line is on the \"wrong\" side of the end of the docstr, according to our established convention",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+/DU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/008_create_default_domain.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "thank you",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+/DQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/010_normalize_identity_migration.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "much cleaner",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+/DI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "thanks",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+/BA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "(HACKING) instead of using a backslash continuation, put the value in parens\n\n  self.attribute_mapping[\u0027domain_id\u0027] \u003d (\n      conf.ldap.user_domain_id_attribute)",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+/A4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+/AY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "put the docstr inside the function. I\u0027d also suggest adding a one line summary and using this as the body of the docstr. There\u0027s also an extra quotation mark at the beginning.",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+/AQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "one line summary should end with a period",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++/s\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "this line is a dupe",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++/Y\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "two blank lines between imports and constants",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++/E\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "imports first",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+++w\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "please remove this -- you can handle this offline and just not check the change in",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+++o\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:04:08Z",
+      "side": 1,
+      "message": "ayoung has something similar in review -- i haven\u0027t experienced the issue myself, but i\u0027d rather only merge one fix or the other",
+      "revId": "933ddae04b492d8dedf79c82aafaf9595035640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
