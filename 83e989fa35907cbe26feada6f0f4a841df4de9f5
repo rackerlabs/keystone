@@ -51,6 +51,24 @@
       "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++TM\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T20:00:20Z",
+      "side": 1,
+      "message": "I guess i should mention that the majority of this doc is copy/pasted directly from the output of:\n\n  $ keystone-manage --help",
+      "parentUuid": "AAAAM3/++Tg\u003d",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
