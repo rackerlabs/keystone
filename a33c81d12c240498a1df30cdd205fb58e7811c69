@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+/c4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-12T09:21:39Z",
+      "side": 1,
+      "message": "So doesn\u0027t the fact that these are (by design) specific to the version (i.e. they are part of the V2Controller) mean that this determines one side of the \"name\"?  Also do you think we need to make them entity specific?  I do agree that changing them to (for example):\n\n_normalize_to_v3()\n_filter_from_v3()\n\nwould make sense, since when there is v4 we might need the v2\u003c-\u003ev4 equivalents.",
+      "parentUuid": "AAAAM3//Aqg\u003d",
+      "revId": "a33c81d12c240498a1df30cdd205fb58e7811c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BJ8\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/009_normalize_identity.py",
         "patchSetId": 21
