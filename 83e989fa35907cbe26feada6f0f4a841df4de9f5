@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/++mc\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-12T17:35:18Z",
+      "side": 1,
+      "message": "\u003d?",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++ms\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-12T17:35:18Z",
+      "side": 1,
+      "message": "--log-date-format\u003dDATE_FORMAT?",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
