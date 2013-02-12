@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+/Fw\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T14:00:12Z",
+      "side": 0,
+      "message": "this was not removed in the previously approved patch",
+      "revId": "f68534597257fd53626929b691c7de9003d3e0da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
