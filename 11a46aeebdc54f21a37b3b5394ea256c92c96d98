@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/++9A\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-12T15:18:01Z",
+      "side": 1,
+      "message": "I\u0027ve changed these to be strings and added the validation logic to BaseLdap for now. \n\nI\u0027ve opened a bug on oslo to hopefully get value restrictions on config options: https://bugs.launchpad.net/oslo/+bug/1123043 Maybe I\u0027ll have time for it later this week, but it also needs some other opinions I guess.",
+      "parentUuid": "AAAAM3//Aw8\u003d",
+      "revId": "11a46aeebdc54f21a37b3b5394ea256c92c96d98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//A48\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 1
@@ -90,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/++9s\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-12T15:18:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//A48\u003d",
+      "revId": "11a46aeebdc54f21a37b3b5394ea256c92c96d98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//A40\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 1
@@ -101,6 +137,24 @@
       "writtenOn": "2013-02-11T17:05:08Z",
       "side": 1,
       "message": "can you assert anything about the response?",
+      "revId": "11a46aeebdc54f21a37b3b5394ea256c92c96d98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++9w\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-12T15:18:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//A40\u003d",
       "revId": "11a46aeebdc54f21a37b3b5394ea256c92c96d98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
