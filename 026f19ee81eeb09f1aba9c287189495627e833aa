@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/++9o\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:42:20Z",
+      "side": 1,
+      "message": "that works -- each method can still look for its own config if necessary",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++9U\u003d",
+        "filename": "keystone/auth/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:42:20Z",
+      "side": 1,
+      "message": "i want to make an exception for this import order (import all should come either last or first IMO), but the import order police will come and change this without an exception in HACKING",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++9M\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:42:20Z",
+      "side": 1,
+      "message": "these definitely need to be cleaned up\n\n- import order\n- do `from keystone import token`\n- remove the reference to `core`\n- remove the import for token_controllers in favor of referencing token.controllers below",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++8A\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:42:20Z",
+      "side": 1,
+      "message": "is this the fix to the dependency injection issue?",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++60\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:42:20Z",
+      "side": 1,
+      "message": "indentation here seems to be messed up",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++5s\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:42:20Z",
+      "side": 1,
+      "message": "no need for abbreviations here:\n\n  # authentication handlers\n\nalso include a space after the hash",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++5o\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:42:20Z",
+      "side": 1,
+      "message": "you also need to register default authentication plugins here",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++6o\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:42:20Z",
+      "side": 1,
+      "message": "if both of these new classes extended an intermediary object, like\n\n  class AuthenticationMethodError(Unauthorized):\n      \"\"\"Authentication method failed.\"\"\"\n      authentication \u003d {}\n\nthen you\u0027d have a common object that was expected to have an authentication attribute, and one class to check for isinstance(error, AuthenticationMethodError) in render_exception -- it\u0027d also give proprietary authentication methods a common exception to extend",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++6M\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:42:20Z",
+      "side": 1,
+      "message": "i think .update() will result in one group\u0027s roles overriding another group\u0027s roles on the same project -- you need to merge the results a little more carefully to ensure that you get the full set of roles the user has on the project",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++58\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:42:20Z",
+      "side": 1,
+      "message": "i expect a method called get_* to return something, not to append an object i\u0027m passing in -- maybe have it return a list of role names?",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++7A\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:42:20Z",
+      "side": 1,
+      "message": "-2; this is awfully close to exposing an undocumented call, please revert this change completely",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++8I\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-12T15:42:20Z",
+      "side": 1,
+      "message": "(HACKING) wrap in parens instead of using backslash continuations\n\n  context[\u0027subject_token_id\u0027] \u003d (\n    request.headers.get(SUBJECT_TOKEN_HEADER))",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
