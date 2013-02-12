@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+/4M\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-12T01:12:13Z",
+      "side": 0,
+      "message": "here\u0027s where self.config is called.",
+      "revId": "e0f8a1bbac91c69923875704a23e8bee630498da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
