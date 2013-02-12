@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/++6I\u003d",
+        "filename": "tools/install_venv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-12T15:50:14Z",
+      "side": 1,
+      "message": "unused import",
+      "revId": "6b181a509486faed45aefc7bc4da0c36650dd486",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
