@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/++4M\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-12T15:54:16Z",
+      "side": 1,
+      "message": "That\u0027s correct. It\u0027s up to the plugin itself.",
+      "parentUuid": "AAAAM3/++9o\u003d",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/++9U\u003d",
         "filename": "keystone/auth/__init__.py",
         "patchSetId": 3
@@ -183,6 +201,24 @@
       "writtenOn": "2013-02-12T15:42:20Z",
       "side": 1,
       "message": "-2; this is awfully close to exposing an undocumented call, please revert this change completely",
+      "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/++28\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-12T15:54:16Z",
+      "side": 1,
+      "message": "But we also have get_user_by_name()? I am trying to do the same for projects. Should we get rid of get_user_by_name() as well?",
+      "parentUuid": "AAAAM3/++7A\u003d",
       "revId": "026f19ee81eeb09f1aba9c287189495627e833aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
