@@ -2,6 +2,142 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+8CE\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-13T21:17:37Z",
+      "side": 1,
+      "message": "suggest remove \"in a single process\" since this is getting into implementation details.",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+8D4\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-13T21:17:37Z",
+      "side": 1,
+      "message": "this option could use a description.",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+8Cc\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-13T21:17:37Z",
+      "side": 1,
+      "message": "I can\u0027t guess what \"The inverse of --verbose\" means from the description of --verbose.",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+8C4\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-13T21:17:37Z",
+      "side": 1,
+      "message": "this option could use a description.",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+8Dg\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-13T21:17:37Z",
+      "side": 1,
+      "message": "this option could use a description, also should be next to --pydev-debug-port for usability.",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+8C8\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-13T21:17:37Z",
+      "side": 1,
+      "message": "should there be a sane order/grouping to these options? the order seems completely random. Grouping the options would improve usability.",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+8Cw\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-13T21:17:37Z",
+      "side": 1,
+      "message": "/etc/keystone/keystone.conf",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+8Bk\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-13T21:17:37Z",
+      "side": 1,
+      "message": "remove \"with\". \"such data\" -\u003e \"such as data\"",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/++mc\u003d",
         "filename": "doc/source/man/keystone-manage.rst",
         "patchSetId": 2
@@ -136,6 +272,23 @@
       "side": 1,
       "message": "everything here is an \"option\", so they all appear under a section titled \"optional arguments\" when you run --help\n\nanyway, it was redundant when rendered",
       "parentUuid": "AAAAM3/+8sc\u003d",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+8A8\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-13T21:17:37Z",
+      "side": 1,
+      "message": "(nit) extra space here.",
       "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
