@@ -16,6 +16,24 @@
       "revId": "80fc831cc27513c18d63b0a5ef48305289477bd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+84M\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-13T14:20:42Z",
+      "side": 1,
+      "message": "This is how we did it in diablo; I prefer this approach as well.",
+      "parentUuid": "AAAAM3/+9aM\u003d",
+      "revId": "80fc831cc27513c18d63b0a5ef48305289477bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
