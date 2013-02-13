@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+8Ug\u003d",
+        "filename": "tests/test_sql_migrations.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-13T19:09:09Z",
+      "side": 1,
+      "message": "why do you put two colons after using?",
+      "revId": "7efbf3e1618460225d6f9eaac8826603728f1e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
