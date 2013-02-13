@@ -121,6 +121,24 @@
       "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+8Yo\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-13T18:38:19Z",
+      "side": 1,
+      "message": "everything here is an \"option\", so they all appear under a section titled \"optional arguments\" when you run --help\n\nanyway, it was redundant when rendered",
+      "parentUuid": "AAAAM3/+8sc\u003d",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
