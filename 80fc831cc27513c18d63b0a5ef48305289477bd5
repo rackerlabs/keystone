@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+9aM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-13T06:38:13Z",
+      "side": 1,
+      "message": "+2 for doing this here rather than stuffing it in as a final check in the middleware (as we do currently).  Should remember to not to that check in the middleware for v3 tokens (although it would be benign since it only does it if there is no project in there yet)",
+      "revId": "80fc831cc27513c18d63b0a5ef48305289477bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
