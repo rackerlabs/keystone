@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+8Rw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-02-13T19:40:17Z",
+      "side": 1,
+      "message": "So if I understood correctly the three scopes are BASE (base dn), ONE (all entries one level under the base dn) and SUBTREE (all). Why we have variables key-value pair named like what you have? It’s confusing to me. Doesn’t something like get_base_scope instead of get_one_scope and get_all_scope \u003d one (or get_one_scope\u003dall) makes it easy to understand? Not requesting to make any changes (unless you feel the same way too) but more like curiosity questions.",
+      "revId": "f72926619b7ef923b53192e32c39804684d14efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+8RM\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-02-13T19:40:17Z",
+      "side": 1,
+      "message": "Why we have both \"\u0027one\u0027: ldap.SCOPE_ONELEVEL\" and \"\u0027single\u0027: ldap.SCOPE_ONELEVEL\" in the return statement but the message in the exception only mentioning \"single\"? Again, I believe \"one\" is better over \"single\" to correctly represent the scope in the error message. I am not very sure that I understood it correctly without discussion with you but giving -1 for now. Thanks!",
+      "revId": "f72926619b7ef923b53192e32c39804684d14efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
