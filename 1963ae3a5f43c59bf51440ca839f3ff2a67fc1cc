@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+8zE\u003d",
+        "filename": "keystone/identity/backends/hybrid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-13T15:29:56Z",
+      "side": 1,
+      "message": "you imported sql twice; also the two backend imports should use the same naming convention",
+      "revId": "1963ae3a5f43c59bf51440ca839f3ff2a67fc1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
