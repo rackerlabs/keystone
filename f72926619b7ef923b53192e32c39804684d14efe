@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+7+Y\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-13T21:32:27Z",
+      "side": 1,
+      "message": "man ldapsearch has the scope values as base, one, sub, and children. We should use the same values.",
+      "revId": "f72926619b7ef923b53192e32c39804684d14efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+8RM\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
