@@ -104,6 +104,23 @@
       "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+8sc\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-13T16:19:21Z",
+      "side": 1,
+      "message": "why was optional removed?",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
