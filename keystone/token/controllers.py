@@ -199,6 +199,11 @@ class Auth(controller.V2Controller):
         except exception.NotFound as e:
             raise exception.Unauthorized(e)
 
+        #test for unscoped token.  If Token is scoped, do not
+        #allow it to get a new token.
+        if old_token_ref['tenant']:
+            raise exception.Unauthorized()
+
         user_ref = old_token_ref['user']
         user_id = user_ref['id']
 

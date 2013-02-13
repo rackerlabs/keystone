@@ -229,6 +229,29 @@ class AuthWithToken(AuthTest):
         self.assertEquals(tenant["id"], self.tenant_bar['id'])
         self.assertEquals(roles[0], self.role_member['id'])
 
+    def test_scoped_token_fails(self):
+        """Verify a scoped token cannot be used to get another token"""
+        # Add a role in so we can check we get this back
+        self.identity_api.add_role_to_user_and_project(
+            self.user_foo['id'],
+            self.tenant_bar['id'],
+            self.role_member['id'])
+        # Get an unscoped tenant
+        body_dict = _build_user_auth(
+            username='FOO',
+            password='foo2')
+        unscoped_token = self.api.authenticate({}, body_dict)
+        # Get a token on BAR tenant using the unscoped tenant
+        body_dict = _build_user_auth(
+            token=unscoped_token["access"]["token"],
+            tenant_name="BAR")
+        scoped_token = self.api.authenticate({}, body_dict)
+        body_dict = _build_user_auth(token=scoped_token["access"]["token"])
+        self.assertRaises(exception.Unauthorized,
+                          self.api.authenticate,
+                          {},
+                          body_dict)
+
     def test_auth_token_project_group_role(self):
         """Verify getting a token in a tenant with group roles"""
         # Add a v2 style role in so we can check we get this back
