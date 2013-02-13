@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+8gI\u003d",
+        "filename": "tests/test_sql_migrations.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-02-13T17:54:18Z",
+      "side": 1,
+      "message": "We should change this to reflect the new name. Thanks!",
+      "revId": "f5c3141d817c279f2c3947b18a6f06894a1f5bf1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
