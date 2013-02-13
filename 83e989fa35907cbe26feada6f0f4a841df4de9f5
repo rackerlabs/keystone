@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+71A\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-13T22:53:25Z",
+      "side": 1,
+      "message": "it\u0027s also the point of the -all command, as opposed to starting up keystone-admin and keystone-public as separate processes",
+      "parentUuid": "AAAAM3/+8CE\u003d",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+8D4\u003d",
         "filename": "doc/source/man/keystone-all.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-13T21:17:37Z",
       "side": 1,
       "message": "this option could use a description.",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+71w\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-13T22:53:25Z",
+      "side": 1,
+      "message": "i don\u0027t even know what it is, something about hooking up the running process to a proprietary debugger",
+      "parentUuid": "AAAAM3/+8D4\u003d",
       "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+71o\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-13T22:53:25Z",
+      "side": 1,
+      "message": "same as the above pydev option",
+      "parentUuid": "AAAAM3/+8Dg\u003d",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+8C8\u003d",
         "filename": "doc/source/man/keystone-all.rst",
         "patchSetId": 2
@@ -98,6 +152,24 @@
       "writtenOn": "2013-02-13T21:17:37Z",
       "side": 1,
       "message": "should there be a sane order/grouping to these options? the order seems completely random. Grouping the options would improve usability.",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+71g\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-13T22:53:25Z",
+      "side": 1,
+      "message": "they\u0027re ordered by argparse, i\u0027m not aware of a way to influence it",
+      "parentUuid": "AAAAM3/+8C8\u003d",
       "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+70w\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-13T22:53:25Z",
+      "side": 1,
+      "message": "out of scope for this patch",
+      "parentUuid": "AAAAM3/+8Cw\u003d",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+8Bk\u003d",
         "filename": "doc/source/man/keystone-manage.rst",
         "patchSetId": 2
@@ -132,6 +222,24 @@
       "writtenOn": "2013-02-13T21:17:37Z",
       "side": 1,
       "message": "remove \"with\". \"such data\" -\u003e \"such as data\"",
+      "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+70s\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-13T22:53:25Z",
+      "side": 1,
+      "message": "agree, but out of scope for this patch",
+      "parentUuid": "AAAAM3/+8Bk\u003d",
       "revId": "83e989fa35907cbe26feada6f0f4a841df4de9f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
