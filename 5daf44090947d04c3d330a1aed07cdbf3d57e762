@@ -87,6 +87,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6WY\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-14T18:11:25Z",
+      "side": 1,
+      "message": "typo plug-in should be plug-ins\nAlso it would be helpful to tell the user the recommended best practice of where they should put the plug-in code that they write.  Do we have a particular directory that we recommend the plugins be placed in?",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6Wo\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 6
@@ -98,6 +115,23 @@
       "writtenOn": "2013-02-14T18:09:34Z",
       "side": 1,
       "message": "``backticks`` on method name",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6WM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-14T18:11:25Z",
+      "side": 1,
+      "message": "typo: implements should be implement",
       "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +223,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6Xc\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-14T18:11:25Z",
+      "side": 1,
+      "message": "typo:  should be authentication instead of authentiation",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6XI\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-14T18:11:25Z",
+      "side": 1,
+      "message": "typo: addition should be additional",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6WI\u003d",
         "filename": "keystone/auth/core.py",
         "patchSetId": 6
@@ -200,6 +268,57 @@
       "writtenOn": "2013-02-14T18:09:34Z",
       "side": 1,
       "message": "spelling",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6W4\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-14T18:11:25Z",
+      "side": 1,
+      "message": "typo authenticaiton should be authentication",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6ko\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-14T18:11:25Z",
+      "side": 1,
+      "message": "I don\u0027t understand why the catalog enhancements were needed to support pluggable authentication",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6k8\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-14T18:11:25Z",
+      "side": 1,
+      "message": "why did you need to add this to support your pluggable authentication work?",
       "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -372,6 +491,23 @@
       "writtenOn": "2013-02-14T18:09:34Z",
       "side": 1,
       "message": "remove the whitespace at end of file",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6UY\u003d",
+        "filename": "tests/test_auth_plugin.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-14T18:11:25Z",
+      "side": 1,
+      "message": "Might be helpful to have an example of the more complicated AuthMethodHandler that demonstrates how a plugin can be written to do multi-step authentication.",
       "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
