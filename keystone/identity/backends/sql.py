@@ -41,23 +41,25 @@ class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled']
     id = sql.Column(sql.String(64), primary_key=True)
-    name = sql.Column(sql.String(64), unique=True, nullable=False)
+    name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
                            nullable=False)
     password = sql.Column(sql.String(128))
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
+    __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
 
 
 class Group(sql.ModelBase, sql.DictBase):
     __tablename__ = 'group'
     attributes = ['id', 'name', 'domain_id']
     id = sql.Column(sql.String(64), primary_key=True)
-    name = sql.Column(sql.String(64), unique=True, nullable=False)
+    name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
                            nullable=False)
     description = sql.Column(sql.Text())
     extra = sql.Column(sql.JsonBlob())
+    __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
 
 
 class Credential(sql.ModelBase, sql.DictBase):
@@ -82,17 +84,17 @@ class Domain(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
 
 
-# TODO(dolph): rename to Project
 class Project(sql.ModelBase, sql.DictBase):
     __tablename__ = 'project'
     attributes = ['id', 'name', 'domain_id']
     id = sql.Column(sql.String(64), primary_key=True)
-    name = sql.Column(sql.String(64), unique=True, nullable=False)
+    name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
                            nullable=False)
     description = sql.Column(sql.Text())
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
+    __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
 
 
 class Role(sql.ModelBase, sql.DictBase):

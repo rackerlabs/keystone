@@ -279,6 +279,7 @@ class SqlUpgradeTests(test.TestCase):
         self.populate_user_table(with_pass_enab=True)
         self.populate_tenant_table(with_desc_enab=True)
         self.upgrade(16)
+
         self.assertTableColumns("user",
                                 ["id", "name", "extra",
                                  "password", "enabled", "domain_id"])
@@ -299,8 +300,11 @@ class SqlUpgradeTests(test.TestCase):
         self.assertEqual(a_project.description,
                          default_fixtures.TENANTS[1]['description'])
         self.assertEqual(a_project.domain_id, DEFAULT_DOMAIN_ID)
+
         session.commit()
         session.close()
+
+        self.check_uniqueness_constraints()
 
     def test_downgrade_16_to_14(self):
         self.upgrade(16)
@@ -435,6 +439,66 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableExists('user_domain_metadata')
         self.assertTableColumns('user_domain_metadata',
                                 ['user_id', 'domain_id', 'data'])
+
+    def check_uniqueness_constraints(self):
+        # Check uniqueness constraints for User & Project tables are
+        # correct following schema modification.  The Group table's
+        # schema is never modified, so we don't bother to check that.
+        domain_table = sqlalchemy.Table('domain',
+                                        self.metadata,
+                                        autoload=True)
+        domain1 = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'enabled': True}
+        domain2 = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'enabled': True}
+        cmd = domain_table.insert().values(domain1)
+        self.engine.execute(cmd)
+        cmd = domain_table.insert().values(domain2)
+        self.engine.execute(cmd)
+
+        # First, the User table.
+        this_table = sqlalchemy.Table('user',
+                                      self.metadata,
+                                      autoload=True)
+        user = {'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex,
+                'domain_id': domain1['id'],
+                'password': uuid.uuid4().hex,
+                'enabled': True,
+                'extra': json.dumps({})}
+        cmd = this_table.insert().values(user)
+        self.engine.execute(cmd)
+        # now insert a user with the same name into a different
+        # domain - which should work.
+        user['id'] = uuid.uuid4().hex
+        user['domain_id'] = domain2['id']
+        cmd = this_table.insert().values(user)
+        self.engine.execute(cmd)
+        cmd = this_table.delete(id=user['id'])
+        self.engine.execute(cmd)
+
+        # Now, the Project table.
+        this_table = sqlalchemy.Table('project',
+                                      self.metadata,
+                                      autoload=True)
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'domain_id': domain1['id'],
+                   'description': uuid.uuid4().hex,
+                   'enabled': True,
+                   'extra': json.dumps({})}
+        cmd = this_table.insert().values(project)
+        self.engine.execute(cmd)
+        # now insert a project with the same name into a different
+        # domain - which should work.
+        project['id'] = uuid.uuid4().hex
+        project['domain_id'] = domain2['id']
+        cmd = this_table.insert().values(project)
+        self.engine.execute(cmd)
+        cmd = this_table.delete(id=project['id'])
+        self.engine.execute(cmd)
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):

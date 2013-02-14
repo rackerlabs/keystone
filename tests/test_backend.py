@@ -261,6 +261,20 @@ class IdentityTests(object):
                           'fake2',
                           user)
 
+    def test_create_duplicate_user_name_in_different_domains(self):
+        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(new_domain['id'], new_domain)
+        user1 = {'id': uuid.uuid4().hex,
+                 'name': uuid.uuid4().hex,
+                 'domain_id': DEFAULT_DOMAIN_ID,
+                 'password': uuid.uuid4().hex}
+        user2 = {'id': uuid.uuid4().hex,
+                 'name': user1['name'],
+                 'domain_id': new_domain['id'],
+                 'password': uuid.uuid4().hex}
+        self.identity_api.create_user(user1['id'], user1)
+        self.identity_api.create_user(user2['id'], user2)
+
     def test_rename_duplicate_user_name_fails(self):
         user1 = {'id': 'fake1',
                  'name': 'fake1',
@@ -317,6 +331,16 @@ class IdentityTests(object):
                           self.identity_api.create_project,
                           'fake1',
                           tenant)
+
+    def test_create_duplicate_project_name_in_different_domains(self):
+        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(new_domain['id'], new_domain)
+        tenant1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'domain_id': DEFAULT_DOMAIN_ID}
+        tenant2 = {'id': uuid.uuid4().hex, 'name': tenant1['name'],
+                   'domain_id': new_domain['id']}
+        self.identity_api.create_project(tenant1['id'], tenant1)
+        self.identity_api.create_project(tenant2['id'], tenant2)
 
     def test_rename_duplicate_project_name_fails(self):
         tenant1 = {'id': 'fake1', 'name': 'fake1',
@@ -1620,6 +1644,26 @@ class IdentityTests(object):
         self.assertRaises(exception.GroupNotFound,
                           self.identity_api.get_group,
                           group['id'])
+
+    def test_create_duplicate_group_name_fails(self):
+        group1 = {'id': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID,
+                  'name': uuid.uuid4().hex}
+        group2 = {'id': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID,
+                  'name': group1['name']}
+        self.identity_api.create_group(group1['id'], group1)
+        self.assertRaises(exception.Conflict,
+                          self.identity_api.create_group,
+                          group2['id'], group2)
+
+    def test_create_duplicate_group_name_in_different_domains(self):
+        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(new_domain['id'], new_domain)
+        group1 = {'id': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID,
+                  'name': uuid.uuid4().hex}
+        group2 = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+                  'name': group1['name']}
+        self.identity_api.create_group(group1['id'], group1)
+        self.identity_api.create_group(group2['id'], group2)
 
     def test_project_crud(self):
         project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,

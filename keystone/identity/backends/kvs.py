@@ -573,7 +573,23 @@ class Identity(kvs.Base, identity.Driver):
     # group crud
 
     def create_group(self, group_id, group):
+        try:
+            return self.db.get('group-%s' % group_id)
+        except exception.NotFound:
+            pass
+        else:
+            msg = _('Duplicate ID, %s.') % group_id
+            raise exception.Conflict(type='group', details=msg)
+        try:
+            self.db.get('group_name-%s' % group['name'])
+        except exception.NotFound:
+            pass
+        else:
+            msg = _('Duplicate name, %s.') % group['name']
+            raise exception.Conflict(type='group', details=msg)
+
         self.db.set('group-%s' % group_id, group)
+        self.db.set('group_name-%s' % group['name'], group)
         group_list = set(self.db.get('group_list', []))
         group_list.add(group_id)
         self.db.set('group_list', list(group_list))
@@ -589,10 +605,32 @@ class Identity(kvs.Base, identity.Driver):
             raise exception.GroupNotFound(group_id=group_id)
 
     def update_group(self, group_id, group):
+        try:
+            self.db.get('group_name-%s' % group['name'])
+        except exception.NotFound:
+            pass
+        else:
+            msg = _('Duplicate name, %s.') % group['name']
+            raise exception.Conflict(type='group', details=msg)
+
+        # get the old name and delete it too
+        try:
+            old_group = self.db.get('group-%s' % group_id)
+        except exception.NotFound:
+            raise exception.GroupNotFound(group_id=group_id)
+        if group['id'] != group_id:
+            raise exception.ValidationError(_('Cannot change group ID'))
+        self.db.delete('group_name-%s' % old_group['name'])
+
         self.db.set('group-%s' % group_id, group)
+        self.db.set('group_name-%s' % group['name'], group)
         return group
 
     def delete_group(self, group_id):
+        try:
+            group = self.db.get('group-%s' % group_id)
+        except exception.NotFound:
+            raise exception.GroupNotFound(group_id=group_id)
         # Delete any entries in the group lists of all users
         user_keys = filter(lambda x: x.startswith("user-"), self.db.keys())
         user_refs = [self.db.get(key) for key in user_keys]
@@ -604,6 +642,7 @@ class Identity(kvs.Base, identity.Driver):
 
         # Now delete the group itself
         self.db.delete('group-%s' % group_id)
+        self.db.delete('group_name-%s' % group['name'])
         group_list = set(self.db.get('group_list', []))
         group_list.remove(group_id)
         self.db.set('group_list', list(group_list))
