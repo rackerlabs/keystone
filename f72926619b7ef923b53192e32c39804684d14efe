@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+7Hc\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-14T09:42:42Z",
+      "side": 1,
+      "message": "This is more like get_one/all records as in find_one, find_all. The names are similar to the ones used in the backend for the get/get_all methods in keystone.common.ldap",
+      "parentUuid": "AAAAM3/+8Rw\u003d",
+      "revId": "f72926619b7ef923b53192e32c39804684d14efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+7+Y\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+7Gw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-14T09:42:42Z",
+      "side": 1,
+      "message": "I chose these names after looking at both the LDAP RFC and the python-ldap docs. The LDAP RFC has these names: baseObject, singleLevel, wholeSubtree. I guess in the end I mashed them all together and didn\u0027t end up with anything consistent. I\u0027ll switch to base, one and sub.\n\nFor \u0027children\u0027 - I\u0027m not sure python-ldap supports that.",
+      "parentUuid": "AAAAM3/+7+Y\u003d",
+      "revId": "f72926619b7ef923b53192e32c39804684d14efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+8RM\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2013-02-13T19:40:17Z",
       "side": 1,
       "message": "Why we have both \"\u0027one\u0027: ldap.SCOPE_ONELEVEL\" and \"\u0027single\u0027: ldap.SCOPE_ONELEVEL\" in the return statement but the message in the exception only mentioning \"single\"? Again, I believe \"one\" is better over \"single\" to correctly represent the scope in the error message. I am not very sure that I understood it correctly without discussion with you but giving -1 for now. Thanks!",
+      "revId": "f72926619b7ef923b53192e32c39804684d14efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+7Gg\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-14T09:42:42Z",
+      "side": 1,
+      "message": "both one and single were meant to help potential sysadmins who can\u0027t remember which name we\u0027re using for the singleLevel search. The error message would\u0027ve been confusing with both.",
+      "parentUuid": "AAAAM3/+8RM\u003d",
       "revId": "f72926619b7ef923b53192e32c39804684d14efe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
