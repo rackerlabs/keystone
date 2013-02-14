@@ -106,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6Y8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T18:00:21Z",
+      "side": 1,
+      "message": "thanks for the info. seemed like they were purposely put there.",
+      "parentUuid": "AAAAM3/+6cM\u003d",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6e4\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
         "patchSetId": 2
@@ -176,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6Y0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T18:00:21Z",
+      "side": 1,
+      "message": "cool. i probably should\u0027ve googled if that made sense. figured it\u0027d be faster for you to explain it to me. :)",
+      "parentUuid": "AAAAM3/+6b8\u003d",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6iA\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 2
@@ -205,6 +241,24 @@
       "side": 1,
       "message": "So update entity should check against changing the ID (which is not permitted) - update_user certainly does that, for example.  Could you expand on what you mean by _require_matching_id()  ? Thanks",
       "parentUuid": "AAAAM3/+6iA\u003d",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6Xk\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T18:00:21Z",
+      "side": 1,
+      "message": "in identity controllers, when update is called, in v3 it will run \u0027_require_matching_id()\u0027 which verifies if the obj has the same id as the id you passing in to modify.\n\nalthough now that i look at v2 update_user, update_project, the check is probably useful there.",
+      "parentUuid": "AAAAM3/+6ac\u003d",
       "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
