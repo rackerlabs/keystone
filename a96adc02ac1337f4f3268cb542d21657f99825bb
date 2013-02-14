@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6fk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/014_add_group_tables.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T17:31:09Z",
+      "side": 1,
+      "message": "cool, i\u0027ve never seen this expressed in sqlalchemy before",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6fc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T17:31:09Z",
+      "side": 1,
+      "message": "thanks",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6j0\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
         "patchSetId": 2
@@ -30,6 +64,23 @@
       "writtenOn": "2013-02-14T17:12:31Z",
       "side": 1,
       "message": "are the double quotations required? differ from projects below",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6e4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T17:31:09Z",
+      "side": 1,
+      "message": "drop the quotes for postgres?",
       "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +115,23 @@
       "writtenOn": "2013-02-14T17:12:31Z",
       "side": 1,
       "message": "do we need this check? i noticed the other updates methods don\u0027t have it and there is a _require_matching_id() clean up before this is called.",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6bw\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T17:31:09Z",
+      "side": 1,
+      "message": "yay :)",
       "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -166,6 +234,24 @@
       "writtenOn": "2013-02-14T17:12:31Z",
       "side": 1,
       "message": "delete action is never verified. are we doing this to make sure the correct item is deleted?",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6bg\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T17:31:09Z",
+      "side": 1,
+      "message": "i\u0027m curious why the deletes are necessary as well -- what\u0027s being asserted?",
+      "parentUuid": "AAAAM3/+6do\u003d",
       "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
