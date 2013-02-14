@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+6tk\u003d",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T15:35:13Z",
+      "side": 1,
+      "message": "out of curiousity, this file has quite a few differences than the oslo/doc/source/conf.py file. are these just keystone custom values?",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
