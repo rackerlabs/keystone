@@ -104,6 +104,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6S0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:21:34Z",
+      "side": 1,
+      "message": "that\u0027s the cool part -- they don\u0027t have to be part of keystone, they just need to be importable by package/class name. So if I wanted to write my own plugin that allowed anonymous access to anyone, i just have to give keystone the class path:\n\n  [auth]\n  methods \u003d anonymous\n  anonymous \u003d myproject.auth.plugins.AnonymousAuth",
+      "parentUuid": "AAAAM3/+6WY\u003d",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6Wo\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 6
