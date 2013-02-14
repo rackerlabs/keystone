@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+6j0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T17:12:31Z",
+      "side": 1,
+      "message": "are the double quotations required? differ from projects below",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6kQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T17:12:31Z",
+      "side": 1,
+      "message": "ADD CONSTRAINT user_name_key UNIQUE (name)",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6iA\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T17:12:31Z",
+      "side": 1,
+      "message": "do we need this check? i noticed the other updates methods don\u0027t have it and there is a _require_matching_id() clean up before this is called.",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6ek\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T17:12:31Z",
+      "side": 1,
+      "message": "update_user",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6fY\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T17:12:31Z",
+      "side": 1,
+      "message": "create_project and update_project below",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6fU\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T17:12:31Z",
+      "side": 1,
+      "message": "create_project",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6ew\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T17:12:31Z",
+      "side": 1,
+      "message": "update_project",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6e0\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1772,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T17:12:31Z",
+      "side": 1,
+      "message": "update_group",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6do\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-14T17:12:31Z",
+      "side": 1,
+      "message": "delete action is never verified. are we doing this to make sure the correct item is deleted?",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
