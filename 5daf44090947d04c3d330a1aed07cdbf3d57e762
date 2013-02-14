@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+7EM\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-14T10:52:12Z",
+      "side": 1,
+      "message": "This hardcodes classes when it\u0027s not really necessary. It looks like just checking the error\u0027s interface for the presence of the authentication attr would be easier. You could do that in a try: body.update(authentication\u003derror.authentication) except AttributeError: pass block. And then have only one return and no isinstance calls.",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
