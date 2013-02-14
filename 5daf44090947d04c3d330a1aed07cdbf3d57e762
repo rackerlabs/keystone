@@ -16,6 +16,24 @@
       "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6mw\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-14T16:46:42Z",
+      "side": 1,
+      "message": "I thought about your approach as well when I started implemented the response. One problem I see is that the attribute \"authentication\" may not be consistently use. Say there\u0027s another exception comes along and extends Unauthroized and happened to its own \"authentication\" attribute but used for a different purposed. Therefore, I want it to be very specific.",
+      "parentUuid": "AAAAM3/+7EM\u003d",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
