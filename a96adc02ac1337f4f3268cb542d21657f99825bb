@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6ao\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/014_add_group_tables.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-14T17:38:29Z",
+      "side": 1,
+      "message": "No, Groups are owned by a domain, just like Users",
+      "parentUuid": "AAAAM3/+6cA\u003d",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6fc\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
         "patchSetId": 2
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6cM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-14T17:38:29Z",
+      "side": 1,
+      "message": "Yes, they are required. \u0027user\u0027 is a reserved term in postgresql",
+      "parentUuid": "AAAAM3/+6j0\u003d",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6e4\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
         "patchSetId": 2
@@ -81,6 +117,24 @@
       "writtenOn": "2013-02-14T17:31:09Z",
       "side": 1,
       "message": "drop the quotes for postgres?",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6aE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-14T17:38:29Z",
+      "side": 1,
+      "message": "....no, you need them for postgres!",
+      "parentUuid": "AAAAM3/+6e4\u003d",
       "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6b8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-14T17:38:29Z",
+      "side": 1,
+      "message": "It will be called that anyway by default...and I am already assuming the default on the upgrade.",
+      "parentUuid": "AAAAM3/+6kQ\u003d",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6iA\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 2
@@ -115,6 +187,24 @@
       "writtenOn": "2013-02-14T17:12:31Z",
       "side": 1,
       "message": "do we need this check? i noticed the other updates methods don\u0027t have it and there is a _require_matching_id() clean up before this is called.",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6ac\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-14T17:38:29Z",
+      "side": 1,
+      "message": "So update entity should check against changing the ID (which is not permitted) - update_user certainly does that, for example.  Could you expand on what you mean by _require_matching_id()  ? Thanks",
+      "parentUuid": "AAAAM3/+6iA\u003d",
       "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +245,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6bk\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-14T17:38:29Z",
+      "side": 1,
+      "message": "oops, good catch, thanks!",
+      "parentUuid": "AAAAM3/+6ek\u003d",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6fY\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 2
@@ -166,6 +274,24 @@
       "writtenOn": "2013-02-14T17:12:31Z",
       "side": 1,
       "message": "create_project and update_project below",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6bc\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-14T17:38:29Z",
+      "side": 1,
+      "message": "too much copy \u0026 paste...:-)",
+      "parentUuid": "AAAAM3/+6fY\u003d",
       "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +315,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6bY\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-14T17:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6fU\u003d",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6ew\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 2
@@ -206,6 +350,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6bU\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-14T17:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6ew\u003d",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6e0\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 2
@@ -217,6 +379,24 @@
       "writtenOn": "2013-02-14T17:12:31Z",
       "side": 1,
       "message": "update_group",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6bQ\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1772,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-14T17:38:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6e0\u003d",
       "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -252,6 +432,24 @@
       "side": 1,
       "message": "i\u0027m curious why the deletes are necessary as well -- what\u0027s being asserted?",
       "parentUuid": "AAAAM3/+6do\u003d",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6a4\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-14T17:38:29Z",
+      "side": 1,
+      "message": "So this is to do with a bug I raised (#1125046) and a restriction this implementation has, as noted in the commit comment.  We have now created two users with the same name in different domains...when the test tries to teardown to 0, it will fail because we cannot go back to a single global domain space.  However, I should have at least added a comment here to that effect.",
+      "parentUuid": "AAAAM3/+6bg\u003d",
       "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
