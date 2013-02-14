@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+6n0\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 0,
+      "message": "this makes me happy every time i see it",
+      "revId": "fc9ded38d93c6c91faf47de7881d5c528b0ee3fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6lY\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 0,
+      "message": "yay",
+      "revId": "fc9ded38d93c6c91faf47de7881d5c528b0ee3fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6kk\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 0,
+      "message": "I think you deleted the wrong one here? add_user_to_project should be removed, not add_role_*\n\ncan also remove termie\u0027s comment now?",
+      "revId": "fc9ded38d93c6c91faf47de7881d5c528b0ee3fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

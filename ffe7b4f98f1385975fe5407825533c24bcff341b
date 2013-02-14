@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+6pQ\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "Besides all the spelling and grammar errors here, I\u0027d rather cut the unnecessary debug output statements rather than hardcoding a set log level.\n\nThis also appears to be very out of scope for this patch.",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6pA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "clean up the imports per HACKING",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6ow\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "Still not in favor of this. It\u0027s not specific to projects and I\u0027d rather it conform to our documented suggestions for roles -- e.g. \"member\".\n\nThere\u0027s no reason why you can\u0027t look for a role named \"member\" and use it if it already exists.\n\nI\u0027m also not sure the role ID needs to be configurable -- it can just be generated randomly as part of the migration.",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6og\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "HACKING - backslash continuation",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6oQ\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "if not len(roles):",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6oI\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "HACKING:\n\n  if tenant_id not in tenants:",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6lo\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "Jose addressed this in another patch -- adding a configurable limit to the number of entities per list operation. I assume this would be a *really* slow operation as-is",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6lA\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "simplify to:\n\n  if len(roles):",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6kc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "same as above, i thought all the calls without an explicit role reference could go away now",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6kM\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "I think this entire method can be removed from the driver interface",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6kA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6j4\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "tenant -\u003e project",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6js\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "don\u0027t use __contains__ directly",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6jo\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "you can also just do actual.pop(s, None) here",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6jY\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "HACKING",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6jI\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "HACKING",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6jA\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:45:53Z",
+      "side": 1,
+      "message": "as previously discussed, please change this to ignore_entity_keys or something to tweak the convention, not to override it with a new convention",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
