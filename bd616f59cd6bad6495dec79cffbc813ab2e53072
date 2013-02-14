@@ -36,6 +36,75 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+6eQ\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-14T17:42:02Z",
+      "side": 1,
+      "message": "also, you don\u0027t want the keys translated so they should not be in _()",
+      "parentUuid": "AAAAM3/+6hE\u003d",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6co\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-14T17:42:02Z",
+      "side": 1,
+      "message": "Will the keystone server fail to start if the string is not valid? Just wondering if it would be better to log a warning and use the default if the string is not valid.",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6cU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-14T17:42:02Z",
+      "side": 1,
+      "message": "I\u0027m not seeing how this is going to work. This function gets an id like 12345678, so it\u0027s going to do a search like (to use the command-line):\n\n ldapsearch -b \"id\u003d12345678,cn\u003dUsers,dc\u003dOpenStack\" \"(objectclass\u003dperson)\"\n\nHow is changing the scope from BASE to ONELEVEL or SUBTREE going to work? The id\u003d12345678,cn\u003dUsers,dc\u003dOpenStack entry still has to exist.",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6cI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-14T17:42:02Z",
+      "side": 1,
+      "message": "This one makes a little more sense since it\u0027s not using the user DN. Since the constraint imposed by self._id_to_dn() and _ldap_get() is in place (that the users must be directly under the \u0027users\u0027 entry) then only ONELEVEL is going to work.  \n\nIf I\u0027m incorrect about the constraint that users must be direct children of the users entry, then allowing BASE for this search is useless or dangerous.",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6gk\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 5
