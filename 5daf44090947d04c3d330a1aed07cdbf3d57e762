@@ -2,6 +2,210 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+6Xs\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "line break after section title\u0027s underline; maybe make Plugin plural",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6Xg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "I vote for plug-in/plug-ins -\u003e plugin/plugins",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6XU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "their -\u003e it\u0027s",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6XE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "To -\u003e to, An -\u003e an",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6W0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "``backticks`` around the class path",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6Wo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "``backticks`` on method name",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6Wc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "maybe be slightly more specific here -- Keystone\u0027s request context?",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6Wk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "``backticks`` on class name",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6WU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "``return None``\n\nalso add:\n\n   (doing so implicitly is sufficient)\n\nbecause all methods in python return None automatically unless you specify otherwise or raise an exception",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6WQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "backticks on method name, raise keyword, and prefer being specific on the exception, e.g. ``keystone.exceptions.Unauthorized``",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6WA\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "success-\u003e successful\n\nalthough i feel like the docs written seperately are a bit better than these now -- maybe refer to them somehow so it\u0027s not maintained twice?",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6WI\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "spelling",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+7EM\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 6
@@ -31,6 +235,262 @@
       "side": 1,
       "message": "I thought about your approach as well when I started implemented the response. One problem I see is that the attribute \"authentication\" may not be consistently use. Say there\u0027s another exception comes along and extends Unauthroized and happened to its own \"authentication\" attribute but used for a different purposed. Therefore, I want it to be very specific.",
       "parentUuid": "AAAAM3/+7EM\u003d",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6Vw\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "(as mentioned on previous patches) that\u0027s why you should have these both extend a base class that guarantees an interface, and then only check for that here",
+      "parentUuid": "AAAAM3/+6mw\u003d",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6Vo\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "don\u0027t build the response twice, build it once and modify it as appropriate -- this is still twice the maintenance effort ;)",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6Vg\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "extend a common exception class that guarantees an authentication attribute exists",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6VU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "i don\u0027t know what you\u0027re trying to create here ....\n\nempty tuples must either be...\n\n  tuple()\n  (,)",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6VY\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "if not len(roles):",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6VI\u003d",
+        "filename": "tests/test_auth_plugin.conf",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "exclude the password and token lines, as they\u0027re just default anyway",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6VE\u003d",
+        "filename": "tests/test_auth_plugin.conf",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "is this a package name? really confused here",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6VA\u003d",
+        "filename": "tests/test_auth_plugin.conf",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "remove the whitespace at end of file",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6U8\u003d",
+        "filename": "tests/test_auth_plugin.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "use uuid\u0027s to illustrate arbitrary values throughout",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6U0\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "prefer following unittest\u0027s method naming... also include what you\u0027re asserting (e.g. that it\u0027s \"valid\")\n\n  assertValidUnscopedToken",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6Uw\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "assertTrue(token[\u0027roles\u0027])\n\nnote i removed user ^",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6Ug\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "unscoped and scoped assertion should both call a common method to assert things like has \"expires\", has valid \"user\", including domain element, etc",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6UM\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "expires and issued_at need to use the same naming convention; spec needs to be revised obviously",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6UU\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "expires is at the root level",
+      "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6UE\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T18:09:34Z",
+      "side": 1,
+      "message": "whocares -\u003e uuid",
       "revId": "5daf44090947d04c3d330a1aed07cdbf3d57e762",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
