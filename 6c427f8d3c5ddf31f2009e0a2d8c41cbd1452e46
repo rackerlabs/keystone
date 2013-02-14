@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+7io\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "They wouldn\u0027t be necessary if we ran all of the updates in a single commit, but we don\u0027t.  This way, when we run the tests, we see the intermediate results of the upgrade in the database, and therefore the tests show the proper results.",
+      "parentUuid": "AAAAM3//BCs\u003d",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BCI\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
         "patchSetId": 4
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+7ik\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "I didn\u0027t want to clash with an existing field.  Member seems to be used already in the unit tests.  I intentionally went as ugly as possible.",
+      "parentUuid": "AAAAM3//BCI\u003d",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BCE\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
         "patchSetId": 4
@@ -65,6 +101,24 @@
       "writtenOn": "2013-02-11T16:55:21Z",
       "side": 1,
       "message": "use sentence case, and definitely don\u0027t insert the description twice",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+7iU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//BCE\u003d",
       "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +153,24 @@
       "writtenOn": "2013-02-11T16:55:21Z",
       "side": 1,
       "message": "+1 no need to keep the sessionmaker around",
+      "parentUuid": "AAAAM3//BhU\u003d",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+7iQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAAM3//BhU\u003d",
       "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -141,6 +213,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+7iM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_membership_role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "I need the role grants.  As far as I know, I don\u0027t need anything else.",
+      "parentUuid": "AAAAM3//BB8\u003d",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BBM\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 4
@@ -152,6 +242,24 @@
       "writtenOn": "2013-02-11T16:55:21Z",
       "side": 1,
       "message": "still torn on whether we should do something like this, or default to \u0027member\u0027, and let the migration fail if such a role already exists. i don\u0027t think either solution is ideal",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+7iI\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "Lets keep this for now.  It is the less risky way to go.  I just wonder if this should be hard coded into the scripts,as we don\u0027t really want people changing it.",
+      "parentUuid": "AAAAM3//BBM\u003d",
       "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -175,6 +283,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+7eE\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "Henry\u0027s change made this superfluous.",
+      "parentUuid": "AAAAM3//BA4\u003d",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//BA8\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 4
@@ -192,6 +318,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+7eQ\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3//BA8\u003d",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//A8M\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 4
@@ -203,6 +347,24 @@
       "writtenOn": "2013-02-11T16:55:21Z",
       "side": 1,
       "message": "is this supposed to return a list of projects or project_id\u0027s?",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+7d4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "project_ids.  Will change variable name to make that clearer.",
+      "parentUuid": "AAAAM3//A8M\u003d",
       "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -243,6 +405,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+7dI\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "That is correct.  The number of roles left in this project is 0 (tested line 416), so we delete the grant.",
+      "parentUuid": "AAAAM3//A7k\u003d",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//A7Y\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 4
@@ -254,6 +434,24 @@
       "writtenOn": "2013-02-11T16:55:21Z",
       "side": 1,
       "message": "delete the line and above comment",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+7cs\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "Done.  Gladly.",
+      "parentUuid": "AAAAM3//A7Y\u003d",
       "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -277,6 +475,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+7cc\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "Can\u0027t.  Logic for this is used in the Contrib code.  I\u0027d have to move it there. I\u0027d rather leave it here for now.",
+      "parentUuid": "AAAAM3//A7E\u003d",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//A7A\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
@@ -288,6 +504,24 @@
       "writtenOn": "2013-02-11T16:55:21Z",
       "side": 1,
       "message": "delete this one too",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+7cY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "Same as above",
+      "parentUuid": "AAAAM3//A7A\u003d",
       "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -311,6 +545,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+7cU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "Yep, that is correct.  There is no \"membership\" any more, only role assignment.",
+      "parentUuid": "AAAAM3//BfU\u003d",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//A64\u003d",
         "filename": "tests/default_fixtures.py",
         "patchSetId": 4
@@ -322,6 +574,24 @@
       "writtenOn": "2013-02-11T16:55:21Z",
       "side": 1,
       "message": "please re-use existing entities or create them in setUp methods specific to your tests",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+7cQ\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "These I would like to leave.  There are issues with using the role  \u0027Member\u0027 and so forth in existing tests that I would like to clean up later, but will need to have these available.  There are enough tests that need multiple tenants and roles that having these availble will be useful.",
+      "parentUuid": "AAAAM3//A64\u003d",
       "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -345,6 +615,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+7cE\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "I am not sure I agree that \u0027enabled\u0027 is the norm.  We have a need for it on the \u0027entities\u0027 but not on the relationships.  None of the assignement types will need it.  I felt this was a good middle ground.",
+      "parentUuid": "AAAAM3//A6g\u003d",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//A6U\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 4
@@ -356,6 +644,24 @@
       "writtenOn": "2013-02-11T16:55:21Z",
       "side": 1,
       "message": "make it clear what you\u0027re trying to accomplish:\n\n  ignore_entity_keys\u003d(\u0027enabled\u0027,)",
+      "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+7b4\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-14T03:03:08Z",
+      "side": 1,
+      "message": "If you insist, I will, but I think you are limiting a potentially reusable function.  I can see this being used for many lists if you just pass in the keys list.",
+      "parentUuid": "AAAAM3//A6U\u003d",
       "revId": "6c427f8d3c5ddf31f2009e0a2d8c41cbd1452e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
