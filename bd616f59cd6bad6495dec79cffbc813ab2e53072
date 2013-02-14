@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+6hY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:58:51Z",
+      "side": 1,
+      "message": "I\u0027d suggest breaking these two options away from the rest of the above and adding a comment to explain the enumerated options",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6hE\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:58:51Z",
+      "side": 1,
+      "message": "Make this dynamic to reduce maintenance, \n\n  ... Choose one of: %s\u0027 % \u0027, \u0027.join(LDAP_SCOPES.keys())",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6gk\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:58:51Z",
+      "side": 1,
+      "message": "aww, I thought you meant oslo supported something like register_enum_str() or something, which i was excited about :P\n\nWith the validation in the driver, I think this is perfectly sufficient, though.",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+6gU\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-14T16:58:51Z",
+      "side": 1,
+      "message": "use uuid.uuid4().hex to illustrate that it\u0027s an arbitrary value",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
