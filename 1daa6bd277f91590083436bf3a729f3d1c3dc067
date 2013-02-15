@@ -260,6 +260,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+3xE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T21:51:54Z",
+      "side": 1,
+      "message": "if you ever get the value out of self._scoped_data, to get the domain_id is _scoped_data[0] and project_id it\u0027s _scoped_data[1]. These are pretty much impossible to verify without looking back here for the documentation. If you use a dict, then getting the domain_id is _scoped_data[\u0027domain_id\u0027] and for project_id it\u0027s _scoped_data[\u0027project_id\u0027]. In the latter case, it\u0027s obviously correct. (although the key string could be typed wrong... this is python so you\u0027re pretty much stuck with a dynamic lookup at some point).",
+      "parentUuid": "AAAAM3/+4B8\u003d",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+4jc\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 7
