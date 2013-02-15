@@ -16,6 +16,244 @@
       "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5nQ\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "why do we need to wrap the command in a cmd.exe or /bin/sh? A comment would explain it all.\n\nI\u0027m guessing it\u0027s to parse/split up the command string. If that\u0027s the case, I\u0027d rather the string was split up by the caller.",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5nM\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "stderr was added, but it\u0027s not used. any reason? A comment would help.",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5m0\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "why isn\u0027t this one throw_on_error? seems like that should be the default.",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5ng\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "Should use \n\n with open(\u0027PKG-INFO\u0027, \u0027r\u0027) as f:\n\nsee http://docs.python.org/2/tutorial/inputoutput.html#methods-of-file-objects , \"good practice to use the with keyword\"",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5nc\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "suggest remove \", None\". This is a common theme throughout this file.",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5ns\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "This comment is misleading because the first thing this function does is try to get the version from OSLO_PACKAGE_VERSION.\n\nPersonally, I think the comments explaining what this function does could be removed. The function is short and understandable enough as is.",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5no\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "harsh, but true.",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5nk\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "suggest remove \", None\". The default is to return None if it\u0027s not found.",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5nY\u003d",
+        "filename": "keystone/openstack/common/setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "As a reviewer, I would have found this file a lot easier to understand if the get_version() function was first in the file, so I suggest changing the order.",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5mU\u003d",
+        "filename": "keystone/openstack/common/version.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "HACKING.py says \"Avoid using \"double quotes\" where you can reasonably use \u0027single quotes\u0027\", https://github.com/openstack/keystone/blob/master/HACKING.rst",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5mM\u003d",
+        "filename": "keystone/openstack/common/version.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "\" -\u003e \u0027",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5l4\u003d",
+        "filename": "keystone/openstack/common/version.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "this is a lot of text for a function that just returns a string.",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5l0\u003d",
+        "filename": "keystone/openstack/common/version.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "this is a lot of text for a function that just returns a string.",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5mQ\u003d",
+        "filename": "keystone/openstack/common/version.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T02:52:08Z",
+      "side": 1,
+      "message": "\" -\u003e \u0027",
+      "revId": "5e82d945aa6ba6ab3527abb54163ae6a22a25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
