@@ -169,6 +169,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    # TODO(chungg): should probably drop this once grants implemented in LDAP.
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         """Remove a role from a user within given tenant.
 
