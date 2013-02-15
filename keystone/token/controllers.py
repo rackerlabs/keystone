@@ -575,28 +575,29 @@ class Auth(controller.V2Controller):
 
     @classmethod
     def format_catalog(cls, catalog_ref):
-        """Munge catalogs from internal to output format
-        Internal catalogs look like:
+        """Munge catalogs from internal to output format.
 
-        {$REGION: {
-            {$SERVICE: {
-                $key1: $value1,
-                ...
+        Internal catalogs look like::
+
+            {$REGION: {
+                {$SERVICE: {
+                    $key1: $value1,
+                    ...
+                    }
                 }
             }
-        }
 
-        The legacy api wants them to look like
+        The legacy API wants them to look like::
 
-        [{'name': $SERVICE[name],
-          'type': $SERVICE,
-          'endpoints': [{
-              'tenantId': $tenant_id,
-              ...
-              'region': $REGION,
-              }],
-          'endpoints_links': [],
-         }]
+            [{'name': $SERVICE[name],
+            'type': $SERVICE,
+            'endpoints': [{
+                'tenantId': $tenant_id,
+                ...
+                'region': $REGION,
+                }],
+            'endpoints_links': [],
+            }]
 
         """
         if not catalog_ref:

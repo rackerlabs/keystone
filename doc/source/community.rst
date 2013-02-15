@@ -29,7 +29,6 @@ Our community welcomes all people interested in open source cloud computing,
 and there are no formal membership requirements. The best way to join the
 community is to talk with others online or at a meetup and offer contributions
 through Launchpad_, the wiki_, or blogs. We welcome all types of contributions,
-
 from blueprint designs to documentation to testing to deployment scripts.
 
 .. _Launchpad: https://launchpad.net/keystone
@@ -44,7 +43,6 @@ for Internet Relay Chat and it is a way to chat online in real time. You can
 also ask a question and come back to the log files to read the answer later.
 Logs for the #openstack IRC channel are stored at
 `<http://eavesdrop.openstack.org/irclogs/>`_.
-
 
 OpenStack Wiki
 --------------
@@ -68,11 +66,11 @@ code is hosted on GitHub
 * `Keystone Project Page on Launchpad <http://launchpad.net/keystone>`_
 * `Keystone Source Repository on GitHub <http://github.com/openstack/keystone>`_
 
-Within launchpad, we use
-`blueprints <https://blueprints.launchpad.net/keystone>`_, to track feature
-work, and track `bugs <https://bugs.launchpad.net/keystone>`_ as well. If
-you are looking for a place to get started contributing to keystone, please
-look at any bugs for keystone that are tagged as `low-hanging-fruit
+Within launchpad, we use `blueprints
+<https://blueprints.launchpad.net/keystone>`_, to track feature work, and track
+`bugs <https://bugs.launchpad.net/keystone>`_ as well. If you are looking for a
+place to get started contributing to keystone, please look at any bugs for
+keystone that are tagged as `low-hanging-fruit
 <https://bugs.launchpad.net/keystone/+bugs?field.tag=low-hanging-fruit>`_.
 
 OpenStack Blog
@@ -87,8 +85,8 @@ events and posts from OpenStack contributors.
 See also: `Planet OpenStack <http://planet.openstack.org/>`_, an aggregation of
 blogs about OpenStack from around the internet, combined into a web site and
 RSS feed. If you'd like to contribute with your blog posts, there are
-instructions for `adding your blog <http://wiki.openstack.org/AddingYourBlog>`_.
-
+instructions for `adding your blog
+<http://wiki.openstack.org/AddingYourBlog>`_.
 
 Twitter
 -------
@@ -96,4 +94,3 @@ Twitter
 Because all the cool kids do it: `@openstack <http://twitter.com/openstack>`_.
 Also follow the `#openstack <http://search.twitter.com/search?q=%23openstack>`_
 tag for relevant tweets.
-

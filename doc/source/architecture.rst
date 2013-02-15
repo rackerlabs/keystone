@@ -20,7 +20,6 @@ Keystone Architecture
 Much of the design is precipitated from the expectation that the auth backends
 for most deployments will actually be shims in front of existing user systems.
 
-
 ------------
 The Services
 ------------
@@ -30,7 +29,6 @@ endpoints. Many of these services are used in a combined fashion by the
 frontend, for example an authenticate call will validate user/tenant
 credentials with the Identity service and, upon success, create and return a
 token with the Token service.
-
 
 Identity
 --------
@@ -42,9 +40,8 @@ In the basic case all this data is managed by the service, allowing the service
 to manage all the CRUD associated with the data.
 
 In other cases, this data is pulled, by varying degrees, from an authoritative
-backend service. An example of this would be when backending on LDAP. See
-`LDAP Backend` below for more details.
-
+backend service. An example of this would be when backending on LDAP. See `LDAP
+Backend` below for more details.
 
 Token
 -----
@@ -52,19 +49,16 @@ Token
 The Token service validates and manages Tokens used for authenticating requests
 once a user/tenant's credentials have already been verified.
 
-
 Catalog
 -------
 
 The Catalog service provides an endpoint registry used for endpoint discovery.
-
 
 Policy
 ------
 
 The Policy service provides a rule-based authorization engine and the
 associated rule management interface.
-
 
 ------------------------
 Application Construction
@@ -109,7 +103,6 @@ frontend, and has no associated Controller class.
 
 .. _Paste: http://pythonpaste.org/
 
-
 ----------------
 Service Backends
 ----------------
@@ -130,7 +123,6 @@ If you implement a backend driver for one of the keystone services, you're
 expected to subclass from these classes. The default response for the defined
 apis in these Drivers is to raise a :mod:`keystone.service.TokenController`.
 
-
 KVS Backend
 -----------
 
@@ -140,23 +132,20 @@ dict.
 
 Supports all features of the general data model.
 
-
 SQL Backend
 -----------
 
 A SQL based backend using SQLAlchemy to store data persistently. The
 keystone-manage command introspects the backends to identify SQL based backends
-when running "db_sync" to establish or upgrade schema. If the backend driver
-has a method db_sync(), it will be invoked to sync and/or migrate schema.
-
+when running ``db_sync`` to establish or upgrade schema. If the backend driver
+has a method ``db_sync()``, it will be invoked to sync and/or migrate schema.
 
 PAM Backend
 -----------
 
-Extra simple backend that uses the current system's PAM service to authenticate,
-providing a one-to-one relationship between Users and Tenants with the `root`
-User also having the 'admin' role.
-
+Extra simple backend that uses the current system's PAM service to
+authenticate, providing a one-to-one relationship between Users and Tenants
+with the `root` User also having the 'admin' role.
 
 Templated Backend
 -----------------
@@ -174,13 +163,11 @@ interpolation)::
   catalog.RegionOne.identity.internalURL = http://localhost:$(public_port)s/v2.0
   catalog.RegionOne.identity.name = 'Identity Service'
 
-
 LDAP Backend
 ------------
 
-The LDAP backend stored Users and Tenents in separate Subtrees.  Roles are recorded
-as entries under the Tenants.
-
+The LDAP backend stored Users and Tenents in separate Subtrees. Roles are
+recorded as entries under the Tenants.
 
 ----------
 Data Model
@@ -194,16 +181,16 @@ There are a few main data types:
 
  * **User**: has account credentials, is associated with one or more tenants
  * **Tenant**: unit of ownership in openstack, contains one or more users
- * **Role**: a first-class piece of metadata associated with many user-tenant pairs.
+ * **Role**: a first-class piece of metadata associated with many user-tenant
+   pairs.
  * **Token**: identifying credential associated with a user or user and tenant
  * **Extras**: bucket of key-value metadata associated with a user-tenant pair.
  * **Rule**: describes a set of requirements for performing an action.
 
 While the general data model allows a many-to-many relationship between Users
-and Tenants and a many-to-one relationship between Extras and User-Tenant pairs,
-the actual backend implementations take varying levels of advantage of that
-functionality.
-
+and Tenants and a many-to-one relationship between Extras and User-Tenant
+pairs, the actual backend implementations take varying levels of advantage of
+that functionality.
 
 ----------------
 Approach to CRUD
@@ -211,13 +198,13 @@ Approach to CRUD
 
 While it is expected that any "real" deployment at a large company will manage
 their users, tenants and other metadata in their existing user systems, a
-variety of CRUD operations are provided for the sake of development and testing.
+variety of CRUD operations are provided for the sake of development and
+testing.
 
 CRUD is treated as an extension or additional feature to the core feature set
 in that it is not required that a backend support it. It is expected that
 backends for services that don't support the CRUD operations will raise a
 :mod:`keystone.exception.NotImplemented`.
-
 
 ----------------------------------
 Approach to Authorization (Policy)
@@ -236,7 +223,6 @@ Other systems wishing to use the policy engine will require additional styles
 of checks and will possibly write completely custom backends. Backends included
 in Keystone are:
 
-
 Rules
 -----
 
@@ -254,10 +240,9 @@ contain the matches. For example::
   # A netadmin call:
   policy_api.enforce(('roles:nova:netadmin',), credentials)
 
-Credentials are generally built from the user metadata in the 'extras' part
-of the Identity API. So, adding a 'role' to the user just means adding the role
-to the user metadata.
-
+Credentials are generally built from the user metadata in the 'extras' part of
+the Identity API. So, adding a 'role' to the user just means adding the role to
+the user metadata.
 
 Capability RBAC
 ---------------

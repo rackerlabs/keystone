@@ -48,22 +48,21 @@ Stop the process using ``Control-C``.
 Memcached and System Time
 =========================
 
-If using `memcached`_ with Keystone - e.g. using the memcache token
-driver or the ``auth_token`` middleware - ensure that the system time
-of memcached hosts is set to UTC.  Memcached uses the host's system
-time in determining whether a key has expired, whereas Keystone sets
-key expiry in UTC.  The timezone used by Keystone and memcached must
-match if key expiry is to behave as expected.
+If using `memcached`_ with Keystone - e.g. using the memcache token driver or
+the ``auth_token`` middleware - ensure that the system time of memcached hosts
+is set to UTC.  Memcached uses the host's system time in determining whether a
+key has expired, whereas Keystone sets key expiry in UTC.  The timezone used by
+Keystone and memcached must match if key expiry is to behave as expected.
 
 .. _`memcached`: http://memcached.org/
 
 Configuration Files
 ===================
 
-The keystone configuration file is an ``ini`` file based on Paste_, a
-common system used to configure python WSGI based applications. In addition to
-the paste configuration entries, general and driver-specific configuration
-values are organized into the following sections:
+The keystone configuration file is an ``ini`` file based on Paste_, a common
+system used to configure python WSGI based applications. In addition to the
+paste configuration entries, general and driver-specific configuration values
+are organized into the following sections:
 
 * ``[DEFAULT]`` - general configuration
 * ``[sql]`` - optional storage backend configuration
@@ -78,8 +77,8 @@ values are organized into the following sections:
 * ``[auth]`` - Authentication plugin configuration
 
 The Keystone configuration file is expected to be named ``keystone.conf``.
-When starting keystone, you can specify a different configuration file to
-use with ``--config-file``. If you do **not** specify a configuration file,
+When starting keystone, you can specify a different configuration file to use
+with ``--config-file``. If you do **not** specify a configuration file,
 keystone will look in the following directories for a configuration file, in
 order:
 
@@ -88,19 +87,20 @@ order:
 * ``/etc/keystone/``
 * ``/etc/``
 
-
 Authentication Plugins
 ----------------------
 
-Keystone support authentication plugins and they are specified
-in the ``[auth]`` section of the configuration file. However, an
-authentication plugin may also have its own section in the configuration
-file. It is up to the plugin to register its own configuration options.
+Keystone support authentication plugins and they are specified in the
+``[auth]`` section of the configuration file. However, an authentication plugin
+may also have its own section in the configuration file. It is up to the plugin
+to register its own configuration options.
 
 * ``methods`` - comma-delimited list of authentication plugin names
-* ``<plugin name>`` - specify the class which handles to authentication method, in the same manner as one would specify a backend driver.
+* ``<plugin name>`` - specify the class which handles to authentication method,
+  in the same manner as one would specify a backend driver.
 
-Keystone provides two authentication methods by default. ``password`` handles password authentication and ``token`` handles token authentication.
+Keystone provides two authentication methods by default. ``password`` handles
+password authentication and ``token`` handles token authentication.
 
 How to Implement an Authentication Plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -111,8 +111,10 @@ following parameters.
 
 * ``context`` - Keystone's request context
 * ``auth_info`` - AuthInfo object which encapsulates the ``authentication`` and
-``scope`` data
-* ``auth_context`` - user authentication context, a dictionary shared by all plugins. It contains ``method_names`` and ``extras`` by default. ``method_names`` is a list and ``extras`` is a dictionary.
+  ``scope`` data
+* ``auth_context`` - user authentication context, a dictionary shared by all
+  plugins. It contains ``method_names`` and ``extras`` by default.
+  ``method_names`` is a list and ``extras`` is a dictionary.
 
 If successful, ``authenticate()`` must provide a valid ``user_id`` in
 ``auth_context``. ``method_name`` is used to convey any additional
@@ -123,16 +125,16 @@ information into ``extras``. Anything in ``extras`` will be conveyed in the
 token's ``extras`` field.
 
 The ``authenticate()`` method must ``return None`` (doing so implicitly is
-sufficient) on successful authentication. If authentication require
-multiple steps, the ``authenticate()`` method must return the payload in the
-form of a dictionary for the next authentication step.
+sufficient) on successful authentication. If authentication require multiple
+steps, the ``authenticate()`` method must return the payload in the form of a
+dictionary for the next authentication step.
 
 If authentication is unsuccessful, the ``authenticate()`` method must raise an
 ``keystone.exception.Unauthorized`` exception.
 
 Simply add the new plugin name to the ``methods`` list along with your plugin
-class configuration in the ``[auth]`` sections of the configuration file
-to deploy it.
+class configuration in the ``[auth]`` sections of the configuration file to
+deploy it.
 
 If the plugin require addition configurations, it may register its own section
 in the configuration file.
@@ -152,10 +154,14 @@ private key should only be readable by the system user that will run Keystone.
 The values that specify where to read the certificates are under the
 ``[signing]`` section of the configuration file.  The configuration values are:
 
-* ``token_format`` - Determines the algorithm used to generate tokens.  Can be either ``UUID`` or ``PKI``. Defaults to ``PKI``
-* ``certfile`` - Location of certificate used to verify tokens.  Default is ``/etc/keystone/ssl/certs/signing_cert.pem``
-* ``keyfile`` - Location of private key used to sign tokens.  Default is ``/etc/keystone/ssl/private/signing_key.pem``
-* ``ca_certs`` - Location of certificate for the authority that issued the above certificate. Default is ``/etc/keystone/ssl/certs/ca.pem``
+* ``token_format`` - Determines the algorithm used to generate tokens.  Can be
+  either ``UUID`` or ``PKI``. Defaults to ``PKI``
+* ``certfile`` - Location of certificate used to verify tokens.  Default is
+  ``/etc/keystone/ssl/certs/signing_cert.pem``
+* ``keyfile`` - Location of private key used to sign tokens.  Default is
+  ``/etc/keystone/ssl/private/signing_key.pem``
+* ``ca_certs`` - Location of certificate for the authority that issued the
+  above certificate. Default is ``/etc/keystone/ssl/certs/ca.pem``
 * ``key_size`` - Default is ``1024``
 * ``valid_days`` - Default is ``3650``
 * ``ca_password``  - Password required to read the ca_file. Default is None
@@ -164,8 +170,8 @@ Signing Certificate Issued by External CA
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You may use a signing certificate issued by an external CA instead of generated
-by keystone-manage. However, certificate issued by external CA must satisfy
-the following conditions:
+by keystone-manage. However, certificate issued by external CA must satisfy the
+following conditions:
 
 * all certificate and key files must be in Privacy Enhanced Mail (PEM) format
 * private key files must not be protected by a password
@@ -174,12 +180,12 @@ When using signing certificate issued by an external CA, you do not need to
 specify ``key_size``, ``valid_days``, and ``ca_password`` as they will be
 ignored.
 
-The basic workflow for using a signing certificate issed by an external CA involves:
+The basic workflow for using a signing certificate issed by an external CA
+involves:
 
 1. `Request Signing Certificate from External CA`_
 2. convert certificate and private key to PEM if needed
 3. `Install External Signing Certificate`_
-
 
 Request Signing Certificate from External CA
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -187,7 +193,8 @@ Request Signing Certificate from External CA
 One way to request a signing certificate from an external CA is to first
 generate a PKCS #10 Certificate Request Syntax (CRS) using OpenSSL CLI.
 
-First create a certificate request configuration file (e.g. ``cert_req.conf``)::
+First create a certificate request configuration file (e.g.
+``cert_req.conf``)::
 
     [ req ]
     default_bits            = 1024
@@ -213,10 +220,11 @@ For example::
 
     openssl req -newkey rsa:1024 -keyout signing_key.pem -keyform PEM -out signing_cert_req.pem -outform PEM -config cert_req.conf -nodes
 
-
 If everything is successfully, you should end up with ``signing_cert_req.pem``
-and ``signing_key.pem``. Send ``signing_cert_req.pem`` to your CA to request a token signing certificate and make sure to ask the certificate to be in PEM format. Also, make sure your trusted CA certificate chain is also in PEM format.
-
+and ``signing_key.pem``. Send ``signing_cert_req.pem`` to your CA to request a
+token signing certificate and make sure to ask the certificate to be in PEM
+format. Also, make sure your trusted CA certificate chain is also in PEM
+format.
 
 Install External Signing Certificate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -237,9 +245,9 @@ Copy the above to your certificate directory. For example::
 
 **Make sure the certificate directory is root-protected.**
 
-If your certificate directory path is different from the default ``/etc/keystone/ssl/certs``, make sure it is reflected in the ``[signing]`` section of the
-configuration file.
-
+If your certificate directory path is different from the default
+``/etc/keystone/ssl/certs``, make sure it is reflected in the ``[signing]``
+section of the configuration file.
 
 Service Catalog
 ---------------
@@ -274,8 +282,8 @@ File-based Service Catalog (``templated.TemplatedCatalog``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The templated catalog is an in-memory backend initialized from a read-only
-``template_file``. Choose this option only if you know that your
-service catalog will not change very much over time.
+``template_file``. Choose this option only if you know that your service
+catalog will not change very much over time.
 
 .. NOTE::
 
@@ -293,8 +301,8 @@ service catalog will not change very much over time.
 
 The value of ``template_file`` is expected to be an absolute path to your
 service catalog configuration. An example ``template_file`` is included in
-Keystone, however you should create your own to reflect your deployment.
-If you are migrating from a legacy deployment, a tool is available to help with
+Keystone, however you should create your own to reflect your deployment.  If
+you are migrating from a legacy deployment, a tool is available to help with
 this task (see `Migrating your Service Catalog from legacy versions of
 Keystone`_).
 
@@ -305,8 +313,8 @@ Another such example is `available in devstack
 Logging
 -------
 
-Logging is configured externally to the rest of Keystone. Configure the path
-to your logging configuration file using the ``[DEFAULT] log_config`` option of
+Logging is configured externally to the rest of Keystone. Configure the path to
+your logging configuration file using the ``[DEFAULT] log_config`` option of
 ``keystone.conf``. If you wish to route all your logging through syslog, set
 the ``[DEFAULT] use_syslog`` option.
 
@@ -355,10 +363,11 @@ SSL
 ---
 
 Keystone may be configured to support 2-way SSL out-of-the-box.  The x509
-certificates used by Keystone must be obtained externally and configured for use
-with Keystone as described in this section.  However, a set of sample certficates
-is provided in the examples/pki/certs and examples/pki/private directories with the Keystone distribution for testing.
-Here is the description of each of them and their purpose:
+certificates used by Keystone must be obtained externally and configured for
+use with Keystone as described in this section.  However, a set of sample
+certficates is provided in the examples/pki/certs and examples/pki/private
+directories with the Keystone distribution for testing.  Here is the
+description of each of them and their purpose:
 
 Types of certificates
 ^^^^^^^^^^^^^^^^^^^^^
@@ -378,16 +387,16 @@ cakey.pem
 ssl_key.pem
     Private key for the Keystone server.
 
-Note that you may choose whatever names you want for these certificates, or combine
-the public/private keys in the same file if you wish.  These certificates are just
-provided as an example.
+Note that you may choose whatever names you want for these certificates, or
+combine the public/private keys in the same file if you wish.  These
+certificates are just provided as an example.
 
 Configuration
 ^^^^^^^^^^^^^
 
-To enable SSL with client authentication, modify the etc/keystone.conf file accordingly
-under the [ssl] section.  SSL configuration example using the included sample
-certificates::
+To enable SSL with client authentication, modify the etc/keystone.conf file
+accordingly under the [ssl] section.  SSL configuration example using the
+included sample certificates::
 
     [ssl]
     enable = True
@@ -408,8 +417,8 @@ User CRUD
 Keystone provides a user CRUD filter that can be added to the public_api
 pipeline. This user crud filter allows users to use a HTTP PATCH to change
 their own password. To enable this extension you should define a
-user_crud_extension filter, insert it after the ``*_body`` middleware
-and before the ``public_service`` app in the public_api WSGI pipeline in
+user_crud_extension filter, insert it after the ``*_body`` middleware and
+before the ``public_service`` app in the public_api WSGI pipeline in
 keystone.conf e.g.::
 
     [filter:user_crud_extension]
@@ -418,14 +427,13 @@ keystone.conf e.g.::
     [pipeline:public_api]
     pipeline = stats_monitoring url_normalize token_auth admin_token_auth xml_body json_body debug ec2_extension user_crud_extension public_service
 
-Each user can then change their own password with a HTTP PATCH ::
+Each user can then change their own password with a HTTP PATCH::
 
     > curl -X PATCH http://localhost:5000/v2.0/OS-KSCRUD/users/<userid> -H "Content-type: application/json"  \
     -H "X_Auth_Token: <authtokenid>" -d '{"user": {"password": "ABCD", "original_password": "DCBA"}}'
 
 In addition to changing their password all of the users current tokens will be
 deleted (if the backend used is kvs or sql)
-
 
 Sample Configuration Files
 --------------------------
@@ -505,14 +513,14 @@ Step 1: Ensure your deployment can access your legacy database
 --------------------------------------------------------------------
 
 Your legacy ``keystone.conf`` contains a SQL configuration section called
-``[keystone.backends.sqlalchemy]`` connection string which, by default,
-looks like::
+``[keystone.backends.sqlalchemy]`` connection string which, by default, looks
+like::
 
     sql_connection = sqlite:///keystone.db
 
-This connection string needs to be accessible from your deployment (e.g.
-you may need to copy your SQLite ``*.db`` file to a new server, adjust the
-relative path as appropriate, or open a firewall for MySQL, etc).
+This connection string needs to be accessible from your deployment (e.g.  you
+may need to copy your SQLite ``*.db`` file to a new server, adjust the relative
+path as appropriate, or open a firewall for MySQL, etc).
 
 Step 2: Import your legacy data
 -------------------------------
@@ -535,16 +543,14 @@ database above, but now you'll see your legacy Keystone data::
     | e3c382f4757a4385b502056431763cca | customer-x     | True    |
     +----------------------------------+----------------+---------+
 
-
 Migrating your Service Catalog from legacy versions of Keystone
 ===============================================================
 
 While legacy Keystone deployments stored the service catalog in the database,
-the service catalog is stored in a flat ``template_file``. An example
-service catalog template file may be found in
-``etc/default_catalog.templates``. You can change the path to your service
-catalog template in ``keystone.conf`` by changing the value of
-``[catalog] template_file``.
+the service catalog is stored in a flat ``template_file``. An example service
+catalog template file may be found in ``etc/default_catalog.templates``. You
+can change the path to your service catalog template in ``keystone.conf`` by
+changing the value of ``[catalog] template_file``.
 
 Import your legacy catalog and redirect the output to your ``template_file``::
 
@@ -552,15 +558,15 @@ Import your legacy catalog and redirect the output to your ``template_file``::
 
 .. NOTE::
 
-    After executing this command, you will need to restart the Keystone
-    service to see your changes.
+    After executing this command, you will need to restart the Keystone service
+    to see your changes.
 
 Migrating from Nova Auth
 ========================
 
-Migration of users, projects (aka tenants), roles and EC2 credentials
-is supported for the Essex and later releases of Nova. To migrate your auth
-data from Nova, use the following steps:
+Migration of users, projects (aka tenants), roles and EC2 credentials is
+supported for the Essex and later releases of Nova. To migrate your auth data
+from Nova, use the following steps:
 
 .. NOTE::
 
@@ -588,20 +594,20 @@ Import your Nova auth data from a ``dump_file`` created with ``nova-manage``::
 
     Users are added to Keystone with the user ID from Nova as the user name.
     Nova's projects are imported with the project ID as the tenant name. The
-    password used to authenticate a user in Keystone will be the API key
-    (also EC2 access key) used in Nova. Users also lose any administrative
-    privileges they had in Nova. The necessary admin role must be explicitly
-    re-assigned to each user.
+    password used to authenticate a user in Keystone will be the API key (also
+    EC2 access key) used in Nova. Users also lose any administrative privileges
+    they had in Nova. The necessary admin role must be explicitly re-assigned
+    to each user.
 
 .. NOTE::
 
-    Users in Nova's auth system have a single set of EC2 credentials that
-    works with all projects (tenants) that user can access. In Keystone, these
+    Users in Nova's auth system have a single set of EC2 credentials that works
+    with all projects (tenants) that user can access. In Keystone, these
     credentials are scoped to a single user/tenant pair. In order to use the
     same secret keys from Nova, you must prefix each corresponding access key
-    with the ID of the project used in Nova. For example, if you had access
-    to the 'Beta' project in your Nova installation with the access/secret
-    keys 'ACCESS'/'SECRET', you should use 'Beta:ACCESS'/'SECRET' in Keystone.
+    with the ID of the project used in Nova. For example, if you had access to
+    the 'Beta' project in your Nova installation with the access/secret keys
+    'ACCESS'/'SECRET', you should use 'Beta:ACCESS'/'SECRET' in Keystone.
     These credentials are active once your migration is complete.
 
 Initializing Keystone
@@ -612,25 +618,27 @@ through the normal REST API. At the moment, the following calls are supported:
 
 * ``db_sync``: Sync the database schema.
 * ``import_legacy``: Import data from a legacy (pre-Essex) database.
-* ``export_legacy_catalog``: Export service catalog from a legacy (pre-Essex) database.
-* ``import_nova_auth``: Load auth data from a dump created with ``nova-manage``.
+* ``export_legacy_catalog``: Export service catalog from a legacy (pre-Essex)
+  database.
+* ``import_nova_auth``: Load auth data from a dump created with
+  ``nova-manage``.
 * ``pki_setup``: Initialize the certificates for PKI based tokens.
 
 Invoking ``keystone-manage`` by itself will give you additional usage
 information.
 
 The private key used for token signing can only be read by its owner.  This
-prevents unauthorized users from spuriously signing tokens.
-``keystone-manage pki_setup`` Should be run as the same system user that will
-be running the Keystone service to ensure proper ownership for the private key
-file and the associated certificates.
+prevents unauthorized users from spuriously signing tokens.  ``keystone-manage
+pki_setup`` Should be run as the same system user that will be running the
+Keystone service to ensure proper ownership for the private key file and the
+associated certificates.
 
 Adding Users, Tenants, and Roles with python-keystoneclient
 ===========================================================
 
-User, tenants, and roles must be administered using admin credentials.
-There are two ways to configure ``python-keystoneclient`` to use admin
-credentials, using the either an existing token or password credentials.
+User, tenants, and roles must be administered using admin credentials.  There
+are two ways to configure ``python-keystoneclient`` to use admin credentials,
+using the either an existing token or password credentials.
 
 Authenticating with a Token
 ---------------------------
@@ -678,10 +686,10 @@ to be passed as arguments each time::
 Example usage
 -------------
 
-``keystone`` is set up to expect commands in the general form of
-``keystone`` ``command`` ``argument``, followed by flag-like keyword arguments to
-provide additional (often optional) information. For example, the command
-``user-list`` and ``tenant-create`` can be invoked as follows::
+``keystone`` is set up to expect commands in the general form of ``keystone``
+``command`` ``argument``, followed by flag-like keyword arguments to provide
+additional (often optional) information. For example, the command ``user-list``
+and ``tenant-create`` can be invoked as follows::
 
     # Using token auth env variables
     export SERVICE_ENDPOINT=http://127.0.0.1:35357/v2.0/
@@ -709,9 +717,9 @@ Tenants
 
 Tenants are the high level grouping within Keystone that represent groups of
 users. A tenant is the grouping that owns virtual machines within Nova, or
-containers within Swift. A tenant can have zero or more users, Users can
-be associated with more than one tenant, and each tenant - user pairing can
-have a role associated with it.
+containers within Swift. A tenant can have zero or more users, Users can be
+associated with more than one tenant, and each tenant - user pairing can have a
+role associated with it.
 
 ``tenant-create``
 ^^^^^^^^^^^^^^^^^
@@ -775,7 +783,8 @@ example::
 ``user-list``
 ^^^^^^^^^^^^^
 
-list users in the system, optionally by a specific tenant (identified by tenant_id)
+list users in the system, optionally by a specific tenant (identified by
+tenant_id)
 
 arguments
 
@@ -797,7 +806,6 @@ keyword arguments
 * name     Desired new user name (Optional)
 * email    Desired new email address (Optional)
 * enabled <true|false>   Enable or disable user (Optional)
-
 
 example::
 
@@ -857,7 +865,6 @@ arguments
 example::
 
     $ keystone role-get 19d1d3344873464d819c45f521ff9890
-
 
 ``user-role-add``
 ^^^^^^^^^^^^^^^^^
@@ -943,13 +950,12 @@ example::
 
     $ keystone service-delete 08741d8ed88242ca88d1f61484a0fe3b
 
-
 Configuring the LDAP Identity Provider
 ===========================================================
 
 As an alternative to the SQL Database backing store, Keystone can use a
-directory server to provide the Identity service.  An example Schema
-for openstack would look like this::
+directory server to provide the Identity service.  An example Schema for
+openstack would look like this::
 
   dn: cn=openstack,cn=org
   dc: openstack
@@ -992,8 +998,8 @@ The corresponding entries in the Keystone configuration file are::
   role_objectclass = organizationalRole
 
 The default object classes and attributes are intentionally simplistic.  They
-reflect the common standard objects according to the LDAP RFCs.  However,
-in a live deployment,  the correct attributes can be overridden to support a
+reflect the common standard objects according to the LDAP RFCs.  However, in a
+live deployment,  the correct attributes can be overridden to support a
 preexisting, more complex schema.  For example,  in the user object,  the
 objectClass posixAccount from RFC2307 is very common.  If this is the
 underlying objectclass, then the *uid* field should probably be *uidNumber* and
@@ -1004,11 +1010,9 @@ corresponding entries in the Keystone configuration file are::
   user_id_attribute = uidNumber
   user_name_attribute = cn
 
-
-There is a set of allowed actions per object type that you can modify
-depending on your specific deployment. For example, the users are managed by
-another tool and you have only read access, in such case the configuration
-is::
+There is a set of allowed actions per object type that you can modify depending
+on your specific deployment. For example, the users are managed by another tool
+and you have only read access, in such case the configuration is::
 
   [ldap]
   user_allow_create = False
@@ -1023,10 +1027,10 @@ is::
   role_allow_update = True
   role_allow_delete = True
 
-There are some configuration options for filtering users, tenants and roles,
-if the backend is providing too much output, in such case the configuration
-will look like::
-  
+There are some configuration options for filtering users, tenants and roles, if
+the backend is providing too much output, in such case the configuration will
+look like::
+
   [ldap]
   user_filter = (memberof=CN=openstack-users,OU=workgroups,DC=openstack,DC=com)
   tenant_filter =
@@ -1041,17 +1045,18 @@ to extract the value from an integer attribute like in Active Directory::
   user_enabled_mask      = 2
   user_enabled_default   = 512
 
-In this case the attribute is an integer and the enabled attribute is listed
-in bit 1, so the if the mask configured *user_enabled_mask* is different from 0,
+In this case the attribute is an integer and the enabled attribute is listed in
+bit 1, so the if the mask configured *user_enabled_mask* is different from 0,
 it gets the value from the field *user_enabled_attribute* and it makes an ADD
-operation with the value indicated on *user_enabled_mask* and if the value matches
-the mask then the account is disabled.
+operation with the value indicated on *user_enabled_mask* and if the value
+matches the mask then the account is disabled.
 
 It also saves the value without mask to the user identity in the attribute
-*enabled_nomask*. This is needed in order to set it back in case that we need to
-change it to enable/disable a user because it contains more information than the 
-status like password expiration. Last setting *user_enabled_mask* is needed in order
-to create a default value on the integer attribute (512 = NORMAL ACCOUNT on AD)
+*enabled_nomask*. This is needed in order to set it back in case that we need
+to change it to enable/disable a user because it contains more information than
+the status like password expiration. Last setting *user_enabled_mask* is needed
+in order to create a default value on the integer attribute (512 = NORMAL
+ACCOUNT on AD)
 
 In case of Active Directory the classes and attributes could not match the
 specified classes in the LDAP module so you can configure them like::

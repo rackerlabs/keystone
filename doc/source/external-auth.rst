@@ -2,28 +2,28 @@
 Using external authentication with Keystone
 ===========================================
 
-When Keystone is executed in :doc:`HTTPD <apache-httpd>` it is possible to
-use external authentication methods different from the authentication
-provided by the identity store backend. For example, this makes possible to
-use a SQL identity backend together with X.509 authentication, Kerberos, etc.
-instead of using the username/password combination.
+When Keystone is executed in :doc:`HTTPD <apache-httpd>` it is possible to use
+external authentication methods different from the authentication provided by
+the identity store backend. For example, this makes possible to use a SQL
+identity backend together with X.509 authentication, Kerberos, etc.  instead of
+using the username/password combination.
 
 Using HTTPD authentication
 ==========================
 
-Webservers like Apache HTTP support many methods of authentication. Keystone can
-profit from this feature and let the authentication be done in the webserver,
-that will pass down the authenticated user to Keystone using the ``REMOTE_USER``
-environment variable. This user must exist in advance in the identity backend
-so as to get a token from the controller.
+Webservers like Apache HTTP support many methods of authentication. Keystone
+can profit from this feature and let the authentication be done in the
+webserver, that will pass down the authenticated user to Keystone using the
+``REMOTE_USER`` environment variable. This user must exist in advance in the
+identity backend so as to get a token from the controller.
 
 To use this method, Keystone should be running on :doc:`HTTPD <apache-httpd>`.
 
 X.509 example
 -------------
 
-The following snippet for the Apache conf will authenticate the user based on
-a valid X.509 certificate from a known CA::
+The following snippet for the Apache conf will authenticate the user based on a
+valid X.509 certificate from a known CA::
 
     <VirtualHost _default_:5000>
         SSLEngine on
@@ -87,24 +87,25 @@ following the semantics below::
                 # User is not authenticated
                 raise exception.Unauthorized("Invalid user")
 
-
 Pipeline configuration
 ----------------------
 
 Once you have your WSGI middleware component developed you have to add it to
-your pipeline. The first step is to add the middleware to your configuration file.
-Assuming that your middleware module is ``keystone.middleware.MyMiddlewareAuth``,
-you can configure it in your ``keystone.conf`` as::
+your pipeline. The first step is to add the middleware to your configuration
+file.  Assuming that your middleware module is
+``keystone.middleware.MyMiddlewareAuth``, you can configure it in your
+``keystone.conf`` as::
 
     [filter:my_auth]
     paste.filter_factory = keystone.middleware.MyMiddlewareAuth.factory
 
-The second step is to add your middleware to the pipeline. The exact place where
-you should place it will depend on your code (i.e. if you need for example that
-the request body is converted from JSON before perform the authentication you
-should place it after the ``json_body`` filter) but it should be set before the
-``public_service`` (for the ``public_api`` pipeline) or ``admin_service`` (for
-the ``admin_api`` pipeline), since they consume authentication.
+The second step is to add your middleware to the pipeline. The exact place
+where you should place it will depend on your code (i.e. if you need for
+example that the request body is converted from JSON before perform the
+authentication you should place it after the ``json_body`` filter) but it
+should be set before the ``public_service`` (for the ``public_api`` pipeline)
+or ``admin_service`` (for the ``admin_api`` pipeline), since they consume
+authentication.
 
 For example, if the original pipeline looks like this::
 
