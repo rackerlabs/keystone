@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+4N8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-15T18:38:23Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAM3/+4nA\u003d",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+4oE\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 7
@@ -98,6 +116,24 @@
       "writtenOn": "2013-02-15T17:49:31Z",
       "side": 1,
       "message": "\"``return None``\" -\u003e \"return ``None``\"",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4OI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-15T18:38:23Z",
+      "side": 1,
+      "message": "i prefer the original",
+      "parentUuid": "AAAAM3/+4nw\u003d",
       "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -251,6 +287,24 @@
       "writtenOn": "2013-02-15T17:49:31Z",
       "side": 1,
       "message": "suggest change from warning to debug.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4NY\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-15T18:38:23Z",
+      "side": 1,
+      "message": "not sure i agree (users attempting to auth against a disabled domain should be higher than debug IMO), but either way, it\u0027s outside the scope of this change",
+      "parentUuid": "AAAAM3/+4i4\u003d",
       "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
