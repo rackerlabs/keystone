@@ -242,6 +242,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+4B8\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-15T19:55:42Z",
+      "side": 1,
+      "message": "What\u0027s the reason for putting them into a dict since we only care about either domain_id or project_id?",
+      "parentUuid": "AAAAM3/+4d0\u003d",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+4jc\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 7
@@ -679,6 +697,24 @@
       "writtenOn": "2013-02-15T17:49:31Z",
       "side": 1,
       "message": "sounds like a pretty major bug!",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4Bs\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-15T19:55:42Z",
+      "side": 1,
+      "message": "I am about to file a security bug against Keystone V2. For PKI tokens, we don\u0027t seem to check the validity of the token first.",
+      "parentUuid": "AAAAM3/+4aE\u003d",
       "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
