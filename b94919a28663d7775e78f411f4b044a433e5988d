@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+4ik\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 2062
+      },
+      "writtenOn": "2013-02-15T16:51:39Z",
+      "side": 1,
+      "message": "escape_dn_chars() is probably wrong here. Inside LDAP filters there are different escaping rules. Use ldap.filter.escape_filter_chars() instead.",
+      "revId": "b94919a28663d7775e78f411f4b044a433e5988d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4ic\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 2062
+      },
+      "writtenOn": "2013-02-15T16:51:39Z",
+      "side": 1,
+      "message": "Same here (escape_filter_chars())",
+      "revId": "b94919a28663d7775e78f411f4b044a433e5988d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
