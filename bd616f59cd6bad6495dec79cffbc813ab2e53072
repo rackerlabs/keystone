@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+4pM\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-15T16:17:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6hY\u003d",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6hE\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 5
@@ -54,6 +72,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+4pE\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-15T16:17:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6hE\u003d",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4pA\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-15T16:17:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6eQ\u003d",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6co\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 5
@@ -65,6 +119,24 @@
       "writtenOn": "2013-02-14T17:42:02Z",
       "side": 1,
       "message": "Will the keystone server fail to start if the string is not valid? Just wondering if it would be better to log a warning and use the default if the string is not valid.",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4rg\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-15T16:17:55Z",
+      "side": 1,
+      "message": "I actually think it\u0027s preferable to fail early than to run with an unexpected value and have a surprise, thinking that you typed subtree (even though the value should\u0027ve been \u0027sub\u0027), but the server complains about onelevel (default) queries.",
+      "parentUuid": "AAAAM3/+6co\u003d",
       "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -133,6 +205,24 @@
       "writtenOn": "2013-02-14T16:58:51Z",
       "side": 1,
       "message": "use uuid.uuid4().hex to illustrate that it\u0027s an arbitrary value",
+      "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4o4\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-15T16:17:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6gU\u003d",
       "revId": "bd616f59cd6bad6495dec79cffbc813ab2e53072",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
