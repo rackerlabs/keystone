@@ -54,7 +54,7 @@ class User(sql.ModelBase, sql.DictBase):
 
 class Group(sql.ModelBase, sql.DictBase):
     __tablename__ = 'group'
-    attributes = ['id', 'name', 'domain_id']
+    attributes = ['id', 'name', 'domain_id', 'description']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
@@ -90,7 +90,7 @@ class Domain(sql.ModelBase, sql.DictBase):
 
 class Project(sql.ModelBase, sql.DictBase):
     __tablename__ = 'project'
-    attributes = ['id', 'name', 'domain_id']
+    attributes = ['id', 'name', 'domain_id', 'description', 'enabled']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
@@ -484,6 +484,10 @@ class Identity(sql.Base, identity.Driver):
     @handle_conflicts(type='project')
     def create_project(self, tenant_id, tenant):
         tenant['name'] = clean.project_name(tenant['name'])
+        if 'enabled' not in tenant:
+            tenant['enabled'] = True
+        if 'description' not in tenant:
+            tenant['description'] = None
         session = self.get_session()
         with session.begin():
             tenant_ref = Project.from_dict(tenant)
@@ -834,6 +838,8 @@ class Identity(sql.Base, identity.Driver):
 
     @handle_conflicts(type='group')
     def create_group(self, group_id, group):
+        if 'description' not in group:
+            group['description'] = None
         session = self.get_session()
         with session.begin():
             ref = Group.from_dict(group)

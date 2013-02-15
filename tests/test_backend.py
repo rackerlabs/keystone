@@ -1530,7 +1530,8 @@ class IdentityTests(object):
 
     def test_create_project_doesnt_modify_passed_in_dict(self):
         new_project = {'id': 'tenant_id', 'name': uuid.uuid4().hex,
-                       'domain_id': DEFAULT_DOMAIN_ID}
+                       'domain_id': DEFAULT_DOMAIN_ID, 'enabled': True,
+                       'description': uuid.uuid4().hex}
         original_project = new_project.copy()
         self.identity_api.create_project('tenant_id', new_project)
         self.assertDictEqual(original_project, new_project)
