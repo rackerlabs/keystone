@@ -72,7 +72,7 @@ def verify_token(token, signing_cert_file_name, ca_file_name):
 
 
 def is_ans1_token(token):
-    '''
+    """
     thx to ayoung for sorting this out.
 
     base64 decoded hex representation of MII is 3082
@@ -81,12 +81,11 @@ def is_ans1_token(token):
 
     re: http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf
 
-    pg4:  For tags from 0 to 30 the first octet is the identfier
-    pg10: Hex 30 means sequence, followed by the length of that sequence.
-    pg5:  Second octet is the length octet
-          first bit indicates short or long form, next 7 bits encode the number
-          of subsequent octets that make up the content length octets as an
-          unsigned binary int
+    - pg4: For tags from 0 to 30 the first octet is the identfier
+    - pg10: Hex 30 means sequence, followed by the length of that sequence.
+    - pg5: Second octet is the length octet first bit indicates short or long
+      form, next 7 bits encode the number of subsequent octets that make up the
+      content length octets as an unsigned binary int::
 
           82 = 10000010 (first bit indicates long form)
           0000010 = 2 octets of content length
@@ -109,7 +108,7 @@ def is_ans1_token(token):
     Max length of the content using 2 octets is 7FFF or 32767
     It's not practical to support a token of this length or greater in http
     therefore, we will check for MII only and ignore the case of larger tokens
-    '''
+    """
     return token[:3] == PKI_ANS1_PREFIX
 
 

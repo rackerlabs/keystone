@@ -33,8 +33,8 @@ In general:
 * Clients making calls to the service will pass in an authentication token.
 * The Keystone middleware will look for and validate that token, taking the
   appropriate action.
-* It will also retrive additional information from the token such as user
-  name, id, tenant name, id, roles, etc...
+* It will also retrieve additional information from the token such as user name,
+  id, tenant name, id, roles, etc...
 
 The middleware will pass those data down to the service as headers. More
 details on the architecture of that setup is described in
@@ -54,21 +54,21 @@ keystone project, the line defining this token is::
     [DEFAULT]
     admin_token = ADMIN
 
-This configured token is a "shared secret" between keystone and other
-openstack services, and is used by the client to communicate with the API to
-create tenants, users, roles, etc.
+This configured token is a "shared secret" between keystone and other openstack
+services, and is used by the client to communicate with the API to create
+tenants, users, roles, etc.
 
 Setting up tenants, users, and roles
 ------------------------------------
 
 You need to minimally define a tenant, user, and role to link the tenant and
-user as the most basic set of details to get other services authenticating
-and authorizing with keystone.
+user as the most basic set of details to get other services authenticating and
+authorizing with keystone.
 
-You will also want to create service users for nova, glance, swift, etc. to
-be able to use to authenticate users against keystone. The ``auth_token``
+You will also want to create service users for nova, glance, swift, etc. to be
+able to use to authenticate users against keystone. The ``auth_token``
 middleware supports using either the shared secret described above as
-`admin_token` or users for each service.
+``admin_token`` or users for each service.
 
 See :doc:`configuration` for a walk through on how to create tenants, users,
 and roles.
@@ -79,35 +79,35 @@ Setting up services
 Creating Service Users
 ----------------------
 
-To configure the OpenStack services with service users, we need to create
-a tenant for all the services, and then users for each of the services. We
-then assign those service users an Admin role on the service tenant. This
-allows them to validate tokens - and authenticate and authorize other user
-requests.
+To configure the OpenStack services with service users, we need to create a
+tenant for all the services, and then users for each of the services. We then
+assign those service users an Admin role on the service tenant. This allows
+them to validate tokens - and authenticate and authorize other user requests.
 
-Create a tenant for the services, typically named 'service' (however, the name can be whatever you choose)::
+Create a tenant for the services, typically named 'service' (however, the name
+can be whatever you choose)::
 
     keystone tenant-create --name=service
 
-This returns a UUID of the tenant - keep that, you'll need it when creating
-the users and specifying the roles.
+This returns a UUID of the tenant - keep that, you'll need it when creating the
+users and specifying the roles.
 
-Create service users for nova, glance, swift, and quantum (or whatever
-subset is relevant to your deployment)::
+Create service users for nova, glance, swift, and quantum (or whatever subset
+is relevant to your deployment)::
 
     keystone user-create --name=nova \
                          --pass=Sekr3tPass \
                          --tenant_id=[the uuid of the tenant] \
                          --email=nova@nothing.com
 
-Repeat this for each service you want to enable. Email is a required field
-in keystone right now, but not used in relation to the service accounts. Each
-of these commands will also return a UUID of the user. Keep those to assign
-the Admin role.
+Repeat this for each service you want to enable. Email is a required field in
+keystone right now, but not used in relation to the service accounts. Each of
+these commands will also return a UUID of the user. Keep those to assign the
+Admin role.
 
 For adding the Admin role to the service accounts, you'll need to know the UUID
-of the role you want to add. If you don't have them handy, you can look it
-up quickly with::
+of the role you want to add. If you don't have them handy, you can look it up
+quickly with::
 
     keystone role-list
 
@@ -127,8 +127,8 @@ where relevant API endpoints exist for OpenStack Services. The OpenStack
 Dashboard, in particular, uses this heavily - and this **must** be configured
 for the OpenStack Dashboard to properly function.
 
-The endpoints for these services are defined in a template, an example of
-which is in the project as the file ``etc/default_catalog.templates``.
+The endpoints for these services are defined in a template, an example of which
+is in the project as the file ``etc/default_catalog.templates``.
 
 Keystone supports two means of defining the services, one is the catalog
 template, as described above - in which case everything is detailed in that
@@ -153,7 +153,6 @@ keystone is online, you need to add the services to the catalog::
                                    --type=object-store \
                                    --description="Swift Service"
 
-
 Setting Up Middleware
 =====================
 
@@ -161,35 +160,35 @@ Keystone Auth-Token Middleware
 --------------------------------
 
 The Keystone auth_token middleware is a WSGI component that can be inserted in
-the WSGI pipeline to handle authenticating tokens with Keystone. You can
-get more details of the middleware in :doc:`middlewarearchitecture`.
+the WSGI pipeline to handle authenticating tokens with Keystone. You can get
+more details of the middleware in :doc:`middlewarearchitecture`.
 
 Configuring Nova to use Keystone
 --------------------------------
 
-When configuring Nova, it is important to create a admin service token for
-the service (from the Configuration step above) and include that as the key
-'admin_token' in Nova's api-paste.ini [filter:authtoken] section or in
-nova.conf [keystone_authtoken] section.
+When configuring Nova, it is important to create a admin service token for the
+service (from the Configuration step above) and include that as the key
+``admin_token`` in Nova's ``api-paste.ini`` ``[filter:authtoken]`` section or
+in ``nova.conf`` ``[keystone_authtoken]`` section.
 
 Configuring Swift to use Keystone
 ---------------------------------
 
 Similar to Nova, swift can be configured to use Keystone for authentication
-rather than its built in 'tempauth'. Refer to the `overview_auth` documentation
-in Swift. 
+rather than its built in ``tempauth`` Refer to the `overview_auth`
+documentation in Swift.
 
 Auth-Token Middleware with Username and Password
 ------------------------------------------------
 
 It is also possible to configure Keystone's auth_token middleware using the
-'admin_user' and 'admin_password' options. When using the 'admin_user' and
-'admin_password' options the 'admin_token' parameter is optional. If
-'admin_token' is specified it will by used only if the specified token is
+``admin_user`` and ``admin_password`` options. When using the ``admin_user``
+and ``admin_password`` options the ``admin_token`` parameter is optional. If
+``admin_token`` is specified it will by used only if the specified token is
 still valid.
 
-Here is an example paste config filter that makes use of the 'admin_user' and
-'admin_password' parameters::
+Here is an example paste config filter that makes use of the ``admin_user`` and
+``admin_password`` parameters::
 
     [filter:authtoken]
     paste.filter_factory = keystone.middleware.auth_token:filter_factory
@@ -203,14 +202,14 @@ It should be noted that when using this option an admin tenant/role
 relationship is required. The admin user is granted access to to the 'Admin'
 role to the 'admin' tenant.
 
-The auth_token middleware can also be configured in nova.conf
-[keystone_authtoken] section to keep paste config clean of site-specific
+The auth_token middleware can also be configured in ``nova.conf``
+``[keystone_authtoken]`` section to keep paste config clean of site-specific
 parameters::
 
     [filter:authtoken]
     paste.filter_factory = keystone.middleware.auth_token:filter_factory
 
-and in nova.conf::
+and in ``nova.conf``::
 
     [DEFAULT]
     ...

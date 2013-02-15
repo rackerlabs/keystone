@@ -17,15 +17,14 @@
 
 """
 Monkey Patch httplib.HTTPResponse to buffer reads of headers. This can improve
-performance when making large numbers of small HTTP requests.  This module
-also provides helper functions to make HTTP connections using
-BufferedHTTPResponse.
+performance when making large numbers of small HTTP requests. This module also
+provides helper functions to make HTTP connections using BufferedHTTPResponse.
 
 .. warning::
 
-    If you use this, be sure that the libraries you are using do not access
-    the socket directly (xmlrpclib, I'm looking at you :/), and instead
-    make all calls through httplib.
+    If you use this, be sure that the libraries you are using do not access the
+    socket directly (xmlrpclib, I'm looking at you :/), and instead make all
+    calls through httplib.
 """
 
 import time
@@ -126,8 +125,8 @@ def http_connect(ipaddr, port, device, partition, method, path,
     :param headers: dictionary of headers
     :param query_string: request query string
     :param ssl: set True if SSL should be used (default: False)
-    :param key_file Private key file (not needed if cert_file has private key)
-    :param cert_file Certificate file (Keystore)
+    :param key_file: Private key file (not needed if cert_file has private key)
+    :param cert_file: Certificate file (Keystore)
     :returns: HTTPConnection object
 
     """
@@ -151,8 +150,8 @@ def http_connect_raw(ipaddr, port, method, path, headers=None,
     :param headers: dictionary of headers
     :param query_string: request query string
     :param ssl: set True if SSL should be used (default: False)
-    :param key_file Private key file (not needed if cert_file has private key)
-    :param cert_file Certificate file (Keystore)
+    :param key_file: Private key file (not needed if cert_file has private key)
+    :param cert_file: Certificate file (Keystore)
     :returns: HTTPConnection object
 
     """

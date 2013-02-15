@@ -19,13 +19,14 @@
 Running Keystone in HTTPD
 =========================
 
-
 SSL
 ===
 
-To run Keystone in HTTPD, first enable SSL support.  This is optional,  but highly recommended.
+To run Keystone in HTTPD, first enable SSL support. This is optional, but
+highly recommended.
 
-Install mod_nss according to your distribution, then apply the following patch and restart HTTPD::
+Install ``mod_nss`` according to your distribution, then apply the following
+patch and restart HTTPD::
 
     --- /etc/httpd/conf.d/nss.conf.orig	2012-03-29 12:59:06.319470425 -0400
     +++ /etc/httpd/conf.d/nss.conf	2012-03-29 12:19:38.862721465 -0400
@@ -52,30 +53,36 @@ Install mod_nss according to your distribution, then apply the following patch a
 Firewall
 --------
 
-Add the following rule to IPTables in order to ensure the SSL traffic can pass your firewall::
+Add the following rule to IPTables in order to ensure the SSL traffic can pass
+your firewall::
 
     -A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
 
-it goes right before::
+It goes right before::
 
     -A INPUT -j REJECT --reject-with icmp-host-prohibited
 
 Files
 -----
 
-Copy the file keystone.conf to the appropriate location for your apache server, most likely::
+Copy the file ``keystone.conf`` to the appropriate location for your apache
+server, most likely::
 
     /etc/httpd/conf.d/keystone.conf
 
-Create the directory ``/var/www/cgi-bin/keystone/``. You can either hardlink or softlink the files ``main`` and ``admin`` to the file ``keystone.py`` in this directory.  For a distribution appropriate place, it should probably be copied to::
+Create the directory ``/var/www/cgi-bin/keystone/``. You can either hardlink or
+softlink the files ``main`` and ``admin`` to the file ``keystone.py`` in this
+directory. For a distribution appropriate place, it should probably be copied
+to::
 
     /usr/share/openstack/keystone/httpd/keystone.py
-
 
 SELinux
 -------
 
-If you are running with SELinux enabled (and you should be) make sure that the file has the appropriate SELinux context to access the linked file.  If you have the file in /var/www/cgi-bin,  you can do this by running::
+If you are running with SELinux enabled (and you should be) make sure that the
+file has the appropriate SELinux context to access the linked file. If you have
+the file in ``/var/www/cgi-bin``, you can do this by running::
 
     sudo restorecon /var/www/cgi-bin
 
@@ -84,7 +91,9 @@ Putting it somewhere else requires you set up your SELinux policy accordingly.
 Keystone Configuration
 ----------------------
 
-Make sure you use the ``SQL`` driver for ``tokens``, otherwise the tokens will not be shared between the processes of the Apache HTTPD server.  To do that, in ``/etc/keystone/keystone.conf`` make sure you have set::
+Make sure you use the ``SQL`` driver for ``tokens``, otherwise the tokens will
+not be shared between the processes of the Apache HTTPD server. To do that, in
+``/etc/keystone/keystone.conf`` make sure you have set::
 
     [token]
     driver = keystone.token.backends.sql.Token

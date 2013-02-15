@@ -26,8 +26,8 @@ license agreement, available on the `<http://wiki.openstack.org/CLA>`_. Once
 the CLA is signed you can contribute code through the Gerrit version control
 system which is related to your Launchpad account.
 
-
-To contribute tests, docs, code, etc, refer to our `Gerrit-Jenkins-Github Workflow`_.
+To contribute tests, docs, code, etc, refer to our `Gerrit-Jenkins-Github
+Workflow`_.
 
 .. _`Gerrit-Jenkins-Github Workflow`: http://wiki.openstack.org/GerritJenkinsGithub
 
@@ -39,7 +39,6 @@ instructions from here will assume that you have installed keystone into a
 virtualenv. If you chose not to, simply exclude "tools/with_venv.sh" from the
 example commands below.
 
-
 Running Keystone
 ----------------
 
@@ -47,18 +46,16 @@ To run the keystone Admin and API server instances, use::
 
     $ tools/with_venv.sh bin/keystone-all
 
-this runs keystone with the configuration the etc/ directory of the project.
-See :doc:`configuration` for details on how Keystone is configured. By default,
-keystone is configured with KVS backends, so any data entered into keystone run
-in this fashion will not persist across restarts.
-
+this runs keystone with the configuration the ``etc/`` directory of the
+project. See :doc:`configuration` for details on how Keystone is configured.
+By default, keystone is configured with KVS backends, so any data entered into
+keystone run in this fashion will not persist across restarts.
 
 Interacting with Keystone
 -------------------------
 
 You can interact with Keystone through the command line using
 :doc:`man/keystone-manage` which allows you to establish tenants, users, etc.
-
 
 You can also interact with Keystone through its REST API. There is a python
 keystone client library `python-keystoneclient`_ which interacts exclusively
@@ -80,35 +77,35 @@ To run the full suites of tests maintained within Keystone, run::
 
     $ ./run_tests.sh
 
-This shows realtime feedback during test execution, iterates over
-multiple configuration variations, and uses external projects to do
-light integration testing to verify the keystone API against other projects.
+This shows realtime feedback during test execution, iterates over multiple
+configuration variations, and uses external projects to do light integration
+testing to verify the keystone API against other projects.
 
 Test Structure
 --------------
 
-``./run_test.sh`` uses its python cohort (``run_tests.py``) to iterate
-through the ``tests`` directory, using Nosetest to collect the tests and
-invoke them using an OpenStack custom test running that displays the tests
-as well as the time taken to run those tests.
+``./run_test.sh`` uses its python cohort (``run_tests.py``) to iterate through
+the ``tests`` directory, using Nosetest to collect the tests and invoke them
+using an OpenStack custom test running that displays the tests as well as the
+time taken to run those tests.
 
 Not all of the tests in the tests directory are strictly unit tests. Keystone
-intentionally includes tests that run the service locally and drives the
-entire configuration to achieve basic functional testing.
+intentionally includes tests that run the service locally and drives the entire
+configuration to achieve basic functional testing.
 
 For the functional tests, an in-memory key-value store is used to keep the
 tests fast.
 
-Within the tests directory, the general structure of the tests is a basic
-set of tests represented under a test class, and then subclasses of those
-tests under other classes with different configurations to drive different
-backends through the APIs.
+Within the tests directory, the general structure of the tests is a basic set
+of tests represented under a test class, and then subclasses of those tests
+under other classes with different configurations to drive different backends
+through the APIs.
 
 For example, ``test_backend.py`` has a sequence of tests under the class
-``IdentityTests`` that will work with the default drivers as configured in
-this projects etc/ directory. ``test_backend_sql.py`` subclasses those tests,
-changing the configuration by overriding with configuration files stored in
-the tests directory aimed at enabling the SQL backend for the Identity module.
+``IdentityTests`` that will work with the default drivers as configured in this
+projects etc/ directory. ``test_backend_sql.py`` subclasses those tests,
+changing the configuration by overriding with configuration files stored in the
+tests directory aimed at enabling the SQL backend for the Identity module.
 
 Likewise, ``test_keystoneclient.py`` takes advantage of the tests written
 against ``KeystoneClientTests`` to verify the same tests function through
@@ -131,7 +128,6 @@ built-in test runner, one migration at a time.
 This is useful for testing the *next* migration in sequence (both forward &
 backward) in a database under version control::
 
-
     python keystone/common/sql/migrate_repo/manage.py test \
     --url=sqlite:///test.db \
     --repository=keystone/common/sql/migrate_repo/
@@ -139,7 +135,6 @@ backward) in a database under version control::
 This command references to a SQLite database (test.db) to be used. Depending on
 the migration, this command alone does not make assertions as to the integrity
 of your data during migration.
-
 
 Writing Tests
 -------------
@@ -152,16 +147,14 @@ To add new drivers, subclass the ``test_backend.py`` (look towards
 ``test_backend_sql.py`` or ``test_backend_kvs.py`` for examples) and update the
 configuration of the test class in ``setUp()``.
 
-
 Further Testing
 ---------------
 
 devstack_ is the *best* way to quickly deploy keystone with the rest of the
 OpenStack universe and should be critical step in your development workflow!
 
-You may also be interested in either the
-`OpenStack Continuous Integration Project`_ or the
-`OpenStack Integration Testing Project`_.
+You may also be interested in either the `OpenStack Continuous Integration
+Project`_ or the `OpenStack Integration Testing Project`_.
 
 .. _devstack: http://devstack.org/
 .. _OpenStack Continuous Integration Project: https://github.com/openstack/openstack-ci
@@ -170,13 +163,13 @@ You may also be interested in either the
 Building the Documentation
 ==========================
 
-The documentation is all generated with Sphinx from within the docs directory.
-To generate the full set of HTML documentation:
+The documentation is all generated with Sphinx from within the ``docs``
+directory. To generate the full set of HTML documentation:
 
     cd docs
     make autodoc
     make html
     make man
 
-the results are in the docs/build/html and docs/build/man directories
+The results are in the ``docs/build/html`` and ``docs/build/man`` directories
 respectively.

@@ -14,7 +14,6 @@
       License for the specific language governing permissions and limitations
       under the License.
 
-
 ===============================
 Service API Examples Using Curl
 ===============================
@@ -247,8 +246,8 @@ If the token is valid, returns::
 HEAD /tokens/{token_id}
 =======================
 
-This is a high-performance variant of the GET call documented above, which
-by definition, returns no response body::
+This is a high-performance variant of the GET call documented above, which by
+definition, returns no response body::
 
     $ curl -I -H "X-Auth-Token:999888777666" http://localhost:35357/v2.0/tokens/887665443383838
 

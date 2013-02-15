@@ -58,6 +58,7 @@ Man Pages
 
 Developers Documentation
 ========================
+
 .. toctree::
    :maxdepth: 1
 
@@ -70,6 +71,7 @@ Developers Documentation
 
 Code Documentation
 ==================
+
 .. toctree::
    :maxdepth: 1
 
