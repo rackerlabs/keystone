@@ -16,10 +16,10 @@
 # limitations under the License.
 
 """
-The actual code for ``auth_token`` has now been moved
-``python-keystoneclient``. It is imported back here to ensure backward
-compatibility for old ``paste.ini`` files that might still refer to here as
-opposed to ``keystoneclient``.
+The actual code for ``auth_token`` has now been moved to
+``python-keystoneclient``. It is imported here to ensure backward compatibility
+for old ``paste.ini`` files that might still refer to this module as opposed to
+``keystoneclient``.
 """
 
 from keystoneclient.middleware import auth_token as client_auth_token

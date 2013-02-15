@@ -166,7 +166,7 @@ more details of the middleware in :doc:`middlewarearchitecture`.
 Configuring Nova to use Keystone
 --------------------------------
 
-When configuring Nova, it is important to create a admin service token for the
+When configuring Nova, it is important to create an admin service token for the
 service (from the Configuration step above) and include that as the key
 ``admin_token`` in Nova's ``api-paste.ini`` ``[filter:authtoken]`` section or
 in ``nova.conf`` ``[keystone_authtoken]`` section.
@@ -175,7 +175,7 @@ Configuring Swift to use Keystone
 ---------------------------------
 
 Similar to Nova, swift can be configured to use Keystone for authentication
-rather than its built in ``tempauth`` Refer to the `overview_auth`
+rather than its built in ``tempauth``. Refer to the `overview_auth`
 documentation in Swift.
 
 Auth-Token Middleware with Username and Password

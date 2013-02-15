@@ -166,7 +166,7 @@ interpolation)::
 LDAP Backend
 ------------
 
-The LDAP backend stored Users and Tenents in separate Subtrees. Roles are
+The LDAP backend stores Users and Tenants in separate Subtrees. Roles are
 recorded as entries under the Tenants.
 
 ----------

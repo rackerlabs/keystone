@@ -48,10 +48,10 @@ Stop the process using ``Control-C``.
 Memcached and System Time
 =========================
 
-If using `memcached`_ with Keystone - e.g. using the memcache token driver or
-the ``auth_token`` middleware - ensure that the system time of memcached hosts
-is set to UTC.  Memcached uses the host's system time in determining whether a
-key has expired, whereas Keystone sets key expiry in UTC.  The timezone used by
+If using `memcached`_ with Keystone (e.g., using the memcache token driver or
+the ``auth_token`` middleware), ensure that the system time of memcached hosts
+is set to UTC. Memcached uses the host's system time in determining whether a
+key has expired, whereas Keystone sets key expiry in UTC. The timezone used by
 Keystone and memcached must match if key expiry is to behave as expected.
 
 .. _`memcached`: http://memcached.org/
@@ -90,7 +90,7 @@ order:
 Authentication Plugins
 ----------------------
 
-Keystone support authentication plugins and they are specified in the
+Keystone supports authentication plugins and they are specified in the
 ``[auth]`` section of the configuration file. However, an authentication plugin
 may also have its own section in the configuration file. It is up to the plugin
 to register its own configuration options.
@@ -125,7 +125,7 @@ information into ``extras``. Anything in ``extras`` will be conveyed in the
 token's ``extras`` field.
 
 The ``authenticate()`` method must ``return None`` (doing so implicitly is
-sufficient) on successful authentication. If authentication require multiple
+sufficient) on successful authentication. If authentication requires multiple
 steps, the ``authenticate()`` method must return the payload in the form of a
 dictionary for the next authentication step.
 
@@ -193,7 +193,7 @@ Request Signing Certificate from External CA
 One way to request a signing certificate from an external CA is to first
 generate a PKCS #10 Certificate Request Syntax (CRS) using OpenSSL CLI.
 
-First create a certificate request configuration file (e.g.
+First create a certificate request configuration file (e.g.,
 ``cert_req.conf``)::
 
     [ req ]
@@ -258,7 +258,7 @@ SQL-based Service Catalog (``sql.Catalog``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A dynamic database-backed driver fully supporting persistent configuration via
-keystoneclient administration commands (e.g. ``keystone endpoint-create``).
+keystoneclient administration commands (e.g., ``keystone endpoint-create``).
 
 ``keystone.conf`` example::
 
@@ -288,7 +288,7 @@ catalog will not change very much over time.
 .. NOTE::
 
     Attempting to manage your service catalog using keystoneclient commands
-    (e.g. ``keystone endpoint-create``) against this driver will result in
+    (e.g., ``keystone endpoint-create``) against this driver will result in
     ``HTTP 501 Not Implemented`` errors. This is the expected behavior. If you
     want to use these commands, you must instead use the SQL-based Service
     Catalog driver.
@@ -417,9 +417,9 @@ User CRUD
 Keystone provides a user CRUD filter that can be added to the public_api
 pipeline. This user crud filter allows users to use a HTTP PATCH to change
 their own password. To enable this extension you should define a
-user_crud_extension filter, insert it after the ``*_body`` middleware and
-before the ``public_service`` app in the public_api WSGI pipeline in
-keystone.conf e.g.::
+``user_crud_extension`` filter, insert it after the ``*_body`` middleware and
+before the ``public_service`` app in the ``public_api`` WSGI pipeline in
+``keystone.conf``::
 
     [filter:user_crud_extension]
     paste.filter_factory = keystone.contrib.user_crud:CrudExtension.factory
@@ -433,7 +433,7 @@ Each user can then change their own password with a HTTP PATCH::
     -H "X_Auth_Token: <authtokenid>" -d '{"user": {"password": "ABCD", "original_password": "DCBA"}}'
 
 In addition to changing their password all of the users current tokens will be
-deleted (if the backend used is kvs or sql)
+deleted (if the backend used is either ``kvs`` or ``sql``).
 
 Sample Configuration Files
 --------------------------
@@ -518,7 +518,7 @@ like::
 
     sql_connection = sqlite:///keystone.db
 
-This connection string needs to be accessible from your deployment (e.g.  you
+This connection string needs to be accessible from your deployment (e.g., you
 may need to copy your SQLite ``*.db`` file to a new server, adjust the relative
 path as appropriate, or open a firewall for MySQL, etc).
 
@@ -673,7 +673,7 @@ be granted the ``admin`` role.
 * ``--os_username OS_USERNAME``: Name of your user
 * ``--os_password OS_PASSWORD``: Password for your user
 * ``--os_tenant_name OS_TENANT_NAME``: Name of your tenant
-* ``--os_auth_url OS_AUTH_URL``: URL of your Keystone auth server, e.g.
+* ``--os_auth_url OS_AUTH_URL``: URL of your Keystone auth server, e.g.,
   ``http://localhost:35357/v2.0``
 
 You can also set these variables in your environment so that they do not need
