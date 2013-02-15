@@ -1,0 +1,633 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+4pk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "\"support\" -\u003e \"supports\"",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4o0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "\"extend\" -\u003e \"extend the\"",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4o8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "\"It is expecting\" -\u003e \"The ``authenticate()`` method expects\"",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4nA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "The next paragraph says that if authenticate() is successful, the method must return None. Suggest you combine both the requirements for successful authentication in one place. For example, say\n\n If successful, ``authenticate()`` must\n provide a valid ``user_id`` in ``auth_context`` and\n return ``None``.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4oE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "\"plugin\" -\u003e \"a plugin\"",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4nw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "\"``return None``\" -\u003e \"return ``None``\"",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4n0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "\"require\" -\u003e \"requires\"",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4ns\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "\"an\" -\u003e \"a\"",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4kM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "suggest change to a class AuthMethods with .load(method_name), .get(method_name).",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4kw\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "suggest change this method to check for error at beginning\n\n if method_name not in CONF.auth.methods:\n   raise exception.AuthMethodNotSupported()\n\nso it\u0027s more obvious to us reviewers.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4jg\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "\"scope data\" -\u003e \"self._scope_data\", and move after the variable.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4d0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "suggest change to a dict() with \u0027project_id\u0027 or \u0027domain_id\u0027 member.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4jc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "\"making sure\" -\u003e \"ensure\"",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4jQ\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "suggest change from warning to debug. It\u0027s not abnormal for a project to be disabled.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4i4\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "suggest change from warning to debug.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4i0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "suggest change from warning to debug.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4io\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "remove \", None\". .get returns None by default. This applies throughout this file.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4ig\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "suggest change to \"not domain_id and not domain_name\". This applies throughout this file.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4hk\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "remove this comment. The function name adequately explains what it does.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4hI\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "remove this comment.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4gg\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "remove this comment.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4eo\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "change \\ to use (), see https://github.com/openstack/keystone/blame/master/HACKING.rst#L14",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4eI\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "remove \"el\", since raise would have exited the function already.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4dY\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "remove this comment.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4dU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "remove this comment.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4dI\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "should this validate that only 1 of domain_id or project_id is set?",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4c8\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "Use () rather than \\. https://github.com/openstack/keystone/blame/master/HACKING.rst#L14",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4c0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "It seems like every exception turns into Unauthorized... is it possible to get Internal Server Error if there\u0027s some kind of internal server error?",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4cA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "these are named parameters, so should be \"domain_id\u003dNone, project_id\u003ddefault_project_id\", or \"project_id\u003ddefault_project_id\"",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4bw\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "seems like we need a default domain for remote users?",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4a0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "_build_remote_user_auth_context doesn\u0027t return anything. suggest change to \n\n self._build_remote_user_auth_context(context, auth_info, auth_context)\n return",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4bA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "\" -\u003e \u0027 , see https://github.com/openstack/keystone/blame/master/HACKING.rst#L20",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4bg\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "remove \"is not None\"",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4aY\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "do we need to maintain auth_response[\u0027methods\u0027]? seems like it\u0027s equivalent to auth_response.keys().",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4Xw\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "if resp is None, should assert auth_context[\u0027user_id\u0027] is set since the docs say the function must set it.",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4bU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "remove this comment, or \"authenticatin\" -\u003e \"authentication\"",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+4aE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-15T17:49:31Z",
+      "side": 1,
+      "message": "sounds like a pretty major bug!",
+      "revId": "1daa6bd277f91590083436bf3a729f3d1c3dc067",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
