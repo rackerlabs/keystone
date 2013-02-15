@@ -265,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+5RE\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-15T09:06:10Z",
+      "side": 1,
+      "message": "You\u0027re correct - we don\u0027t need it here, I\u0027ll remove.  Nice catch.",
+      "parentUuid": "AAAAM3/+6Xk\u003d",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6bw\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 2
@@ -416,6 +434,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "AAAAM3/+6ew\u003d",
+      "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5MU\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-15T09:06:10Z",
+      "side": 1,
+      "message": "...and actually this uncovered a bug in the update_project in the backend that was not, unlike User and Group, copying all the attributes over when doing an update (i.e. domain_id was not being updated)",
+      "parentUuid": "AAAAM3/+6bU\u003d",
       "revId": "a96adc02ac1337f4f3268cb542d21657f99825bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
