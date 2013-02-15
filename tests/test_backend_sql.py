@@ -67,7 +67,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'name': uuid.uuid4().hex,
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
-        self.identity_api.create_user(user['id'], user)
+        self.identity_man.create_user({}, user['id'], user)
         self.identity_api.add_user_to_project(self.tenant_bar['id'],
                                               user['id'])
         self.identity_api.delete_user(user['id'])
@@ -81,7 +81,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
         self.assertRaises(exception.ValidationError,
-                          self.identity_api.create_user,
+                          self.identity_man.create_user, {},
                           user['id'],
                           user)
         self.assertRaises(exception.UserNotFound,
@@ -97,7 +97,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                   'name': None,
                   'domain_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
-                          self.identity_api.create_project,
+                          self.identity_man.create_project, {},
                           tenant['id'],
                           tenant)
         self.assertRaises(exception.ProjectNotFound,
@@ -124,7 +124,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'name': 'fakeuser',
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
-        self.identity_api.create_user('fake', user)
+        self.identity_man.create_user({}, 'fake', user)
         self.identity_api.add_user_to_project(self.tenant_bar['id'],
                                               user['id'])
         self.identity_api.delete_project(self.tenant_bar['id'])
@@ -136,7 +136,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'name': 'fakeuser',
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
-        self.identity_api.create_user('fake', user)
+        self.identity_man.create_user({}, 'fake', user)
         self.identity_api.create_metadata(user['id'],
                                           self.tenant_bar['id'],
                                           {'extra': 'extra'})
@@ -151,7 +151,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'name': 'fakeuser',
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
-        self.identity_api.create_user('fake', user)
+        self.identity_man.create_user({}, 'fake', user)
         self.identity_api.create_metadata(user['id'],
                                           self.tenant_bar['id'],
                                           {'extra': 'extra'})
@@ -179,7 +179,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
             'name': uuid.uuid4().hex,
             'domain_id': DEFAULT_DOMAIN_ID,
             arbitrary_key: arbitrary_value}
-        ref = self.identity_api.create_project(tenant_id, tenant)
+        ref = self.identity_man.create_project({}, tenant_id, tenant)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertIsNone(ref.get('extra'))
 
@@ -207,7 +207,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
             'domain_id': DEFAULT_DOMAIN_ID,
             'password': uuid.uuid4().hex,
             arbitrary_key: arbitrary_value}
-        ref = self.identity_api.create_user(user_id, user)
+        ref = self.identity_man.create_user({}, user_id, user)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertIsNone(ref.get('password'))
         self.assertIsNone(ref.get('extra'))
