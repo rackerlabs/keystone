@@ -174,6 +174,7 @@ class Identity(identity.Driver):
 
     # CRUD
     def create_user(self, user_id, user):
+        identity.set_optional_defaults(user, models.User)
         user['name'] = clean.user_name(user['name'])
         return identity.filter_user(self.user.create(user))
 
@@ -183,6 +184,7 @@ class Identity(identity.Driver):
         return self.user.update(user_id, user)
 
     def create_project(self, tenant_id, tenant):
+        identity.set_optional_defaults(tenant, models.Project)
         tenant['name'] = clean.project_name(tenant['name'])
         data = tenant.copy()
         if 'id' not in data or data['id'] is None:
@@ -242,6 +244,7 @@ class Identity(identity.Driver):
         self.role.update(role_id, role)
 
     def create_group(self, group_id, group):
+        identity.set_optional_defaults(group, models.Group)
         group['name'] = clean.group_name(group['name'])
         return self.group.create(group)
 

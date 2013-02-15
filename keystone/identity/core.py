@@ -19,6 +19,7 @@
 from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import manager
+from keystone.common import models
 from keystone import config
 from keystone import exception
 
@@ -47,6 +48,16 @@ def filter_user(user_ref):
         except KeyError:
             pass
     return user_ref
+
+
+def set_optional_defaults(ref, model):
+    default_values = {'description': '',
+                      'enabled': True}
+    if model is models.User:
+        default_values.pop('description')
+    for key in model.optional_keys:
+        if key not in ref and key in default_values:
+            ref[key] = default_values.get(key)
 
 
 @dependency.provider('identity_api')

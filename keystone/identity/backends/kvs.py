@@ -16,6 +16,7 @@
 
 from keystone import clean
 from keystone.common import kvs
+from keystone.common import models
 from keystone.common import utils
 from keystone import exception
 from keystone import identity
@@ -189,6 +190,7 @@ class Identity(kvs.Base, identity.Driver):
 
     # CRUD
     def create_user(self, user_id, user):
+        identity.set_optional_defaults(user, models.User)
         user['name'] = clean.user_name(user['name'])
         try:
             self.get_user(user_id)
@@ -288,6 +290,7 @@ class Identity(kvs.Base, identity.Driver):
         self.db.set('user_list', list(user_list))
 
     def create_project(self, tenant_id, tenant):
+        identity.set_optional_defaults(tenant, models.Project)
         tenant['name'] = clean.project_name(tenant['name'])
         try:
             self.get_project(tenant_id)
@@ -573,6 +576,7 @@ class Identity(kvs.Base, identity.Driver):
     # group crud
 
     def create_group(self, group_id, group):
+        identity.set_optional_defaults(group, models.Group)
         try:
             return self.db.get('group-%s' % group_id)
         except exception.NotFound:
