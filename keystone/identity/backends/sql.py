@@ -1016,14 +1016,33 @@ class Identity(sql.Base, identity.Driver):
 
         with session.begin():
             for metadata_ref in session.query(UserProjectGrant):
-                metadata = metadata_ref.to_dict()
+                meta = metadata_ref.to_dict()
                 try:
-                    self.remove_role_from_user_and_project(
-                        metadata['user_id'], metadata['project_id'], role_id)
+                    self.delete_grant(role_id, user_id=meta['user_id'],
+                                      project_id=meta['project_id'])
                 except exception.RoleNotFound:
                     pass
-
-            # FIXME(dolph): user-domain metadata needs to be updated
+            for metadata_ref in session.query(UserDomainGrant):
+                meta = metadata_ref.to_dict()
+                try:
+                    self.delete_grant(role_id, user_id=meta['user_id'],
+                                      domain_id=meta['domain_id'])
+                except exception.RoleNotFound:
+                    pass
+            for metadata_ref in session.query(GroupProjectGrant):
+                meta = metadata_ref.to_dict()
+                try:
+                    self.delete_grant(role_id, group_id=meta['group_id'],
+                                      project_id=meta['project_id'])
+                except exception.RoleNotFound:
+                    pass
+            for metadata_ref in session.query(GroupDomainGrant):
+                meta = metadata_ref.to_dict()
+                try:
+                    self.delete_grant(role_id, group_id=meta['group_id'],
+                                      domain_id=meta['domain_id'])
+                except exception.RoleNotFound:
+                    pass
 
             if not session.query(Role).filter_by(id=role_id).delete():
                 raise exception.RoleNotFound(role_id=role_id)
