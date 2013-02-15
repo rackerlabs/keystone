@@ -50,6 +50,24 @@
       "revId": "fc9ded38d93c6c91faf47de7881d5c528b0ee3fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5e4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 0,
+      "message": "Done:\n\nSince we were ignoring the actual role, they had the same effect.  We may well be able to get rid of add_user_to_project soon...",
+      "parentUuid": "AAAAM3/+6kk\u003d",
+      "revId": "fc9ded38d93c6c91faf47de7881d5c528b0ee3fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

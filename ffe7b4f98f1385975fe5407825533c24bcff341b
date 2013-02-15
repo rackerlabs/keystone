@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+5jQ\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6pQ\u003d",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6pA\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
         "patchSetId": 5
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+5i8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "The role id has to be deterministic in order to have a functioning downgrade script.\nWhat if there is is a member role already, and they are using it for different semantics? \n\nIf there is a member role already, we don\u0027t want to remove it in the downgrade script.\n\nIf this process is not determined by preset values, we need to record the values used during the upgrade to figure out what to do during a downgrade.  That seems like madness.\n\nI will make the name of the field configurable, with a default to _member_.  We can document what an end user should be aware of on a migration if they want to use their own role name and id.",
+      "parentUuid": "AAAAM3/+6ow\u003d",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6og\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
         "patchSetId": 5
@@ -64,6 +100,24 @@
       "writtenOn": "2013-02-14T16:45:53Z",
       "side": 1,
       "message": "HACKING - backslash continuation",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5ik\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6og\u003d",
       "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+5h4\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6oQ\u003d",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6oI\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 5
@@ -98,6 +170,24 @@
       "writtenOn": "2013-02-14T16:45:53Z",
       "side": 1,
       "message": "HACKING:\n\n  if tenant_id not in tenants:",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5h0\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6oI\u003d",
       "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+5f4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "Shouldn\u0027t actually be that bad in the normal case, one request per item.  It will only be really slow if the user is in a lot of projects, which is the case we want to watch out for.  Is Jose\u0027s patch actually submitted?  If not, we can add this to that patch.",
+      "parentUuid": "AAAAM3/+6lo\u003d",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6lA\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 5
@@ -132,6 +240,24 @@
       "writtenOn": "2013-02-14T16:45:53Z",
       "side": 1,
       "message": "simplify to:\n\n  if len(roles):",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5fs\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6lA\u003d",
       "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+5eY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6kc\u003d",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6kM\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 5
@@ -166,6 +310,24 @@
       "writtenOn": "2013-02-14T16:45:53Z",
       "side": 1,
       "message": "I think this entire method can be removed from the driver interface",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5cM\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "it is currently called by\nkeystone/common/sql/nova.py:89:\nkeystone/common/sql/legacy.py:135:\nkeystone/common/sql/legacy.py:161:\nkeystone/identity/controllers.py:209:\nkeystone/identity/controllers.py:245:\n\nAnd we shouldn\u0027t duplicate the logic of the default role.  However, the logic that creates the role has gone away:  that was a side effect of improper unit test setup.  Now rectified",
+      "parentUuid": "AAAAM3/+6kM\u003d",
       "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +368,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+5cI\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "YAY!",
+      "parentUuid": "AAAAM3/+6j4\u003d",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6js\u003d",
         "filename": "tests/test_migrate_nova_auth.py",
         "patchSetId": 5
@@ -217,6 +397,24 @@
       "writtenOn": "2013-02-14T16:45:53Z",
       "side": 1,
       "message": "don\u0027t use __contains__ directly",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5bA\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6js\u003d",
       "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +438,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+5bs\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6jo\u003d",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6jY\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 5
@@ -257,6 +473,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+5a4\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+6jY\u003d",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+6jI\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 5
@@ -268,6 +502,24 @@
       "writtenOn": "2013-02-14T16:45:53Z",
       "side": 1,
       "message": "HACKING",
+      "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+5as\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-15T14:01:39Z",
+      "side": 1,
+      "message": "Which rule?",
+      "parentUuid": "AAAAM3/+6jI\u003d",
       "revId": "ffe7b4f98f1385975fe5407825533c24bcff341b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
