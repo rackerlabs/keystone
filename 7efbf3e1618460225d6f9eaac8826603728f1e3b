@@ -16,6 +16,24 @@
       "revId": "7efbf3e1618460225d6f9eaac8826603728f1e3b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3b4\u003d",
+        "filename": "tests/test_sql_migrations.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T01:01:56Z",
+      "side": 1,
+      "message": "reStructuredText uses that as an indicator that the following text should be displayed in monospace format (code samples, etc).",
+      "parentUuid": "AAAAM3/+8Ug\u003d",
+      "revId": "7efbf3e1618460225d6f9eaac8826603728f1e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
