@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+3Qg\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-16T03:00:44Z",
+      "side": 1,
+      "message": "Yes, the check for \u0027user_id\u0027 is being done in controllers.py.",
+      "parentUuid": "AAAAM3/+3XE\u003d",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+3XA\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 8
@@ -87,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+3RA\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-16T03:00:44Z",
+      "side": 1,
+      "message": "We have to support both v2 and v3 at the same time. I can\u0027t think of a good way to over-ride this interface. But yes, its rather ugly right now.",
+      "parentUuid": "AAAAM3/+3W8\u003d",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+3Ww\u003d",
         "filename": "tests/test_auth_plugin.py",
         "patchSetId": 8
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+3Qk\u003d",
+        "filename": "tests/test_auth_plugin.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-16T03:00:44Z",
+      "side": 1,
+      "message": "I don\u0027t think we can effectively police all plugins. All we can do is to do some very basic checks. Like PAM modules, plugins can shoot themselves in the foot if they really wanted. No difference than say a dynamically loaded library causes memory corruption.",
+      "parentUuid": "AAAAM3/+3Ww\u003d",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+3Ws\u003d",
         "filename": "tests/test_auth_plugin.py",
         "patchSetId": 8
@@ -115,6 +169,24 @@
       "writtenOn": "2013-02-16T01:56:22Z",
       "side": 1,
       "message": "expected to have tests that explicitly work the \"token\" and \"password\" auth handlers",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3Qo\u003d",
+        "filename": "tests/test_auth_plugin.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-16T03:00:44Z",
+      "side": 1,
+      "message": "token and password handlers are invoked in test_v3_auth.py.",
+      "parentUuid": "AAAAM3/+3Ws\u003d",
       "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
