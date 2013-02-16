@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+3Wk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T02:09:58Z",
+      "side": 1,
+      "message": "might want to just make this project_id instead...",
+      "revId": "769119dfae69310574200b2b85c660a6c5b7a731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3Wg\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T02:09:58Z",
+      "side": 1,
+      "message": "we\u0027re not doing anything with the formatted exception - did you intend to log it?",
+      "revId": "769119dfae69310574200b2b85c660a6c5b7a731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3Wc\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T02:09:58Z",
+      "side": 1,
+      "message": "does this imply that we need to purge (relevant) trusts on a role removal with a user from a project?",
+      "revId": "769119dfae69310574200b2b85c660a6c5b7a731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
