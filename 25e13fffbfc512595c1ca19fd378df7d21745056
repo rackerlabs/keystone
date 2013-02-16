@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+3XQ\u003d",
+        "filename": "keystone/auth/__init__.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T01:56:22Z",
+      "side": 1,
+      "message": "can we make this a specific set of imports please?",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3XM\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T01:56:22Z",
+      "side": 1,
+      "message": "an example dictionary in the docstring would be immensely helpful here",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3XE\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T01:56:22Z",
+      "side": 1,
+      "message": "I think it\u0027s darned awkward to require specific side effects using this as a base handler - the changing of user_id and method_name in an \"auth_context\" dictionary. If we can wrangle it, I\u0027d rather assert that should be returned in the dictionary (with appropriate docstring example) rather than expecting a side effect to happen.",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3XA\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T01:56:22Z",
+      "side": 1,
+      "message": "this is a very, very broad exception to catch here - can it be narrowed?",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3W8\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T01:56:22Z",
+      "side": 1,
+      "message": "why are we adding a version specific method here instead of over-ridding the existing get_catalog in the appropriate versioned handler/subclass?\n\nReally don\u0027t want to add version specific methods",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3Ww\u003d",
+        "filename": "tests/test_auth_plugin.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T01:56:22Z",
+      "side": 1,
+      "message": "if we\u0027re going to mandate side effects in the handler, then we should be testing for them here - user_name and method being explicitly added to the auth_context (if I read it right). Otherwise we\u0027re sure to have incorrect plugins that pass the tests, but aren\u0027t \"right\"",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3Ws\u003d",
+        "filename": "tests/test_auth_plugin.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T01:56:22Z",
+      "side": 1,
+      "message": "expected to have tests that explicitly work the \"token\" and \"password\" auth handlers",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
