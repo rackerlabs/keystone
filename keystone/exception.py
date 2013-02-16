@@ -144,6 +144,10 @@ class PolicyNotFound(NotFound):
     """Could not find policy: %(policy_id)s"""
 
 
+class PolicyNotAuthorized(Forbidden):
+    """Policy doesn't allow %(action)s to be performed."""
+
+
 class RoleNotFound(NotFound):
     """Could not find role: %(role_id)s"""
 
