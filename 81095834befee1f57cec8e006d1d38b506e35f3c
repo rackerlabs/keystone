@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+3a4\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T01:08:24Z",
+      "side": 1,
+      "message": "s/Tenants/Projects/g",
+      "revId": "81095834befee1f57cec8e006d1d38b506e35f3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
