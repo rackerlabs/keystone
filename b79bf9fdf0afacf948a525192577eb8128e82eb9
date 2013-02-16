@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+3gg\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T00:41:49Z",
+      "side": 1,
+      "message": "this is sort of a bizarre, arbitrary UUID to include as a default. Why are we including this as a config option instead of looking up the \"member_role_name\" defined role name and using that?",
+      "revId": "b79bf9fdf0afacf948a525192577eb8128e82eb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3f0\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T00:41:49Z",
+      "side": 1,
+      "message": "if we want to keep this high level \"helper\" api call, then we should be looking up the role ID from the name in the config and applying that - not storing deployment specific details in the config instead.",
+      "revId": "b79bf9fdf0afacf948a525192577eb8128e82eb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3fY\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-16T00:41:49Z",
+      "side": 1,
+      "message": "why the timeout increase?",
+      "revId": "b79bf9fdf0afacf948a525192577eb8128e82eb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
