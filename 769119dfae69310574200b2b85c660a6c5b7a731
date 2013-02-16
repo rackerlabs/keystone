@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+3UI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-16T02:26:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+3Wk\u003d",
+      "revId": "769119dfae69310574200b2b85c660a6c5b7a731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+3Wg\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+3To\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-16T02:26:28Z",
+      "side": 1,
+      "message": "No, this was vestige of tracking down a logging problem.  This should be reverted.",
+      "parentUuid": "AAAAM3/+3Wg\u003d",
+      "revId": "769119dfae69310574200b2b85c660a6c5b7a731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+3Wc\u003d",
         "filename": "tests/test_auth.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2013-02-16T02:09:58Z",
       "side": 1,
       "message": "does this imply that we need to purge (relevant) trusts on a role removal with a user from a project?",
+      "revId": "769119dfae69310574200b2b85c660a6c5b7a731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3UU\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-16T02:26:28Z",
+      "side": 1,
+      "message": "Nope.  If a user loses a role, the attempt to create a token from the trust will fail.  I\u0027ll put in a specific unit test for that.",
+      "parentUuid": "AAAAM3/+3Wc\u003d",
       "revId": "769119dfae69310574200b2b85c660a6c5b7a731",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
