@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+3TU\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-16T02:54:17Z",
+      "side": 1,
+      "message": "Lots of discussion on this point.  The short of it is that we don\u0027t want to conflict with what users might have used in the past, as we won\u0027t be able to run the sql downgrade scripts without doing some sort of damage.  Either we will remove more or less in certain circumstances.  This is neutral, a trifle ugly, but understandable. It is also configurable.",
+      "parentUuid": "AAAAM3/+3gg\u003d",
+      "revId": "b79bf9fdf0afacf948a525192577eb8128e82eb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+3f0\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+3S4\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-16T02:54:17Z",
+      "side": 1,
+      "message": "No, we want to get  rid of this API, just there are a few places that use it still, and this patch was creeping out of scope.  But both values ned to be in the config file, as people might want to use an existing role for membership, as opposed to the one we generate for them.",
+      "parentUuid": "AAAAM3/+3f0\u003d",
+      "revId": "b79bf9fdf0afacf948a525192577eb8128e82eb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+3fY\u003d",
         "filename": "tests/test_content_types.py",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2013-02-16T00:41:49Z",
       "side": 1,
       "message": "why the timeout increase?",
+      "revId": "b79bf9fdf0afacf948a525192577eb8128e82eb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+3S0\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-16T02:54:17Z",
+      "side": 1,
+      "message": "Ah..debugging vestige.  I will remove.",
+      "parentUuid": "AAAAM3/+3fY\u003d",
       "revId": "b79bf9fdf0afacf948a525192577eb8128e82eb9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
