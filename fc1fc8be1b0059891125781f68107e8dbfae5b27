@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+2WQ\u003d",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-17T06:01:19Z",
+      "side": 1,
+      "message": "This seems like a pretty different call path.  Can you give a pointer to the code changed to cause this, or explain it?",
+      "revId": "fc1fc8be1b0059891125781f68107e8dbfae5b27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
