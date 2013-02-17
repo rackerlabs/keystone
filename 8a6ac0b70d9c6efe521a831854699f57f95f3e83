@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+11U\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-17T21:11:59Z",
+      "side": 1,
+      "message": "You can\u0027t add this after the fact.  Since this upgrade is already in the tree, you need a new upgrade to add this constraint.",
+      "revId": "8a6ac0b70d9c6efe521a831854699f57f95f3e83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
