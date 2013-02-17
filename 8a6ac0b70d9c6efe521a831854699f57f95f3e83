@@ -16,6 +16,24 @@
       "revId": "8a6ac0b70d9c6efe521a831854699f57f95f3e83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+1zY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/016_normalize_domain_ids.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-17T22:25:11Z",
+      "side": 1,
+      "message": "is that true?  I asked Dolph about this on a previous change - and his response is that we only need to maintain the database structure at each major release - i.e. it\u0027s OK to modify this here since 016 has not been yet included in a major release.",
+      "parentUuid": "AAAAM3/+11U\u003d",
+      "revId": "8a6ac0b70d9c6efe521a831854699f57f95f3e83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
