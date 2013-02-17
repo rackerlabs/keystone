@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+2Vw\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-17T06:22:28Z",
+      "side": 1,
+      "message": "would a domain suffix field be a usable alternative here?  For each domain, if they provide a suffix,  see if it matches the username.  If so, the user belongs to that domain.",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+2Vs\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-17T06:22:28Z",
+      "side": 1,
+      "message": "NO, as revoked tokens will not be returned from a list or get call.",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+3XM\u003d",
         "filename": "keystone/auth/core.py",
         "patchSetId": 8
@@ -65,6 +99,57 @@
       "side": 1,
       "message": "Yes, the check for \u0027user_id\u0027 is being done in controllers.py.",
       "parentUuid": "AAAAM3/+3XE\u003d",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+2Vk\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-17T06:22:28Z",
+      "side": 1,
+      "message": "Agreed.",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+2Vg\u003d",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-17T06:22:28Z",
+      "side": 1,
+      "message": "/auth/token",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+2VE\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-17T06:22:28Z",
+      "side": 1,
+      "message": "the hyperlinks to the actual role objects, HATEOAS.",
       "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +208,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+2VY\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-17T06:22:28Z",
+      "side": 1,
+      "message": "Getting there, bud.",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+3Ww\u003d",
         "filename": "tests/test_auth_plugin.py",
         "patchSetId": 8
@@ -152,6 +254,24 @@
       "side": 1,
       "message": "I don\u0027t think we can effectively police all plugins. All we can do is to do some very basic checks. Like PAM modules, plugins can shoot themselves in the foot if they really wanted. No difference than say a dynamically loaded library causes memory corruption.",
       "parentUuid": "AAAAM3/+3Ww\u003d",
+      "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+2Vc\u003d",
+        "filename": "tests/test_auth_plugin.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-17T06:22:28Z",
+      "side": 1,
+      "message": "All he is saying is we need a test method that gets run against all plugins that we ship that makes sure it provides the right side effects.",
+      "parentUuid": "AAAAM3/+3Qk\u003d",
       "revId": "25e13fffbfc512595c1ca19fd378df7d21745056",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
