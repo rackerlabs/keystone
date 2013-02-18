@@ -1691,6 +1691,8 @@ class TokenTests(object):
     def test_token_crud(self):
         token_id = uuid.uuid4().hex
         data = {'id': token_id, 'a': 'b',
+                'user_id': 'testuserid',
+                'tenant_id': None,
                 'user': {'id': 'testuserid'}}
         data_ref = self.token_api.create_token(token_id, data)
         expires = data_ref.pop('expires')
@@ -1710,10 +1712,16 @@ class TokenTests(object):
 
     def create_token_sample_data(self, tenant_id=None):
         token_id = uuid.uuid4().hex
-        data = {'id': token_id, 'a': 'b',
-                'user': {'id': 'testuserid'}}
+        data = {
+            'id': token_id,
+            'a': 'b',
+            'user_id': 'testuserid',
+            'tenant_id': None,
+            'user': {'id': 'testuserid'},
+        }
         if tenant_id is not None:
             data['tenant'] = {'id': tenant_id, 'name': tenant_id}
+            data['tenant_id'] = tenant_id
         self.token_api.create_token(token_id, data)
         return token_id
 
@@ -1772,9 +1780,14 @@ class TokenTests(object):
     def test_expired_token(self):
         token_id = uuid.uuid4().hex
         expire_time = timeutils.utcnow() - datetime.timedelta(minutes=1)
-        data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
-                'expires': expire_time,
-                'user': {'id': 'testuserid'}}
+        data = {
+            'id': token_id, 'a': 'b',
+            'id_hash': token_id,
+            'expires': expire_time,
+            'user_id': 'testuserid',
+            'tenant_id': None,
+            'user': {'id': 'testuserid'},
+        }
         data_ref = self.token_api.create_token(token_id, data)
         self.assertDictEqual(data_ref, data)
         self.assertRaises(exception.TokenNotFound,
@@ -1782,8 +1795,15 @@ class TokenTests(object):
 
     def test_null_expires_token(self):
         token_id = uuid.uuid4().hex
-        data = {'id': token_id, 'id_hash': token_id, 'a': 'b', 'expires': None,
-                'user': {'id': 'testuserid'}}
+        data = {
+            'id': token_id,
+            'id_hash': token_id,
+            'a': 'b',
+            'expires': None,
+            'user_id': 'testuserid',
+            'tenant_id': None,
+            'user': {'id': 'testuserid'},
+        }
         data_ref = self.token_api.create_token(token_id, data)
         self.assertDictEqual(data_ref, data)
         new_data_ref = self.token_api.get_token(token_id)
