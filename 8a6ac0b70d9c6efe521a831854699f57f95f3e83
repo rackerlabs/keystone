@@ -34,6 +34,23 @@
       "revId": "8a6ac0b70d9c6efe521a831854699f57f95f3e83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+zwU\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T20:37:41Z",
+      "side": 1,
+      "message": "merge conflict is here -- and this bug isn\u0027t correct? it\u0027s marked invalid and references a bug that\u0027s already fix committed",
+      "revId": "8a6ac0b70d9c6efe521a831854699f57f95f3e83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
