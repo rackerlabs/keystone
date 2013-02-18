@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+z6g\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T19:37:04Z",
+      "side": 1,
+      "message": "spaces after hashes throughout",
+      "revId": "ec2ae7dd177f90f46a55ce0ede70f2e09f9079d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+z7I\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T19:37:04Z",
+      "side": 1,
+      "message": "\"what was previously done\" -\u003e \"replace records in the user_tenant_membership table with explicit role grants\"",
+      "revId": "ec2ae7dd177f90f46a55ce0ede70f2e09f9079d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+z7E\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 11
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T19:37:04Z",
+      "side": 1,
+      "message": "sentence case",
+      "revId": "ec2ae7dd177f90f46a55ce0ede70f2e09f9079d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
