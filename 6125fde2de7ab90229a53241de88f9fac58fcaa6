@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+0QQ\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T17:44:53Z",
+      "side": 1,
+      "message": "sorry to block, but i don\u0027t think this change was intended... you already have an instance of exception.Error and wrapping it like this actually creates a security vulnerability for SecurityErrors",
+      "revId": "6125fde2de7ab90229a53241de88f9fac58fcaa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
