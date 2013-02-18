@@ -19,15 +19,18 @@ import webob
 from keystone.common import wsgi
 from keystone.openstack.common import jsonutils
 from keystone import test
+from keystone import exception
 
 
-class ApplicationTest(test.TestCase):
+class BaseWSGITest(test.TestCase):
     def _make_request(self, url='/'):
         req = webob.Request.blank(url)
         args = {'action': 'index', 'controller': None}
         req.environ['wsgiorg.routing_args'] = [None, args]
         return req
 
+
+class ApplicationTest(BaseWSGITest):
     def test_response_content_type(self):
         class FakeApp(wsgi.Application):
             def index(self, context):
@@ -76,3 +79,58 @@ class ApplicationTest(test.TestCase):
         self.assertEqual(resp.body, '')
         self.assertEqual(resp.headers.get('Content-Length'), '0')
         self.assertEqual(resp.headers.get('Content-Type'), None)
+
+
+class MiddlewareTest(BaseWSGITest):
+    """Test wsgi.Middleware, not like test_middleware which test the
+    Middleware itself."""
+    def test_middleware_good_requests(self):
+        req = self._make_request()
+
+        class FakeApp(wsgi.Application):
+            def index(self, context):
+                pass
+
+        class FakeMiddleware(wsgi.Middleware):
+            def process_request(self, req):
+                req.environ['fake_request'] = True
+                return req
+        resp = FakeMiddleware(None)(req)
+        self.assertTrue('fake_request' in resp.environ)
+
+        class FakeMiddleware(wsgi.Middleware):
+            def process_response(self, request, response):
+                response.environ = {}
+                response.environ['fake_response'] = True
+                return response
+        resp = FakeMiddleware(FakeApp())(req)
+        self.assertTrue('fake_response' in resp.environ)
+
+    def test_middleware_bad_requests(self):
+        class FakeApp(wsgi.Application):
+            def index(self, context):
+                pass
+
+        class FakeMiddleware(wsgi.Middleware):
+            def process_response(self, request, response):
+                raise exception.Unauthorized()
+
+        req = self._make_request()
+        req.environ['REMOTE_ADDR'] = 'http://www.test.com'
+        resp = FakeMiddleware(FakeApp())(req)
+        self.assertEquals(resp.status_int, exception.Unauthorized().code)
+
+        class FakeMiddleware(wsgi.Middleware):
+            def process_response(self, request, response):
+                raise TypeError()
+        req = self._make_request()
+        resp = FakeMiddleware(FakeApp())(req)
+        # This is a validationerror type
+        self.assertEquals(resp.status_int, 400)
+
+        class FakeMiddleware(wsgi.Middleware):
+            def process_response(self, request, response):
+                raise Exception('EXCEPTIONERROR')
+        req = self._make_request()
+        resp = FakeMiddleware(FakeApp())(req)
+        self.assertTrue('EXCEPTIONERROR' in resp.body)
