@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+zWw\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T22:40:31Z",
+      "side": 1,
+      "message": "HACKING- import modules, not attributes\n\n  from keystoneclient.contrib.ec2 import utils as ec2_utils\n\ni suppose this import could also go above imports from within keystone as well",
+      "revId": "ebc039ba461dc9b0eaf5bfa69e364a38222c109f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
