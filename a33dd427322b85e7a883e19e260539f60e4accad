@@ -68,6 +68,24 @@
       "revId": "a33dd427322b85e7a883e19e260539f60e4accad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+zpo\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-18T22:19:36Z",
+      "side": 1,
+      "message": "There\u0027s something wrong with the current test classes. test_v3_identity tests all required admin privilege. Which means we have to use the \u0027ADMIN\u0027 token. Others merely need the scoped token.",
+      "parentUuid": "AAAAM3/+z/o\u003d",
+      "revId": "a33dd427322b85e7a883e19e260539f60e4accad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
