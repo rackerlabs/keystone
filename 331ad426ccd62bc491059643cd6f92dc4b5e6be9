@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+0lo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-18T16:02:51Z",
+      "side": 1,
+      "message": "Makes no difference.  There is no implicit relationship between the session and the drop commands.",
+      "parentUuid": "AAAAM3/+0ow\u003d",
+      "revId": "331ad426ccd62bc491059643cd6f92dc4b5e6be9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+0oo\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-18T15:45:20Z",
       "side": 1,
       "message": "the session commit/close calls are only performed for sqlite -- is that intentional?",
+      "revId": "331ad426ccd62bc491059643cd6f92dc4b5e6be9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+0lk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-18T16:02:51Z",
+      "side": 1,
+      "message": "Yes, as only sqlite is using the session API.  Migrate is wonky.",
+      "parentUuid": "AAAAM3/+0oo\u003d",
       "revId": "331ad426ccd62bc491059643cd6f92dc4b5e6be9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+0lM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-18T16:02:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+0qk\u003d",
+      "revId": "331ad426ccd62bc491059643cd6f92dc4b5e6be9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+0mo\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 9
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+0lE\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-18T16:02:51Z",
+      "side": 1,
+      "message": "Before migrate: Role name is unique, and should fail upon the inser of a duplicate name.  \nAfter migrate: Only the member role ID field will take effect.  User will be confused, but they will have done it to themselves.  No permanent damage will havebeen done.",
+      "parentUuid": "AAAAM3/+0mo\u003d",
+      "revId": "331ad426ccd62bc491059643cd6f92dc4b5e6be9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+0nY\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 9
@@ -81,6 +153,24 @@
       "writtenOn": "2013-02-18T15:45:20Z",
       "side": 1,
       "message": "if you want to, you could reduce this to a comprehension:\n\n  for project_id in set(a.project_id for a in associations):",
+      "revId": "331ad426ccd62bc491059643cd6f92dc4b5e6be9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+0k8\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-18T16:02:51Z",
+      "side": 1,
+      "message": "I\u0027ve read that three times and it doesn\u0027t parse immediately.  I realize python lets you do things like that, but I don\u0027t particularly find them more readable.",
+      "parentUuid": "AAAAM3/+0nY\u003d",
       "revId": "331ad426ccd62bc491059643cd6f92dc4b5e6be9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
