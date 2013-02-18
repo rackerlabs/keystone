@@ -90,7 +90,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         ref['type'] = uuid.uuid4().hex
         return ref
 
-    def get_scoped_token(self):
+    def get_project_token(self):
         """Convenience method so that we can test authenticated requests."""
         # FIXME(dolph): should use real auth
         return 'ADMIN'
@@ -109,30 +109,53 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             })
         return r.body['access']['token']['id']
 
-    def v3_request(self, path, **kwargs):
+    def get_requested_token(self, auth):
+        """Convenience method so that we can test authenticated requests."""
+
+        r = self.admin_request(
+            method='POST',
+            path='/v3/auth',
+            # FIXME(henry-nash) We shouldn't have to use the admin token here
+            token='ADMIN',
+            body=auth)
+        return r.getheader('X-Subject-Token')
+
+    def v3_request(self, path, auth=None, **kwargs):
         path = '/v3' + path
-        return self.admin_request(
-            path=path,
-            token=self.get_scoped_token(),
-            **kwargs)
+        if auth:
+            return self.admin_request(
+                path=path,
+                token=self.get_requested_token(auth),
+                **kwargs)
+        else:
+            return self.admin_request(
+                path=path,
+                token=self.get_project_token(),
+                **kwargs)
 
-    def get(self, path, **kwargs):
-        return self.v3_request(method='GET', path=path, **kwargs)
+    def get(self, path, auth=None, **kwargs):
+        return self.v3_request(method='GET', path=path,
+                               auth=auth, **kwargs)
 
-    def head(self, path, **kwargs):
-        return self.v3_request(method='HEAD', path=path, **kwargs)
+    def head(self, path, auth=None, **kwargs):
+        return self.v3_request(method='HEAD', path=path,
+                               auth=auth, **kwargs)
 
-    def post(self, path, **kwargs):
-        return self.v3_request(method='POST', path=path, **kwargs)
+    def post(self, path, auth=None, **kwargs):
+        return self.v3_request(method='POST', path=path,
+                               auth=auth, **kwargs)
 
-    def put(self, path, **kwargs):
-        return self.v3_request(method='PUT', path=path, **kwargs)
+    def put(self, path, auth=None, **kwargs):
+        return self.v3_request(method='PUT', path=path,
+                               auth=auth, **kwargs)
 
-    def patch(self, path, **kwargs):
-        return self.v3_request(method='PATCH', path=path, **kwargs)
+    def patch(self, path, auth=None, **kwargs):
+        return self.v3_request(method='PATCH', path=path,
+                               auth=auth, **kwargs)
 
-    def delete(self, path, **kwargs):
-        return self.v3_request(method='DELETE', path=path, **kwargs)
+    def delete(self, path, auth=None, **kwargs):
+        return self.v3_request(method='DELETE', path=path,
+                               auth=auth, **kwargs)
 
     def assertValidListResponse(self, resp, key, entity_validator, ref=None,
                                 expected_length=None):
