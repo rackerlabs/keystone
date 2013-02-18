@@ -206,6 +206,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+334\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T20:03:42Z",
+      "side": 1,
+      "message": "interesting, never heard that convention before, but it appears to be popular.. changing throughout",
+      "parentUuid": "AAAAM3/+380\u003d",
+      "revId": "4379c789c0fdbf3a2dfc7a1ce87e3a23fce08017",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+388\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 1
