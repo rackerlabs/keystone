@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+0ow\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T15:45:20Z",
+      "side": 1,
+      "message": "i assume these should be done before the above session is closed?",
+      "revId": "331ad426ccd62bc491059643cd6f92dc4b5e6be9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+0oo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T15:45:20Z",
+      "side": 1,
+      "message": "the session commit/close calls are only performed for sqlite -- is that intentional?",
+      "revId": "331ad426ccd62bc491059643cd6f92dc4b5e6be9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+0qk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T15:45:20Z",
+      "side": 1,
+      "message": "clean up imports\n\n  import stdlib\n\n  import libs\n\n  import local",
+      "revId": "331ad426ccd62bc491059643cd6f92dc4b5e6be9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+0mo\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T15:45:20Z",
+      "side": 1,
+      "message": "need to revise keystone.conf.sample to document these.\n\ni\u0027m also worried about the case where a user sets one of these but not the other, or sets them both to valid values referring to different roles. thoughts? if nothing else, it need to have very strong wording in the docs",
+      "revId": "331ad426ccd62bc491059643cd6f92dc4b5e6be9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+0nY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T15:45:20Z",
+      "side": 1,
+      "message": "if you want to, you could reduce this to a comprehension:\n\n  for project_id in set(a.project_id for a in associations):",
+      "revId": "331ad426ccd62bc491059643cd6f92dc4b5e6be9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
