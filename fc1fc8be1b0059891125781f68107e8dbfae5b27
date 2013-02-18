@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+zoE\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T21:26:24Z",
+      "side": 1,
+      "message": "this seems pretty redundant with ForbiddenAction",
+      "revId": "fc1fc8be1b0059891125781f68107e8dbfae5b27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+2WQ\u003d",
         "filename": "keystone/policy/backends/rules.py",
         "patchSetId": 1
@@ -31,6 +48,40 @@
       "side": 1,
       "message": "So\n1) The exception raising is a new capability, so we should use it\n2) The old enforce() call used to just make sure there was a \"brian\" initialised, and then call check().  The new policy engines doesn\u0027t have such an enforce() call, just a check() call.\n\nThese changes make us, essentially, do the same thing a nova",
       "parentUuid": "AAAAM3/+2WQ\u003d",
+      "revId": "fc1fc8be1b0059891125781f68107e8dbfae5b27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+zn4\u003d",
+        "filename": "tests/test_policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T21:26:24Z",
+      "side": 1,
+      "message": "import order should be revised with this",
+      "revId": "fc1fc8be1b0059891125781f68107e8dbfae5b27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+znw\u003d",
+        "filename": "tests/test_policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T21:26:24Z",
+      "side": 1,
+      "message": "self.assertTrue(result)",
       "revId": "fc1fc8be1b0059891125781f68107e8dbfae5b27",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
