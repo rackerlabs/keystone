@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+z5k\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T19:41:18Z",
+      "side": 1,
+      "message": "_build_request or something? this reads like methods\u003d[\u0027user\u0027] after reading the functions above",
+      "revId": "a33dd427322b85e7a883e19e260539f60e4accad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+z/c\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T19:41:18Z",
+      "side": 1,
+      "message": "don\u0027t pass all the extra attributes as None, they should be defaulting to None -- makes these tests really hard to read",
+      "revId": "a33dd427322b85e7a883e19e260539f60e4accad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+0H8\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 9
@@ -13,6 +47,24 @@
       "writtenOn": "2013-02-18T18:24:33Z",
       "side": 1,
       "message": "You may want to look at RestfulTestCase in test_v3.py (that AuthTest is based on) and how it issues these requests - I think it always puts a faked ADMIN token in the request...is that by-passing some functionality that we are therfore not testing?",
+      "revId": "a33dd427322b85e7a883e19e260539f60e4accad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+z/o\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T19:41:18Z",
+      "side": 1,
+      "message": "yes, it\u0027s bypassing auth \u0026 policy engine -- should be fixed as part of this patch",
+      "parentUuid": "AAAAM3/+0H8\u003d",
       "revId": "a33dd427322b85e7a883e19e260539f60e4accad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
