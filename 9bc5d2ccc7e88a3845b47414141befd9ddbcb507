@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+0w4\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T14:36:52Z",
+      "side": 1,
+      "message": "you could make this a class attribute of MiddlewareTest since all tests consume it\n\non that note -- it looks like you\u0027ve really written 5 tests here, but combined them into two test_* methods -- can you break it up into 5 tests and name them accordingly?",
+      "revId": "9bc5d2ccc7e88a3845b47414141befd9ddbcb507",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+0wU\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-18T14:36:52Z",
+      "side": 1,
+      "message": "you can remove the () on Unauthorized, as you should be able to access the class attribute without instantiating an instance",
+      "revId": "9bc5d2ccc7e88a3845b47414141befd9ddbcb507",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
