@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+zuM\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-18T20:50:57Z",
+      "side": 1,
+      "message": "Shouldn\u0027t the default be sub and then folks need to explicitly set the value to one when they want to optimize?  That way folks aren\u0027t surprised when a search just goes one level?",
+      "revId": "159ffe48e986e524f5930ad41d376bdce2b6a07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
