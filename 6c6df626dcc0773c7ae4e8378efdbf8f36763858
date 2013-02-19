@@ -16,6 +16,74 @@
       "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+yAw\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-19T12:47:44Z",
+      "side": 1,
+      "message": "What situation is this? Please don\u0027t leave an empty \"except:\", specify the exception that you\u0027re waiting for (see HACKING).",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+yA8\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-19T12:47:44Z",
+      "side": 1,
+      "message": "The len( call is useless here. You can just check if roles is true or not. set() is false.\n\nAlso, can\u0027t this code be in the except branch? That way you can get rid of the roles \u003d set() line, too.",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+yAQ\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-19T12:47:44Z",
+      "side": 1,
+      "message": "These two methods have unintuitive names. \u0027Get\u0027 implies a read operation, but here one of the passed in arguments (metadata_ref) is modified. IMHO modifying the passed in argument reduces readability. Why not return a new dictionary instead?",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+yAg\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-19T12:47:44Z",
+      "side": 1,
+      "message": "Doesn\u0027t this break the existing Identity API? The other backends return a list here. Do you want to do list(set(metdata...)) instead?",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
