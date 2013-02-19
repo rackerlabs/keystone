@@ -86,6 +86,24 @@
       "revId": "570234141918e99bb4cb261cbf5feedc9cc2510b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xWE\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-02-19T16:18:31Z",
+      "side": 1,
+      "message": "Wasn\u0027t it introduced in your first patch?",
+      "parentUuid": "AAAAM3/+xXk\u003d",
+      "revId": "570234141918e99bb4cb261cbf5feedc9cc2510b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
