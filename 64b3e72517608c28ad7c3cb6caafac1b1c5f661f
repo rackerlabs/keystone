@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+xf8\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2013-02-19T15:39:22Z",
+      "side": 1,
+      "message": "nitpick: return not needed",
+      "revId": "64b3e72517608c28ad7c3cb6caafac1b1c5f661f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
