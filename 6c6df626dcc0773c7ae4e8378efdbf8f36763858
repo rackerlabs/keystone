@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+xcE\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-19T15:54:17Z",
+      "side": 1,
+      "message": "Can you provide more commentary on how this plugin overrides capabilities that were previously found in Driver xxx.\nReally need to make it clear that the plugin is a substitute for previous function that was not as extensible",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xb0\u003d",
+        "filename": "keystone/auth/methods/token.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-19T15:54:17Z",
+      "side": 1,
+      "message": "Can you provide more commentary on how this plugin overrides capabilities that were previously found in Driver xxx.\nReally need to make it clear that the plugin is a substitute for previous function that was not as extensible",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+ynA\u003d",
         "filename": "keystone/auth/routers.py",
         "patchSetId": 10
@@ -98,6 +132,23 @@
       "writtenOn": "2013-02-19T12:47:44Z",
       "side": 1,
       "message": "Doesn\u0027t this break the existing Identity API? The other backends return a list here. Do you want to do list(set(metdata...)) instead?",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xdg\u003d",
+        "filename": "tests/test_auth_plugin.conf",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-19T15:54:17Z",
+      "side": 1,
+      "message": "In this example you are enable all 3 plugins.  What is unclear to me is the trigger model.   How is it declared when the password plugin will be invoked, when the token plugin will be invoked, and when the custom simple-challenge-response plugin will be invoked.  How the orchestration is managed and the semantics (does it try all three???) needs to be clearly documented.",
       "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
