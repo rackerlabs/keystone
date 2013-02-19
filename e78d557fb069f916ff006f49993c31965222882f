@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+zL0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-19T00:21:12Z",
+      "side": 1,
+      "message": "suggest use a single config option, user_enabled_emulation_dn, where if it\u0027s set to anything then it\u0027s enabled.\n\nsimilar suggestion for tenant_enabled_emulation_dn",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+zHs\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-19T00:21:12Z",
+      "side": 1,
+      "message": "safer to escape options_name so that it\u0027s valid for a DN.",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+zIA\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-19T00:21:12Z",
+      "side": 1,
+      "message": "should escape dn so that it\u0027s valid for an ldap filter.",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+zIM\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-19T00:21:12Z",
+      "side": 1,
+      "message": "change this to request no attributes (1.1), for efficiency.",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+zLE\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-19T00:21:12Z",
+      "side": 1,
+      "message": "is this raised only if self.enabled_emulation_dn doesn\u0027t exist? should log the misconfiguration somewhere.",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+zKc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-19T00:21:12Z",
+      "side": 1,
+      "message": "suggest remove this line.",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+zKM\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-19T00:21:12Z",
+      "side": 1,
+      "message": "change 4 lines to \"return enabled_value\".",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+zGM\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-19T00:21:12Z",
+      "side": 1,
+      "message": "it seems incredibly strange to me to attempt to add some random entry to my ldap server.",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+zFw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-19T00:21:12Z",
+      "side": 1,
+      "message": "would it be better to set self.enabled_emulation to False in __init__ if \u0027enabled\u0027 is in self.attribute_ignore?",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
