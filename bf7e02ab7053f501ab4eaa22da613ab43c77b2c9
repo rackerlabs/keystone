@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+xRw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "foreign key to user table here?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xR0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "foreign key to user table here?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xSE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "foreign key to project table here?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xSo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "We have expires here, but not in the model?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xSY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "foreign key to trust table here?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xSM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "foreign key to roles table here?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xRo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "foreign key to trust table here?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xRk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "foreign key to endpoint table here?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xQk\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "This whole block of code is rather ugly. We should just do get_project_roles_for_user() and raise an exception if user have no project roles.",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xQY\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "I wonder if we can monkey patch session and handle the conflicts there instead. Just a thought ...",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xJ4\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "should this be \u0027project_id\u0027 instead?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xIU\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "Should this be \u0027trustee_user_id\u0027?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xH8\u003d",
+        "filename": "keystone/trust/__init__.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "Note from heckj on my v3 token API review. He would like to see specific import instead of *.",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xHE\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "no foreign key constraints?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xG8\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "no foreign key constraints?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xGc\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "What happen when a project is deleted?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xGs\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "What happen if a role definition is deleted? Will DELETE /roles/{role_id} cleanup this table as well?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xGo\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:32:54Z",
+      "side": 1,
+      "message": "What happen when an endpoint is deleted?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
