@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+xZo\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-02-19T16:02:13Z",
+      "side": 1,
+      "message": "You already have an instance of exception.Error in e",
+      "revId": "570234141918e99bb4cb261cbf5feedc9cc2510b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xZY\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-02-19T16:02:13Z",
+      "side": 1,
+      "message": "This should be LOG.exception, shouldn\u0027t it?",
+      "revId": "570234141918e99bb4cb261cbf5feedc9cc2510b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xZU\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-02-19T16:02:13Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "570234141918e99bb4cb261cbf5feedc9cc2510b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
