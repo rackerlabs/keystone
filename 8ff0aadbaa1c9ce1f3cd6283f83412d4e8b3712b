@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+xNw\u003d",
+        "filename": "tools/pip-requires",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-19T17:03:04Z",
+      "side": 1,
+      "message": "this should be \u003e\u003d0.2.1",
+      "revId": "8ff0aadbaa1c9ce1f3cd6283f83412d4e8b3712b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
