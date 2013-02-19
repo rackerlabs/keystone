@@ -161,6 +161,10 @@ class Ec2Controller(controller.V2Controller):
             user_id=user_ref['id'],
             tenant_id=tenant_ref['id'])
 
+        # Validate that the auth info is valid and nothing is disabled
+        auth_info = (user_ref, tenant_ref, metadata_ref)
+        token.validate_auth_info(self, context, auth_info)        
+
         # TODO(termie): optimize this call at some point and put it into the
         #               the return for metadata
         # fill out the roles in the metadata
