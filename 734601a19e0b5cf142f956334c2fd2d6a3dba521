@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+xME\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T17:12:28Z",
+      "side": 1,
+      "message": "Seems like we are duplicating domain checking code, here and in line 78. I wonder if it makes more sense to refactor the domain checking code into a separate method, like\n\nis_doman_enable(self, domain_id)",
+      "revId": "734601a19e0b5cf142f956334c2fd2d6a3dba521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
