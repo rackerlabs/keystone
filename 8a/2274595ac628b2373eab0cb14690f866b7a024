@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Approved+1: Mark McLoughlin <markmc@redhat.com>
+Code-Review+2: Mark McLoughlin <markmc@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 19 Feb 2013 20:08:05 +0000
+Reviewed-on: https://review.openstack.org/22314
+Project: openstack/keystone
+Branch: refs/heads/stable/folsom
