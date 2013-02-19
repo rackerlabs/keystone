@@ -16,6 +16,24 @@
       "revId": "dabd1fe82a5a6bf8b1decf146bd580fbdc3a74d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xaE\u003d",
+        "filename": "tests/test_s3_token_middleware.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-02-19T15:59:28Z",
+      "side": 1,
+      "message": "I actually need a static method in this case or that doesn\u0027t work.\n\nin classmethod it will use S3TokenMiddleareTestGood class (for the self/cls instance variable) instead of from FakeHTTPConnection.\n\nI could as well put it in its own function if that\u0027s too confusing..",
+      "parentUuid": "AAAAM3/+xc4\u003d",
+      "revId": "dabd1fe82a5a6bf8b1decf146bd580fbdc3a74d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
