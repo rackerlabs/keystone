@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+wm0\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-19T20:35:30Z",
+      "side": 1,
+      "message": "either the test for JSON needs to be revised...",
+      "revId": "3d4f6d0e8026d12c9f3d3018a21fcd2a98f2ffee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+wmU\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-19T20:35:30Z",
+      "side": 1,
+      "message": "i imagine that this is *always* \u0027not (s or p)\u0027 considering that user responses do not contain roles",
+      "revId": "3d4f6d0e8026d12c9f3d3018a21fcd2a98f2ffee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+wmk\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 826,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-19T20:35:30Z",
+      "side": 1,
+      "message": "or this method needs to be updated?\n\ni thought had assumed this was testing serialization of roles in the auth response, not in a user response...? roles should *never* be returned as part of a user response",
+      "revId": "3d4f6d0e8026d12c9f3d3018a21fcd2a98f2ffee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
