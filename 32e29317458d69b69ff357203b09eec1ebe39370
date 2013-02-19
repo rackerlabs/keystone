@@ -16,6 +16,24 @@
       "revId": "32e29317458d69b69ff357203b09eec1ebe39370",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+wFk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-19T23:33:28Z",
+      "side": 1,
+      "message": "values here contain only changes in our object, not all its attributes. Return value of update operation is passed to the client by controller and is expected to be full ref, not only changes applied.",
+      "parentUuid": "AAAAM3//DmI\u003d",
+      "revId": "32e29317458d69b69ff357203b09eec1ebe39370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
