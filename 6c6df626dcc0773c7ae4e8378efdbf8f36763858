@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+ynA\u003d",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-19T05:50:37Z",
+      "side": 1,
+      "message": "Need to make this /auth/tokens or you are going to make it impossible to handle non-token auth.  Or, change this to token, I am ok with that as well.",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
