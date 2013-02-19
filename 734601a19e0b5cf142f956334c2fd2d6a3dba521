@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+xD4\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-19T17:59:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+xLo\u003d",
+      "revId": "734601a19e0b5cf142f956334c2fd2d6a3dba521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+xLA\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+xDY\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-19T17:59:13Z",
+      "side": 1,
+      "message": "Done\n\nskipping :returns: since there\u0027s no expected return value",
+      "parentUuid": "AAAAM3/+xLA\u003d",
+      "revId": "734601a19e0b5cf142f956334c2fd2d6a3dba521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+xME\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2013-02-19T17:12:28Z",
       "side": 1,
       "message": "Seems like we are duplicating domain checking code, here and in line 78. I wonder if it makes more sense to refactor the domain checking code into a separate method, like\n\nis_doman_enable(self, domain_id)",
+      "revId": "734601a19e0b5cf142f956334c2fd2d6a3dba521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xBI\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-19T17:59:13Z",
+      "side": 1,
+      "message": "agree, but want to avoid extraneous refactoring in a security fix... trying to keep this as close to a copy/paste of the original code as possible",
+      "parentUuid": "AAAAM3/+xME\u003d",
       "revId": "734601a19e0b5cf142f956334c2fd2d6a3dba521",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
