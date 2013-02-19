@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+xYw\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T16:03:31Z",
+      "side": 1,
+      "message": "See auth.AuthMethodHandler docstring.",
+      "parentUuid": "AAAAM3/+xcE\u003d",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+xb0\u003d",
         "filename": "keystone/auth/methods/token.py",
         "patchSetId": 10
@@ -47,6 +65,24 @@
       "writtenOn": "2013-02-19T15:54:17Z",
       "side": 1,
       "message": "Can you provide more commentary on how this plugin overrides capabilities that were previously found in Driver xxx.\nReally need to make it clear that the plugin is a substitute for previous function that was not as extensible",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xY8\u003d",
+        "filename": "keystone/auth/methods/token.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T16:03:31Z",
+      "side": 1,
+      "message": "See auth.AuthMethodHandler docstring.",
+      "parentUuid": "AAAAM3/+xb0\u003d",
       "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+xcU\u003d",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T16:03:31Z",
+      "side": 1,
+      "message": "I am fine with making it /auth/tokens once the new spec is approved. Don\u0027t want to keep changing it till the spec is settle.",
+      "parentUuid": "AAAAM3/+ynA\u003d",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+yAw\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 10
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+xbU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T16:03:31Z",
+      "side": 1,
+      "message": "This code will be short-live. It is intended to be removed once Adam\u0027s user project membership migration is completed. Hence, a FIXME.",
+      "parentUuid": "AAAAM3/+yAw\u003d",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+yA8\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 10
@@ -98,6 +170,24 @@
       "writtenOn": "2013-02-19T12:47:44Z",
       "side": 1,
       "message": "The len( call is useless here. You can just check if roles is true or not. set() is false.\n\nAlso, can\u0027t this code be in the except branch? That way you can get rid of the roles \u003d set() line, too.",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xas\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T16:03:31Z",
+      "side": 1,
+      "message": "Reason I have it outside of except is that the except statement will go away after the user project membership migration.",
+      "parentUuid": "AAAAM3/+yA8\u003d",
       "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+xao\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T16:03:31Z",
+      "side": 1,
+      "message": "Apparently none of the unit tests failed. :) But yeah, list() make sense.",
+      "parentUuid": "AAAAM3/+yAg\u003d",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+xdg\u003d",
         "filename": "tests/test_auth_plugin.conf",
         "patchSetId": 10
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+xZM\u003d",
+        "filename": "tests/test_auth_plugin.conf",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T16:03:31Z",
+      "side": 1,
+      "message": "They are documented in configuration.rst I think.",
+      "parentUuid": "AAAAM3/+xdg\u003d",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+xms\u003d",
         "filename": "tests/test_auth_plugin.py",
         "patchSetId": 10
@@ -166,6 +292,24 @@
       "writtenOn": "2013-02-19T15:10:53Z",
       "side": 1,
       "message": "These look like they would be better as separate tests.",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xc0\u003d",
+        "filename": "tests/test_auth_plugin.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T16:03:31Z",
+      "side": 1,
+      "message": "This is a test for a multiple step auths. Doing it in a separate test would require the exact same setup steps in the beginning. Not worth the tradeoff.",
+      "parentUuid": "AAAAM3/+xms\u003d",
       "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
