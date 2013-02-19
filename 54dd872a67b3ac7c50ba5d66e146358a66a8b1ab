@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+xkU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 954,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-19T15:26:45Z",
+      "side": 1,
+      "message": "what happened to \"with session.begin()\", was that not correct?",
+      "revId": "54dd872a67b3ac7c50ba5d66e146358a66a8b1ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
