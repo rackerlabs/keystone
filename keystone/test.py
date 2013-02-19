@@ -233,6 +233,13 @@ class TestCase(NoModule, unittest.TestCase):
         # TODO(termie): doing something from json, probably based on Django's
         #               loaddata will be much preferred.
         if hasattr(self, 'identity_api'):
+            for domain in fixtures.DOMAINS:
+                try:
+                    rv = self.identity_api.create_domain(domain['id'], domain)
+                except exception.Conflict:
+                    pass
+                setattr(self, 'domain_%s' % domain['id'], rv)
+
             for tenant in fixtures.TENANTS:
                 rv = self.identity_api.create_project(tenant['id'], tenant)
                 setattr(self, 'tenant_%s' % tenant['id'], rv)
