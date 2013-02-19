@@ -34,6 +34,23 @@
       "revId": "159ffe48e986e524f5930ad41d376bdce2b6a07e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xxw\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-19T14:10:03Z",
+      "side": 1,
+      "message": "OK",
+      "revId": "159ffe48e986e524f5930ad41d376bdce2b6a07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
