@@ -16,6 +16,24 @@
       "revId": "54dd872a67b3ac7c50ba5d66e146358a66a8b1ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xg0\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 954,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-19T15:35:31Z",
+      "side": 1,
+      "message": "Dolph mentioned that there isn\u0027t a need for it for a single query.  Not that familiar with it myself but in the current file i found session.begin both used and not used in the scenario.",
+      "parentUuid": "AAAAM3/+xkU\u003d",
+      "revId": "54dd872a67b3ac7c50ba5d66e146358a66a8b1ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
