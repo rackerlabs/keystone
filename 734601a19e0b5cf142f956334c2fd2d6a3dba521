@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+xLo\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-19T17:15:08Z",
+      "side": 1,
+      "message": "why accept metadata_ref if you do nothing with it here?",
+      "revId": "734601a19e0b5cf142f956334c2fd2d6a3dba521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xLA\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-02-19T17:15:08Z",
+      "side": 1,
+      "message": "since this is one of the \"core\" API pieces, we should be explicit about what this method (and it\u0027s drivers) should be doing - pls. add docstrings to add in :params:, :returns:, and :raises: with expectations",
+      "revId": "734601a19e0b5cf142f956334c2fd2d6a3dba521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+xME\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 2
