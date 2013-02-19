@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+wGs\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1651,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-19T23:34:39Z",
+      "side": 1,
+      "message": "As long as SQL backend tries to satisfy some \"broken implementation\", we should allow it to do that. But right here if \u0027extra\u0027 field exists, it should be empty by the exact reason you wrote - no unexpected values were passed in.\nSo I think, it should stay.",
+      "parentUuid": "AAAAM3/+wKI\u003d",
+      "revId": "e6fba2273e9ba041758dbdaed4e743338cacd793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+wKY\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2013-02-19T23:16:38Z",
       "side": 1,
       "message": "i think you found a bug, this condition should not be valid. the returned user_ref should not have password in it.  see identity.filter_user in backend -- that should pop off the password.",
+      "revId": "e6fba2273e9ba041758dbdaed4e743338cacd793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+wGg\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1694,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-19T23:34:39Z",
+      "side": 1,
+      "message": "Both KVS and LDAP backends return password field here. I guess, it\u0027s because noone filters result of update methods. I\u0027m not sure if we should force absence of this field here. I guess, it\u0027s a theme for some other patch.",
+      "parentUuid": "AAAAM3/+wKk\u003d",
       "revId": "e6fba2273e9ba041758dbdaed4e743338cacd793",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
