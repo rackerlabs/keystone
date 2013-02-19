@@ -16,6 +16,24 @@
       "revId": "159ffe48e986e524f5930ad41d376bdce2b6a07e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+ySs\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 2340
+      },
+      "writtenOn": "2013-02-19T09:14:43Z",
+      "side": 1,
+      "message": "I\u0027d like to keep the default to \u0027one\u0027 because this is the current behaviour of keystone. You can see the hardcoded default ONELEVEL scope in the diff to core.py.",
+      "parentUuid": "AAAAM3/+zuM\u003d",
+      "revId": "159ffe48e986e524f5930ad41d376bdce2b6a07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
