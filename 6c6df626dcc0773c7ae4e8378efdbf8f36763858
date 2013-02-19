@@ -124,6 +124,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+w8E\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-19T18:20:54Z",
+      "side": 1,
+      "message": "from a mailing list discussion... how impactful would it be to change these two register_str to register_list, and then iterate through the defined drivers until a driver authenticates successfully or they all fail? in the base case we would only have 1 driver\n\nthe goal being to allow deployments to use our builtin password auth, but then write their own password driver that keystone should fall back on if, say, keystone isn\u0027t already aware of a user from an external system",
+      "revId": "6c6df626dcc0773c7ae4e8378efdbf8f36763858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+yAw\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 10
