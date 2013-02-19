@@ -33,6 +33,23 @@
       "revId": "2823e852c387292387ce35087af92491ac11b472",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+wg8\u003d",
+        "filename": "tools/pip-requires",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-19T21:00:33Z",
+      "side": 1,
+      "message": "-1",
+      "revId": "2823e852c387292387ce35087af92491ac11b472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
