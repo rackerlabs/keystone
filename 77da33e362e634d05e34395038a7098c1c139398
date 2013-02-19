@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+wNc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-19T22:47:34Z",
+      "side": 1,
+      "message": "For v3 tokens, roles are directly under root container. They are no longer in user container.",
+      "revId": "77da33e362e634d05e34395038a7098c1c139398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
