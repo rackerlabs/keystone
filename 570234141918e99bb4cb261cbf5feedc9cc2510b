@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+xX4\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-02-19T16:09:11Z",
+      "side": 1,
+      "message": "I am really not sure how this came back here when it should have been removed earlier, thanks for spotting.",
+      "parentUuid": "AAAAM3/+xZo\u003d",
+      "revId": "570234141918e99bb4cb261cbf5feedc9cc2510b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+xZY\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2013-02-19T16:02:13Z",
       "side": 1,
       "message": "Same as above.",
+      "revId": "570234141918e99bb4cb261cbf5feedc9cc2510b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+xXk\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-02-19T16:09:11Z",
+      "side": 1,
+      "message": "I think that\u0027s another patch?, I am not sure what the policy on keystone for side fixes.",
+      "parentUuid": "AAAAM3/+xZU\u003d",
       "revId": "570234141918e99bb4cb261cbf5feedc9cc2510b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
