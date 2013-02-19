@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+w7U\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-19T21:48:50Z",
+      "side": 1,
+      "message": "Nope, as ID might be in a different back end",
+      "parentUuid": "AAAAM3/+xRw\u003d",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+xR0\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
         "patchSetId": 14
@@ -64,6 +82,24 @@
       "writtenOn": "2013-02-19T17:32:54Z",
       "side": 1,
       "message": "We have expires here, but not in the model?",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+w7M\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-19T21:48:50Z",
+      "side": 1,
+      "message": "updated the model",
+      "parentUuid": "AAAAM3/+xSo\u003d",
       "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +191,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+wY4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-19T21:48:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+xQk\u003d",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+xQY\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 14
@@ -189,6 +243,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+w60\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-19T21:48:50Z",
+      "side": 1,
+      "message": "Eventually, but changing tenant to project can potentiall break the v2 apis, so I had to use the old term.",
+      "parentUuid": "AAAAM3/+xJ4\u003d",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+xIU\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 14
@@ -206,6 +278,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+w6s\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-19T21:48:50Z",
+      "side": 1,
+      "message": "Yes. Actually, it should be checking for trust.  Will change.",
+      "parentUuid": "AAAAM3/+xIU\u003d",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+xH8\u003d",
         "filename": "keystone/trust/__init__.py",
         "patchSetId": 14
@@ -217,6 +307,24 @@
       "writtenOn": "2013-02-19T17:32:54Z",
       "side": 1,
       "message": "Note from heckj on my v3 token API review. He would like to see specific import instead of *.",
+      "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+wag\u003d",
+        "filename": "keystone/trust/__init__.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-19T21:48:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+xH8\u003d",
       "revId": "bf7e02ab7053f501ab4eaa22da613ab43c77b2c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
