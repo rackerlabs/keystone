@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+zDY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-19T01:00:43Z",
+      "side": 1,
+      "message": "suggest **kwargs to match python convention.\n\nalso, pep8 naming convention\nhttp://www.python.org/dev/peps/pep-0008/#function-names",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+zBI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-19T01:00:43Z",
+      "side": 1,
+      "message": "there\u0027s a lot of common code between protected and filterprotected. Is protected just a filterprotected with an empty filters?",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+z/8\u003d",
         "filename": "keystone/policy/controllers.py",
         "patchSetId": 4
