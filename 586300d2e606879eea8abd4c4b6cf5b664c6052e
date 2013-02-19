@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+yLo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-19T10:45:25Z",
+      "side": 1,
+      "message": "so **kwargs does seem to work here....and could you be more specific about the name convention that this clashes with?",
+      "parentUuid": "AAAAM3/+zDY\u003d",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+zBI\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-19T01:00:43Z",
       "side": 1,
       "message": "there\u0027s a lot of common code between protected and filterprotected. Is protected just a filterprotected with an empty filters?",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+yL8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-19T10:45:25Z",
+      "side": 1,
+      "message": "Yes, true, but I struggled to get the parameter passing to work correctly with just one decorator (or two consecutive ones)",
+      "parentUuid": "AAAAM3/+zBI\u003d",
       "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+yME\u003d",
+        "filename": "keystone/policy/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-19T10:45:25Z",
+      "side": 1,
+      "message": "That was my first thought too...but I struggled to get the second decorator to work correctly in terms of whether filters were set or not...",
+      "parentUuid": "AAAAM3/+z/8\u003d",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+0Ag\u003d",
         "filename": "keystone/policy/controllers.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2013-02-18T18:59:51Z",
       "side": 1,
       "message": "HACKING- filter is a reserved word\n\nthis would also be appropriate to do in wrap_collection -- it\u0027s one of the reasons why i passed context to it",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+yNE\u003d",
+        "filename": "keystone/policy/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-19T10:45:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+0Ag\u003d",
       "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+ySA\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-19T10:45:25Z",
+      "side": 1,
+      "message": "Done (was hang-over from when I was thinking of only specify the auth required on set up, rather than on each call)",
+      "parentUuid": "AAAAM3/+0Bs\u003d",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+0BY\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2013-02-18T18:59:51Z",
       "side": 1,
       "message": "get_project_token? it\u0027s hardcoded with admin_token today, but should be performing v3 auth to get a project scoped token to test with... get_domain_token() should be another new call when we get there",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+yR8\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-19T10:45:25Z",
+      "side": 1,
+      "message": "Renamed, and we\u0027ll come back and fix this later",
+      "parentUuid": "AAAAM3/+0BY\u003d",
       "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+yR4\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-19T10:45:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+0A8\u003d",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+0DU\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 4
@@ -132,6 +258,24 @@
       "writtenOn": "2013-02-18T18:59:51Z",
       "side": 1,
       "message": "nose import goes in a second group, between stdlib and keystone",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+yTU\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-19T10:45:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+0DU\u003d",
       "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+yTQ\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-19T10:45:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+0DM\u003d",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+0DA\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 4
@@ -166,6 +328,24 @@
       "writtenOn": "2013-02-18T18:59:51Z",
       "side": 1,
       "message": "fix docstr example",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+ySE\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-19T10:45:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+0DA\u003d",
       "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+ySI\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-19T10:45:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+0Ck\u003d",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+0Cw\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 4
@@ -200,6 +398,24 @@
       "writtenOn": "2013-02-18T18:59:51Z",
       "side": 1,
       "message": "remove print",
+      "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+ySM\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-19T10:45:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+0Cw\u003d",
       "revId": "586300d2e606879eea8abd4c4b6cf5b664c6052e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
