@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+wKI\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1651,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-19T23:16:38Z",
+      "side": 1,
+      "message": "i\u0027m torn whether this assertion should be included or not.  it\u0027s difficult to see when this will ever fail given the scenario. extra is only populated if values are passed in that aren\u0027t in the Project table... id, name, domain_id are all attributes in the table.  i would probably drop it since it\u0027s sql specific but i\u0027m ok with keeping it as well.",
+      "revId": "e6fba2273e9ba041758dbdaed4e743338cacd793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+wKY\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1689,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-19T23:16:38Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "e6fba2273e9ba041758dbdaed4e743338cacd793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+wKk\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1694,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-19T23:16:38Z",
+      "side": 1,
+      "message": "i think you found a bug, this condition should not be valid. the returned user_ref should not have password in it.  see identity.filter_user in backend -- that should pop off the password.",
+      "revId": "e6fba2273e9ba041758dbdaed4e743338cacd793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
