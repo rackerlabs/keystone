@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+wc0\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-19T21:30:11Z",
+      "side": 1,
+      "message": "should return on group update as well",
+      "revId": "8a21da35d598526e9059bfa9b382a509b2b7e3ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+weU\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1631,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-19T21:30:11Z",
+      "side": 1,
+      "message": "should check for return value here as well",
+      "revId": "8a21da35d598526e9059bfa9b382a509b2b7e3ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+wdw\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1665,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-19T21:30:11Z",
+      "side": 1,
+      "message": "should check for return value here as well",
+      "revId": "8a21da35d598526e9059bfa9b382a509b2b7e3ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+wds\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1684,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-19T21:30:11Z",
+      "side": 1,
+      "message": "should check for return value here as well",
+      "revId": "8a21da35d598526e9059bfa9b382a509b2b7e3ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
