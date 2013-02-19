@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+ylQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-19T08:08:32Z",
+      "side": 1,
+      "message": "I believe, most users should be satisfied with default DN choice. This way we allow user to just flip the switch and try it on without selecting another DN. We have the same setup for dumb member.",
+      "parentUuid": "AAAAM3/+zL0\u003d",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+zHs\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-19T00:21:12Z",
       "side": 1,
       "message": "safer to escape options_name so that it\u0027s valid for a DN.",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+yiY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-19T08:08:32Z",
+      "side": 1,
+      "message": "options_name is provided by developer not by user, so considered safe. It\u0027s never been escaped (see BaseLdap.__init__).",
+      "parentUuid": "AAAAM3/+zHs\u003d",
       "revId": "e78d557fb069f916ff006f49993c31965222882f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+yh0\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-19T08:08:32Z",
+      "side": 1,
+      "message": "DN is already properly escaped by _id_to_dn.",
+      "parentUuid": "AAAAM3/+zIA\u003d",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+zIM\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2013-02-19T00:21:12Z",
       "side": 1,
       "message": "change this to request no attributes (1.1), for efficiency.",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+yhc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-19T08:08:32Z",
+      "side": 1,
+      "message": "Premature optimization is the root of all evil. We never used attribute list limitation.",
+      "parentUuid": "AAAAM3/+zIM\u003d",
       "revId": "e78d557fb069f916ff006f49993c31965222882f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+yhU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-19T08:08:32Z",
+      "side": 1,
+      "message": "Yes, and it\u0027s not considered as misconfiguration. If we never created this entry means we never enabled any objects.",
+      "parentUuid": "AAAAM3/+zLE\u003d",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+zKc\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2013-02-19T00:21:12Z",
       "side": 1,
       "message": "suggest remove this line.",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+yhM\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-19T08:08:32Z",
+      "side": 1,
+      "message": "Makes control flow clear.\n\n    if smth:\n        return one\n    else:\n        return two\n\nis better than\n\n    if smth:\n        return one\n    return two",
+      "parentUuid": "AAAAM3/+zKc\u003d",
       "revId": "e78d557fb069f916ff006f49993c31965222882f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+yg8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-19T08:08:32Z",
+      "side": 1,
+      "message": "enabled_value is a list of pairs describing LDAP objects. We don\u0027t need to return it, we need only simple boolean value.",
+      "parentUuid": "AAAAM3/+zKM\u003d",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+zGM\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+yg0\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-19T08:08:32Z",
+      "side": 1,
+      "message": "It\u0027s not random and it won\u0027t be created unless you ask for enabled attribute emulation and don\u0027t create it by hand.",
+      "parentUuid": "AAAAM3/+zGM\u003d",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+zFw\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -149,6 +293,24 @@
       "writtenOn": "2013-02-19T00:21:12Z",
       "side": 1,
       "message": "would it be better to set self.enabled_emulation to False in __init__ if \u0027enabled\u0027 is in self.attribute_ignore?",
+      "revId": "e78d557fb069f916ff006f49993c31965222882f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+ygw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-19T08:08:32Z",
+      "side": 1,
+      "message": "Unfortunately, attribute_ignore is filled by leaf class after all parent initialization is finished, so we can\u0027t catch it there.",
+      "parentUuid": "AAAAM3/+zFw\u003d",
       "revId": "e78d557fb069f916ff006f49993c31965222882f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
