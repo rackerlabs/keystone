@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+t1k\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-20T20:54:39Z",
+      "side": 1,
+      "message": "I think SCOPE_BASE should be ruled out here.",
+      "revId": "f706ecacf4311104b0d0dc59c34ea598f2c86868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
