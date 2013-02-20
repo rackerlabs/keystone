@@ -86,6 +86,24 @@
       "revId": "e6fba2273e9ba041758dbdaed4e743338cacd793",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uyI\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1694,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-20T15:25:27Z",
+      "side": 1,
+      "message": "i see, must be get_user that filters out correctly.",
+      "parentUuid": "AAAAM3/+wGg\u003d",
+      "revId": "e6fba2273e9ba041758dbdaed4e743338cacd793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
