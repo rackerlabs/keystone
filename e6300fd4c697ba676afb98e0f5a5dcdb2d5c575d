@@ -37,6 +37,57 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+uKw\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T18:48:21Z",
+      "side": 1,
+      "message": "authentication should not be optional\n\nif it\u0027s not provided, the keystone.common.wsgi.Application will raise a 400",
+      "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uKc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T18:48:21Z",
+      "side": 1,
+      "message": "authentication is not optional",
+      "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uKU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T18:48:21Z",
+      "side": 1,
+      "message": "the framework just unpacked this value... why are you repacking it?",
+      "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+uS4\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 21
