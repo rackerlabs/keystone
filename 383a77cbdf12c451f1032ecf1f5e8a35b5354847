@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+uqw\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-20T16:02:15Z",
+      "side": 1,
+      "message": "user_id has to come from plugins. There are forms of authentication where the user_id is encrypted/obfuscated and has to be resolved at the plugin level.",
+      "parentUuid": "AAAAM3/+uwE\u003d",
+      "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+u2s\u003d",
         "filename": "keystone/auth/methods/password.py",
         "patchSetId": 17
@@ -64,6 +82,24 @@
       "writtenOn": "2013-02-20T14:00:18Z",
       "side": 1,
       "message": "i still find conditionally modifying the user context to be incredibly confusing. don\u0027t pass in user_context and instead expect the plugin to return a user_id as a string",
+      "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uqo\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-20T16:02:15Z",
+      "side": 1,
+      "message": "All the plugin\u0027s must agreed on the same user_id or authentication is considered unsuccessful. Besides, auth_context is used to carry other information such as \"extras\" and \"methods\" as well.",
+      "parentUuid": "AAAAM3/+u2s\u003d",
       "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
