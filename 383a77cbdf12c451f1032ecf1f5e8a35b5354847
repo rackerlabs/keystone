@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+u28\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-20T14:00:27Z",
+      "side": 1,
+      "message": "typo  \"must be succeeded\"  should be \"must suceed\"",
+      "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+u20\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-20T14:00:27Z",
+      "side": 1,
+      "message": "typo agreed should be agree",
+      "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+u2s\u003d",
         "filename": "keystone/auth/methods/password.py",
         "patchSetId": 17
