@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+uU4\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T18:05:33Z",
+      "side": 1,
+      "message": "my fix for this was to keep the test as is, but create a domain within the test to disable... and then use the original (now failing) test to assert that you can\u0027t login if your domain is disabled :)",
+      "revId": "466157fb553580f59f15893642bbae573257b7c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uU0\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T18:05:33Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "466157fb553580f59f15893642bbae573257b7c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
