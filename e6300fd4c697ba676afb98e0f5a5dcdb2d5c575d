@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+uQM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T18:29:12Z",
+      "side": 1,
+      "message": "it\u0027s not in the spec, i\u0027ve never seen it documented and it doesn\u0027t look like you\u0027re using it here either",
+      "parentUuid": "AAAAM3/+uQU\u003d",
+      "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+uRs\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 21
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "an authentication is consider successful if all methods are succeeded. If one or more methods need continuation, then return a 401 with the information needed for the next authentication step.\n\nSay we have three methods: password, rsa, challenge-response\n\npassword succeeded, but rsa needs next token code and challenge-response issue a challenge, we would raise an AdditionalAuthRequired exception with the payload from rsa and challenge-response.",
       "parentUuid": "AAAAM3/+uRs\u003d",
+      "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uPA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T18:29:12Z",
+      "side": 1,
+      "message": "i don\u0027t understand how the condition in the \u0027if\u0027 statement is capable of making that determination? I think I would expect the plugin to raise AdditonalAuthRequired and this code to allow that to bubble back to the API?",
+      "parentUuid": "AAAAM3/+uQc\u003d",
       "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
