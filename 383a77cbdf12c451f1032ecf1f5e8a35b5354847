@@ -124,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+umE\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-20T16:27:43Z",
+      "side": 1,
+      "message": "user_id has to come from the plugin. As mentioned above, for some forms of authentication, user_id is encrypted/obfuscated and has to resolved at the plugin level.",
+      "parentUuid": "AAAAM3/+uoE\u003d",
+      "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+vcY\u003d",
         "filename": "keystone/openstack/common/policy.py",
         "patchSetId": 17
