@@ -159,6 +159,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+uJk\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T18:51:33Z",
+      "side": 1,
+      "message": "remote_user should provide a user_id, not a user name\n\nif it\u0027s going to a provide a username, then we have to assume default domain",
+      "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uJU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T18:51:33Z",
+      "side": 1,
+      "message": "i don\u0027t quite understand why REMOTE_USER requires a password plugin, and the error message doesn\u0027t really indicate what\u0027s wrong -- this should almost be an 500 exception.UnexpectedError, not a 401",
+      "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+uRs\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 21
