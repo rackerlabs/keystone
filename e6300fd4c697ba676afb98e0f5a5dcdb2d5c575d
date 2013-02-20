@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+uME\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-20T18:41:17Z",
+      "side": 1,
+      "message": "Good catch!",
+      "parentUuid": "AAAAM3/+uRQ\u003d",
+      "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+uS4\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 21
@@ -137,6 +155,24 @@
       "side": 1,
       "message": "i don\u0027t understand how the condition in the \u0027if\u0027 statement is capable of making that determination? I think I would expect the plugin to raise AdditonalAuthRequired and this code to allow that to bubble back to the API?",
       "parentUuid": "AAAAM3/+uQc\u003d",
+      "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uMI\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-20T18:41:17Z",
+      "side": 1,
+      "message": "We need to aggregate all the continuation responses. I\u0027ve documented the expected behavior in both configuration.rst and the AuthPluginHander interface.",
+      "parentUuid": "AAAAM3/+uPA\u003d",
       "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
