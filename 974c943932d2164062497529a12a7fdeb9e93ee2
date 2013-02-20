@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+uEg\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T19:27:56Z",
+      "side": 1,
+      "message": "an unscoped token shouldn\u0027t have a roles element\n\n  self.assertNotIn(\u0027roles\u0027, token)",
+      "revId": "974c943932d2164062497529a12a7fdeb9e93ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uEY\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T19:27:56Z",
+      "side": 1,
+      "message": "also test for user name\n\nunscoped tokens should also have an \u0027expires\u0027 attribute",
+      "revId": "974c943932d2164062497529a12a7fdeb9e93ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uEE\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T19:27:56Z",
+      "side": 1,
+      "message": "assertTrue(token[\u0027roles\u0027])\n\nand then iterates the roles and make sure they all have an id and name",
+      "revId": "974c943932d2164062497529a12a7fdeb9e93ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uD8\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T19:27:56Z",
+      "side": 1,
+      "message": "check for a name",
+      "revId": "974c943932d2164062497529a12a7fdeb9e93ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uDs\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T19:27:56Z",
+      "side": 1,
+      "message": "also need to test for a catalog, which i haven\u0027t seen any tests producing, and methods\n\nalso need to test the structure of included project and domain element, so i would suggest creating assertProjectScopedToken and assertDomainScopedToken methods that call this one for things in common",
+      "revId": "974c943932d2164062497529a12a7fdeb9e93ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uDU\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T19:27:56Z",
+      "side": 1,
+      "message": "please don\u0027t suppress test failures",
+      "revId": "974c943932d2164062497529a12a7fdeb9e93ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
