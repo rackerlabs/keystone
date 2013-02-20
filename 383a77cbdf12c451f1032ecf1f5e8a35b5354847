@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+uwE\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-20T14:59:29Z",
+      "side": 1,
+      "message": "I would see applying the plug in as a chain of responsibility.  Each plug in should get a definitive swipe at it, and, if it cannot answer a firm \"the user is \u003cusername\u003e\"  it passes it on.  Thus, you shouldn\u0027t be checking to see if the user_id is in the user_context, but rather should be only using the user_id you are passed in the user_info.  If the user_id is in the context already, something should have put it there, and that something should have terminated the chain.",
+      "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+u2s\u003d",
         "filename": "keystone/auth/methods/password.py",
         "patchSetId": 17
@@ -47,6 +64,23 @@
       "writtenOn": "2013-02-20T14:00:18Z",
       "side": 1,
       "message": "i still find conditionally modifying the user context to be incredibly confusing. don\u0027t pass in user_context and instead expect the plugin to return a user_id as a string",
+      "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+vcY\u003d",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-20T14:59:29Z",
+      "side": 1,
+      "message": "Is this just the file out of common?  I thought we already had a copy.",
       "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
