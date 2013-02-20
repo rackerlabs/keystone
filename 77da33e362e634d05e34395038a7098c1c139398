@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+ugY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-20T17:14:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+w7c\u003d",
+      "revId": "77da33e362e634d05e34395038a7098c1c139398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+wNc\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-19T22:47:34Z",
       "side": 1,
       "message": "For v3 tokens, roles are directly under root container. They are no longer in user container.",
+      "revId": "77da33e362e634d05e34395038a7098c1c139398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+ugU\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-20T17:14:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+wNc\u003d",
       "revId": "77da33e362e634d05e34395038a7098c1c139398",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+ugQ\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-20T17:14:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+uvw\u003d",
+      "revId": "77da33e362e634d05e34395038a7098c1c139398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+uwA\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 5
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+ugM\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-20T17:14:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+uwA\u003d",
+      "revId": "77da33e362e634d05e34395038a7098c1c139398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+uvc\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 5
@@ -81,6 +153,24 @@
       "writtenOn": "2013-02-20T15:04:22Z",
       "side": 1,
       "message": "i\u0027d rather see token\u003dNone as part of the v3_request signature, and then have:\n\n  token \u003d token or self.get_project_token() when calling admin_request\n\neither way you don\u0027t need to modify any of the calls below to pass auth... those methods pass kwargs they don\u0027t understand straight through",
+      "revId": "77da33e362e634d05e34395038a7098c1c139398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+ugI\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-20T17:14:10Z",
+      "side": 1,
+      "message": "simplified.",
+      "parentUuid": "AAAAM3/+uvc\u003d",
       "revId": "77da33e362e634d05e34395038a7098c1c139398",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
