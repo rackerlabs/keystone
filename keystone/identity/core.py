@@ -102,12 +102,20 @@ class Driver(object):
         raise exception.NotImplemented()
 
     def add_user_to_project(self, tenant_id, user_id):
-            """Add user to a tenant by creating a default role relationship.
+        """Add user to a tenant by creating a default role relationship.
 
-            :raises: keystone.exception.ProjectNotFound,
-                     keystone.exception.UserNotFound
+        :raises: keystone.exception.ProjectNotFound,
+                 keystone.exception.UserNotFound
 
-            """
+        """
+        try:
+            self.add_role_to_user_and_project(user_id,
+                                              tenant_id,
+                                              config.CONF.member_role_id)
+        except exception.RoleNotFound:
+            self.create_role(config.CONF.member_role_id,
+                             {'id': config.CONF.member_role_id,
+                              'name': config.CONF.member_role_name})
             self.add_role_to_user_and_project(user_id,
                                               tenant_id,
                                               config.CONF.member_role_id)
