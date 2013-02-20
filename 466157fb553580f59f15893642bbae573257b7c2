@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+uT0\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T18:13:24Z",
+      "side": 1,
+      "message": "managing this should be the responsibility of the plugin\u0027s caller, instead:\n\n  return user_info.user_id",
+      "revId": "466157fb553580f59f15893642bbae573257b7c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+uU4\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 20
