@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+uS4\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T18:20:44Z",
+      "side": 1,
+      "message": "remove extras",
+      "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uRs\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T18:20:44Z",
+      "side": 1,
+      "message": "help me understand this check... if at least one auth method succeeded... raise an exception that you need more?",
+      "revId": "e6300fd4c697ba676afb98e0f5a5dcdb2d5c575d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
