@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+vYI\u003d",
+        "filename": "tests/test_v3_trust.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-20T06:07:39Z",
+      "side": 1,
+      "message": "These will need to be /v3 after the token APIs landed.",
+      "revId": "f690941a4fe85d8d6d8066b13a32ef426e09d035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+vWk\u003d",
+        "filename": "tests/test_v3_trust.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-20T06:07:39Z",
+      "side": 1,
+      "message": "just use self.identity_api.create_domain().",
+      "revId": "f690941a4fe85d8d6d8066b13a32ef426e09d035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
