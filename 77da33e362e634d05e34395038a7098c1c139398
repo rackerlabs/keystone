@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+w7c\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T15:04:22Z",
+      "side": 1,
+      "message": "pep8 on naming convention\n\n  def _build_policy_check_credentials",
+      "revId": "77da33e362e634d05e34395038a7098c1c139398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+wNc\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 5
@@ -13,6 +30,57 @@
       "writtenOn": "2013-02-19T22:47:34Z",
       "side": 1,
       "message": "For v3 tokens, roles are directly under root container. They are no longer in user container.",
+      "revId": "77da33e362e634d05e34395038a7098c1c139398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uvw\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T15:04:22Z",
+      "side": 1,
+      "message": "this is the only change in this file that makes sense to me -- the rest look like they can be reverted after rebasing on a newer version of gyee\u0027s patch\n\nalthough since this will also return a real token with the admin role in gyee\u0027s patch, perhaps get_admin_token() would be even more appropriate",
+      "revId": "77da33e362e634d05e34395038a7098c1c139398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uwA\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T15:04:22Z",
+      "side": 1,
+      "message": "then remove it, can\u0027t merge like this",
+      "revId": "77da33e362e634d05e34395038a7098c1c139398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+uvc\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T15:04:22Z",
+      "side": 1,
+      "message": "i\u0027d rather see token\u003dNone as part of the v3_request signature, and then have:\n\n  token \u003d token or self.get_project_token() when calling admin_request\n\neither way you don\u0027t need to modify any of the calls below to pass auth... those methods pass kwargs they don\u0027t understand straight through",
       "revId": "77da33e362e634d05e34395038a7098c1c139398",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
