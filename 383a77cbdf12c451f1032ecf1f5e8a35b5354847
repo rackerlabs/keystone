@@ -106,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+uoE\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T16:18:39Z",
+      "side": 1,
+      "message": "it should be outside of the plugin\u0027s scope of responsibility to enforce that logic",
+      "parentUuid": "AAAAM3/+uqo\u003d",
+      "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+vcY\u003d",
         "filename": "keystone/openstack/common/policy.py",
         "patchSetId": 17
