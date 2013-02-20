@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+u2s\u003d",
+        "filename": "keystone/auth/methods/password.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T14:00:18Z",
+      "side": 1,
+      "message": "i still find conditionally modifying the user context to be incredibly confusing. don\u0027t pass in user_context and instead expect the plugin to return a user_id as a string",
+      "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+u3E\u003d",
+        "filename": "tests/policy.json",
+        "patchSetId": 17
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T14:00:18Z",
+      "side": 1,
+      "message": "delete this entire file\n\nin keystone.test.TestCase.setUp, add\n\n  self.opt(policy_file\u003detcdir(\u0027policy.json\u0027))\n\nand get this for free",
+      "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+u3U\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T14:00:18Z",
+      "side": 1,
+      "message": "those fixtures add a huge amount of completely unnecessary overhead to these tests\n\nmove the domain, project, user, role and role grant from keystone_identity to the end of this setup method, and override the role name with \u0027admin\u0027 and then self.user with be admin across all v3 tests\n\nleave groups and credentials in the identity setup method\n\nalso still include the role_keystone_admin -\u003e role_admin changes as their more representative of what our use case anyway",
+      "revId": "383a77cbdf12c451f1032ecf1f5e8a35b5354847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
