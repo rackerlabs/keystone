@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+uqg\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-20T16:01:59Z",
+      "side": 1,
+      "message": "Should not all these calls be \"protected\" ?",
+      "revId": "d8e1dae33b8bde4e1c0e480fc60f17aec5523163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
