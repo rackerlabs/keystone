@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+uV4\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-20T17:58:59Z",
+      "side": 1,
+      "message": "you\u0027re not doing anything with filtered_roles here",
+      "revId": "54a95902e2348c56ba85a9070a605a8681996226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
