@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+r9w\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-21T17:19:46Z",
+      "side": 1,
+      "message": "This is done by the register_str(\u0027query_scope\u0027, group\u003d\u0027ldap\u0027, default\u003d\u0027one\u0027)\nconfig option.  This code could stand to be refactored, bt it is the simplest way to unbreak it.",
+      "parentUuid": "AAAAM3/+sAs\u003d",
+      "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+sB4\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+r9Y\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-21T17:19:46Z",
+      "side": 1,
+      "message": "Yes, but not in this commit.  Just trying to fix the brokeness.",
+      "parentUuid": "AAAAM3/+sB4\u003d",
+      "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+sCQ\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-02-21T16:38:38Z",
       "side": 1,
       "message": "This exception cannot be raised. It\u0027s guarded by\n\n    if search_result:",
+      "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+r9U\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-21T17:19:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+sCQ\u003d",
       "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2013-02-21T16:49:06Z",
       "side": 1,
       "message": "Would be good to have a comment to explain why these are commented out and not just removed",
+      "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+r7I\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-21T17:19:46Z",
+      "side": 1,
+      "message": "Ah, right...will remove",
+      "parentUuid": "AAAAM3/+sBQ\u003d",
       "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
