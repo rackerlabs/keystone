@@ -356,6 +356,69 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
             'Invalid LDAP scope: %s. *' % CONF.ldap.query_scope,
             identity_ldap.Identity)
 
+    def test_migrate_project_members(self):
+        key_tmpl = 'ldap:%s,ou=%s,' + CONF.ldap.suffix
+        db = fakeldap.FakeShelve.get_instance()
+        db.clear()
+        db.update({
+            key_tmpl % ('cn=tenant1', 'Groups'): {
+                'objectClass': ['groupOfNames'],
+                'cn': ['tenant1'],
+                'ou': ['tenant1'],
+                'member': ['cn=user1,ou=Users,dc=example,dc=com'],
+            },
+            key_tmpl % ('cn=user1', 'Users'): {
+                'objectClass': ['inetOrgPerson'],
+                'cn': ['user1'],
+            },
+        })
+        self.identity_api = identity_ldap.Identity()
+        self.identity_api._migrate_project_members_to_member_role()
+        roles = self.identity_api.get_roles_for_user_and_project('user1',
+                                                                 'tenant1')
+        self.assertEquals([CONF.member_role_id], roles)
+        self.assertEquals([],
+                          db[key_tmpl % ('cn=tenant1', 'Groups')]['member'])
+
+    def test_migrate_project_members_halfway(self):
+        role_id = CONF.member_role_id
+        key_tmpl = 'ldap:%s,ou=%s,' + CONF.ldap.suffix
+        db = fakeldap.FakeShelve.get_instance()
+        db.clear()
+        db.update({
+            key_tmpl % ('cn=' + role_id, 'Roles'): {
+                'objectClass': ['organizationalRole'],
+                'ou': [CONF.member_role_name],
+            },
+            key_tmpl % ('cn=' + role_id + ',cn=tenant1', 'Groups'): {
+                'objectClass': ['organizationalRole'],
+                'ou': [CONF.member_role_name],
+                'roleOccupant': ['cn=user1,ou=Users,dc=example,dc=com'],
+            },
+            key_tmpl % ('cn=tenant1', 'Groups'): {
+                'objectClass': ['groupOfNames'],
+                'cn': ['tenant1'],
+                'ou': ['tenant1'],
+                'member': ['cn=user1,ou=Users,dc=example,dc=com',
+                           'cn=user2,ou=Users,dc=example,dc=com'],
+            },
+            key_tmpl % ('cn=user1', 'Users'): {
+                'objectClass': ['inetOrgPerson'],
+                'cn': ['user1'],
+            },
+            key_tmpl % ('cn=user2', 'Users'): {
+                'objectClass': ['inetOrgPerson'],
+                'cn': ['user2'],
+            },
+        })
+        self.identity_api = identity_ldap.Identity()
+        self.identity_api._migrate_project_members_to_member_role()
+        roles = self.identity_api.get_roles_for_user_and_project('user2',
+                                                                 'tenant1')
+        self.assertEquals([role_id], roles)
+        self.assertEquals([],
+                          db[key_tmpl % ('cn=tenant1', 'Groups')]['member'])
+
 # TODO (henry-nash) These need to be removed when the full LDAP implementation
 # is submitted - see Bugs 1092187, 1101287, 1101276, 1101289
     def test_group_crud(self):

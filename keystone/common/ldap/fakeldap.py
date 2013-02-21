@@ -264,7 +264,7 @@ class FakeLdap(object):
                 else:
                     if not isinstance(v, list):
                         v = [v]
-                    for val in v:
+                    for val in list(v):
                         try:
                             values.remove(val)
                         except ValueError:
