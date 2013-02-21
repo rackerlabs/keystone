@@ -359,7 +359,21 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
 # TODO (henry-nash) These need to be removed when the full LDAP implementation
 # is submitted - see Bugs 1092187, 1101287, 1101276, 1101289
     def test_group_crud(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
+        group = {'id': uuid.uuid4().hex, 'domain_id': uuid.uuid4().hex,
+                 'name': uuid.uuid4().hex}
+        #group = {'id': 'testgroup1', 'domain_id': '',
+                  #'name': 'testGroup1'}
+        self.identity_api.create_group(group['id'], group)
+        group_ref = self.identity_api.get_group(group['id'])
+        self.assertDictEqual(group_ref, group)
+        
+        self.identity_api.update_group(group['id'], group)
+        group_ref = self.identity_api.get_group(group['id'])
+        self.assertDictEqual(group_ref, group)
+
+        self.identity_api.delete_group(group['id'])
+        self.assertRaises(exception.GroupNotFound,
+        self.identity_api.get_group,group['id'])
 
     def test_add_user_to_group(self):
         raise nose.exc.SkipTest('Blocked by bug 1092187')

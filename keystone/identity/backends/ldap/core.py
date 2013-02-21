@@ -901,10 +901,24 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
         super(RoleApi, self).delete(id)
 
 
+    def roles_delete_subtree_by_group(self, group_id):
+          conn = self.get_connection()
+          query = '(objectClass=%s)' % self.object_class
+          group_dn = self.project_api._id_to_dn(group_id)
+          try:
+              roles = conn.search_s(group_dn, ldap.SCOPE_ONELEVEL, query)
+              for role_dn, _ in roles:
+                  try:
+                      conn.delete_s(role_dn)
+                  except Exception as inst:
+                      raise inst
+          except ldap.NO_SUCH_OBJECT:
+              pass
+          
 # TODO (henry-nash) This is a placeholder for the full LDPA implementation
 # This needs to be completed (see Bug #1092187)
 class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
-    DEFAULT_OU = 'ou=UserGroups'
+    DEFAULT_OU = 'ou=Groups'
     DEFAULT_STRUCTURAL_CLASSES = []
     DEFAULT_OBJECTCLASS = 'groupOfNames'
     DEFAULT_ID_ATTR = 'cn'
