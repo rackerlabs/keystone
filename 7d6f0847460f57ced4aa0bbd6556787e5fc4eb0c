@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+rkU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-21T20:33:44Z",
+      "side": 1,
+      "message": "this should be done in the manager, as it\u0027s applicable to all backend drivers",
+      "revId": "7d6f0847460f57ced4aa0bbd6556787e5fc4eb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+rkQ\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-21T20:33:44Z",
+      "side": 1,
+      "message": "same",
+      "revId": "7d6f0847460f57ced4aa0bbd6556787e5fc4eb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+rkI\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1552,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-21T20:33:44Z",
+      "side": 1,
+      "message": "good test",
+      "revId": "7d6f0847460f57ced4aa0bbd6556787e5fc4eb0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
