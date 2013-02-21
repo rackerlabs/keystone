@@ -361,11 +361,11 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_group_crud(self):
         raise nose.exc.SkipTest('Blocked by bug 1092187')
 
-    def test_add_user_to_group(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
+    #def test_add_user_to_group(self):
+        #raise nose.exc.SkipTest('Blocked by bug 1092187')
 
-    def test_add_user_to_group_404(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
+    #def test_add_user_to_group_404(self):
+        #raise nose.exc.SkipTest('Blocked by bug 1092187')
 
     def test_check_user_in_group(self):
         raise nose.exc.SkipTest('Blocked by bug 1092187')
@@ -373,14 +373,14 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_check_user_not_in_group(self):
         raise nose.exc.SkipTest('Blocked by bug 1092187')
 
-    def test_list_users_in_group(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
+    #def test_list_users_in_group(self):
+        #raise nose.exc.SkipTest('Blocked by bug 1092187')
 
-    def test_remove_user_from_group(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
+    #def test_remove_user_from_group(self):
+        #raise nose.exc.SkipTest('Blocked by bug 1092187')
 
-    def test_remove_user_from_group_404(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
+    #def test_remove_user_from_group_404(self):
+     #   raise nose.exc.SkipTest('Blocked by bug 1092187')
 
     def test_get_role_grant_by_user_and_project(self):
         raise nose.exc.SkipTest('Blocked by bug 1101287')
@@ -436,8 +436,8 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_delete_group_with_user_project_domain_links(self):
         raise nose.exc.SkipTest('Blocked by bug 1101287')
 
-    def test_list_groups(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
+    #def test_list_groups(self):
+        #raise nose.exc.SkipTest('Blocked by bug 1092187')
 
     def test_list_domains(self):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
