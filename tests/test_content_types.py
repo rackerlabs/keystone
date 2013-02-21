@@ -373,8 +373,7 @@ class CoreApiTests(object):
                     'tenantId': self.tenant_bar['id'],
                 },
             },
-            # TODO(dolph): creating a token should result in a 201 Created
-            expected_status=200)
+            expected_status=201)
         self.assertValidAuthenticationResponse(r)
 
     def test_authenticate_unscoped(self):
@@ -389,8 +388,7 @@ class CoreApiTests(object):
                     },
                 },
             },
-            # TODO(dolph): creating a token should result in a 201 Created
-            expected_status=200)
+            expected_status=201)
         self.assertValidAuthenticationResponse(r)
 
     def test_get_tenants_for_token(self):

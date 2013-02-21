@@ -39,7 +39,7 @@ class V2CatalogTestCase(test_content_types.RestfulTestCase):
     def assertValidErrorResponse(self, response):
         self.assertEqual(response.status, 400)
 
-    def _endpoint_create(self, expected_status=200, missing_param=None):
+    def _endpoint_create(self, expected_status=201, missing_param=None):
         path = '/v2.0/endpoints'
         body = {
             "endpoint": {
@@ -58,21 +58,21 @@ class V2CatalogTestCase(test_content_types.RestfulTestCase):
         return body, r
 
     def test_endpoint_create(self):
-        req_body, response = self._endpoint_create(expected_status=200)
+        req_body, response = self._endpoint_create(expected_status=201)
         self.assertTrue('endpoint' in response.body)
         self.assertTrue('id' in response.body['endpoint'])
         for field, value in req_body['endpoint'].iteritems():
             self.assertEqual(response.body['endpoint'][field], value)
 
     def test_endpoint_create_with_missing_adminurl(self):
-        req_body, response = self._endpoint_create(expected_status=200,
+        req_body, response = self._endpoint_create(expected_status=201,
                                                    missing_param='adminurl')
-        self.assertEqual(response.status, 200)
+        self.assertEqual(response.status, 201)
 
     def test_endpoint_create_with_missing_internalurl(self):
-        req_body, response = self._endpoint_create(expected_status=200,
+        req_body, response = self._endpoint_create(expected_status=201,
                                                    missing_param='internalurl')
-        self.assertEqual(response.status, 200)
+        self.assertEqual(response.status, 201)
 
     def test_endpoint_create_with_missing_publicurl(self):
         req_body, response = self._endpoint_create(expected_status=400,

@@ -251,7 +251,9 @@ class Application(BaseApplication):
             return result
         elif isinstance(result, webob.exc.WSGIHTTPException):
             return result
-        return render_response(body=result)
+        req_method = req.environ['REQUEST_METHOD']
+        code = (201, 'Created') if req_method == 'POST' else None
+        return render_response(body=result, status=code)
 
     def _normalize_arg(self, arg):
         return str(arg).replace(':', '_').replace('-', '_')
