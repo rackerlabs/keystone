@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+sAs\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-21T16:38:38Z",
+      "side": 1,
+      "message": "We should add an argument to turn on or off complex behavior. We get a coin flip here - we either get DN of the object we are interested in or some other DN that has nothing to do with our intensions.\n\nIf we are doing lookup (meaning we expect object to exist), we should raise some NotFound or NO_SUCH_OBJECT if this id wasn\u0027t found.",
+      "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+sB4\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-21T16:38:38Z",
+      "side": 1,
+      "message": "Can we make this simpler with positional format args instead of dict?",
+      "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+sCQ\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-21T16:38:38Z",
+      "side": 1,
+      "message": "This exception cannot be raised. It\u0027s guarded by\n\n    if search_result:",
+      "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
