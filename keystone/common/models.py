@@ -115,7 +115,7 @@ class Group(Model):
     """
 
     required_keys = ('id', 'name', 'domain_id')
-    optional_keys = ('description')
+    optional_keys = tuple('description')
 
 
 class Project(Model):
@@ -147,3 +147,21 @@ class Role(Model):
 
     required_keys = ('id', 'name')
     optional_keys = tuple()
+
+
+class Domain(Model):
+    """Domain object.
+
+    Required keys:
+        id
+        name
+
+    Optional keys:
+
+        description
+        enabled (bool, default True)
+
+    """
+
+    required_keys = ('id', 'name')
+    optional_keys = ('description', 'enabled')
