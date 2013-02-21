@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+r64\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-21T17:27:45Z",
+      "side": 1,
+      "message": "That\u0027s not what I meant, but it\u0027s just a fix, agreed.",
+      "parentUuid": "AAAAM3/+r9w\u003d",
+      "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+sB4\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
