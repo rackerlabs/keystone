@@ -243,7 +243,13 @@ class Application(BaseApplication):
             logging.exception(e)
             return render_exception(exception.UnexpectedError(exception=e))
 
-        if result is None:
+        req_method = req.environ['REQUEST_METHOD']
+        code = None
+        if req_method == 'POST' or (req_method == 'PUT' and
+                                    action == 'create_grant'):
+            code = (201, 'Created')
+
+        if result is None and code is None:
             return render_response(status=(204, 'No Content'))
         elif isinstance(result, basestring):
             return result
@@ -251,7 +257,7 @@ class Application(BaseApplication):
             return result
         elif isinstance(result, webob.exc.WSGIHTTPException):
             return result
-        return render_response(body=result)
+        return render_response(body=result, status=code)
 
     def _normalize_arg(self, arg):
         return str(arg).replace(':', '_').replace('-', '_')
