@@ -24,6 +24,7 @@ library to work with nova.
 
 """
 
+import copy
 import re
 import shelve
 
@@ -264,7 +265,7 @@ class FakeLdap(object):
                 else:
                     if not isinstance(v, list):
                         v = [v]
-                    for val in v:
+                    for val in list(v):
                         try:
                             values.remove(val)
                         except ValueError:
@@ -326,7 +327,7 @@ class FakeLdap(object):
                 # filter the attributes by fields
                 attrs = dict([(k, v) for k, v in attrs.iteritems()
                               if not fields or k in fields])
-                objects.append((dn, attrs))
+                objects.append((dn, copy.deepcopy(attrs)))
 
         LOG.debug('FakeLdap search result: %s', objects)
         return objects
