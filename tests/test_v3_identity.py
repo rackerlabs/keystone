@@ -40,6 +40,32 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             self.credential_id,
             self.credential)
 
+    # override test_v3 requests
+    def get(self, path, **kwargs):
+        r = super(IdentityTestCase, self).get(path, **kwargs)
+        self.assertResponseStatus(r, 200)
+        return r
+
+    def patch(self, path, **kwargs):
+        r = super(IdentityTestCase, self).patch(path, **kwargs)
+        self.assertResponseStatus(r, 200)
+        return r
+
+    def post(self, path, **kwargs):
+        r = super(IdentityTestCase, self).post(path, **kwargs)
+        self.assertResponseStatus(r, 201)
+        return r
+
+    def put(self, path, **kwargs):
+        r = super(IdentityTestCase, self).put(path, **kwargs)
+        self.assertResponseStatus(r, 204)
+        return r
+
+    def delete(self, path, **kwargs):
+        r = super(IdentityTestCase, self).delete(path, **kwargs)
+        self.assertResponseStatus(r, 204)
+        return r
+
     # domain crud tests
 
     def test_create_domain(self):
