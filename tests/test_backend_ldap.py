@@ -358,28 +358,8 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
 
 # TODO (henry-nash) These need to be removed when the full LDAP implementation
 # is submitted - see Bugs 1092187, 1101287, 1101276, 1101289
+
     def test_group_crud(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
-
-    def test_add_user_to_group(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
-
-    def test_add_user_to_group_404(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
-
-    def test_check_user_in_group(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
-
-    def test_check_user_not_in_group(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
-
-    def test_list_users_in_group(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
-
-    def test_remove_user_from_group(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
-
-    def test_remove_user_from_group_404(self):
         raise nose.exc.SkipTest('Blocked by bug 1092187')
 
     def test_get_role_grant_by_user_and_project(self):
@@ -436,9 +416,6 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_delete_group_with_user_project_domain_links(self):
         raise nose.exc.SkipTest('Blocked by bug 1101287')
 
-    def test_list_groups(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
-
     def test_list_domains(self):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
 
@@ -453,9 +430,6 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
 
     def test_create_duplicate_project_name_in_different_domains(self):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
-
-    def test_create_duplicate_group_name_fails(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
 
     def test_create_duplicate_group_name_in_different_domains(self):
         raise nose.exc.SkipTest('Blocked by bug 1101276')

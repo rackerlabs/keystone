@@ -13,7 +13,6 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-
 import uuid
 
 import ldap
@@ -27,7 +26,6 @@ from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone import identity
-
 
 CONF = config.CONF
 
@@ -262,6 +260,37 @@ class Identity(identity.Driver):
         except ldap.NO_SUCH_OBJECT:
             raise exception.GroupNotFound(group_id=group_id)
 
+    def add_user_to_group(self, user_id, group_id):
+        self.get_user(user_id)
+        self.get_group(group_id)
+        self.group.add_user(user_id, group_id)
+
+    def remove_user_from_group(self, user_id, group_id):
+        self.get_user(user_id)
+        self.get_group(group_id)
+        self.group.remove_user(user_id, group_id)
+
+    def list_groups_for_user(self, user_id):
+        self.get_user(user_id)
+        return self.group.get_user_groups(user_id)
+
+    def list_groups(self):
+        return self.group.get_all()
+
+    def list_users_in_group(self, group_id):
+        self.get_group(group_id)
+        return self.group.get_users_in_group(group_id)
+
+    def check_user_in_group(self, user_id, group_id):
+        self.get_user(user_id)
+        self.get_group(group_id)
+        user_refs = self.list_users_in_group(group_id)
+        found = False
+        for x in user_refs:
+            if (x['id'] == user_id):
+                found = True
+        return found
+
 
 # TODO(termie): remove this and move cross-api calls into driver
 class ApiShim(object):
@@ -394,6 +423,9 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap, ApiShimMixin):
         if self.enabled_mask:
             self.mask_enabled_attribute(values)
         values = super(UserApi, self).create(values)
+        group_id = values.get('group_id')
+        if group_id is not None:
+            self.group_api.add_user(values['group_id'], values['id'])
         tenant_id = values.get('tenant_id')
         if tenant_id is not None:
             self.project_api.add_user(values['tenant_id'], values['id'])
@@ -900,6 +932,20 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
             pass
         super(RoleApi, self).delete(id)
 
+    def roles_delete_subtree_by_group(self, group_id):
+        conn = self.get_connection()
+        query = '(objectClass=%s)' % self.object_class
+        group_dn = self.project_api._id_to_dn(group_id)
+        try:
+            roles = conn.search_s(group_dn, ldap.SCOPE_ONELEVEL, query)
+            for role_dn, _ in roles:
+                try:
+                    conn.delete_s(role_dn)
+                except Exception as inst:
+                    raise inst
+        except ldap.NO_SUCH_OBJECT:
+            pass
+
 
 # TODO (henry-nash) This is a placeholder for the full LDPA implementation
 # This needs to be completed (see Bug #1092187)
@@ -968,3 +1014,56 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
             msg = _('Changing Name not supported by LDAP')
             raise exception.NotImplemented(message=msg)
         super(GroupApi, self).update(id, values, old_obj)
+
+    def add_user(self, user_id, group_id):
+        conn = self.get_connection()
+        try:
+            conn.modify_s(
+                self._id_to_dn(group_id),
+                [(ldap.MOD_ADD,
+                  self.member_attribute,
+                  self.user_api._id_to_dn(user_id))])
+        except ldap.TYPE_OR_VALUE_EXISTS:
+            msg = ('User %s is already a member of group %s'
+                   % (user_id, group_id))
+            raise exception.Conflict(msg)
+
+    def remove_user(self, user_id, group_id):
+        conn = self.get_connection()
+        try:
+            conn.modify_s(
+                self._id_to_dn(group_id),
+                [(ldap.MOD_DELETE,
+                  self.member_attribute,
+                  self.user_api._id_to_dn(user_id))])
+        except ldap.NO_SUCH_ATTRIBUTE:
+            raise exception.NotFound(user_id)
+
+    def get_user_groups(self, user_id):
+        """Return a list of groups a user has access to"""
+        user_dn = self.user_api._id_to_dn(user_id)
+        query = '(%s=%s)' % (self.member_attribute, user_dn)
+        memberships = self.get_all(query)
+        return memberships
+
+    def get_users_in_group(self, group_id):
+        """Return a list of users belongs to a group"""
+        group_dn = self._id_to_dn(group_id)
+        query = '(objectClass=%s)' % self.object_class
+        conn = self.get_connection()
+        group_dn = self._id_to_dn(group_id)
+        try:
+            attrs = conn.search_s(group_dn,
+                                  ldap.SCOPE_BASE,
+                                  query, ['%s' % self.member_attribute])
+        except ldap.NO_SUCH_OBJECT:
+            return []
+        users = []
+        for groupdn, member in attrs:
+            user_dns = member[self.member_attribute]
+            for user_dn in user_dns:
+                if self.use_dumb_member and user_dn == self.dumb_member:
+                    continue
+                user_id = self.user_api._dn_to_id(user_dn)
+                users.append(self.user_api.get(user_id))
+        return users
