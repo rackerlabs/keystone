@@ -238,6 +238,10 @@ class TestCase(NoModule, unittest.TestCase):
                 rv = self.identity_api.create_project(tenant['id'], tenant)
                 setattr(self, 'tenant_%s' % tenant['id'], rv)
 
+            for group in fixtures.GROUPS:
+                rv = self.identity_api.create_group(group['id'], group)
+                setattr(self, 'group_%s' % group['id'], rv)
+
             for role in fixtures.ROLES:
                 try:
                     rv = self.identity_api.create_role(role['id'], role)
