@@ -84,6 +84,23 @@
       "revId": "7b39a6095bd35c6f8a29741667b30d11ea634898",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+tbo\u003d",
+        "filename": "tests/test_v3_protection.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-21T00:15:04Z",
+      "side": 1,
+      "message": "user, project, and domain are already created for you as part of V3 auth API changes.",
+      "revId": "7b39a6095bd35c6f8a29741667b30d11ea634898",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
