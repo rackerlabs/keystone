@@ -50,6 +50,40 @@
       "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+r/A\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-21T16:49:06Z",
+      "side": 1,
+      "message": "So if you don\u0027t find it or you get a value exception you just return\nself._id_to_dn_string(id).  So we are safe assuming that when this is invoked we won\u0027t ever need to know which case it really was?  And is it also OK that whereas before you were notified that the object did not exist (and you could take action) now you are given the dn back but its not really there in ldap. How will you know you need to create it? It looks like it was found with no issues.",
+      "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+sBQ\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-21T16:49:06Z",
+      "side": 1,
+      "message": "Would be good to have a comment to explain why these are commented out and not just removed",
+      "revId": "1edd8d9dd57e1636cfb56e7ad20300df41ef5281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
