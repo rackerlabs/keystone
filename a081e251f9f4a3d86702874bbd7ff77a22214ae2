@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+tZ0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-21T00:31:19Z",
+      "side": 1,
+      "message": "this if is completely unnecessary -- the for loop won\u0027t iterate if filters \u003d\u003d []",
+      "revId": "a081e251f9f4a3d86702874bbd7ff77a22214ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+tZY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-21T00:31:19Z",
+      "side": 1,
+      "message": "same, remove \u0027if filters\u0027",
+      "revId": "a081e251f9f4a3d86702874bbd7ff77a22214ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
