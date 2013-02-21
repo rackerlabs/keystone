@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+tcQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-21T00:18:04Z",
+      "side": 1,
+      "message": "damn, missed that one in the re-merge. Thx",
+      "parentUuid": "AAAAM3/+tds\u003d",
+      "revId": "7b39a6095bd35c6f8a29741667b30d11ea634898",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+tdY\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-21T00:12:25Z",
       "side": 1,
       "message": "I am under the impression the \u0027ADMIN\u0027 token is going away?",
+      "revId": "7b39a6095bd35c6f8a29741667b30d11ea634898",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+ta8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-21T00:18:04Z",
+      "side": 1,
+      "message": "so, not sure..this was here before, so wasn\u0027t sure if we can remove - maybe we will follow up with a bug fix on that if we decide to kill it",
+      "parentUuid": "AAAAM3/+tdY\u003d",
       "revId": "7b39a6095bd35c6f8a29741667b30d11ea634898",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+ta4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-21T00:18:04Z",
+      "side": 1,
+      "message": "yep",
+      "parentUuid": "AAAAM3/+tdg\u003d",
+      "revId": "7b39a6095bd35c6f8a29741667b30d11ea634898",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+tdE\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2013-02-21T00:12:25Z",
       "side": 1,
       "message": "why if False?",
+      "revId": "7b39a6095bd35c6f8a29741667b30d11ea634898",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+tbA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-21T00:18:04Z",
+      "side": 1,
+      "message": "sorry , some extra debug left in",
+      "parentUuid": "AAAAM3/+tdE\u003d",
       "revId": "7b39a6095bd35c6f8a29741667b30d11ea634898",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +170,24 @@
       "writtenOn": "2013-02-21T00:15:04Z",
       "side": 1,
       "message": "user, project, and domain are already created for you as part of V3 auth API changes.",
+      "revId": "7b39a6095bd35c6f8a29741667b30d11ea634898",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+tac\u003d",
+        "filename": "tests/test_v3_protection.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-21T00:18:04Z",
+      "side": 1,
+      "message": "true, but I want a particular mixture of users in different domains...",
+      "parentUuid": "AAAAM3/+tbo\u003d",
       "revId": "7b39a6095bd35c6f8a29741667b30d11ea634898",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
