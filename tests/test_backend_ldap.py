@@ -361,8 +361,8 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_group_crud(self):
         raise nose.exc.SkipTest('Blocked by bug 1092187')
 
-    def test_add_user_to_group(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
+    #def test_add_user_to_group(self):
+        #raise nose.exc.SkipTest('Blocked by bug 1092187')
 
     def test_add_user_to_group_404(self):
         raise nose.exc.SkipTest('Blocked by bug 1092187')
@@ -376,8 +376,8 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_list_users_in_group(self):
         raise nose.exc.SkipTest('Blocked by bug 1092187')
 
-    def test_remove_user_from_group(self):
-        raise nose.exc.SkipTest('Blocked by bug 1092187')
+    #def test_remove_user_from_group(self):
+        #raise nose.exc.SkipTest('Blocked by bug 1092187')
 
     def test_remove_user_from_group_404(self):
         raise nose.exc.SkipTest('Blocked by bug 1092187')

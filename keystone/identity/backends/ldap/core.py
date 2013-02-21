@@ -262,6 +262,19 @@ class Identity(identity.Driver):
         except ldap.NO_SUCH_OBJECT:
             raise exception.GroupNotFound(group_id=group_id)
 
+    def add_user_to_group(self, user_id, group_id):
+        self.get_user(user_id)
+        self.get_group(group_id)
+        self.group.add_user(user_id, group_id)
+
+    def remove_user_from_group(self, user_id, group_id):
+        self.get_user(user_id)
+        self.get_group(group_id)
+        self.group.remove_user(user_id, group_id)
+
+    def list_groups_for_user(self, user_id):
+        return self.group.get_user_groups(user_id)
+
 
 # TODO(termie): remove this and move cross-api calls into driver
 class ApiShim(object):
@@ -394,9 +407,13 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap, ApiShimMixin):
         if self.enabled_mask:
             self.mask_enabled_attribute(values)
         values = super(UserApi, self).create(values)
-        tenant_id = values.get('tenant_id')
-        if tenant_id is not None:
-            self.project_api.add_user(values['tenant_id'], values['id'])
+        group_id = values.get('group_id')
+        if group_id is not None:
+            self.group_api.add_user(values['group_id'], values['id'])
+        else:
+            tenant_id = values.get('tenant_id')
+            if tenant_id is not None:
+                self.project_api.add_user(values['tenant_id'], values['id'])
         return values
 
     def update(self, id, values):
@@ -900,11 +917,25 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
             pass
         super(RoleApi, self).delete(id)
 
+    def roles_delete_subtree_by_group(self, group_id):
+        conn = self.get_connection()
+        query = '(objectClass=%s)' % self.object_class
+        group_dn = self.project_api._id_to_dn(group_id)
+        try:
+            roles = conn.search_s(group_dn, ldap.SCOPE_ONELEVEL, query)
+            for role_dn, _ in roles:
+                try:
+                    conn.delete_s(role_dn)
+                except Exception as inst:
+                    raise inst
+        except ldap.NO_SUCH_OBJECT:
+            pass
+
 
 # TODO (henry-nash) This is a placeholder for the full LDPA implementation
 # This needs to be completed (see Bug #1092187)
 class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
-    DEFAULT_OU = 'ou=UserGroups'
+    DEFAULT_OU = 'ou=Groups'
     DEFAULT_STRUCTURAL_CLASSES = []
     DEFAULT_OBJECTCLASS = 'groupOfNames'
     DEFAULT_ID_ATTR = 'cn'
@@ -968,3 +999,32 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
             msg = _('Changing Name not supported by LDAP')
             raise exception.NotImplemented(message=msg)
         super(GroupApi, self).update(id, values, old_obj)
+
+    def add_user(self, user_id, group_id):
+        conn = self.get_connection()
+        try:
+            conn.modify_s(
+                self._id_to_dn(group_id),
+                [(ldap.MOD_ADD,
+                  self.member_attribute,
+                  self.user_api._id_to_dn(user_id))])
+        except ldap.TYPE_OR_VALUE_EXISTS:
+            pass
+
+    def remove_user(self, user_id, group_id):
+        conn = self.get_connection()
+        try:
+            conn.modify_s(
+                self._id_to_dn(group_id),
+                [(ldap.MOD_DELETE,
+                  self.member_attribute,
+                  self.user_api._id_to_dn(user_id))])
+        except ldap.TYPE_OR_VALUE_EXISTS:
+            pass
+
+    def get_user_groups(self, user_id):
+        """Return a list of groups a user has access to"""
+        user_dn = self.user_api._id_to_dn(user_id)
+        query = '(%s=%s)' % (self.member_attribute, user_dn)
+        memberships = self.get_all(query)
+        return memberships

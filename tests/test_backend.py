@@ -1598,7 +1598,8 @@ class IdentityTests(object):
 
     def test_add_user_to_group(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_domain(domain['id'], domain)
+        #TODO (sahdev-zala) do it once Domain CRUD is implemented - bug 1101276
+        #self.identity_api.create_domain(domain['id'], domain)
         new_group = {'id': uuid.uuid4().hex, 'domain_id': uuid.uuid4().hex,
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
@@ -1680,7 +1681,8 @@ class IdentityTests(object):
 
     def test_remove_user_from_group(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_domain(domain['id'], domain)
+        #TODO (sahdev-zala) do it once Domain CRUD is implemented - bug 1101276
+        #self.identity_api.create_domain(domain['id'], domain)
         new_group = {'id': uuid.uuid4().hex, 'domain_id': uuid.uuid4().hex,
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
