@@ -22,6 +22,7 @@ from ldap import filter as ldap_filter
 from keystone import clean
 from keystone.common import ldap as common_ldap
 from keystone.common.ldap import fakeldap
+from keystone.common import logging
 from keystone.common import models
 from keystone.common import utils
 from keystone import config
@@ -29,6 +30,7 @@ from keystone import exception
 from keystone import identity
 
 
+LOG = logging.getLogger(__name__)
 CONF = config.CONF
 
 
@@ -44,6 +46,48 @@ class Identity(identity.Driver):
         self.project = ProjectApi(CONF)
         self.role = RoleApi(CONF)
         self.group = GroupApi(CONF)
+
+    def db_sync(self):
+        self._migrate_project_members_to_member_role()
+
+    def _migrate_project_members_to_member_role(self):
+        role_id, role_name = CONF.member_role_id, CONF.member_role_name
+        LOG.debug(_('Migrating project members to role %s'), role_id)
+        try:
+            self.role.get(role_id)
+        except exception.RoleNotFound:
+            LOG.debug(_('Role %s not found, creating it'), role_id)
+            self.create_role(role_id, {'id': role_id, 'name': role_name})
+        use_dumb_member = self.project.use_dumb_member
+        dumb_member = self.project.dumb_member
+        member_attribute = self.project.member_attribute
+        if use_dumb_member:
+            query = "(!(%s=%s))" % (member_attribute, dumb_member)
+        else:
+            query = "(%s=*)" % member_attribute
+        old_mapping = self.project.attribute_mapping
+        self.project.attribute_mapping = old_mapping.copy()
+        self.project.attribute_mapping['member'] = 'member'
+        projects = self.project._ldap_get_all(query)
+        self.project.attribute_mapping = old_mapping
+        for dn, attrs in projects:
+            if (self.project.enabled_emulation and
+                    dn == self.project.enabled_emulation_dn):
+                continue
+            project_id = self.project._dn_to_id(dn)
+            LOG.debug('Processing project %s', project_id)
+            user_dns = attrs[member_attribute]
+            if use_dumb_member:
+                try:
+                    user_dns.remove(dumb_member)
+                except ValueError:
+                    pass
+            for user_dn in user_dns:
+                user_id = self.user._dn_to_id(user_dn)
+                self.role.add_user(role_id, user_id, project_id)
+            LOG.debug('Deleting all members from project entry')
+            conn = self.project.get_connection()
+            conn.modify_s(dn, [(ldap.MOD_DELETE, member_attribute, user_dns)])
 
     def get_connection(self, user=None, password=None):
         if self.LDAP_URL.startswith('fake://'):
@@ -144,10 +188,7 @@ class Identity(identity.Driver):
         return {'roles': metadata_ref}
 
     def get_role(self, role_id):
-        try:
-            return self.role.get(role_id)
-        except exception.NotFound:
-            raise exception.RoleNotFound(role_id=role_id)
+        return self.role.get(role_id)
 
     def list_roles(self):
         return self.role.get_all()
@@ -695,8 +736,10 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                                  self.project_api._id_to_dn(tenant_id))
 
     def get(self, id, filter=None):
-        model = super(RoleApi, self).get(id, filter)
-        return model
+        try:
+            return super(RoleApi, self).get(id, filter)
+        except exception.NotFound:
+            raise exception.RoleNotFound(role_id=id)
 
     def create(self, values):
         #values['id'] = values['name']
