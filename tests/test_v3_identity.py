@@ -47,18 +47,20 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         ref = self.new_domain_ref()
         r = self.post(
             '/domains',
-            body={'domain': ref})
+            body={'domain': ref},
+            expected_status=201)
         return self.assertValidDomainResponse(r, ref)
 
     def test_list_domains(self):
         """GET /domains"""
-        r = self.get('/domains')
+        r = self.get('/domains', expected_status=200)
         self.assertValidDomainListResponse(r, ref=self.domain)
 
     def test_get_domain(self):
         """GET /domains/{domain_id}"""
         r = self.get('/domains/%(domain_id)s' % {
-            'domain_id': self.domain_id})
+            'domain_id': self.domain_id},
+            expected_status=200)
         self.assertValidDomainResponse(r, self.domain)
 
     def test_update_domain(self):
@@ -67,7 +69,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         del ref['id']
         r = self.patch('/domains/%(domain_id)s' % {
             'domain_id': self.domain_id},
-            body={'domain': ref})
+            body={'domain': ref},
+            expected_status=200)
         self.assertValidDomainResponse(r, ref)
 
     def test_disable_domain(self):
@@ -75,7 +78,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.domain['enabled'] = False
         r = self.patch('/domains/%(domain_id)s' % {
             'domain_id': self.domain_id},
-            body={'domain': {'enabled': False}})
+            body={'domain': {'enabled': False}},
+            expected_status=200)
         self.assertValidDomainResponse(r, self.domain)
 
         # check that the project and user are still enabled
@@ -96,13 +100,14 @@ class IdentityTestCase(test_v3.RestfulTestCase):
     def test_delete_domain(self):
         """DELETE /domains/{domain_id}"""
         self.delete('/domains/%(domain_id)s' % {
-            'domain_id': self.domain_id})
+            'domain_id': self.domain_id},
+            expected_status=204)
 
     # project crud tests
 
     def test_list_projects(self):
         """GET /projects"""
-        r = self.get('/projects')
+        r = self.get('/projects', expected_status=200)
         self.assertValidProjectListResponse(r, ref=self.project)
 
     def test_create_project(self):
@@ -110,14 +115,16 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         ref = self.new_project_ref(domain_id=self.domain_id)
         r = self.post(
             '/projects',
-            body={'project': ref})
+            body={'project': ref},
+            expected_status=201)
         self.assertValidProjectResponse(r, ref)
 
     def test_get_project(self):
         """GET /projects/{project_id}"""
         r = self.get(
             '/projects/%(project_id)s' % {
-                'project_id': self.project_id})
+                'project_id': self.project_id},
+            expected_status=200)
         self.assertValidProjectResponse(r, self.project)
 
     def test_update_project(self):
@@ -127,14 +134,16 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.patch(
             '/projects/%(project_id)s' % {
                 'project_id': self.project_id},
-            body={'project': ref})
+            body={'project': ref},
+            expected_status=200)
         self.assertValidProjectResponse(r, ref)
 
     def test_delete_project(self):
         """DELETE /projects/{project_id}"""
         self.delete(
             '/projects/%(project_id)s' % {
-                'project_id': self.project_id})
+                'project_id': self.project_id},
+            expected_status=204)
 
     # user crud tests
 
@@ -143,38 +152,45 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         ref = self.new_user_ref(domain_id=self.domain_id)
         r = self.post(
             '/users',
-            body={'user': ref})
+            body={'user': ref},
+            expected_status=201)
         return self.assertValidUserResponse(r, ref)
 
     def test_list_users(self):
         """GET /users"""
-        r = self.get('/users')
+        r = self.get('/users', expected_status=200)
         self.assertValidUserListResponse(r, ref=self.user)
 
     def test_get_user(self):
         """GET /users/{user_id}"""
         r = self.get('/users/%(user_id)s' % {
-            'user_id': self.user['id']})
+            'user_id': self.user['id']},
+            expected_status=200)
         self.assertValidUserResponse(r, self.user)
 
     def test_add_user_to_group(self):
         """PUT /groups/{group_id}/users/{user_id}"""
         self.put('/groups/%(group_id)s/users/%(user_id)s' % {
-            'group_id': self.group_id, 'user_id': self.user['id']})
+            'group_id': self.group_id, 'user_id': self.user['id']},
+            expected_status=204)
 
     def test_check_user_in_group(self):
         """HEAD /groups/{group_id}/users/{user_id}"""
         self.put('/groups/%(group_id)s/users/%(user_id)s' % {
-            'group_id': self.group_id, 'user_id': self.user['id']})
+            'group_id': self.group_id, 'user_id': self.user['id']},
+            expected_status=204)
         self.head('/groups/%(group_id)s/users/%(user_id)s' % {
-            'group_id': self.group_id, 'user_id': self.user['id']})
+            'group_id': self.group_id, 'user_id': self.user['id']},
+            expected_status=204)
 
     def test_list_users_in_group(self):
         """GET /groups/{group_id}/users"""
         r = self.put('/groups/%(group_id)s/users/%(user_id)s' % {
-            'group_id': self.group_id, 'user_id': self.user['id']})
+            'group_id': self.group_id, 'user_id': self.user['id']},
+            expected_status=204)
         r = self.get('/groups/%(group_id)s/users' % {
-            'group_id': self.group_id})
+            'group_id': self.group_id},
+            expected_status=200)
         self.assertValidUserListResponse(r, ref=self.user)
         self.assertIn('/groups/%(group_id)s/users' % {
             'group_id': self.group_id}, r.body['links']['self'])
@@ -182,9 +198,11 @@ class IdentityTestCase(test_v3.RestfulTestCase):
     def test_remove_user_from_group(self):
         """DELETE /groups/{group_id}/users/{user_id}"""
         self.put('/groups/%(group_id)s/users/%(user_id)s' % {
-            'group_id': self.group_id, 'user_id': self.user['id']})
+            'group_id': self.group_id, 'user_id': self.user['id']},
+            expected_status=204)
         self.delete('/groups/%(group_id)s/users/%(user_id)s' % {
-            'group_id': self.group_id, 'user_id': self.user['id']})
+            'group_id': self.group_id, 'user_id': self.user['id']},
+            expected_status=204)
 
     def test_update_user(self):
         """PATCH /users/{user_id}"""
@@ -192,13 +210,15 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         del user['id']
         r = self.patch('/users/%(user_id)s' % {
             'user_id': self.user['id']},
-            body={'user': user})
+            body={'user': user},
+            expected_status=200)
         self.assertValidUserResponse(r, user)
 
     def test_delete_user(self):
         """DELETE /users/{user_id}"""
         self.delete('/users/%(user_id)s' % {
-            'user_id': self.user['id']})
+            'user_id': self.user['id']},
+            expected_status=204)
 
     # group crud tests
 
@@ -207,18 +227,20 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         ref = self.new_group_ref(domain_id=self.domain_id)
         r = self.post(
             '/groups',
-            body={'group': ref})
+            body={'group': ref},
+            expected_status=201)
         return self.assertValidGroupResponse(r, ref)
 
     def test_list_groups(self):
         """GET /groups"""
-        r = self.get('/groups')
+        r = self.get('/groups', expected_status=200)
         self.assertValidGroupListResponse(r, ref=self.group)
 
     def test_get_group(self):
         """GET /groups/{group_id}"""
         r = self.get('/groups/%(group_id)s' % {
-            'group_id': self.group_id})
+            'group_id': self.group_id},
+            expected_status=200)
         self.assertValidGroupResponse(r, self.group)
 
     def test_update_group(self):
@@ -227,19 +249,21 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         del group['id']
         r = self.patch('/groups/%(group_id)s' % {
             'group_id': self.group_id},
-            body={'group': group})
+            body={'group': group},
+            expected_status=200)
         self.assertValidGroupResponse(r, group)
 
     def test_delete_group(self):
         """DELETE /groups/{group_id}"""
         self.delete('/groups/%(group_id)s' % {
-            'group_id': self.group_id})
+            'group_id': self.group_id},
+            expected_status=204)
 
     # credential crud tests
 
     def test_list_credentials(self):
         """GET /credentials"""
-        r = self.get('/credentials')
+        r = self.get('/credentials', expected_status=200)
         self.assertValidCredentialListResponse(r, ref=self.credential)
 
     def test_create_credential(self):
@@ -247,14 +271,15 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         ref = self.new_credential_ref(user_id=self.user['id'])
         r = self.post(
             '/credentials',
-            body={'credential': ref})
+            body={'credential': ref},
+            expected_status=201)
         self.assertValidCredentialResponse(r, ref)
 
     def test_get_credential(self):
         """GET /credentials/{credential_id}"""
         r = self.get(
             '/credentials/%(credential_id)s' % {
-                'credential_id': self.credential_id})
+                'credential_id': self.credential_id}, expected_status=200)
         self.assertValidCredentialResponse(r, self.credential)
 
     def test_update_credential(self):
@@ -266,14 +291,16 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.patch(
             '/credentials/%(credential_id)s' % {
                 'credential_id': self.credential_id},
-            body={'credential': ref})
+            body={'credential': ref},
+            expected_status=200)
         self.assertValidCredentialResponse(r, ref)
 
     def test_delete_credential(self):
         """DELETE /credentials/{credential_id}"""
         self.delete(
             '/credentials/%(credential_id)s' % {
-                'credential_id': self.credential_id})
+                'credential_id': self.credential_id},
+            expected_status=204)
 
     # role crud tests
 
@@ -282,18 +309,20 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         ref = self.new_role_ref()
         r = self.post(
             '/roles',
-            body={'role': ref})
+            body={'role': ref},
+            expected_status=201)
         return self.assertValidRoleResponse(r, ref)
 
     def test_list_roles(self):
         """GET /roles"""
-        r = self.get('/roles')
+        r = self.get('/roles', expected_status=200)
         self.assertValidRoleListResponse(r, ref=self.role)
 
     def test_get_role(self):
         """GET /roles/{role_id}"""
         r = self.get('/roles/%(role_id)s' % {
-            'role_id': self.role_id})
+            'role_id': self.role_id},
+            expected_status=200)
         self.assertValidRoleResponse(r, self.role)
 
     def test_update_role(self):
@@ -302,13 +331,15 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         del ref['id']
         r = self.patch('/roles/%(role_id)s' % {
             'role_id': self.role_id},
-            body={'role': ref})
+            body={'role': ref},
+            expected_status=200)
         self.assertValidRoleResponse(r, ref)
 
     def test_delete_role(self):
         """DELETE /roles/{role_id}"""
         self.delete('/roles/%(role_id)s' % {
-            'role_id': self.role_id})
+            'role_id': self.role_id},
+            expected_status=204)
 
     def test_crud_user_project_role_grants(self):
         collection_url = (
