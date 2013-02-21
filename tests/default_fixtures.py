@@ -111,3 +111,22 @@ ROLES = [
         'name': 'Other',
     }
 ]
+
+GROUPS = [
+    {
+        'id': 'gbar',
+        'name': 'GBAR',
+        'domain_id': DEFAULT_DOMAIN_ID,
+        'description': 'description',
+    }, {
+        'id': 'gbaz',
+        'name': 'GBAZ',
+        'domain_id': DEFAULT_DOMAIN_ID,
+        'description': 'description',
+    }, {
+        'id': 'gmtu',
+        'name': 'GMTU',
+        'description': 'description',
+        'domain_id': DEFAULT_DOMAIN_ID
+    }
+]
