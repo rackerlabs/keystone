@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+pwc\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-22T18:52:44Z",
+      "side": 1,
+      "message": "remove - let\u0027s not create any more of these.",
+      "revId": "6fd3929ae81823ca0433639668c6bda2ec364aba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+pxA\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-22T18:52:44Z",
+      "side": 1,
+      "message": "We\u0027re trying not to add any more fixtures to this...since it slows done every test.  Just create the groups manually as part of your test, using random hex strings wherever possible.  Take a look at other tests in test_backend.py",
+      "revId": "6fd3929ae81823ca0433639668c6bda2ec364aba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+pwg\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-22T18:52:44Z",
+      "side": 1,
+      "message": "you shouldn\u0027t to write this here....if you think group support is now sufficient, then just remove test_group_crud from this file and the version if the parent class (in test_backend) will get run against the ldap backend",
+      "revId": "6fd3929ae81823ca0433639668c6bda2ec364aba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
