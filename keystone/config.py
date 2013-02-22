@@ -120,6 +120,8 @@ register_str('auth_admin_prefix', default='')
 register_int('max_param_size', default=64)
 # we allow tokens to be a bit larger to accomidate PKI
 register_int('max_token_size', default=8192)
+#default max request size is 112k
+register_int('max_request_body_size', default=114688)
 
 #ssl options
 register_bool('enable', group='ssl', default=False)
