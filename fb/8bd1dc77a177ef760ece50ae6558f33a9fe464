@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: guang-yee
+Submitted-by: Jenkins
+Submitted-at: Fri, 22 Feb 2013 00:06:08 +0000
+Reviewed-on: https://review.openstack.org/22621
+Project: openstack/keystone
+Branch: refs/heads/milestone-proposed
