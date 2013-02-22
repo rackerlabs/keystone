@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+qH4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-22T15:39:12Z",
+      "side": 1,
+      "message": "add a short summary line.",
+      "revId": "f706ecacf4311104b0d0dc59c34ea598f2c86868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+qHw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-22T15:39:12Z",
+      "side": 1,
+      "message": "suggest use ldap.controls in the code and not import controls separately (remove this line).\n\nAlso, group imports, so this line (if you keep it) should be moved up with line 17.",
+      "revId": "f706ecacf4311104b0d0dc59c34ea598f2c86868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+t1k\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 4
@@ -13,6 +47,57 @@
       "writtenOn": "2013-02-20T20:54:39Z",
       "side": 1,
       "message": "I think SCOPE_BASE should be ruled out here.",
+      "revId": "f706ecacf4311104b0d0dc59c34ea598f2c86868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+qHg\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-22T15:39:12Z",
+      "side": 1,
+      "message": "suggest move the code in this leg into a separate function. I prefer fewer levels of indentation.",
+      "revId": "f706ecacf4311104b0d0dc59c34ea598f2c86868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+qHk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-22T15:39:12Z",
+      "side": 1,
+      "message": "why True? give a name to this \"magic number\" parameter so reviewers know what it is.",
+      "revId": "f706ecacf4311104b0d0dc59c34ea598f2c86868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+qHU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-22T15:39:12Z",
+      "side": 1,
+      "message": "suggest put a comment here saying that this disables paging from now on (or, write a small function called self._disable_paging()).",
       "revId": "f706ecacf4311104b0d0dc59c34ea598f2c86868",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
