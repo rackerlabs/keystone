@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+pwU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1023,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-22T19:28:10Z",
+      "side": 1,
+      "message": "yes, in delete_grant, it actually throws RoleNoteFound when either the role doesn\u0027t exist or when the role doesn\u0027t exist in the interaction pair.  the catch here is more for the latter as the former can\u0027t be triggered given our previous check up top.",
+      "parentUuid": "AAAAM3/+p7g\u003d",
+      "revId": "12ca19a1d5ee1f8ae15015bef3457c01e6ec5bd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+qF4\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 4
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "the first warning in that doc indicates that we shouldn\u0027t be using autocommit... are we using autcommit? (Maybe I should look up the answer myself...) The previous project I worked on used autocommit with the db and it worked well for us, so I don\u0027t totally agree with the warning.\n\nThe original version of this function had the session.begin() around a much bigger chunk of code, not just the session.delete(). Why change to only just the session.delete()?",
       "parentUuid": "AAAAM3/+qAg\u003d",
+      "revId": "12ca19a1d5ee1f8ae15015bef3457c01e6ec5bd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+psM\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1049,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-22T19:28:10Z",
+      "side": 1,
+      "message": "i originally chose to wrap it around the delete action. but now that i review code further, i just noticed that the previous query is really a delete as well. \n\nmaybe it makes sense to wrap it all if the transactions within delete_grant are considered subtransactions.",
+      "parentUuid": "AAAAM3/+p7E\u003d",
       "revId": "12ca19a1d5ee1f8ae15015bef3457c01e6ec5bd2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
