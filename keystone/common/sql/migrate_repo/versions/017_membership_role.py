@@ -48,7 +48,7 @@ def upgrade(migrate_engine):
         data = {'roles': [config.CONF.member_role_id]}
         ins = user_project_role_table.insert().values(
             user_id=membership.user_id,
-            project_id=membership.project_id,
+            project_id=membership.tenant_id,
             data=json.dumps(data))
         conn.execute(ins)
     session.close()
