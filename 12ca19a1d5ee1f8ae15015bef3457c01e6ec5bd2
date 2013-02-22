@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+qBU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1023,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-22T16:57:10Z",
+      "side": 1,
+      "message": "there are 4 grant tables, each containing an interaction pair (ie. user-project, user-domain, etc..) and a role associated with that pair.  delete_role goes through each table to see if that role exists in that specific table. the initial check up top actually checks to see if role exists and if not, skips this whole process.",
+      "parentUuid": "AAAAM3/+qF8\u003d",
+      "revId": "12ca19a1d5ee1f8ae15015bef3457c01e6ec5bd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+qF4\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-22T16:22:02Z",
       "side": 1,
       "message": "Is a session a transaction? (Maybe I should look up the answer myself.) Creating a \"session\" seems unneccessary if it\u0027s just covering a single delete operation since it\u0027s either going to work and be committed or fail and get rolled back.",
+      "revId": "12ca19a1d5ee1f8ae15015bef3457c01e6ec5bd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+qAg\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1049,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-02-22T16:57:10Z",
+      "side": 1,
+      "message": "not that familiar with it myself, so i could be completely wrong using it.  i added session.begin back because of this: http://docs.sqlalchemy.org/en/latest/orm/session.html (see first warning)",
+      "parentUuid": "AAAAM3/+qF4\u003d",
       "revId": "12ca19a1d5ee1f8ae15015bef3457c01e6ec5bd2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
