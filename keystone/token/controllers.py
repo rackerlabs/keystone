@@ -1,4 +1,5 @@
 import json
+import subprocess
 import uuid
 
 from keystone.common import cms
@@ -113,9 +114,13 @@ class Auth(controller.V2Controller):
         if CONF.signing.token_format == 'UUID':
             token_id = uuid.uuid4().hex
         elif CONF.signing.token_format == 'PKI':
-            token_id = cms.cms_sign_token(json.dumps(token_data),
-                                          CONF.signing.certfile,
-                                          CONF.signing.keyfile)
+            try:
+                token_id = cms.cms_sign_token(json.dumps(token_data),
+                                              CONF.signing.certfile,
+                                              CONF.signing.keyfile)
+            except subprocess.CalledProcessError:
+                raise exception.UnexpectedError(
+                    'Unable to sign token.')
         else:
             raise exception.UnexpectedError(
                 'Invalid value for token_format: %s.'
