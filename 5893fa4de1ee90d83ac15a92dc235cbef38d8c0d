@@ -16,6 +16,24 @@
       "revId": "5893fa4de1ee90d83ac15a92dc235cbef38d8c0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+pF0\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-23T10:14:59Z",
+      "side": 1,
+      "message": "So all tests are good :-)....but, I don\u0027t think the purpose of this test should be to verify that deleting roles doesn\u0027t cause collateral damage - other tests should do that (e.g. get_delete roles).  This test is just to determine whether the right roles are returned for a user and domain...we just have to use create/delete role to create the environment.",
+      "parentUuid": "AAAAM3/+pHA\u003d",
+      "revId": "5893fa4de1ee90d83ac15a92dc235cbef38d8c0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
