@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+pHA\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 4992
+      },
+      "writtenOn": "2013-02-23T09:46:52Z",
+      "side": 1,
+      "message": "no checks on roles for user 2? to ensure change on user 1 does not affect 2. possibly have in addition a common role between the two",
+      "revId": "5893fa4de1ee90d83ac15a92dc235cbef38d8c0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
