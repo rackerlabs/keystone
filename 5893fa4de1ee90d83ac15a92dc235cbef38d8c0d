@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+o/E\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-02-23T16:30:08Z",
+      "side": 1,
+      "message": "Hi Henry, looks great. Just for my knowledge, since we aren\u0027t doing anything with user2 (besides creating and assigning role), I guess the sole purpose of  creating user2 is just to have multi users environment right? or is there any other reason we are creating user2? Thanks!",
+      "revId": "5893fa4de1ee90d83ac15a92dc235cbef38d8c0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+pHA\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 2
