@@ -11,6 +11,7 @@ from keystone import exception
 LOG = logging.getLogger(__name__)
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+DISABLED_VALUES = ['0']
 
 
 def _build_policy_check_credentials(self, action, context, kwargs):
@@ -213,9 +214,28 @@ class V3Controller(V2Controller):
     @classmethod
     def filter_by_attribute(cls, context, refs, attr):
         """Filters a list of references by query string value."""
+
+        def _attr_match(ref_attr, val_attr):
+            """Matches attributes allowing for booleans as strings.
+
+            We test explicitly for a value that defines it as 'False',
+            which also means that the existence of the attribute with
+            no value implies 'True'
+
+            """
+            if type(ref_attr) == bool:
+                if (isinstance(val_attr, basestring) and
+                        val_attr.lower() in DISABLED_VALUES):
+                    val = False
+                else:
+                    val = True
+                return (ref_attr == val)
+            else:
+                return (ref_attr == val_attr)
+
         if attr in context['query_string']:
             value = context['query_string'][attr]
-            return [r for r in refs if r[attr] == value]
+            return [r for r in refs if _attr_match(r[attr], value)]
         return refs
 
     def _require_matching_id(self, value, ref):
