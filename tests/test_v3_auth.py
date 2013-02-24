@@ -26,84 +26,6 @@ import test_v3
 CONF = config.CONF
 
 
-def _build_auth_scope(project_id=None, project_name=None,
-                      project_domain_id=None, project_domain_name=None,
-                      domain_id=None, domain_name=None):
-    scope_data = {}
-    if project_id or project_name:
-        scope_data['project'] = {}
-        if project_id:
-            scope_data['project']['id'] = project_id
-        else:
-            scope_data['project']['name'] = project_name
-            if project_domain_id or project_domain_name:
-                project_domain_json = {}
-                if project_domain_id:
-                    project_domain_json['id'] = project_domain_id
-                else:
-                    project_domain_json['name'] = project_domain_name
-                scope_data['project']['domain'] = project_domain_json
-    if domain_id or domain_name:
-        scope_data['domain'] = {}
-        if domain_id:
-            scope_data['domain']['id'] = domain_id
-        else:
-            scope_data['domain']['name'] = domain_name
-    return scope_data
-
-
-def _build_password_auth(user_id=None, username=None,
-                         user_domain_id=None, user_domain_name=None,
-                         password=None):
-    password_data = {'user': {}}
-    if user_id:
-        password_data['user']['id'] = user_id
-    else:
-        password_data['user']['name'] = username
-        if user_domain_id or user_domain_name:
-            password_data['user']['domain'] = {}
-            if user_domain_id:
-                password_data['user']['domain']['id'] = user_domain_id
-            else:
-                password_data['user']['domain']['name'] = user_domain_name
-    password_data['user']['password'] = password
-    return password_data
-
-
-def _build_token_auth(token):
-    return {'id': token}
-
-
-def _build_authentication_request(token=None, user_id=None, username=None,
-                                  user_domain_id=None, user_domain_name=None,
-                                  password=None, project_id=None,
-                                  project_name=None, project_domain_id=None,
-                                  project_domain_name=None,
-                                  domain_id=None, domain_name=None):
-    """Build auth dictionary.
-
-    It will create an auth dictionary based on all the arguments
-    that it receives.
-    """
-    auth_data = {}
-    auth_data['authentication'] = {'methods': []}
-    if token:
-        auth_data['authentication']['methods'].append('token')
-        auth_data['authentication']['token'] = _build_token_auth(token)
-    if user_id or username:
-        auth_data['authentication']['methods'].append('password')
-        auth_data['authentication']['password'] = _build_password_auth(
-            user_id, username, user_domain_id, user_domain_name, password)
-    if project_id or project_name or domain_id or domain_name:
-        auth_data['scope'] = _build_auth_scope(project_id,
-                                               project_name,
-                                               project_domain_id,
-                                               project_domain_name,
-                                               domain_id,
-                                               domain_name)
-    return auth_data
-
-
 class AuthTest(test_v3.RestfulTestCase):
     def assertValidTokenResponse(self, r):
         self.assertTrue(r.getheader('X-Subject-Token'))
@@ -182,7 +104,7 @@ class AuthTest(test_v3.RestfulTestCase):
         return self.assertDictEqual(normalize(a), normalize(b))
 
 
-class TestAuthInfo(test.TestCase):
+class TestAuthInfo(AuthTest):
     def test_missing_auth_methods(self):
         auth_data = {'authentication': {}}
         auth_data['authentication']['token'] = {'id': uuid.uuid4().hex}
@@ -209,19 +131,20 @@ class TestAuthInfo(test.TestCase):
                           auth_data)
 
     def test_project_name_no_domain(self):
-        auth_data = _build_authentication_request(username='test',
-                                                  password='test',
-                                                  project_name='abc')
+        auth_data = self.build_authentication_request(username='test',
+                                                      password='test',
+                                                      project_name='abc')
         self.assertRaises(exception.ValidationError,
                           auth.controllers.AuthInfo,
                           None,
                           auth_data)
 
     def test_both_project_and_domain_in_scope(self):
-        auth_data = _build_authentication_request(user_id='test',
-                                                  password='test',
-                                                  project_name='test',
-                                                  domain_name='test')
+        auth_data = self.build_authentication_request(
+            user_id='test',
+            password='test',
+            project_name='test',
+            domain_name='test')
         self.assertRaises(exception.ValidationError,
                           auth.controllers.AuthInfo,
                           None,
@@ -231,7 +154,7 @@ class TestAuthInfo(test.TestCase):
 class TestTokenAPIs(AuthTest):
     def setUp(self):
         super(TestTokenAPIs, self).setUp()
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_id=self.domain_id,
             password=self.user['password'])
@@ -247,7 +170,7 @@ class TestTokenAPIs(AuthTest):
         # FIXME(gyee): PKI tokens are not interchangeable because token
         # data is baked into the token itself.
         self.opt_in_group('signing', token_format='UUID')
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
             project_id=self.project['id'])
@@ -272,7 +195,7 @@ class TestTokenAPIs(AuthTest):
         # FIXME(gyee): PKI tokens are not interchangeable because token
         # data is baked into the token itself.
         self.opt_in_group('signing', token_format='PKI')
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
             project_id=self.project['id'])
@@ -345,7 +268,7 @@ class TestTokenAPIs(AuthTest):
 
     def test_rescoping_token(self):
         expires = self.token_data['expires']
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             token=self.token,
             project_id=self.project_id)
         r = self.post('/auth/tokens', body=auth_data)
@@ -372,14 +295,14 @@ class TestTokenAPIs(AuthTest):
 
 class TestAuth(AuthTest):
     def test_unscoped_token_with_user_id(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'])
         r = self.post('/auth/tokens', body=auth_data)
         self.assertValidUnscopedTokenResponse(r)
 
     def test_unscoped_token_with_user_domain_id(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_id=self.domain['id'],
             password=self.user['password'])
@@ -387,7 +310,7 @@ class TestAuth(AuthTest):
         self.assertValidUnscopedTokenResponse(r)
 
     def test_unscoped_token_with_user_domain_name(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_name=self.domain['name'],
             password=self.user['password'])
@@ -395,7 +318,7 @@ class TestAuth(AuthTest):
         self.assertValidUnscopedTokenResponse(r)
 
     def test_project_id_scoped_token_with_user_id(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
             project_id=self.project['id'])
@@ -407,14 +330,14 @@ class TestAuth(AuthTest):
         project = self.new_project_ref(domain_id=self.domain_id)
         self.identity_api.create_project(project_id, project)
 
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
             project_id=project['id'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_project_id_scoped_token_with_user_domain_id(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_id=self.domain['id'],
             password=self.user['password'],
@@ -423,7 +346,7 @@ class TestAuth(AuthTest):
         self.assertValidProjectScopedTokenResponse(r)
 
     def test_project_id_scoped_token_with_user_domain_name(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_name=self.domain['name'],
             password=self.user['password'],
@@ -436,7 +359,7 @@ class TestAuth(AuthTest):
             self.domain['id'], self.user['id'], self.role['id'])
         self.put(path=path)
 
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
             domain_id=self.domain['id'])
@@ -448,7 +371,7 @@ class TestAuth(AuthTest):
             self.domain['id'], self.user['id'], self.role['id'])
         self.put(path=path)
 
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_id=self.domain['id'],
             password=self.user['password'],
@@ -461,7 +384,7 @@ class TestAuth(AuthTest):
             self.domain['id'], self.user['id'], self.role['id'])
         self.put(path=path)
 
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_name=self.domain['name'],
             password=self.user['password'],
@@ -474,7 +397,7 @@ class TestAuth(AuthTest):
             self.domain['id'], self.user['id'], self.role['id'])
         self.put(path=path)
 
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
             domain_name=self.domain['name'])
@@ -486,7 +409,7 @@ class TestAuth(AuthTest):
             self.domain['id'], self.user['id'], self.role['id'])
         self.put(path=path)
 
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_id=self.domain['id'],
             password=self.user['password'],
@@ -499,7 +422,7 @@ class TestAuth(AuthTest):
             self.domain['id'], self.user['id'], self.role['id'])
         self.put(path=path)
 
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_name=self.domain['name'],
             password=self.user['password'],
@@ -523,7 +446,7 @@ class TestAuth(AuthTest):
         self.put(path=path)
 
         # now get a domain-scoped token
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
             domain_id=self.domain['id'])
@@ -536,7 +459,7 @@ class TestAuth(AuthTest):
             self.domain['id'], self.user['id'], self.role['id'])
         self.put(path=path)
         # now get a domain-scoped token
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
             domain_name=self.domain['name'])
@@ -544,14 +467,14 @@ class TestAuth(AuthTest):
         self.assertValidDomainScopedTokenResponse(r)
 
     def test_domain_scope_failed(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
             domain_id=self.domain['id'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_auth_with_id(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'])
         r = self.post('/auth/tokens', body=auth_data)
@@ -561,45 +484,45 @@ class TestAuth(AuthTest):
         headers = {'X-Subject-Token': r.getheader('X-Subject-Token')}
 
         # test token auth
-        auth_data = _build_authentication_request(token=token)
+        auth_data = self.build_authentication_request(token=token)
         r = self.post('/auth/tokens', body=auth_data)
         self.assertValidUnscopedTokenResponse(r)
 
     def test_invalid_user_id(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=uuid.uuid4().hex,
             password=self.user['password'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_invalid_user_name(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=uuid.uuid4().hex,
             user_domain_id=self.domain['id'],
             password=self.user['password'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_invalid_domain_id(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_id=uuid.uuid4().hex,
             password=self.user['password'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_invalid_domain_name(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_name=uuid.uuid4().hex,
             password=self.user['password'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_invalid_password(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=uuid.uuid4().hex)
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_remote_user(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'])
         api = auth.controllers.Auth()
@@ -610,7 +533,7 @@ class TestAuth(AuthTest):
         self.assertEqual(auth_context['user_id'], self.user['id'])
 
     def test_remote_user_no_domain(self):
-        auth_data = _build_authentication_request(
+        auth_data = self.build_authentication_request(
             username=self.user['name'],
             password=self.user['password'])
         api = auth.controllers.Auth()
