@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Joe Heck <heckj@mac.com>
+Approved+1: guang-yee
+Code-Review+2: guang-yee
+Code-Review+1: gordon chung <chungg@ca.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 25 Feb 2013 20:34:33 +0000
+Reviewed-on: https://review.openstack.org/22705
+Project: openstack/keystone
+Branch: refs/heads/master
