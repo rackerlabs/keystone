@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+nJI\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-25T21:23:22Z",
+      "side": 1,
+      "message": "Yes. We may need to special-case that one.",
+      "parentUuid": "AAAAM3/+nMI\u003d",
+      "revId": "098925295cd61d5a16eb5db25d1ccba6c3c15474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+nLg\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 2
@@ -87,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+nIw\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-25T21:23:22Z",
+      "side": 1,
+      "message": "Good point!",
+      "parentUuid": "AAAAM3/+nLE\u003d",
+      "revId": "098925295cd61d5a16eb5db25d1ccba6c3c15474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+nKM\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 2
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+nI8\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-25T21:23:22Z",
+      "side": 1,
+      "message": "For REMOTE_USER, we are calling api.authenticate() directly insteading using self.post(). Therefore, we need to peel the \"auth\" layer.",
+      "parentUuid": "AAAAM3/+nKM\u003d",
+      "revId": "098925295cd61d5a16eb5db25d1ccba6c3c15474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+nJk\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 2
@@ -115,6 +169,24 @@
       "writtenOn": "2013-02-25T21:16:17Z",
       "side": 1,
       "message": "i\u0027d rather get the same coverage as the json tests\n\nRename AuthTest to AuthTests, have it extend object instead of a TestCase, and then combine the two in two different classes:\n\n  class TestAuthJSON(test_v3.RestfulTestCase, AuthTests):\n    content_type \u003d \u0027json\u0027\n\n  class TestAuthXML(test_v3.RestfulTestCase, AuthTests):\n    content_type \u003d \u0027xml\u0027",
+      "revId": "098925295cd61d5a16eb5db25d1ccba6c3c15474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nI4\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-25T21:23:22Z",
+      "side": 1,
+      "message": "Good point!",
+      "parentUuid": "AAAAM3/+nJk\u003d",
       "revId": "098925295cd61d5a16eb5db25d1ccba6c3c15474",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
