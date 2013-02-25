@@ -82,13 +82,14 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
 
         # A default auth request we can use - un-scoped user token
         self.auth = {}
-        self.auth['authentication'] = {'methods': []}
-        self.auth['authentication']['methods'].append('password')
-        self.auth['authentication']['password'] = {'user': {}}
-        self.auth['authentication']['password']['user']['id'] = (
+        self.auth['identity'] = {'methods': []}
+        self.auth['identity']['methods'].append('password')
+        self.auth['identity']['password'] = {'user': {}}
+        self.auth['identity']['password']['user']['id'] = (
             self.user1['id'])
-        self.auth['authentication']['password']['user']['password'] = (
+        self.auth['identity']['password']['user']['password'] = (
             self.user1['password'])
+        self.auth = {'auth': self.auth}
 
     def tearDown(self):
         super(IdentityTestProtectedCase, self).tearDown()
