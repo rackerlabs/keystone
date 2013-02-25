@@ -33,6 +33,125 @@
       "revId": "2d5d4eaf635d01396af2500ef4a745c31fef4602",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nAY\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T22:51:21Z",
+      "side": 1,
+      "message": "trustId would make more sense in v2",
+      "revId": "2d5d4eaf635d01396af2500ef4a745c31fef4602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nAI\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T22:51:21Z",
+      "side": 1,
+      "message": "this should be a boolean",
+      "revId": "2d5d4eaf635d01396af2500ef4a745c31fef4602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+m/0\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T22:51:21Z",
+      "side": 1,
+      "message": "can you be consistent about expires / expiry / expires_at?",
+      "revId": "2d5d4eaf635d01396af2500ef4a745c31fef4602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+m/8\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T22:51:21Z",
+      "side": 1,
+      "message": "boolean",
+      "revId": "2d5d4eaf635d01396af2500ef4a745c31fef4602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+m/U\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T22:51:21Z",
+      "side": 1,
+      "message": "could remove",
+      "revId": "2d5d4eaf635d01396af2500ef4a745c31fef4602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+m/A\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 2058,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T22:51:21Z",
+      "side": 1,
+      "message": "what is r1, r2, and r3? generate uuid\u0027s and test for them",
+      "revId": "2d5d4eaf635d01396af2500ef4a745c31fef4602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+m+0\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 2061,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T22:51:21Z",
+      "side": 1,
+      "message": "is 10 necessary? i think 3 would be sufficient throughout",
+      "revId": "2d5d4eaf635d01396af2500ef4a745c31fef4602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
