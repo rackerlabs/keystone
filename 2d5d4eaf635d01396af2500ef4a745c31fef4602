@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+nAo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T22:43:25Z",
+      "side": 1,
+      "message": "change this to deleted_at, and then set it to the current timestamp when you delete",
+      "revId": "2d5d4eaf635d01396af2500ef4a745c31fef4602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nAg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T22:43:25Z",
+      "side": 1,
+      "message": "expires_at?",
+      "revId": "2d5d4eaf635d01396af2500ef4a745c31fef4602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
