@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+nMI\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T21:16:17Z",
+      "side": 1,
+      "message": "i assume this will turn policies into a list of \"policie\" elements, correct?",
+      "revId": "098925295cd61d5a16eb5db25d1ccba6c3c15474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nLg\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T21:16:17Z",
+      "side": 1,
+      "message": "undo",
+      "revId": "098925295cd61d5a16eb5db25d1ccba6c3c15474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nLk\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T21:16:17Z",
+      "side": 1,
+      "message": "log.exception(\u0027Serializer failed\u0027)",
+      "revId": "098925295cd61d5a16eb5db25d1ccba6c3c15474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nLI\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T21:16:17Z",
+      "side": 1,
+      "message": "import order -- lxml goes into it\u0027s own group between uuid and keystone",
+      "revId": "098925295cd61d5a16eb5db25d1ccba6c3c15474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nLE\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T21:16:17Z",
+      "side": 1,
+      "message": "instead of re-assigning token from itself, do it in one go:\n\n  if r.getheader(\u0027Content-Type\u0027) \u003d\u003d \u0027application/xml\u0027:\n    token \u003d serializer.from_xml(etree.tostring(r.body))[\u0027token\u0027]\n  else:\n    token \u003d r.body[\u0027token\u0027]\n\nalso don\u0027t do .lower(), especially in tests",
+      "revId": "098925295cd61d5a16eb5db25d1ccba6c3c15474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nKM\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T21:16:17Z",
+      "side": 1,
+      "message": "why do you need to do this only in remote_user tests? that seems like it\u0027s asserting a broken behavior somewhere...",
+      "revId": "098925295cd61d5a16eb5db25d1ccba6c3c15474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nJk\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T21:16:17Z",
+      "side": 1,
+      "message": "i\u0027d rather get the same coverage as the json tests\n\nRename AuthTest to AuthTests, have it extend object instead of a TestCase, and then combine the two in two different classes:\n\n  class TestAuthJSON(test_v3.RestfulTestCase, AuthTests):\n    content_type \u003d \u0027json\u0027\n\n  class TestAuthXML(test_v3.RestfulTestCase, AuthTests):\n    content_type \u003d \u0027xml\u0027",
+      "revId": "098925295cd61d5a16eb5db25d1ccba6c3c15474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
