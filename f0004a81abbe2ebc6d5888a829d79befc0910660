@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+nb8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-25T18:44:41Z",
+      "side": 1,
+      "message": "To separate change",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nb0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-25T18:44:41Z",
+      "side": 1,
+      "message": "Until here.",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nbU\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-25T18:44:41Z",
+      "side": 1,
+      "message": "Moving this method out should go to separate change.",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nbY\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-25T18:44:41Z",
+      "side": 1,
+      "message": "unused",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nbQ\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-25T18:44:41Z",
+      "side": 1,
+      "message": "Project membership cleanup - to separate change.",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nbA\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-25T18:44:41Z",
+      "side": 1,
+      "message": "To separate change",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nao\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-25T18:44:41Z",
+      "side": 1,
+      "message": "Are there any reason to boost timeout here?",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
