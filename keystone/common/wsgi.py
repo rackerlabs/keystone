@@ -129,8 +129,12 @@ class Server(object):
     def _run(self, application, socket):
         """Start a WSGI server in a new green thread."""
         log = logging.getLogger('eventlet.wsgi.server')
-        eventlet.wsgi.server(socket, application, custom_pool=self.pool,
-                             log=WritableLogger(log))
+        try:
+            eventlet.wsgi.server(socket, application, custom_pool=self.pool,
+                                 log=WritableLogger(log))
+        except Exception as e:
+            LOG.exception(_('Server error'))
+            raise
 
 
 class Request(webob.Request):
@@ -553,5 +557,5 @@ def render_exception(error):
         'message': str(error)
     }}
     if isinstance(error, exception.AuthPluginException):
-        body['error']['identity'] = error.authentication
+        body['authentication'] = error.authentication
     return render_response(status=(error.code, error.title), body=body)
