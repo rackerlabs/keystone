@@ -128,21 +128,23 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             method='POST',
             path='/v3/auth/tokens',
             body={
-                'authentication': {
-                    'methods': ['password'],
-                    'password': {
-                        'user': {
-                            'name': self.user['name'],
-                            'password': self.user['password'],
-                            'domain': {
-                                'id': self.user['domain_id']
+                'auth': {
+                    'identity': {
+                        'methods': ['password'],
+                        'password': {
+                            'user': {
+                                'name': self.user['name'],
+                                'password': self.user['password'],
+                                'domain': {
+                                    'id': self.user['domain_id']
+                                }
                             }
                         }
-                    }
-                },
-                'scope': {
-                    'project': {
-                        'id': self.project['id'],
+                    },
+                    'scope': {
+                        'project': {
+                            'id': self.project['id'],
+                        }
                     }
                 }
             })
