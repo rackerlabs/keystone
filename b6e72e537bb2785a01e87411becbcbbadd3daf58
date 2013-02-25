@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+nsA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-25T16:54:14Z",
+      "side": 1,
+      "message": "Is \"ref_attr\" also a boolean? Do we need to worry about converting it to boolean as well?",
+      "revId": "b6e72e537bb2785a01e87411becbcbbadd3daf58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
