@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+oTE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-25T08:37:08Z",
+      "side": 1,
+      "message": "Thanks!",
+      "revId": "9de6c9c4cffcf8878a4821433da8fe4ccb55745d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+oTA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-25T08:37:08Z",
+      "side": 1,
+      "message": "I think we already did this check before we came into the if clause, so no need to repeat.",
+      "revId": "9de6c9c4cffcf8878a4821433da8fe4ccb55745d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+oS4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-25T08:37:08Z",
+      "side": 1,
+      "message": "Do we not also need to add in any project_id that is present (that would be in the v2 token as a tenant_id)?",
+      "revId": "9de6c9c4cffcf8878a4821433da8fe4ccb55745d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+oR8\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-25T08:37:08Z",
+      "side": 1,
+      "message": "As an aside, I think delete_token() just marks it as non longer valid.  Does anything actually physically delete the token...or are they kept around for auditing purposes?  If the later, do we describe somewhere in the docs some kind of periodic archiving to stop the DB growing continuously?  I raise this now since of course the same will be true for trusts that are deleted/deactivated/disabled",
+      "revId": "9de6c9c4cffcf8878a4821433da8fe4ccb55745d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
