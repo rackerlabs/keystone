@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+nT8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-25T20:47:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+nb0\u003d",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+nbU\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 23
@@ -47,6 +65,24 @@
       "writtenOn": "2013-02-25T18:44:41Z",
       "side": 1,
       "message": "Moving this method out should go to separate change.",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nNw\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-25T20:47:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+nbU\u003d",
       "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+nNk\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-25T20:47:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+nbY\u003d",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+nbQ\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 23
@@ -81,6 +135,24 @@
       "writtenOn": "2013-02-25T18:44:41Z",
       "side": 1,
       "message": "Project membership cleanup - to separate change.",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nNg\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-25T20:47:45Z",
+      "side": 1,
+      "message": "managed to munge it in with the conflicts change.  But yep.",
+      "parentUuid": "AAAAM3/+nbQ\u003d",
       "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+nNM\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-25T20:47:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+nbA\u003d",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+nao\u003d",
         "filename": "tests/test_content_types.py",
         "patchSetId": 23
@@ -115,6 +205,24 @@
       "writtenOn": "2013-02-25T18:44:41Z",
       "side": 1,
       "message": "Are there any reason to boost timeout here?",
+      "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nNI\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-25T20:47:45Z",
+      "side": 1,
+      "message": "Only for debugging.  It will be reverted prior to final commit.",
+      "parentUuid": "AAAAM3/+nao\u003d",
       "revId": "f0004a81abbe2ebc6d5888a829d79befc0910660",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
