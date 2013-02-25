@@ -16,6 +16,24 @@
       "revId": "b6e72e537bb2785a01e87411becbcbbadd3daf58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+npc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-25T17:07:18Z",
+      "side": 1,
+      "message": "Yes, ref_attr here will be a true boolean, see check further up...so I don\u0027t think any conversion is needed",
+      "parentUuid": "AAAAM3/+nsA\u003d",
+      "revId": "b6e72e537bb2785a01e87411becbcbbadd3daf58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
