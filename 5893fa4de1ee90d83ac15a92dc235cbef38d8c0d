@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+nMo\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T22:33:43Z",
+      "side": 1,
+      "message": "should probably be a FIXME",
+      "revId": "5893fa4de1ee90d83ac15a92dc235cbef38d8c0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+o/E\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 2
@@ -31,6 +48,23 @@
       "side": 1,
       "message": "Yes, the reason is just to have some other users in the DB, to  at least provide a basic test that the get call is indeed returning the correct subset",
       "parentUuid": "AAAAM3/+o/E\u003d",
+      "revId": "5893fa4de1ee90d83ac15a92dc235cbef38d8c0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nH0\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-25T22:33:43Z",
+      "side": 1,
+      "message": "if this is returning a list of id\u0027s as asserted below, then _ref is a misleading choice for the variable name, as it generally implies a reference to an object that can be persisted. role_ids?",
       "revId": "5893fa4de1ee90d83ac15a92dc235cbef38d8c0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
