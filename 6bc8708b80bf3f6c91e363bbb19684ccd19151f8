@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+nPM\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-25T20:32:35Z",
+      "side": 1,
+      "message": "Yes. It was removed in a V3 specific patch.",
+      "parentUuid": "AAAAM3/+nQw\u003d",
+      "revId": "6bc8708b80bf3f6c91e363bbb19684ccd19151f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+nRI\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-25T20:19:03Z",
       "side": 1,
       "message": "This needs a docstring -- it\u0027s not super clear that d is a dict or what the expected behavior is.",
+      "revId": "6bc8708b80bf3f6c91e363bbb19684ccd19151f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+nPE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-25T20:32:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAM3/+nRI\u003d",
       "revId": "6bc8708b80bf3f6c91e363bbb19684ccd19151f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
