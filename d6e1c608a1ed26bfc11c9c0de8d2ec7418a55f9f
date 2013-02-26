@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+l+8\u003d",
+        "filename": "tests/test_v3_protection.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-26T13:56:40Z",
+      "side": 1,
+      "message": "I think this comment is a cut and paste from another test?",
+      "revId": "d6e1c608a1ed26bfc11c9c0de8d2ec7418a55f9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
