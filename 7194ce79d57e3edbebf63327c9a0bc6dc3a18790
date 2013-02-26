@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+mV8\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-26T07:11:48Z",
+      "side": 1,
+      "message": "The literal SQL seems to be the only way to test for a column being null and still make it through the PEP8 test.",
+      "revId": "7194ce79d57e3edbebf63327c9a0bc6dc3a18790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
