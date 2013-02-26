@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+mds\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-26T05:11:09Z",
+      "side": 1,
+      "message": "Is this related to the migration work or did you just fix something else while doing the migration work?",
+      "revId": "ce655365627b26d8cc5bac80e4a98a5bce65499b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+mdo\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-26T05:11:09Z",
+      "side": 1,
+      "message": "Is this related to the migration work or did you just fix something else while doing the migration work?",
+      "revId": "ce655365627b26d8cc5bac80e4a98a5bce65499b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
