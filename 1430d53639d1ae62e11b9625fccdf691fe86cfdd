@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+l/c\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-26T13:53:09Z",
+      "side": 1,
+      "message": "Go ahead and make this project_id (flattened) -- see spec\n\nhttps://github.com/openstack/identity-api/blob/master/openstack-identity-api/src/markdown/identity-api-v3.md#trusts",
+      "revId": "1430d53639d1ae62e11b9625fccdf691fe86cfdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
