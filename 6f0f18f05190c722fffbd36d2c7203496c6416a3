@@ -33,6 +33,24 @@
       "revId": "6f0f18f05190c722fffbd36d2c7203496c6416a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+mc8\u003d",
+        "filename": "tests/test_v3_protection.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-26T06:10:00Z",
+      "side": 1,
+      "message": "Had planned on doing v2 auth for this, but it seemed out of place in v3 protection.  Messed with it for a while, but it is a bridge to far tonight",
+      "parentUuid": "AAAAM3/+mec\u003d",
+      "revId": "6f0f18f05190c722fffbd36d2c7203496c6416a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
