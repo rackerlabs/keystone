@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+mcs\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-26T05:37:39Z",
+      "side": 1,
+      "message": "are the trustee_user_id and trustor_user_id being set somewhere? I thought trust APIs are depending on them.",
+      "revId": "6f0f18f05190c722fffbd36d2c7203496c6416a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+mec\u003d",
         "filename": "tests/test_v3_protection.py",
         "patchSetId": 6
