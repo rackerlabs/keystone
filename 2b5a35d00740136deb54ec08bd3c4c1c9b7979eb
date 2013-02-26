@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+ldo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T18:51:53Z",
+      "side": 1,
+      "message": "Misleading newline",
+      "revId": "2b5a35d00740136deb54ec08bd3c4c1c9b7979eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+ldI\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T18:51:53Z",
+      "side": 1,
+      "message": "May be like this?\n\n    if not data_copy.get(\u0027expires\u0027):",
+      "revId": "2b5a35d00740136deb54ec08bd3c4c1c9b7979eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+ldA\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T18:51:53Z",
+      "side": 1,
+      "message": "trust_id \u003d metadata_ref.get(\u0027trust_id\u0027)",
+      "revId": "2b5a35d00740136deb54ec08bd3c4c1c9b7979eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lcs\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T18:51:53Z",
+      "side": 1,
+      "message": "Overindent",
+      "revId": "2b5a35d00740136deb54ec08bd3c4c1c9b7979eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lcg\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T18:51:53Z",
+      "side": 1,
+      "message": "Obsolete line?",
+      "revId": "2b5a35d00740136deb54ec08bd3c4c1c9b7979eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lb0\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T18:51:53Z",
+      "side": 1,
+      "message": "unused",
+      "revId": "2b5a35d00740136deb54ec08bd3c4c1c9b7979eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lcU\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T18:51:53Z",
+      "side": 1,
+      "message": "Extra braces",
+      "revId": "2b5a35d00740136deb54ec08bd3c4c1c9b7979eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lb8\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T18:51:53Z",
+      "side": 1,
+      "message": "Are keyword arguments necessary here?",
+      "revId": "2b5a35d00740136deb54ec08bd3c4c1c9b7979eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+laU\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T18:51:53Z",
+      "side": 1,
+      "message": "unused",
+      "revId": "2b5a35d00740136deb54ec08bd3c4c1c9b7979eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lY4\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 37
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T18:51:53Z",
+      "side": 1,
+      "message": "Irrelevant space :)",
+      "revId": "2b5a35d00740136deb54ec08bd3c4c1c9b7979eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lYk\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T18:51:53Z",
+      "side": 1,
+      "message": "Cut out this rename to separate change?",
+      "revId": "2b5a35d00740136deb54ec08bd3c4c1c9b7979eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
