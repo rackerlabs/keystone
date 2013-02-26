@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+ms0\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-26T01:21:10Z",
+      "side": 1,
+      "message": "you can\u0027t raise a validation error without passing attribute and target -- validate each key you\u0027re looking for and raise an appropriate ValidationError about what you\u0027re expecting",
+      "revId": "b33475227b4c3b673675a67c47c78a2d65b839bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
