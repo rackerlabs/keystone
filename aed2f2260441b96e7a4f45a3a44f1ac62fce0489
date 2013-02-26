@@ -1,0 +1,344 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+k8Q\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "I would suggest changing this to something like\n\n    if sum([has_project, has_domain, has_trust]) !\u003d 1:",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k8w\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "What if trust is provided with one of these?",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k7k\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "Looks like self._scope_data can contain either ids or refs - is it intentional?",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k7U\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "trust is not used here. If it\u0027s intentional, it should be prefixed with underscore.",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k5M\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be added in _populate_scope or separate _populate_trust method?",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k44\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "And\n\n    user_ref \u003d trustor_user_ref",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k4o\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "Why use keyword arguments?",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k4Y\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "Looks better:\n\n    (\u0027expires_at\u0027,)",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k38\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "Can be separated too.",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k0w\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we delete tokens for trusts issued by this user (where he is trustor), not for this user (where he is trustee)?",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k30\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "Either remove or uncomment",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k3U\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "noop",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k2Y\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "Extra braces are still here",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k20\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "unused",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k9Q\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "It looks like session.flush() is not required here. Other list_* methods don\u0027t use it and so doesn\u0027t have any loops or intermediate lists in them. I think, these methods should be just like the others.",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k9A\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "Use\n\n    with session.begin():\n\nand minimize try: block",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k18\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "expires_at \u003d trust.get(\u0027expires_at\u0027)",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+k0o\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "overridden by next line",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+kzw\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "SqlToken testcase should remain.",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+kzo\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T23:36:22Z",
+      "side": 1,
+      "message": "Don\u0027t forget to revert this.",
+      "revId": "aed2f2260441b96e7a4f45a3a44f1ac62fce0489",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
