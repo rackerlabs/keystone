@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+liU\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-26T18:02:16Z",
+      "side": 1,
+      "message": "remove \u0027extra\u0027",
+      "revId": "1fc7842c9412c43274507bec73a54518a3ca9647",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
