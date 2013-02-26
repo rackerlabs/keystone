@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+l/A\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-26T13:58:59Z",
+      "side": 1,
+      "message": "this can now definitely be simplified as:\n\n  if context.get(\u0027is_admin\u0027):",
+      "revId": "d6e1c608a1ed26bfc11c9c0de8d2ec7418a55f9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+l+8\u003d",
         "filename": "tests/test_v3_protection.py",
         "patchSetId": 7
