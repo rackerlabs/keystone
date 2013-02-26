@@ -177,3 +177,7 @@ def append_v3_routers(mapper, routers):
                    controller=role_controller,
                    action='revoke_grant',
                    conditions=dict(method=['DELETE']))
+    mapper.connect('/trusts/{trust_id}/roles',
+                   controller=role_controller,
+                   action='list_roles_for_trust',
+                   conditions=dict(method=['GET']))
