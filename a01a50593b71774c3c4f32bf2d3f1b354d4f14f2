@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+mwQ\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-26T00:56:37Z",
+      "side": 1,
+      "message": "make the exception more specific -- what could be raised? (i actually don\u0027t see anything worth catching?)\n\nalso, you\u0027re not using e (just overwriting the reference), so \u0027except Exception:\u0027 would have made it more clear",
+      "revId": "a01a50593b71774c3c4f32bf2d3f1b354d4f14f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
