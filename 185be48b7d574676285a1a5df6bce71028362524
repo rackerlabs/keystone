@@ -2,6 +2,193 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+lKw\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T20:26:59Z",
+      "side": 1,
+      "message": "(\u0027description\u0027,)",
+      "revId": "185be48b7d574676285a1a5df6bce71028362524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lKI\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T20:26:59Z",
+      "side": 1,
+      "message": "Check if user exists",
+      "revId": "185be48b7d574676285a1a5df6bce71028362524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lKE\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T20:26:59Z",
+      "side": 1,
+      "message": "If we keep it, it shouldn\u0027t be hidden in else: branch.",
+      "revId": "185be48b7d574676285a1a5df6bce71028362524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lM8\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1018,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T20:26:59Z",
+      "side": 1,
+      "message": "We should raise Conflict like in RoleApi.add_user",
+      "revId": "185be48b7d574676285a1a5df6bce71028362524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lMw\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1029,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T20:26:59Z",
+      "side": 1,
+      "message": "Wrong exception is caught. We should raise exception here as well (don\u0027t look at RoleApi.delete_user, except: branch is broken there)",
+      "revId": "185be48b7d574676285a1a5df6bce71028362524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lLY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T20:26:59Z",
+      "side": 1,
+      "message": "Use self.id_attr",
+      "revId": "185be48b7d574676285a1a5df6bce71028362524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lMM\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1043,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T20:26:59Z",
+      "side": 1,
+      "message": "Inline this",
+      "revId": "185be48b7d574676285a1a5df6bce71028362524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lMI\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T20:26:59Z",
+      "side": 1,
+      "message": "If it is None, we\u0027ll get fail later (at \u0027in members\u0027). I don\u0027t think this check is appropriate.",
+      "revId": "185be48b7d574676285a1a5df6bce71028362524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lLo\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1048,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T20:26:59Z",
+      "side": 1,
+      "message": "Search at specific DN with SCOPE_BASE",
+      "revId": "185be48b7d574676285a1a5df6bce71028362524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lMY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T20:26:59Z",
+      "side": 1,
+      "message": "extra blank line",
+      "revId": "185be48b7d574676285a1a5df6bce71028362524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lLU\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1055,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T20:26:59Z",
+      "side": 1,
+      "message": "Dict of attributes is named \u0027attrs\u0027 everywhere in the backend.",
+      "revId": "185be48b7d574676285a1a5df6bce71028362524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+mTk\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 7
@@ -13,6 +200,23 @@
       "writtenOn": "2013-02-26T08:00:10Z",
       "side": 1,
       "message": "Although I know this is marked as WIP, but it is not good form to have this code commented out in code that is posted up - since you are removing this test from all other backends...so there is not way this would be allowed in...unless you plan on fixing bug 1101276 as well!  Better to comment this code out locally whenever you are testing",
+      "revId": "185be48b7d574676285a1a5df6bce71028362524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+lJY\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-26T20:26:59Z",
+      "side": 1,
+      "message": "Don\u0027t comment out - just delete.",
       "revId": "185be48b7d574676285a1a5df6bce71028362524",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
