@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+kL0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-27T06:54:48Z",
+      "side": 1,
+      "message": "OK, will change it - there was a debate about whether we should also check for \u0027false\u0027, \u0027False\u0027 etc., which is why it was a list.  I left it like that in case we changed our minds!  Provided we don\u0027t, I\u0027ll just make it a simple equality check!",
+      "parentUuid": "AAAAM3/+kR8\u003d",
+      "revId": "b485891547e976ff9e34fd2c6930ca2229a91cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+kRw\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+kKs\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-27T06:54:48Z",
+      "side": 1,
+      "message": "true...although do need the authentication build helpers from test_v3.RestfulTestCase...so will use that, and call setup with load_sample_data\u003dFalse.",
+      "parentUuid": "AAAAM3/+kRw\u003d",
+      "revId": "b485891547e976ff9e34fd2c6930ca2229a91cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+kRQ\u003d",
         "filename": "tests/test_v3_protection.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2013-02-27T05:43:18Z",
       "side": 1,
       "message": "Forbidden instead of an empty list? That by design?",
+      "revId": "b485891547e976ff9e34fd2c6930ca2229a91cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+kLk\u003d",
+        "filename": "tests/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-02-27T06:54:48Z",
+      "side": 1,
+      "message": "It should depend whether the \"failure\" is simply due to filtering returning nothing (in which case you should get an empty list), or whether you have asked for something you don\u0027t have authorization for.  This case is the latter.",
+      "parentUuid": "AAAAM3/+kRQ\u003d",
       "revId": "b485891547e976ff9e34fd2c6930ca2229a91cb7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
