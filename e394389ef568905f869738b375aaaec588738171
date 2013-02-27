@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+kSI\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-27T05:46:18Z",
+      "side": 1,
+      "message": "Builtin method override. Why don\u0027t use sum() function? True \u003d\u003d 1",
+      "revId": "e394389ef568905f869738b375aaaec588738171",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+kT8\u003d",
         "filename": "keystone/auth/methods/token.py",
         "patchSetId": 41
@@ -13,6 +30,57 @@
       "writtenOn": "2013-02-27T05:03:17Z",
       "side": 1,
       "message": "if this is a trust token you may want to just raise Unauthorized as only use case for token auth is re-scoping. Trust token can\u0027t be used for re-scoping.",
+      "revId": "e394389ef568905f869738b375aaaec588738171",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+kSE\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-27T05:46:18Z",
+      "side": 1,
+      "message": "We already fetched it it the beginning of previous if: block.",
+      "revId": "e394389ef568905f869738b375aaaec588738171",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+kR0\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-27T05:46:18Z",
+      "side": 1,
+      "message": "data_copy.get(\u0027expires\u0027)",
+      "revId": "e394389ef568905f869738b375aaaec588738171",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+kRk\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-02-27T05:46:18Z",
+      "side": 1,
+      "message": "This loop is unnecessary here and in two other list_trusts methods. You can just write:\n\n    trusts \u003d session.query(TrustModel).filter_by(deleted_at\u003dNone)",
       "revId": "e394389ef568905f869738b375aaaec588738171",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
