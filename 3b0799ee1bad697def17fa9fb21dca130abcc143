@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+kaY\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-27T03:05:47Z",
+      "side": 1,
+      "message": "I would not expect this to fail.  We do not validate that a project exists, or that roles have been assigned, until trust execution time.",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+kaw\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-27T03:05:47Z",
+      "side": 1,
+      "message": "This does not create an expired trust.  A trust takes in the iso time.  If no time is passed in, the trust does not expire.",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
