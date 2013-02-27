@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAM3/+kUo\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-27T04:58:01Z",
+      "side": 1,
+      "message": "we allow unscoped trust? What for?",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+kaY\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 1
@@ -30,6 +47,40 @@
       "writtenOn": "2013-02-27T03:05:47Z",
       "side": 1,
       "message": "This does not create an expired trust.  A trust takes in the iso time.  If no time is passed in, the trust does not expire.",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+kUI\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-27T04:58:01Z",
+      "side": 1,
+      "message": "how about a test for creating a trust token in v3 and validating it in v2?",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+kVI\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-27T04:58:01Z",
+      "side": 1,
+      "message": "Can you also add xml test cases for trust if possible?",
       "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
