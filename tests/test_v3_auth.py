@@ -12,15 +12,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import uuid
 
 from lxml import etree
+import nose.exc
 
 from keystone import auth
 from keystone import config
 from keystone import exception
 from keystone.common import serializer
-from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
 from keystone import test
 
@@ -32,7 +33,7 @@ CONF = config.CONF
 
 def _build_auth_scope(project_id=None, project_name=None,
                       project_domain_id=None, project_domain_name=None,
-                      domain_id=None, domain_name=None):
+                      domain_id=None, domain_name=None, trust_id=None):
     scope_data = {}
     if project_id or project_name:
         scope_data['project'] = {}
@@ -53,6 +54,9 @@ def _build_auth_scope(project_id=None, project_name=None,
             scope_data['domain']['id'] = domain_id
         else:
             scope_data['domain']['name'] = domain_name
+    if trust_id:
+        scope_data['trust'] = {}
+        scope_data['trust']['id'] = trust_id
     return scope_data
 
 
@@ -80,10 +84,7 @@ def _build_token_auth(token):
 
 def _build_authentication_request(token=None, user_id=None, username=None,
                                   user_domain_id=None, user_domain_name=None,
-                                  password=None, project_id=None,
-                                  project_name=None, project_domain_id=None,
-                                  project_domain_name=None,
-                                  domain_id=None, domain_name=None):
+                                  password=None, **kwargs):
     """Build auth dictionary.
 
     It will create an auth dictionary based on all the arguments
@@ -98,13 +99,8 @@ def _build_authentication_request(token=None, user_id=None, username=None,
         auth_data['identity']['methods'].append('password')
         auth_data['identity']['password'] = _build_password_auth(
             user_id, username, user_domain_id, user_domain_name, password)
-    if project_id or project_name or domain_id or domain_name:
-        auth_data['scope'] = _build_auth_scope(project_id,
-                                               project_name,
-                                               project_domain_id,
-                                               project_domain_name,
-                                               domain_id,
-                                               domain_name)
+    if kwargs:
+        auth_data['scope'] = _build_auth_scope(**kwargs)
     return {'auth': auth_data}
 
 
@@ -635,3 +631,263 @@ class TestAuthJSON(AuthTest):
 
 class TestAuthXML(TestAuthJSON):
     content_type = 'xml'
+
+
+class TestTrustAuth(AuthTest):
+    def setUp(self):
+        super(TestTrustAuth, self).setUp()
+
+        # create a trustee to delegate stuff to
+        self.trustee_user_id = uuid.uuid4().hex
+        self.trustee_user = self.new_user_ref(domain_id=self.domain_id)
+        self.trustee_user['id'] = self.trustee_user_id
+        self.identity_api.create_user(self.trustee_user_id, self.trustee_user)
+
+    def assertValidTrustListResponse(self, resp, *args, **kwargs):
+        return self.assertValidListResponse(
+            resp,
+            'trusts',
+            self.assertValidTrust,
+            *args,
+            **kwargs)
+
+    def assertValidTrustResponse(self, resp, *args, **kwargs):
+        return self.assertValidResponse(
+            resp,
+            'trust',
+            self.assertValidTrust,
+            *args,
+            **kwargs)
+
+    def assertValidTrust(self, entity, ref=None):
+        self.assertIsNotNone(entity.get('trustor_user_id'))
+        self.assertIsNotNone(entity.get('trustee_user_id'))
+        self.assertIsNotNone(entity.get('project_id'))
+        self.assertIn('expires_at', entity)
+
+        # these were used during dev and shouldn't land in final impl
+        # self.assertNotIn('roles', entity)
+        self.assertNotIn('role_ids', entity)
+        self.assertNotIn('role_names', entity)
+
+        if ref:
+            self.assertEqual(ref['trustor_user_id'], entity['trustor_user_id'])
+            self.assertEqual(ref['trustee_user_id'], entity['trustee_user_id'])
+            self.assertEqual(ref['project_id'], entity['project_id'])
+            # FIXME
+            #self.assertEqual(ref['expires_at'], entity['expires_at'])
+        return entity
+
+    def new_trust_ref(self, trustor_user_id, trustee_user_id, project_id=None,
+                      impersonation=None, expires=None, role_ids=None,
+                      role_names=None):
+        ref = self.new_ref()
+
+        ref['trustor_user_id'] = trustor_user_id
+        ref['trustee_user_id'] = trustee_user_id
+        ref['impersonation'] = impersonation or False
+        ref['project_id'] = project_id
+
+        if isinstance(expires, basestring):
+            ref['expires_at'] = expires
+        elif isinstance(expires, dict):
+            ref['expires_at'] = unicode(
+                timeutils.utcnow() + datetime.timedelta(**expires))
+        elif expires is None:
+            pass
+        else:
+            raise NotImplementedError('Unexpected value for "expires"')
+
+        role_ids = role_ids or []
+        role_names = role_names or []
+        if role_ids or role_names:
+            ref['roles'] = []
+            for role_id in role_ids:
+                ref['roles'].append({'id': role_id})
+            for role_name in role_names:
+                ref['roles'].append({'name': role_name})
+
+        return ref
+
+    def test_create_trust_400(self):
+        raise nose.exc.SkipTest('Blocked by bug 1133435')
+        self.post('/trusts', body={'trust': {}}, expected_status=400)
+
+    def test_create_unscoped_trust(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id)
+        del ref['id']
+        r = self.post('/trusts', body={'trust': ref})
+        self.assertValidTrustResponse(r, ref)
+
+    def test_trust_crud(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            role_ids=[self.role_id])
+        del ref['id']
+        r = self.post('/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r, ref)
+
+        r = self.get(
+            '/trusts/%(trust_id)s' % {'trust_id': trust['id']},
+            expected_status=200)
+        self.assertValidTrustResponse(r, ref)
+
+        # validate roles on the trust
+        r = self.get(
+            '/trusts/%(trust_id)s/roles' % {
+                'trust_id': trust['id']},
+            expected_status=200)
+        roles = self.assertValidRoleListResponse(r, self.role)
+        self.assertIn(self.role['id'], [x['id'] for x in roles])
+        self.head(
+            '/trusts/%(trust_id)s/roles/%(role_id)s' % {
+                'trust_id': trust['id'],
+                'role_id': self.role['id']},
+            expected_status=204)
+        r = self.get(
+            '/trusts/%(trust_id)s/roles/%(role_id)s' % {
+                'trust_id': trust['id'],
+                'role_id': self.role['id']},
+            expected_status=200)
+        self.assertValidRoleResponse(r, self.role)
+
+        r = self.get('/trusts', expected_status=200)
+        self.assertValidTrustListResponse(r, trust)
+
+        # trusts are immutable
+        self.patch(
+            '/trusts/%(trust_id)s' % {'trust_id': trust['id']},
+            body={'trust': ref},
+            expected_status=404)
+
+        self.delete(
+            '/trusts/%(trust_id)s' % {'trust_id': trust['id']},
+            expected_status=204)
+
+        self.get(
+            '/trusts/%(trust_id)s' % {'trust_id': trust['id']},
+            expected_status=404)
+
+    def test_create_trust_trustee_404(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id)
+        del ref['id']
+        self.post('/trusts', body={'trust': ref}, expected_status=404)
+
+    def test_create_trust_trustor_trustee_backwards(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.trustee_user_id,
+            trustee_user_id=self.user_id)
+        del ref['id']
+        self.post('/trusts', body={'trust': ref}, expected_status=403)
+
+    def test_create_trust_project_404(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=uuid.uuid4().hex,
+            role_ids=[self.role_id])
+        del ref['id']
+        self.post('/trusts', body={'trust': ref}, expected_status=404)
+
+    def test_create_trust_role_id_404(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            role_ids=[uuid.uuid4().hex])
+        del ref['id']
+        self.post('/trusts', body={'trust': ref}, expected_status=404)
+
+    def test_create_trust_role_name_404(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            role_names=[uuid.uuid4().hex])
+        del ref['id']
+        self.post('/trusts', body={'trust': ref}, expected_status=404)
+
+    def test_create_expired_trust(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            expires=dict(seconds=-1),
+            role_ids=[self.role_id])
+        del ref['id']
+        r = self.post('/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r, ref)
+
+        self.get('/trusts/%(trust_id)s' % {
+            'trust_id': trust['id']},
+            expected_status=404)
+
+        auth_data = _build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+        self.post('/auth/tokens', body=auth_data, expected_status=401)
+
+    def test_exercise_trust_scoped_token_without_impersonation(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            expires=dict(minutes=1),
+            role_ids=[self.role_id])
+        del ref['id']
+
+        r = self.post('/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+
+        auth_data = _build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+        r = self.post('/auth/tokens', body=auth_data)
+        self.assertValidProjectTrustScopedTokenResponse(r)
+        self.assertEqual(r.body['token']['user']['id'],
+                         self.trustee_user['id'])
+        self.assertEqual(r.body['token']['user']['name'],
+                         self.trustee_user['name'])
+        self.assertEqual(r.body['token']['user']['domain']['id'],
+                         self.domain['id'])
+        self.assertEqual(r.body['token']['user']['domain']['name'],
+                         self.domain['name'])
+        self.assertEqual(r.body['token']['project']['id'], self.project['id'])
+        self.assertEqual(r.body['token']['project']['name'],
+                         self.project['name'])
+
+    def test_exercise_trust_scoped_token_with_impersonation(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            expires=dict(minutes=1),
+            role_ids=[self.role_id])
+        del ref['id']
+
+        r = self.post('/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+
+        auth_data = _build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+        r = self.post('/auth/tokens', body=auth_data)
+        self.assertValidProjectTrustScopedTokenResponse(r)
+        self.assertEqual(r.body['token']['user']['id'], self.user['id'])
+        self.assertEqual(r.body['token']['user']['name'], self.user['name'])
+        self.assertEqual(r.body['token']['user']['domain']['id'],
+                         self.domain['id'])
+        self.assertEqual(r.body['token']['user']['domain']['name'],
+                         self.domain['name'])
+        self.assertEqual(r.body['token']['project']['id'], self.project['id'])
+        self.assertEqual(r.body['token']['project']['name'],
+                         self.project['name'])

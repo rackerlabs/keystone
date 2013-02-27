@@ -248,12 +248,13 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             entity_validator(entity, ref)
         return entities
 
-    def assertValidResponse(self, resp, key, entity_validator, ref):
+    def assertValidResponse(self, resp, key, entity_validator, *args,
+                            **kwargs):
         """Make assertions common to all API responses."""
         entity = resp.body.get(key)
         self.assertIsNotNone(entity)
-        self.assertValidEntity(entity, ref)
-        entity_validator(entity, ref)
+        self.assertValidEntity(entity, *args, **kwargs)
+        entity_validator(entity, *args, **kwargs)
         return entity
 
     def assertValidEntity(self, entity, ref=None):
