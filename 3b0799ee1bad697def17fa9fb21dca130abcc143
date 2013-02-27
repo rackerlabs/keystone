@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+jr8\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-27T14:29:55Z",
+      "side": 1,
+      "message": "Given that roles are optional, I\u0027d expect a project to be optional -- there\u0027s not really any meaning to having one without the other. This also seems useful if you enable impersonation without scoping -- useful for requesting another user\u0027s list of projects/domains in keystone, for example.",
+      "parentUuid": "AAAAM3/+kUo\u003d",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+kaY\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-27T03:05:47Z",
       "side": 1,
       "message": "I would not expect this to fail.  We do not validate that a project exists, or that roles have been assigned, until trust execution time.",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+jsY\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-27T14:29:55Z",
+      "side": 1,
+      "message": "That\u0027s contrary to every other API in keystone.\n\nAround essex, users frequently complained of being able to fill keystone with garbage data without error. We\u0027ve since rectified that it should be tested for and rectified here.",
+      "parentUuid": "AAAAM3/+kaY\u003d",
       "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+jsI\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-27T14:29:55Z",
+      "side": 1,
+      "message": "Good catch, I must have lost the expiration argument in a refactor.",
+      "parentUuid": "AAAAM3/+kaw\u003d",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+kUI\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 1
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+jrw\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-27T14:29:55Z",
+      "side": 1,
+      "message": "I haven\u0027t seen any docs for v2 and wouldn\u0027t pretend to have any expectations as to how to use it.",
+      "parentUuid": "AAAAM3/+kUI\u003d",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+kVI\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 1
@@ -81,6 +153,24 @@
       "writtenOn": "2013-02-27T04:58:01Z",
       "side": 1,
       "message": "Can you also add xml test cases for trust if possible?",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+jrs\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-27T14:29:55Z",
+      "side": 1,
+      "message": "I\u0027d like to take a stab at that for at least a single test case -- I was focused mostly on API behavior yesterday",
+      "parentUuid": "AAAAM3/+kVI\u003d",
       "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
