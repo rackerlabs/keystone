@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+i2c\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-27T21:56:49Z",
+      "side": 1,
+      "message": "surround with _() so can be translated",
+      "revId": "64028221df2cb5f87596e39594d525b03e4923b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
