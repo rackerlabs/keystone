@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+jiY\u003d",
+        "filename": "tests/test_contrib_ec2_core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-27T18:45:43Z",
+      "side": 1,
+      "message": "HACKING.rst says to only import modules, not module attributes.\nhttps://github.com/openstack/keystone/blame/master/HACKING.rst#L65",
+      "revId": "25a882bf5ebb796c48e8be469262e1b2387fde58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+jMc\u003d",
+        "filename": "tests/test_contrib_ec2_core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-02-27T18:45:43Z",
+      "side": 1,
+      "message": "group these imports together.",
+      "revId": "25a882bf5ebb796c48e8be469262e1b2387fde58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
