@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+kR8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-27T05:43:18Z",
+      "side": 1,
+      "message": "DISABLED_VALUES has only \u00270\u0027? Then why do \"in\" or val_attr.lower()?",
+      "revId": "b485891547e976ff9e34fd2c6930ca2229a91cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+kRw\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-27T05:43:18Z",
+      "side": 1,
+      "message": "No need to extend AuthTest because these tests are all negative tests. No need to add the load_fixtures overhead.",
+      "revId": "b485891547e976ff9e34fd2c6930ca2229a91cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+kRQ\u003d",
+        "filename": "tests/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-27T05:43:18Z",
+      "side": 1,
+      "message": "Forbidden instead of an empty list? That by design?",
+      "revId": "b485891547e976ff9e34fd2c6930ca2229a91cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
