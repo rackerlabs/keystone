@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+jqw\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 739,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-27T14:44:54Z",
+      "side": 1,
+      "message": "These should get replaced with validation of the role data on the trust object itself.",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+kaY\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 1
@@ -72,6 +89,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+jq8\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-27T14:44:54Z",
+      "side": 1,
+      "message": "Good point.  As I thought it over, I realized that the objects creates are all using UUIDs that had to be server side generated, and so delaying the validation is pointless.\n\nI\u0027d like to note, tho0ugh, that I still don\u0027t want to delete trusts after creation just because a user has lost a role.  Those changes and assignments may be temporary, and should not cause trusts to go away.",
+      "parentUuid": "AAAAM3/+jsY\u003d",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+jq4\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 808,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-27T14:44:54Z",
+      "side": 1,
+      "message": "400 for invalid data, not 404.",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+kaw\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 1
@@ -101,6 +153,40 @@
       "side": 1,
       "message": "Good catch, I must have lost the expiration argument in a refactor.",
       "parentUuid": "AAAAM3/+kaw\u003d",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+jqs\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-27T14:44:54Z",
+      "side": 1,
+      "message": "You need to fill in the id from r.",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+jrE\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-27T14:44:54Z",
+      "side": 1,
+      "message": "You must have a token to get a trust token.  UID/PW or other forms of auth do not work.",
       "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
