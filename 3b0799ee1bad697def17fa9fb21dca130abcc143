@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+joU\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-27T15:10:23Z",
+      "side": 1,
+      "message": "They\u0027re unconsumable at that point, right? I appreciate the need to keep around the record for auditing, but how else would you denote in the API that a trust is unusable? (besides a 404)",
+      "parentUuid": "AAAAM3/+jq8\u003d",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+jq4\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 1
@@ -118,6 +136,24 @@
       "writtenOn": "2013-02-27T14:44:54Z",
       "side": 1,
       "message": "400 for invalid data, not 404.",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+joQ\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 808,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-27T15:10:23Z",
+      "side": 1,
+      "message": "404 here because the referenced role can\u0027t be found (RoleNotFound should bubble up to the API layer)",
+      "parentUuid": "AAAAM3/+jq4\u003d",
       "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -176,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3/+joM\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-27T15:10:23Z",
+      "side": 1,
+      "message": "It looks like I made that mistake several times, apparently -- thanks.",
+      "parentUuid": "AAAAM3/+jqs\u003d",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+jrE\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 1
@@ -187,6 +241,24 @@
       "writtenOn": "2013-02-27T14:44:54Z",
       "side": 1,
       "message": "You must have a token to get a trust token.  UID/PW or other forms of auth do not work.",
+      "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+joI\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-27T15:10:23Z",
+      "side": 1,
+      "message": "I thought you changed your mind on that? Why the constraint? What\u0027s the goal of requiring a (unscoped?) token first?\n\nFrom the CLI, I\u0027m envisioning passing an extra --os-trust-id on top of my other credentials... and then you can consume a trust in a single step.",
+      "parentUuid": "AAAAM3/+jrE\u003d",
       "revId": "3b0799ee1bad697def17fa9fb21dca130abcc143",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
