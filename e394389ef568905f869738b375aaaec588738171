@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+kT8\u003d",
+        "filename": "keystone/auth/methods/token.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-27T05:03:17Z",
+      "side": 1,
+      "message": "if this is a trust token you may want to just raise Unauthorized as only use case for token auth is re-scoping. Trust token can\u0027t be used for re-scoping.",
+      "revId": "e394389ef568905f869738b375aaaec588738171",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+kT0\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-27T05:03:17Z",
+      "side": 1,
+      "message": "remove the extra import default_fixtures",
+      "revId": "e394389ef568905f869738b375aaaec588738171",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
