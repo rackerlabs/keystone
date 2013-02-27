@@ -54,6 +54,18 @@ else
     EC2RC="ec2rc"
 fi
 
+# Please set these, they are ONLY SAMPLE PASSWORDS!
+ADMIN_PASSWORD=${ADMIN_PASSWORD:-secrete}
+if [[ "$ADMIN_PASSWORD" == "secrete" ]]; then
+    echo "The default admin password has been detected.  Please consider"
+    echo "setting an actual password in environment variable ADMIN_PASSWORD"
+fi
+SERVICE_PASSWORD=${SERVICE_PASSWORD:-$ADMIN_PASSWORD}
+if [[ "$SERVICE_PASSWORD" == "$ADMIN_PASSWORD" ]]; then
+    echo "The default service password has been detected.  Please consider"
+    echo "setting an actual password in environment variable SERVICE_PASSWORD"
+fi
+
 # Extract some info from Keystone's configuration file
 if [[ -r "$KEYSTONE_CONF" ]]; then
     CONFIG_SERVICE_TOKEN=$(sed 's/[[:space:]]//g' $KEYSTONE_CONF | grep ^admin_token= | cut -d'=' -f2)
@@ -80,9 +92,10 @@ DEMO_TENANT=$(get_id keystone tenant-create --name=demo \
                                             --description "Default Tenant")
 
 ADMIN_USER=$(get_id keystone user-create --name=admin \
-                                         --pass=secrete)
+                                         --pass="$ADMIN_PASSWORD")
 
 ADMIN_ROLE=$(get_id keystone role-create --name=admin)
+MEMBER_ROLE=$(get_id keystone role-create --name=Member)
 
 keystone user-role-add --user-id $ADMIN_USER \
                        --role-id $ADMIN_ROLE \
@@ -95,14 +108,15 @@ SERVICE_TENANT=$(get_id keystone tenant-create --name=service \
                                                --description "Service Tenant")
 
 GLANCE_USER=$(get_id keystone user-create --name=glance \
-                                          --pass=glance)
+                                          --pass="$SERVICE_PASSWORD"
+                                          --tenant-id $SERVICE_TENANT)
 
 keystone user-role-add --user-id $GLANCE_USER \
                        --role-id $ADMIN_ROLE \
                        --tenant-id $SERVICE_TENANT
 
 NOVA_USER=$(get_id keystone user-create --name=nova \
-                                        --pass=nova \
+                                        --pass="$SERVICE_PASSWORD" \
                                         --tenant-id $SERVICE_TENANT)
 
 keystone user-role-add --user-id $NOVA_USER \
@@ -110,20 +124,32 @@ keystone user-role-add --user-id $NOVA_USER \
                        --tenant-id $SERVICE_TENANT
 
 EC2_USER=$(get_id keystone user-create --name=ec2 \
-                                       --pass=ec2 \
+                                       --pass="$SERVICE_PASSWORD" \
                                        --tenant-id $SERVICE_TENANT)
 
 keystone user-role-add --user-id $EC2_USER \
                        --role-id $ADMIN_ROLE \
                        --tenant-id $SERVICE_TENANT
 
-SWIFT_USER=$(get_id keystone user-create --name=swift \
-                                         --pass=swiftpass \
-                                         --tenant-id $SERVICE_TENANT)
+if [[ -n "$ENABLE_SWIFT" ]]; then
+    SWIFT_USER=$(get_id keystone user-create --name=swift \
+                                             --pass="$SERVICE_PASSWORD" \
+                                             --tenant-id $SERVICE_TENANT)
 
-keystone user-role-add --user-id $SWIFT_USER \
-                       --role-id $ADMIN_ROLE \
-                       --tenant-id $SERVICE_TENANT
+    keystone user-role-add --user-id $SWIFT_USER \
+                           --role-id $ADMIN_ROLE \
+                           --tenant-id $SERVICE_TENANT
+fi
+
+if [[ -n "$ENABLE_QUANTUM" ]]; then
+    QUANTUM_USER=$(get_id keystone user-create --name=quantum \
+                                             --pass="$SERVICE_PASSWORD" \
+                                             --tenant-id $SERVICE_TENANT)
+
+    keystone user-role-add --user-id $QUANTUM_USER \
+                           --role-id $ADMIN_ROLE \
+                           --tenant-id $SERVICE_TENANT
+fi
 
 #
 # Keystone service
@@ -157,9 +183,9 @@ fi
 # Volume service
 #
 VOLUME_SERVICE=$(get_id \
-keystone service-create --name=volume \
+keystone service-create --name=cinder \
                         --type=volume \
-                        --description="Nova Volume Service")
+                        --description="Cinder Volume Service")
 if [[ -z "$DISABLE_ENDPOINTS" ]]; then
     keystone endpoint-create --region RegionOne --service-id $VOLUME_SERVICE \
         --publicurl "http://$CONTROLLER_PUBLIC_ADDRESS:8776/v1/\$(tenant_id)s" \
@@ -198,15 +224,33 @@ fi
 #
 # Swift service
 #
-SWIFT_SERVICE=$(get_id \
-keystone service-create --name=swift \
-                        --type="object-store" \
-                        --description="Swift Service")
-if [[ -z "$DISABLE_ENDPOINTS" ]]; then
-    keystone endpoint-create --region RegionOne --service-id $SWIFT_SERVICE \
-        --publicurl   "http://$CONTROLLER_PUBLIC_ADDRESS:8888/v1/AUTH_\$(tenant_id)s" \
-        --adminurl    "http://$CONTROLLER_ADMIN_ADDRESS:8888/v1" \
-        --internalurl "http://$CONTROLLER_INTERNAL_ADDRESS:8888/v1/AUTH_\$(tenant_id)s"
+if [[ -n "$ENABLE_SWIFT" ]]; then
+    SWIFT_SERVICE=$(get_id \
+    keystone service-create --name=swift \
+                            --type="object-store" \
+                            --description="Swift Service")
+    if [[ -z "$DISABLE_ENDPOINTS" ]]; then
+        keystone endpoint-create --region RegionOne --service-id $SWIFT_SERVICE \
+            --publicurl   "http://$CONTROLLER_PUBLIC_ADDRESS:8888/v1/AUTH_\$(tenant_id)s" \
+            --adminurl    "http://$CONTROLLER_ADMIN_ADDRESS:8888/v1" \
+            --internalurl "http://$CONTROLLER_INTERNAL_ADDRESS:8888/v1/AUTH_\$(tenant_id)s"
+    fi
+fi
+
+#
+# Quantum service
+#
+if [[ -n "$ENABLE_QUANTUM" ]]; then
+    QUANTUM_SERVICE=$(get_id \
+    keystone service-create --name=quantum \
+                            --type=network \
+                            --description="Quantum Service")
+    if [[ -z "$DISABLE_ENDPOINTS" ]]; then
+        keystone endpoint-create --region RegionOne --service-id $QUANTUM_SERVICE \
+            --publicurl   "http://$CONTROLLER_PUBLIC_ADDRESS:9696" \
+            --adminurl    "http://$CONTROLLER_ADMIN_ADDRESS:9696" \
+            --internalurl "http://$CONTROLLER_INTERNAL_ADDRESS:9696"
+    fi
 fi
 
 # create ec2 creds and parse the secret and access key returned
