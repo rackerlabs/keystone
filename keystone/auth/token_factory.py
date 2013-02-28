@@ -126,7 +126,7 @@ class TokenDataHelper(object):
             # TODO(gyee): v3 service catalog is not quite completed yet
             token_data['catalog'] = service_catalog
 
-    def _populate_token(self, token_data, expires=None):
+    def _populate_times(self, token_data, expires=None):
         if not expires:
             expires = token_module.default_expire_time()
         if not isinstance(expires, unicode):
@@ -143,7 +143,7 @@ class TokenDataHelper(object):
         self._populate_roles(token_data, user_id, domain_id, project_id)
         self._populate_service_catalog(token_data, user_id, domain_id,
                                        project_id)
-        self._populate_token(token_data, expires)
+        self._populate_times(token_data, expires)
         return {'token': token_data}
 
 
@@ -248,6 +248,12 @@ def render_token_data_response(token_id, token_data):
     headers.append(('Vary', 'X-Auth-Token'))
     headers.append(('Content-Type', 'application/json'))
     status = (200, 'OK')
+    # Minimally meet V3 API spec
+    # convert 'expires' to 'expires_at'
+    if "token" in token_data:
+        if "expires" in token_data["token"]:
+            token_data["token"]['expires_at'] = token_data["token"]["expires"]
+            del token_data["token"]["expires"]
     body = jsonutils.dumps(token_data, cls=utils.SmarterEncoder)
     return webob.Response(body=body,
                           status='%s %s' % status,
