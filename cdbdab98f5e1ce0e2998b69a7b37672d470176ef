@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH///OY\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-28T14:04:33Z",
+      "side": 1,
+      "message": "Good catch, I completely forgot we have self.assertCloseEnoughForGovernmentWork(t1, t2) :)",
+      "parentUuid": "AAAANH///ms\u003d",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH///n4\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-28T03:14:31Z",
       "side": 1,
       "message": "trust_dict[\u0027expires_at\u0027] \u003d timeutils.isotime(trust_dict[\u0027expires_at\u0027])",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH///L8\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-28T14:04:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAANH///n4\u003d",
       "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH///OA\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-28T14:04:33Z",
+      "side": 1,
+      "message": "If anything, I\u0027d rather use dict() so that it\u0027s only expired by milliseconds, at most... I chose seconds to better illustrate intent of the test.",
+      "parentUuid": "AAAANH///nw\u003d",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH///ng\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2013-02-28T03:14:31Z",
       "side": 1,
       "message": "Again, can\u0027t do trust auth with a password:  trust gets ignored and you get a token as yourself.  I can put in an extra check for that, but the positive thread here should be:\n        auth_data \u003d _build_authentication_request(\n            user_id\u003dself.trustee_user[\u0027id\u0027],\n            password\u003dself.trustee_user[\u0027password\u0027])\n        resp \u003d self.post(\u0027/auth/tokens\u0027, body\u003dauth_data)\n        auth_data \u003d _build_authentication_request(\n            token\u003dresp.getheader(\u0027X-Subject-Token\u0027),\n            trust_id\u003dtrust[\u0027id\u0027])\n        r \u003d self.post(\u0027/auth/tokens\u0027, body\u003dauth_data)",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH///MA\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-28T14:04:33Z",
+      "side": 1,
+      "message": "Can we file a bug on that and fix it before grizzly?",
+      "parentUuid": "AAAANH///ng\u003d",
       "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH///N4\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-28T14:04:33Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAANH///nI\u003d",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH///nQ\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2013-02-28T03:14:31Z",
       "side": 1,
       "message": "This function doesn\u0027t exist",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH///MI\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 703,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-28T14:04:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAANH///nQ\u003d",
       "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH///N0\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-28T14:04:33Z",
+      "side": 1,
+      "message": "project is not being set correctly by token_factory?",
+      "parentUuid": "AAAANH///nY\u003d",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH///nM\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 7
@@ -132,6 +258,24 @@
       "writtenOn": "2013-02-28T03:14:31Z",
       "side": 1,
       "message": "add\nimpersonation\u003dTrue here.",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH///ME\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-28T14:04:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAANH///nM\u003d",
       "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
