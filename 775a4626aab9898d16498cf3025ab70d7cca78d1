@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAANH//+Xw\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-28T21:42:36Z",
+      "side": 1,
+      "message": "Why is this no longer needed?",
+      "revId": "775a4626aab9898d16498cf3025ab70d7cca78d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+X0\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-28T21:42:36Z",
+      "side": 1,
+      "message": "Why is this no longer needed?",
+      "revId": "775a4626aab9898d16498cf3025ab70d7cca78d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+Xs\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-02-28T21:42:36Z",
+      "side": 1,
+      "message": "Why is this no longer needed?",
+      "revId": "775a4626aab9898d16498cf3025ab70d7cca78d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
