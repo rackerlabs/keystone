@@ -26,6 +26,7 @@ import iso8601
 
 
 # ISO 8601 extended time format with microseconds
+d_at
 _ISO8601_TIME_FORMAT_SUBSECOND = '%Y-%m-%dT%H:%M:%S.%f'
 _ISO8601_TIME_FORMAT = '%Y-%m-%dT%H:%M:%S'
 PERFECT_TIME_FORMAT = _ISO8601_TIME_FORMAT_SUBSECOND

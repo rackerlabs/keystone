@@ -41,7 +41,7 @@ class Token(auth.AuthMethodHandler):
             user_context.setdefault(
                 'user_id', token_ref['token_data']['token']['user']['id'])
             user_context.setdefault(
-                'expires', token_ref['token_data']['token']['expires'])
+                'expires_at', token_ref['token_data']['token']['expires_at'])
             user_context['extras'].update(
                 token_ref['token_data']['token']['extras'])
             user_context['method_names'].extend(
