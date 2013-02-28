@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAANH//+z0\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-28T18:02:39Z",
+      "side": 1,
+      "message": "OK, can re-enable these in the tests now",
+      "revId": "31fa81f1fd20b70222b8d8926b66189dcf0441f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+zw\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-28T18:02:39Z",
+      "side": 1,
+      "message": "Project ID is now optional for due to  unscoped.",
+      "revId": "31fa81f1fd20b70222b8d8926b66189dcf0441f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+zo\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-28T18:02:39Z",
+      "side": 1,
+      "message": "Need to handle the None cases.",
+      "revId": "31fa81f1fd20b70222b8d8926b66189dcf0441f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+z4\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-28T18:02:39Z",
+      "side": 1,
+      "message": "Need to uncomment these.",
+      "revId": "31fa81f1fd20b70222b8d8926b66189dcf0441f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
