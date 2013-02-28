@@ -34,6 +34,24 @@
       "revId": "0293061136d7d18ed6ddcba08d7681831271718e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+tw\u003d",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-02-28T18:56:23Z",
+      "side": 1,
+      "message": "There have been no *documented* changes to v2, AFAIK. Unfortunately, there have been *undocumented* changes to core, specifically on tokens for PKI support.\n\nhttps://review.openstack.org/#/c/20289/ this is also introducing undocumented changes to v2",
+      "parentUuid": "AAAANH//+0w\u003d",
+      "revId": "0293061136d7d18ed6ddcba08d7681831271718e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
