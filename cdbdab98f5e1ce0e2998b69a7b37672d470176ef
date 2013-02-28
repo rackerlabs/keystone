@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAANH///ms\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-28T03:14:31Z",
+      "side": 1,
+      "message": "do a time comparison instead of a string comparison, as they go through some parsing and may not be identical, but still have the same time value.  I did \n\n            self.assertEqual(timeutils.parse_isotime(ref.get(\u0027expires_at\u0027, None)),\n                             timeutils.parse_isotime(entity.get(\u0027expires_at\u0027,None)))",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH///n4\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-28T03:14:31Z",
+      "side": 1,
+      "message": "trust_dict[\u0027expires_at\u0027] \u003d timeutils.isotime(trust_dict[\u0027expires_at\u0027])",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH///nw\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-28T03:14:31Z",
+      "side": 1,
+      "message": "This should be sufficient, but I ended up using a time difference of a minute instead.  There shouldn\u0027t be rounding....But sometimes there is.  Still, a minute should be a valid test?",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH///ng\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-28T03:14:31Z",
+      "side": 1,
+      "message": "Again, can\u0027t do trust auth with a password:  trust gets ignored and you get a token as yourself.  I can put in an extra check for that, but the positive thread here should be:\n        auth_data \u003d _build_authentication_request(\n            user_id\u003dself.trustee_user[\u0027id\u0027],\n            password\u003dself.trustee_user[\u0027password\u0027])\n        resp \u003d self.post(\u0027/auth/tokens\u0027, body\u003dauth_data)\n        auth_data \u003d _build_authentication_request(\n            token\u003dresp.getheader(\u0027X-Subject-Token\u0027),\n            trust_id\u003dtrust[\u0027id\u0027])\n        r \u003d self.post(\u0027/auth/tokens\u0027, body\u003dauth_data)",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH///nI\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-28T03:14:31Z",
+      "side": 1,
+      "message": "although it is the default, add impersonation\u003dFalse here do document it.",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH///nQ\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 703,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-28T03:14:31Z",
+      "side": 1,
+      "message": "This function doesn\u0027t exist",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH///nY\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-28T03:14:31Z",
+      "side": 1,
+      "message": "These are failing and I don\u0027t know if it is the existing token code or if mine is doing something wrong.",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH///nM\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-02-28T03:14:31Z",
+      "side": 1,
+      "message": "add\nimpersonation\u003dTrue here.",
+      "revId": "cdbdab98f5e1ce0e2998b69a7b37672d470176ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
