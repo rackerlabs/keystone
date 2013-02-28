@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAANH//+Pk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-02-28T23:10:03Z",
+      "side": 1,
+      "message": "Don\u0027t you have to ensure len(res) is always 1? What if there are two or more users found?",
+      "revId": "1201d72a261a49cb7c30a88be8433486d9085f1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
