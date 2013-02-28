@@ -16,6 +16,24 @@
       "revId": "0293061136d7d18ed6ddcba08d7681831271718e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+0w\u003d",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-02-28T17:54:34Z",
+      "side": 1,
+      "message": "I don\u0027t think so, Identity API 2.0 has not changed, just its status is being declared stable (which de facto is, all changes are in v3 now, right?)",
+      "parentUuid": "AAAANH///Cw\u003d",
+      "revId": "0293061136d7d18ed6ddcba08d7681831271718e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
