@@ -43,7 +43,7 @@ class VersionTestCase(test.TestCase):
                 "values": [
                     {
                         "id": "v2.0",
-                        "status": "beta",
+                        "status": "stable",
                         "updated": "2011-11-19T00:00:00Z",
                         "links": [
                             {
@@ -91,7 +91,7 @@ class VersionTestCase(test.TestCase):
                 "values": [
                     {
                         "id": "v2.0",
-                        "status": "beta",
+                        "status": "stable",
                         "updated": "2011-11-19T00:00:00Z",
                         "links": [
                             {
