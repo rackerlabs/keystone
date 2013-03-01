@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAANH//9Sk\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-01T16:02:55Z",
+      "side": 1,
+      "message": "expires_at",
+      "revId": "d44f677b7b413750e809924af3543624988a7da6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//9SM\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-01T16:02:55Z",
+      "side": 1,
+      "message": "expiry \u003d token_data[\u0027token\u0027][\u0027expires\u0027] if \u0027expires\u0027 in token_data[\u0027token] else token_data[\u0027token\u0027][\u0027expires_at\u0027]",
+      "revId": "d44f677b7b413750e809924af3543624988a7da6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//9Sc\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-01T16:02:55Z",
+      "side": 1,
+      "message": "Translation is not needed as this function is used by v3 only.",
+      "revId": "d44f677b7b413750e809924af3543624988a7da6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
