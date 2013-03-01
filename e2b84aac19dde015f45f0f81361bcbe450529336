@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAANH//8wQ\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-01T20:35:17Z",
+      "side": 1,
+      "message": "this needs to be \u0027expires_at\u0027, doing so won\u0027t validate schema as token_data is storied at a blob in the backend.",
+      "revId": "e2b84aac19dde015f45f0f81361bcbe450529336",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//8wc\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-01T20:35:17Z",
+      "side": 1,
+      "message": "Please remove this check and change token_data[\u0027token\u0027][\u0027expires_at\u0027] instead. token_data is stored as a blob in the tokens table so it does not constitute a schema change. If we are going to change it, change it all the way. Doing it halfway only adds confusion.",
+      "revId": "e2b84aac19dde015f45f0f81361bcbe450529336",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
