@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH//83o\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 4992
+      },
+      "writtenOn": "2013-03-01T19:59:01Z",
+      "side": 1,
+      "message": "No, keeping as \"expires\", internally everywhere \"expires\", only outward facing made into \"expires_at\". Read earlier comment of keeping this change minimal, versus going all the way up till the database.",
+      "parentUuid": "AAAANH//9Sk\u003d",
+      "revId": "d44f677b7b413750e809924af3543624988a7da6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH//9SM\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH//8zg\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4992
+      },
+      "writtenOn": "2013-03-01T19:59:01Z",
+      "side": 1,
+      "message": "This is not necessary if we preserve the \"expires\" in previous comment of yours.",
+      "parentUuid": "AAAANH//9SM\u003d",
+      "revId": "d44f677b7b413750e809924af3543624988a7da6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH//9Sc\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2013-03-01T16:02:55Z",
       "side": 1,
       "message": "Translation is not needed as this function is used by v3 only.",
+      "revId": "d44f677b7b413750e809924af3543624988a7da6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//8zI\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 4992
+      },
+      "writtenOn": "2013-03-01T19:59:01Z",
+      "side": 1,
+      "message": "Agree. Will remove. Thanks!\n(It stemmed from when I first started working on this fix to merging with head that contained the fix for the XML issue having more than one root element).",
+      "parentUuid": "AAAANH//9Sc\u003d",
       "revId": "d44f677b7b413750e809924af3543624988a7da6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
