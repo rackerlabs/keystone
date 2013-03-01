@@ -16,6 +16,24 @@
       "revId": "1201d72a261a49cb7c30a88be8433486d9085f1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//9w0\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-03-01T08:19:50Z",
+      "side": 1,
+      "message": "We never did this check and I don\u0027t believe it\u0027s necessary since even if someone managed to create two elements with the same name (shoot one\u0027s leg), we shouldn\u0027t prevent one from fetching any one of them by name.",
+      "parentUuid": "AAAANH//+Pk\u003d",
+      "revId": "1201d72a261a49cb7c30a88be8433486d9085f1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
