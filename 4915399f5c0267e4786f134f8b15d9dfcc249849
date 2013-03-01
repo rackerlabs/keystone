@@ -16,6 +16,24 @@
       "revId": "4915399f5c0267e4786f134f8b15d9dfcc249849",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+FE\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-03-01T00:55:36Z",
+      "side": 1,
+      "message": "we don\u0027t particularly care about jenkins running it, do we? this is a message for users",
+      "parentUuid": "AAAANH//+k4\u003d",
+      "revId": "4915399f5c0267e4786f134f8b15d9dfcc249849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
