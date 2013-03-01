@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH//+XQ\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 45
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-01T00:50:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAANH///Y8\u003d",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH///aY\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 45
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-28T07:39:01Z",
       "side": 1,
       "message": "Looks like token_user_id is not used anymore.",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+XA\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-01T00:50:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAANH///aY\u003d",
       "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH//+G0\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-01T00:50:23Z",
+      "side": 1,
+      "message": "Answered in an earlier review.  Only a trustee can create tokens from a trust.    Thus, we need to delete the tokens from the set of tokens for which a user is the trustee.  We don\u0027t invalidate trusts upon user changing their password.",
+      "parentUuid": "AAAANH///aI\u003d",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH///Yg\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 45
@@ -81,6 +135,24 @@
       "writtenOn": "2013-02-28T07:39:01Z",
       "side": 1,
       "message": "Simplify:\n\n   if not data.get(\u0027expires\u0027):",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+Wk\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-01T00:50:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAANH///Yg\u003d",
       "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH//+Wo\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-01T00:50:23Z",
+      "side": 1,
+      "message": "Not quite.  If the value is not present, we can\u0027t pop, as there is nothing to pop.  We only pop if it is present but is None",
+      "parentUuid": "AAAANH///Yo\u003d",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH///aA\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 45
@@ -115,6 +205,24 @@
       "writtenOn": "2013-02-28T07:39:01Z",
       "side": 1,
       "message": "Bad indentation. PEP8 must catch this, it\u0027s not somehow...",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+V8\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-01T00:50:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAANH///aA\u003d",
       "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH//+VU\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-01T00:50:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAANH///Zw\u003d",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH///Zs\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 45
@@ -149,6 +275,24 @@
       "writtenOn": "2013-02-28T07:39:01Z",
       "side": 1,
       "message": "Better:\n\n    trusts.extend(...)\n\nor\n\n    trusts +\u003d ...",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+VQ\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-01T00:50:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAANH///Zs\u003d",
       "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH//+Gc\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-01T00:50:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAANH///ZQ\u003d",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH///YM\u003d",
         "filename": "tests/test_auth.py",
         "patchSetId": 45
@@ -189,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH//+GY\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-01T00:50:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAANH///YM\u003d",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH///ZA\u003d",
         "filename": "tests/test_content_types.py",
         "patchSetId": 45
@@ -200,6 +380,24 @@
       "writtenOn": "2013-02-28T07:39:01Z",
       "side": 1,
       "message": "I think, this can be reverted.",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//+GI\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-01T00:50:23Z",
+      "side": 1,
+      "message": "Not yet....I\u0027ll get it before I commit, but debugging without it is a pain.  I\u0027ll get before the final final.",
+      "parentUuid": "AAAANH///ZA\u003d",
       "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
