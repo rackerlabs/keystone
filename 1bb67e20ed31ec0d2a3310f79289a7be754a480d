@@ -194,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAANH//9wI\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-03-01T08:37:55Z",
+      "side": 1,
+      "message": "You can do data.pop(\u0027trust_id\u0027, None), but it looks ugly, you\u0027re right. I still think that this looks better:\n\n    if \u0027trust_id\u0027 in data and data[\u0027trust_id\u0027] is None:",
+      "parentUuid": "AAAANH//+Wo\u003d",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAANH///aA\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 45
@@ -398,6 +416,24 @@
       "side": 1,
       "message": "Not yet....I\u0027ll get it before I commit, but debugging without it is a pain.  I\u0027ll get before the final final.",
       "parentUuid": "AAAANH///ZA\u003d",
+      "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//9vo\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-03-01T08:37:55Z",
+      "side": 1,
+      "message": "You can always keep it in you work dir :)",
+      "parentUuid": "AAAANH//+GI\u003d",
       "revId": "1bb67e20ed31ec0d2a3310f79289a7be754a480d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
