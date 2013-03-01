@@ -34,6 +34,24 @@
       "revId": "1201d72a261a49cb7c30a88be8433486d9085f1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//9Qk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-01T16:10:08Z",
+      "side": 1,
+      "message": "I also think it\u0027s a bug, but it was not introduced by this change. If multiple users matched the filter then this function will return whichever the server decided to return first and the order returned could be random. We should look at how other LDAP authenticators work (like Apache mod_authnz_ldap).",
+      "parentUuid": "AAAANH//9w0\u003d",
+      "revId": "1201d72a261a49cb7c30a88be8433486d9085f1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
