@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAANH//9Cw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_optimize_tokens_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-01T18:14:19Z",
+      "side": 1,
+      "message": "project_id ?",
+      "revId": "d5b6b5e07b831ec34e8d9b4ba4b54ae830f649b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//9CU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_optimize_tokens_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-01T18:14:19Z",
+      "side": 1,
+      "message": "is this equivalent to all().delete() or does this drop the table?",
+      "revId": "d5b6b5e07b831ec34e8d9b4ba4b54ae830f649b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//9Cs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_optimize_tokens_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-01T18:14:19Z",
+      "side": 1,
+      "message": "project_id ?",
+      "revId": "d5b6b5e07b831ec34e8d9b4ba4b54ae830f649b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//9Cg\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-01T18:14:19Z",
+      "side": 1,
+      "message": "the backslash continuation brigade will rewrite inevitably rewrite this; prefer the previous style:\n\n  q \u003d session.query()\n  q \u003d q.filter()\n\n  etc",
+      "revId": "d5b6b5e07b831ec34e8d9b4ba4b54ae830f649b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
