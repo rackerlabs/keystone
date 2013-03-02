@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAANH//8T4\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-02T03:27:02Z",
+      "side": 1,
+      "message": "This should be a configuration setting.  I will open a bug for that.",
+      "revId": "096c39df82039cc7b0526834368db912008fb561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANH//8T0\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-02T03:27:02Z",
+      "side": 1,
+      "message": "Typo \"if\"",
+      "revId": "096c39df82039cc7b0526834368db912008fb561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
