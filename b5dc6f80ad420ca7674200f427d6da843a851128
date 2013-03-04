@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3///yI\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 51
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-04T03:46:25Z",
+      "side": 1,
+      "message": ", [\"user_id:%(user_id)s\"]\n\nI would think user can still list projects with a regular token instead of a trust token.",
+      "revId": "b5dc6f80ad420ca7674200f427d6da843a851128",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3///yE\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 51
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-04T03:46:25Z",
+      "side": 1,
+      "message": "xxlist_trusts? that intentional?",
+      "revId": "b5dc6f80ad420ca7674200f427d6da843a851128",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3///yA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-04T03:46:25Z",
+      "side": 1,
+      "message": "trust_info.get(\u0027id\u0027)",
+      "revId": "b5dc6f80ad420ca7674200f427d6da843a851128",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3///xs\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-04T03:46:25Z",
+      "side": 1,
+      "message": "What are these changes for? I thought we don\u0027t support trust API in V2.",
+      "revId": "b5dc6f80ad420ca7674200f427d6da843a851128",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3///xo\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-04T03:46:25Z",
+      "side": 1,
+      "message": "I thought we don\u0027t support trust tokens in V2.",
+      "revId": "b5dc6f80ad420ca7674200f427d6da843a851128",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
