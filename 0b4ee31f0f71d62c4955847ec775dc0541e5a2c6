@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3///DI\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-04T17:27:04Z",
+      "side": 1,
+      "message": "(nit) imports should be in alphabetical order.",
+      "revId": "0b4ee31f0f71d62c4955847ec775dc0541e5a2c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3///B8\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-04T17:27:04Z",
+      "side": 1,
+      "message": "(nit) remove this comment.",
+      "revId": "0b4ee31f0f71d62c4955847ec775dc0541e5a2c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3///B4\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-04T17:27:04Z",
+      "side": 1,
+      "message": "(nit) use \u0027 rather than \"",
+      "revId": "0b4ee31f0f71d62c4955847ec775dc0541e5a2c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3///B0\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-04T17:27:04Z",
+      "side": 1,
+      "message": "(nit) use \u0027 rather than \"",
+      "revId": "0b4ee31f0f71d62c4955847ec775dc0541e5a2c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
