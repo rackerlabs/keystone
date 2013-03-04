@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//+sg\u003d",
+        "filename": "keystone/locale/keystone.pot",
+        "patchSetId": 21
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T19:15:36Z",
+      "side": 0,
+      "message": "this looks like a change, but it\u0027s just a complicated diff -- this ended up on line 152",
+      "revId": "9fa6e0a206f1e998e1c2c0efabb2cbfe4b11439e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
