@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//+v0\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T19:03:13Z",
+      "side": 1,
+      "message": "this was caught in another patch and was fixed as tuple(\u0027description\u0027) -- just a warning that the two will conflict, but i don\u0027t have a preference between the two syntaxes",
+      "revId": "1ae783388b147800af85f625b0158d28453ceef0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+vY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T19:03:13Z",
+      "side": 1,
+      "message": "all of this should really be done in manager methods that wrap the drivers ...\n\nside note- unfortunately test_backend tests the drivers directly using identity_api, etc... there are a few tests that test the Manager using identity_man instead, which the tests here should do as well",
+      "revId": "1ae783388b147800af85f625b0158d28453ceef0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+vQ\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1553,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T19:03:13Z",
+      "side": 1,
+      "message": "if you\u0027re assigning default values, why specify enabled?",
+      "revId": "1ae783388b147800af85f625b0158d28453ceef0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
