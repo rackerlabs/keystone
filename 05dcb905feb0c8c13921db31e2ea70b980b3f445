@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//+yQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T18:47:56Z",
+      "side": 1,
+      "message": "1) these don\u0027t really need to be named privately, 2) i don\u0027t think \"get_\" is proper terminology when it\u0027s not returning anything",
+      "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+yA\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T18:47:56Z",
+      "side": 1,
+      "message": "nice",
+      "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+x8\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T18:47:56Z",
+      "side": 1,
+      "message": "i\u0027m not sure this bug is relevant to any of these tests...",
+      "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
