@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//+qY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-04T19:51:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//+xs\u003d",
+      "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//+xg\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-03-04T18:57:01Z",
       "side": 1,
       "message": "what\u0027s supposed to happen if tenant_id or user_id are None?",
+      "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+pk\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-04T19:51:42Z",
+      "side": 1,
+      "message": "So in the future, when we support domains and groups properly in LDAP, we will get the appropriate metadata for different pairs (e.g. user-domain, group-tenant etc.).  Have a look at the sql backend equivalent of this function for more info.",
+      "parentUuid": "AAAAN3//+xg\u003d",
       "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//+oU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-04T19:51:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//+yQ\u003d",
+      "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//+wk\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2013-03-04T18:57:01Z",
       "side": 1,
       "message": "change \"user_id\" to \"user_id\u003duser_id\" to use named parameter.",
+      "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+oQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-04T19:51:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//+wk\u003d",
       "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +170,24 @@
       "writtenOn": "2013-03-04T18:47:56Z",
       "side": 1,
       "message": "i\u0027m not sure this bug is relevant to any of these tests...",
+      "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+m8\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-04T19:51:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//+x8\u003d",
       "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
