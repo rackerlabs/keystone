@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAN3//+xs\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-04T18:57:01Z",
+      "side": 1,
+      "message": "(nit) remove \"are\"",
+      "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+xg\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-04T18:57:01Z",
+      "side": 1,
+      "message": "what\u0027s supposed to happen if tenant_id or user_id are None?",
+      "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//+yQ\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 3
@@ -13,6 +47,23 @@
       "writtenOn": "2013-03-04T18:47:56Z",
       "side": 1,
       "message": "1) these don\u0027t really need to be named privately, 2) i don\u0027t think \"get_\" is proper terminology when it\u0027s not returning anything",
+      "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+wk\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-04T18:57:01Z",
+      "side": 1,
+      "message": "change \"user_id\" to \"user_id\u003duser_id\" to use named parameter.",
       "revId": "05dcb905feb0c8c13921db31e2ea70b980b3f445",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
