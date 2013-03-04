@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3///Hg\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T16:47:14Z",
+      "side": 0,
+      "message": "This is removing a valid part of the test, rather than properly expanding test coverage. This was ensuring that the changes made in update_role were reflected by a subsequent call to get_role.\n\nInstead of removing this, just copy/paste lines 1126 and 1127 to validate the results of both get_role AND the new return of update_role",
+      "revId": "54509a2bcbb9f4fab6af54e87612e3ef04ec7a4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3///Hc\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1634,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T16:47:14Z",
+      "side": 0,
+      "message": "same as the above",
+      "revId": "54509a2bcbb9f4fab6af54e87612e3ef04ec7a4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3///HY\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1651,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T16:47:14Z",
+      "side": 0,
+      "message": "same as above",
+      "revId": "54509a2bcbb9f4fab6af54e87612e3ef04ec7a4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3///G8\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1668,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T16:47:14Z",
+      "side": 0,
+      "message": "same as above",
+      "revId": "54509a2bcbb9f4fab6af54e87612e3ef04ec7a4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3///G4\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1687,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T16:47:14Z",
+      "side": 0,
+      "message": "same as above",
+      "revId": "54509a2bcbb9f4fab6af54e87612e3ef04ec7a4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

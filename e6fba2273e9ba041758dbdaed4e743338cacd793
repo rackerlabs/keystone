@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3///HA\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1651,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T16:47:14Z",
+      "side": 1,
+      "message": "This is essentially asserting an entirely a broken behavior. Yes, I think the broken http api behavior needs to be preserved on v2, but that shouldn\u0027t be asserted against the driver, period.",
+      "parentUuid": "AAAAM3/+wGs\u003d",
+      "revId": "e6fba2273e9ba041758dbdaed4e743338cacd793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3/+wKY\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 3
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "i see, must be get_user that filters out correctly.",
       "parentUuid": "AAAAM3/+wGg\u003d",
+      "revId": "e6fba2273e9ba041758dbdaed4e743338cacd793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3///G0\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1694,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T16:47:14Z",
+      "side": 1,
+      "message": "password should not be returned by any driver... that\u0027d be a worthy test by itself",
+      "parentUuid": "AAAAM3/+uyI\u003d",
       "revId": "e6fba2273e9ba041758dbdaed4e743338cacd793",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
