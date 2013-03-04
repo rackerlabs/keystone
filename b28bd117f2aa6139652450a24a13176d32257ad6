@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//+9k\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T17:57:01Z",
+      "side": 1,
+      "message": "nice catch",
+      "revId": "b28bd117f2aa6139652450a24a13176d32257ad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+8o\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T17:57:01Z",
+      "side": 1,
+      "message": "-2; user.create() should absolutely not be able to add a user to a group",
+      "revId": "b28bd117f2aa6139652450a24a13176d32257ad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

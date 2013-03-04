@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//+9c\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T17:57:01Z",
+      "side": 0,
+      "message": "this blank line should be restored",
+      "revId": "2f916c6d547b22046dae4946389e545cee26deea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
