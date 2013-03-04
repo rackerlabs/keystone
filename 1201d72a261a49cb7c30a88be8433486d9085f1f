@@ -70,6 +70,24 @@
       "revId": "1201d72a261a49cb7c30a88be8433486d9085f1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+Zk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T21:21:07Z",
+      "side": 1,
+      "message": "The impact of the bug should be limited to v2, as v3 is expected to return a list when querying by name (and it wouldn\u0027t use get_by_name anyway)",
+      "parentUuid": "AAAAN3//+Z0\u003d",
+      "revId": "1201d72a261a49cb7c30a88be8433486d9085f1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
