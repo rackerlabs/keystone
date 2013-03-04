@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//+0U\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T18:37:02Z",
+      "side": 1,
+      "message": "meta_id1",
+      "revId": "af357f6bfc46176686203392e479a820c931e16a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+0Q\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T18:37:02Z",
+      "side": 1,
+      "message": "meta_id2",
+      "revId": "af357f6bfc46176686203392e479a820c931e16a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+z8\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1026,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T18:37:02Z",
+      "side": 1,
+      "message": "why bother with .to_dict() ?",
+      "revId": "af357f6bfc46176686203392e479a820c931e16a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+zw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T18:37:02Z",
+      "side": 1,
+      "message": "... because? (i\u0027m really not sure why)",
+      "revId": "af357f6bfc46176686203392e479a820c931e16a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
