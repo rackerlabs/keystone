@@ -33,6 +33,57 @@
       "revId": "b28bd117f2aa6139652450a24a13176d32257ad6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+7I\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T18:06:45Z",
+      "side": 1,
+      "message": "raise exception.UserNotFound(user_id\u003duser_id)",
+      "revId": "b28bd117f2aa6139652450a24a13176d32257ad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+5U\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1602,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T18:06:45Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be removed for all backends -- in fact, this *should* break tests against non-LDAP. I\u0027d suggest raising SkipTest citing the bug referenced above in test_backend_ldap (overriding these tests)",
+      "revId": "b28bd117f2aa6139652450a24a13176d32257ad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+5I\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-04T18:06:45Z",
+      "side": 1,
+      "message": "why is this written here and not in test_backend?",
+      "revId": "b28bd117f2aa6139652450a24a13176d32257ad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
