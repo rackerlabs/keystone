@@ -129,12 +129,10 @@ class TokenDataHelper(object):
     def _populate_token(self, token_data, expires=None):
         if not expires:
             expires = token_module.default_expire_time()
-        if not isinstance(expires, unicode):
-            expires = timeutils.isotime(expires,
-                                        fmt=timeutils.PERFECT_TIME_FORMAT)
+        if not isinstance(expires, basestring):
+            expires = timeutils.isotime(expires, subsecond=True)
         token_data['expires_at'] = expires
-        token_data['issued_at'] = timeutils.isotime(
-            fmt=timeutils.PERFECT_TIME_FORMAT)
+        token_data['issued_at'] = timeutils.isotime(subsecond=True)
 
     def get_token_data(self, user_id, method_names, extras,
                        domain_id=None, project_id=None, expires=None):
