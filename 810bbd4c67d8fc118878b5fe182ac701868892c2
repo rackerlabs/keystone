@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//+JE\u003d",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-04T23:56:32Z",
+      "side": 1,
+      "message": "Are you trying to test if the SERVICE_PASSWORD is \"secrete\" or whether someone has set the service and admin password to the same thing, even if this is not \"secrete\"?",
+      "revId": "810bbd4c67d8fc118878b5fe182ac701868892c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
