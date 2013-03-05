@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//9Sk\u003d",
+        "filename": "keystone/openstack/common/timeutils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-03-05T09:25:28Z",
+      "side": 1,
+      "message": "This isn\u0027t in oslo-incubator, need to sync with oslo when https://review.openstack.org/#/c/23218 is accepted.",
+      "revId": "e2294c59b6548ab801739fc62414fd3ae232b743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
