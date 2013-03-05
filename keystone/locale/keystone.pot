@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: keystone "
-"jenkins.keystone.propose.translation.update.130\n"
+"jenkins.keystone.propose.translation.update.131\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-03-04 00:02+0000\n"
+"POT-Creation-Date: 2013-03-05 00:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,63 +218,69 @@ msgstr ""
 msgid "Invalid LDAP scope: %s. Choose one of: "
 msgstr ""
 
-#: keystone/common/ldap/core.py:197 keystone/identity/backends/kvs.py:588
+#: keystone/common/ldap/core.py:199 keystone/identity/backends/kvs.py:588
 #: keystone/identity/backends/kvs.py:616
 #, python-format
 msgid "Duplicate name, %s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:207 keystone/identity/backends/kvs.py:581
+#: keystone/common/ldap/core.py:209 keystone/identity/backends/kvs.py:581
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:212
+#: keystone/common/ldap/core.py:214
 #, python-format
 msgid "LDAP %s create"
 msgstr ""
 
-#: keystone/common/ldap/core.py:320
+#: keystone/common/ldap/core.py:322
 #, python-format
 msgid "LDAP %s update"
 msgstr ""
 
-#: keystone/common/ldap/core.py:348
+#: keystone/common/ldap/core.py:350
 #, python-format
 msgid "LDAP %s delete"
 msgstr ""
 
-#: keystone/common/ldap/core.py:365
+#: keystone/common/ldap/core.py:367
 #, python-format
 msgid "LDAP init: url=%s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:369
+#: keystone/common/ldap/core.py:372
 #, python-format
 msgid "LDAP bind: dn=%s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:380
+#: keystone/common/ldap/core.py:383
 #, python-format
 msgid "LDAP add: dn=%s, attrs=%s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:385
+#: keystone/common/ldap/core.py:388
 #, python-format
 msgid "LDAP search: dn=%s, scope=%s, query=%s, attrs=%s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:409
+#: keystone/common/ldap/core.py:439
+msgid ""
+"LDAP Server does not support paging.Disable paging in keystone.conf "
+"toavoid this message"
+msgstr ""
+
+#: keystone/common/ldap/core.py:456
 #, python-format
 msgid "LDAP modify: dn=%s, modlist=%s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:414
+#: keystone/common/ldap/core.py:461
 #, python-format
 msgid "LDAP delete: dn=%s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:418
+#: keystone/common/ldap/core.py:465
 #, python-format
 msgid "LDAP delete_ext: dn=%s, serverctrls=%s"
 msgstr ""
