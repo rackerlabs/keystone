@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAN3//7/U\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-05T21:01:05Z",
+      "side": 1,
+      "message": "Do the other OpenStack Projects support the ability to invoke Keystone via SSL/HTTPS?  Might be nice to give some context on when this can be used",
+      "revId": "ca397de68bb828bff533d46acfecfdfd32776705",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//+HI\u003d",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 2
@@ -13,6 +30,40 @@
       "writtenOn": "2013-03-05T00:51:14Z",
       "side": 1,
       "message": "is backending a word?",
+      "revId": "ca397de68bb828bff533d46acfecfdfd32776705",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//7+0\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-05T21:01:05Z",
+      "side": 1,
+      "message": "Tenents should be Tenants",
+      "revId": "ca397de68bb828bff533d46acfecfdfd32776705",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//79k\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-05T21:01:05Z",
+      "side": 1,
+      "message": "in determining should be to determine",
       "revId": "ca397de68bb828bff533d46acfecfdfd32776705",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +149,23 @@
       "writtenOn": "2013-03-05T00:51:14Z",
       "side": 1,
       "message": "\"the if the\" -\u003e \"if the\"\n\nalso, replace *word* with ``word``.",
+      "revId": "ca397de68bb828bff533d46acfecfdfd32776705",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//784\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-05T21:01:05Z",
+      "side": 1,
+      "message": "Typo:\" to be able to use\"   should be  \"in order\"",
       "revId": "ca397de68bb828bff533d46acfecfdfd32776705",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
