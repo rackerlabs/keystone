@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAN3//8to\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 56
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-05T16:25:34Z",
+      "side": 1,
+      "message": "should be spaces, not a tab",
+      "revId": "f4d1e5226910573923d2edfade20c23f3a1a3267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8s0\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 56
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-05T16:25:34Z",
+      "side": 1,
+      "message": "i don\u0027t understand this change -- what is the impact of allowing create project if user_id:%(user_id)s is true?",
+      "revId": "f4d1e5226910573923d2edfade20c23f3a1a3267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8s4\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 56
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-05T16:25:34Z",
+      "side": 1,
+      "message": "what does @ do?",
+      "revId": "f4d1e5226910573923d2edfade20c23f3a1a3267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//9jw\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 56

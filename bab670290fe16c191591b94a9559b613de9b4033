@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//8tg\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 56
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-05T16:25:34Z",
+      "side": 0,
+      "message": "you removed list_user_projects -- that\u0027s a valid entry",
+      "revId": "bab670290fe16c191591b94a9559b613de9b4033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
