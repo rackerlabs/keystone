@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//8iM\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 56
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-05T17:09:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//8to\u003d",
+      "revId": "f4d1e5226910573923d2edfade20c23f3a1a3267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//8s0\u003d",
         "filename": "etc/policy.json",
         "patchSetId": 56
@@ -30,6 +48,24 @@
       "writtenOn": "2013-03-05T16:25:34Z",
       "side": 1,
       "message": "i don\u0027t understand this change -- what is the impact of allowing create project if user_id:%(user_id)s is true?",
+      "revId": "f4d1e5226910573923d2edfade20c23f3a1a3267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8pg\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 56
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-05T17:09:23Z",
+      "side": 1,
+      "message": "This is just an attempt to simplify the rule set.  It should be the same logic as before, just a common way to express it.\n\nRe-added list_user_projects",
+      "parentUuid": "AAAAN3//8s0\u003d",
       "revId": "f4d1e5226910573923d2edfade20c23f3a1a3267",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//8pU\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 56
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-05T17:09:23Z",
+      "side": 1,
+      "message": "It allows all.  There is insufficient data way to screen these, so it is done in code in the controller.  I want to have the place holder for screen them in place here.",
+      "parentUuid": "AAAAN3//8s4\u003d",
+      "revId": "f4d1e5226910573923d2edfade20c23f3a1a3267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//9jw\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 56
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//8gA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-05T17:09:23Z",
+      "side": 1,
+      "message": "Done.  Was moved elsewhere, and comment needs to go away",
+      "parentUuid": "AAAAN3//9jw\u003d",
+      "revId": "f4d1e5226910573923d2edfade20c23f3a1a3267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//9jQ\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 56
@@ -81,6 +153,24 @@
       "writtenOn": "2013-03-05T06:49:45Z",
       "side": 1,
       "message": "nit...but technically I think you mean \"trust tokens do not support domains yet\"",
+      "revId": "f4d1e5226910573923d2edfade20c23f3a1a3267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8fY\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-05T17:09:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//9jQ\u003d",
       "revId": "f4d1e5226910573923d2edfade20c23f3a1a3267",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
