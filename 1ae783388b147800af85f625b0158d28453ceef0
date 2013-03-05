@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//+HM\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-05T00:28:01Z",
+      "side": 1,
+      "message": "dropped this change since it isn\u0027t needed now that i\u0027ve changed logic.",
+      "parentUuid": "AAAAN3//+v0\u003d",
+      "revId": "1ae783388b147800af85f625b0158d28453ceef0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//+vY\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 5
@@ -47,6 +65,24 @@
       "writtenOn": "2013-03-04T19:03:13Z",
       "side": 1,
       "message": "if you\u0027re assigning default values, why specify enabled?",
+      "revId": "1ae783388b147800af85f625b0158d28453ceef0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+Hw\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1553,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-05T00:28:01Z",
+      "side": 1,
+      "message": "changed to False.",
+      "parentUuid": "AAAAN3//+vQ\u003d",
       "revId": "1ae783388b147800af85f625b0158d28453ceef0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
