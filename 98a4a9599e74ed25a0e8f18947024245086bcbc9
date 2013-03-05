@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//8Yw\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "looking at line 199 \u0026 201\n\n a) can also have (None, project_id, trust_ref)\n b) should it be trust_ref and not trust_id?",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Z4\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "(None, None) -\u003e (None, None, None)",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Z0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "if trust_info is allowed to have \u0027id\u0027 set to None, seems like it should also be allowed to not have \u0027id\u0027 set at all. (trust_info.get(\u0027id\u0027))",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Zs\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "should be TrustNotFound?",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8YY\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "Need to update this documentation.",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Yk\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "at line 199, sets both project and trust, why is it allowed there and not here?",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8YU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "TODO(ayoung)",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8YM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "do we need to check \"or trust\" since just set project_id in previous line?",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Xs\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "Should this be Unauthorized or 403 Forbidden? (Unauthorized means that the user needs to log in: http://tools.ietf.org/html/rfc2616#section-10.4.2)",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8XI\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "should domain_id be token_domain_id? I don\u0027t see domain_id used in here.",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8W0\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "might be useful to log something here.",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8XE\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "Forbidden?",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Wk\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "collapse nested if into single if / and",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Ws\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "Forbidden?",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8WI\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "seems to be fixing an unrelated problem.",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Vw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "it\u0027s 2013.",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8U8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "is this a foreign key?",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8U0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:10:07Z",
+      "side": 1,
+      "message": "foreign key?",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
