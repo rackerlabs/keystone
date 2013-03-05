@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//+Gs\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-05T00:39:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//+yk\u003d",
+      "revId": "af357f6bfc46176686203392e479a820c931e16a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//+0U\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 6
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//+Go\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-05T00:39:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//+0U\u003d",
+      "revId": "af357f6bfc46176686203392e479a820c931e16a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//+0Q\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 6
@@ -64,6 +100,24 @@
       "writtenOn": "2013-03-04T18:37:02Z",
       "side": 1,
       "message": "meta_id2",
+      "revId": "af357f6bfc46176686203392e479a820c931e16a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+Gk\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-05T00:39:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//+0Q\u003d",
       "revId": "af357f6bfc46176686203392e479a820c931e16a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//+GE\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1026,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-05T00:39:19Z",
+      "side": 1,
+      "message": "copy/paste logic. dropped to_dict()",
+      "parentUuid": "AAAAN3//+z8\u003d",
+      "revId": "af357f6bfc46176686203392e479a820c931e16a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//+zw\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 6
@@ -98,6 +170,24 @@
       "writtenOn": "2013-03-04T18:37:02Z",
       "side": 1,
       "message": "... because? (i\u0027m really not sure why)",
+      "revId": "af357f6bfc46176686203392e479a820c931e16a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+FE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-05T00:39:19Z",
+      "side": 1,
+      "message": "originally i added this because the logic was near identical to delete_grant().  i\u0027ve removed it since remove_role_from_user_and_project appears to remove all UserProjectGrants for the project as well.",
+      "parentUuid": "AAAAN3//+zw\u003d",
       "revId": "af357f6bfc46176686203392e479a820c931e16a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
