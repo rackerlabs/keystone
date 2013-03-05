@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//8fM\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-05T17:05:47Z",
+      "side": 1,
+      "message": "cool, i prefer this indentation style way more for long method signatures",
+      "revId": "8d4bdaf5a0335009aab0ddbed1a110c8a743c8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
