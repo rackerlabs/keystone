@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAN3//8Oo\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-05T19:00:25Z",
+      "side": 1,
+      "message": "I think you mean domain here",
+      "revId": "cc9567bad48526e567d9dc9e5681465575c13a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//8Rg\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 10
