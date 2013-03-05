@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//+FA\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-05T00:39:23Z",
+      "side": 1,
+      "message": "this method looks good",
+      "revId": "e16742bdf2f1fa7386f2983b037a78fde4a576c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+FI\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-05T00:39:23Z",
+      "side": 1,
+      "message": "nice add",
+      "revId": "e16742bdf2f1fa7386f2983b037a78fde4a576c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
