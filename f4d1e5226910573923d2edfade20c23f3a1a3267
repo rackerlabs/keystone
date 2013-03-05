@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//9jw\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-05T06:49:45Z",
+      "side": 1,
+      "message": "Are these lines meant to refer to the function above or below?  Seems like we either need a line break or different indentation (depending on your answer)",
+      "revId": "f4d1e5226910573923d2edfade20c23f3a1a3267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//9jQ\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-05T06:49:45Z",
+      "side": 1,
+      "message": "nit...but technically I think you mean \"trust tokens do not support domains yet\"",
+      "revId": "f4d1e5226910573923d2edfade20c23f3a1a3267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
