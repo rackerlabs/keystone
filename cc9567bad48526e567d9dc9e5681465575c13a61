@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAN3//8Hw\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-05T20:33:58Z",
+      "side": 1,
+      "message": "Interesting, so domains have an enabled option but the projects model  above does not have this option?",
+      "revId": "cc9567bad48526e567d9dc9e5681465575c13a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//8Oo\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 10
@@ -13,6 +30,91 @@
       "writtenOn": "2013-03-05T19:00:25Z",
       "side": 1,
       "message": "I think you mean domain here",
+      "revId": "cc9567bad48526e567d9dc9e5681465575c13a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Fg\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-05T20:33:58Z",
+      "side": 1,
+      "message": "Looks good!",
+      "revId": "cc9567bad48526e567d9dc9e5681465575c13a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Dc\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1090,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-05T20:33:58Z",
+      "side": 1,
+      "message": "Typo: Return should be Returns",
+      "revId": "cc9567bad48526e567d9dc9e5681465575c13a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8D4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1097,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-05T20:33:58Z",
+      "side": 1,
+      "message": "typo: should be Returns a list of users that belong to a group",
+      "revId": "cc9567bad48526e567d9dc9e5681465575c13a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Bc\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1109,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-05T20:33:58Z",
+      "side": 1,
+      "message": "Can groupdn be an _ here? It doesn\u0027t look like you use it.",
+      "revId": "cc9567bad48526e567d9dc9e5681465575c13a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8IQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-05T20:33:58Z",
+      "side": 1,
+      "message": "good catch!",
       "revId": "cc9567bad48526e567d9dc9e5681465575c13a61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
