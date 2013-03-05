@@ -1,0 +1,565 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//8H0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "trust_id -\u003e trust_ref.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8GA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "\"trust_id\" -\u003e \"trust_id\u003dtrust_id\"",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8HQ\u003d",
+        "filename": "keystone/auth/methods/token.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "e isn\u0027t available here.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8GY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "ForiegnKey to user.id?",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8GU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "ForeignKey to user.id?",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8GM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "ForeignKey to project.id?",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8GI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "ForiegnKey?",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8GE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/018_add_trust_tables.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "ForeignKey?",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Fw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "user parameter isn\u0027t used.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8F4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "userid should be user_id",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Fs\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "wrap in _() for translation.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Fc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "the last argument to this function is user, not tenant_id.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8FY\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "this is extra-indented.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8FU\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "Forbidden?",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8FQ\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "use single quotes",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8FA\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "this tenant_id is not used, and overwritten at line 209.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Eg\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "move to alphabetical order.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8EU\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "this is extra-indented.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8EQ\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "selfself-\u003e self",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8EE\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "this is extra-indented.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Ds\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "check for trust deleted?",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Dg\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "ForeignKey to user.id?",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8C0\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "this is extra-indented.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Ck\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "prefer \u0027 instead of \"",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8CU\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "do we need to check here for token is None? (at line 51 check for trust is None, so I\u0027m wondering if token could be None, too.)",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8CQ\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "trust_id -\u003e \"trust_id\u003dtrust_id\"",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8CE\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "this was just checked at line 51.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Bk\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "use _() for translation.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8BY\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "why default trust to None, it\u0027s just going to raise ValidationError.",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8A0\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "argument should be trust_id\u003dtrust_id",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8As\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "argument should be trust_id\u003dtrust_id",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Ak\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "trust_id\u003dtrust_id",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//7/4\u003d",
+        "filename": "keystone/trust/routers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T20:40:20Z",
+      "side": 1,
+      "message": "not used?",
+      "revId": "601eeb50b60a2e99041690fe19238202bc203503",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
