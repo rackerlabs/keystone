@@ -305,6 +305,40 @@
       "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8So\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:49:03Z",
+      "side": 1,
+      "message": "Forbidden ?\n\n(and the rest of these)",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//8Sc\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T18:49:03Z",
+      "side": 1,
+      "message": "should this be param? also, document new parameters.",
+      "revId": "98a4a9599e74ed25a0e8f18947024245086bcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
