@@ -52,6 +52,24 @@
       "revId": "dabd1fe82a5a6bf8b1decf146bd580fbdc3a74d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+IA\u003d",
+        "filename": "tests/test_s3_token_middleware.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-05T00:18:50Z",
+      "side": 1,
+      "message": "Chmouel - let\u0027s see what it looks like as a separate function, as you suggested. I think anyone looking at this is going to think it\u0027s a bug unless there\u0027s ample commenting.",
+      "parentUuid": "AAAAN3///I4\u003d",
+      "revId": "dabd1fe82a5a6bf8b1decf146bd580fbdc3a74d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
