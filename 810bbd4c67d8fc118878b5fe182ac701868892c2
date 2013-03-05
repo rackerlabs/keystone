@@ -16,6 +16,24 @@
       "revId": "810bbd4c67d8fc118878b5fe182ac701868892c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//+Io\u003d",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6850
+      },
+      "writtenOn": "2013-03-05T00:48:50Z",
+      "side": 1,
+      "message": "I suppose the answer is both, although the error message would be incorrect if they purposely set the admin and service passwords to the same value",
+      "parentUuid": "AAAAN3//+JE\u003d",
+      "revId": "810bbd4c67d8fc118878b5fe182ac701868892c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
