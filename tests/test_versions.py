@@ -42,6 +42,29 @@ class VersionTestCase(test.TestCase):
             "versions": {
                 "values": [
                     {
+                        "id": "v3.0",
+                        "status": "stable",
+                        "updated": "2013-03-06T00:00:00Z",
+                        "links": [
+                            {
+                                "rel": "self",
+                                "href": "http://localhost:%s/v3/" %
+                                        CONF.public_port
+                            }
+                        ],
+                        "media-types": [
+                            {
+                                "base": "application/json",
+                                "type": "application/"
+                                        "vnd.openstack.identity-v3+json"
+                            }, {
+                                "base": "application/xml",
+                                "type": "application/"
+                                        "vnd.openstack.identity-v3+xml"
+                            }
+                        ]
+                    },
+                    {
                         "id": "v2.0",
                         "status": "beta",
                         "updated": "2011-11-19T00:00:00Z",
@@ -90,6 +113,29 @@ class VersionTestCase(test.TestCase):
             "versions": {
                 "values": [
                     {
+                        "id": "v3.0",
+                        "status": "stable",
+                        "updated": "2013-03-06T00:00:00Z",
+                        "links": [
+                            {
+                                "rel": "self",
+                                "href": "http://localhost:%s/v3/" %
+                                        CONF.admin_port,
+                            }
+                        ],
+                        "media-types": [
+                            {
+                                "base": "application/json",
+                                "type": "application/"
+                                        "vnd.openstack.identity-v3+json"
+                            }, {
+                                "base": "application/xml",
+                                "type": "application/"
+                                        "vnd.openstack.identity-v3+xml"
+                            }
+                        ]
+                    },
+                    {
                         "id": "v2.0",
                         "status": "beta",
                         "updated": "2011-11-19T00:00:00Z",
@@ -123,6 +169,158 @@ class VersionTestCase(test.TestCase):
                                         "vnd.openstack.identity-v2.0+xml"
                             }
                         ]
+                    }
+                ]
+            }
+        }
+        self.assertEqual(data, expected)
+
+    def test_public_version_v2(self):
+        client = self.client(self.public_app)
+        resp = client.get('/v2.0/')
+        self.assertEqual(resp.status_int, 200)
+        data = jsonutils.loads(resp.body)
+        expected = {
+            "version": {
+                "id": "v2.0",
+                "status": "beta",
+                "updated": "2011-11-19T00:00:00Z",
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "http://localhost:%s/v2.0/" %
+                                CONF.public_port,
+                    }, {
+                        "rel": "describedby",
+                        "type": "text/html",
+                        "href": "http://docs.openstack.org/api/"
+                                "openstack-identity-service/2.0/"
+                                "content/"
+                    }, {
+                        "rel": "describedby",
+                        "type": "application/pdf",
+                        "href": "http://docs.openstack.org/api/"
+                                "openstack-identity-service/2.0/"
+                                "identity-dev-guide-2.0.pdf"
+                    }
+                ],
+                "media-types": [
+                    {
+                        "base": "application/json",
+                        "type": "application/"
+                                "vnd.openstack.identity-v2.0+json"
+                    }, {
+                        "base": "application/xml",
+                        "type": "application/"
+                                "vnd.openstack.identity-v2.0+xml"
+                    }
+                ]
+            }
+        }
+        self.assertEqual(data, expected)
+
+    def test_admin_version_v2(self):
+        client = self.client(self.admin_app)
+        resp = client.get('/v2.0/')
+        self.assertEqual(resp.status_int, 200)
+        data = jsonutils.loads(resp.body)
+        expected = {
+            "version": {
+                "id": "v2.0",
+                "status": "beta",
+                "updated": "2011-11-19T00:00:00Z",
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "http://localhost:%s/v2.0/" %
+                                CONF.admin_port,
+                    }, {
+                        "rel": "describedby",
+                        "type": "text/html",
+                        "href": "http://docs.openstack.org/api/"
+                                "openstack-identity-service/2.0/"
+                                "content/"
+                    }, {
+                        "rel": "describedby",
+                        "type": "application/pdf",
+                        "href": "http://docs.openstack.org/api/"
+                                "openstack-identity-service/2.0/"
+                                "identity-dev-guide-2.0.pdf"
+                    }
+                ],
+                "media-types": [
+                    {
+                        "base": "application/json",
+                        "type": "application/"
+                                "vnd.openstack.identity-v2.0+json"
+                    }, {
+                        "base": "application/xml",
+                        "type": "application/"
+                                "vnd.openstack.identity-v2.0+xml"
+                    }
+                ]
+            }
+        }
+        self.assertEqual(data, expected)
+
+    def test_public_version_v3(self):
+        client = self.client(self.public_app)
+        resp = client.get('/v3/')
+        self.assertEqual(resp.status_int, 200)
+        data = jsonutils.loads(resp.body)
+        expected = {
+            "version": {
+                "id": "v3.0",
+                "status": "stable",
+                "updated": "2013-03-06T00:00:00Z",
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "http://localhost:%s/v3/" %
+                                CONF.public_port,
+                    }
+                ],
+                "media-types": [
+                    {
+                        "base": "application/json",
+                        "type": "application/"
+                                "vnd.openstack.identity-v3+json"
+                    }, {
+                        "base": "application/xml",
+                        "type": "application/"
+                                "vnd.openstack.identity-v3+xml"
+                    }
+                ]
+            }
+        }
+        self.assertEqual(data, expected)
+
+    def test_admin_version_v3(self):
+        client = self.client(self.public_app)
+        resp = client.get('/v3/')
+        self.assertEqual(resp.status_int, 200)
+        data = jsonutils.loads(resp.body)
+        expected = {
+            "version": {
+                "id": "v3.0",
+                "status": "stable",
+                "updated": "2013-03-06T00:00:00Z",
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "http://localhost:%s/v3/" %
+                                CONF.admin_port,
+                    }
+                ],
+                "media-types": [
+                    {
+                        "base": "application/json",
+                        "type": "application/"
+                                "vnd.openstack.identity-v3+json"
+                    }, {
+                        "base": "application/xml",
+                        "type": "application/"
+                                "vnd.openstack.identity-v3+xml"
                     }
                 ]
             }
