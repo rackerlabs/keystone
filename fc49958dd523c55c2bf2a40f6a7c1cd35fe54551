@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//628\u003d",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-06T14:01:19Z",
+      "side": 1,
+      "message": "the version id here should actually indicate \u0027v3.0\u0027\n\nA client should be able to find that the server support v3 by seeing the \u0027v3\u0027 key, and then be able to check which iteration of v3 is supported by checking the minor version\n\ne.g. havana should rev this to v3.1",
+      "revId": "fc49958dd523c55c2bf2a40f6a7c1cd35fe54551",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//62w\u003d",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-06T14:01:19Z",
+      "side": 1,
+      "message": "this will return a v3 response on:\n\n  GET /v2.0/\n\nwhich is broken",
+      "revId": "fc49958dd523c55c2bf2a40f6a7c1cd35fe54551",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
