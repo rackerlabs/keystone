@@ -569,7 +569,8 @@ class JsonTestCase(RestfulTestCase, CoreApiTests):
 
         # validate token
         self.assertIsNotNone(r.body['access']['token'].get('id'))
-        self.assertIsNotNone(r.body['access']['token'].get('expires'))
+        self.assertIsNotNone(r.body['access']['token'].get('expires_at',
+                             r.body['access']['token'].get('expires')))
         tenant = r.body['access']['token'].get('tenant')
         if tenant is not None:
             # validate tenant
@@ -834,7 +835,7 @@ class XmlTestCase(RestfulTestCase, CoreApiTests):
         token = xml.find(self._tag('token'))
         self.assertIsNotNone(token)
         self.assertIsNotNone(token.get('id'))
-        self.assertIsNotNone(token.get('expires'))
+        self.assertIsNotNone(token.get('expires_at', token.get('expires')))
         tenant = token.find(self._tag('tenant'))
         if tenant is not None:
             # validate tenant
