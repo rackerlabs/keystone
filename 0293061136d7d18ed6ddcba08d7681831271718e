@@ -52,6 +52,24 @@
       "revId": "0293061136d7d18ed6ddcba08d7681831271718e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//7hc\u003d",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-06T01:15:27Z",
+      "side": 1,
+      "message": "....I think, therefore, we should update the date - so at least we have a version check that can distinguish between servers running the latest v2.0 implementation",
+      "parentUuid": "AAAANH//+tw\u003d",
+      "revId": "0293061136d7d18ed6ddcba08d7681831271718e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
