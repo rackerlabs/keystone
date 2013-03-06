@@ -16,6 +16,24 @@
       "revId": "fbd87379178582cb509e529f18659a4b7f138981",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//6TU\u003d",
+        "filename": "tests/test_versions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-03-06T20:21:06Z",
+      "side": 1,
+      "message": "It is not valid ISO 8601 format indeed.",
+      "parentUuid": "AAAAN3//6b4\u003d",
+      "revId": "fbd87379178582cb509e529f18659a4b7f138981",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
