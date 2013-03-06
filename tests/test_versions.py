@@ -42,6 +42,41 @@ class VersionTestCase(test.TestCase):
             "versions": {
                 "values": [
                     {
+                        "id": "v3",
+                        "status": "beta",
+                        "updated": "2013-03-06T00:00:00Z",
+                        "links": [
+                            {
+                                "rel": "self",
+                                "href": "http://localhost:%s/v3/" %
+                                        CONF.public_port,
+                            }, {
+                                "rel": "describedby",
+                                "type": "text/html",
+                                "href": "http://docs.openstack.org/api/"
+                                        "openstack-identity-service/3/"
+                                        "content/"
+                            }, {
+                                "rel": "describedby",
+                                "type": "application/pdf",
+                                "href": "http://docs.openstack.org/api/"
+                                        "openstack-identity-service/3/"
+                                        "identity-dev-guide-3.pdf"
+                            }
+                        ],
+                        "media-types": [
+                            {
+                                "base": "application/json",
+                                "type": "application/"
+                                        "vnd.openstack.identity-v3+json"
+                            }, {
+                                "base": "application/xml",
+                                "type": "application/"
+                                        "vnd.openstack.identity-v3+xml"
+                            }
+                        ]
+                    },
+                    {
                         "id": "v2.0",
                         "status": "beta",
                         "updated": "2011-11-19T00:00:00Z",
@@ -89,6 +124,41 @@ class VersionTestCase(test.TestCase):
         expected = {
             "versions": {
                 "values": [
+                    {
+                        "id": "v3",
+                        "status": "beta",
+                        "updated": "2013-03-06T00:00:00Z",
+                        "links": [
+                            {
+                                "rel": "self",
+                                "href": "http://localhost:%s/v3/" %
+                                        CONF.admin_port,
+                            }, {
+                                "rel": "describedby",
+                                "type": "text/html",
+                                "href": "http://docs.openstack.org/api/"
+                                        "openstack-identity-service/3/"
+                                        "content/"
+                            }, {
+                                "rel": "describedby",
+                                "type": "application/pdf",
+                                "href": "http://docs.openstack.org/api/"
+                                        "openstack-identity-service/3/"
+                                        "identity-dev-guide-3.pdf"
+                            }
+                        ],
+                        "media-types": [
+                            {
+                                "base": "application/json",
+                                "type": "application/"
+                                        "vnd.openstack.identity-v3+json"
+                            }, {
+                                "base": "application/xml",
+                                "type": "application/"
+                                        "vnd.openstack.identity-v3+xml"
+                            }
+                        ]
+                    },
                     {
                         "id": "v2.0",
                         "status": "beta",

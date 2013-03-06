@@ -122,6 +122,39 @@ class Version(wsgi.Application):
                 }
             ]
         }
+        versions['v3'] = {
+            'id': 'v3',
+            'status': 'beta',
+            'updated': '2013-03-06T00:00:00Z',
+            'links': [
+                {
+                    'rel': 'self',
+                    'href': self._get_identity_url(version='v3'),
+                }, {
+                    'rel': 'describedby',
+                    'type': 'text/html',
+                    'href': 'http://docs.openstack.org/api/openstack-'
+                            'identity-service/3/content/'
+                }, {
+                    'rel': 'describedby',
+                    'type': 'application/pdf',
+                    'href': 'http://docs.openstack.org/api/openstack-'
+                            'identity-service/3/identity-dev-guide-'
+                            '3.pdf'
+                }
+            ],
+            'media-types': [
+                {
+                    'base': 'application/json',
+                    'type': 'application/vnd.openstack.identity-v3'
+                            '+json'
+                }, {
+                    'base': 'application/xml',
+                    'type': 'application/vnd.openstack.identity-v3'
+                            '+xml'
+                }
+            ]
+        }
 
         return versions
 
@@ -136,5 +169,5 @@ class Version(wsgi.Application):
     def get_version(self, context):
         versions = self._get_versions_list(context)
         return wsgi.render_response(body={
-            'version': versions['v2.0']
+            'version': versions['v3']
         })
