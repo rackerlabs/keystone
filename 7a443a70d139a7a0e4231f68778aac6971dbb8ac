@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//6BY\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-06T23:00:25Z",
+      "side": 1,
+      "message": "(nit) this is extra-indented.",
+      "revId": "7a443a70d139a7a0e4231f68778aac6971dbb8ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
