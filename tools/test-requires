@@ -32,3 +32,9 @@ netifaces
 
 # For translations processing
 Babel
+
+# For db migration testing
+# Note you will also need the corresponding -devel packages
+# installed or the MySQL/PostgreSQL tests will be skipped
+MySQL-python
+psycopg2
