@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//7oo\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1089,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-06T00:16:46Z",
+      "side": 1,
+      "message": "Is there a reason we don\u0027t call this list_user_groups?",
+      "revId": "88b33c30a7b318c7a78ad616bd0d9ce5ea2d528f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//7ok\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1096,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-06T00:16:46Z",
+      "side": 1,
+      "message": "Is there a reason we don\u0027t call this list_users_in_group?",
+      "revId": "88b33c30a7b318c7a78ad616bd0d9ce5ea2d528f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//7pA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1097,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-06T00:16:46Z",
+      "side": 1,
+      "message": "Returns a list of users that belong to a group?",
+      "revId": "88b33c30a7b318c7a78ad616bd0d9ce5ea2d528f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//7nQ\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-06T00:16:46Z",
+      "side": 1,
+      "message": "Ok, so probably worth making this comment a bit clearer..i.e. something like:\n\n\"The domain and group crud tests here override the standard ones in test_backend.py so that we can exclude the update name test, since we do not yet support the update of either group of domain names with LDAP.  Remove these LDAP specific tests....\".\n\nIt might be good to add an update test the changed some other attribute of a group/domain (e.g. description?) here - so at least we do a check on update...in fact you could add that to test_backend as well.",
+      "revId": "88b33c30a7b318c7a78ad616bd0d9ce5ea2d528f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
