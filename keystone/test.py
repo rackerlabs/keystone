@@ -16,6 +16,7 @@
 
 import datetime
 import errno
+import functools
 import os
 import socket
 import subprocess
@@ -25,6 +26,7 @@ import time
 import eventlet
 import mox
 import nose.exc
+import nose.plugins.skip
 from paste import deploy
 import stubout
 import unittest2 as unittest
@@ -113,6 +115,22 @@ def checkout_vendor(repo, rev):
         LOG.warning(_('Failed to checkout %s'), repo)
     cd(working_dir)
     return revdir
+
+
+class skip_unless(object):
+    """Decorator that skips a test if condition is not true."""
+    def __init__(self, condition, msg):
+        self.condition = condition
+        self.message = msg
+
+    def __call__(self, func):
+        @functools.wraps(func)
+        def _skipper(*args, **kw):
+            """Wrapped skipper function."""
+            if not self.condition:
+                raise nose.SkipTest(self.message)
+            func(*args, **kw)
+        return _skipper
 
 
 class TestClient(object):
