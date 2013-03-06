@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//6Bs\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-06T22:56:07Z",
+      "side": 1,
+      "message": "wrap in _() for translation.\n\nalso, and this is a general question, how much information do we want to give away to the client when there\u0027s an authority problem?",
+      "revId": "3603b1c7dd5cd4e38a7681b27fe2d5b7b2936bee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
