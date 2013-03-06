@@ -46,7 +46,7 @@ class Token(kvs.Base, token.Driver):
         if not data_copy.get('expires'):
             data_copy['expires'] = token.default_expire_time()
         if 'trust_id' in data and data['trust_id'] is None:
-                data_copy.pop('trust_id')
+            data_copy.pop('trust_id')
         self.db.set('token-%s' % token_id, data_copy)
         return copy.deepcopy(data_copy)
 
@@ -65,6 +65,14 @@ class Token(kvs.Base, token.Driver):
         for token, ref in self.db.items():
             if not token.startswith('token-'):
                 continue
+            if trust_id is not None:
+                ref_trust_id = ref.get('trust_id')
+                if not ref_trust_id:
+                    continue
+                if ref_trust_id != trust_id:
+                    continue
+                tokens.append(token.split('-', 1)[1])
+                continue
             user = ref.get('user')
             if not user:
                 continue
@@ -77,10 +85,6 @@ class Token(kvs.Base, token.Driver):
                 if not tenant:
                     continue
                 if tenant.get('id') != tenant_id:
-                    continue
-            if trust_id is not None:
-                trust = ref.get('trust_id')
-                if not trust:
                     continue
             tokens.append(token.split('-', 1)[1])
         return tokens

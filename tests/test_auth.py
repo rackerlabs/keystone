@@ -20,6 +20,7 @@ import uuid
 from keystone import auth
 from keystone import config
 from keystone import exception
+from keystone import identity
 from keystone.openstack.common import timeutils
 from keystone import test
 from keystone import token
@@ -638,6 +639,24 @@ class AuthWithTrust(AuthTest):
                           2,
                           "user_foo has three roles, but the token should"
                           " only get the two roles specified in the trust.")
+
+    def test_delete_tokens_for_user_invalidates_tokens_from_trust(self):
+        tokens = self.trust_controller.token_api.list_tokens(
+            {}, self.trustee['id'], trust_id=self.new_trust['id'])
+        self.assertEquals(len(tokens), 0)
+        auth_response = self.fetch_v2_token_from_trust()
+        tokens = self.trust_controller.token_api.list_tokens(
+            {}, self.trustee['id'], trust_id=self.new_trust['id'])
+        self.assertEquals(len(tokens), 1)
+
+        identity.controllers.delete_tokens_for_user(
+            {},
+            self.trust_controller.token_api,
+            self.trust_controller.trust_api,
+            self.trustee['id'])
+        tokens = self.trust_controller.token_api.list_tokens(
+            {}, self.trustee['id'], trust_id=self.new_trust['id'])
+        self.assertEquals(len(tokens), 0)
 
     def test_token_from_trust_cant_get_another_token(self):
         auth_response = self.fetch_v2_token_from_trust()

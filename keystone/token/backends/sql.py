@@ -84,6 +84,13 @@ class Token(sql.Base, token.Driver):
         token_references = query.filter_by(valid=True)
         for token_ref in token_references:
             token_ref_dict = token_ref.to_dict()
+            if trust_id is not None:
+                token_trust_id = token_ref_dict.get('trust_id')
+                if not token_trust_id:
+                    continue
+                if token_trust_id != trust_id:
+                    tokens.append(token_ref['id'])
+                    continue
             user = token_ref_dict.get('user')
             if not user:
                 continue
@@ -94,12 +101,6 @@ class Token(sql.Base, token.Driver):
                 if not tenant:
                     continue
                 if tenant.get('id') != tenant_id:
-                    continue
-            if trust_id is not None:
-                token_trust_id = token_ref_dict.get('trust_id')
-                if not token_trust_id:
-                    continue
-                if token_trust_id != trust_id:
                     continue
             tokens.append(token_ref['id'])
         return tokens
