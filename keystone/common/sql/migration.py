@@ -26,7 +26,7 @@ from keystone import config
 
 
 CONF = config.CONF
-
+INIT_VERSION = 0
 
 try:
     from migrate.versioning import exceptions as versioning_exceptions
@@ -60,7 +60,7 @@ def db_version():
     try:
         return versioning_api.db_version(CONF.sql.connection, repo_path)
     except versioning_exceptions.DatabaseNotControlledError:
-        return db_version_control(0)
+        return db_version_control(INIT_VERSION)
 
 
 def db_version_control(version=None):
