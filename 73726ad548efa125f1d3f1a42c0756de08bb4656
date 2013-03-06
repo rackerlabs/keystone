@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//6II\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-06T22:19:30Z",
+      "side": 1,
+      "message": "does anyone besides me think it\u0027s weird to modify an input argument without documenting that it\u0027s going to be modified? (this applies to create_group, create_project.)",
+      "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//6JQ\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-06T22:19:30Z",
+      "side": 1,
+      "message": "suggest provide a name for \"magic constant\" {}, e.g., context\u003d{}.\n\nalso, since this is used all over the place, have a function self._create_user()",
+      "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//6Iw\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1555,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-06T22:19:30Z",
+      "side": 1,
+      "message": "this is incorrect. The test is showing that the project doesn\u0027t get changed, and the function has changed so that it now modifies the passed-in project.",
+      "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//6Ic\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1560,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-06T22:19:30Z",
+      "side": 1,
+      "message": "remove \u0027enabled\u0027 to test this.",
+      "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//6IA\u003d",
+        "filename": "tests/test_backend_kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-06T22:19:30Z",
+      "side": 1,
+      "message": "how do I know that this is the kvs backend?",
+      "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//6Ho\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-06T22:19:30Z",
+      "side": 1,
+      "message": "how do I know that this is the LDAP driver? maybe check instanceof().",
+      "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//6HU\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-06T22:19:30Z",
+      "side": 1,
+      "message": "same here, check instanceof()",
+      "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
