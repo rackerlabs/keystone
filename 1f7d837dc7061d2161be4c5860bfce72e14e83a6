@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAN3//6Eg\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-06T22:46:28Z",
+      "side": 1,
+      "message": "(nit) remove ()",
+      "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//6Ec\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-06T22:46:28Z",
+      "side": 1,
+      "message": "move \"% user_id\" out of _()",
+      "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//6i8\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 1
@@ -13,6 +47,23 @@
       "writtenOn": "2013-03-06T17:14:06Z",
       "side": 1,
       "message": "These if statements which all do a continue is pretty distracting. Why not group them a bit?\n\nif (not user\n    or user.get(\u0027id\u0027) !\u003d user_id\n    or ref.get(.......\n    or ....):\n   continue",
+      "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//6C4\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-06T22:46:28Z",
+      "side": 1,
+      "message": "suggest put this function called 3 times into its own function, so it\u0027s obvious is the same function called each time.",
       "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
