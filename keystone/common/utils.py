@@ -301,7 +301,7 @@ def setup_remote_pydev_debug():
                      'that a debugger processes is listening on that port.')
 
         try:
-            from pydev import pydevd
+            import pydevd
 
             pydevd.settrace(CONF.pydev_debug_host,
                             port=CONF.pydev_debug_port,
