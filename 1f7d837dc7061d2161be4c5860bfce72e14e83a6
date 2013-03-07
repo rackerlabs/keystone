@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//5qA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-07T17:20:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//6Eg\u003d",
+      "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//6Ec\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 1
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//5p8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-07T17:20:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//6Ec\u003d",
+      "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//6i8\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 1
@@ -65,6 +101,24 @@
       "writtenOn": "2013-03-06T17:14:06Z",
       "side": 1,
       "message": "These if statements which all do a continue is pretty distracting. Why not group them a bit?\n\nif (not user\n    or user.get(\u0027id\u0027) !\u003d user_id\n    or ref.get(.......\n    or ....):\n   continue",
+      "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//5pw\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-07T17:20:08Z",
+      "side": 1,
+      "message": "So, I took this idea and ran with it.  The revised patch should be much more legible.  Unfortunately, I was not able to split this into two functions (list_tokens_for_user and list_tokens_for_trust) at the API level due to the way the memcached backend is keyed.",
+      "parentUuid": "AAAAN3//6i8\u003d",
       "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -100,6 +154,24 @@
       "side": 1,
       "message": "disagree, just because it\u0027s already a one-liner, and the subsequent assertion is not always the same",
       "parentUuid": "AAAAN3//6C4\u003d",
+      "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//4oE\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-07T17:20:08Z",
+      "side": 1,
+      "message": "Done anyway.  I like how it looks.  Cleaned up this function in the revised patch.",
+      "parentUuid": "AAAAN3//47c\u003d",
       "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
