@@ -373,6 +373,7 @@ class CoreApiTests(object):
                     'tenantId': self.tenant_bar['id'],
                 },
             },
+            # TODO(dolph): creating a token should result in a 201 Created
             expected_status=200)
         self.assertValidAuthenticationResponse(r)
 
@@ -388,6 +389,7 @@ class CoreApiTests(object):
                     },
                 },
             },
+            # TODO(dolph): creating a token should result in a 201 Created
             expected_status=200)
         self.assertValidAuthenticationResponse(r)
 
@@ -568,6 +570,8 @@ class JsonTestCase(RestfulTestCase, CoreApiTests):
         # validate token
         self.assertIsNotNone(r.body['access']['token'].get('id'))
         self.assertIsNotNone(r.body['access']['token'].get('expires'))
+        self.assertIsNone(r.body['access']['token'].get('expires_at'))
+                             
         tenant = r.body['access']['token'].get('tenant')
         if tenant is not None:
             # validate tenant
