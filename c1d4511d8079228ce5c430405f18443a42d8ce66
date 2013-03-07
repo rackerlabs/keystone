@@ -34,6 +34,24 @@
       "revId": "c1d4511d8079228ce5c430405f18443a42d8ce66",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//4is\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-07T17:52:57Z",
+      "side": 1,
+      "message": "no problem Dolph. i definitely needed to think about it more than i did originally ie.support only v3.  i\u0027ve moved the code to its own function similar to \nparams \u003d self._normalize_dict(params) above",
+      "parentUuid": "AAAAN3//4sw\u003d",
+      "revId": "c1d4511d8079228ce5c430405f18443a42d8ce66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
