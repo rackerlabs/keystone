@@ -16,6 +16,24 @@
       "revId": "3603b1c7dd5cd4e38a7681b27fe2d5b7b2936bee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//48Y\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-07T14:58:11Z",
+      "side": 1,
+      "message": "+1; I just double checked with ttx that this is allowed during string freeze https://wiki.openstack.org/wiki/StringFreeze",
+      "parentUuid": "AAAAN3//6Bs\u003d",
+      "revId": "3603b1c7dd5cd4e38a7681b27fe2d5b7b2936bee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
