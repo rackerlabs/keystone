@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//5mw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-07T05:24:00Z",
+      "side": 1,
+      "message": "yes, it should be modifying a clone. will fix that.",
+      "parentUuid": "AAAAN3//6II\u003d",
+      "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//6JQ\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//5jo\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-07T05:24:00Z",
+      "side": 1,
+      "message": "unsure what you mean in the second part... do you mean to have a function like this:\n\ndef _create_user(user[\u0027id\u0027], user):\n    return self.identity_man.create_user(context, user[\u0027id\u0027], user)",
+      "parentUuid": "AAAAN3//6JQ\u003d",
+      "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//6Iw\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2013-03-06T22:19:30Z",
       "side": 1,
       "message": "this is incorrect. The test is showing that the project doesn\u0027t get changed, and the function has changed so that it now modifies the passed-in project.",
+      "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//5gE\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1555,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-07T05:24:00Z",
+      "side": 1,
+      "message": "was blanking on what was meant here. got it now... i need to create a copy of item in manager and mod that so extra values aren\u0027t needed",
+      "parentUuid": "AAAAN3//6Iw\u003d",
       "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//5gs\u003d",
+        "filename": "tests/test_backend_kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-07T05:24:00Z",
+      "side": 1,
+      "message": "this might be sheer luck that it defaults to kvs driver",
+      "parentUuid": "AAAAN3//6IA\u003d",
+      "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//6Ho\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 6
@@ -98,6 +170,24 @@
       "writtenOn": "2013-03-06T22:19:30Z",
       "side": 1,
       "message": "how do I know that this is the LDAP driver? maybe check instanceof().",
+      "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//5gk\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-07T05:24:00Z",
+      "side": 1,
+      "message": "backend_ldap.conf sets identity to ldap i believe... similar to existing setup in test_backend_sql",
+      "parentUuid": "AAAAN3//6Ho\u003d",
       "revId": "73726ad548efa125f1d3f1a42c0756de08bb4656",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
