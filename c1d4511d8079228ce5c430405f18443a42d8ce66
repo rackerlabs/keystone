@@ -16,6 +16,24 @@
       "revId": "c1d4511d8079228ce5c430405f18443a42d8ce66",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//4sw\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-07T16:50:19Z",
+      "side": 1,
+      "message": "the code in patchset 1 is much simpler, and I think that\u0027ll be closer to the final result here (sorry again, gordon!)",
+      "parentUuid": "AAAAN3//41w\u003d",
+      "revId": "c1d4511d8079228ce5c430405f18443a42d8ce66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
