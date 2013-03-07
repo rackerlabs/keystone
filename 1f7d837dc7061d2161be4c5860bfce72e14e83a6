@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//47g\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-07T15:16:06Z",
+      "side": 1,
+      "message": "+1; i18n is broken otherwise",
+      "parentUuid": "AAAAN3//6Ec\u003d",
+      "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//6i8\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 1
@@ -64,6 +82,24 @@
       "writtenOn": "2013-03-06T22:46:28Z",
       "side": 1,
       "message": "suggest put this function called 3 times into its own function, so it\u0027s obvious is the same function called each time.",
+      "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//47c\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-07T15:16:06Z",
+      "side": 1,
+      "message": "disagree, just because it\u0027s already a one-liner, and the subsequent assertion is not always the same",
+      "parentUuid": "AAAAN3//6C4\u003d",
       "revId": "1f7d837dc7061d2161be4c5860bfce72e14e83a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
