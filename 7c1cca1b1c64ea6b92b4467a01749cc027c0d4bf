@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//37c\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-03-08T00:13:22Z",
+      "side": 1,
+      "message": "I believe it\u0027s a good idea to check for user_dns (i.e. if not user_dns:) before we try to remove a member from it i.e. (the if use_dumb_member: loop) ?",
+      "revId": "7c1cca1b1c64ea6b92b4467a01749cc027c0d4bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
