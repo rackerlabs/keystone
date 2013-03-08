@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAN3//2c0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-08T21:01:38Z",
+      "side": 1,
+      "message": "use \u0027is\u0027 when comparing identities",
+      "revId": "f3100d76767fcd9a17a895caf71f6762e7291685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//+OE\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 6
@@ -13,6 +30,24 @@
       "writtenOn": "2013-03-04T22:54:37Z",
       "side": 1,
       "message": "suggest use keyword arguments for keyword parameters, e.g., change to project_name\u003dproject_name, etc.",
+      "revId": "f3100d76767fcd9a17a895caf71f6762e7291685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//2ck\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-08T21:01:38Z",
+      "side": 1,
+      "message": "better yet, pass through all the parameters that you don\u0027t need as done in master using **kwargs -- i\u0027m guessing this patch needs a rebase?",
+      "parentUuid": "AAAAN3//+OE\u003d",
       "revId": "f3100d76767fcd9a17a895caf71f6762e7291685",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
