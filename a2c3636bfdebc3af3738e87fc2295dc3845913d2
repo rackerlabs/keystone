@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//2wQ\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T18:58:19Z",
+      "side": 1,
+      "message": "suggest remove else to remove a level of nesting.",
+      "revId": "a2c3636bfdebc3af3738e87fc2295dc3845913d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//2wo\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T18:58:19Z",
+      "side": 1,
+      "message": "this is extra-indented and hard to follow.",
+      "revId": "a2c3636bfdebc3af3738e87fc2295dc3845913d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//2v8\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T18:58:19Z",
+      "side": 1,
+      "message": "use named argument for named parameter, \"tenant_id\" -\u003e \"tenant_id\u003dtenant_id\"",
+      "revId": "a2c3636bfdebc3af3738e87fc2295dc3845913d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//2vQ\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T18:58:19Z",
+      "side": 1,
+      "message": "this is extra-indented and hard to follow.",
+      "revId": "a2c3636bfdebc3af3738e87fc2295dc3845913d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//2vc\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T18:58:19Z",
+      "side": 1,
+      "message": "used named argument for named parameter, \"tenant_id\" -\u003e \"tenant_id\u003dtenant_id\".",
+      "revId": "a2c3636bfdebc3af3738e87fc2295dc3845913d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
