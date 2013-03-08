@@ -141,6 +141,51 @@ class JsonBodyMiddleware(wsgi.Middleware):
         request.environ[PARAMS_ENV] = params
 
 
+class HtmlBodyMiddleware(wsgi.Middleware):
+    """De/serializes HTML to/from JSON."""
+
+    def process_request(self, request):
+        
+        #Make sure that the HTML middleware is executed on
+        #the way out
+        outgoing_html = 'text/html' in str(request.accept)
+        if outgoing_html:
+            request.accept = 'text/html'
+        
+        """Transform the request from XML to JSON."""
+        incoming_html = ('application/x-www-form-urlencoded' in
+                         str(request.content_type))
+        if incoming_html and request.body:
+            request.content_type = 'application/json'
+            try:
+                request.body = jsonutils.dumps(
+                    serializer.from_xml(request.body))
+                
+
+            except Exception:
+                LOG.exception('Serializer failed')
+                e = exception.ValidationError(attribute='valid HTML',
+                                              target='request body')
+                return wsgi.render_exception(e)
+
+    def process_response(self, request, response):
+        """Transform the response from JSON to XML."""
+        outgoing_html = 'text/html' in str(request.accept)
+        if outgoing_html and response.body:
+            request.accept = 'text/html'
+            response.content_type = 'text/html'
+            try:
+                 body_obj = jsonutils.loads(response.body)
+                 response.charset = request.charset
+                 response.text = serializer.to_html(body_obj)
+            except Exception:
+                LOG.exception('Serializer failed')
+                e = exception.ValidationError(attribute='valid XML',
+                                              target='request body')
+                return wsgi.render_exception(e)
+        return response
+
+
 class XmlBodyMiddleware(wsgi.Middleware):
     """De/serializes XML to/from JSON."""
 
@@ -162,6 +207,7 @@ class XmlBodyMiddleware(wsgi.Middleware):
         """Transform the response from JSON to XML."""
         outgoing_xml = 'application/xml' in str(request.accept)
         if outgoing_xml and response.body:
+            request.accept = 'application/xml'
             response.content_type = 'application/xml'
             try:
                 body_obj = jsonutils.loads(response.body)

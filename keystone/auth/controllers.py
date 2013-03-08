@@ -406,3 +406,26 @@ class Auth(controller.V3Controller):
     @controller.protected
     def revocation_list(self, context, auth=None):
         return self.token_controllers_ref.revocation_list(context, auth)
+
+    def login_form(self, context):
+        return {"<form action='login' method='post'>":
+                {"username": "<input name='username' type='text'/>",
+                 "password": "<input name='password' type='password'/>",
+                 "submit": "<input type='submit'/>"},
+                "</form>": ""}
+
+    def login(self, context, form):
+        auth = {'identity':
+                {'methods': ['password'],
+                 'password':
+                 {'user':
+                  {'name': form.get('username'),
+                   'password': form.get('password'),
+                   'domain':
+                   {'id': 'default'},
+                   }
+                  }
+                 }
+                }
+        token = self.authenticate_for_token(context, auth)
+        return token

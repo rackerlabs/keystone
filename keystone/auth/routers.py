@@ -40,3 +40,11 @@ def append_v3_routers(mapper, routers):
                    controller=auth_controller,
                    action='revocation_list',
                    conditions=dict(method=['GET']))
+    mapper.connect('/auth/tokens/login',
+                   controller=auth_controller,
+                   action='login_form',
+                   conditions=dict(method=['GET']))
+    mapper.connect('/auth/tokens/login',
+                   controller=auth_controller,
+                   action='login',
+                   conditions=dict(method=['POST']))
