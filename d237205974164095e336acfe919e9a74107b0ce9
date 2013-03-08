@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//3YM\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-03-08T09:42:58Z",
+      "side": 1,
+      "message": "According to Dolph\u0027s comment in https://review.openstack.org/#/c/23155/1/keystone/controllers.py,unified\nthere were v2 changes post-Folsom.\nNot sure what semantics of \u0027updated\u0027 timestamp is, if it is the same as in Grizzly, does that mean v2 changes in Grizzly are all available in Folsom?",
+      "revId": "d237205974164095e336acfe919e9a74107b0ce9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
