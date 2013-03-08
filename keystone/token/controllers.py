@@ -461,13 +461,11 @@ class Auth(controller.V2Controller):
         Optionally, limited to a token owned by a specific tenant.
 
         """
-        # TODO(termie): this stuff should probably be moved to middleware
-        self.assert_admin(context)
         token_ref = self.token_api.get_token(context=context,
                                              token_id=token_id)
         return token_ref
 
-    # admin only
+    @controller.protected
     def validate_token_head(self, context, token_id):
         """Check that a token is valid.
 
@@ -479,7 +477,7 @@ class Auth(controller.V2Controller):
         belongs_to = context['query_string'].get('belongsTo')
         assert self._get_token_ref(context, token_id, belongs_to)
 
-    # admin only
+    @controller.protected
     def validate_token(self, context, token_id):
         """Check that a token is valid.
 
@@ -516,8 +514,8 @@ class Auth(controller.V2Controller):
         self.assert_admin(context)
         self.token_api.delete_token(context=context, token_id=token_id)
 
+    @controller.protected
     def revocation_list(self, context, auth=None):
-        self.assert_admin(context)
         tokens = self.token_api.list_revoked_tokens(context)
 
         for t in tokens:
