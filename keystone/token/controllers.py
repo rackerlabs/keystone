@@ -517,7 +517,6 @@ class Auth(controller.V2Controller):
         self.token_api.delete_token(context=context, token_id=token_id)
 
     def revocation_list(self, context, auth=None):
-        self.assert_admin(context)
         tokens = self.token_api.list_revoked_tokens(context)
 
         for t in tokens:
