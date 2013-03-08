@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//224\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-08T18:06:01Z",
+      "side": 1,
+      "message": "why do we delete trust token if user password changes?",
+      "revId": "415b88c1c17e2133edd02e7eb794157369d671fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//23I\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-08T18:06:01Z",
+      "side": 1,
+      "message": "where are the \"roles\" being used?",
+      "revId": "415b88c1c17e2133edd02e7eb794157369d671fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//23A\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-08T18:06:01Z",
+      "side": 1,
+      "message": "we should only delete a trust token if the role to be removed is one of the delegated roles.",
+      "revId": "415b88c1c17e2133edd02e7eb794157369d671fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
