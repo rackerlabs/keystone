@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//21U\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-08T18:21:38Z",
+      "side": 1,
+      "message": "So that is the password was compromised, we have removed all tokens generated from that compromise.",
+      "parentUuid": "AAAAN3//224\u003d",
+      "revId": "415b88c1c17e2133edd02e7eb794157369d671fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//23I\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//21Q\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-08T18:21:38Z",
+      "side": 1,
+      "message": "It is not.  Removed in a follow on patch.",
+      "parentUuid": "AAAAN3//23I\u003d",
+      "revId": "415b88c1c17e2133edd02e7eb794157369d671fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//23A\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2013-03-08T18:06:01Z",
       "side": 1,
       "message": "we should only delete a trust token if the role to be removed is one of the delegated roles.",
+      "revId": "415b88c1c17e2133edd02e7eb794157369d671fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//21M\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-08T18:21:38Z",
+      "side": 1,
+      "message": "I think that rule will only make sense once we have the rule in place that only an unscoped token can get another token.",
+      "parentUuid": "AAAAN3//23A\u003d",
       "revId": "415b88c1c17e2133edd02e7eb794157369d671fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
