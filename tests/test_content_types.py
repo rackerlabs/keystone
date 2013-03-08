@@ -232,8 +232,11 @@ class RestfulTestCase(test.TestCase):
         self.assertValidResponseHeaders(response)
         return response
 
-    def get_scoped_token(self):
+    def get_scoped_token(self, **kwargs):
         """Convenience method so that we can test authenticated requests."""
+        tenant_id = kwargs.pop('tenant_id', None)
+        if not tenant_id:
+            tenant_id = self.tenant_bar['id']
         r = self.public_request(
             method='POST',
             path='/v2.0/tokens',
@@ -243,7 +246,7 @@ class RestfulTestCase(test.TestCase):
                         'username': self.user_foo['name'],
                         'password': self.user_foo['password'],
                     },
-                    'tenantId': self.tenant_bar['id'],
+                    'tenantId': tenant_id,
                 },
             })
         return self._get_token_id(r)
@@ -398,6 +401,28 @@ class CoreApiTests(object):
 
     def test_validate_token(self):
         token = self.get_scoped_token()
+        r = self.admin_request(
+            path='/v2.0/tokens/%(token_id)s' % {
+                'token_id': token,
+            },
+            token=token)
+        self.assertValidAuthenticationResponse(r)
+
+    def test_validate_token_service_role(self):
+        service_project = {
+            'id': 'service',
+            'name': 'SERVICE',
+            'domain_id': default_fixtures.DEFAULT_DOMAIN_ID,
+            'description': 'service',
+            'enabled': True
+        }
+
+        rv = self.identity_api.create_project(service_project['id'],
+                                              service_project)
+        rv = self.identity_api.add_user_to_project(service_project['id'],
+                                                   self.user_foo['id'])
+
+        token = self.get_scoped_token(tenant_id='service')
         r = self.admin_request(
             path='/v2.0/tokens/%(token_id)s' % {
                 'token_id': token,
