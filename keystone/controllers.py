@@ -118,6 +118,10 @@ class Version(wsgi.Application):
                     'base': 'application/json',
                     'type': MEDIA_TYPE_JSON % 'v2.0'
                 }, {
+                    'base': 'text/html',
+                    'type': 'application/vnd.openstack.identity-v2.0'
+                            '+html'
+                }, {
                     'base': 'application/xml',
                     'type': MEDIA_TYPE_XML % 'v2.0'
                 }
@@ -157,11 +161,23 @@ class Version(wsgi.Application):
     def get_version_v2(self, context):
         versions = self._get_versions_list(context)
         return wsgi.render_response(body={
-            'version': versions['v2.0']
+            'version': versions['v2.0'],
+            'modules' : {'catalog':{'href':'catalog'},
+             'policy':{'href':'policy'},
+             'projects':{'href':'projects'},
+             'tokens':{'href':'tokens'},
+             'users':{'href':'users'}}
+
         })
 
     def get_version_v3(self, context):
         versions = self._get_versions_list(context)
         return wsgi.render_response(body={
-            'version': versions['v3']
+            'version': versions['v3'],
+            'modules' : {'tokens':{'href':'auth/tokens'},
+                         'catalog':{'href':'catalog'},
+                         'policy':{'href':'policy'},
+                         'projects':{'href':'projects'},
+                         'users':{'href':'users'}},
+            'login':{'href':'auth/tokens/login'}
         })

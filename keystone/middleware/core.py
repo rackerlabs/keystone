@@ -146,6 +146,11 @@ class XmlBodyMiddleware(wsgi.Middleware):
 
     def process_request(self, request):
         """Transform the request from XML to JSON."""
+        incoming_html = 'application/x-www-form-urlencoded' in str(request.content_type)
+        if incoming_html and request.body:
+            request.content_type = 'application/json'
+            request.body = jsonutils.dumps(serializer.from_html(request.body))
+
         incoming_xml = 'application/xml' in str(request.content_type)
         if incoming_xml and request.body:
             request.content_type = 'application/json'
@@ -153,6 +158,14 @@ class XmlBodyMiddleware(wsgi.Middleware):
 
     def process_response(self, request, response):
         """Transform the response from JSON to XML."""
+        outgoing_html = 'text/html' in str(request.accept)
+        if outgoing_html and response.body:
+            response.content_type = 'text/html'
+            body_obj = jsonutils.loads(response.body)
+            response.charset = request.charset
+            response.text = serializer.to_html(body_obj)
+            return response
+
         outgoing_xml = 'application/xml' in str(request.accept)
         if outgoing_xml and response.body:
             response.content_type = 'application/xml'
