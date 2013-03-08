@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//3Ig\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T16:23:39Z",
+      "side": 1,
+      "message": "remove ()",
+      "revId": "7609a9070314b66e38b14a911b237f753002c9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//3IY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T16:23:39Z",
+      "side": 1,
+      "message": "could break or return here.",
+      "revId": "7609a9070314b66e38b14a911b237f753002c9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//3Hk\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T16:23:39Z",
+      "side": 1,
+      "message": "since you only care about the dn, should indicate to server to not return any attribues (use 1.1).",
+      "revId": "7609a9070314b66e38b14a911b237f753002c9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//3H8\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 808,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T16:23:39Z",
+      "side": 1,
+      "message": "why catch an exception just to re-raise it?",
+      "revId": "7609a9070314b66e38b14a911b237f753002c9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//3Hg\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 817,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T16:23:39Z",
+      "side": 1,
+      "message": "since you only care about the dn, should indicate to server to not return any attribues (use 1.1).",
+      "revId": "7609a9070314b66e38b14a911b237f753002c9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//3H4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T16:23:39Z",
+      "side": 1,
+      "message": "why catch an exception just to re-raise it?",
+      "revId": "7609a9070314b66e38b14a911b237f753002c9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//3HY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T16:23:39Z",
+      "side": 1,
+      "message": "since this code is copied from roles_delete_subtree_by_group, should share by moving into a function.",
+      "revId": "7609a9070314b66e38b14a911b237f753002c9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//3HU\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 886,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T16:23:39Z",
+      "side": 1,
+      "message": "wrap in _() for translation. Also, need names for substitution variables for translation.",
+      "revId": "7609a9070314b66e38b14a911b237f753002c9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//3As\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 965,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T16:23:39Z",
+      "side": 1,
+      "message": "note to self: verify that the filter also includes the objectclass.",
+      "revId": "7609a9070314b66e38b14a911b237f753002c9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//3A4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-08T16:23:39Z",
+      "side": 1,
+      "message": "should fail if there\u0027s more than 1 match.",
+      "revId": "7609a9070314b66e38b14a911b237f753002c9c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
