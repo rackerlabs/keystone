@@ -16,6 +16,24 @@
       "revId": "7c1cca1b1c64ea6b92b4467a01749cc027c0d4bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//3eg\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-03-08T08:11:33Z",
+      "side": 1,
+      "message": "This way we check if there were only dumb_member in user_dns and if we swap these ifs, we\u0027ll proceed with empty user_dns list.",
+      "parentUuid": "AAAAN3//37c\u003d",
+      "revId": "7c1cca1b1c64ea6b92b4467a01749cc027c0d4bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
