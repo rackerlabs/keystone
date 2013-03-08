@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//320\u003d",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-08T01:16:37Z",
+      "side": 1,
+      "message": "Pull out the common code instead of duplicating it.",
+      "revId": "06ccb1646eee68f6427087d5496c0cff63811373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//32w\u003d",
+        "filename": "tests/test_versions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-08T01:16:37Z",
+      "side": 1,
+      "message": "reduce the amount of duplicated code.",
+      "revId": "06ccb1646eee68f6427087d5496c0cff63811373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
