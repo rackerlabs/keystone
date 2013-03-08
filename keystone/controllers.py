@@ -149,8 +149,7 @@ class Version(wsgi.Application):
                     }, {
                         'base': 'application/xml',
                         'type': MEDIA_TYPE_XML % 'v3'
-                    }
-                ]
+                    }]
             }
 
         return versions
@@ -167,8 +166,7 @@ class Version(wsgi.Application):
         versions = self._get_versions_list(context)
         if 'v2.0' in _VERSIONS:
             return wsgi.render_response(body={
-                'version': versions['v2.0']
-            })
+                'version': versions['v2.0']})
         else:
             raise exception.VersionNotFound(version='v2.0')
 
