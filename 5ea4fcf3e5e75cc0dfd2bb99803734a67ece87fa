@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//20w\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-03-08T18:24:45Z",
+      "side": 1,
+      "message": "Not critical but would be nice to keep master Change-Id even if it\u0027s not a direct cherry-pick like here (it helps to locate master review).",
+      "revId": "5ea4fcf3e5e75cc0dfd2bb99803734a67ece87fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//20s\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-03-08T18:24:45Z",
+      "side": 1,
+      "message": "ok, that makes sense but I\u0027d like to see Dolph\u0027s opinion before approving.\nAlso what about documenting v2 changes?",
+      "revId": "5ea4fcf3e5e75cc0dfd2bb99803734a67ece87fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
