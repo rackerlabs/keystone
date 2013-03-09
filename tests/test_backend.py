@@ -1872,6 +1872,8 @@ class TokenTests(object):
     def test_token_crud(self):
         token_id = uuid.uuid4().hex
         data = {'id': token_id, 'a': 'b',
+                'user_id': 'testuserid',
+                'trust_id': None,
                 'user': {'id': 'testuserid'}}
         data_ref = self.token_api.create_token(token_id, data)
         expires = data_ref.pop('expires')
@@ -1892,6 +1894,7 @@ class TokenTests(object):
     def create_token_sample_data(self, tenant_id=None, trust_id=None):
         token_id = uuid.uuid4().hex
         data = {'id': token_id, 'a': 'b',
+                'user_id': 'testuserid',
                 'user': {'id': 'testuserid'}}
         if tenant_id is not None:
             data['tenant'] = {'id': tenant_id, 'name': tenant_id}
@@ -1964,6 +1967,8 @@ class TokenTests(object):
         expire_time = timeutils.utcnow() - datetime.timedelta(minutes=1)
         data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
                 'expires': expire_time,
+                'user_id': 'testuserid',
+                'trust_id': None,
                 'user': {'id': 'testuserid'}}
         data_ref = self.token_api.create_token(token_id, data)
         self.assertDictEqual(data_ref, data)
