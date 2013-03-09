@@ -16,6 +16,23 @@
       "revId": "6045987b134a2ff92852c28be2adf7e56725adae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//1tA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-03-09T23:56:34Z",
+      "side": 1,
+      "message": "master Change-Id: I1457237f52310f0536fbcdcaa42174b17e8edbf5",
+      "revId": "6045987b134a2ff92852c28be2adf7e56725adae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
