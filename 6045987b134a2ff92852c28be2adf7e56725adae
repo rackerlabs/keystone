@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//1vA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-03-09T22:56:55Z",
+      "side": 1,
+      "message": "This is now https://bitbucket.org/eventlet/eventlet/issue/92",
+      "revId": "6045987b134a2ff92852c28be2adf7e56725adae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
