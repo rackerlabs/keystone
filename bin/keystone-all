@@ -88,15 +88,20 @@ if __name__ == '__main__':
     if CONF.debug:
         CONF.log_opt_values(logging.getLogger(CONF.prog), logging.DEBUG)
 
-    if CONF.config_file:
+    if CONF.paste_deploy.config_file:
+        paste_config = CONF.paste_deploy.config_file
+        paste_config_value = paste_config
+        if not os.path.isabs(paste_config):
+            paste_config = CONF.find_file(paste_config)
+    elif CONF.config_file:
         paste_config = CONF.config_file[0]
+        paste_config_value = paste_config
     else:
         paste_config = CONF.find_file('keystone.conf')
-        if not paste_config:
-            print ("The keystone.conf file could not be found in the "
-                   "configuration directories.")
-            CONF.print_help()
-            sys.exit(1)
+        paste_config_value = 'keystone.conf'
+    if not paste_config or not os.path.exists(paste_config):
+        print ("The %s file could not be found." % paste_config_value)
+        sys.exit(1)
 
     monkeypatch_thread = not CONF.standard_threads
     pydev_debug_url = utils.setup_remote_pydev_debug()
