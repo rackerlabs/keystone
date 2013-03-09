@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//2EE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5733
+      },
+      "writtenOn": "2013-03-09T04:32:08Z",
+      "side": 1,
+      "message": "It would be great if this insert could be skipped if the member_role_id already exists. This would make for a cleaner upgrade for deployments that already have a \"member\" role. The downside is that in downgrade() we wouldn\u0027t know whether to delete it or not unless we added another \u0027extra\u0027 item to indicate that the role was added by the upgrade itself.\n\nKeystone devs might disagree with me here, so fix the other stuff first.",
+      "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//2EM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5733
+      },
+      "writtenOn": "2013-03-09T04:32:08Z",
+      "side": 1,
+      "message": "This still throws away roles. metadata.data needs to be used here at least. You also need to consider whether the insert loop above has already created the rows you\u0027re inserting here. My advice would be to do things in this order:\n\n1) Loop through metadata, inserting user_project_role rows. When inserting, add config.CONF.member_role_id to metadata.data[\u0027roles\u0027] iff it\u0027s not there already. Insert with data\u003dmetadata.data.\n\n2) Move the existing user_project_membership loop below this loop, and add a check for matching user_id/project_id. Skip the insert if a row exists.",
+      "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//2EA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5733
+      },
+      "writtenOn": "2013-03-09T04:32:08Z",
+      "side": 1,
+      "message": "I think this should be membership.data? And the json will need to be parsed into a dictionary.",
+      "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//2D8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5733
+      },
+      "writtenOn": "2013-03-09T04:32:08Z",
+      "side": 1,
+      "message": "Someone could correct me on this, but I think the existence of any roles here at all confirms project membership, so there should be no need to check any particular role.",
+      "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//2D4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5733
+      },
+      "writtenOn": "2013-03-09T04:32:08Z",
+      "side": 1,
+      "message": "This should loop through user_project_metadata. Can probably be merged into the above loop. Don\u0027t forget data\u003dmetadata.data.",
+      "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//2Dc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5733
+      },
+      "writtenOn": "2013-03-09T04:32:08Z",
+      "side": 1,
+      "message": "As above, roles always need to be moved back into the metadata table, not just when member_role exists.",
+      "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
