@@ -30,5 +30,8 @@ keyring
 http://tarballs.openstack.org/swift/swift-master.tar.gz#egg=swift
 netifaces
 
+# ec2token test use nova.wsgi
+http://tarballs.openstack.org/nova/nova-master.tar.gz#egg=nova
+
 # For translations processing
 Babel
