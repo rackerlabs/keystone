@@ -528,7 +528,10 @@ class SqlUpgradeTests(test.TestCase):
 
     def test_upgrade_trusts(self):
         self.assertEqual(self.schema.version, 0, "DB is at version 0")
-        self.upgrade(18)
+        self.upgrade(17)
+        self.assertTableColumns("token",
+                                ["id", "expires", "extra", "valid"])
+        self.upgrade(19)
         self.assertTableColumns("trust",
                                 ["id", "trustor_user_id",
                                  "trustee_user_id",
@@ -537,6 +540,9 @@ class SqlUpgradeTests(test.TestCase):
                                  "expires_at", "extra"])
         self.assertTableColumns("trust_role",
                                 ["trust_id", "role_id"])
+        self.assertTableColumns("token",
+                                ["id", "expires", "extra", "valid",
+                                 "trust_id", "user_id"])
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
