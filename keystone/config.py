@@ -333,3 +333,6 @@ register_str('token', group='auth',
 for method_name in CONF.auth.methods:
     if method_name not in _DEFAULT_AUTH_METHODS:
         config.register_str(method_name, group='auth')
+
+# PasteDeploy config file
+register_str('config_file', group='paste_deploy', default=None)
