@@ -822,3 +822,44 @@ class TestTrustAuth(test_v3.RestfulTestCase):
                      self.user_id, expected_status=200)
         trusts = r.body['trusts']
         self.assertEqual(len(trusts), 0)
+
+    def test_change_password_invalidates_trust_tokens(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=1),
+            role_ids=[self.role_id])
+        del ref['id']
+
+        r = self.post('/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+
+        auth_data = _build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+        r = self.post('/auth/tokens', body=auth_data)
+
+        self.assertValidProjectTrustScopedTokenResponse(r, self.user)
+        trust_token = r.getheader('X-Subject-Token')
+        from keystone.common import cms
+        token_id = cms.cms_hash_token(trust_token)
+
+        r = self.get('/trusts?trustor_user_id=%s' %
+                     self.user_id, expected_status=200,
+                     token=trust_token)
+
+        auth_data = _build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'])
+
+        r = self.patch('/users/%s' % self.trustee_user['id'],
+                       body={'user': {'password': 'newpassword'}},
+                       auth=auth_data,
+                       expected_status=200)
+
+        r = self.get('/trusts?trustor_user_id=%s' %
+                     self.user_id, expected_status=401,
+                     token=trust_token)
