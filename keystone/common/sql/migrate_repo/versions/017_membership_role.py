@@ -43,7 +43,22 @@ def upgrade(migrate_engine):
 
     user_project_membership_table = sql.Table('user_project_membership',
                                               meta, autoload=True)
+    old_metadata_table = sql.Table('metadata', meta, autoload=True)
     session = sql.orm.sessionmaker(bind=migrate_engine)()
+
+    for metadata in session.query(old_metadata_table):
+        if not config.CONF.member_role_id in metadata.data:
+            data = json.loads(metadata.data)
+            data['roles'].append(config.CONF.member_role_id)
+        else:
+            data = metadata.data
+
+        ins = user_project_role_table.insert().values(
+            user_id=metadata.user_id,
+            project_id=metadata.tenant_id,
+            data=json.dumps(data))
+        conn.execute(ins)
+
     for membership in session.query(user_project_membership_table):
         data = {'roles': [config.CONF.member_role_id]}
         ins = user_project_role_table.insert().values(
@@ -51,8 +66,10 @@ def upgrade(migrate_engine):
             project_id=membership.tenant_id,
             data=json.dumps(data))
         conn.execute(ins)
+
     session.close()
     user_project_membership_table.drop()
+    old_metadata_table.drop()
 
 
 def downgrade(migrate_engine):
@@ -77,19 +94,47 @@ def downgrade(migrate_engine):
             primary_key=True))
     user_project_membership_table.create(migrate_engine, checkfirst=True)
 
+    metadata_table = sql.Table(
+        'metadata',
+        meta,
+        sql.Column(
+            'user_id',
+            sql.String(64),
+            sql.ForeignKey('user.id'),
+            primary_key=True),
+        sql.Column(
+            'tenant_id',
+            sql.String(64),
+            primary_key=True),
+        sql.Column('data',
+                   sql.Text()))
+    metadata_table.create(migrate_engine, checkfirst=True)
+
     user_project_metadata_table = sql.Table(
         'user_project_metadata',
         meta,
         autoload=True)
 
+    metadata_table = sql.Table(
+        'metadata',
+        meta,
+        autoload=True)
+
     session = sql.orm.sessionmaker(bind=migrate_engine)()
     for membership in session.query(user_project_metadata_table):
-        if 'roles' in membership:
-            roles = membership['roles']
-            if config.CONF.member_role_id in roles:
-                ins = (user_project_membership_table.insert()
-                       .values(user_id=membership.user_id,
-                               tenant_id=membership.project_id))
+        if 'roles' in membership.data:
+            roles = json.loads(membership.data)
+            ins = (user_project_membership_table.insert()
+                   .values(user_id=membership.user_id,
+                           tenant_id=membership.project_id))
+
+    for metadata in session.query(user_project_metadata_table):
+        if 'roles' in metadata:
+            roles = json.loads(metadata.data)
+            ins = (metadata_table.insert()
+                   .values(user_id=metadata.user_id,
+                           tenant_id=metadata.project_id))
+
     session.close()
     role_table = sql.Table('role', meta, autoload=True)
     conn = migrate_engine.connect()
