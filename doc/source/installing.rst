@@ -58,6 +58,7 @@ commandline path:
 You will find sample configuration files in ``etc/``
 
 * keystone.conf
+* keystone-paste.ini
 * logging.conf
 * policy.json
 * default_catalog.templates
