@@ -153,6 +153,25 @@ def filterprotected(*filters):
 class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
 
+    def _delete_tokens_for_user(self, context, user_id, project_id=None):
+        #First delete tokens that could get other tokens.
+        for token_id in self.token_api.list_tokens(context,
+                                                   user_id,
+                                                   tenant_id=project_id):
+            try:
+                self.token_api.delete_token(context, token_id)
+            except exception.NotFound:
+                pass
+        #delete tokens generated from trusts
+        for trust in self.trust_api.list_trusts_for_trustee(context, user_id):
+            try:
+                token_list = self.token_api.list_tokens(context, user_id,
+                                                        trust_id=trust['id'])
+                for token in token_list:
+                    self.token_api.delete_token(context, token)
+            except exception.NotFound:
+                pass
+
     def _require_attribute(self, ref, attr):
         """Ensures the reference contains the specified attribute."""
         if ref.get(attr) is None or ref.get(attr) == '':
