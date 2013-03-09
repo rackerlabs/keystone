@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//2MU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/019_fixup_role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-09T00:15:42Z",
+      "side": 1,
+      "message": "this looks like the first patch that you showed me -- is the only thing that\u0027s different about it that you had to provide references (role_table.c.extra) to the column in both cases?",
+      "revId": "9b13664d09e46ee87d4bd8054cd4c2990f369fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//2L4\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-09T00:15:42Z",
+      "side": 1,
+      "message": "should this one have some valid \"extra\" data so that you can test to ensure you\u0027re not overwriting it with \"{}\" as well?",
+      "revId": "9b13664d09e46ee87d4bd8054cd4c2990f369fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
