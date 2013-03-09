@@ -327,3 +327,6 @@ register_str('password', group='auth',
              default='keystone.auth.methods.token.Token')
 register_str('token', group='auth',
              default='keystone.auth.methods.password.Password')
+
+# PasteDeploy config file
+register_str('config_file', group='paste_deploy', default=None)
