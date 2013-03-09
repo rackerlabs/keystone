@@ -440,6 +440,144 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableColumns('user_domain_metadata',
                                 ['user_id', 'domain_id', 'data'])
 
+    def test_metadata_table_migration(self):
+        # Scaffolding
+        session = self.Session()
+        self.assertEqual(self.schema.version, 0, "DB at version 0")
+        self.upgrade(16)
+
+        # Create a Domain
+        domain_table = sqlalchemy.Table('domain',
+                                        self.metadata,
+                                        autoload=True)
+
+        domain = {'id': uuid.uuid4().hex,
+                  'name': uuid.uuid4().hex,
+                  'enabled': True}
+        cmd = domain_table.insert().values(domain)
+        self.engine.execute(cmd)
+
+        # Create a Project
+        project_table = sqlalchemy.Table('project',
+                                         self.metadata,
+                                         autoload=True)
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'domain_id': domain['id'],
+                   'extra': "{}"}
+        cmd = project_table.insert().values(project)
+        self.engine.execute(cmd)
+
+        # Create another Project
+        project2 = {'id': uuid.uuid4().hex,
+                    'name': uuid.uuid4().hex,
+                    'domain_id': domain['id'],
+                    'extra': "{}"}
+        cmd = project_table.insert().values(project2)
+        self.engine.execute(cmd)
+
+        # Create a User
+        user_table = sqlalchemy.Table('user',
+                                      self.metadata,
+                                      autoload=True)
+        user = {'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex,
+                'domain_id': domain['id'],
+                'password': uuid.uuid4().hex,
+                'enabled': True,
+                'extra': json.dumps({})}
+        cmd = user_table.insert().values(user)
+        self.engine.execute(cmd)
+
+        # Create a Role
+        role_table = sqlalchemy.Table('role',
+                                      self.metadata,
+                                      autoload=True)
+        role = {'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex}
+        cmd = role_table.insert().values(role)
+        self.engine.execute(cmd)
+
+        # And another role
+        role2 = {'id': uuid.uuid4().hex,
+                 'name': uuid.uuid4().hex}
+        cmd = role_table.insert().values(role2)
+        # Grant Role to User
+        data = json.dumps({"roles": [role['id']]})
+        metadata_table = sqlalchemy.Table('metadata',
+                                          self.metadata,
+                                          autoload=True)
+        role_grant = {'user_id': user['id'],
+                      'tenant_id': project['id'],
+                      'data': data}
+        cmd = metadata_table.insert().values(role_grant)
+        self.engine.execute(cmd)
+
+        data = json.dumps({"roles": [role2['id']]})
+        role_grant = {'user_id': user['id'],
+                      'tenant_id': project2['id'],
+                      'data': data}
+        cmd = metadata_table.insert().values(role_grant)
+        self.engine.execute(cmd)
+        session.commit()
+
+        self.upgrade(17)
+        # Test user in project has role
+        r = session.execute('select data from metadata where user_id="%s"'
+                            'and tenant_id="%s"' %
+                            (user['id'], project['id']))
+        test_project1 = json.loads(r.fetchone()['data'])
+        self.assertEqual(test_project1['roles'][0], role['id'])
+
+        # Test user in project2 has role2
+        r = session.execute('select data from metadata where user_id="%s"'
+                            ' and tenant_id="%s"' %
+                            (user['id'], project2['id']))
+        test_project2 = json.loads(r.fetchone()['data'])
+        self.assertEqual(test_project2['roles'][0], role2['id'])
+
+        # Test for user in project has role in user_project_metadata
+        # Migration 17 does not properly migrate this data, so this should
+        # be None.
+        r = session.execute('select data from user_project_metadata where '
+                            'user_id="%s" and project_id="%s"' %
+                            (user['id'], project['id']))
+        self.assertIsNone(r.fetchone())
+
+        # Create a conflicting user-project in user_project_metadata with
+        # a different role
+        user_project_metadata_table = sqlalchemy.Table(
+            'user_project_metadata',
+            self.metadata,
+            autoload=True)
+        data = json.dumps({"roles": [role2['id']]})
+        role_grant = {'user_id': user['id'],
+                      'project_id': project['id'],
+                      'data': data}
+        cmd = user_project_metadata_table.insert().values(role_grant)
+        self.engine.execute(cmd)
+        # End Scaffolding
+
+        # Migrate to 20
+        self.upgrade(20)
+
+        # The user-project pairs should have all roles from the previous
+        # metadata table in addition to any roles currently in
+        # user_project_metadata
+        r = session.execute('select data from user_project_metadata '
+                            'where user_id="%s" and project_id="%s"' %
+                            (user['id'], project['id']))
+        test_project1 = json.loads(r.fetchone()['data'])
+        self.assertIn(role['id'], test_project1['roles'])
+        self.assertIn(role2['id'], test_project1['roles'])
+
+        # pairs that only existed in old metadata table should be in
+        # user_project_metadata
+        r = session.execute('select data from user_project_metadata where '
+                            'user_id="%s" and project_id="%s"' %
+                            (user['id'], project2['id']))
+        test_project2 = json.loads(r.fetchone()['data'])
+
     def test_upgrade_default_roles(self):
         def count_member_roles():
             session = self.Session()
