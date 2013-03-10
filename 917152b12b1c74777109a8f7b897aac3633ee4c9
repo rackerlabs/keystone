@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//1l8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-10T04:06:39Z",
+      "side": 1,
+      "message": "remove WIP",
+      "revId": "917152b12b1c74777109a8f7b897aac3633ee4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//1l0\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-10T04:06:39Z",
+      "side": 1,
+      "message": "i\u0027m wondering if we should use the term \u0027project\u0027 here instead of \u0027tenant\u0027?",
+      "revId": "917152b12b1c74777109a8f7b897aac3633ee4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//1l4\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-10T04:06:39Z",
+      "side": 1,
+      "message": "rather than redefining admin_required,\n\n  project_id:service or rule:admin_required",
+      "revId": "917152b12b1c74777109a8f7b897aac3633ee4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//1ls\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-10T04:06:39Z",
+      "side": 1,
+      "message": "check_token is the v3 equivalent of validate_token_head -- I don\u0027t have a preference between the two but only one should be defined here, not both. the method name of the other should be changes in the controller and in the router that maps it.",
+      "revId": "917152b12b1c74777109a8f7b897aac3633ee4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
