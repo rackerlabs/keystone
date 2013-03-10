@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//1nc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 53
+      },
+      "writtenOn": "2013-03-10T03:38:57Z",
+      "side": 1,
+      "message": "Thanks for the feedback missed a fairly basic change there. But part 1 should be correct now. Part 2 is mostly correct except that I think sqlalchemy will not allow the insert if there is a matching id. Forcing the check seemed excessive, but happy to re-look.",
+      "parentUuid": "AAAAN3//2EM\u003d",
+      "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//2EA\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2013-03-09T04:32:08Z",
       "side": 1,
       "message": "I think this should be membership.data? And the json will need to be parsed into a dictionary.",
+      "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//1nY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 53
+      },
+      "writtenOn": "2013-03-10T03:38:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//2EA\u003d",
       "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//1nU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 53
+      },
+      "writtenOn": "2013-03-10T03:38:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//2D8\u003d",
+      "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//2D4\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
         "patchSetId": 2
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//1nQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 53
+      },
+      "writtenOn": "2013-03-10T03:38:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//2D4\u003d",
+      "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//2Dc\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
         "patchSetId": 2
@@ -98,6 +170,24 @@
       "writtenOn": "2013-03-09T04:32:08Z",
       "side": 1,
       "message": "As above, roles always need to be moved back into the metadata table, not just when member_role exists.",
+      "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//1nM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/017_membership_role.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 53
+      },
+      "writtenOn": "2013-03-10T03:38:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//2Dc\u003d",
       "revId": "4053610e420d4e360bf2c3a428f925fba288addf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
