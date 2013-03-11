@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAN3//1lg\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-11T16:13:00Z",
+      "side": 1,
+      "message": "Allows a user to  change their own password.",
+      "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//1fc\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 2
@@ -31,6 +48,23 @@
       "side": 1,
       "message": "interesting question -- i\u0027d want to hear a solid use case for a service to know that an auth is the result of delegation / impersonation before starting to provide that data. i\u0027d prefer to keep the feature as transparent to other services if possible",
       "parentUuid": "AAAAN3//1fc\u003d",
+      "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//1lc\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-11T16:13:00Z",
+      "side": 1,
+      "message": "trust is in different locations in different tokens, this makes it consistent.  This way, testing on a trust_id does not fail, which would be a security issue.\n\nAgree with Dolph:  lets not make people think the y should/can test on a trust, as I see that leading to situations where, once again, people are forced to hand out their credentials.  SO, no header for trusts",
       "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//0Qw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/019_add_trust_to_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-11T16:13:00Z",
+      "side": 1,
+      "message": "Its indicative of a bad migrations due to a bad driver.  Migrations work fine with the real DB backends, but SQLite does not support dropping columns.  I tried other numerous workarounds for SQLite, and have come to the conclusion that it is not worth it:  We really care about MySQL and PostgreSQL for live deployments.  SQLite will work \"well enough\" with this migration, too.",
+      "parentUuid": "AAAAN3//0kQ\u003d",
+      "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//0kE\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 2
@@ -82,6 +134,24 @@
       "writtenOn": "2013-03-11T13:43:51Z",
       "side": 1,
       "message": ".. why is this a standalone method?",
+      "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//0RY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-11T16:13:00Z",
+      "side": 1,
+      "message": "Because it can potentially be used from anywhere.  Here it is called from both V2 and V3 controllers.",
+      "parentUuid": "AAAAN3//0kE\u003d",
       "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -117,6 +187,24 @@
       "side": 1,
       "message": "can\u0027t do foreign keys because it would cross driver boundaries",
       "parentUuid": "AAAAN3//1fk\u003d",
+      "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//0Rk\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-11T16:13:00Z",
+      "side": 1,
+      "message": "Dolph is right.",
+      "parentUuid": "AAAAN3//0kI\u003d",
       "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
