@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//zgc\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-11T23:07:13Z",
+      "side": 1,
+      "message": "I don\u0027t see how this change is related to the other changes.",
+      "revId": "f3f67c6f9f77b04079764bfd0ee3268a1eed268d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
