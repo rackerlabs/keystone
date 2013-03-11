@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//zqI\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1849
+      },
+      "writtenOn": "2013-03-11T21:42:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//1l0\u003d",
+      "revId": "917152b12b1c74777109a8f7b897aac3633ee4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//1l4\u003d",
         "filename": "etc/policy.json",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2013-03-10T04:06:39Z",
       "side": 1,
       "message": "rather than redefining admin_required,\n\n  project_id:service or rule:admin_required",
+      "revId": "917152b12b1c74777109a8f7b897aac3633ee4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zvI\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1849
+      },
+      "writtenOn": "2013-03-11T21:42:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//1l4\u003d",
       "revId": "917152b12b1c74777109a8f7b897aac3633ee4c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
