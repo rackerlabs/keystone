@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//0ko\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-11T13:43:51Z",
+      "side": 1,
+      "message": "interesting question -- i\u0027d want to hear a solid use case for a service to know that an auth is the result of delegation / impersonation before starting to provide that data. i\u0027d prefer to keep the feature as transparent to other services if possible",
+      "parentUuid": "AAAAN3//1fc\u003d",
+      "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//1fU\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/019_add_trust_to_token.py",
         "patchSetId": 2
@@ -36,6 +54,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//0kQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/019_add_trust_to_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-11T13:43:51Z",
+      "side": 1,
+      "message": "i\u0027m not clear on why you would need to catch this and suppress it -- it seems indicative of a bad migration, not a misbehavior in the sql driver. are you seeing this with db_sync (valid issue then?) or test_sql_upgrade (maybe just need to manually commit here?)",
+      "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//0kE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-11T13:43:51Z",
+      "side": 1,
+      "message": ".. why is this a standalone method?",
+      "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//1fk\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 2
@@ -47,6 +99,24 @@
       "writtenOn": "2013-03-10T10:38:04Z",
       "side": 1,
       "message": "At first glance, one would think that this and the trust_id should be foreign keys.  I suspect the reason they are not is that since  the physical deletion of tokens from the DB is an out-of-band exercise, having a FK relationship might be problematic. On the flip side, if a provider REALLY wanted full auditing, then they would want all the entities to which the tokens are related to hang around too - however, I\u0027m not sure we want to really enforce all that (and if we did we would probably need significant additional support for the operations of archiving whole batches of related entities) \n\nProbably worth a comment here about why these attributes are not FKs",
+      "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//0kI\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-11T13:43:51Z",
+      "side": 1,
+      "message": "can\u0027t do foreign keys because it would cross driver boundaries",
+      "parentUuid": "AAAAN3//1fk\u003d",
       "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
