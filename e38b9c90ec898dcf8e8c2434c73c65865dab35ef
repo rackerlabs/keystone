@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//0Ak\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-11T18:10:18Z",
+      "side": 1,
+      "message": "Agreed....I was just going along with the underlying implementation of delete_tokens_for_user()....I think it is because this is called from several different classes, with no suitable common ancestor that holds",
+      "parentUuid": "AAAAN3//0JI\u003d",
+      "revId": "e38b9c90ec898dcf8e8c2434c73c65865dab35ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//0Iw\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2013-03-11T17:10:27Z",
       "side": 1,
       "message": "... such that this would be r[\u0027id\u0027]",
+      "revId": "e38b9c90ec898dcf8e8c2434c73c65865dab35ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//0Aw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-11T18:10:18Z",
+      "side": 1,
+      "message": "yep, you\u0027re right....haven;t got the tests running yet :-)",
+      "parentUuid": "AAAAN3//0Io\u003d",
       "revId": "e38b9c90ec898dcf8e8c2434c73c65865dab35ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
