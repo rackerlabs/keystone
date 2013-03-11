@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//1G4\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-03-11T03:20:51Z",
+      "side": 1,
+      "message": "Hi Brad, the last \",\"  (end of description line) is unnecessary. Thanks!",
+      "revId": "5994797042bb9103675b4025ae488e65173e7f22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//1G0\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-03-11T03:20:51Z",
+      "side": 1,
+      "message": "The last \",\"  at the end of description line is unnecessary.",
+      "revId": "5994797042bb9103675b4025ae488e65173e7f22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
