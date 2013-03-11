@@ -16,6 +16,24 @@
       "revId": "248b75f6b53b418cec3b081f015388e1a21c6222",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//0so\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-11T11:52:21Z",
+      "side": 1,
+      "message": "I think it\u0027s because LDAP doesn\u0027t (yet?) support update of a name, which is what the standard crud test does.  If we are going to have this here, we really need a comment as to why we must override - since everyone has that same question!",
+      "parentUuid": "AAAAN3//0tk\u003d",
+      "revId": "248b75f6b53b418cec3b081f015388e1a21c6222",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
