@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//0JI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-11T17:10:27Z",
+      "side": 1,
+      "message": "I find it really odd that these functions are defined on the module",
+      "revId": "e38b9c90ec898dcf8e8c2434c73c65865dab35ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//0Iw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 646,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-11T17:10:27Z",
+      "side": 1,
+      "message": "what is this function returning? i would think it would be returning user refs...",
+      "revId": "e38b9c90ec898dcf8e8c2434c73c65865dab35ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//0Io\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-11T17:10:27Z",
+      "side": 1,
+      "message": "... such that this would be r[\u0027id\u0027]",
+      "revId": "e38b9c90ec898dcf8e8c2434c73c65865dab35ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
