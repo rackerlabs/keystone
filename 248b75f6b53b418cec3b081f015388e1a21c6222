@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//0tk\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-11T11:43:22Z",
+      "side": 1,
+      "message": "what\u0027s different about this implementation than that in test_backend? (why doesn\u0027t that one run against LDAP?)",
+      "revId": "248b75f6b53b418cec3b081f015388e1a21c6222",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
