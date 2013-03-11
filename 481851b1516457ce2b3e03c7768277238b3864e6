@@ -123,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//0Og\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/019_add_trust_to_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-11T16:26:20Z",
+      "side": 1,
+      "message": "Ok, so I think you are saying that we should only hit this is:\n\na) You are using sqlite, and\nb) You did a downgrade, followed by an upgrade\n\nI would say that we should make that clearer in the text and potentially only pass on the error if we are using sqllite",
+      "parentUuid": "AAAAN3//0Qw\u003d",
+      "revId": "481851b1516457ce2b3e03c7768277238b3864e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//0kE\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 2
