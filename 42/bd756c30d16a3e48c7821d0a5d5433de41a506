@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Approved+1: guang-yee <guang.yee@hp.com>
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Verified+1: SmokeStack
+Code-Review+1: ayoung <ayoung@redhat.com>
+Code-Review+1: Kieran Spear <kispear@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 11 Mar 2013 16:06:31 +0000
+Reviewed-on: https://review.openstack.org/23974
+Project: openstack/keystone
+Branch: refs/heads/master
