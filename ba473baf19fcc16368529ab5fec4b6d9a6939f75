@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//zOI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-12T04:09:22Z",
+      "side": 1,
+      "message": "Brant, excellent observation! Yeah, this logic definitely doesn\u0027t look right. It was intended to revoke all to project-scoped tokens for projects in the disabled domain.",
+      "parentUuid": "AAAAN3//zYg\u003d",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//zYQ\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 4
@@ -98,6 +116,23 @@
       "writtenOn": "2013-03-12T00:32:21Z",
       "side": 1,
       "message": "suggest remove \", None\" since this is the default.",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zO8\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 859,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-12T04:09:22Z",
+      "side": 1,
+      "message": "password: uuid.uuid4().hex",
       "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
