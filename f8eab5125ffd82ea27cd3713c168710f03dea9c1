@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//xu0\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1849
+      },
+      "writtenOn": "2013-03-12T21:08:52Z",
+      "side": 1,
+      "message": "What about switching this over to a role check?",
+      "revId": "f8eab5125ffd82ea27cd3713c168710f03dea9c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
