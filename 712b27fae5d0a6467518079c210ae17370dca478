@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//yYk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-12T19:43:41Z",
+      "side": 1,
+      "message": "this is a very generically named function but then token_table is an argument instead of \u0027table\u0027 and trust_id is hardcoded into the exception instead of being pulled from the column argument",
+      "revId": "712b27fae5d0a6467518079c210ae17370dca478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//ymk\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
         "patchSetId": 5
@@ -36,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//yS0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-12T19:43:41Z",
+      "side": 1,
+      "message": "use !\u003d if that\u0027s what you\u0027re intending; this syntax is ambiguous",
+      "revId": "712b27fae5d0a6467518079c210ae17370dca478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//ymw\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
         "patchSetId": 5
@@ -47,6 +81,24 @@
       "writtenOn": "2013-03-12T18:05:43Z",
       "side": 1,
       "message": "change to the correct column name (might be user_id)",
+      "revId": "712b27fae5d0a6467518079c210ae17370dca478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//x5s\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-12T19:43:41Z",
+      "side": 1,
+      "message": "can it be pulled from column? e.g.\n\n  column.name",
+      "parentUuid": "AAAAN3//ymw\u003d",
       "revId": "712b27fae5d0a6467518079c210ae17370dca478",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
