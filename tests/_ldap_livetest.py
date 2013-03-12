@@ -14,6 +14,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import ldap
+import ldap.modlist
+import nose.exc
 import subprocess
 
 from keystone import config
@@ -27,33 +30,46 @@ import test_backend_ldap
 CONF = config.CONF
 
 
-def delete_object(name):
+def create_object(dn, attrs):
+    conn = ldap.initialize(CONF.ldap.url)
+    conn.simple_bind_s(CONF.ldap.user, CONF.ldap.password)
+    ldif = ldap.modlist.addModlist(attrs)
+    conn.add_s(dn, ldif)
+    conn.unbind_s()
+
+
+def clear_live_database():
     devnull = open('/dev/null', 'w')
-    dn = '%s,%s' % (name, CONF.ldap.suffix)
     subprocess.call(['ldapdelete',
                      '-x',
                      '-D', CONF.ldap.user,
                      '-H', CONF.ldap.url,
                      '-w', CONF.ldap.password,
-                     dn],
+                     '-r', CONF.ldap.suffix],
                     stderr=devnull)
 
+    if CONF.ldap.suffix.startswith('ou='):
+        tree_dn_attrs = {'objectclass': 'organizationalUnit',
+                         'ou': 'openstack'}
+    else:
+        tree_dn_attrs = {'objectclass': ['dcObject', 'organizationalUnit'],
+                         'dc': 'openstack',
+                         'ou': 'openstack'}
+    create_object(CONF.ldap.suffix, tree_dn_attrs)
+    create_object(CONF.ldap.user_tree_dn,
+                  {'objectclass': 'organizationalUnit',
+                  'ou': 'Users'})
+    create_object(CONF.ldap.role_tree_dn,
+                  {'objectclass': 'organizationalUnit',
+                  'ou': 'Roles'})
+    create_object(CONF.ldap.tenant_tree_dn,
+                  {'objectclass': 'organizationalUnit',
+                  'ou': 'Projects'})
 
-def clear_live_database():
-    roles = ['keystone_admin', 'fake1', 'fake2', 'useless']
-    groups = ['baz', 'bar', 'tenent4add', 'fake1', 'fake2']
-    users = ['foo', 'two', 'fake1', 'fake2', 'no_meta']
-
-    for group in groups:
-        for role in roles:
-            delete_object('cn=%s,cn=%s,ou=Groups' % (role, group))
-        delete_object('cn=%s,ou=Groups' % group)
-
-    for user in users:
-        delete_object('cn=%s,ou=Users' % user)
-
-    for role in roles:
-        delete_object('cn=%s,ou=Roles' % role)
+    # NOTE(crazed): This feature is currently being added
+    create_object("ou=Groups,%s" % CONF.ldap.suffix,
+                  {'objectclass': 'organizationalUnit',
+                  'ou': 'Groups'})
 
 
 class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
@@ -65,6 +81,16 @@ class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
         clear_live_database()
         self.identity_api = identity_ldap.Identity()
         self.load_fixtures(default_fixtures)
+        self.clear_database = clear_live_database
 
     def tearDown(self):
         test.TestCase.tearDown(self)
+
+    def test_user_enable_attribute_mask(self):
+        raise nose.exc.SkipTest('Test is for Active Directory Only')
+
+    def test_configurable_allowed_project_actions(self):
+        raise nose.exc.SkipTest('Blocked by bug 1155234')
+
+    def test_project_crud(self):
+        raise nose.exc.SkipTest('Blocked by bug 1155234')
