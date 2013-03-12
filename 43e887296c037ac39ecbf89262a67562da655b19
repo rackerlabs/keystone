@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//zRM\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-12T02:39:39Z",
+      "side": 1,
+      "message": "This has been bothering me.  In v2 it is still tenant, not project.  If this is getting triggered by a V2 call, we have a problem with the values passed in the authenticate calls being changed.  If not ,then this needs to be and or rule for either project id or tenant matching.",
+      "revId": "43e887296c037ac39ecbf89262a67562da655b19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
