@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//zbI\u003d",
+        "filename": "tests/test_v3_protection.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T00:17:28Z",
+      "side": 1,
+      "message": "(nit) \"third\" -\u003e \"fourth\" (or should it be \"fifth\", could also change to \"Amongst the domains ...\")",
+      "revId": "6b733ef2938f4da9a6462c7255a85fdcfb11c0fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zac\u003d",
+        "filename": "tests/test_v3_protection.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T00:17:28Z",
+      "side": 1,
+      "message": "(nit) remove \"be\"",
+      "revId": "6b733ef2938f4da9a6462c7255a85fdcfb11c0fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zaE\u003d",
+        "filename": "tests/test_v3_protection.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T00:17:28Z",
+      "side": 1,
+      "message": "(nit) \"get only get\" -\u003e \"get\"",
+      "revId": "6b733ef2938f4da9a6462c7255a85fdcfb11c0fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zaM\u003d",
+        "filename": "tests/test_v3_protection.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T00:17:28Z",
+      "side": 1,
+      "message": "suggest move these 2 lines of code to a function, then have it take an object and do json serialization.",
+      "revId": "6b733ef2938f4da9a6462c7255a85fdcfb11c0fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zZ0\u003d",
+        "filename": "tests/test_v3_protection.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T00:17:28Z",
+      "side": 1,
+      "message": "By returning ForbiddenAction here are we exposing information that should not be exposed? (that the domain exists)",
+      "revId": "6b733ef2938f4da9a6462c7255a85fdcfb11c0fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
