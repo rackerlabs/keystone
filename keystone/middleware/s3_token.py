@@ -39,7 +39,7 @@ import webob
 
 from keystone.openstack.common import jsonutils
 from swift.common import utils as swift_utils
-
+from urlparse import urlparse
 
 PROTOCOL_NAME = 'S3 Token Authentication'
 
@@ -55,19 +55,26 @@ class S3Token(object):
         """Common initialization code."""
         self.app = app
         self.logger = swift_utils.get_logger(conf, log_route='s3token')
-        self.logger.debug('Starting the %s component' % PROTOCOL_NAME)
+        self.logger.debug('Starting s3token middleware')
         self.reseller_prefix = conf.get('reseller_prefix', 'AUTH_')
         # where to find the auth service (we use this to validate tokens)
-        self.auth_host = conf.get('auth_host')
-        self.auth_port = int(conf.get('auth_port', 35357))
-        self.auth_protocol = conf.get('auth_protocol', 'https')
-        if self.auth_protocol == 'http':
-            self.http_client_class = httplib.HTTPConnection
-        else:
-            self.http_client_class = httplib.HTTPSConnection
-        # SSL
+        self.s3_url = conf.get('keystone_s3_url',
+                               'http://localhost:35357/v2.0/s3tokens')
+
+        # SSL Configuration
         self.cert_file = conf.get('certfile')
         self.key_file = conf.get('keyfile')
+
+        # Legacy configuration
+        auth_host = conf.get('auth_host')
+        auth_port = conf.get('auth_port')
+        auth_protocol = conf.get('auth_protocol')
+        if all([auth_host, auth_port, auth_protocol]):
+            self.s3_url = '%s://%s:%s/v2.0/s3tokens' % (
+                auth_protocol, auth_host, auth_port)
+
+        # This is mostly for the unittest to be overriden.
+        self.http_client_class = None
 
     def deny_request(self, code):
         error_table = {
@@ -83,19 +90,28 @@ class S3Token(object):
                      (code, error_table[code][1]))
         return resp
 
+    def get_http_client_class(self, scheme):
+        if scheme == 'http':
+            return httplib.HTTPConnection
+        else:
+            return httplib.HTTPSConnection
+
     def _json_request(self, creds_json):
         headers = {'Content-Type': 'application/json'}
-        if self.auth_protocol == 'http':
-            conn = self.http_client_class(self.auth_host, self.auth_port)
-        else:
-            conn = self.http_client_class(self.auth_host,
-                                          self.auth_port,
-                                          self.key_file,
-                                          self.cert_file)
         try:
-            conn.request('POST', '/v2.0/s3tokens',
-                         body=creds_json,
-                         headers=headers)
+            o = urlparse(self.s3_url)
+
+            # We do this to allow the unittest to override
+            # http_client_class with its own connection.
+            if not self.http_client_class:
+                self.http_client_class = self.get_http_client_class(o.scheme)
+
+            if o.scheme == 'http':
+                conn = self.http_client_class(o.netloc)
+            else:
+                conn = self.http_client_class(o.netloc, key_file=self.key_file,
+                                              cert_file=self.cert_file)
+            conn.request('POST', o.path, body=creds_json, headers=headers)
             response = conn.getresponse()
             output = response.read()
         except Exception as e:
@@ -162,10 +178,14 @@ class S3Token(object):
         if ':' in access:
             access, force_tenant = access.split(':')
 
-        # Authenticate request.
-        creds = {'credentials': {'access': access,
-                                 'token': token,
-                                 'signature': signature}}
+        # Make a copy of args for authentication and signature verification.
+        creds = {
+            'ec2Credentials': {
+                'access': access,
+                'signature': signature,
+                'token': token,
+            }
+        }
         creds_json = jsonutils.dumps(creds)
         self.logger.debug('Connecting to Keystone sending this JSON: %s' %
                           creds_json)
@@ -200,6 +220,7 @@ class S3Token(object):
         req.headers['X-Auth-Token'] = token_id
         tenant_to_connect = force_tenant or tenant['id']
         self.logger.debug('Connecting with tenant: %s' % (tenant_to_connect))
+
         new_tenant_name = '%s%s' % (self.reseller_prefix, tenant_to_connect)
         environ['PATH_INFO'] = environ['PATH_INFO'].replace(account,
                                                             new_tenant_name)
@@ -207,10 +228,7 @@ class S3Token(object):
 
 
 def filter_factory(global_conf, **local_conf):
-    """Returns a WSGI filter app for use with paste.deploy."""
+    """ Returns the WSGI filter for use with paste.deploy. """
     conf = global_conf.copy()
     conf.update(local_conf)
-
-    def auth_filter(app):
-        return S3Token(app, conf)
-    return auth_filter
+    return lambda app: S3Token(app, conf)

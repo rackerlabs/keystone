@@ -15,6 +15,7 @@
 # under the License.
 
 import logging
+import httplib
 
 import stubout
 import unittest2 as unittest
@@ -59,7 +60,7 @@ class FakeApp(object):
 
 
 class FakeHTTPConnection(object):
-    def __init__(self, *args):
+    def __init__(self, *args, **kwargs):
         return
 
     def getresponse(self):
@@ -79,6 +80,26 @@ class S3TokenMiddlewareTestBase(unittest.TestCase):
     def start_fake_response(self, status, headers):
         self.response_status = int(status.split(' ', 1)[0])
         self.response_headers = dict(headers)
+
+    def test_compat_configuration(self):
+        dico = {
+            'auth_host': 'foo',
+            'auth_port': 9999,
+            'auth_protocol': 'gopher',
+        }
+        self.middleware = s3_token.S3Token(FakeApp(), dico)
+        self.assertEqual(self.middleware.s3_url,
+                         'gopher://foo:9999/v2.0/s3tokens')
+
+    def test_http_client_class(self):
+        self.middleware = s3_token.S3Token(FakeApp(), {})
+        http_class = self.middleware.get_http_client_class('http')
+        self.assertEqual(http_class, httplib.HTTPConnection)
+
+    def test_https_client_class(self):
+        self.middleware = s3_token.S3Token(FakeApp(), {})
+        http_class = self.middleware.get_http_client_class('https')
+        self.assertEqual(http_class, httplib.HTTPSConnection)
 
 
 def good_request(cls, method, path, **kwargs):
