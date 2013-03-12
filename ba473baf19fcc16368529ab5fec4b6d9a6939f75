@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//zY8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T00:32:21Z",
+      "side": 1,
+      "message": "this is extra-indented.",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zY4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T00:32:21Z",
+      "side": 1,
+      "message": "change to just raise",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zYo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T00:32:21Z",
+      "side": 1,
+      "message": "suggest take this duplicated code and put it into a separate function (create_column())",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zYg\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T00:32:21Z",
+      "side": 1,
+      "message": "this looks wrong... project isn\u0027t used.",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zYQ\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T00:32:21Z",
+      "side": 1,
+      "message": "why does migrate_repo/versions/020_add_trust_to_token.py have String(128) for these columns?",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zYI\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T00:32:21Z",
+      "side": 1,
+      "message": "suggest remove \", None\" since this is the default.",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
