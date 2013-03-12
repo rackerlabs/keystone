@@ -16,6 +16,24 @@
       "revId": "f3f67c6f9f77b04079764bfd0ee3268a1eed268d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zL4\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-12T04:34:50Z",
+      "side": 1,
+      "message": "Agreed. Please revert.",
+      "parentUuid": "AAAAN3//zgc\u003d",
+      "revId": "f3f67c6f9f77b04079764bfd0ee3268a1eed268d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
