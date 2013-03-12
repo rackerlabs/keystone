@@ -29,6 +29,10 @@ LDAP_VALUES = {'TRUE': True, 'FALSE': False}
 CONTROL_TREEDELETE = '1.2.840.113556.1.4.805'
 LDAP_SCOPES = {'one': ldap.SCOPE_ONELEVEL,
                'sub': ldap.SCOPE_SUBTREE}
+LDAP_DEREF_OPTS = {'always': ldap.DEREF_ALWAYS,
+                   'finding': ldap.DEREF_FINDING,
+                   'never': ldap.DEREF_NEVER,
+                   'searching': ldap.DEREF_SEARCHING}
 
 
 def py2ldap(val):
@@ -61,6 +65,12 @@ def safe_iter(attrs):
     else:
         yield attrs
 
+def ldap_deref_opt(opt):
+    try:
+        return LDAP_DEREF_OPTS[opt]
+    except KeyError:
+        raise ValueError(_('Invalid LDAP deref option: %s. Choose one of: ' % opt) +
+                         ', '.join(LDAP_DEREF_OPTS.keys()))
 
 def ldap_scope(scope):
     try:
@@ -91,6 +101,7 @@ class BaseLdap(object):
         self.LDAP_USER = conf.ldap.user
         self.LDAP_PASSWORD = conf.ldap.password
         self.LDAP_SCOPE = ldap_scope(conf.ldap.query_scope)
+        self.LDAP_DEREF_OPT = ldap_deref_opt(conf.ldap.deref_opt)
         self.page_size = conf.ldap.page_size
 
         if self.options_name is not None:
@@ -142,7 +153,8 @@ class BaseLdap(object):
             conn = fakeldap.FakeLdap(self.LDAP_URL)
         else:
             conn = LdapWrapper(self.LDAP_URL,
-                               self.page_size)
+                               self.page_size,
+                               self.LDAP_DEREF_OPT)
 
         if user is None:
             user = self.LDAP_USER
@@ -348,9 +360,10 @@ class BaseLdap(object):
 
 
 class LdapWrapper(object):
-    def __init__(self, url, page_size):
+    def __init__(self, url, page_size, deref_opt):
         LOG.debug(_("LDAP init: url=%s"), url)
         self.conn = ldap.initialize(url)
+        self.conn.set_option(ldap.OPT_DEREF, deref_opt)
         self.page_size = page_size
 
     def simple_bind_s(self, user, password):
