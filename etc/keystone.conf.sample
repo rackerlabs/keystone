@@ -139,6 +139,7 @@
 
 # Maximum results per page; a value of zero ('0') disables paging (default)
 # page_size = 0
+# deref_opt = never
 
 # The LDAP scope for queries, this can be either 'one'
 # (onelevel/singleLevel) or 'sub' (subtree/wholeSubtree)
