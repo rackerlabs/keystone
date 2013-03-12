@@ -253,6 +253,7 @@ register_str('dumb_member', group='ldap', default='cn=dumb,dc=nonexistent')
 register_bool('allow_subtree_delete', group='ldap', default=False)
 register_str('query_scope', group='ldap', default='one')
 register_int('page_size', group='ldap', default=0)
+register_str('deref_opt', group='ldap', default='never')
 
 register_str('user_tree_dn', group='ldap', default=None)
 register_str('user_filter', group='ldap', default=None)
