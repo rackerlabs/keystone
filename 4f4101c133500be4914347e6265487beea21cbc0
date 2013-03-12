@@ -16,6 +16,24 @@
       "revId": "4f4101c133500be4914347e6265487beea21cbc0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//x/k\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T18:54:01Z",
+      "side": 1,
+      "message": "I changed it to \"except Exception\", see https://github.com/openstack/keystone/blame/master/HACKING.rst#L16",
+      "parentUuid": "AAAAN3//yVs\u003d",
+      "revId": "4f4101c133500be4914347e6265487beea21cbc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
