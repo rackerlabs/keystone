@@ -84,6 +84,24 @@
       "revId": "6b733ef2938f4da9a6462c7255a85fdcfb11c0fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zMg\u003d",
+        "filename": "tests/test_v3_protection.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-12T04:27:49Z",
+      "side": 1,
+      "message": "File that as a bug, but leave it in this test for now.",
+      "parentUuid": "AAAAN3//zZ0\u003d",
+      "revId": "6b733ef2938f4da9a6462c7255a85fdcfb11c0fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
