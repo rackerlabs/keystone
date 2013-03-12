@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//zUA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-12T04:22:28Z",
+      "side": 1,
+      "message": "Blame our pep8 checker",
+      "parentUuid": "AAAAN3//zY8\u003d",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//zY4\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//zT8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-12T04:22:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//zY4\u003d",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//zYo\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2013-03-12T00:32:21Z",
       "side": 1,
       "message": "suggest take this duplicated code and put it into a separate function (create_column())",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zT4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-12T04:22:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//zYo\u003d",
       "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//zSU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-12T04:22:28Z",
+      "side": 1,
+      "message": "Good catch.  It turns out that the logic I was using was a bit more draconian, and removed tokens that should have been left in place.  But passing the tenant_id on down the function chain is correct..",
+      "parentUuid": "AAAAN3//zYg\u003d",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//zYQ\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 4
@@ -99,6 +171,24 @@
       "writtenOn": "2013-03-12T00:32:21Z",
       "side": 1,
       "message": "why does migrate_repo/versions/020_add_trust_to_token.py have String(128) for these columns?",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zTM\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-12T04:22:28Z",
+      "side": 1,
+      "message": "Done.  I was looking at the wrong column (password)",
+      "parentUuid": "AAAAN3//zYQ\u003d",
       "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//zTA\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-12T04:22:28Z",
+      "side": 1,
+      "message": "Tests start to fail if I do that, indicating that they are not the same thing.",
+      "parentUuid": "AAAAN3//zYI\u003d",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//zO8\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 4
@@ -133,6 +241,24 @@
       "writtenOn": "2013-03-12T04:09:22Z",
       "side": 1,
       "message": "password: uuid.uuid4().hex",
+      "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//zNc\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 859,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-12T04:22:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//zO8\u003d",
       "revId": "ba473baf19fcc16368529ab5fec4b6d9a6939f75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
