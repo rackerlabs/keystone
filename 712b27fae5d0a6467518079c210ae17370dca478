@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//ym4\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T18:05:43Z",
+      "side": 1,
+      "message": "Is this equivalent to [[\"rule:admin_or_owner\"]] defined at line 4? If so, should that be used since it\u0027s a little more descriptive?",
+      "revId": "712b27fae5d0a6467518079c210ae17370dca478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//ymk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T18:05:43Z",
+      "side": 1,
+      "message": "is this supposed to be not (migrate_engine.name \u003d\u003d \"sqlite\" and ... ) ?\n\nsuggest change to if (migrate_engine.name \u003d\u003d \"sqlite\" and ... ) : pass; else raise",
+      "revId": "712b27fae5d0a6467518079c210ae17370dca478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//ymw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T18:05:43Z",
+      "side": 1,
+      "message": "change to the correct column name (might be user_id)",
+      "revId": "712b27fae5d0a6467518079c210ae17370dca478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//ymE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-12T18:05:43Z",
+      "side": 1,
+      "message": "suggest use named argument for named parameter, e.g. \"project_id\" -\u003e \"tenant_id\u003dproject_id\".",
+      "revId": "712b27fae5d0a6467518079c210ae17370dca478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
