@@ -26,10 +26,8 @@ import test_backend_ldap
 
 CONF = config.CONF
 
-
-def delete_object(name):
+def delete_object(dn):
     devnull = open('/dev/null', 'w')
-    dn = '%s,%s' % (name, CONF.ldap.suffix)
     subprocess.call(['ldapdelete',
                      '-x',
                      '-D', CONF.ldap.user,
@@ -40,20 +38,25 @@ def delete_object(name):
 
 
 def clear_live_database():
-    roles = ['keystone_admin', 'fake1', 'fake2', 'useless']
-    groups = ['baz', 'bar', 'tenent4add', 'fake1', 'fake2']
-    users = ['foo', 'two', 'fake1', 'fake2', 'no_meta']
+    roles = ['keystone_admin', 'fake1', 'fake2', 'useless', 'admin', 'member',
+             '9fe2ff9ee4384b1894a90878d3e92bab',
+             '02def574ec544446bf6d7cb685ad8a70',
+             'cdb7cbfb098644c4baf2100d94411b12',
+             'c66397bbab37418da7eee1606b3f2adf']
+    groups = ['baz', 'bar', 'tenent4add', 'fake1', 'fake2', 'mtu']
+    users = ['foo', 'two', 'fake1', 'fake2', 'no_meta', 'badguy', 'sna']
 
     for group in groups:
         for role in roles:
-            delete_object('cn=%s,cn=%s,ou=Groups' % (role, group))
-        delete_object('cn=%s,ou=Groups' % group)
+            delete_object('cn=%s,cn=%s,%s' % (role, group,
+                          CONF.ldap.tenant_tree_dn))
+        delete_object('cn=%s,%s' % (group, CONF.ldap.tenant_tree_dn))
 
     for user in users:
-        delete_object('cn=%s,ou=Users' % user)
+        delete_object('cn=%s,%s' % (user, CONF.ldap.user_tree_dn))
 
     for role in roles:
-        delete_object('cn=%s,ou=Roles' % role)
+        delete_object('cn=%s,%s' % (role, CONF.ldap.role_tree_dn))
 
 
 class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
