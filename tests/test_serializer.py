@@ -14,6 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import copy
 import re
 
 from keystone.common import serializer
@@ -176,3 +177,39 @@ class XmlSerializerTestCase(test.TestCase):
         """
 
         self.assertEqualIgnoreWhitespace(serializer.to_xml(d), xml)
+
+    def test_collection_list(self):
+        d = {
+            "links": {
+                "next": "http://localhost:5000/v3/objects?page=3",
+                "previous": "http://localhost:5000/v3/objects?page=1",
+                "self": "http://localhost:5000/v3/objects"
+            },
+            "objects": [{
+                "attribute": "value1",
+                "links": {
+                    "self": "http://localhost:5000/v3/objects/abc123def"
+                }
+            }, {
+                "attribute": "value2",
+                "links": {
+                    "self": "http://localhost:5000/v3/objects/abc456def"
+                }
+            }]}
+        xml = """
+            <?xml version="1.0" encoding="UTF-8"?>
+            <objects xmlns="http://docs.openstack.org/identity/api/v2.0">
+                <object attribute="value1">
+                    <links self="http://localhost:5000/v3/objects/abc123def"/>
+                </object>
+                <object attribute="value2">
+                    <links self="http://localhost:5000/v3/objects/abc456def"/>
+                </object>
+                <links self="http://localhost:5000/v3/objects"
+                       next="http://localhost:5000/v3/objects?page=3"
+                       previous="http://localhost:5000/v3/objects?page=1"/>
+            </objects>
+        """
+        self.assertEqualIgnoreWhitespace(
+            serializer.to_xml(copy.deepcopy(d)), xml)
+        self.assertDictEqual(serializer.from_xml(xml), d)

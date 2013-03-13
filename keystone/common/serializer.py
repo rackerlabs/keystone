@@ -71,7 +71,30 @@ class XmlDeserializer(object):
     def __call__(self, xml_str):
         """Returns a dictionary populated by decoding the given xml string."""
         dom = etree.fromstring(xml_str.strip(), PARSER)
-        return self.walk_element(dom, True)
+        links_json = self._find_and_remove_links_from_root(dom, True)
+        obj_json = self.walk_element(dom, True)
+        if links_json:
+            obj_json['links'] = links_json['links']
+        return obj_json
+
+    def _find_and_remove_links_from_root(self, dom, namespace):
+        """Special-case links element
+
+        If "links" is in the elements, convert it and remove it from root
+        element. "links" will be placed back into the root of the converted
+        JSON object.
+
+        """
+        for element in dom:
+            decoded_tag = XmlDeserializer._tag_name(element.tag, namespace)
+            if decoded_tag == 'links':
+                links_json = self.walk_element(element, namespace)
+                dom.remove(element)
+                # TODO(gyee): are 'next' and 'previous' mandatory? If so,
+                # setting them to None if they don't exist?
+                links_json['links'].setdefault('previous')
+                links_json['links'].setdefault('next')
+                return links_json
 
     @staticmethod
     def _tag_name(tag, namespace):
@@ -153,10 +176,17 @@ class XmlSerializer(object):
         Optionally, namespace the etree by specifying an ``xmlns``.
 
         """
+        links = None
         # FIXME(dolph): skipping links for now
         for key in d.keys():
             if '_links' in key:
                 d.pop(key)
+            # FIXME(gyee): special-case links in collections
+            if 'links' == key:
+                if links:
+                    # we have multiple links
+                    raise Exception('Multiple links found')
+                links = d.pop(key)
 
         assert len(d.keys()) == 1, ('Cannot encode more than one root '
                                     'element: %s' % d.keys())
@@ -174,6 +204,10 @@ class XmlSerializer(object):
         root = etree.Element(root_name, xmlns=(xmlns or XMLNS))
 
         self.populate_element(root, d[name])
+
+        # FIXME(gyee): special-case links for now
+        if links:
+            self.populate_element(root, {'links': links})
 
         # TODO(dolph): you can get a doctype from lxml, using ElementTrees
         return '%s\n%s' % (DOCTYPE, etree.tostring(root, pretty_print=True))
