@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//xdo\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-03-13T05:55:44Z",
+      "side": 1,
+      "message": "Sorry I don\u0027t see the problem here? _walk_versions takes the engine and then two booleans:\n\n def _walk_versions(self, engine\u003dNone, snake_walk\u003dFalse, downgrade\u003dTrue):",
+      "parentUuid": "AAAAN3//zkQ\u003d",
+      "revId": "07e0a0c88529f2b88a430e35df43f5c1e27d3bbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//zkM\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-03-11T22:43:13Z",
       "side": 1,
       "message": "The arguments here don\u0027t match the method signature.",
+      "revId": "07e0a0c88529f2b88a430e35df43f5c1e27d3bbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//xdk\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-03-13T05:55:44Z",
+      "side": 1,
+      "message": "as above...",
+      "parentUuid": "AAAAN3//zkM\u003d",
       "revId": "07e0a0c88529f2b88a430e35df43f5c1e27d3bbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//xc0\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-03-13T05:55:44Z",
+      "side": 1,
+      "message": "getattr raises an AttributeError if it doesn\u0027t exist and no default is provided:\n\nhttp://docs.python.org/2/library/functions.html#getattr",
+      "parentUuid": "AAAAN3//zis\u003d",
+      "revId": "07e0a0c88529f2b88a430e35df43f5c1e27d3bbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//zik\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2013-03-11T22:43:13Z",
       "side": 1,
       "message": "why check if with_data again?",
+      "revId": "07e0a0c88529f2b88a430e35df43f5c1e27d3bbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//xQA\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-03-13T05:55:44Z",
+      "side": 1,
+      "message": "Fixed. (the migration just above should always happen regardless of whether its being tested with data).",
+      "parentUuid": "AAAAN3//zik\u003d",
       "revId": "07e0a0c88529f2b88a430e35df43f5c1e27d3bbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//xcw\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-03-13T05:55:44Z",
+      "side": 1,
+      "message": "getattr raises an AttributeError if it doesn\u0027t exist and no default is provided:\nhttp://docs.python.org/2/library/functions.html#getattr",
+      "parentUuid": "AAAAN3//zio\u003d",
+      "revId": "07e0a0c88529f2b88a430e35df43f5c1e27d3bbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//ziU\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2013-03-11T22:43:13Z",
       "side": 1,
       "message": "use () to continue a line rather than \\, see HACKING.py.",
+      "revId": "07e0a0c88529f2b88a430e35df43f5c1e27d3bbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//xbs\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-03-13T05:55:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//ziU\u003d",
       "revId": "07e0a0c88529f2b88a430e35df43f5c1e27d3bbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
