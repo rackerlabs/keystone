@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//wQo\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-13T18:50:20Z",
+      "side": 1,
+      "message": "ATest?",
+      "revId": "f5edbaeb2d963471c2b50ab8f7083f77e588bce0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
