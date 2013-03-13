@@ -356,3 +356,40 @@ class TestMigrations(test.TestCase):
             LOG.error("Failed to migrate to version %s on engine %s" %
                       (version, engine))
             raise
+
+    # migration 004 - reverts token_id_hash
+    def _prerun_004(self, engine):
+        data = [{'id_hash': str(uuid.uuid4()),
+                 'id': "ID1",
+                 'valid': True,
+                 'expires': datetime.datetime(2013, 1, 1, 0, 0, 0),
+                 'extra': 'ExtraInfo1'},
+                {'id_hash': str(uuid.uuid4()),
+                 'id': "ID2",
+                 'valid': True,
+                 'expires': datetime.datetime(2014, 2, 3, 1, 2, 3),
+                 'extra': 'ExtraInfo2'},
+                {'id_hash': str(uuid.uuid4()),
+                 'id': "ID3",
+                 'valid': True,
+                 'expires': datetime.datetime(2015, 4, 5, 6, 7, 8),
+                 'extra': 'ExtraInfo3'}
+                ]
+
+        tokens = get_table(engine, 'token')
+        engine.execute(tokens.insert(), data)
+        return data
+
+    def _check_004(self, engine, data):
+        tokens = get_table(engine, 'token')
+
+        # Check the id_hash column no longer exists
+        self.assertNotIn('id_hash', tokens.c)
+
+        # Check data has migrated correctly
+        for data_row in data:
+            row = tokens.select(tokens.c.id == data_row['id_hash']).execute().\
+                first()
+            self.assertEqual(row['expires'], data_row['expires'])
+            self.assertEqual(row['extra'], data_row['extra'])
+            self.assertEqual(row['valid'], data_row['valid'])
