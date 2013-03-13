@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//wPU\u003d",
+        "filename": "tests/test_serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-13T19:02:25Z",
+      "side": 1,
+      "message": "preferred the test coverage of the previous patch where at least one of these is null, which would be common",
+      "revId": "af44a4b3b86046260a8a8361f8a826a32e2c3934",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//wPY\u003d",
+        "filename": "tests/test_serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-13T19:02:25Z",
+      "side": 1,
+      "message": "i really don\u0027t think this is a common approach for xml; i would expect this to be rendered as:\n\n  \u003clinks\u003e\n    \u003clink rel\u003d\"self\" href\u003d\"http://localhost:5000/v3/objects\" /\u003e\n    \u003clink rel\u003d\"next\" href\u003d\"http://localhost:5000/v3/objects?page\u003d3\" /\u003e\n    \u003clink rel\u003d\"previous\" href\u003d\"http://localhost:5000/v3/objects?page\u003d1\" /\u003e\n  \u003c/links\u003e\n\nwith or without the outer \u003clinks\u003e container",
+      "revId": "af44a4b3b86046260a8a8361f8a826a32e2c3934",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
