@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAN3//wGU\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-13T20:12:20Z",
+      "side": 1,
+      "message": "this cmd is not executed?",
+      "revId": "2349f01e2df1b6753540ac8e60153d37a157e760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//wLM\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 6
