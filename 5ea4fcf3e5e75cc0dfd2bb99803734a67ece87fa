@@ -33,6 +33,24 @@
       "revId": "5ea4fcf3e5e75cc0dfd2bb99803734a67ece87fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//waU\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-13T17:36:29Z",
+      "side": 1,
+      "message": "I\u0027m fine with setting \u0027updated\u0027 to a time a time when we considered it stable (which I would argue was around essex), but this datetime doesn\u0027t match that in master: https://review.openstack.org/#/c/23155/3/keystone/controllers.py",
+      "parentUuid": "AAAAN3//20s\u003d",
+      "revId": "5ea4fcf3e5e75cc0dfd2bb99803734a67ece87fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
