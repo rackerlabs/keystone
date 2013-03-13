@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//v28\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-13T22:27:12Z",
+      "side": 1,
+      "message": "(nit) should be an extra blank line here. see https://github.com/openstack/keystone/blame/master/HACKING.rst#L69",
+      "revId": "e4a7dedc025263ff17dd29343eab27e649c8d3ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//wQM\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 6
