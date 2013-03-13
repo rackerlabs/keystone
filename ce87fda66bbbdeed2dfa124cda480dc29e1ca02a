@@ -16,6 +16,24 @@
       "revId": "ce87fda66bbbdeed2dfa124cda480dc29e1ca02a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//wfc\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-13T16:51:22Z",
+      "side": 1,
+      "message": "It should be \"links\" -- I\u0027ll revise the API doc if there\u0027s any bad examples remaining",
+      "parentUuid": "AAAAN3//wuE\u003d",
+      "revId": "ce87fda66bbbdeed2dfa124cda480dc29e1ca02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
