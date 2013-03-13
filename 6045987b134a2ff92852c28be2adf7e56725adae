@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//wZo\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-13T17:42:42Z",
+      "side": 1,
+      "message": "i imagine that the old import is not supposed to remain",
+      "revId": "6045987b134a2ff92852c28be2adf7e56725adae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//zf4\u003d",
         "filename": "keystone/common/cms.py",
         "patchSetId": 2
