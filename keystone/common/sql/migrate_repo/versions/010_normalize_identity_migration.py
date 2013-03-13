@@ -37,7 +37,7 @@ def downgrade_user_table(meta, migrate_engine, session):
     for user in session.query(user_table).all():
         extra = json.loads(user.extra)
         extra['password'] = user.password
-        extra['enabled'] = '%r' % user.enabled
+        extra['enabled'] = user.enabled
         values = {'extra': json.dumps(extra)}
         update = user_table.update().\
             where(user_table.c.id == user.id).\
@@ -50,7 +50,7 @@ def downgrade_tenant_table(meta, migrate_engine, session):
     for tenant in session.query(tenant_table).all():
         extra = json.loads(tenant.extra)
         extra['description'] = tenant.description
-        extra['enabled'] = '%r' % tenant.enabled
+        extra['enabled'] = tenant.enabled
         values = {'extra': json.dumps(extra)}
         update = tenant_table.update().\
             where(tenant_table.c.id == tenant.id).\
