@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//wLM\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-13T19:40:23Z",
+      "side": 1,
+      "message": "if this gets a rev, i prefer the assertion used near the end of the test to be used here as well:\n\n  self.assertIn(role[\u0027id\u0027], test_project1[\u0027roles\u0027])",
+      "revId": "2349f01e2df1b6753540ac8e60153d37a157e760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//wKs\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-13T19:40:23Z",
+      "side": 1,
+      "message": "nice",
+      "revId": "2349f01e2df1b6753540ac8e60153d37a157e760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//wKk\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-13T19:40:23Z",
+      "side": 1,
+      "message": "missing an assertion for the contents of data here?\n\nAlso, add:\n\n  self.assertTableDoesNotExist(\u0027metadata\u0027)",
+      "revId": "2349f01e2df1b6753540ac8e60153d37a157e760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
