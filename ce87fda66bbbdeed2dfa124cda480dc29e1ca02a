@@ -52,6 +52,23 @@
       "revId": "ce87fda66bbbdeed2dfa124cda480dc29e1ca02a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//wd0\u003d",
+        "filename": "tests/test_serializer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-13T17:03:45Z",
+      "side": 1,
+      "message": "Would prefer the structure illustrated in the bug as it\u0027s a bit more XML\u0027y... with a \"next\" link as well the output would be something like:\n\n  \u003clink rel\u003d\"self\" href\u003d\"http://identity:5000/v3/objects\" /\u003e\n  \u003clink rel\u003d\"next\" href\u003d\"http://identity:5000/v3/objects?page\u003d2\" /\u003e\n\nThose could also be in a parent \u003clinks\u003e\u003c/links\u003e element -- not sure if that\u0027s desired though?",
+      "revId": "ce87fda66bbbdeed2dfa124cda480dc29e1ca02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
