@@ -34,6 +34,24 @@
       "revId": "ce87fda66bbbdeed2dfa124cda480dc29e1ca02a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//weU\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-13T16:59:26Z",
+      "side": 1,
+      "message": "Turns out there were lots of bad examples :P fixed in https://review.openstack.org/#/c/24338/",
+      "parentUuid": "AAAAN3//wfc\u003d",
+      "revId": "ce87fda66bbbdeed2dfa124cda480dc29e1ca02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
