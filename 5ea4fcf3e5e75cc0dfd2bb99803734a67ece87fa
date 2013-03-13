@@ -51,6 +51,24 @@
       "revId": "5ea4fcf3e5e75cc0dfd2bb99803734a67ece87fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//wT8\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-03-13T18:28:48Z",
+      "side": 1,
+      "message": "\u003e which I would argue was around essex\n\nBut what about v2 changes after that?\nWhat is the semantics of \u0027updated\u0027 anyway? Are clients going to use that information?",
+      "parentUuid": "AAAAN3//waU\u003d",
+      "revId": "5ea4fcf3e5e75cc0dfd2bb99803734a67ece87fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
