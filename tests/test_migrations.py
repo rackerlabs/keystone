@@ -393,3 +393,54 @@ class TestMigrations(test.TestCase):
             self.assertEqual(row['expires'], data_row['expires'])
             self.assertEqual(row['extra'], data_row['extra'])
             self.assertEqual(row['valid'], data_row['valid'])
+
+    # migration 009 - normalise identity tables
+    #  this stage just adds the new columns
+    def _prerun_009(self, engine):
+        data = {
+            'user': [{'id': str(uuid.uuid4()),
+                      'name': 'Name 1',
+                      'extra': '{"password": "foo", "enabled": true}'},
+                     {'id': str(uuid.uuid4()),
+                      'name': 'Name 2',
+                      'extra': '{"password": "bar", "enabled": false}'},
+                     {'id': str(uuid.uuid4()),
+                      'name': 'Name 3',
+                      'extra': '{"password": "baz", "enabled": true}'},
+                     ],
+            'tenant': [{'id': str(uuid.uuid4()),
+                        'name': 'Tenant Name 1',
+                        'extra': '{"description": "Desc1", "enabled": false}'},
+                       {'id': str(uuid.uuid4()),
+                        'name': 'Tenant Name 2',
+                        'extra': '{"description": "Desc2", "enabled": true}'},
+                       ]}
+
+        users = get_table(engine, 'user')
+        engine.execute(users.insert(), data['user'])
+        tenants = get_table(engine, 'tenant')
+        engine.execute(tenants.insert(), data['tenant'])
+        return data
+
+    def _check_009(self, engine, data):
+        # Check columns have been added correctly
+        users = get_table(engine, 'user')
+        self.assertIn('password', users.c)
+        self.assertIn('enabled', users.c)
+
+        tenants = get_table(engine, 'tenant')
+        self.assertIn('description', tenants.c)
+        self.assertIn('enabled', tenants.c)
+
+        # Check data has migrated correctly
+        for data_row in data['user']:
+            row = users.select(
+                users.c.id == data_row['id']).execute().first()
+            self.assertEqual(row['name'], data_row['name'])
+            self.assertEqual(row['extra'], data_row['extra'])
+
+        for data_row in data['tenant']:
+            row = tenants.select(
+                tenants.c.id == data_row['id']).execute().first()
+            self.assertEqual(row['name'], data_row['name'])
+            self.assertEqual(row['extra'], data_row['extra'])
