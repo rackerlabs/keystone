@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//vj0\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-14T05:06:42Z",
+      "side": 1,
+      "message": "where\u0027s hashlib being used?",
+      "revId": "50a69aa194543a284f5db077f21c22b14b6ef2a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
