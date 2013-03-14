@@ -96,6 +96,8 @@ class Token(sql.Base, token.Driver):
             if tenant_id is not None:
                 if 'tenant' not in token_ref_dict:
                     continue
+                if token_ref_dict['tenant'] is None:
+                    continue
                 if token_ref_dict['tenant'].get('id') != tenant_id:
                     continue
             tokens.append(token_ref['id'])
