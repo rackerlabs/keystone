@@ -34,6 +34,24 @@
       "revId": "c92b276f81d32eef2c23497058002f168e358ec7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//uJ4\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-14T23:50:42Z",
+      "side": 1,
+      "message": "ah, i\u0027m totally blind; thanks!",
+      "parentUuid": "AAAAN3//uKY\u003d",
+      "revId": "c92b276f81d32eef2c23497058002f168e358ec7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
