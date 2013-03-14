@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//vAs\u003d",
+        "filename": "tests/_ldap_livetest.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-14T15:27:22Z",
+      "side": 1,
+      "message": "this should be projects now instead of tenants",
+      "revId": "894202cf93c47e6152749c2671a6af17060651c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
