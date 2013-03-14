@@ -502,3 +502,89 @@ class TestMigrations(test.TestCase):
             extra = json.loads(data_row['extra'])
             self.assertEqual(row['description'], extra['description'])
             self.assertEqual(row['enabled'], extra['enabled'])
+
+    data_011 = {
+        'service': [{'id': 'e78732f29b1140ecbd969fbd9212fa27',
+                     'type': '23ce4c88438843de9bde87c3f13db1fd',
+                     'extra': '{"name": "Foo Service"'},
+                    {'id': '287a6f72b75f4cc7b5e54803585ce096',
+                     'type': '79efb5833f2245409316e7725edff65e',
+                     'extra': '{"name": "Bar Service"'},
+                    ],
+        'endpoint': [
+            {'id': '801fde29ecbb4020a90c7e94d88982ed',
+             'region': 'a78a45188ac34e7da45e3175b1e4c433',
+             'service_id': 'e78732f29b1140ecbd969fbd9212fa27',
+             'extra': '{"publicurl": "9cfc5ede0b824c0fbc92e8f4cf98a972",'
+                       '"internalurl": "b4c1be81664a4e028f85af12a3422625",'
+                       '"adminurl": "c4ee91dbe23043e593b0f1a75d78a59d"}'},
+            {'id': '90c7e516f7c64b6fbf3df57c9e99ea3a',
+             'region': 'e7904d5090af4b159c5200e07f6336e1',
+             'service_id': 'e78732f29b1140ecbd969fbd9212fa27',
+             'extra': '{"publicurl": "34f1dd31eba4470f9f9603e529b13e9c",'
+                       '"internalurl": "fa48caeec95c4cd6bdc4fec1a09cf038",'
+                       '"adminurl": "e9e94b2fdf6241c488e8460e724ad2e9"}'},
+        ]}
+
+    # migration 011 - normalise identity tables
+    #  this stage just adds the new columns
+    def _prerun_011(self, engine):
+        services = get_table(engine, 'service')
+        engine.execute(services.insert(), self.data_011['service'])
+        endpoints = get_table(engine, 'endpoint')
+        engine.execute(endpoints.insert(), self.data_011['endpoint'])
+
+        return self.data_011
+
+    def _check_011(self, engine, data):
+        endpoint_v2 = get_table(engine, 'endpoint_v2')
+        endpoint_v3 = get_table(engine, 'endpoint_v3')
+
+        # Check columns have been added correctly
+        self.assertIn('id', endpoint_v3.c)
+        self.assertIn('legacy_endpoint_id', endpoint_v3.c)
+        self.assertIn('interface', endpoint_v3.c)
+        self.assertIn('region', endpoint_v3.c)
+        self.assertIn('service_id', endpoint_v3.c)
+        self.assertIn('url', endpoint_v3.c)
+        self.assertIn('extra', endpoint_v3.c)
+
+    def _check_012(self, engine, data):
+        # Data for 012 test was injected in 011
+
+        # Check the migration of the data from the endpoint_v2
+        # to endpoint_v3 table occurred correctly
+        endpoints = get_table(engine, 'endpoint_v3')
+        endpoint_rows = endpoints.select().execute().fetchall()
+
+        for endpoint_row in endpoint_rows:
+            data_row = [ep for ep in self.data_011['endpoint']
+                        if ep['id'] == endpoint_row['legacy_endpoint_id']]
+            self.assertEqual(data_row[0]['region'], endpoint_row['region'])
+            extra = json.loads(data_row[0]['extra'])
+            self.assertIn('%surl' % endpoint_row['interface'], extra.keys())
+            self.assertEqual(endpoint_row['extra'], '{}')
+            self.assertEqual(data_row[0]['service_id'],
+                             endpoint_row['service_id'])
+
+    def _check_013(self, engine, data):
+        # Data for 013 test was injected in 011
+
+        # Check the migration of the data occurred correctly to the
+        # endpoint table
+        endpoints = get_table(engine, 'endpoint')
+        endpoint_rows = endpoints.select().execute().fetchall()
+
+        for endpoint_row in endpoint_rows:
+            data_row = [ep for ep in self.data_011['endpoint']
+                        if ep['id'] == endpoint_row['legacy_endpoint_id']]
+            self.assertEqual(data_row[0]['region'], endpoint_row['region'])
+            extra = json.loads(data_row[0]['extra'])
+            self.assertIn('%surl' % endpoint_row['interface'], extra.keys())
+            self.assertEqual(endpoint_row['extra'], '{}')
+            self.assertEqual(data_row[0]['service_id'],
+                             endpoint_row['service_id'])
+
+        # Confirm the endpoint_v2 table no longer exists
+        self.assertRaises(sqlalchemy.exc.NoSuchTableError,
+                          get_table, engine, 'endpoint_v2')
