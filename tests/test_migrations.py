@@ -26,6 +26,7 @@ if possible.
 import commands
 import ConfigParser
 import datetime
+import json
 import os
 import urlparse
 import uuid
@@ -425,33 +426,34 @@ class TestMigrations(test.TestCase):
             self.assertEqual(row['extra'], data_row['extra'])
             self.assertEqual(row['valid'], data_row['valid'])
 
+    data_009 = {
+        'user': [{'id': str(uuid.uuid4()),
+                  'name': 'Name 1',
+                  'extra': '{"password": "foo", "enabled": true}'},
+                 {'id': str(uuid.uuid4()),
+                  'name': 'Name 2',
+                  'extra': '{"password": "bar", "enabled": false, '
+                  '"test": "5f5fd3d9-0a81-4a05-8eb2-801e90f8bed0"}'},
+                 {'id': str(uuid.uuid4()),
+                  'name': 'Name 3',
+                  'extra': '{"password": "baz", "enabled": true}'},
+                 ],
+        'tenant': [{'id': str(uuid.uuid4()),
+                    'name': 'Tenant Name 1',
+                    'extra': '{"description": "Desc1", "enabled": false}'},
+                   {'id': str(uuid.uuid4()),
+                    'name': 'Tenant Name 2',
+                    'extra': '{"description": "Desc2", "enabled": true}'},
+                   ]}
+
     # migration 009 - normalise identity tables
     #  this stage just adds the new columns
     def _prerun_009(self, engine):
-        data = {
-            'user': [{'id': str(uuid.uuid4()),
-                      'name': 'Name 1',
-                      'extra': '{"password": "foo", "enabled": true}'},
-                     {'id': str(uuid.uuid4()),
-                      'name': 'Name 2',
-                      'extra': '{"password": "bar", "enabled": false}'},
-                     {'id': str(uuid.uuid4()),
-                      'name': 'Name 3',
-                      'extra': '{"password": "baz", "enabled": true}'},
-                     ],
-            'tenant': [{'id': str(uuid.uuid4()),
-                        'name': 'Tenant Name 1',
-                        'extra': '{"description": "Desc1", "enabled": false}'},
-                       {'id': str(uuid.uuid4()),
-                        'name': 'Tenant Name 2',
-                        'extra': '{"description": "Desc2", "enabled": true}'},
-                       ]}
-
         users = get_table(engine, 'user')
-        engine.execute(users.insert(), data['user'])
+        engine.execute(users.insert(), self.data_009['user'])
         tenants = get_table(engine, 'tenant')
-        engine.execute(tenants.insert(), data['tenant'])
-        return data
+        engine.execute(tenants.insert(), self.data_009['tenant'])
+        return self.data_009
 
     def _check_009(self, engine, data):
 
@@ -476,3 +478,27 @@ class TestMigrations(test.TestCase):
                 tenants.c.id == data_row['id']).execute().first()
             self.assertEqual(row['name'], data_row['name'])
             self.assertEqual(row['extra'], data_row['extra'])
+
+    def _check_010(self, engine, data):
+        # Data used to test 010 migration was injected in 009
+        users = get_table(engine, 'user')
+        for data_row in self.data_009['user']:
+            row = users.select(
+                users.c.id == data_row['id']).execute().first()
+            self.assertEqual(row['name'], data_row['name'])
+            extra = json.loads(data_row['extra'])
+            self.assertEqual(row['password'], extra['password'])
+            self.assertEqual(row['enabled'], extra['enabled'])
+            extra.pop('password')
+            extra.pop('enabled')
+            self.assertDictEqual(json.loads(row['extra']), extra)
+
+        tenants = get_table(engine, 'tenant')
+        for data_row in self.data_009['tenant']:
+            row = tenants.select(
+                tenants.c.id == data_row['id']).execute().first()
+            self.assertEqual(row['name'], data_row['name'])
+            self.assertEqual(row['extra'], '{}')
+            extra = json.loads(data_row['extra'])
+            self.assertEqual(row['description'], extra['description'])
+            self.assertEqual(row['enabled'], extra['enabled'])
