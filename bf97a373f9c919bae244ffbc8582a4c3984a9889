@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//vkQ\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-14T04:59:40Z",
+      "side": 1,
+      "message": "may want to test other items in \"extra\". For example,\n\n\u0027extra\u0027: \u0027{\u0027password\u0027: \u0027foo\u0027, \u0027enable\u0027: true, uuid.uuid4().hex: uuid.uuid4().hex}",
+      "revId": "bf97a373f9c919bae244ffbc8582a4c3984a9889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//vkM\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-14T04:59:40Z",
+      "side": 1,
+      "message": "extra.pop(\u0027password\u0027)\n\nextra.pop(\u0027enabled\u0027)\n\nself.assertDictEqual(row[\u0027extra\u0027], extra)",
+      "revId": "bf97a373f9c919bae244ffbc8582a4c3984a9889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
