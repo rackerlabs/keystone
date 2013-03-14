@@ -147,63 +147,6 @@ class SqlUpgradeTests(test.TestCase):
         session.commit()
         session.close()
 
-    def test_upgrade_endpoints(self):
-        self.upgrade(10)
-        service_extra = {
-            'name': uuid.uuid4().hex,
-        }
-        service = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
-            'extra': json.dumps(service_extra),
-        }
-        endpoint_extra = {
-            'publicurl': uuid.uuid4().hex,
-            'internalurl': uuid.uuid4().hex,
-            'adminurl': uuid.uuid4().hex,
-        }
-        endpoint = {
-            'id': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
-            'service_id': service['id'],
-            'extra': json.dumps(endpoint_extra),
-        }
-
-        session = self.Session()
-        self.insert_dict(session, 'service', service)
-        self.insert_dict(session, 'endpoint', endpoint)
-        session.commit()
-        session.close()
-
-        self.upgrade(13)
-        self.assertTableColumns(
-            'service',
-            ['id', 'type', 'extra'])
-        self.assertTableColumns(
-            'endpoint',
-            ['id', 'legacy_endpoint_id', 'interface', 'region', 'service_id',
-             'url', 'extra'])
-
-        endpoint_table = sqlalchemy.Table(
-            'endpoint', self.metadata, autoload=True)
-
-        session = self.Session()
-        self.assertEqual(session.query(endpoint_table).count(), 3)
-        for interface in ['public', 'internal', 'admin']:
-            q = session.query(endpoint_table)
-            q = q.filter_by(legacy_endpoint_id=endpoint['id'])
-            q = q.filter_by(interface=interface)
-            ref = q.one()
-            self.assertNotEqual(ref.id, endpoint['id'])
-            self.assertEqual(ref.legacy_endpoint_id, endpoint['id'])
-            self.assertEqual(ref.interface, interface)
-            self.assertEqual(ref.region, endpoint['region'])
-            self.assertEqual(ref.service_id, endpoint['service_id'])
-            self.assertEqual(ref.url, endpoint_extra['%surl' % interface])
-            self.assertEqual(ref.extra, '{}')
-        session.commit()
-        session.close()
-
     def assertTenantTables(self):
         self.assertTableExists('tenant')
         self.assertTableExists('user_tenant_membership')
