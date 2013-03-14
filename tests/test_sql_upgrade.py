@@ -124,37 +124,6 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableExists('policy')
         self.assertTableColumns('policy', ['id', 'type', 'blob', 'extra'])
 
-    def test_upgrade_normalize_identity(self):
-        self.upgrade(8)
-        self.populate_user_table()
-        self.populate_tenant_table()
-        self.upgrade(10)
-        self.assertTableColumns("user",
-                                ["id", "name", "extra",
-                                 "password", "enabled"])
-        self.assertTableColumns("tenant",
-                                ["id", "name", "extra", "description",
-                                 "enabled"])
-        self.assertTableColumns("role", ["id", "name", "extra"])
-        self.assertTableColumns("user_tenant_membership",
-                                ["user_id", "tenant_id"])
-        self.assertTableColumns("metadata", ["user_id", "tenant_id", "data"])
-        session = self.Session()
-        user_table = sqlalchemy.Table("user",
-                                      self.metadata,
-                                      autoload=True)
-        a_user = session.query(user_table).filter("id='foo'").one()
-        self.assertTrue(a_user.enabled)
-        a_user = session.query(user_table).filter("id='badguy'").one()
-        self.assertFalse(a_user.enabled)
-        tenant_table = sqlalchemy.Table("tenant",
-                                        self.metadata,
-                                        autoload=True)
-        a_tenant = session.query(tenant_table).filter("id='baz'").one()
-        self.assertEqual(a_tenant.description, 'description')
-        session.commit()
-        session.close()
-
     def test_downgrade_10_to_8(self):
         self.upgrade(10)
         self.populate_user_table(with_pass_enab=True)
