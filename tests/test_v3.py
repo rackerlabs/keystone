@@ -174,6 +174,17 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
         return ref
 
+    def admin_request(self, *args, **kwargs):
+        """Translates XML responses to dicts.
+
+        This implies that we only have to write assertions for JSON.
+
+        """
+        r = super(RestfulTestCase, self).admin_request(*args, **kwargs)
+        if r.getheader('Content-Type') == 'application/xml':
+            r.body = serializer.from_xml(etree.tostring(r.body))
+        return r
+
     def get_scoped_token(self):
         """Convenience method so that we can test authenticated requests."""
         r = self.admin_request(
@@ -221,10 +232,8 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         else:
             token = self.get_scoped_token()
         path = '/v3' + path
-        return self.admin_request(
-            path=path,
-            token=token,
-            **kwargs)
+
+        return self.admin_request(path=path, token=token, **kwargs)
 
     def get(self, path, **kwargs):
         r = self.v3_request(method='GET', path=path, **kwargs)
@@ -365,11 +374,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
     def assertValidTokenResponse(self, r, user=None):
         self.assertTrue(r.getheader('X-Subject-Token'))
-        token = r.body
-        if r.getheader('Content-Type') == 'application/xml':
-            token = serializer.from_xml(etree.tostring(r.body))['token']
-        else:
-            token = r.body['token']
+        token = r.body['token']
 
         self.assertIsNotNone(token.get('expires_at'))
         expires_at = self.assertValidISO8601ExtendedFormatDatetime(
