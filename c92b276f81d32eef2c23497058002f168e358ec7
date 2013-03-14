@@ -16,6 +16,24 @@
       "revId": "c92b276f81d32eef2c23497058002f168e358ec7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//uKY\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 360
+      },
+      "writtenOn": "2013-03-14T23:43:06Z",
+      "side": 1,
+      "message": "dolphm: see line 327 in this file. You would simple set \u0027password\u0027  to point to your own implementation. The default is \u0027keystone.auth.methods.token.Token\u0027 in this file.",
+      "parentUuid": "AAAAN3//uKw\u003d",
+      "revId": "c92b276f81d32eef2c23497058002f168e358ec7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
