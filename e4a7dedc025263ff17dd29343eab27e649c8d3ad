@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//vqs\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-14T02:13:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//wQ0\u003d",
+      "revId": "e4a7dedc025263ff17dd29343eab27e649c8d3ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//v28\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//vqo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_add_trust_to_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-14T02:13:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//v28\u003d",
+      "revId": "e4a7dedc025263ff17dd29343eab27e649c8d3ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//wQM\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2013-03-13T18:54:37Z",
       "side": 1,
       "message": "\u0027password\u0027: uuid.uuid4().hex?",
+      "revId": "e4a7dedc025263ff17dd29343eab27e649c8d3ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//vqg\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-14T02:13:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//wQM\u003d",
       "revId": "e4a7dedc025263ff17dd29343eab27e649c8d3ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
