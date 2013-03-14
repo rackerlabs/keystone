@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//vI0\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-14T15:18:08Z",
+      "side": 1,
+      "message": "cool",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//vD4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-14T15:18:08Z",
+      "side": 1,
+      "message": "optional arguments (project) should be specified as keywords",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//vDQ\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1958,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-14T15:18:08Z",
+      "side": 1,
+      "message": "if you\u0027re having to specify user ID twice in this, then something is broken..? i hope \u0027user\u0027 can be removed",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//vDM\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1979,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-14T15:18:08Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//vDI\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2053,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-14T15:18:08Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//vC8\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1090,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-14T15:18:08Z",
+      "side": 1,
+      "message": "this should ideally come from keystoneclient",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//vCo\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1093,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-14T15:18:08Z",
+      "side": 1,
+      "message": "don\u0027t need to assign to r",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//vCg\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-14T15:18:08Z",
+      "side": 1,
+      "message": "self.assertValidTrustResponse(r)",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//vCk\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-14T15:18:08Z",
+      "side": 1,
+      "message": "self.assertValidUserResponse(r)",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//vC0\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-14T15:18:08Z",
+      "side": 1,
+      "message": "don\u0027t need to assign to r here",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
