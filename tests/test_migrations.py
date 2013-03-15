@@ -699,3 +699,32 @@ class TestMigrations(test.TestCase):
             self.assertEqual(row['enabled'], data_row['enabled'])
             self.assertEqual(row['extra'], data_row['extra'])
             self.assertEqual(row['domain_id'], DEFAULT_DOMAIN_ID)
+
+    def _prerun_017(self, engine):
+        user_project_memberships = get_table(engine, 'user_project_membership')
+        upm_rows = user_project_memberships.select().execute().fetchall()
+
+        data = []
+        for upm_row in upm_rows:
+            data.append({'user_id': upm_row.user_id,
+                         'tenant_id': upm_row.tenant_id})
+
+        return data
+
+    def _check_017(self, engine, data):
+        roles = get_table(engine, 'role')
+        default_role = roles.select(
+            roles.c.id == CONF.member_role_id).execute().first()
+        self.assertEqual(default_role['name'], CONF.member_role_name)
+
+        up_meta = get_table(engine, 'user_project_metadata')
+        for data_row in data:
+            row = up_meta.select(
+                up_meta.c.user_id == data_row['user_id']).execute().first()
+            self.assertEqual(row['project_id'], data_row['tenant_id'])
+            self.assertEqual(
+                row['data'],
+                json.dumps({'roles': [config.CONF.member_role_id]}))
+
+        self.assertRaises(sqlalchemy.exc.NoSuchTableError,
+                          get_table, engine, 'user_project_membership')
