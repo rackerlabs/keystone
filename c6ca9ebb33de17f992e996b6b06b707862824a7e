@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//tPM\u003d",
+        "filename": "tests/_ldap_livetest.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-15T20:12:13Z",
+      "side": 1,
+      "message": "if sending stderr to devnull is no longer needed can you delete this line please",
+      "revId": "c6ca9ebb33de17f992e996b6b06b707862824a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//tPU\u003d",
+        "filename": "tests/backend_liveldap.conf",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-15T20:12:13Z",
+      "side": 1,
+      "message": "cn should be dc",
+      "revId": "c6ca9ebb33de17f992e996b6b06b707862824a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//tPI\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-15T20:12:13Z",
+      "side": 1,
+      "message": "why the default case here?",
+      "revId": "c6ca9ebb33de17f992e996b6b06b707862824a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//tPA\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-15T20:12:13Z",
+      "side": 1,
+      "message": "nice catch crazed!",
+      "revId": "c6ca9ebb33de17f992e996b6b06b707862824a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
