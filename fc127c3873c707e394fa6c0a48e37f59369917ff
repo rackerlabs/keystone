@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//tbQ\u003d",
+        "filename": "tests/_ldap_livetest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-15T17:31:30Z",
+      "side": 1,
+      "message": "please update these to match what devstack creates",
+      "revId": "fc127c3873c707e394fa6c0a48e37f59369917ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//teA\u003d",
+        "filename": "tests/backend_liveldap.conf",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-15T17:31:30Z",
+      "side": 1,
+      "message": "Please make this user \u003d dc\u003dManager,dc\u003dopenstack,dc\u003dorg\nso it lines up with how devstack configures openldap",
+      "revId": "fc127c3873c707e394fa6c0a48e37f59369917ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
