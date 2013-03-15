@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//uDE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-15T01:32:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//vD4\u003d",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//vDQ\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 7
@@ -47,6 +65,24 @@
       "writtenOn": "2013-03-14T15:18:08Z",
       "side": 1,
       "message": "if you\u0027re having to specify user ID twice in this, then something is broken..? i hope \u0027user\u0027 can be removed",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//u1o\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1958,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-15T01:32:47Z",
+      "side": 1,
+      "message": "Done.  It wasn\u0027t necessary, just made the comparator below work.  But I\u0027ll pop the user_id value instead:  user_id is now a key in the database, and thus must be in the model object.",
+      "parentUuid": "AAAAN3//vDQ\u003d",
       "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//uDU\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1090,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-15T01:32:47Z",
+      "side": 1,
+      "message": "removed.  It was a debugging vestige that should not have been here.",
+      "parentUuid": "AAAAN3//vC8\u003d",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//vCo\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 7
@@ -115,6 +169,24 @@
       "writtenOn": "2013-03-14T15:18:08Z",
       "side": 1,
       "message": "don\u0027t need to assign to r",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//uDQ\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1093,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-15T01:32:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//vCo\u003d",
       "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//uDM\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-15T01:32:47Z",
+      "side": 1,
+      "message": "list has a different format.  Just need an api call that is auth specific.  The 200 is sufficient to tests.",
+      "parentUuid": "AAAAN3//vCg\u003d",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//vCk\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 7
@@ -149,6 +239,24 @@
       "writtenOn": "2013-03-14T15:18:08Z",
       "side": 1,
       "message": "self.assertValidUserResponse(r)",
+      "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//uDI\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-15T01:32:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAN3//vCk\u003d",
       "revId": "a1c1c71c9d62b53c6016f9f55b3e29f3cf6d6862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
