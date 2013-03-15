@@ -38,8 +38,11 @@ from keystone.common.sql import migration
 import keystone.common.sql.migrate_repo
 from keystone.common.sql.migration import versioning_api as migration_api
 from keystone.common import logging
+from keystone import config
 from keystone import test
 
+CONF = config.CONF
+DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 LOG = logging.getLogger('keystone.tests.test_migrations')
 
 
@@ -637,3 +640,42 @@ class TestMigrations(test.TestCase):
                           get_table, engine, 'tenants')
         self.assertRaises(sqlalchemy.exc.NoSuchTableError,
                           get_table, engine, 'user_tenant_membership')
+
+    data_016 = {'user': []}
+
+    def _prerun_016(self, engine):
+        # Use existing user data originally injected in 009, but we
+        # have to retrieve a copy of it because in 010 it was
+        # transformed and so can not reference in the data_009 as it does
+        # not in a convenient layout.
+        users = get_table(engine, 'user')
+        user_items = users.select().execute().fetchall()
+        for user_row in user_items:
+            self.data_016['user'].append(
+                {'id': user_row['id'],
+                 'name': user_row['name'],
+                 'password': user_row['password'],
+                 'enabled': user_row['enabled'],
+                 'extra': user_row['extra']})
+
+    # Reuse the tenant table created for migration 015
+    def _check_016(self, engine, data):
+        users = get_table(engine, 'user')
+        for data_row in self.data_016['user']:
+            row = users.select(
+                users.c.id == data_row['id']).execute().first()
+            self.assertEqual(row['name'], data_row['name'])
+            self.assertEqual(row['password'], data_row['password'])
+            self.assertEqual(row['enabled'], data_row['enabled'])
+            self.assertEqual(row['extra'], data_row['extra'])
+            self.assertEqual(row['domain_id'], DEFAULT_DOMAIN_ID)
+
+        projects = get_table(engine, 'project')
+        for data_row in self.data_015['tenant']:
+            row = projects.select(
+                projects.c.id == data_row['id']).execute().first()
+            self.assertEqual(row['name'], data_row['name'])
+            self.assertEqual(row['description'], data_row['description'])
+            self.assertEqual(row['enabled'], data_row['enabled'])
+            self.assertEqual(row['extra'], data_row['extra'])
+            self.assertEqual(row['domain_id'], DEFAULT_DOMAIN_ID)
