@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAN3//uFs\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-15T00:47:33Z",
+      "side": 1,
+      "message": "Good point, since this is off the V3 api.",
+      "parentUuid": "AAAAN3//u6w\u003d",
+      "revId": "a9c1524a06387199c9916aa9a78bb9f81b342c71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAN3//u64\u003d",
         "filename": "keystone/auth/routers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-03-14T16:21:43Z",
       "side": 1,
       "message": "Serving html should come from auth plugin. That\u0027s what the generic auth payload is designed for.",
+      "revId": "a9c1524a06387199c9916aa9a78bb9f81b342c71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//uFo\u003d",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-15T00:47:33Z",
+      "side": 1,
+      "message": "good point.",
+      "parentUuid": "AAAAN3//u64\u003d",
       "revId": "a9c1524a06387199c9916aa9a78bb9f81b342c71",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
