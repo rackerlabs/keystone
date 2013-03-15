@@ -728,3 +728,12 @@ class TestMigrations(test.TestCase):
 
         self.assertRaises(sqlalchemy.exc.NoSuchTableError,
                           get_table, engine, 'user_project_membership')
+
+    def _check_019(self, engine, data):
+        # Use the role data injected in the 007 migration test
+        roles = get_table(engine, 'role')
+        role_items = roles.select().execute().fetchall()
+
+        # verify that all of the extra fields have been fixed
+        for role_row in role_items:
+            self.assertNotEqual(role_row['extra'], None)
