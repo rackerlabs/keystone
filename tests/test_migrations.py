@@ -585,3 +585,55 @@ class TestMigrations(test.TestCase):
         # Confirm the endpoint_v2 table no longer exists
         self.assertRaises(sqlalchemy.exc.NoSuchTableError,
                           get_table, engine, 'endpoint_v2')
+
+    data_015 = {
+        'user_tenant_membership':
+        [{'user_id': data_009['user'][0]['id'],
+          'tenant_id': data_009['tenant'][0]['id']},
+         {'user_id': data_009['user'][1]['id'],
+          'tenant_id': data_009['tenant'][1]['id']},
+         ],
+        'tenant': []}
+
+    def _prerun_015(self, engine):
+        user_tenant_memberships = get_table(engine, 'user_tenant_membership')
+        engine.execute(user_tenant_memberships.insert(),
+                       self.data_015['user_tenant_membership'])
+
+        # Use existing tenant data originally injected in 009, but we
+        # have to retrieve a copy of it because in 010 it was
+        # transformed and so can not reference in the data_009 as it does
+        # not in a convenient layout.
+        tenants = get_table(engine, 'tenant')
+        tenant_items = tenants.select().execute().fetchall()
+        for tenant_row in tenant_items:
+            self.data_015['tenant'].append(
+                {'id': tenant_row['id'],
+                 'name': tenant_row['name'],
+                 'description': tenant_row['description'],
+                 'enabled': tenant_row['enabled'],
+                 'extra': tenant_row['extra']})
+
+    def _check_015(self, engine, data):
+        # Check data was copied correctly
+        user_project_memberships = get_table(engine, 'user_project_membership')
+        for data_row in self.data_015['user_tenant_membership']:
+            row = user_project_memberships.select(
+                user_project_memberships.c.user_id ==
+                data_row['user_id']).execute().first()
+            self.assertEqual(row['tenant_id'], data_row['tenant_id'])
+
+        projects = get_table(engine, 'project')
+        for data_row in self.data_015['tenant']:
+            row = projects.select(
+                projects.c.id == data_row['id']).execute().first()
+            self.assertEqual(row['id'], data_row['id'])
+            self.assertEqual(row['name'], data_row['name'])
+            self.assertEqual(row['extra'], data_row['extra'])
+            self.assertEqual(row['description'], data_row['description'])
+
+        # Ensure old tables no longer exist
+        self.assertRaises(sqlalchemy.exc.NoSuchTableError,
+                          get_table, engine, 'tenants')
+        self.assertRaises(sqlalchemy.exc.NoSuchTableError,
+                          get_table, engine, 'user_tenant_membership')
