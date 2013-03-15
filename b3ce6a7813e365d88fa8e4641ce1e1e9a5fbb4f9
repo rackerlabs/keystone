@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//tww\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-15T13:32:18Z",
+      "side": 1,
+      "message": "This link doesn\u0027t lead to a bug description.",
+      "revId": "b3ce6a7813e365d88fa8e4641ce1e1e9a5fbb4f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
