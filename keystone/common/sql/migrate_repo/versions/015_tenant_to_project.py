@@ -108,7 +108,8 @@ def downgrade_with_copy(meta, migrate_engine):
                                               autoload=True)
     insert = user_tenant_membership_table.insert()
     for membership in session.query(user_project_membership_table):
-        insert.execute(membership)
+        insert.execute({'user_id': membership.user_id,
+                        'tenant_id': membership.tenant_id})
     user_project_membership_table.drop()
 
     session.commit()
