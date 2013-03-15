@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//t0E\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-15T11:28:45Z",
+      "side": 1,
+      "message": "I think this should actually go in the V3 controller, since V2 didn\u0027t have a concept of groups.",
+      "revId": "85f0034ca55bc59fc57934bd60b98bb3345d4443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//t0A\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/021_add_trust_to_token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-15T11:28:45Z",
+      "side": 1,
+      "message": "Great that we have added the check for sqlite.  I\u0027d prefer if we were still more explicit in the comment - I assuming that we will only hit this if we have down a downgrade and then an upgrade?  If that is the case, how about something like:\n\n\"sqlite fails, silently, to drop columns. So if we have already done a downgrade and are now upgrading, then we will hit this, since sqlite thinks it had dropped the columns on the downgrade, but it hasn\u0027t\"",
+      "revId": "85f0034ca55bc59fc57934bd60b98bb3345d4443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
