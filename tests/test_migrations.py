@@ -429,6 +429,26 @@ class TestMigrations(test.TestCase):
             self.assertEqual(row['extra'], data_row['extra'])
             self.assertEqual(row['valid'], data_row['valid'])
 
+    def _prerun_007(self, engine):
+        data = [{'id': str(uuid.uuid4()),
+                 'name': 'Test Role 1'},
+                {'id': str(uuid.uuid4()),
+                 'name': 'Test Role 2'}
+                ]
+        roles = get_table(engine, 'role')
+        engine.execute(roles.insert(), data)
+        return data
+
+    def _check_007(self, engine, data):
+        roles = get_table(engine, 'role')
+
+        self.assertIn('extra', roles.c)
+        for data_row in data:
+            row = roles.select(roles.c.id == data_row['id']).execute().first()
+            self.assertEqual(row['name'], data_row['name'])
+            self.assertEqual(row['extra'], None)
+            # extra should really be '{}' and is fixed up in migration 019
+
     data_009 = {
         'user': [{'id': str(uuid.uuid4()),
                   'name': 'Name 1',
