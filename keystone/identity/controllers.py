@@ -444,6 +444,67 @@ class DomainV3(controller.V3Controller):
                             project_id=project['id'])
         return DomainV3.wrap_member(context, ref)
 
+    def _delete_domain_contents(self, context, domain_id):
+        """Delete the contents of a domain.
+
+        Before we delete a domain, we need to remove all the entities
+        that are owned by it, i.e. Users, Groups & Projects. To do this we
+        call the respective delete functions for these entities, which are
+        themselves responsible for deleting any credentials and role grants
+        associated with them as well as revoking any relevant tokens.
+
+        The order we delete entities is also important since we want to
+        retain referential integrity throughout, and many of the entities
+        have foreign key relationship with each other. The following
+        order is used:
+
+        Projects: Could have FKs to user and groups for grants
+        Groups: Could have FKs to users for membership and
+                domains for grants
+        Users: Could have FKs to domains for grants
+
+        """
+        # Start by disabling all the users in this domain, to minimize the
+        # the risk that things are changing under our feet.  In theory this
+        # step should not be necessary, since users of a disabled domain
+        # are prevented from authenticating - however there are some
+        # existing bugs in this area.
+        # TODO(henry-nash) Consider removing this code once bugs like 1156516
+        # have been fixed.
+        user_refs = self.identity_api.list_users(context)
+        user_refs = [r for r in user_refs if r['domain_id'] == domain_id]
+        for user in user_refs:
+            if user['enabled']:
+                user['enabled'] = False
+                self.identity_api.update_user(context, user['id'], user)
+                self._delete_tokens_for_user(context, user['id'])
+
+        # Now, for safety, reload list of users, as well as projects, that are
+        # owned by this domain.
+        user_refs = self.identity_api.list_users(context)
+        user_ids = [r['id'] for r in user_refs if r['domain_id'] == domain_id]
+
+        proj_refs = self.identity_api.list_projects(context)
+        proj_ids = [r['id'] for r in proj_refs if r['domain_id'] == domain_id]
+
+        # First delete the projects themselves
+        prod_cntl = ProjectV3()
+        for proj in proj_ids:
+            prod_cntl._delete_project(context, proj)
+
+        # Get the list of groups owned by this domain and delete them
+        group_refs = self.identity_api.list_groups(context)
+        group_ids = ([r['id'] for r in group_refs
+                     if r['domain_id'] == domain_id])
+        group_cntl = GroupV3()
+        for group in group_ids:
+            group_cntl._delete_group(context, group)
+
+        # And finally, delete the users themselves
+        user_cntl = UserV3()
+        for user in user_ids:
+            user_cntl._delete_user(context, user)
+
     @controller.protected
     def delete_domain(self, context, domain_id):
         # explicitly forbid deleting the default domain (this should be a
@@ -451,8 +512,19 @@ class DomainV3(controller.V3Controller):
         # changes, etc)
         if domain_id == DEFAULT_DOMAIN_ID:
             raise exception.ForbiddenAction(action='delete the default domain')
-
-        return self.identity_api.delete_domain(context, domain_id)
+        else:
+            # To help avoid inadvertent deletes, we insist that the domain
+            # has been previously disabled.  This also prevents a user deleting
+            # their own domain since, once it is disabled, they won't be able
+            # to get a valid token to issue this delete.
+            ref = self.identity_api.get_domain(context, domain_id)
+            if ref['enabled']:
+                raise exception.ForbiddenAction(
+                    action='delete a domain that is not disabled')
+            else:
+                # OK, we are go for delete!
+                self._delete_domain_contents(context, domain_id)
+                return self.identity_api.delete_domain(context, domain_id)
 
     def _get_domain_by_name(self, context, domain_name):
         """Get the domain via its unique name.
@@ -499,9 +571,19 @@ class ProjectV3(controller.V3Controller):
         ref = self.identity_api.update_project(context, project_id, project)
         return ProjectV3.wrap_member(context, ref)
 
+    def _delete_project(self, context, project_id):
+        # Delete any credentials that reference this project
+        for cred in self.identity_api.list_credentials(context):
+            if cred['project_id'] == project_id:
+                self.identity_api.delete_credential(context, cred['id'])
+        # Finally delete the project itself - the backend is
+        # responsible for deleting any role assignments related
+        # to this project
+        return self.identity_api.delete_project(context, project_id)
+
     @controller.protected
     def delete_project(self, context, project_id):
-        return self.identity_api.delete_project(context, project_id)
+        return self._delete_project(context, project_id)
 
 
 class UserV3(controller.V3Controller):
@@ -560,9 +642,22 @@ class UserV3(controller.V3Controller):
             context, user_id, group_id)
         self._delete_tokens_for_user(context, user_id)
 
+    def _delete_user(self, context, user_id):
+        # Delete any credentials that reference this user
+        for cred in self.identity_api.list_credentials(context):
+            if cred['user_id'] == user_id:
+                self.identity_api.delete_credential(context, cred['id'])
+
+        # Make sure any tokens are marked as deleted
+        self._delete_tokens_for_user(context, user_id)
+        # Finally delete the user itself - the backend is
+        # responsible for deleting any role assignments related
+        # to this user
+        return self.identity_api.delete_user(context, user_id)
+
     @controller.protected
     def delete_user(self, context, user_id):
-        return self.identity_api.delete_user(context, user_id)
+        return self._delete_user(context, user_id)
 
 
 class GroupV3(controller.V3Controller):
@@ -598,8 +693,7 @@ class GroupV3(controller.V3Controller):
         ref = self.identity_api.update_group(context, group_id, group)
         return GroupV3.wrap_member(context, ref)
 
-    @controller.protected
-    def delete_group(self, context, group_id):
+    def _delete_group(self, context, group_id):
         # As well as deleting the group, we need to invalidate
         # any tokens for the users who are members of the group.
         # We get the list of users before we attempt the group
@@ -610,6 +704,10 @@ class GroupV3(controller.V3Controller):
         self.identity_api.delete_group(context, group_id)
         for user in user_refs:
             self._delete_tokens_for_user(context, user['id'])
+
+    @controller.protected
+    def delete_group(self, context, group_id):
+        return self._delete_group(context, group_id)
 
 
 class CredentialV3(controller.V3Controller):
@@ -642,9 +740,12 @@ class CredentialV3(controller.V3Controller):
             credential)
         return CredentialV3.wrap_member(context, ref)
 
+    def _delete_credential(self, context, credential_id):
+        return self.identity_api.delete_credential(context, credential_id)
+
     @controller.protected
     def delete_credential(self, context, credential_id):
-        return self.identity_api.delete_credential(context, credential_id)
+        return self._delete_credential(context, credential_id)
 
 
 class RoleV3(controller.V3Controller):
