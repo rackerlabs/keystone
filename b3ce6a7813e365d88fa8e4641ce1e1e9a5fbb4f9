@@ -16,6 +16,24 @@
       "revId": "b3ce6a7813e365d88fa8e4641ce1e1e9a5fbb4f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH///wo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1007
+      },
+      "writtenOn": "2013-03-17T05:44:24Z",
+      "side": 1,
+      "message": "Updated link is https://bitbucket.org/eventlet/eventlet/issue/92",
+      "parentUuid": "AAAAN3//tww\u003d",
+      "revId": "b3ce6a7813e365d88fa8e4641ce1e1e9a5fbb4f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
