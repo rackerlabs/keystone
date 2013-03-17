@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH///xc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-17T02:59:05Z",
+      "side": 1,
+      "message": "You might have a race condition here.  You probably want to disable the users first and foremost before doing anything else.  A user could potentially be logged in, and creating tokens and Credentials while you are deleting them, and you could end up with one hanging around after you thought yoyu had removed them all.  This is non-transactional, after all.",
+      "revId": "9ae1df275f67c90f687a027ff69be488f6a00f53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
