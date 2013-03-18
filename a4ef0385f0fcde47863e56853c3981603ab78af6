@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH///Bg\u003d",
+        "filename": "tests/test_serializer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-18T13:14:47Z",
+      "side": 1,
+      "message": "Changing this to also test for xml-\u003ejson-\u003exml and json-\u003exml-\u003ejson only required writing a better version of assertEqualXML above",
+      "revId": "a4ef0385f0fcde47863e56853c3981603ab78af6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
