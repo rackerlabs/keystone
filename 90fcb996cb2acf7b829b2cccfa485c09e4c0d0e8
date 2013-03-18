@@ -16,6 +16,24 @@
       "revId": "90fcb996cb2acf7b829b2cccfa485c09e4c0d0e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+nU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-18T18:25:18Z",
+      "side": 1,
+      "message": "The \"disable first and then delete \" logic is just to make sure that people don\u0027t delete by accident, and thus it should not be done in here.  Ideally, two different users, with different roles would be required to disable and then delete.",
+      "parentUuid": "AAAAOH//+yo\u003d",
+      "revId": "90fcb996cb2acf7b829b2cccfa485c09e4c0d0e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
