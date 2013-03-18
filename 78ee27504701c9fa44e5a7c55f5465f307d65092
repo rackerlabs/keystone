@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//+hU\u003d",
+        "filename": "tests/_ldap_livetest.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-18T19:24:52Z",
+      "side": 1,
+      "message": "should these be coming from CONF instead of hardcoding?",
+      "revId": "78ee27504701c9fa44e5a7c55f5465f307d65092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+h0\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-18T19:24:52Z",
+      "side": 1,
+      "message": "what\u0027s up with the naming? :)\n\nWe have identity_api at the beginning, then it was changed to identity_man, then back to identity_api. I hope the next guy\u0027s not going to change it back to identity_man.",
+      "revId": "78ee27504701c9fa44e5a7c55f5465f307d65092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
