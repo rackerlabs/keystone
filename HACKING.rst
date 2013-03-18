@@ -237,6 +237,11 @@ without the patch and passes with the patch.
 For more information on creating unit tests and utilizing the testing
 infrastructure in OpenStack Nova, please read nova/testing/README.rst.
 
+LDAP has a fake backend that performs rudimentary operations.  If you
+are building more significant LDAP functionality, you should test against
+a live LDAP server.  Devstack has an option to set up a directoyr server for
+Keystone to use.  The unit tests can be run against a live server with
+tests/_ldap_livetest.py
 
 openstack-common
 ----------------
