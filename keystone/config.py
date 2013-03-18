@@ -22,6 +22,9 @@ from oslo.config import cfg
 
 from keystone.common import logging
 
+
+LOG = logging.getLogger(__name__)
+
 gettext.install('keystone', unicode=1)
 
 _DEFAULT_LOG_FORMAT = "%(asctime)s %(levelname)8s [%(name)s] %(message)s"
@@ -73,8 +76,17 @@ logging_cli_opts = [
 ]
 
 CONF = cfg.CONF
-CONF.register_cli_opts(common_cli_opts)
-CONF.register_cli_opts(logging_cli_opts)
+
+try:
+    CONF.register_cli_opts(common_cli_opts)
+    CONF.register_cli_opts(logging_cli_opts)
+except cfg.ArgsAlreadyParsedError as e:
+    # this is actually a dirty hack to provide support for
+    # keystone.middleware.auth_token; if the module has been removed from
+    # keystone, then this try/except can be removed
+    LOG.warning(
+        '%s; this may be caused by using keystone.middleware.auth_token '
+        '(deprecated) instead of keystoneclient.middleware.auth_token' % e)
 
 
 def setup_logging(conf):
