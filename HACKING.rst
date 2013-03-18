@@ -237,6 +237,17 @@ without the patch and passes with the patch.
 For more information on creating unit tests and utilizing the testing
 infrastructure in OpenStack Nova, please read nova/testing/README.rst.
 
+LDAP has a fake backend that performs rudimentary operations.  If you
+are building more significant LDAP functionality, you should test against
+a live LDAP server.  Devstack has an options to set up a directory server for
+Keystone to use.  Add ldap to the ``ENABLED_SERVICES`` environment variable,
+and set environment variables ``KEYSTONE_IDENTITY_BACKEND=ldap`` and
+``KEYSTONE_CLEAR_LDAP=yes`` in your ``localrc`` file.
+
+The unit tests can be run against a live server with
+``tests/_ldap_livetest.py``.  The default password is ``test`` but if you have
+installed devstack with a different LDAP password, modify the file
+``tests/backend_liveldap.conf`` to reflect your password.
 
 openstack-common
 ----------------
