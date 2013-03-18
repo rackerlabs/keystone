@@ -34,6 +34,24 @@
       "revId": "e7ec13602df8baa10e70d73212323909c8901a55",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+fc\u003d",
+        "filename": "tests/_ldap_livetest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-03-18T20:12:58Z",
+      "side": 1,
+      "message": "Hi Allan, thanks! Here you have options set to \u0027never\u0027, \u0027searching\u0027 an\u0027d always\u0027 (e.g. CONF.ldap.deref_opt \u003d \u0027searching\u0027). Since the LDAP_DEREF_OPTS has four options including \"finding\", I was wondering about covering it as well (e.g. adding  CONF.ldap.deref_opt \u003d \u0027finding\u0027) but based on your reply, seems like it\u0027s not needed.",
+      "parentUuid": "AAAAOH//+is\u003d",
+      "revId": "e7ec13602df8baa10e70d73212323909c8901a55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
