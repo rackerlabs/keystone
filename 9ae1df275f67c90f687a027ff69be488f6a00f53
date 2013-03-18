@@ -16,6 +16,24 @@
       "revId": "9ae1df275f67c90f687a027ff69be488f6a00f53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH///Hw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-18T09:39:50Z",
+      "side": 1,
+      "message": "In theory no, since the domain is disabled - so no users should be able to authenticate.  However, there are some bugs in this area (I just raised 1156516), so will add some prep code that disables all the users explicitly.",
+      "parentUuid": "AAAAOH///xc\u003d",
+      "revId": "9ae1df275f67c90f687a027ff69be488f6a00f53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
