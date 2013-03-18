@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//+7U\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-18T15:10:47Z",
+      "side": 1,
+      "message": "This is a driver-specific explanation",
+      "revId": "3388255792ff05b4b27ff6558e1a669d3a3cd2e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+7Q\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-18T15:10:47Z",
+      "side": 1,
+      "message": "either cite the bug(s) so this can be understood / addressed in the future, or remove the comment -- the TODO doesn\u0027t look related although I assume it\u0027s intended to be",
+      "revId": "3388255792ff05b4b27ff6558e1a669d3a3cd2e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+7M\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-18T15:10:47Z",
+      "side": 1,
+      "message": "prod_cntl? project_controller?",
+      "revId": "3388255792ff05b4b27ff6558e1a669d3a3cd2e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+7E\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-18T15:10:47Z",
+      "side": 1,
+      "message": "both else\u0027s really aren\u0027t necessary -- both conditionals are designed to short circuit",
+      "revId": "3388255792ff05b4b27ff6558e1a669d3a3cd2e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+7A\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-18T15:10:47Z",
+      "side": 1,
+      "message": "cool",
+      "revId": "3388255792ff05b4b27ff6558e1a669d3a3cd2e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+68\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-18T15:10:47Z",
+      "side": 1,
+      "message": "cool",
+      "revId": "3388255792ff05b4b27ff6558e1a669d3a3cd2e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+6o\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-18T15:10:47Z",
+      "side": 1,
+      "message": "nice coverage",
+      "revId": "3388255792ff05b4b27ff6558e1a669d3a3cd2e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
