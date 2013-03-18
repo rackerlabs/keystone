@@ -16,6 +16,24 @@
       "revId": "e7ec13602df8baa10e70d73212323909c8901a55",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+is\u003d",
+        "filename": "tests/_ldap_livetest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 7045
+      },
+      "writtenOn": "2013-03-18T19:05:24Z",
+      "side": 1,
+      "message": "Hi Sahdev, what do you mean a test for \u0027finding\u0027? This test creates a user tree of the openstack tree then creates an alias to that user tree inside the openstack user tree. Once that\u0027s done we check that we can dereference the results and find valid users in the alternate user tree.",
+      "parentUuid": "AAAAOH//+qg\u003d",
+      "revId": "e7ec13602df8baa10e70d73212323909c8901a55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
