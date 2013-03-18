@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//+f8\u003d",
+        "filename": "tests/_ldap_livetest.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7045
+      },
+      "writtenOn": "2013-03-18T19:33:10Z",
+      "side": 1,
+      "message": "Well I added this, since I ran tests against a configuration that I planned to use in production as well as the devstack environment. I figure it would be useful to create the tree based on the settings.",
+      "parentUuid": "AAAAOH//+hU\u003d",
+      "revId": "78ee27504701c9fa44e5a7c55f5465f307d65092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//+h0\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 17
