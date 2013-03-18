@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//+yo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-03-18T16:51:51Z",
+      "side": 1,
+      "message": "How does disable domain supposed to work? If some one is fixing \"disabled domain\" I believe they will repeat the same logic ( iterating over groups,users, credentials and disabling them, and revoking the existing token for the domain).\n\nBetter approach would be to fix \u0027disable domain\" which recursively disables its members.  Delete domain simple calls disable on  the domain and then deletes it\n\nAlso what happens to issued token for the users in the domain?\n\nAlso what will happen to the tokens acquired using scoped domain?   A user may not be part of this domain, but he would have got token scoped to this domain.",
+      "revId": "90fcb996cb2acf7b829b2cccfa485c09e4c0d0e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
