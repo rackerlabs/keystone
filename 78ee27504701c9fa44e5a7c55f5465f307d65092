@@ -33,6 +33,41 @@
       "revId": "78ee27504701c9fa44e5a7c55f5465f307d65092",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+gM\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-18T19:31:11Z",
+      "side": 1,
+      "message": "I think the confusion was that somethings are called _api which are really calling on the controller.  man was probably a mistaken attempt to follow up on the manager, which is really the factory....we have naming issues acros the board, but we are getting better.",
+      "parentUuid": "AAAAOH//+h0\u003d",
+      "revId": "78ee27504701c9fa44e5a7c55f5465f307d65092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+gE\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-18T19:31:11Z",
+      "side": 1,
+      "message": "make this controller",
+      "revId": "78ee27504701c9fa44e5a7c55f5465f307d65092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
