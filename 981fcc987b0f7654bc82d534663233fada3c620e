@@ -16,6 +16,23 @@
       "revId": "981fcc987b0f7654bc82d534663233fada3c620e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//96I\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-03-19T01:50:20Z",
+      "side": 1,
+      "message": "Should also mention that you need to change the LDAP password in backend_liveldap.conf to match the LDAP_PASSWORD  password you chose in your devstack localrc file.",
+      "revId": "981fcc987b0f7654bc82d534663233fada3c620e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
