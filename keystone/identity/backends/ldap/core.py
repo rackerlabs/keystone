@@ -20,6 +20,7 @@ import ldap
 from ldap import filter as ldap_filter
 
 from keystone import clean
+from keystone.common import driver
 from keystone.common import ldap as common_ldap
 from keystone.common.ldap import fakeldap
 from keystone.common import models
@@ -31,7 +32,7 @@ from keystone import identity
 CONF = config.CONF
 
 
-class Identity(identity.Driver):
+class Identity(driver.TransactableDriverMixin, identity.Driver):
     def __init__(self):
         super(Identity, self).__init__()
         self.LDAP_URL = CONF.ldap.url

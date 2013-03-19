@@ -15,6 +15,7 @@
 # under the License.
 
 from keystone import exception
+from keystone.common import driver
 
 
 class DictKvs(dict):
@@ -46,7 +47,7 @@ class DictKvs(dict):
 INMEMDB = DictKvs()
 
 
-class Base(object):
+class Base(driver.TransactableDriverMixin):
     def __init__(self, db=None):
         if db is None:
             db = INMEMDB

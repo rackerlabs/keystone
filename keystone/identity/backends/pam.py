@@ -16,6 +16,9 @@
 
 from __future__ import absolute_import
 
+from keystone.common import driver
+
+
 try:
     import pam
 except ImportError:
@@ -52,7 +55,7 @@ def PAM_authenticate(username, password):
     return True
 
 
-class PamIdentity(identity.Driver):
+class PamIdentity(driver.TransactableDriverMixin, identity.Driver):
     """Very basic identity based on PAM.
 
     Tenant is always the same as User, root user has admin role.
