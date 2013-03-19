@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//9aA\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-19T14:36:14Z",
+      "side": 1,
+      "message": "i think the logic here is incorrect. currently, if paste_config isn\u0027t set, it will skip over the fail msg below in else section and try to deploy still.",
+      "revId": "c75e40111bb0817aedd733d734f910e66abdeece",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
