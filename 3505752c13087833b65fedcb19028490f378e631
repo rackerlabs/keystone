@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOH//8oA\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-19T20:55:43Z",
+      "side": 1,
+      "message": "suggest rename to alias_dereferencing so that users aren\u0027t confused thinking it\u0027s referral chasing.\n\nAlso, add documentation like the docs for the query_scope option below.",
+      "revId": "3505752c13087833b65fedcb19028490f378e631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//8rE\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 4
