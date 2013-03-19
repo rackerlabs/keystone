@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//8yg\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-19T19:54:21Z",
+      "side": 1,
+      "message": "delete_domain catches NO_SUCH_OBJECT, should delete_group do the same?",
+      "revId": "e259fc0db4e178cb39f7822987c74495b0aa9311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8zM\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-19T19:54:21Z",
+      "side": 1,
+      "message": "DomainApi already raises DomainNotFound, so don\u0027t need to catch and re-raise.",
+      "revId": "e259fc0db4e178cb39f7822987c74495b0aa9311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8x4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-19T19:54:21Z",
+      "side": 1,
+      "message": "isn\u0027t \"\u0027%s\u0027 % \u00271.1\u0027\" just a more complicated way to write \u00271.1\u0027? change to \u00271.1\u0027",
+      "revId": "e259fc0db4e178cb39f7822987c74495b0aa9311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8xk\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-19T19:54:21Z",
+      "side": 1,
+      "message": "why eating the exception here?",
+      "revId": "e259fc0db4e178cb39f7822987c74495b0aa9311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8xU\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 825,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-19T19:54:21Z",
+      "side": 1,
+      "message": "what if dn is False? should be a comment.",
+      "revId": "e259fc0db4e178cb39f7822987c74495b0aa9311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8xA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 886,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-19T19:54:21Z",
+      "side": 1,
+      "message": "2 problems here:\n\n1) translators might have to change the order of the substitution variables, so need to use named variables.\n\n2) The % (user_id, group_id) needs to be outside _().",
+      "revId": "e259fc0db4e178cb39f7822987c74495b0aa9311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8wo\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-19T19:54:21Z",
+      "side": 1,
+      "message": "user_dn needs to be properly escaped for LDAP filters.",
+      "revId": "e259fc0db4e178cb39f7822987c74495b0aa9311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8ww\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 915,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-19T19:54:21Z",
+      "side": 1,
+      "message": "\"\u0027%s\u0027 % self.member_attribute\" looks like a complicated way to write \"self.member_attribute\". suggest change to just \"self.member_attribute\"",
+      "revId": "e259fc0db4e178cb39f7822987c74495b0aa9311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
