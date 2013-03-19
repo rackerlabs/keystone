@@ -25,7 +25,6 @@ from keystone.common import logging
 from keystone import config
 from keystone import exception
 
-
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 LOG = logging.getLogger(__name__)
@@ -187,6 +186,7 @@ class User(controller.V2Controller):
         return {'user': self._filter_domain_id(ref)}
 
     # CRUD extension
+    @controller.handle_atomic_transaction(api_type='identity_api')
     def create_user(self, context, user):
         user = self._normalize_dict(user)
         self.assert_admin(context)
@@ -203,11 +203,11 @@ class User(controller.V2Controller):
         user_id = uuid.uuid4().hex
         user_ref = self._normalize_domain_id(context, user.copy())
         user_ref['id'] = user_id
-        new_user_ref = self.identity_api.create_user(
-            context, user_id, user_ref)
+        new_user_ref = self.identity_api.create_user(context, user_id,
+                                                     user_ref)
         if default_tenant_id:
-            self.identity_api.add_user_to_project(context,
-                                                  default_tenant_id, user_id)
+            self.identity_api.add_user_to_project(context, default_tenant_id,
+                                                  user_id)
         return {'user': self._filter_domain_id(new_user_ref)}
 
     def update_user(self, context, user_id, user):

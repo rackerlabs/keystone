@@ -5,8 +5,10 @@ import uuid
 from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import wsgi
+from keystone.common import driver
 from keystone import config
 from keystone import exception
+from keystone.openstack.common import excutils
 
 
 LOG = logging.getLogger(__name__)
@@ -146,6 +148,29 @@ def filterprotected(*filters):
             return f(self, context, filters, **kwargs)
         return wrapper
     return _filterprotected
+
+
+def handle_atomic_transaction(api_type=None):
+    """Decorator to handle atomic transaction. On failure, the complete
+    transaction is rolled back."""
+    def decorator(method):
+        @functools.wraps(method)
+        def wrapper(self, context, *args, **kwargs):
+            api = getattr(self, api_type, None)
+            if api and isinstance(api.driver,
+                                  driver.TransactableDriverMixin):
+                try:
+                    api.begin_transaction(context)
+                    output = method(self, context, *args, **kwargs)
+                    api.commit_transaction(context)
+                    return output
+                except Exception as e:
+                    with excutils.save_and_reraise_exception():
+                        api.rollback_transaction(context)
+            else:
+                return method(self, context, *args, **kwargs)
+        return wrapper
+    return decorator
 
 
 @dependency.requires('identity_api', 'policy_api', 'token_api',

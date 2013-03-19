@@ -149,7 +149,7 @@ class UserGroupMembership(sql.ModelBase, sql.DictBase):
                           primary_key=True)
 
 
-class Identity(sql.Base, identity.Driver):
+class Identity(sql.TransactableSQLDriverMixin, identity.Driver):
     # Internal interface to manage the database
     def db_sync(self):
         migration.db_sync()
@@ -506,7 +506,7 @@ class Identity(sql.Base, identity.Driver):
     def create_metadata(self, user_id, tenant_id, metadata,
                         domain_id=None, group_id=None):
         session = self.get_session()
-        with session.begin():
+        with session.begin(subtransactions=True):
             if user_id:
                 if tenant_id:
                     session.add(UserProjectGrant(user_id=user_id,
@@ -532,7 +532,7 @@ class Identity(sql.Base, identity.Driver):
     def update_metadata(self, user_id, tenant_id, metadata,
                         domain_id=None, group_id=None):
         session = self.get_session()
-        with session.begin():
+        with session.begin(subtransactions=True):
             if user_id:
                 if tenant_id:
                     q = session.query(UserProjectGrant)
@@ -641,7 +641,7 @@ class Identity(sql.Base, identity.Driver):
         user['name'] = clean.user_name(user['name'])
         user = utils.hash_user_password(user)
         session = self.get_session()
-        with session.begin():
+        with session.begin(subtransactions=True):
             user_ref = User.from_dict(user)
             session.add(user_ref)
             session.flush()
