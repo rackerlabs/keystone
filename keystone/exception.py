@@ -116,12 +116,18 @@ class Unauthorized(SecurityError):
 
 class AuthPluginException(Unauthorized):
     """ Authentication plugin error. """
-    authentication = {}
+
+    def __init__(self, *args, **kwargs):
+        super(AuthPluginException).__init__(*args, **kwargs)
+        self.authentication = {}
 
 
 class AuthMethodNotSupported(AuthPluginException):
     """ Attempted to authenticate with an unsupported method. """
-    authentication = {'methods': CONF.auth.methods}
+
+    def __init__(self, *args, **kwargs):
+        super(AuthMethodNotSupported).__init__(*args, **kwargs)
+        self.authentication = {'methods': CONF.auth.methods}
 
 
 class AdditionalAuthRequired(AuthPluginException):
