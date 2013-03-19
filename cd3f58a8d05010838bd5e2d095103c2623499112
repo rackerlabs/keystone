@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//8mg\u003d",
+        "filename": "keystone/common/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-19T21:31:48Z",
+      "side": 1,
+      "message": "we use dict(self[key]) and list(self[key]) in other place where we\u0027d need to do this",
+      "revId": "cd3f58a8d05010838bd5e2d095103c2623499112",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8ls\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-19T21:31:48Z",
+      "side": 1,
+      "message": "the fact that we\u0027re catching conflicts indicates we\u0027re either not tearing down properly or not using fixtures properly",
+      "revId": "cd3f58a8d05010838bd5e2d095103c2623499112",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8l0\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-19T21:31:48Z",
+      "side": 1,
+      "message": "remove the no-op",
+      "revId": "cd3f58a8d05010838bd5e2d095103c2623499112",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8j4\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-19T21:31:48Z",
+      "side": 1,
+      "message": "nice coverage",
+      "revId": "cd3f58a8d05010838bd5e2d095103c2623499112",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
