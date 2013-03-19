@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//8rE\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-19T20:40:14Z",
+      "side": 1,
+      "message": "move % opt outsize of _().",
+      "revId": "3505752c13087833b65fedcb19028490f378e631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8rM\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-19T20:40:14Z",
+      "side": 1,
+      "message": "use lowercase, like page_size to follow the HACKING.py convention.",
+      "revId": "3505752c13087833b65fedcb19028490f378e631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8qw\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-19T20:40:14Z",
+      "side": 1,
+      "message": "is this a regex? the string can have any number of spaces at the end?",
+      "revId": "3505752c13087833b65fedcb19028490f378e631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
