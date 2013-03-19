@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//8cY\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-19T22:22:03Z",
+      "side": 1,
+      "message": "wrapping all these into a function just means they can be wrapped in a readable try/except",
+      "revId": "93eaec7d32193dfe6ce8e97a29cd89cbe8f9c479",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8cI\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-19T22:22:03Z",
+      "side": 1,
+      "message": "this preserves the same order of register_*() as before",
+      "revId": "93eaec7d32193dfe6ce8e97a29cd89cbe8f9c479",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8cs\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-19T22:22:03Z",
+      "side": 1,
+      "message": "this was overriding a class attribute with an instance attribute, which is just a bit confusing, more more importantly: the class attribute was executed when the module was executed, not when the class was called; this was cusing CONF.auth.methods to be executed before keystone.config was executed (before CONF.auth.methods was available)... but only when you import keystone.middleware.auth_token directly (not when keystone is executed normally).",
+      "revId": "93eaec7d32193dfe6ce8e97a29cd89cbe8f9c479",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
