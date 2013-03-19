@@ -606,3 +606,18 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()
+
+    def begin_transaction(self):
+        """Start transaction. Only supported in sql backend.
+        """
+        raise exception.NotImplemented()
+
+    def commit_transaction(self):
+        """Commit transaction. Only supported in sql backend.
+        """
+        raise exception.NotImplemented()
+
+    def rollback_transaction(self):
+        """Rollback transaction. Only supported in sql backend.
+        """
+        raise exception.NotImplemented()

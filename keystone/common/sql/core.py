@@ -30,6 +30,8 @@ from keystone.common import logging
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import jsonutils
+from keystone.openstack.common import excutils
+from keystone.openstack.common import local
 
 
 CONF = config.CONF
@@ -47,6 +49,7 @@ String = sql.String
 ForeignKey = sql.ForeignKey
 DateTime = sql.DateTime
 IntegrityError = sql.exc.IntegrityError
+OperationalError = sql.exc.OperationalError
 NotFound = sql.orm.exc.NoResultFound
 Boolean = sql.Boolean
 Text = sql.Text
@@ -211,13 +214,39 @@ class MySQLPingListener(object):
 class Base(object):
     _engine = None
     _sessionmaker = None
+    # Strong greenthread store for storing session object.
+    _session_store = local.strong_store()
 
-    def get_session(self, autocommit=True, expire_on_commit=False):
-        """Return a SQLAlchemy session."""
-        self._engine = self._engine or self.get_engine()
-        self._sessionmaker = self._sessionmaker or self.get_sessionmaker(
-            self._engine)
-        return self._sessionmaker()
+    def begin_transaction(self, autocommit=True, expire_on_commit=False):
+        """Start transaction for session object of current thread."""
+        class_name = self.__class__.__name__
+        session = self.get_session(autocommit, expire_on_commit)
+        setattr(self._session_store, class_name, session)
+        session.begin()
+
+    def commit_transaction(self):
+        """Commit the transaction for session object of current thread."""
+        class_name = self.__class__.__name__
+        if hasattr(self._session_store, class_name):
+            session = getattr(self._session_store, class_name)
+            if session is not None:
+                session.commit()
+                delattr(self._session_store, class_name)
+            else:
+                msg = "Session value is None, unable to commit Transaction"
+                logging.warn(_(msg))
+
+    def rollback_transaction(self):
+        """Rollback the transaction for session object of current thread."""
+        class_name = self.__class__.__name__
+        if hasattr(self._session_store, class_name):
+            session = getattr(self._session_store, class_name)
+            if session is not None:
+                session.rollback()
+                delattr(self._session_store, class_name)
+            else:
+                msg = "Session value is None, unable to rollback Transaction"
+                logging.warn(_(msg))
 
     def get_engine(self, allow_global_engine=True):
         """Return a SQLAlchemy engine.
@@ -262,6 +291,19 @@ class Base(object):
             autocommit=autocommit,
             expire_on_commit=expire_on_commit)
 
+    def get_session(self, autocommit=True, expire_on_commit=False):
+        """Return a SQLAlchemy session."""
+        class_name = self.__class__.__name__
+        if hasattr(self._session_store, class_name):
+            session = getattr(self._session_store, class_name)
+            if session is not None:
+                return session
+        self._engine = self._engine or self.get_engine()
+        self._sessionmaker = self._sessionmaker or self.get_sessionmaker(
+            self._engine, autocommit=autocommit,
+            expire_on_commit=expire_on_commit)
+        return self._sessionmaker()
+
 
 def handle_conflicts(type='object'):
     """Converts IntegrityError into HTTP 409 Conflict."""
@@ -272,5 +314,7 @@ def handle_conflicts(type='object'):
                 return method(*args, **kwargs)
             except IntegrityError as e:
                 raise exception.Conflict(type=type, details=str(e.orig))
+            except OperationalError as e:
+                raise exception.UnexpectedError(type=type, details=str(e.orig))
         return wrapper
     return decorator

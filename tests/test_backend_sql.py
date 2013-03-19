@@ -224,6 +224,14 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertEqual(arbitrary_value, ref['extra'][arbitrary_key])
 
+    def test_get_session_returns_same_session(self):
+        """Check if same session object is maintained for a single request.
+        """
+        self.identity_api.begin_transaction()
+        self.assertEqual(self.identity_api.get_session(),
+                         self.identity_api.get_session())
+        self.identity_api.commit_transaction()
+
 
 class SqlTrust(SqlTests, test_backend.TrustTests):
     pass
