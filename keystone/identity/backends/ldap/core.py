@@ -294,6 +294,18 @@ class Identity(identity.Driver):
     def list_domains(self):
         return self.domain.get_all()
 
+    def begin_transaction(self):
+        pass
+
+    def commit_transaction(self):
+        pass
+
+    def rollback_transaction(self):
+        pass
+
+    def remove_session(self):
+        pass
+
 
 # TODO(termie): remove this and move cross-api calls into driver
 class ApiShim(object):

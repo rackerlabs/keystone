@@ -648,3 +648,15 @@ class Identity(kvs.Base, identity.Driver):
         group_list = set(self.db.get('group_list', []))
         group_list.remove(group_id)
         self.db.set('group_list', list(group_list))
+
+    def begin_transaction(self):
+        pass
+
+    def commit_transaction(self):
+        pass
+
+    def rollback_transaction(self):
+        pass
+
+    def remove_session(self):
+        pass
