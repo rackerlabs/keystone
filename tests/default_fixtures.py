@@ -116,5 +116,14 @@ ROLES = [
         'id': 'writer',
         'name': 'Writer',
     }
+]
 
+DOMAINS = [
+    {
+        'id': DEFAULT_DOMAIN_ID,
+        'name': 'Default',
+        'enabled': True,
+        'description': 'Owns users and tenants (i.e. projects) available '
+                       'on Identity API v2.'
+    }
 ]
