@@ -219,6 +219,28 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertRaises(exception.DomainNotFound,
                           self.identity_api.get_domain,
                           domain_id=self.domain2['id'])
+
+        # Declare fake getters for resources
+        def fake_get_project(*args, **kwargs):
+            raise exception.ProjectNotFound(self.project2['id'])
+
+        def fake_get_group(*args, **kwargs):
+            raise exception.GroupNotFound(self.group2['id'])
+
+        def fake_get_user(*args, **kwargs):
+            raise exception.UserNotFound(self.user2['id'])
+
+        def fake_get_credential(*args, **kwargs):
+            raise exception.CredentialNotFound(self.credential2['id'])
+
+        # Stub out getters for project, user, group, credential
+        # To bypass deletes not working for project, user, group, credential
+        self.stubs.Set(self.identity_api, 'get_project', fake_get_project)
+        self.stubs.Set(self.identity_api, 'get_group', fake_get_group)
+        self.stubs.Set(self.identity_api, 'get_user', fake_get_user)
+        self.stubs.Set(self.identity_api, 'get_credential',
+                       fake_get_credential)
+
         self.assertRaises(exception.ProjectNotFound,
                           self.identity_api.get_project,
                           tenant_id=self.project2['id'])
@@ -232,6 +254,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                           self.identity_api.get_credential,
                           credential_id=self.credential2['id'])
 
+        # Unset all stubs to normal
+        self.stubs.UnsetAll()
         # ...and that all self.domain entities are still here
         r = self.identity_api.get_domain(self.domain['id'])
         self.assertDictEqual(r, self.domain)
@@ -459,11 +483,20 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.delete('/users/%(user_id)s' % {
             'user_id': self.user['id']})
 
+        def fake_get_credential(*args, **kwargs):
+            raise exception.CredentialNotFound(self.credential2['id'])
+
+        # Stub out getters for project, user, group, credential
+        # To bypass deletes not working for project, user, group, credential
+        self.stubs.Set(self.identity_api, 'get_credential',
+                       fake_get_credential)
+
         # Deleting the user should have deleted any credentials
         # that reference this project
         self.assertRaises(exception.CredentialNotFound,
                           self.identity_api.get_credential,
                           credential_id=self.credential['id'])
+        self.stubs.UnsetAll()
         # And the no tokens we remain valid
         tokens = self.token_api.list_tokens(self.user['id'])
         self.assertEquals(len(tokens), 0)

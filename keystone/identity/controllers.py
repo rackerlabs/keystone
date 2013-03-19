@@ -25,7 +25,6 @@ from keystone.common import logging
 from keystone import config
 from keystone import exception
 
-
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 LOG = logging.getLogger(__name__)
@@ -203,11 +202,13 @@ class User(controller.V2Controller):
         user_id = uuid.uuid4().hex
         user_ref = self._normalize_domain_id(context, user.copy())
         user_ref['id'] = user_id
-        new_user_ref = self.identity_api.create_user(
-            context, user_id, user_ref)
-        if default_tenant_id:
-            self.identity_api.add_user_to_project(context,
-                                                  default_tenant_id, user_id)
+        with controller.transaction(context, api=self.identity_api):
+            new_user_ref = self.identity_api.create_user(context, user_id,
+                                                         user_ref)
+            if default_tenant_id:
+                self.identity_api.add_user_to_project(context,
+                                                      default_tenant_id,
+                                                      user_id)
         return {'user': self._filter_domain_id(new_user_ref)}
 
     def update_user(self, context, user_id, user):
@@ -235,9 +236,10 @@ class User(controller.V2Controller):
         self.assert_admin(context)
         # ensure that we're a member of that tenant
         default_tenant_id = user.get('tenantId')
-        self.identity_api.add_user_to_project(context,
-                                              default_tenant_id, user_id)
-        return self.update_user(context, user_id, user)
+        with controller.transaction(context, api=self.identity_api):
+            self.identity_api.add_user_to_project(context,
+                                                  default_tenant_id, user_id)
+            return self.update_user(context, user_id, user)
 
 
 class Role(controller.V2Controller):
@@ -520,9 +522,10 @@ class DomainV3(controller.V3Controller):
             raise exception.ForbiddenAction(
                 action='delete a domain that is not disabled')
 
-        # OK, we are go for delete!
-        self._delete_domain_contents(context, domain_id)
-        return self.identity_api.delete_domain(context, domain_id)
+        with controller.transaction(context, api=self.identity_api):
+            # OK, we are go for delete!
+            self._delete_domain_contents(context, domain_id)
+            return self.identity_api.delete_domain(context, domain_id)
 
     def _get_domain_by_name(self, context, domain_name):
         """Get the domain via its unique name.
@@ -581,7 +584,8 @@ class ProjectV3(controller.V3Controller):
 
     @controller.protected
     def delete_project(self, context, project_id):
-        return self._delete_project(context, project_id)
+        with controller.transaction(context, api=self.identity_api):
+            return self._delete_project(context, project_id)
 
 
 class UserV3(controller.V3Controller):
@@ -655,7 +659,8 @@ class UserV3(controller.V3Controller):
 
     @controller.protected
     def delete_user(self, context, user_id):
-        return self._delete_user(context, user_id)
+        with controller.transaction(context, api=self.identity_api):
+            return self._delete_user(context, user_id)
 
 
 class GroupV3(controller.V3Controller):

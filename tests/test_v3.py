@@ -29,6 +29,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         load_sample_data should be set to false.
 
         """
+        super(RestfulTestCase, self).setUp()
         self.config([
             test.etcdir('keystone.conf.sample'),
             test.testsdir('test_overrides.conf'),

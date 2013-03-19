@@ -26,10 +26,12 @@ import sqlalchemy.pool
 from sqlalchemy import types as sql_types
 from sqlalchemy.orm.attributes import InstrumentedAttribute
 
+from keystone.common import driver
 from keystone.common import logging
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import jsonutils
+from keystone.openstack.common import local
 
 
 CONF = config.CONF
@@ -47,6 +49,7 @@ String = sql.String
 ForeignKey = sql.ForeignKey
 DateTime = sql.DateTime
 IntegrityError = sql.exc.IntegrityError
+OperationalError = sql.exc.OperationalError
 NotFound = sql.orm.exc.NoResultFound
 Boolean = sql.Boolean
 Text = sql.Text
@@ -218,7 +221,8 @@ class Base(object):
         """Return a SQLAlchemy session."""
         self._engine = self._engine or self.get_engine()
         self._sessionmaker = self._sessionmaker or self.get_sessionmaker(
-            self._engine)
+            self._engine, autocommit=autocommit,
+            expire_on_commit=expire_on_commit)
         return self._sessionmaker()
 
     def get_engine(self, allow_global_engine=True):
@@ -265,6 +269,52 @@ class Base(object):
             expire_on_commit=expire_on_commit)
 
 
+class TransactableSQLDriverMixin(Base, driver.TransactableDriverMixin):
+
+    _session_store = local.strong_store()
+
+    def begin_transaction(self):
+        """Start transaction for session object of current thread."""
+        session = self.get_session()
+        class_name = self.__class__.__name__
+        setattr(self._session_store, class_name, session)
+        session.begin(subtransactions=True)
+
+    def commit_transaction(self):
+        """Commit the transaction for session object of current thread."""
+        class_name = self.__class__.__name__
+        if hasattr(self._session_store, class_name):
+            session = getattr(self._session_store, class_name)
+            if session is not None:
+                session.commit()
+                delattr(self._session_store, class_name)
+            else:
+                msg = "Session value is None, unable to commit Transaction"
+                logging.warn(_(msg))
+
+    def rollback_transaction(self):
+        """Rollback the transaction for session object of current thread."""
+        class_name = self.__class__.__name__
+        if hasattr(self._session_store, class_name):
+            session = getattr(self._session_store, class_name)
+            if session is not None:
+                session.rollback()
+                delattr(self._session_store, class_name)
+            else:
+                msg = "Session value is None, unable to rollback Transaction"
+                logging.warn(_(msg))
+
+    def get_session(self, autocommit=True, expire_on_commit=False):
+        """Return a SQLAlchemy session."""
+        class_name = self.__class__.__name__
+        if hasattr(self._session_store, class_name):
+            session = getattr(self._session_store, class_name)
+            if session is not None:
+                return session
+        return super(TransactableSQLDriverMixin,
+                     self).get_session(autocommit, expire_on_commit)
+
+
 def handle_conflicts(type='object'):
     """Converts IntegrityError into HTTP 409 Conflict."""
     def decorator(method):
@@ -274,5 +324,7 @@ def handle_conflicts(type='object'):
                 return method(*args, **kwargs)
             except IntegrityError as e:
                 raise exception.Conflict(type=type, details=str(e.orig))
+            except OperationalError as e:
+                raise exception.UnexpectedError(type=type, details=str(e.orig))
         return wrapper
     return decorator

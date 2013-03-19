@@ -149,7 +149,7 @@ class UserGroupMembership(sql.ModelBase, sql.DictBase):
                           primary_key=True)
 
 
-class Identity(sql.Base, identity.Driver):
+class Identity(sql.TransactableSQLDriverMixin, identity.Driver):
     # Internal interface to manage the database
     def db_sync(self):
         migration.db_sync()
@@ -482,7 +482,7 @@ class Identity(sql.Base, identity.Driver):
         except sql.NotFound:
             raise exception.ProjectNotFound(project_id=tenant_id)
 
-        with session.begin():
+        with session.begin(subtransactions=True):
             q = session.query(UserProjectGrant)
             q = q.filter_by(project_id=tenant_id)
             q.delete(False)
@@ -506,7 +506,7 @@ class Identity(sql.Base, identity.Driver):
     def create_metadata(self, user_id, tenant_id, metadata,
                         domain_id=None, group_id=None):
         session = self.get_session()
-        with session.begin():
+        with session.begin(subtransactions=True):
             if user_id:
                 if tenant_id:
                     session.add(UserProjectGrant(user_id=user_id,
@@ -532,7 +532,7 @@ class Identity(sql.Base, identity.Driver):
     def update_metadata(self, user_id, tenant_id, metadata,
                         domain_id=None, group_id=None):
         session = self.get_session()
-        with session.begin():
+        with session.begin(subtransactions=True):
             if user_id:
                 if tenant_id:
                     q = session.query(UserProjectGrant)
@@ -613,7 +613,7 @@ class Identity(sql.Base, identity.Driver):
         ref = session.query(Domain).filter_by(id=domain_id).first()
         if not ref:
             raise exception.DomainNotFound(domain_id=domain_id)
-        with session.begin():
+        with session.begin(subtransactions=True):
             session.delete(ref)
             session.flush()
 
@@ -641,7 +641,7 @@ class Identity(sql.Base, identity.Driver):
         user['name'] = clean.user_name(user['name'])
         user = utils.hash_user_password(user)
         session = self.get_session()
-        with session.begin():
+        with session.begin(subtransactions=True):
             user_ref = User.from_dict(user)
             session.add(user_ref)
             session.flush()
@@ -685,7 +685,7 @@ class Identity(sql.Base, identity.Driver):
         if 'id' in user and user_id != user['id']:
             raise exception.ValidationError('Cannot change user ID')
 
-        with session.begin():
+        with session.begin(subtransactions=True):
             user_ref = session.query(User).filter_by(id=user_id).first()
             if user_ref is None:
                 raise exception.UserNotFound(user_id=user_id)
@@ -765,7 +765,7 @@ class Identity(sql.Base, identity.Driver):
         except sql.NotFound:
             raise exception.UserNotFound(user_id=user_id)
 
-        with session.begin():
+        with session.begin(subtransactions=True):
 
             q = session.query(UserProjectGrant)
             q = q.filter_by(user_id=user_id)
@@ -838,7 +838,7 @@ class Identity(sql.Base, identity.Driver):
         except sql.NotFound:
             raise exception.GroupNotFound(group_id=group_id)
 
-        with session.begin():
+        with session.begin(subtransactions=True):
             q = session.query(GroupProjectGrant)
             q = q.filter_by(group_id=group_id)
             q.delete(False)
@@ -906,7 +906,7 @@ class Identity(sql.Base, identity.Driver):
         except sql.NotFound:
             raise exception.CredentialNotFound(credential_id=credential_id)
 
-        with session.begin():
+        with session.begin(subtransactions=True):
             session.delete(ref)
             session.flush()
 

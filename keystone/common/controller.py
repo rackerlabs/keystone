@@ -1,12 +1,15 @@
 import collections
+import contextlib
 import functools
 import uuid
 
 from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import wsgi
+from keystone.common import driver
 from keystone import config
 from keystone import exception
+from keystone.openstack.common import excutils
 
 
 LOG = logging.getLogger(__name__)
@@ -146,6 +149,24 @@ def filterprotected(*filters):
             return f(self, context, filters, **kwargs)
         return wrapper
     return _filterprotected
+
+
+@contextlib.contextmanager
+def transaction(context, api=None):
+    """Context manager to handle atomic transaction. On failure, the complete
+    transaction is rolled back."""
+    if api and isinstance(api.driver, driver.TransactableDriverMixin):
+        try:
+            api.begin_transaction(context)
+            yield
+        except Exception as e:
+            with excutils.save_and_reraise_exception():
+                LOG.exception(_(e))
+                api.rollback_transaction(context)
+        else:
+            api.commit_transaction(context)
+    else:
+        yield
 
 
 @dependency.requires('identity_api', 'policy_api', 'token_api',
