@@ -7,6 +7,7 @@ from keystone.common import logging
 from keystone.common import wsgi
 from keystone import config
 from keystone import exception
+from keystone.openstack.common import excutils
 
 
 LOG = logging.getLogger(__name__)
@@ -146,6 +147,26 @@ def filterprotected(*filters):
             return f(self, context, filters, **kwargs)
         return wrapper
     return _filterprotected
+
+
+def handle_atomic_transaction(type='object'):
+    """Decorator to handle atomic transaction. On failure, the complete
+    transaction is rolled back."""
+    def decorator(method):
+        @functools.wraps(method)
+        def wrapper(self, context, *args, **kwargs):
+            try:
+                self.identity_api.begin_transaction(context)
+                output = method(self, context, *args, **kwargs)
+                self.identity_api.commit_transaction(context)
+                return output
+            except Exception as e:
+                with excutils.save_and_reraise_exception():
+                    self.identity_api.rollback_transaction(context)
+            finally:
+                self.identity_api.remove_session(context)
+        return wrapper
+    return decorator
 
 
 @dependency.requires('identity_api', 'policy_api', 'token_api',

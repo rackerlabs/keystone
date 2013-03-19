@@ -152,3 +152,15 @@ class PamIdentity(identity.Driver):
 
     def delete_role(self, role_id):
         raise NotImplementedError()
+
+    def begin_transaction(self):
+        pass
+
+    def commit_transaction(self):
+        pass
+
+    def rollback_transaction(self):
+        pass
+
+    def remove_session(self):
+        pass
