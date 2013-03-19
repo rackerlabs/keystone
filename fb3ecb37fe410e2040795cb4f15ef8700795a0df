@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//9bw\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1929,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-19T14:09:40Z",
+      "side": 1,
+      "message": "i\u0027m not sure this actually tests whether \u0027password\u0027 is part of the returned value. my fault when adding this, but assertDictContainsSubset only checks that the larger dictionary contains the smaller dictionary.  it should explicitly test for \u0027password\u0027 value",
+      "revId": "fb3ecb37fe410e2040795cb4f15ef8700795a0df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
