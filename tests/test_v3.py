@@ -112,8 +112,8 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         """Populates a ref with attributes common to all API entities."""
         return {
             'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
+            'name': 'name' + uuid.uuid4().hex,
+            'description': 'desc' + uuid.uuid4().hex,
             'enabled': True}
 
     def new_service_ref(self):

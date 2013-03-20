@@ -43,11 +43,18 @@ def load_auth_method(method_name):
     return importutils.import_object(driver)
 
 
-def get_auth_method(method_name):
+#TODO(ayoung) move this to startup time
+def get_auth_methods():
     global AUTH_METHODS
-    if method_name not in AUTH_METHODS:
-        AUTH_METHODS[method_name] = load_auth_method(method_name)
-    return AUTH_METHODS[method_name]
+    if not len(AUTH_METHODS):
+        AUTH_METHODS = {}
+        for method_name in CONF.auth.methods:
+            AUTH_METHODS[method_name] = (load_auth_method(method_name))
+    return AUTH_METHODS
+
+
+def get_auth_method(method_name):
+    return get_auth_methods()[method_name]
 
 
 class AuthInfo(object):
@@ -236,10 +243,11 @@ class AuthInfo(object):
         :returns: auth method payload
 
         """
-        if method not in self.auth['identity']['methods']:
+        if method in self.auth['identity']['methods']:
+            return self.auth['identity'][method]
+        else:
             raise exception.ValidationError(attribute=method,
                                             target='identity')
-        return self.auth['identity'][method]
 
     def get_scope(self):
         """Get scope information.
@@ -317,43 +325,24 @@ class Auth(controller.V3Controller):
             LOG.exception(e)
             raise exception.Unauthorized(e)
 
-    def _build_remote_user_auth_context(self, context, auth_info,
-                                        auth_context):
-        username = context['REMOTE_USER']
-        # FIXME(gyee): REMOTE_USER is not good enough since we are
-        # requiring domain_id to do user lookup now. Try to get
-        # the user_id from auth_info for now, assuming external auth
-        # has check to make sure user is the same as the one specify
-        # in "identity".
-        if 'password' in auth_info.get_method_names():
-            user_info = auth_info.get_method_data('password')
-            user_ref = auth_info.lookup_user(user_info['user'])
-            auth_context['user_id'] = user_ref['id']
-        else:
-            msg = _('Unable to lookup user %s') % (username)
-            raise exception.Unauthorized(msg)
-
     def authenticate(self, context, auth_info, auth_context):
         """Authenticate user."""
-
-        # user have been authenticated externally
-        if 'REMOTE_USER' in context:
-            self._build_remote_user_auth_context(context,
-                                                 auth_info,
-                                                 auth_context)
-            return
 
         # need to aggregate the results in case two or more methods
         # are specified
         auth_response = {'methods': []}
-        for method_name in auth_info.get_method_names():
-            method = get_auth_method(method_name)
-            resp = method.authenticate(context,
-                                       auth_info.get_method_data(method_name),
-                                       auth_context)
+
+        for auth_method in CONF.auth.methods:
+            auth_data = None
+            if auth_method in auth_info.get_method_names():
+                auth_data = auth_info.get_method_data(auth_method)
+            resp = (get_auth_methods()[auth_method].authenticate(context,
+                    auth_data,
+                    auth_context,
+                    auth_info.get_method_names()))
             if resp:
-                auth_response['methods'].append(method_name)
-                auth_response[method_name] = resp
+                auth_response['methods'].append(auth_method)
+                auth_response[auth_method] = resp
 
         if len(auth_response["methods"]) > 0:
             # authentication continuation required

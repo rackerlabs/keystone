@@ -28,8 +28,12 @@ LOG = logging.getLogger(__name__)
 class Token(auth.AuthMethodHandler):
     def __init__(self):
         self.token_api = token.Manager()
+        self.method_name = METHOD_NAME
 
-    def authenticate(self, context, auth_payload, user_context):
+    def authenticate(self, context, auth_payload, user_context, method_names):
+        if self.method_name not in method_names:
+            return
+
         try:
             if 'id' not in auth_payload:
                 raise exception.ValidationError(attribute='id',

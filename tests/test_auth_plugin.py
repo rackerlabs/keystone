@@ -17,9 +17,11 @@
 import uuid
 
 from keystone import auth
+from keystone import config
 from keystone import exception
 from keystone import test
 
+CONF = config.CONF
 
 # for testing purposes only
 METHOD_NAME = 'simple-challenge-response'
@@ -28,7 +30,13 @@ DEMO_USER_ID = uuid.uuid4().hex
 
 
 class SimpleChallengeResponse(auth.AuthMethodHandler):
-    def authenticate(self, context, auth_payload, user_context):
+    def __init__(self):
+        self.method_name = METHOD_NAME
+        super(SimpleChallengeResponse, self).__init__()
+
+    def authenticate(self, context, auth_payload, user_context, method_names):
+        if self.method_name not in method_names:
+            return
         if 'response' in auth_payload:
             if auth_payload['response'] != EXPECTED_RESPONSE:
                 raise exception.Unauthorized('Wrong answer')
@@ -61,10 +69,10 @@ class TestAuthPlugin(test.TestCase):
                           auth_data)
 
     def test_addition_auth_steps(self):
-        auth_data = {'methods': ['simple-challenge-response']}
-        auth_data['simple-challenge-response'] = {
-            'test': 'test'}
-        auth_data = {'identity': auth_data}
+        CONF.auth.methods = ['simple-challenge-response']
+        auth_data = {'identity':
+                     {'methods': ['simple-challenge-response'],
+                      'simple-challenge-response': {'test': 'test'}}}
         auth_info = auth.controllers.AuthInfo(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         try:

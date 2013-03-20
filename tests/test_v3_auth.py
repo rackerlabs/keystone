@@ -1073,15 +1073,14 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_remote_user(self):
-        auth_data = self.build_authentication_request(
-            user_id=self.user['id'],
-            password=self.user['password'])['auth']
+        auth_data = self.build_authentication_request()['auth']
         api = auth.controllers.Auth()
-        context = {'REMOTE_USER': self.user['name']}
+        context = {'REMOTE_USER': self.default_domain_user['name']}
         auth_info = auth.controllers.AuthInfo(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         api.authenticate(context, auth_info, auth_context)
-        self.assertEqual(auth_context['user_id'], self.user['id'])
+        self.assertEqual(auth_context['user_id'],
+                         self.default_domain_user['id'])
 
     def test_remote_user_no_domain(self):
         auth_data = self.build_authentication_request(

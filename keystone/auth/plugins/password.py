@@ -18,7 +18,7 @@ from keystone import auth
 from keystone.common import logging
 from keystone import exception
 from keystone import identity
-
+from keystone.auth.plugins import common
 
 METHOD_NAME = 'password'
 
@@ -34,37 +34,11 @@ class UserAuthInfo(object):
         self.user_ref = None
         self._validate_and_normalize_auth_data(auth_payload)
 
-    def _assert_domain_is_enabled(self, domain_ref):
-        if not domain_ref.get('enabled'):
-            msg = _('Domain is disabled: %s') % (domain_ref['id'])
-            LOG.warning(msg)
-            raise exception.Unauthorized(msg)
-
     def _assert_user_is_enabled(self, user_ref):
         if not user_ref.get('enabled', True):
             msg = _('User is disabled: %s') % (user_ref['id'])
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
-
-    def _lookup_domain(self, domain_info):
-        domain_id = domain_info.get('id')
-        domain_name = domain_info.get('name')
-        domain_ref = None
-        if not domain_id and not domain_name:
-            raise exception.ValidationError(attribute='id or name',
-                                            target='domain')
-        try:
-            if domain_name:
-                domain_ref = self.identity_api.get_domain_by_name(
-                    context=self.context, domain_name=domain_name)
-            else:
-                domain_ref = self.identity_api.get_domain(
-                    context=self.context, domain_id=domain_id)
-        except exception.DomainNotFound as e:
-            LOG.exception(e)
-            raise exception.Unauthorized(e)
-        self._assert_domain_is_enabled(domain_ref)
-        return domain_ref
 
     def _validate_and_normalize_auth_data(self, auth_payload):
         if 'user' not in auth_payload:
@@ -83,7 +57,9 @@ class UserAuthInfo(object):
                 if 'domain' not in user_info:
                     raise exception.ValidationError(attribute='domain',
                                                     target='user')
-                domain_ref = self._lookup_domain(user_info['domain'])
+                domain_ref = common.lookup_domain(self.context,
+                                                  user_info['domain'],
+                                                  self.identity_api)
                 user_ref = self.identity_api.get_user_by_name(
                     context=self.context, user_name=user_name,
                     domain_id=domain_ref['id'])
@@ -92,7 +68,7 @@ class UserAuthInfo(object):
                     context=self.context, user_id=user_id)
                 domain_ref = self.identity_api.get_domain(
                     context=self.context, domain_id=user_ref['domain_id'])
-                self._assert_domain_is_enabled(domain_ref)
+                common.assert_domain_is_enabled(domain_ref)
         except exception.UserNotFound as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
@@ -102,7 +78,13 @@ class UserAuthInfo(object):
 
 
 class Password(auth.AuthMethodHandler):
-    def authenticate(self, context, auth_payload, user_context):
+    def __init__(self):
+        self.method_name = METHOD_NAME
+        super(Password, self).__init__()
+
+    def authenticate(self, context, auth_payload, user_context, method_names):
+        if self.method_name not in method_names:
+            return
         """Try to authenticate against the identity backend."""
         user_info = UserAuthInfo(context, auth_payload)
 
