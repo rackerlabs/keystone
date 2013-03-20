@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//8NI\u003d",
+        "filename": "keystone/locale/keystone.pot",
+        "patchSetId": 16
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-20T02:15:57Z",
+      "side": 1,
+      "message": "fixed in https://review.openstack.org/24868",
+      "revId": "d9ae62fb84fdb741f9605d66505d14263b01ea68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
