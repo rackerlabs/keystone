@@ -16,6 +16,24 @@
       "revId": "c75e40111bb0817aedd733d734f910e66abdeece",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8SA\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-03-20T00:27:00Z",
+      "side": 1,
+      "message": "Not sure I follow: if [paste_deploy] config_file is not set, backward compat kicks in and first config file is assumed to contain paste.deploy configuration or in case --config-dir is used, keystone.conf is assumed.",
+      "parentUuid": "AAAAOH//9aA\u003d",
+      "revId": "c75e40111bb0817aedd733d734f910e66abdeece",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
