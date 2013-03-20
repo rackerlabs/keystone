@@ -173,6 +173,13 @@ def register_cli_int(*args, **kw):
     return conf.register_cli_opt(cfg.IntOpt(*args, **kw), group=group)
 
 
+def setup_authentication(conf):
+    # register any non-default auth methods here (used by extensions, etc)
+    for method_name in conf.auth.methods:
+        if method_name not in _DEFAULT_AUTH_METHODS:
+            conf.register_opt(cfg.StrOpt(method_name), group='auth')
+
+
 register_cli_bool('standard-threads', default=False)
 
 register_cli_str('pydev-debug-host', default=None)
@@ -342,8 +349,3 @@ register_str('password', group='auth',
              default='keystone.auth.methods.token.Token')
 register_str('token', group='auth',
              default='keystone.auth.methods.password.Password')
-
-# register any non-default auth methods here (used by extensions, etc)
-for method_name in CONF.auth.methods:
-    if method_name not in _DEFAULT_AUTH_METHODS:
-        config.register_str(method_name, group='auth')

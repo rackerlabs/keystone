@@ -80,6 +80,7 @@ if __name__ == '__main__':
     CONF(project='keystone', default_config_files=config_files)
 
     config.setup_logging(CONF)
+    config.setup_authentication(CONF)
 
     # Log the options used when starting if we're in debug mode...
     if CONF.debug:
