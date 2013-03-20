@@ -34,6 +34,24 @@
       "revId": "c75e40111bb0817aedd733d734f910e66abdeece",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//7so\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-20T13:48:18Z",
+      "side": 1,
+      "message": "apologies, i worded that poorly.  what i meant is that if [paste_deploy] is set to an invalid file in keystone.conf, then it will fail to find the correct paste_config but will still continue.",
+      "parentUuid": "AAAAOH//8SA\u003d",
+      "revId": "c75e40111bb0817aedd733d734f910e66abdeece",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
