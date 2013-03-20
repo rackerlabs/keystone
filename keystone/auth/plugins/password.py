@@ -102,7 +102,13 @@ class UserAuthInfo(object):
 
 
 class Password(auth.AuthMethodHandler):
-    def authenticate(self, context, auth_payload, user_context):
+    def __init__(self):
+        self.method_name = METHOD_NAME
+        super(Password, self).__init__()
+
+    def authenticate(self, context, auth_payload, user_context, method_names):
+        if not self.method_name in method_names:
+            return
         """Try to authenticate against the identity backend."""
         user_info = UserAuthInfo(context, auth_payload)
 
