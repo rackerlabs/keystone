@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//69A\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 7045
+      },
+      "writtenOn": "2013-03-20T22:03:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOH//6/4\u003d",
+      "revId": "8dd817d4a340933afbc263367c3a8e603b0a2281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//6/o\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-03-20T21:31:30Z",
       "side": 1,
       "message": "suggest don\u0027t put ldap_ in front of everything, since this is in an ldap module already. Maybe a better name is parse_alias_dereferencing",
+      "revId": "8dd817d4a340933afbc263367c3a8e603b0a2281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//69M\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7045
+      },
+      "writtenOn": "2013-03-20T22:03:27Z",
+      "side": 1,
+      "message": "I disagree with parse_alias_dereferencing, as the name causes some lines to be too long, but do agree it should be something better. I\u0027m considering parse_deref(opt).",
+      "parentUuid": "AAAAOH//6/o\u003d",
       "revId": "8dd817d4a340933afbc263367c3a8e603b0a2281",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//69I\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7045
+      },
+      "writtenOn": "2013-03-20T22:03:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOH//6/s\u003d",
+      "revId": "8dd817d4a340933afbc263367c3a8e603b0a2281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//6/k\u003d",
         "filename": "tests/_ldap_livetest.py",
         "patchSetId": 5
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//688\u003d",
+        "filename": "tests/_ldap_livetest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7045
+      },
+      "writtenOn": "2013-03-20T22:03:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOH//6/k\u003d",
+      "revId": "8dd817d4a340933afbc263367c3a8e603b0a2281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//6/8\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 5
@@ -81,6 +153,24 @@
       "writtenOn": "2013-03-20T21:31:30Z",
       "side": 1,
       "message": "(nit) I don\u0027t understand why there\u0027s \" *\" at the end.\n\nAlso, . is a special character in regex so should be escaped.",
+      "revId": "8dd817d4a340933afbc263367c3a8e603b0a2281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//68c\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 7045
+      },
+      "writtenOn": "2013-03-20T22:03:27Z",
+      "side": 1,
+      "message": "I escaped the ., good catch. I just copied what was done for ldap_scope, removed the * since it\u0027s unnecessary.",
+      "parentUuid": "AAAAOH//6/8\u003d",
       "revId": "8dd817d4a340933afbc263367c3a8e603b0a2281",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
