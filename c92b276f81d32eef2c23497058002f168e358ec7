@@ -52,6 +52,24 @@
       "revId": "c92b276f81d32eef2c23497058002f168e358ec7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8MQ\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-20T02:32:23Z",
+      "side": 1,
+      "message": "playing with this code today, it doesn\u0027t look like CONF.auth.methods will ever have a value from the config file here -- it\u0027ll always be the default value. So, custom drivers will never be registered.\n\nFurthermore, \u0027config\u0027 below is not defined.",
+      "parentUuid": "AAAAN3//uJ4\u003d",
+      "revId": "c92b276f81d32eef2c23497058002f168e358ec7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
