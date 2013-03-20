@@ -251,9 +251,11 @@
 # user_additional_attribute_mapping =
 
 [auth]
-methods = password,token
+methods = remote,password,token
 password = keystone.auth.plugins.password.Password
 token = keystone.auth.plugins.token.Token
+remote = keystone.auth.plugins.remote.RemoteUser
+
 
 [paste_deploy]
 # Name of the paste configuration file that defines the available pipelines
