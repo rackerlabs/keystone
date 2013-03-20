@@ -34,6 +34,41 @@
       "revId": "f8eab5125ffd82ea27cd3713c168710f03dea9c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8KM\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-20T03:23:25Z",
+      "side": 1,
+      "message": "checking for a specific tenant id is incredibly deployment specific, not to mention we don\u0027t provide for users to set a tenant id themselves",
+      "parentUuid": "AAAAOH//8Rs\u003d",
+      "revId": "f8eab5125ffd82ea27cd3713c168710f03dea9c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8KY\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-20T03:23:25Z",
+      "side": 1,
+      "message": "-2 this is asserting a bad behavior; you should be able to pull a revocation list with a real token",
+      "revId": "f8eab5125ffd82ea27cd3713c168710f03dea9c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
