@@ -53,6 +53,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//8So\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-20T00:03:46Z",
+      "side": 1,
+      "message": "super(AuthPluginException, self).__init__(*args, **kwargs)",
+      "revId": "93eaec7d32193dfe6ce8e97a29cd89cbe8f9c479",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//8Sw\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-20T00:03:46Z",
+      "side": 1,
+      "message": "super(AuthMethodNotSupported, self).__init__(*args, **kwargs)",
+      "revId": "93eaec7d32193dfe6ce8e97a29cd89cbe8f9c479",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//8cs\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 2
