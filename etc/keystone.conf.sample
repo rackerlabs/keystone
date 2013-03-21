@@ -155,6 +155,14 @@
 [assignment]
 # driver =
 
+[oauth]
+# driver = keystone.contrib.delegated_auth.backends.sql.DelegatedAuth
+
+# Specify how quickly the request token will expire (in seconds)
+# request_token_expiry = 3600
+# Specify how quickly the access token will expire (in days)
+# access_token_expiry = 1
+
 [ssl]
 #enable = True
 #certfile = /etc/keystone/pki/certs/ssl_cert.pem
@@ -281,10 +289,11 @@
 # user_additional_attribute_mapping =
 
 [auth]
-methods = external,password,token
+methods = external,password,token,oauth
 #external = keystone.auth.plugins.external.ExternalDefault
 password = keystone.auth.plugins.password.Password
 token = keystone.auth.plugins.token.Token
+oauth = keystone.auth.plugins.oauth.OAuth
 
 [paste_deploy]
 # Name of the paste configuration file that defines the available pipelines

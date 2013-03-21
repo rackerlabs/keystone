@@ -166,7 +166,7 @@ class AuthInfo(object):
                 'domain' in self.auth['scope'],
                 'OS-TRUST:trust' in self.auth['scope']]) != 1:
             raise exception.ValidationError(
-                attribute='project, domain, or OS-TRUST:trust',
+                attribute='project, domain, OS-TRUST:trust',
                 target='scope')
 
         if 'project' in self.auth['scope']:

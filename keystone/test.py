@@ -45,6 +45,7 @@ from keystone.common import sql
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
+from keystone.contrib import delegated_auth as oauth
 from keystone.contrib import ec2
 from keystone import credential
 from keystone import exception
@@ -271,13 +272,12 @@ class TestCase(NoModule, unittest.TestCase):
         # assignment manager gets the default assignment driver from the
         # identity driver.
         for manager in [identity, assignment, catalog, credential, ec2, policy,
-                        token, token_provider, trust]:
+                        token, token_provider, trust, oauth]:
             # manager.__name__ is like keystone.xxx[.yyy],
             # converted to xxx[_yyy]
             manager_name = ('%s_api' %
                             manager.__name__.replace('keystone.', '').
                             replace('.', '_'))
-
             setattr(self, manager_name, manager.Manager())
 
         dependency.resolve_future_dependencies()
