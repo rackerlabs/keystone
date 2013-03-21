@@ -23,6 +23,7 @@ from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import wsgi
 from keystone import config
+from keystone.contrib import delegated_auth
 from keystone.contrib import ec2
 from keystone import controllers
 from keystone import credential
@@ -48,6 +49,7 @@ DRIVERS = dict(
     credentials_api=credential.Manager(),
     ec2_api=ec2.Manager(),
     identity_api=_IDENTITY_API,
+    delegated_auth_api=delegated_auth.Manager(),
     policy_api=policy.Manager(),
     token_api=token.Manager(),
     trust_api=trust.Manager(),
