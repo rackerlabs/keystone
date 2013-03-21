@@ -121,6 +121,12 @@
 [ec2]
 # driver = keystone.contrib.ec2.backends.kvs.Ec2
 
+[oauth]
+# To add delegated_auth support, uncomment the driver line below and 
+# add 'oauth_ext' as the second last argument to the following pipelines:
+# [pipeline:public_api], [pipeline:admin_api] and [pipeline:api_v3]
+# driver = keystone.contrib.delegated_auth.backends.kvs.DelegatedAuth
+
 [ssl]
 #enable = True
 #certfile = /etc/keystone/ssl/certs/keystone.pem
@@ -269,6 +275,9 @@ paste.filter_factory = keystone.contrib.admin_crud:CrudExtension.factory
 
 [filter:ec2_extension]
 paste.filter_factory = keystone.contrib.ec2:Ec2Extension.factory
+
+[filter:oauth_ext]
+paste.filter_factory = keystone.contrib.delegated_auth:DelegatedAuthExtension.factory
 
 [filter:s3_extension]
 paste.filter_factory = keystone.contrib.s3:S3Extension.factory
