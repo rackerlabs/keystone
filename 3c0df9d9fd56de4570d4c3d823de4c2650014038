@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//6eE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-21T04:24:59Z",
+      "side": 1,
+      "message": "please change this to:\nif \u0027trust\u0027 in self.auth[\u0027scope\u0027]:\n     if  not CONF.trust.enabled:\n          raise exception.Forbidden(\u0027Trusts are disabled.\u0027)",
+      "revId": "3c0df9d9fd56de4570d4c3d823de4c2650014038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//6eA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-21T04:24:59Z",
+      "side": 1,
+      "message": "Good cleanup, although, this probably should be in a separate patch.",
+      "revId": "3c0df9d9fd56de4570d4c3d823de4c2650014038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//6d0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-21T04:24:59Z",
+      "side": 1,
+      "message": "please remove the checks like these.",
+      "revId": "3c0df9d9fd56de4570d4c3d823de4c2650014038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//6ec\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-21T04:24:59Z",
+      "side": 1,
+      "message": "These are still the wrong logic, even if the y should never be executed.  If you are going to have the check in there, throw the exception.",
+      "revId": "3c0df9d9fd56de4570d4c3d823de4c2650014038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
