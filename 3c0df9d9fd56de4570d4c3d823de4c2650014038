@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//6dg\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-21T04:41:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOH//6eE\u003d",
+      "revId": "3c0df9d9fd56de4570d4c3d823de4c2650014038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//6eA\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-03-21T04:24:59Z",
       "side": 1,
       "message": "Good cleanup, although, this probably should be in a separate patch.",
+      "revId": "3c0df9d9fd56de4570d4c3d823de4c2650014038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//6dc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-21T04:41:14Z",
+      "side": 1,
+      "message": "it\u0027s required to raise forbidden to the api",
+      "parentUuid": "AAAAOH//6eA\u003d",
       "revId": "3c0df9d9fd56de4570d4c3d823de4c2650014038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2013-03-21T04:24:59Z",
       "side": 1,
       "message": "These are still the wrong logic, even if the y should never be executed.  If you are going to have the check in there, throw the exception.",
+      "revId": "3c0df9d9fd56de4570d4c3d823de4c2650014038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//6dQ\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-21T04:41:14Z",
+      "side": 1,
+      "message": "the goal of a feature flag is to enable/disable impact of the feature, not to introduce new behaviors",
+      "parentUuid": "AAAAOH//6ec\u003d",
       "revId": "3c0df9d9fd56de4570d4c3d823de4c2650014038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
