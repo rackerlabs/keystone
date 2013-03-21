@@ -60,7 +60,7 @@ class SqlUpgradeTests(test.TestCase):
         # create and share a single sqlalchemy engine for testing
         self.engine = self.base.get_engine(allow_global_engine=False)
         self.Session = self.base.get_sessionmaker(engine=self.engine,
-                                                  autocommit=False)
+                                                  autocommit=True)
 
         self.initialize_sql()
         self.repo_path = migration._find_migrate_repo()
@@ -152,8 +152,6 @@ class SqlUpgradeTests(test.TestCase):
                                         autoload=True)
         a_tenant = session.query(tenant_table).filter("id='baz'").one()
         self.assertEqual(a_tenant.description, 'description')
-        session.commit()
-        session.close()
 
     def test_downgrade_10_to_8(self):
         self.upgrade(10)
@@ -175,8 +173,6 @@ class SqlUpgradeTests(test.TestCase):
                                         autoload=True)
         a_tenant = session.query(tenant_table).filter("id='baz'").one()
         self.assertEqual(a_tenant.name, default_fixtures.TENANTS[1]['name'])
-        session.commit()
-        session.close()
 
     def test_upgrade_endpoints(self):
         self.upgrade(10)
@@ -203,8 +199,6 @@ class SqlUpgradeTests(test.TestCase):
         session = self.Session()
         self.insert_dict(session, 'service', service)
         self.insert_dict(session, 'endpoint', endpoint)
-        session.commit()
-        session.close()
 
         self.upgrade(13)
         self.assertTableColumns(
@@ -232,8 +226,6 @@ class SqlUpgradeTests(test.TestCase):
             self.assertEqual(ref.service_id, endpoint['service_id'])
             self.assertEqual(ref.url, endpoint_extra['%surl' % interface])
             self.assertEqual(ref.extra, '{}')
-        session.commit()
-        session.close()
 
     def assertTenantTables(self):
         self.assertTableExists('tenant')
@@ -300,9 +292,6 @@ class SqlUpgradeTests(test.TestCase):
                          default_fixtures.TENANTS[1]['description'])
         self.assertEqual(a_project.domain_id, DEFAULT_DOMAIN_ID)
 
-        session.commit()
-        session.close()
-
         self.check_uniqueness_constraints()
 
     def test_downgrade_16_to_14(self):
@@ -327,8 +316,6 @@ class SqlUpgradeTests(test.TestCase):
         a_tenant = session.query(tenant_table).filter("id='baz'").one()
         self.assertEqual(a_tenant.description,
                          default_fixtures.TENANTS[1]['description'])
-        session.commit()
-        session.close()
 
     def test_downgrade_remove_group_tables(self):
         self.upgrade(14)
@@ -379,8 +366,6 @@ class SqlUpgradeTests(test.TestCase):
         for endpoint in endpoints.values():
             endpoint.update(common_endpoint_attrs)
             self.insert_dict(session, 'endpoint', endpoint)
-        session.commit()
-        session.close()
 
         self.downgrade(9)
 
@@ -406,15 +391,12 @@ class SqlUpgradeTests(test.TestCase):
         for interface in ['public', 'internal', 'admin']:
             expected_url = endpoints[interface]['url']
             self.assertEqual(extra['%surl' % interface], expected_url)
-        session.commit()
-        session.close()
 
     def insert_dict(self, session, table_name, d):
         """Naively inserts key-value pairs into a table, given a dictionary."""
         this_table = sqlalchemy.Table(table_name, self.metadata, autoload=True)
         insert = this_table.insert()
         insert.execute(d)
-        session.commit()
 
     def test_downgrade_to_0(self):
         self.upgrade(self.max_version)
@@ -501,8 +483,6 @@ class SqlUpgradeTests(test.TestCase):
                       'tenant_id': project2['id'],
                       'data': json.dumps({"roles": [role2['id']]})}
         self.engine.execute(metadata_table.insert().values(role_grant))
-
-        session.commit()
 
         self.upgrade(17)
 
@@ -712,8 +692,6 @@ class SqlUpgradeTests(test.TestCase):
         self.insert_dict(session, 'endpoint', endpoint)
 
         self.upgrade(22)
-        session.commit()
-        session.close()
 
         session = self.Session()
         endpoint_table = sqlalchemy.Table(

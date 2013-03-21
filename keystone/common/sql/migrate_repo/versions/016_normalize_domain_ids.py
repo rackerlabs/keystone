@@ -337,8 +337,6 @@ def upgrade_user_table_with_col_create(meta, migrate_engine, session):
             where(user_table.c.id == user.id).\
             values(values)
         migrate_engine.execute(update)
-    # Need to commit this or setting nullable to False will fail
-    session.commit()
     user_table.columns.domain_id.alter(nullable=False)
 
     # Finally, change the uniqueness settings for the name attribute
@@ -364,8 +362,6 @@ def upgrade_project_table_with_col_create(meta, migrate_engine, session):
             where(project_table.c.id == project.id).\
             values(values)
         migrate_engine.execute(update)
-    # Need to commit this or setting nullable to False will fail
-    session.commit()
     project_table.columns.domain_id.alter(nullable=False)
 
     # Finally, change the uniqueness settings for the name attribute
@@ -379,7 +375,6 @@ def downgrade_user_table_with_col_drop(meta, migrate_engine, session):
     session.execute('ALTER TABLE "user" DROP CONSTRAINT '
                     'user_dom_name_unique;')
     session.execute('ALTER TABLE "user" ADD UNIQUE (name);')
-    session.commit()
     # And now go ahead an drop the domain_id column
     domain_table = sql.Table('domain', meta, autoload=True)
     user_table = sql.Table('user', meta, autoload=True)
@@ -394,7 +389,6 @@ def downgrade_project_table_with_col_drop(meta, migrate_engine, session):
                     'proj_dom_name_unique;')
     session.execute('ALTER TABLE project ADD CONSTRAINT tenant_name_key '
                     'UNIQUE (name);')
-    session.commit()
     # And now go ahead an drop the domain_id column
     domain_table = sql.Table('domain', meta, autoload=True)
     project_table = sql.Table('project', meta, autoload=True)
@@ -413,8 +407,6 @@ def upgrade(migrate_engine):
     else:
         upgrade_user_table_with_col_create(meta, migrate_engine, session)
         upgrade_project_table_with_col_create(meta, migrate_engine, session)
-    session.commit()
-    session.close()
 
 
 def downgrade(migrate_engine):
@@ -429,5 +421,3 @@ def downgrade(migrate_engine):
         # have problems dropping columns which are foreign keys
         downgrade_user_table_with_col_drop(meta, migrate_engine, session)
         downgrade_project_table_with_col_drop(meta, migrate_engine, session)
-    session.commit()
-    session.close()

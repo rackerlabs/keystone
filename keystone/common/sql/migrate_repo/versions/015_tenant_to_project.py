@@ -61,9 +61,6 @@ def upgrade_with_copy(meta, migrate_engine):
     for user_id, tenant_id in session.query(user_tenant_membership_table):
         insert.execute({'user_id': user_id, 'tenant_id': tenant_id})
 
-    session.commit()
-    session.close()
-
     user_tenant_membership_table.drop()
     tenant_table.drop()
 
@@ -110,9 +107,6 @@ def downgrade_with_copy(meta, migrate_engine):
     for membership in session.query(user_project_membership_table):
         insert.execute(membership)
     user_project_membership_table.drop()
-
-    session.commit()
-    session.close()
 
 
 def upgrade(migrate_engine):

@@ -1,11 +1,8 @@
 import json
-import uuid
 
 import sqlalchemy as sql
-from sqlalchemy import orm
 
 from keystone import config
-from keystone import exception
 
 
 CONF = config.CONF
@@ -55,7 +52,6 @@ def upgrade(migrate_engine):
 
         conn.execute(q)
 
-    session.close()
     old_metadata_table.drop()
 
 
@@ -97,8 +93,5 @@ def downgrade(migrate_engine):
     for metadata in session.query(user_project_metadata_table):
         if 'roles' in metadata:
             roles = json.loads(metadata.data)
-            ins = (metadata_table.insert()
-                   .values(user_id=metadata.user_id,
-                           tenant_id=metadata.project_id))
-
-    session.close()
+            metadata_table.insert().values(user_id=metadata.user_id,
+                                           tenant_id=metadata.project_id)

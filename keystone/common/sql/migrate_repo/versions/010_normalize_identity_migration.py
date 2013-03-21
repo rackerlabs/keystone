@@ -90,7 +90,6 @@ def upgrade(migrate_engine):
     session = sessionmaker(bind=migrate_engine)()
     upgrade_user_table(meta, migrate_engine, session)
     upgrade_tenant_table(meta, migrate_engine, session)
-    session.commit()
 
 
 def downgrade(migrate_engine):
@@ -99,4 +98,3 @@ def downgrade(migrate_engine):
     session = sessionmaker(bind=migrate_engine)()
     downgrade_user_table(meta, migrate_engine, session)
     downgrade_tenant_table(meta, migrate_engine, session)
-    session.commit()

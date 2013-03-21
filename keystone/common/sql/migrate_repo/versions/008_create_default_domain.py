@@ -40,10 +40,8 @@ def upgrade(migrate_engine):
             'description': 'Owns users and tenants (i.e. projects) available '
                            'on Identity API v2.'})}
 
-    session = orm.sessionmaker(bind=migrate_engine)()
     insert = domain_table.insert()
     insert.execute(domain)
-    session.commit()
 
 
 def downgrade(migrate_engine):
@@ -55,4 +53,3 @@ def downgrade(migrate_engine):
     session = orm.sessionmaker(bind=migrate_engine)()
     session.execute(
         'DELETE FROM domain WHERE id=:id', {'id': DEFAULT_DOMAIN_ID})
-    session.commit()

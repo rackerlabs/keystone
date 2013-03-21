@@ -51,7 +51,6 @@ def upgrade(migrate_engine):
             project_id=membership.tenant_id,
             data=json.dumps(data))
         conn.execute(ins)
-    session.close()
     user_project_membership_table.drop()
 
 
@@ -90,7 +89,6 @@ def downgrade(migrate_engine):
                 ins = (user_project_membership_table.insert()
                        .values(user_id=membership.user_id,
                                tenant_id=membership.project_id))
-    session.close()
     role_table = sql.Table('role', meta, autoload=True)
     conn = migrate_engine.connect()
     user_project_membership_table = sql.Table(

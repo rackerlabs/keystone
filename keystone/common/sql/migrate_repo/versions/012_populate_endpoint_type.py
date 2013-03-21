@@ -50,8 +50,6 @@ def upgrade(migrate_engine):
             }
             insert = new_table.insert().values(endpoint)
             migrate_engine.execute(insert)
-    session.commit()
-    session.close()
 
 
 def downgrade(migrate_engine):
@@ -95,5 +93,3 @@ def downgrade(migrate_engine):
             }
             insert = legacy_table.insert().values(endpoint)
             migrate_engine.execute(insert)
-        session.commit()
-    session.close()
