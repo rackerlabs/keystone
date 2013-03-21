@@ -177,7 +177,7 @@ class Identity(kvs.Base, identity.Driver):
         roles.remove(role_id)
         metadata_ref['roles'] = list(roles)
 
-        if not len(roles):
+        if not roles:
             self.db.delete('metadata-%s-%s' % (tenant_id, user_id))
             user_ref = self._get_user(user_id)
             tenants = set(user_ref.get('tenants', []))
