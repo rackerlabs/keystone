@@ -305,6 +305,13 @@ def configure():
     register_bool('use_tls', group='ldap', default=False)
     register_str('tls_req_cert', group='ldap', default='demand')
 
+    # oauth1
+    register_str(
+        'driver', group='oauth1',
+        default='keystone.contrib.oauth1.backends.sql.OAuth1')
+    register_int('request_token_duration', group='oauth1', default=28800)
+    register_int('access_token_duration', group='oauth1', default=86400)
+
     # pam
     register_str('userid', group='pam', default=None)
     register_str('password', group='pam', default=None)
