@@ -212,6 +212,17 @@
 # group_allow_update = True
 # group_allow_delete = True
 
+# Additional attribute mappings can be used to map internal keystone attributes
+# to ldap attributes. This allows keystone to fulfill ldap objectclass
+# requirements. An example to map the description and gecos attributes to a
+# user's name would be:
+# user_additional_attribute_mapping = description:name, gecos:name
+#
+# group_additional_attribute_mapping = None
+# role_additional_attribute_mapping = None
+# tenant_additional_attribute_mapping = None
+# user_additional_attribute_mapping = None
+
 [auth]
 methods = password,token
 password = keystone.auth.plugins.password.Password
