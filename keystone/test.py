@@ -43,6 +43,7 @@ from keystone.common import logging
 from keystone.common import sql
 from keystone.common import utils
 from keystone.common import wsgi
+from keystone.contrib import delegated_auth as oauth
 from keystone import config
 from keystone import credential
 from keystone import exception
@@ -253,7 +254,7 @@ class TestCase(NoModule, unittest.TestCase):
     def load_backends(self):
         """Initializes each manager and assigns them to an attribute."""
         for manager in [assignment, catalog, credential, identity, policy,
-                        token, trust]:
+                        token, trust, oauth]:
             manager_name = '%s_api' % manager.__name__.split('.')[-1]
             setattr(self, manager_name, manager.Manager())
 
