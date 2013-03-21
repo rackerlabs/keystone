@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//5Pc\u003d",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-21T20:53:04Z",
+      "side": 1,
+      "message": "my only issue with this is that _VERSIONS should be a set, but that appears to be inconsequential here",
+      "revId": "620e6e37803ca94a9708413c35039e5097f6d9d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
