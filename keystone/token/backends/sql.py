@@ -75,7 +75,8 @@ class Token(sql.Base, token.Driver):
             token_ref.valid = False
             session.flush()
 
-    def delete_tokens(self, user_id, tenant_id=None, trust_id=None):
+    def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
+                      consumer_id=None):
         """Deletes all tokens in one session
 
         The user_id will be ignored if the trust_id is specified. user_id
@@ -100,6 +101,11 @@ class Token(sql.Base, token.Driver):
                     token_ref_dict = token_ref.to_dict()
                     if not self._tenant_matches(tenant_id, token_ref_dict):
                         continue
+                if consumer_id:
+                    token_ref_dict = token_ref.to_dict()
+                    if not self._consumer_matches(consumer_id, token_ref_dict):
+                        continue
+
                 token_ref.valid = False
 
             session.flush()
@@ -108,6 +114,19 @@ class Token(sql.Base, token.Driver):
         return ((tenant_id is None) or
                 (token_ref_dict.get('tenant') and
                  token_ref_dict['tenant'].get('id') == tenant_id))
+
+    def _consumer_matches(self, consumer_id, token_ref_dict):
+        if consumer_id is None:
+            return True
+        else:
+            if 'token_data' in token_ref_dict:
+                token_data = token_ref_dict.get('token_data')
+                if 'token' in token_data:
+                    token = token_data.get('token')
+                    oauth = token.get('OS-OAUTH1')
+                    if oauth and oauth.get('consumer_id') == consumer_id:
+                        return True
+            return False
 
     def _list_tokens_for_trust(self, trust_id):
         session = self.get_session()
