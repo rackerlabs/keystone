@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//6jU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-21T03:12:44Z",
+      "side": 1,
+      "message": "This is the place where the trust is first discovered.  If  trusts is enabled and trust is in scope, this is the most important place to throw an exception",
+      "revId": "c950722bbea5572909278d55f69ac0924284ccac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//6j0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-21T03:12:44Z",
+      "side": 1,
+      "message": "remove the if blcok and always delete trust tokens.  If trusts were never enabled, there will be none in the database and this will return quickly. If it was enabled and then disabled, there will still be valid tokens from the trusts",
+      "revId": "c950722bbea5572909278d55f69ac0924284ccac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//6ko\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-21T03:12:44Z",
+      "side": 1,
+      "message": "This logic is wrong.  If trusts are not enabled, but a token comes in with a trust ID we need to return Forbidden",
+      "revId": "c950722bbea5572909278d55f69ac0924284ccac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//6k0\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1013,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-21T03:12:44Z",
+      "side": 1,
+      "message": "Keep this test, but set the config option in the test, and remove default.",
+      "revId": "c950722bbea5572909278d55f69ac0924284ccac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//6ks\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-21T03:12:44Z",
+      "side": 1,
+      "message": "keep this line just in case we decide to reverse the policy, so that trust tests will continue to run.",
+      "revId": "c950722bbea5572909278d55f69ac0924284ccac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
