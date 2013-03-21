@@ -388,6 +388,11 @@ def configure():
     register_bool('use_tls', group='ldap', default=False)
     register_str('tls_req_cert', group='ldap', default='demand')
 
+    # oauth
+    register_str(
+        'driver', group='oauth',
+        default='keystone.contrib.delegated_auth.backends.kvs.DelegatedAuth')
+
     # pam
     register_str('userid', group='pam', default=None)
     register_str('password', group='pam', default=None)
