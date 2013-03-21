@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//6tk\u003d",
+        "filename": "tests/_ldap_livetest.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-21T01:31:09Z",
+      "side": 1,
+      "message": "imports should remain in alphabetical order, so this line should be before keystone.config.",
+      "revId": "6b6202f3f28a551716c7c953a0b9c5c0b8181450",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//6tU\u003d",
+        "filename": "tests/_ldap_livetest.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-21T01:31:09Z",
+      "side": 1,
+      "message": "doesn\u0027t this depend on whatever\u0027s in the test system\u0027s ldap.conf? A test shouldn\u0027t be dependent on the test environment.",
+      "revId": "6b6202f3f28a551716c7c953a0b9c5c0b8181450",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
