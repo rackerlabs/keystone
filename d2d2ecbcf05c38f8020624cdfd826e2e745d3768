@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//60U\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-21T00:08:43Z",
+      "side": 1,
+      "message": "suggest use named argument for named parameter; change \"self.alias_dereferencing\" to \"alias_dereferencing\u003dself.alias_dereferencing\"",
+      "revId": "d2d2ecbcf05c38f8020624cdfd826e2e745d3768",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//6zs\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-21T00:08:43Z",
+      "side": 1,
+      "message": "On my system, ldap.DEREF_NEVER is 0, so this will not work. Change to \"if alias_dereferencing is not None:\". Also, need a testcase since this wasn\u0027t caught by existing tests.\n\n \u003e\u003e\u003e bool(ldap.DEREF_NEVER)\n False",
+      "revId": "d2d2ecbcf05c38f8020624cdfd826e2e745d3768",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
