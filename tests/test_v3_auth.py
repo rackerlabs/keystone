@@ -1009,9 +1009,16 @@ class TestAuthXML(TestAuthJSON):
     content_type = 'xml'
 
 
+class TestTrustOptional(test_v3.RestfulTestCase):
+    def test_trusts_disabled_by_default(self):
+        self.get('/trusts', body={'trust': {}}, expected_status=404)
+        self.post('/trusts', body={'trust': {}}, expected_status=404)
+
+
 class TestTrustAuth(TestAuthInfo):
     def setUp(self):
         super(TestTrustAuth, self).setUp(load_sample_data=True)
+        self.opt_in_group('trust', enabled=True)
 
         # create a trustee to delegate stuff to
         self.trustee_user_id = uuid.uuid4().hex

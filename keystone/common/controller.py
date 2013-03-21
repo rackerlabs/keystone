@@ -171,13 +171,17 @@ class V2Controller(wsgi.Application):
                 self.token_api.delete_token(context, token_id)
             except exception.NotFound:
                 pass
+
         #delete tokens generated from trusts
-        for trust in self.trust_api.list_trusts_for_trustee(context, user_id):
-            self._delete_tokens_for_trust(context, user_id, trust['id'])
-        for trust in self.trust_api.list_trusts_for_trustor(context, user_id):
-            self._delete_tokens_for_trust(context,
-                                          trust['trustee_user_id'],
-                                          trust['id'])
+        if CONF.trust.enabled:
+            for trust in self.trust_api.list_trusts_for_trustee(context,
+                                                                user_id):
+                self._delete_tokens_for_trust(context, user_id, trust['id'])
+            for trust in self.trust_api.list_trusts_for_trustor(context,
+                                                                user_id):
+                self._delete_tokens_for_trust(context,
+                                              trust['trustee_user_id'],
+                                              trust['id'])
 
     def _require_attribute(self, ref, attr):
         """Ensures the reference contains the specified attribute."""
