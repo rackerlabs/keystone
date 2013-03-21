@@ -151,6 +151,9 @@
 [assignment]
 # driver =
 
+[oauth]
+# driver = keystone.contrib.delegated_auth.backends.sql.DelegatedAuth
+
 [ssl]
 #enable = True
 #certfile = /etc/keystone/pki/certs/ssl_cert.pem

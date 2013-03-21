@@ -3,6 +3,7 @@ import unittest2 as unittest
 
 from keystone import assignment
 from keystone import catalog
+from keystone.contrib import delegated_auth
 from keystone import exception
 from keystone import identity
 from keystone import policy
@@ -54,4 +55,8 @@ class TestDrivers(unittest.TestCase):
 
     def test_token_driver_unimplemented(self):
         interface = token.Driver()
+        self.assertInterfaceNotImplemented(interface)
+
+    def test_oauth_driver_unimplemented(self):
+        interface = delegated_auth.Driver()
         self.assertInterfaceNotImplemented(interface)
