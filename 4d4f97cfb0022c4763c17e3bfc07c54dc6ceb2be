@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//5Tk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-21T20:30:08Z",
+      "side": 1,
+      "message": "wrap in _() for translation. Needs more text to say why it\u0027s invalid.",
+      "revId": "4d4f97cfb0022c4763c17e3bfc07c54dc6ceb2be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//5TI\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-21T20:30:08Z",
+      "side": 1,
+      "message": "should have tests for correctly parsing different attribute mapping strings, like if it has more than 1, empty string, missing a the :, no first part, no second part, etc.",
+      "revId": "4d4f97cfb0022c4763c17e3bfc07c54dc6ceb2be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
