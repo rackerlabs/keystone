@@ -48,6 +48,7 @@ Column = sql.Column
 Index = sql.Index
 String = sql.String
 ForeignKey = sql.ForeignKey
+Index = sql.Index
 DateTime = sql.DateTime
 IntegrityError = sql.exc.IntegrityError
 OperationalError = sql.exc.OperationalError
