@@ -429,7 +429,7 @@ class Identity(sql.Base, identity.Driver):
                 raise exception.RoleNotFound(message=msg)
             roles.remove(role_id)
             metadata_ref['roles'] = list(roles)
-            if len(roles):
+            if roles:
                 self.update_metadata(user_id, tenant_id, metadata_ref)
             else:
                 session = self.get_session()

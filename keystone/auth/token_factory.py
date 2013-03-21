@@ -74,7 +74,7 @@ class TokenDataHelper(object):
             role_ref.setdefault('project_id', project_id)
             roles_ref.append(role_ref)
         # user have no project roles, therefore access denied
-        if len(roles_ref) == 0:
+        if not roles_ref:
             msg = _('User have no access to project')
             LOG.debug(msg)
             raise exception.Unauthorized(msg)
@@ -89,7 +89,7 @@ class TokenDataHelper(object):
             role_ref.setdefault('domain_id', domain_id)
             roles_ref.append(role_ref)
         # user have no domain roles, therefore access denied
-        if len(roles_ref) == 0:
+        if not roles_ref:
             msg = _('User have no access to domain')
             LOG.debug(msg)
             raise exception.Unauthorized(msg)
