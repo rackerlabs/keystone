@@ -206,7 +206,7 @@ def configure():
     register_str('default_domain_id', group='identity', default='default')
 
     # trust
-    register_bool('enabled', group='trust', default=True)
+    register_bool('enabled', group='trust', default=False)
 
     # ssl
     register_bool('enable', group='ssl', default=False)
