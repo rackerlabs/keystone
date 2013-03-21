@@ -364,6 +364,18 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
             'Invalid LDAP deref option: %s\.' % CONF.ldap.alias_dereferencing,
             identity.backends.ldap.Identity)
 
+    def test_user_extra_attribute_mapping(self):
+        CONF.ldap.user_additional_attribute_mapping = ['description:name']
+        self.identity_api = identity.backends.ldap.Identity()
+        user = {
+            'id': 'extra_attributes',
+            'name': 'EXTRA_ATTRIBUTES',
+            'password': 'extra',
+        }
+        self.identity_api.create_user(user['id'], user)
+        dn, attrs = self.identity_api.user._ldap_get(user['id'])
+        self.assertTrue(user['name'] in attrs['description'])
+
 # TODO (henry-nash) These need to be removed when the full LDAP implementation
 # is submitted - see Bugs 1092187, 1101287, 1101276, 1101289
 
