@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//6e4\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-21T04:16:47Z",
+      "side": 1,
+      "message": "default\u003dTrue, or we\u0027ll have to mark the APIs as optional in the spec. Otherwise, this is not going to do well in interoperability.",
+      "revId": "8f180bb26299d099af6f00a79121ea913fa4228f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
