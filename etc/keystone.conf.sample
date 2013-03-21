@@ -152,6 +152,14 @@
 [assignment]
 # driver =
 
+[oauth]
+# driver = keystone.contrib.delegated_auth.backends.sql.DelegatedAuth
+
+# User can specify how quickly the request token will expire (in hours)
+# and the access token (in days)
+# request_token_expiry = 8
+# access_token_expiry = 20
+
 [ssl]
 #enable = True
 #certfile = /etc/keystone/pki/certs/ssl_cert.pem
