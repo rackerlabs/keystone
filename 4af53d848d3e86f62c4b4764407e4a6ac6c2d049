@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//6Mk\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-21T10:32:02Z",
+      "side": 1,
+      "message": "So the question is a bit more fundamental.  Is the purpose of validating a token to return what the abilities of the user were when the token was created, or as they are at the instance we call validate()?  The latter is implemented here.  If we want to do the former, quite a lot else would have to change.  For example, if the domain was enabled when we create the token, should we honor that even though the domain might now be disabled?\n\nI do think, however, we don\u0027t have a clarity of intent across our overall implementation, since:\n\n1) If a users \"capabilities\" are changed, then the next validate token is designed pick them up and put the new capabilities into the token data returned, ignoring what was stored in the original token.\n\n2) Any time a users \"capabilities\" are changed we invalidate any token the user has anyway.  If we catch all these cases (admittedly it isn\u0027t quite perfect yet), then 1) would become a no-op, since validate would fail to get a valid token.\n\n3) Any invalidated token will filter back to a client doing PKI via the revocation list",
+      "revId": "4af53d848d3e86f62c4b4764407e4a6ac6c2d049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//6NI\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-03-21T10:32:02Z",
+      "side": 1,
+      "message": "trust_id is here as well",
+      "revId": "4af53d848d3e86f62c4b4764407e4a6ac6c2d049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
