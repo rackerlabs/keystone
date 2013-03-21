@@ -7,6 +7,7 @@ from keystone import exception
 from keystone import identity
 from keystone import policy
 from keystone import token
+from keystone.contrib import delegated_auth as oauth
 
 
 class TestDrivers(unittest.TestCase):
@@ -54,4 +55,8 @@ class TestDrivers(unittest.TestCase):
 
     def test_token_driver_unimplemented(self):
         interface = token.Driver()
+        self.assertInterfaceNotImplemented(interface)
+
+    def test_oauth_driver_unimplemented(self):
+        interface = oauth.Driver()
         self.assertInterfaceNotImplemented(interface)
