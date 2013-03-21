@@ -51,6 +51,8 @@ class Token(auth.AuthMethodHandler):
             if ('OS-TRUST:trust' in token_ref['token_data']['token'] or
                     'trust' in token_ref['token_data']['token']):
                 raise exception.Forbidden()
+            if 'OS-OAUTH10A:oauth' in token_ref['token_data']['token']:
+                raise exception.Forbidden()
         except AssertionError as e:
             LOG.error(e)
             raise exception.Unauthorized(e)
