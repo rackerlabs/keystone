@@ -182,7 +182,7 @@ class AuthInfo(object):
         elif 'domain' in self.auth['scope']:
             domain_ref = self._lookup_domain(self.auth['scope']['domain'])
             self._scope_data = (domain_ref['id'], None, None)
-        elif 'trust' in self.auth['scope']:
+        elif CONF.trust.enabled and 'trust' in self.auth['scope']:
             trust_ref = self._lookup_trust(self.auth['scope']['trust'])
             #TODO ayoung when trusts support domain, Fill in domain data here
             if 'project_id' in trust_ref:
@@ -297,7 +297,7 @@ class Auth(controller.V3Controller):
 
     def _check_and_set_default_scoping(self, context, auth_info, auth_context):
         (domain_id, project_id, trust) = auth_info.get_scope()
-        if trust:
+        if CONF.trust.enabled and trust:
             project_id = trust['project_id']
         if domain_id or project_id or trust:
             # scope is specified
