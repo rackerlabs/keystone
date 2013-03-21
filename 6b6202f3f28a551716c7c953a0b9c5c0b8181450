@@ -69,6 +69,24 @@
       "revId": "6b6202f3f28a551716c7c953a0b9c5c0b8181450",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//5/s\u003d",
+        "filename": "tests/_ldap_livetest.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-21T13:45:44Z",
+      "side": 1,
+      "message": "I put the comment on the wrong line. I don\u0027t have a problem with the way this is done.",
+      "parentUuid": "AAAAOH//6pM\u003d",
+      "revId": "6b6202f3f28a551716c7c953a0b9c5c0b8181450",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
