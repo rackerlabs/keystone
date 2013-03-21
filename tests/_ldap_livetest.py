@@ -92,3 +92,15 @@ class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
 
     def test_user_enable_attribute_mask(self):
         raise nose.exc.SkipTest('Test is for Active Directory Only')
+
+    def test_extra_attribute_mapping(self):
+        CONF.ldap.user_additional_attribute_mapping = ['description:name']
+        self.identity_api = identity_ldap.Identity()
+        user = {
+            'id': 'extra_attributes',
+            'name': 'EXTRA_ATTRIBUTES',
+            'password': 'extra',
+        }
+        self.identity_api.create_user(user['id'], user)
+        dn, attrs = self.identity_api.user._ldap_get(user['id'])
+        self.assertTrue(user['name'] in attrs['description'])
