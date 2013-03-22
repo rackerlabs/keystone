@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//3Uo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-22T22:22:45Z",
+      "side": 1,
+      "message": "Either link to a bug report, or state the problem that you are fixing.",
+      "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//3Uw\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-22T22:22:45Z",
+      "side": 1,
+      "message": "This comment is documenting what is going into the database, but it is strangely placed here;  it probably should be recorded in a bug report if there is something significantly wrong.",
+      "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//3Us\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-22T22:22:45Z",
+      "side": 1,
+      "message": "Please replace this line with a TODO for what should be done.",
+      "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
