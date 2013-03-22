@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//3QQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-03-22T23:45:31Z",
+      "side": 1,
+      "message": "will do sirrah",
+      "parentUuid": "AAAAOH//3Uo\u003d",
+      "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//3Uw\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//3QY\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-03-22T23:45:31Z",
+      "side": 1,
+      "message": "Well, I put it here as an explanation of what is going on for anybody trying to make sense of the following code. It can be added to a bug as well but it seems like it is a useful place to explain it. Thoughts?",
+      "parentUuid": "AAAAOH//3Uw\u003d",
+      "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//3Us\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2013-03-22T22:22:45Z",
       "side": 1,
       "message": "Please replace this line with a TODO for what should be done.",
+      "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//3QU\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-03-22T23:45:31Z",
+      "side": 1,
+      "message": "how about:\n\nTODO(termie): reduce stored token complexity",
+      "parentUuid": "AAAAOH//3Us\u003d",
       "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
