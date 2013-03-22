@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//360\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-22T16:10:19Z",
+      "side": 1,
+      "message": "i believe we\u0027ve always preferred the former; the token would be invalid if roles were revoked or a domain was disabled anyway (2)",
+      "parentUuid": "AAAAOH//6Mk\u003d",
+      "revId": "4af53d848d3e86f62c4b4764407e4a6ac6c2d049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//6NI\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-03-21T10:32:02Z",
       "side": 1,
       "message": "trust_id is here as well",
+      "revId": "4af53d848d3e86f62c4b4764407e4a6ac6c2d049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//350\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-22T16:10:19Z",
+      "side": 1,
+      "message": "not in termie\u0027s world ;)",
+      "parentUuid": "AAAAOH//6NI\u003d",
       "revId": "4af53d848d3e86f62c4b4764407e4a6ac6c2d049",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
