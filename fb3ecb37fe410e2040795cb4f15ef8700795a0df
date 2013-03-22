@@ -34,6 +34,24 @@
       "revId": "fb3ecb37fe410e2040795cb4f15ef8700795a0df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//308\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1929,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-22T16:44:43Z",
+      "side": 1,
+      "message": "it should be testing user_ref for password instead of user.  \n\ni probably shouldn\u0027t have made assertDictContainsSubset have the same name as original deprecated method but the way i coded it, it will take the 2 dictionaries as param and which ever one is smaller, it will check to make sure all it\u0027s key/values are in the larger one.\n\nif user_ref for some reason is a larger dictionary than user, the assertion will be valid even if user_ref contains \u0027password\u0027 as all extra values in larger dictionary are ignored.",
+      "parentUuid": "AAAAOH//3/g\u003d",
+      "revId": "fb3ecb37fe410e2040795cb4f15ef8700795a0df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
