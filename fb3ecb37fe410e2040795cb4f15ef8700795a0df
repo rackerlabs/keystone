@@ -52,6 +52,24 @@
       "revId": "fb3ecb37fe410e2040795cb4f15ef8700795a0df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//3yE\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1929,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-03-22T16:57:14Z",
+      "side": 1,
+      "message": "I missed something. Why should we assert existence of \u0027password\u0027 in user_ref?\n\nI didn\u0027t realize that assertDictContainsSubset method is not the builtin one. How about we replace it with builtin implementation from 2.7?",
+      "parentUuid": "AAAAOH//308\u003d",
+      "revId": "fb3ecb37fe410e2040795cb4f15ef8700795a0df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
