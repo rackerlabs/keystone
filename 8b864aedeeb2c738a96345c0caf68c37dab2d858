@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//4Do\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-22T15:18:08Z",
+      "side": 1,
+      "message": "it be nice to mention what the option is",
+      "revId": "8b864aedeeb2c738a96345c0caf68c37dab2d858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//4Ds\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-22T15:18:08Z",
+      "side": 1,
+      "message": "backticks on file path",
+      "revId": "8b864aedeeb2c738a96345c0caf68c37dab2d858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
