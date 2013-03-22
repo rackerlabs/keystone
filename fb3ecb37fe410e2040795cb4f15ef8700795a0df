@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//3ho\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-03-22T19:52:48Z",
+      "side": 1,
+      "message": "BaseLdap.update will raise appropirate NotFound exception if there is no such role. No need to do another roundtrip to LDAP server.",
+      "parentUuid": "AAAAOH//3kU\u003d",
+      "revId": "fb3ecb37fe410e2040795cb4f15ef8700795a0df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//9bw\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 4
