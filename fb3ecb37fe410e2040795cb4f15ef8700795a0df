@@ -70,6 +70,24 @@
       "revId": "fb3ecb37fe410e2040795cb4f15ef8700795a0df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//3t8\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1929,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2013-03-22T17:31:58Z",
+      "side": 1,
+      "message": "should be testing for NON-existence of password in user_ref as it is the value returned via update and should not contain password value.\n\nyes, it is my fault regarding method name. i wrote it mainly as futureproof since it\u0027s deprecated in future versions. I\u0027m indifferent whether we use builtin method or not. just need to make sure the same cases described above:\n1. user_ref doesn\u0027t have \u0027password\u0027\n2. if user_ref is larger dictionary, extra key/values aren\u0027t compared so \u0027password\u0027 could still get through.",
+      "parentUuid": "AAAAOH//3yE\u003d",
+      "revId": "fb3ecb37fe410e2040795cb4f15ef8700795a0df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
