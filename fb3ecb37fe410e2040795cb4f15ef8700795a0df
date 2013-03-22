@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOH//3kU\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-22T19:34:45Z",
+      "side": 1,
+      "message": "Leave the get_role call, as that confirms that the role exists, and throws the proper error if it does not",
+      "revId": "fb3ecb37fe410e2040795cb4f15ef8700795a0df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//9bw\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 4
