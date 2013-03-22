@@ -88,6 +88,24 @@
       "revId": "fb3ecb37fe410e2040795cb4f15ef8700795a0df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//3sY\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1929,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2013-03-22T17:54:24Z",
+      "side": 1,
+      "message": "Both KVS and LDAP backends fail this assertion. This should be a separate bug and a separate change request.",
+      "parentUuid": "AAAAOH//3t8\u003d",
+      "revId": "fb3ecb37fe410e2040795cb4f15ef8700795a0df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
