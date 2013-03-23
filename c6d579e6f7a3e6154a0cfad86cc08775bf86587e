@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//3N0\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-23T01:01:53Z",
+      "side": 1,
+      "message": "OK,  if it is just explanation, then this is fine.  I thought you were suggesting a fix.",
+      "parentUuid": "AAAAOH//3QY\u003d",
+      "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//3Us\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 3
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "how about:\n\nTODO(termie): reduce stored token complexity",
       "parentUuid": "AAAAOH//3Us\u003d",
+      "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//3Nw\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-03-23T01:01:53Z",
+      "side": 1,
+      "message": "Yes, that would be good.",
+      "parentUuid": "AAAAOH//3QU\u003d",
       "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
