@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//1Pk\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-25T19:55:06Z",
+      "side": 1,
+      "message": "should use assertIs when comparing against None.",
+      "revId": "4fb8c90cf1a55356e55e0657b0c76283d84d1fbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
