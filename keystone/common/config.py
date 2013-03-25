@@ -335,6 +335,9 @@ def configure():
     register_bool('group_allow_create', group='ldap', default=True)
     register_bool('group_allow_update', group='ldap', default=True)
     register_bool('group_allow_delete', group='ldap', default=True)
+    register_bool('group_enabled_emulation', group='ldap', default=False)
+    register_str('group_enabled_emulation_dn', group='ldap', default=None)
+    register_str('group_enabled_attribute', group='ldap', default='enabled')
 
     register_str('domain_tree_dn', group='ldap', default=None)
     register_str('domain_filter', group='ldap', default=None)
