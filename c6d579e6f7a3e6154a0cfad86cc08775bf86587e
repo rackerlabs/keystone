@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//1TA\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-03-25T19:35:54Z",
+      "side": 1,
+      "message": "henry-nash: I mostly agree, I actually think all the code in this file is a bad architectural decision, however I wasn\u0027t trying to boil the ocean, just make sure that extensions can generate tokens (not possible if all token generation happens in this file) before release.\n\nI\u0027d be happy for this entire thing to be rewritten in a much simpler and better understood way, but this was intended as a minimal change before release.",
+      "parentUuid": "AAAAOH//3Bo\u003d",
+      "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//3Uw\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 3
@@ -124,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//1So\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-03-25T19:35:54Z",
+      "side": 1,
+      "message": "we aren\u0027t fixing it, just enumerating the unexpected conditions, we are right before release and this section of code is well-tested even though it is misunderstanding what it is doing (ie it is getting a proper result through the wrong methods), a bug could be filed for \"re-write token factory\" though, yes",
+      "parentUuid": "AAAAOH//3Bk\u003d",
+      "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//3Bg\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 3
@@ -135,6 +171,24 @@
       "writtenOn": "2013-03-23T13:54:07Z",
       "side": 1,
       "message": "\"Makes sense?\" - seems superfluous.",
+      "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//1Sg\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-03-25T19:35:54Z",
+      "side": 1,
+      "message": "Do you hate fun? Rhetorical questions?",
+      "parentUuid": "AAAAOH//3Bg\u003d",
       "revId": "c6d579e6f7a3e6154a0cfad86cc08775bf86587e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
