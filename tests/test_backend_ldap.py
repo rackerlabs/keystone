@@ -440,21 +440,6 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                           self.identity_api.get_domain,
                           domain['id'])
 
-    def test_get_role_grant_by_user_and_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_get_role_grants_for_user_and_project_404(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_add_role_grant_to_user_and_project_404(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_remove_role_grant_from_user_and_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_get_and_remove_role_grant_by_group_and_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
     def test_get_and_remove_role_grant_by_group_and_domain(self):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
 
@@ -462,7 +447,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
 
     def test_get_and_remove_correct_role_grant_from_a_mix(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
+        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
 
     def test_project_crud(self):
         # NOTE(topol): LDAP implementation does not currently support the
@@ -506,17 +491,11 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_multi_role_grant_by_user_group_on_project_domain(self):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
 
-    def test_delete_role_with_user_and_group_grants(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
     def test_delete_user_with_group_project_domain_links(self):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
 
     def test_delete_group_with_user_project_domain_links(self):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
-
-    def test_list_user_projects(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_get_project_users(self):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
@@ -595,6 +574,43 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
             [{'id': CONF.identity.default_domain_id,
               'name': 'Default',
               'enabled': True}])
+
+    def test_delete_role_with_user_and_group_grants(self):
+        role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_role(role1['id'], role1)
+        project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                    'domain_id': CONF.identity.default_domain_id}
+        self.identity_man.create_project({}, project1['id'], project1)
+        user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                 'domain_id': CONF.identity.default_domain_id,
+                 'password': uuid.uuid4().hex, 'enabled': True}
+        self.identity_man.create_user({}, user1['id'], user1)
+        group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'domain_id': CONF.identity.default_domain_id}
+        self.identity_man.create_group({}, group1['id'], group1)
+        self.identity_api.create_grant(user_id=user1['id'],
+                                       project_id=project1['id'],
+                                       role_id=role1['id'])
+        self.identity_api.create_grant(group_id=group1['id'],
+                                       project_id=project1['id'],
+                                       role_id=role1['id'])
+        roles_ref = self.identity_api.list_grants(
+            user_id=user1['id'],
+            project_id=project1['id'])
+        self.assertEquals(len(roles_ref), 1)
+        roles_ref = self.identity_api.list_grants(
+            group_id=group1['id'],
+            project_id=project1['id'])
+        self.assertEquals(len(roles_ref), 1)
+        self.identity_api.delete_role(role1['id'])
+        roles_ref = self.identity_api.list_grants(
+            user_id=user1['id'],
+            project_id=project1['id'])
+        self.assertEquals(len(roles_ref), 0)
+        roles_ref = self.identity_api.list_grants(
+            group_id=group1['id'],
+            project_id=project1['id'])
+        self.assertEquals(len(roles_ref), 0)
 
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):
