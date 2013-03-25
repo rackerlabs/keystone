@@ -351,6 +351,18 @@ def configure():
     register_bool('domain_allow_delete', group='ldap', default=True)
     register_bool('domain_enabled_emulation', group='ldap', default=False)
     register_str('domain_enabled_emulation_dn', group='ldap', default=None)
+    register_str(
+        'tls_cacertfile',
+        group='ldap',
+        default="/etc/keystone/ssl/certs/tls_cacertfile.pem")
+    register_str(
+        'tls_cacertdir',
+        group='ldap',
+        default="/etc/keystone/ldap/certs/")
+    register_bool('use_tls', group='ldap', default=False)
+    register_bool('use_tls_cacertfile', group='ldap', default=False)
+    register_bool('use_tls_cacertdir', group='ldap', default=False)
+    register_str('tls_req_cert', group='ldap', default='demand')
 
     # pam
     register_str('url', group='pam', default=None)
