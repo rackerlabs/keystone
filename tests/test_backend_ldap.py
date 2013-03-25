@@ -440,21 +440,6 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                           self.identity_api.get_domain,
                           domain['id'])
 
-    def test_get_role_grant_by_user_and_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_get_role_grants_for_user_and_project_404(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_add_role_grant_to_user_and_project_404(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_remove_role_grant_from_user_and_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_get_and_remove_role_grant_by_group_and_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
     def test_get_and_remove_role_grant_by_group_and_domain(self):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
 
@@ -462,7 +447,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
 
     def test_get_and_remove_correct_role_grant_from_a_mix(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
+        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
 
     def test_project_crud(self):
         # NOTE(topol): LDAP implementation does not currently support the
@@ -506,17 +491,11 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_multi_role_grant_by_user_group_on_project_domain(self):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
 
-    def test_delete_role_with_user_and_group_grants(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
     def test_delete_user_with_group_project_domain_links(self):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
 
     def test_delete_group_with_user_project_domain_links(self):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
-
-    def test_list_user_projects(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_get_project_users(self):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
@@ -551,6 +530,9 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
 
     def test_get_roles_for_user_and_domain(self):
+        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+
+    def test_delete_role_with_user_and_group_grants(self):
         raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
 
     def test_list_group_members_missing_entry(self):

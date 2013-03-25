@@ -724,8 +724,7 @@ class IdentityTests(object):
                           role_id='member')
 
     def test_get_and_remove_role_grant_by_group_and_project(self):
-        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_domain(new_domain['id'], new_domain)
+        new_domain = self._get_domain_fixture()
         new_group = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
                      'name': uuid.uuid4().hex}
         self.identity_man.create_group(EMPTY_CONTEXT,
@@ -1171,8 +1170,7 @@ class IdentityTests(object):
     def test_delete_role_with_user_and_group_grants(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_role(role1['id'], role1)
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_domain(domain1['id'], domain1)
+        domain1 = self._get_domain_fixture()
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': domain1['id']}
         self.identity_man.create_project(EMPTY_CONTEXT,
@@ -2031,8 +2029,7 @@ class IdentityTests(object):
                           user['id'])
 
     def test_list_user_projects(self):
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_domain(domain['id'], domain)
+        domain = self._get_domain_fixture()
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                  'password': uuid.uuid4().hex, 'domain_id': domain['id'],
                  'enabled': True}
