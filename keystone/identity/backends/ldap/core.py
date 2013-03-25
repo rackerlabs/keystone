@@ -338,6 +338,58 @@ class Identity(identity.Driver):
     def list_domains(self):
         return [DEFAULT_DOMAIN]
 
+    def list_grants(self, user_id=None, group_id=None, project_id=None):
+        id = None
+        if project_id:
+            self.get_project(project_id)
+        if user_id:
+            self.get_user(user_id)
+            id = user_id
+        if group_id:
+            self.get_group(group_id)
+            id = group_id
+
+        roles = self.role.get_grant(user_id, group_id, project_id)
+        list = []
+        if user_id:
+            for role in roles:
+                if role.user_id == id:
+                    list.append(self.get_role(role.role_id))
+        if group_id:
+            for role in roles:
+                if role.group_id == id:
+                    list.append(self.get_role(role.role_id))
+        return list
+
+    def create_grant(self, role_id, user_id=None, group_id=None,
+                     project_id=None):
+        self.get_role(role_id)
+        if project_id:
+            self.get_project(project_id)
+        if user_id:
+            self.get_user(user_id)
+        if group_id:
+            self.get_group(group_id)
+
+        self.role.grant_role(role_id, user_id, group_id, project_id)
+
+    def delete_grant(self, role_id, user_id=None, group_id=None,
+                     project_id=None):
+        if user_id:
+            self.get_user(user_id)
+            id = user_id
+        if group_id:
+            self.get_group(group_id)
+            id = group_id
+        if project_id:
+            self.get_project(project_id)
+        self.role.delete_grant(role_id, user_id, group_id,
+                               project_id)
+
+    def list_user_projects(self, user_id):
+        self.get_user(user_id)
+        return [p['id'] for p in self.project.get_user_projects(user_id)]
+
 
 # TODO(termie): remove this and move cross-api calls into driver
 class ApiShim(object):
@@ -752,8 +804,102 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                     user_id=user_id,
                     role_id=role_id,
                     tenant_id=tenant_id))
-
         return res
+
+    def get_grant(self, user_id=None, group_id=None,
+                  project_id=None):
+        dn = self.project_api._id_to_dn(project_id)
+        conn = self.get_connection()
+        query = '(objectClass=%s)' % self.object_class
+
+        try:
+            roles = conn.search_s(dn, ldap.SCOPE_ONELEVEL, query)
+        except ldap.NO_SUCH_OBJECT:
+            return []
+        res = []
+        for role_dn, attrs in roles:
+            member_dns = attrs[self.member_attribute]
+            for member_dn in member_dns:
+                if user_id:
+                    if self.use_dumb_member and member_dn == self.dumb_member:
+                        continue
+                    try:
+                        user_id = self.user_api._dn_to_id(member_dn)
+                        role_id = self._dn_to_id(role_dn)
+                        res.append(UserRoleAssociation(user_id=user_id,
+                                                       role_id=role_id,
+                                                       tenant_id=project_id))
+                    except exception.UserNotFound:
+                        pass
+
+                if group_id:
+                    try:
+                        group_id = self.group_api._dn_to_id(member_dn)
+                        role_id = self._dn_to_id(role_dn)
+                        res.append(GroupRoleAssociation(group_id=group_id,
+                                                        role_id=role_id,
+                                                        tenant_id=project_id))
+                    except exception.GroupNotFound:
+                        pass
+        return res
+
+    def delete_grant(self, role_id, user_id, group_id, project_id):
+        dn = None
+        role_dn = self._subrole_id_to_dn(role_id, project_id)
+
+        conn = self.get_connection()
+        if user_id:
+            dn = self.user_api._id_to_dn(user_id)
+        if group_id:
+            dn = self.group_api._id_to_dn(group_id)
+
+        try:
+            conn.modify_s(role_dn, [(ldap.MOD_DELETE,
+                                     self.member_attribute, dn)])
+        except ldap.NO_SUCH_ATTRIBUTE:
+            raise exception.NotFound(self.member_attribute)
+
+    def grant_role(self, role_id, user_id=None, group_id=None,
+                   project_id=None):
+        role_dn = None
+        dn = None
+        member_id = None
+        role_dn = self._subrole_id_to_dn(role_id, project_id)
+        if user_id:
+            member_id = user_id
+            dn = self.user_api._id_to_dn(user_id)
+        if group_id:
+            member_id = group_id
+            dn = self.group_api._id_to_dn(group_id)
+
+        conn = self.get_connection()
+
+        try:
+            conn.modify_s(role_dn, [(ldap.MOD_ADD,
+                                     self.member_attribute, dn)])
+        except ldap.TYPE_OR_VALUE_EXISTS:
+            msg = _(('%s already has role %s in %s')
+                    % (member_id, role_id, project_id))
+            raise exception.Conflict(type='role grant', details=msg)
+        except ldap.NO_SUCH_OBJECT:
+            if project_id is None or self.get(role_id) is None:
+                raise Exception(_('Role %s not found') % (role_id))
+
+            attrs = [('objectClass', [self.object_class]),
+                     (self.member_attribute, [dn])]
+
+            if self.use_dumb_member:
+                attrs[1][1].append(self.dumb_member)
+            conn.add_s(role_dn, attrs)
+
+        if user_id:
+            return UserRoleAssociation(role_id=role_id,
+                                       user_id=id,
+                                       tenant_id=project_id)
+        if group_id:
+            return GroupRoleAssociation(group_id=group_id,
+                                        role_id=role_id,
+                                        tenant_id=project_id)
 
     def list_global_roles_for_user(self, user_id):
         user_dn = self.user_api._id_to_dn(user_id)
@@ -838,24 +984,70 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
             pass
         super(RoleApi, self).delete(id)
 
-# TODO(spzala): this is only placeholder for group and domain role support
-# which will be added under bug 1101287
-    def roles_delete_subtree_by_type(self, id, type):
+    def delete_group(self, role_id, group_id, project_id=None):
+        role_dn = self._subrole_id_to_dn(role_id, project_id)
         conn = self.get_connection()
-        query = '(objectClass=%s)' % self.object_class
-        dn = None
-        if type == 'Group':
-            dn = self.group_api._id_to_dn(id)
-        if type == 'Domain':
-            dn = self.domain_api._id_to_dn(id)
-        if dn:
+        group_dn = self.group_api._id_to_dn(group_id)
+        try:
+            conn.modify_s(role_dn, [(ldap.MOD_DELETE,
+                                     self.member_attribute, group_dn)])
+        except ldap.NO_SUCH_OBJECT:
+            if self.get(role_id) is None:
+                raise exception.RoleNotFound(role_id=role_id)
+            attrs = [('objectClass', [self.object_class]),
+                     (self.member_attribute, [group_dn])]
+
+            if self.use_dumb_member:
+                attrs[1][1].append(self.dumb_member)
+            conn.add_s(role_dn, attrs)
+
+        except ldap.NO_SUCH_ATTRIBUTE:
+            raise exception.GroupNotFound(group_id=group_id)
+
+    def list_global_roles_for_group(self, group_id):
+        group_dn = self.group_api._id_to_dn(group_id)
+        roles = self.get_all('(%s=%s)' % (self.member_attribute, group_dn))
+        return [GroupRoleAssociation(
+                role_id=role.id,
+                group_id=group_id) for role in roles]
+
+    def list_project_roles_for_group(self, group_id, project_id=None):
+        conn = self.get_connection()
+        group_dn = self.group_api._id_to_dn(group_id)
+        query = '(&(objectClass=%s)(%s=%s))' % (self.object_class,
+                                                self.member_attribute,
+                                                group_dn)
+
+        if project_id is not None:
+            dn = self.project_api._id_to_dn(project_id)
             try:
-                roles = conn.search_s(dn, ldap.SCOPE_ONELEVEL,
-                                      query, ['%s' % '1.1'])
-                for role_dn, _ in roles:
-                    conn.delete_s(role_dn)
+                roles = conn.search_s(dn, ldap.SCOPE_ONELEVEL, query)
             except ldap.NO_SUCH_OBJECT:
-                pass
+                return []
+
+            res = []
+            for role_dn, _ in roles:
+                role_id = self._dn_to_id(role_dn)
+                res.append(GroupRoleAssociation(
+                    group_id=group_id,
+                    role_id=role_id,
+                    tenant_id=project_id))
+        else:
+            try:
+                roles = conn.search_s(self.project_api.tree_dn,
+                                      ldap.SCOPE_SUBTREE, query)
+            except ldap.NO_SUCH_OBJECT:
+                return []
+
+            res = []
+            if roles is not None:
+                for role_dn, _ in roles:
+                    role_id = self._dn_to_id(role_dn)
+                    project_id = ldap.dn.str2dn(role_dn)[1][0][1]
+                    res.append(GroupRoleAssociation(group_id=group_id,
+                                                    role_id=role_id,
+                                                    tenant_id=project_id))
+        return res
 
 
 class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
@@ -895,11 +1087,16 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
         return super(GroupApi, self).create(data)
 
     def delete(self, id):
-        if self.subtree_delete_enabled:
-            super(GroupApi, self).deleteTree(id)
-        else:
-            self.role_api.roles_delete_subtree_by_type(id, 'Group')
-            super(GroupApi, self).delete(id)
+        super(GroupApi, self).delete(id)
+
+        for ref in self.role_api.list_global_roles_for_group(id):
+            self.role_api.delete_group(role_id=ref.role_id,
+                                       group_id=ref.group_id,
+                                       project_id=ref.project_id)
+        for ref in self.role_api.list_project_roles_for_group(id):
+            self.role_api.delete_group(role_id=ref.role_id,
+                                       group_id=ref.group_id,
+                                       project_id=ref.project_id)
 
     def update(self, id, values):
         old_obj = self.get(id)
