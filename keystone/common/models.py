@@ -112,11 +112,11 @@ class Group(Model):
     Optional keys:
 
         description
-
+        enabled (bool, default True)
     """
 
     required_keys = ('id', 'name', 'domain_id')
-    optional_keys = ('description',)
+    optional_keys = ('description', 'enabled')
 
 
 class Project(Model):
