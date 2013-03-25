@@ -374,7 +374,8 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     # Refer to bug 1136403 for more detail.
     def test_group_crud(self):
         group = {'id': uuid.uuid4().hex, 'domain_id': uuid.uuid4().hex,
-                 'name': uuid.uuid4().hex, 'description': uuid.uuid4().hex}
+                 'name': uuid.uuid4().hex,
+                 'description': uuid.uuid4().hex}
         self.identity_api.create_group(group['id'], group)
         group_ref = self.identity_api.get_group(group['id'])
         self.assertDictEqual(group_ref, group)
@@ -404,30 +405,6 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                           self.identity_api.get_domain,
                           domain['id'])
 
-    def test_get_role_grant_by_user_and_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_get_role_grants_for_user_and_project_404(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_add_role_grant_to_user_and_project_404(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_remove_role_grant_from_user_and_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_get_and_remove_role_grant_by_group_and_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_get_and_remove_role_grant_by_group_and_domain(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_get_and_remove_role_grant_by_user_and_domain(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_get_and_remove_correct_role_grant_from_a_mix(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
     def test_project_crud(self):
         # NOTE(topol): LDAP implementation does not currently support the
         #              updating of a project name so this method override
@@ -455,36 +432,6 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                           self.identity_api.get_project,
                           project['id'])
 
-    def test_get_and_remove_role_grant_by_group_and_cross_domain(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_get_and_remove_role_grant_by_user_and_cross_domain(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_role_grant_by_group_and_cross_domain_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_role_grant_by_user_and_cross_domain_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_multi_role_grant_by_user_group_on_project_domain(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_delete_role_with_user_and_group_grants(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_delete_user_with_group_project_domain_links(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_delete_group_with_user_project_domain_links(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_list_user_projects(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
-    def test_get_project_users(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
-
     def test_create_duplicate_user_name_in_different_domains(self):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
 
@@ -511,9 +458,6 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
 
     def test_move_project_between_domains_with_clashing_names_fails(self):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
-
-    def test_get_roles_for_user_and_domain(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):

@@ -985,7 +985,7 @@ class IdentityTests(object):
         domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_domain(domain2['id'], domain2)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'domain_id': domain1['id']}
         self.identity_man.create_group({}, group1['id'], group1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': domain2['id']}
@@ -1077,7 +1077,7 @@ class IdentityTests(object):
                  'enabled': True}
         self.identity_man.create_user({}, user1['id'], user1)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'domain_id': domain1['id']}
         self.identity_man.create_group({}, group1['id'], group1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': domain1['id']}
@@ -1210,7 +1210,7 @@ class IdentityTests(object):
                  'enabled': True}
         self.identity_man.create_user({}, user1['id'], user1)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'domain_id': domain1['id']}
         self.identity_man.create_group({}, group1['id'], group1)
         self.identity_api.create_grant(user_id=user1['id'],
                                        project_id=project1['id'],
@@ -1258,7 +1258,7 @@ class IdentityTests(object):
                  'enabled': True}
         self.identity_man.create_user({}, user1['id'], user1)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'domain_id': domain1['id']}
         self.identity_man.create_group({}, group1['id'], group1)
         self.identity_api.create_grant(group_id=group1['id'],
                                        project_id=project1['id'],
@@ -2144,7 +2144,7 @@ class TrustTests(object):
         self.assertTrue(timeutils.normalize_time(trust_data['expires_at']) >
                         timeutils.utcnow())
 
-        self.assertEquals([{'id':'member'},
+        self.assertEquals([{'id': 'member'},
                            {'id': 'other'},
                            {'id': 'browser'}], trust_data['roles'])
 
