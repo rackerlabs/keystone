@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//1LI\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-25T20:28:40Z",
+      "side": 1,
+      "message": "suggest change ldap to ``ldap``",
+      "revId": "0a68149d66e27e4f03e0936e5dc92babcea0c8d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
