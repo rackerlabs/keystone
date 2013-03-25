@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//1Ts\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-25T19:49:25Z",
+      "side": 1,
+      "message": "remove None from these.",
+      "revId": "8e2ddd8d9db80b3491fc09a0bcfad46fc8f4d8ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//1SM\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-25T19:49:25Z",
+      "side": 1,
+      "message": "we should be referring to tenants as projects.",
+      "revId": "8e2ddd8d9db80b3491fc09a0bcfad46fc8f4d8ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//1SQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-25T19:49:25Z",
+      "side": 1,
+      "message": "don\u0027t forget domains.",
+      "revId": "8e2ddd8d9db80b3491fc09a0bcfad46fc8f4d8ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//1TI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-25T19:49:25Z",
+      "side": 1,
+      "message": "change to \"except Except:\" or something more specific, see https://github.com/openstack/keystone/blame/master/HACKING.rst#L16",
+      "revId": "8e2ddd8d9db80b3491fc09a0bcfad46fc8f4d8ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//1Sc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-25T19:49:25Z",
+      "side": 1,
+      "message": "remove the +s since they aren\u0027t necessary.",
+      "revId": "8e2ddd8d9db80b3491fc09a0bcfad46fc8f4d8ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//1S4\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-25T19:49:25Z",
+      "side": 1,
+      "message": "The description of the config options say \"map internal keystone attributes to ldap attributes\" and this says \"\u003cldap_attribute\u003e:\u003ckeystone_attribute\u003e\"... are the docs saying that this should be \u003ckeystone_attribute\u003e:\u003cldap_attribute\u003e ?",
+      "revId": "8e2ddd8d9db80b3491fc09a0bcfad46fc8f4d8ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//1R8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-25T19:49:25Z",
+      "side": 1,
+      "message": "change \u0027\u0027 to \u0027, \u0027 ?",
+      "revId": "8e2ddd8d9db80b3491fc09a0bcfad46fc8f4d8ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//1Qw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-03-25T19:49:25Z",
+      "side": 1,
+      "message": "should make sure that there\u0027s only 1 instance of each attribute name.",
+      "revId": "8e2ddd8d9db80b3491fc09a0bcfad46fc8f4d8ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
