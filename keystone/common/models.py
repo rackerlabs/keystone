@@ -112,7 +112,6 @@ class Group(Model):
     Optional keys:
 
         description
-
     """
 
     required_keys = ('id', 'name', 'domain_id')
