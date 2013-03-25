@@ -405,6 +405,53 @@ class Identity(identity.Driver):
     def list_domains(self):
         return [DEFAULT_DOMAIN]
 
+    def list_grants(self, user_id=None, group_id=None, project_id=None):
+        if user_id:
+            self.get_user(user_id)
+        if group_id:
+            self.get_group(group_id)
+        if project_id:
+            self.get_project(project_id)
+
+        roles = self.role.get_grant(user_id, group_id, project_id)
+        grant = []
+        if user_id:
+            for role in roles:
+                if role.user_id == user_id:
+                    grant.append(self.get_role(role.role_id))
+        if group_id:
+            for role in roles:
+                if role.group_id == group_id:
+                    grant.append(self.get_role(role.role_id))
+        return grant
+
+    def create_grant(self, role_id, user_id=None, group_id=None,
+                     project_id=None):
+        self.get_role(role_id)
+        if user_id:
+            self.get_user(user_id)
+        if group_id:
+            self.get_group(group_id)
+        if project_id:
+            self.get_project(project_id)
+
+        self.role.grant_role(role_id, user_id, group_id, project_id)
+
+    def delete_grant(self, role_id, user_id=None, group_id=None,
+                     project_id=None):
+        if user_id:
+            self.get_user(user_id)
+        if group_id:
+            self.get_group(group_id)
+        if project_id:
+            self.get_project(project_id)
+        self.role.delete_grant(role_id, user_id, group_id,
+                               project_id)
+
+    def list_user_projects(self, user_id):
+        self.get_user(user_id)
+        return [p['id'] for p in self.project.get_user_projects(user_id)]
+
 
 # TODO(termie): turn this into a data object and move logic to driver
 class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
@@ -681,13 +728,135 @@ class RoleApi(common_ldap.BaseLdap):
                 if self.use_dumb_member and user_dn == self.dumb_member:
                     continue
                 res.append(UserRoleAssociation(
+<<<<<<< HEAD:keystone/identity/backends/ldap.py
                     user_dn=user_dn,
                     role_dn=role_dn,
                     tenant_dn=tenant_dn))
-
+=======
+                    user_id=user_id,
+                    role_id=role_id,
+                    tenant_id=tenant_id))
         return res
 
+    def get_grant(self, user_id=None, group_id=None, project_id=None):
+        dn = None
+        if user_id:
+            dn = self.user_api._id_to_dn(user_id)
+        if group_id:
+            dn = self.group_api._id_to_dn(group_id)
+
+        conn = self.get_connection()
+        query = '(&(objectClass=%s)(%s=%s))' % (self.object_class,
+                                                self.member_attribute,
+                                                dn)
+
+        res = []
+        if project_id:
+            project_dn = self.project_api._id_to_dn(project_id)
+            try:
+                roles = conn.search_s(project_dn, ldap.SCOPE_ONELEVEL, query)
+            except ldap.NO_SUCH_OBJECT:
+                LOG.warning(_('%s does not exist in the directory.')
+                            % (project_dn))
+                return res
+>>>>>>> ae96830... LDAP support for V3 role grants:keystone/identity/backends/ldap/core.py
+
+            for role_dn, _ in roles:
+                if user_id:
+                    role_id = self._dn_to_id(role_dn)
+                    res.append(UserRoleAssociation(user_id=user_id,
+                                                   role_id=role_id,
+                                                   tenant_id=project_id))
+                if group_id:
+                    role_id = self._dn_to_id(role_dn)
+                    res.append(GroupRoleAssociation(group_id=group_id,
+                                                    role_id=role_id,
+                                                    tenant_id=project_id))
+            return res
+
+            try:
+                roles = conn.search_s(self.project_api.tree_dn,
+                                      ldap.SCOPE_SUBTREE, query)
+            except ldap.NO_SUCH_OBJECT:
+                LOG.warning(_('%s does not exist in the directory.')
+                            % (self.project_api.tree_dn))
+                return res
+
+            if roles is not None:
+                for role_dn, _ in roles:
+                    role_id = self._dn_to_id(role_dn)
+                    project_id = ldap.dn.str2dn(role_dn)[1][0][1]
+                    if user_id:
+                        res.append(UserRoleAssociation(user_id=user_id,
+                                                       role_id=role_id,
+                                                       tenant_id=project_id))
+                    if group_id:
+                        res.append(GroupRoleAssociation(group_id=group_id,
+                                                        role_id=role_id,
+                                                        tenant_id=project_id))
+        return res
+
+<<<<<<< HEAD:keystone/identity/backends/ldap.py
     def list_global_roles_for_user(self, user_dn):
+=======
+    def delete_grant(self, role_id, user_id=None, group_id=None,
+                     project_id=None):
+        dn = None
+        role_dn = self._subrole_id_to_dn(role_id, project_id)
+
+        conn = self.get_connection()
+        if user_id:
+            dn = self.user_api._id_to_dn(user_id)
+        if group_id:
+            dn = self.group_api._id_to_dn(group_id)
+
+        try:
+            conn.modify_s(role_dn, [(ldap.MOD_DELETE,
+                                     self.member_attribute, dn)])
+        except ldap.NO_SUCH_ATTRIBUTE:
+            raise exception.NotFound(self.member_attribute)
+
+    def grant_role(self, role_id, user_id=None, group_id=None,
+                   project_id=None):
+        dn = None
+        member_id = None
+        role_dn = self._subrole_id_to_dn(role_id, project_id)
+        if user_id:
+            member_id = user_id
+            dn = self.user_api._id_to_dn(user_id)
+        if group_id:
+            member_id = group_id
+            dn = self.group_api._id_to_dn(group_id)
+
+        conn = self.get_connection()
+
+        try:
+            conn.modify_s(role_dn, [(ldap.MOD_ADD,
+                                     self.member_attribute, dn)])
+        except ldap.TYPE_OR_VALUE_EXISTS:
+            msg = (_('%(member_id)s already has role %(role_id)s '
+                     ' in %(project_id)s')
+                   % {'member_id': member_id, 'role_id': role_id,
+                      'project_id': project_id})
+            raise exception.Conflict(type='role grant', details=msg)
+        except ldap.NO_SUCH_OBJECT:
+            if not project_id or not self.get(role_id):
+                raise Exception(_('Role %s not found') % (role_id))
+
+            conn.add_s(role_dn, self._calc_create_member_attrs(dn))
+
+        if user_id:
+            return UserRoleAssociation(role_id=role_id,
+                                       user_id=id,
+                                       tenant_id=project_id)
+        if group_id:
+            return GroupRoleAssociation(group_id=group_id,
+                                        role_id=role_id,
+                                        tenant_id=project_id)
+
+    def list_global_roles_for_user(self, user_id):
+        user_dn = self.user_api._id_to_dn(user_id)
+>>>>>>> ae96830... LDAP support for V3 role grants:keystone/identity/backends/ldap/core.py
         roles = self.get_all('(%s=%s)' % (self.member_attribute, user_dn))
         return [UserRoleAssociation(
                 role_dn=role.dn,
@@ -756,6 +925,39 @@ class RoleApi(common_ldap.BaseLdap):
             pass
         super(RoleApi, self).delete(id)
 
+<<<<<<< HEAD:keystone/identity/backends/ldap.py
+=======
+    def delete_group(self, role_id, group_id, project_id=None):
+        role_dn = self._subrole_id_to_dn(role_id, project_id)
+        conn = self.get_connection()
+        group_dn = self.group_api._id_to_dn(group_id)
+        try:
+            conn.modify_s(role_dn, [(ldap.MOD_DELETE,
+                                     self.member_attribute, group_dn)])
+        except ldap.NO_SUCH_OBJECT:
+            if self.get(role_id) is None:
+                raise exception.RoleNotFound(role_id=role_id)
+
+            conn.add_s(role_dn, self._calc_create_member_attrs(group_dn))
+
+        except ldap.NO_SUCH_ATTRIBUTE:
+            raise exception.GroupNotFound(group_id=group_id)
+
+    def list_global_roles_for_group(self, group_id):
+        group_dn = self.group_api._id_to_dn(group_id)
+        roles = self.get_all('(%s=%s)' % (self.member_attribute, group_dn))
+        return [GroupRoleAssociation(
+                role_id=role.id,
+                group_id=group_id) for role in roles]
+
+    def _calc_create_member_attrs(self, dn):
+        member_attrs = [dn]
+        if self.use_dumb_member:
+            member_attrs.append(self.dumb_member)
+        return [('objectClass', [self.object_class]),
+                (self.member_attribute, member_attrs)]
+
+>>>>>>> ae96830... LDAP support for V3 role grants:keystone/identity/backends/ldap/core.py
 
 class GroupApi(common_ldap.BaseLdap):
     DEFAULT_OU = 'ou=UserGroups'
@@ -793,6 +995,7 @@ class GroupApi(common_ldap.BaseLdap):
         return super(GroupApi, self).create(data)
 
     def delete(self, id):
+<<<<<<< HEAD:keystone/identity/backends/ldap.py
         if self.subtree_delete_enabled:
             super(GroupApi, self).deleteTree(id)
         else:
@@ -813,6 +1016,18 @@ class GroupApi(common_ldap.BaseLdap):
                     pass
 
             super(GroupApi, self).delete(id)
+=======
+        super(GroupApi, self).delete(id)
+
+        for ref in self.role_api.list_global_roles_for_group(id):
+            self.role_api.delete_group(role_id=ref.role_id,
+                                       group_id=ref.group_id,
+                                       project_id=ref.project_id)
+        for ref in self.role_api.get_grant(group_id=id):
+            self.role_api.delete_group(role_id=ref.role_id,
+                                       group_id=ref.group_id,
+                                       project_id=ref.project_id)
+>>>>>>> ae96830... LDAP support for V3 role grants:keystone/identity/backends/ldap/core.py
 
     def update(self, id, values):
         old_obj = self.get(id)
