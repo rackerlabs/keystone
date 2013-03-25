@@ -34,6 +34,9 @@ LDAP_DEREF = {'always': ldap.DEREF_ALWAYS,
               'finding': ldap.DEREF_FINDING,
               'never': ldap.DEREF_NEVER,
               'searching': ldap.DEREF_SEARCHING}
+LDAP_TLS_CERTS = {'never': ldap.OPT_X_TLS_NEVER,
+                  'demand': ldap.OPT_X_TLS_DEMAND,
+                  'allow': ldap.OPT_X_TLS_ALLOW}
 
 
 def py2ldap(val):
@@ -73,6 +76,13 @@ def parse_deref(opt):
     except KeyError:
         raise ValueError((_('Invalid LDAP deref option: %s. Choose one of: ') %
                          opt) + ', '.join(LDAP_DEREF.keys()))
+        
+def parse_tls_cert(opt):
+    try:
+        return LDAP_TLS_CERTS[opt]
+    except KeyError:
+        raise ValueError((_('Invalid LDAP tls certs option: %s. Choose one of: ') %
+                         opt) + ', '.join(LDAP_TLS_CERTS.keys()))
 
 
 def ldap_scope(scope):
@@ -106,6 +116,11 @@ class BaseLdap(object):
         self.LDAP_SCOPE = ldap_scope(conf.ldap.query_scope)
         self.alias_dereferencing = parse_deref(conf.ldap.alias_dereferencing)
         self.page_size = conf.ldap.page_size
+        self.use_tls = conf.ldap.use_tls
+        self.use_tls_cacertfile = conf.ldap.use_tls_cacertfile
+        self.use_tls_cacertdir = conf.ldap.use_tls_cacertdir
+        self.tls_req_cert = parse_tls_cert(conf.ldap.use_tls_req_cert)
+      
 
         if self.options_name is not None:
             self.suffix = conf.ldap.suffix
@@ -157,7 +172,13 @@ class BaseLdap(object):
         else:
             conn = LdapWrapper(self.LDAP_URL,
                                self.page_size,
-                               alias_dereferencing=self.alias_dereferencing)
+                               alias_dereferencing=self.alias_dereferencing,
+                               use_tls=self.use_tls,
+                               use_tls_cacertfile=self.use_tls_cacertfile,
+                               use_tls_cacertdir=self.use_tls_cacertdir,
+                               tls_cacertfile=self.tls_cacertfile,
+                               tls_cacertdir=self.tls_cacertdir,
+                               tls_req_cert=self.tls_req_cert)
 
         if user is None:
             user = self.LDAP_USER
@@ -363,9 +384,34 @@ class BaseLdap(object):
 
 
 class LdapWrapper(object):
-    def __init__(self, url, page_size, alias_dereferencing=None):
+    def __init__(self, url, page_size, alias_dereferencing=None, 
+                 use_tls=False,
+                 use_tls_cacertfile=False,
+                 use_tls_cacertdir=False,
+                 tls_cacertfile=None,
+                 tls_cacertdir=None,
+                 tls_req_cert='demand'):
         LOG.debug(_("LDAP init: url=%s"), url)
+        LOG.debug(_("LDAP init: use_tls=%s"), use_tls)
+        LOG.debug(_("LDAP init: use_tls_cacertfile=%s"), use_tls_cacertfile)
+        LOG.debug(_("LDAP init: use_tls_cacertdir=%s"), use_tls_cacertdir)
+        LOG.debug(_("LDAP init: tls_cacertfile=%s"), tls_cacertfile)
+        LOG.debug(_("LDAP init: tls_cacertdir=%s"), tls_cacertdir)
+        LOG.debug(_("LDAP init: tls_req_cert=%s"), tls_req_cert)
+        if use_tls is True:
+            if use_tls_cacertfile is True and tls_cacertfile is not None:
+                ldap.set_option(ldap.OPT_X_TLS_CACERTFILE, tls_cacertfile)
+            if use_tls_cacertdir is True and tls_cacertdir is not None:
+                ldap.set_option(ldap.OPT_X_TLS_CACERTDIR, tls_cacertdir)
+            if tls_req_cert in LDAP_TLS_CERTS.keys():
+                ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, 
+                                LDAP_TLS_CERTS[tls_req_cert])
+
         self.conn = ldap.initialize(url)
+
+        if use_tls is True:
+            self.conn.start_tls_s()
+       
         if alias_dereferencing is not None:
             self.conn.set_option(ldap.OPT_DEREF, alias_dereferencing)
         self.page_size = page_size
