@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//04A\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1561
+      },
+      "writtenOn": "2013-03-26T01:21:30Z",
+      "side": 1,
+      "message": "Can you expand this commit message?\n\nIt sounds like you copied this code?  Where from?  How is it licensed?  I don\u0027t see any credit given for where it was copied from ... a reference would be nice, if anyone ever wanted to go look for changes in the original code.",
+      "revId": "1725511e8a5bc521809d68e084f6f5e3aa0bbea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
