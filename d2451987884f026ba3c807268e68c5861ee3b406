@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//04o\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1561
+      },
+      "writtenOn": "2013-03-26T01:12:34Z",
+      "side": 1,
+      "message": "typo here  s/fro/from/\n\nAlso, I don\u0027t think the indention is really necessary ...",
+      "revId": "d2451987884f026ba3c807268e68c5861ee3b406",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//04k\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1561
+      },
+      "writtenOn": "2013-03-26T01:12:34Z",
+      "side": 1,
+      "message": "I\u0027m generally not a fan of adding code that\u0027s not needed by anything in the tree.\n\nHowever, if this were to go in, I think it would be good to add a comment with this line of code that explains why it\u0027s here.  If it\u0027s not used anywhere in the code, someone could easily come around later and remove it as unused.",
+      "revId": "d2451987884f026ba3c807268e68c5861ee3b406",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
