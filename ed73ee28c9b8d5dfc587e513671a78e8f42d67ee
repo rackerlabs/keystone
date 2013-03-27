@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//zJI\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-27T02:37:31Z",
+      "side": 1,
+      "message": "Do we need to make similar changes for deserialization?",
+      "revId": "ed73ee28c9b8d5dfc587e513671a78e8f42d67ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
