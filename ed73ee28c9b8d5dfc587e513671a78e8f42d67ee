@@ -16,6 +16,24 @@
       "revId": "ed73ee28c9b8d5dfc587e513671a78e8f42d67ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//yqU\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-27T12:18:31Z",
+      "side": 1,
+      "message": "these exceptions are specifically necessary for serializing service catalogs, which never get deserialized by the server, so i\u0027d vote no",
+      "parentUuid": "AAAAOH//zJI\u003d",
+      "revId": "ed73ee28c9b8d5dfc587e513671a78e8f42d67ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
