@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//wsc\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-28T16:44:12Z",
+      "side": 1,
+      "message": "it\u0027s nearly inconsequential here, but a reference to common\u0027s method should just be copied in rather than actually wrapping the function, so...\n\n  setup_authentication \u003d config.setup_authentication",
+      "revId": "2e36c487b4ca0d0a14dd6315bd9731b56c80ecf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//wsk\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 799,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-03-28T16:44:12Z",
+      "side": 1,
+      "message": "awesome",
+      "revId": "2e36c487b4ca0d0a14dd6315bd9731b56c80ecf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
