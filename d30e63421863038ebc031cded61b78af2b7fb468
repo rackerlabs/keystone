@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//vL0\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-03-29T22:31:37Z",
+      "side": 1,
+      "message": "Is the swapping \u0027/\u0027 with \u0027-\u0027 hack really necessary?",
+      "revId": "d30e63421863038ebc031cded61b78af2b7fb468",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
