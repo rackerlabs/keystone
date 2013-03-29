@@ -52,6 +52,24 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             body={'domain': ref})
         return self.assertValidDomainResponse(r, ref)
 
+    def test_create_domain_case_sensitivity(self):
+        """POST /domains"""
+        ref = self.new_domain_ref()
+
+        # ensure the name is lowercase
+        ref['name'] = ref['name'].lower()
+        r = self.post(
+            '/domains',
+            body={'domain': ref})
+        self.assertValidDomainResponse(r, ref)
+
+        # ensure the name is uppercase
+        ref['name'] = ref['name'].upper()
+        r = self.post(
+            '/domains',
+            body={'domain': ref})
+        self.assertValidDomainResponse(r, ref)
+
     def test_list_domains(self):
         """GET /domains"""
         r = self.get('/domains')

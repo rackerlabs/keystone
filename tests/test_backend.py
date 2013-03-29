@@ -1429,6 +1429,19 @@ class IdentityTests(object):
                           self.identity_api.delete_role,
                           uuid.uuid4().hex)
 
+    def test_create_project_case_sensitivity(self):
+        # create a ref with a lowercase name
+        ref = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex.lower(),
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.identity_man.create_project({}, ref['id'], ref)
+
+        # assign a new ID with the same name, but this time in uppercase
+        ref['id'] = uuid.uuid4().hex
+        ref['name'] = ref['name'].upper()
+        self.identity_man.create_project({}, ref['id'], ref)
+
     def test_create_project_long_name_fails(self):
         tenant = {'id': 'fake1', 'name': 'a' * 65,
                   'domain_id': DEFAULT_DOMAIN_ID}
@@ -1494,6 +1507,19 @@ class IdentityTests(object):
                           self.identity_api.update_project,
                           tenant['id'],
                           tenant)
+
+    def test_create_user_case_sensitivity(self):
+        # create a ref with a lowercase name
+        ref = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex.lower(),
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.identity_man.create_user({}, ref['id'], ref)
+
+        # assign a new ID with the same name, but this time in uppercase
+        ref['id'] = uuid.uuid4().hex
+        ref['name'] = ref['name'].upper()
+        self.identity_man.create_user({}, ref['id'], ref)
 
     def test_create_user_long_name_fails(self):
         user = {'id': 'fake1', 'name': 'a' * 65,
@@ -1974,6 +2000,18 @@ class IdentityTests(object):
         self.assertRaises(exception.DomainNotFound,
                           self.identity_api.get_domain,
                           domain['id'])
+
+    def test_create_domain_case_sensitivity(self):
+        # create a ref with a lowercase name
+        ref = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex.lower()}
+        self.identity_man.create_domain({}, ref['id'], ref)
+
+        # assign a new ID with the same name, but this time in uppercase
+        ref['id'] = uuid.uuid4().hex
+        ref['name'] = ref['name'].upper()
+        self.identity_man.create_domain({}, ref['id'], ref)
 
     def test_user_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
