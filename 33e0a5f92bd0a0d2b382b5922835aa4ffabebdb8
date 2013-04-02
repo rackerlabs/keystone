@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//snQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-02T16:12:04Z",
+      "side": 1,
+      "message": "Would it be better to not have this option, and have tls_cacertfile default to None, where None indicates to not use the certfile?\n\nSame with use_tls_cacertdir and tls_certdir.\n\nAs someone looking at a config file trying to figure out why TLS isn\u0027t working, it would be a lot more obvious to only have 1 option.",
+      "revId": "33e0a5f92bd0a0d2b382b5922835aa4ffabebdb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//snw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-02T16:12:04Z",
+      "side": 1,
+      "message": "imports should remain in alphabetical order, so move this line after 19.",
+      "revId": "33e0a5f92bd0a0d2b382b5922835aa4ffabebdb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//snk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-02T16:12:04Z",
+      "side": 1,
+      "message": "remove \"is True\".",
+      "revId": "33e0a5f92bd0a0d2b382b5922835aa4ffabebdb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//sng\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-02T16:12:04Z",
+      "side": 1,
+      "message": "remove ()s since this is not C or Java.",
+      "revId": "33e0a5f92bd0a0d2b382b5922835aa4ffabebdb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//snY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-02T16:12:04Z",
+      "side": 1,
+      "message": "remove is True.\n\nThis comment applies to all the is not True, is True throughout this part, e.g., line 419 too.",
+      "revId": "33e0a5f92bd0a0d2b382b5922835aa4ffabebdb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//snE\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-02T16:12:04Z",
+      "side": 1,
+      "message": "(note to self) There must be a better exception for this... configuration error or something.",
+      "revId": "33e0a5f92bd0a0d2b382b5922835aa4ffabebdb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//snA\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-02T16:12:04Z",
+      "side": 1,
+      "message": "extra ( here?",
+      "revId": "33e0a5f92bd0a0d2b382b5922835aa4ffabebdb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//sms\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-02T16:12:04Z",
+      "side": 1,
+      "message": "consider the else leg... should it log that the tls_req_cert is invalid, or maybe should have asserted earlier?",
+      "revId": "33e0a5f92bd0a0d2b382b5922835aa4ffabebdb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
