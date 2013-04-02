@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: Thierry Carrez <thierry@openstack.org>
+Code-Review+2: Thierry Carrez <thierry@openstack.org>
+Code-Review+1: termie <termie@openstack.org>
+Submitted-by: Jenkins
+Submitted-at: Tue, 02 Apr 2013 07:52:37 +0000
+Reviewed-on: https://review.openstack.org/25833
+Project: openstack/keystone
+Branch: refs/heads/milestone-proposed
