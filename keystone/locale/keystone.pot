@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: keystone "
-"jenkins.keystone.propose.translation.update.148\n"
+"jenkins.keystone.propose.translation.update.159\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-03-22 00:02+0000\n"
+"POT-Creation-Date: 2013-04-02 00:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,19 +79,19 @@ msgstr ""
 msgid "User not found"
 msgstr ""
 
-#: keystone/auth/token_factory.py:78
+#: keystone/auth/token_factory.py:81
 msgid "User have no access to project"
 msgstr ""
 
-#: keystone/auth/token_factory.py:93
+#: keystone/auth/token_factory.py:96
 msgid "User have no access to domain"
 msgstr ""
 
-#: keystone/auth/token_factory.py:264 keystone/token/controllers.py:121
+#: keystone/auth/token_factory.py:314 keystone/token/controllers.py:121
 msgid "Unable to sign token."
 msgstr ""
 
-#: keystone/auth/token_factory.py:267 keystone/token/controllers.py:124
+#: keystone/auth/token_factory.py:317 keystone/token/controllers.py:124
 #, python-format
 msgid "Invalid value for token_format: %s.  Allowed values are PKI or UUID."
 msgstr ""
