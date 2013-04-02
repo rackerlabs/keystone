@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//sUI\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-02T20:28:22Z",
+      "side": 1,
+      "message": "GET /users/{user_id}/projects is part of the core auth flow and has nothing to do with the rest of the patch -- how was this not implemented before?\n\nand where is GET /users/{user_id}/domains ?\n\nthis looks like it can be done in the manager though, so maybe i\u0027m just missing something",
+      "revId": "4d7439d4048a5ffb29e4a035a7752501d889219f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
