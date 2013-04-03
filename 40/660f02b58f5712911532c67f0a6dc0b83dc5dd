@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Code-Review+1: Dolph Mathews <dolph.mathews@gmail.com>
+Approved+1: Joe Heck <heckj@mac.com>
+Code-Review+2: Joe Heck <heckj@mac.com>
+Approved+1: Chuck Short <chuck.short@canonical.com>
+Code-Review+2: Chuck Short <chuck.short@canonical.com>
+Code-Review+1: Nathanael I Burton <nathanael.i.burton.work@gmail.com>
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Code-Review+1: ayoung <ayoung@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 03 Apr 2013 15:22:45 +0000
+Reviewed-on: https://review.openstack.org/23564
+Project: openstack/keystone
+Branch: refs/heads/stable/folsom
