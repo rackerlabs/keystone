@@ -40,6 +40,18 @@ virtualenv. If you chose not to, simply exclude "tools/with_venv.sh" from the
 example commands below.
 
 
+Configuring Keystone
+--------------------
+
+keystone requires a configuration file.  There is a sample configuration file
+that can be used to get started::
+
+    $ cp etc/keystone.conf.sample etc/keystone.conf
+
+The defaults are enough to get you going, but you can make any changes if
+needed.
+
+
 Running Keystone
 ----------------
 
@@ -57,8 +69,7 @@ Interacting with Keystone
 -------------------------
 
 You can interact with Keystone through the command line using
-:doc:`man/keystone-manage` which allows you to establish tenants, users, etc.
-
+:doc:`man/keystone-manage` which allows you to initialize keystone, etc.
 
 You can also interact with Keystone through its REST API. There is a python
 keystone client library `python-keystoneclient`_ which interacts exclusively
@@ -72,6 +83,22 @@ place::
     $ bin/keystone-manage db_sync
 
 .. _`python-keystoneclient`: https://github.com/openstack/python-keystoneclient
+
+Initial Sample Data
+-------------------
+
+There is an included script which is helpful in setting up some initial sample
+data for use with keystone::
+
+    $ SERVICE_TOKEN=ADMIN tools/with_venv.sh tools/sample_data.sh
+
+Notice it requires a service token read from an environment varialble for
+authentication.  The default value "ADMIN" is from ``etc/keystone.conf``.
+
+Once run, you can see the sample data that has been created by using the
+`python-keystoneclient`_ command-line interface::
+
+    $ tools/with_venv.sh keystone --token ADMIN --endpoint http://127.0.0.1:35357/v2.0/ user-list
 
 Running Tests
 =============
