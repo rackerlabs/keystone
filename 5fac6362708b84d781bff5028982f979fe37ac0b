@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//3/w\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-04-03T09:55:27Z",
+      "side": 1,
+      "message": "Well I was matching what\u0027s done in ec2tokens middleware but it seems that it\u0027s ec2tokens middleware that needs to be updated:\n\n        :param credentials: dict of ec2 signature\n        :param ec2Credentials: DEPRECATED dict of ec2 signature\n[..]\n def authenticate(self, context, credentials\u003dNone, ec2Credentials\u003dNone):\n\n(no tests in ec2 middleware btw :()\n\nwill change it back to credential and add test for this.",
+      "parentUuid": "AAAAOH//4EE\u003d",
+      "revId": "5fac6362708b84d781bff5028982f979fe37ac0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//4D8\u003d",
         "filename": "tests/test_s3_token_middleware.py",
         "patchSetId": 1
