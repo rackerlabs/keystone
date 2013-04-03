@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX//+qg\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-03T19:31:03Z",
+      "side": 1,
+      "message": "(nit) remove extra space at end of line.",
+      "revId": "b42931fa9036033ddfa6ba5b782d2554005f38a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+qE\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-03T19:31:03Z",
+      "side": 1,
+      "message": "Does this mean that tls_cacertdir is ignored, or that if the cert file works then that\u0027s adequate and cert dir is still used?",
+      "revId": "b42931fa9036033ddfa6ba5b782d2554005f38a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+qc\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-03T19:31:03Z",
+      "side": 1,
+      "message": "document the allowed values and what they mean.\n\nalso, could use tls_req_cert \u003d None to indicate to use tls? Just a suggestion.",
+      "revId": "b42931fa9036033ddfa6ba5b782d2554005f38a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+ps\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-03T19:31:03Z",
+      "side": 1,
+      "message": "add a blank line after stdlib imports, see https://github.com/openstack/keystone/blob/master/HACKING.rst#imports",
+      "revId": "b42931fa9036033ddfa6ba5b782d2554005f38a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+pk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-03T19:31:03Z",
+      "side": 1,
+      "message": "suggest mention the name of the option, \"tls_req_cert\"",
+      "revId": "b42931fa9036033ddfa6ba5b782d2554005f38a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+pc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-03T19:31:03Z",
+      "side": 1,
+      "message": "suggest merge all these logs into a single call to LOG.debug. Otherwise can get split up if multiple requests. Or, don\u0027t log like all the other arguments aren\u0027t logged.",
+      "revId": "b42931fa9036033ddfa6ba5b782d2554005f38a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+pU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-03T19:31:03Z",
+      "side": 1,
+      "message": "is there extra ( here? \"ValueError((\" -\u003e \"ValueError(\". remove it if don\u0027t need it.",
+      "revId": "b42931fa9036033ddfa6ba5b782d2554005f38a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+pQ\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-03T19:31:03Z",
+      "side": 1,
+      "message": "suggest change to \"not tls_cacertfile\", seems like an empty tls_cacertfile is as useless as None.\n\nThis also applies to 413.",
+      "revId": "b42931fa9036033ddfa6ba5b782d2554005f38a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+pM\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-03T19:31:03Z",
+      "side": 1,
+      "message": "I think that this is going to set the global value for OPT_X_TLS_CACERTFILE, but this is in the init for a single ldap connection. Either move this so that it\u0027s at the global level, or change the code so that it\u0027s setting the option only for the new connection.",
+      "revId": "b42931fa9036033ddfa6ba5b782d2554005f38a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+pI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-03T19:31:03Z",
+      "side": 1,
+      "message": "I\u0027d rather this change was made in a separate commit.",
+      "revId": "b42931fa9036033ddfa6ba5b782d2554005f38a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
