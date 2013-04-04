@@ -123,7 +123,8 @@
 #certfile = /etc/keystone/ssl/certs/keystone.pem
 #keyfile = /etc/keystone/ssl/private/keystonekey.pem
 #ca_certs = /etc/keystone/ssl/certs/ca.pem
-#cert_required = True
+#cert_cn = localhost
+#cert_required = False
 
 [signing]
 #token_format = PKI

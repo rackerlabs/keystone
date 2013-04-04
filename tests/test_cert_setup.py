@@ -48,6 +48,10 @@ class CertSetupTestCase(test.TestCase):
         CONF.signing.ca_certs = os.path.join(CERTDIR, "ca.pem")
         CONF.signing.keyfile = os.path.join(KEYDIR, "signing_key.pem")
 
+        CONF.ssl.ca_certs = CONF.signing.ca_certs
+        CONF.ssl.certfile = os.path.join(CERTDIR, 'keystone.pem')
+        CONF.ssl.keyfile = os.path.join(KEYDIR, 'keystonekey.pem')
+
         self.load_backends()
         self.load_fixtures(default_fixtures)
         self.controller = token.controllers.Auth()
@@ -78,6 +82,8 @@ class CertSetupTestCase(test.TestCase):
         self.assertTrue(os.path.exists(CONF.signing.certfile))
         self.assertTrue(os.path.exists(CONF.signing.ca_certs))
         self.assertTrue(os.path.exists(CONF.signing.keyfile))
+        self.assertTrue(os.path.exists(CONF.ssl.certfile))
+        self.assertTrue(os.path.exists(CONF.ssl.keyfile))
 
     def tearDown(self):
         try:
