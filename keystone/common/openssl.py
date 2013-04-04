@@ -29,7 +29,9 @@ DIR_PERMS = (stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR |
              stat.S_IROTH | stat.S_IXOTH)
 CERT_PERMS = stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH
 PRIV_PERMS = stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR
-DEFAULT_SUBJECT = '/C=US/ST=Unset/L=Unset/O=Unset/CN=www.example.com'
+
+BASE_SUBJECT = '/C=US/ST=Unset/L=Unset/O=Unset/CN=%s'
+DEFAULT_SUBJECT = BASE_SUBJECT % 'www.example.com'
 
 
 def file_exists(file_path):
@@ -58,9 +60,7 @@ class ConfigurePKI(object):
                                'ca_private_key': self.ca_key_file,
                                'ca_cert_cn': 'hostname',
                                'request_file': self.request_file_name,
-                               'signing_key': CONF.signing.keyfile,
-                               'signing_cert': CONF.signing.certfile,
-                               'default_subject': DEFAULT_SUBJECT,
+                               'cert_subject': DEFAULT_SUBJECT,
                                'key_size': int(CONF.signing.key_size),
                                'valid_days': int(CONF.signing.valid_days),
                                'ca_password': CONF.signing.ca_password}
@@ -78,9 +78,15 @@ class ConfigurePKI(object):
             os.chown(file_name, self.use_keystone_user or -1,
                      self.use_keystone_group or -1)
 
-    def exec_command(self, command):
-        to_exec = command % self.ssl_dictionary
+    def exec_command(self, command, **kwargs):
+        if not kwargs:
+            ssl_dictionary = self.ssl_dictionary
+        else:
+            ssl_dictionary = dict(self.ssl_dictionary, **kwargs)
+
+        to_exec = command % ssl_dictionary
         LOG.info(to_exec)
+        print to_exec
         subprocess.check_call(to_exec.rsplit(' '))
 
     def build_ssl_config_file(self):
@@ -118,36 +124,49 @@ class ConfigurePKI(object):
                               '-key %(ca_private_key)s -out %(ca_cert)s '
                               '-days %(valid_days)d '
                               '-config %(ssl_config)s '
-                              '-subj %(default_subject)s')
+                              '-subj %(cert_subject)s')
             self._set_permissions(self.ssl_dictionary['ca_cert'], CERT_PERMS)
 
-    def build_private_key(self):
-        signing_keyfile = self.ssl_dictionary['signing_key']
+    def _build_private_key(self, keyfile):
+        # signing_keyfile = self.ssl_dictionary['signing_key']
 
-        if not file_exists(signing_keyfile):
-            self._make_dirs(signing_keyfile)
+        if not file_exists(keyfile):
+            self._make_dirs(keyfile)
 
-            self.exec_command('openssl genrsa -out %(signing_key)s '
+            self.exec_command('openssl genrsa -out %(keyfile)s '
                               '%(key_size)d '
-                              '-config %(ssl_config)s')
-        self._set_permissions(os.path.dirname(signing_keyfile), PRIV_PERMS)
-        self._set_permissions(signing_keyfile, stat.S_IRUSR)
+                              '-config %(ssl_config)s',
+                              keyfile=keyfile)
+        self._set_permissions(os.path.dirname(keyfile), PRIV_PERMS)
+        self._set_permissions(keyfile, stat.S_IRUSR)
 
-    def build_signing_cert(self):
-        if not file_exists(CONF.signing.certfile):
-            self._make_dirs(CONF.signing.certfile)
-            self.exec_command('openssl req -key %(signing_key)s -new -nodes '
+    def _build_usr_cert(self, keyfile, certfile, subject):
+        if not file_exists(certfile):
+            self._make_dirs(certfile)
+            self.exec_command('openssl req -key %(keyfile)s -new -nodes '
                               '-out %(request_file)s -config %(ssl_config)s '
-                              '-subj %(default_subject)s')
-            self.exec_command('openssl ca -batch -out %(signing_cert)s '
+                              '-subj %(cert_subject)s',
+                              keyfile=keyfile, cert_subject=subject)
+            self.exec_command('openssl ca -batch -out %(certfile)s '
                               '-config %(ssl_config)s '
-                              '-infiles %(request_file)s')
+                              '-infiles %(request_file)s',
+                              certfile=certfile)
+
+    def build_signing_key_cert(self):
+        self._build_private_key(CONF.signing.keyfile)
+        self._build_usr_cert(CONF.signing.keyfile, CONF.signing.certfile,
+                             DEFAULT_SUBJECT)
+
+    def build_keystone_key_cert(self):
+        self._build_private_key(CONF.ssl.keyfile)
+        self._build_usr_cert(CONF.ssl.keyfile, CONF.ssl.certfile,
+                             BASE_SUBJECT % CONF.ssl.cert_cn)
 
     def run(self):
         self.build_ssl_config_file()
         self.build_ca_cert()
-        self.build_private_key()
-        self.build_signing_cert()
+        self.build_signing_key_cert()
+        self.build_keystone_key_cert()
 
     sslconfig = """
 # OpenSSL configuration file.
@@ -156,6 +175,7 @@ class ConfigurePKI(object):
 # Establish working directory.
 
 dir            = %(conf_dir)s
+
 [ ca ]
 default_ca        = CA_default
 
@@ -166,12 +186,15 @@ database          = $dir/index.txt
 certificate       = %(ca_cert)s
 private_key       = %(ca_private_key)s
 default_days      = 365
-default_md        = md5
+default_md        = sha1
 preserve          = no
 email_in_dn       = no
 nameopt           = default_ca
 certopt           = default_ca
 policy            = policy_match
+x509_extensions   = usr_cert
+unique_subject    = no
+
 [ policy_match ]
 countryName             = match
 stateOrProvinceName     = match
@@ -181,37 +204,43 @@ commonName              = supplied
 emailAddress            = optional
 
 [ req ]
-default_bits        = 1024 # Size of keys
-default_keyfile        = key.pem # name of generated keys
-default_md        = md5 # message digest algorithm
+default_bits       = 2048 # Size of keys
+default_keyfile    = key.pem # name of generated keys
+default_md         = default # message digest algorithm
 string_mask        = nombstr # permitted characters
-distinguished_name    = req_distinguished_name
-req_extensions        = v3_req
+distinguished_name = req_distinguished_name
+req_extensions     = v3_req
 
 [ req_distinguished_name ]
-0.organizationName    = Organization Name (company)
-organizationalUnitName    = Organizational Unit Name (department, division)
-emailAddress        = Email Address
-emailAddress_max    = 40
-localityName        = Locality Name (city, district)
-stateOrProvinceName    = State or Province Name (full name)
-countryName        = Country Name (2 letter code)
-countryName_min        = 2
-countryName_max        = 2
-commonName        = Common Name (hostname, IP, or your name)
-commonName_max        = 64
+0.organizationName          = Organization Name (company)
+organizationalUnitName      = Organizational Unit Name (department, division)
+emailAddress                = Email Address
+emailAddress_max            = 40
+localityName                = Locality Name (city, district)
+stateOrProvinceName         = State or Province Name (full name)
+countryName                 = Country Name (2 letter code)
+countryName_min             = 2
+countryName_max             = 2
+commonName                  = Common Name (hostname, IP, or your name)
+commonName_max              = 64
 # Default values for the above, for consistency and less typing.
-0.organizationName_default = Openstack, Inc
-localityName_default = Undefined
+0.organizationName_default  = Openstack, Inc
+localityName_default        = Undefined
 stateOrProvinceName_default = Undefined
-countryName_default = US
-commonName_default = %(ca_cert_cn)s
+countryName_default         = US
+commonName_default          = %(ca_cert_cn)s
 
 [ v3_ca ]
-basicConstraints = CA:TRUE
-subjectKeyIdentifier = hash
+basicConstraints       = CA:TRUE
+subjectKeyIdentifier   = hash
 authorityKeyIdentifier = keyid:always,issuer:always
 
 [ v3_req ]
-basicConstraints = CA:FALSE
-subjectKeyIdentifier = hash"""
+basicConstraints     = CA:FALSE
+subjectKeyIdentifier = hash
+
+[ usr_cert ]
+basicConstraints       = CA:FALSE
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid:always,issuer:always
+"""

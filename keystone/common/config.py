@@ -210,9 +210,13 @@ def configure():
 
     # ssl
     register_bool('enable', group='ssl', default=False)
-    register_str('certfile', group='ssl', default=None)
-    register_str('keyfile', group='ssl', default=None)
-    register_str('ca_certs', group='ssl', default=None)
+    register_str('certfile', group='ssl',
+                 default="/etc/keystone/ssl/certs/keystone.pem")
+    register_str('keyfile', group='ssl',
+                 default="/etc/keystone/ssl/private/keystonekey.pem")
+    register_str('ca_certs', group='ssl',
+                 default="/etc/keystone/ssl/certs/ca.pem")
+    register_str('cert_cn', group='ssl', default='localhost')
     register_bool('cert_required', group='ssl', default=False)
 
     # signing
