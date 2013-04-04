@@ -70,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAOX//8eM\u003d",
+        "filename": "tests/_ldap_tls_livetest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-04-04T21:57:57Z",
+      "side": 1,
+      "message": "The above two methods are called \"*_demand_option\". This method and one below doesn\u0027t have the same. Is it a naming inconsistency? or the option \"CONF.ldap.tls_req_cert \u003d \u0027demand\u0027\" is not needed? Thanks!",
+      "revId": "2995ea91cefdaf150b06bca23d68fe9b7ddfc11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOX//8nI\u003d",
         "filename": "tests/backend_tls_liveldap.conf",
         "patchSetId": 5
