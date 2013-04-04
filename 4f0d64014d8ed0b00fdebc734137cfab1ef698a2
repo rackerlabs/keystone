@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX//8zA\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-04T20:11:55Z",
+      "side": 1,
+      "message": "suggest use partition rather than split, since expecting exactly 2 results, also add a testcase where have 2 : in item string.",
+      "revId": "4f0d64014d8ed0b00fdebc734137cfab1ef698a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//8yU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-04T20:11:55Z",
+      "side": 1,
+      "message": "for translation, need to name the format patterns. So, change first %s to %(item)s and 2nd to %(attr_map)s, etc; then will have to pass dict rather than tuple.",
+      "revId": "4f0d64014d8ed0b00fdebc734137cfab1ef698a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//8x0\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-04T20:11:55Z",
+      "side": 1,
+      "message": "as suggested earlier, have a test with 3 :s, e.g., \u0027description:name:something\u0027",
+      "revId": "4f0d64014d8ed0b00fdebc734137cfab1ef698a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
