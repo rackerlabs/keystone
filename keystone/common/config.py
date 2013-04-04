@@ -210,10 +210,18 @@ def configure():
 
     # ssl
     register_bool('enable', group='ssl', default=False)
-    register_str('certfile', group='ssl', default=None)
-    register_str('keyfile', group='ssl', default=None)
-    register_str('ca_certs', group='ssl', default=None)
+    register_str('certfile', group='ssl',
+                 default="/etc/keystone/ssl/certs/keystone.pem")
+    register_str('keyfile', group='ssl',
+                 default="/etc/keystone/ssl/private/keystonekey.pem")
+    register_str('ca_certs', group='ssl',
+                 default="/etc/keystone/ssl/certs/ca.pem")
     register_bool('cert_required', group='ssl', default=False)
+    register_int('key_size', group='ssl', default=1024)
+    register_int('valid_days', group='ssl', default=3650)
+    register_str('ca_password', group='ssl', default=None)
+    register_str('cert_subject', group='ssl',
+                 default='/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost')
 
     # signing
     register_str(
@@ -233,6 +241,8 @@ def configure():
     register_int('key_size', group='signing', default=1024)
     register_int('valid_days', group='signing', default=3650)
     register_str('ca_password', group='signing', default=None)
+    register_str('cert_subject', group='signing',
+                 default='/C=US/ST=Unset/L=Unset/O=Unset/CN=www.example.com')
 
     # sql
     register_str('connection', group='sql', secret=True,
