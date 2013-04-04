@@ -50,6 +50,57 @@
       "revId": "2995ea91cefdaf150b06bca23d68fe9b7ddfc11f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//8mw\u003d",
+        "filename": "tests/_ldap_tls_livetest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-04T21:07:23Z",
+      "side": 1,
+      "message": "13",
+      "revId": "2995ea91cefdaf150b06bca23d68fe9b7ddfc11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//8nI\u003d",
+        "filename": "tests/backend_tls_liveldap.conf",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-04T21:07:23Z",
+      "side": 1,
+      "message": "Use the same password that devstack uses",
+      "revId": "2995ea91cefdaf150b06bca23d68fe9b7ddfc11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//8nA\u003d",
+        "filename": "tests/backend_tls_liveldap.conf",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-04T21:07:23Z",
+      "side": 1,
+      "message": "You should be able to inherit these values from the live ldap config file and just add the tls specific values at the end.",
+      "revId": "2995ea91cefdaf150b06bca23d68fe9b7ddfc11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
