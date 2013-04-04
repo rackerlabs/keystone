@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX//8zs\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 905
+      },
+      "writtenOn": "2013-04-04T20:08:17Z",
+      "side": 1,
+      "message": "Can we default to tls?",
+      "revId": "2995ea91cefdaf150b06bca23d68fe9b7ddfc11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//8zE\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 905
+      },
+      "writtenOn": "2013-04-04T20:08:17Z",
+      "side": 1,
+      "message": "Do we have a reference distro? Can we use /etc/ssl/certs?",
+      "revId": "2995ea91cefdaf150b06bca23d68fe9b7ddfc11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//8zo\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 905
+      },
+      "writtenOn": "2013-04-04T20:08:17Z",
+      "side": 1,
+      "message": "Again let\u0027s default to using tls.",
+      "revId": "2995ea91cefdaf150b06bca23d68fe9b7ddfc11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
