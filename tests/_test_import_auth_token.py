@@ -17,8 +17,11 @@ class TestAuthToken(unittest.TestCase):
         from oslo.config import cfg
         conf = cfg.CONF
 
-        # define some config options
-        conf.register_opt(cfg.BoolOpt('debug', default=False))
+        try:
+            # define some config options
+            conf.register_opt(cfg.BoolOpt('debug', default=False))
+        except cfg.DuplicateOptError:
+            pass
 
         # and then import auth_token as a filter
         from keystone.middleware import auth_token
