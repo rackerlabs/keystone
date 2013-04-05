@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX//8NU\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1436,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-04-05T01:52:38Z",
+      "side": 1,
+      "message": "Hi Dolph, don\u0027t we need a test for \u0027groups\u0027 as well?",
+      "revId": "cb2f2265ae550b8fa07fb1f8444a2f17a98fbd08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//8NQ\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-04-05T01:52:38Z",
+      "side": 1,
+      "message": "Hmmm.. I guess I might not understand the requirement cause you won\u0027t miss user, project, group with a similar test.? Thanks.",
+      "revId": "cb2f2265ae550b8fa07fb1f8444a2f17a98fbd08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
