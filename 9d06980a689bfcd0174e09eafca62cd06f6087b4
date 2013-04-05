@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX//690\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-05T22:29:03Z",
+      "side": 1,
+      "message": "can you just put a single check here: if using_ldaps and using_tls: raise....",
+      "revId": "9d06980a689bfcd0174e09eafca62cd06f6087b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
