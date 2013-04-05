@@ -228,8 +228,8 @@
 
 [auth]
 methods = password,token
-password = keystone.auth.plugins.password.Password
-token = keystone.auth.plugins.token.Token
+password = keystone.auth.password.Password
+token = keystone.auth.token.Token
 
 [filter:debug]
 paste.filter_factory = keystone.common.wsgi:Debug.factory
