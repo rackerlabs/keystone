@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX//7+w\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-04-05T07:41:54Z",
+      "side": 1,
+      "message": "It might be a good idea to just say why we are doing this - i.e. why the replacement is better.",
+      "revId": "e6aeb96751b0b6ae2c44b2b7293f59985b8906ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
