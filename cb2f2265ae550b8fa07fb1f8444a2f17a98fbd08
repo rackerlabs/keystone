@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOX//7u0\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1436,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-04-05T12:36:41Z",
+      "side": 1,
+      "message": "OK, sounds good. Thanks!",
+      "parentUuid": "AAAAOX//8Lc\u003d",
+      "revId": "cb2f2265ae550b8fa07fb1f8444a2f17a98fbd08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOX//8NQ\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "feel free to write those tests; I chose domains here because it\u0027s the simplest entity in the identity backend to test that driver\u0027s behavior",
       "parentUuid": "AAAAOX//8NQ\u003d",
+      "revId": "cb2f2265ae550b8fa07fb1f8444a2f17a98fbd08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//7uY\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-04-05T12:36:41Z",
+      "side": 1,
+      "message": "Hi Dolph, thanks. OK, that\u0027s good. Sure, I will add new tests :) as low priority work.",
+      "parentUuid": "AAAAOX//8LU\u003d",
       "revId": "cb2f2265ae550b8fa07fb1f8444a2f17a98fbd08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
