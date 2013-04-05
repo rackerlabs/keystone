@@ -16,6 +16,23 @@
       "revId": "685f5e67cd7f06d922f73ba02ceb4dee517cbe62",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//8Mw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-04-05T02:09:35Z",
+      "side": 1,
+      "message": "Hi Brant, I think instead of tenant_ref, \u0027project_ref\u0027 will be consistent with other project crud methods. Thanks!",
+      "revId": "685f5e67cd7f06d922f73ba02ceb4dee517cbe62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
