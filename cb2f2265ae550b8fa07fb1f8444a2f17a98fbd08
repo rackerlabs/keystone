@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOX//8Lc\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1436,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-05T02:39:15Z",
+      "side": 1,
+      "message": "I think this is sufficient to illustrate the desired behavior; I chose users and projects simply because they were the topic of conversation on the mailing list.",
+      "parentUuid": "AAAAOX//8NU\u003d",
+      "revId": "cb2f2265ae550b8fa07fb1f8444a2f17a98fbd08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOX//8NQ\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-05T01:52:38Z",
       "side": 1,
       "message": "Hmmm.. I guess I might not understand the requirement cause you won\u0027t miss user, project, group with a similar test.? Thanks.",
+      "revId": "cb2f2265ae550b8fa07fb1f8444a2f17a98fbd08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//8LU\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-05T02:39:15Z",
+      "side": 1,
+      "message": "feel free to write those tests; I chose domains here because it\u0027s the simplest entity in the identity backend to test that driver\u0027s behavior",
+      "parentUuid": "AAAAOX//8NQ\u003d",
       "revId": "cb2f2265ae550b8fa07fb1f8444a2f17a98fbd08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
