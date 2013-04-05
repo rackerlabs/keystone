@@ -360,10 +360,10 @@ def configure():
     # default authentication methods
     register_list('methods', group='auth', default=_DEFAULT_AUTH_METHODS)
     register_str(
-        'password', group='auth', default='keystone.auth.plugins.token.Token')
+        'password', group='auth', default='keystone.auth.token.Token')
     register_str(
         'token', group='auth',
-        default='keystone.auth.plugins.password.Password')
+        default='keystone.auth.password.Password')
 
     # register any non-default auth methods here (used by extensions, etc)
     for method_name in CONF.auth.methods:
