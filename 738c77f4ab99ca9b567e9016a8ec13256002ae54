@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX//6pw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-04-06T16:46:35Z",
+      "side": 1,
+      "message": "No need to call .keys() in LDAP_DEREF.keys()",
+      "revId": "738c77f4ab99ca9b567e9016a8ec13256002ae54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//6p0\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-04-06T16:46:35Z",
+      "side": 1,
+      "message": "No need to call .keys() in LDAP_TLS_CERTS.keys()",
+      "revId": "738c77f4ab99ca9b567e9016a8ec13256002ae54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//6p8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-04-06T16:46:35Z",
+      "side": 1,
+      "message": "This can be also wrote like this:  using_ldaps \u003d url.lower().startswith(\"ldaps\")",
+      "revId": "738c77f4ab99ca9b567e9016a8ec13256002ae54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//6p4\u003d",
+        "filename": "tests/_ldap_tls_livetest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-04-06T16:46:35Z",
+      "side": 1,
+      "message": "This should be removed :)",
+      "revId": "738c77f4ab99ca9b567e9016a8ec13256002ae54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
