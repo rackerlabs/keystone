@@ -53,6 +53,58 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn///8k\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-08T18:49:16Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAOX//6p8\u003d",
+      "revId": "738c77f4ab99ca9b567e9016a8ec13256002ae54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///8M\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-08T18:49:16Z",
+      "side": 1,
+      "message": "why is ldaps lowercase?\n\nalso, i18n?",
+      "revId": "738c77f4ab99ca9b567e9016a8ec13256002ae54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///8E\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-08T18:49:16Z",
+      "side": 1,
+      "message": "we just made a pass to eliminate these types of comparisons, please do:\n\n  if not ldap.TLS_AVAIL:",
+      "revId": "738c77f4ab99ca9b567e9016a8ec13256002ae54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOX//6p4\u003d",
         "filename": "tests/_ldap_tls_livetest.py",
         "patchSetId": 7
@@ -64,6 +116,41 @@
       "writtenOn": "2013-04-06T16:46:35Z",
       "side": 1,
       "message": "This should be removed :)",
+      "revId": "738c77f4ab99ca9b567e9016a8ec13256002ae54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///7g\u003d",
+        "filename": "tests/_ldap_tls_livetest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-08T18:49:16Z",
+      "side": 1,
+      "message": "please... you can remove the entire setUp",
+      "parentUuid": "AAAAOX//6p4\u003d",
+      "revId": "738c77f4ab99ca9b567e9016a8ec13256002ae54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///7M\u003d",
+        "filename": "tests/_ldap_tls_livetest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-08T18:49:16Z",
+      "side": 1,
+      "message": "bad bad python! remove the teardown completely",
       "revId": "738c77f4ab99ca9b567e9016a8ec13256002ae54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
