@@ -33,6 +33,24 @@
       "revId": "685f5e67cd7f06d922f73ba02ceb4dee517cbe62",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///qc\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-08T20:59:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOX//8Mw\u003d",
+      "revId": "685f5e67cd7f06d922f73ba02ceb4dee517cbe62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
