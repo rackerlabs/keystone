@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn///mU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-08T21:36:34Z",
+      "side": 1,
+      "message": "this is a giant red flag..",
+      "revId": "aef0e05b83c79137f53b2192ff5ab43ed021cb93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
