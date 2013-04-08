@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn///dw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-08T22:49:21Z",
+      "side": 1,
+      "message": "change \"TLDAP to LDAP\".",
+      "revId": "cdbd6192e670f63c3e06b4cd73b5719100c1ec4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///dc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-08T22:49:21Z",
+      "side": 1,
+      "message": "suggest change 408-410 to\n\n using_ldaps \u003d url.lower().startswith(\"ldaps\")",
+      "revId": "cdbd6192e670f63c3e06b4cd73b5719100c1ec4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///dY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-08T22:49:21Z",
+      "side": 1,
+      "message": "wrap error message in _() for translation.",
+      "revId": "cdbd6192e670f63c3e06b4cd73b5719100c1ec4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///dU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-08T22:49:21Z",
+      "side": 1,
+      "message": "since already know that TLS_AVAIL is 0, suggest change message to \"TLS not available\"",
+      "revId": "cdbd6192e670f63c3e06b4cd73b5719100c1ec4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///cg\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-08T22:49:21Z",
+      "side": 1,
+      "message": "this message isn\u0027t completely accurate since the error could be that it\u0027s not a directory, so suggest \"tls_cacertfile %s not found or is not a file.\"",
+      "revId": "cdbd6192e670f63c3e06b4cd73b5719100c1ec4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///dI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-08T22:49:21Z",
+      "side": 1,
+      "message": "suggest move these 2 copies of notes (copied at line 420) to one location. DRY principle.",
+      "revId": "cdbd6192e670f63c3e06b4cd73b5719100c1ec4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///cc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-08T22:49:21Z",
+      "side": 1,
+      "message": "suggest \"tls_cacertdir %s not found or is not a directory.\"",
+      "revId": "cdbd6192e670f63c3e06b4cd73b5719100c1ec4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///dA\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-08T22:49:21Z",
+      "side": 1,
+      "message": "change , to % ?\n\nAlso, should this be raising an exception, or be a warning and mention that the value is being ignored?",
+      "revId": "cdbd6192e670f63c3e06b4cd73b5719100c1ec4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///c8\u003d",
+        "filename": "tests/_ldap_tls_livetest.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-08T22:49:21Z",
+      "side": 1,
+      "message": "remove this commented-out code.",
+      "revId": "cdbd6192e670f63c3e06b4cd73b5719100c1ec4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///cQ\u003d",
+        "filename": "tests/_ldap_tls_livetest.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-08T22:49:21Z",
+      "side": 1,
+      "message": "suggestions for more testcases:\n\nall values of tls_cacertfile, and an invalid tls_cacertfile\n\ntest that if ldaps and use_tls then error\n\ntest if tls_cacertfile is set then tls_cacertdir is ignored",
+      "revId": "cdbd6192e670f63c3e06b4cd73b5719100c1ec4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
