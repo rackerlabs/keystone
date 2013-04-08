@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn///is\u003d",
+        "filename": "tests/_test_import_auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-08T22:06:09Z",
+      "side": 1,
+      "message": "would be nice to have a comment in the code as to why the register_opt needs to be wrapped in try/except.\n\nwould it be better to change to a different option name to avoid the problem?\n\nIf the DuplicateOptError is expected, then test that with assertRaises .\n\nWhy not remove call to register_opt?",
+      "revId": "1e60f3d153b7f8a6d74b782a19834ecad07ec12a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
