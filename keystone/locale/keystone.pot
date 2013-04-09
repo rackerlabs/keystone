@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: keystone "
-"jenkins.keystone.propose.translation.update.148\n"
+"jenkins.keystone.propose.translation.update.166\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-03-22 00:02+0000\n"
+"POT-Creation-Date: 2013-04-09 00:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "%(property_name)s is not a%(display_expected_type)s"
 msgstr ""
 
-#: keystone/test.py:112
+#: keystone/test.py:113
 #, python-format
 msgid "Failed to checkout %s"
 msgstr ""
@@ -79,19 +79,19 @@ msgstr ""
 msgid "User not found"
 msgstr ""
 
-#: keystone/auth/token_factory.py:78
+#: keystone/auth/token_factory.py:81
 msgid "User have no access to project"
 msgstr ""
 
-#: keystone/auth/token_factory.py:93
+#: keystone/auth/token_factory.py:96
 msgid "User have no access to domain"
 msgstr ""
 
-#: keystone/auth/token_factory.py:264 keystone/token/controllers.py:121
+#: keystone/auth/token_factory.py:314 keystone/token/controllers.py:121
 msgid "Unable to sign token."
 msgstr ""
 
-#: keystone/auth/token_factory.py:267 keystone/token/controllers.py:124
+#: keystone/auth/token_factory.py:317 keystone/token/controllers.py:124
 #, python-format
 msgid "Invalid value for token_format: %s.  Allowed values are PKI or UUID."
 msgstr ""
@@ -379,7 +379,7 @@ msgstr ""
 msgid "Search scope %s not implemented."
 msgstr ""
 
-#: keystone/common/sql/core.py:206
+#: keystone/common/sql/core.py:204
 #, python-format
 msgid "Got mysql server has gone away: %s"
 msgstr ""
