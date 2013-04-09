@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//+Cw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 1011
+      },
+      "writtenOn": "2013-04-09T18:27:45Z",
+      "side": 1,
+      "message": "We will need to extend all backends from  TransactableDriverMixin (PAM/LDAP/KVS/SQL) since these 3 methods are called in the decorator (handle_atomic_transaction).\n\n* In case of SQL, sql driver should be extended from TransactableSqlDriverMixin.",
+      "parentUuid": "AAAAOn//+fI\u003d",
+      "revId": "42defa9e0f34bf5d21378f95ddd5dd59af7a86f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//+fc\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 3
