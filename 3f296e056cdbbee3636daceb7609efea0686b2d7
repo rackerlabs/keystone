@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//9uQ\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-09T22:24:26Z",
+      "side": 1,
+      "message": "I think this should continue to delete the testrunner database, so add this back in:\n\n rm -f tests.sqlite",
+      "revId": "3f296e056cdbbee3636daceb7609efea0686b2d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
