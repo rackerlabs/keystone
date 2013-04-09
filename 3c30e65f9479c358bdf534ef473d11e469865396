@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//+Oc\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-09T16:25:38Z",
+      "side": 1,
+      "message": "the keystone.contrib.user_crud module specifies as password as \u0027original_password\u0027 -- maybe just remove the initial single quote so it will match both?",
+      "revId": "3c30e65f9479c358bdf534ef473d11e469865396",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//+OU\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-09T16:25:38Z",
+      "side": 1,
+      "message": "coercing unicode to a string here is just broken",
+      "revId": "3c30e65f9479c358bdf534ef473d11e469865396",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
