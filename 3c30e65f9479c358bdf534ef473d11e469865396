@@ -33,6 +33,24 @@
       "revId": "3c30e65f9479c358bdf534ef473d11e469865396",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//+MQ\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 4992
+      },
+      "writtenOn": "2013-04-09T16:48:55Z",
+      "side": 1,
+      "message": "Good catch Dolph! This prompts an upstream question .. why are we ever constructing a request body with password in plain text? Routinely substituing password with some fixed length character string is more secure, not just for the log files.",
+      "parentUuid": "AAAAOn//+OU\u003d",
+      "revId": "3c30e65f9479c358bdf534ef473d11e469865396",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
