@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//+fI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-09T14:38:46Z",
+      "side": 1,
+      "message": "these three methods should exist in a mixin class, not in the identity driver\n\ncreate a new class for these three unimplemented methods, TransactableDriverMixin (maybe in keystone.common.driver?), implement it in TransactableSqlDriverMixin and have the sql driver extend that",
+      "revId": "42defa9e0f34bf5d21378f95ddd5dd59af7a86f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//+fc\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-09T14:38:46Z",
+      "side": 1,
+      "message": "Remove the \"only supported in sql backend\" -- that\u0027s absolutely not for the driver interface to assert",
+      "revId": "42defa9e0f34bf5d21378f95ddd5dd59af7a86f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//+fY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-09T14:38:46Z",
+      "side": 1,
+      "message": "raise a new exception type on each of these, exception.TransactionsNotImplemented() which extends NotImplemented",
+      "revId": "42defa9e0f34bf5d21378f95ddd5dd59af7a86f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//+fE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-09T14:38:46Z",
+      "side": 1,
+      "message": "one line doc strings are closed on the same line (see HACKING)",
+      "revId": "42defa9e0f34bf5d21378f95ddd5dd59af7a86f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
