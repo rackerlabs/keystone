@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOn//+Qk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-04-09T16:02:27Z",
+      "side": 1,
+      "message": "Please describe what is the intended change and how it is done in practice in the patch, including if there are things to be aware of (changes in behavior, additional requirements for othe rcomponents, etc...)",
+      "revId": "6e5d0027e9c39c518ffbcfefc566af073a0f64d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//+U8\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
@@ -53,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//+So\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-04-09T16:02:27Z",
+      "side": 1,
+      "message": "does this print really belong to the final patch ?\nLooks like a temporary debugging aid",
+      "revId": "6e5d0027e9c39c518ffbcfefc566af073a0f64d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//+SA\u003d",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 2
@@ -64,6 +98,23 @@
       "writtenOn": "2013-04-09T15:57:44Z",
       "side": 1,
       "message": "remove",
+      "revId": "6e5d0027e9c39c518ffbcfefc566af073a0f64d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//+SM\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-04-09T16:02:27Z",
+      "side": 1,
+      "message": "This should probably be removed from the final patch.",
       "revId": "6e5d0027e9c39c518ffbcfefc566af073a0f64d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
