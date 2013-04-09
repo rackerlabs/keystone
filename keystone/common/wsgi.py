@@ -25,6 +25,7 @@ import sys
 
 import eventlet.wsgi
 import routes.middleware
+import re
 import ssl
 import webob.dec
 import webob.exc
@@ -379,21 +380,21 @@ class Debug(Middleware):
 
     @webob.dec.wsgify(RequestClass=Request)
     def __call__(self, req):
-        LOG.debug('%s %s %s', ('*' * 20), 'REQUEST ENVIRON', ('*' * 20))
-        for key, value in req.environ.items():
-            LOG.debug('%s = %s', key, value)
-        LOG.debug('')
-        LOG.debug('%s %s %s', ('*' * 20), 'REQUEST BODY', ('*' * 20))
-        for line in req.body_file:
-            LOG.debug(line)
-        LOG.debug('')
-
         resp = req.get_response(self.application)
+        if LOG.isEnabledFor(logging.DEBUG):
+            LOG.debug('%s %s %s', ('*' * 20), 'REQUEST ENVIRON', ('*' * 20))
+            for key, value in req.environ.items():
+                LOG.debug('%s = %s', key, utils.mask_password(value, True))
+            LOG.debug('')
+            LOG.debug('%s %s %s', ('*' * 20), 'REQUEST BODY', ('*' * 20))
+            for line in req.body_file:
+                LOG.debug(utils.mask_password(line))
+            LOG.debug('')
 
-        LOG.debug('%s %s %s', ('*' * 20), 'RESPONSE HEADERS', ('*' * 20))
-        for (key, value) in resp.headers.iteritems():
-            LOG.debug('%s = %s', key, value)
-        LOG.debug('')
+            LOG.debug('%s %s %s', ('*' * 20), 'RESPONSE HEADERS', ('*' * 20))
+            for (key, value) in resp.headers.iteritems():
+                LOG.debug('%s = %s', key, value)
+            LOG.debug('')
 
         resp.app_iter = self.print_generator(resp.app_iter)
 

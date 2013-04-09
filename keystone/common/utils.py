@@ -21,6 +21,7 @@
 import hashlib
 import json
 import os
+import re
 import subprocess
 import time
 
@@ -268,3 +269,35 @@ class LimitingReader(object):
         if self.bytes_read > self.limit:
             raise exception.RequestTooLarge()
         return result
+
+
+_RE_PASS_1 = re.compile(r"('*password'\s*:\s*)u?'.+?'", re.DOTALL)
+_RE_PASS_2 = re.compile(r'("*password"\s*:\s*)u?".+?"', re.DOTALL)
+
+
+def mask_password(message, is_unicode=False, secret="***"):
+    """Replace password with 'secret' in message.
+
+    :param message: The string which include security information.
+    :param is_unicode: Is unicode string ?
+    :param secret: substitution string default to "***".
+    :returns: The string
+
+    For example:
+       >>> mask_password('"password" : "aaaaa"')
+       '"password" : ***'
+       >>> mask_password("'original_password' : 'aaaaa'")
+       "'original_password' : ***"
+       >>> mask_password("'original_password' :   u'aaaaa'")
+       "'original_password' :   ***"
+    """
+    if is_unicode:
+        message = unicode(message)
+    # Match the group 1 and replace all others with 'secret'
+    secret = r"\g<1>" + secret
+    result = _RE_PASS_1.sub(secret, message)
+    # In order to reduce the complex of regular expression substitution
+    # try to scan the password property with double quotes again.
+    if result == message:
+        result = _RE_PASS_2.sub(secret, message)
+    return result
