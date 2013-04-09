@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Approved+1: Mark McLoughlin <markmc@redhat.com>
+Code-Review+2: Mark McLoughlin <markmc@redhat.com>
+Code-Review+1: guang-yee <guang.yee@hp.com>
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Code-Review+1: henry-nash <henryn@linux.vnet.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 09 Apr 2013 14:02:37 +0000
+Reviewed-on: https://review.openstack.org/23842
+Project: openstack/keystone
+Branch: refs/heads/stable/folsom
