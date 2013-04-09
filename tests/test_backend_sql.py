@@ -92,6 +92,15 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                           user['name'],
                           DEFAULT_DOMAIN_ID)
 
+    def test_create_unicode_user_name(self):
+        unicode_name = u'name \u540d\u5b57'
+        user = {'id': uuid.uuid4().hex,
+                'name': unicode_name,
+                'domain_id': DEFAULT_DOMAIN_ID,
+                'password': uuid.uuid4().hex}
+        ref = self.identity_api.create_user(user['id'], user)
+        self.assertEqual(unicode_name, ref['name'])
+
     def test_create_null_project_name(self):
         tenant = {'id': uuid.uuid4().hex,
                   'name': None,
