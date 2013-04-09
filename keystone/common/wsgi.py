@@ -25,6 +25,7 @@ import sys
 
 import eventlet.wsgi
 import routes.middleware
+import re
 import ssl
 import webob.dec
 import webob.exc
@@ -381,11 +382,17 @@ class Debug(Middleware):
     def __call__(self, req):
         LOG.debug('%s %s %s', ('*' * 20), 'REQUEST ENVIRON', ('*' * 20))
         for key, value in req.environ.items():
-            LOG.debug('%s = %s', key, value)
+            text = re.sub(r"('*password': u?').+?'",
+                          lambda m: m.group(1) + "***'",
+                          unicode(value))
+            LOG.debug('%s = %s', key, text)
         LOG.debug('')
         LOG.debug('%s %s %s', ('*' * 20), 'REQUEST BODY', ('*' * 20))
         for line in req.body_file:
-            LOG.debug(line)
+            text = re.sub(r'("*password": ").+?"',
+                          lambda m: m.group(1) + '***"',
+                          line)
+            LOG.debug(text)
         LOG.debug('')
 
         resp = req.get_response(self.application)
