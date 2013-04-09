@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//+U8\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-09T15:57:44Z",
+      "side": 1,
+      "message": "Nice catch.",
+      "revId": "6e5d0027e9c39c518ffbcfefc566af073a0f64d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//+Us\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-09T15:57:44Z",
+      "side": 1,
+      "message": "Sample data like this does not belong in this file.  If these values are required, put them as the defaults in config.py",
+      "revId": "6e5d0027e9c39c518ffbcfefc566af073a0f64d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//+UY\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-09T15:57:44Z",
+      "side": 1,
+      "message": "This looks like debugging. Please remove",
+      "revId": "6e5d0027e9c39c518ffbcfefc566af073a0f64d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//+SA\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-09T15:57:44Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "6e5d0027e9c39c518ffbcfefc566af073a0f64d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
