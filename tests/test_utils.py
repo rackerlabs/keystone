@@ -63,3 +63,24 @@ class UtilsTestCase(test.TestCase):
         self.assertFalse(utils.auth_str_equal('a', 'aaaaa'))
         self.assertFalse(utils.auth_str_equal('aaaaa', 'a'))
         self.assertFalse(utils.auth_str_equal('ABC123', 'abc123'))
+
+    def test_mask_password(self):
+        message = "test = 'password': 'aaaaaa'"
+        self.assertEqual(utils.mask_password(message, True),
+                         "test = 'password': '***'")
+
+        message = "test = 'password'  :   'aaaaaa'"
+        self.assertEqual(utils.mask_password(message, False),
+                         "test = 'password'  :   '***'")
+
+        message = u"test = u'password' : u'aaaaaa'"
+        self.assertEqual(utils.mask_password(message, True),
+                         u"test = u'password' : u'***'")
+
+        message = 'test = "password" : "aaaaaaaaa"'
+        self.assertEqual(utils.mask_password(message),
+                         'test = "password" : "***"')
+
+        message = 'test = "original_password" : "aaaaaaaaa"'
+        self.assertEqual(utils.mask_password(message),
+                         'test = "original_password" : "***"')
