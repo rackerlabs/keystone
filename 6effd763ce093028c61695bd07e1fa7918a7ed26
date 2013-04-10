@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//7zs\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-04-10T23:17:14Z",
+      "side": 1,
+      "message": "I had changed the config file over to 2048, but put it back with this commit. In general I would pick 2048, but historically (i think it\u0027s for older browsers) web certificates are supposed to be 1024. \n\nIt probably doesn\u0027t matter here.",
+      "parentUuid": "AAAAOn//8po\u003d",
+      "revId": "6effd763ce093028c61695bd07e1fa7918a7ed26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//8KI\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 3
@@ -64,6 +82,41 @@
       "writtenOn": "2013-04-10T20:03:35Z",
       "side": 1,
       "message": "i\u0027d like to see the same default naming conventions used between \u0027ssl\u0027 certs and \u0027signing\u0027 certs",
+      "revId": "6effd763ce093028c61695bd07e1fa7918a7ed26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//7uQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-04-10T23:17:14Z",
+      "side": 1,
+      "message": "These were used as they are the defaults provided in the original keystone.conf.sample and specified in the docs. Am i right to assume that changing them (in all places) doesn\u0027t matter?",
+      "parentUuid": "AAAAOn//8KI\u003d",
+      "revId": "6effd763ce093028c61695bd07e1fa7918a7ed26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//7uI\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-04-10T23:17:14Z",
+      "side": 1,
+      "message": "Should this also be a configuration option?",
       "revId": "6effd763ce093028c61695bd07e1fa7918a7ed26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
