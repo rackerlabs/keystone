@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//8Bk\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-10T20:51:31Z",
+      "side": 1,
+      "message": "why \u0027*?",
+      "revId": "670e3df32d7c82cd2d3998f7c1d994637b234cbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//8BI\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-10T20:51:31Z",
+      "side": 1,
+      "message": "why \"*?\n\nalso, this doesn\u0027t handle all possible valid JSON inputs, since you can have whitespace after the key and before the :. Note that the value could be on a separate line, too.\n\nfor performance, would be better to only do this if debug logging was enabled.",
+      "revId": "670e3df32d7c82cd2d3998f7c1d994637b234cbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
