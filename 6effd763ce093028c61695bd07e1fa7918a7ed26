@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOn//8J8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-10T20:04:00Z",
+      "side": 1,
+      "message": "ssl_setup?",
+      "revId": "6effd763ce093028c61695bd07e1fa7918a7ed26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//8ps\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
