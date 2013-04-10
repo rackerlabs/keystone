@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//9ZE\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-04-10T05:13:55Z",
+      "side": 1,
+      "message": "Don\u0027t think they are required. There\u0027s a very good chance these certs will be replaced with commercial CA issued certs in production anyway.\n\nFor mom \u0026 pop deployments, less configuration is better.",
+      "parentUuid": "AAAAOn//+Us\u003d",
+      "revId": "6e5d0027e9c39c518ffbcfefc566af073a0f64d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//+UY\u003d",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 2
