@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//9Ks\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-04-10T09:30:10Z",
+      "side": 1,
+      "message": "I need use this \u0027unicode(value)\u0027 otherwise I will encounter the following error when run test case:\n  File \"/Users/gengjh/MyWorks/OpenStack/keystone/.tox/py27/lib/python2.7/site-packages/keystone/common/wsgi.py\", line 387, in __call__\n    value)\n  File \"/Users/gengjh/MyWorks/OpenStack/keystone/.tox/py27/lib/python2.7/re.py\", line 151, in sub\n    return _compile(pattern, flags).sub(repl, string, count)\nTypeError: expected string or buffer",
+      "revId": "4ca82e1c2b7bcf9bc3fc95fde17973f852a3fdc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
