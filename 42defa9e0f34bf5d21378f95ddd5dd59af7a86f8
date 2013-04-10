@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//9CQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 6124
+      },
+      "writtenOn": "2013-04-10T12:40:48Z",
+      "side": 1,
+      "message": "I have implemented TransactableDriverMixin in keystone.common.driver, the methods are unimplemented. The only backend that needs to implement these methods is \"SQL\"  , we dont need to separately implement TransactableDriverMixin methods in TransactableSqlDriverMixin it is done in keystone.common.sql.core:Base. Also For the keystone.common.kvs :Base we inherit TransactableDriverMixin directly which gives us these methods without lot of code change. And only in case of ldap and pam backends we inherit from TransactableDriverMixin directly during creation of Identity API in keystone.identity.backends.ldap.core:Identity and keystone.identity.backends.pam:Identity.  All the backends thus have the required methods since the decorator keystone.common.controller:handle_atomic_transaction will be called irrespective of the backend used. Will push these changes once it is reviewed internally.",
+      "parentUuid": "AAAAOn//+fI\u003d",
+      "revId": "42defa9e0f34bf5d21378f95ddd5dd59af7a86f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//+fc\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 3
