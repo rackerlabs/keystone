@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//8AU\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-10T20:59:42Z",
+      "side": 1,
+      "message": "how about a user with no enabled and one with None, e.g.,\n\n  \u0027extra\u0027: json.dumps({})\n   ...\n  \u0027extra\u0027: json.dumps({\u0027enabled\u0027: None})",
+      "revId": "3a0a1a287df61cb5b1c660b777b7f3bd7cca4180",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//7/8\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-10T20:59:42Z",
+      "side": 1,
+      "message": "why not user.enabled?",
+      "revId": "3a0a1a287df61cb5b1c660b777b7f3bd7cca4180",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
