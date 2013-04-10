@@ -33,6 +33,23 @@
       "revId": "6effd763ce093028c61695bd07e1fa7918a7ed26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//8KI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-10T20:03:35Z",
+      "side": 1,
+      "message": "i\u0027d like to see the same default naming conventions used between \u0027ssl\u0027 certs and \u0027signing\u0027 certs",
+      "revId": "6effd763ce093028c61695bd07e1fa7918a7ed26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
