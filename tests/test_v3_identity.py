@@ -349,6 +349,14 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.put('/groups/%(group_id)s/users/%(user_id)s' % {
             'group_id': self.group_id, 'user_id': self.user['id']})
 
+    def test_list_groups_for_user(self):
+        """GET /users/{user_id}/groups"""
+        self.put('/groups/%(group_id)s/users/%(user_id)s' % {
+            'group_id': self.group_id, 'user_id': self.user['id']})
+        r = self.get('/users/%(user_id)s/groups' % {
+            'user_id': self.user_id})
+        self.assertValidGroupListResponse(r, ref=self.group)
+
     def test_check_user_in_group(self):
         """HEAD /groups/{group_id}/users/{user_id}"""
         self.put('/groups/%(group_id)s/users/%(user_id)s' % {
