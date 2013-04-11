@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//7Ok\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-04-11T10:00:30Z",
+      "side": 1,
+      "message": "_RE_PASS_1 \u003d re.compile(r\"(\u0027*password\u0027\\s*:\\s*)u?\u0027.+?\u0027\", re.DOTALL)\n\n_RE_PASS_2 \u003d re.compile(r\u0027(\"*password\"\\s*:\\s*)u?\".+?\"\u0027, re.DOTALL)\n\n\ndef mask_password(message, is_unicode\u003dFalse, secret\u003d\"***\"):\n     \"\"\"Replace password with ‘‘secret‘‘ in message.\n\n     :param message: The string which include security information.\n     :param is_unicode: Is unicode string ?\n     :param secret: substitution string default to \"***\".\n     :returns: The string\n\n     For example:\n\n        \u003e\u003e\u003e mask_password(\u0027\"password\" : \"aaaaa\"\u0027)\n        \u0027\"password\" : ***\u0027\n        \u003e\u003e\u003e mask_password(\"\u0027original_password\u0027 : \u0027aaaaa\u0027\")\n        \"\u0027original_password\u0027 : ***\"\n        \u003e\u003e\u003e mask_password(\"\u0027original_password\u0027 :   u\u0027aaaaa\u0027\")\n        \"\u0027original_password\u0027 :   ***\"\n\n     \"\"\"\n     secret \u003d r\"\\1\" + secret\n     if is_unicode:\n         message \u003d unicode(message)\n     result \u003d _RE_PASS_1.sub(secret, message)\n     # In order to reduce the complex of regular expression substitution\n     # try to scan the password property with double quotes again.\n     if result \u003d\u003d message:\n         result \u003d _RE_PASS_2.sub(secret, message)\n     return result",
+      "revId": "24359c8483d5608ccc3cbd6d90d4d2502174e832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//7OU\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-04-11T10:00:30Z",
+      "side": 1,
+      "message": "More customizing can be done by adding a default variable secret as shown above",
+      "revId": "24359c8483d5608ccc3cbd6d90d4d2502174e832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//7OY\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-04-11T10:00:30Z",
+      "side": 1,
+      "message": "IMHO better to use doctest to give example in the docstring.",
+      "revId": "24359c8483d5608ccc3cbd6d90d4d2502174e832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//7Og\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-04-11T10:00:30Z",
+      "side": 1,
+      "message": "No need to create a new local variable.",
+      "revId": "24359c8483d5608ccc3cbd6d90d4d2502174e832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//7OQ\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-04-11T10:00:30Z",
+      "side": 1,
+      "message": "Use \\1 in the substitution string is better than a lambda IMHO check example above",
+      "revId": "24359c8483d5608ccc3cbd6d90d4d2502174e832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//7OM\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-04-11T10:00:30Z",
+      "side": 1,
+      "message": "Typo: Two \"the\".",
+      "revId": "24359c8483d5608ccc3cbd6d90d4d2502174e832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//7OI\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-04-11T10:00:30Z",
+      "side": 1,
+      "message": "A compiled Regex is better performance wise.",
+      "revId": "24359c8483d5608ccc3cbd6d90d4d2502174e832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
