@@ -123,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//67Q\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-04-11T15:28:47Z",
+      "side": 1,
+      "message": "Good question, i think to keep it more sample we needn\u0027t the  \u0027 or \" since it mean nothing to us.",
+      "parentUuid": "AAAAOn//7Bg\u003d",
+      "revId": "24359c8483d5608ccc3cbd6d90d4d2502174e832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//7OM\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 6
