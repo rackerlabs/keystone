@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//7DA\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-04-11T14:22:50Z",
+      "side": 1,
+      "message": "If do it like your example, the quote will be replaced, like this:\n\u0027\"password\" : \"aaaaa\" \u003d\u003e \"password\" : ***\u0027\n\nmouad, do you have any solution for this?",
+      "parentUuid": "AAAAOn//7OQ\u003d",
+      "revId": "24359c8483d5608ccc3cbd6d90d4d2502174e832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//7OM\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 6
