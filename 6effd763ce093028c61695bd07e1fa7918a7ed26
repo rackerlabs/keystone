@@ -106,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//7nc\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-11T01:14:16Z",
+      "side": 1,
+      "message": "Leave them as is, or it will break existing installs.",
+      "parentUuid": "AAAAOn//7uQ\u003d",
+      "revId": "6effd763ce093028c61695bd07e1fa7918a7ed26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//7uI\u003d",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 3
@@ -117,6 +135,24 @@
       "writtenOn": "2013-04-10T23:17:14Z",
       "side": 1,
       "message": "Should this also be a configuration option?",
+      "revId": "6effd763ce093028c61695bd07e1fa7918a7ed26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//7nU\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-11T01:14:16Z",
+      "side": 1,
+      "message": "Probably, so long as the default values are these here, it should not break anything.",
+      "parentUuid": "AAAAOn//7uI\u003d",
       "revId": "6effd763ce093028c61695bd07e1fa7918a7ed26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
