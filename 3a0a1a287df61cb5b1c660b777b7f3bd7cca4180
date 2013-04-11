@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//7F8\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-11T13:33:07Z",
+      "side": 1,
+      "message": "bah, i definitely meant to include that; thanks!",
+      "parentUuid": "AAAAOn//8AU\u003d",
+      "revId": "3a0a1a287df61cb5b1c660b777b7f3bd7cca4180",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//7/8\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-10T20:59:42Z",
       "side": 1,
       "message": "why not user.enabled?",
+      "revId": "3a0a1a287df61cb5b1c660b777b7f3bd7cca4180",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//7F4\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-11T13:33:07Z",
+      "side": 1,
+      "message": "the first .one() call was returning a tuple while the rest returned a model object... this was the result of debugging that, but it works. i\u0027ll take another look because it\u0027s certainly ugly",
+      "parentUuid": "AAAAOn//7/8\u003d",
       "revId": "3a0a1a287df61cb5b1c660b777b7f3bd7cca4180",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
