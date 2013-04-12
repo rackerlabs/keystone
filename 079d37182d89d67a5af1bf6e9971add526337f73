@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//5Ik\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-12T17:57:10Z",
+      "side": 1,
+      "message": "why \u0027* in the regex? this means there can be 0 or more \u0027, so could have \u0027\u0027\u0027password. was this supposed to be \u0027.*??",
+      "revId": "079d37182d89d67a5af1bf6e9971add526337f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//5H8\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-12T17:57:10Z",
+      "side": 1,
+      "message": "(nit) since this function is only called from wsgi.py, suggest move it to wsgi.py.",
+      "revId": "079d37182d89d67a5af1bf6e9971add526337f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//5IQ\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-12T17:57:10Z",
+      "side": 1,
+      "message": "change \"scan the password property with double quotes again.\"\nto \"scan for the password property again with double quotes.\"",
+      "revId": "079d37182d89d67a5af1bf6e9971add526337f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//5IU\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-12T17:57:10Z",
+      "side": 1,
+      "message": "suggest don\u0027t do this compare. I don\u0027t think it\u0027s going to improve performance, since comparing the strings is going to have to walk through every character, so suggest skip the check and just do the regex sub all the time.",
+      "revId": "079d37182d89d67a5af1bf6e9971add526337f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//5Hk\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-12T17:57:10Z",
+      "side": 1,
+      "message": "move this up with the rest of the standard library imports, to line 22. see https://github.com/openstack/keystone/blame/master/HACKING.rst#L69",
+      "revId": "079d37182d89d67a5af1bf6e9971add526337f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
