@@ -34,6 +34,9 @@
 # member_role_id = 9fe2ff9ee4384b1894a90878d3e92bab
 # member_role_name = _member_
 
+# Customize the size of generated unique ID's (allowable range: 1-64)
+# uid_length = 32
+
 # === Logging Options ===
 # Print debugging output
 # (includes plaintext request logging, potentially including passwords)
