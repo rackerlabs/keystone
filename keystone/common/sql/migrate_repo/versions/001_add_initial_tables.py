@@ -108,7 +108,7 @@ def upgrade(migrate_engine):
         'token',
         meta,
         sql.Column('id', sql.String(64), primary_key=True),
-        sql.Column('expires', sql.DateTime()),
+        sql.Column('expires', sql.DateTime(), index=True),
         sql.Column('extra', sql.Text()))
     token_table.create(migrate_engine, checkfirst=True)
 

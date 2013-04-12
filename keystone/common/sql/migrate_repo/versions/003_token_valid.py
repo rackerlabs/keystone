@@ -26,9 +26,11 @@ def upgrade(migrate_engine):
     token = Table('token', meta, autoload=True)
     # creating the column immediately with nullable=False fails with
     # PostgreSQL (LP 1068181), so do it in two steps instead
-    valid = Column("valid", Boolean(), ColumnDefault(True), nullable=True)
+    valid = Column("valid", Boolean(), ColumnDefault(True), nullable=True, index=True)
     valid.create(token, populate_default=True)
     valid.alter(type=Boolean(), default=True, nullable=False)
+    idx = Index('ix_token_valid', token.c.valid)
+    idx.create(migrate_engine)
 
 
 def downgrade(migrate_engine):
