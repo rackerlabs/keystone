@@ -18,10 +18,10 @@
 
 import urllib
 import urlparse
-import uuid
 
 from keystone.common import controller
 from keystone.common import logging
+from keystone.common import uid
 from keystone import config
 from keystone import exception
 
@@ -99,7 +99,7 @@ class Tenant(controller.V2Controller):
             raise exception.ValidationError(message=msg)
 
         self.assert_admin(context)
-        tenant_ref['id'] = tenant_ref.get('id', uuid.uuid4().hex)
+        tenant_ref['id'] = tenant_ref.get('id', uid.new())
         tenant = self.identity_api.create_project(
             context, tenant_ref['id'],
             self._normalize_domain_id(context, tenant_ref))
@@ -200,7 +200,7 @@ class User(controller.V2Controller):
                 and self.identity_api.get_project(context,
                                                   default_tenant_id) is None):
             raise exception.ProjectNotFound(project_id=default_tenant_id)
-        user_id = uuid.uuid4().hex
+        user_id = uid.new()
         user_ref = self._normalize_domain_id(context, user.copy())
         user_ref['id'] = user_id
         new_user_ref = self.identity_api.create_user(
@@ -272,7 +272,7 @@ class Role(controller.V2Controller):
             msg = 'Name field is required and cannot be empty'
             raise exception.ValidationError(message=msg)
 
-        role_id = uuid.uuid4().hex
+        role_id = uid.new()
         role['id'] = role_id
         role_ref = self.identity_api.create_role(context, role_id, role)
         return {'role': role_ref}

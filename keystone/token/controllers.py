@@ -1,11 +1,11 @@
 import json
 import subprocess
-import uuid
 
 from keystone.common import cms
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import logging
+from keystone.common import uid
 from keystone.common import utils
 from keystone import config
 from keystone import exception
@@ -111,7 +111,7 @@ class Auth(controller.V2Controller):
         token_data['access']['serviceCatalog'] = service_catalog
 
         if CONF.signing.token_format == 'UUID':
-            token_id = uuid.uuid4().hex
+            token_id = uid.new(min_length=32)
         elif CONF.signing.token_format == 'PKI':
             try:
                 token_id = cms.cms_sign_token(json.dumps(token_data),

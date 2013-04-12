@@ -14,8 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
+from keystone.common import uid
 from keystone.common import wsgi
 from keystone import config
 from keystone import exception
@@ -62,15 +61,15 @@ class ExceptionTestCase(test.TestCase):
                 self.assertValidJsonRendering(cls(message='Overriden.'))
 
     def test_validation_error(self):
-        target = uuid.uuid4().hex
-        attribute = uuid.uuid4().hex
+        target = uid.new()
+        attribute = uid.new()
         e = exception.ValidationError(target=target, attribute=attribute)
         self.assertValidJsonRendering(e)
         self.assertIn(target, str(e))
         self.assertIn(attribute, str(e))
 
     def test_not_found(self):
-        target = uuid.uuid4().hex
+        target = uid.new()
         e = exception.NotFound(target=target)
         self.assertValidJsonRendering(e)
         self.assertIn(target, str(e))
@@ -81,7 +80,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_unauthorized_exposure(self):
         self.opt(debug=False)
 
-        risky_info = uuid.uuid4().hex
+        risky_info = uid.new()
         e = exception.Unauthorized(message=risky_info)
         self.assertValidJsonRendering(e)
         self.assertNotIn(risky_info, str(e))
@@ -89,7 +88,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_unauthorized_exposure_in_debug(self):
         self.opt(debug=True)
 
-        risky_info = uuid.uuid4().hex
+        risky_info = uid.new()
         e = exception.Unauthorized(message=risky_info)
         self.assertValidJsonRendering(e)
         self.assertIn(risky_info, str(e))
@@ -97,7 +96,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_forbidden_exposure(self):
         self.opt(debug=False)
 
-        risky_info = uuid.uuid4().hex
+        risky_info = uid.new()
         e = exception.Forbidden(message=risky_info)
         self.assertValidJsonRendering(e)
         self.assertNotIn(risky_info, str(e))
@@ -105,7 +104,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_forbidden_exposure_in_debug(self):
         self.opt(debug=True)
 
-        risky_info = uuid.uuid4().hex
+        risky_info = uid.new()
         e = exception.Forbidden(message=risky_info)
         self.assertValidJsonRendering(e)
         self.assertIn(risky_info, str(e))
@@ -113,8 +112,8 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_forbidden_action_exposure(self):
         self.opt(debug=False)
 
-        risky_info = uuid.uuid4().hex
-        action = uuid.uuid4().hex
+        risky_info = uid.new()
+        action = uid.new()
         e = exception.ForbiddenAction(message=risky_info, action=action)
         self.assertValidJsonRendering(e)
         self.assertNotIn(risky_info, str(e))
@@ -127,7 +126,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_forbidden_action_exposure_in_debug(self):
         self.opt(debug=True)
 
-        risky_info = uuid.uuid4().hex
+        risky_info = uid.new()
 
         e = exception.ForbiddenAction(message=risky_info)
         self.assertValidJsonRendering(e)

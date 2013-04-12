@@ -15,9 +15,9 @@
 # under the License.
 
 import unittest2 as unittest
-import uuid
 
 from keystone.common import dependency
+from keystone.common import uid
 
 
 class TestDependencyInjection(unittest.TestCase):
@@ -159,7 +159,7 @@ class TestDependencyInjection(unittest.TestCase):
         consumer.do_work_with_dependencies()
 
     def test_unresolvable_dependency(self):
-        @dependency.requires(uuid.uuid4().hex)
+        @dependency.requires(uid.new())
         class Consumer(object):
             pass
 

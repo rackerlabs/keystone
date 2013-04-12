@@ -1,4 +1,4 @@
-import uuid
+from keystone.common import uid
 
 import test_v3
 
@@ -8,7 +8,7 @@ class PolicyTestCase(test_v3.RestfulTestCase):
 
     def setUp(self):
         super(PolicyTestCase, self).setUp()
-        self.policy_id = uuid.uuid4().hex
+        self.policy_id = uid.new()
         self.policy = self.new_policy_ref()
         self.policy['id'] = self.policy_id
         self.policy_api.create_policy(

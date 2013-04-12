@@ -1,6 +1,5 @@
-import uuid
-
 from keystone.common.sql import util as sql_util
+from keystone.common import uid
 from keystone import test
 
 import test_content_types
@@ -12,7 +11,7 @@ BASE_URL = 'http://127.0.0.1:35357/v2'
 class V2CatalogTestCase(test_content_types.RestfulTestCase):
     def setUp(self):
         super(V2CatalogTestCase, self).setUp()
-        self.service_id = uuid.uuid4().hex
+        self.service_id = uid.new()
         self.service = self.new_service_ref()
         self.service['id'] = self.service_id
         self.catalog_api.create_service(
@@ -22,14 +21,14 @@ class V2CatalogTestCase(test_content_types.RestfulTestCase):
     def new_ref(self):
         """Populates a ref with attributes common to all API entities."""
         return {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
+            'id': uid.new(),
+            'name': uid.new(),
+            'description': uid.new(),
             'enabled': True}
 
     def new_service_ref(self):
         ref = self.new_ref()
-        ref['type'] = uuid.uuid4().hex
+        ref['type'] = uid.new()
         return ref
 
     def _get_token_id(self, r):

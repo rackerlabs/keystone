@@ -1,9 +1,16 @@
 from keystone import exception
 from keystone import test
 from keystone.common import uid
+from keystone.common import config
 
 
 class UidTest(test.TestCase):
+    def setUp(self):
+        super(UidTest, self).setUp()
+
+        # reset the default uid_length
+        self.opt(uid_length=config._DEFAULT_UID_LENGTH)
+
     def test_default_length(self):
         self.assertEqual(len(uid.new()), 32)
 

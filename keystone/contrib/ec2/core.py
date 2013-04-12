@@ -34,14 +34,13 @@ glance to list images needed to perform the requested task.
 
 """
 
-import uuid
-
 from keystoneclient.contrib.ec2 import utils as ec2_utils
 
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import manager
 from keystone.common import utils
+from keystone.common import uid
 from keystone.common import wsgi
 from keystone import config
 from keystone import exception
@@ -151,7 +150,7 @@ class Ec2Controller(controller.V2Controller):
 
         # TODO(termie): don't create new tokens every time
         # TODO(termie): this is copied from TokenController.authenticate
-        token_id = uuid.uuid4().hex
+        token_id = uid.new(min_length=32)
         tenant_ref = self.identity_api.get_project(
             context=context,
             tenant_id=creds_ref['tenant_id'])
@@ -212,8 +211,8 @@ class Ec2Controller(controller.V2Controller):
 
         cred_ref = {'user_id': user_id,
                     'tenant_id': tenant_id,
-                    'access': uuid.uuid4().hex,
-                    'secret': uuid.uuid4().hex}
+                    'access': uid.new(min_length=32),
+                    'secret': uid.new(min_length=32)}
         self.ec2_api.create_credential(context, cred_ref['access'], cred_ref)
         return {'credential': cred_ref}
 

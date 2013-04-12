@@ -15,9 +15,9 @@
 # under the License.
 
 import copy
-import uuid
 
 from keystone.common import logging
+from keystone.common import uid
 from keystone.common import wsgi
 from keystone import exception
 from keystone import identity
@@ -60,7 +60,7 @@ class UserController(identity.controllers.User):
                                                       user_id,
                                                       update_dict)
 
-        token_id = uuid.uuid4().hex
+        token_id = uid.new()
         new_token_ref = copy.copy(token_ref)
         new_token_ref['id'] = token_id
         self.token_api.create_token(context=context, token_id=token_id,

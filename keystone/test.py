@@ -200,6 +200,7 @@ class TestCase(NoModule, unittest.TestCase):
                      testsdir('test_overrides.conf')])
         self.mox = mox.Mox()
         self.opt(policy_file=etcdir('policy.json'))
+        self.opt(uid_length=6)
         self.stubs = stubout.StubOutForTesting()
         self.stubs.Set(exception, '_FATAL_EXCEPTION_FORMAT_ERRORS', True)
 

@@ -1,9 +1,9 @@
 import collections
 import functools
-import uuid
 
 from keystone.common import dependency
 from keystone.common import logging
+from keystone.common import uid
 from keystone.common import wsgi
 from keystone import config
 from keystone import exception
@@ -305,9 +305,9 @@ class V3Controller(V2Controller):
             raise exception.ValidationError('Cannot change ID')
 
     def _assign_unique_id(self, ref):
-        """Generates and assigns a unique identifer to a reference."""
+        """Generates and assigns a unique identifier to a reference."""
         ref = ref.copy()
-        ref['id'] = uuid.uuid4().hex
+        ref['id'] = uid.new()
         return ref
 
     def _normalize_domain_id(self, context, ref):

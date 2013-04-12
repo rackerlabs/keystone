@@ -14,10 +14,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 from keystone.common.sql import nova
 from keystone.common.sql import util as sql_util
+from keystone.common import uid
 from keystone import config
 from keystone.contrib.ec2.backends import sql as ec2_sql
 from keystone.identity.backends import sql as identity_sql
@@ -82,7 +81,7 @@ class MigrateNovaAuth(test.TestCase):
         super(MigrateNovaAuth, self).tearDown()
 
     def _create_role(self, role_name):
-        role_id = uuid.uuid4().hex
+        role_id = uid.new()
         role_dict = {'id': role_id, 'name': role_name}
         self.identity_api.create_role(role_id, role_dict)
 

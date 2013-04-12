@@ -14,11 +14,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 import nose.exc
 
 from keystone.common import sql
+from keystone.common import uid
 from keystone import config
 from keystone import test
 
@@ -44,15 +43,15 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
 
         client = self.get_client(admin=True)
 
-        service = client.services.create(name=uuid.uuid4().hex,
-                                         service_type=uuid.uuid4().hex,
-                                         description=uuid.uuid4().hex)
+        service = client.services.create(name=uid.new(),
+                                         service_type=uid.new(),
+                                         description=uid.new())
 
-        endpoint_region = uuid.uuid4().hex
-        invalid_service_id = uuid.uuid4().hex
-        endpoint_publicurl = uuid.uuid4().hex
-        endpoint_internalurl = uuid.uuid4().hex
-        endpoint_adminurl = uuid.uuid4().hex
+        endpoint_region = uid.new()
+        invalid_service_id = uid.new()
+        endpoint_publicurl = uid.new()
+        endpoint_internalurl = uid.new()
+        endpoint_adminurl = uid.new()
 
         # a non-existent service ID should trigger a 404
         self.assertRaises(client_exceptions.NotFound,
@@ -84,18 +83,18 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
         client = self.get_client(admin=True)
         self.assertRaises(client_exceptions.NotFound,
                           client.endpoints.create,
-                          region=uuid.uuid4().hex,
-                          service_id=uuid.uuid4().hex,
-                          publicurl=uuid.uuid4().hex,
-                          adminurl=uuid.uuid4().hex,
-                          internalurl=uuid.uuid4().hex)
+                          region=uid.new(),
+                          service_id=uid.new(),
+                          publicurl=uid.new(),
+                          adminurl=uid.new(),
+                          internalurl=uid.new())
 
     def test_endpoint_delete_404(self):
         from keystoneclient import exceptions as client_exceptions
         client = self.get_client(admin=True)
         self.assertRaises(client_exceptions.NotFound,
                           client.endpoints.delete,
-                          id=uuid.uuid4().hex)
+                          id=uid.new())
 
     def test_policy_crud(self):
         # FIXME(dolph): this test was written prior to the v3 implementation of
@@ -107,18 +106,18 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
         from keystoneclient import exceptions as client_exceptions
         client = self.get_client(admin=True)
 
-        policy_blob = uuid.uuid4().hex
-        policy_type = uuid.uuid4().hex
+        policy_blob = uid.new()
+        policy_type = uid.new()
         service = client.services.create(
-            name=uuid.uuid4().hex,
-            service_type=uuid.uuid4().hex,
-            description=uuid.uuid4().hex)
+            name=uid.new(),
+            service_type=uid.new(),
+            description=uid.new())
         endpoint = client.endpoints.create(
             service_id=service.id,
-            region=uuid.uuid4().hex,
-            adminurl=uuid.uuid4().hex,
-            internalurl=uuid.uuid4().hex,
-            publicurl=uuid.uuid4().hex)
+            region=uid.new(),
+            adminurl=uid.new(),
+            internalurl=uid.new(),
+            publicurl=uid.new())
 
         # create
         policy = client.policies.create(
@@ -141,14 +140,14 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
         self.assertEquals(endpoint.id, policy.endpoint_id)
 
         # update
-        policy_blob = uuid.uuid4().hex
-        policy_type = uuid.uuid4().hex
+        policy_blob = uid.new()
+        policy_type = uid.new()
         endpoint = client.endpoints.create(
             service_id=service.id,
-            region=uuid.uuid4().hex,
-            adminurl=uuid.uuid4().hex,
-            internalurl=uuid.uuid4().hex,
-            publicurl=uuid.uuid4().hex)
+            region=uid.new(),
+            adminurl=uid.new(),
+            internalurl=uid.new(),
+            publicurl=uid.new())
 
         policy = client.policies.update(
             policy=policy.id,

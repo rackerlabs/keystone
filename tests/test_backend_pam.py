@@ -14,9 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 from keystone import config
+from keystone.common import uid
 from keystone.identity.backends import pam as identity_pam
 from keystone import test
 
@@ -32,7 +31,7 @@ class PamIdentity(test.TestCase):
                      test.testsdir('test_overrides.conf'),
                      test.testsdir('backend_pam.conf')])
         self.identity_api = identity_pam.PamIdentity()
-        id = uuid.uuid4().hex
+        id = uid.new()
         self.tenant_in = {'id': id, 'name': id}
         self.user_in = {'id': CONF.pam.userid, 'name': CONF.pam.userid}
 
