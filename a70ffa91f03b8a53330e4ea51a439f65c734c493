@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//5MQ\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-12T17:22:38Z",
+      "side": 1,
+      "message": "Move this test to test_bakend, and then skip if the backend cannot support it, but they all should.  Most important that the LDAP backend be tested against this",
+      "revId": "a70ffa91f03b8a53330e4ea51a439f65c734c493",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
