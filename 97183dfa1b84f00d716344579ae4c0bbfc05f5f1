@@ -33,6 +33,24 @@
       "revId": "97183dfa1b84f00d716344579ae4c0bbfc05f5f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//4yI\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7144
+      },
+      "writtenOn": "2013-04-12T23:13:49Z",
+      "side": 1,
+      "message": "A note saying that with_venv.sh only needs to be used if you\u0027re using a virtualenv is already pointed out earlier on the page in the Setup section.",
+      "parentUuid": "AAAAOn//5xg\u003d",
+      "revId": "97183dfa1b84f00d716344579ae4c0bbfc05f5f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
