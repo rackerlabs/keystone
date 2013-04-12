@@ -32,3 +32,5 @@ netifaces
 
 # For translations processing
 Babel
+MySQL-python
+psycopg2
