@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//5AE\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-12T19:17:55Z",
+      "side": 1,
+      "message": "this is equivalent to\n\n  if not values:\n    values \u003d None",
+      "revId": "d61988a48ee6d5c03e20e27ea7407ffa8106e9c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//4/4\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-12T19:17:55Z",
+      "side": 1,
+      "message": "this does not appear to be applicable to xml; the order of the argument is backwards from the normal convention; this is equivalent to self.assertTrue(tenant.get(\u0027description\u0027)) which I don\u0027t believe is the intended behavior",
+      "revId": "d61988a48ee6d5c03e20e27ea7407ffa8106e9c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
