@@ -33,6 +33,24 @@
       "revId": "717f1aa7f6cb5f01fe16a516644c96419c6900c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//5Do\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-12T18:45:34Z",
+      "side": 1,
+      "message": "no, this is a backport",
+      "parentUuid": "AAAAOn//5Mk\u003d",
+      "revId": "717f1aa7f6cb5f01fe16a516644c96419c6900c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
