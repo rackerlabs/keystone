@@ -29,6 +29,8 @@ def upgrade(migrate_engine):
     valid = Column("valid", Boolean(), ColumnDefault(True), nullable=True)
     valid.create(token, populate_default=True)
     valid.alter(type=Boolean(), default=True, nullable=False)
+    idx = Index('ix_token_valid', token.c.valid)
+    idx.create(migrate_engine)
 
 
 def downgrade(migrate_engine):
