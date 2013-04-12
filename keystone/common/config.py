@@ -28,6 +28,7 @@ gettext.install('keystone', unicode=1)
 _DEFAULT_LOG_FORMAT = "%(asctime)s %(levelname)8s [%(name)s] %(message)s"
 _DEFAULT_LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 _DEFAULT_AUTH_METHODS = ['password', 'token']
+_DEFAULT_UID_LENGTH = 32
 
 COMMON_CLI_OPTS = [
     cfg.BoolOpt('debug',
@@ -200,7 +201,7 @@ def configure():
     register_str('auth_admin_prefix', default='')
     register_str('policy_file', default='policy.json')
     register_str('policy_default_rule', default=None)
-    register_int('uid_length', default=32)
+    register_int('uid_length', default=_DEFAULT_UID_LENGTH)
     # default max request size is 112k
     register_int('max_request_body_size', default=114688)
     register_int('max_param_size', default=64)

@@ -15,10 +15,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import uid
 from keystone import exception
 
 
@@ -43,7 +42,7 @@ class Service(controller.V2Controller):
 
     def create_service(self, context, OS_KSADM_service):
         self.assert_admin(context)
-        service_id = uuid.uuid4().hex
+        service_id = uid.new()
         service_ref = OS_KSADM_service.copy()
         service_ref['id'] = service_id
         new_service_ref = self.catalog_api.create_service(
@@ -96,10 +95,10 @@ class Endpoint(controller.V2Controller):
                 # null urls can be discarded
                 endpoint.pop('%surl' % i)
 
-        legacy_endpoint_id = uuid.uuid4().hex
+        legacy_endpoint_id = uid.new()
         for interface, url in urls.iteritems():
             endpoint_ref = endpoint.copy()
-            endpoint_ref['id'] = uuid.uuid4().hex
+            endpoint_ref['id'] = uid.new()
             endpoint_ref['legacy_endpoint_id'] = legacy_endpoint_id
             endpoint_ref['interface'] = interface
             endpoint_ref['url'] = url

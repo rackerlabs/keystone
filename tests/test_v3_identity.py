@@ -14,9 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 from keystone import exception
+from keystone.common import uid
 
 import test_v3
 
@@ -27,13 +26,13 @@ class IdentityTestCase(test_v3.RestfulTestCase):
     def setUp(self):
         super(IdentityTestCase, self).setUp()
 
-        self.group_id = uuid.uuid4().hex
+        self.group_id = uid.new()
         self.group = self.new_group_ref(
             domain_id=self.domain_id)
         self.group['id'] = self.group_id
         self.identity_api.create_group(self.group_id, self.group)
 
-        self.credential_id = uuid.uuid4().hex
+        self.credential_id = uid.new()
         self.credential = self.new_credential_ref(
             user_id=self.user['id'],
             project_id=self.project_id)

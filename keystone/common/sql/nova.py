@@ -16,10 +16,9 @@
 
 """Export data from Nova database and import through Identity Service."""
 
-import uuid
-
 from keystone import config
 from keystone.common import logging
+from keystone.common import uid
 from keystone.contrib.ec2.backends import sql as ec2_sql
 from keystone.identity.backends import sql as identity_sql
 
@@ -44,15 +43,11 @@ def import_auth(data):
     _create_ec2_creds(ec2_api, identity_api, ec2_creds, user_map)
 
 
-def _generate_uuid():
-    return uuid.uuid4().hex
-
-
 def _create_projects(api, tenants):
     tenant_map = {}
     for tenant in tenants:
         tenant_dict = {
-            'id': _generate_uuid(),
+            'id': uid.new(),
             'name': tenant['id'],
             'domain_id': tenant.get('domain_id', DEFAULT_DOMAIN_ID),
             'description': tenant['description'],
@@ -68,7 +63,7 @@ def _create_users(api, users):
     user_map = {}
     for user in users:
         user_dict = {
-            'id': _generate_uuid(),
+            'id': uid.new(),
             'name': user['id'],
             'domain_id': user.get('domain_id', DEFAULT_DOMAIN_ID),
             'email': '',
@@ -96,7 +91,7 @@ def _create_roles(api, roles):
             LOG.debug(_('Ignoring existing role %s') % role)
             continue
         role_dict = {
-            'id': _generate_uuid(),
+            'id': uid.new(),
             'name': role,
         }
         role_map[role] = role_dict['id']

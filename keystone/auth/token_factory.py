@@ -18,11 +18,11 @@
 
 import json
 import subprocess
-import uuid
 import webob
 
 from keystone.common import cms
 from keystone.common import logging
+from keystone.common import uid
 from keystone.common import utils
 from keystone import catalog
 from keystone import config
@@ -304,7 +304,7 @@ def create_token(context, auth_context, auth_info):
         trust)
 
     if CONF.signing.token_format == 'UUID':
-        token_id = uuid.uuid4().hex
+        token_id = uid.new(min_length=32)
     elif CONF.signing.token_format == 'PKI':
         try:
             token_id = cms.cms_sign_token(json.dumps(token_data),

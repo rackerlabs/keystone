@@ -14,14 +14,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 import ldap
 
 from keystone import clean
 from keystone.common import ldap as common_ldap
 from keystone.common.ldap import fakeldap
 from keystone.common import models
+from keystone.common import uid
 from keystone.common import utils
 from keystone import config
 from keystone import exception
@@ -174,7 +173,7 @@ class Identity(identity.Driver):
         tenant['name'] = clean.project_name(tenant['name'])
         data = tenant.copy()
         if 'id' not in data or data['id'] is None:
-            data['id'] = str(uuid.uuid4().hex)
+            data['id'] = uid.new()
         if 'description' in data and data['description'] in ['', None]:
             data.pop('description')
         return self.project.create(data)
@@ -501,7 +500,7 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
         self.affirm_unique(values)
         data = values.copy()
         if data.get('id') is None:
-            data['id'] = uuid.uuid4().hex
+            data['id'] = uid.new()
         return super(ProjectApi, self).create(data)
 
     def get_user_projects(self, user_id):
@@ -855,7 +854,7 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
         self.affirm_unique(values)
         data = values.copy()
         if data.get('id') is None:
-            data['id'] = uuid.uuid4().hex
+            data['id'] = uid.new()
         if 'description' in data and data['description'] in ['', None]:
             data.pop('description')
         return super(GroupApi, self).create(data)
@@ -964,7 +963,7 @@ class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
         self.affirm_unique(values)
         data = values.copy()
         if data.get('id') is None:
-            data['id'] = uuid.uuid4().hex
+            data['id'] = uid.new()
         return super(DomainApi, self).create(data)
 
     def delete(self, id):

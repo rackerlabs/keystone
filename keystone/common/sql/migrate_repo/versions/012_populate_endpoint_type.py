@@ -15,10 +15,11 @@
 # under the License.
 
 import json
-import uuid
 
 import sqlalchemy as sql
 from sqlalchemy import orm
+
+from keystone.common import uid
 
 
 ENDPOINT_TYPES = ['public', 'internal', 'admin']
@@ -40,7 +41,7 @@ def upgrade(migrate_engine):
 
         for interface in ENDPOINT_TYPES:
             endpoint = {
-                'id': uuid.uuid4().hex,
+                'id': uid.new(),
                 'legacy_endpoint_id': ref.id,
                 'interface': interface,
                 'region': ref.region,

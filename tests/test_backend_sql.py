@@ -14,10 +14,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 from keystone import catalog
 from keystone.common import sql
+from keystone.common import uid
 from keystone import config
 from keystone import exception
 from keystone import identity
@@ -67,10 +66,10 @@ class SqlTests(test.TestCase):
 
 class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_delete_user_with_project_association(self):
-        user = {'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex,
+        user = {'id': uid.new(),
+                'name': uid.new(),
                 'domain_id': DEFAULT_DOMAIN_ID,
-                'password': uuid.uuid4().hex}
+                'password': uid.new()}
         self.identity_man.create_user({}, user['id'], user)
         self.identity_api.add_user_to_project(self.tenant_bar['id'],
                                               user['id'])
@@ -80,10 +79,10 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                           user['id'])
 
     def test_create_null_user_name(self):
-        user = {'id': uuid.uuid4().hex,
+        user = {'id': uid.new(),
                 'name': None,
                 'domain_id': DEFAULT_DOMAIN_ID,
-                'password': uuid.uuid4().hex}
+                'password': uid.new()}
         self.assertRaises(exception.ValidationError,
                           self.identity_man.create_user, {},
                           user['id'],
@@ -97,7 +96,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                           DEFAULT_DOMAIN_ID)
 
     def test_create_null_project_name(self):
-        tenant = {'id': uuid.uuid4().hex,
+        tenant = {'id': uid.new(),
                   'name': None,
                   'domain_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
@@ -113,7 +112,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                           DEFAULT_DOMAIN_ID)
 
     def test_create_null_role_name(self):
-        role = {'id': uuid.uuid4().hex,
+        role = {'id': uid.new(),
                 'name': None}
         self.assertRaises(exception.Conflict,
                           self.identity_api.create_role,
@@ -175,19 +174,19 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         This behavior is specific to the SQL driver.
 
         """
-        tenant_id = uuid.uuid4().hex
-        arbitrary_key = uuid.uuid4().hex
-        arbitrary_value = uuid.uuid4().hex
+        tenant_id = uid.new()
+        arbitrary_key = uid.new()
+        arbitrary_value = uid.new()
         tenant = {
             'id': tenant_id,
-            'name': uuid.uuid4().hex,
+            'name': uid.new(),
             'domain_id': DEFAULT_DOMAIN_ID,
             arbitrary_key: arbitrary_value}
         ref = self.identity_man.create_project({}, tenant_id, tenant)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertIsNone(ref.get('extra'))
 
-        tenant['name'] = uuid.uuid4().hex
+        tenant['name'] = uid.new()
         ref = self.identity_api.update_project(tenant_id, tenant)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertEqual(arbitrary_value, ref['extra'][arbitrary_key])
@@ -202,22 +201,22 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         This behavior is specific to the SQL driver.
 
         """
-        user_id = uuid.uuid4().hex
-        arbitrary_key = uuid.uuid4().hex
-        arbitrary_value = uuid.uuid4().hex
+        user_id = uid.new()
+        arbitrary_key = uid.new()
+        arbitrary_value = uid.new()
         user = {
             'id': user_id,
-            'name': uuid.uuid4().hex,
+            'name': uid.new(),
             'domain_id': DEFAULT_DOMAIN_ID,
-            'password': uuid.uuid4().hex,
+            'password': uid.new(),
             arbitrary_key: arbitrary_value}
         ref = self.identity_man.create_user({}, user_id, user)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertIsNone(ref.get('password'))
         self.assertIsNone(ref.get('extra'))
 
-        user['name'] = uuid.uuid4().hex
-        user['password'] = uuid.uuid4().hex
+        user['name'] = uid.new()
+        user['password'] = uid.new()
         ref = self.identity_api.update_user(user_id, user)
         self.assertIsNone(ref.get('password'))
         self.assertIsNone(ref['extra'].get('password'))
@@ -236,17 +235,17 @@ class SqlToken(SqlTests, test_backend.TokenTests):
 class SqlCatalog(SqlTests, test_backend.CatalogTests):
     def test_malformed_catalog_throws_error(self):
         service = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
+            'id': uid.new(),
+            'type': uid.new(),
+            'name': uid.new(),
+            'description': uid.new(),
         }
         self.catalog_api.create_service(service['id'], service.copy())
 
         malformed_url = "http://192.168.1.104:$(compute_port)s/v2/$(tenant)s"
         endpoint = {
-            'id': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
+            'id': uid.new(),
+            'region': uid.new(),
             'service_id': service['id'],
             'interface': 'public',
             'url': malformed_url,
@@ -258,16 +257,16 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
 
     def test_get_catalog_with_empty_public_url(self):
         service = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
+            'id': uid.new(),
+            'type': uid.new(),
+            'name': uid.new(),
+            'description': uid.new(),
         }
         self.catalog_api.create_service(service['id'], service.copy())
 
         endpoint = {
-            'id': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
+            'id': uid.new(),
+            'region': uid.new(),
             'interface': 'public',
             'url': '',
             'service_id': service['id'],
@@ -284,19 +283,19 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
 
     def test_create_endpoint_400(self):
         service = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
+            'id': uid.new(),
+            'type': uid.new(),
+            'name': uid.new(),
+            'description': uid.new(),
         }
         self.catalog_api.create_service(service['id'], service.copy())
 
         endpoint = {
-            'id': uuid.uuid4().hex,
+            'id': uid.new(),
             'region': "0" * 256,
             'service_id': service['id'],
             'interface': 'public',
-            'url': uuid.uuid4().hex,
+            'url': uid.new(),
         }
 
         with self.assertRaises(exception.StringLengthExceeded):

@@ -27,13 +27,13 @@ To run these tests against a live database:
 """
 import copy
 import json
-import uuid
 
 from migrate.versioning import api as versioning_api
 import sqlalchemy
 
 from keystone.common import sql
 from keystone.common.sql import migration
+from keystone.common import uid
 from keystone import config
 from keystone import test
 
@@ -161,44 +161,44 @@ class SqlUpgradeTests(test.TestCase):
 
         users = {
             'bool_enabled_user': {
-                'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex,
-                'password': uuid.uuid4().hex,
+                'id': uid.new(),
+                'name': uid.new(),
+                'password': uid.new(),
                 'extra': json.dumps({'enabled': True})},
             'bool_disabled_user': {
-                'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex,
-                'password': uuid.uuid4().hex,
+                'id': uid.new(),
+                'name': uid.new(),
+                'password': uid.new(),
                 'extra': json.dumps({'enabled': False})},
             'str_enabled_user': {
-                'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex,
-                'password': uuid.uuid4().hex,
+                'id': uid.new(),
+                'name': uid.new(),
+                'password': uid.new(),
                 'extra': json.dumps({'enabled': 'True'})},
             'str_disabled_user': {
-                'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex,
-                'password': uuid.uuid4().hex,
+                'id': uid.new(),
+                'name': uid.new(),
+                'password': uid.new(),
                 'extra': json.dumps({'enabled': 'False'})},
             'int_enabled_user': {
-                'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex,
-                'password': uuid.uuid4().hex,
+                'id': uid.new(),
+                'name': uid.new(),
+                'password': uid.new(),
                 'extra': json.dumps({'enabled': 1})},
             'int_disabled_user': {
-                'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex,
-                'password': uuid.uuid4().hex,
+                'id': uid.new(),
+                'name': uid.new(),
+                'password': uid.new(),
                 'extra': json.dumps({'enabled': 0})},
             'null_enabled_user': {
-                'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex,
-                'password': uuid.uuid4().hex,
+                'id': uid.new(),
+                'name': uid.new(),
+                'password': uid.new(),
                 'extra': json.dumps({'enabled': None})},
             'unset_enabled_user': {
-                'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex,
-                'password': uuid.uuid4().hex,
+                'id': uid.new(),
+                'name': uid.new(),
+                'password': uid.new(),
                 'extra': json.dumps({})}}
 
         session = self.Session()
@@ -261,21 +261,21 @@ class SqlUpgradeTests(test.TestCase):
     def test_upgrade_endpoints(self):
         self.upgrade(10)
         service_extra = {
-            'name': uuid.uuid4().hex,
+            'name': uid.new(),
         }
         service = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
+            'id': uid.new(),
+            'type': uid.new(),
             'extra': json.dumps(service_extra),
         }
         endpoint_extra = {
-            'publicurl': uuid.uuid4().hex,
-            'internalurl': uuid.uuid4().hex,
-            'adminurl': uuid.uuid4().hex,
+            'publicurl': uid.new(),
+            'internalurl': uid.new(),
+            'adminurl': uid.new(),
         }
         endpoint = {
-            'id': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
+            'id': uid.new(),
+            'region': uid.new(),
             'service_id': service['id'],
             'extra': json.dumps(endpoint_extra),
         }
@@ -422,35 +422,35 @@ class SqlUpgradeTests(test.TestCase):
         self.upgrade(13)
 
         service_extra = {
-            'name': uuid.uuid4().hex,
+            'name': uid.new(),
         }
         service = {
-            'id': uuid.uuid4().hex,
-            'type': uuid.uuid4().hex,
+            'id': uid.new(),
+            'type': uid.new(),
             'extra': json.dumps(service_extra),
         }
 
         common_endpoint_attrs = {
-            'legacy_endpoint_id': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
+            'legacy_endpoint_id': uid.new(),
+            'region': uid.new(),
             'service_id': service['id'],
             'extra': json.dumps({}),
         }
         endpoints = {
             'public': {
-                'id': uuid.uuid4().hex,
+                'id': uid.new(),
                 'interface': 'public',
-                'url': uuid.uuid4().hex,
+                'url': uid.new(),
             },
             'internal': {
-                'id': uuid.uuid4().hex,
+                'id': uid.new(),
                 'interface': 'internal',
-                'url': uuid.uuid4().hex,
+                'url': uid.new(),
             },
             'admin': {
-                'id': uuid.uuid4().hex,
+                'id': uid.new(),
                 'interface': 'admin',
-                'url': uuid.uuid4().hex,
+                'url': uid.new(),
             },
         }
 
@@ -533,42 +533,42 @@ class SqlUpgradeTests(test.TestCase):
             'metadata', self.metadata, autoload=True)
 
         # Create a Domain
-        domain = {'id': uuid.uuid4().hex,
-                  'name': uuid.uuid4().hex,
+        domain = {'id': uid.new(),
+                  'name': uid.new(),
                   'enabled': True}
         session.execute(domain_table.insert().values(domain))
 
         # Create a Project
-        project = {'id': uuid.uuid4().hex,
-                   'name': uuid.uuid4().hex,
+        project = {'id': uid.new(),
+                   'name': uid.new(),
                    'domain_id': domain['id'],
                    'extra': "{}"}
         session.execute(project_table.insert().values(project))
 
         # Create another Project
-        project2 = {'id': uuid.uuid4().hex,
-                    'name': uuid.uuid4().hex,
+        project2 = {'id': uid.new(),
+                    'name': uid.new(),
                     'domain_id': domain['id'],
                     'extra': "{}"}
         session.execute(project_table.insert().values(project2))
 
         # Create a User
-        user = {'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex,
+        user = {'id': uid.new(),
+                'name': uid.new(),
                 'domain_id': domain['id'],
-                'password': uuid.uuid4().hex,
+                'password': uid.new(),
                 'enabled': True,
                 'extra': json.dumps({})}
         session.execute(user_table.insert().values(user))
 
         # Create a Role
-        role = {'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex}
+        role = {'id': uid.new(),
+                'name': uid.new()}
         session.execute(role_table.insert().values(role))
 
         # And another role
-        role2 = {'id': uuid.uuid4().hex,
-                 'name': uuid.uuid4().hex}
+        role2 = {'id': uid.new(),
+                 'name': uid.new()}
         session.execute(role_table.insert().values(role2))
 
         # Grant Role to User
@@ -674,11 +674,11 @@ class SqlUpgradeTests(test.TestCase):
         domain_table = sqlalchemy.Table('domain',
                                         self.metadata,
                                         autoload=True)
-        domain1 = {'id': uuid.uuid4().hex,
-                   'name': uuid.uuid4().hex,
+        domain1 = {'id': uid.new(),
+                   'name': uid.new(),
                    'enabled': True}
-        domain2 = {'id': uuid.uuid4().hex,
-                   'name': uuid.uuid4().hex,
+        domain2 = {'id': uid.new(),
+                   'name': uid.new(),
                    'enabled': True}
         cmd = domain_table.insert().values(domain1)
         self.engine.execute(cmd)
@@ -689,17 +689,17 @@ class SqlUpgradeTests(test.TestCase):
         this_table = sqlalchemy.Table('user',
                                       self.metadata,
                                       autoload=True)
-        user = {'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex,
+        user = {'id': uid.new(),
+                'name': uid.new(),
                 'domain_id': domain1['id'],
-                'password': uuid.uuid4().hex,
+                'password': uid.new(),
                 'enabled': True,
                 'extra': json.dumps({})}
         cmd = this_table.insert().values(user)
         self.engine.execute(cmd)
         # now insert a user with the same name into a different
         # domain - which should work.
-        user['id'] = uuid.uuid4().hex
+        user['id'] = uid.new()
         user['domain_id'] = domain2['id']
         cmd = this_table.insert().values(user)
         self.engine.execute(cmd)
@@ -717,17 +717,17 @@ class SqlUpgradeTests(test.TestCase):
         this_table = sqlalchemy.Table('project',
                                       self.metadata,
                                       autoload=True)
-        project = {'id': uuid.uuid4().hex,
-                   'name': uuid.uuid4().hex,
+        project = {'id': uid.new(),
+                   'name': uid.new(),
                    'domain_id': domain1['id'],
-                   'description': uuid.uuid4().hex,
+                   'description': uid.new(),
                    'enabled': True,
                    'extra': json.dumps({})}
         cmd = this_table.insert().values(project)
         self.engine.execute(cmd)
         # now insert a project with the same name into a different
         # domain - which should work.
-        project['id'] = uuid.uuid4().hex
+        project['id'] = uid.new()
         project['domain_id'] = domain2['id']
         cmd = this_table.insert().values(project)
         self.engine.execute(cmd)
@@ -778,17 +778,17 @@ class SqlUpgradeTests(test.TestCase):
         self.upgrade(21)
 
         service = {
-            'id': uuid.uuid4().hex,
+            'id': uid.new(),
             'name': 'keystone',
             'type': 'identity'}
         self.insert_dict(session, 'service', service)
 
-        legacy_endpoint_id = uuid.uuid4().hex
+        legacy_endpoint_id = uid.new()
         endpoint = {
-            'id': uuid.uuid4().hex,
+            'id': uid.new(),
             'service_id': service['id'],
-            'interface': uuid.uuid4().hex[:8],
-            'url': uuid.uuid4().hex,
+            'interface': uid.new(length=8),
+            'url': uid.new(),
             'extra': json.dumps({
                 'legacy_endpoint_id': legacy_endpoint_id})}
         self.insert_dict(session, 'endpoint', endpoint)

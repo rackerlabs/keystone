@@ -13,11 +13,11 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-import uuid
 import nose.exc
 
 from keystone import catalog
 from keystone.catalog.backends import kvs as catalog_kvs
+from keystone.common import uid
 from keystone import exception
 from keystone import identity
 from keystone import test
@@ -105,13 +105,13 @@ class KvsCatalog(test.TestCase, test_backend.CatalogTests):
         # FIXME(dolph): exceptions should be UserNotFound and ProjectNotFound
         self.assertRaises(exception.NotFound,
                           self.catalog_api.get_catalog,
-                          uuid.uuid4().hex,
+                          uid.new(),
                           'bar')
 
         self.assertRaises(exception.NotFound,
                           self.catalog_api.get_catalog,
                           'foo',
-                          uuid.uuid4().hex)
+                          uid.new())
 
     def test_get_catalog(self):
         catalog_ref = self.catalog_api.get_catalog('foo', 'bar')

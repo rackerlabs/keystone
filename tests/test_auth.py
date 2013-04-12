@@ -14,10 +14,10 @@
 
 import copy
 import datetime
-import uuid
 
 from keystone import auth
 from keystone import config
+from keystone.common import uid
 from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone import test
@@ -195,7 +195,7 @@ class AuthWithToken(AuthTest):
 
     def test_auth_invalid_token(self):
         """Verify exception is raised if invalid token"""
-        body_dict = _build_user_auth(token={"id": uuid.uuid4().hex})
+        body_dict = _build_user_auth(token={"id": uid.new()})
         self.assertRaises(
             exception.Unauthorized,
             self.controller.authenticate,
@@ -253,8 +253,8 @@ class AuthWithToken(AuthTest):
             self.tenant_bar['id'],
             self.role_member['id'])
         # Now create a group role for this user as well
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': uuid.uuid4().hex,
-                     'name': uuid.uuid4().hex}
+        new_group = {'id': uid.new(), 'domain_id': uid.new(),
+                     'name': uid.new()}
         self.identity_api.create_group(new_group['id'], new_group)
         self.identity_api.add_user_to_group(self.user_foo['id'],
                                             new_group['id'])
@@ -280,23 +280,23 @@ class AuthWithToken(AuthTest):
     def test_auth_token_cross_domain_group_and_project(self):
         """Verify getting a token in cross domain group/project roles"""
         # create domain, project and group and grant roles to user
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        domain1 = {'id': uid.new(), 'name': uid.new()}
         self.identity_api.create_domain(domain1['id'], domain1)
-        project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        project1 = {'id': uid.new(), 'name': uid.new(),
                     'domain_id': domain1['id']}
         self.identity_api.create_project(project1['id'], project1)
-        role_foo_domain1 = {'id': uuid.uuid4().hex,
-                            'name': uuid.uuid4().hex}
+        role_foo_domain1 = {'id': uid.new(),
+                            'name': uid.new()}
         self.identity_api.create_role(role_foo_domain1['id'],
                                       role_foo_domain1)
-        role_group_domain1 = {'id': uuid.uuid4().hex,
-                              'name': uuid.uuid4().hex}
+        role_group_domain1 = {'id': uid.new(),
+                              'name': uid.new()}
         self.identity_api.create_role(role_group_domain1['id'],
                                       role_group_domain1)
         self.identity_api.add_user_to_project(project1['id'],
                                               self.user_foo['id'])
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain1['id'],
-                     'name': uuid.uuid4().hex}
+        new_group = {'id': uid.new(), 'domain_id': domain1['id'],
+                     'name': uid.new()}
         self.identity_api.create_group(new_group['id'], new_group)
         self.identity_api.add_user_to_group(self.user_foo['id'],
                                             new_group['id'])
@@ -377,8 +377,8 @@ class AuthWithPasswordCredentials(AuthTest):
     def test_auth_invalid_user(self):
         """Verify exception is raised if invalid user"""
         body_dict = _build_user_auth(
-            username=uuid.uuid4().hex,
-            password=uuid.uuid4().hex)
+            username=uid.new(),
+            password=uid.new())
         self.assertRaises(
             exception.Unauthorized,
             self.controller.authenticate,
@@ -388,7 +388,7 @@ class AuthWithPasswordCredentials(AuthTest):
         """Verify exception is raised if invalid password"""
         body_dict = _build_user_auth(
             username="FOO",
-            password=uuid.uuid4().hex)
+            password=uid.new())
         self.assertRaises(
             exception.Unauthorized,
             self.controller.authenticate,
@@ -492,7 +492,7 @@ class AuthWithRemoteUser(AuthTest):
         self.assertRaises(
             exception.Unauthorized,
             self.controller.authenticate,
-            {'REMOTE_USER': uuid.uuid4().hex},
+            {'REMOTE_USER': uid.new()},
             body_dict)
 
 
@@ -786,7 +786,7 @@ class TokenExpirationTest(AuthTest):
             token_id=scoped_token_id)
         self.assertEqual(original_expiration, r['access']['token']['expires'])
 
-    def test_maintain_uuid_token_expiration(self):
+    def test_maintain_uid_token_expiration(self):
         self.opt_in_group('signing', token_format='UUID')
         self._maintain_token_expiration()
 

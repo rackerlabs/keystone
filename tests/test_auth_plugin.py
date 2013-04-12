@@ -14,8 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
+from keystone.common import logging
+from keystone.common import uid
 from keystone import auth
 from keystone import exception
 from keystone import test
@@ -23,8 +23,8 @@ from keystone import test
 
 # for testing purposes only
 METHOD_NAME = 'simple-challenge-response'
-EXPECTED_RESPONSE = uuid.uuid4().hex
-DEMO_USER_ID = uuid.uuid4().hex
+EXPECTED_RESPONSE = uid.new()
+DEMO_USER_ID = uid.new()
 
 
 class SimpleChallengeResponse(auth.AuthMethodHandler):
@@ -51,7 +51,7 @@ class TestAuthPlugin(test.TestCase):
         self.api = auth.controllers.Auth()
 
     def test_unsupported_auth_method(self):
-        method_name = uuid.uuid4().hex
+        method_name = uid.new()
         auth_data = {'methods': [method_name]}
         auth_data[method_name] = {'test': 'test'}
         auth_data = {'identity': auth_data}
@@ -88,7 +88,7 @@ class TestAuthPlugin(test.TestCase):
         # test incorrect response
         auth_data = {'methods': ['simple-challenge-response']}
         auth_data['simple-challenge-response'] = {
-            'response': uuid.uuid4().hex}
+            'response': uid.new()}
         auth_data = {'identity': auth_data}
         auth_info = auth.controllers.AuthInfo(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}

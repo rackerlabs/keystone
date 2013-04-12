@@ -14,11 +14,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
+from keystone.common import uid
 from keystone.contrib.s3.core import S3Controller
 from keystone.contrib import ec2
-
 from keystone import exception
 from keystone import test
 
@@ -53,7 +51,7 @@ class S3ContribCore(test.TestCase):
                        'saWNhdGlvbi9vY3RldC1zdHJlYW0KVHVlLCAxMSBEZWMgMjAxM'
                        'iAyMTo0MTo0MSBHTVQKL2NvbnRfczMvdXBsb2FkZWRfZnJ'
                        'vbV9zMy50eHQ=',
-                       'signature': uuid.uuid4().hex}
+                       'signature': uid.new()}
 
         self.assertRaises(exception.Unauthorized,
                           self.controller.check_signature,

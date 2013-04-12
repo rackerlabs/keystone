@@ -14,11 +14,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 import memcache
 
 from keystone.common import utils
+from keystone.common import uid
 from keystone.openstack.common import timeutils
 from keystone import test
 from keystone.token.backends import memcache as token_memcache
@@ -79,20 +78,20 @@ class MemcacheToken(test.TestCase, test_backend.TokenTests):
         self.token_api = token_memcache.Token(client=fake_client)
 
     def test_create_unicode_token_id(self):
-        token_id = unicode(self._create_token_id())
+        token_id = unicode(uid.new())
         data = {'id': token_id, 'a': 'b',
                 'user': {'id': 'testuserid'}}
         self.token_api.create_token(token_id, data)
         self.token_api.get_token(token_id)
 
     def test_create_unicode_user_id(self):
-        token_id = self._create_token_id()
-        user_id = unicode(uuid.uuid4().hex)
+        token_id = uid.new()
+        user_id = unicode(uid.new())
         data = {'id': token_id, 'a': 'b',
                 'user': {'id': user_id}}
         self.token_api.create_token(token_id, data)
         self.token_api.get_token(token_id)
 
     def test_list_tokens_unicode_user_id(self):
-        user_id = unicode(uuid.uuid4().hex)
+        user_id = unicode(uid.new())
         self.token_api.list_tokens(user_id)

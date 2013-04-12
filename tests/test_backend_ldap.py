@@ -14,10 +14,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
 import nose.exc
 
 from keystone.common.ldap import fakeldap
+from keystone.common import uid
 from keystone import config
 from keystone import exception
 from keystone import identity
@@ -159,13 +159,13 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         CONF.ldap.role_allow_delete = False
         self.identity_api = identity.backends.ldap.Identity()
 
-        role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        role = {'id': uid.new(), 'name': uid.new()}
         self.assertRaises(exception.ForbiddenAction,
                           self.identity_api.create_role,
                           role['id'],
                           role)
 
-        self.role_member['name'] = uuid.uuid4().hex
+        self.role_member['name'] = uid.new()
         self.assertRaises(exception.ForbiddenAction,
                           self.identity_api.update_role,
                           self.role_member['id'],
@@ -349,14 +349,14 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         user_api.get_connection(user=None, password=None)
 
     def test_wrong_ldap_scope(self):
-        CONF.ldap.query_scope = uuid.uuid4().hex
+        CONF.ldap.query_scope = uid.new()
         self.assertRaisesRegexp(
             ValueError,
             'Invalid LDAP scope: %s. *' % CONF.ldap.query_scope,
             identity.backends.ldap.Identity)
 
     def test_wrong_alias_dereferencing(self):
-        CONF.ldap.alias_dereferencing = uuid.uuid4().hex
+        CONF.ldap.alias_dereferencing = uid.new()
         self.assertRaisesRegexp(
             ValueError,
             'Invalid LDAP deref option: %s\.' % CONF.ldap.alias_dereferencing,
@@ -371,12 +371,12 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     # In the tests below, the update is demonstrated by updating description.
     # Refer to bug 1136403 for more detail.
     def test_group_crud(self):
-        group = {'id': uuid.uuid4().hex, 'domain_id': uuid.uuid4().hex,
-                 'name': uuid.uuid4().hex, 'description': uuid.uuid4().hex}
+        group = {'id': uid.new(), 'domain_id': uid.new(),
+                 'name': uid.new(), 'description': uid.new()}
         self.identity_api.create_group(group['id'], group)
         group_ref = self.identity_api.get_group(group['id'])
         self.assertDictEqual(group_ref, group)
-        group['description'] = uuid.uuid4().hex
+        group['description'] = uid.new()
         self.identity_api.update_group(group['id'], group)
         group_ref = self.identity_api.get_group(group['id'])
         self.assertDictEqual(group_ref, group)
@@ -387,12 +387,12 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                           group['id'])
 
     def test_domain_crud(self):
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'enabled': True, 'description': uuid.uuid4().hex}
+        domain = {'id': uid.new(), 'name': uid.new(),
+                  'enabled': True, 'description': uid.new()}
         self.identity_api.create_domain(domain['id'], domain)
         domain_ref = self.identity_api.get_domain(domain['id'])
         self.assertDictEqual(domain_ref, domain)
-        domain['description'] = uuid.uuid4().hex
+        domain['description'] = uid.new()
         self.identity_api.update_domain(domain['id'], domain)
         domain_ref = self.identity_api.get_domain(domain['id'])
         self.assertDictEqual(domain_ref, domain)
@@ -430,9 +430,9 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         # NOTE(topol): LDAP implementation does not currently support the
         #              updating of a project name so this method override
         #              provides a different update test
-        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': uuid.uuid4().hex,
-                   'description': uuid.uuid4().hex
+        project = {'id': uid.new(), 'name': uid.new(),
+                   'domain_id': uid.new(),
+                   'description': uid.new()
                    }
         self.identity_api.create_project(project['id'], project)
         project_ref = self.identity_api.get_project(project['id'])
@@ -443,7 +443,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
             project['enabled'] = True
         self.assertDictEqual(project_ref, project)
 
-        project['description'] = uuid.uuid4().hex
+        project['description'] = uid.new()
         self.identity_api.update_project(project['id'], project)
         project_ref = self.identity_api.get_project(project['id'])
         self.assertDictEqual(project_ref, project)
@@ -558,9 +558,9 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         # NOTE(topol): LDAPIdentityEnabledEmulation will create an
         #              enabled key in the project dictionary so this
         #              method override handles this side-effect
-        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': uuid.uuid4().hex,
-                   'description': uuid.uuid4().hex
+        project = {'id': uid.new(), 'name': uid.new(),
+                   'domain_id': uid.new(),
+                   'description': uid.new()
                    }
 
         self.identity_api.create_project(project['id'], project)
@@ -572,7 +572,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         project['enabled'] = True
         self.assertDictEqual(project_ref, project)
 
-        project['description'] = uuid.uuid4().hex
+        project['description'] = uid.new()
         self.identity_api.update_project(project['id'], project)
         project_ref = self.identity_api.get_project(project['id'])
         self.assertDictEqual(project_ref, project)
@@ -583,8 +583,8 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
                           project['id'])
 
     def test_user_crud(self):
-        user = {'domain_id': uuid.uuid4().hex, 'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex, 'password': 'passw0rd'}
+        user = {'domain_id': uid.new(), 'id': uid.new(),
+                'name': uid.new(), 'password': 'passw0rd'}
         self.identity_man.create_user({}, user['id'], user)
         user['enabled'] = True
         user_ref = self.identity_api.get_user(user['id'])
@@ -592,7 +592,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
         self.assertDictEqual(user_ref_dict, user)
 
-        user['password'] = uuid.uuid4().hex
+        user['password'] = uid.new()
         self.identity_api.update_user(user['id'], user)
         user_ref = self.identity_api.get_user(user['id'])
         del user['password']

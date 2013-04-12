@@ -16,10 +16,10 @@
 # under the License.
 
 import tempfile
-import uuid
 
 from keystone import config
 from keystone import exception
+from keystone.common import uid
 from keystone.openstack.common import jsonutils
 from keystone.policy.backends import rules
 
@@ -67,19 +67,19 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         # Now create some users, one in domainA and two of them in domainB
         self.user1 = self.new_user_ref(
             domain_id=self.domainA['id'])
-        self.user1['password'] = uuid.uuid4().hex
+        self.user1['password'] = uid.new()
         user_ref = self.identity_api.create_user(self.user1['id'],
                                                  self.user1)
 
         self.user2 = self.new_user_ref(
             domain_id=self.domainB['id'])
-        self.user2['password'] = uuid.uuid4().hex
+        self.user2['password'] = uid.new()
         user_ref = self.identity_api.create_user(self.user2['id'],
                                                  self.user2)
 
         self.user3 = self.new_user_ref(
             domain_id=self.domainB['id'])
-        self.user3['password'] = uuid.uuid4().hex
+        self.user3['password'] = uid.new()
         user_ref = self.identity_api.create_user(self.user3['id'],
                                                  self.user3)
 

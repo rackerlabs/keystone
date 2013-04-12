@@ -13,11 +13,11 @@
 # under the License.
 
 import json
-import uuid
 
 import nose.exc
 
 from keystone.common import cms
+from keystone.common import uid
 from keystone import auth
 from keystone import config
 from keystone import exception
@@ -39,7 +39,7 @@ class TestAuthInfo(test_v3.RestfulTestCase):
 
     def test_missing_auth_methods(self):
         auth_data = {'identity': {}}
-        auth_data['identity']['token'] = {'id': uuid.uuid4().hex}
+        auth_data['identity']['token'] = {'id': uid.new()}
         self.assertRaises(exception.ValidationError,
                           auth.controllers.AuthInfo,
                           None,
@@ -178,7 +178,7 @@ class TestTokenAPIs(test_v3.RestfulTestCase):
                                   method='GET',
                                   expected_status=401)
 
-    def test_v3_v2_unscoped_uuid_token_intermix(self):
+    def test_v3_v2_unscoped_uid_token_intermix(self):
         self.opt_in_group('signing', token_format='UUID')
         auth_data = self.build_authentication_request(
             user_id=self.default_domain_user['id'],
@@ -222,7 +222,7 @@ class TestTokenAPIs(test_v3.RestfulTestCase):
         self.assertIn(v2_token['access']['token']['expires'][:-1],
                       token_data['token']['expires_at'])
 
-    def test_v3_v2_uuid_token_intermix(self):
+    def test_v3_v2_uid_token_intermix(self):
         # FIXME(gyee): PKI tokens are not interchangeable because token
         # data is baked into the token itself.
         self.opt_in_group('signing', token_format='UUID')
@@ -276,7 +276,7 @@ class TestTokenAPIs(test_v3.RestfulTestCase):
         self.assertEqual(v2_token['access']['user']['roles'][0]['id'],
                          token_data['token']['roles'][0]['id'])
 
-    def test_v2_v3_unscoped_uuid_token_intermix(self):
+    def test_v2_v3_unscoped_uid_token_intermix(self):
         self.opt_in_group('signing', token_format='UUID')
         body = {
             'auth': {
@@ -324,7 +324,7 @@ class TestTokenAPIs(test_v3.RestfulTestCase):
         self.assertIn(v2_token_data['access']['token']['expires'][-1],
                       token_data['token']['expires_at'])
 
-    def test_v2_v3_uuid_token_intermix(self):
+    def test_v2_v3_uid_token_intermix(self):
         self.opt_in_group('signing', token_format='UUID')
         body = {
             'auth': {
@@ -444,19 +444,19 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
         # Now create some users, one in domainA and two of them in domainB
         self.user1 = self.new_user_ref(
             domain_id=self.domainA['id'])
-        self.user1['password'] = uuid.uuid4().hex
+        self.user1['password'] = uid.new()
         user_ref = self.identity_api.create_user(self.user1['id'],
                                                  self.user1)
 
         self.user2 = self.new_user_ref(
             domain_id=self.domainB['id'])
-        self.user2['password'] = uuid.uuid4().hex
+        self.user2['password'] = uid.new()
         user_ref = self.identity_api.create_user(self.user2['id'],
                                                  self.user2)
 
         self.user3 = self.new_user_ref(
             domain_id=self.domainB['id'])
-        self.user3['password'] = uuid.uuid4().hex
+        self.user3['password'] = uid.new()
         user_ref = self.identity_api.create_user(self.user3['id'],
                                                  self.user3)
 
@@ -796,7 +796,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_project_id_scoped_token_with_user_id_401(self):
-        project_id = uuid.uuid4().hex
+        project_id = uid.new()
         project = self.new_project_ref(domain_id=self.domain_id)
         self.identity_api.create_project(project_id, project)
 
@@ -901,7 +901,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         self.assertValidDomainScopedTokenResponse(r)
 
     def test_domain_scope_token_with_group_role(self):
-        group_id = uuid.uuid4().hex
+        group_id = uid.new()
         group = self.new_group_ref(
             domain_id=self.domain_id)
         group['id'] = group_id
@@ -960,13 +960,13 @@ class TestAuthJSON(test_v3.RestfulTestCase):
 
     def test_invalid_user_id(self):
         auth_data = self.build_authentication_request(
-            user_id=uuid.uuid4().hex,
+            user_id=uid.new(),
             password=self.user['password'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_invalid_user_name(self):
         auth_data = self.build_authentication_request(
-            username=uuid.uuid4().hex,
+            username=uid.new(),
             user_domain_id=self.domain['id'],
             password=self.user['password'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
@@ -974,21 +974,21 @@ class TestAuthJSON(test_v3.RestfulTestCase):
     def test_invalid_domain_id(self):
         auth_data = self.build_authentication_request(
             username=self.user['name'],
-            user_domain_id=uuid.uuid4().hex,
+            user_domain_id=uid.new(),
             password=self.user['password'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_invalid_domain_name(self):
         auth_data = self.build_authentication_request(
             username=self.user['name'],
-            user_domain_name=uuid.uuid4().hex,
+            user_domain_name=uid.new(),
             password=self.user['password'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_invalid_password(self):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
-            password=uuid.uuid4().hex)
+            password=uid.new())
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_remote_user(self):
@@ -1034,7 +1034,7 @@ class TestTrustOptional(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
-            trust_id=uuid.uuid4().hex)
+            trust_id=uid.new())
         self.post('/auth/tokens', body=auth_data, expected_status=403)
 
 
@@ -1044,7 +1044,7 @@ class TestTrustAuth(TestAuthInfo):
         super(TestTrustAuth, self).setUp(load_sample_data=True)
 
         # create a trustee to delegate stuff to
-        self.trustee_user_id = uuid.uuid4().hex
+        self.trustee_user_id = uid.new()
         self.trustee_user = self.new_user_ref(domain_id=self.domain_id)
         self.trustee_user['id'] = self.trustee_user_id
         self.identity_api.create_user(self.trustee_user_id, self.trustee_user)
@@ -1115,7 +1115,7 @@ class TestTrustAuth(TestAuthInfo):
     def test_create_trust_trustee_404(self):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
-            trustee_user_id=uuid.uuid4().hex)
+            trustee_user_id=uid.new())
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
 
@@ -1130,7 +1130,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=uuid.uuid4().hex,
+            project_id=uid.new(),
             role_ids=[self.role_id])
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
@@ -1140,7 +1140,7 @@ class TestTrustAuth(TestAuthInfo):
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
             project_id=self.project_id,
-            role_ids=[uuid.uuid4().hex])
+            role_ids=[uid.new()])
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
 
@@ -1149,7 +1149,7 @@ class TestTrustAuth(TestAuthInfo):
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
             project_id=self.project_id,
-            role_names=[uuid.uuid4().hex])
+            role_names=[uid.new()])
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
 
@@ -1242,7 +1242,7 @@ class TestTrustAuth(TestAuthInfo):
 
     def test_v3_v2_intermix_project_not_in_default_domaini_failed(self):
         # create a trustee in default domain to delegate stuff to
-        trustee_user_id = uuid.uuid4().hex
+        trustee_user_id = uid.new()
         trustee_user = self.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
         trustee_user['id'] = trustee_user_id
         self.identity_api.create_user(trustee_user_id, trustee_user)
@@ -1284,7 +1284,7 @@ class TestTrustAuth(TestAuthInfo):
 
     def test_v3_v2_intermix(self):
         # create a trustee in default domain to delegate stuff to
-        trustee_user_id = uuid.uuid4().hex
+        trustee_user_id = uid.new()
         trustee_user = self.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
         trustee_user['id'] = trustee_user_id
         self.identity_api.create_user(trustee_user_id, trustee_user)
@@ -1471,7 +1471,7 @@ class TestTrustAuth(TestAuthInfo):
 
         self.assertValidUserResponse(
             self.patch('/users/%s' % self.trustee_user['id'],
-                       body={'user': {'password': uuid.uuid4().hex}},
+                       body={'user': {'password': uid.new()}},
                        auth=auth_data,
                        expected_status=200))
 

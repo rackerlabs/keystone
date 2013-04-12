@@ -15,12 +15,12 @@
 # under the License.
 
 import httplib
-import uuid
 
 from lxml import etree
 import nose.exc
 
 from keystone.common import serializer
+from keystone.common import uid
 from keystone.openstack.common import jsonutils
 from keystone import test
 
@@ -312,13 +312,13 @@ class CoreApiTests(object):
 
     def test_public_not_found(self):
         r = self.public_request(
-            path='/%s' % uuid.uuid4().hex,
+            path='/%s' % uid.new(),
             expected_status=404)
         self.assertValidErrorResponse(r)
 
     def test_admin_not_found(self):
         r = self.admin_request(
-            path='/%s' % uuid.uuid4().hex,
+            path='/%s' % uid.new(),
             expected_status=404)
         self.assertValidErrorResponse(r)
 
@@ -507,9 +507,9 @@ class CoreApiTests(object):
     def test_invalid_parameter_error_response(self):
         token = self.get_scoped_token()
         bad_body = {
-            'OS-KSADM:service%s' % uuid.uuid4().hex: {
-                'name': uuid.uuid4().hex,
-                'type': uuid.uuid4().hex,
+            'OS-KSADM:service%s' % uid.new(): {
+                'name': uid.new(),
+                'type': uid.new(),
             },
         }
         res = self.admin_request(method='POST',
@@ -664,11 +664,11 @@ class JsonTestCase(RestfulTestCase, CoreApiTests):
     def test_service_crud_requires_auth(self):
         """Service CRUD should 401 without an X-Auth-Token (bug 1006822)."""
         # values here don't matter because we should 401 before they're checked
-        service_path = '/v2.0/OS-KSADM/services/%s' % uuid.uuid4().hex
+        service_path = '/v2.0/OS-KSADM/services/%s' % uid.new()
         service_body = {
             'OS-KSADM:service': {
-                'name': uuid.uuid4().hex,
-                'type': uuid.uuid4().hex,
+                'name': uid.new(),
+                'type': uid.new(),
             },
         }
 
@@ -697,8 +697,8 @@ class JsonTestCase(RestfulTestCase, CoreApiTests):
         """User role list should 401 without an X-Auth-Token (bug 1006815)."""
         # values here don't matter because we should 401 before they're checked
         path = '/v2.0/tenants/%(tenant_id)s/users/%(user_id)s/roles' % {
-            'tenant_id': uuid.uuid4().hex,
-            'user_id': uuid.uuid4().hex,
+            'tenant_id': uid.new(),
+            'user_id': uid.new(),
         }
 
         r = self.admin_request(path=path, expected_status=401)

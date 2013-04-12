@@ -1,11 +1,11 @@
 import datetime
-import uuid
 
 from lxml import etree
 
 from keystone import auth
 from keystone.common import serializer
 from keystone.common.sql import util as sql_util
+from keystone.common import uid
 from keystone import config
 from keystone.openstack.common import timeutils
 from keystone.policy.backends import rules
@@ -39,32 +39,32 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         self.load_backends()
 
         if load_sample_data:
-            self.domain_id = uuid.uuid4().hex
+            self.domain_id = uid.new()
             self.domain = self.new_domain_ref()
             self.domain['id'] = self.domain_id
             self.identity_api.create_domain(self.domain_id, self.domain)
 
-            self.project_id = uuid.uuid4().hex
+            self.project_id = uid.new()
             self.project = self.new_project_ref(
                 domain_id=self.domain_id)
             self.project['id'] = self.project_id
             self.identity_api.create_project(self.project_id, self.project)
 
-            self.user_id = uuid.uuid4().hex
+            self.user_id = uid.new()
             self.user = self.new_user_ref(
                 domain_id=self.domain_id,
                 project_id=self.project_id)
             self.user['id'] = self.user_id
             self.identity_api.create_user(self.user_id, self.user)
 
-            self.default_domain_project_id = uuid.uuid4().hex
+            self.default_domain_project_id = uid.new()
             self.default_domain_project = self.new_project_ref(
                 domain_id=DEFAULT_DOMAIN_ID)
             self.default_domain_project['id'] = self.default_domain_project_id
             self.identity_api.create_project(self.default_domain_project_id,
                                              self.default_domain_project)
 
-            self.default_domain_user_id = uuid.uuid4().hex
+            self.default_domain_user_id = uid.new()
             self.default_domain_user = self.new_user_ref(
                 domain_id=DEFAULT_DOMAIN_ID,
                 project_id=self.default_domain_project_id)
@@ -73,7 +73,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
                                           self.default_domain_user)
 
             # create & grant policy.json's default role for admin_required
-            self.role_id = uuid.uuid4().hex
+            self.role_id = uid.new()
             self.role = self.new_role_ref()
             self.role['id'] = self.role_id
             self.role['name'] = 'admin'
@@ -105,22 +105,22 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
     def new_ref(self):
         """Populates a ref with attributes common to all API entities."""
         return {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
+            'id': uid.new(),
+            'name': uid.new(),
+            'description': uid.new(),
             'enabled': True}
 
     def new_service_ref(self):
         ref = self.new_ref()
-        ref['type'] = uuid.uuid4().hex
+        ref['type'] = uid.new()
         return ref
 
     def new_endpoint_ref(self, service_id):
         ref = self.new_ref()
-        ref['interface'] = uuid.uuid4().hex[:8]
+        ref['interface'] = uid.new(length=8)
         ref['service_id'] = service_id
-        ref['url'] = uuid.uuid4().hex
-        ref['region'] = uuid.uuid4().hex
+        ref['url'] = uid.new()
+        ref['region'] = uid.new()
         return ref
 
     def new_domain_ref(self):
@@ -135,8 +135,8 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
     def new_user_ref(self, domain_id, project_id=None):
         ref = self.new_ref()
         ref['domain_id'] = domain_id
-        ref['email'] = uuid.uuid4().hex
-        ref['password'] = uuid.uuid4().hex
+        ref['email'] = uid.new()
+        ref['password'] = uid.new()
         if project_id:
             ref['project_id'] = project_id
         return ref
@@ -149,8 +149,8 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
     def new_credential_ref(self, user_id, project_id=None):
         ref = self.new_ref()
         ref['user_id'] = user_id
-        ref['blob'] = uuid.uuid4().hex
-        ref['type'] = uuid.uuid4().hex
+        ref['blob'] = uid.new()
+        ref['type'] = uid.new()
         if project_id:
             ref['project_id'] = project_id
         return ref
@@ -161,8 +161,8 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
     def new_policy_ref(self):
         ref = self.new_ref()
-        ref['blob'] = uuid.uuid4().hex
-        ref['type'] = uuid.uuid4().hex
+        ref['blob'] = uid.new()
+        ref['type'] = uid.new()
         return ref
 
     def new_trust_ref(self, trustor_user_id, trustee_user_id, project_id=None,

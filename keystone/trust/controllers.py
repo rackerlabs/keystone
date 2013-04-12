@@ -1,11 +1,10 @@
-import uuid
-
 from keystone import config
 from keystone import exception
 from keystone import identity
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import logging
+from keystone.common import uid
 from keystone.openstack.common import timeutils
 
 
@@ -142,7 +141,7 @@ class TrustV3(controller.V3Controller):
                                        (trust['expires_at']))
             new_trust = self.trust_api.create_trust(
                 context=context,
-                trust_id=uuid.uuid4().hex,
+                trust_id=uid.new(),
                 trust=trust,
                 roles=clean_roles)
             self._fill_in_roles(context,
