@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//5Mw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-12T17:17:46Z",
+      "side": 1,
+      "message": "two lines",
+      "revId": "717f1aa7f6cb5f01fe16a516644c96419c6900c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//5Mk\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-12T17:17:46Z",
+      "side": 1,
+      "message": "Can you group these so all the trues are together and all the falses are together?  Figuring out whether the logic is correct by eye is error prone.",
+      "revId": "717f1aa7f6cb5f01fe16a516644c96419c6900c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
