@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//5xk\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-04-12T05:38:42Z",
+      "side": 1,
+      "message": "Default uses PKI tokens. And you\u0027ll need to run \u0027keystone-manage pki_setup\u0027.",
+      "revId": "97183dfa1b84f00d716344579ae4c0bbfc05f5f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//5xg\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-04-12T05:38:42Z",
+      "side": 1,
+      "message": "may want to mention what with_venv.sh is for and no need to use it if you are not using virtual environment",
+      "revId": "97183dfa1b84f00d716344579ae4c0bbfc05f5f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
