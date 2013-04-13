@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//4q8\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-04-13T08:28:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//5Ik\u003d",
+      "revId": "079d37182d89d67a5af1bf6e9971add526337f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//5H8\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-12T17:57:10Z",
       "side": 1,
       "message": "(nit) since this function is only called from wsgi.py, suggest move it to wsgi.py.",
+      "revId": "079d37182d89d67a5af1bf6e9971add526337f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//4q4\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-04-13T08:28:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//5H8\u003d",
       "revId": "079d37182d89d67a5af1bf6e9971add526337f73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//4q0\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-04-13T08:28:38Z",
+      "side": 1,
+      "message": "Will merge the regex into one",
+      "parentUuid": "AAAAOn//5IU\u003d",
+      "revId": "079d37182d89d67a5af1bf6e9971add526337f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//5Hk\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 8
@@ -81,6 +135,24 @@
       "writtenOn": "2013-04-12T17:57:10Z",
       "side": 1,
       "message": "move this up with the rest of the standard library imports, to line 22. see https://github.com/openstack/keystone/blame/master/HACKING.rst#L69",
+      "revId": "079d37182d89d67a5af1bf6e9971add526337f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//4rA\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-04-13T08:28:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//5Hk\u003d",
       "revId": "079d37182d89d67a5af1bf6e9971add526337f73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
