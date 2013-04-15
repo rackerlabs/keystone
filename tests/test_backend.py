@@ -350,6 +350,8 @@ class TokenTests(object):
                 'user': {'id': 'testuserid'}}
         if tenant_id is not None:
             data['tenant'] = {'id': tenant_id, 'name': tenant_id}
+        if tenant_id == 'None':
+            data['tenant'] = None
         self.token_api.create_token(token_id, data)
         return token_id
 
@@ -379,12 +381,16 @@ class TokenTests(object):
         tenant2 = uuid.uuid4().hex
         token_id3 = self.create_token_sample_data(tenant_id=tenant1)
         token_id4 = self.create_token_sample_data(tenant_id=tenant2)
+        token_id5 = self.create_token_sample_data()
+        token_id6 = self.create_token_sample_data(tenant_id='None')
         tokens = self.token_api.list_tokens('testuserid')
-        self.assertEquals(len(tokens), 2)
+        self.assertEquals(len(tokens), 4)
         self.assertNotIn(token_id1, tokens)
         self.assertNotIn(token_id2, tokens)
         self.assertIn(token_id3, tokens)
         self.assertIn(token_id4, tokens)
+        self.assertIn(token_id5, tokens)
+        self.assertIn(token_id6, tokens)
         tokens = self.token_api.list_tokens('testuserid', tenant2)
         self.assertEquals(len(tokens), 1)
         self.assertNotIn(token_id1, tokens)
