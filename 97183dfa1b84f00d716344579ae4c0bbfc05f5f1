@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//33Q\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7144
+      },
+      "writtenOn": "2013-04-15T22:51:29Z",
+      "side": 1,
+      "message": "I did not have to run \u0027keystone-manage pki_setup\u0027 in order to run the tools/sample_data.sh script.  Is there something else that requires it?  I\u0027ll be happy to add some documentation about it, but would like to mention what requires it.  Thanks.",
+      "parentUuid": "AAAAOn//5xk\u003d",
+      "revId": "97183dfa1b84f00d716344579ae4c0bbfc05f5f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//5xg\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 2
