@@ -16,6 +16,24 @@
       "revId": "aea2e5547a2ac8ef6f4cdeb31837e9bfc9fb6eac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//3kY\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1446
+      },
+      "writtenOn": "2013-04-16T11:54:44Z",
+      "side": 1,
+      "message": "no, before it would error out if there was a tenant: None entry - you can see the difference in the unit test",
+      "parentUuid": "AAAAOn//3sA\u003d",
+      "revId": "aea2e5547a2ac8ef6f4cdeb31837e9bfc9fb6eac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
