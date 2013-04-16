@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//304\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-04-16T01:17:02Z",
+      "side": 1,
+      "message": "ok, error reporting should be improved, if an invalid paste_deploy file is specified, it fails with either\n\nValueError: Cannot resolve relative uri \u0027config:None\u0027; no relative_to keyword argument given\n\nor\n\nIOError: [Errno 2] No such file or directory: \u0027/tmp/blah\u0027\n\nwhich is not user friendly.",
+      "parentUuid": "AAAAOH//7so\u003d",
+      "revId": "c75e40111bb0817aedd733d734f910e66abdeece",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOX//8jE\u003d",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 3
