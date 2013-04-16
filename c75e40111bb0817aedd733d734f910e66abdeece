@@ -105,6 +105,24 @@
       "revId": "c75e40111bb0817aedd733d734f910e66abdeece",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//3ik\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-16T13:13:08Z",
+      "side": 1,
+      "message": "it\u0027s not a blocker, just wondering why keystone.conf.sample and some are not .sample.",
+      "parentUuid": "AAAAOn//378\u003d",
+      "revId": "c75e40111bb0817aedd733d734f910e66abdeece",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
