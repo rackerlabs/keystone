@@ -415,22 +415,16 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
     DEFAULT_ATTRIBUTE_IGNORE = ['tenant_id', 'tenants']
     NotFound = exception.UserNotFound
     options_name = 'user'
-    attribute_mapping = {'password': 'userPassword',
-                         'email': 'mail',
-                         'name': 'sn',
-                         'enabled': 'enabled',
-                         'domain_id': 'domain_id'}
+    attribute_options_names = {'password': 'pass',
+                               'email': 'mail',
+                               'name': 'name',
+                               'enabled': 'enabled',
+                               'domain_id': 'domain_id'}
 
     model = models.User
 
     def __init__(self, conf):
         super(UserApi, self).__init__(conf)
-        self.attribute_mapping['name'] = conf.ldap.user_name_attribute
-        self.attribute_mapping['email'] = conf.ldap.user_mail_attribute
-        self.attribute_mapping['password'] = conf.ldap.user_pass_attribute
-        self.attribute_mapping['enabled'] = conf.ldap.user_enabled_attribute
-        self.attribute_mapping['domain_id'] = (
-            conf.ldap.user_domain_id_attribute)
         self.enabled_mask = conf.ldap.user_enabled_mask
         self.enabled_default = conf.ldap.user_enabled_default
         self.attribute_ignore = (getattr(conf.ldap, 'user_attribute_ignore')
@@ -481,20 +475,14 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
     NotFound = exception.ProjectNotFound
     notfound_arg = 'project_id'  # NOTE(yorik-sar): while options_name = tenant
     options_name = 'tenant'
-    attribute_mapping = {'name': 'ou',
-                         'description': 'description',
-                         'tenantId': 'cn',
-                         'enabled': 'enabled',
-                         'domain_id': 'domain_id'}
+    attribute_options_names = {'name': 'name',
+                               'description': 'desc',
+                               'enabled': 'enabled',
+                               'domain_id': 'domain_id'}
     model = models.Project
 
     def __init__(self, conf):
         super(ProjectApi, self).__init__(conf)
-        self.attribute_mapping['name'] = conf.ldap.tenant_name_attribute
-        self.attribute_mapping['description'] = conf.ldap.tenant_desc_attribute
-        self.attribute_mapping['enabled'] = conf.ldap.tenant_enabled_attribute
-        self.attribute_mapping['domain_id'] = (
-            conf.ldap.tenant_domain_id_attribute)
         self.member_attribute = (getattr(conf.ldap, 'tenant_member_attribute')
                                  or self.DEFAULT_MEMBER_ATTRIBUTE)
         self.attribute_ignore = (getattr(conf.ldap, 'tenant_attribute_ignore')
@@ -598,14 +586,11 @@ class RoleApi(common_ldap.BaseLdap):
     DEFAULT_ATTRIBUTE_IGNORE = []
     NotFound = exception.RoleNotFound
     options_name = 'role'
-    attribute_mapping = {'name': 'ou',
-                         #'serviceId': 'service_id',
-                         }
+    attribute_options_names = {'name': 'name'}
     model = models.Role
 
     def __init__(self, conf):
         super(RoleApi, self).__init__(conf)
-        self.attribute_mapping['name'] = conf.ldap.role_name_attribute
         self.member_attribute = (getattr(conf.ldap, 'role_member_attribute')
                                  or self.DEFAULT_MEMBER_ATTRIBUTE)
         self.attribute_ignore = (getattr(conf.ldap, 'role_attribute_ignore')
@@ -766,18 +751,13 @@ class GroupApi(common_ldap.BaseLdap):
     DEFAULT_ATTRIBUTE_IGNORE = []
     NotFound = exception.GroupNotFound
     options_name = 'group'
-    attribute_mapping = {'name': 'ou',
-                         'description': 'description',
-                         'groupId': 'cn',
-                         'domain_id': 'domain_id'}
+    attribute_options_names = {'description': 'desc',
+                               'name': 'name',
+                               'domain_id': 'domain_id'}
     model = models.Group
 
     def __init__(self, conf):
         super(GroupApi, self).__init__(conf)
-        self.attribute_mapping['name'] = conf.ldap.group_name_attribute
-        self.attribute_mapping['description'] = conf.ldap.group_desc_attribute
-        self.attribute_mapping['domain_id'] = (
-            conf.ldap.group_domain_id_attribute)
         self.member_attribute = (getattr(conf.ldap, 'group_member_attribute')
                                  or self.DEFAULT_MEMBER_ATTRIBUTE)
         self.attribute_ignore = (getattr(conf.ldap, 'group_attribute_ignore')
