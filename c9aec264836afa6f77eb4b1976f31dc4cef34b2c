@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//3jA\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-16T13:05:51Z",
+      "side": 1,
+      "message": "(nit) use named parameter for named argument, so change \"True\" to \"is_unicode\u003dTrue\".",
+      "revId": "c9aec264836afa6f77eb4b1976f31dc4cef34b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//3i8\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-16T13:05:51Z",
+      "side": 1,
+      "message": "suggest combining the 2 LOG.isEnabledFor(logging.DEBUG) sections, so move the code from 394-401 in here.",
+      "revId": "c9aec264836afa6f77eb4b1976f31dc4cef34b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
