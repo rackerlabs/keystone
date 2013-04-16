@@ -34,6 +34,24 @@
       "revId": "feaa258e3bf292769adab76d805aa373040f56ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//3kg\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 7291
+      },
+      "writtenOn": "2013-04-16T11:50:41Z",
+      "side": 1,
+      "message": "LOG.debug(\u0027%s %s %s\u0027, (\u0027*\u0027 * 20), \u0027REQUEST ENVIRON\u0027, (\u0027*\u0027 * 20))\t\t\n\t393\t        for key, value in req.environ.items():\t\t\n\t394\t            LOG.debug(\u0027%s \u003d %s\u0027, key, value)\t\t\n\t395\t        LOG.debug(\u0027\u0027)\t\t\n\t396\t        LOG.debug(\u0027%s %s %s\u0027, (\u0027*\u0027 * 20), \u0027REQUEST BODY\u0027, (\u0027*\u0027 * 20))\t\t\n\t397\t        for line in req.body_file:\t\t\n\t398\t            LOG.debug(line)\t\t\n\t399\t        LOG.debug(\u0027\u0027)\n\nThis was in front of req.get_response(self.application). Even if exceptions are somehow thrown from inside req.get_response(self.application), the debug log will gets printed.\n\nBTW, you also changed the order of log entries. Whatever printed in req.get_response(self.application) will now goes before.",
+      "parentUuid": "AAAAOn//3rg\u003d",
+      "revId": "feaa258e3bf292769adab76d805aa373040f56ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
