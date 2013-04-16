@@ -23,6 +23,7 @@ from keystone.openstack.common import timeutils
 from keystone import test
 from keystone import token
 from keystone import trust
+from keystone.token import core
 
 import default_fixtures
 
@@ -789,6 +790,44 @@ class TokenExpirationTest(AuthTest):
     def test_maintain_uuid_token_expiration(self):
         self.opt_in_group('signing', token_format='UUID')
         self._maintain_token_expiration()
+
+
+class ValidateAuthInfoTest(AuthTest):
+    def setUp(self):
+        super(ValidateAuthInfoTest, self).setUp()
+        self.trustor = self.user_foo
+        username = self.trustor['name'],
+        password = 'foo2'
+        body_dict = _build_user_auth(username=username, password=password)
+        self.unscoped_token = self.controller.authenticate({}, body_dict)
+
+    def test_auth_domain_id_in_user_and_tenant_refs(self):
+        context = {'token_id': self.unscoped_token['access']['token']['id']}
+        user_ref = self.user_foo
+        tenant_ref = self.tenant_bar
+        core.validate_auth_info(self.controller, context, user_ref, tenant_ref)
+
+    def test_auth_domain_id_only_in_tenant_refs(self):
+        context = {'token_id': self.unscoped_token['access']['token']['id']}
+        user_ref = self.user_foo.copy()
+        tenant_ref = self.tenant_bar
+        del user_ref['domain_id']
+        core.validate_auth_info(self.controller, context, user_ref, tenant_ref)
+
+    def test_auth_domain_id_only_in_user_refs(self):
+        context = {'token_id': self.unscoped_token['access']['token']['id']}
+        user_ref = self.user_foo
+        tenant_ref = self.tenant_bar.copy()
+        del tenant_ref['domain_id']
+        core.validate_auth_info(self.controller, context, user_ref, tenant_ref)
+
+    def test_auth_no_domain_id_in_user_and_tenant_refs(self):
+        context = {'token_id': self.unscoped_token['access']['token']['id']}
+        user_ref = self.user_foo.copy()
+        tenant_ref = self.tenant_bar.copy()
+        del user_ref['domain_id']
+        del tenant_ref['domain_id']
+        core.validate_auth_info(self.controller, context, user_ref, tenant_ref)
 
 
 class NonDefaultAuthTest(test.TestCase):

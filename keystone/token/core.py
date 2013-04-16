@@ -79,13 +79,14 @@ def validate_auth_info(self, context, user_ref, tenant_ref):
         raise exception.Unauthorized(msg)
 
     # If the user's domain is disabled don't allow them to authenticate
-    user_domain_ref = self.identity_api.get_domain(
-        context,
-        user_ref['domain_id'])
-    if user_domain_ref and not user_domain_ref.get('enabled', True):
-        msg = 'Domain is disabled: %s' % user_domain_ref['id']
-        LOG.warning(msg)
-        raise exception.Unauthorized(msg)
+    if 'domain_id' in user_ref:
+        user_domain_ref = self.identity_api.get_domain(
+            context,
+            user_ref['domain_id'])
+        if user_domain_ref and not user_domain_ref.get('enabled', True):
+            msg = 'Domain is disabled: %s' % user_domain_ref['id']
+            LOG.warning(msg)
+            raise exception.Unauthorized(msg)
 
     if tenant_ref:
         # If the project is disabled don't allow them to authenticate
@@ -95,14 +96,15 @@ def validate_auth_info(self, context, user_ref, tenant_ref):
             raise exception.Unauthorized(msg)
 
         # If the project's domain is disabled don't allow them to authenticate
-        project_domain_ref = self.identity_api.get_domain(
-            context,
-            tenant_ref['domain_id'])
-        if (project_domain_ref and
-                not project_domain_ref.get('enabled', True)):
-            msg = 'Domain is disabled: %s' % project_domain_ref['id']
-            LOG.warning(msg)
-            raise exception.Unauthorized(msg)
+        if 'domain_id' in tenant_ref:
+            project_domain_ref = self.identity_api.get_domain(
+                context,
+                tenant_ref['domain_id'])
+            if (project_domain_ref and
+                    not project_domain_ref.get('enabled', True)):
+                msg = 'Domain is disabled: %s' % project_domain_ref['id']
+                LOG.warning(msg)
+                raise exception.Unauthorized(msg)
 
 
 @dependency.provider('token_api')
