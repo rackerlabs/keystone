@@ -29,6 +29,7 @@ import copy
 import json
 import uuid
 
+from nose.tools import make_decorator
 from migrate.versioning import api as versioning_api
 import sqlalchemy
 
@@ -42,6 +43,18 @@ import default_fixtures
 
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+
+
+# makes sure that a session is closed even if a test fails
+def use_session(fn):
+    def wraps(self, *args, **kwargs):
+        session = self.Session()
+        try:
+            return fn(self, session, *args, **kwargs)
+        finally:
+            session.close()
+
+    return make_decorator(fn)(wraps)
 
 
 class SqlUpgradeTests(test.TestCase):
@@ -124,7 +137,8 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableExists('policy')
         self.assertTableColumns('policy', ['id', 'type', 'blob', 'extra'])
 
-    def test_upgrade_normalize_identity(self):
+    @use_session
+    def test_upgrade_normalize_identity(self, session):
         self.upgrade(8)
         self.populate_user_table()
         self.populate_tenant_table()
@@ -139,7 +153,7 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableColumns("user_tenant_membership",
                                 ["user_id", "tenant_id"])
         self.assertTableColumns("metadata", ["user_id", "tenant_id", "data"])
-        session = self.Session()
+
         user_table = sqlalchemy.Table("user",
                                       self.metadata,
                                       autoload=True)
@@ -152,10 +166,9 @@ class SqlUpgradeTests(test.TestCase):
                                         autoload=True)
         a_tenant = session.query(tenant_table).filter("id='baz'").one()
         self.assertEqual(a_tenant.description, 'description')
-        session.commit()
-        session.close()
 
-    def test_normalized_enabled_states(self):
+    @use_session
+    def test_normalized_enabled_states(self, session):
         self.upgrade(8)
 
         users = {
@@ -200,16 +213,15 @@ class SqlUpgradeTests(test.TestCase):
                 'password': uuid.uuid4().hex,
                 'extra': json.dumps({})}}
 
-        session = self.Session()
         for user in users.values():
             self.insert_dict(session, 'user', user)
+
         session.commit()
-        session.close()
 
         self.upgrade(10)
 
         user_table = sqlalchemy.Table('user', self.metadata, autoload=True)
-        q = self.Session().query(user_table, 'enabled')
+        q = session.query(user_table, 'enabled')
 
         user = q.filter_by(id=users['bool_enabled_user']['id']).one()
         self.assertTrue(user.enabled)
@@ -235,7 +247,8 @@ class SqlUpgradeTests(test.TestCase):
         user = q.filter_by(id=users['unset_enabled_user']['id']).one()
         self.assertTrue(user.enabled)
 
-    def test_downgrade_10_to_8(self):
+    @use_session
+    def test_downgrade_10_to_8(self, session):
         self.upgrade(10)
         self.populate_user_table(with_pass_enab=True)
         self.populate_tenant_table(with_desc_enab=True)
@@ -244,7 +257,7 @@ class SqlUpgradeTests(test.TestCase):
                                 ['id', 'name', 'extra'])
         self.assertTableColumns('tenant',
                                 ['id', 'name', 'extra'])
-        session = self.Session()
+
         user_table = sqlalchemy.Table("user",
                                       self.metadata,
                                       autoload=True)
@@ -255,10 +268,11 @@ class SqlUpgradeTests(test.TestCase):
                                         autoload=True)
         a_tenant = session.query(tenant_table).filter("id='baz'").one()
         self.assertEqual(a_tenant.name, default_fixtures.TENANTS[1]['name'])
-        session.commit()
-        session.close()
 
-    def test_upgrade_endpoints(self):
+        session.commit()
+
+    @use_session
+    def test_upgrade_endpoints(self, session):
         self.upgrade(10)
         service_extra = {
             'name': uuid.uuid4().hex,
@@ -280,11 +294,9 @@ class SqlUpgradeTests(test.TestCase):
             'extra': json.dumps(endpoint_extra),
         }
 
-        session = self.Session()
         self.insert_dict(session, 'service', service)
         self.insert_dict(session, 'endpoint', endpoint)
         session.commit()
-        session.close()
 
         self.upgrade(13)
         self.assertTableColumns(
@@ -298,7 +310,6 @@ class SqlUpgradeTests(test.TestCase):
         endpoint_table = sqlalchemy.Table(
             'endpoint', self.metadata, autoload=True)
 
-        session = self.Session()
         self.assertEqual(session.query(endpoint_table).count(), 3)
         for interface in ['public', 'internal', 'admin']:
             q = session.query(endpoint_table)
@@ -312,8 +323,8 @@ class SqlUpgradeTests(test.TestCase):
             self.assertEqual(ref.service_id, endpoint['service_id'])
             self.assertEqual(ref.url, endpoint_extra['%surl' % interface])
             self.assertEqual(ref.extra, '{}')
+
         session.commit()
-        session.close()
 
     def assertTenantTables(self):
         self.assertTableExists('tenant')
@@ -353,7 +364,8 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableExists('group_domain_metadata')
         self.assertTableExists('user_group_membership')
 
-    def test_upgrade_14_to_16(self):
+    @use_session
+    def test_upgrade_14_to_16(self, session):
         self.upgrade(14)
         self.populate_user_table(with_pass_enab=True)
         self.populate_tenant_table(with_desc_enab=True)
@@ -362,7 +374,7 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableColumns("user",
                                 ["id", "name", "extra",
                                  "password", "enabled", "domain_id"])
-        session = self.Session()
+
         user_table = sqlalchemy.Table("user",
                                       self.metadata,
                                       autoload=True)
@@ -381,11 +393,11 @@ class SqlUpgradeTests(test.TestCase):
         self.assertEqual(a_project.domain_id, DEFAULT_DOMAIN_ID)
 
         session.commit()
-        session.close()
 
         self.check_uniqueness_constraints()
 
-    def test_downgrade_16_to_14(self):
+    @use_session
+    def test_downgrade_16_to_14(self, session):
         self.upgrade(16)
         self.populate_user_table(with_pass_enab_domain=True)
         self.populate_tenant_table(with_desc_enab_domain=True)
@@ -393,7 +405,7 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableColumns("user",
                                 ["id", "name", "extra",
                                  "password", "enabled"])
-        session = self.Session()
+
         user_table = sqlalchemy.Table("user",
                                       self.metadata,
                                       autoload=True)
@@ -408,7 +420,6 @@ class SqlUpgradeTests(test.TestCase):
         self.assertEqual(a_tenant.description,
                          default_fixtures.TENANTS[1]['description'])
         session.commit()
-        session.close()
 
     def test_downgrade_remove_group_tables(self):
         self.upgrade(14)
@@ -418,7 +429,8 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableDoesNotExist('group_domain_metadata')
         self.assertTableDoesNotExist('user_group_membership')
 
-    def test_downgrade_endpoints(self):
+    @use_session
+    def test_downgrade_endpoints(self, session):
         self.upgrade(13)
 
         service_extra = {
@@ -454,13 +466,11 @@ class SqlUpgradeTests(test.TestCase):
             },
         }
 
-        session = self.Session()
         self.insert_dict(session, 'service', service)
         for endpoint in endpoints.values():
             endpoint.update(common_endpoint_attrs)
             self.insert_dict(session, 'endpoint', endpoint)
         session.commit()
-        session.close()
 
         self.downgrade(9)
 
@@ -474,7 +484,6 @@ class SqlUpgradeTests(test.TestCase):
         endpoint_table = sqlalchemy.Table(
             'endpoint', self.metadata, autoload=True)
 
-        session = self.Session()
         self.assertEqual(session.query(endpoint_table).count(), 1)
         q = session.query(endpoint_table)
         q = q.filter_by(id=common_endpoint_attrs['legacy_endpoint_id'])
@@ -487,7 +496,6 @@ class SqlUpgradeTests(test.TestCase):
             expected_url = endpoints[interface]['url']
             self.assertEqual(extra['%surl' % interface], expected_url)
         session.commit()
-        session.close()
 
     def insert_dict(self, session, table_name, d):
         """Naively inserts key-value pairs into a table, given a dictionary."""
@@ -519,11 +527,11 @@ class SqlUpgradeTests(test.TestCase):
         self.assertTableColumns('user_domain_metadata',
                                 ['user_id', 'domain_id', 'data'])
 
-    def test_metadata_table_migration(self):
+    @use_session
+    def test_metadata_table_migration(self, session):
         # Scaffolding
-        session = self.Session()
-
         self.upgrade(16)
+
         domain_table = sqlalchemy.Table('domain', self.metadata, autoload=True)
         user_table = sqlalchemy.Table('user', self.metadata, autoload=True)
         role_table = sqlalchemy.Table('role', self.metadata, autoload=True)
@@ -536,21 +544,21 @@ class SqlUpgradeTests(test.TestCase):
         domain = {'id': uuid.uuid4().hex,
                   'name': uuid.uuid4().hex,
                   'enabled': True}
-        self.engine.execute(domain_table.insert().values(domain))
+        session.execute(domain_table.insert().values(domain))
 
         # Create a Project
         project = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
                    'domain_id': domain['id'],
                    'extra': "{}"}
-        self.engine.execute(project_table.insert().values(project))
+        session.execute(project_table.insert().values(project))
 
         # Create another Project
         project2 = {'id': uuid.uuid4().hex,
                     'name': uuid.uuid4().hex,
                     'domain_id': domain['id'],
                     'extra': "{}"}
-        self.engine.execute(project_table.insert().values(project2))
+        session.execute(project_table.insert().values(project2))
 
         # Create a User
         user = {'id': uuid.uuid4().hex,
@@ -559,28 +567,28 @@ class SqlUpgradeTests(test.TestCase):
                 'password': uuid.uuid4().hex,
                 'enabled': True,
                 'extra': json.dumps({})}
-        self.engine.execute(user_table.insert().values(user))
+        session.execute(user_table.insert().values(user))
 
         # Create a Role
         role = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex}
-        self.engine.execute(role_table.insert().values(role))
+        session.execute(role_table.insert().values(role))
 
         # And another role
         role2 = {'id': uuid.uuid4().hex,
                  'name': uuid.uuid4().hex}
-        self.engine.execute(role_table.insert().values(role2))
+        session.execute(role_table.insert().values(role2))
 
         # Grant Role to User
         role_grant = {'user_id': user['id'],
                       'tenant_id': project['id'],
                       'data': json.dumps({"roles": [role['id']]})}
-        self.engine.execute(metadata_table.insert().values(role_grant))
+        session.execute(metadata_table.insert().values(role_grant))
 
         role_grant = {'user_id': user['id'],
                       'tenant_id': project2['id'],
                       'data': json.dumps({"roles": [role2['id']]})}
-        self.engine.execute(metadata_table.insert().values(role_grant))
+        session.execute(metadata_table.insert().values(role_grant))
 
         session.commit()
 
@@ -590,16 +598,16 @@ class SqlUpgradeTests(test.TestCase):
             'user_project_metadata', self.metadata, autoload=True)
 
         # Test user in project has role
-        r = session.execute('select data from metadata where user_id="%s"'
-                            'and tenant_id="%s"' %
+        r = session.execute("select data from metadata where user_id='%s'"
+                            " and tenant_id='%s'" %
                             (user['id'], project['id']))
         test_project1 = json.loads(r.fetchone()['data'])
         self.assertEqual(len(test_project1['roles']), 1)
         self.assertIn(role['id'], test_project1['roles'])
 
         # Test user in project2 has role2
-        r = session.execute('select data from metadata where user_id="%s"'
-                            ' and tenant_id="%s"' %
+        r = session.execute("select data from metadata where user_id='%s'"
+                            " and tenant_id='%s'" %
                             (user['id'], project2['id']))
         test_project2 = json.loads(r.fetchone()['data'])
         self.assertEqual(len(test_project2['roles']), 1)
@@ -608,8 +616,8 @@ class SqlUpgradeTests(test.TestCase):
         # Test for user in project has role in user_project_metadata
         # Migration 17 does not properly migrate this data, so this should
         # be None.
-        r = session.execute('select data from user_project_metadata where '
-                            'user_id="%s" and project_id="%s"' %
+        r = session.execute("select data from user_project_metadata where "
+                            "user_id='%s' and project_id='%s'" %
                             (user['id'], project['id']))
         self.assertIsNone(r.fetchone())
 
@@ -623,14 +631,16 @@ class SqlUpgradeTests(test.TestCase):
         self.engine.execute(cmd)
         # End Scaffolding
 
+        session.commit()
+
         # Migrate to 20
         self.upgrade(20)
 
         # The user-project pairs should have all roles from the previous
         # metadata table in addition to any roles currently in
         # user_project_metadata
-        r = session.execute('select data from user_project_metadata '
-                            'where user_id="%s" and project_id="%s"' %
+        r = session.execute("select data from user_project_metadata "
+                            "where user_id='%s' and project_id='%s'" %
                             (user['id'], project['id']))
         role_ids = json.loads(r.fetchone()['data'])['roles']
         self.assertEqual(len(role_ids), 3)
@@ -640,8 +650,8 @@ class SqlUpgradeTests(test.TestCase):
 
         # pairs that only existed in old metadata table should be in
         # user_project_metadata
-        r = session.execute('select data from user_project_metadata where '
-                            'user_id="%s" and project_id="%s"' %
+        r = session.execute("select data from user_project_metadata where "
+                            "user_id='%s' and project_id='%s'" %
                             (user['id'], project2['id']))
         role_ids = json.loads(r.fetchone()['data'])['roles']
         self.assertEqual(len(role_ids), 2)
@@ -754,8 +764,8 @@ class SqlUpgradeTests(test.TestCase):
                                 ["id", "expires", "extra", "valid",
                                  "trust_id", "user_id"])
 
-    def test_fixup_role(self):
-        session = self.Session()
+    @use_session
+    def test_fixup_role(self, session):
         self.assertEqual(self.schema.version, 0, "DB is at version 0")
         self.upgrade(1)
         self.insert_dict(session, "role", {"id": "test", "name": "test"})
@@ -766,13 +776,15 @@ class SqlUpgradeTests(test.TestCase):
         r = session.execute('select count(*) as c from role '
                             'where extra is null')
         self.assertEqual(r.fetchone()['c'], 2)
+        session.commit()
+
         self.upgrade(19)
         r = session.execute('select count(*) as c from role '
                             'where extra is null')
         self.assertEqual(r.fetchone()['c'], 0)
 
-    def test_legacy_endpoint_id(self):
-        session = self.Session()
+    @use_session
+    def test_legacy_endpoint_id(self, session):
         self.upgrade(21)
 
         service = {
@@ -791,11 +803,9 @@ class SqlUpgradeTests(test.TestCase):
                 'legacy_endpoint_id': legacy_endpoint_id})}
         self.insert_dict(session, 'endpoint', endpoint)
 
-        self.upgrade(22)
         session.commit()
-        session.close()
+        self.upgrade(22)
 
-        session = self.Session()
         endpoint_table = sqlalchemy.Table(
             'endpoint', self.metadata, autoload=True)
 
