@@ -69,6 +69,40 @@
       "revId": "106ef8404a6de27ad61fc4b961783ed0d391dafd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//2fc\u003d",
+        "filename": "keystone/common/uid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-17T18:47:47Z",
+      "side": 1,
+      "message": "for translation, need to use named replacement string in case they need to change the order.",
+      "revId": "106ef8404a6de27ad61fc4b961783ed0d391dafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//2fU\u003d",
+        "filename": "tests/test_uid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-17T18:47:47Z",
+      "side": 1,
+      "message": "(nit) imports are not in alphabetical order, move this one to line 1.",
+      "revId": "106ef8404a6de27ad61fc4b961783ed0d391dafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
