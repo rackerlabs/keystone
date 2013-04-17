@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//2sY\u003d",
+        "filename": "keystone/common/uid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-17T14:24:38Z",
+      "side": 1,
+      "message": "they\u0027re just based on other hardcoded values, so i didn\u0027t see a need... if you\u0027re writing your own driver, i think it would be appropriate to reach in here and change these values to accept a larger config value\n\nallowing them to be configurable from keystone.conf would just be confusing alongside uid_length",
+      "parentUuid": "AAAAOn//49c\u003d",
+      "revId": "106ef8404a6de27ad61fc4b961783ed0d391dafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//29I\u003d",
         "filename": "keystone/common/uid.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-17T05:28:24Z",
       "side": 1,
       "message": "Why can\u0027t we just have \"length\"? What\u0027s the need for \"min_length\"?",
+      "revId": "106ef8404a6de27ad61fc4b961783ed0d391dafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//2sc\u003d",
+        "filename": "keystone/common/uid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-17T14:24:38Z",
+      "side": 1,
+      "message": "i don\u0027t think uuid \u0026 ec2 tokens should configurable to become shorter, so a min_length provides a lower bound in that case",
+      "parentUuid": "AAAAOn//29I\u003d",
       "revId": "106ef8404a6de27ad61fc4b961783ed0d391dafd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
