@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//2Os\u003d",
+        "filename": "keystone/locale/ja/LC_MESSAGES/keystone.po",
+        "patchSetId": 27
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4419
+      },
+      "writtenOn": "2013-04-18T02:31:10Z",
+      "side": 0,
+      "message": "This should say:\n# Japanese translations for keystone\n\nOn the other side but it is just removed. It looks like someone knocked off the # at the front.\n\nHowever, I\u0027m still gonna +1 as it doesn\u0027t really break things.",
+      "revId": "203b821754f0192437666ee1380a1a889ca64cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
