@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//2Gw\u003d",
+        "filename": "keystone/common/uid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-04-18T06:13:19Z",
+      "side": 1,
+      "message": "I am still not sure what \"min_length\" is going to buy us. If one specifies a min_length, it basically says I want a UUID no shorter than the specified min_length. It that case, we don\u0027t we just say I want a UUID with a specific length?",
+      "parentUuid": "AAAAOn//2sc\u003d",
+      "revId": "106ef8404a6de27ad61fc4b961783ed0d391dafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//2fc\u003d",
         "filename": "keystone/common/uid.py",
         "patchSetId": 1
