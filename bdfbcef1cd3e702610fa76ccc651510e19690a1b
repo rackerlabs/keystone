@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//1RY\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2031,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-19T16:26:40Z",
+      "side": 1,
+      "message": "passing this string as the tenant_id here is a bit misleading, without knowing the implementation of create_token_sample_data\n\ni would simply prefer that \u0027existing_but_empty\u0027 be replaced with a constant defined at the module level, e.g. NULL \u003d object(), such that you can use:\n\n  self.create_token_sample_data(tenant_id\u003dNULL)\n\nAnd then revise the create_token_sample_data to simply test for:\n\n  if tenant_id is NULL: data[\u0027tenant\u0027] \u003d None",
+      "revId": "bdfbcef1cd3e702610fa76ccc651510e19690a1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
