@@ -427,8 +427,6 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
         super(UserApi, self).__init__(conf)
         self.enabled_mask = conf.ldap.user_enabled_mask
         self.enabled_default = conf.ldap.user_enabled_default
-        self.attribute_ignore = (getattr(conf.ldap, 'user_attribute_ignore')
-                                 or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def _ldap_res_to_model(self, res):
         obj = super(UserApi, self)._ldap_res_to_model(res)
@@ -485,8 +483,6 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
         super(ProjectApi, self).__init__(conf)
         self.member_attribute = (getattr(conf.ldap, 'tenant_member_attribute')
                                  or self.DEFAULT_MEMBER_ATTRIBUTE)
-        self.attribute_ignore = (getattr(conf.ldap, 'tenant_attribute_ignore')
-                                 or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def create(self, values):
         self.affirm_unique(values)
@@ -593,8 +589,6 @@ class RoleApi(common_ldap.BaseLdap):
         super(RoleApi, self).__init__(conf)
         self.member_attribute = (getattr(conf.ldap, 'role_member_attribute')
                                  or self.DEFAULT_MEMBER_ATTRIBUTE)
-        self.attribute_ignore = (getattr(conf.ldap, 'role_attribute_ignore')
-                                 or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def get(self, id, filter=None):
         model = super(RoleApi, self).get(id, filter)
@@ -760,8 +754,6 @@ class GroupApi(common_ldap.BaseLdap):
         super(GroupApi, self).__init__(conf)
         self.member_attribute = (getattr(conf.ldap, 'group_member_attribute')
                                  or self.DEFAULT_MEMBER_ATTRIBUTE)
-        self.attribute_ignore = (getattr(conf.ldap, 'group_attribute_ignore')
-                                 or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def create(self, values):
         self.affirm_unique(values)
