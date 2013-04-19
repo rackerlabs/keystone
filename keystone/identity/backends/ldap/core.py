@@ -163,11 +163,16 @@ class Identity(identity.Driver):
     # CRUD
     def create_user(self, user_id, user):
         user['name'] = clean.user_name(user['name'])
+        # If not present, enabled is defaulted to True
+        if 'enabled' in user:
+            user['enabled'] = clean.user_enabled(user['enabled'])
         return identity.filter_user(self.user.create(user))
 
     def update_user(self, user_id, user):
         if 'name' in user:
             user['name'] = clean.user_name(user['name'])
+        if 'enabled' in user:
+            user['enabled'] = clean.user_enabled(user['enabled'])
         return self.user.update(user_id, user)
 
     def create_project(self, tenant_id, tenant):

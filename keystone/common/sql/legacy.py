@@ -121,7 +121,7 @@ class LegacyMigration(object):
             new_dict = {'email': x.get('email', ''),
                         'password': x.get('password', None),
                         'id': x.get('uid', x.get('id')),
-                        'enabled': x.get('enabled', True),
+                        'enabled': bool(x.get('enabled', True)),
                         'domain_id': x.get('domain_id', DEFAULT_DOMAIN_ID)}
             if x.get('tenant_id'):
                 new_dict['tenant_id'] = self._project_map.get(x['tenant_id'])
