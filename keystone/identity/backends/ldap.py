@@ -412,7 +412,6 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
     DEFAULT_STRUCTURAL_CLASSES = ['person']
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_OBJECTCLASS = 'inetOrgPerson'
-    DEFAULT_ATTRIBUTE_IGNORE = ['tenant_id', 'tenants']
     NotFound = exception.UserNotFound
     options_name = 'user'
     attribute_options_names = {'password': 'pass',
@@ -427,8 +426,6 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
         super(UserApi, self).__init__(conf)
         self.enabled_mask = conf.ldap.user_enabled_mask
         self.enabled_default = conf.ldap.user_enabled_default
-        self.attribute_ignore = (getattr(conf.ldap, 'user_attribute_ignore')
-                                 or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def _ldap_res_to_model(self, res):
         obj = super(UserApi, self)._ldap_res_to_model(res)
@@ -471,7 +468,6 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
     DEFAULT_OBJECTCLASS = 'groupOfNames'
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_MEMBER_ATTRIBUTE = 'member'
-    DEFAULT_ATTRIBUTE_IGNORE = []
     NotFound = exception.ProjectNotFound
     notfound_arg = 'project_id'  # NOTE(yorik-sar): while options_name = tenant
     options_name = 'tenant'
@@ -485,8 +481,6 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
         super(ProjectApi, self).__init__(conf)
         self.member_attribute = (getattr(conf.ldap, 'tenant_member_attribute')
                                  or self.DEFAULT_MEMBER_ATTRIBUTE)
-        self.attribute_ignore = (getattr(conf.ldap, 'tenant_attribute_ignore')
-                                 or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def create(self, values):
         self.affirm_unique(values)
@@ -583,7 +577,6 @@ class RoleApi(common_ldap.BaseLdap):
     DEFAULT_STRUCTURAL_CLASSES = []
     DEFAULT_OBJECTCLASS = 'organizationalRole'
     DEFAULT_MEMBER_ATTRIBUTE = 'roleOccupant'
-    DEFAULT_ATTRIBUTE_IGNORE = []
     NotFound = exception.RoleNotFound
     options_name = 'role'
     attribute_options_names = {'name': 'name'}
@@ -593,8 +586,6 @@ class RoleApi(common_ldap.BaseLdap):
         super(RoleApi, self).__init__(conf)
         self.member_attribute = (getattr(conf.ldap, 'role_member_attribute')
                                  or self.DEFAULT_MEMBER_ATTRIBUTE)
-        self.attribute_ignore = (getattr(conf.ldap, 'role_attribute_ignore')
-                                 or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def get(self, id, filter=None):
         model = super(RoleApi, self).get(id, filter)
@@ -748,7 +739,6 @@ class GroupApi(common_ldap.BaseLdap):
     DEFAULT_OBJECTCLASS = 'groupOfNames'
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_MEMBER_ATTRIBUTE = 'member'
-    DEFAULT_ATTRIBUTE_IGNORE = []
     NotFound = exception.GroupNotFound
     options_name = 'group'
     attribute_options_names = {'description': 'desc',
@@ -760,8 +750,6 @@ class GroupApi(common_ldap.BaseLdap):
         super(GroupApi, self).__init__(conf)
         self.member_attribute = (getattr(conf.ldap, 'group_member_attribute')
                                  or self.DEFAULT_MEMBER_ATTRIBUTE)
-        self.attribute_ignore = (getattr(conf.ldap, 'group_attribute_ignore')
-                                 or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def create(self, values):
         self.affirm_unique(values)
