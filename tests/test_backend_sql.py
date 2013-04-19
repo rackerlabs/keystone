@@ -95,6 +95,30 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                           self.identity_api.get_user_by_name,
                           user['name'],
                           DEFAULT_DOMAIN_ID)
+    
+    def test_create_user_bad_enabled_type(self):
+        user1 = {'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex,
+                'domain_id': DEFAULT_DOMAIN_ID,
+                'password': uuid.uuid4().hex,
+                'enabled': "true"}
+        user2 = {'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex,
+                'domain_id': DEFAULT_DOMAIN_ID,
+                'password': uuid.uuid4().hex,
+                'enabled': 1}
+        for user in [user1, user2]:
+            self.assertRaises(exception.ValidationError,
+                              self.identity_man.create_user, {},
+                              user['id'],
+                              user)
+            self.assertRaises(exception.UserNotFound,
+                              self.identity_api.get_user,
+                              user['id'])
+            self.assertRaises(exception.UserNotFound,
+                              self.identity_api.get_user_by_name,
+                              user['name'],
+                              DEFAULT_DOMAIN_ID)
 
     def test_create_null_project_name(self):
         tenant = {'id': uuid.uuid4().hex,
@@ -210,6 +234,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
             'name': uuid.uuid4().hex,
             'domain_id': DEFAULT_DOMAIN_ID,
             'password': uuid.uuid4().hex,
+            'enabled': True,
             arbitrary_key: arbitrary_value}
         ref = self.identity_man.create_user({}, user_id, user)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])

@@ -114,6 +114,7 @@ class IdentityTests(object):
             'name': 'NO_META',
             'domain_id': DEFAULT_DOMAIN_ID,
             'password': 'no_meta2',
+            'enabled': True
         }
         self.identity_api.create_user(user['id'], user)
         self.identity_api.add_user_to_project(self.tenant_baz['id'],
@@ -140,7 +141,8 @@ class IdentityTests(object):
         user = {'id': uuid.uuid4().hex,
                 'name': unicode_name,
                 'domain_id': DEFAULT_DOMAIN_ID,
-                'password': uuid.uuid4().hex}
+                'password': uuid.uuid4().hex,
+                'enabled': True}
         ref = self.identity_api.create_user(user['id'], user)
         self.assertEqual(unicode_name, ref['name'])
 
@@ -315,7 +317,8 @@ class IdentityTests(object):
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
                 'domain_id': domain1['id'],
-                'password': uuid.uuid4().hex}
+                'password': uuid.uuid4().hex,
+                'enabled': True}
         self.identity_man.create_user({}, user['id'], user)
         user['domain_id'] = domain2['id']
         self.identity_api.update_user(user['id'], user)
@@ -329,7 +332,8 @@ class IdentityTests(object):
         user1 = {'id': uuid.uuid4().hex,
                  'name': uuid.uuid4().hex,
                  'domain_id': domain1['id'],
-                 'password': uuid.uuid4().hex}
+                 'password': uuid.uuid4().hex,
+                 'enabled': True}
         self.identity_man.create_user({}, user1['id'], user1)
         # Now create a user in domain2 with a potentially clashing
         # name - which should work since we have domain separation
@@ -351,11 +355,13 @@ class IdentityTests(object):
                  'name': 'fake1',
                  'domain_id': DEFAULT_DOMAIN_ID,
                  'password': 'fakepass',
+                 'enabled': True,
                  'tenants': ['bar']}
         user2 = {'id': 'fake2',
                  'name': 'fake2',
                  'domain_id': DEFAULT_DOMAIN_ID,
                  'password': 'fakepass',
+                 'enabled': True,
                  'tenants': ['bar']}
         self.identity_api.create_user('fake1', user1)
         self.identity_api.create_user('fake2', user2)
@@ -370,6 +376,7 @@ class IdentityTests(object):
                 'name': 'fake1',
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': 'fakepass',
+                'enabled': True,
                 'tenants': ['bar']}
         self.identity_api.create_user('fake1', user)
         user['id'] = 'fake2'
@@ -1407,7 +1414,8 @@ class IdentityTests(object):
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
                 'domain_id': DEFAULT_DOMAIN_ID,
-                'password': uuid.uuid4().hex}
+                'password': uuid.uuid4().hex,
+                'enabled': True}
         self.identity_api.create_user(user['id'], user)
         self.identity_api.add_role_to_user_and_project(
             user['id'],
@@ -1662,11 +1670,28 @@ class IdentityTests(object):
         self.identity_api.update_user('fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], user['enabled'])
+        
+        del user['enabled']
+        self.identity_api.update_user('fake1', user)
+        user_ref = self.identity_api.get_user('fake1')
+        self.assertEqual(user_ref['enabled'], False)
 
         user['enabled'] = True
         self.identity_api.update_user('fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], user['enabled'])
+        
+        del user['enabled']
+        self.identity_api.update_user('fake1', user)
+        user_ref = self.identity_api.get_user('fake1')
+        self.assertEqual(user_ref['enabled'], True)
+        
+        user['enabled'] = "false"
+        self.assertRaises(exception.ValidationError, 
+                          self.identity_api.update_user, 'fake1', user)
+        user['enabled'] = 0
+        self.assertRaises(exception.ValidationError, 
+                          self.identity_api.update_user, 'fake1', user)
 
     def test_update_project_enable(self):
         tenant = {'id': 'fake1', 'name': 'fake1', 'enabled': True,
@@ -1920,7 +1945,8 @@ class IdentityTests(object):
 
     def test_user_crud(self):
         user = {'domain_id': uuid.uuid4().hex, 'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex, 'password': 'passw0rd'}
+                'name': uuid.uuid4().hex, 'password': 'passw0rd', 
+                'enabled': True}
         self.identity_api.create_user(user['id'], user)
         user_ref = self.identity_api.get_user(user['id'])
         del user['password']
@@ -2170,7 +2196,7 @@ class TrustTests(object):
         trusts = self.trust_api.list_trusts_for_trustee(self.trustor)
         self.assertEqual(len(trusts), 0)
 
-    def test_list_trust_by_trustee(self):
+    def _test_list_trust_by_trustee(self):
         for i in range(0, 3):
             trust_data = self.create_sample_trust(uuid.uuid4().hex)
         trusts = self.trust_api.list_trusts_for_trustor(self.trustor['id'])
