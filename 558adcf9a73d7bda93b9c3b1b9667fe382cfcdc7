@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//zZ4\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-04-22T20:36:37Z",
+      "side": 1,
+      "message": "Can this be changed from NULL to NULL_OBJECT so that it is more clear what you are doing here and not confused with the Python Null Object Design Pattern?",
+      "revId": "558adcf9a73d7bda93b9c3b1b9667fe382cfcdc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
