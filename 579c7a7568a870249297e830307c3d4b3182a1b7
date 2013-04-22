@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//zWA\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-22T21:00:03Z",
+      "side": 1,
+      "message": "i\u0027m not sure whether the nose.tools covers this, but usually you do a @functools.wraps(fn) above this line",
+      "revId": "579c7a7568a870249297e830307c3d4b3182a1b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//zVA\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-22T21:00:03Z",
+      "side": 1,
+      "message": "if we\u0027re doing self.Session() anyway, it seems viable that we can add the cleanup code to the default test teardowns, whenever self.Session() is called, add the session to a list of created sessions to be torn down at the end of the tests, then instead of putting a decorator around all these calls and adding an arg, you would just put session \u003d self.Session() at the beginning of each test using one",
+      "revId": "579c7a7568a870249297e830307c3d4b3182a1b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//zV0\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-22T21:00:03Z",
+      "side": 1,
+      "message": "isn\u0027t there auto escaping if you use :1 or whatnot? we shouldn\u0027t be building our own sql strings this way.\n\nresult \u003d session.execute(\n            \"SELECT * FROM user WHERE id\u003d:param\",\n            {\"param\":5}\n        )\n\n we generally standardize on using single quotes, btw, so please don\u0027t switch these all",
+      "revId": "579c7a7568a870249297e830307c3d4b3182a1b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
