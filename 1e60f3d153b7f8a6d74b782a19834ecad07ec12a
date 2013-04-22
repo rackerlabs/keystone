@@ -16,6 +16,24 @@
       "revId": "1e60f3d153b7f8a6d74b782a19834ecad07ec12a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//99g\u003d",
+        "filename": "tests/_test_import_auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-22T16:21:08Z",
+      "side": 1,
+      "message": "brant: i can add a note, but it only errors when run under certain circumstances in the tests, i don\u0027t know what the original goal of this test is so I made the minimal change. \n\nAs far as I can tell we are not testing that we can set a config value, just that importing oslo before before auth_token works",
+      "parentUuid": "AAAAOn///is\u003d",
+      "revId": "1e60f3d153b7f8a6d74b782a19834ecad07ec12a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
