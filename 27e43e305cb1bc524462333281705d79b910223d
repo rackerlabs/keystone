@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//xQo\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-23T22:47:10Z",
+      "side": 1,
+      "message": "change \"varialble\" to \"variable\"",
+      "revId": "27e43e305cb1bc524462333281705d79b910223d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//xQI\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-23T22:47:10Z",
+      "side": 1,
+      "message": "suggest add the config option name, ``admin_token`` in the ``[DEFAULT]`` section.",
+      "revId": "27e43e305cb1bc524462333281705d79b910223d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
