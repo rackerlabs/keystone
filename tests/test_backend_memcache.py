@@ -14,14 +14,18 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import copy
+import datetime
 import uuid
 
 import memcache
 
 from keystone.common import utils
 from keystone import exception
+from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
 from keystone import test
+from keystone import token
 from keystone.token.backends import memcache as token_memcache
 
 import test_backend
@@ -33,6 +37,7 @@ class MemcacheClient(object):
     def __init__(self, *args, **kwargs):
         """Ignores the passed in args."""
         self.cache = {}
+        self.reject_cas = False
 
     def add(self, key, value):
         if self.get(key):
@@ -50,19 +55,53 @@ class MemcacheClient(object):
         if not isinstance(key, str):
             raise memcache.Client.MemcachedStringEncodingError()
 
+    def gets(self, key):
+        """Call self.get() since we don't really do 'cas' here."""
+        return self.get(key)
+
     def get(self, key):
         """Retrieves the value for a key or None."""
         self.check_key(key)
         obj = self.cache.get(key)
         now = utils.unixtime(timeutils.utcnow())
         if obj and (obj[1] == 0 or obj[1] > now):
-            return obj[0]
+            # NOTE(morganfainberg): This will behave more like memcache
+            # actually does and will prevent modification of the passed in
+            # reference from affecting the cached back-end data. This makes
+            # tests a little easier to write.
+            #
+            # The back-end store should only change with an explicit
+            # set/delete/append/etc
+            data_copy = copy.deepcopy(obj[0])
+            return data_copy
 
     def set(self, key, value, time=0):
         """Sets the value for a key."""
         self.check_key(key)
-        self.cache[key] = (value, time)
+            # NOTE(morganfainberg): This will behave more like memcache
+            # actually does and will prevent modification of the passed in
+            # reference from affecting the cached back-end data. This makes
+            # tests a little easier to write.
+            #
+            # The back-end store should only change with an explicit
+            # set/delete/append/etc
+        data_copy = copy.deepcopy(value)
+        self.cache[key] = (data_copy, time)
         return True
+
+    def cas(self, key, value, time=0, min_compress_len=0):
+        """Call self.set() since we don't really do 'cas' here."""
+        if self.reject_cas:
+            return False
+        return self.set(key, value, time=time)
+
+    def reset_cas(self):
+        """
+        This is a stub for the memcache client reset_cas function. Since we
+        don't maintain cas_cache in the dummy driver, there is nothing to do
+        here
+        """
+        pass
 
     def delete(self, key):
         self.check_key(key)
@@ -101,3 +140,104 @@ class MemcacheToken(test.TestCase, test_backend.TokenTests):
     def test_flush_expired_token(self):
         with self.assertRaises(exception.NotImplemented):
             self.token_api.flush_expired_tokens()
+
+    def test_user_record_token_flush(self):
+        valid_token_id = uuid.uuid4().hex
+        expired_token_id = uuid.uuid4().hex
+        user_id = unicode(uuid.uuid4().hex)
+
+        expire_delta = datetime.timedelta(seconds=86400)
+
+        valid_data = {'id': valid_token_id, 'a': 'b',
+                      'user': {'id': user_id}}
+        expired_data = {'id': expired_token_id, 'a': 'b',
+                        'user': {'id': user_id},
+                        'expires': (timeutils.utcnow() - expire_delta)}
+
+        self.token_api.create_token(valid_token_id, valid_data)
+        self.token_api.create_token(expired_token_id, expired_data)
+        # NOTE(morganfainberg): Directly access the data cache since we need to
+        # get expired tokens as well as valid tokens. token_api.list_tokens()
+        # will not return any expired tokens in the list.
+        user_key = self.token_api._prefix_user_id(user_id)
+        user_record = self.token_api.client.get(user_key)
+        user_token_list = jsonutils.loads('[%s]' % user_record)
+
+        self.assertEquals(len(user_token_list), 2)
+
+        self.token_api._flush_user_list(user_id)
+        flushed_user_record = self.token_api.client.get(user_key)
+        flushed_list = jsonutils.loads('[%s]' % flushed_user_record)
+
+        self.assertEquals(len(flushed_list), 1)
+        self.assertIn(token.unique_id(valid_token_id), flushed_list)
+        self.assertNotIn(token.unique_id(expired_token_id), flushed_list)
+
+    def test_user_record_token_flush_append(self):
+        valid_token_id = uuid.uuid4().hex
+        expired_token_id = uuid.uuid4().hex
+        new_token_id = uuid.uuid4().hex
+        user_id = unicode(uuid.uuid4().hex)
+
+        expire_delta = datetime.timedelta(seconds=86400)
+
+        valid_data = {'id': valid_token_id, 'a': 'a',
+                      'user': {'id': user_id}}
+        expired_data = {'id': expired_token_id, 'a': 'b',
+                        'user': {'id': user_id},
+                        'expires': (timeutils.utcnow() - expire_delta)}
+        new_token_data = {'id': new_token_id, 'a': 'c',
+                          'user': {'id': user_id},
+                          'expires': token.default_expire_time()}
+
+        self.token_api.create_token(valid_token_id, valid_data)
+        self.token_api.create_token(expired_token_id, expired_data)
+
+        # NOTE(morganfainberg): Directly access the data cache since we need to
+        # get expired tokens as well as valid tokens. token_api.list_tokens()
+        # will not return any expired tokens in the list.
+        user_key = self.token_api._prefix_user_id(user_id)
+        user_record = self.token_api.client.get(user_key)
+        user_token_list = jsonutils.loads('[%s]' % user_record)
+
+        self.assertEquals(len(user_token_list), 2)
+        ptk = self.token_api._prefix_token_id(token.unique_id(new_token_id))
+        self.token_api.client.set(ptk, new_token_data)
+
+        self.token_api._flush_user_list(
+            user_id, token_data=new_token_id)
+        flushed_user_record = self.token_api.client.get(user_key)
+        flushed_list = jsonutils.loads('[%s]' % flushed_user_record)
+
+        self.assertEquals(len(flushed_list), 2)
+        self.assertIn(token.unique_id(valid_token_id), flushed_list)
+        self.assertIn(token.unique_id(new_token_id), flushed_list)
+        self.assertNotIn(token.unique_id(expired_token_id), flushed_list)
+
+    def cas_failure_on_flush(self):
+        self.token_api._get_memcache_client().reject_cas = True
+        valid_token_id = uuid.uuid4().hex
+        expired_token_id = uuid.uuid4().hex
+        user_id = unicode(uuid.uuid4().hex)
+
+        expire_delta = datetime.timedelta(seconds=86400)
+
+        valid_data = {'id': valid_token_id, 'a': 'b',
+                      'user': {'id': user_id}}
+        expired_data = {'id': expired_token_id, 'a': 'b',
+                        'user': {'id': user_id},
+                        'expires': (timeutils.utcnow() - expire_delta)}
+
+        self.token_api.create_token(valid_token_id, valid_data)
+        self.token_api.create_token(expired_token_id, expired_data)
+        # NOTE(morganfainberg): Directly access the data cache since we need to
+        # get expired tokens as well as valid tokens. token_api.list_tokens()
+        # will not return any expired tokens in the list.
+        user_key = self.token_api._prefix_user_id(user_id)
+        user_record = self.token_api.client.get(user_key)
+        user_token_list = jsonutils.loads('[%s]' % user_record)
+
+        self.assertEquals(len(user_token_list), 2)
+
+        self.asserRaises(self.token_api._flush_user_list(user_id),
+                         exception.UnexpectedError)
