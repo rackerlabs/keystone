@@ -239,7 +239,8 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
 
     def test_user_attribute_ignore(self):
         CONF.ldap.user_attribute_ignore = ['email', 'password',
-                                           'tenant_id', 'enabled', 'tenants']
+                                           'tenant_id', 'enabled',
+                                           'tenants', 'domain_id']
         self.clear_database()
         self.identity_api = identity.backends.ldap.Identity()
         self.load_fixtures(default_fixtures)
@@ -250,6 +251,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         self.assertNotIn('tenant_id', user_ref)
         self.assertNotIn('enabled', user_ref)
         self.assertNotIn('tenants', user_ref)
+        self.assertNotIn('domain_id', user_ref)
 
     def test_project_attribute_mapping(self):
         CONF.ldap.tenant_name_attribute = 'ou'
@@ -278,7 +280,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_project_attribute_ignore(self):
         CONF.ldap.tenant_attribute_ignore = ['name',
                                              'description',
-                                             'enabled']
+                                             'enabled', 'domain_id']
         self.clear_database()
         self.identity_api = identity.backends.ldap.Identity()
         self.load_fixtures(default_fixtures)
@@ -287,6 +289,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         self.assertNotIn('name', tenant_ref)
         self.assertNotIn('description', tenant_ref)
         self.assertNotIn('enabled', tenant_ref)
+        self.assertNotIn('domain_id', tenant_ref)
 
     def test_role_attribute_mapping(self):
         CONF.ldap.role_name_attribute = 'ou'
@@ -382,6 +385,17 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         mapping = self.identity_api.user._parse_extra_attrs(option_list)
         expected_dict = {'description': 'name', 'gecos': 'password'}
         self.assertDictEqual(expected_dict, mapping)
+
+    def test_group_attribute_ignore(self):
+        CONF.ldap.group_attribute_ignore = ['domain_id']
+        self.clear_database()
+        self.identity_api = identity.backends.ldap.Identity()
+        group = {'id': uuid.uuid4().hex, 'domain_id': uuid.uuid4().hex,
+                 'name': uuid.uuid4().hex, 'description': uuid.uuid4().hex}
+        self.identity_api.create_group(group['id'], group)
+        group_ref = self.identity_api.get_group(group['id'])
+        self.assertEqual(group_ref['id'], group['id'])
+        self.assertNotIn('domain_id', group_ref)
 
 # TODO (henry-nash) These need to be removed when the full LDAP implementation
 # is submitted - see Bugs 1092187, 1101287, 1101276, 1101289
