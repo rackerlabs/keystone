@@ -69,6 +69,24 @@
       "revId": "12f6eb886a46f6b9dd5e021361297d6bb3a66230",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//yp4\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 7135
+      },
+      "writtenOn": "2013-04-23T08:45:38Z",
+      "side": 1,
+      "message": "Yup, feel the same way",
+      "parentUuid": "AAAAOn//yro\u003d",
+      "revId": "12f6eb886a46f6b9dd5e021361297d6bb3a66230",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
