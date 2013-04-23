@@ -34,6 +34,41 @@
       "revId": "12f6eb886a46f6b9dd5e021361297d6bb3a66230",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ysE\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-04-23T08:20:51Z",
+      "side": 1,
+      "message": "I think the rationale is that if you did return NotFound, then this would be a way of users trolling to find out valid userIDs...returning ForbiddenAction stops this leakage",
+      "parentUuid": "AAAAOn//2gc\u003d",
+      "revId": "12f6eb886a46f6b9dd5e021361297d6bb3a66230",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//yro\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-04-23T08:20:51Z",
+      "side": 1,
+      "message": "My only comment is that the fact that one user cannot see another user\u0027s groups is purely a function of a particularly policy file (albeit the default is setup this way).  It might be good to mention this as a comment in case we ever change this default in the future",
+      "revId": "12f6eb886a46f6b9dd5e021361297d6bb3a66230",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
