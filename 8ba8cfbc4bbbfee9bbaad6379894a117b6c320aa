@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//x1Q\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-04-23T17:28:37Z",
+      "side": 1,
+      "message": "If both \u0027keystone_s3_url\u0027 and legacy configuration are specified, we should ignore the legacy stuff, or raise an exception.\n\nif not self.s3_url and all([auth_host, auth_port, auth_protocol]):\n ...",
+      "revId": "8ba8cfbc4bbbfee9bbaad6379894a117b6c320aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
