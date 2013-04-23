@@ -374,7 +374,8 @@ def configure():
     register_str('domain_member_attribute', group='ldap', default='member')
     register_str('domain_desc_attribute', group='ldap', default='description')
     register_str('domain_enabled_attribute', group='ldap', default='enabled')
-    register_list('domain_attribute_ignore', group='ldap', default='')
+    register_list('domain_attribute_ignore', group='ldap', 
+                  default='user_domain_id_attribute, group_domain_id_attribute,tenant_domain_id_attribute')
     register_bool('domain_allow_create', group='ldap', default=True)
     register_bool('domain_allow_update', group='ldap', default=True)
     register_bool('domain_allow_delete', group='ldap', default=True)
