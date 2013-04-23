@@ -79,7 +79,7 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         self.user_foo.pop('password')
-        self.assertDictEqual(user_ref, self.user_foo)
+        self.assertDictContainsSubset(user_ref, self.user_foo)
         self.assert_(tenant_ref is None)
         self.assert_(not metadata_ref)
 
@@ -93,8 +93,8 @@ class IdentityTests(object):
         #               not be returned by the api
         self.user_sna.pop('password')
         self.user_sna['enabled'] = True
-        self.assertDictEqual(user_ref, self.user_sna)
-        self.assertDictEqual(tenant_ref, self.tenant_bar)
+        self.assertDictContainsSubset(user_ref, self.user_sna)
+        self.assertDictContainsSubset(tenant_ref, self.tenant_bar)
         metadata_ref.pop('roles')
         self.assertDictEqual(metadata_ref, self.metadata_snamtu)
 
@@ -129,7 +129,7 @@ class IdentityTests(object):
         self.assertEquals(metadata_ref, {"roles":
                                          [CONF.member_role_id]})
         self.assertDictContainsSubset(user_ref, user)
-        self.assertDictEqual(tenant_ref, self.tenant_baz)
+        self.assertDictContainsSubset(tenant_ref, self.tenant_baz)
 
     def test_password_hashed(self):
         user_ref = self.identity_api._get_user(self.user_foo['id'])
@@ -147,7 +147,7 @@ class IdentityTests(object):
     def test_get_project(self):
         tenant_ref = self.identity_api.get_project(
             tenant_id=self.tenant_bar['id'])
-        self.assertDictEqual(tenant_ref, self.tenant_bar)
+        self.assertDictContainsSubset(tenant_ref, self.tenant_bar)
 
     def test_get_project_404(self):
         self.assertRaises(exception.ProjectNotFound,
@@ -158,7 +158,7 @@ class IdentityTests(object):
         tenant_ref = self.identity_api.get_project_by_name(
             tenant_name=self.tenant_bar['name'],
             domain_id=DEFAULT_DOMAIN_ID)
-        self.assertDictEqual(tenant_ref, self.tenant_bar)
+        self.assertDictContainsSubset(tenant_ref, self.tenant_bar)
 
     def test_get_project_by_name_404(self):
         self.assertRaises(exception.ProjectNotFound,
@@ -187,7 +187,7 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         self.user_foo.pop('password')
-        self.assertDictEqual(user_ref, self.user_foo)
+        self.assertDictContainsSubset(user_ref, self.user_foo)
 
     def test_get_user_404(self):
         self.assertRaises(exception.UserNotFound,
@@ -202,7 +202,7 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         self.user_foo.pop('password')
-        self.assertDictEqual(user_ref, self.user_foo)
+        self.assertDictContainsSubset(user_ref, self.user_foo)
 
     def test_get_user_by_name_404(self):
         self.assertRaises(exception.UserNotFound,

@@ -179,7 +179,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_user_filter(self):
         user_ref = self.identity_api.get_user(self.user_foo['id'])
         self.user_foo.pop('password')
-        self.assertDictEqual(user_ref, self.user_foo)
+        self.assertDictContainsSubset(user_ref, self.user_foo)
 
         CONF.ldap.user_filter = '(CN=DOES_NOT_MATCH)'
         self.identity_api = identity.backends.ldap.Identity()
@@ -189,7 +189,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
 
     def test_project_filter(self):
         tenant_ref = self.identity_api.get_project(self.tenant_bar['id'])
-        self.assertDictEqual(tenant_ref, self.tenant_bar)
+        self.assertDictContainsSubset(tenant_ref, self.tenant_bar)
 
         CONF.ldap.tenant_filter = '(CN=DOES_NOT_MATCH)'
         self.identity_api = identity.backends.ldap.Identity()
@@ -396,11 +396,11 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                  'name': uuid.uuid4().hex, 'description': uuid.uuid4().hex}
         self.identity_api.create_group(group['id'], group)
         group_ref = self.identity_api.get_group(group['id'])
-        self.assertDictEqual(group_ref, group)
+        self.assertDictContainsSubset(group_ref, group)
         group['description'] = uuid.uuid4().hex
         self.identity_api.update_group(group['id'], group)
         group_ref = self.identity_api.get_group(group['id'])
-        self.assertDictEqual(group_ref, group)
+        self.assertDictContainsSubset(group_ref, group)
 
         self.identity_api.delete_group(group['id'])
         self.assertRaises(exception.GroupNotFound,
@@ -422,6 +422,54 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         self.assertRaises(exception.DomainNotFound,
                           self.identity_api.get_domain,
                           domain['id'])
+
+    def test_authenticate_no_metadata(self):
+        user = {
+            'id': 'no_meta',
+            'name': 'NO_META',
+            'domain_id': 'default',
+            'password': 'no_meta2',
+        }
+        self.identity_api.create_user(user['id'], user)
+        self.identity_api.add_user_to_project(self.tenant_baz['id'],
+                                              user['id'])
+        user_ref, tenant_ref, metadata_ref = self.identity_api.authenticate(
+            user_id=user['id'],
+            tenant_id=self.tenant_baz['id'],
+            password=user['password'])
+        # NOTE(termie): the password field is left in user_foo to make
+        #               it easier to authenticate in tests, but should
+        #               not be returned by the api
+        user.pop('password')
+        if self.identity_api.project.enabled_emulation:
+            user['enabled'] = True
+        self.assertEquals(metadata_ref, {"roles":
+                                         [CONF.member_role_id]})
+        self.assertDictContainsSubset(user_ref, user)
+        self.assertDictContainsSubset(tenant_ref, self.tenant_baz)
+
+    def test_user_crud(self):
+        user = {'domain_id': uuid.uuid4().hex, 'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex, 'password': 'passw0rd'}
+        self.identity_api.create_user(user['id'], user)
+        user_ref = self.identity_api.get_user(user['id'])
+        del user['password']
+        if self.identity_api.project.enabled_emulation:
+            user['enabled'] = True
+        user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
+        self.assertDictContainsSubset(user_ref_dict, user)
+
+        user['password'] = uuid.uuid4().hex
+        self.identity_api.update_user(user['id'], user)
+        user_ref = self.identity_api.get_user(user['id'])
+        del user['password']
+        user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
+        self.assertDictContainsSubset(user_ref_dict, user)
+
+        self.identity_api.delete_user(user['id'])
+        self.assertRaises(exception.UserNotFound,
+                          self.identity_api.get_user,
+                          user['id'])
 
     def test_get_role_grant_by_user_and_project(self):
         raise nose.exc.SkipTest('Blocked by bug 1101287')
@@ -462,12 +510,12 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         #               an enabled key in the project_ref.
         if self.identity_api.project.enabled_emulation:
             project['enabled'] = True
-        self.assertDictEqual(project_ref, project)
+        self.assertDictContainsSubset(project_ref, project)
 
         project['description'] = uuid.uuid4().hex
         self.identity_api.update_project(project['id'], project)
         project_ref = self.identity_api.get_project(project['id'])
-        self.assertDictEqual(project_ref, project)
+        self.assertDictContainsSubset(project_ref, project)
 
         self.identity_api.delete_project(project['id'])
         self.assertRaises(exception.ProjectNotFound,
@@ -607,8 +655,8 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         user.pop('password')
         self.assertEquals(metadata_ref, {"roles":
                                          [CONF.member_role_id]})
-        self.assertDictEqual(user_ref, user)
-        self.assertDictEqual(tenant_ref, self.tenant_baz)
+        self.assertDictContainsSubset(user_ref, user)
+        self.assertDictContainsSubset(tenant_ref, self.tenant_baz)
 
     def test_project_crud(self):
         # NOTE(topol): LDAPIdentityEnabledEmulation will create an
@@ -626,12 +674,12 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         # key with a value of True when LDAPIdentityEnabledEmulation
         # is used so we now add this expected key to the project dictionary
         project['enabled'] = True
-        self.assertDictEqual(project_ref, project)
+        self.assertDictContainsSubset(project_ref, project)
 
         project['description'] = uuid.uuid4().hex
         self.identity_api.update_project(project['id'], project)
         project_ref = self.identity_api.get_project(project['id'])
-        self.assertDictEqual(project_ref, project)
+        self.assertDictContainsSubset(project_ref, project)
 
         self.identity_api.delete_project(project['id'])
         self.assertRaises(exception.ProjectNotFound,
@@ -641,19 +689,20 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def test_user_crud(self):
         user = {'domain_id': uuid.uuid4().hex, 'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex, 'password': 'passw0rd'}
-        self.identity_man.create_user({}, user['id'], user)
-        user['enabled'] = True
+        self.identity_api.create_user(user['id'], user)
         user_ref = self.identity_api.get_user(user['id'])
         del user['password']
+        if self.identity_api.project.enabled_emulation:
+            user['enabled'] = True
         user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
-        self.assertDictEqual(user_ref_dict, user)
+        self.assertDictContainsSubset(user_ref_dict, user)
 
         user['password'] = uuid.uuid4().hex
         self.identity_api.update_user(user['id'], user)
         user_ref = self.identity_api.get_user(user['id'])
         del user['password']
         user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
-        self.assertDictEqual(user_ref_dict, user)
+        self.assertDictContainsSubset(user_ref_dict, user)
 
         self.identity_api.delete_user(user['id'])
         self.assertRaises(exception.UserNotFound,

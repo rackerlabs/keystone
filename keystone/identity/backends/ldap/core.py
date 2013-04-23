@@ -294,7 +294,16 @@ class Identity(identity.Driver):
             raise exception.DomainNotFound(domain_id=domain_id)
 
     def list_domains(self):
-        return self.domain.get_all()
+        domains = self.domain.get_all()
+        #check if the list has default domain
+        found_default = False
+        for domain in domains:
+            if domain.get('id') == CONF.identity.default_domain_id:
+                found_default = True
+                break
+        if not found_default:
+            domains.insert(0, self.domain.get_default_domain())
+        return domains
 
 
 # TODO(termie): remove this and move cross-api calls into driver
@@ -376,7 +385,7 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap, ApiShimMixin):
     DEFAULT_STRUCTURAL_CLASSES = ['person']
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_OBJECTCLASS = 'inetOrgPerson'
-    DEFAULT_ATTRIBUTE_IGNORE = ['tenant_id', 'tenants']
+    DEFAULT_ATTRIBUTE_IGNORE = ['tenant_id', 'tenants', 'domain_id']
     NotFound = exception.UserNotFound
     options_name = 'user'
     attribute_mapping = {'password': 'userPassword',
@@ -476,7 +485,7 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
     DEFAULT_OBJECTCLASS = 'groupOfNames'
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_MEMBER_ATTRIBUTE = 'member'
-    DEFAULT_ATTRIBUTE_IGNORE = []
+    DEFAULT_ATTRIBUTE_IGNORE = ['domain_id']
     NotFound = exception.ProjectNotFound
     notfound_arg = 'project_id'  # NOTE(yorik-sar): while options_name = tenant
     options_name = 'tenant'
@@ -833,7 +842,7 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
     DEFAULT_OBJECTCLASS = 'groupOfNames'
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_MEMBER_ATTRIBUTE = 'member'
-    DEFAULT_ATTRIBUTE_IGNORE = []
+    DEFAULT_ATTRIBUTE_IGNORE = ['domain_id']
     NotFound = exception.GroupNotFound
     options_name = 'group'
     attribute_mapping = {'name': 'ou',
@@ -963,13 +972,17 @@ class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
                                  or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def get(self, id, filter=None):
-        """Replaces exception.NotFound with exception.DomainNotFound."""
         try:
             return super(DomainApi, self).get(id, filter)
         except exception.NotFound:
+            if id == CONF.identity.default_domain_id:
+                        return self.get_default_domain()
             raise exception.DomainNotFound(domain_id=id)
 
     def create(self, values):
+        if values.get('id') == CONF.identity.default_domain_id:
+            msg = _('Default domain is not allowed to create.')
+            raise exception.NotImplemented(msg)
         self.affirm_unique(values)
         data = values.copy()
         if data.get('id') is None:
@@ -992,3 +1005,10 @@ class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
             msg = _('Changing Name not supported by LDAP')
             raise exception.NotImplemented(message=msg)
         super(DomainApi, self).update(id, values, old_obj)
+
+    def get_default_domain(self):
+        return {'id': CONF.identity.default_domain_id, 'name': 'Default',
+                'enabled': True,
+                'description':
+                'Owns users and tenants (i.e. projects) available '
+                'on Identity API v2.'}
