@@ -171,7 +171,7 @@
 # user_enabled_attribute = enabled
 # user_enabled_mask = 0
 # user_enabled_default = True
-# user_attribute_ignore = tenant_id,tenants
+# user_attribute_ignore = tenant_id,tenants,domain_id
 # user_allow_create = True
 # user_allow_update = True
 # user_allow_delete = True
@@ -187,7 +187,7 @@
 # tenant_name_attribute = ou
 # tenant_desc_attribute = desc
 # tenant_enabled_attribute = enabled
-# tenant_attribute_ignore =
+# tenant_attribute_ignore = domain_id
 # tenant_allow_create = True
 # tenant_allow_update = True
 # tenant_allow_delete = True
@@ -212,7 +212,7 @@
 # group_name_attribute = ou
 # group_member_attribute = member
 # group_desc_attribute = desc
-# group_attribute_ignore =
+# group_attribute_ignore = domain_id
 # group_allow_create = True
 # group_allow_update = True
 # group_allow_delete = True

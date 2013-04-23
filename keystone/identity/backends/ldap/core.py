@@ -32,6 +32,12 @@ CONF = config.CONF
 
 LOG = logging.getLogger(__name__)
 
+DEFAULT_DOMAIN = {'id': CONF.identity.default_domain_id, 'name': 'Default',
+                  'enabled': True,
+                  'description':
+                  'Owns users and tenants (i.e. projects) available '
+                  'on Identity API v2.'}
+
 
 class Identity(identity.Driver):
     def __init__(self):
@@ -273,6 +279,10 @@ class Identity(identity.Driver):
         return found
 
     def create_domain(self, domain_id, domain):
+        if domain == DEFAULT_DOMAIN:
+            msg = (_('The default domain %s cannot be created.')
+                   % CONF.identity.default_domain_id)
+            raise exception.Forbidden(msg)
         domain['name'] = clean.domain_name(domain['name'])
         return self.domain.create(domain)
 
@@ -283,18 +293,35 @@ class Identity(identity.Driver):
             raise exception.DomainNotFound(domain_id=domain_id)
 
     def update_domain(self, domain_id, domain):
+        if domain == DEFAULT_DOMAIN:
+            msg = (_('The default domain %s cannot be updated.')
+                   % CONF.identity.default_domain_id)
+            raise exception.Forbidden(msg)
         if 'name' in domain:
             domain['name'] = clean.domain_name(domain['name'])
         return self.domain.update(domain_id, domain)
 
     def delete_domain(self, domain_id):
+        if self.domain.get(domain_id) == DEFAULT_DOMAIN:
+            msg = (_('The default domain %s cannot be deleted.')
+                   % CONF.identity.default_domain_id)
+            raise exception.Forbidden(msg)
         try:
             return self.domain.delete(domain_id)
         except ldap.NO_SUCH_OBJECT:
             raise exception.DomainNotFound(domain_id=domain_id)
 
     def list_domains(self):
-        return self.domain.get_all()
+        domains = self.domain.get_all()
+        #check if the list has default domain
+        found_default = False
+        for domain in domains:
+            if domain.get('id') == CONF.identity.default_domain_id:
+                found_default = True
+                break
+        if not found_default:
+            domains.insert(0, DEFAULT_DOMAIN)
+        return domains
 
 
 # TODO(termie): remove this and move cross-api calls into driver
@@ -376,7 +403,7 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap, ApiShimMixin):
     DEFAULT_STRUCTURAL_CLASSES = ['person']
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_OBJECTCLASS = 'inetOrgPerson'
-    DEFAULT_ATTRIBUTE_IGNORE = ['tenant_id', 'tenants']
+    DEFAULT_ATTRIBUTE_IGNORE = ['tenant_id', 'tenants', 'domain_id']
     NotFound = exception.UserNotFound
     options_name = 'user'
     attribute_mapping = {'password': 'userPassword',
@@ -476,7 +503,7 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
     DEFAULT_OBJECTCLASS = 'groupOfNames'
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_MEMBER_ATTRIBUTE = 'member'
-    DEFAULT_ATTRIBUTE_IGNORE = []
+    DEFAULT_ATTRIBUTE_IGNORE = ['domain_id']
     NotFound = exception.ProjectNotFound
     notfound_arg = 'project_id'  # NOTE(yorik-sar): while options_name = tenant
     options_name = 'tenant'
@@ -833,7 +860,7 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
     DEFAULT_OBJECTCLASS = 'groupOfNames'
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_MEMBER_ATTRIBUTE = 'member'
-    DEFAULT_ATTRIBUTE_IGNORE = []
+    DEFAULT_ATTRIBUTE_IGNORE = ['domain_id']
     NotFound = exception.GroupNotFound
     options_name = 'group'
     attribute_mapping = {'name': 'ou',
@@ -963,10 +990,11 @@ class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
                                  or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def get(self, id, filter=None):
-        """Replaces exception.NotFound with exception.DomainNotFound."""
         try:
             return super(DomainApi, self).get(id, filter)
         except exception.NotFound:
+            if id == CONF.identity.default_domain_id:
+                return DEFAULT_DOMAIN
             raise exception.DomainNotFound(domain_id=id)
 
     def create(self, values):
