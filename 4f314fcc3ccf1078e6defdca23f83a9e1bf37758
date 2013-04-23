@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//x1E\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1535,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-04-23T17:41:00Z",
+      "side": 1,
+      "message": "Keystone supports xml format.   This code relies on python  boolean literal value.  REST request response should be language agnostic\n\nIn identity spec it is mentioned as\n{\n    \"entity\": {\n        \"name\": string,\n        \"description\": string,\n        \"enabled\": boolean\n    }\n}\n\nand all the examples use \"true\" for boolean\n\nBasically take the input \"true/false\" from REST layer and convert to \"True/False\" as expected by python and don\u0027t make user send True/False",
+      "revId": "4f314fcc3ccf1078e6defdca23f83a9e1bf37758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
