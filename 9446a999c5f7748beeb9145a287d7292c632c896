@@ -16,6 +16,24 @@
       "revId": "9446a999c5f7748beeb9145a287d7292c632c896",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//yiQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-04-23T10:43:04Z",
+      "side": 1,
+      "message": "Actualy, code at EOF is no-op anyway, so should be removed.",
+      "parentUuid": "AAAAOn//yic\u003d",
+      "revId": "9446a999c5f7748beeb9145a287d7292c632c896",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
