@@ -23,11 +23,15 @@ from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import jsonutils
+from keystone.openstack.common import timeutils
 from keystone import token
 
 
 CONF = config.CONF
 config.register_str('servers', group='memcache', default='localhost:11211')
+config.register_int('max_revocation_list_size', group='memcache', default=0)
+config.register_int('max_user_record_list_size', group='memcache', default=0)
+config.register_int('max_compare_and_set_retry', group='memcache', default=16)
 
 
 class Token(token.Driver):
@@ -41,8 +45,14 @@ class Token(token.Driver):
         return self._memcache_client or self._get_memcache_client()
 
     def _get_memcache_client(self):
+        # NOTE(morganfainberg): The memcache client library for python is NOT
+        # thread safe and should not be passed between threads. This is highly
+        # specific to the cas() (compare and set) methods and the caching of
+        # the previous value(s). It appears greenthread should ensure there is
+        # a single data structure per spawned greenthread.
         memcache_servers = CONF.memcache.servers.split(',')
-        self._memcache_client = memcache.Client(memcache_servers, debug=0)
+        self._memcache_client = memcache.Client(memcache_servers, debug=0,
+                                                cache_cas=True)
         return self._memcache_client
 
     def _prefix_token_id(self, token_id):
@@ -58,7 +68,6 @@ class Token(token.Driver):
         token_ref = self.client.get(ptk)
         if token_ref is None:
             raise exception.TokenNotFound(token_id=token_id)
-
         return token_ref
 
     def create_token(self, token_id, data):
@@ -80,8 +89,7 @@ class Token(token.Driver):
             if not self.client.append(user_key, ',%s' % token_data):
                 if not self.client.add(user_key, token_data):
                     if not self.client.append(user_key, ',%s' % token_data):
-                        msg = _('Unable to add token user list.')
-                        raise exception.UnexpectedError(msg)
+                        self._flush_user_list(user_key, token_data=token_id)
         return copy.deepcopy(data_copy)
 
     def _add_to_revocation_list(self, data):
@@ -90,8 +98,7 @@ class Token(token.Driver):
             if not self.client.add(self.revocation_key, data_json):
                 if not self.client.append(self.revocation_key,
                                           ',%s' % data_json):
-                    msg = _('Unable to add token to revocation list.')
-                    raise exception.UnexpectedError(msg)
+                    self._flush_revocation_list(token_data=data)
 
     def delete_token(self, token_id):
         # Test for existence
@@ -101,11 +108,106 @@ class Token(token.Driver):
         self._add_to_revocation_list(data)
         return result
 
+    def _filter_list_and_cas(self, token_list_key, token_data=None):
+        """
+        If token_data is None, the list will be flushed of expired tokens.
+
+        If token_data is provided, the list will be flushed of expired tokens
+        and then the data will be appended to the new filtered list before
+        the Compare-and-Set function in memcache is called.
+        """
+        is_revocation_list = False
+        error_msg = _('Unable to add token user list.')
+
+        cas_retry = 0
+        filtered_list = []
+
+        current_time = timeutils.normalize_time(
+            timeutils.parse_isotime(timeutils.isotime()))
+
+        if token_list_key == self.revocation_key:
+            # NOTE(morganfainberg): the revocation list is an actual json dump
+            # of the token data itself instead of a list of token ids. To make
+            # everything sane, there is minor handling changes needed if it
+            # is the revocation-list.
+            is_revocation_list = True
+            error_msg = _('Unable to add token to revocation list.')
+
+        while cas_retry <= CONF.memcache.max_compare_and_set_retry:
+            # NOTE(morganfainberg): cas or "compare and set" is a function of
+            # memcache. It will return false if the value has changed since the
+            # last call to client.gets(). This is the memcache supported method
+            # of avoiding race conditions on set().  Memcache is already atomic
+            # on the back-end and serializes operations.
+            #
+            # cas_retry is for tracking our iterations before we give up (in
+            # case memcache is down or something horrible happens we don't
+            # iterate forever trying to compare and set the new value.
+            cas_retry += 1
+            record = self.client.gets(token_list_key)
+
+            if not record:
+                break
+
+            token_list = jsonutils.loads('[%s]' % record)
+            for token_i in token_list:
+                if is_revocation_list:
+                    token_ref = token_i
+                else:
+                    ptk = self._prefix_token_id(token.unique_id(token_i))
+                    token_ref = self.client.get(ptk)
+                    if not token_ref:
+                        continue
+
+                if 'expires' in token_ref:
+                    if is_revocation_list:
+                        expires_at = timeutils.parse_isotime(
+                            token_ref['expires'])
+                    else:
+                        expires_at = token_ref['expires']
+                    expiry = timeutils.normalize_time(expires_at)
+                    if expiry < current_time:
+                        continue
+                filtered_list.append(jsonutils.dumps(token_i))
+            if token_data is not None:
+                filtered_list.append(jsonutils.dumps(token_data))
+            if self.client.cas(token_list_key, ','.join(filtered_list)):
+                return
+        raise exception.UnexpectedError(error_msg)
+
+    def _flush_user_list(self, user_id, token_data=None):
+        """
+        Clean up the user-record-list of "expired" tokens using the memcache
+        "cas" (compare and set) functionality.
+        """
+        user_key = self._prefix_user_id(user_id)
+        self._filter_list_and_cas(user_key, token_data=token_data)
+
+    def _flush_revocation_list(self, token_data=None):
+        """
+        Clean up the revocation-list of "expired" tokens using the memcache
+        "cas" (compare and set) functionality.
+        """
+        self._filter_list_and_cas(self.revocation_key, token_data=token_data)
+
     def list_tokens(self, user_id, tenant_id=None, trust_id=None):
         tokens = []
         user_key = self._prefix_user_id(user_id)
         user_record = self.client.get(user_key) or ""
         token_list = jsonutils.loads('[%s]' % user_record)
+        if CONF.memcache.max_user_record_list_size > 0:
+            # NOTE(morganfainberg): only keep the list smaller than the
+            # max_user_record_list_size if the option is set.  Typically this
+            # is only needed if there is a maximum list-size that is desired
+            # that is less than the number that can fit in a memecache page.
+            #
+            # If this is set to 0, the flush will occur only if the list has
+            # exceeded the memcache page-size and fails to append the token
+            # unique id to the current list.
+            if len(token_list) > CONF.memcache.max_user_record_list_size:
+                self._flush_user_list(user_id)
+                user_record = self.client.get(user_key) or ""
+                token_list = jsonutils.loads('[%s]' % user_record)
         for token_id in token_list:
             ptk = self._prefix_token_id(token.unique_id(token_id))
             token_ref = self.client.get(ptk)
@@ -122,12 +224,23 @@ class Token(token.Driver):
                         continue
                     if trust != trust_id:
                         continue
-
                 tokens.append(token_id)
         return tokens
 
     def list_revoked_tokens(self):
         list_json = self.client.get(self.revocation_key)
         if list_json:
-            return jsonutils.loads('[%s]' % list_json)
+            revoked_list = jsonutils.loads('[%s]' % list_json)
+            if CONF.memcache.max_revocation_list_size > 0:
+                # NOTE(morganfainberg): only keep the list smaller than the
+                # max_revocation_list_size if the option is set.  Typically
+                # this is only if there is a maximum list-size that is desired
+                # that is less than the number that can fit in a memecache page
+                #
+                # If this is set to 0, the flush will occur only if
+                # the list has exceeded the memcache page-size and fails to
+                # append the token to the current revocation-list
+                if len(revoked_list) > CONF.memcache.max_revocation_list_size:
+                    self._flush_revocation_list()
+            return revoked_list
         return []
