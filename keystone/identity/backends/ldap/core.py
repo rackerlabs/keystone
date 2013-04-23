@@ -291,7 +291,16 @@ class Identity(identity.Driver):
             raise exception.DomainNotFound(domain_id=domain_id)
 
     def list_domains(self):
-        return self.domain.get_all()
+        domains = self.domain.get_all()
+        #check if the list has default domain
+        found_default = False
+        for domain in domains:
+            if domain.get('id') == CONF.identity.default_domain_id:
+                found_default = True
+                break
+        if not found_default:
+            domains.insert(0, self.domain.get_default_domain())
+        return domains
 
 
 # TODO(termie): remove this and move cross-api calls into driver
@@ -942,6 +951,10 @@ class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
                          'enabled': 'enabled'}
     model = models.Domain
 
+    _set_default_domain = True
+
+    _default_domain_id = CONF.identity.default_domain_id
+
     def __init__(self, conf):
         super(DomainApi, self).__init__(conf)
         self.api = ApiShim(conf)
@@ -954,13 +967,17 @@ class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
                                  or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def get(self, id, filter=None):
-        """Replaces exception.NotFound with exception.DomainNotFound."""
         try:
             return super(DomainApi, self).get(id, filter)
         except exception.NotFound:
+            if id == self._default_domain_id and self._set_default_domain:
+                        _set_default_domain = True
+                        return self.get_default_domain()
             raise exception.DomainNotFound(domain_id=id)
 
     def create(self, values):
+        if values.get('id') == self._default_domain_id:
+            self._set_default_domain = False
         self.affirm_unique(values)
         data = values.copy()
         if data.get('id') is None:
@@ -973,6 +990,8 @@ class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
         else:
             self.role_api.roles_delete_subtree_by_type(id, 'Domain')
             super(DomainApi, self).delete(id)
+        if id == self._default_domain_id:
+            self._set_default_domain = True
 
     def update(self, id, values):
         try:
@@ -983,3 +1002,10 @@ class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
             msg = _('Changing Name not supported by LDAP')
             raise exception.NotImplemented(message=msg)
         super(DomainApi, self).update(id, values, old_obj)
+
+    def get_default_domain(self):
+        return {'id': self._default_domain_id, 'name': 'Default',
+                'enabled': True,
+                'description':
+                'Owns users and tenants (i.e. projects) available '
+                'on Identity API v2.'}
