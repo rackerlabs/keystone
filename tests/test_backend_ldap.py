@@ -423,6 +423,17 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                           self.identity_api.get_domain,
                           domain['id'])
 
+    def test_get_default_domain(self):
+        default_domain_id = CONF.identity.default_domain_id
+        domains = self.identity_api.list_domains()
+        domain_ids = []
+        for domain in domains:
+            self.identity_api.delete_domain(domain['id'])
+        domain_ref = self.identity_api.get_domain(default_domain_id)
+        self.assertEqual(default_domain_id, domain_ref['id'])
+        domains = self.identity_api.list_domains()
+        self.assertEquals(len(domains), 1)
+
     def test_get_role_grant_by_user_and_project(self):
         raise nose.exc.SkipTest('Blocked by bug 1101287')
 
