@@ -28,6 +28,7 @@ from keystone import exception
 from keystone import identity
 
 CONF = config.CONF
+DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
 
 class Identity(identity.Driver):
@@ -954,7 +955,12 @@ class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
                                  or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def get(self, id, filter=None):
-        """Replaces exception.NotFound with exception.DomainNotFound."""
+        if id == DEFAULT_DOMAIN_ID:
+            defaultdomain = self._ldap_get(id)
+            if defaultdomain is None:
+                defaultdomain = {'id': id, 'name': 'Default', 'enabled': True,
+                                 'description': 'this is a fake domain.'}
+                return defaultdomain
         try:
             return super(DomainApi, self).get(id, filter)
         except exception.NotFound:
