@@ -251,6 +251,8 @@ class TestCase(NoModule, unittest.TestCase):
                     rv = self.identity_api.create_domain(domain['id'], domain)
                 except (exception.Conflict, exception.NotImplemented):
                     pass
+                except exception.Forbidden:
+                    pass
                 setattr(self, 'domain_%s' % domain['id'], domain)
 
             for tenant in fixtures.TENANTS:
