@@ -28,6 +28,7 @@ from keystone import exception
 from keystone import identity
 
 CONF = config.CONF
+DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
 
 class Identity(identity.Driver):
@@ -942,6 +943,8 @@ class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
                          'enabled': 'enabled'}
     model = models.Domain
 
+    _fake_default_domain = True
+
     def __init__(self, conf):
         super(DomainApi, self).__init__(conf)
         self.api = ApiShim(conf)
@@ -954,13 +957,16 @@ class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
                                  or self.DEFAULT_ATTRIBUTE_IGNORE)
 
     def get(self, id, filter=None):
-        """Replaces exception.NotFound with exception.DomainNotFound."""
         try:
             return super(DomainApi, self).get(id, filter)
         except exception.NotFound:
+            if id == DEFAULT_DOMAIN_ID and self._fake_default_domain:
+                        return self.get_fake_domain(id)
             raise exception.DomainNotFound(domain_id=id)
 
     def create(self, values):
+        if values.get('id') == DEFAULT_DOMAIN_ID:
+            self._fake_default_domain = False
         self.affirm_unique(values)
         data = values.copy()
         if data.get('id') is None:
@@ -983,3 +989,7 @@ class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
             msg = _('Changing Name not supported by LDAP')
             raise exception.NotImplemented(message=msg)
         super(DomainApi, self).update(id, values, old_obj)
+
+    def get_fake_domain(self, id):
+        return {'id': id, 'name': 'Fake', 'enabled': True,
+                'description': 'This is a fake domain.'}
