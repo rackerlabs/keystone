@@ -420,6 +420,7 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
                                'name': 'name',
                                'enabled': 'enabled',
                                'domain_id': 'domain_id'}
+    immutable_attrs = ['id']
 
     model = models.User
 
@@ -477,6 +478,7 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
                                'description': 'desc',
                                'enabled': 'enabled',
                                'domain_id': 'domain_id'}
+    immutable_attrs = ['name']
     model = models.Project
 
     def __init__(self, conf):
@@ -547,9 +549,6 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
 
     def update(self, id, values):
         old_obj = self.get(id)
-        if old_obj['name'] != values['name']:
-            msg = 'Changing Name not supported by LDAP'
-            raise exception.NotImplemented(message=msg)
         return super(ProjectApi, self).update(id, values, old_obj)
 
 
@@ -583,6 +582,7 @@ class RoleApi(common_ldap.BaseLdap):
     NotFound = exception.RoleNotFound
     options_name = 'role'
     attribute_options_names = {'name': 'name'}
+    immutable_attrs = ['id']
     model = models.Role
 
     def __init__(self, conf):
@@ -713,8 +713,6 @@ class RoleApi(common_ldap.BaseLdap):
             pass
 
     def update(self, role_id, role):
-        if role['id'] != role_id:
-            raise exception.ValidationError('Cannot change role ID')
         try:
             old_name = self.get_by_name(role['name'])
             raise exception.Conflict('Cannot duplicate name %s' % old_name)
@@ -748,6 +746,7 @@ class GroupApi(common_ldap.BaseLdap):
     attribute_options_names = {'description': 'desc',
                                'name': 'name',
                                'domain_id': 'domain_id'}
+    immutable_attrs = ['name']
     model = models.Group
 
     def __init__(self, conf):
@@ -788,9 +787,6 @@ class GroupApi(common_ldap.BaseLdap):
 
     def update(self, id, values):
         old_obj = self.get(id)
-        if old_obj['name'] != values['name']:
-            msg = _('Changing Name not supported by LDAP')
-            raise exception.NotImplemented(message=msg)
         return super(GroupApi, self).update(id, values, old_obj)
 
     def add_user(self, user_dn, group_id, user_id):

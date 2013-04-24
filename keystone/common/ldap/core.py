@@ -115,6 +115,7 @@ class BaseLdap(object):
     options_name = None
     model = None
     attribute_options_names = {}
+    immutable_attrs = []
     attribute_ignore = []
     tree_dn = None
 
@@ -386,7 +387,10 @@ class BaseLdap(object):
 
         modlist = []
         for k, v in values.iteritems():
-            if k == 'id' or k in self.attribute_ignore:
+            if k in self.immutable_attrs and old_obj[k] != v:
+                raise exception.ValidationError('Cannot change %s %s' %
+                                                (self.options_name, k))
+            elif k == 'id' or k in self.attribute_ignore:
                 continue
             if v is None:
                 if old_obj[k] is not None:
