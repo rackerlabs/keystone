@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//wjI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_migrate_metadata_table_roles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-04-24T15:26:51Z",
+      "side": 0,
+      "message": "Any idea why this was accidentally added in?  Fix looks very straightforward.",
+      "revId": "b4db547d0a681fbf7c8927a8c07c8bb3844582fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
