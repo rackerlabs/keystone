@@ -16,6 +16,24 @@
       "revId": "4f314fcc3ccf1078e6defdca23f83a9e1bf37758",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//w38\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1535,
+      "author": {
+        "id": 7309
+      },
+      "writtenOn": "2013-04-24T09:09:58Z",
+      "side": 1,
+      "message": "This precise code relies on python boolean only because this is a test case and does not represent the complete workflow of an HTTP request going through the JSON parser used by the REST API.\n\nIn the normal workflow, the JSON parser takes care of translating HTTP data into the appropriate python representation. \nAs JSON differentiates string and boolean types and is language agnostic, there is no python specific code when the REST API processes the request.\n\nIn my point of view, with the solution you proposed, ie. implicitly converting string \"true/false\" into python boolean, you break API consistency by allowing clients to use any json type in place of the expected boolean one. \nIf API accepts \"true/false\", what for other strings like \"True/False\", \"TRUE/FALSE\", \"yes/no\", \"0/1\" or integer values 0/1 ?",
+      "parentUuid": "AAAAOn//x1E\u003d",
+      "revId": "4f314fcc3ccf1078e6defdca23f83a9e1bf37758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
