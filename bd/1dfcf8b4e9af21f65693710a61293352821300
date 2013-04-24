@@ -1,0 +1,15 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: termie <termie@openstack.org>
+Verified+1: SmokeStack
+Code-Review+1: Morgan Fainberg <morgan@metacloud.com>
+Code-Review+1: nachiappan-veerappan-nachiappan <nachiappan.veerappan-nachiappan@hp.com>
+Code-Review+1: Sahdev Zala <spzala@us.ibm.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+1: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 24 Apr 2013 19:17:54 +0000
+Reviewed-on: https://review.openstack.org/27164
+Project: openstack/keystone
+Branch: refs/heads/master
