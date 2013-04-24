@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//wCE\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:45:02Z",
+      "side": 1,
+      "message": "superfluous newline",
+      "revId": "1a528ef04786586254898be2a113ab5dfc487920",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
