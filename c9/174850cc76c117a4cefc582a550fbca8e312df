@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+1: Jay Pipes <jaypipes@gmail.com>
+Code-Review+1: termie <termie@openstack.org>
+Approved+1: guang-yee <guang.yee@hp.com>
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Verified+1: SmokeStack
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 24 Apr 2013 17:01:54 +0000
+Reviewed-on: https://review.openstack.org/27026
+Project: openstack/keystone
+Branch: refs/heads/master
