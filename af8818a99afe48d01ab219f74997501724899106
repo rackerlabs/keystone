@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//wC4\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-04-24T21:05:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//wRg\u003d",
+      "revId": "af8818a99afe48d01ab219f74997501724899106",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//wQw\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-24T18:56:45Z",
       "side": 1,
       "message": "put an \u0027a\u0027 before Paste Deploy separate should not be split",
+      "revId": "af8818a99afe48d01ab219f74997501724899106",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wDA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-04-24T21:05:56Z",
+      "side": 1,
+      "message": "separate split seems to be Gerrit rendering, line was too long for its taste, fixed",
+      "parentUuid": "AAAAOn//wQw\u003d",
       "revId": "af8818a99afe48d01ab219f74997501724899106",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//wDk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-04-24T21:05:56Z",
+      "side": 1,
+      "message": "link to Paste site, defined below:\n.. _Paste: http://pythonpaste.org/",
+      "parentUuid": "AAAAOn//wQs\u003d",
+      "revId": "af8818a99afe48d01ab219f74997501724899106",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//wP0\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2013-04-24T18:56:45Z",
       "side": 1,
       "message": "after primary configuration file, I would put ``etc/keystone.conf``,  just to be clear",
+      "revId": "af8818a99afe48d01ab219f74997501724899106",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wC8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-04-24T21:05:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//wP0\u003d",
       "revId": "af8818a99afe48d01ab219f74997501724899106",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
