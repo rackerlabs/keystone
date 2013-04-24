@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//xIQ\u003d",
+        "filename": "tests/test_migrations.conf",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T02:32:42Z",
+      "side": 1,
+      "message": "We have more correct values for these in tests/backend_sql.conf.  PLease use these instead.\n\n#To Test MySQL:\n#connection \u003d mysql://keystone:keystone@localhost/keystone?charset\u003dutf8\n#To Test PostgreSQL:\n#connection \u003d postgresql://keystone:keystone@localhost/keystone?client_encoding\u003dutf8",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//xI4\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T02:32:42Z",
+      "side": 1,
+      "message": "This seems unnecessarily verbose.  Deduce the package name like the loggers elsewhere.",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//xIw\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T02:32:42Z",
+      "side": 1,
+      "message": "NOVA?",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//xIo\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T02:32:42Z",
+      "side": 1,
+      "message": "Is it possible to use the in Memory SQLite database?  I realize it has issues with the engine creation, but it will be much faster than spooling to disk?",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//xIk\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T02:32:42Z",
+      "side": 1,
+      "message": "I don\u0027t trust you, but I happen to agree with you here :).",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//xIA\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T02:32:42Z",
+      "side": 1,
+      "message": "Need to honor ?client_encoding\u003dutf8 in the Postgresql connection string.",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//xIg\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T02:32:42Z",
+      "side": 1,
+      "message": "Isn\u0027t it easier to shell out to dropdb and createdb?  And more correct?",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//xHQ\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T02:32:42Z",
+      "side": 1,
+      "message": "This should be the database read from the config file.",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//xHM\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T02:32:42Z",
+      "side": 1,
+      "message": "This should be the database name read from the config file",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//xHI\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T02:32:42Z",
+      "side": 1,
+      "message": "Drop this test.  This is one we really don\u0027t care about.",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//xG8\u003d",
+        "filename": "tools/test-requires",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T02:32:42Z",
+      "side": 1,
+      "message": "These also require the -devel packages be installed, either into the venv or on the base system. That should be documented, otherwise we can\u0027t run these tests.",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
