@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//v4o\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-24T23:01:31Z",
+      "side": 1,
+      "message": "... so, at runtime, change the behavior *if* the default domain was created? restarting the service therefore reverts this behavior..?",
+      "revId": "bc4221dad1d5dcba049fcafbe79a888d99cc972f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
