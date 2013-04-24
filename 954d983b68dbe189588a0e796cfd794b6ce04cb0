@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//wH4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T20:09:13Z",
+      "side": 1,
+      "message": "This assignment is unnecessary.  Just use CONF.identity.default_domain_id inline.",
+      "revId": "954d983b68dbe189588a0e796cfd794b6ce04cb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wHk\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-24T20:09:13Z",
+      "side": 1,
+      "message": "Why is this necessary?  And the logic looks wrong:  We set this if any domain is created, but the DEFAULT domain may still be missing.  So We get back a default domain only until we create another one?  I think you are trying to optimize the call below, but it should be triggered on creating the default domain, not on creating any domain.  PLus, this is an in memroy variable, which means it is going to get reset when we restart the server.  If you really want this optimization, initialize the value in the catch block below the first time it is triggered, and reverse the logic:  call it \"fake_default_domain\" and set it to false, but reset it to tru in the catch block,  then, in the create code, if the default domain is  created, set it back to false.",
+      "revId": "954d983b68dbe189588a0e796cfd794b6ce04cb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
