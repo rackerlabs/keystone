@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOn//wCc\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:41:16Z",
+      "side": 1,
+      "message": "i\u0027d love to have this moved above the class definitions (i know this is also technically a class, but it is basically just a utility function)",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//xIQ\u003d",
         "filename": "tests/test_migrations.conf",
         "patchSetId": 7
@@ -36,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//wDY\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:41:16Z",
+      "side": 1,
+      "message": "please make this into a standard docstring (summary line, any extra on more lines)",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//xIw\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 7
@@ -47,6 +81,40 @@
       "writtenOn": "2013-04-24T02:32:42Z",
       "side": 1,
       "message": "NOVA?",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wDc\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:41:16Z",
+      "side": 1,
+      "message": "superfluous newline",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wDQ\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:41:16Z",
+      "side": 1,
+      "message": "newline after function def, pls",
       "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +189,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//wCs\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:41:16Z",
+      "side": 1,
+      "message": "standard doc string pls",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wCw\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:41:16Z",
+      "side": 1,
+      "message": "standard doc string pls",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//xHQ\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 7
@@ -138,6 +240,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//wDE\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:41:16Z",
+      "side": 1,
+      "message": "standard doc string pls",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//xHM\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 7
@@ -149,6 +268,40 @@
       "writtenOn": "2013-04-24T02:32:42Z",
       "side": 1,
       "message": "This should be the database name read from the config file",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wCk\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:41:16Z",
+      "side": 1,
+      "message": "this looks like this should be a docstring not a bunch of comments",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wC0\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:41:16Z",
+      "side": 1,
+      "message": "Capitalize the M in migrate pls",
       "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
