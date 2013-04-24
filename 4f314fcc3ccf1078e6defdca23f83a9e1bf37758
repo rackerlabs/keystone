@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOn//wFA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:29:09Z",
+      "side": 1,
+      "message": "in all of these perhaps just say user[\u0027enabled\u0027] \u003d clean.user_enabled(user.get(\u0027enabled\u0027, True)) \n\nsaves all these if statements",
+      "revId": "4f314fcc3ccf1078e6defdca23f83a9e1bf37758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wEo\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1534,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:29:09Z",
+      "side": 1,
+      "message": "in these cases, it seems like we may as well accept true|false but i don\u0027t have strong feelings there",
+      "revId": "4f314fcc3ccf1078e6defdca23f83a9e1bf37758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//x1E\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 3
@@ -31,6 +65,23 @@
       "side": 1,
       "message": "This precise code relies on python boolean only because this is a test case and does not represent the complete workflow of an HTTP request going through the JSON parser used by the REST API.\n\nIn the normal workflow, the JSON parser takes care of translating HTTP data into the appropriate python representation. \nAs JSON differentiates string and boolean types and is language agnostic, there is no python specific code when the REST API processes the request.\n\nIn my point of view, with the solution you proposed, ie. implicitly converting string \"true/false\" into python boolean, you break API consistency by allowing clients to use any json type in place of the expected boolean one. \nIf API accepts \"true/false\", what for other strings like \"True/False\", \"TRUE/FALSE\", \"yes/no\", \"0/1\" or integer values 0/1 ?",
       "parentUuid": "AAAAOn//x1E\u003d",
+      "revId": "4f314fcc3ccf1078e6defdca23f83a9e1bf37758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wEc\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1543,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T20:29:09Z",
+      "side": 1,
+      "message": "1 is valid in python,  bool(1) \u003d\u003d True, so this seems like it shouldn\u0027t raise an error and just be converted by the cleaning function",
       "revId": "4f314fcc3ccf1078e6defdca23f83a9e1bf37758",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
