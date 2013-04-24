@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//wWo\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T18:14:01Z",
+      "side": 1,
+      "message": "please move this function up in the file above the class definitions, same with _RE_PASS above",
+      "revId": "0dc1ad1e9c47aa7b04b944e88b071ea1a646ae91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
