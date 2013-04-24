@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOn//wUM\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-24T18:23:39Z",
+      "side": 1,
+      "message": "can we make this in a sub heading called LDAP or something?",
+      "revId": "384a58ad31be21f980216737a72f9067c4e4d883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//yU8\u003d",
         "filename": "HACKING.rst",
         "patchSetId": 4
