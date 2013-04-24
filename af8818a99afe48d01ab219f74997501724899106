@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//wRg\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-04-24T18:56:45Z",
+      "side": 1,
+      "message": "Keystone should be Keystone\u0027s  and  \u0027and Paste\u0027 should be \u0027and the Paste\u0027",
+      "revId": "af8818a99afe48d01ab219f74997501724899106",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wQw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-04-24T18:56:45Z",
+      "side": 1,
+      "message": "put an \u0027a\u0027 before Paste Deploy separate should not be split",
+      "revId": "af8818a99afe48d01ab219f74997501724899106",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wQs\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-04-24T18:56:45Z",
+      "side": 1,
+      "message": "why the _ at the end of Paste",
+      "revId": "af8818a99afe48d01ab219f74997501724899106",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//wP0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-04-24T18:56:45Z",
+      "side": 1,
+      "message": "after primary configuration file, I would put ``etc/keystone.conf``,  just to be clear",
+      "revId": "af8818a99afe48d01ab219f74997501724899106",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
