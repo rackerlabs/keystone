@@ -207,6 +207,7 @@ class Identity(kvs.Base, identity.Driver):
             raise exception.Conflict(type='user', details=msg)
 
         user = utils.hash_user_password(user)
+        default_tenant_id = user.get('tenantId', None)
         new_user = user.copy()
 
         new_user.setdefault('groups', [])
@@ -216,6 +217,8 @@ class Identity(kvs.Base, identity.Driver):
         user_list = set(self.db.get('user_list', []))
         user_list.add(user_id)
         self.db.set('user_list', list(user_list))
+        if default_tenant_id:
+            self.add_user_to_project(default_tenant_id, user_id)
         return identity.filter_user(new_user)
 
     def update_user(self, user_id, user):

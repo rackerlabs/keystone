@@ -15,11 +15,14 @@
 # under the License.
 
 from keystone import clean
+from keystone.common import logging
 from keystone.common import sql
 from keystone.common.sql import migration
 from keystone.common import utils
 from keystone import exception
 from keystone import identity
+
+LOG = logging.getLogger(__name__)
 
 
 class User(sql.ModelBase, sql.DictBase):
@@ -183,15 +186,23 @@ class Identity(sql.Base, identity.Driver):
         try:
             user_ref = self._get_user(user_id)
         except exception.UserNotFound:
+            LOG.debug("Failed to authenticate user %(user_id)s "
+                      "in tenant %(tenant_id)s. No user with that "
+                      "id was found." % locals())
             raise AssertionError('Invalid user / password')
 
         if not self._check_password(password, user_ref):
+            LOG.debug("Failed to authenticate user %(user_id)s "
+                      "in tenant %(tenant_id)s. Bad password." % locals())
             raise AssertionError('Invalid user / password')
 
         if tenant_id is not None:
             # FIXME(gyee): this should really be
             # get_roles_for_user_and_project() after the dusts settle
             if tenant_id not in self.get_projects_for_user(user_id):
+                LOG.debug("Failed to authenticate user %(user_id)s "
+                          "in tenant %(tenant_id)s. Tenant not in list "
+                          "of tenants for that user." % locals())
                 raise AssertionError('Invalid project')
             try:
                 tenant_ref = self.get_project(tenant_id)
@@ -640,11 +651,14 @@ class Identity(sql.Base, identity.Driver):
     def create_user(self, user_id, user):
         user['name'] = clean.user_name(user['name'])
         user = utils.hash_user_password(user)
+        default_tenant_id = user.get('tenantId', None)
         session = self.get_session()
         with session.begin():
             user_ref = User.from_dict(user)
             session.add(user_ref)
             session.flush()
+            if default_tenant_id:
+                self.add_user_to_project(default_tenant_id, user_id)
         return identity.filter_user(user_ref.to_dict())
 
     def list_users(self):

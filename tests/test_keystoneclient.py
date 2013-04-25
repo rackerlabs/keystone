@@ -228,13 +228,12 @@ class KeystoneClientTests(object):
             tenant_id=tenant['id'])
 
         # token authentication
-        client = self._client(
-            username=user['name'],
-            password=user['password'])
         self.assertRaises(
             client_exceptions.Unauthorized,
             self._client,
-            token=client.auth_token,
+            username=user['name'],
+            password=user['password'],
+            token=admin_client.auth_token,
             tenant_id=tenant['id'])
 
     # FIXME(ja): this test should require the "keystone:admin" roled
