@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//ue4\u003d",
+        "filename": "keystone/common/uid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:47:52Z",
+      "side": 1,
+      "message": "I don\u0027t understand this comment. Seems pretty obvious that a uuid shouldn\u0027t be shorter than 1 character.",
+      "revId": "9cea4bd13fea34b9fc11c432d7960c8cec329a2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//uew\u003d",
+        "filename": "keystone/common/uid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:47:52Z",
+      "side": 1,
+      "message": "a docstring would be nice, to make the intent obvious, and what combinations of parameters are expected.",
+      "revId": "9cea4bd13fea34b9fc11c432d7960c8cec329a2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
