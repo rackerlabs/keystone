@@ -16,6 +16,23 @@
       "revId": "bc4221dad1d5dcba049fcafbe79a888d99cc972f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//vxA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-25T01:10:18Z",
+      "side": 1,
+      "message": "No, this boolean is checked in get afterwards, via affirm_unique.  But there is a bug in this code, in that the boolean needs to be reset to True in get",
+      "revId": "bc4221dad1d5dcba049fcafbe79a888d99cc972f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
