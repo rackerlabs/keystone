@@ -205,9 +205,6 @@ class User(controller.V2Controller):
         user_ref['id'] = user_id
         new_user_ref = self.identity_api.create_user(
             context, user_id, user_ref)
-        if default_tenant_id:
-            self.identity_api.add_user_to_project(context,
-                                                  default_tenant_id, user_id)
         return {'user': self._filter_domain_id(new_user_ref)}
 
     def update_user(self, context, user_id, user):

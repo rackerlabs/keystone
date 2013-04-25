@@ -163,7 +163,12 @@ class Identity(identity.Driver):
     # CRUD
     def create_user(self, user_id, user):
         user['name'] = clean.user_name(user['name'])
-        return identity.filter_user(self.user.create(user))
+        default_tenant_id = user.get('tenantId', None)
+        result = self.user.create(user)
+        if default_tenant_id:
+            self.add_user_to_project(default_tenant_id, user_id)
+
+        return identity.filter_user(result)
 
     def update_user(self, user_id, user):
         if 'name' in user:

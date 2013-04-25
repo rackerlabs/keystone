@@ -640,11 +640,14 @@ class Identity(sql.Base, identity.Driver):
     def create_user(self, user_id, user):
         user['name'] = clean.user_name(user['name'])
         user = utils.hash_user_password(user)
+        default_tenant_id = user.get('tenantId', None)
         session = self.get_session()
         with session.begin():
             user_ref = User.from_dict(user)
             session.add(user_ref)
             session.flush()
+            if default_tenant_id:
+                self.add_user_to_project(default_tenant_id, user_id)
         return identity.filter_user(user_ref.to_dict())
 
     def list_users(self):

@@ -227,16 +227,6 @@ class KeystoneClientTests(object):
             password=user['password'],
             tenant_id=tenant['id'])
 
-        # token authentication
-        client = self._client(
-            username=user['name'],
-            password=user['password'])
-        self.assertRaises(
-            client_exceptions.Unauthorized,
-            self._client,
-            token=client.auth_token,
-            tenant_id=tenant['id'])
-
     # FIXME(ja): this test should require the "keystone:admin" roled
     #            (probably the role set via --keystone_admin_role flag)
     # FIXME(ja): add a test that admin endpoint is only sent to admin user
