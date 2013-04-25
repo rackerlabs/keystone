@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//uhQ\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 8
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "what do you think about also checking for CONF.find_file(\u0027keystone-paste.ini\u0027) before trying this?",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ujE\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 8
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "suggest make this message more descriptive...\n\n \"The Keystone paste configuration file %s could not be found.\"\n\nalso, why not write error message to stderr like in keystone.py?",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ufs\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "change \"Paste Deploy\" to \"PasteDeploy\", this is what it\u0027s called in config.py (or change config.py to Paste Deploy).\n\nI\u0027d just like references to Paste Deploy to be consistent... I searched around and found both, so maybe it\u0027s not an issue.",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//uiA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "change \"as running\" to \"to run\" ?",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//uh0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "change \"file is\" to \"files are\"\n\nremove \"format\", or change \"an ``init`` file\" to \"in ``ini`` file format\"",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ufo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "change \"Paste Deploy\" to \"PasteDeploy\".",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//uhA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "change \"are\" to \"can be\"",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ugo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "this sentence should be changed so it\u0027s obvious that the sections below are in the primary configuration file, not the paste configuration file.",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ugI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "add ``[paste_deploy]`` to this list if you keep it.",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//uhk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "should mention that if the configuration file is not an absolute path then it searches in the same directories as above.",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ugY\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "I\u0027d like to see a comment at the top of this file what it\u0027s for.\n\n# Keystone PasteDeploy configuration file.",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ugQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "I\u0027d prefer not to have a section with a single entry, so suggest move config_file to the [DEFAULT] section, unless you\u0027re expecting more options.",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//uf0\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "this is the same code as in keystone-all (at line 91). Could it be moved to a common location? (maybe in keystone.config).\n\nAlso, if it\u0027s in a function should be easier to write testcases.",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ugE\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T22:40:38Z",
+      "side": 1,
+      "message": "suggest exit(1)",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
