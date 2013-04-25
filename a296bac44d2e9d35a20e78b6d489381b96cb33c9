@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//ueg\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T23:00:22Z",
+      "side": 1,
+      "message": "change variable name to default_project_id.",
+      "revId": "a296bac44d2e9d35a20e78b6d489381b96cb33c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//uec\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T23:00:22Z",
+      "side": 1,
+      "message": "change variable name to default_project_id",
+      "revId": "a296bac44d2e9d35a20e78b6d489381b96cb33c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ueM\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T23:00:22Z",
+      "side": 1,
+      "message": "I find it hard to believe that the sql identity backend never did logging before this change.",
+      "revId": "a296bac44d2e9d35a20e78b6d489381b96cb33c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ueY\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T23:00:22Z",
+      "side": 1,
+      "message": "wrap strings in _() so they get translated. (applies to other changed lines, too)",
+      "revId": "a296bac44d2e9d35a20e78b6d489381b96cb33c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ueU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T23:00:22Z",
+      "side": 1,
+      "message": "change tenant to project. (applies to other changed lines, too)",
+      "revId": "a296bac44d2e9d35a20e78b6d489381b96cb33c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ueQ\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-25T23:00:22Z",
+      "side": 1,
+      "message": "change variable name to default_project_id.",
+      "revId": "a296bac44d2e9d35a20e78b6d489381b96cb33c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
