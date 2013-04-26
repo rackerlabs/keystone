@@ -3,7 +3,7 @@ from keystone import test
 from keystone.common import uid
 
 
-DEFAULT_LEN = 32
+DEFAULT_LEN = 25
 MAX_LEN = 64
 
 

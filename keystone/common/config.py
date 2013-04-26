@@ -200,7 +200,7 @@ def configure():
     register_str('auth_admin_prefix', default='')
     register_str('policy_file', default='policy.json')
     register_str('policy_default_rule', default=None)
-    register_int('uid_length', default=32)
+    register_int('uid_length', default=25)
     # default max request size is 112k
     register_int('max_request_body_size', default=114688)
     register_int('max_param_size', default=64)
@@ -374,7 +374,7 @@ def configure():
     register_bool('domain_enabled_emulation', group='ldap', default=False)
     register_str('domain_enabled_emulation_dn', group='ldap', default=None)
     register_str('tls_cacertfile', group='ldap', default=None)
-    register_str('tls_cacertdir',  group='ldap', default=None)
+    register_str('tls_cacertdir', group='ldap', default=None)
     register_bool('use_tls', group='ldap', default=False)
     register_str('tls_req_cert', group='ldap', default='demand')
 

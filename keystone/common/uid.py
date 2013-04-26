@@ -10,13 +10,15 @@ CONF = config.CONF
 MIN_LENGTH = 1
 MAX_LENGTH = 64
 
+BASE36_ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyz'
+
 
 def new(length=None, min_length=MIN_LENGTH):
     """Return a URL-friendly globally unique string.
 
     - URL-friendliness: encoding/decoding is not required to use the string in
       a URL.
-    - Globally unique: with pow(16, length) possible variations; lower lengths
+    - Globally unique: with pow(36, length) possible variations; lower lengths
       are more likely to produce collisions are not are not recommended to
       ensure uniqueness in a production system.
 
@@ -41,5 +43,14 @@ def new(length=None, min_length=MIN_LENGTH):
 
     s = ''
     while length > len(s):
-        s += uuid.uuid4().hex
+        s += base36_encode(uuid.uuid4().int)
     return s[:length]
+
+
+def base36_encode(number):
+    """Converts a positive integer to a base36 string."""
+    s = ''
+    while number != 0:
+        number, i = divmod(number, len(BASE36_ALPHABET))
+        s = BASE36_ALPHABET[i] + s
+    return s
