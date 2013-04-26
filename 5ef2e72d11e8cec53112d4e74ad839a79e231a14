@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//va4\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//wCc\u003d",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//xIQ\u003d",
         "filename": "tests/test_migrations.conf",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-24T02:32:42Z",
       "side": 1,
       "message": "We have more correct values for these in tests/backend_sql.conf.  PLease use these instead.\n\n#To Test MySQL:\n#connection \u003d mysql://keystone:keystone@localhost/keystone?charset\u003dutf8\n#To Test PostgreSQL:\n#connection \u003d postgresql://keystone:keystone@localhost/keystone?client_encoding\u003dutf8",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//va8\u003d",
+        "filename": "tests/test_migrations.conf",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//xIQ\u003d",
       "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//vaU\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//xI4\u003d",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//wDY\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2013-04-24T20:41:16Z",
       "side": 1,
       "message": "please make this into a standard docstring (summary line, any extra on more lines)",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//vZ4\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//wDY\u003d",
       "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//vZ0\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//xIw\u003d",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//wDc\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2013-04-24T20:41:16Z",
       "side": 1,
       "message": "superfluous newline",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//vZw\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//wDc\u003d",
       "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//uPE\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//wDQ\u003d",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//vZs\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//wDQ\u003d",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//xIo\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 7
@@ -132,6 +276,24 @@
       "writtenOn": "2013-04-24T02:32:42Z",
       "side": 1,
       "message": "Is it possible to use the in Memory SQLite database?  I realize it has issues with the engine creation, but it will be much faster than spooling to disk?",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//uJM\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Fixed but I had to port a fix for the with_engine decorator that was implemented in Nova to get this to work. Otherwise when an in-memory SQLlite db was created and the db_version set, the engine was automatically disposed of, losing the versioning information.",
+      "parentUuid": "AAAAOn//xIo\u003d",
       "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//uPA\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//xIA\u003d",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//xIg\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 7
@@ -183,6 +363,24 @@
       "writtenOn": "2013-04-24T02:32:42Z",
       "side": 1,
       "message": "Isn\u0027t it easier to shell out to dropdb and createdb?  And more correct?",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//uPw\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "It\u0027s easier to do it this way because we can do a conditional drop of the database. With dropdb we\u0027d have to parse the output to work out why the drop failed.",
+      "parentUuid": "AAAAOn//xIg\u003d",
       "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//uXE\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//wCs\u003d",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//wCw\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 7
@@ -217,6 +433,24 @@
       "writtenOn": "2013-04-24T20:41:16Z",
       "side": 1,
       "message": "standard doc string pls",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//uXA\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//wCw\u003d",
       "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +491,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//uW8\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//wDE\u003d",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//xHM\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 7
@@ -291,6 +543,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//uW0\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//wCk\u003d",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//wC0\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 7
@@ -302,6 +572,24 @@
       "writtenOn": "2013-04-24T20:41:16Z",
       "side": 1,
       "message": "Capitalize the M in migrate pls",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//uWs\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//wC0\u003d",
       "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +613,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//uJE\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//xHI\u003d",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//xG8\u003d",
         "filename": "tools/test-requires",
         "patchSetId": 7
@@ -336,6 +642,24 @@
       "writtenOn": "2013-04-24T02:32:42Z",
       "side": 1,
       "message": "These also require the -devel packages be installed, either into the venv or on the base system. That should be documented, otherwise we can\u0027t run these tests.",
+      "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//t/g\u003d",
+        "filename": "tools/test-requires",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T11:53:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//xG8\u003d",
       "revId": "5ef2e72d11e8cec53112d4e74ad839a79e231a14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
