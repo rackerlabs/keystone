@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//s60\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T23:39:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//tG8\u003d",
+      "revId": "6eee2a4568d965782935357c58f6981716f12021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//tGs\u003d",
         "filename": "tests/test_migrations.conf",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//s50\u003d",
+        "filename": "tests/test_migrations.conf",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T23:39:42Z",
+      "side": 1,
+      "message": "Have added the newline\n\nAlthough the settings are overridden for the opportunistic testing for CI MySQL and PosgreSQL testing setup, the values are used for the test_walk_versions test, and as configured ensures that the memory SQLite db is always run.\n\nIt would be possible to setup this as the default way of doing things and then rename this file test_migrations.conf.sample if that\u0027s what you\u0027d prefer.",
+      "parentUuid": "AAAAOn//tGs\u003d",
+      "revId": "6eee2a4568d965782935357c58f6981716f12021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//tGY\u003d",
         "filename": "tests/test_migrations.py",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2013-04-26T20:46:55Z",
       "side": 1,
       "message": "periods at the ends of sentences, pls",
+      "revId": "6eee2a4568d965782935357c58f6981716f12021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//s48\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5292
+      },
+      "writtenOn": "2013-04-26T23:39:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//tGY\u003d",
       "revId": "6eee2a4568d965782935357c58f6981716f12021",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
