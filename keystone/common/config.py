@@ -306,7 +306,7 @@ def configure():
     register_str(
         'user_domain_id_attribute', group='ldap', default='businessCategory')
     register_int('user_enabled_mask', group='ldap', default=0)
-    register_str('user_enabled_default', group='ldap', default='True')
+    register_bool('user_enabled_default', group='ldap', default=True)
     register_list(
         'user_attribute_ignore', group='ldap', default='tenant_id,tenants')
     register_bool('user_allow_create', group='ldap', default=True)
@@ -384,7 +384,7 @@ def configure():
         'domain_additional_attribute_mapping', group='ldap', default=None)
 
     register_str('tls_cacertfile', group='ldap', default=None)
-    register_str('tls_cacertdir',  group='ldap', default=None)
+    register_str('tls_cacertdir', group='ldap', default=None)
     register_bool('use_tls', group='ldap', default=False)
     register_str('tls_req_cert', group='ldap', default='demand')
 
