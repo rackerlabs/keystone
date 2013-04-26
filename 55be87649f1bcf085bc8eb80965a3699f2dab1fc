@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//tFY\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-26T21:00:53Z",
+      "side": 1,
+      "message": "arbitrary newline",
+      "revId": "55be87649f1bcf085bc8eb80965a3699f2dab1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
