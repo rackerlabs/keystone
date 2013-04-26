@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//tEI\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-26T22:11:12Z",
+      "side": 1,
+      "message": "this looks one space off, but gerrit sometimes lies",
+      "revId": "0c6c4579e99643b0887bd71cdeec5cb618f004d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//tD8\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-26T22:11:12Z",
+      "side": 1,
+      "message": "probably needs a double-indent",
+      "revId": "0c6c4579e99643b0887bd71cdeec5cb618f004d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
