@@ -33,6 +33,24 @@
       "revId": "9cea4bd13fea34b9fc11c432d7960c8cec329a2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//uVg\u003d",
+        "filename": "keystone/common/uid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-04-26T02:34:45Z",
+      "side": 1,
+      "message": "I still think having both \"length\" and \"min_length\" is redundant and somewhat confusing. Is there really a use case in which the caller meant to ask for a ID of any length as long as it is at least the specified \u0027min_length\u0027. In that case, why not just ask an ID of a specific \u0027length\u0027?",
+      "parentUuid": "AAAAOn//uew\u003d",
+      "revId": "9cea4bd13fea34b9fc11c432d7960c8cec329a2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
