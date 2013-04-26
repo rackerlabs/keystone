@@ -16,6 +16,24 @@
       "revId": "83fad2c38d9be4d05a6f7109bb91707fba919ff4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//tKQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 7028
+      },
+      "writtenOn": "2013-04-26T20:04:56Z",
+      "side": 1,
+      "message": "ok, I won\u0027t hardcore the passwd policy or email address. Will have only check for null password.\n\nBut checking for null email address doesn\u0027t make sense as --email is an optional value and if not provided will have value None. So we can\u0027t clearly make out if user has passed none value (as in --email \"\") or if he hasn\u0027t passed --email parameter during user creation.\n\nFrom Dashboard, email is a mandatory option but from CLI in the help manual --email is an optional value. What should be the correct behavior?",
+      "parentUuid": "AAAAOn//tL4\u003d",
+      "revId": "83fad2c38d9be4d05a6f7109bb91707fba919ff4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
