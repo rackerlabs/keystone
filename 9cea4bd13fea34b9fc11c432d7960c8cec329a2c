@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//tuo\u003d",
+        "filename": "keystone/common/uid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-26T15:06:35Z",
+      "side": 1,
+      "message": "revising, hopefully between the new comment and function docstr this will be more clear",
+      "parentUuid": "AAAAOn//ue4\u003d",
+      "revId": "9cea4bd13fea34b9fc11c432d7960c8cec329a2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//uew\u003d",
         "filename": "keystone/common/uid.py",
         "patchSetId": 2
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "I still think having both \"length\" and \"min_length\" is redundant and somewhat confusing. Is there really a use case in which the caller meant to ask for a ID of any length as long as it is at least the specified \u0027min_length\u0027. In that case, why not just ask an ID of a specific \u0027length\u0027?",
       "parentUuid": "AAAAOn//uew\u003d",
+      "revId": "9cea4bd13fea34b9fc11c432d7960c8cec329a2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//tus\u003d",
+        "filename": "keystone/common/uid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-04-26T15:06:35Z",
+      "side": 1,
+      "message": "i\u0027m putting most of this into a docstr, but:\n\nuse case for length: tests want a uid of a very specific length (say, 8 to simulate an arbitrary endpoint interface type)\n\nuse case for min_length: further constraining the range of keystone.conf uid_length to MAX_LENGTH into a narrower range; e.g. lowering the keystone.conf uid_length shouldn\u0027t reduce token length below 32 chars\n\nuse case for both specified together: a dynamic or user-specified length that must be constrained by the system into a narrower range than the default",
+      "parentUuid": "AAAAOn//uVg\u003d",
       "revId": "9cea4bd13fea34b9fc11c432d7960c8cec329a2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
