@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//tG8\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-26T20:46:55Z",
+      "side": 1,
+      "message": "this belongs in the second set of imports (third party non-stdlib)",
+      "revId": "6eee2a4568d965782935357c58f6981716f12021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//tGs\u003d",
+        "filename": "tests/test_migrations.conf",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-26T20:46:55Z",
+      "side": 1,
+      "message": "newline above this, pls\n\nalso, why does this file exist? seems like it will always be overridden and should instead be test_migrations.conf.sample",
+      "revId": "6eee2a4568d965782935357c58f6981716f12021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//tGY\u003d",
+        "filename": "tests/test_migrations.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-04-26T20:46:55Z",
+      "side": 1,
+      "message": "periods at the ends of sentences, pls",
+      "revId": "6eee2a4568d965782935357c58f6981716f12021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
