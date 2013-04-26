@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//tL4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-04-26T19:53:00Z",
+      "side": 1,
+      "message": "Just check for None and leave it at that. We do not want to hardcode password policy or email address parsing into the code here.",
+      "revId": "83fad2c38d9be4d05a6f7109bb91707fba919ff4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
