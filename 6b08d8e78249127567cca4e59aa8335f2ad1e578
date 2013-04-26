@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//ttE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-04-26T15:22:08Z",
+      "side": 1,
+      "message": "suggest change this to \"customizable uid length\" -- a uuid (Universally unique identifier) if shortened is not universally unique anymore, and there\u0027s no reason to make it longer since there\u0027s only the one universe we\u0027re concerned about.",
+      "revId": "6b08d8e78249127567cca4e59aa8335f2ad1e578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
