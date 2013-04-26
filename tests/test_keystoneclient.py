@@ -477,6 +477,24 @@ class KeystoneClientTests(object):
                           email=uuid.uuid4().hex,
                           tenant_id=uuid.uuid4().hex)
 
+    def test_user_create_null_pass(self):
+        from keystoneclient import exceptions as client_exceptions
+        client = self.get_client(admin=True)
+        self.assertRaises(client_exceptions.BadRequest,
+                          client.users.create,
+                          name=uuid.uuid4().hex,
+                          password="",
+                          email='%s@example.com' % uuid.uuid4().hex)
+
+    def test_user_create_pass_all_blank_spaces(self):
+        from keystoneclient import exceptions as client_exceptions
+        client = self.get_client(admin=True)
+        self.assertRaises(client_exceptions.BadRequest,
+                          client.users.create,
+                          name=uuid.uuid4().hex,
+                          password=" " * 65,
+                          email='%s@example.com' % uuid.uuid4().hex)
+
     def test_user_get_404(self):
         from keystoneclient import exceptions as client_exceptions
         client = self.get_client(admin=True)

@@ -195,6 +195,12 @@ class User(controller.V2Controller):
             msg = 'Name field is required and cannot be empty'
             raise exception.ValidationError(message=msg)
 
+        # Check for NULL password. CLI option --pass ""
+        # Also check if password is not all space characters.
+        if 'password' not in user or not len(user['password'].strip()):
+            msg = 'Password field is required and cannot be empty'
+            raise exception.ValidationError(message=msg)
+
         default_tenant_id = user.get('tenantId', None)
         if (default_tenant_id is not None
                 and self.identity_api.get_project(context,
