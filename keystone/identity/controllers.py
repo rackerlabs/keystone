@@ -16,6 +16,7 @@
 
 """Workflow Logic the Identity service."""
 
+import re
 import urllib
 import urlparse
 import uuid
@@ -190,10 +191,37 @@ class User(controller.V2Controller):
     def create_user(self, context, user):
         user = self._normalize_dict(user)
         self.assert_admin(context)
+        # NOTE(Prem): Password length need to be discussed and there should
+        # be a consensus.
+        passwd_min_len = 1
+        passwd_max_len = 1024
 
         if 'name' not in user or not user['name']:
             msg = 'Name field is required and cannot be empty'
             raise exception.ValidationError(message=msg)
+
+        if 'password' not in user or not user['password']:
+            msg = 'Password field is required and cannot be empty'
+            raise exception.ValidationError(message=msg)
+
+        if len(user['password'].strip()) < passwd_min_len:
+            msg = 'Password cannot be empty'
+            raise exception.ValidationError(msg)
+
+        if len(user['password']) > passwd_max_len:
+            msg = 'Password should not be greater than \
+                   %s characters.' % passwd_max_len
+            raise exception.ValidationError(msg)
+
+        # NOTE(Prem): This is not a strict email id parser but more of
+        # quick sanity check. Python email parser email.utils.parseraddr
+        # is not a very robust parser, hence going with regex here.
+        if 'email'in user and user['email']:
+            mail_id_re = r'^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$'
+            match = re.findall(mail_id_re, user['email'], re.I)
+            if not match:
+                msg = 'Email is not valid'
+                raise exception.ValidationError(message=msg)
 
         default_tenant_id = user.get('tenantId', None)
         if (default_tenant_id is not None
