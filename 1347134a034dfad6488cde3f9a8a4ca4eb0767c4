@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//srs\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 954,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-04-27T10:02:04Z",
+      "side": 1,
+      "message": "I don\u0027t think we need this...",
+      "revId": "1347134a034dfad6488cde3f9a8a4ca4eb0767c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ssU\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 974,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-04-27T10:02:04Z",
+      "side": 1,
+      "message": "do you mean _set_default_domain or self._set_default_domain ? is\u0027nt this already guaranteed to be True based on passing the above if clause?  Surely, for now, you just want to return the default domain if we didn\u0027t find a pre-created one for the default_id?",
+      "revId": "1347134a034dfad6488cde3f9a8a4ca4eb0767c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//sro\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-04-27T10:02:04Z",
+      "side": 1,
+      "message": "The only thing keeping this state variable does is cater for the case when the operator HAS created a default domain and the values are different than the default.  For now, I\u0027d say, we just list that as a limitation.",
+      "revId": "1347134a034dfad6488cde3f9a8a4ca4eb0767c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ssY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 993,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-04-27T10:02:04Z",
+      "side": 1,
+      "message": "So the controller checks this - delete_domain won\u0027t ever be called for the default domain.",
+      "revId": "1347134a034dfad6488cde3f9a8a4ca4eb0767c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
