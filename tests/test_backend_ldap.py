@@ -533,6 +533,38 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_get_roles_for_user_and_domain(self):
         raise nose.exc.SkipTest('Blocked by bug 1101287')
 
+    def test_list_group_members_no_entry(self):
+        """List group members with deleted user.
+
+        If a group has a deleted entry for a member, the non-deleted members
+        are returned.
+
+        """
+
+        # Create a group
+        group_id = None
+        group = dict(name='group1')
+        group_id = self.identity_api.create_group(group_id, group)['id']
+
+        # Create a couple of users and add them to the group.
+        user_id = None
+        user = dict(name='user1', id='user1_id')
+        user_1_id = self.identity_api.create_user(user_id, user)['id']
+
+        self.identity_api.add_user_to_group(user_1_id, group_id)
+
+        user_id = None
+        user = dict(name='user2', id='user2_id')
+        user_2_id = self.identity_api.create_user(user_id, user)['id']
+
+        self.identity_api.add_user_to_group(user_2_id, group_id)
+
+        # Delete user 2 from LDAP.
+        self.identity_api.user.delete(user_2_id)
+
+        # List group users.
+        self.identity_api.list_users_in_group(group_id)
+
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def setUp(self):
