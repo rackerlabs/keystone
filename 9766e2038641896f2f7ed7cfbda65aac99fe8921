@@ -69,6 +69,24 @@
       "revId": "9766e2038641896f2f7ed7cfbda65aac99fe8921",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//n6o\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-01T15:02:12Z",
+      "side": 1,
+      "message": "I\u0027d prefer that\u0027s a separate bug. Part of the issue with LDAP is that the administration of users and groups could be done directly to the LDAP directory rather than through Keystone. So the admin could delete the user entry and not update the group entry.",
+      "parentUuid": "AAAAOn//oKg\u003d",
+      "revId": "9766e2038641896f2f7ed7cfbda65aac99fe8921",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
