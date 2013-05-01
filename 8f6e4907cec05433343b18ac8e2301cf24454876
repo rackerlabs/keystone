@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//nTU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-05-01T20:21:32Z",
+      "side": 1,
+      "message": "I really like how you moved the exception checking code into the _get_project method and the similar methods.  You made the code incredibly cleaner by doing that!",
+      "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//nR4\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-05-01T20:21:32Z",
+      "side": 1,
+      "message": "what was it about the query.get optimization that made you decide to add a test method to ensure that the password is being hashed?  Not clear to me why this is related to the optimization you put in.",
+      "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
