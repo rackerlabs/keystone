@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//oKA\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2750
+      },
+      "writtenOn": "2013-05-01T12:07:13Z",
+      "side": 1,
+      "message": "there is no copyright assignment with openstack, so this is the correct thing to do (add individual copyright when changing files)",
+      "parentUuid": "AAAAOn//oK0\u003d",
+      "revId": "9766e2038641896f2f7ed7cfbda65aac99fe8921",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//oKg\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 6
