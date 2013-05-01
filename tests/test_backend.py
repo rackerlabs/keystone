@@ -132,7 +132,8 @@ class IdentityTests(object):
         self.assertDictEqual(tenant_ref, self.tenant_baz)
 
     def test_password_hashed(self):
-        user_ref = self.identity_api._get_user(self.user_foo['id'])
+        session = self.identity_api.get_session()
+        user_ref = self.identity_api._get_user(session, self.user_foo['id'])
         self.assertNotEqual(user_ref['password'], self.user_foo['password'])
 
     def test_create_unicode_user_name(self):
