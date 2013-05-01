@@ -69,9 +69,7 @@ def downgrade(migrate_engine):
         if not legacy_id:
             continue
 
-        q = session.query(legacy_table)
-        q = q.filter_by(id=legacy_id)
-        legacy_ref = q.first()
+        legacy_ref = session.query(legacy_table).get(legacy_id)
         if legacy_ref:
             # We already have one, so just update the extra
             # attribute with the urls.
