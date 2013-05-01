@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//oK0\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-01T11:40:54Z",
+      "side": 1,
+      "message": "Can we have it here? I doubt it but I am not sure. Giving -1 for this, will change if I am wrong.",
+      "revId": "9766e2038641896f2f7ed7cfbda65aac99fe8921",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//oKg\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-01T11:40:54Z",
+      "side": 1,
+      "message": "I think ideally we should check, when delete user, that if it\u0027s member of any group.. we remove it from group as well. But I am fine if we want to do that as a separate bug?",
+      "revId": "9766e2038641896f2f7ed7cfbda65aac99fe8921",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
