@@ -13,6 +13,7 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+
 import uuid
 import nose.exc
 
@@ -25,10 +26,14 @@ from keystone.token.backends import kvs as token_kvs
 from keystone.trust.backends import kvs as trust_kvs
 
 import default_fixtures
-import test_backend
+
+import identity_tests
+import token_tests
+import trust_tests
+import catalog_tests
 
 
-class KvsIdentity(test.TestCase, test_backend.IdentityTests):
+class KvsIdentity(test.TestCase, identity_tests.IdentityTests):
     def setUp(self):
         super(KvsIdentity, self).setUp()
         identity.CONF.identity.driver = \
@@ -69,13 +74,13 @@ class KvsIdentity(test.TestCase, test_backend.IdentityTests):
         raise nose.exc.SkipTest('Blocked by bug 1119770')
 
 
-class KvsToken(test.TestCase, test_backend.TokenTests):
+class KvsToken(test.TestCase, token_tests.TokenTests):
     def setUp(self):
         super(KvsToken, self).setUp()
         self.token_api = token_kvs.Token(db={})
 
 
-class KvsTrust(test.TestCase, test_backend.TrustTests):
+class KvsTrust(test.TestCase, trust_tests.TrustTests):
     def setUp(self):
         super(KvsTrust, self).setUp()
         identity.CONF.identity.driver = \
@@ -87,7 +92,7 @@ class KvsTrust(test.TestCase, test_backend.TrustTests):
         self.load_fixtures(default_fixtures)
 
 
-class KvsCatalog(test.TestCase, test_backend.CatalogTests):
+class KvsCatalog(test.TestCase, catalog_tests.CatalogTests):
     def setUp(self):
         super(KvsCatalog, self).setUp()
         self.catalog_api = catalog_kvs.Catalog(db={})

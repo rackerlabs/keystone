@@ -22,14 +22,14 @@ from keystone import exception
 from keystone import test
 
 import default_fixtures
-import test_backend
+import catalog_tests
 
 DEFAULT_CATALOG_TEMPLATES = os.path.abspath(os.path.join(
-    os.path.dirname(__file__),
+    os.path.dirname(__file__), '..',
     'default_catalog.templates'))
 
 
-class TestTemplatedCatalog(test.TestCase, test_backend.CatalogTests):
+class TestTemplatedCatalog(test.TestCase, catalog_tests.CatalogTests):
 
     DEFAULT_FIXTURE = {
         'RegionOne': {

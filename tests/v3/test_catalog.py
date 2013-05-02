@@ -1,9 +1,24 @@
+# vim: tabstop=4 shiftwidth=4 softtabstop=4
+
+# Copyright 2013 OpenStack LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
 import uuid
+import base_v3
 
-import test_v3
 
-
-class CatalogTestCase(test_v3.RestfulTestCase):
+class CatalogTestCase(base_v3.RestfulTestCase):
     """Test service & endpoint CRUD"""
 
     def setUp(self):
@@ -84,7 +99,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         self.assertValidEndpointResponse(r, ref)
 
     def assertValidErrorResponse(self, response):
-        self.assertTrue(response.status in [400])
+        self.assertTrue(response.status_code in [400])
 
     def test_create_endpoint_400(self):
         """POST /endpoints"""
@@ -135,7 +150,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             path='/v2.0/endpoints',
             token=self.get_scoped_token(),
             body={'endpoint': ref})
-        endpoint_v2 = r.body['endpoint']
+        endpoint_v2 = r.result['endpoint']
 
         # test the endpoint on v3
         r = self.get('/endpoints')

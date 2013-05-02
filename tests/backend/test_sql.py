@@ -28,7 +28,11 @@ from keystone import trust
 
 
 import default_fixtures
-import test_backend
+import identity_tests
+import trust_tests
+import token_tests
+import catalog_tests
+import policy_tests
 
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
@@ -65,7 +69,7 @@ class SqlTests(test.TestCase):
         super(SqlTests, self).tearDown()
 
 
-class SqlIdentity(SqlTests, test_backend.IdentityTests):
+class SqlIdentity(SqlTests, identity_tests.IdentityTests):
     def test_delete_user_with_project_association(self):
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
@@ -225,15 +229,15 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.assertEqual(arbitrary_value, ref['extra'][arbitrary_key])
 
 
-class SqlTrust(SqlTests, test_backend.TrustTests):
+class SqlTrust(SqlTests, trust_tests.TrustTests):
     pass
 
 
-class SqlToken(SqlTests, test_backend.TokenTests):
+class SqlToken(SqlTests, token_tests.TokenTests):
     pass
 
 
-class SqlCatalog(SqlTests, test_backend.CatalogTests):
+class SqlCatalog(SqlTests, catalog_tests.CatalogTests):
     def test_malformed_catalog_throws_error(self):
         service = {
             'id': uuid.uuid4().hex,
@@ -303,5 +307,5 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
             self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
 
 
-class SqlPolicy(SqlTests, test_backend.PolicyTests):
+class SqlPolicy(SqlTests, policy_tests.PolicyTests):
     pass

@@ -1,3 +1,19 @@
+# vim: tabstop=4 shiftwidth=4 softtabstop=4
+
+# Copyright 2013 OpenStack LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
 import datetime
 import uuid
 
@@ -21,6 +37,7 @@ TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
 
 class RestfulTestCase(test_content_types.RestfulTestCase):
+
     def setUp(self, load_sample_data=True):
         """Setup for v3 Restful Test Cases.
 
@@ -29,14 +46,15 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         load_sample_data should be set to false.
 
         """
-        self.config([
-            test.etcdir('keystone.conf.sample'),
-            test.testsdir('test_overrides.conf'),
-            test.testsdir('backend_sql.conf'),
-            test.testsdir('backend_sql_disk.conf')])
+        config_files = [test.etcdir('keystone.conf.sample'),
+                        test.testsdir('test_overrides.conf'),
+                        test.testsdir('backend_sql.conf'),
+                        test.testsdir('backend_sql_disk.conf')]
+        super(RestfulTestCase, self).setUp(serve=False,
+                                           config_files=config_files)
 
-        sql_util.setup_test_database()
         self.load_backends()
+        sql_util.setup_test_database()
 
         if load_sample_data:
             self.domain_id = uuid.uuid4().hex
@@ -87,20 +105,14 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
                 self.default_domain_user_id, self.project_id,
                 self.role_id)
 
-        self.public_server = self.serveapp('keystone', name='main')
-        self.admin_server = self.serveapp('keystone', name='admin')
-
     def tearDown(self):
-        self.public_server.kill()
-        self.admin_server.kill()
-        self.public_server = None
-        self.admin_server = None
         sql_util.teardown_test_database()
         # need to reset the plug-ins
         auth.controllers.AUTH_METHODS = {}
         #drop the policy rules
-        CONF.reset()
         rules.reset()
+
+        super(RestfulTestCase, self).tearDown()
 
     def new_ref(self):
         """Populates a ref with attributes common to all API entities."""
@@ -204,8 +216,8 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
         """
         r = super(RestfulTestCase, self).admin_request(*args, **kwargs)
-        if r.getheader('Content-Type') == 'application/xml':
-            r.body = serializer.from_xml(etree.tostring(r.body))
+        if r.headers.get('content-type') == 'application/xml':
+            r.result = serializer.from_xml(etree.tostring(r.result))
         return r
 
     def get_scoped_token(self):
@@ -234,7 +246,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
                     }
                 }
             })
-        return r.getheader('X-Subject-Token')
+        return r.headers.get('x-subject-token')
 
     def get_requested_token(self, auth):
         """Request the specific token we want."""
@@ -243,7 +255,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             method='POST',
             path='/v3/auth/tokens',
             body=auth)
-        return r.getheader('X-Subject-Token')
+        return r.headers.get('x-subject-token')
 
     def v3_request(self, path, **kwargs):
         # Check if the caller has passed in auth details for
@@ -296,15 +308,15 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         return r
 
     def assertValidErrorResponse(self, r):
-        if r.getheader('Content-Type') == 'application/xml':
-            resp = serializer.from_xml(etree.tostring(r.body))
+        if r.headers.get('content-type') == 'application/xml':
+            resp = serializer.from_xml(etree.tostring(r.result))
         else:
-            resp = r.body
+            resp = r.result
         self.assertIsNotNone(resp.get('error'))
         self.assertIsNotNone(resp['error'].get('code'))
         self.assertIsNotNone(resp['error'].get('title'))
         self.assertIsNotNone(resp['error'].get('message'))
-        self.assertEqual(int(resp['error']['code']), r.status)
+        self.assertEqual(int(resp['error']['code']), r.status_code)
 
     def assertValidListLinks(self, links):
         self.assertIsNotNone(links)
@@ -331,7 +343,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         response, and asserted to be equal.
 
         """
-        entities = resp.body.get(key)
+        entities = resp.result.get(key)
         self.assertIsNotNone(entities)
 
         if expected_length is not None:
@@ -341,7 +353,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             self.assertTrue(len(entities))
 
         # collections should have relational links
-        self.assertValidListLinks(resp.body.get('links'))
+        self.assertValidListLinks(resp.result.get('links'))
 
         for entity in entities:
             self.assertIsNotNone(entity)
@@ -356,7 +368,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
     def assertValidResponse(self, resp, key, entity_validator, *args,
                             **kwargs):
         """Make assertions common to all API responses."""
-        entity = resp.body.get(key)
+        entity = resp.result.get(key)
         self.assertIsNotNone(entity)
         self.assertValidEntity(entity, *args, **kwargs)
         entity_validator(entity, *args, **kwargs)
@@ -397,8 +409,8 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         self.assertTrue(isinstance(dt, datetime.datetime))
 
     def assertValidTokenResponse(self, r, user=None):
-        self.assertTrue(r.getheader('X-Subject-Token'))
-        token = r.body['token']
+        self.assertTrue(r.headers.get('x-subject-token'))
+        token = r.result['token']
 
         self.assertIsNotNone(token.get('expires_at'))
         expires_at = self.assertValidISO8601ExtendedFormatDatetime(
@@ -861,8 +873,3 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         if kwargs:
             auth_data['scope'] = self.build_auth_scope(**kwargs)
         return {'auth': auth_data}
-
-
-class VersionTestCase(RestfulTestCase):
-    def test_get_version(self):
-        pass
