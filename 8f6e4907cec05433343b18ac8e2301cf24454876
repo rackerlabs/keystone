@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//lo0\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-02T19:01:11Z",
+      "side": 1,
+      "message": "self.session doesn\u0027t exist",
+      "parentUuid": "AAAAOn//lxs\u003d",
+      "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//lxw\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-02T17:42:32Z",
       "side": 1,
       "message": "Does this pattern automatically clean up the session?",
+      "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//low\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-02T19:01:11Z",
+      "side": 1,
+      "message": "this shouldn\u0027t result in a dirty session",
+      "parentUuid": "AAAAOn//lxw\u003d",
       "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
