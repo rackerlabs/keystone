@@ -22,13 +22,12 @@ from keystone.common import sql
 from keystone import config
 from keystone import test
 
-import test_keystoneclient
-
+from test_master import KcMasterTestCase
 
 CONF = config.CONF
 
 
-class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
+class KcMasterSqlTestCase(KcMasterTestCase):
     def config(self, config_files):
         super(KcMasterSqlTestCase, self).config([
             test.etcdir('keystone.conf.sample'),

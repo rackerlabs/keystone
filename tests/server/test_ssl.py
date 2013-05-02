@@ -22,6 +22,8 @@ import ssl
 from keystone import config
 from keystone import test
 
+import base_server
+
 
 CONF = config.CONF
 
@@ -33,10 +35,7 @@ CA = os.path.join(CERTDIR, 'cacert.pem')
 CLIENT = os.path.join(CERTDIR, 'middleware.pem')
 
 
-class SSLTestCase(test.TestCase):
-    def setUp(self):
-        super(SSLTestCase, self).setUp()
-        self.load_backends()
+class SSLTestCase(base_server.ServerTestCase):
 
     def test_1way_ssl_ok(self):
         """

@@ -56,6 +56,7 @@ def public_app_factory(global_conf, **local_conf):
 
 @logging.fail_gracefully
 def admin_app_factory(global_conf, **local_conf):
+    controllers.register_version('v2.0')
     conf = global_conf.copy()
     conf.update(local_conf)
     return wsgi.ComposingRouter(routes.Mapper(),
