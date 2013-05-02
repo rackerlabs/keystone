@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOn//lyA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-02T17:30:19Z",
+      "side": 1,
+      "message": "Is this going to fill up server logs?",
+      "revId": "9766e2038641896f2f7ed7cfbda65aac99fe8921",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//oK0\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 6
