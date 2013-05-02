@@ -17,8 +17,9 @@
 
 from keystone import config
 from keystone import controllers
-from keystone.openstack.common import jsonutils
-from keystone import test
+# from keystone.openstack.common import jsonutils
+
+from test_content_types import RestfulTestCase
 
 
 CONF = config.CONF
@@ -109,15 +110,10 @@ VERSIONS_RESPONSE = {
 }
 
 
-class VersionTestCase(test.TestCase):
+class VersionTestCase(RestfulTestCase):
     def setUp(self):
         super(VersionTestCase, self).setUp()
         self.load_backends()
-        self.public_app = self.loadapp('keystone', 'main')
-        self.admin_app = self.loadapp('keystone', 'admin')
-
-        self.public_server = self.serveapp('keystone', name='main')
-        self.admin_server = self.serveapp('keystone', name='admin')
 
     def _paste_in_port(self, response, port):
         for link in response['links']:
@@ -125,10 +121,8 @@ class VersionTestCase(test.TestCase):
                 link['href'] = port
 
     def test_public_versions(self):
-        client = self.client(self.public_app)
-        resp = client.get('/')
-        self.assertEqual(resp.status_int, 300)
-        data = jsonutils.loads(resp.body)
+        resp = self.public_request(path='/')
+        self.assertEqual(resp.status_code, 300)
         expected = VERSIONS_RESPONSE
         for version in expected['versions']['values']:
             if version['id'] == 'v3.0':
@@ -137,13 +131,11 @@ class VersionTestCase(test.TestCase):
             elif version['id'] == 'v2.0':
                 self._paste_in_port(
                     version, 'http://localhost:%s/v2.0/' % CONF.public_port)
-        self.assertEqual(data, expected)
+        self.assertEqual(resp.result, expected)
 
     def test_admin_versions(self):
-        client = self.client(self.admin_app)
-        resp = client.get('/')
-        self.assertEqual(resp.status_int, 300)
-        data = jsonutils.loads(resp.body)
+        resp = self.admin_request(path='/')
+        self.assertEqual(resp.status_code, 300)
         expected = VERSIONS_RESPONSE
         for version in expected['versions']['values']:
             if version['id'] == 'v3.0':
@@ -152,64 +144,55 @@ class VersionTestCase(test.TestCase):
             elif version['id'] == 'v2.0':
                 self._paste_in_port(
                     version, 'http://localhost:%s/v2.0/' % CONF.admin_port)
-        self.assertEqual(data, expected)
+        self.assertEqual(resp.result, expected)
 
     def test_public_version_v2(self):
-        client = self.client(self.public_app)
-        resp = client.get('/v2.0/')
-        self.assertEqual(resp.status_int, 200)
-        data = jsonutils.loads(resp.body)
+        resp = self.public_request(path='/v2.0/')
+        self.assertEqual(resp.status_code, 200)
         expected = v2_VERSION_RESPONSE
         self._paste_in_port(expected['version'],
                             'http://localhost:%s/v2.0/' % CONF.public_port)
-        self.assertEqual(data, expected)
+        self.assertEqual(resp.result, expected)
 
     def test_admin_version_v2(self):
-        client = self.client(self.admin_app)
-        resp = client.get('/v2.0/')
-        self.assertEqual(resp.status_int, 200)
-        data = jsonutils.loads(resp.body)
+        resp = self.admin_request(path='/v2.0/')
+        self.assertEqual(resp.status_code, 200)
         expected = v2_VERSION_RESPONSE
         self._paste_in_port(expected['version'],
                             'http://localhost:%s/v2.0/' % CONF.admin_port)
-        self.assertEqual(data, expected)
+        self.assertEqual(resp.result, expected)
 
     def test_public_version_v3(self):
-        print CONF.public_port
-        client = self.client(self.public_app)
-        resp = client.get('/v3/')
-        self.assertEqual(resp.status_int, 200)
-        data = jsonutils.loads(resp.body)
-        expected = v3_VERSION_RESPONSE
-        self._paste_in_port(expected['version'],
-                            'http://localhost:%s/v3/' % CONF.public_port)
-        self.assertEqual(data, expected)
-
-    def test_admin_version_v3(self):
-        client = self.client(self.public_app)
-        resp = client.get('/v3/')
-        self.assertEqual(resp.status_int, 200)
-        data = jsonutils.loads(resp.body)
+        resp = self.public_request(path='/v3/')
+        self.assertEqual(resp.status_code, 200)
         expected = v3_VERSION_RESPONSE
         self._paste_in_port(expected['version'],
                             'http://localhost:%s/v3/' % CONF.admin_port)
-        self.assertEqual(data, expected)
+        self.assertEqual(resp.result, expected)
 
-    def test_v2_disabled(self):
-        self.stubs.Set(controllers, '_VERSIONS', ['v3'])
-        client = self.client(self.public_app)
-        # request to /v2.0 should fail
-        resp = client.get('/v2.0/')
-        self.assertEqual(resp.status_int, 404)
-
-        # request to /v3 should pass
-        resp = client.get('/v3/')
-        self.assertEqual(resp.status_int, 200)
-        data = jsonutils.loads(resp.body)
+    def test_admin_version_v3(self):
+        resp = self.public_request(path='/v3/')
+        self.assertEqual(resp.status_code, 200)
         expected = v3_VERSION_RESPONSE
         self._paste_in_port(expected['version'],
-                            'http://localhost:%s/v3/' % CONF.public_port)
-        self.assertEqual(data, expected)
+                            'http://localhost:%s/v3/' % CONF.admin_port)
+        self.assertEqual(resp.result, expected)
+
+    def test_v2_disabled(self):
+        app = self.public_app
+
+        self.stubs.Set(controllers, '_VERSIONS', ['v3'])
+        # request to /v2.0 should fail
+        resp = app.get('/v2.0/', expect_errors=True)
+        self.assertEqual(resp.status_code, 404)
+
+        # request to /v3 should pass
+        resp = self.public_request(path='/v3/')
+        self.assertEqual(resp.status_code, 200)
+        expected = v3_VERSION_RESPONSE
+        self._paste_in_port(expected['version'],
+                            'http://localhost:%s/v3/' % CONF.admin_port)
+        self.assertEqual(resp.result, expected)
 
         # only v3 information should be displayed by requests to /
         v3_only_response = {
@@ -221,26 +204,25 @@ class VersionTestCase(test.TestCase):
         }
         self._paste_in_port(v3_only_response['versions']['values'][0],
                             'http://localhost:%s/v3/' % CONF.public_port)
-        resp = client.get('/')
-        self.assertEqual(resp.status_int, 300)
-        data = jsonutils.loads(resp.body)
-        self.assertEqual(data, v3_only_response)
+        resp = self.public_request(path='/')
+        self.assertEqual(resp.status_code, 300)
+        self.assertEqual(resp.result, v3_only_response)
 
     def test_v3_disabled(self):
+        app = self.public_app
+
         self.stubs.Set(controllers, '_VERSIONS', ['v2.0'])
-        client = self.client(self.public_app)
         # request to /v3 should fail
-        resp = client.get('/v3/')
-        self.assertEqual(resp.status_int, 404)
+        resp = app.get('/v3/', expect_errors=True)
+        self.assertEqual(resp.status_code, 404)
 
         # request to /v2.0 should pass
-        resp = client.get('/v2.0/')
-        self.assertEqual(resp.status_int, 200)
-        data = jsonutils.loads(resp.body)
+        resp = self.public_request(path='/v2.0/')
+        self.assertEqual(resp.status_code, 200)
         expected = v2_VERSION_RESPONSE
         self._paste_in_port(expected['version'],
                             'http://localhost:%s/v2.0/' % CONF.public_port)
-        self.assertEqual(data, expected)
+        self.assertEqual(resp.result, expected)
 
         # only v2 information should be displayed by requests to /
         v2_only_response = {
@@ -252,7 +234,6 @@ class VersionTestCase(test.TestCase):
         }
         self._paste_in_port(v2_only_response['versions']['values'][0],
                             'http://localhost:%s/v2.0/' % CONF.public_port)
-        resp = client.get('/')
-        self.assertEqual(resp.status_int, 300)
-        data = jsonutils.loads(resp.body)
-        self.assertEqual(data, v2_only_response)
+        resp = self.public_request(path='/')
+        self.assertEqual(resp.status_code, 300)
+        self.assertEqual(resp.result, v2_only_response)

@@ -18,11 +18,8 @@ import datetime
 import errno
 import os
 import socket
-import subprocess
 import sys
-import time
 
-import eventlet
 import mox
 import nose.exc
 from paste import deploy
@@ -32,8 +29,6 @@ import unittest2 as unittest
 from keystone import catalog
 from keystone.common import kvs
 from keystone.common import logging
-from keystone.common import utils
-from keystone.common import wsgi
 from keystone import config
 from keystone import exception
 from keystone import identity
@@ -42,11 +37,6 @@ from keystone import policy
 from keystone import token
 from keystone import trust
 
-
-do_monkeypatch = not os.getenv('STANDARD_THREADS')
-eventlet.patcher.monkey_patch(all=False, socket=True, time=True,
-                              thread=do_monkeypatch)
-
 LOG = logging.getLogger(__name__)
 ROOTDIR = os.path.dirname(os.path.abspath(os.curdir))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
@@ -54,9 +44,6 @@ TESTSDIR = os.path.join(ROOTDIR, 'tests')
 ETCDIR = os.path.join(ROOTDIR, 'etc')
 CONF = config.CONF
 DRIVERS = {}
-
-
-cd = os.chdir
 
 
 logging.getLogger('routes.middleware').level = logging.WARN
@@ -81,68 +68,6 @@ def initialize_drivers():
     DRIVERS['token_api'] = token.Manager()
     DRIVERS['trust_api'] = trust.Manager()
     return DRIVERS
-
-
-def checkout_vendor(repo, rev):
-    # TODO(termie): this function is a good target for some optimizations :PERF
-    name = repo.split('/')[-1]
-    if name.endswith('.git'):
-        name = name[:-4]
-
-    working_dir = os.getcwd()
-    revdir = os.path.join(VENDOR, '%s-%s' % (name, rev.replace('/', '_')))
-    modcheck = os.path.join(VENDOR, '.%s-%s' % (name, rev.replace('/', '_')))
-    try:
-        if os.path.exists(modcheck):
-            mtime = os.stat(modcheck).st_mtime
-            if int(time.time()) - mtime < 10000:
-                return revdir
-
-        if not os.path.exists(revdir):
-            utils.git('clone', repo, revdir)
-
-        cd(revdir)
-        utils.git('checkout', '-q', 'master')
-        utils.git('pull', '-q')
-        utils.git('checkout', '-q', rev)
-
-        # write out a modified time
-        with open(modcheck, 'w') as fd:
-            fd.write('1')
-    except subprocess.CalledProcessError:
-        LOG.warning(_('Failed to checkout %s'), repo)
-    cd(working_dir)
-    return revdir
-
-
-class TestClient(object):
-    def __init__(self, app=None, token=None):
-        self.app = app
-        self.token = token
-
-    def request(self, method, path, headers=None, body=None):
-        if headers is None:
-            headers = {}
-
-        if self.token:
-            headers.setdefault('X-Auth-Token', self.token)
-
-        req = wsgi.Request.blank(path)
-        req.method = method
-        for k, v in headers.iteritems():
-            req.headers[k] = v
-        if body:
-            req.body = body
-        return req.get_response(self.app)
-
-    def get(self, path, headers=None):
-        return self.request('GET', path=path, headers=headers)
-
-    def post(self, path, headers=None, body=None):
-        return self.request('POST', path=path, headers=headers, body=body)
-
-    def put(self, path, headers=None, body=None):
-        return self.request('PUT', path=path, headers=headers, body=body)
 
 
 class NoModule(object):
@@ -194,10 +119,16 @@ class TestCase(NoModule, unittest.TestCase):
         # show complete diffs on failure
         self.maxDiff = None
 
-    def setUp(self):
+    def setUp(self, config_files=None, **kwargs):
         super(TestCase, self).setUp()
-        self.config([etcdir('keystone.conf.sample'),
-                     testsdir('test_overrides.conf')])
+
+        if config_files is None:
+            config_files = [etcdir('keystone.conf.sample'),
+                            testsdir('test_overrides.conf')]
+
+        if config_files:
+            self.config(config_files)
+
         self.mox = mox.Mox()
         self.opt(policy_file=etcdir('policy.json'))
         self.stubs = stubout.StubOutForTesting()
@@ -310,23 +241,6 @@ class TestCase(NoModule, unittest.TestCase):
 
     def appconfig(self, config):
         return deploy.appconfig(self._paste_config(config))
-
-    def serveapp(self, config, name=None, cert=None, key=None, ca=None,
-                 cert_required=None, host="127.0.0.1", port=0):
-        app = self.loadapp(config, name=name)
-        server = wsgi.Server(app, host, port)
-        if cert is not None and ca is not None and key is not None:
-            server.set_ssl(certfile=cert, keyfile=key, ca_certs=ca,
-                           cert_required=cert_required)
-        server.start(key='socket')
-
-        # Service catalog tests need to know the port we ran on.
-        port = server.socket_info['socket'][1]
-        self.opt(public_port=port, admin_port=port)
-        return server
-
-    def client(self, app, *args, **kw):
-        return TestClient(app, *args, **kw)
 
     def add_path(self, path):
         sys.path.insert(0, path)

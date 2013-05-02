@@ -401,7 +401,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'group_id': self.group_id})
         self.assertValidUserListResponse(r, ref=self.user)
         self.assertIn('/groups/%(group_id)s/users' % {
-            'group_id': self.group_id}, r.body['links']['self'])
+            'group_id': self.group_id}, r.result['links']['self'])
 
     def test_remove_user_from_group(self):
         """DELETE /groups/{group_id}/users/{user_id}"""
@@ -449,7 +449,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             password=self.user['password'],
             project_id=self.project['id'])
         resp = self.post('/auth/tokens', body=auth_data)
-        token = resp.getheader('X-Subject-Token')
+        token = resp.headers.get('x-subject-token')
         # Confirm token is valid for now
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token},
@@ -609,14 +609,14 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.head(member_url)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=self.role)
-        self.assertIn(collection_url, r.body['links']['self'])
+        self.assertIn(collection_url, r.result['links']['self'])
 
         # FIXME(gyee): this test is no longer valid as user
         # have no role in the project. Can't get a scoped token
         #self.delete(member_url)
         #r = self.get(collection_url)
         #self.assertValidRoleListResponse(r, expected_length=0)
-        #self.assertIn(collection_url, r.body['links']['self'])
+        #self.assertIn(collection_url, r.result['links']['self'])
 
     def test_crud_user_domain_role_grants(self):
         collection_url = (
@@ -631,12 +631,12 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.head(member_url)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=self.role)
-        self.assertIn(collection_url, r.body['links']['self'])
+        self.assertIn(collection_url, r.result['links']['self'])
 
         self.delete(member_url)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, expected_length=0)
-        self.assertIn(collection_url, r.body['links']['self'])
+        self.assertIn(collection_url, r.result['links']['self'])
 
     def test_crud_group_project_role_grants(self):
         collection_url = (
@@ -651,12 +651,12 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.head(member_url)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=self.role)
-        self.assertIn(collection_url, r.body['links']['self'])
+        self.assertIn(collection_url, r.result['links']['self'])
 
         self.delete(member_url)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, expected_length=0)
-        self.assertIn(collection_url, r.body['links']['self'])
+        self.assertIn(collection_url, r.result['links']['self'])
 
     def test_crud_group_domain_role_grants(self):
         collection_url = (
@@ -671,9 +671,9 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.head(member_url)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=self.role)
-        self.assertIn(collection_url, r.body['links']['self'])
+        self.assertIn(collection_url, r.result['links']['self'])
 
         self.delete(member_url)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, expected_length=0)
-        self.assertIn(collection_url, r.body['links']['self'])
+        self.assertIn(collection_url, r.result['links']['self'])

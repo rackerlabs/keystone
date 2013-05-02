@@ -18,13 +18,13 @@
 import httplib
 
 from keystone import config
-from keystone import test
+from . import core
 
 
 CONF = config.CONF
 
 
-class IPv6TestCase(test.TestCase):
+class IPv6TestCase(core.ServerTestCase):
     @classmethod
     def setUpClass(cls):
         cls.skip_if_no_ipv6()

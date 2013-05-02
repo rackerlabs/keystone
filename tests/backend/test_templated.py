@@ -25,7 +25,7 @@ import default_fixtures
 import test_backend
 
 DEFAULT_CATALOG_TEMPLATES = os.path.abspath(os.path.join(
-    os.path.dirname(__file__),
+    os.path.dirname(__file__), '..',
     'default_catalog.templates'))
 
 
