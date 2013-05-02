@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOn//lxs\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-02T17:42:32Z",
+      "side": 1,
+      "message": "why doesn\u0027t _get_user directly access self.session?  Why is it passed in as a param instead?",
+      "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//lxw\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-02T17:42:32Z",
+      "side": 1,
+      "message": "Does this pattern automatically clean up the session?",
+      "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//nTU\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 4
