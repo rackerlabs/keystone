@@ -24,14 +24,15 @@ from keystone import exception
 from keystone import identity
 from keystone import test
 
+from base_backend import DEFAULT_DOMAIN_ID
 import default_fixtures
-import test_backend
+import identity_tests
 
 
 CONF = config.CONF
 
 
-class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
+class LDAPIdentity(test.TestCase, identity_tests.IdentityTests):
 
     def clear_database(self):
         db = fakeldap.FakeShelve().get_instance()
@@ -387,7 +388,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
 # is submitted - see Bugs 1092187, 1101287, 1101276, 1101289
 
     # (spzala)The group and domain crud tests below override the standard ones
-    # in test_backend.py so that we can exclude the update name test, since we
+    # in backend_tests.py so that we can exclude the update name test, since we
     # do not yet support the update of either group or domain names with LDAP.
     # In the tests below, the update is demonstrated by updating description.
     # Refer to bug 1136403 for more detail.
@@ -590,7 +591,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         user = {
             'id': 'no_meta',
             'name': 'NO_META',
-            'domain_id': test_backend.DEFAULT_DOMAIN_ID,
+            'domain_id': DEFAULT_DOMAIN_ID,
             'password': 'no_meta2',
             'enabled': True,
         }

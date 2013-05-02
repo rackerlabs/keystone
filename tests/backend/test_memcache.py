@@ -23,7 +23,7 @@ from keystone.openstack.common import timeutils
 from keystone import test
 from keystone.token.backends import memcache as token_memcache
 
-import test_backend
+import token_tests
 
 
 class MemcacheClient(object):
@@ -72,7 +72,7 @@ class MemcacheClient(object):
             pass
 
 
-class MemcacheToken(test.TestCase, test_backend.TokenTests):
+class MemcacheToken(test.TestCase, token_tests.TokenTests):
     def setUp(self):
         super(MemcacheToken, self).setUp()
         fake_client = MemcacheClient()
