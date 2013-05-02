@@ -33,6 +33,24 @@
       "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//m2o\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-02T01:36:52Z",
+      "side": 1,
+      "message": "this is overriding a test in test_backend by the same name... the test is designed to reach into private methods of the driver and verify that it\u0027s not storing the password in plaintext. naturally, the way it gets into those private methods will vary from driver to driver, so i had to do a custom implementation here after changing_get_user()\u0027s method signature (to require an existing session)",
+      "parentUuid": "AAAAOn//nR4\u003d",
+      "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
