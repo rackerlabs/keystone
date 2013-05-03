@@ -31,6 +31,9 @@ CONF = config.CONF
 
 
 class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
+    def _get_domain_fixture(self):
+        """Domains in LDAP are read-only, so just return the static one."""
+        return self.identity_api.get_domain(CONF.identity.default_domain_id)
 
     def clear_database(self):
         db = fakeldap.FakeShelve().get_instance()
@@ -391,8 +394,11 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     # In the tests below, the update is demonstrated by updating description.
     # Refer to bug 1136403 for more detail.
     def test_group_crud(self):
-        group = {'id': uuid.uuid4().hex, 'domain_id': uuid.uuid4().hex,
-                 'name': uuid.uuid4().hex, 'description': uuid.uuid4().hex}
+        group = {
+            'id': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex}
         self.identity_api.create_group(group['id'], group)
         group_ref = self.identity_api.get_group(group['id'])
         self.assertDictEqual(group_ref, group)
@@ -409,15 +415,17 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_domain_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True, 'description': uuid.uuid4().hex}
-        self.identity_api.create_domain(domain['id'], domain)
-        domain_ref = self.identity_api.get_domain(domain['id'])
-        self.assertDictEqual(domain_ref, domain)
-        domain['description'] = uuid.uuid4().hex
-        self.identity_api.update_domain(domain['id'], domain)
-        domain_ref = self.identity_api.get_domain(domain['id'])
-        self.assertDictEqual(domain_ref, domain)
-
-        self.identity_api.delete_domain(domain['id'])
+        with self.assertRaises(exception.Forbidden):
+            self.identity_api.create_domain(domain['id'], domain)
+        with self.assertRaises(exception.DomainNotFound):
+            domain_ref = self.identity_api.get_domain(domain['id'])
+        with self.assertRaises(exception.Forbidden):
+            domain['description'] = uuid.uuid4().hex
+            self.identity_api.update_domain(domain['id'], domain)
+        with self.assertRaises(exception.DomainNotFound):
+            self.identity_api.get_domain(domain['id'])
+        with self.assertRaises(exception.Forbidden):
+            self.identity_api.delete_domain(domain['id'])
         self.assertRaises(exception.DomainNotFound,
                           self.identity_api.get_domain,
                           domain['id'])
@@ -451,7 +459,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         #              updating of a project name so this method override
         #              provides a different update test
         project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': uuid.uuid4().hex,
+                   'domain_id': CONF.identity.default_domain_id,
                    'description': uuid.uuid4().hex
                    }
         self.identity_api.create_project(project['id'], project)
@@ -533,6 +541,20 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_get_roles_for_user_and_domain(self):
         raise nose.exc.SkipTest('Blocked by bug 1101287')
 
+    def test_create_duplicate_group_name_in_different_domains(self):
+        raise nose.exc.SkipTest(
+            'N/A: LDAP does not support multiple domains')
+
+    def test_move_group_between_domains(self):
+        raise nose.exc.SkipTest(
+            'N/A: LDAP does not support multiple domains')
+
+    def test_list_domains(self):
+        domains = self.identity_api.list_domains()
+        self.assertEquals(
+            domains,
+            [{'id': 'default', 'name': 'Default', 'enabled': True}])
+
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def setUp(self):
@@ -578,10 +600,11 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         # NOTE(topol): LDAPIdentityEnabledEmulation will create an
         #              enabled key in the project dictionary so this
         #              method override handles this side-effect
-        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': uuid.uuid4().hex,
-                   'description': uuid.uuid4().hex
-                   }
+        project = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'description': uuid.uuid4().hex}
 
         self.identity_api.create_project(project['id'], project)
         project_ref = self.identity_api.get_project(project['id'])
@@ -603,8 +626,11 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
                           project['id'])
 
     def test_user_crud(self):
-        user = {'domain_id': uuid.uuid4().hex, 'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex, 'password': 'passw0rd'}
+        user = {
+            'id': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'name': uuid.uuid4().hex,
+            'password': uuid.uuid4().hex}
         self.identity_man.create_user({}, user['id'], user)
         user['enabled'] = True
         user_ref = self.identity_api.get_user(user['id'])
