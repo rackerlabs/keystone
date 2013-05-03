@@ -131,3 +131,6 @@ class Token(token.Driver):
         if list_json:
             return jsonutils.loads('[%s]' % list_json)
         return []
+
+    def flush_expired_tokens(self, allow_deletion=False):
+        return None

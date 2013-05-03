@@ -2079,6 +2079,35 @@ class TokenTests(object):
         new_data_ref = self.token_api.get_token(token_id)
         self.assertEqual(data_ref, new_data_ref)
 
+    def test_flush_expired_token(self):
+        for i in xrange(0, 2):
+            token_id = uuid.uuid4().hex
+            expire_time = timeutils.utcnow() - datetime.timedelta(minutes=1)
+            data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
+                    'expires': expire_time,
+                    'trust_id': None,
+                    'valid': True,
+                    'user': {'id': 'testuserid'}}
+            data_ref = self.token_api.create_token(token_id, data)
+            data_ref.pop('user_id')
+            self.assertDictEqual(data_ref, data)
+
+        token_id = uuid.uuid4().hex
+        expire_time = timeutils.utcnow() + datetime.timedelta(minutes=1)
+        data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
+                'expires': expire_time,
+                'trust_id': None,
+                'valid': True,
+                'user': {'id': 'testuserid'}}
+        data_ref = self.token_api.create_token(token_id, data)
+        data_ref.pop('user_id')
+        self.assertDictEqual(data_ref, data)
+
+        self.assertIn(self.token_api.flush_expired_tokens(False), (2, None))
+        tokens = self.token_api.list_tokens('testuserid')
+        self.assertEqual(len(tokens), 1)
+        self.assertIn(token_id, tokens)
+
     def check_list_revoked_tokens(self, token_ids):
         revoked_ids = [x['id'] for x in self.token_api.list_revoked_tokens()]
         for token_id in token_ids:
