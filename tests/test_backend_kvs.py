@@ -14,6 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 import uuid
+import datetime
 import nose.exc
 
 from keystone import catalog
@@ -23,6 +24,7 @@ from keystone import identity
 from keystone import test
 from keystone.token.backends import kvs as token_kvs
 from keystone.trust.backends import kvs as trust_kvs
+from keystone.openstack.common import timeutils
 
 import default_fixtures
 import test_backend
@@ -73,6 +75,32 @@ class KvsToken(test.TestCase, test_backend.TokenTests):
     def setUp(self):
         super(KvsToken, self).setUp()
         self.token_api = token_kvs.Token(db={})
+
+    def test_flush_expired_token(self):
+        token_id = uuid.uuid4().hex
+        expire_time = timeutils.utcnow() - datetime.timedelta(minutes=1)
+        data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
+                'expires': expire_time,
+                'trust_id': None,
+                'user': {'id': 'testuserid'}}
+        data_ref = self.token_api.create_token(token_id, data)
+        data_ref.pop('user_id')
+        self.assertDictEqual(data_ref, data)
+
+        token_id = uuid.uuid4().hex
+        expire_time = timeutils.utcnow() + datetime.timedelta(minutes=1)
+        data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
+                'expires': expire_time,
+                'trust_id': None,
+                'user': {'id': 'testuserid'}}
+        data_ref = self.token_api.create_token(token_id, data)
+        data_ref.pop('user_id')
+        self.assertDictEqual(data_ref, data)
+
+        self.token_api.flush_expired_tokens()
+        tokens = self.token_api.list_tokens('testuserid')
+        self.assertEqual(len(tokens), 1)
+        self.assertIn(token_id, tokens)
 
 
 class KvsTrust(test.TestCase, test_backend.TrustTests):
