@@ -27,7 +27,14 @@ from keystone import config
 from keystone import exception
 from keystone import identity
 
+
 CONF = config.CONF
+
+DEFAULT_DOMAIN = {
+    'id': CONF.identity.default_domain_id,
+    'name': 'Default',
+    'enabled': True,
+}
 
 
 class Identity(identity.Driver):
@@ -55,6 +62,21 @@ class Identity(identity.Driver):
             password = self.LDAP_PASSWORD
         conn.simple_bind_s(user, password)
         return conn
+
+    def _validate_domain(self, ref):
+        """Validate that either the default domain or nothing is specified."""
+        domain_id = ref.pop('domain_id', CONF.identity.default_domain_id)
+        if domain_id != CONF.identity.default_domain_id:
+            raise exception.DomainNotFound(domain_id=domain_id)
+
+    def _set_default_domain(self, ref):
+        """Overrides any domain reference with the default domain."""
+        if isinstance(ref, dict):
+            ref['domain_id'] = CONF.identity.default_domain_id
+        elif isinstance(ref, list):
+            for x in ref:
+                self._set_default_domain(x)
+        return ref
 
     # Identity interface
     def authenticate(self, user_id=None, tenant_id=None, password=None):
@@ -97,29 +119,31 @@ class Identity(identity.Driver):
         return (identity.filter_user(user_ref), tenant_ref, metadata_ref)
 
     def get_project(self, tenant_id):
-        return self.project.get(tenant_id)
+        return self._set_default_domain(self.project.get(tenant_id))
 
     def list_projects(self):
-        return self.project.get_all()
+        return self._set_default_domain(self.project.get_all())
 
     def get_project_by_name(self, tenant_name, domain_id):
         # TODO(henry-nash): Use domain_id once domains are implemented
         # in LDAP backend
-        return self.project.get_by_name(tenant_name)
+        return self._set_default_domain(self.project.get_by_name(tenant_name))
 
     def _get_user(self, user_id):
         return self.user.get(user_id)
 
     def get_user(self, user_id):
-        return identity.filter_user(self._get_user(user_id))
+        ref = identity.filter_user(self._get_user(user_id))
+        return self._set_default_domain(ref)
 
     def list_users(self):
-        return self.user.get_all()
+        return self._set_default_domain(self.user.get_all())
 
     def get_user_by_name(self, user_name, domain_id):
         # TODO(henry-nash): Use domain_id once domains are implemented
         # in LDAP backend
-        return identity.filter_user(self.user.get_by_name(user_name))
+        ref = identity.filter_user(self.user.get_by_name(user_name))
+        return self._set_default_domain(ref)
 
     def get_metadata(self, user_id=None, tenant_id=None,
                      domain_id=None, group_id=None):
@@ -146,7 +170,7 @@ class Identity(identity.Driver):
 
     def get_project_users(self, tenant_id):
         self.get_project(tenant_id)
-        return self.project.get_users(tenant_id)
+        return self._set_default_domain(self.project.get_users(tenant_id))
 
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         self.get_user(user_id)
@@ -162,15 +186,18 @@ class Identity(identity.Driver):
 
     # CRUD
     def create_user(self, user_id, user):
+        self._validate_domain(user)
         user['name'] = clean.user_name(user['name'])
         return identity.filter_user(self.user.create(user))
 
     def update_user(self, user_id, user):
+        self._validate_domain(user)
         if 'name' in user:
             user['name'] = clean.user_name(user['name'])
         return self.user.update(user_id, user)
 
     def create_project(self, tenant_id, tenant):
+        self._validate_domain(tenant)
         tenant['name'] = clean.project_name(tenant['name'])
         data = tenant.copy()
         if 'id' not in data or data['id'] is None:
@@ -180,6 +207,7 @@ class Identity(identity.Driver):
         return self.project.create(data)
 
     def update_project(self, tenant_id, tenant):
+        self._validate_domain(tenant)
         if 'name' in tenant:
             tenant['name'] = clean.project_name(tenant['name'])
         return self.project.update(tenant_id, tenant)
@@ -223,13 +251,15 @@ class Identity(identity.Driver):
         self.role.update(role_id, role)
 
     def create_group(self, group_id, group):
+        self._validate_domain(group)
         group['name'] = clean.group_name(group['name'])
         return self.group.create(group)
 
     def get_group(self, group_id):
-        return self.group.get(group_id)
+        return self._set_default_domain(self.group.get(group_id))
 
     def update_group(self, group_id, group):
+        self._validate_domain(group)
         if 'name' in group:
             group['name'] = clean.group_name(group['name'])
         return self.group.update(group_id, group)
@@ -249,14 +279,14 @@ class Identity(identity.Driver):
 
     def list_groups_for_user(self, user_id):
         self.get_user(user_id)
-        return self.group.list_user_groups(user_id)
+        return self._set_default_domain(self.group.list_user_groups(user_id))
 
     def list_groups(self):
-        return self.group.get_all()
+        return self._set_default_domain(self.group.get_all())
 
     def list_users_in_group(self, group_id):
         self.get_group(group_id)
-        return self.group.list_group_users(group_id)
+        return self._set_default_domain(self.group.list_group_users(group_id))
 
     def check_user_in_group(self, user_id, group_id):
         self.get_user(user_id)
@@ -270,28 +300,25 @@ class Identity(identity.Driver):
         return found
 
     def create_domain(self, domain_id, domain):
-        domain['name'] = clean.domain_name(domain['name'])
-        return self.domain.create(domain)
+        if domain_id == CONF.identity.default_domain_id:
+            msg = 'Duplicate ID, %s.' % domain_id
+            raise exception.Conflict(type='domain', details=msg)
+        raise exception.Forbidden('Domains are read-only against LDAP')
 
     def get_domain(self, domain_id):
-        try:
-            return self.domain.get(domain_id)
-        except exception.NotFound:
+        if domain_id == CONF.identity.default_domain_id:
+            return DEFAULT_DOMAIN
+        else:
             raise exception.DomainNotFound(domain_id=domain_id)
 
     def update_domain(self, domain_id, domain):
-        if 'name' in domain:
-            domain['name'] = clean.domain_name(domain['name'])
-        return self.domain.update(domain_id, domain)
+        raise exception.Forbidden('Domains are read-only against LDAP')
 
     def delete_domain(self, domain_id):
-        try:
-            return self.domain.delete(domain_id)
-        except ldap.NO_SUCH_OBJECT:
-            raise exception.DomainNotFound(domain_id=domain_id)
+        raise exception.Forbidden('Domains are read-only against LDAP')
 
     def list_domains(self):
-        return self.domain.get_all()
+        return [DEFAULT_DOMAIN]
 
 
 # TODO(termie): remove this and move cross-api calls into driver
