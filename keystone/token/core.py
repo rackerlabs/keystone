@@ -187,3 +187,12 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()
+
+    def flush_expired_tokens(self, allow_deletion=False):
+        """Archive or delete tokens that have expired
+
+        :param allow_deletion: True to permanently delete tokens
+        :type allow_deletion: Boolean
+
+        """
+        raise exception.NotImplemented()
