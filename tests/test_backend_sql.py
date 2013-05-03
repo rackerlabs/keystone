@@ -15,6 +15,7 @@
 # under the License.
 
 import uuid
+import datetime
 
 from keystone import catalog
 from keystone.common import sql
@@ -25,6 +26,7 @@ from keystone import policy
 from keystone import test
 from keystone import token
 from keystone import trust
+from keystone.openstack.common import timeutils
 
 
 import default_fixtures
@@ -230,7 +232,47 @@ class SqlTrust(SqlTests, test_backend.TrustTests):
 
 
 class SqlToken(SqlTests, test_backend.TokenTests):
-    pass
+
+    def test_flush_expired_token(self):
+        token_id = uuid.uuid4().hex
+        expire_time = timeutils.utcnow() - datetime.timedelta(minutes=1)
+        data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
+                'expires': expire_time,
+                'trust_id': None,
+                'user': {'id': 'testuserid'}}
+        data_ref = self.token_api.create_token(token_id, data)
+        data_ref.pop('user_id')
+        self.assertDictEqual(data_ref, data)
+
+        good_token_id = uuid.uuid4().hex
+        expire_time = timeutils.utcnow() + datetime.timedelta(minutes=1)
+        data = {'id_hash': good_token_id, 'id': good_token_id, 'a': 'b',
+                'expires': expire_time,
+                'trust_id': None,
+                'user': {'id': 'testuserid'}}
+        data_ref = self.token_api.create_token(good_token_id, data)
+        data_ref.pop('user_id')
+        self.assertDictEqual(data_ref, data)
+
+        self.token_api.flush_expired_tokens(False)
+        tokens = self.token_api.list_tokens('testuserid')
+        self.assertEqual(len(tokens), 1)
+        self.assertIn(good_token_id, tokens)
+
+        token_id = uuid.uuid4().hex
+        expire_time = timeutils.utcnow() - datetime.timedelta(minutes=1)
+        data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
+                'expires': expire_time,
+                'trust_id': None,
+                'user': {'id': 'testuserid'}}
+        data_ref = self.token_api.create_token(token_id, data)
+        data_ref.pop('user_id')
+        self.assertDictEqual(data_ref, data)
+
+        self.token_api.flush_expired_tokens(True)
+        tokens = self.token_api.list_tokens('testuserid')
+        self.assertEqual(len(tokens), 1)
+        self.assertIn(good_token_id, tokens)
 
 
 class SqlCatalog(SqlTests, test_backend.CatalogTests):
