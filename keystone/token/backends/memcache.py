@@ -32,6 +32,7 @@ config.register_str('servers', group='memcache', default='localhost:11211')
 
 class Token(token.Driver):
     revocation_key = 'revocation-list'
+    expired_key = 'expired-list'
 
     def __init__(self, client=None):
         self._memcache_client = client
@@ -131,3 +132,6 @@ class Token(token.Driver):
         if list_json:
             return jsonutils.loads('[%s]' % list_json)
         return []
+
+    def flush_expired_tokens(self, allow_deletion=False):
+        return None
