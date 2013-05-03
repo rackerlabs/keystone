@@ -115,3 +115,16 @@ class Token(kvs.Base, token.Driver):
             record['expires'] = token_ref['expires']
             tokens.append(record)
         return tokens
+
+    def flush_expired_tokens(self, allow_deletion=False):
+        if not allow_deletion:
+            return None
+
+        now = timeutils.utcnow()
+        count = 0
+        for token, token_ref in self.db.items():
+            if self.is_expired(now, token_ref):
+                count += 1
+                self.db.delete(token)
+
+        return count
