@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//kmc\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-03T13:59:16Z",
+      "side": 1,
+      "message": "Not that it\u0027s possible for this to do any work in the real world from keystone-manage, but the function should only delete tokens if allow_deletion is True",
+      "revId": "d70bf855e64692b7ab5043879a06e3c1f1661046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//kmg\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-03T13:59:16Z",
+      "side": 1,
+      "message": "can this inherit from TokenModel so we don\u0027t have to maintain both?",
+      "revId": "d70bf855e64692b7ab5043879a06e3c1f1661046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//kmA\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-03T13:59:16Z",
+      "side": 1,
+      "message": "you could also test that token_id is in tokens",
+      "revId": "d70bf855e64692b7ab5043879a06e3c1f1661046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
