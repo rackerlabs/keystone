@@ -389,7 +389,9 @@ def configure():
     register_str('tls_req_cert', group='ldap', default='demand')
 
     # oauth
-    register_str('driver', group='oauth', default='')
+    register_str(
+        'driver', group='oauth',
+        default='keystone.contrib.delegated_auth.backends.kvs.DelegatedAuth')
 
     # pam
     register_str('url', group='pam', default=None)

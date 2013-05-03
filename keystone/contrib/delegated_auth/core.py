@@ -19,6 +19,7 @@
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import logging
 from keystone.common import manager
 from keystone.common import oauth
 from keystone.common import utils
@@ -29,6 +30,8 @@ from keystone import token
 
 
 CONF = config.CONF
+
+LOG = logging.getLogger(__name__)
 
 
 @dependency.provider('oauth_api')
@@ -108,12 +111,17 @@ class DelegatedAuthExtension(wsgi.ExtensionRouter):
             '/DA/consumer/{consumer_id}',
             controller=consumer_controller,
             action='update_consumer',
-            conditions=dict(methods=['PUT']))
+            conditions=dict(methods=['PATCH']))
         mapper.connect(
             '/DA/consumer/{consumer_id}',
-            controler=consumer_controller,
+            controller=consumer_controller,
             action='delete_consumer',
             conditions=dict(methods=['DELETE']))
+        mapper.connect(
+            '/DA/consumers',
+            controller=consumer_controller,
+            action='list_consumers',
+            conditions=dict(methods=['GET']))
 
         # user accesss token crud
         mapper.connect(
@@ -123,7 +131,7 @@ class DelegatedAuthExtension(wsgi.ExtensionRouter):
             conditions=dict(methods=['GET']))
         mapper.connect(
             '/DA/user/{user_id}/authorization/{authz_id}',
-            controler=authz_controller,
+            controller=authz_controller,
             action='delete_user_authorization',
             conditions=dict(methods=['DELETE']))
 
@@ -152,36 +160,41 @@ class DelegatedAuthExtension(wsgi.ExtensionRouter):
             conditions=dict(methods=['POST']))
 
 
-#@dependency.requires('oauth_api')
+@dependency.requires('oauth_api')
 class ConsumerCrudV3(controller.V3Controller):
     collection_name = 'consumers'
     member_name = 'consumer'
 
-    @controller.protected
+    #@controller.protected
     def create_consumer(self, context, consumer):
         ref = self._assign_unique_id(self._normalize_dict(consumer))
         ref = self._normalize_domain_id(context, ref)
-        consumer_ref = self.oauth_api.create_consumer(context, ref)
+        consumer_ref = self.oauth_api.create_consumer(context, ref['id'], ref)
         return ConsumerCrudV3.wrap_member(context, consumer_ref)
 
-    @controller.protected
+    #@controller.protected
     def update_consumer(self, context, consumer_id, consumer):
         self._require_matching_id(consumer_id, consumer)
         ref = self._normalize_dict(consumer)
         ref = self.oauth_api.update_consumer(context, consumer_id, consumer)
         return ConsumerCrudV3.wrap_member(context, ref)
 
-    @controller.protected
+    #@controller.protected
+    def list_consumers(self, context):
+        ref = self.oauth_api.list_consumers(context)
+        return ConsumerCrudV3.wrap_collection(context, ref)
+
+    #@controller.protected
     def get_consumer(self, context, consumer_id):
         ref = self.oauth_api.get_consumer(context, consumer_id)
         return ConsumerCrudV3.wrap_member(context, ref)
 
-    @controller.protected
+    #@controller.protected
     def delete_consumer(self, context, consumer_id):
-        return self.oauth_api.delete_consumer(context, consumer_id)
+        self.oauth_api.delete_consumer(context, consumer_id)
 
 
-#@dependency.requires('oauth_api')
+@dependency.requires('oauth_api')
 class AuthorizationCrudV3(controller.V3Controller):
     collection_name = 'authorizations'
     member_name = 'authorization'
@@ -207,13 +220,13 @@ class DummyOauthDriver(object):
         return {'id': 'req-key', 'secret': 'req-secret'}
 
 
-#@dependency.requires('oauth_api')
+@dependency.requires('oauth_api')
 class OauthFlowManiaV3(controller.V3Controller):
     collection_name = 'not_used'
     member_name = 'not_used'
 
     def create_request_token(self, context):
-        self.oauth_api = DummyOauthDriver()
+        #self.oauth_api = DummyOauthDriver()
         request = context['request']
         consumer_key = request.GET.get('oauth_consumer_key')
         consumer = self.oauth_api.get_consumer(context, consumer_key)
@@ -238,7 +251,7 @@ class OauthFlowManiaV3(controller.V3Controller):
 
     def create_access_token(self, context):
         # boilerplate duplicated from above
-        self.oauth_api = DummyOauthDriver()
+        #self.oauth_api = DummyOauthDriver()
         request = context['request']
         consumer_key = request.GET.get('oauth_consumer_key')
         request_token_key = request.GET.get('oauth_request_token')
@@ -278,7 +291,7 @@ class OauthFlowManiaV3(controller.V3Controller):
     def authenticate(self, context):
         """Turn a signed request with an access key into a keystone token."""
         # boilerplate duplicated from above
-        self.oauth_api = DummyOauthDriver()
+        #self.oauth_api = DummyOauthDriver()
         request = context['request']
         consumer_key = request.POST.get('oauth_consumer_key')
         access_token_key = request.POST.get('oauth_access_token')
@@ -296,13 +309,12 @@ class OauthFlowManiaV3(controller.V3Controller):
             {'HMAC-SHA1': oauth.SignatureMethod_HMAC_SHA1()})
 
         params = oauth_server.verify_request(
-            oauth_request, consumer, token=request_token)
+            oauth_request, consumer, token=access_token)
 
         if access_token['consumer'] != params['consumer_key']:
             raise exception.Unauthorized()
 
         # INSERT TOKEN GENERATION CODE HERE
-
 
     def authorize(self, context, request_token_id, requested_roles):
         """An authenticated user is going to authorize a request token.
