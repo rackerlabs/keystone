@@ -24,15 +24,29 @@ from keystone.openstack.common import timeutils
 from keystone import token
 
 
-class TokenModel(sql.ModelBase, sql.DictBase):
-    __tablename__ = 'token'
+class TokenBase(object):
+
     attributes = ['id', 'expires', 'user_id', 'trust_id']
+
     id = sql.Column(sql.String(64), primary_key=True)
     expires = sql.Column(sql.DateTime(), default=None)
     extra = sql.Column(sql.JsonBlob())
     valid = sql.Column(sql.Boolean(), default=True)
     user_id = sql.Column(sql.String(64))
     trust_id = sql.Column(sql.String(64), nullable=True)
+
+
+class TokenModel(TokenBase, sql.ModelBase, sql.DictBase):
+    __tablename__ = 'token'
+
+    def archive(self):
+        token = self.to_dict()
+        token['valid'] = self.valid
+        return ArchivedTokenModel.from_dict(token)
+
+
+class ArchivedTokenModel(TokenBase, sql.ModelBase, sql.DictBase):
+    __tablename__ = 'token_archive'
 
 
 class Token(sql.Base, token.Driver):
@@ -134,3 +148,18 @@ class Token(sql.Base, token.Driver):
             }
             tokens.append(record)
         return tokens
+
+    def flush_expired_tokens(self, allow_deletion=False):
+        session = self.get_session()
+
+        with session.begin():
+            query = session.query(TokenModel)
+            query = query.filter(TokenModel.expires < timeutils.utcnow())
+            if allow_deletion:
+                query.delete(False)
+            else:
+                for token_ref in query:
+                    session.add(token_ref.archive())
+                    session.delete(token_ref)
+
+            session.flush()
