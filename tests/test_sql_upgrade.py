@@ -26,6 +26,7 @@ To run these tests against a live database:
     all data will be lost.
 """
 import copy
+import datetime
 import json
 import uuid
 
@@ -34,6 +35,8 @@ import sqlalchemy
 
 from keystone.common import sql
 from keystone.common.sql import migration
+from keystone.openstack.common import timeutils
+
 from keystone import config
 from keystone import test
 
@@ -807,6 +810,29 @@ class SqlUpgradeTests(test.TestCase):
         self.assertEqual(ref.url, endpoint['url'])
         self.assertEqual(ref.legacy_endpoint_id, legacy_endpoint_id)
         self.assertEqual(ref.extra, '{}')
+
+    def test_token_archive_downgrade(self):
+        session = self.Session()
+        self.upgrade(23)
+
+        token_id = uuid.uuid4().hex
+        user_id = uuid.uuid4().hex
+
+        token_table = sqlalchemy.Table('token', self.metadata, autoload=True)
+
+        expire_time = timeutils.utcnow() - datetime.timedelta(minutes=1)
+        expire_time = expire_time.replace(microsecond=0)  # mysql
+
+        token_data = {'id': token_id, 'expires': expire_time, 'valid': True,
+                      'trust_id': None, 'user_id': user_id, 'extra': '{}'}
+        self.insert_dict(session, 'token_archive', token_data)
+
+        self.downgrade(22)
+
+        new_token_data = session.query(token_table).one()
+
+        for k, v in token_data.iteritems():
+            self.assertEqual(getattr(new_token_data, k), v)
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):

@@ -26,6 +26,7 @@ from keystone import config
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import version
+from keystone import token
 
 CONF = config.CONF
 
@@ -111,6 +112,27 @@ class SSLSetup(BaseCertificateSetup):
         conf_ssl.run()
 
 
+class TokenFlush(BaseApp):
+    """Flush expired tokens from the backend."""
+
+    name = 'token_flush'
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(TokenFlush, cls).add_argument_parser(subparsers)
+        parser.add_argument('--strategy',
+                            choices=('archive', 'delete'),
+                            default='archive')
+        return parser
+
+    @classmethod
+    def main(cls):
+        allow_deletion = CONF.command.strategy == 'delete'
+
+        token_manager = token.Manager()
+        token_manager.driver.flush_expired_tokens(allow_deletion)
+
+
 class ImportLegacy(BaseApp):
     """Import a legacy database."""
 
@@ -173,6 +195,7 @@ CMDS = [
     ImportNovaAuth,
     PKISetup,
     SSLSetup,
+    TokenFlush,
 ]
 
 
