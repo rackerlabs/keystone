@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//j9U\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-03T19:32:23Z",
+      "side": 1,
+      "message": "ayoung - I looked through the code to see how often this might be called and it\u0027s not just the list group users operation, other operations wind up calling this (_delete_tokens_for_group was the first place). Since I\u0027m not sure how common this will be, I\u0027ll change it to a debug.",
+      "parentUuid": "AAAAOn//lyA\u003d",
+      "revId": "9766e2038641896f2f7ed7cfbda65aac99fe8921",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//oK0\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 6
