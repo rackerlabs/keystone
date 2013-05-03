@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//lJg\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-03T02:08:00Z",
+      "side": 1,
+      "message": "Don\u0027t use \u0027created at\u0027.  We have to continue to keep track of valid tokens, so you really can\u0027t age out valid but old tokens.",
+      "revId": "0c6c4579e99643b0887bd71cdeec5cb618f004d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//tD8\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 1
@@ -30,6 +47,23 @@
       "writtenOn": "2013-04-26T22:11:12Z",
       "side": 1,
       "message": "probably needs a double-indent",
+      "revId": "0c6c4579e99643b0887bd71cdeec5cb618f004d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//lNU\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-03T02:08:00Z",
+      "side": 1,
+      "message": "kill the white space in the comment.",
       "revId": "0c6c4579e99643b0887bd71cdeec5cb618f004d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
