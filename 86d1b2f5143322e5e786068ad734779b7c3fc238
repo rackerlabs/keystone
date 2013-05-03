@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//js4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-03T22:55:14Z",
+      "side": 1,
+      "message": "Remove the comma at the end after True.",
+      "revId": "86d1b2f5143322e5e786068ad734779b7c3fc238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//jso\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-03T22:55:14Z",
+      "side": 1,
+      "message": "I think Henry\u0027s comment is no longer needed.",
+      "revId": "86d1b2f5143322e5e786068ad734779b7c3fc238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//jrY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-03T22:55:14Z",
+      "side": 1,
+      "message": "I think it may be better just to go with \u0027Domains are read-only against LDAP\u0027 exception like update_domain or delete_domain. since in the ldap server a domain with domain_id is not really created, so \u0027duplicate\u0027 message is confusing.",
+      "revId": "86d1b2f5143322e5e786068ad734779b7c3fc238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//jq4\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-03T22:55:14Z",
+      "side": 1,
+      "message": "CONF.identity.default_domain_id instead of \u0027default\u0027.",
+      "revId": "86d1b2f5143322e5e786068ad734779b7c3fc238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
