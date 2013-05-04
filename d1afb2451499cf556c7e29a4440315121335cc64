@@ -16,6 +16,23 @@
       "revId": "d1afb2451499cf556c7e29a4440315121335cc64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//jiM\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-04T03:30:00Z",
+      "side": 1,
+      "message": "Fixtures, in the keystone/test.py file",
+      "revId": "d1afb2451499cf556c7e29a4440315121335cc64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
