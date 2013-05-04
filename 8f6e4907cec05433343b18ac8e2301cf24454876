@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOn//jjo\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-04T01:32:06Z",
+      "side": 1,
+      "message": "self.get_session90 should be self.create_session(), as get implies accessor.",
+      "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//lxs\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 4
@@ -31,6 +48,23 @@
       "side": 1,
       "message": "self.session doesn\u0027t exist",
       "parentUuid": "AAAAOn//lxs\u003d",
+      "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//jjk\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-04T01:32:06Z",
+      "side": 1,
+      "message": "My concern here is that we are creating session objects this way, but we are not destroying or releasing them. Usually, each session maps to a one database connection, so I am worried that we are going to consume all of the database connections.",
       "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
