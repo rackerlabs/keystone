@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOn//jis\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-04T03:06:53Z",
+      "side": 1,
+      "message": "Assume the additional returns are needed for the validate default domain method?",
+      "revId": "86d1b2f5143322e5e786068ad734779b7c3fc238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//js4\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 3
