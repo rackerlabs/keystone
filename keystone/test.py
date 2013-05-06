@@ -221,6 +221,7 @@ class TestCase(NoModule, unittest.TestCase):
                      testsdir('test_overrides.conf')])
         self.mox = mox.Mox()
         self.opt(policy_file=etcdir('policy.json'))
+        self.opt_in_group('kds', master_key_file=tmpdir('kds.mkey'))
         self.stubs = stubout.StubOutForTesting()
         self.stubs.Set(exception, '_FATAL_EXCEPTION_FORMAT_ERRORS', True)
 
