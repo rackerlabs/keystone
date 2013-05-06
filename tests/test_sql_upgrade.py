@@ -824,6 +824,11 @@ class SqlUpgradeTests(test.TestCase):
         self.assertEqual(ref.legacy_endpoint_id, legacy_endpoint_id)
         self.assertEqual(ref.extra, '{}')
 
+    def test_upgrade_kds(self):
+        self.assertEqual(self.schema.version, 0, "DB is at version 0")
+        self.upgrade(28)
+        self.assertTableColumns("kds_keys", ["id", "name", "key", "extra"])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user

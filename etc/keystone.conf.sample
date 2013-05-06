@@ -134,6 +134,9 @@
 [ec2]
 # driver = keystone.contrib.ec2.backends.kvs.Ec2
 
+[kds]
+driver = keystone.contrib.kds.backends.sql.KDS
+
 [ssl]
 #enable = True
 #certfile = /etc/keystone/pki/certs/ssl_cert.pem
