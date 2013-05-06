@@ -23,6 +23,7 @@ from keystone import controllers
 from keystone.common import logging
 from keystone.common import wsgi
 from keystone.contrib import ec2
+from keystone import credentials
 from keystone import identity
 from keystone import policy
 from keystone import routers
@@ -88,7 +89,7 @@ def v3_app_factory(global_conf, **local_conf):
     conf.update(local_conf)
     mapper = routes.Mapper()
     v3routers = []
-    for module in [auth, catalog, identity, policy]:
+    for module in [auth, catalog, credentials, identity, policy]:
         module.routers.append_v3_routers(mapper, v3routers)
 
     if CONF.trust.enabled:
