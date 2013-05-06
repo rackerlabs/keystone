@@ -25,6 +25,7 @@ from keystone.common import wsgi
 from keystone import config
 from keystone.contrib import ec2
 from keystone.contrib import oauth1
+from keystone.contrib import kds
 from keystone import controllers
 from keystone import credential
 from keystone import identity
@@ -49,6 +50,7 @@ DRIVERS = dict(
     catalog_api=catalog.Manager(),
     credentials_api=credential.Manager(),
     ec2_api=ec2.Manager(),
+    kds_api=kds.Manager(),
     identity_api=_IDENTITY_API,
     oauth1_api=oauth1.Manager(),
     policy_api=policy.Manager(),

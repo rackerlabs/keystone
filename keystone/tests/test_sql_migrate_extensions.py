@@ -28,6 +28,7 @@ To run these tests against a live database:
 
 from keystone.contrib import example
 from keystone.contrib import oauth1
+from keystone.contrib import kds
 
 import test_sql_upgrade
 
@@ -108,3 +109,19 @@ class SqlUpgradeOAuth1Extension(test_sql_upgrade.SqlMigrateBase):
         self.assertTableDoesNotExist('consumer')
         self.assertTableDoesNotExist('request_token')
         self.assertTableDoesNotExist('access_token')
+
+
+class SqlUpgradeKdsExtension(test_sql_upgrade.SqlMigrateBase):
+    def repo_package(self):
+        return example
+
+    def test_upgrade(self):
+        self.assertTableDoesNotExist('kds_keys')
+        self.upgrade(1, repository=self.repo_path)
+        self.assertTableColumns('kds_keys', ['id', 'name', 'key', 'extra'])
+
+    def test_downgrade(self):
+        self.upgrade(1, repository=self.repo_path)
+        self.assertTableColumns('kds_keys', ['id', 'name', 'key', 'extra'])
+        self.downgrade(0, repository=self.repo_path)
+        self.assertTableDoesNotExist('kds_keys')
