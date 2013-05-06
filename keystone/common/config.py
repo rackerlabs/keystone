@@ -408,6 +408,15 @@ def configure():
         if method_name not in _DEFAULT_AUTH_METHODS:
             register_str(method_name, group='auth')
 
+    # Key Distribution Server
+    register_str('driver', group='kds',
+                 default='keystone.contrib.kds.backends.sql.KDS')
+    register_str('master_key_file', group='kds',
+                 default='/etc/keystone/kds.mkey')
+    register_str('enctype', group='kds', default='AES')
+    register_str('hashtype', group='kds', default='SHA256')
+    register_int('ticket_lifetime', group='kds', default='3600')
+
     # PasteDeploy config file
     register_str('config_file', group='paste_deploy', default=None)
 
