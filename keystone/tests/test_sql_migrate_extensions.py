@@ -27,6 +27,7 @@ To run these tests against a live database:
 """
 
 from keystone.contrib import example
+from keystone.contrib import kds
 
 import test_sql_upgrade
 
@@ -45,3 +46,19 @@ class SqlUpgradeExampleExtension(test_sql_upgrade.SqlMigrateBase):
         self.assertTableColumns('example', ['id', 'type', 'extra'])
         self.downgrade(0, repository=self.repo_path)
         self.assertTableDoesNotExist('example')
+
+
+class SqlUpgradeKdsExtension(test_sql_upgrade.SqlMigrateBase):
+    def repo_package(self):
+        return kds
+
+    def test_upgrade(self):
+        self.assertTableDoesNotExist('example')
+        self.upgrade(1, repository=self.repo_path)
+        self.assertTableColumns("kds_keys", ["id", "name", "key", "extra"])
+
+    def test_downgrade(self):
+        self.upgrade(1, repository=self.repo_path)
+        self.assertTableColumns("kds_keys", ["id", "name", "key", "extra"])
+        self.downgrade(0, repository=self.repo_path)
+        self.assertTableDoesNotExist('kds_keys')
