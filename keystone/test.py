@@ -35,6 +35,7 @@ from keystone.common import logging
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
+from keystone import credential
 from keystone import exception
 from keystone import identity
 from keystone.openstack.common import timeutils
@@ -80,6 +81,7 @@ def initialize_drivers():
     DRIVERS['policy_api'] = policy.Manager()
     DRIVERS['token_api'] = token.Manager()
     DRIVERS['trust_api'] = trust.Manager()
+    DRIVERS['credential_api'] = credential.Manager()
     return DRIVERS
 
 
