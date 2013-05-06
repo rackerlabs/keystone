@@ -37,6 +37,7 @@ class IPv6TestCase(test.TestCase):
         """
         Make sure both public and admin API work with ipv6.
         """
+
         self.public_server = self.serveapp('keystone', name='main',
                                            host="::1", port=0)
         self.admin_server = self.serveapp('keystone', name='admin',
