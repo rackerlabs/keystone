@@ -91,6 +91,9 @@
 # exist to order to maintain support for your v2 clients.
 # default_domain_id = default
 
+[credentials]
+# driver = keystone.credentials.backends.sql.Credentials
+
 [trust]
 # driver = keystone.trust.backends.sql.Trust
 
