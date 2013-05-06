@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//hws\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-05-06T19:44:57Z",
+      "side": 1,
+      "message": "why are you doing this??  user_enabled_default is a boolean.  Why are you setting it to 1???",
+      "revId": "1bebdc03185824cc4efa06ea2b280e8ff72129d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//hwM\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-05-06T19:44:57Z",
+      "side": 1,
+      "message": "Why are you doing this?  user_enabled_default should be a boolean. The bitmask stuff is only for active directory (its a one off) .   It is NOT general ldap.  These values should not change",
+      "revId": "1bebdc03185824cc4efa06ea2b280e8ff72129d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
