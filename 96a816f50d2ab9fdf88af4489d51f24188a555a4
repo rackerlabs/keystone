@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//fpg\u003d",
+        "filename": "keystone/locale/ja/LC_MESSAGES/keystone.po",
+        "patchSetId": 46
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4419
+      },
+      "writtenOn": "2013-05-07T21:54:44Z",
+      "side": 0,
+      "message": "Maybe we could add \u0027japanese\u0027 here in the new file",
+      "revId": "96a816f50d2ab9fdf88af4489d51f24188a555a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
