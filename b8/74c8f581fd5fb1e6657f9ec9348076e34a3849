@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Approved+1: Alan Pevec <apevec@gmail.com>
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Code-Review+1: ayoung <ayoung@redhat.com>
+Code-Review+1: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 07 May 2013 17:05:28 +0000
+Reviewed-on: https://review.openstack.org/28431
+Project: openstack/keystone
+Branch: refs/heads/stable/grizzly
