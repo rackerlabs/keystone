@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//gKo\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-07T16:08:26Z",
+      "side": 1,
+      "message": "doesn\u0027t appear that you\u0027re using the count, so why not just remove all that?",
+      "revId": "7d7599dc3ae010494ce75e1ce09d0fc83d18aae1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//gLI\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-07T16:08:26Z",
+      "side": 1,
+      "message": "similar to memcache, this should raise an exception as the specified behavior can\u0027t be achieved by the driver, so the cli should get a non-zero result",
+      "revId": "7d7599dc3ae010494ce75e1ce09d0fc83d18aae1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//gLU\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-07T16:08:26Z",
+      "side": 1,
+      "message": "this should probably just raise notimplemented",
+      "revId": "7d7599dc3ae010494ce75e1ce09d0fc83d18aae1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//gK0\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-07T16:08:26Z",
+      "side": 1,
+      "message": "regarding the count- i\u0027m not 100% sure we can expect backends to return a specific number",
+      "revId": "7d7599dc3ae010494ce75e1ce09d0fc83d18aae1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
