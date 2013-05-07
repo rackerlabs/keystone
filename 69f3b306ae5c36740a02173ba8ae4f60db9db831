@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//fho\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-07T23:36:26Z",
+      "side": 1,
+      "message": "remove 74 and 75 because 76 does the same thing.",
+      "revId": "69f3b306ae5c36740a02173ba8ae4f60db9db831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//fhk\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-07T23:36:26Z",
+      "side": 1,
+      "message": "this isn\u0027t the correct docstring, it\u0027s a copy of _validate_domain\u0027s.",
+      "revId": "69f3b306ae5c36740a02173ba8ae4f60db9db831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//fgA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-07T23:36:26Z",
+      "side": 1,
+      "message": "suggest change _get_user to set the default domain then don\u0027t have to change other places.",
+      "revId": "69f3b306ae5c36740a02173ba8ae4f60db9db831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ffc\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-07T23:36:26Z",
+      "side": 1,
+      "message": "need to set default domain here?",
+      "revId": "69f3b306ae5c36740a02173ba8ae4f60db9db831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
