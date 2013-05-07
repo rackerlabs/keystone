@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//gcI\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-07T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn//js4\u003d",
+      "revId": "86d1b2f5143322e5e786068ad734779b7c3fc238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//jso\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2013-05-03T22:55:14Z",
       "side": 1,
       "message": "I think Henry\u0027s comment is no longer needed.",
+      "revId": "86d1b2f5143322e5e786068ad734779b7c3fc238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//gaA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-07T14:52:17Z",
+      "side": 1,
+      "message": "hmm, nice catch... the provided domain_id here should be validated to be the default, otherwise a 404 should be raised. will fix that and remove all these comments",
+      "parentUuid": "AAAAOn//jso\u003d",
       "revId": "86d1b2f5143322e5e786068ad734779b7c3fc238",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//gZM\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-07T14:52:17Z",
+      "side": 1,
+      "message": "revised all these calls to raise 404 if the default_domain_id isn\u0027t provided, and then forbidden if it is, which follows the pattern of other drivers. in this case, 409 Conflict is appropriate because the api user is attempting to create the default domain again, which already exists (again, other drivers do this)",
+      "parentUuid": "AAAAOn//jrY\u003d",
+      "revId": "86d1b2f5143322e5e786068ad734779b7c3fc238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//jq4\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 3
@@ -81,6 +135,24 @@
       "writtenOn": "2013-05-03T22:55:14Z",
       "side": 1,
       "message": "CONF.identity.default_domain_id instead of \u0027default\u0027.",
+      "revId": "86d1b2f5143322e5e786068ad734779b7c3fc238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//gYc\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-07T14:52:17Z",
+      "side": 1,
+      "message": "thanks, fixed",
+      "parentUuid": "AAAAOn//jq4\u003d",
       "revId": "86d1b2f5143322e5e786068ad734779b7c3fc238",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
