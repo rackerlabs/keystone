@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOn//eZ4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T15:43:28Z",
+      "side": 1,
+      "message": "should this code be in domain.get_all()? suggest move 298-305 into DomainApi get_all().\n\nThen you\u0027ll probably find that get_default_domain isn\u0027t used outside of DomainApi so should be private.",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eZY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T15:43:28Z",
+      "side": 1,
+      "message": "If you\u0027re not allowed to create the default domain, then why check if the default domain is in the list, just always add it.",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eZw\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T15:43:28Z",
+      "side": 1,
+      "message": "this is super-indented. move it back so indented 4 chars.",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//fI4\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
@@ -19,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//eZM\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 984,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T15:43:28Z",
+      "side": 1,
+      "message": "suggest \"The default domain %s cannot be created\"",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//eaY\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
@@ -30,6 +98,23 @@
       "writtenOn": "2013-05-08T15:41:16Z",
       "side": 1,
       "message": "i don\u0027t understand why you\u0027d block creating the default domain? and if you are blocking it, it should be a 409 Conflict if it\u0027s \"already exists\" or a Forbidden if it\u0027s a disallowed operation... NotImplemented makes zero sense",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eZI\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T15:43:28Z",
+      "side": 1,
+      "message": "Seems like Forbidden would be the correct response.",
       "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
