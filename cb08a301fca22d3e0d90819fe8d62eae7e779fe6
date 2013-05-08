@@ -33,6 +33,108 @@
       "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//dbs\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 990,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T22:48:03Z",
+      "side": 1,
+      "message": "the _() should enclose only the string, not the % part, so this line should be \n\n msg \u003d (_(\u0027The default domain %s cannot be created.\u0027)\n\nThis is going to break translation.",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//dac\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T22:48:03Z",
+      "side": 1,
+      "message": "Why Forbidden and not Conflict? The docs seem to indicate that Conflict should be returned.",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//daw\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T22:48:03Z",
+      "side": 1,
+      "message": "same problem with _() including the %.",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//daU\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1010,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T22:48:03Z",
+      "side": 1,
+      "message": "Seems like if I\u0027m not using the virtual default domain I should be able to update the domain, for example to disable it or change the description.",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//das\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1012,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T22:48:03Z",
+      "side": 1,
+      "message": "same problem with _() including the %.",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//daA\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T22:48:03Z",
+      "side": 1,
+      "message": "The Conflict exception here is never going to match because the except at 250 is going to catch it, so remove exception.Conflict.",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
