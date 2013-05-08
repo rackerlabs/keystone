@@ -16,6 +16,24 @@
       "revId": "6c3ee80dda8ae32c41376aac19773e6ac26d1329",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//fHo\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-05-08T06:41:28Z",
+      "side": 1,
+      "message": "In my tests using add and delete within the session like this with a manual flush, sqlalchemy is smart enough to develop two large batch statements, not hundreds/thousands of inserts and deletes. \n\nI guess using the ORM here at all is an overhead, but i really don\u0027t know how much. What were you thinking, something like read in 1000 at a time and issue insert/deletes in groups?\n\nIn general I would think that performance could be maintained by simply increasing the frequency with which you ran the flush.",
+      "parentUuid": "AAAAOn//fJE\u003d",
+      "revId": "6c3ee80dda8ae32c41376aac19773e6ac26d1329",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
