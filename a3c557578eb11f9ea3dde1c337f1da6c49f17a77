@@ -189,6 +189,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//eWM\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-08T15:57:34Z",
+      "side": 1,
+      "message": "i\u0027d need to hear a case for forbidden... the other backends raise 409 Conflict when you try to create something that already exists",
+      "parentUuid": "AAAAOn//eZI\u003d",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//eZ0\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
