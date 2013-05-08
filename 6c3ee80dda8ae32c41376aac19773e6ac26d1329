@@ -34,6 +34,24 @@
       "revId": "6c3ee80dda8ae32c41376aac19773e6ac26d1329",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//fF8\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-08T07:41:12Z",
+      "side": 1,
+      "message": "Sorry, I missed you are running the for loop in one session, I am still fall into the bad performance when delete user since the for loop in _delete_tokens_for_user (keystone/keystone/common/controller.py) is outside the session.\n\nBut anyway, we need avoid run the for loop too many times, right? Try to insert/delete by group is better than now I think.\n\nIf you have no plan to run this automatically such as a cron job to run in the keystone main process, the performance issue should be always there.",
+      "parentUuid": "AAAAOn//fHo\u003d",
+      "revId": "6c3ee80dda8ae32c41376aac19773e6ac26d1329",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
