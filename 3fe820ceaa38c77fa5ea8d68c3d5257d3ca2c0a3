@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//eI4\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T17:52:53Z",
+      "side": 1,
+      "message": "would like a comment here saying this must be done before any other keystone imports.",
+      "revId": "3fe820ceaa38c77fa5ea8d68c3d5257d3ca2c0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eI0\u003d",
+        "filename": "bin/keystone-manage",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T17:52:53Z",
+      "side": 1,
+      "message": "would like a comment here saying this must be done before any other keystone imports.",
+      "revId": "3fe820ceaa38c77fa5ea8d68c3d5257d3ca2c0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eII\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T17:52:53Z",
+      "side": 1,
+      "message": "isn\u0027t this supposed to be done before all the keystone imports? (like at line 33)",
+      "revId": "3fe820ceaa38c77fa5ea8d68c3d5257d3ca2c0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
