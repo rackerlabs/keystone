@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//ej8\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-08T14:29:23Z",
+      "side": 1,
+      "message": "forgot to reply to this- I *don\u0027t* think it should be done in _get_user because (from the driver\u0027s perspective) _set_default_domain is a superficial change being made for the layer above the driver, and _get_user() is intended to be an internal method. Anyway, doing it in _get_user() feels wrong to me as a result",
+      "parentUuid": "AAAAOn//fgA\u003d",
+      "revId": "69f3b306ae5c36740a02173ba8ae4f60db9db831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//ffc\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 4
@@ -64,6 +82,24 @@
       "writtenOn": "2013-05-07T23:36:26Z",
       "side": 1,
       "message": "need to set default domain here?",
+      "revId": "69f3b306ae5c36740a02173ba8ae4f60db9db831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ej4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-08T14:29:23Z",
+      "side": 1,
+      "message": "no, because this method is only returning a list of project ID\u0027s, not refs",
+      "parentUuid": "AAAAOn//ffc\u003d",
       "revId": "69f3b306ae5c36740a02173ba8ae4f60db9db831",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
