@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//fJE\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-08T06:13:10Z",
+      "side": 1,
+      "message": "We really need consider the performance here and use the better sql to do this. You know in our long run test environment, there are more than 144 thousand tokens, with more than 19000 non expired in the db in about 2 days (5 tenants and 300 users). \nRun the for loop to delete those expired tokens will lead the program no response long time.",
+      "revId": "6c3ee80dda8ae32c41376aac19773e6ac26d1329",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
