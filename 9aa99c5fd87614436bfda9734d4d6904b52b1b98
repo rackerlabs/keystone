@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//eGA\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2013-05-08T18:05:29Z",
+      "side": 1,
+      "message": "jsonutils.loads use json.loads which returns all string in unicode, the issue is that in line 206 environ[\u0027PATH_INFO\u0027] is str and new_tenant_name will be unicode",
+      "parentUuid": "AAAAOn//eKo\u003d",
+      "revId": "9aa99c5fd87614436bfda9734d4d6904b52b1b98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//eKc\u003d",
         "filename": "tests/test_s3_token_middleware.py",
         "patchSetId": 1
