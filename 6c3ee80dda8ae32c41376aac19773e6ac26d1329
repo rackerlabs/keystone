@@ -52,6 +52,24 @@
       "revId": "6c3ee80dda8ae32c41376aac19773e6ac26d1329",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//ejM\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-08T14:38:07Z",
+      "side": 1,
+      "message": "David: this is intended to be managed periodically by cron, etc and the first issue you mentioned regarding _delete_tokens_for_user is way out of scope here",
+      "parentUuid": "AAAAOn//fF8\u003d",
+      "revId": "6c3ee80dda8ae32c41376aac19773e6ac26d1329",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
