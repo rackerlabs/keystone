@@ -69,6 +69,24 @@
       "revId": "9aa99c5fd87614436bfda9734d4d6904b52b1b98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//dSI\u003d",
+        "filename": "tests/test_s3_token_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T23:48:45Z",
+      "side": 1,
+      "message": "Could you add a testcase that shows that jsonutils.loads returns unicode? It probably doesn\u0027t belong in this part.",
+      "parentUuid": "AAAAOn//eHU\u003d",
+      "revId": "9aa99c5fd87614436bfda9734d4d6904b52b1b98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
