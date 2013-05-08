@@ -16,6 +16,91 @@
       "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eaY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-08T15:41:16Z",
+      "side": 1,
+      "message": "i don\u0027t understand why you\u0027d block creating the default domain? and if you are blocking it, it should be a 409 Conflict if it\u0027s \"already exists\" or a Forbidden if it\u0027s a disallowed operation... NotImplemented makes zero sense",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eZ0\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-08T15:41:16Z",
+      "side": 1,
+      "message": "why is this a method? just make it a constant defined at the top of the file",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eZs\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-08T15:41:16Z",
+      "side": 1,
+      "message": "-1; i\u0027d rather not reduce test coverage with any of these ContainsSubset changes; can the test be made more specific?",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eZU\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-08T15:41:16Z",
+      "side": 1,
+      "message": "what is special about these tests that doesn\u0027t apply to non-ldap backends?",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eY4\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 695,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-08T15:41:16Z",
+      "side": 1,
+      "message": "this conditional just looks like your broke something and you\u0027re reducing coverage to compensate",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
