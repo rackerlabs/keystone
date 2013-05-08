@@ -33,6 +33,24 @@
       "revId": "9aa99c5fd87614436bfda9734d4d6904b52b1b98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eHU\u003d",
+        "filename": "tests/test_s3_token_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2013-05-08T17:59:38Z",
+      "side": 1,
+      "message": "Because the issue is that jsonutils.loads returns unicode and in the code there is a replace operation on PATH_INFO (str) with the tenant (unicode without this patch)",
+      "parentUuid": "AAAAOn//eKc\u003d",
+      "revId": "9aa99c5fd87614436bfda9734d4d6904b52b1b98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
