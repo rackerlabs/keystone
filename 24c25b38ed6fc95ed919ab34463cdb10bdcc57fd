@@ -16,6 +16,24 @@
       "revId": "24c25b38ed6fc95ed919ab34463cdb10bdcc57fd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eKU\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-05-08T17:37:11Z",
+      "side": 1,
+      "message": "Note this is Folsom security fix \u0027backported\u0027 from keystoneclient (new home for authtoken)\n  https://review.openstack.org/28572\n\nIt is intentional not to raise an exception in order not to break users with invalid setups (see bug 1174608)",
+      "parentUuid": "AAAAOn//eMk\u003d",
+      "revId": "24c25b38ed6fc95ed919ab34463cdb10bdcc57fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
