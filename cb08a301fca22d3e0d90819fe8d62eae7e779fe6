@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//dfk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-05-08T22:11:59Z",
+      "side": 1,
+      "message": "typo \"Thre\"",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//dfc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-05-08T22:11:59Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be on a more permanent storage e.g. wiki.openstack.org ?",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
