@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//eMk\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-05-08T17:21:07Z",
+      "side": 1,
+      "message": "May want to raise an exception here by default and provide a configurable option to override this.",
+      "revId": "24c25b38ed6fc95ed919ab34463cdb10bdcc57fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
