@@ -16,6 +16,24 @@
       "revId": "fd7354d615d7bdc591fd61a06c682ee97fdd99ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eTc\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-08T16:19:01Z",
+      "side": 1,
+      "message": "godo catch, i was thinking there was an alternative code path here to get a tenant_ref, but that doesn\u0027t seem to be true!",
+      "parentUuid": "AAAAOn//eb0\u003d",
+      "revId": "fd7354d615d7bdc591fd61a06c682ee97fdd99ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
