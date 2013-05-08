@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//dV8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_add_indexes_to_token_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T23:19:02Z",
+      "side": 1,
+      "message": "(nit) imports should be in alphabetical order.",
+      "revId": "4ea587f179443ad5d9072b41b335211f8e578b52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//dWQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_add_indexes_to_token_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T23:19:02Z",
+      "side": 1,
+      "message": "would be nice not to have duplicated code. Maybe create a separate function and pass in a function reference (to either Index.create or Index.drop).",
+      "revId": "4ea587f179443ad5d9072b41b335211f8e578b52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
