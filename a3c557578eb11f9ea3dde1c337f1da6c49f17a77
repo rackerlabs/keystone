@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//eZ8\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1013,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-05-08T15:42:36Z",
+      "side": 1,
+      "message": "Is this a typo?  perhaps a \"the\" between Owns and users?",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//eZs\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 10
