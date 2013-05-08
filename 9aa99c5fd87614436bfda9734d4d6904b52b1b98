@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//eKo\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-05-08T17:35:02Z",
+      "side": 1,
+      "message": "I don\u0027t understand this change. Since when we generate IDs in UNICODE? If that\u0027s the case, shouldn\u0027t we also need to translate all other IDs?",
+      "revId": "9aa99c5fd87614436bfda9734d4d6904b52b1b98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eKc\u003d",
+        "filename": "tests/test_s3_token_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-05-08T17:35:02Z",
+      "side": 1,
+      "message": "This test case doesn\u0027t seem to reflect the unicode tenant ID changes.",
+      "revId": "9aa99c5fd87614436bfda9734d4d6904b52b1b98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
