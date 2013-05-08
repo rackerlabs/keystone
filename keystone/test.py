@@ -23,6 +23,7 @@ import sys
 import time
 
 import eventlet
+import gettext
 import mox
 import nose.exc
 from paste import deploy
@@ -47,6 +48,8 @@ from keystone import trust
 do_monkeypatch = not os.getenv('STANDARD_THREADS')
 eventlet.patcher.monkey_patch(all=False, socket=True, time=True,
                               thread=do_monkeypatch)
+
+gettext.install('keystone', unicode=1)
 
 LOG = logging.getLogger(__name__)
 ROOTDIR = os.path.dirname(os.path.abspath(os.curdir))
