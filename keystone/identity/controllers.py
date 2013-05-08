@@ -178,7 +178,11 @@ class User(controller.V2Controller):
         user_list = self.identity_api.list_users(context)
         for x in user_list:
             self._filter_domain_id(x)
-        return {'users': user_list}
+        params = {
+            'limit': context['query_string'].get('limit'),
+            'marker': context['query_string'].get('marker'),
+        }
+        return self._format_user_list(user_list, **params)
 
     def get_user_by_name(self, context, user_name):
         self.assert_admin(context)
@@ -238,6 +242,35 @@ class User(controller.V2Controller):
         self.identity_api.add_user_to_project(context,
                                               default_tenant_id, user_id)
         return self.update_user(context, user_id, user)
+
+    def _format_user_list(self, user_list, **kwargs):
+        marker = kwargs.get('marker')
+        first_index = 0
+        if marker is not None:
+            for (marker_index, user) in enumerate(user_list):
+                if user['id'] == marker:
+                    # we start pagination after the marker
+                    first_index = marker + 1
+                    break
+            else:
+                msg = 'Marker could not be found'
+                raise exception.ValidationError(message=msg)
+
+        limit = kwargs.get('limit')
+        last_index = None
+        if limit is not None:
+            try:
+                limit = int('limit')
+                if limit < 0:
+                    raise AssertionError()
+            except (ValueError, AssertionError):
+                msg = 'Invalid limit value'
+                raise exception.ValidationError(message=msg)
+            last_index = first_index + limit
+
+        user_list = user_list[first_index:last_index]
+
+        return {'users': user_list}
 
 
 class Role(controller.V2Controller):
