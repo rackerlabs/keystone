@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//fI4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 984,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-05-08T06:14:14Z",
+      "side": 1,
+      "message": "do you mean \u0027.....is not allowed to be created.\u0027 ?",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
