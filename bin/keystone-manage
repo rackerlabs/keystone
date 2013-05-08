@@ -13,6 +13,8 @@ if os.path.exists(os.path.join(possible_topdir,
                                '__init__.py')):
     sys.path.insert(0, possible_topdir)
 
+from keystone.openstack.common import gettextutils
+gettextutils.install('keystone')
 
 from keystone import cli
 

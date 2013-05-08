@@ -21,6 +21,9 @@ if os.path.exists(os.path.join(possible_topdir,
 
 from paste import deploy
 
+from keystone.openstack.common import gettextutils
+gettextutils.install('keystone')
+
 from keystone import config
 from keystone.common import wsgi
 from keystone.common import utils
