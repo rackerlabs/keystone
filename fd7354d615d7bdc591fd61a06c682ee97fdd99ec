@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//eb0\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-08T15:31:20Z",
+      "side": 1,
+      "message": "get_project at line 125 would have set the default domain already (line 141), so remove 136 and 137.",
+      "revId": "fd7354d615d7bdc591fd61a06c682ee97fdd99ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
