@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//dc4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T12:29:45Z",
+      "side": 1,
+      "message": "Thanks, Alan! I will update it with next patch.",
+      "parentUuid": "AAAAOn//dfk\u003d",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//dfc\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 11
@@ -53,6 +71,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//dM0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T12:29:45Z",
+      "side": 1,
+      "message": "Thanks, Brant! Very good to know.",
+      "parentUuid": "AAAAOn//dZQ\u003d",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//dck\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T12:29:45Z",
+      "side": 1,
+      "message": "Hmmm.. that\u0027s a good idea to have it for reference. I will check with Dolph and AYoung.",
+      "parentUuid": "AAAAOn//dfc\u003d",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//dbs\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 11
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//ckU\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 990,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T12:29:45Z",
+      "side": 1,
+      "message": "Cool. will correct all of these.",
+      "parentUuid": "AAAAOn//dbs\u003d",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//dac\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 11
@@ -81,6 +153,24 @@
       "writtenOn": "2013-05-08T22:48:03Z",
       "side": 1,
       "message": "Why Forbidden and not Conflict? The docs seem to indicate that Conflict should be returned.",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//clU\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T12:29:45Z",
+      "side": 1,
+      "message": "I think in the last patch we decided that we are going with Forbidden. With your comment on the test.py, I believe going with forbidden is fine?",
+      "parentUuid": "AAAAOn//dac\u003d",
       "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//ckc\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1010,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T12:29:45Z",
+      "side": 1,
+      "message": "Agree. I am making changes for that.",
+      "parentUuid": "AAAAOn//daU\u003d",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//das\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 11
@@ -149,6 +257,24 @@
       "writtenOn": "2013-05-08T22:48:03Z",
       "side": 1,
       "message": "The Conflict exception here is never going to match because the except at 250 is going to catch it, so remove exception.Conflict.",
+      "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//cmE\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T12:29:45Z",
+      "side": 1,
+      "message": "Ah, Will do. Thanks!",
+      "parentUuid": "AAAAOn//daA\u003d",
       "revId": "cb08a301fca22d3e0d90819fe8d62eae7e779fe6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
