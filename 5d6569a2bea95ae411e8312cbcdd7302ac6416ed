@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//b5Q\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-05-09T18:54:48Z",
+      "side": 1,
+      "message": "i think at some point the goal of having the extra newline before the \"\"\" was dropped (it was for an ancient version of emacs that nobody uses any more)",
+      "revId": "5d6569a2bea95ae411e8312cbcdd7302ac6416ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//b5M\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-05-09T18:54:48Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "5d6569a2bea95ae411e8312cbcdd7302ac6416ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//b5I\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-05-09T18:54:48Z",
+      "side": 1,
+      "message": "why do these validate methods exist if we are always going to set the default domain?",
+      "revId": "5d6569a2bea95ae411e8312cbcdd7302ac6416ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//b2I\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-05-09T18:54:48Z",
+      "side": 1,
+      "message": "why are we validating if we are uniformly raising an exception?",
+      "revId": "5d6569a2bea95ae411e8312cbcdd7302ac6416ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
