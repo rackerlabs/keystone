@@ -16,6 +16,24 @@
       "revId": "4d7439d4048a5ffb29e4a035a7752501d889219f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//sCU\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T00:32:43Z",
+      "side": 1,
+      "message": "Hi Dolph, agree. But this method (list_user_projects) was in the test_backend_ldap as skipped under this particular bug (1101287) I am working for roles and that\u0027s why I took care of it with other test cases and removed it from test_backend_ldap as you can see part of code changes. There is a similar method get_projects_for_user that was implemented so my guess was this new method is towards V3 APIs. \nAbout not have similar method for the domains, I did notice it but since domains implementation is not completed and there is a bug open for it (1101276) I believe it needs to be taken care there. \n\nI hope it makes sense. Thanks!",
+      "parentUuid": "AAAAOH//sUI\u003d",
+      "revId": "4d7439d4048a5ffb29e4a035a7752501d889219f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
