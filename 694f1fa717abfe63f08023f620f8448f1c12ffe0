@@ -34,6 +34,23 @@
       "revId": "694f1fa717abfe63f08023f620f8448f1c12ffe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//be0\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-09T21:54:38Z",
+      "side": 1,
+      "message": "It looks like the reason you need to do this is because the ldap backend is now stripping out the domain. I don\u0027t think we want the ldap backend to strip out the domain.",
+      "revId": "694f1fa717abfe63f08023f620f8448f1c12ffe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
