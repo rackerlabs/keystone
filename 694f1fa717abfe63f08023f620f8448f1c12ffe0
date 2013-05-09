@@ -51,6 +51,24 @@
       "revId": "694f1fa717abfe63f08023f620f8448f1c12ffe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//bLU\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T23:59:16Z",
+      "side": 1,
+      "message": "Hi Brant, yes that\u0027s the reason. We have decided to ignore the domain_id and that\u0027s where it\u0027s stripping out the domain_id. So the sub-set is the one without domain_id and was failing the original test(s). I am going to dig more here and see if find a good way to handle it and also without affecting SQL backend. If you think of something, please let me know. Thanks!",
+      "parentUuid": "AAAAOn//be0\u003d",
+      "revId": "694f1fa717abfe63f08023f620f8448f1c12ffe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
