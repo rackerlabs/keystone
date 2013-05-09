@@ -87,6 +87,24 @@
       "revId": "9aa99c5fd87614436bfda9734d4d6904b52b1b98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//b0Y\u003d",
+        "filename": "tests/test_s3_token_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2013-05-09T19:07:47Z",
+      "side": 1,
+      "message": "I think I\u0027m making this more complicated to understand that it is.\n\nkeystone.openstack.common.jsonutil returns unicode because use normal json module [0] which translate string of json to unicode in python 2.x\n\nThe issue is line 205 of keystone/middleware/s3_token.py, where we calling replace with the second parameter being unicode, this works for normal characters.\n\n    \u003e\u003e\u003e \"something\".replace(\"some\", \"thing\")\n    \u0027thingthing\u0027\n\n\nBut it will fail when we have a str with non-ascii characters and the parameters are not encoded:\n\n    \u003e\u003e\u003e \"sómething\".replace(\"some\", u\"thing\")\n    Traceback (most recent call last):\n      File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\n    UnicodeDecodeError: \u0027ascii\u0027 codec can\u0027t decode byte 0xc3 in position 1: ordinal not in range(128)\n    \u003e\u003e\u003e \"sómething\".replace(\"sóme\", u\"thing\".encode(\u0027utf8\u0027))\n    \u0027thingthing\u0027\n\n\n\nSo basically I\u0027ve added this test because is the most simple thing to test, a \"it works\" test (without the patch the call will fail with UnicodeDecodeError).\n\n[0] http://docs.python.org/2/library/json.html#encoders-and-decoders",
+      "parentUuid": "AAAAOn//dSI\u003d",
+      "revId": "9aa99c5fd87614436bfda9734d4d6904b52b1b98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
