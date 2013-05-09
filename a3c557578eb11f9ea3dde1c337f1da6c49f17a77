@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//eU0\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "that\u0027s where we are thinking to have \"forbidden\" unless I didn\u0027t understand it? I think the default domain to us is what we lay down originally (e.g. dc\u003dopenstack, dc\u003dorg). End user can use default domain by creating it outside keystone.",
+      "parentUuid": "AAAAOn//eWg\u003d",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//eXA\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-08T15:55:29Z",
       "side": 1,
       "message": "regarding consistent api behavior, what happens to GET /v3/domains/default ?",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eUo\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "If a default domain was created in the server side, we return that.. if not we return our static default.",
+      "parentUuid": "AAAAOn//eXA\u003d",
       "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//eUE\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "that\u0027s good point, but again if one is created outside the keystone update will performed on it. If not, I believe we may need to add a condition (: there and not try to do any update if it\u0027s our static domain.",
+      "parentUuid": "AAAAOn//eW8\u003d",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//eW4\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2013-05-08T15:55:29Z",
       "side": 1,
       "message": "regarding consistent api behavior, what happens to DELETE /v3/domains/default ?",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eUA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "Same as update.",
+      "parentUuid": "AAAAOn//eW4\u003d",
       "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//eTQ\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "hmmm.. get_all is a common method.. in common/ldap/core.py and I believe we don\u0027t want to touch anything there right now..may be we do it in future seperately or with future domain design change?",
+      "parentUuid": "AAAAOn//eZ4\u003d",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//eZY\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//eTI\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "the check is if a default domain was created outside keystone, on server side .. hope makes sense.",
+      "parentUuid": "AAAAOn//eZY\u003d",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//eZw\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
@@ -115,6 +223,24 @@
       "writtenOn": "2013-05-08T15:43:28Z",
       "side": 1,
       "message": "this is super-indented. move it back so indented 4 chars.",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//dnY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "good catch.. pep-8 couldn\u0027t catch it :-).",
+      "parentUuid": "AAAAOn//eZw\u003d",
       "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -149,6 +275,24 @@
       "writtenOn": "2013-05-08T15:43:28Z",
       "side": 1,
       "message": "suggest \"The default domain %s cannot be created\"",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eqw\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 984,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "Yes. Thanks, Henry! I will update it.",
+      "parentUuid": "AAAAOn//fI4\u003d",
       "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -207,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//eTE\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "I can go with forbidden with some change in the Tests",
+      "parentUuid": "AAAAOn//eWM\u003d",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//eZ0\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
@@ -218,6 +380,24 @@
       "writtenOn": "2013-05-08T15:41:16Z",
       "side": 1,
       "message": "why is this a method? just make it a constant defined at the top of the file",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eIE\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "OK, will do.",
+      "parentUuid": "AAAAOn//eZ0\u003d",
       "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -241,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//eH0\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1013,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "I copied it from the SQL default domain. so I guess it\u0027s OK to leave as it is?",
+      "parentUuid": "AAAAOn//eZ8\u003d",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//eZs\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 10
@@ -252,6 +450,24 @@
       "writtenOn": "2013-05-08T15:41:16Z",
       "side": 1,
       "message": "-1; i\u0027d rather not reduce test coverage with any of these ContainsSubset changes; can the test be made more specific?",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eWA\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "Dolph, the miss match on the original test (dictequal) that it\u0027s not equal because we ignore \u0027domain_id\u0027 .. one quick option is not to provide \u0027domain_id\u0027 but I am little scared to do that in the test_backend.py considering sql. I think in the test_backend_ldap, it\u0027s fine. please let me know what you think?",
+      "parentUuid": "AAAAOn//eZs\u003d",
       "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -275,6 +491,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//eVk\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "it\u0027s the use of \"if self.identity_api.project.enabled_emulation:\n\t\t\t  user[\u0027enabled\u0027] \u003d True\"\nI see tests in the test_backend_ldap that were differing to the common tests just because of that. So thought, it\u0027s good idea not to change in thing the test_backend and go with similar approach.",
+      "parentUuid": "AAAAOn//eZU\u003d",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//eY4\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 10
@@ -286,6 +520,24 @@
       "writtenOn": "2013-05-08T15:41:16Z",
       "side": 1,
       "message": "this conditional just looks like your broke something and you\u0027re reducing coverage to compensate",
+      "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//eVQ\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 695,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-09T18:58:53Z",
+      "side": 1,
+      "message": "Hmmm... how? we adding this condition to pass the test because we get \"user_ref\" with enabled attribute set by the user. I see we are doing it in many tests.",
+      "parentUuid": "AAAAOn//eY4\u003d",
       "revId": "a3c557578eb11f9ea3dde1c337f1da6c49f17a77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
