@@ -14,12 +14,26 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+
+import os
+import sys
+
+# NOTE(mikal): All of this is because if dnspython is present in your
+# environment then eventlet monkeypatches socket.getaddrinfo() with an
+# implementation which doesn't work for IPv6. What we're checking here is
+# that the magic environment variable was set when the import happened.
+if ('eventlet' in sys.modules and os.environ.get(
+        'EVENTLET_NO_GREENDNS', '').lower() != 'yes'):
+    raise ImportError('eventlet imported before nova/cmd/__init__ '
+                      '(env var set to %s)'
+                      % os.environ.get('EVENTLET_NO_GREENDNS'))
+
+os.environ['EVENTLET_NO_GREENDNS'] = 'yes'
+
 import datetime
 import errno
-import os
 import socket
 import subprocess
-import sys
 import time
 
 import eventlet
@@ -350,10 +364,6 @@ class TestCase(NoModule, unittest.TestCase):
 
     @staticmethod
     def skip_if_no_ipv6():
-
-        # TODO(blk-u): lp 1176204. At this time, eventlet address resolution
-        # doesn't support IPv6. Once it does, remove the next line.
-        raise nose.exc.SkipTest("Eventlet doesn't support IPv6, lp 1176204")
 
         try:
             s = socket.socket(socket.AF_INET6)
