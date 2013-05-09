@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//bX4\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-05-09T22:39:28Z",
+      "side": 1,
+      "message": "nova -\u003e keystone ?",
+      "revId": "c927cadeba88659597745f98efb2d9c8d48344e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
