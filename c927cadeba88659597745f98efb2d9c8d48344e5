@@ -16,6 +16,23 @@
       "revId": "c927cadeba88659597745f98efb2d9c8d48344e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//bXU\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2013-05-09T22:41:17Z",
+      "side": 1,
+      "message": "incorrect error message? nova-\u003ekeystone?",
+      "revId": "c927cadeba88659597745f98efb2d9c8d48344e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
