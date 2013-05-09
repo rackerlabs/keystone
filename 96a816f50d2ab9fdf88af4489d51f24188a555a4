@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//bw4\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 494
+      },
+      "writtenOn": "2013-05-09T19:25:35Z",
+      "side": 0,
+      "message": "i\u0027d like some re-assurance that this is still being gated appropriately",
+      "revId": "96a816f50d2ab9fdf88af4489d51f24188a555a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
