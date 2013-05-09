@@ -861,8 +861,3 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         if kwargs:
             auth_data['scope'] = self.build_auth_scope(**kwargs)
         return {'auth': auth_data}
-
-
-class VersionTestCase(RestfulTestCase):
-    def test_get_version(self):
-        pass

@@ -1,9 +1,9 @@
 import uuid
 
-import test_v3
+from base_v3 import RestfulTestCase
 
 
-class PolicyTestCase(test_v3.RestfulTestCase):
+class PolicyTestCase(RestfulTestCase):
     """Test policy CRUD"""
 
     def setUp(self):

@@ -18,10 +18,10 @@ import uuid
 
 from keystone import exception
 
-import test_v3
+from base_v3 import RestfulTestCase
 
 
-class IdentityTestCase(test_v3.RestfulTestCase):
+class IdentityTestCase(RestfulTestCase):
     """Test domains, projects, users, groups, credential & role CRUD"""
 
     def setUp(self):

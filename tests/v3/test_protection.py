@@ -23,14 +23,14 @@ from keystone import exception
 from keystone.openstack.common import jsonutils
 from keystone.policy.backends import rules
 
-import test_v3
+from base_v3 import RestfulTestCase
 
 
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
 
-class IdentityTestProtectedCase(test_v3.RestfulTestCase):
+class IdentityTestProtectedCase(RestfulTestCase):
     """Test policy protection of a sample of v3 identity apis"""
 
     def setUp(self):
@@ -48,7 +48,7 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         the default domain.
 
         """
-        # Ensure that test_v3.RestfulTestCase doesn't load its own
+        # Ensure that base_v3.RestfulTestCase doesn't load its own
         # sample data, which would make checking the results of our
         # tests harder
         super(IdentityTestProtectedCase, self).setUp(load_sample_data=False)

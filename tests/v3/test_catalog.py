@@ -1,9 +1,9 @@
 import uuid
 
-import test_v3
+from base_v3 import RestfulTestCase
 
 
-class CatalogTestCase(test_v3.RestfulTestCase):
+class CatalogTestCase(RestfulTestCase):
     """Test service & endpoint CRUD"""
 
     def setUp(self):
