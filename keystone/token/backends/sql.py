@@ -35,6 +35,14 @@ class TokenModel(sql.ModelBase, sql.DictBase):
     trust_id = sql.Column(sql.String(64), nullable=True)
 
 
+class RevokedTokenModel(sql.ModelBase, sql.DictBase):
+    __tablename__ = 'revoked_token'
+    attributes = ['id', 'expires']
+    id = sql.Column(sql.String(64), primary_key=True)
+    expires = sql.Column(sql.DateTime(), default=None)
+    extra = sql.Column(sql.JsonBlob())
+
+
 class Token(sql.Base, token.Driver):
     # Public interface
     def get_token(self, token_id):
@@ -77,7 +85,13 @@ class Token(sql.Base, token.Driver):
                                                             valid=True).first()
             if not token_ref:
                 raise exception.TokenNotFound(token_id=token_id)
-            token_ref.valid = False
+            token_dict = token_ref.to_dict()
+            token_dict.pop('user_id')
+            token_dict.pop('trust_id')
+
+            revoked_token_ref = RevokedTokenModel.from_dict(token_dict)
+            session.add(revoked_token_ref)
+            session.delete(token_ref)
             session.flush()
 
     def _list_tokens_for_trust(self, trust_id):
@@ -124,9 +138,8 @@ class Token(sql.Base, token.Driver):
         session = self.get_session()
         tokens = []
         now = timeutils.utcnow()
-        query = session.query(TokenModel)
-        query = query.filter(TokenModel.expires > now)
-        token_references = query.filter_by(valid=False)
+        query = session.query(RevokedTokenModel)
+        token_references = query.filter(RevokedTokenModel.expires > now)
         for token_ref in token_references:
             record = {
                 'id': token_ref['id'],
