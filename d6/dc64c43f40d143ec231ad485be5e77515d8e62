@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+1: Thierry Carrez <thierry@openstack.org>
+Verified+1: SmokeStack
+Approved+1: ayoung <ayoung@redhat.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 10 May 2013 17:10:26 +0000
+Reviewed-on: https://review.openstack.org/28785
+Project: openstack/keystone
+Branch: refs/heads/master
