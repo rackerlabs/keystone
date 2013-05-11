@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//Yrc\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-11T21:26:44Z",
+      "side": 1,
+      "message": "See discussion on:\n\nhttps://review.openstack.org/#/c/26845/",
+      "parentUuid": "AAAAOn//Y6M\u003d",
+      "revId": "2012a75bd4e0e982614a6391e95e001bbf4749b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//Y6E\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-11T15:24:28Z",
       "side": 1,
       "message": "Could use a comment here to say what the extra field will be used for.   Or use a more descriptive variable name such as extra_for_storing_XXX.   Maybe this wasn\u0027t documented previously but we should take this opportunity to document this.",
+      "revId": "2012a75bd4e0e982614a6391e95e001bbf4749b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//Yrg\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-11T21:26:44Z",
+      "side": 1,
+      "message": "This keeps parity with the token table.  We don\u0027t need user or trust id to enumerate anymore.  We can drop this field, but there is tooling elsewhere in the common/sql code that expects there to be an \u0027extra\u0027 field.",
+      "parentUuid": "AAAAOn//Y6E\u003d",
       "revId": "2012a75bd4e0e982614a6391e95e001bbf4749b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
