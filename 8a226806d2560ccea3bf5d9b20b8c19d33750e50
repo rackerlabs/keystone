@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//Y98\u003d",
+        "filename": "tests/backend_ldap.conf",
+        "patchSetId": 14
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-05-11T12:27:52Z",
+      "side": 1,
+      "message": "remove whtie space",
+      "revId": "8a226806d2560ccea3bf5d9b20b8c19d33750e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//Y94\u003d",
+        "filename": "tests/backend_ldap.conf",
+        "patchSetId": 14
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-05-11T12:27:52Z",
+      "side": 1,
+      "message": "remove white space",
+      "revId": "8a226806d2560ccea3bf5d9b20b8c19d33750e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//Y+E\u003d",
+        "filename": "tests/backend_liveldap.conf",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-05-11T12:27:52Z",
+      "side": 1,
+      "message": "remove white space",
+      "revId": "8a226806d2560ccea3bf5d9b20b8c19d33750e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//Y+A\u003d",
+        "filename": "tests/backend_liveldap.conf",
+        "patchSetId": 14
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-05-11T12:27:52Z",
+      "side": 1,
+      "message": "remove white space",
+      "revId": "8a226806d2560ccea3bf5d9b20b8c19d33750e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//Y+I\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-05-11T12:27:52Z",
+      "side": 1,
+      "message": "Nice!",
+      "revId": "8a226806d2560ccea3bf5d9b20b8c19d33750e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
