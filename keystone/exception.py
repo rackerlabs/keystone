@@ -188,6 +188,10 @@ class TokenNotFound(NotFound):
     """Could not find token: %(token_id)s"""
 
 
+class TokenForUserNotFound(NotFound):
+    """Could not find token for user: %(user_id)s"""
+
+
 class UserNotFound(NotFound):
     """Could not find user: %(user_id)s"""
 

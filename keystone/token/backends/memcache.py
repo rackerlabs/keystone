@@ -101,6 +101,16 @@ class Token(token.Driver):
         self._add_to_revocation_list(data)
         return result
 
+    def delete_token_for_user(self, user_id, tenant_id=None, trust_id=None):
+        token_list = self.list_tokens(user_id,
+                                      tenant_id=tenant_id,
+                                      trust_id=trust_id)
+        try:
+            for token in token_list:
+                self.delete_token(token)
+        except exception.TokenNotFound:
+            raise exception.TokenForUserNotFound(user_id=user_id)
+
     def list_tokens(self, user_id, tenant_id=None, trust_id=None):
         tokens = []
         user_key = self._prefix_user_id(user_id)

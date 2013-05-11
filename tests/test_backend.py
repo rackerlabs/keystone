@@ -1998,6 +1998,37 @@ class TokenTests(object):
         self.token_api.create_token(token_id, data)
         return token_id
 
+    def test_delete_token_for_user(self):
+        tokens = self.token_api.list_tokens('testuserid')
+        self.assertEquals(len(tokens), 0)
+        token_id1 = self.create_token_sample_data('testtenantid')
+        tokens = self.token_api.list_tokens('testuserid')
+        self.assertEquals(len(tokens), 1)
+        self.assertIn(token_id1, tokens)
+        token_id2 = self.create_token_sample_data('testtenantid')
+        tokens = self.token_api.list_tokens('testuserid')
+        self.assertEquals(len(tokens), 2)
+        self.assertIn(token_id2, tokens)
+        self.assertIn(token_id1, tokens)
+        self.token_api.delete_token_for_user(user_id='testuserid',
+                                             tenant_id='testtenantid')
+        tokens = self.token_api.list_tokens('testuserid')
+        self.assertEquals(len(tokens), 0)
+
+    def test_delete_token_for_user_trust(self):
+        tokens = self.token_api.list_tokens(user_id='testuserid')
+        self.assertEquals(len(tokens), 0)
+        token_id1 = self.create_token_sample_data(tenant_id='testtenantid',
+                                                  trust_id='testtrustid')
+        tokens = self.token_api.list_tokens('testuserid')
+        self.assertEquals(len(tokens), 1)
+        self.assertIn(token_id1, tokens)
+        self.token_api.delete_token_for_user(user_id='testuserid',
+                                             tenant_id='testtenantid',
+                                             trust_id='testtrustid')
+        tokens = self.token_api.list_tokens('testuserid')
+        self.assertEquals(len(tokens), 0)
+
     def test_token_list(self):
         tokens = self.token_api.list_tokens('testuserid')
         self.assertEquals(len(tokens), 0)

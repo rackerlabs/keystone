@@ -155,22 +155,19 @@ class V2Controller(wsgi.Application):
 
     def _delete_tokens_for_trust(self, context, user_id, trust_id):
         try:
-            token_list = self.token_api.list_tokens(context, user_id,
-                                                    trust_id=trust_id)
-            for token in token_list:
-                self.token_api.delete_token(context, token)
+            self.token_api.delete_token_for_user(context, user_id,
+                                                 trust_id=trust_id)
         except exception.NotFound:
             pass
 
     def _delete_tokens_for_user(self, context, user_id, project_id=None):
         #First delete tokens that could get other tokens.
-        for token_id in self.token_api.list_tokens(context,
-                                                   user_id,
-                                                   tenant_id=project_id):
-            try:
-                self.token_api.delete_token(context, token_id)
-            except exception.NotFound:
-                pass
+        try:
+            self.token_api.delete_token_for_user(context,
+                                                 user_id,
+                                                 tenant_id=project_id)
+        except exception.NotFound:
+            pass
 
         #delete tokens generated from trusts
         for trust in self.trust_api.list_trusts_for_trustee(context, user_id):
