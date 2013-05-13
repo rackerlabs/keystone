@@ -283,7 +283,7 @@ class AuthProtocol(object):
         we can't authenticate.
 
         """
-        LOG.debug('Authenticating user token')
+        LOG.info('Authenticating user token')
         try:
             self._remove_auth_headers(env)
             user_token = self._get_user_token_from_header(env)
@@ -325,8 +325,8 @@ class AuthProtocol(object):
             'X-Tenant',
             'X-Role',
         )
-        LOG.debug('Removing headers from request environment: %s' %
-                  ','.join(auth_headers))
+        LOG.info('Removing headers from request environment: %s' %
+                 ','.join(auth_headers))
         self._remove_headers(env, auth_headers)
 
     def _get_user_token_from_header(self, env):
@@ -452,7 +452,7 @@ class AuthProtocol(object):
         try:
             data = jsonutils.loads(body)
         except ValueError:
-            LOG.debug('Keystone did not return json-encoded body')
+            LOG.info('Keystone did not return json-encoded body')
             data = {}
 
         return response, data
@@ -502,6 +502,7 @@ class AuthProtocol(object):
         :no longer raises ServiceError since it no longer makes RPC
 
         """
+        LOG.info('Validating user token %s' % user_token)
         try:
             token_id = cms.cms_hash_token(user_token)
             cached = self._cache_get(token_id)
@@ -512,10 +513,11 @@ class AuthProtocol(object):
                 data = json.loads(verified)
             else:
                 data = self.verify_uuid_token(user_token, retry)
-            self._cache_put(token_id, data)
+            expires = self._confirm_token_not_expired(data)
+            self._cache_put(token_id, data, expires)
             return data
         except Exception as e:
-            LOG.debug('Token validation failure.', exc_info=True)
+            LOG.info('Token validation failure.', exc_info=True)
             self._cache_store_invalid(user_token)
             LOG.warn("Authorization failed for token %s", user_token)
             raise InvalidUserToken('Token authorization failed')
@@ -632,17 +634,29 @@ class AuthProtocol(object):
             key = 'tokens/%s' % token
             cached = self._cache.get(key)
             if cached == 'invalid':
-                LOG.debug('Cached Token %s is marked unauthorized', token)
+                LOG.info('Cached Token %s is marked unauthorized', token)
                 raise InvalidUserToken('Token authorization failed')
             if cached:
                 data, expires = cached
                 if time.time() < float(expires):
-                    LOG.debug('Returning cached token %s', token)
+                    LOG.info('Returning cached token %s', token)
                     return data
                 else:
-                    LOG.debug('Cached Token %s seems expired', token)
+                    LOG.info('Cached Token %s seems expired', token)
 
-    def _cache_put(self, token, data):
+    def _confirm_token_not_expired(self, data):
+        if 'token' in data.get('access', {}):
+            timestamp = data['access']['token']['expires']
+            expires = self._iso8601.parse_date(timestamp).strftime('%s')
+        else:
+            LOG.info('invalid token format: %s' % data)
+            raise InvalidUserToken('Token authorization failed')
+        if time.time() >= float(expires):
+            LOG.info('Token expired a %s', timestamp)
+            raise InvalidUserToken('Token authorization failed')
+        return expires
+
+    def _cache_put(self, token, data, expires):
         """Put token data into the cache.
 
         Stores the parsed expire date in cache allowing
@@ -650,13 +664,7 @@ class AuthProtocol(object):
         """
         if self._cache and data:
             key = 'tokens/%s' % token
-            if 'token' in data.get('access', {}):
-                timestamp = data['access']['token']['expires']
-                expires = self._iso8601.parse_date(timestamp).strftime('%s')
-            else:
-                LOG.error('invalid token format')
-                return
-            LOG.debug('Storing %s token in memcache', token)
+            LOG.info('Storing %s token in memcache', token)
             self._cache.set(key,
                             (data, expires),
                             time=self.token_cache_time)
@@ -665,7 +673,7 @@ class AuthProtocol(object):
         """Store invalid token in cache."""
         if self._cache:
             key = 'tokens/%s' % token
-            LOG.debug('Marking token %s as unauthorized in memcache', token)
+            LOG.info('Marking token %s as unauthorized in memcache', token)
             self._cache.set(key,
                             'invalid',
                             time=self.token_cache_time)
@@ -692,8 +700,9 @@ class AuthProtocol(object):
                                             '/v2.0/tokens/%s' % user_token,
                                             additional_headers=headers)
 
+        LOG.info('UUID validation response headers=%s, response=%s, data=%s' %
+                 (headers, response, data))
         if response.status == 200:
-            self._cache_put(user_token, data)
             return data
         if response.status == 404:
             # FIXME(ja): I'm assuming the 404 status means that user_token is
@@ -726,8 +735,8 @@ class AuthProtocol(object):
         token_id = utils.hash_signed_token(signed_text)
         for revoked_id in revoked_ids:
             if token_id == revoked_id:
-                LOG.debug('Token %s is marked as having been revoked',
-                          token_id)
+                LOG.info('Token %s is marked as having been revoked',
+                         token_id)
                 return True
         return False
 
