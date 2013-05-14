@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAOn//WLI\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:43:25Z",
+      "side": 1,
+      "message": "add a blank line here",
+      "revId": "2534135bd8c265bffb0e182122c8528fe033d548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//YLc\u003d",
         "filename": "keystone/credentials/core.py",
         "patchSetId": 6
