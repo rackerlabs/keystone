@@ -16,7 +16,9 @@
 
 
 from keystone.common import logging
+from keystone.common import utils
 from keystone import auth
+from keystone import config
 from keystone import exception
 from keystone import identity
 
@@ -24,6 +26,7 @@ from keystone import identity
 METHOD_NAME = 'password'
 
 LOG = logging.getLogger(__name__)
+CONF = config.CONF
 
 
 class UserAuthInfo(object):
@@ -79,8 +82,15 @@ class UserAuthInfo(object):
             raise exception.ValidationError(attribute='id or name',
                                             target='user')
         self.password = user_info.get('password', None)
+        max_pw_size = utils.MAX_PASSWORD_LENGTH
+        if self.password and len(self.password) > max_pw_size:
+            raise exception.ValidationSizeError(attribute='password',
+                                                size=max_pw_size)
         try:
             if user_name:
+                if len(user_name) > CONF.max_param_size:
+                    raise exception.ValidationSizeError(
+                        attribute='name', size=CONF.max_param_size)
                 if 'domain' not in user_info:
                     raise exception.ValidationError(attribute='domain',
                                                     target='user')
@@ -89,6 +99,9 @@ class UserAuthInfo(object):
                     context=self.context, user_name=user_name,
                     domain_id=domain_ref['id'])
             else:
+                if user_id and len(user_id) > CONF.max_param_size:
+                    raise exception.ValidationSizeError(
+                        attribute='id', size=CONF.max_param_size)
                 user_ref = self.identity_api.get_user(
                     context=self.context, user_id=user_id)
                 domain_ref = self.identity_api.get_domain(

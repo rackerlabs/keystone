@@ -21,6 +21,7 @@ import nose.exc
 
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
+from keystone import auth
 from keystone import config
 from keystone import test
 
@@ -59,6 +60,8 @@ class CompatTestCase(test.TestCase):
         self.admin_server.kill()
         self.public_server = None
         self.admin_server = None
+        # need to reset the plug-ins
+        auth.controllers.AUTH_METHODS = {}
         super(CompatTestCase, self).tearDown()
 
     def _public_url(self):

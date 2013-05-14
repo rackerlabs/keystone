@@ -110,7 +110,15 @@
 # template_file = default_catalog.templates
 
 [token]
+# Note the distinction between "driver" and "provider". Token "driver" simply
+# provides token CRUD. On the other hand, token "provider" provides token
+# operation management.
+
 # driver = keystone.token.backends.kvs.Token
+# provider = keystone.token.providers.pki_token.Provider
+
+# uncomment the following two lines to switch over to UUID token provider
+# provider = keystone.token.providers.uuid_token.Provider
 
 # Amount of time a token should remain valid (in seconds)
 # expiration = 86400
@@ -261,6 +269,9 @@ paste.filter_factory = keystone.middleware:XmlBodyMiddleware.factory
 [filter:json_body]
 paste.filter_factory = keystone.middleware:JsonBodyMiddleware.factory
 
+[filter:v2_token_translator]
+paste.filter_factory = keystone.middleware:V2TokenTranslator.factory
+
 [filter:user_crud_extension]
 paste.filter_factory = keystone.contrib.user_crud:CrudExtension.factory
 
@@ -298,10 +309,10 @@ paste.app_factory = keystone.service:v3_app_factory
 paste.app_factory = keystone.service:admin_app_factory
 
 [pipeline:public_api]
-pipeline = access_log sizelimit url_normalize token_auth admin_token_auth xml_body json_body ec2_extension user_crud_extension public_service
+pipeline = access_log sizelimit url_normalize token_auth admin_token_auth xml_body json_body v2_token_translator ec2_extension user_crud_extension public_service
 
 [pipeline:admin_api]
-pipeline = access_log sizelimit url_normalize token_auth admin_token_auth xml_body json_body ec2_extension s3_extension crud_extension admin_service
+pipeline = access_log sizelimit url_normalize token_auth admin_token_auth xml_body json_body v2_token_translator ec2_extension s3_extension crud_extension admin_service
 
 [pipeline:api_v3]
 pipeline = access_log sizelimit url_normalize token_auth admin_token_auth xml_body json_body ec2_extension s3_extension service_v3
