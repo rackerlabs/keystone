@@ -29,6 +29,7 @@ from keystone import policy
 from keystone import routers
 from keystone import token
 from keystone import trust
+from keystone.token import provider as token_provider
 
 
 CONF = config.CONF
@@ -41,6 +42,7 @@ DRIVERS = dict(
     identity_api=identity.Manager(),
     policy_api=policy.Manager(),
     token_api=token.Manager(),
+    token_provider_api=token_provider.Manager(),
     trust_api=trust.Manager())
 
 
