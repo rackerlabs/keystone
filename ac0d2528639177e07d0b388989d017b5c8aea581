@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//UZg\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T20:12:13Z",
+      "side": 1,
+      "message": "i really dislike the term \u0027management\u0027 here because it directly overlaps with the token backend, which already manages token persistence. token_provider would be much more specific",
+      "revId": "ac0d2528639177e07d0b388989d017b5c8aea581",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//UZQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T20:12:13Z",
+      "side": 1,
+      "message": "NO! A) token_format is redundant with the driver specification, and B) token_format should be deprecated from [signing] or wherever it\u0027s defined in favor of a driver specification",
+      "revId": "ac0d2528639177e07d0b388989d017b5c8aea581",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//UZ0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T20:12:13Z",
+      "side": 1,
+      "message": "PkiToken -\u003e Driver ?",
+      "revId": "ac0d2528639177e07d0b388989d017b5c8aea581",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//UZE\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T20:12:13Z",
+      "side": 1,
+      "message": "UuidToken -\u003e Driver?",
+      "revId": "ac0d2528639177e07d0b388989d017b5c8aea581",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
