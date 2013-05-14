@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//UzE\u003d",
+        "filename": "tests/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T17:04:48Z",
+      "side": 1,
+      "message": "should this be comparing to string \u003d \u0027200\u0027 or the integer value?",
+      "revId": "dfc2b1b8efb4fb19758faa4d12040c3c45d1d007",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//UzA\u003d",
+        "filename": "tests/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T17:04:48Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "dfc2b1b8efb4fb19758faa4d12040c3c45d1d007",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//Uy0\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T17:04:48Z",
+      "side": 1,
+      "message": "This might need to be taken care of in a separate fix, but would it be worth it to remove the commented out code?",
+      "revId": "dfc2b1b8efb4fb19758faa4d12040c3c45d1d007",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
