@@ -407,3 +407,13 @@ def configure():
 
     # PasteDeploy config file
     register_str('config_file', group='paste_deploy', default=None)
+
+    # token providers
+    register_str(
+        'v2_provider',
+        group='token',
+        default='keystone.token.providers.pki_token.V2Provider')
+    register_str(
+        'v3_provider',
+        group='token',
+        default='keystone.token.providers.pki_token.V3Provider')

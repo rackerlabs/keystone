@@ -119,7 +119,19 @@
 # template_file = default_catalog.templates
 
 [token]
+# Note the distinction between "driver" and "v*_provider". Token "driver" simply
+# provides token CRUD. On the other hand, token "provider" provides token
+# operation management, such as generating tokens to be persisted by the
+# driver.
+
 # driver = keystone.token.backends.kvs.Token
+
+# v2_provider = keystone.token.providers.pki_token.V2Provider
+# v3_provider = keystone.token.providers.pki_token.V3Provider
+
+# uncomment the following two lines to switch over to UUID token provider
+# v2_provider = keystone.token.providers.uuid_token.V2Provider
+# v3_provider = keystone.token.providers.uuid_token.V3Provider
 
 # Amount of time a token should remain valid (in seconds)
 # expiration = 86400

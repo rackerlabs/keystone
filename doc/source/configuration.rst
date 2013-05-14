@@ -74,7 +74,7 @@ following sections:
 * ``[s3]`` - Amazon S3 authentication driver configuration.
 * ``[identity]`` - identity system driver configuration
 * ``[catalog]`` - service catalog driver configuration
-* ``[token]`` - token driver configuration
+* ``[token]`` - token driver & token providers configuration
 * ``[policy]`` - policy system driver configuration for RBAC
 * ``[signing]`` - cryptographic signatures for PKI based tokens
 * ``[ssl]`` - SSL configuration
@@ -147,6 +147,20 @@ attribute of the ``authentication`` request body. If multiple plugins are
 invoked, all plugins must succeed in order to for the entire
 authentication to be successful. Furthermore, all the plugins invoked must
 agree on the ``user_id`` in the ``auth_context``.
+
+Token Providers
+---------------
+
+Keystone supports customizable token providers and they are
+specified in the ``[token]`` section of the configuration file.
+Keystone provides both PKI and UUID token providers with PKI
+token providers enabled as default. However, users may register their own token
+providers by configuring the following properties.
+
+* ``v2_provider`` - version 2 token provider driver. Defaults to
+                    ``keystone.token.providers.pki_token.V2Provider``
+* ``v3_provider`` - version 3 token provider driver. Defaults to
+                    ``keystone.token.providers.pki_token.V3Provider``
 
 Certificates for PKI
 --------------------
