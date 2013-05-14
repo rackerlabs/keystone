@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//VHw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T14:39:26Z",
+      "side": 1,
+      "message": "i wouldn\u0027t even document the kvs backend here... because it\u0027s not persistent, keystone-manage can\u0027t influence it, anyway.",
+      "parentUuid": "AAAAOn//WRA\u003d",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//WQ8\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 7
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//VHo\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T14:39:26Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAOn//WQ4\u003d",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//WQ0\u003d",
         "filename": "doc/source/man/keystone-manage.rst",
         "patchSetId": 7
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//VHc\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T14:39:26Z",
+      "side": 1,
+      "message": "if it shows up.. it actually shouldn\u0027t",
+      "parentUuid": "AAAAOn//WQ0\u003d",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//WQk\u003d",
         "filename": "keystone/cli.py",
         "patchSetId": 7
@@ -81,6 +135,58 @@
       "writtenOn": "2013-05-14T01:32:19Z",
       "side": 1,
       "message": "to keep in alphabetical order, should be after keystone.common imports.",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//VHU\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T14:39:26Z",
+      "side": 1,
+      "message": "after keystone.openstack.common **",
+      "parentUuid": "AAAAOn//WQk\u003d",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//VHM\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T14:39:26Z",
+      "side": 1,
+      "message": "this should use choices http://argparse.googlecode.com/svn/trunk/doc/add_argument.html#choices",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//VHI\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T14:39:26Z",
+      "side": 1,
+      "message": "so that you don\u0027t have to perform your own validation",
       "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +227,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//VHA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_add_token_archive.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T14:39:26Z",
+      "side": 1,
+      "message": "good catch, i don\u0027t see a reason for one",
+      "parentUuid": "AAAAOn//WP8\u003d",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//WOc\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/023_add_token_archive.py",
         "patchSetId": 7
@@ -149,6 +273,24 @@
       "writtenOn": "2013-05-14T01:32:19Z",
       "side": 1,
       "message": "suggest remove nullable\u003dTrue, or use it consistenly on lines 13 and 14.",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//VG0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_add_token_archive.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T14:39:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t this just match the primary token table?",
+      "parentUuid": "AAAAOn//WPg\u003d",
       "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +331,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//VGc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_add_token_archive.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T14:39:26Z",
+      "side": 1,
+      "message": "that\u0027s a much broader problem -- some downgrades are known to discard data and we\u0027ve never addressed that",
+      "parentUuid": "AAAAOn//WPU\u003d",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//WOY\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 7
@@ -223,6 +383,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//VFs\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T14:39:26Z",
+      "side": 1,
+      "message": "synchronize_session\u003dFalse",
+      "parentUuid": "AAAAOn//WOE\u003d",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//WNo\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 7
@@ -234,6 +412,24 @@
       "writtenOn": "2013-05-14T01:32:19Z",
       "side": 1,
       "message": "seems like the parameter should make it clear not that deleting is allowed but that deleting will happen. So suggest call it \"do_delete\" or something. Also, could pass in an enumeration or constant value rather than a boolean. Consider:\n\n process_expired_tokens(ARCHIVE)\n\nor \n \n process_expired_tokens(DELETE)\n\nwould be easier to understand.",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//VDk\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T14:39:26Z",
+      "side": 1,
+      "message": "I suggested allow_deletion at the driver layer because it\u0027s up to the driver implementation to decide if deletion is possible, not up to the external tool to dictate... e.g.: http://paste.openstack.org/raw/37237/",
+      "parentUuid": "AAAAOn//WNo\u003d",
       "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -268,6 +464,24 @@
       "writtenOn": "2013-05-14T01:32:19Z",
       "side": 1,
       "message": "should this be up in TokenTests rather than in duplicated?",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//VDc\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T14:39:26Z",
+      "side": 1,
+      "message": "the expected behavior varies per driver impl",
+      "parentUuid": "AAAAOn//WMg\u003d",
       "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
