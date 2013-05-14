@@ -23,6 +23,7 @@ from keystone.common import utils
 from keystone.common import wsgi
 from keystone import exception
 from keystone.openstack.common import jsonutils
+from keystone.token import provider as token_provider
 
 
 CONF = config.CONF
@@ -202,3 +203,23 @@ class RequestBodySizeLimiter(wsgi.Middleware):
                                            CONF.max_request_body_size)
             req.body_file = limiter
         return self.application
+
+
+class V2TokenTranslator(wsgi.Middleware):
+    """Translate V3 to V2 token."""
+
+    def __init__(self, *args, **kwargs):
+        super(V2TokenTranslator, self).__init__(*args, **kwargs)
+
+    def process_response(self, request, response):
+        env = request.environ
+        if (env['REQUEST_METHOD'] in ('POST', 'GET') and
+                (env['PATH_INFO'].startswith('/tokens') or
+                 env['PATH_INFO'] == '/ec2tokens') and
+                response.status_int == 200):
+            token_data = jsonutils.loads(response.body)
+            token_version = token_provider.get_token_version(token_data)
+            if token_version == token_provider.V3:
+                response.body = jsonutils.dumps(
+                    token_provider.v3_to_v2_token(token_data))
+        return response

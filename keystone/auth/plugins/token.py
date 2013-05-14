@@ -16,6 +16,7 @@
 
 from keystone import auth
 from keystone.common import logging
+from keystone import config
 from keystone import exception
 from keystone import token
 
@@ -23,6 +24,7 @@ from keystone import token
 METHOD_NAME = 'token'
 
 LOG = logging.getLogger(__name__)
+CONF = config.CONF
 
 
 class Token(auth.AuthMethodHandler):
@@ -35,6 +37,9 @@ class Token(auth.AuthMethodHandler):
                 raise exception.ValidationError(attribute='id',
                                                 target=METHOD_NAME)
             token_id = auth_payload['id']
+            if len(token_id) > CONF.max_token_size:
+                raise exception.ValidationSizeError(attribute='token',
+                                                    size=CONF.max_token_size)
             token_ref = self.token_api.get_token(context, token_id)
             user_context.setdefault(
                 'user_id', token_ref['token_data']['token']['user']['id'])
@@ -48,6 +53,11 @@ class Token(auth.AuthMethodHandler):
                 token_ref['token_data']['token']['methods'])
             if 'trust' in token_ref['token_data']:
                 raise exception.Forbidden()
+            if 'trust_id' in token_ref['metadata']:
+                raise exception.Forbidden()
         except AssertionError as e:
+            LOG.error(e)
+            raise exception.Unauthorized(e)
+        except exception.TokenNotFound:
             LOG.error(e)
             raise exception.Unauthorized(e)
