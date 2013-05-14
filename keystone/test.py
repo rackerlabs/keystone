@@ -40,6 +40,7 @@ from keystone import identity
 from keystone.openstack.common import timeutils
 from keystone import policy
 from keystone import token
+from keystone import token_management
 from keystone import trust
 
 
@@ -80,6 +81,7 @@ def initialize_drivers():
     DRIVERS['policy_api'] = policy.Manager()
     DRIVERS['token_api'] = token.Manager()
     DRIVERS['trust_api'] = trust.Manager()
+    DRIVERS['token_management_api'] = token_management.Manager()
     return DRIVERS
 
 

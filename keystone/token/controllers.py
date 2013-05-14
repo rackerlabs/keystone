@@ -22,7 +22,8 @@ class ExternalAuthNotApplicable(Exception):
     pass
 
 
-@dependency.requires('catalog_api', 'trust_api', 'token_api')
+@dependency.requires('catalog_api', 'trust_api', 'token_api',
+                     'token_management_api')
 class Auth(controller.V2Controller):
     def ca_cert(self, context, auth=None):
         ca_file = open(CONF.signing.ca_certs, 'r')
@@ -80,71 +81,12 @@ class Auth(controller.V2Controller):
 
         user_ref, tenant_ref, metadata_ref, expiry = auth_info
         core.validate_auth_info(self, context, user_ref, tenant_ref)
-        trust_id = metadata_ref.get('trust_id')
-        user_ref = self._filter_domain_id(user_ref)
-        if tenant_ref:
-            tenant_ref = self._filter_domain_id(tenant_ref)
-        auth_token_data = self._get_auth_token_data(user_ref,
-                                                    tenant_ref,
-                                                    metadata_ref,
-                                                    expiry)
-
-        if tenant_ref:
-            catalog_ref = self.catalog_api.get_catalog(
-                context=context,
-                user_id=user_ref['id'],
-                tenant_id=tenant_ref['id'],
-                metadata=metadata_ref)
-        else:
-            catalog_ref = {}
-
-        auth_token_data['id'] = 'placeholder'
-
-        roles_ref = []
-        for role_id in metadata_ref.get('roles', []):
-            role_ref = self.identity_api.get_role(context, role_id)
-            roles_ref.append(dict(name=role_ref['name']))
-
-        token_data = Auth.format_token(auth_token_data, roles_ref)
-
-        service_catalog = Auth.format_catalog(catalog_ref)
-        token_data['access']['serviceCatalog'] = service_catalog
-
-        if CONF.signing.token_format == 'UUID':
-            token_id = uuid.uuid4().hex
-        elif CONF.signing.token_format == 'PKI':
-            try:
-                token_id = cms.cms_sign_token(json.dumps(token_data),
-                                              CONF.signing.certfile,
-                                              CONF.signing.keyfile)
-            except subprocess.CalledProcessError:
-                raise exception.UnexpectedError(_(
-                    'Unable to sign token.'))
-        else:
-            raise exception.UnexpectedError(_(
-                'Invalid value for token_format: %s.'
-                '  Allowed values are PKI or UUID.') %
-                CONF.signing.token_format)
-        try:
-            self.token_api.create_token(
-                context, token_id, dict(key=token_id,
-                                        id=token_id,
-                                        expires=auth_token_data['expires'],
-                                        user=user_ref,
-                                        tenant=tenant_ref,
-                                        metadata=metadata_ref,
-                                        trust_id=trust_id))
-        except Exception as e:
-            # an identical token may have been created already.
-            # if so, return the token_data as it is also identical
-            try:
-                self.token_api.get_token(context=context,
-                                         token_id=token_id)
-            except exception.TokenNotFound:
-                raise e
-
-        token_data['access']['token']['id'] = token_id
-
+        token_data = self.token_management_api.issue_v2_token(
+            context=context,
+            user_id=user_ref['id'],
+            expires=expiry,
+            project_id=tenant_ref['id'] if tenant_ref else None,
+            metadata_ref=metadata_ref)
         return token_data
 
     def _authenticate_token(self, context, auth):
@@ -469,46 +411,6 @@ class Auth(controller.V2Controller):
                     _('Token does not belong to specified tenant.'))
         return data
 
-    def _assert_default_domain(self, context, token_ref):
-        """ Make sure we are operating on default domain only. """
-        if token_ref.get('token_data'):
-            # this is a V3 token
-            msg = _('Non-default domain is not supported')
-            # user in a non-default is prohibited
-            if (token_ref['token_data']['token']['user']['domain']['id'] !=
-                    DEFAULT_DOMAIN_ID):
-                raise exception.Unauthorized(msg)
-            # domain scoping is prohibited
-            if token_ref['token_data']['token'].get('domain'):
-                raise exception.Unauthorized(
-                    _('Domain scoped token is not supported'))
-            # project in non-default domain is prohibited
-            if token_ref['token_data']['token'].get('project'):
-                project = token_ref['token_data']['token']['project']
-                project_domain_id = project['domain']['id']
-                # scoped to project in non-default domain is prohibited
-                if project_domain_id != DEFAULT_DOMAIN_ID:
-                    raise exception.Unauthorized(msg)
-            # if token is scoped to trust, both trustor and trustee must
-            # be in the default domain. Furthermore, the delegated project
-            # must also be in the default domain
-            metadata_ref = token_ref['metadata']
-            if CONF.trust.enabled and 'trust_id' in metadata_ref:
-                trust_ref = self.trust_api.get_trust(context,
-                                                     metadata_ref['trust_id'])
-                trustee_user_ref = self.identity_api.get_user(
-                    context, trust_ref['trustee_user_id'])
-                if trustee_user_ref['domain_id'] != DEFAULT_DOMAIN_ID:
-                    raise exception.Unauthorized(msg)
-                trustor_user_ref = self.identity_api.get_user(
-                    context, trust_ref['trustor_user_id'])
-                if trustor_user_ref['domain_id'] != DEFAULT_DOMAIN_ID:
-                    raise exception.Unauthorized(msg)
-                project_ref = self.identity_api.get_project(
-                    context, trust_ref['project_id'])
-                if project_ref['domain_id'] != DEFAULT_DOMAIN_ID:
-                    raise exception.Unauthorized(msg)
-
     # admin only
     def validate_token_head(self, context, token_id):
         """Check that a token is valid.
@@ -518,10 +420,9 @@ class Auth(controller.V2Controller):
         Identical to ``validate_token``, except does not return a response.
 
         """
+        self.assert_admin(context)
         belongs_to = context['query_string'].get('belongsTo')
-        token_ref = self._get_token_ref(context, token_id, belongs_to)
-        assert token_ref
-        self._assert_default_domain(context, token_ref)
+        self.token_management_api.check_v2_token(context, token_id, belongs_to)
 
     # admin only
     def validate_token(self, context, token_id):
@@ -532,34 +433,19 @@ class Auth(controller.V2Controller):
         Returns metadata about the token along any associated roles.
 
         """
+        self.assert_admin(context)
         belongs_to = context['query_string'].get('belongsTo')
-        token_ref = self._get_token_ref(context, token_id, belongs_to)
-        self._assert_default_domain(context, token_ref)
-
-        # TODO(termie): optimize this call at some point and put it into the
-        #               the return for metadata
-        # fill out the roles in the metadata
-        metadata_ref = token_ref['metadata']
-        roles_ref = []
-        for role_id in metadata_ref.get('roles', []):
-            roles_ref.append(self.identity_api.get_role(context, role_id))
-
-        # Get a service catalog if possible
-        # This is needed for on-behalf-of requests
-        catalog_ref = None
-        if token_ref.get('tenant'):
-            catalog_ref = self.catalog_api.get_catalog(
-                context=context,
-                user_id=token_ref['user']['id'],
-                tenant_id=token_ref['tenant']['id'],
-                metadata=metadata_ref)
-        return Auth.format_token(token_ref, roles_ref, catalog_ref)
+        return self.token_management_api.validate_v2_token(
+            context,
+            token_id=token_id,
+            belongs_to=belongs_to)
 
     def delete_token(self, context, token_id):
         """Delete a token, effectively invalidating it for authz."""
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
-        self.token_api.delete_token(context=context, token_id=token_id)
+        self.token_management_api.revoke_token(
+            context=context, token_id=token_id)
 
     def revocation_list(self, context, auth=None):
         self.assert_admin(context)
@@ -592,99 +478,6 @@ class Auth(controller.V2Controller):
                 metadata=token_ref['metadata'])
 
         return Auth.format_endpoint_list(catalog_ref)
-
-    @classmethod
-    def format_authenticate(cls, token_ref, roles_ref, catalog_ref):
-        o = Auth.format_token(token_ref, roles_ref)
-        o['access']['serviceCatalog'] = Auth.format_catalog(catalog_ref)
-        return o
-
-    @classmethod
-    def format_token(cls, token_ref, roles_ref, catalog_ref=None):
-        user_ref = token_ref['user']
-        metadata_ref = token_ref['metadata']
-        expires = token_ref['expires']
-        if expires is not None:
-            if not isinstance(expires, unicode):
-                expires = timeutils.isotime(expires)
-        o = {'access': {'token': {'id': token_ref['id'],
-                                  'expires': expires,
-                                  'issued_at': timeutils.strtime()
-                                  },
-                        'user': {'id': user_ref['id'],
-                                 'name': user_ref['name'],
-                                 'username': user_ref['name'],
-                                 'roles': roles_ref,
-                                 'roles_links': metadata_ref.get('roles_links',
-                                                                 [])
-                                 }
-                        }
-             }
-        if 'tenant' in token_ref and token_ref['tenant']:
-            token_ref['tenant']['enabled'] = True
-            o['access']['token']['tenant'] = token_ref['tenant']
-        if catalog_ref is not None:
-            o['access']['serviceCatalog'] = Auth.format_catalog(catalog_ref)
-        if metadata_ref:
-            if 'is_admin' in metadata_ref:
-                o['access']['metadata'] = {'is_admin':
-                                           metadata_ref['is_admin']}
-            else:
-                o['access']['metadata'] = {'is_admin': 0}
-        if 'roles' in metadata_ref:
-            o['access']['metadata']['roles'] = metadata_ref['roles']
-        if CONF.trust.enabled and 'trust_id' in metadata_ref:
-            o['access']['trust'] = {'trustee_user_id':
-                                    metadata_ref['trustee_user_id'],
-                                    'id': metadata_ref['trust_id']
-                                    }
-        return o
-
-    @classmethod
-    def format_catalog(cls, catalog_ref):
-        """Munge catalogs from internal to output format
-        Internal catalogs look like:
-
-        {$REGION: {
-            {$SERVICE: {
-                $key1: $value1,
-                ...
-                }
-            }
-        }
-
-        The legacy api wants them to look like
-
-        [{'name': $SERVICE[name],
-          'type': $SERVICE,
-          'endpoints': [{
-              'tenantId': $tenant_id,
-              ...
-              'region': $REGION,
-              }],
-          'endpoints_links': [],
-         }]
-
-        """
-        if not catalog_ref:
-            return []
-
-        services = {}
-        for region, region_ref in catalog_ref.iteritems():
-            for service, service_ref in region_ref.iteritems():
-                new_service_ref = services.get(service, {})
-                new_service_ref['name'] = service_ref.pop('name')
-                new_service_ref['type'] = service
-                new_service_ref['endpoints_links'] = []
-                service_ref['region'] = region
-
-                endpoints_ref = new_service_ref.get('endpoints', [])
-                endpoints_ref.append(service_ref)
-
-                new_service_ref['endpoints'] = endpoints_ref
-                services[service] = new_service_ref
-
-        return services.values()
 
     @classmethod
     def format_endpoint_list(cls, catalog_ref):
