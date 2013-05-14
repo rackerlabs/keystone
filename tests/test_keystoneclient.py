@@ -21,8 +21,10 @@ import nose.exc
 
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
+from keystone import auth
 from keystone import config
 from keystone import test
+from keystone.token import provider as token_provider
 
 import default_fixtures
 
@@ -59,6 +61,8 @@ class CompatTestCase(test.TestCase):
         self.admin_server.kill()
         self.public_server = None
         self.admin_server = None
+        # need to reset the plug-ins
+        auth.controllers.AUTH_METHODS = {}
         super(CompatTestCase, self).tearDown()
 
     def _public_url(self):
@@ -625,6 +629,29 @@ class KeystoneClientTests(object):
         roles = client.roles.list()
         # TODO(devcamcar): This assert should be more specific.
         self.assertTrue(len(roles) > 0)
+
+    def test_ec2_auth(self):
+        client = self.get_client()
+        cred = client.ec2.create(user_id=self.user_foo['id'],
+                                 tenant_id=self.tenant_bar['id'])
+        
+        from keystoneclient.contrib.ec2 import utils as ec2_utils
+        signer = ec2_utils.Ec2Signer(cred.secret)
+        credentials = {'params': {'SignatureVersion': '2'},
+                       'access': cred.access,
+                       'verb': 'GET',
+                       'host': 'localhost',
+                       'path': '/thisisgoingtowork'}
+        signature = signer.generate(credentials)
+        credentials['signature'] = signature
+        url = '%s/ec2tokens' % (client.auth_url)
+        (resp, token) = client.request(url=url,
+                                      method='POST',
+                                      body={'credentials': credentials})
+        # make sure we have a v2 token
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(token_provider.get_token_version(token),
+                         token_provider.V2)
 
     def test_ec2_credential_crud(self):
         client = self.get_client()
