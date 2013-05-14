@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//UCg\u003d",
+        "filename": "tests/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-05-14T23:30:38Z",
+      "side": 1,
+      "message": "In webob status is a string eg \u0027200 OK\u0027 status_code is the integer status code. Preferable to both is I would prefer this to be in an assertStatus or some such test so that it is not so repeated.\n\nActually i don\u0027t think even that matters, i\u0027m pretty sure this will bomb before this because the expected_status will be incorrect.",
+      "parentUuid": "AAAAOn//UzE\u003d",
+      "revId": "dfc2b1b8efb4fb19758faa4d12040c3c45d1d007",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//UzA\u003d",
         "filename": "tests/test_catalog.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2013-05-14T17:04:48Z",
       "side": 1,
       "message": "This might need to be taken care of in a separate fix, but would it be worth it to remove the commented out code?",
+      "revId": "dfc2b1b8efb4fb19758faa4d12040c3c45d1d007",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//UCM\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-05-14T23:30:38Z",
+      "side": 1,
+      "message": "I have another patch up for debate which is cleanup related. I agree that it should probably be removed however i would like to keep this patch on point.",
+      "parentUuid": "AAAAOn//Uy0\u003d",
       "revId": "dfc2b1b8efb4fb19758faa4d12040c3c45d1d007",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
