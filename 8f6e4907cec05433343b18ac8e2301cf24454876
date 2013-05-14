@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn//VBo\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T15:03:55Z",
+      "side": 1,
+      "message": "good point -- i\u0027ll do that in a separate patch",
+      "parentUuid": "AAAAOn//jjo\u003d",
+      "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//lxs\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 4
@@ -65,6 +83,24 @@
       "writtenOn": "2013-05-04T01:32:06Z",
       "side": 1,
       "message": "My concern here is that we are creating session objects this way, but we are not destroying or releasing them. Usually, each session maps to a one database connection, so I am worried that we are going to consume all of the database connections.",
+      "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//VBY\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-14T15:03:55Z",
+      "side": 1,
+      "message": "not sure i follow - this is recycling the session, so it would be alleviating your concern",
+      "parentUuid": "AAAAOn//jjk\u003d",
       "revId": "8f6e4907cec05433343b18ac8e2301cf24454876",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
