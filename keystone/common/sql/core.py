@@ -241,6 +241,7 @@ class Base(object):
 
             if 'sqlite' in connection_dict.drivername:
                 engine_config['poolclass'] = sqlalchemy.pool.StaticPool
+                engine_config['connect_args'] = {'check_same_thread': False}
             elif 'mysql' in connection_dict.drivername:
                 engine_config['listeners'] = [MySQLPingListener()]
 
