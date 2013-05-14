@@ -46,7 +46,7 @@ class TrustRole(sql.ModelBase):
 class Trust(sql.Base, trust.Driver):
     @sql.handle_conflicts(type='trust')
     def create_trust(self, trust_id, trust, roles):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = TrustModel.from_dict(trust)
             ref['id'] = trust_id
@@ -73,7 +73,7 @@ class Trust(sql.Base, trust.Driver):
 
     @sql.handle_conflicts(type='trust')
     def get_trust(self, trust_id):
-        session = self.get_session()
+        session = self.create_session()
         ref = (session.query(TrustModel).
                filter_by(deleted_at=None).
                filter_by(id=trust_id).first())
@@ -90,13 +90,13 @@ class Trust(sql.Base, trust.Driver):
 
     @sql.handle_conflicts(type='trust')
     def list_trusts(self):
-        session = self.get_session()
+        session = self.create_session()
         trusts = session.query(TrustModel).filter_by(deleted_at=None)
         return [trust_ref.to_dict() for trust_ref in trusts]
 
     @sql.handle_conflicts(type='trust')
     def list_trusts_for_trustee(self, trustee_user_id):
-        session = self.get_session()
+        session = self.create_session()
         trusts = (session.query(TrustModel).
                   filter_by(deleted_at=None).
                   filter_by(trustee_user_id=trustee_user_id))
@@ -104,7 +104,7 @@ class Trust(sql.Base, trust.Driver):
 
     @sql.handle_conflicts(type='trust')
     def list_trusts_for_trustor(self, trustor_user_id):
-        session = self.get_session()
+        session = self.create_session()
         trusts = (session.query(TrustModel).
                   filter_by(deleted_at=None).
                   filter_by(trustor_user_id=trustor_user_id))
@@ -112,7 +112,7 @@ class Trust(sql.Base, trust.Driver):
 
     @sql.handle_conflicts(type='trust')
     def delete_trust(self, trust_id):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             trust_ref = session.query(TrustModel).get(trust_id)
             if not trust_ref:

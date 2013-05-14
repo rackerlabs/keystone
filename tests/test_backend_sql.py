@@ -74,7 +74,7 @@ class SqlTests(test.TestCase, sql.Base):
 
 class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_password_hashed(self):
-        session = self.identity_api.get_session()
+        session = self.identity_api.create_session()
         user_ref = self.identity_api._get_user(session, self.user_foo['id'])
         self.assertNotEqual(user_ref['password'], self.user_foo['password'])
 

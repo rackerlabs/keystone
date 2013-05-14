@@ -176,7 +176,7 @@ class Identity(sql.Base, identity.Driver):
         in the list of tenants on the user.
 
         """
-        session = self.get_session()
+        session = self.create_session()
 
         user_ref = None
         tenant_ref = None
@@ -213,11 +213,11 @@ class Identity(sql.Base, identity.Driver):
         return project_ref
 
     def get_project(self, tenant_id):
-        session = self.get_session()
+        session = self.create_session()
         return self._get_project(session, tenant_id).to_dict()
 
     def get_project_by_name(self, tenant_name, domain_id):
-        session = self.get_session()
+        session = self.create_session()
         query = session.query(Project)
         query = query.filter_by(name=tenant_name)
         query = query.filter_by(domain_id=domain_id)
@@ -228,7 +228,7 @@ class Identity(sql.Base, identity.Driver):
         return project_ref.to_dict()
 
     def get_project_users(self, tenant_id):
-        session = self.get_session()
+        session = self.create_session()
         self.get_project(tenant_id)
         query = session.query(User)
         query = query.join(UserProjectGrant)
@@ -239,7 +239,7 @@ class Identity(sql.Base, identity.Driver):
 
     def get_metadata(self, user_id=None, tenant_id=None,
                      domain_id=None, group_id=None):
-        session = self.get_session()
+        session = self.create_session()
 
         if user_id:
             if tenant_id:
@@ -264,7 +264,7 @@ class Identity(sql.Base, identity.Driver):
 
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None):
-        session = self.get_session()
+        session = self.create_session()
         self._get_role(session, role_id)
         if user_id:
             self._get_user(session, user_id)
@@ -294,7 +294,7 @@ class Identity(sql.Base, identity.Driver):
 
     def list_grants(self, user_id=None, group_id=None,
                     domain_id=None, project_id=None):
-        session = self.get_session()
+        session = self.create_session()
         if user_id:
             self._get_user(session, user_id)
         if group_id:
@@ -313,7 +313,7 @@ class Identity(sql.Base, identity.Driver):
 
     def get_grant(self, role_id, user_id=None, group_id=None,
                   domain_id=None, project_id=None):
-        session = self.get_session()
+        session = self.create_session()
         role_ref = self._get_role(session, role_id)
         if user_id:
             self._get_user(session, user_id)
@@ -336,7 +336,7 @@ class Identity(sql.Base, identity.Driver):
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None):
-        session = self.get_session()
+        session = self.create_session()
         self._get_role(session, role_id)
         if user_id:
             self._get_user(session, user_id)
@@ -368,12 +368,12 @@ class Identity(sql.Base, identity.Driver):
                                  domain_id, group_id)
 
     def list_projects(self):
-        session = self.get_session()
+        session = self.create_session()
         tenant_refs = session.query(Project).all()
         return [tenant_ref.to_dict() for tenant_ref in tenant_refs]
 
     def get_projects_for_user(self, user_id):
-        session = self.get_session()
+        session = self.create_session()
         self._get_user(session, user_id)
         query = session.query(UserProjectGrant)
         query = query.filter_by(user_id=user_id)
@@ -398,7 +398,7 @@ class Identity(sql.Base, identity.Driver):
             pass
 
     def get_roles_for_user_and_project(self, user_id, tenant_id):
-        session = self.get_session()
+        session = self.create_session()
         self._get_user(session, user_id)
         self._get_project(session, tenant_id)
         metadata_ref = {}
@@ -407,7 +407,7 @@ class Identity(sql.Base, identity.Driver):
         return list(set(metadata_ref.get('roles', [])))
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        session = self.get_session()
+        session = self.create_session()
         self._get_user(session, user_id)
         self._get_project(session, tenant_id)
         self._get_role(session, role_id)
@@ -442,7 +442,7 @@ class Identity(sql.Base, identity.Driver):
             if len(roles):
                 self.update_metadata(user_id, tenant_id, metadata_ref)
             else:
-                session = self.get_session()
+                session = self.create_session()
                 q = session.query(UserProjectGrant)
                 q = q.filter_by(project_id=tenant_id)
                 q.delete()
@@ -454,7 +454,7 @@ class Identity(sql.Base, identity.Driver):
     @sql.handle_conflicts(type='project')
     def create_project(self, tenant_id, tenant):
         tenant['name'] = clean.project_name(tenant['name'])
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             tenant_ref = Project.from_dict(tenant)
             session.add(tenant_ref)
@@ -463,7 +463,7 @@ class Identity(sql.Base, identity.Driver):
 
     @sql.handle_conflicts(type='project')
     def update_project(self, tenant_id, tenant):
-        session = self.get_session()
+        session = self.create_session()
 
         if 'name' in tenant:
             tenant['name'] = clean.project_name(tenant['name'])
@@ -483,7 +483,7 @@ class Identity(sql.Base, identity.Driver):
 
     @sql.handle_conflicts(type='project')
     def delete_project(self, tenant_id):
-        session = self.get_session()
+        session = self.create_session()
 
         with session.begin():
             tenant_ref = self._get_project(session, tenant_id)
@@ -506,7 +506,7 @@ class Identity(sql.Base, identity.Driver):
     @sql.handle_conflicts(type='metadata')
     def create_metadata(self, user_id, tenant_id, metadata,
                         domain_id=None, group_id=None):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             if user_id:
                 if tenant_id:
@@ -532,7 +532,7 @@ class Identity(sql.Base, identity.Driver):
     @sql.handle_conflicts(type='metadata')
     def update_metadata(self, user_id, tenant_id, metadata,
                         domain_id=None, group_id=None):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             if user_id:
                 if tenant_id:
@@ -563,7 +563,7 @@ class Identity(sql.Base, identity.Driver):
 
     @sql.handle_conflicts(type='domain')
     def create_domain(self, domain_id, domain):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = Domain.from_dict(domain)
             session.add(ref)
@@ -571,7 +571,7 @@ class Identity(sql.Base, identity.Driver):
         return ref.to_dict()
 
     def list_domains(self):
-        session = self.get_session()
+        session = self.create_session()
         refs = session.query(Domain).all()
         return [ref.to_dict() for ref in refs]
 
@@ -582,11 +582,11 @@ class Identity(sql.Base, identity.Driver):
         return ref
 
     def get_domain(self, domain_id):
-        session = self.get_session()
+        session = self.create_session()
         return self._get_domain(session, domain_id).to_dict()
 
     def get_domain_by_name(self, domain_name):
-        session = self.get_session()
+        session = self.create_session()
         try:
             ref = session.query(Domain).filter_by(name=domain_name).one()
         except sql.NotFound:
@@ -595,7 +595,7 @@ class Identity(sql.Base, identity.Driver):
 
     @sql.handle_conflicts(type='domain')
     def update_domain(self, domain_id, domain):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = self._get_domain(session, domain_id)
             old_dict = ref.to_dict()
@@ -610,14 +610,14 @@ class Identity(sql.Base, identity.Driver):
         return ref.to_dict()
 
     def delete_domain(self, domain_id):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = self._get_domain(session, domain_id)
             session.delete(ref)
             session.flush()
 
     def list_user_projects(self, user_id):
-        session = self.get_session()
+        session = self.create_session()
         user = self.get_user(user_id)
         metadata_refs = session\
             .query(UserProjectGrant)\
@@ -639,7 +639,7 @@ class Identity(sql.Base, identity.Driver):
     def create_user(self, user_id, user):
         user['name'] = clean.user_name(user['name'])
         user = utils.hash_user_password(user)
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             user_ref = User.from_dict(user)
             session.add(user_ref)
@@ -647,7 +647,7 @@ class Identity(sql.Base, identity.Driver):
         return identity.filter_user(user_ref.to_dict())
 
     def list_users(self):
-        session = self.get_session()
+        session = self.create_session()
         user_refs = session.query(User)
         return [identity.filter_user(x.to_dict()) for x in user_refs]
 
@@ -658,11 +658,11 @@ class Identity(sql.Base, identity.Driver):
         return user_ref
 
     def get_user(self, user_id):
-        session = self.get_session()
+        session = self.create_session()
         return identity.filter_user(self._get_user(session, user_id).to_dict())
 
     def get_user_by_name(self, user_name, domain_id):
-        session = self.get_session()
+        session = self.create_session()
         query = session.query(User)
         query = query.filter_by(name=user_name)
         query = query.filter_by(domain_id=domain_id)
@@ -676,7 +676,7 @@ class Identity(sql.Base, identity.Driver):
     def update_user(self, user_id, user):
         if 'name' in user:
             user['name'] = clean.user_name(user['name'])
-        session = self.get_session()
+        session = self.create_session()
         if 'id' in user and user_id != user['id']:
             raise exception.ValidationError('Cannot change user ID')
 
@@ -697,7 +697,7 @@ class Identity(sql.Base, identity.Driver):
         return identity.filter_user(user_ref.to_dict(include_extra_dict=True))
 
     def add_user_to_group(self, user_id, group_id):
-        session = self.get_session()
+        session = self.create_session()
         self.get_group(group_id)
         self.get_user(user_id)
         query = session.query(UserGroupMembership)
@@ -713,7 +713,7 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
 
     def check_user_in_group(self, user_id, group_id):
-        session = self.get_session()
+        session = self.create_session()
         self.get_group(group_id)
         self.get_user(user_id)
         query = session.query(UserGroupMembership)
@@ -723,7 +723,7 @@ class Identity(sql.Base, identity.Driver):
             raise exception.NotFound('User not found in group')
 
     def remove_user_from_group(self, user_id, group_id):
-        session = self.get_session()
+        session = self.create_session()
         # We don't check if user or group are still valid and let the remove
         # be tried anyway - in case this is some kind of clean-up operation
         query = session.query(UserGroupMembership)
@@ -737,7 +737,7 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
 
     def list_groups_for_user(self, user_id):
-        session = self.get_session()
+        session = self.create_session()
         self.get_user(user_id)
         query = session.query(UserGroupMembership)
         query = query.filter_by(user_id=user_id)
@@ -745,7 +745,7 @@ class Identity(sql.Base, identity.Driver):
         return [self.get_group(x.group_id) for x in membership_refs]
 
     def list_users_in_group(self, group_id):
-        session = self.get_session()
+        session = self.create_session()
         self.get_group(group_id)
         query = session.query(UserGroupMembership)
         query = query.filter_by(group_id=group_id)
@@ -753,7 +753,7 @@ class Identity(sql.Base, identity.Driver):
         return [self.get_user(x.user_id) for x in membership_refs]
 
     def delete_user(self, user_id):
-        session = self.get_session()
+        session = self.create_session()
 
         ref = session.query(User).get(user_id)
         if not ref:
@@ -779,7 +779,7 @@ class Identity(sql.Base, identity.Driver):
 
     @sql.handle_conflicts(type='group')
     def create_group(self, group_id, group):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = Group.from_dict(group)
             session.add(ref)
@@ -787,7 +787,7 @@ class Identity(sql.Base, identity.Driver):
         return ref.to_dict()
 
     def list_groups(self):
-        session = self.get_session()
+        session = self.create_session()
         refs = session.query(Group).all()
         return [ref.to_dict() for ref in refs]
 
@@ -798,12 +798,12 @@ class Identity(sql.Base, identity.Driver):
         return ref
 
     def get_group(self, group_id):
-        session = self.get_session()
+        session = self.create_session()
         return self._get_group(session, group_id).to_dict()
 
     @sql.handle_conflicts(type='group')
     def update_group(self, group_id, group):
-        session = self.get_session()
+        session = self.create_session()
 
         with session.begin():
             ref = self._get_group(session, group_id)
@@ -819,7 +819,7 @@ class Identity(sql.Base, identity.Driver):
         return ref.to_dict()
 
     def delete_group(self, group_id):
-        session = self.get_session()
+        session = self.create_session()
 
         with session.begin():
             ref = self._get_group(session, group_id)
@@ -843,7 +843,7 @@ class Identity(sql.Base, identity.Driver):
 
     @sql.handle_conflicts(type='credential')
     def create_credential(self, credential_id, credential):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = Credential.from_dict(credential)
             session.add(ref)
@@ -851,7 +851,7 @@ class Identity(sql.Base, identity.Driver):
         return ref.to_dict()
 
     def list_credentials(self):
-        session = self.get_session()
+        session = self.create_session()
         refs = session.query(Credential).all()
         return [ref.to_dict() for ref in refs]
 
@@ -862,12 +862,12 @@ class Identity(sql.Base, identity.Driver):
         return ref
 
     def get_credential(self, credential_id):
-        session = self.get_session()
+        session = self.create_session()
         return self._get_credential(session, credential_id).to_dict()
 
     @sql.handle_conflicts(type='credential')
     def update_credential(self, credential_id, credential):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = self._get_credential(session, credential_id)
             old_dict = ref.to_dict()
@@ -882,7 +882,7 @@ class Identity(sql.Base, identity.Driver):
         return ref.to_dict()
 
     def delete_credential(self, credential_id):
-        session = self.get_session()
+        session = self.create_session()
 
         with session.begin():
             ref = self._get_credential(session, credential_id)
@@ -893,7 +893,7 @@ class Identity(sql.Base, identity.Driver):
 
     @sql.handle_conflicts(type='role')
     def create_role(self, role_id, role):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = Role.from_dict(role)
             session.add(ref)
@@ -901,7 +901,7 @@ class Identity(sql.Base, identity.Driver):
         return ref.to_dict()
 
     def list_roles(self):
-        session = self.get_session()
+        session = self.create_session()
         refs = session.query(Role).all()
         return [ref.to_dict() for ref in refs]
 
@@ -912,12 +912,12 @@ class Identity(sql.Base, identity.Driver):
         return ref
 
     def get_role(self, role_id):
-        session = self.get_session()
+        session = self.create_session()
         return self._get_role(session, role_id).to_dict()
 
     @sql.handle_conflicts(type='role')
     def update_role(self, role_id, role):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = self._get_role(session, role_id)
             old_dict = ref.to_dict()
@@ -932,7 +932,7 @@ class Identity(sql.Base, identity.Driver):
         return ref.to_dict()
 
     def delete_role(self, role_id):
-        session = self.get_session()
+        session = self.create_session()
 
         with session.begin():
             ref = self._get_role(session, role_id)

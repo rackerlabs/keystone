@@ -215,11 +215,13 @@ class Base(object):
     _engine = None
     _sessionmaker = None
 
-    def get_session(self, autocommit=True, expire_on_commit=False):
-        """Return a SQLAlchemy session."""
+    def create_session(self, autocommit=True, expire_on_commit=False):
+        """Return a new SQLAlchemy session."""
         self._engine = self._engine or self.get_engine()
         self._sessionmaker = self._sessionmaker or self.get_sessionmaker(
-            self._engine)
+            self._engine,
+            autocommit=autocommit,
+            expire_on_commit=expire_on_commit)
         return self._sessionmaker()
 
     def get_engine(self, allow_global_engine=True):
