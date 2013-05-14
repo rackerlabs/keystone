@@ -243,6 +243,14 @@ methods = password,token
 password = keystone.auth.plugins.password.Password
 token = keystone.auth.plugins.token.Token
 
+[token_management]
+#token_format = PKI
+#driver = keystone.token_management.providers.pki_token.PkiToken
+
+# uncomment the following two lines to switch over to UUID token provider
+#token_format = UUID
+#driver = keystone.token_management.providers.uuid_token.UuidToken
+
 [filter:debug]
 paste.filter_factory = keystone.common.wsgi:Debug.factory
 

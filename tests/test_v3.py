@@ -21,19 +21,22 @@ TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
 
 class RestfulTestCase(test_content_types.RestfulTestCase):
-    def setUp(self, load_sample_data=True):
+    def setUp(self, load_sample_data=True, configs=[]):
         """Setup for v3 Restful Test Cases.
 
         If a child class wants to create their own sample data
         and provide their own auth data to obtain tokens, then
         load_sample_data should be set to false.
 
+        Child class can provide additional config overrides via configs
+        parameter.
+
         """
         self.config([
             test.etcdir('keystone.conf.sample'),
             test.testsdir('test_overrides.conf'),
             test.testsdir('backend_sql.conf'),
-            test.testsdir('backend_sql_disk.conf')])
+            test.testsdir('backend_sql_disk.conf')] + configs)
 
         sql_util.setup_test_database()
         self.load_backends()
