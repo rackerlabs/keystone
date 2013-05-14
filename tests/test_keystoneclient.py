@@ -62,12 +62,10 @@ class CompatTestCase(test.TestCase):
         super(CompatTestCase, self).tearDown()
 
     def _public_url(self):
-        public_port = self.public_server.socket_info['socket'][1]
-        return "http://localhost:%s/v2.0" % public_port
+        return "http://localhost:%s/v2.0" % self.public_server.port
 
     def _admin_url(self):
-        admin_port = self.admin_server.socket_info['socket'][1]
-        return "http://localhost:%s/v2.0" % admin_port
+        return "http://localhost:%s/v2.0" % self.admin_server.port
 
     def _client(self, admin=False, **kwargs):
         from keystoneclient.v2_0 import client as ks_client
