@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//U+U\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "It might be helpful here to add a description of the change since this commit introduces a lot of new code.",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U+E\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Whitespace issue here. Not sure if it matters in .rst files.",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U98\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Does this have a default that needs to be documented? According to keystone/common/config.py there is a default I believe?",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U9c\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Might be helpful to document what is returned here at line 308 as the return statement is added.",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U88\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Same documentation comment here, it would be helpful to know what is being used for parameters and returned.",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U8U\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Consider using locals dictionary here instead of multiple %s substitutions. \n\u0027%(status)s %(headerlist\u003dheaders)s\u0027 % locals()\n\nThis helps make things a little more readable when dealing with multiple substitutions in messages.",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U8Q\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Should we carry this over to the documentation in doc/source/configuration.rst and list it as the default?",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U74\u003d",
+        "filename": "keystone/token_management/providers/uuid_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Consider adding doc strings for this method?",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U7s\u003d",
+        "filename": "keystone/token_management/providers/uuid_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Consider adding doc strings to this method",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U7Y\u003d",
+        "filename": "keystone/token_management/providers/uuid_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "It looks like this check is common between a couple different methods. Would it be worth it to pull this common functionality out into a separate function? That way when another solution is purposed it only needs to be changed in one place.",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U7I\u003d",
+        "filename": "keystone/token_management/providers/uuid_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Consider adding doc strings to this method",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U7Q\u003d",
+        "filename": "keystone/token_management/providers/uuid_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Same comment as above",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U7E\u003d",
+        "filename": "keystone/token_management/providers/uuid_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Consider adding doc strings to this method",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U68\u003d",
+        "filename": "keystone/token_management/providers/uuid_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Consider adding doc strings to this method",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U64\u003d",
+        "filename": "keystone/token_management/providers/uuid_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Consider adding doc strings to this method",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U6Q\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "(NIT) is \u0027not\u0027 suppose to be \u0027no\u0027?",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//U6I\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-14T15:44:52Z",
+      "side": 1,
+      "message": "Same comment as above",
+      "revId": "0e96222762791307722e7c9aa16069dc87b3e8fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
