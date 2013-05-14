@@ -76,6 +76,7 @@ values are organized into the following sections:
 * ``[signing]`` - cryptographic signatures for PKI based tokens
 * ``[ssl]`` - SSL configuration
 * ``[auth]`` - Authentication plugin configuration
+* ``[token_provider]`` - Token provider configuration
 
 The Keystone configuration file is expected to be named ``keystone.conf``.
 When starting keystone, you can specify a different configuration file to
@@ -141,6 +142,17 @@ attribute of the ``authentication`` request body. If multiple plugins are
 invoked, all plugins must succeed in order to for the entire
 authentication to be successful. Furthermore, all the plugins invoked must
 agree on the ``user_id`` in the ``auth_context``.
+
+Token Provider
+--------------
+
+Keystone supports customizable token providers and they are
+specified in the ``[token_provider]`` section of the configuration file.
+Keystone providers both PKI and UUID token providers with PKI
+token provider enabled as default. However, user may register their own token
+provider by configuring the following properties.
+
+* ``driver`` - token provider driver. Defaults to ``keystone.token.providers.pki_token.Provider``
 
 Certificates for PKI
 --------------------

@@ -404,3 +404,9 @@ def configure():
     for method_name in CONF.auth.methods:
         if method_name not in _DEFAULT_AUTH_METHODS:
             register_str(method_name, group='auth')
+
+    # token provider
+    register_str(
+        'driver',
+        group='token_provider',
+        default='keystone.token.providers.pki_token.Provider')

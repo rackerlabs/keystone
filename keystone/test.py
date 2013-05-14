@@ -41,6 +41,7 @@ from keystone.openstack.common import timeutils
 from keystone import policy
 from keystone import token
 from keystone import trust
+from keystone.token import provider as token_provider
 
 
 do_monkeypatch = not os.getenv('STANDARD_THREADS')
@@ -80,6 +81,7 @@ def initialize_drivers():
     DRIVERS['policy_api'] = policy.Manager()
     DRIVERS['token_api'] = token.Manager()
     DRIVERS['trust_api'] = trust.Manager()
+    DRIVERS['token_provider_api'] = token_provider.Manager()
     return DRIVERS
 
 
