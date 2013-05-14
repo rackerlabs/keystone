@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//WRA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "Should describe what happens if you try to use --strategy\u003darchive, is it ignored or is it an error?",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WQ8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 999,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "Should describe what happens if you try to token_flush when using memcache backend.",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WQ4\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "suggest remove \"from the database\" since kvs isn\u0027t really a database.",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WQ0\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "add the --strategy option for token_flush",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WQk\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "to keep in alphabetical order, should be after keystone.common imports.",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WQA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_add_token_archive.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "should have copyright.",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WP8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_add_token_archive.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "does this need a primary key?",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WOc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_add_token_archive.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "should be default\u003dFalse?",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WPg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_add_token_archive.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "suggest remove nullable\u003dTrue, or use it consistenly on lines 13 and 14.",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WOg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_add_token_archive.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "If the columns here were in the same order as thay are in token.backends.sql TokenBase.",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WPU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_add_token_archive.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "seems a little unsafe, since somebody might have a bunch of flushed tokens in here and now they\u0027re gone. Maybe check if it\u0027s empty first?",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WOY\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "for the archive table, should be default\u003dFalse?",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WOE\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "suggest give a name to the False paramater so reviewers know what it\u0027s for.",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WNo\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "seems like the parameter should make it clear not that deleting is allowed but that deleting will happen. So suggest call it \"do_delete\" or something. Also, could pass in an enumeration or constant value rather than a boolean. Consider:\n\n process_expired_tokens(ARCHIVE)\n\nor \n \n process_expired_tokens(DELETE)\n\nwould be easier to understand.",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WNc\u003d",
+        "filename": "tests/test_backend_kvs.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "suggest give a name for the True argument so reviewers know what it is.",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//WMg\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-14T01:32:19Z",
+      "side": 1,
+      "message": "should this be up in TokenTests rather than in duplicated?",
+      "revId": "11d82c0d7bc56c8f15e8b011dd337639915d5e99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
