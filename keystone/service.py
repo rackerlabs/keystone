@@ -27,6 +27,7 @@ from keystone import identity
 from keystone import policy
 from keystone import routers
 from keystone import token
+from keystone import token_management
 from keystone import trust
 
 
@@ -39,6 +40,7 @@ DRIVERS = dict(
     identity_api=identity.Manager(),
     policy_api=policy.Manager(),
     token_api=token.Manager(),
+    token_management_api=token_management.Manager(),
     trust_api=trust.Manager())
 
 
