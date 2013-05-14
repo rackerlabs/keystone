@@ -94,27 +94,6 @@ class AuthBadRequests(AuthTest):
     def setUp(self):
         super(AuthBadRequests, self).setUp()
 
-    def test_no_external_auth(self):
-        """Verify that _authenticate_external() raises exception if N/A."""
-        self.assertRaises(
-            token.controllers.ExternalAuthNotApplicable,
-            self.controller._authenticate_external,
-            {}, {})
-
-    def test_no_token_in_auth(self):
-        """Verify that _authenticate_token() raises exception if no token."""
-        self.assertRaises(
-            exception.ValidationError,
-            self.controller._authenticate_token,
-            None, {})
-
-    def test_no_credentials_in_auth(self):
-        """Verify that _authenticate_local() raises exception if no creds."""
-        self.assertRaises(
-            exception.ValidationError,
-            self.controller._authenticate_local,
-            None, {})
-
     def test_authenticate_blank_request_body(self):
         """Verify sending empty json dict raises the right exception."""
         self.assertRaises(exception.ValidationError,

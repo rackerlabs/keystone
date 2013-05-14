@@ -97,7 +97,7 @@ class Ec2Extension(wsgi.ExtensionRouter):
             conditions=dict(method=['DELETE']))
 
 
-@dependency.requires('catalog_api', 'ec2_api')
+@dependency.requires('catalog_api', 'ec2_api', 'v2_token_provider_api')
 class Ec2Controller(controller.V2Controller):
     def check_signature(self, creds_ref, credentials):
         signer = ec2_utils.Ec2Signer(creds_ref['secret'])
@@ -165,33 +165,15 @@ class Ec2Controller(controller.V2Controller):
 
         # Validate that the auth info is valid and nothing is disabled
         token.validate_auth_info(self, context, user_ref, tenant_ref)
-
-        # TODO(termie): optimize this call at some point and put it into the
-        #               the return for metadata
-        # fill out the roles in the metadata
-        roles = metadata_ref.get('roles', [])
-        if not roles:
-            raise exception.Unauthorized(message='User not valid for tenant.')
-        roles_ref = [self.identity_api.get_role(context, role_id)
-                     for role_id in roles]
-
-        catalog_ref = self.catalog_api.get_catalog(
+        (token_id, token_data) = self.v2_token_provider_api.issue_token(
             context=context,
             user_id=user_ref['id'],
-            tenant_id=tenant_ref['id'],
-            metadata=metadata_ref)
+            method_names=['password'],
+            expires_at=None,
+            project_id=tenant_ref['id'] if tenant_ref else None,
+            metadata_ref=metadata_ref)
 
-        token_ref = self.token_api.create_token(
-            context, token_id, dict(id=token_id,
-                                    user=user_ref,
-                                    tenant=tenant_ref,
-                                    metadata=metadata_ref))
-
-        # TODO(termie): i don't think the ec2 middleware currently expects a
-        #               full return, but it contains a note saying that it
-        #               would be better to expect a full return
-        return token.controllers.Auth.format_authenticate(
-            token_ref, roles_ref, catalog_ref)
+        return token_data
 
     def create_credential(self, context, user_id, tenant_id):
         """Create a secret/access pair for use with ec2 style auth.
