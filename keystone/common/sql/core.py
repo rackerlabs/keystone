@@ -78,11 +78,14 @@ def initialize_decorator(init):
                             v = str(v)
                         if column.type.length and \
                                 column.type.length < len(v):
-                            #if signing.token_format == 'PKI', the id will
+                            #if this is PKI token, the id will
                             #store it's public key which is very long.
-                            if config.CONF.signing.token_format == 'PKI' and \
-                                    self.__tablename__ == 'token' and \
-                                    k == 'id':
+                            is_pki_token = (
+                                config.CONF.token_management.token_format ==
+                                'PKI')
+                            if (is_pki_token and
+                                    self.__tablename__ == 'token' and
+                                    k == 'id'):
                                 continue
 
                             raise exception.StringLengthExceeded(
