@@ -16,13 +16,16 @@
 
 from keystone import auth
 from keystone.common import logging
+from keystone import config
 from keystone import exception
 from keystone import token
+from keystone.token import provider as token_provider
 
 
 METHOD_NAME = 'token'
 
 LOG = logging.getLogger(__name__)
+CONF = config.CONF
 
 
 class Token(auth.AuthMethodHandler):
@@ -35,19 +38,40 @@ class Token(auth.AuthMethodHandler):
                 raise exception.ValidationError(attribute='id',
                                                 target=METHOD_NAME)
             token_id = auth_payload['id']
+            if len(token_id) > CONF.max_token_size:
+                raise exception.ValidationSizeError(attribute='token',
+                                                    size=CONF.max_token_size)
             token_ref = self.token_api.get_token(context, token_id)
-            user_context.setdefault(
-                'user_id', token_ref['token_data']['token']['user']['id'])
-            # to support Grizzly-3 to Grizzly-RC1 transition
-            expires_at = token_ref['token_data']['token'].get(
-                'expires_at', token_ref['token_data']['token'].get('expires'))
-            user_context.setdefault('expires_at', expires_at)
-            user_context['extras'].update(
-                token_ref['token_data']['token']['extras'])
-            user_context['method_names'].extend(
-                token_ref['token_data']['token']['methods'])
+            if (token_provider.get_token_version(token_ref['token_data']) ==
+                    token_provider.V3):
+                # V3 token
+                user_context.setdefault(
+                    'user_id', token_ref['token_data']['token']['user']['id'])
+                # to support Grizzly-3 to Grizzly-RC1 transition
+                expires_at = token_ref['token_data']['token'].get(
+                    'expires_at',
+                    token_ref['token_data']['token'].get('expires'))
+                user_context.setdefault('expires_at', expires_at)
+                user_context['extras'].update(
+                    token_ref['token_data']['token']['extras'])
+                user_context['method_names'].extend(
+                    token_ref['token_data']['token']['methods'])
+            else:
+                # V2 token
+                user_context.setdefault(
+                    'user_id', token_ref['token_data']['access']['user']['id'])
+                # to support Grizzly-3 to Grizzly-RC1 transition
+                expires = token_ref['token_data']['access']['token']['expires']
+                user_context.setdefault('expires_at', expires)
+                user_context['method_names'].extend(['token'])
+
             if 'trust' in token_ref['token_data']:
                 raise exception.Forbidden()
+            if 'trust_id' in token_ref['metadata']:
+                raise exception.Forbidden()
         except AssertionError as e:
+            LOG.error(e)
+            raise exception.Unauthorized(e)
+        except exception.TokenNotFound as e:
             LOG.error(e)
             raise exception.Unauthorized(e)
