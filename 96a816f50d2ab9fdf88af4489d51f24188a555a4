@@ -16,6 +16,24 @@
       "revId": "96a816f50d2ab9fdf88af4489d51f24188a555a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3//+cQ\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 1849
+      },
+      "writtenOn": "2013-05-15T19:21:03Z",
+      "side": 0,
+      "message": "The unit test will cover this.  And the next step, once this patch lands, is to update devstack to use RPAC for service users.",
+      "parentUuid": "AAAAOn//bw4\u003d",
+      "revId": "96a816f50d2ab9fdf88af4489d51f24188a555a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
