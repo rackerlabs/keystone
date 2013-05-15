@@ -212,15 +212,11 @@ class MySQLPingListener(object):
 
 # Backends
 class Base(object):
-    _engine = None
-    _sessionmaker = None
-
     def get_session(self, autocommit=True, expire_on_commit=False):
         """Return a SQLAlchemy session."""
-        self._engine = self._engine or self.get_engine()
-        self._sessionmaker = self._sessionmaker or self.get_sessionmaker(
-            self._engine)
-        return self._sessionmaker()
+        engine = self.get_engine()
+        sessionmaker = self.get_sessionmaker(engine)
+        return sessionmaker()
 
     def get_engine(self, allow_global_engine=True):
         """Return a SQLAlchemy engine.
