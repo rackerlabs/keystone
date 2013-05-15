@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAO3///Yo\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-15T13:07:42Z",
+      "side": 1,
+      "message": "Need some guidance on how to generate the secret, for now I was just appending _secret, obvs wrong.",
+      "revId": "e484b3a4234a5f9675338469656e0f1250b02434",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3///Y0\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-15T13:07:42Z",
+      "side": 1,
+      "message": "should be defined somewhere else as a common constant",
+      "revId": "e484b3a4234a5f9675338469656e0f1250b02434",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3///Yg\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-15T13:07:42Z",
+      "side": 1,
+      "message": "Any specific format for issued_at?",
+      "revId": "e484b3a4234a5f9675338469656e0f1250b02434",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3///YY\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-15T13:07:42Z",
+      "side": 1,
+      "message": "After reading the api spec - I wasn\u0027t sure what exactly this function and the delete function should do",
+      "revId": "e484b3a4234a5f9675338469656e0f1250b02434",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
