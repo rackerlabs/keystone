@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAO3///SI\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-15T13:52:17Z",
+      "side": 1,
+      "message": "We might still need a blank line here per Brant\u0027s comment in patch set 6.",
+      "revId": "6d6befa21b18c8c1c4a867cb75681ba976b8b0f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
