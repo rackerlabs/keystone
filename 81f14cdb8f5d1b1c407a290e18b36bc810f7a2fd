@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAO3///KM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-15T14:34:48Z",
+      "side": 1,
+      "message": "``token_archive``",
+      "revId": "81f14cdb8f5d1b1c407a290e18b36bc810f7a2fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3///J8\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-15T14:34:48Z",
+      "side": 1,
+      "message": "erm, keystone.config was in the correct order before, and the extra line break is unnecessary (see HACKING regarding import order)",
+      "revId": "81f14cdb8f5d1b1c407a290e18b36bc810f7a2fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3///I4\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-15T14:34:48Z",
+      "side": 1,
+      "message": "if you give this a default\u003d\u0027archive\u0027 kwarg, then...",
+      "revId": "81f14cdb8f5d1b1c407a290e18b36bc810f7a2fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3///I0\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-15T14:34:48Z",
+      "side": 1,
+      "message": "... strategy is None is not possible",
+      "revId": "81f14cdb8f5d1b1c407a290e18b36bc810f7a2fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3///Iw\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-15T14:34:48Z",
+      "side": 1,
+      "message": "and this else block is already not reachable, so please remove that",
+      "revId": "81f14cdb8f5d1b1c407a290e18b36bc810f7a2fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3///Ig\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-15T14:34:48Z",
+      "side": 1,
+      "message": "don\u0027t you also need to redefine the id column to not be a primary key?",
+      "revId": "81f14cdb8f5d1b1c407a290e18b36bc810f7a2fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
