@@ -156,27 +156,22 @@ class Identity(sql.Base, identity.Driver):
         return utils.check_password(password, user_ref.password)
 
     # Identity interface
-    def authenticate(self, user_id=None, tenant_id=None, password=None):
-        """Authenticate based on a user, tenant and password.
 
-        Expects the user object to have a password field and the tenant to be
-        in the list of tenants on the user.
-
-        """
+    def authenticate_user(self, user_id, password):
         session = self.get_session()
-
         user_ref = None
-        tenant_ref = None
-        metadata_ref = {}
-
         try:
             user_ref = self._get_user(session, user_id)
         except exception.UserNotFound:
             raise AssertionError('Invalid user / password')
-
         if not self._check_password(password, user_ref):
             raise AssertionError('Invalid user / password')
+        return user_ref
 
+    def authorize_for_project(self, tenant_id, user_ref):
+        user_id = user_ref['id']
+        tenant_ref = None
+        metadata_ref = {}
         if tenant_id is not None:
             # FIXME(gyee): this should really be
             # get_roles_for_user_and_project() after the dusts settle
@@ -191,7 +186,8 @@ class Identity(sql.Base, identity.Driver):
             except exception.MetadataNotFound:
                 metadata_ref = {}
         user_ref = identity.filter_user(user_ref.to_dict())
-        return (user_ref, tenant_ref, metadata_ref)
+        user_data = user_ref, tenant_ref, metadata_ref
+        return user_data
 
     def _get_project(self, session, project_id):
         project_ref = session.query(Project).get(project_id)

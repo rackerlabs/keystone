@@ -95,27 +95,10 @@ class Identity(identity.Driver):
             raise ValueError(_('Expected dict or list: %s') % type(ref))
 
     # Identity interface
-    def authenticate(self, user_id=None, tenant_id=None, password=None):
-        """Authenticate based on a user, tenant and password.
-
-        Expects the user object to have a password field and the tenant to be
-        in the list of tenants on the user.
-        """
+    def authorize_for_project(self, tenant_id, user_ref):
+        user_id = user_ref['id']
         tenant_ref = None
         metadata_ref = {}
-
-        try:
-            user_ref = self._get_user(user_id)
-        except exception.UserNotFound:
-            raise AssertionError('Invalid user / password')
-
-        try:
-            conn = self.user.get_connection(self.user._id_to_dn(user_id),
-                                            password)
-            if not conn:
-                raise AssertionError('Invalid user / password')
-        except Exception:
-            raise AssertionError('Invalid user / password')
 
         if tenant_id is not None:
             if tenant_id not in self.get_projects_for_user(user_id):
@@ -134,6 +117,22 @@ class Identity(identity.Driver):
 
         user_ref = self._set_default_domain(identity.filter_user(user_ref))
         return (user_ref, tenant_ref, metadata_ref)
+
+    # Identity interface
+
+    def authenticate_user(self, user_id, password):
+        try:
+            user_ref = self._get_user(user_id)
+        except exception.UserNotFound:
+            raise AssertionError('Invalid user / password')
+        try:
+            conn = self.user.get_connection(self.user._id_to_dn(user_id),
+                                            password)
+            if not conn:
+                raise AssertionError('Invalid user / password')
+        except Exception:
+            raise AssertionError('Invalid user / password')
+        return user_ref
 
     def get_project(self, tenant_id):
         return self._set_default_domain(self.project.get(tenant_id))

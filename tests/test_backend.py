@@ -58,27 +58,31 @@ class IdentityTests(object):
 
     def test_authenticate_bad_user(self):
         self.assertRaises(AssertionError,
-                          self.identity_api.authenticate,
+                          self.identity_man.authenticate,
+                          {},
                           user_id=uuid.uuid4().hex,
                           tenant_id=self.tenant_bar['id'],
                           password=self.user_foo['password'])
 
     def test_authenticate_bad_password(self):
         self.assertRaises(AssertionError,
-                          self.identity_api.authenticate,
+                          self.identity_man.authenticate,
+                          {},
                           user_id=self.user_foo['id'],
                           tenant_id=self.tenant_bar['id'],
                           password=uuid.uuid4().hex)
 
     def test_authenticate_bad_project(self):
         self.assertRaises(AssertionError,
-                          self.identity_api.authenticate,
+                          self.identity_man.authenticate,
+                          {},
                           user_id=self.user_foo['id'],
                           tenant_id=uuid.uuid4().hex,
                           password=self.user_foo['password'])
 
     def test_authenticate_no_project(self):
-        user_ref, tenant_ref, metadata_ref = self.identity_api.authenticate(
+        user_ref, tenant_ref, metadata_ref = self.identity_man.authenticate(
+            {},
             user_id=self.user_foo['id'],
             password=self.user_foo['password'])
         # NOTE(termie): the password field is left in user_foo to make
@@ -90,7 +94,8 @@ class IdentityTests(object):
         self.assert_(not metadata_ref)
 
     def test_authenticate(self):
-        user_ref, tenant_ref, metadata_ref = self.identity_api.authenticate(
+        user_ref, tenant_ref, metadata_ref = self.identity_man.authenticate(
+            {},
             user_id=self.user_sna['id'],
             tenant_id=self.tenant_bar['id'],
             password=self.user_sna['password'])
@@ -107,7 +112,8 @@ class IdentityTests(object):
     def test_authenticate_role_return(self):
         self.identity_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_baz['id'], self.role_admin['id'])
-        user_ref, tenant_ref, metadata_ref = self.identity_api.authenticate(
+        user_ref, tenant_ref, metadata_ref = self.identity_man.authenticate(
+            {},
             user_id=self.user_foo['id'],
             tenant_id=self.tenant_baz['id'],
             password=self.user_foo['password'])
@@ -124,7 +130,8 @@ class IdentityTests(object):
         self.identity_api.create_user(user['id'], user)
         self.identity_api.add_user_to_project(self.tenant_baz['id'],
                                               user['id'])
-        user_ref, tenant_ref, metadata_ref = self.identity_api.authenticate(
+        user_ref, tenant_ref, metadata_ref = self.identity_man.authenticate(
+            {},
             user_id=user['id'],
             tenant_id=self.tenant_baz['id'],
             password=user['password'])

@@ -23,29 +23,24 @@ from keystone import identity
 
 class Identity(kvs.Base, identity.Driver):
     # Public interface
-    def authenticate(self, user_id=None, tenant_id=None, password=None):
-        """Authenticate based on a user, tenant and password.
 
-        Expects the user object to have a password field and the tenant to be
-        in the list of tenants on the user.
-
-        """
+    def authenticate_user(self, user_id, password):
         user_ref = None
-        tenant_ref = None
-        metadata_ref = {}
-
         try:
             user_ref = self._get_user(user_id)
         except exception.UserNotFound:
             raise AssertionError('Invalid user / password')
-
         if not utils.check_password(password, user_ref.get('password')):
             raise AssertionError('Invalid user / password')
+        return user_ref
 
+    def authorize_for_project(self, tenant_id, user_ref):
+        user_id = user_ref['id']
+        tenant_ref = None
+        metadata_ref = {}
         if tenant_id is not None:
             if tenant_id not in self.get_projects_for_user(user_id):
                 raise AssertionError('Invalid tenant')
-
             try:
                 tenant_ref = self.get_project(tenant_id)
                 metadata_ref = self.get_metadata(user_id, tenant_id)
@@ -54,8 +49,8 @@ class Identity(kvs.Base, identity.Driver):
                 metadata_ref = {}
             except exception.MetadataNotFound:
                 metadata_ref = {}
-
-        return (identity.filter_user(user_ref), tenant_ref, metadata_ref)
+        auth_data = identity.filter_user(user_ref), tenant_ref, metadata_ref
+        return auth_data
 
     def get_project(self, tenant_id):
         try:
