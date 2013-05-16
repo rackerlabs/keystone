@@ -46,9 +46,13 @@ class Error(StandardError):
                 raise e
             else:
                 LOG.warning('missing exception kwargs (programmer error)')
-                message = self.__doc__
+                message = _(self._clean_message(self.__doc__))
 
         super(Error, self).__init__(message)
+
+    def _clean_message(self, message):
+        """Clean up a docstr for API presentation."""
+        return re.sub('[ \n]+', ' ', message).strip()
 
     def _build_message(self, message, **kwargs):
         """Builds and returns an exception message.
@@ -56,10 +60,7 @@ class Error(StandardError):
         :raises: KeyError given insufficient kwargs
 
         """
-        if not message:
-            message = re.sub('[ \n]+', ' ', self.__doc__ % kwargs)
-            message = message.strip()
-        return message
+        return message or _(self._clean_message(self.__doc__)) % kwargs
 
 
 class ValidationError(Error):
