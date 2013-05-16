@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAO3//8hU\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-05-16T14:34:49Z",
+      "side": 1,
+      "message": "you shouldn\u0027t use _() like _(self._clean_message(self.__doc__)), because self._clean_message(self.__doc__)) can be translate. The right way to use _() function should like below sample code line.\n\n_(\"This is a sample message string\")",
+      "revId": "fd58d1a1bec85bcde269bd933fb1e07140715703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3//8hQ\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-05-16T14:34:49Z",
+      "side": 1,
+      "message": "please check my above comments",
+      "revId": "fd58d1a1bec85bcde269bd933fb1e07140715703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
