@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAO3//8RM\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-16T16:08:44Z",
+      "side": 1,
+      "message": "(NIT) this is really pick but should the indentation of \u0027expire...\u0027 be on the same level as \u0027autocommit..\u0027 on the line above?",
+      "revId": "4e0cfb12f75da943d168d9c4889837498ac06292",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
