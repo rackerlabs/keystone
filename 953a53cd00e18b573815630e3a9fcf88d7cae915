@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAO3//+vU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-05-16T08:13:36Z",
+      "side": 1,
+      "message": "As already mentioned, commit message should be wrapped, or it\u0027s hard to read in a terminal:\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "953a53cd00e18b573815630e3a9fcf88d7cae915",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
