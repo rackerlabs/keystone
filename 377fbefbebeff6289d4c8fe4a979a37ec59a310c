@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAO3//8Fc\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-16T17:27:05Z",
+      "side": 1,
+      "message": "the other backends are named using singular nouns (identity, catalog, token, trust, etc) ... please follow suit here",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3//8FU\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-16T17:27:05Z",
+      "side": 1,
+      "message": "credential",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3//8FQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-16T17:27:05Z",
+      "side": 1,
+      "message": "credential",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3//8FI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-16T17:27:05Z",
+      "side": 1,
+      "message": "credential_api",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3//8Ec\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-16T17:27:05Z",
+      "side": 1,
+      "message": "why not just simplify this like all the other migrations? you don\u0027t need any of the intermediate references\n\n  session \u003d sql.orm.sessionmaker(bind\u003dmigrate_engine)()",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3//8EY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-16T17:27:05Z",
+      "side": 1,
+      "message": "can you explain what the impact of the bug is on the code that you\u0027re writing, rather than just linking to a bug?",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3//8EU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-16T17:27:05Z",
+      "side": 1,
+      "message": "would much rather these be a set of explicit drops, but maybe that\u0027s what the bug above is about?",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
