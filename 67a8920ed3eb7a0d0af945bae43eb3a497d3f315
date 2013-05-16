@@ -223,6 +223,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAO3//9e0\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-16T02:10:56Z",
+      "side": 1,
+      "message": "I don\u0027t think this code should be inside keystone, but if redundancy can be eliminated... please do!",
+      "parentUuid": "AAAAOn//uf0\u003d",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//ugE\u003d",
         "filename": "httpd/keystone.py",
         "patchSetId": 8
@@ -234,6 +252,24 @@
       "writtenOn": "2013-04-25T22:40:38Z",
       "side": 1,
       "message": "suggest exit(1)",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3//9e4\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-16T02:10:56Z",
+      "side": 1,
+      "message": "sys.exit(\"The %s file could not be found.\" % paste_config_value)",
+      "parentUuid": "AAAAOn//ugE\u003d",
       "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
