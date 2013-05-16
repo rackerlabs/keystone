@@ -46,7 +46,7 @@ class Error(StandardError):
                 raise e
             else:
                 LOG.warning('missing exception kwargs (programmer error)')
-                message = self.__doc__
+                message = _(self.__doc__)
 
         super(Error, self).__init__(message)
 
@@ -57,8 +57,9 @@ class Error(StandardError):
 
         """
         if not message:
-            message = re.sub('[ \n]+', ' ', self.__doc__ % kwargs)
+            message = re.sub('[ \n]+', ' ', self.__doc__)
             message = message.strip()
+            message = _(message) % kwargs
         return message
 
 
