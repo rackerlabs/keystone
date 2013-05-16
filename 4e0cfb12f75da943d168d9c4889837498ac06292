@@ -34,6 +34,24 @@
       "revId": "4e0cfb12f75da943d168d9c4889837498ac06292",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAO3//8LU\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-16T16:34:55Z",
+      "side": 1,
+      "message": "gotcha, good to know. Just wanted to make sure. Thanks!",
+      "parentUuid": "AAAAO3//8PQ\u003d",
+      "revId": "4e0cfb12f75da943d168d9c4889837498ac06292",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
