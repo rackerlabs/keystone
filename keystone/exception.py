@@ -48,7 +48,7 @@ class Error(StandardError):
                 LOG.warning('missing exception kwargs (programmer error)')
                 message = self.__doc__
 
-        super(Error, self).__init__(message)
+        super(Error, self).__init__(_(message))
 
     def _build_message(self, message, **kwargs):
         """Builds and returns an exception message.
