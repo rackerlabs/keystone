@@ -206,6 +206,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAO3//754\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-16T18:16:17Z",
+      "side": 1,
+      "message": "this is how glance does it, but nova does it with a single config option in DEFAULT (api_paste_config)\n\nhttps://github.com/openstack/glance/blob/master/etc/glance-api.conf#L348\n\ni prefer [paste_deploy] myself",
+      "parentUuid": "AAAAOn//ugQ\u003d",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//uf0\u003d",
         "filename": "httpd/keystone.py",
         "patchSetId": 8
