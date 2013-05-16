@@ -224,6 +224,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH///rY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-05-16T21:31:55Z",
+      "side": 1,
+      "message": "I prefer separate section too, we might want to add \"flavor\" like Glance, with differently configured pipelines.\nAFAICT Nova started separating options out of [DEFAULT] into logically organized sections, overcrowded single section is not very user-friendly.",
+      "parentUuid": "AAAAO3//754\u003d",
+      "revId": "67a8920ed3eb7a0d0af945bae43eb3a497d3f315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//uf0\u003d",
         "filename": "httpd/keystone.py",
         "patchSetId": 8
