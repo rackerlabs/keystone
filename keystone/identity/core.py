@@ -62,6 +62,11 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.identity.driver)
 
+    def authenticate(self, context, user_id=None,
+                     tenant_id=None, password=None):
+        user_ref = self.driver.authenticate_user(user_id, password)
+        return self.driver.verify_user_in_project(tenant_id, user_ref)
+
     def create_user(self, context, user_id, user_ref):
         user = user_ref.copy()
         if 'enabled' not in user:
@@ -86,12 +91,17 @@ class Manager(manager.Manager):
 class Driver(object):
     """Interface description for an Identity driver."""
 
-    def authenticate(self, user_id=None, tenant_id=None, password=None):
+    def authenticate_user(self, user_id, password):
         """Authenticate a given user, tenant and password.
-
         :returns: (user_ref, tenant_ref, metadata_ref)
         :raises: AssertionError
+        """
+        raise exception.NotImplemented()
 
+    def verify_user_in_project(self, tenant_id, user_ref):
+        """Authenticate a given user, tenant and password.
+        :returns: (user_ref, tenant_ref, metadata_ref)
+        :raises: AssertionError
         """
         raise exception.NotImplemented()
 
