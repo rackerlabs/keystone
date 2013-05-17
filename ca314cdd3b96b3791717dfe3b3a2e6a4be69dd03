@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//+Ww\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-17T13:35:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH///XQ\u003d",
+      "revId": "ca314cdd3b96b3791717dfe3b3a2e6a4be69dd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH///XM\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-17T00:02:17Z",
       "side": 1,
       "message": "use self._get_user() here?",
+      "revId": "ca314cdd3b96b3791717dfe3b3a2e6a4be69dd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//+Wc\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 758,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-17T13:35:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH///XM\u003d",
       "revId": "ca314cdd3b96b3791717dfe3b3a2e6a4be69dd03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//+V4\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-17T13:35:20Z",
+      "side": 1,
+      "message": "there\u0027s no bug fix - note that i removed valid\u003dTrue from the filter and checked it here instead",
+      "parentUuid": "AAAAPH///V8\u003d",
+      "revId": "ca314cdd3b96b3791717dfe3b3a2e6a4be69dd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH///VU\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2013-05-17T00:02:17Z",
       "side": 1,
       "message": "this looks like it\u0027s fixing a different bug.",
+      "revId": "ca314cdd3b96b3791717dfe3b3a2e6a4be69dd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//+Vk\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-17T13:35:20Z",
+      "side": 1,
+      "message": "same as above; using .get() and checking validity after the ref is returned. don\u0027t have benchmarks, but i suspect this will be faster for valid tokens and slower for invalid tokens",
+      "parentUuid": "AAAAPH///VU\u003d",
       "revId": "ca314cdd3b96b3791717dfe3b3a2e6a4be69dd03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
