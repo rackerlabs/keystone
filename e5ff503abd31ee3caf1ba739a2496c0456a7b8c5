@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//9JM\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-17T20:26:23Z",
+      "side": 1,
+      "message": "this indicates that the ldap driver won\u0027t return a domain_id, even when one should be there? this would fail the v3 API test suite\n\nin other words \"tenant_attribute_ignore\" should impact how the ldap driver interacts with an ldap server, not how the driver responds to the controller",
+      "revId": "e5ff503abd31ee3caf1ba739a2496c0456a7b8c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
