@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//9c0\u003d",
+        "filename": "README.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-05-17T18:11:51Z",
+      "side": 1,
+      "message": "small  typo: additionl  should be addition,",
+      "revId": "f762b331fe0c3d7a184b66606e576fbbc30b181a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//9cw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 1134,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-05-17T18:11:51Z",
+      "side": 1,
+      "message": "Nice!!!!",
+      "revId": "f762b331fe0c3d7a184b66606e576fbbc30b181a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
