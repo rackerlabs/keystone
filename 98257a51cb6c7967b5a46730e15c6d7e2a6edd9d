@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//+L8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-17T14:25:31Z",
+      "side": 1,
+      "message": "please don\u0027t commit commented out code",
+      "revId": "98257a51cb6c7967b5a46730e15c6d7e2a6edd9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//+L0\u003d",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-17T14:25:31Z",
+      "side": 1,
+      "message": "CredentialModel",
+      "revId": "98257a51cb6c7967b5a46730e15c6d7e2a6edd9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
