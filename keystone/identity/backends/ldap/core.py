@@ -108,7 +108,7 @@ class Identity(identity.Driver):
             user_ref = self._get_user(user_id)
         except exception.UserNotFound:
             raise AssertionError('Invalid user / password')
-
+        conn = None
         try:
             conn = self.user.get_connection(self.user._id_to_dn(user_id),
                                             password)
@@ -116,6 +116,9 @@ class Identity(identity.Driver):
                 raise AssertionError('Invalid user / password')
         except Exception:
             raise AssertionError('Invalid user / password')
+        finally:
+            if conn:
+                conn.unbind_s()
 
         if tenant_id is not None:
             if tenant_id not in self.get_projects_for_user(user_id):
@@ -573,6 +576,8 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
             # places, and is not part of the exposed API, it's easier for us to
             # just ignore this instead of raising exception.Conflict.
             pass
+        finally:
+            conn.unbind_s()
 
     def remove_user(self, tenant_id, user_id):
         conn = self.get_connection()
@@ -583,6 +588,8 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
                             self.user_api._id_to_dn(user_id))])
         except ldap.NO_SUCH_ATTRIBUTE:
             raise exception.NotFound(user_id)
+        finally:
+            conn.unbind_s()
 
     def get_users(self, tenant_id, role_id=None):
         tenant = self._ldap_get(tenant_id)
@@ -698,7 +705,8 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                 conn.add_s(role_dn, attrs)
             except Exception as inst:
                     raise inst
-
+        finally:
+            conn.unbind_s()
         return UserRoleAssociation(
             role_id=role_id,
             user_id=user_id,
@@ -726,6 +734,8 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
 
         except ldap.NO_SUCH_ATTRIBUTE:
             raise exception.UserNotFound(user_id=user_id)
+        finally:
+            conn.unbind_s()
 
     def get_role_assignments(self, tenant_id):
         conn = self.get_connection()
@@ -736,6 +746,8 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
             roles = conn.search_s(tenant_dn, ldap.SCOPE_ONELEVEL, query)
         except ldap.NO_SUCH_OBJECT:
             return []
+        finally:
+            conn.unbind_s()
 
         res = []
         for role_dn, attrs in roles:
@@ -774,6 +786,8 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                 roles = conn.search_s(tenant_dn, ldap.SCOPE_ONELEVEL, query)
             except ldap.NO_SUCH_OBJECT:
                 return []
+            finally:
+                conn.unbind_s()
 
             res = []
             for role_dn, _ in roles:
@@ -789,6 +803,8 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                                       query)
             except ldap.NO_SUCH_OBJECT:
                 return []
+            finally:
+                conn.unbind_s()
 
             res = []
             for role_dn, _ in roles:
@@ -813,6 +829,8 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                     raise inst
         except ldap.NO_SUCH_OBJECT:
             pass
+        finally:
+            conn.unbind_s()
 
     def update(self, role_id, role):
         if role['id'] != role_id:
@@ -836,12 +854,13 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                 conn.delete_s(role_dn)
         except ldap.NO_SUCH_OBJECT:
             pass
+        finally:
+            conn.unbind_s()
         super(RoleApi, self).delete(id)
 
 # TODO(spzala): this is only placeholder for group and domain role support
 # which will be added under bug 1101287
     def roles_delete_subtree_by_type(self, id, type):
-        conn = self.get_connection()
         query = '(objectClass=%s)' % self.object_class
         dn = None
         if type == 'Group':
@@ -849,6 +868,7 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
         if type == 'Domain':
             dn = self.domain_api._id_to_dn(id)
         if dn:
+            conn = self.get_connection()
             try:
                 roles = conn.search_s(dn, ldap.SCOPE_ONELEVEL,
                                       query, ['%s' % '1.1'])
@@ -856,6 +876,8 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
                     conn.delete_s(role_dn)
             except ldap.NO_SUCH_OBJECT:
                 pass
+            finally:
+                conn.unbind_s()
 
 
 class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
@@ -920,6 +942,8 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
             raise exception.Conflict(_(
                 'User %(user_id)s is already a member of group %(group_id)s') %
                 {'user_id': user_id, 'group_id': group_id})
+        finally:
+            conn.unbind_s()
 
     def remove_user(self, user_id, group_id):
         conn = self.get_connection()
@@ -931,6 +955,8 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
                   self.user_api._id_to_dn(user_id))])
         except ldap.NO_SUCH_ATTRIBUTE:
             raise exception.UserNotFound(user_id=user_id)
+        finally:
+            conn.unbind_s()
 
     def list_user_groups(self, user_id):
         """Return a list of groups for which the user is a member."""
@@ -950,6 +976,8 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
                                   query, ['%s' % self.member_attribute])
         except ldap.NO_SUCH_OBJECT:
             return []
+        finally:
+            conn.unbind_s()
         users = []
         for dn, member in attrs:
             user_dns = member[self.member_attribute]
