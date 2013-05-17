@@ -70,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH///Qk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-17T01:58:43Z",
+      "side": 1,
+      "message": "I don\u0027t see exceptions used.",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAO3//8Ec\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
         "patchSetId": 10
@@ -115,6 +132,125 @@
       "writtenOn": "2013-05-16T17:27:05Z",
       "side": 1,
       "message": "would much rather these be a set of explicit drops, but maybe that\u0027s what the bug above is about?",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH///Qs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-17T01:58:43Z",
+      "side": 1,
+      "message": "use single-quotes per PEP8. (this applies at 43, 59)",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH///Qo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-17T01:58:43Z",
+      "side": 1,
+      "message": "tenant_table isn\u0027t used.",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH///Qc\u003d",
+        "filename": "keystone/credentials/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-17T01:58:43Z",
+      "side": 1,
+      "message": "for alphabetical order, move keystone.credentials up above keystone.exception",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH///QE\u003d",
+        "filename": "keystone/credentials/routers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-17T01:58:43Z",
+      "side": 1,
+      "message": "would be nice to have some whitespace here.",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH///QA\u003d",
+        "filename": "keystone/credentials/routers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-17T01:58:43Z",
+      "side": 1,
+      "message": "I don\u0027t see wsgi used.",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH///Pw\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-17T01:58:43Z",
+      "side": 1,
+      "message": "(nit) could leave these in alphabetical order",
+      "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH///Po\u003d",
+        "filename": "tests/test_v3_credentials.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-17T01:58:43Z",
+      "side": 1,
+      "message": "suggest add tests for list credentials when they don\u0027t exist, create when already exists, update when doesn\u0027t exist, delete when doesn\u0027t exist.",
       "revId": "377fbefbebeff6289d4c8fe4a979a37ec59a310c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
