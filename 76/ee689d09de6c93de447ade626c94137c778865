@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Loic Dachary <loic@dachary.org>
+Verified+1: SmokeStack
+Code-Review+1: Steven Hardy <shardy@redhat.com>
+Approved+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Jamie Lennox <jlennox@redhat.com>
+Code-Review+1: Robert Hyerle <hyerle@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 17 May 2013 17:44:51 +0000
+Reviewed-on: https://review.openstack.org/27653
+Project: openstack/keystone
+Branch: refs/heads/master
