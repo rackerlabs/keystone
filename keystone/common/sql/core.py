@@ -1,6 +1,7 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
 
 # Copyright 2012 OpenStack LLC
+# Copyright 2013 IBM Corp.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
@@ -226,9 +227,10 @@ class Base(object):
 
     def get_session(self, autocommit=True, expire_on_commit=False):
         """Return a SQLAlchemy session."""
-        self._engine = self._engine or self.get_engine()
-        self._sessionmaker = self._sessionmaker or self.get_sessionmaker(
-            self._engine)
+        if not self._engine:
+            self._engine = self.get_engine()
+            self._sessionmaker = self.get_sessionmaker(self._engine)
+            register_global_engine_callback(self._clear_engine)
         return self._sessionmaker()
 
     def get_engine(self, allow_global_engine=True):
@@ -278,6 +280,10 @@ class Base(object):
             bind=engine,
             autocommit=autocommit,
             expire_on_commit=expire_on_commit)
+
+    def _clear_engine(self):
+        self._engine = None
+        self._sessionmaker = None
 
 
 def handle_conflicts(type='object'):
