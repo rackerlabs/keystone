@@ -34,8 +34,9 @@ from keystone.openstack.common import jsonutils
 
 CONF = config.CONF
 
-# maintain a single engine reference for sqlite in-memory
+# maintain a single engine reference for sqlalchemy engine
 GLOBAL_ENGINE = None
+GLOBAL_ENGINE_CALLBACKS = []
 
 
 ModelBase = declarative.declarative_base()
@@ -96,7 +97,19 @@ ModelBase.__init__ = initialize_decorator(ModelBase.__init__)
 
 def set_global_engine(engine):
     global GLOBAL_ENGINE
+    global GLOBAL_ENGINE_CALLBACKS
+
     GLOBAL_ENGINE = engine
+
+    for cb in GLOBAL_ENGINE_CALLBACKS:
+        cb()
+    GLOBAL_ENGINE_CALLBACKS = []
+
+
+def register_global_engine_callback(cb_fn):
+    global GLOBAL_ENGINE_CALLBACKS
+
+    GLOBAL_ENGINE_CALLBACKS.append(cb_fn)
 
 
 # Special Fields
