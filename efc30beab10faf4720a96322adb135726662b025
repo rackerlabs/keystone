@@ -16,6 +16,24 @@
       "revId": "efc30beab10faf4720a96322adb135726662b025",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//7bs\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-19T21:35:47Z",
+      "side": 0,
+      "message": "Hi Brant, thought comment is unnecessary because the exception is self explanatory.",
+      "parentUuid": "AAAAPH///T0\u003d",
+      "revId": "efc30beab10faf4720a96322adb135726662b025",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
