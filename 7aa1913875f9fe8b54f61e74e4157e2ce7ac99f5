@@ -2,6 +2,142 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPH//45k\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:02:09Z",
+      "side": 1,
+      "message": "Should the function be called delete_tokens_for_user since it deletes multiple tokens?",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//47k\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:02:09Z",
+      "side": 1,
+      "message": "is this where you want to check for TokenNotFound?",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//47w\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:02:09Z",
+      "side": 1,
+      "message": "it seems unneccessary and confusing to me to check for this error here, because we just got the list of tokens, so deleting one of them shouldn\u0027t fail.",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//47U\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:02:09Z",
+      "side": 1,
+      "message": "Check for TokenNotFound here?",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//47Q\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:02:09Z",
+      "side": 1,
+      "message": "How would this happen, since you just got the list of tokens?",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//47A\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:02:09Z",
+      "side": 1,
+      "message": "This is confusing ... if the trust_id is set, then don\u0027t use user_id? This function could use comments to explain what it\u0027s doing.",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//454\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:02:09Z",
+      "side": 1,
+      "message": "Suggest \n\n Invalidates all tokens for a user.",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//45I\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:02:09Z",
+      "side": 1,
+      "message": "Add an explanation of what happens when tenant_id is None or when trust_id is None.",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//U3A\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 1
