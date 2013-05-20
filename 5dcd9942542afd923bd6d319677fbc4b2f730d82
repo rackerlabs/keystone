@@ -16,6 +16,24 @@
       "revId": "5dcd9942542afd923bd6d319677fbc4b2f730d82",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//5LM\u003d",
+        "filename": "tests/test_sql_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T20:41:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//6dk\u003d",
+      "revId": "5dcd9942542afd923bd6d319677fbc4b2f730d82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
