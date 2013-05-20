@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//57k\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_username_lenght.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-20T16:43:14Z",
+      "side": 1,
+      "message": "typo in filename (lenght)",
+      "revId": "8ff5a963ea31e4baddbf8ed71bffa239dd4fb875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//57E\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-20T16:43:14Z",
+      "side": 1,
+      "message": "drop all the assert equal about schema versions -- they\u0027re already checked in _migrate()",
+      "revId": "8ff5a963ea31e4baddbf8ed71bffa239dd4fb875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
