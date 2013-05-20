@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//6bc\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-20T14:09:50Z",
+      "side": 1,
+      "message": "Advise ordering the formal imports in alphabetical order",
+      "revId": "7b92474300dfea059d84b7e125376843b39940a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
