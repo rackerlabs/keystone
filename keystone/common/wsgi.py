@@ -603,10 +603,14 @@ def render_response(body=None, status=None, headers=None):
 
 def render_exception(error):
     """Forms a WSGI response based on the current error."""
+    if isinstance(error.message, unicode):
+        msg = error.message
+    else:
+        msg = str(error)
     body = {'error': {
         'code': error.code,
         'title': error.title,
-        'message': str(error)
+        'message': msg
     }}
     if isinstance(error, exception.AuthPluginException):
         body['error']['identity'] = error.authentication
