@@ -73,6 +73,30 @@
 # or a module with notify() method:
 # onready = keystone.common.systemd
 
+# Log output to standard error
+# use_stderr = True
+
+# Format string to use for log messages with context
+# logging_context_format_string = %(asctime)s.%(msecs)03d %(process)d %(levelname)s %(name)s [%(request_id)s %(user)s %(tenant)s] %(instance)s%(message)s
+
+# Format string to use for log messages without context
+# logging_default_format_string = %(asctime)s.%(msecs)03d %(process)d %(levelname)s %(name)s [-] %(instance)s%(message)s
+
+# Data to append to log format when level is DEBUG
+# logging_debug_format_suffix = %(funcName)s %(pathname)s:%(lineno)d
+
+# Prefix each line of exception output with this format
+# logging_exception_prefix = %(asctime)s.%(msecs)03d %(process)d TRACE %(name)s %(instance)s
+
+# List of logger=LEVEL pairs
+# default_log_levels = 'amqplib=WARN', 'sqlalchemy=WARN', 'boto=WARN', 'suds=INFO', 'keystone=INFO', 'eventlet.wsgi.server=WARN'
+
+# Publish error events
+# publish_errors = False
+
+# Make deprecations fatal
+# fatal_deprecations = False
+
 [sql]
 # The SQLAlchemy connection string used to connect to the database
 # connection = sqlite:///keystone.db
