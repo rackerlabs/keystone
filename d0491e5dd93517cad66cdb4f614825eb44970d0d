@@ -16,6 +16,24 @@
       "revId": "d0491e5dd93517cad66cdb4f614825eb44970d0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//5KY\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T20:43:18Z",
+      "side": 1,
+      "message": "It\u0027s calling whatever function/functor was registered on register_engine_callback. Should I add a comment? And if so, what should it say?",
+      "parentUuid": "AAAAPH//6c8\u003d",
+      "revId": "d0491e5dd93517cad66cdb4f614825eb44970d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
