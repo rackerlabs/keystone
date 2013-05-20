@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//44g\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2013-05-20T22:05:00Z",
+      "side": 1,
+      "message": "Looking at this again, it appears keystone doesn\u0027t do any string translations at module import time ... so I\u0027ve moved this",
+      "parentUuid": "AAAAOn//eI4\u003d",
+      "revId": "3fe820ceaa38c77fa5ea8d68c3d5257d3ca2c0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//eI0\u003d",
         "filename": "bin/keystone-manage",
         "patchSetId": 1
@@ -64,6 +82,24 @@
       "writtenOn": "2013-05-10T18:49:45Z",
       "side": 1,
       "message": "Done",
+      "parentUuid": "AAAAOn//dN8\u003d",
+      "revId": "3fe820ceaa38c77fa5ea8d68c3d5257d3ca2c0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//45o\u003d",
+        "filename": "keystone/openstack/common/gettextutils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2013-05-20T22:05:00Z",
+      "side": 1,
+      "message": "It\u0027s this way because oslo\u0027s update.py changes \u0027oslo\u0027 to \u0027keystone\u0027",
       "parentUuid": "AAAAOn//dN8\u003d",
       "revId": "3fe820ceaa38c77fa5ea8d68c3d5257d3ca2c0a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
