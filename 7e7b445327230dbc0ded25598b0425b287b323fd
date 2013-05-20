@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//5A0\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T21:42:12Z",
+      "side": 1,
+      "message": "suggest use a named argument for a named parameter, so change \"token_data\" to \"token_data\u003dtoken_data\".",
+      "revId": "7e7b445327230dbc0ded25598b0425b287b323fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//4/o\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T21:42:12Z",
+      "side": 1,
+      "message": "suggest add some comment as to what happens if token_data is None vs when it\u0027s not None. e.g., if token_data is None then the \"expired\" tokens are removed only, but if token_data is not None then that token is also added.",
+      "revId": "7e7b445327230dbc0ded25598b0425b287b323fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//5AY\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T21:42:12Z",
+      "side": 1,
+      "message": "suggest raise useful exceptions rather than return codes, especially Boolean return codes.",
+      "revId": "7e7b445327230dbc0ded25598b0425b287b323fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//4/g\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T21:42:12Z",
+      "side": 1,
+      "message": "suggest raise a useful exception.",
+      "revId": "7e7b445327230dbc0ded25598b0425b287b323fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//4/Y\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T21:42:12Z",
+      "side": 1,
+      "message": "There\u0027s a lot of duplicated code with _flush_user_list_cas, suggest move common code out to another function.",
+      "revId": "7e7b445327230dbc0ded25598b0425b287b323fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//4/A\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T21:42:12Z",
+      "side": 1,
+      "message": "Doesn\u0027t _flush_user_list_cas need to know the length to shrink the token list to?",
+      "revId": "7e7b445327230dbc0ded25598b0425b287b323fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//4+0\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T21:42:12Z",
+      "side": 1,
+      "message": "Doesn\u0027t _flush_revocation_list_cas need to know the length to shrink the list to?",
+      "revId": "7e7b445327230dbc0ded25598b0425b287b323fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//498\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T21:42:12Z",
+      "side": 1,
+      "message": "I think there should be a testcase for the case when the number of retries is exceeded.",
+      "revId": "7e7b445327230dbc0ded25598b0425b287b323fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
