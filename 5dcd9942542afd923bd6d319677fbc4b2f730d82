@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//6dk\u003d",
+        "filename": "tests/test_sql_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-20T13:55:44Z",
+      "side": 1,
+      "message": "Should we consider removing some of the newlines in this test to fit the existing conventions in this file?",
+      "revId": "5dcd9942542afd923bd6d319677fbc4b2f730d82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
