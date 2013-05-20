@@ -14,7 +14,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import gettext
 import os
 import sys
 
@@ -22,8 +21,6 @@ from oslo.config import cfg
 
 from keystone.common import logging
 
-
-gettext.install('keystone', unicode=1)
 
 _DEFAULT_LOG_FORMAT = "%(asctime)s %(levelname)8s [%(name)s] %(message)s"
 _DEFAULT_LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -78,8 +75,7 @@ CONF = cfg.CONF
 
 
 def setup_logging(conf):
-    """
-    Sets up the logging options for a log with supplied name
+    """Sets up the logging options for a log with supplied name
 
     :param conf: a cfg.ConfOpts object
     """
@@ -270,6 +266,10 @@ def configure():
         default='keystone.identity.backends.sql.Identity')
     register_str(
         'driver',
+        group='credential',
+        default='keystone.credential.backends.sql.Credential')
+    register_str(
+        'driver',
         group='policy',
         default='keystone.policy.backends.sql.Policy')
     register_str(
@@ -384,7 +384,7 @@ def configure():
         'domain_additional_attribute_mapping', group='ldap', default=None)
 
     register_str('tls_cacertfile', group='ldap', default=None)
-    register_str('tls_cacertdir',  group='ldap', default=None)
+    register_str('tls_cacertdir', group='ldap', default=None)
     register_bool('use_tls', group='ldap', default=False)
     register_str('tls_req_cert', group='ldap', default='demand')
 
@@ -404,3 +404,6 @@ def configure():
     for method_name in CONF.auth.methods:
         if method_name not in _DEFAULT_AUTH_METHODS:
             register_str(method_name, group='auth')
+
+    # PasteDeploy config file
+    register_str('config_file', group='paste_deploy', default=None)

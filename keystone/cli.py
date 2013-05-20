@@ -20,12 +20,13 @@ import grp
 import pwd
 
 from oslo.config import cfg
+import pbr.version
 
 from keystone.common import openssl
 from keystone import config
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
-from keystone.openstack.common import version
+from keystone import token
 
 CONF = config.CONF
 
@@ -48,14 +49,14 @@ class DbSync(BaseApp):
 
     @staticmethod
     def main():
-        for k in ['identity', 'catalog', 'policy', 'token']:
+        for k in ['identity', 'catalog', 'policy', 'token', 'credential']:
             driver = importutils.import_object(getattr(CONF, k).driver)
             if hasattr(driver, 'db_sync'):
                 driver.db_sync()
 
 
 class BaseCertificateSetup(BaseApp):
-    """Common user/group setup for PKI and SSL generation"""
+    """Common user/group setup for PKI and SSL generation."""
 
     @classmethod
     def add_argument_parser(cls, subparsers):
@@ -100,7 +101,7 @@ class PKISetup(BaseCertificateSetup):
 
 
 class SSLSetup(BaseCertificateSetup):
-    """Create key pairs and certificates for HTTPS connections"""
+    """Create key pairs and certificates for HTTPS connections."""
 
     name = 'ssl_setup'
 
@@ -109,6 +110,17 @@ class SSLSetup(BaseCertificateSetup):
         keystone_user_id, keystone_group_id = cls.get_user_group()
         conf_ssl = openssl.ConfigureSSL(keystone_user_id, keystone_group_id)
         conf_ssl.run()
+
+
+class TokenFlush(BaseApp):
+    """Flush expired tokens from the backend."""
+
+    name = 'token_flush'
+
+    @classmethod
+    def main(cls):
+        token_manager = token.Manager()
+        token_manager.driver.flush_expired_tokens()
 
 
 class ImportLegacy(BaseApp):
@@ -173,6 +185,7 @@ CMDS = [
     ImportNovaAuth,
     PKISetup,
     SSLSetup,
+    TokenFlush,
 ]
 
 
@@ -191,7 +204,7 @@ def main(argv=None, config_files=None):
     CONF.register_cli_opt(command_opt)
     CONF(args=argv[1:],
          project='keystone',
-         version=version.VersionInfo('keystone').version_string(),
+         version=pbr.version.VersionInfo('keystone').version_string(),
          usage='%(prog)s [' + '|'.join([cmd.name for cmd in CMDS]) + ']',
          default_config_files=config_files)
     config.setup_logging(CONF)

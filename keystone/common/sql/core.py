@@ -22,9 +22,9 @@ import sqlalchemy.engine.url
 from sqlalchemy.exc import DisconnectionError
 from sqlalchemy.ext import declarative
 import sqlalchemy.orm
+from sqlalchemy.orm.attributes import InstrumentedAttribute
 import sqlalchemy.pool
 from sqlalchemy import types as sql_types
-from sqlalchemy.orm.attributes import InstrumentedAttribute
 
 from keystone.common import logging
 from keystone import config
@@ -182,9 +182,7 @@ class DictBase(object):
 
 class MySQLPingListener(object):
 
-    """
-    Ensures that MySQL connections checked out of the
-    pool are alive.
+    """Ensures that MySQL connections checked out of the pool are alive.
 
     Borrowed from:
     http://groups.google.com/group/sqlalchemy/msg/a4ce563d802c929f

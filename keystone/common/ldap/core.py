@@ -84,17 +84,21 @@ def parse_tls_cert(opt):
     try:
         return LDAP_TLS_CERTS[opt]
     except KeyError:
-        raise ValueError((_('Invalid LDAP tls certs option: %s. '
-                            'Choose one of: ') %
-                         opt) + ', '.join(LDAP_TLS_CERTS.keys()))
+        raise ValueError(_(
+            'Invalid LDAP TLS certs option: %(option). '
+            'Choose one of: %(options)s') % {
+                'option': opt,
+                'options': ', '.join(LDAP_TLS_CERTS.keys())})
 
 
 def ldap_scope(scope):
     try:
         return LDAP_SCOPES[scope]
     except KeyError:
-        raise ValueError(_('Invalid LDAP scope: %s. Choose one of: ' % scope) +
-                         ', '.join(LDAP_SCOPES.keys()))
+        raise ValueError(
+            _('Invalid LDAP scope: %(scope)s. Choose one of: %(options)s') % {
+                'scope': scope,
+                'options': ', '.join(LDAP_SCOPES.keys())})
 
 
 class BaseLdap(object):
@@ -182,9 +186,10 @@ class BaseLdap(object):
             try:
                 ldap_attr, attr_map = item.split(':')
             except Exception:
-                LOG.warn(_('Invalid additional attribute mapping: "%s". '
-                           'Format must be ' +
-                           '<ldap_attribute>:<keystone_attribute>') % item)
+                LOG.warn(_(
+                    'Invalid additional attribute mapping: "%s". '
+                    'Format must be <ldap_attribute>:<keystone_attribute>')
+                    % item)
                 continue
             if attr_map not in self.attribute_mapping:
                 LOG.warn(_('Invalid additional attribute mapping: "%(item)s". '
@@ -393,6 +398,8 @@ class BaseLdap(object):
             except ldap.NO_SUCH_OBJECT:
                 raise self._not_found(id)
 
+        return self.get(id)
+
     def delete(self, id):
         if not self.allow_delete:
             action = _('LDAP %s delete') % self.options_name
@@ -498,16 +505,19 @@ class LdapWrapper(object):
                            if kind != 'userPassword'
                            else ['****'])
                           for kind, values in ldap_attrs]
-            LOG.debug(_('LDAP add: dn=%s, attrs=%s'), dn, sane_attrs)
+            LOG.debug(_('LDAP add: dn=%(dn)s, attrs=%(attrs)s') % {
+                'dn': dn, 'attrs': sane_attrs})
         return self.conn.add_s(dn, ldap_attrs)
 
     def search_s(self, dn, scope, query, attrlist=None):
         if LOG.isEnabledFor(logging.DEBUG):
-            LOG.debug(_('LDAP search: dn=%s, scope=%s, query=%s, attrs=%s'),
-                      dn,
-                      scope,
-                      query,
-                      attrlist)
+            LOG.debug(_(
+                'LDAP search: dn=%(dn)s, scope=%(scope)s, query=%(query)s, '
+                'attrs=%(attrs)s') % {
+                    'dn': dn,
+                    'scope': scope,
+                    'query': query,
+                    'attrlist': attrlist})
         if self.page_size:
             res = self.paged_search_s(dn, scope, query, attrlist)
         else:
@@ -571,7 +581,8 @@ class LdapWrapper(object):
             sane_modlist = [(op, kind, (values if kind != 'userPassword'
                                         else ['****']))
                             for op, kind, values in ldap_modlist]
-            LOG.debug(_("LDAP modify: dn=%s, modlist=%s"), dn, sane_modlist)
+            LOG.debug(_('LDAP modify: dn=%(dn)s, modlist=%(modlist)s') % {
+                'dn': dn, 'modlist': sane_modlist})
 
         return self.conn.modify_s(dn, ldap_modlist)
 
@@ -580,7 +591,9 @@ class LdapWrapper(object):
         return self.conn.delete_s(dn)
 
     def delete_ext_s(self, dn, serverctrls):
-        LOG.debug(_("LDAP delete_ext: dn=%s, serverctrls=%s"), dn, serverctrls)
+        LOG.debug(
+            _('LDAP delete_ext: dn=%(dn)s, serverctrls=%(serverctrls)s') % {
+                'dn': dn, 'serverctrls': serverctrls})
         return self.conn.delete_ext_s(dn, serverctrls)
 
     def _disable_paging(self):
@@ -688,14 +701,16 @@ class EnabledEmuMixIn(BaseLdap):
         if 'enabled' not in self.attribute_ignore and self.enabled_emulation:
             data = values.copy()
             enabled_value = data.pop('enabled', None)
-            super(EnabledEmuMixIn, self).update(object_id, data, old_obj)
+            ref = super(EnabledEmuMixIn, self).update(object_id, data, old_obj)
             if enabled_value is not None:
                 if enabled_value:
                     self._add_enabled(object_id)
                 else:
                     self._remove_enabled(object_id)
+            return ref
         else:
-            super(EnabledEmuMixIn, self).update(object_id, values, old_obj)
+            return super(EnabledEmuMixIn, self).update(
+                object_id, values, old_obj)
 
     def delete(self, object_id):
         if self.enabled_emulation:
