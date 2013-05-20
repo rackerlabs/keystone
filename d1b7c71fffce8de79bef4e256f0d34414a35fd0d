@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//6fM\u003d",
+        "filename": "keystone/common/wsgi_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-20T13:44:50Z",
+      "side": 1,
+      "message": "Should this note be changed to Brant\u0027s info (blk-u), since it is now being introduced into Keystone under Brant\u0027s name?",
+      "revId": "d1b7c71fffce8de79bef4e256f0d34414a35fd0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
