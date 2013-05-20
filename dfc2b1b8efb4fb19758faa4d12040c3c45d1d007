@@ -54,6 +54,108 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//428\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:33:02Z",
+      "side": 1,
+      "message": "should be importing modules, see https://github.com/openstack/keystone/blame/master/HACKING.rst#L65",
+      "revId": "dfc2b1b8efb4fb19758faa4d12040c3c45d1d007",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//42s\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:33:02Z",
+      "side": 1,
+      "message": "should handle case where path is None better, or should path default to \u0027/\u0027?",
+      "revId": "dfc2b1b8efb4fb19758faa4d12040c3c45d1d007",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//42k\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:33:02Z",
+      "side": 1,
+      "message": "suggest consolidate \"if body\" code, so move this up to 106, and move 108 above that.",
+      "revId": "dfc2b1b8efb4fb19758faa4d12040c3c45d1d007",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//41Q\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:33:02Z",
+      "side": 1,
+      "message": "isn\u0027t expect_errors\u003dFalse the default? If so, remove the extra argument.",
+      "revId": "dfc2b1b8efb4fb19758faa4d12040c3c45d1d007",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//40w\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 877,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:33:02Z",
+      "side": 1,
+      "message": "the length is true?",
+      "revId": "dfc2b1b8efb4fb19758faa4d12040c3c45d1d007",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//40I\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-20T22:33:02Z",
+      "side": 1,
+      "message": "import modules, not module attributes per HACKING.py: https://github.com/openstack/keystone/blame/master/HACKING.rst#L65",
+      "revId": "dfc2b1b8efb4fb19758faa4d12040c3c45d1d007",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//Uy0\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 2
