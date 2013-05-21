@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//3QI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T13:40:03Z",
+      "side": 1,
+      "message": "Not sure if this could/should be changed here as it is not the code you\u0027re patching, but what is the \u0027else:\u0027 for in this case? If we don\u0027t except the ldap.NO_SUCH_OBJECT error and we return bool(enabled_value) can we just do that within the try:? That way we leave everything covered under two cases. 1.) search the connection and return enabled_value and clean up the connection in the finally 2.) attempt to search, bomb out and except the connect, and clean up in the finally.",
+      "revId": "07d9eeba4ef39119374f02da5e3208fdbe1ad749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
