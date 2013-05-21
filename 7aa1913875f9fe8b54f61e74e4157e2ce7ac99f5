@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//4eU\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-21T08:50:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//45k\u003d",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//47k\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-20T22:02:09Z",
       "side": 1,
       "message": "is this where you want to check for TokenNotFound?",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//4T4\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-21T08:50:24Z",
+      "side": 1,
+      "message": "The list_tokens is not throw the TokenNotFound exception, so I need not check it here.",
+      "parentUuid": "AAAAPH//47k\u003d",
       "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//4Tw\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-21T08:50:24Z",
+      "side": 1,
+      "message": "delete_token function will throw the exception.TokenNotFound, I have to catch it here.",
+      "parentUuid": "AAAAPH//47w\u003d",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//47U\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2013-05-20T22:02:09Z",
       "side": 1,
       "message": "Check for TokenNotFound here?",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//4To\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-21T08:50:24Z",
+      "side": 1,
+      "message": "Please see my reply in kvs.py.",
+      "parentUuid": "AAAAPH//47U\u003d",
       "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//4Tk\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-21T08:50:24Z",
+      "side": 1,
+      "message": "Please see my reply in kvs.py.",
+      "parentUuid": "AAAAPH//47Q\u003d",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//47A\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2013-05-20T22:02:09Z",
       "side": 1,
       "message": "This is confusing ... if the trust_id is set, then don\u0027t use user_id? This function could use comments to explain what it\u0027s doing.",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//4Tc\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-21T08:50:24Z",
+      "side": 1,
+      "message": "This is keeping consistent with the logic in list_tokens:\n    def list_tokens(self, user_id, tenant_id\u003dNone, trust_id\u003dNone):\n        if trust_id:\n            return self._list_tokens_for_trust(trust_id)\n        else:\n            return self._list_tokens_for_user(user_id, tenant_id)",
+      "parentUuid": "AAAAPH//47A\u003d",
       "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//4TY\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-21T08:50:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//454\u003d",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//45I\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 1
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//4SY\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-21T08:50:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//45I\u003d",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn//U3A\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 1
@@ -149,6 +293,24 @@
       "writtenOn": "2013-05-14T16:06:03Z",
       "side": 1,
       "message": "Is this line needed if we are checking it again at line 2012?",
+      "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//4SA\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2007,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-21T08:50:24Z",
+      "side": 1,
+      "message": "Done, remove unnecessary check.",
+      "parentUuid": "AAAAOn//U3A\u003d",
       "revId": "7aa1913875f9fe8b54f61e74e4157e2ce7ac99f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
