@@ -16,6 +16,24 @@
       "revId": "ff76a1b5cd3308cfb0ce936800364e27413ed946",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//3pI\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-05-21T10:34:12Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure you don\u0027t need it in this case as we aren\u0027t doing transactions and building up queries, we are just running the one statement.",
+      "parentUuid": "AAAAPH//3uE\u003d",
+      "revId": "ff76a1b5cd3308cfb0ce936800364e27413ed946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
