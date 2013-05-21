@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//15E\u003d",
+        "filename": "keystone/common/oauth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "Since this is a newly added file, does the copyright need to be 2013?",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//148\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "Same copyright comment here",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//14s\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "Is this needed? If nothing is returned then I think that does the same thing?",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//13s\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "Should this be extracted out into a loop that builds a list and just returns that instead of looping in the actual return statement? Thoughts?",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//13Y\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "Should these be not yet implemented?",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//13Q\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "Same copyright comment here",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//128\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "whitespace issue",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//120\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "Align \u0027return with the line above",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//12s\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "Should toReturn be named to_return to follow OpenStack convention?",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//12o\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "same convention comment here",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//12g\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "should this be not yet implemented?",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//118\u003d",
+        "filename": "tests/test_contrib_delegated_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "same copyright comment here",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//12c\u003d",
+        "filename": "tests/test_contrib_delegated_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "whitespace issue",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//12Y\u003d",
+        "filename": "tests/test_contrib_delegated_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "whitespace issue",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//12M\u003d",
+        "filename": "tests/test_contrib_delegated_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "whitespace issue",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//12A\u003d",
+        "filename": "tests/test_contrib_delegated_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T21:49:08Z",
+      "side": 1,
+      "message": "whitespace issue",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
