@@ -41,6 +41,7 @@ from keystone.common import logging
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
+from keystone.contrib import ec2
 from keystone import credential
 from keystone import exception
 from keystone import identity
@@ -80,6 +81,7 @@ def testsdir(*p):
 def initialize_drivers():
     DRIVERS['catalog_api'] = catalog.Manager()
     DRIVERS['credential_api'] = credential.Manager()
+    DRIVERS['ec2_api'] = ec2.Manager()
     DRIVERS['identity_api'] = identity.Manager()
     DRIVERS['policy_api'] = policy.Manager()
     DRIVERS['token_api'] = token.Manager()
