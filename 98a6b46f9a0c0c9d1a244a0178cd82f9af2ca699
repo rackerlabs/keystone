@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//3Ag\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-21T14:56:19Z",
+      "side": 1,
+      "message": "webtest belongs with external dependencies (e.g. lxml and nose), not stdlib (see HACKING)",
+      "revId": "98a6b46f9a0c0c9d1a244a0178cd82f9af2ca699",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//3Ac\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-21T14:56:19Z",
+      "side": 1,
+      "message": "+1",
+      "revId": "98a6b46f9a0c0c9d1a244a0178cd82f9af2ca699",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
