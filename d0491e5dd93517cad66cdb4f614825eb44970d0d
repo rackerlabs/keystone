@@ -34,6 +34,24 @@
       "revId": "d0491e5dd93517cad66cdb4f614825eb44970d0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//3NA\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T13:54:52Z",
+      "side": 1,
+      "message": "That\u0027s a good question. At first glance and seeing \u0027cb()\u0027 I start looking for that somewhere else in the file to see what it does and if anything else uses it. I think a comment here should be sufficient in saying \u0027cb() calls into whatever  function/functor was registered on register_engine_callback\u0027. That way others will know where it is coming from. It might be somewhat elementary but it could help readability in the future for someone else.",
+      "parentUuid": "AAAAPH//5KY\u003d",
+      "revId": "d0491e5dd93517cad66cdb4f614825eb44970d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
