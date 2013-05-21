@@ -37,6 +37,11 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase, sql.Base):
 
         self.load_backends()
         self.engine = self.get_engine()
+
+        # NOTE(blk-u): Import this module so that the table Model is available
+        # when create tables.
+        import keystone.contrib.ec2.backends.sql
+
         sql.ModelBase.metadata.create_all(bind=self.engine)
 
     def tearDown(self):
