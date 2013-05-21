@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//3OY\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-21T13:47:43Z",
+      "side": 1,
+      "message": "I agree with Brant here. Some comments would be really helpful in explaining what each case is doing. Are there benefits to using one over the other? Will my results vary? What\u0027s the difference in using trust_id vs. user_id?Things like that might cross one\u0027s mind when looking through this.",
+      "revId": "39841826f1948a894be61624499493e0187ece3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
