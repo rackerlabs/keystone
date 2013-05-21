@@ -16,6 +16,24 @@
       "revId": "39841826f1948a894be61624499493e0187ece3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//26Y\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-21T15:24:14Z",
+      "side": 1,
+      "message": "As I mentioned in the patch set 1\u0027s response, this is just from the function \u0027list_tokens\u0027 to make it consistent.",
+      "parentUuid": "AAAAPH//3OY\u003d",
+      "revId": "39841826f1948a894be61624499493e0187ece3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
