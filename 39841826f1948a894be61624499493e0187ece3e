@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPH//2sE\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-21T16:21:12Z",
+      "side": 1,
+      "message": "I don\u0027t see why this needs to exist",
+      "revId": "39841826f1948a894be61624499493e0187ece3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//2r8\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-21T16:21:12Z",
+      "side": 1,
+      "message": "why would a token be not found and why would it be valid to suddenly stop deleting tokens and raise an exception to the api?? it seems like you should wrap the delete_token call in a try/except rather than the entire loop and simply log a warning if any tokens that fail to be deleted, if anything?",
+      "revId": "39841826f1948a894be61624499493e0187ece3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//2rw\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-21T16:21:12Z",
+      "side": 1,
+      "message": "this is a totally generic implementation that should exist in the base driver, rather than specific driver implementations... this is literally a copy/paste from kvs",
+      "revId": "39841826f1948a894be61624499493e0187ece3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//3OY\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 3
@@ -31,6 +82,41 @@
       "side": 1,
       "message": "As I mentioned in the patch set 1\u0027s response, this is just from the function \u0027list_tokens\u0027 to make it consistent.",
       "parentUuid": "AAAAPH//3OY\u003d",
+      "revId": "39841826f1948a894be61624499493e0187ece3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//2rk\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-21T16:21:12Z",
+      "side": 1,
+      "message": "if you\u0027re only allowing tenant_id OR trust_id to be specified, this should be validated by the manager",
+      "parentUuid": "AAAAPH//26Y\u003d",
+      "revId": "39841826f1948a894be61624499493e0187ece3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//2rc\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-21T16:21:12Z",
+      "side": 1,
+      "message": "put a base implementation here",
       "revId": "39841826f1948a894be61624499493e0187ece3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
