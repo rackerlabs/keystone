@@ -16,6 +16,8 @@ Keystone Startup Command
 SYNOPSIS
 ========
 
+::
+
   keystone-all [-h] [--version] [--pydev-debug-port PYDEV_DEBUG_PORT]
                     [--verbose] [--noverbose] [--config-dir DIR]
                     [--log-config PATH] [--log-date-format DATE_FORMAT]
@@ -39,10 +41,11 @@ OPTIONS
   -h, --help            show this help message and exit
   --version             show program's version number and exit
   --pydev-debug-port PYDEV_DEBUG_PORT
+  						Port to connect to for remote debugger.
   --verbose, -v         Print more verbose output (set logging level to INFO
                         instead of default WARNING level).
   --noverbose           The inverse of --verbose
-  --config-dir DIR      Path to a config directory to pull *.conf files from.
+  --config-dir DIR      Path to a config directory to pull \*.conf files from.
                         This file set is sorted, so as to provide a
                         predictable parse order if individual options are
                         over-ridden. The set is parsed after the file(s), if
@@ -61,13 +64,14 @@ OPTIONS
                         prepended to --log-file)
   --syslog-log-facility SYSLOG_LOG_FACILITY
                         syslog facility to receive log lines.
-  --standard-threads
+  --standard-threads    Do not monkey-patch threading system modules.
   --nostandard-threads  The inverse of --standard-threads
   --config-file PATH    Path to a config file to use. Multiple config files
                         can be specified, with values in later files taking
                         precedence. The default files used are:
                         ['/etc/keystone/keystone.conf']
   --pydev-debug-host PYDEV_DEBUG_HOST
+  						Host to connect to for remote debugger.
   --debug, -d           Print debugging output (set logging level to DEBUG
                         instead of default WARNING level).
   --nodebug             The inverse of --debug
