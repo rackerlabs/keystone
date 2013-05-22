@@ -24,6 +24,7 @@ from swift.common import utils as swift_utils
 
 from keystone.middleware import s3_token
 from keystone.openstack.common import jsonutils
+from keystone import test
 
 
 class FakeHTTPResponse(object):
@@ -58,12 +59,10 @@ class FakeHTTPConnection(object):
         pass
 
 
-class S3TokenMiddlewareTestBase(testtools.TestCase):
+class S3TokenMiddlewareTestBase(test.TestCase):
 
     def setUp(self):
         super(S3TokenMiddlewareTestBase, self).setUp()
-        self.stubs = stubout.StubOutForTesting()
-        self.addCleanup(self.stubs.UnsetAll)
         # Stub out swift_utils.get_logger.  get_logger tries to configure
         # syslogging to '/dev/log', which will fail on OS X.
 

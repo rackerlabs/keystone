@@ -5,10 +5,11 @@ from keystone import catalog
 from keystone import exception
 from keystone import identity
 from keystone import policy
+from keystone import test
 from keystone import token
 
 
-class TestDrivers(testtools.TestCase):
+class TestDrivers(test.TestCase):
     """Asserts that drivers are written as expected.
 
     Public methods on drivers should raise keystone.exception.NotImplemented,
