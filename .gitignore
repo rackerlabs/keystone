@@ -27,3 +27,4 @@ etc/logging.conf
 tests/test.db.pristine
 .project
 .pydevproject
+.testrepository
