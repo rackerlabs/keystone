@@ -17,14 +17,12 @@
 import uuid
 import webob
 
-import nose.exc
-
 from keystone import config
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
 from keystone import test
 
-import default_fixtures
+from tests import default_fixtures
 
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
@@ -523,7 +521,7 @@ class KeystoneClientTests(object):
                           user=uuid.uuid4().hex)
 
     def test_user_update_tenant_404(self):
-        raise nose.exc.SkipTest('N/A')
+        self.skipTest('N/A')
         from keystoneclient import exceptions as client_exceptions
         client = self.get_client(admin=True)
         self.assertRaises(client_exceptions.NotFound,
@@ -1072,10 +1070,10 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
         self.assertTrue(len(roles) > 0)
 
     def test_role_list_404(self):
-        raise nose.exc.SkipTest('N/A')
+        self.skipTest('N/A')
 
     def test_authenticate_and_delete_token(self):
-        raise nose.exc.SkipTest('N/A')
+        self.skipTest('N/A')
 
     def test_user_create_update_delete(self):
         from keystoneclient import exceptions as client_exceptions
@@ -1119,16 +1117,16 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
                           user.id)
 
     def test_user_update_404(self):
-        raise nose.exc.SkipTest('N/A')
+        self.skipTest('N/A')
 
     def test_endpoint_create_404(self):
-        raise nose.exc.SkipTest('N/A')
+        self.skipTest('N/A')
 
     def test_endpoint_delete_404(self):
-        raise nose.exc.SkipTest('N/A')
+        self.skipTest('N/A')
 
     def test_policy_crud(self):
-        raise nose.exc.SkipTest('N/A due to lack of endpoint CRUD')
+        self.skipTest('N/A due to lack of endpoint CRUD')
 
 
 class Kc11TestCase(CompatTestCase, KeystoneClientTests):
@@ -1136,4 +1134,4 @@ class Kc11TestCase(CompatTestCase, KeystoneClientTests):
         return KEYSTONECLIENT_REPO, '0.1.1'
 
     def test_policy_crud(self):
-        raise nose.exc.SkipTest('N/A')
+        self.skipTest('N/A')

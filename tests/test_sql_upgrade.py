@@ -37,7 +37,7 @@ from keystone.common.sql import migration
 from keystone import config
 from keystone import test
 
-import default_fixtures
+from tests import default_fixtures
 
 
 CONF = config.CONF

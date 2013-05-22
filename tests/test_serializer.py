@@ -27,7 +27,7 @@ class XmlSerializerTestCase(test.TestCase):
     def assertEqualXML(self, a, b):
         """Parses two XML documents from strings and compares the results.
 
-        This provides easy-to-read failures from nose.
+        This provides easy-to-read failures.
 
         """
         parser = etree.XMLParser(remove_blank_text=True)

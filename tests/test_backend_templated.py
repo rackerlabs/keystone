@@ -21,8 +21,8 @@ from keystone.catalog.backends import templated as catalog_templated
 from keystone import exception
 from keystone import test
 
-import default_fixtures
-import test_backend
+from tests import default_fixtures
+from tests import test_backend
 
 DEFAULT_CATALOG_TEMPLATES = os.path.abspath(os.path.join(
     os.path.dirname(__file__),
@@ -64,5 +64,6 @@ class TestTemplatedCatalog(test.TestCase, test_backend.CatalogTests):
     def test_malformed_catalog_throws_error(self):
         self.catalog_api.templates['RegionOne']['compute']['adminURL'] = \
             'http://localhost:$(compute_port)s/v1.1/$(tenant)s'
-        with self.assertRaises(exception.MalformedEndpoint):
-            self.catalog_api.get_catalog('fake-user', 'fake-tenant')
+        self.assertRaises(
+            exception.MalformedEndpoint,
+            self.catalog_api.get_catalog, 'fake-user', 'fake-tenant')

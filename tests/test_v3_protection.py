@@ -23,7 +23,7 @@ from keystone import exception
 from keystone.openstack.common import jsonutils
 from keystone.policy.backends import rules
 
-import test_v3
+from tests import test_v3
 
 
 CONF = config.CONF

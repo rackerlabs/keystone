@@ -159,6 +159,7 @@ class DefaultPolicyTestCase(test.TestCase):
         super(DefaultPolicyTestCase, self).setUp()
         rules.reset()
         rules.init()
+        self.addCleanup(rules.reset)
 
         self.rules = {
             "default": [],
@@ -172,10 +173,6 @@ class DefaultPolicyTestCase(test.TestCase):
             dict((k, common_policy.parse_rule(v))
                  for k, v in self.rules.items()), default_rule)
         common_policy.set_rules(these_rules)
-
-    def tearDown(self):
-        super(DefaultPolicyTestCase, self).setUp()
-        rules.reset()
 
     def test_policy_called(self):
         self.assertRaises(exception.ForbiddenAction, rules.enforce,

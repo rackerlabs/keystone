@@ -18,7 +18,7 @@ import uuid
 
 from keystone import exception
 
-import test_v3
+from tests import test_v3
 
 
 class IdentityTestCase(test_v3.RestfulTestCase):
