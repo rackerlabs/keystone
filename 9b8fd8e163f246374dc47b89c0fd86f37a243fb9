@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//zGI\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T19:43:17Z",
+      "side": 1,
+      "message": "it would be nice if _flush_user_list returned the list that it just set because then wouldn\u0027t have to get the list again.",
+      "revId": "9b8fd8e163f246374dc47b89c0fd86f37a243fb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zGA\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T19:43:17Z",
+      "side": 1,
+      "message": "why don\u0027t we get the list again here like we do for list_tokens?",
+      "revId": "9b8fd8e163f246374dc47b89c0fd86f37a243fb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zJA\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T19:43:17Z",
+      "side": 1,
+      "message": "Nice!",
+      "revId": "9b8fd8e163f246374dc47b89c0fd86f37a243fb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
