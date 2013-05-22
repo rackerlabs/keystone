@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//zgE\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-22T16:59:47Z",
+      "side": 1,
+      "message": "don\u0027t include the new middleware by default; instead, provide documentation explaining why you would want to include it and how to do so",
+      "revId": "f046358230ba3703aa4de735bb63532e4f6bbbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zgA\u003d",
+        "filename": "keystone/contrib/delegated_auth/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-22T16:59:47Z",
+      "side": 1,
+      "message": "i guess this file needs headers and a # flake8: noqa flag",
+      "revId": "f046358230ba3703aa4de735bb63532e4f6bbbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zf8\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-22T16:59:47Z",
+      "side": 1,
+      "message": "stdlib imports, external package imports, then local package imports\n\nso uuid before keystone",
+      "revId": "f046358230ba3703aa4de735bb63532e4f6bbbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
