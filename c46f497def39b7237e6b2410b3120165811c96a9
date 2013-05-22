@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//zMw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_revoked_tokens_table.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T19:12:46Z",
+      "side": 1,
+      "message": "should currently-revoked tokens be moved into this table from the token table?",
+      "revId": "c46f497def39b7237e6b2410b3120165811c96a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zMs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_revoked_tokens_table.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T19:12:46Z",
+      "side": 1,
+      "message": "and then moved back here.",
+      "revId": "c46f497def39b7237e6b2410b3120165811c96a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zLo\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T19:12:46Z",
+      "side": 1,
+      "message": "aren\u0027t all tokens in the Token table going to be valid now?",
+      "revId": "c46f497def39b7237e6b2410b3120165811c96a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zMA\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T19:12:46Z",
+      "side": 1,
+      "message": "suggest don\u0027t add it to the revoked tokens table if expires \u003c\u003d now , since the query at 142 will never match.",
+      "revId": "c46f497def39b7237e6b2410b3120165811c96a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zMU\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T19:12:46Z",
+      "side": 1,
+      "message": "the revoked token table isn\u0027t going to speed things up much if we\u0027re going to be filtering anyways, since need to read the whole table. Creating an index on expires might help.",
+      "revId": "c46f497def39b7237e6b2410b3120165811c96a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
