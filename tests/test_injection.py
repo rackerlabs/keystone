@@ -14,13 +14,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import testtools
 import uuid
 
 from keystone.common import dependency
+from keystone import test
 
 
-class TestDependencyInjection(testtools.TestCase):
+class TestDependencyInjection(test.TestCase):
     def test_dependency_injection(self):
         class Interface(object):
             def do_work(self):
