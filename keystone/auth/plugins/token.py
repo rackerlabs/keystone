@@ -39,7 +39,7 @@ class Token(auth.AuthMethodHandler):
             token_ref = self.token_api.get_token(context, token_id)
             if 'token_data' not in token_ref:
                 raise exception.ValidationError(attribute='token_data',
-                                                   target=METHOD_NAME)
+                                                target=METHOD_NAME)
             user_context.setdefault(
                 'user_id', token_ref['token_data']['token']['user']['id'])
             # to support Grizzly-3 to Grizzly-RC1 transition
