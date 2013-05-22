@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//zdw\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-22T17:14:50Z",
+      "side": 1,
+      "message": "Cool, good idea",
+      "parentUuid": "AAAAPH//0Xo\u003d",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//13Y\u003d",
         "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
         "patchSetId": 4
@@ -171,6 +189,24 @@
       "side": 1,
       "message": "Yes, is there a convention for marking things at not yet implemented? I just added a comment.",
       "parentUuid": "AAAAPH//13Y\u003d",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zd0\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-22T17:14:50Z",
+      "side": 1,
+      "message": "yep, you can use something like this\n\nhttp://docs.python.org/2/library/exceptions.html#exceptions.NotImplementedError",
+      "parentUuid": "AAAAPH//0Xk\u003d",
       "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
