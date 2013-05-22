@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//0YA\u003d",
+        "filename": "keystone/common/oauth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-22T11:21:10Z",
+      "side": 1,
+      "message": "Changed it to 2013",
+      "parentUuid": "AAAAPH//15E\u003d",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//148\u003d",
         "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-21T21:49:08Z",
       "side": 1,
       "message": "Same copyright comment here",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//0X4\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-22T11:21:10Z",
+      "side": 1,
+      "message": "Changed it to 2013",
+      "parentUuid": "AAAAPH//148\u003d",
       "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//0X8\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-22T11:21:10Z",
+      "side": 1,
+      "message": "Removed last line",
+      "parentUuid": "AAAAPH//14s\u003d",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//13s\u003d",
         "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2013-05-21T21:49:08Z",
       "side": 1,
       "message": "Should this be extracted out into a loop that builds a list and just returns that instead of looping in the actual return statement? Thoughts?",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//0Xo\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-22T11:21:10Z",
+      "side": 1,
+      "message": "It should be fine, it works with 0 elements, 1 and \u003e1. \nProbably not that easy to debug though. I\u0027ll look at other classes and see what the convention is.",
+      "parentUuid": "AAAAPH//13s\u003d",
       "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//0Xk\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-22T11:21:10Z",
+      "side": 1,
+      "message": "Yes, is there a convention for marking things at not yet implemented? I just added a comment.",
+      "parentUuid": "AAAAPH//13Y\u003d",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//13Q\u003d",
         "filename": "keystone/contrib/delegated_auth/core.py",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2013-05-21T21:49:08Z",
       "side": 1,
       "message": "Same copyright comment here",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//0Xg\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-22T11:21:10Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "AAAAPH//13Q\u003d",
       "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//0Xc\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-22T11:21:10Z",
+      "side": 1,
+      "message": "Yes, fixed, in both spots.",
+      "parentUuid": "AAAAPH//12s\u003d",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//12o\u003d",
         "filename": "keystone/contrib/delegated_auth/core.py",
         "patchSetId": 4
@@ -200,6 +326,24 @@
       "writtenOn": "2013-05-21T21:49:08Z",
       "side": 1,
       "message": "same copyright comment here",
+      "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//0XY\u003d",
+        "filename": "tests/test_contrib_delegated_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-22T11:21:10Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "AAAAPH//118\u003d",
       "revId": "6f3838845f674d211a316ff5ab523444c4974c05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
