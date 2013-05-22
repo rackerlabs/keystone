@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//zXU\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T18:22:52Z",
+      "side": 1,
+      "message": "should update the text here with the text in openstack/common/log.py, it\u0027s important here because log.py says this option is deprecated.",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zVc\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T18:22:52Z",
+      "side": 1,
+      "message": "does this apply to Keystone? Keystone wouldn\u0027t pass instance. So maybe we don\u0027t need to document this option? Figure out if this is used and if not let\u0027s not document it.",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zVY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T18:22:52Z",
+      "side": 1,
+      "message": "same here, does this apply to Keystone? Keystone wouldn\u0027t pass instance. So maybe we don\u0027t need to document this option? Figure out if this is used and if not let\u0027s not document it.",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zU0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T18:22:52Z",
+      "side": 1,
+      "message": "is this the format for list options? seems weird.",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zWg\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T18:22:52Z",
+      "side": 1,
+      "message": "suggest don\u0027t rename the import. It\u0027s easier to remember if the name is kept the same.",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zWc\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T18:22:52Z",
+      "side": 1,
+      "message": "It looks like this happens already when opestack.common.log is imported, see log.py line 158. Make sure and remove these lines if it\u0027s already done.",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
