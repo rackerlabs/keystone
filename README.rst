@@ -116,6 +116,12 @@ dict.
 
 Supports all features of the general data model.
 
+LDAP Backend
+------------
+
+Supports the Identity backend only.  In addition, multiple domain support is
+disabled by default.  To enable it, see the LDAP section of the configuration
+guide.
 
 PAM Backend
 -----------

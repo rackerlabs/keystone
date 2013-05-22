@@ -312,7 +312,8 @@ def configure():
     register_int('user_enabled_mask', group='ldap', default=0)
     register_str('user_enabled_default', group='ldap', default='True')
     register_list(
-        'user_attribute_ignore', group='ldap', default='tenant_id,tenants')
+        'user_attribute_ignore', group='ldap',
+        default='tenant_id,tenants,domain_id')
     register_bool('user_allow_create', group='ldap', default=True)
     register_bool('user_allow_update', group='ldap', default=True)
     register_bool('user_allow_delete', group='ldap', default=True)
@@ -331,7 +332,7 @@ def configure():
     register_str('tenant_enabled_attribute', group='ldap', default='enabled')
     register_str(
         'tenant_domain_id_attribute', group='ldap', default='businessCategory')
-    register_list('tenant_attribute_ignore', group='ldap', default='')
+    register_list('tenant_attribute_ignore', group='ldap', default='domain_id')
     register_bool('tenant_allow_create', group='ldap', default=True)
     register_bool('tenant_allow_update', group='ldap', default=True)
     register_bool('tenant_allow_delete', group='ldap', default=True)
@@ -363,7 +364,7 @@ def configure():
     register_str('group_desc_attribute', group='ldap', default='description')
     register_str(
         'group_domain_id_attribute', group='ldap', default='businessCategory')
-    register_list('group_attribute_ignore', group='ldap', default='')
+    register_list('group_attribute_ignore', group='ldap', default='domain_id')
     register_bool('group_allow_create', group='ldap', default=True)
     register_bool('group_allow_update', group='ldap', default=True)
     register_bool('group_allow_delete', group='ldap', default=True)

@@ -32,9 +32,6 @@ CONF = config.CONF
 
 
 class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
-    def _get_domain_fixture(self):
-        """Domains in LDAP are read-only, so just return the static one."""
-        return self.identity_api.get_domain(CONF.identity.default_domain_id)
 
     def clear_database(self):
         db = fakeldap.FakeShelve().get_instance()
@@ -386,6 +383,73 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         expected_dict = {'description': 'name', 'gecos': 'password'}
         self.assertDictEqual(expected_dict, mapping)
 
+    def test_user_attribute_ignore_domain_id(self):
+        CONF.ldap.user_attribute_ignore = ['domain_id']
+        self.clear_database()
+        self.identity_api = identity.backends.ldap.Identity()
+        user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                'password': uuid.uuid4().hex, 'enabled': True,
+                'domain_id': uuid.uuid4().hex}
+        self.identity_api.create_user(user['id'], user)
+        user_ref = self.identity_api.get_user(user['id'])
+        self.assertEqual(user_ref['id'], user['id'])
+        self.assertEqual(user_ref['domain_id'],
+                         CONF.identity.default_domain_id)
+
+        # test with default domain
+        user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                'password': uuid.uuid4().hex, 'enabled': True,
+                'domain_id': CONF.identity.default_domain_id}
+        self.identity_api.create_user(user['id'], user)
+        user_ref = self.identity_api.get_user(user['id'])
+        self.assertEqual(user_ref['id'], user['id'])
+        self.assertEqual(user_ref['domain_id'], user['domain_id'])
+
+    def test_project_attribute_ignore_domain_id(self):
+        CONF.ldap.tenant_attribute_ignore = ['domain_id']
+        self.clear_database()
+        self.identity_api = identity.backends.ldap.Identity()
+        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'domain_id': uuid.uuid4().hex,
+                   'description': uuid.uuid4().hex
+                   }
+        self.identity_api.create_project(project['id'], project)
+        project_ref = self.identity_api.get_project(project['id'])
+        self.assertEqual(project_ref['id'], project['id'])
+        self.assertEqual(project_ref['domain_id'],
+                         CONF.identity.default_domain_id)
+
+        # test with default domain
+        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'domain_id': CONF.identity.default_domain_id,
+                   'description': uuid.uuid4().hex
+                   }
+        self.identity_api.create_project(project['id'], project)
+        project_ref = self.identity_api.get_project(project['id'])
+        self.assertEqual(project_ref['id'], project['id'])
+        self.assertEqual(project_ref['domain_id'], project['domain_id'])
+
+    def test_group_attribute_ignore_domain_id(self):
+        CONF.ldap.group_attribute_ignore = ['domain_id']
+        self.clear_database()
+        self.identity_api = identity.backends.ldap.Identity()
+        group = {'id': uuid.uuid4().hex, 'domain_id': uuid.uuid4().hex,
+                 'name': uuid.uuid4().hex, 'description': uuid.uuid4().hex}
+        self.identity_api.create_group(group['id'], group)
+        group_ref = self.identity_api.get_group(group['id'])
+        self.assertEqual(group_ref['id'], group['id'])
+        self.assertEqual(group_ref['domain_id'],
+                         CONF.identity.default_domain_id)
+
+        # test with default domain
+        group = {'id': uuid.uuid4().hex,
+                 'domain_id': CONF.identity.default_domain_id,
+                 'name': uuid.uuid4().hex, 'description': uuid.uuid4().hex}
+        self.identity_api.create_group(group['id'], group)
+        group_ref = self.identity_api.get_group(group['id'])
+        self.assertEqual(group_ref['id'], group['id'])
+        self.assertEqual(group_ref['domain_id'], group['domain_id'])
+
 # TODO (henry-nash) These need to be removed when the full LDAP implementation
 # is submitted - see Bugs 1092187, 1101287, 1101276, 1101289
 
@@ -395,11 +459,8 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     # In the tests below, the update is demonstrated by updating description.
     # Refer to bug 1136403 for more detail.
     def test_group_crud(self):
-        group = {
-            'id': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex}
+        group = {'id': uuid.uuid4().hex, 'domain_id': uuid.uuid4().hex,
+                 'name': uuid.uuid4().hex, 'description': uuid.uuid4().hex}
         self.identity_api.create_group(group['id'], group)
         group_ref = self.identity_api.get_group(group['id'])
         self.assertDictEqual(group_ref, group)
@@ -416,25 +477,15 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
     def test_domain_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True, 'description': uuid.uuid4().hex}
-        with self.assertRaises(exception.Forbidden):
-            self.identity_api.create_domain(domain['id'], domain)
-        with self.assertRaises(exception.Conflict):
-            self.identity_api.create_domain(
-                CONF.identity.default_domain_id, domain)
-        with self.assertRaises(exception.DomainNotFound):
-            domain_ref = self.identity_api.get_domain(domain['id'])
-        with self.assertRaises(exception.DomainNotFound):
-            domain['description'] = uuid.uuid4().hex
-            self.identity_api.update_domain(domain['id'], domain)
-        with self.assertRaises(exception.Forbidden):
-            self.identity_api.update_domain(
-                CONF.identity.default_domain_id, domain)
-        with self.assertRaises(exception.DomainNotFound):
-            self.identity_api.get_domain(domain['id'])
-        with self.assertRaises(exception.DomainNotFound):
-            self.identity_api.delete_domain(domain['id'])
-        with self.assertRaises(exception.Forbidden):
-            self.identity_api.delete_domain(CONF.identity.default_domain_id)
+        self.identity_api.create_domain(domain['id'], domain)
+        domain_ref = self.identity_api.get_domain(domain['id'])
+        self.assertDictEqual(domain_ref, domain)
+        domain['description'] = uuid.uuid4().hex
+        self.identity_api.update_domain(domain['id'], domain)
+        domain_ref = self.identity_api.get_domain(domain['id'])
+        self.assertDictEqual(domain_ref, domain)
+
+        self.identity_api.delete_domain(domain['id'])
         self.assertRaises(exception.DomainNotFound,
                           self.identity_api.get_domain,
                           domain['id'])
@@ -455,10 +506,10 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_get_and_remove_role_grant_by_group_and_domain(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_get_and_remove_role_grant_by_user_and_domain(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_get_and_remove_correct_role_grant_from_a_mix(self):
         raise nose.exc.SkipTest('Blocked by bug 1101287')
@@ -468,7 +519,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         #              updating of a project name so this method override
         #              provides a different update test
         project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': CONF.identity.default_domain_id,
+                   'domain_id': uuid.uuid4().hex,
                    'description': uuid.uuid4().hex
                    }
         self.identity_api.create_project(project['id'], project)
@@ -491,34 +542,34 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                           project['id'])
 
     def test_get_and_remove_role_grant_by_group_and_cross_domain(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_get_and_remove_role_grant_by_user_and_cross_domain(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_role_grant_by_group_and_cross_domain_project(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_role_grant_by_user_and_cross_domain_project(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_multi_role_grant_by_user_group_on_project_domain(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_delete_role_with_user_and_group_grants(self):
         raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_delete_user_with_group_project_domain_links(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_delete_group_with_user_project_domain_links(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_list_user_projects(self):
         raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_get_project_users(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_create_duplicate_user_name_in_different_domains(self):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
@@ -527,8 +578,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
 
     def test_create_duplicate_group_name_in_different_domains(self):
-        raise nose.exc.SkipTest(
-            'N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101276')
 
     def test_move_user_between_domains(self):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
@@ -537,8 +587,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
 
     def test_move_group_between_domains(self):
-        raise nose.exc.SkipTest(
-            'N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101276')
 
     def test_move_group_between_domains_with_clashing_names_fails(self):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
@@ -550,7 +599,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
 
     def test_get_roles_for_user_and_domain(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        raise nose.exc.SkipTest('Blocked by bug 1101287')
 
     def test_list_group_members_missing_entry(self):
         """List group members with deleted user.
@@ -640,11 +689,10 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         # NOTE(topol): LDAPIdentityEnabledEmulation will create an
         #              enabled key in the project dictionary so this
         #              method override handles this side-effect
-        project = {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
-            'description': uuid.uuid4().hex}
+        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'domain_id': uuid.uuid4().hex,
+                   'description': uuid.uuid4().hex
+                   }
 
         self.identity_api.create_project(project['id'], project)
         project_ref = self.identity_api.get_project(project['id'])
@@ -666,11 +714,8 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
                           project['id'])
 
     def test_user_crud(self):
-        user = {
-            'id': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
-            'name': uuid.uuid4().hex,
-            'password': uuid.uuid4().hex}
+        user = {'domain_id': uuid.uuid4().hex, 'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex, 'password': 'passw0rd'}
         self.identity_man.create_user({}, user['id'], user)
         user['enabled'] = True
         user_ref = self.identity_api.get_user(user['id'])

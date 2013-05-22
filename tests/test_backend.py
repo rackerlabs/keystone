@@ -1585,14 +1585,11 @@ class IdentityTests(object):
             self.assertTrue(x for x in users if x['id'] == test_user['id'])
 
     def test_list_groups(self):
-        group1 = {
-            'id': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
-            'name': uuid.uuid4().hex}
-        group2 = {
-            'id': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
-            'name': uuid.uuid4().hex}
+        domain = self._get_domain_fixture()
+        group1 = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
+                  'name': uuid.uuid4().hex}
+        group2 = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
+                  'name': uuid.uuid4().hex}
         self.identity_man.create_group({}, group1['id'], group1)
         self.identity_man.create_group({}, group2['id'], group2)
         groups = self.identity_api.list_groups()
@@ -1793,10 +1790,9 @@ class IdentityTests(object):
         self.identity_api.check_user_in_group(new_user['id'], new_group['id'])
 
     def test_check_user_not_in_group(self):
-        new_group = {
-            'id': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
-            'name': uuid.uuid4().hex}
+        domain = self._get_domain_fixture()
+        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
+                     'name': uuid.uuid4().hex}
         self.identity_man.create_group({}, new_group['id'], new_group)
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.check_user_in_group,
@@ -1976,8 +1972,8 @@ class IdentityTests(object):
                           domain['id'])
 
     def test_user_crud(self):
-        user = {'domain_id': CONF.identity.default_domain_id,
-                'id': uuid.uuid4().hex,
+        domain = self._get_domain_fixture()
+        user = {'domain_id': domain['id'], 'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex, 'password': 'passw0rd'}
         self.identity_api.create_user(user['id'], user)
         user_ref = self.identity_api.get_user(user['id'])

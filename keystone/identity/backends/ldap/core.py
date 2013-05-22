@@ -51,6 +51,7 @@ class Identity(identity.Driver):
         self.project = ProjectApi(CONF)
         self.role = RoleApi(CONF)
         self.group = GroupApi(CONF)
+        self.domain = DomainApi(CONF)
 
     def get_connection(self, user=None, password=None):
         if self.LDAP_URL.startswith('fake://'):
@@ -65,29 +66,24 @@ class Identity(identity.Driver):
         return conn
 
     def _validate_domain(self, ref):
-        """Validate that either the default domain or nothing is specified.
-
-        Also removes the domain from the ref so that LDAP doesn't have to
-        persist the attribute.
+        """
+        Check if default domain is provided. If so, removes it from the ref
+        so that LDAP doesn't have to persist the attribute.
 
         """
         ref = ref.copy()
-        domain_id = ref.pop('domain_id', CONF.identity.default_domain_id)
-        self._validate_domain_id(domain_id)
+        if 'domain_id' in ref:
+            if ref['domain_id'] == CONF.identity.default_domain_id:
+                domain_id = ref.pop('domain_id',
+                                    CONF.identity.default_domain_id)
         return ref
 
-    def _validate_domain_id(self, domain_id):
-        """Validate that the domain ID specified belongs to the default domain.
-
-        """
-        if domain_id != CONF.identity.default_domain_id:
-            raise exception.DomainNotFound(domain_id=domain_id)
-
     def _set_default_domain(self, ref):
-        """Overrides any domain reference with the default domain."""
+        """Overrides ref with the default domain if domain not found."""
         if isinstance(ref, dict):
             ref = ref.copy()
-            ref['domain_id'] = CONF.identity.default_domain_id
+            if 'domain_id' not in ref:
+                ref['domain_id'] = CONF.identity.default_domain_id
             return ref
         elif isinstance(ref, list):
             return [self._set_default_domain(x) for x in ref]
@@ -142,7 +138,6 @@ class Identity(identity.Driver):
         return self._set_default_domain(self.project.get_all())
 
     def get_project_by_name(self, tenant_name, domain_id):
-        self._validate_domain_id(domain_id)
         return self._set_default_domain(self.project.get_by_name(tenant_name))
 
     def _get_user(self, user_id):
@@ -156,7 +151,6 @@ class Identity(identity.Driver):
         return self._set_default_domain(self.user.get_all())
 
     def get_user_by_name(self, user_name, domain_id):
-        self._validate_domain_id(domain_id)
         ref = identity.filter_user(self.user.get_by_name(user_name))
         return self._set_default_domain(ref)
 
@@ -319,24 +313,48 @@ class Identity(identity.Driver):
 
     def create_domain(self, domain_id, domain):
         if domain_id == CONF.identity.default_domain_id:
-            msg = 'Duplicate ID, %s.' % domain_id
-            raise exception.Conflict(type='domain', details=msg)
-        raise exception.Forbidden('Domains are read-only against LDAP')
+            msg = (_('The default domain %s is read-only against LDAP.')
+                   % CONF.identity.default_domain_id)
+            raise exception.Forbidden(msg)
+        domain['name'] = clean.domain_name(domain['name'])
+        return self.domain.create(domain)
 
     def get_domain(self, domain_id):
-        self._validate_domain_id(domain_id)
-        return DEFAULT_DOMAIN
+        try:
+            return self.domain.get(domain_id)
+        except exception.NotFound:
+            raise exception.DomainNotFound(domain_id=domain_id)
 
     def update_domain(self, domain_id, domain):
-        self._validate_domain_id(domain_id)
-        raise exception.Forbidden('Domains are read-only against LDAP')
+        if domain_id == CONF.identity.default_domain_id:
+            msg = (_('The default domain %s is read-only against LDAP.')
+                   % CONF.identity.default_domain_id)
+            raise exception.Forbidden(msg)
+        if 'name' in domain:
+            domain['name'] = clean.domain_name(domain['name'])
+        return self.domain.update(domain_id, domain)
 
     def delete_domain(self, domain_id):
-        self._validate_domain_id(domain_id)
-        raise exception.Forbidden('Domains are read-only against LDAP')
+        if domain_id == CONF.identity.default_domain_id:
+            msg = (_('The default domain %s is read-only against LDAP.')
+                   % CONF.identity.default_domain_id)
+            raise exception.Forbidden(msg)
+        try:
+            return self.domain.delete(domain_id)
+        except ldap.NO_SUCH_OBJECT:
+            raise exception.DomainNotFound(domain_id=domain_id)
 
     def list_domains(self):
-        return [DEFAULT_DOMAIN]
+        domains = self.domain.get_all()
+        #check if the list has default domain
+        found_default = False
+        for domain in domains:
+            if domain.get('id') == CONF.identity.default_domain_id:
+                found_default = True
+                break
+        if not found_default:
+            domains.insert(0, DEFAULT_DOMAIN)
+        return domains
 
 
 # TODO(termie): remove this and move cross-api calls into driver
@@ -380,6 +398,12 @@ class ApiShim(object):
             self._group = GroupApi(self.conf)
         return self._group
 
+    @property
+    def domain(self):
+        if not self._domain:
+            self._domain = DomainApi(self.conf)
+        return self._domain
+
 
 # TODO(termie): remove this and move cross-api calls into driver
 class ApiShimMixin(object):
@@ -412,7 +436,7 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap, ApiShimMixin):
     DEFAULT_STRUCTURAL_CLASSES = ['person']
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_OBJECTCLASS = 'inetOrgPerson'
-    DEFAULT_ATTRIBUTE_IGNORE = ['tenant_id', 'tenants']
+    DEFAULT_ATTRIBUTE_IGNORE = ['tenant_id', 'tenants', 'domain_id']
     NotFound = exception.UserNotFound
     options_name = 'user'
     attribute_mapping = {'password': 'userPassword',
@@ -512,7 +536,7 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
     DEFAULT_OBJECTCLASS = 'groupOfNames'
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_MEMBER_ATTRIBUTE = 'member'
-    DEFAULT_ATTRIBUTE_IGNORE = []
+    DEFAULT_ATTRIBUTE_IGNORE = ['domain_id']
     NotFound = exception.ProjectNotFound
     notfound_arg = 'project_id'  # NOTE(yorik-sar): while options_name = tenant
     options_name = 'tenant'
@@ -869,7 +893,7 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
     DEFAULT_OBJECTCLASS = 'groupOfNames'
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_MEMBER_ATTRIBUTE = 'member'
-    DEFAULT_ATTRIBUTE_IGNORE = []
+    DEFAULT_ATTRIBUTE_IGNORE = ['domain_id']
     NotFound = exception.GroupNotFound
     options_name = 'group'
     attribute_mapping = {'name': 'ou',
@@ -970,3 +994,62 @@ class GroupApi(common_ldap.BaseLdap, ApiShimMixin):
                                 " from the group. The user will be ignored.") %
                               dict(user_dn=user_dn, group_dn=group_dn))
         return users
+
+
+class DomainApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap,
+                ApiShimMixin):
+    DEFAULT_OU = 'ou=Domains'
+    DEFAULT_STRUCTURAL_CLASSES = []
+    DEFAULT_OBJECTCLASS = 'groupOfNames'
+    DEFAULT_ID_ATTR = 'cn'
+    DEFAULT_MEMBER_ATTRIBUTE = 'member'
+    DEFAULT_ATTRIBUTE_IGNORE = []
+    options_name = 'domain'
+    attribute_mapping = {'name': 'ou',
+                         'description': 'description',
+                         'domainId': 'cn',
+                         'enabled': 'enabled'}
+    model = models.Domain
+
+    def __init__(self, conf):
+        super(DomainApi, self).__init__(conf)
+        self.api = ApiShim(conf)
+        self.attribute_mapping['name'] = conf.ldap.domain_name_attribute
+        self.attribute_mapping['description'] = conf.ldap.domain_desc_attribute
+        self.attribute_mapping['enabled'] = conf.ldap.domain_enabled_attribute
+        self.member_attribute = (getattr(conf.ldap, 'domain_member_attribute')
+                                 or self.DEFAULT_MEMBER_ATTRIBUTE)
+        self.attribute_ignore = (getattr(conf.ldap, 'domain_attribute_ignore')
+                                 or self.DEFAULT_ATTRIBUTE_IGNORE)
+
+    def get(self, id, filter=None):
+        try:
+            return super(DomainApi, self).get(id, filter)
+        except exception.NotFound:
+            if id == CONF.identity.default_domain_id:
+                return DEFAULT_DOMAIN
+            raise exception.DomainNotFound(domain_id=id)
+
+    def create(self, values):
+        self.affirm_unique(values)
+        data = values.copy()
+        if data.get('id') is None:
+            data['id'] = uuid.uuid4().hex
+        return super(DomainApi, self).create(data)
+
+    def delete(self, id):
+        if self.subtree_delete_enabled:
+            super(DomainApi, self).deleteTree(id)
+        else:
+            self.role_api.roles_delete_subtree_by_type(id, 'Domain')
+            super(DomainApi, self).delete(id)
+
+    def update(self, id, values):
+        try:
+            old_obj = self.get(id)
+        except exception.NotFound:
+            raise exception.DomainNotFound(domain_id=id)
+        if old_obj['name'] != values['name']:
+            msg = _('Changing Name not supported by LDAP')
+            raise exception.NotImplemented(message=msg)
+        super(DomainApi, self).update(id, values, old_obj)

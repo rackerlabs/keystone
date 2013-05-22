@@ -1143,3 +1143,7 @@ tls_cacertfile and tls_cacertdir are set then tls_cacertfile will be
 used and tls_cacertdir is ignored.  Furthermore, valid options for
 tls_req_cert are demand, never, and allow.  These correspond to the
 standard options permitted by the TLS_REQCERT TLS option.
+
+Multiple Domain support is disabled by default.  If you wish to enable
+multiple domain support, you need to remove the `domain_id` field from
+the attribute_ignored list for the user, group, and project entities.
