@@ -16,6 +16,24 @@
       "revId": "18241dd86b5a18db9ea0b5d7a54b5fb7a9176a2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//yqE\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-22T22:33:48Z",
+      "side": 1,
+      "message": "This line isn\u0027t a problem. The html parser correctly uses the next line as the description and this line doesn\u0027t generate a warning when generating the docs.\n\nBut I see that the fix to --pydev-debug-port and --pydef-debug-host are incorrect, I should have added a description rather than make the argument spec the description.",
+      "parentUuid": "AAAAPH//yr0\u003d",
+      "revId": "18241dd86b5a18db9ea0b5d7a54b5fb7a9176a2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
