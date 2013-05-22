@@ -18,42 +18,16 @@ import io
 import uuid
 
 from lxml import etree
-import nose.exc
 import webtest
 
 from keystone.common import serializer
 from keystone.openstack.common import jsonutils
 from keystone import test
 
-import default_fixtures
+from tests import default_fixtures
 
 
-class RestfulTestCase(test.TestCase):
-    """Performs restful tests against the WSGI app over HTTP.
-
-    This class launches public & admin WSGI servers for every test, which can
-    be accessed by calling ``public_request()`` or ``admin_request()``,
-    respectfully.
-
-    ``restful_request()`` and ``request()`` methods are also exposed if you
-    need to bypass restful conventions or access HTTP details in your test
-    implementation.
-
-    Three new asserts are provided:
-
-    * ``assertResponseSuccessful``: called automatically for every request
-        unless an ``expected_status`` is provided
-    * ``assertResponseStatus``: called instead of ``assertResponseSuccessful``,
-        if an ``expected_status`` is provided
-    * ``assertValidResponseHeaders``: validates that the response headers
-        appear as expected
-
-    Requests are automatically serialized according to the defined
-    ``content_type``. Responses are automatically deserialized as well, and
-    available in the ``response.body`` attribute. The original body content is
-    available in the ``response.raw`` attribute.
-
-    """
+class BaseRestfulTestCase(test.TestCase):
 
     # default content type to test
     content_type = 'json'
@@ -237,6 +211,60 @@ class RestfulTestCase(test.TestCase):
 
         """
         raise NotImplementedError()
+
+
+class RestfulTestCase(BaseRestfulTestCase):
+    """Performs restful tests against the WSGI app over HTTP.
+
+    This class launches public & admin WSGI servers for every test, which can
+    be accessed by calling ``public_request()`` or ``admin_request()``,
+    respectfully.
+
+    ``restful_request()`` and ``request()`` methods are also exposed if you
+    need to bypass restful conventions or access HTTP details in your test
+    implementation.
+
+    Three new asserts are provided:
+
+    * ``assertResponseSuccessful``: called automatically for every request
+        unless an ``expected_status`` is provided
+    * ``assertResponseStatus``: called instead of ``assertResponseSuccessful``,
+        if an ``expected_status`` is provided
+    * ``assertValidResponseHeaders``: validates that the response headers
+        appear as expected
+
+    Requests are automatically serialized according to the defined
+    ``content_type``. Responses are automatically deserialized as well, and
+    available in the ``response.body`` attribute. The original body content is
+    available in the ``response.raw`` attribute.
+
+    """
+
+    def setUp(self):
+        super(RestfulTestCase, self).setUp()
+
+        self.load_backends()
+        self.load_fixtures(default_fixtures)
+
+        self.public_server = self.serveapp('keystone', name='main')
+        self.admin_server = self.serveapp('keystone', name='admin')
+
+        # TODO(termie): is_admin is being deprecated once the policy stuff
+        #               is all working
+        # TODO(termie): add an admin user to the fixtures and use that user
+        # override the fixtures, for now
+        self.metadata_foobar = self.identity_api.update_metadata(
+            self.user_foo['id'],
+            self.tenant_bar['id'],
+            dict(roles=[self.role_admin['id']], is_admin='1'))
+
+    def tearDown(self):
+        """Kill running servers and release references to avoid leaks."""
+        self.public_server.kill()
+        self.admin_server.kill()
+        self.public_server = None
+        self.admin_server = None
+        super(RestfulTestCase, self).tearDown()
 
 
 class CoreApiTests(object):
@@ -444,7 +472,7 @@ class CoreApiTests(object):
         self.assertValidTenantResponse(r)
 
     def test_get_user_roles(self):
-        raise nose.exc.SkipTest('Blocked by bug 933565')
+        self.skipTest('Blocked by bug 933565')
 
         token = self.get_scoped_token()
         r = self.admin_request(

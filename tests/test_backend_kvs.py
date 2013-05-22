@@ -15,8 +15,6 @@
 # under the License.
 import uuid
 
-import nose.exc
-
 from keystone import catalog
 from keystone.catalog.backends import kvs as catalog_kvs
 from keystone import exception
@@ -25,8 +23,8 @@ from keystone import test
 from keystone.token.backends import kvs as token_kvs
 from keystone.trust.backends import kvs as trust_kvs
 
-import default_fixtures
-import test_backend
+from tests import default_fixtures
+from tests import test_backend
 
 
 class KvsIdentity(test.TestCase, test_backend.IdentityTests):
@@ -40,34 +38,34 @@ class KvsIdentity(test.TestCase, test_backend.IdentityTests):
 
     def test_list_user_projects(self):
         # NOTE(chungg): not implemented
-        raise nose.exc.SkipTest('Blocked by bug 1119770')
+        self.skipTest('Blocked by bug 1119770')
 
     def test_create_duplicate_group_name_in_different_domains(self):
-        raise nose.exc.SkipTest('Blocked by bug 1119770')
+        self.skipTest('Blocked by bug 1119770')
 
     def test_create_duplicate_user_name_in_different_domains(self):
-        raise nose.exc.SkipTest('Blocked by bug 1119770')
+        self.skipTest('Blocked by bug 1119770')
 
     def test_create_duplicate_project_name_in_different_domains(self):
-        raise nose.exc.SkipTest('Blocked by bug 1119770')
+        self.skipTest('Blocked by bug 1119770')
 
     def test_move_user_between_domains(self):
-        raise nose.exc.SkipTest('Blocked by bug 1119770')
+        self.skipTest('Blocked by bug 1119770')
 
     def test_move_user_between_domains_with_clashing_names_fails(self):
-        raise nose.exc.SkipTest('Blocked by bug 1119770')
+        self.skipTest('Blocked by bug 1119770')
 
     def test_move_group_between_domains(self):
-        raise nose.exc.SkipTest('Blocked by bug 1119770')
+        self.skipTest('Blocked by bug 1119770')
 
     def test_move_group_between_domains_with_clashing_names_fails(self):
-        raise nose.exc.SkipTest('Blocked by bug 1119770')
+        self.skipTest('Blocked by bug 1119770')
 
     def test_move_project_between_domains(self):
-        raise nose.exc.SkipTest('Blocked by bug 1119770')
+        self.skipTest('Blocked by bug 1119770')
 
     def test_move_project_between_domains_with_clashing_names_fails(self):
-        raise nose.exc.SkipTest('Blocked by bug 1119770')
+        self.skipTest('Blocked by bug 1119770')
 
 
 class KvsToken(test.TestCase, test_backend.TokenTests):

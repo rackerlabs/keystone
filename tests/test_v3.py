@@ -21,7 +21,7 @@ DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
 
-class RestfulTestCase(test_content_types.RestfulTestCase):
+class RestfulTestCase(test_content_types.BaseRestfulTestCase):
     def setUp(self, load_sample_data=True):
         """Setup for v3 Restful Test Cases.
 
@@ -30,6 +30,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         load_sample_data should be set to false.
 
         """
+        super(RestfulTestCase, self).setUp()
         self.config([
             test.etcdir('keystone.conf.sample'),
             test.testsdir('test_overrides.conf'),
@@ -97,16 +98,13 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         self.admin_server = self.serveapp('keystone', name='admin')
 
     def tearDown(self):
-        self.public_server.kill()
-        self.admin_server.kill()
-        self.public_server = None
-        self.admin_server = None
         sql_util.teardown_test_database()
         # need to reset the plug-ins
         auth.controllers.AUTH_METHODS = {}
         #drop the policy rules
         CONF.reset()
         rules.reset()
+        super(RestfulTestCase, self).tearDown()
 
     def new_ref(self):
         """Populates a ref with attributes common to all API entities."""

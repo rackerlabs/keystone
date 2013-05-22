@@ -17,16 +17,14 @@
 
 import uuid
 
-import nose.exc
-
 from keystone.common.ldap import fakeldap
 from keystone import config
 from keystone import exception
 from keystone import identity
 from keystone import test
 
-import default_fixtures
-import test_backend
+from tests import default_fixtures
+from tests import test_backend
 
 
 CONF = config.CONF
@@ -441,28 +439,28 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                           domain['id'])
 
     def test_get_role_grant_by_user_and_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
+        self.skipTest('Blocked by bug 1101287')
 
     def test_get_role_grants_for_user_and_project_404(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
+        self.skipTest('Blocked by bug 1101287')
 
     def test_add_role_grant_to_user_and_project_404(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
+        self.skipTest('Blocked by bug 1101287')
 
     def test_remove_role_grant_from_user_and_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
+        self.skipTest('Blocked by bug 1101287')
 
     def test_get_and_remove_role_grant_by_group_and_project(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
+        self.skipTest('Blocked by bug 1101287')
 
     def test_get_and_remove_role_grant_by_group_and_domain(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_get_and_remove_role_grant_by_user_and_domain(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_get_and_remove_correct_role_grant_from_a_mix(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
+        self.skipTest('Blocked by bug 1101287')
 
     def test_project_crud(self):
         # NOTE(topol): LDAP implementation does not currently support the
@@ -492,66 +490,64 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                           project['id'])
 
     def test_get_and_remove_role_grant_by_group_and_cross_domain(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_get_and_remove_role_grant_by_user_and_cross_domain(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_role_grant_by_group_and_cross_domain_project(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_role_grant_by_user_and_cross_domain_project(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_multi_role_grant_by_user_group_on_project_domain(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_delete_role_with_user_and_group_grants(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
+        self.skipTest('Blocked by bug 1101287')
 
     def test_delete_user_with_group_project_domain_links(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_delete_group_with_user_project_domain_links(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_list_user_projects(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101287')
+        self.skipTest('Blocked by bug 1101287')
 
     def test_get_project_users(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_create_duplicate_user_name_in_different_domains(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101276')
+        self.skipTest('Blocked by bug 1101276')
 
     def test_create_duplicate_project_name_in_different_domains(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101276')
+        self.skipTest('Blocked by bug 1101276')
 
     def test_create_duplicate_group_name_in_different_domains(self):
-        raise nose.exc.SkipTest(
-            'N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_move_user_between_domains(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101276')
+        self.skipTest('Blocked by bug 1101276')
 
     def test_move_user_between_domains_with_clashing_names_fails(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101276')
+        self.skipTest('Blocked by bug 1101276')
 
     def test_move_group_between_domains(self):
-        raise nose.exc.SkipTest(
-            'N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_move_group_between_domains_with_clashing_names_fails(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101276')
+        self.skipTest('Blocked by bug 1101276')
 
     def test_move_project_between_domains(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101276')
+        self.skipTest('Blocked by bug 1101276')
 
     def test_move_project_between_domains_with_clashing_names_fails(self):
-        raise nose.exc.SkipTest('Blocked by bug 1101276')
+        self.skipTest('Blocked by bug 1101276')
 
     def test_get_roles_for_user_and_domain(self):
-        raise nose.exc.SkipTest('N/A: LDAP does not support multiple domains')
+        self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_list_group_members_missing_entry(self):
         """List group members with deleted user.
@@ -692,5 +688,4 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
                           user['id'])
 
     def test_user_enable_attribute_mask(self):
-        raise nose.exc.SkipTest(
-            "Enabled emulation conflicts with enabled mask")
+        self.skipTest("Enabled emulation conflicts with enabled mask")

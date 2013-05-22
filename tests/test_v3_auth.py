@@ -15,14 +15,14 @@
 import json
 import uuid
 
-import nose.exc
+import testtools
 
 from keystone import auth
 from keystone.common import cms
 from keystone import config
 from keystone import exception
 
-import test_v3
+from tests import test_v3
 
 
 CONF = config.CONF
@@ -1036,7 +1036,7 @@ class TestTrustAuth(TestAuthInfo):
         self.identity_api.create_user(self.trustee_user_id, self.trustee_user)
 
     def test_create_trust_400(self):
-        raise nose.exc.SkipTest('Blocked by bug 1133435')
+        self.skipTest('Blocked by bug 1133435')
         self.post('/OS-TRUST/trusts', body={'trust': {}}, expected_status=400)
 
     def test_create_unscoped_trust(self):

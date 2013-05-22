@@ -15,7 +15,7 @@
 # under the License.
 
 import datetime
-import default_fixtures
+from tests import default_fixtures
 import uuid
 
 from keystone.catalog import core
@@ -2296,16 +2296,19 @@ class TrustTests(object):
 
 class CommonHelperTests(test.TestCase):
     def test_format_helper_raises_malformed_on_missing_key(self):
-        with self.assertRaises(exception.MalformedEndpoint):
-            core.format_url("http://%(foo)s/%(bar)s", {"foo": "1"})
+        self.assertRaises(
+            exception.MalformedEndpoint,
+            core.format_url, "http://%(foo)s/%(bar)s", {"foo": "1"})
 
     def test_format_helper_raises_malformed_on_wrong_type(self):
-        with self.assertRaises(exception.MalformedEndpoint):
-            core.format_url("http://%foo%s", {"foo": "1"})
+        self.assertRaises(
+            exception.MalformedEndpoint,
+            core.format_url, "http://%foo%s", {"foo": "1"})
 
     def test_format_helper_raises_malformed_on_incomplete_format(self):
-        with self.assertRaises(exception.MalformedEndpoint):
-            core.format_url("http://%(foo)", {"foo": "1"})
+        self.assertRaises(
+            exception.MalformedEndpoint,
+            core.format_url, "http://%(foo)", {"foo": "1"})
 
 
 class CatalogTests(object):

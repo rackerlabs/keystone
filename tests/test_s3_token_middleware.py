@@ -17,27 +17,13 @@
 import logging
 
 import stubout
-import unittest2 as unittest
+import testtools
 import webob
 
 from swift.common import utils as swift_utils
 
 from keystone.middleware import s3_token
 from keystone.openstack.common import jsonutils
-
-
-def setUpModule(self):
-    self.stubs = stubout.StubOutForTesting()
-    # Stub out swift_utils.get_logger.  get_logger tries to configure
-    # syslogging to '/dev/log', which will fail on OS X.
-
-    def fake_get_logger(config, log_route=None):
-        return logging.getLogger(log_route)
-    self.stubs.Set(swift_utils, 'get_logger', fake_get_logger)
-
-
-def tearDownModule(self):
-    self.stubs.UnsetAll()
 
 
 class FakeHTTPResponse(object):
@@ -72,9 +58,18 @@ class FakeHTTPConnection(object):
         pass
 
 
-class S3TokenMiddlewareTestBase(unittest.TestCase):
+class S3TokenMiddlewareTestBase(testtools.TestCase):
+
     def setUp(self):
         super(S3TokenMiddlewareTestBase, self).setUp()
+        self.stubs = stubout.StubOutForTesting()
+        self.addCleanup(self.stubs.UnsetAll)
+        # Stub out swift_utils.get_logger.  get_logger tries to configure
+        # syslogging to '/dev/log', which will fail on OS X.
+
+        def fake_get_logger(config, log_route=None):
+            return logging.getLogger(log_route)
+        self.stubs.Set(swift_utils, 'get_logger', fake_get_logger)
 
     def start_fake_response(self, status, headers):
         self.response_status = int(status.split(' ', 1)[0])

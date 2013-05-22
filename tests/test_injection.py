@@ -14,13 +14,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import unittest2 as unittest
+import testtools
 import uuid
 
 from keystone.common import dependency
 
 
-class TestDependencyInjection(unittest.TestCase):
+class TestDependencyInjection(testtools.TestCase):
     def test_dependency_injection(self):
         class Interface(object):
             def do_work(self):
@@ -163,5 +163,4 @@ class TestDependencyInjection(unittest.TestCase):
         class Consumer(object):
             pass
 
-        with self.assertRaises(dependency.UnresolvableDependencyException):
-            Consumer()
+        self.assertRaises(dependency.UnresolvableDependencyException, Consumer)

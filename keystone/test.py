@@ -22,11 +22,11 @@ import subprocess
 import sys
 import time
 
+import fixtures
 import mox
-import nose.exc
 from paste import deploy
 import stubout
-import unittest2 as unittest
+import testtools
 
 from keystone import catalog
 from keystone.common import kvs
@@ -48,7 +48,7 @@ wsgi_server.monkey_patch_eventlet()
 
 
 LOG = logging.getLogger(__name__)
-ROOTDIR = os.path.dirname(os.path.abspath(os.curdir))
+ROOTDIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
 TESTSDIR = os.path.join(ROOTDIR, 'tests')
 ETCDIR = os.path.join(ROOTDIR, 'etc')
@@ -111,6 +111,8 @@ def checkout_vendor(repo, rev):
         with open(modcheck, 'w') as fd:
             fd.write('1')
     except subprocess.CalledProcessError:
+        raise testtools.TestCase.skipException(
+            "Unable to check out old libraries from git")
         LOG.warning(_('Failed to checkout %s'), repo)
     cd(working_dir)
     return revdir
@@ -184,10 +186,24 @@ class NoModule(object):
         sys.meta_path.insert(0, finder)
 
 
-class TestCase(NoModule, unittest.TestCase):
+class MoxStubout(fixtures.Fixture):
+    """Deal with code around mox and stubout as a fixture."""
+
+    def setUp(self):
+        super(MoxStubout, self).setUp()
+        # emulate some of the mox stuff, we can't use the metaclass
+        # because it screws with our generators
+        self.mox = mox.Mox()
+        self.stubs = stubout.StubOutForTesting()
+        self.addCleanup(self.stubs.UnsetAll)
+        self.addCleanup(self.stubs.SmartUnsetAll)
+        self.addCleanup(self.mox.UnsetStubs)
+        self.addCleanup(self.mox.VerifyAll)
+
+
+class TestCase(NoModule, testtools.TestCase):
     def __init__(self, *args, **kw):
         super(TestCase, self).__init__(*args, **kw)
-        self._paths = []
         self._memo = {}
         self._overrides = []
         self._group_overrides = {}
@@ -197,30 +213,42 @@ class TestCase(NoModule, unittest.TestCase):
 
     def setUp(self):
         super(TestCase, self).setUp()
+        test_timeout = os.environ.get('OS_TEST_TIMEOUT', 0)
+        try:
+            test_timeout = int(test_timeout)
+        except ValueError:
+            # If timeout value is invalid do not set a timeout.
+            test_timeout = 0
+        if test_timeout > 0:
+            self.useFixture(fixtures.Timeout(test_timeout, gentle=True))
+        self.useFixture(fixtures.NestedTempfile())
+        self.useFixture(fixtures.TempHomeDir())
+
+        if (os.environ.get('OS_STDOUT_CAPTURE') == 'True' or
+                os.environ.get('OS_STDOUT_CAPTURE') == '1'):
+            stdout = self.useFixture(fixtures.StringStream('stdout')).stream
+            self.useFixture(fixtures.MonkeyPatch('sys.stdout', stdout))
+        if (os.environ.get('OS_STDERR_CAPTURE') == 'True' or
+                os.environ.get('OS_STDERR_CAPTURE') == '1'):
+            stderr = self.useFixture(fixtures.StringStream('stderr')).stream
+            self.useFixture(fixtures.MonkeyPatch('sys.stderr', stderr))
+
+        self.log_fixture = self.useFixture(fixtures.FakeLogger())
+
+        mox_fixture = self.useFixture(MoxStubout())
+        self.mox = mox_fixture.mox
+        self.stubs = mox_fixture.stubs
+
         self.config([etcdir('keystone.conf.sample'),
                      testsdir('test_overrides.conf')])
-        self.mox = mox.Mox()
         self.opt(policy_file=etcdir('policy.json'))
-        self.stubs = stubout.StubOutForTesting()
         self.stubs.Set(exception, '_FATAL_EXCEPTION_FORMAT_ERRORS', True)
+        self.addCleanup(timeutils.clear_time_override)
+        self.addCleanup(kvs.INMEMDB.clear)
+        self.addCleanup(CONF.reset)
 
     def config(self, config_files):
         CONF(args=[], project='keystone', default_config_files=config_files)
-
-    def tearDown(self):
-        try:
-            timeutils.clear_time_override()
-            self.mox.UnsetStubs()
-            self.stubs.UnsetAll()
-            self.stubs.SmartUnsetAll()
-            self.mox.VerifyAll()
-            super(TestCase, self).tearDown()
-        finally:
-            for path in self._paths:
-                if path in sys.path:
-                    sys.path.remove(path)
-            kvs.INMEMDB.clear()
-            CONF.reset()
 
     def opt_in_group(self, group, **kw):
         for k, v in kw.iteritems():
@@ -329,10 +357,6 @@ class TestCase(NoModule, unittest.TestCase):
     def client(self, app, *args, **kw):
         return TestClient(app, *args, **kw)
 
-    def add_path(self, path):
-        sys.path.insert(0, path)
-        self._paths.append(path)
-
     def assertCloseEnoughForGovernmentWork(self, a, b, delta=3):
         """Asserts that two datetimes are nearly equal within a small delta.
 
@@ -352,19 +376,17 @@ class TestCase(NoModule, unittest.TestCase):
             self.assertIn(x, fullset)
             self.assertEquals(subset.get(x), fullset.get(x))
 
-    @staticmethod
-    def skip_if_no_ipv6():
+    def skip_if_no_ipv6(self):
 
         # TODO(blk-u): lp 1176204. At this time, eventlet address resolution
         # doesn't support IPv6. Once it does, remove the next line.
-        raise nose.exc.SkipTest("Eventlet doesn't support IPv6, lp 1176204")
+        self.skipTest("Eventlet doesn't support IPv6, lp 1176204")
 
         try:
             s = socket.socket(socket.AF_INET6)
         except socket.error as e:
-            if e.errno == errno.EAFNOSUPPORT:
-                raise nose.exc.SkipTest("IPv6 is not enabled in the system")
-            else:
-                raise
+            self.skipIf(e.errno == errno.EAFNOSUPPORT,
+                        "IPv6 is not enabled in the system")
+            raise
         else:
             s.close()
