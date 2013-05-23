@@ -148,8 +148,8 @@ def filterprotected(*filters):
     return _filterprotected
 
 
-@dependency.requires('identity_api', 'policy_api', 'token_api',
-                     'trust_api', 'catalog_api', 'credential_api')
+@dependency.requires('identity_api', 'policy_api', 'token_api', 'trust_api',
+                     'revoked_token_api', 'catalog_api', 'credential_api')
 class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
 
@@ -157,20 +157,38 @@ class V2Controller(wsgi.Application):
         try:
             token_list = self.token_api.list_tokens(context, user_id,
                                                     trust_id=trust_id)
-            for token in token_list:
-                self.token_api.delete_token(context, token)
+            deleted = self.token_api.batch_delete_tokens(context,
+                                                         token_list=token_list)
+            try:
+                full_list = self.token_api.list_revoked_tokens(context)
+                flush_all = True
+            except exception.NotImplemented:
+                full_list = deleted
+                flush_all = False
+            self.revoked_token_api.add_revoked_tokens(
+                context, revoke_tokens_list=full_list, flush_all=flush_all)
         except exception.NotFound:
             pass
 
     def _delete_tokens_for_user(self, context, user_id, project_id=None):
         #First delete tokens that could get other tokens.
-        for token_id in self.token_api.list_tokens(context,
-                                                   user_id,
-                                                   tenant_id=project_id):
+
+        try:
+            token_list = self.token_api.list_tokens(context,
+                                                    user_id,
+                                                    tenant_id=project_id)
+            deleted = self.token_api.batch_delete_tokens(context,
+                                                         token_list=token_list)
             try:
-                self.token_api.delete_token(context, token_id)
-            except exception.NotFound:
-                pass
+                full_list = self.revoked_token_api.list_revoked_tokens(context)
+                flush_all = True
+            except exception.NotImplemented:
+                full_list = deleted
+                flush_all = False
+            self.revoked_token_api.add_revoked_tokens(
+                context, revoke_tokens_list=full_list, flush_all=flush_all)
+        except exception.NotFound:
+            pass
 
         #delete tokens generated from trusts
         for trust in self.trust_api.list_trusts_for_trustee(context, user_id):

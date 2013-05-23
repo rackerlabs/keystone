@@ -22,7 +22,8 @@ class ExternalAuthNotApplicable(Exception):
     pass
 
 
-@dependency.requires('catalog_api', 'trust_api', 'token_api')
+@dependency.requires('catalog_api', 'trust_api', 'token_api',
+                     'revoked_token_api')
 class Auth(controller.V2Controller):
     def ca_cert(self, context, auth=None):
         ca_file = open(CONF.signing.ca_certs, 'r')
@@ -559,11 +560,23 @@ class Auth(controller.V2Controller):
         """Delete a token, effectively invalidating it for authz."""
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
-        self.token_api.delete_token(context=context, token_id=token_id)
+        token_ref = self.token_api.delete_token(context=context,
+                                                token_id=token_id)
+        try:
+            full_token_list = self.token_api.list_revoked_tokens(context)
+        except exception.NotImplemented:
+            full_token_list = None
+
+        if full_token_list is None:
+            self.revoked_token_api.add_revoked_token(context,
+                                                     token_ref=token_ref)
+        else:
+            self.revoked_token_api.add_revoked_tokens(
+                context, revoke_tokens_list=full_token_list, flush_all=True)
 
     def revocation_list(self, context, auth=None):
         self.assert_admin(context)
-        tokens = self.token_api.list_revoked_tokens(context)
+        tokens = self.revoked_token_api.list_revoked_tokens(context)
 
         for t in tokens:
             expires = t['expires']

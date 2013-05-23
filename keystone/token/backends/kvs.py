@@ -54,11 +54,20 @@ class Token(kvs.Base, token.Driver):
     def delete_token(self, token_id):
         token_id = token.unique_id(token_id)
         try:
-            token_ref = self.get_token(token_id)
+            token_copy = copy.deepcopy(self.db.get('token-%s' % token_id))
             self.db.delete('token-%s' % token_id)
-            self.db.set('revoked-token-%s' % token_id, token_ref)
         except exception.NotFound:
             raise exception.TokenNotFound(token_id=token_id)
+        return token_copy
+
+    def batch_delete_tokens(self, token_list):
+        deleted_tokens = []
+        for token_id in token_list:
+            try:
+                deleted_tokens.append(self.delete_token(token_id))
+            except exception.TokenNotFound:
+                pass
+        return deleted_tokens
 
     def is_not_expired(self, now, ref):
         return not ref.get('expires') and ref.get('expires') < now
