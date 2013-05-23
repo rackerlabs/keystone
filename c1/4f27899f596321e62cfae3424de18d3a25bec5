@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Approved+1: Chuck Short <chuck.short@canonical.com>
+Code-Review+1: Chuck Short <chuck.short@canonical.com>
+Approved+1: Adam Gandelman <adam.gandelman@canonical.com>
+Code-Review+2: Adam Gandelman <adam.gandelman@canonical.com>
+Code-Review+1: guang-yee <guang.yee@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 23 May 2013 19:45:42 +0000
+Reviewed-on: https://review.openstack.org/30147
+Project: openstack/keystone
+Branch: refs/heads/stable/folsom
