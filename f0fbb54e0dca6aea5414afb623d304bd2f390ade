@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//yKI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-05-23T04:38:37Z",
+      "side": 1,
+      "message": "I think the except should go in the default implementation in core and not in the controller. \n\nIt cannot be raised by the SQL backend, and in the default impl it can be raised by first listing a user\u0027s tokens and then that token being missing when it comes to being deleted. In that unlikely scenario we shouldn\u0027t exit the whole delete loop but skip that one missing token. (ie inside the for loop)",
+      "revId": "f0fbb54e0dca6aea5414afb623d304bd2f390ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//yKE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-05-23T04:38:37Z",
+      "side": 1,
+      "message": "ditto above",
+      "revId": "f0fbb54e0dca6aea5414afb623d304bd2f390ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//yJ4\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-05-23T04:38:37Z",
+      "side": 1,
+      "message": "(discussion) if this is sort of thing is going to be something we do often maybe tenant_id should go on the token table so we can just add it to the filter, same for list_tokens.",
+      "revId": "f0fbb54e0dca6aea5414afb623d304bd2f390ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//yKg\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-05-23T04:38:37Z",
+      "side": 1,
+      "message": "Given that the parameters are exactly the same as list_tokens can we just call this delete_tokens? or maybe list_tokens should be list_tokens_for_user.",
+      "revId": "f0fbb54e0dca6aea5414afb623d304bd2f390ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
