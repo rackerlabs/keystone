@@ -166,6 +166,16 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    def batch_delete_tokens(self, token_list):
+        """
+        Deletes each token_id in the token_list.
+
+        :param token_list: list of token_id's
+        :type token_list: list
+        :returns: None.
+        """
+        raise exception.NotImplemented()
+
     def list_tokens(self, user_id, tenant_id=None, trust_id=None):
         """Returns a list of current token_id's for a user
 
@@ -181,9 +191,15 @@ class Driver(object):
         raise exception.NotImplemented()
 
     def list_revoked_tokens(self):
-        """Returns a list of all revoked tokens
+        """Returns a list of all revoked tokens.
 
-        :returns: list of token_id's
+        This method should only be implemented on a subclass if the driver
+        requires a complete refresh of the revocation-list each time a token
+        is deleted (e.g. the canonical source of revoked tokens is managed in
+        the token driver like the SQL driver does).  This will be used to
+        populate caches such as KVS or Memcache revocation-list drivers.
+
+        :returns: list of token_ref's
 
         """
         raise exception.NotImplemented()

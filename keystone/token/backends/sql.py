@@ -72,10 +72,21 @@ class Token(sql.Base, token.Driver):
         key = token.unique_id(token_id)
         with session.begin():
             token_ref = session.query(TokenModel).get(key)
+            token_copy = copy.deepcopy(token_ref)
             if not token_ref or not token_ref.valid:
                 raise exception.TokenNotFound(token_id=token_id)
             token_ref.valid = False
             session.flush()
+        return token_copy
+
+    def batch_delete_tokens(self, token_list):
+        deleted_tokens = []
+        for token_id in token_list:
+            try:
+                deleted_tokens.append(self.delete_token(token_id))
+            except exception.TokenNotFound:
+                pass
+        return deleted_tokens
 
     def _list_tokens_for_trust(self, trust_id):
         session = self.get_session()

@@ -2155,10 +2155,10 @@ class TokenTests(object):
 
         self.assertEqual(data_ref, new_data_ref)
 
-    def check_list_revoked_tokens(self, token_ids):
-        revoked_ids = [x['id'] for x in self.token_api.list_revoked_tokens()]
-        for token_id in token_ids:
-            self.assertIn(token_id, revoked_ids)
+    #def check_list_revoked_tokens(self, token_ids):
+    #    revoked_ids = [x['id'] for x in self.token_api.list_revoked_tokens()]
+    #    for token_id in token_ids:
+    #        self.assertIn(token_id, revoked_ids)
 
     def delete_token(self):
         token_id = uuid.uuid4().hex
@@ -2176,16 +2176,16 @@ class TokenTests(object):
             data_ref['id'])
         return token_id
 
-    def test_list_revoked_tokens_returns_empty_list(self):
-        revoked_ids = [x['id'] for x in self.token_api.list_revoked_tokens()]
-        self.assertEqual(revoked_ids, [])
+    #def test_list_revoked_tokens_returns_empty_list(self):
+    #    revoked_ids = [x['id'] for x in self.token_api.list_revoked_tokens()]
+    #    self.assertEqual(revoked_ids, [])
 
-    def test_list_revoked_tokens_for_single_token(self):
-        self.check_list_revoked_tokens([self.delete_token()])
+    #def test_list_revoked_tokens_for_single_token(self):
+    #    self.check_list_revoked_tokens([self.delete_token()])
 
-    def test_list_revoked_tokens_for_multiple_tokens(self):
-        self.check_list_revoked_tokens([self.delete_token()
-                                        for x in xrange(2)])
+    #def test_list_revoked_tokens_for_multiple_tokens(self):
+    #    self.check_list_revoked_tokens([self.delete_token()
+    #                                    for x in xrange(2)])
 
     def test_flush_expired_token(self):
         token_id = uuid.uuid4().hex
