@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//wA0\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-05-23T21:20:57Z",
+      "side": 1,
+      "message": "TODO(henry-hash): If ..\n\nIs the colon significant?",
+      "revId": "a7e1add548a06b94e8dcea1e27b9118551c649dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//wA4\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-05-23T21:20:57Z",
+      "side": 1,
+      "message": "TODO(henry-nash): These ..",
+      "revId": "a7e1add548a06b94e8dcea1e27b9118551c649dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
