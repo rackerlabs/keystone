@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//yGw\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7473
+      },
+      "writtenOn": "2013-05-23T05:30:22Z",
+      "side": 1,
+      "message": "Minor comment: Should this (crypt_strength) be moved out into the configuration also? \n\nIf CryptoContext is going to be the eventual direction I think the following should be registered in the configuration: \n\nCONF.identity.pw_max_length (currently max_pass_length)\nCONF.identity.pw_rounds        (currently crypt_strength)\nCONF.identity.pw_algorithm    (currently not configurable)\n\nHowever this can be delayed for a future change.",
+      "revId": "862f3786f47c5cca1a15f25644728e976085da49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
