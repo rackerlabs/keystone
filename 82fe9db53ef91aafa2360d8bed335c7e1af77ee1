@@ -72,6 +72,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//xLA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T14:23:28Z",
+      "side": 1,
+      "message": "Would it be useful to carry over the docstrings as well? This will help readability and they are already written. Thoughts?",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//xKY\u003d",
+        "filename": "keystone/identity/backends/pam.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T14:23:28Z",
+      "side": 1,
+      "message": "I think it would be useful to document this method to state it returns a tuple as it is a little hard to spot this than the old implementation.",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//xRo\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 1
