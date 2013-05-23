@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-05-22 17:05+0000\n"
+"POT-Creation-Date: 2013-05-23 17:05+0000\n"
 "PO-Revision-Date: 2013-05-22 03:11+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) "
@@ -38,7 +38,7 @@ msgstr "%(property_name)s 不應超過 %(max_length)s 個字元。"
 msgid "%(property_name)s is not a %(display_expected_type)s"
 msgstr ""
 
-#: keystone/test.py:115
+#: keystone/test.py:114
 #, python-format
 msgid "Failed to checkout %s"
 msgstr "無法移出 %s"
@@ -188,28 +188,28 @@ msgstr "RBAC：正在新增查詢過濾器參數 (%s)"
 msgid "Invalid token in normalize_domain_id"
 msgstr "normalize_domain_id 中的記號無效"
 
-#: keystone/common/wsgi.py:106
-#, python-format
-msgid "Starting %(arg0)s on %(host)s:%(port)s"
-msgstr "正在 %(host)s:%(port)s 上啟動 %(arg0)s"
-
-#: keystone/common/wsgi.py:166
-msgid "Server error"
-msgstr "伺服器錯誤"
-
-#: keystone/common/wsgi.py:245
+#: keystone/common/wsgi.py:162
 #, python-format
 msgid "arg_dict: %s"
 msgstr "arg_dict：%s"
 
-#: keystone/common/wsgi.py:267
+#: keystone/common/wsgi.py:184
 #, python-format
 msgid "Authorization failed. %s from %s"
 msgstr "授權失敗。%s（自 %s）"
 
-#: keystone/common/wsgi.py:510
+#: keystone/common/wsgi.py:427
 msgid "The resource could not be found."
 msgstr "找不到資源。"
+
+#: keystone/common/wsgi_server.py:59
+#, python-format
+msgid "Starting %(arg0)s on %(host)s:%(port)s"
+msgstr "正在 %(host)s:%(port)s 上啟動 %(arg0)s"
+
+#: keystone/common/wsgi_server.py:119
+msgid "Server error"
+msgstr "伺服器錯誤"
 
 #: keystone/common/ldap/core.py:79
 #, python-format

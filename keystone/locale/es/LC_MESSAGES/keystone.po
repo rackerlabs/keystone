@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-05-22 17:05+0000\n"
+"POT-Creation-Date: 2013-05-23 17:05+0000\n"
 "PO-Revision-Date: 2013-05-21 09:13+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Spanish "
@@ -38,7 +38,7 @@ msgstr "%(property_name)s no debe tener más de %(max_length)s caracteres."
 msgid "%(property_name)s is not a %(display_expected_type)s"
 msgstr ""
 
-#: keystone/test.py:115
+#: keystone/test.py:114
 #, python-format
 msgid "Failed to checkout %s"
 msgstr "No se ha podido extraer %s"
@@ -200,28 +200,28 @@ msgstr "RBAC: añadiendo parámetros de filtro de consultas (%s)"
 msgid "Invalid token in normalize_domain_id"
 msgstr "Señal no válida en normalize_domain_id"
 
-#: keystone/common/wsgi.py:106
-#, python-format
-msgid "Starting %(arg0)s on %(host)s:%(port)s"
-msgstr "Iniciando %(arg0)s en %(host)s:%(port)s"
-
-#: keystone/common/wsgi.py:166
-msgid "Server error"
-msgstr "Error de servidor"
-
-#: keystone/common/wsgi.py:245
+#: keystone/common/wsgi.py:162
 #, python-format
 msgid "arg_dict: %s"
 msgstr "arg_dict: %s"
 
-#: keystone/common/wsgi.py:267
+#: keystone/common/wsgi.py:184
 #, python-format
 msgid "Authorization failed. %s from %s"
 msgstr "Ha fallado la autorización. %s de %s"
 
-#: keystone/common/wsgi.py:510
+#: keystone/common/wsgi.py:427
 msgid "The resource could not be found."
 msgstr "El recurso no se ha podido encontrar."
+
+#: keystone/common/wsgi_server.py:59
+#, python-format
+msgid "Starting %(arg0)s on %(host)s:%(port)s"
+msgstr "Iniciando %(arg0)s en %(host)s:%(port)s"
+
+#: keystone/common/wsgi_server.py:119
+msgid "Server error"
+msgstr "Error de servidor"
 
 #: keystone/common/ldap/core.py:79
 #, python-format

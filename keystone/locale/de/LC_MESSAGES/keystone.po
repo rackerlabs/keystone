@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-05-22 17:05+0000\n"
+"POT-Creation-Date: 2013-05-23 17:05+0000\n"
 "PO-Revision-Date: 2013-05-22 03:45+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: German "
@@ -38,7 +38,7 @@ msgstr "%(property_name)s sollte nicht größer als %(max_length)s Zeichen sein.
 msgid "%(property_name)s is not a %(display_expected_type)s"
 msgstr ""
 
-#: keystone/test.py:115
+#: keystone/test.py:114
 #, python-format
 msgid "Failed to checkout %s"
 msgstr "%s wurde nicht ausgecheckt"
@@ -198,28 +198,28 @@ msgstr ""
 msgid "Invalid token in normalize_domain_id"
 msgstr "Ungültiges Token in 'normalize_domain_id'"
 
-#: keystone/common/wsgi.py:106
-#, python-format
-msgid "Starting %(arg0)s on %(host)s:%(port)s"
-msgstr "Starten von %(arg0)s auf %(host)s:%(port)s"
-
-#: keystone/common/wsgi.py:166
-msgid "Server error"
-msgstr "Serverfehler"
-
-#: keystone/common/wsgi.py:245
+#: keystone/common/wsgi.py:162
 #, python-format
 msgid "arg_dict: %s"
 msgstr "arg_dict: %s"
 
-#: keystone/common/wsgi.py:267
+#: keystone/common/wsgi.py:184
 #, python-format
 msgid "Authorization failed. %s from %s"
 msgstr "Autorisierung fehlgeschlagen. %s von %s"
 
-#: keystone/common/wsgi.py:510
+#: keystone/common/wsgi.py:427
 msgid "The resource could not be found."
 msgstr "Die Ressource konnte nicht gefunden werden."
+
+#: keystone/common/wsgi_server.py:59
+#, python-format
+msgid "Starting %(arg0)s on %(host)s:%(port)s"
+msgstr "Starten von %(arg0)s auf %(host)s:%(port)s"
+
+#: keystone/common/wsgi_server.py:119
+msgid "Server error"
+msgstr "Serverfehler"
 
 #: keystone/common/ldap/core.py:79
 #, python-format
