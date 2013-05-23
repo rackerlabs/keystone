@@ -277,6 +277,24 @@
       "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//wJw\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T20:28:36Z",
+      "side": 1,
+      "message": "Tested with removing these lines and everything works fine, will remove in the next patch set",
+      "parentUuid": "AAAAPH//wiw\u003d",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
