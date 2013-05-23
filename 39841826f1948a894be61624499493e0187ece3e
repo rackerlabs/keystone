@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//1Wc\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-23T04:49:31Z",
+      "side": 1,
+      "message": "I will remove it.",
+      "parentUuid": "AAAAPH//2sE\u003d",
+      "revId": "39841826f1948a894be61624499493e0187ece3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//2r8\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//1XM\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-23T04:49:31Z",
+      "side": 1,
+      "message": "I will remove the try/except and the TokenNotFound exception will be handled by the \u0027delete_token\u0027",
+      "parentUuid": "AAAAPH//2r8\u003d",
+      "revId": "39841826f1948a894be61624499493e0187ece3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//2rw\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2013-05-21T16:21:12Z",
       "side": 1,
       "message": "this is a totally generic implementation that should exist in the base driver, rather than specific driver implementations... this is literally a copy/paste from kvs",
+      "revId": "39841826f1948a894be61624499493e0187ece3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//1YA\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-23T04:49:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//2rw\u003d",
       "revId": "39841826f1948a894be61624499493e0187ece3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -135,6 +189,24 @@
       "writtenOn": "2013-05-21T16:21:12Z",
       "side": 1,
       "message": "put a base implementation here",
+      "revId": "39841826f1948a894be61624499493e0187ece3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//1WA\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-23T04:49:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//2rc\u003d",
       "revId": "39841826f1948a894be61624499493e0187ece3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
