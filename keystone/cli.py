@@ -27,6 +27,7 @@ from keystone import config
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone import token
+from keystone.token import revocation
 
 CONF = config.CONF
 
@@ -121,6 +122,8 @@ class TokenFlush(BaseApp):
     def main(cls):
         token_manager = token.Manager()
         token_manager.driver.flush_expired_tokens()
+        revoked_token_manager = revocation.Manager()
+        revoked_token_manager.driver.flush_expired_tokens()
 
 
 class ImportLegacy(BaseApp):

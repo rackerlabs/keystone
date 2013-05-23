@@ -279,6 +279,9 @@ def configure():
     register_str(
         'driver', group='token', default='keystone.token.backends.kvs.Token')
     register_str(
+        'revocation_driver', group='token',
+        default='keystone.token.revocation.backends.kvs.Revocation')
+    register_str(
         'driver', group='trust', default='keystone.trust.backends.sql.Trust')
     register_str(
         'driver', group='ec2', default='keystone.contrib.ec2.backends.kvs.Ec2')

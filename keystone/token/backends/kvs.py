@@ -54,9 +54,7 @@ class Token(kvs.Base, token.Driver):
     def delete_token(self, token_id):
         token_id = token.unique_id(token_id)
         try:
-            token_ref = self.get_token(token_id)
             self.db.delete('token-%s' % token_id)
-            self.db.set('revoked-token-%s' % token_id, token_ref)
         except exception.NotFound:
             raise exception.TokenNotFound(token_id=token_id)
 
