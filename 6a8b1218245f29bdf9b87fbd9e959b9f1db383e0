@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//wF0\u003d",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T20:51:18Z",
+      "side": 1,
+      "message": "Is this suppose to be \u0027credentials\u0027 instead of \u0027credential\u0027?",
+      "revId": "6a8b1218245f29bdf9b87fbd9e959b9f1db383e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
