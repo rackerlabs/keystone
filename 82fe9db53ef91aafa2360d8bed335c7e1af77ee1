@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//w7w\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-23T17:18:35Z",
+      "side": 1,
+      "message": "verify_user_authorization?  authorize_user?",
+      "parentUuid": "AAAAPH//xNc\u003d",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//xSM\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 1
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//w7s\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-23T17:18:35Z",
+      "side": 1,
+      "message": "good idea.  Yes it would.",
+      "parentUuid": "AAAAPH//xLA\u003d",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//xKY\u003d",
         "filename": "keystone/identity/backends/pam.py",
         "patchSetId": 1
@@ -100,6 +136,24 @@
       "writtenOn": "2013-05-23T14:23:28Z",
       "side": 1,
       "message": "I think it would be useful to document this method to state it returns a tuple as it is a little hard to spot this than the old implementation.",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//w7o\u003d",
+        "filename": "keystone/identity/backends/pam.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-23T17:18:35Z",
+      "side": 1,
+      "message": "actually, I can remove the interim variable.",
+      "parentUuid": "AAAAPH//xKY\u003d",
       "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//w7k\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-23T17:18:35Z",
+      "side": 1,
+      "message": "Yes, I just kept the old name.  This is maintaining API compatibility.",
+      "parentUuid": "AAAAPH//xRo\u003d",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//xRs\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 1
@@ -134,6 +206,24 @@
       "writtenOn": "2013-05-23T13:40:51Z",
       "side": 1,
       "message": "revise docstr to reflect new scope of responsibility",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//w7g\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-23T17:18:35Z",
+      "side": 1,
+      "message": "Good point.",
+      "parentUuid": "AAAAPH//xRs\u003d",
       "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
