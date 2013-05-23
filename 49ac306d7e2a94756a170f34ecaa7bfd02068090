@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//yJY\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-05-23T04:48:06Z",
+      "side": 1,
+      "message": "I know you didn\u0027t do it but would it not be appropriate to put --pydev-debug-host and -port next to each other?",
+      "revId": "49ac306d7e2a94756a170f34ecaa7bfd02068090",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
