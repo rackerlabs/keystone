@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//who\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-05-23T18:24:03Z",
+      "side": 1,
+      "message": "maybe you don\u0027t need the \"user\" in the name (since you always authorise with a user)....so maybe verify_authorization_[for|on|to]_project...pick you\u0027re favorite preposition...",
+      "parentUuid": "AAAAPH//w7w\u003d",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//xSM\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 1
