@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//w6Q\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-23T15:44:46Z",
+      "side": 1,
+      "message": "Hi Brant, question - if allow_global_engine is true and GLOBLE_ENGINE was found, then above check will never be executed - is that not needed?",
+      "revId": "d56bbde214e5eef27484fb758f68c4f7f2f9ba09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
