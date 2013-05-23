@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//xS0\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-23T13:40:51Z",
+      "side": 0,
+      "message": "i prefer the old return statement; made it clear that it was a tuple being constructed \u0026 returned",
+      "revId": "7db13c58bc8fe0aac35b68ac7296cabee2b5004d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

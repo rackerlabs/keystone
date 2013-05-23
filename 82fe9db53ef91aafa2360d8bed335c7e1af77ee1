@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//xSQ\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-23T13:40:51Z",
+      "side": 1,
+      "message": "can you change the word \"in\" to something else? that\u0027s very vague ... user_authorized_on_project() or authorize_user_on_project(), etc would be more explicit",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//xSM\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-23T13:40:51Z",
+      "side": 1,
+      "message": "why is this still returning a user_ref? the caller already passed one in",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//xRo\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-23T13:40:51Z",
+      "side": 1,
+      "message": "this is also verifying authorization",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//xRs\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-23T13:40:51Z",
+      "side": 1,
+      "message": "revise docstr to reflect new scope of responsibility",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
