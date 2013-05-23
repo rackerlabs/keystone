@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//vuM\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-23T23:03:56Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this go after nose.exc? \nI could be wrong, it\u0027s confusing specially with long statements at few places :-) but getting it.",
+      "revId": "c08461f4352175ed7c00837ca979949b5993dc80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
