@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//xNc\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-05-23T14:07:15Z",
+      "side": 1,
+      "message": "Agree we should change the name.  What\u0027s unusual is that if there is no project, it still returns \"successfully\", with project as None, of course.  Maybe \"extend_authorization_to_include_project\" (maybe too much of a mouthful!)",
+      "parentUuid": "AAAAPH//xSQ\u003d",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//xSM\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-23T13:40:51Z",
       "side": 1,
       "message": "why is this still returning a user_ref? the caller already passed one in",
+      "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//xOE\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-05-23T14:07:15Z",
+      "side": 1,
+      "message": "agreed - seems cleaner if this \"extending\" the authorisation to include project, so just this and the appropriate metadata is returned",
+      "parentUuid": "AAAAPH//xSM\u003d",
       "revId": "82fe9db53ef91aafa2360d8bed335c7e1af77ee1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
