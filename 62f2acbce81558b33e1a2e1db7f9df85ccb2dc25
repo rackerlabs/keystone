@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//zPo\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T18:20:06Z",
+      "side": 1,
+      "message": "Good catch, thanks Brant. Done",
+      "parentUuid": "AAAAPH//zXU\u003d",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//zVc\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-22T18:22:52Z",
       "side": 1,
       "message": "does this apply to Keystone? Keystone wouldn\u0027t pass instance. So maybe we don\u0027t need to document this option? Figure out if this is used and if not let\u0027s not document it.",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//wkA\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T18:20:06Z",
+      "side": 1,
+      "message": "I have tried this default value that is specified in oslo-incubator and it bombs out when running keystone. Wonder what we should do with this? Thoughts?",
+      "parentUuid": "AAAAPH//zVc\u003d",
       "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,58 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//wj8\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T18:20:06Z",
+      "side": 1,
+      "message": "Same with this config option",
+      "parentUuid": "AAAAPH//zVY\u003d",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//wj4\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T18:20:06Z",
+      "side": 1,
+      "message": "same with this config option",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//wjw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T18:20:06Z",
+      "side": 1,
+      "message": "... and this one",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//zU0\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 5
@@ -64,6 +152,58 @@
       "writtenOn": "2013-05-22T18:22:52Z",
       "side": 1,
       "message": "is this the format for list options? seems weird.",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//zOQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T18:20:06Z",
+      "side": 1,
+      "message": "Yes, I believe list config options are specified like this.",
+      "parentUuid": "AAAAPH//zU0\u003d",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//wjo\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T18:20:06Z",
+      "side": 1,
+      "message": "This config option works with Keystone",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//wjg\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T18:20:06Z",
+      "side": 1,
+      "message": "This one is good too, no issues running in Keystone",
       "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +227,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//wi8\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T18:20:06Z",
+      "side": 1,
+      "message": "The reason I did this is because this is the convention in nova: \nhttps://github.com/openstack/nova/blob/master/nova/compute/manager.py#L65\nquantum: \nhttps://github.com/openstack/quantum/blob/master/quantum/api/api_common.py#L25\nglance: \nhttps://github.com/openstack/glance/blob/master/glance/api/common.py#L17\n\nIt seems that this is the current implementation. I can change if you want it otherwise but I figured if the other projects have established the openstack/common/log.py import as logging then I thought we should keep that convention consistent. Thoughts?",
+      "parentUuid": "AAAAPH//zWg\u003d",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//zWc\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 5
@@ -98,6 +256,24 @@
       "writtenOn": "2013-05-22T18:22:52Z",
       "side": 1,
       "message": "It looks like this happens already when opestack.common.log is imported, see log.py line 158. Make sure and remove these lines if it\u0027s already done.",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//wiw\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-05-23T18:20:06Z",
+      "side": 1,
+      "message": "Right, good catch. Let me try a couple things and see what I find.",
+      "parentUuid": "AAAAPH//zWc\u003d",
       "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
