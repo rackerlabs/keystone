@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//uLc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-24T14:34:27Z",
+      "side": 1,
+      "message": "Good catch, I will fix it.",
+      "parentUuid": "AAAAPH//yKI\u003d",
+      "revId": "f0fbb54e0dca6aea5414afb623d304bd2f390ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//yKE\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 4
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//uI0\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-24T14:34:27Z",
+      "side": 1,
+      "message": "As I know, there is multitenancy blueprint which is working on refine the token table (add new project id and domain id volume). I am not sure whether it was already be implemented or still on going.",
+      "parentUuid": "AAAAPH//yJ4\u003d",
+      "revId": "f0fbb54e0dca6aea5414afb623d304bd2f390ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//yKg\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 4
@@ -64,6 +100,24 @@
       "writtenOn": "2013-05-23T04:38:37Z",
       "side": 1,
       "message": "Given that the parameters are exactly the same as list_tokens can we just call this delete_tokens? or maybe list_tokens should be list_tokens_for_user.",
+      "revId": "f0fbb54e0dca6aea5414afb623d304bd2f390ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//uK4\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-24T14:34:27Z",
+      "side": 1,
+      "message": "I will change the name to delete_tokens.",
+      "parentUuid": "AAAAPH//yKg\u003d",
       "revId": "f0fbb54e0dca6aea5414afb623d304bd2f390ade",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
