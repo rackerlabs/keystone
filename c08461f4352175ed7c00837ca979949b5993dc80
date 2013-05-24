@@ -51,6 +51,24 @@
       "revId": "c08461f4352175ed7c00837ca979949b5993dc80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//tZY\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-24T19:38:20Z",
+      "side": 1,
+      "message": "Ah, cool. Thanks for the detail explanation, Dolph! This is good to know.",
+      "parentUuid": "AAAAPH//taw\u003d",
+      "revId": "c08461f4352175ed7c00837ca979949b5993dc80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
