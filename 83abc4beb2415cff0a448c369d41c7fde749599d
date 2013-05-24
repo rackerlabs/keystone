@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//uG4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1149,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-24T14:47:41Z",
+      "side": 1,
+      "message": "Hi Lance, thanks for looking at the patch and the comments but I am going to abandon this patch. I recently had a discussion with Doplh and Adam and we agreed that let\u0027s not restore the multip domain support for now. This is a working patch so if we hear anybody looking for it, we will provide the patch. Thanks again!",
+      "parentUuid": "AAAAPH//uNM\u003d",
+      "revId": "83abc4beb2415cff0a448c369d41c7fde749599d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//uMo\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 1
