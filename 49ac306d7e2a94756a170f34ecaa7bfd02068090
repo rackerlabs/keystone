@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPH//tXU\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-24T19:56:59Z",
+      "side": 1,
+      "message": "This fix is fine.",
+      "revId": "49ac306d7e2a94756a170f34ecaa7bfd02068090",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//tXE\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-24T19:56:59Z",
+      "side": 1,
+      "message": "Everything below this line will be wiped away unless it\u0027s fixed correctly.",
+      "revId": "49ac306d7e2a94756a170f34ecaa7bfd02068090",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//yJY\u003d",
         "filename": "doc/source/man/keystone-all.rst",
         "patchSetId": 3
@@ -31,6 +65,24 @@
       "side": 1,
       "message": "in fact, would it be better if the options not be in alphabetical order?",
       "parentUuid": "AAAAPH//yJY\u003d",
+      "revId": "49ac306d7e2a94756a170f34ecaa7bfd02068090",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//tXo\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-24T19:56:59Z",
+      "side": 1,
+      "message": "to ease maintanence, this should be a copy/paste of keystone-all --help ... if this is going to exist in this document at all.",
+      "parentUuid": "AAAAPH//xz8\u003d",
       "revId": "49ac306d7e2a94756a170f34ecaa7bfd02068090",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
