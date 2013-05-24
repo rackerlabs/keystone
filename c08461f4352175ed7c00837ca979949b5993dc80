@@ -33,6 +33,24 @@
       "revId": "c08461f4352175ed7c00837ca979949b5993dc80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//taw\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-24T19:25:39Z",
+      "side": 1,
+      "message": "they\u0027re are group correctly here, according to...\n\n- json/uuid are stdlib imports\n- nose is an external package import\n- keystone is all local imports\n- test_v3 is a relative import\n\nrelative imports are actually a no-no, and checked by flake8 H304, which we\u0027re still ignoring (and have to) because there\u0027s no package to contain them today. termie added an __init__ to tests/ once, but it got reverted because people had environment issues with it.",
+      "parentUuid": "AAAAPH//vmI\u003d",
+      "revId": "c08461f4352175ed7c00837ca979949b5993dc80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
