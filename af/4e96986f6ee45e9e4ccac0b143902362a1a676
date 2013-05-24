@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Joe Heck <heckj@mac.com>
+Approved+1: guang-yee <guang.yee@hp.com>
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Verified+1: SmokeStack
+Submitted-by: Jenkins
+Submitted-at: Fri, 24 May 2013 21:25:01 +0000
+Reviewed-on: https://review.openstack.org/30478
+Project: openstack/keystone
+Branch: refs/heads/master
