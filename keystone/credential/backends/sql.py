@@ -41,7 +41,7 @@ class Credential(sql.Base, credential.Driver):
 
     @sql.handle_conflicts(type='credential')
     def create_credential(self, credential_id, credential):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = CredentialModel.from_dict(credential)
             session.add(ref)
@@ -49,7 +49,7 @@ class Credential(sql.Base, credential.Driver):
         return ref.to_dict()
 
     def list_credentials(self):
-        session = self.get_session()
+        session = self.create_session()
         refs = session.query(CredentialModel).all()
         return [ref.to_dict() for ref in refs]
 
@@ -60,12 +60,12 @@ class Credential(sql.Base, credential.Driver):
         return ref
 
     def get_credential(self, credential_id):
-        session = self.get_session()
+        session = self.create_session()
         return self._get_credential(session, credential_id).to_dict()
 
     @sql.handle_conflicts(type='credential')
     def update_credential(self, credential_id, credential):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = self._get_credential(session, credential_id)
             old_dict = ref.to_dict()
@@ -80,7 +80,7 @@ class Credential(sql.Base, credential.Driver):
         return ref.to_dict()
 
     def delete_credential(self, credential_id):
-        session = self.get_session()
+        session = self.create_session()
 
         with session.begin():
             ref = self._get_credential(session, credential_id)

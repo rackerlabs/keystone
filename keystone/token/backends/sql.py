@@ -40,7 +40,7 @@ class Token(sql.Base, token.Driver):
     def get_token(self, token_id):
         if token_id is None:
             raise exception.TokenNotFound(token_id=token_id)
-        session = self.get_session()
+        session = self.create_session()
         token_ref = session.query(TokenModel).get(token.unique_id(token_id))
         now = datetime.datetime.utcnow()
         if not token_ref or not token_ref.valid:
@@ -61,14 +61,14 @@ class Token(sql.Base, token.Driver):
         token_ref = TokenModel.from_dict(data_copy)
         token_ref.id = token.unique_id(token_id)
         token_ref.valid = True
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             session.add(token_ref)
             session.flush()
         return token_ref.to_dict()
 
     def delete_token(self, token_id):
-        session = self.get_session()
+        session = self.create_session()
         key = token.unique_id(token_id)
         with session.begin():
             token_ref = session.query(TokenModel).get(key)
@@ -78,7 +78,7 @@ class Token(sql.Base, token.Driver):
             session.flush()
 
     def _list_tokens_for_trust(self, trust_id):
-        session = self.get_session()
+        session = self.create_session()
         tokens = []
         now = timeutils.utcnow()
         query = session.query(TokenModel)
@@ -97,7 +97,7 @@ class Token(sql.Base, token.Driver):
                     (token_ref_dict.get('tenant') and
                      token_ref_dict['tenant'].get('id') == tenant_id))
 
-        session = self.get_session()
+        session = self.create_session()
         tokens = []
         now = timeutils.utcnow()
         query = session.query(TokenModel)
@@ -118,7 +118,7 @@ class Token(sql.Base, token.Driver):
             return self._list_tokens_for_user(user_id, tenant_id)
 
     def list_revoked_tokens(self):
-        session = self.get_session()
+        session = self.create_session()
         tokens = []
         now = timeutils.utcnow()
         query = session.query(TokenModel)
@@ -133,7 +133,7 @@ class Token(sql.Base, token.Driver):
         return tokens
 
     def flush_expired_tokens(self):
-        session = self.get_session()
+        session = self.create_session()
 
         query = session.query(TokenModel)
         query = query.filter(TokenModel.expires < timeutils.utcnow())

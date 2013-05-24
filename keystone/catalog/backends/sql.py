@@ -55,7 +55,7 @@ class Catalog(sql.Base, catalog.Driver):
 
     # Services
     def list_services(self):
-        session = self.get_session()
+        session = self.create_session()
         services = session.query(Service).all()
         return [s.to_dict() for s in list(services)]
 
@@ -66,11 +66,11 @@ class Catalog(sql.Base, catalog.Driver):
         return ref
 
     def get_service(self, service_id):
-        session = self.get_session()
+        session = self.create_session()
         return self._get_service(session, service_id).to_dict()
 
     def delete_service(self, service_id):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = self._get_service(session, service_id)
             session.query(Endpoint).filter_by(service_id=service_id).delete()
@@ -78,7 +78,7 @@ class Catalog(sql.Base, catalog.Driver):
             session.flush()
 
     def create_service(self, service_id, service_ref):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             service = Service.from_dict(service_ref)
             session.add(service)
@@ -86,7 +86,7 @@ class Catalog(sql.Base, catalog.Driver):
         return service.to_dict()
 
     def update_service(self, service_id, service_ref):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = self._get_service(session, service_id)
             old_dict = ref.to_dict()
@@ -101,7 +101,7 @@ class Catalog(sql.Base, catalog.Driver):
 
     # Endpoints
     def create_endpoint(self, endpoint_id, endpoint_ref):
-        session = self.get_session()
+        session = self.create_session()
         self.get_service(endpoint_ref['service_id'])
         new_endpoint = Endpoint.from_dict(endpoint_ref)
         with session.begin():
@@ -110,7 +110,7 @@ class Catalog(sql.Base, catalog.Driver):
         return new_endpoint.to_dict()
 
     def delete_endpoint(self, endpoint_id):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = self._get_endpoint(session, endpoint_id)
             session.delete(ref)
@@ -123,16 +123,16 @@ class Catalog(sql.Base, catalog.Driver):
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
     def get_endpoint(self, endpoint_id):
-        session = self.get_session()
+        session = self.create_session()
         return self._get_endpoint(session, endpoint_id).to_dict()
 
     def list_endpoints(self):
-        session = self.get_session()
+        session = self.create_session()
         endpoints = session.query(Endpoint)
         return [e.to_dict() for e in list(endpoints)]
 
     def update_endpoint(self, endpoint_id, endpoint_ref):
-        session = self.get_session()
+        session = self.create_session()
         with session.begin():
             ref = self._get_endpoint(session, endpoint_id)
             old_dict = ref.to_dict()
