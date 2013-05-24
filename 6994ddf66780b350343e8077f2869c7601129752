@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//tD0\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-24T22:40:38Z",
+      "side": 1,
+      "message": "i don\u0027t really like providing a private method for external callback; just make it public?",
+      "revId": "6994ddf66780b350343e8077f2869c7601129752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//tDo\u003d",
+        "filename": "tests/test_sql_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-24T22:40:38Z",
+      "side": 1,
+      "message": "(this comment should be in a different review) why is TestBase separated from TestGlobalEngine? What is \"Base\" about this class?",
+      "revId": "6994ddf66780b350343e8077f2869c7601129752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
