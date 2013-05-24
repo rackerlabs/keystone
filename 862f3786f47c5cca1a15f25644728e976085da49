@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//uBY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-24T15:22:22Z",
+      "side": 1,
+      "message": "so, i went down the road of moving it from auth to identity and the resulting usage doesn\u0027t makes less sense, especially given that identity is responsible for creating users, which is where the length of the password should be validated",
+      "parentUuid": "AAAAPH//vVw\u003d",
+      "revId": "862f3786f47c5cca1a15f25644728e976085da49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//yGw\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 2
