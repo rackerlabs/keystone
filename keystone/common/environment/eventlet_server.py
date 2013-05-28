@@ -18,7 +18,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import os
 import socket
 import ssl
 import sys
@@ -31,14 +30,6 @@ from keystone.common import wsgi
 
 
 LOG = logging.getLogger(__name__)
-
-
-def monkey_patch_eventlet(monkeypatch_thread=None):
-    if monkeypatch_thread is None:
-        monkeypatch_thread = not os.getenv('STANDARD_THREADS')
-
-    eventlet.patcher.monkey_patch(all=False, socket=True, time=True,
-                                  thread=monkeypatch_thread)
 
 
 class Server(object):
