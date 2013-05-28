@@ -15,6 +15,9 @@ if os.path.exists(os.path.join(possible_topdir,
 
 
 from keystone import cli
+from keystone.common import environment
+
+environment.use_stdlib()
 
 
 if __name__ == '__main__':
