@@ -16,6 +16,23 @@
       "revId": "40060b9f41b2d652e2bf1de78cb79483ad954006",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//pq8\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2080,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-05-28T15:32:18Z",
+      "side": 1,
+      "message": "I think we should probably have slightly better testing than this - for example if your new code just deleted all tokens, these tests would still pass.  I\u0027d suggest you add some other tokens into the mix which should still remain after you have deleted the ones for testtenantid",
+      "revId": "40060b9f41b2d652e2bf1de78cb79483ad954006",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
