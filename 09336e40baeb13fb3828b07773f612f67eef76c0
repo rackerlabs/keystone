@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//q9w\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-28T08:16:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//tR0\u003d",
+      "revId": "09336e40baeb13fb3828b07773f612f67eef76c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//tRo\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-24T20:32:22Z",
       "side": 1,
       "message": "i find that to be a very non-intuitive behavior... there should definitely be an explanation as to *why* it makes sense to ignore the user_id if a trust_id is specified (and why it makes sense to specify both)... it just looks like the caller is doing it wrong and should expect an exception",
+      "revId": "09336e40baeb13fb3828b07773f612f67eef76c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//qmg\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-28T08:16:09Z",
+      "side": 1,
+      "message": "I will update the comments, but I hope ayoung can help to review it.",
+      "parentUuid": "AAAAPH//tRo\u003d",
       "revId": "09336e40baeb13fb3828b07773f612f67eef76c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//q8M\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-28T08:16:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//tRc\u003d",
+      "revId": "09336e40baeb13fb3828b07773f612f67eef76c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//tRY\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2013-05-24T20:32:22Z",
       "side": 1,
       "message": "remove this if statement completely, it\u0027s redundant with the behavior of the for loop",
+      "revId": "09336e40baeb13fb3828b07773f612f67eef76c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//q9s\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-28T08:16:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//tRY\u003d",
       "revId": "09336e40baeb13fb3828b07773f612f67eef76c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//q9g\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-28T08:16:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//tRU\u003d",
+      "revId": "09336e40baeb13fb3828b07773f612f67eef76c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//tRM\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 6
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//q8Y\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-28T08:16:09Z",
+      "side": 1,
+      "message": "But actually, if tenant_id and tenant_matches is False, we need not update set token_ref.valid \u003d False.",
+      "parentUuid": "AAAAPH//tRM\u003d",
+      "revId": "09336e40baeb13fb3828b07773f612f67eef76c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//tQ8\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 6
@@ -115,6 +223,24 @@
       "writtenOn": "2013-05-24T20:32:22Z",
       "side": 1,
       "message": "the way this is being called, tenant_id will never be none, and the rest might be more clearly expressed (IMO) as:\n\n  try: \n    return token_ref_dict[\u0027tenant\u0027][\u0027id\u0027] \u003d\u003d tenant_id\n  except KeyError:\n    return False",
+      "revId": "09336e40baeb13fb3828b07773f612f67eef76c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//q9U\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6526
+      },
+      "writtenOn": "2013-05-28T08:16:09Z",
+      "side": 1,
+      "message": "Dolph, I think your assumption is incorrect, the tenant_id is maybe none in the existing test cases, and I think we need to keep the original logical to keep checking it.",
+      "parentUuid": "AAAAPH//tQ8\u003d",
       "revId": "09336e40baeb13fb3828b07773f612f67eef76c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
