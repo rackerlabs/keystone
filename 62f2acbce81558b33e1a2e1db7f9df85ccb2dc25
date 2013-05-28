@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//qKo\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-28T12:59:44Z",
+      "side": 1,
+      "message": "(this implies you have an updated patch?)",
+      "parentUuid": "AAAAPH//zPo\u003d",
+      "revId": "62f2acbce81558b33e1a2e1db7f9df85ccb2dc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//zVc\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 5
