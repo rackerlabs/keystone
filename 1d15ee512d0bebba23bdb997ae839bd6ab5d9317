@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//ppw\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-28T15:39:42Z",
+      "side": 1,
+      "message": "immediately after uuid tokens are verified, the expiration is verified",
+      "revId": "1d15ee512d0bebba23bdb997ae839bd6ab5d9317",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//ppg\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-28T15:39:42Z",
+      "side": 1,
+      "message": "valid uuid tokens are verified to have a valid expiration",
+      "revId": "1d15ee512d0bebba23bdb997ae839bd6ab5d9317",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
