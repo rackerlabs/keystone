@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 28 May 2013 20:56:09 +0000
+Reviewed-on: https://review.openstack.org/30743
+Project: openstack/keystone
+Branch: refs/heads/stable/folsom
