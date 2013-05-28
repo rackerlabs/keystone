@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//pss\u003d",
+        "filename": "keystone/openstack/common/gettextutils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-05-28T15:28:29Z",
+      "side": 1,
+      "message": "If we want to use default localedir /usr/share/locale, then, we need manually configure it as KEYSTONE_LOCALDIR value since we\u0027ll use this new install fucntion. right? If yes, I think we may should default use /usr/share/locale when KEYSTONE_LOCALDIR isn\u0027t configured",
+      "revId": "48768b0033bea6ccff82e5002069f671bfbe6664",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
