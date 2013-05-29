@@ -217,7 +217,7 @@
 # role_allow_update = True
 # role_allow_delete = True
 
-# group_tree_dn =
+# group_tree_dn = ou=UserGroups,dc=example,dc=com
 # group_filter =
 # group_objectclass = groupOfNames
 # group_id_attribute = cn
