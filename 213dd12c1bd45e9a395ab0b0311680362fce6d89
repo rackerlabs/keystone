@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPH//i9g\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T20:19:43Z",
+      "side": 1,
+      "message": "suggest put these checks in the same order as the arguments. It\u0027ll be easier to review. So move 345-347 above 343",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i9Y\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T20:19:43Z",
+      "side": 1,
+      "message": "why not use user_id here rather than id? I don\u0027t see what\u0027s gained by having a new variable that\u0027s the same as the other variable.",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i9Q\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T20:19:43Z",
+      "side": 1,
+      "message": "same here, just use group_id.",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i9A\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T20:19:43Z",
+      "side": 1,
+      "message": "what if project_id is None? I wouldn\u0027t expect _id_to_dn to work.",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//jiE\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 9
@@ -13,6 +81,91 @@
       "writtenOn": "2013-05-30T16:45:47Z",
       "side": 1,
       "message": "Same question as below",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i88\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 844,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T20:19:43Z",
+      "side": 1,
+      "message": "shouldn\u0027t these arguments have defaults like all the other methods?",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i84\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T20:19:43Z",
+      "side": 1,
+      "message": "don\u0027t need to set this here since setting it at 865.",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i8w\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T20:19:43Z",
+      "side": 1,
+      "message": "suggest don\u0027t use \"is None\" here. All the other places where check project_id, role_id etc, don\u0027t use is None.",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i78\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T20:19:43Z",
+      "side": 1,
+      "message": "suggest make this cleaner by adding to a member_attrs list before set attrs.\n\n member_attrs \u003d dn\n member_attrs.append(self.dumb_member) if self.use_dumb_member\n attrs \u003d [(\u0027objectClass\u0027, [self.object_class]), (self.member_attribute, member_attrs)]",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i7s\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T20:19:43Z",
+      "side": 1,
+      "message": "similar suggestion here for use_dumb_member (line 892)\n\nSince do it in several places, could put it into a function.",
       "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -47,6 +200,24 @@
       "writtenOn": "2013-05-30T16:55:07Z",
       "side": 1,
       "message": "Note: I am overridding the above test (test_delete_role_with_user_and_group_grants) in test_backend.py because it has domain specific granting. Instead of skipping, thought it\u0027s worth to keep it here.",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i7Y\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T20:19:43Z",
+      "side": 1,
+      "message": "This comment needs to be in the code.",
+      "parentUuid": "AAAAPH//lL0\u003d",
       "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
