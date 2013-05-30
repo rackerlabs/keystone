@@ -17,6 +17,7 @@ import re
 
 from keystone.common import config
 from keystone.common import logging
+from keystone.openstack.common.gettextutils import _
 
 
 CONF = config.CONF
@@ -36,19 +37,21 @@ class Error(StandardError):
     title = None
 
     def __init__(self, message=None, **kwargs):
-        """Use the doc string as the error message by default."""
-
         try:
-            message = self._build_message(message, **kwargs)
+            if not message:
+                if isinstance(message, unicode):
+                    message = unicode(message, 'utf-8')
+                    self.message = self._build_message(message, **kwargs)
+            self.message = self._build_message(message, **kwargs)
         except KeyError as e:
             # if you see this warning in your logs, please raise a bug report
             if _FATAL_EXCEPTION_FORMAT_ERRORS:
                 raise e
             else:
-                LOG.warning('missing exception kwargs (programmer error)')
-                message = self.__doc__
+                LOG.warning(_('missing exception kwargs (programmer error)'))
+                message = self.message
 
-        super(Error, self).__init__(message)
+        super(Error, self).__init__(self.message)
 
     def _build_message(self, message, **kwargs):
         """Builds and returns an exception message.
@@ -57,42 +60,32 @@ class Error(StandardError):
 
         """
         if not message:
-            message = re.sub('[ \n]+', ' ', self.__doc__ % kwargs)
+            message = re.sub('[ \n]+', ' ', self.message % kwargs)
             message = message.strip()
         return message
 
 
 class ValidationError(Error):
-    """Expecting to find %(attribute)s in %(target)s.
-
-    The server could not comply with the request since it is either malformed
-    or otherwise incorrect.
-
-    The client is assumed to be in error.
-
-    """
+    message = _("Expecting to find %(attribute)s in %(target)s."
+                "The server could not comply with the request"
+                " since it is either malformed or otherwise"
+                " incorrect.The client is assumed to be in error.")
     code = 400
     title = 'Bad Request'
 
 
 class StringLengthExceeded(ValidationError):
-    """String length exceeded.
-
-    The length of string "%(string)s" exceeded the limit of column
-    %(type)s(CHAR(%(length)d)).
-
-    """
+    message = _("String length exceeded.The length of"
+                " string '%(string)s' exceeded the limit"
+                " of column %(type)s(CHAR(%(length)d)).")
 
 
 class ValidationSizeError(Error):
-    """Request attribute %(attribute)s must be less than or equal to %(size)i.
-
-    The server could not comply with the request because the attribute
-    size is invalid (too large).
-
-    The client is assumed to be in error.
-
-    """
+    message = _("Request attribute %(attribute)s must be"
+                " less than or equal to %(size)i.The server"
+                " could not comply with the request because"
+                " the attribute size is invalid (too large)."
+                "The client is assumed to be in error.")
     code = 400
     title = 'Bad Request'
 
@@ -103,13 +96,13 @@ class SecurityError(Error):
     def _build_message(self, message, **kwargs):
         """Only returns detailed messages in debug mode."""
         if CONF.debug:
-            return message or self.__doc__ % kwargs
+            return message or self.message % kwargs
         else:
-            return self.__doc__ % kwargs
+            return self.message % kwargs
 
 
 class Unauthorized(SecurityError):
-    """The request you have made requires authentication."""
+    message = _("The request you have made requires authentication.")
     code = 401
     title = 'Unauthorized'
 
@@ -123,7 +116,7 @@ class AuthPluginException(Unauthorized):
 
 
 class AuthMethodNotSupported(AuthPluginException):
-    """Attempted to authenticate with an unsupported method."""
+    message = _("Attempted to authenticate with an unsupported method.")
 
     def __init__(self, *args, **kwargs):
         super(AuthMethodNotSupported, self).__init__(*args, **kwargs)
@@ -131,7 +124,7 @@ class AuthMethodNotSupported(AuthPluginException):
 
 
 class AdditionalAuthRequired(AuthPluginException):
-    """Additional authentications steps required."""
+    message = _("Additional authentications steps required.")
 
     def __init__(self, auth_response=None, **kwargs):
         super(AdditionalAuthRequired, self).__init__(message=None, **kwargs)
@@ -139,112 +132,108 @@ class AdditionalAuthRequired(AuthPluginException):
 
 
 class Forbidden(SecurityError):
-    """You are not authorized to perform the requested action."""
+    message = _("You are not authorized to perform the requested action.")
     code = 403
     title = 'Forbidden'
 
 
 class ForbiddenAction(Forbidden):
-    """You are not authorized to perform the requested action, %(action)s."""
+    message = _("You are not authorized to perform the"
+                " requested action, %(action)s.")
 
 
 class NotFound(Error):
-    """Could not find, %(target)s."""
+    message = _("Could not find, %(target)s.")
     code = 404
     title = 'Not Found'
 
 
 class EndpointNotFound(NotFound):
-    """Could not find endpoint, %(endpoint_id)s."""
+    message = _("Could not find endpoint, %(endpoint_id)s.")
 
 
 class MetadataNotFound(NotFound):
-    """An unhandled exception has occurred: Could not find metadata."""
+    message = _("An unhandled exception has occurred:"
+                " Could not find metadata.")
     # (dolph): metadata is not a user-facing concept,
     #          so this exception should not be exposed
 
 
 class PolicyNotFound(NotFound):
-    """Could not find policy, %(policy_id)s."""
+    message = _("Could not find policy, %(policy_id)s.")
 
 
 class RoleNotFound(NotFound):
-    """Could not find role, %(role_id)s."""
+    message = _("Could not find role, %(role_id)s.")
 
 
 class ServiceNotFound(NotFound):
-    """Could not find service, %(service_id)s."""
+    message = _("Could not find service, %(service_id)s.")
 
 
 class DomainNotFound(NotFound):
-    """Could not find domain, %(domain_id)s."""
+    message = _("Could not find domain, %(domain_id)s.")
 
 
 class ProjectNotFound(NotFound):
-    """Could not find project, %(project_id)s."""
+    message = _("Could not find project, %(project_id)s.")
 
 
 class TokenNotFound(NotFound):
-    """Could not find token, %(token_id)s."""
+    message = _("Could not find token, %(token_id)s.")
 
 
 class UserNotFound(NotFound):
-    """Could not find user, %(user_id)s."""
+    message = _("Could not find user, %(user_id)s.")
 
 
 class GroupNotFound(NotFound):
-    """Could not find group, %(group_id)s."""
+    message = _("Could not find group, %(group_id)s.")
 
 
 class TrustNotFound(NotFound):
-    """Could not find trust, %(trust_id)s."""
+    message = _("Could not find trust, %(trust_id)s.")
 
 
 class CredentialNotFound(NotFound):
-    """Could not find credential, %(credential_id)s."""
+    message = _("Could not find credential, %(credential_id)s.")
 
 
 class VersionNotFound(NotFound):
-    """Could not find version, %(version)s."""
+    message = _("Could not find version, %(version)s.")
 
 
 class Conflict(Error):
-    """Conflict occurred attempting to store %(type)s.
-
-    %(details)s
-
-    """
+    message = _("Conflict occurred attempting to store %(type)s."
+                "%(details)s")
     code = 409
     title = 'Conflict'
 
 
 class RequestTooLarge(Error):
-    """Request is too large."""
+    message = _("Request is too large.")
     code = 413
     title = 'Request is too large.'
 
 
 class UnexpectedError(Error):
-    """An unexpected error prevented the server from fulfilling your request.
-
-    %(exception)s
-
-    """
+    message = _("An unexpected error prevented the server"
+                " from fulfilling your request,%(exception)s")
     code = 500
     title = 'Internal Server Error'
 
 
 class MalformedEndpoint(UnexpectedError):
-    """Malformed endpoint URL (%(endpoint)s), see ERROR log for details."""
+    message = _("Malformed endpoint URL (%(endpoint)s),"
+                " see ERROR log for details.")
 
 
 class NotImplemented(Error):
-    """The action you have requested has not been implemented."""
+    message = _("The action you have requested has not been implemented.")
     code = 501
     title = 'Not Implemented'
 
 
 class PasteConfigNotFound(UnexpectedError):
-    """The Keystone paste configuration file %(config_file)s could not be
-    found.
-    """
+    message = _("The Keystone paste configuration file"
+                " %(config_file)s could not be found.")
