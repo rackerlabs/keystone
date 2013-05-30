@@ -52,6 +52,24 @@
       "revId": "d56bbde214e5eef27484fb758f68c4f7f2f9ba09",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//jVw\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T17:44:50Z",
+      "side": 1,
+      "message": "I changed my mind on this. It\u0027s working as designed. GLOBAL_ENGINE will only be set if we\u0027ve gone through this code before, in which case we would have created the tables.\n\nAlso, if you check the original version of the code, create_all() was only done if allow_global_engine, so I don\u0027t want to change the behavior so that the tables are created even when not allow_global_engine.\n\nI can\u0027t say that I totally understand the intent of the original code... it makes no sense to me, but that\u0027s how it worked.",
+      "parentUuid": "AAAAPH//lG0\u003d",
+      "revId": "d56bbde214e5eef27484fb758f68c4f7f2f9ba09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
