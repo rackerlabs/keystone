@@ -113,6 +113,11 @@ class ApplicationTest(BaseWSGITest):
         self.assertEqual(resp.headers.get('Content-Length'), '0')
         self.assertEqual(resp.headers.get('Content-Type'), None)
 
+    def test_render_exception(self):
+        e = exception.Unauthorized(message=u'\u7f51\u7edc')
+        resp = wsgi.render_exception(e)
+        self.assertEqual(resp.status_int, 401)
+
 
 class MiddlewareTest(BaseWSGITest):
     def test_middleware_request(self):
