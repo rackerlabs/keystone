@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//jTQ\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T18:03:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//tD0\u003d",
+      "revId": "6994ddf66780b350343e8077f2869c7601129752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//tDo\u003d",
         "filename": "tests/test_sql_core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-24T22:40:38Z",
       "side": 1,
       "message": "(this comment should be in a different review) why is TestBase separated from TestGlobalEngine? What is \"Base\" about this class?",
+      "revId": "6994ddf66780b350343e8077f2869c7601129752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//jS8\u003d",
+        "filename": "tests/test_sql_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T18:03:58Z",
+      "side": 1,
+      "message": "The global engine isn\u0027t in the Base class so I don\u0027t think those belong in here.\n\nThe tests in this class test the Base class in keystone.common.sql.core. I think the name is appropriate, but if you\u0027ve got a suggestion it\u0027s easy for me to change it.",
+      "parentUuid": "AAAAPH//tDo\u003d",
       "revId": "6994ddf66780b350343e8077f2869c7601129752",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
