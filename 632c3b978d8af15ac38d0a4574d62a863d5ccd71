@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPH//imI\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T22:15:25Z",
+      "side": 1,
+      "message": "since tenant_id can be None, should use keyword arg for it.",
+      "revId": "632c3b978d8af15ac38d0a4574d62a863d5ccd71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//imA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T22:15:25Z",
+      "side": 1,
+      "message": "suggest keep the methods in the same order in all the backends, so put authenticate_user before authorize_for_project.",
+      "revId": "632c3b978d8af15ac38d0a4574d62a863d5ccd71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//k7U\u003d",
         "filename": "keystone/identity/backends/pam.py",
         "patchSetId": 4
@@ -13,6 +47,40 @@
       "writtenOn": "2013-05-30T04:54:49Z",
       "side": 1,
       "message": "whoa, never seen that before",
+      "revId": "632c3b978d8af15ac38d0a4574d62a863d5ccd71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//ikw\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T22:15:25Z",
+      "side": 1,
+      "message": "don\u0027t you need the ()?",
+      "revId": "632c3b978d8af15ac38d0a4574d62a863d5ccd71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//ikM\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T22:15:25Z",
+      "side": 1,
+      "message": "for reviewers, it would be nice to have the {} named so that I know it\u0027s the context and not something else. So suggest a constant like EMPTY_CONTEXT.",
       "revId": "632c3b978d8af15ac38d0a4574d62a863d5ccd71",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
