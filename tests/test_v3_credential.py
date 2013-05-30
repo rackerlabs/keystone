@@ -15,6 +15,7 @@
 # under the License.
 
 import uuid
+from hashlib import sha256
 
 import test_v3
 
@@ -76,3 +77,32 @@ class CredentialTestCase(test_v3.RestfulTestCase):
         self.delete(
             '/credentials/%(credential_id)s' % {
                 'credential_id': self.credential_id})
+
+    def test_create_ec2_credential(self):
+        """Call ``POST /credentials``."""
+        ref = self.new_credential_ref(user_id=self.user['id'])
+        ref['blob'] = {"access": uuid.uuid4().hex,
+                       "secret": uuid.uuid4().hex}
+        ref['type'] = 'ec2'
+        r = self.post(
+            '/credentials',
+            body={'credential': ref})
+        self.assertValidCredentialResponse(r, ref)
+        # Assert credential id same as hash of access key id for
+        # ec2 credentials
+        self.assertEqual(r.result['credential']['id'],
+                         sha256(ref['blob']['access']).hexdigest())
+
+    def test_create_non_ec2_credential(self):
+        """Call ``POST /credentials``."""
+        ref = self.new_credential_ref(user_id=self.user['id'])
+        ref['blob'] = {"access": uuid.uuid4().hex,
+                       "secret": uuid.uuid4().hex}
+        r = self.post(
+            '/credentials',
+            body={'credential': ref})
+        self.assertValidCredentialResponse(r, ref)
+        # Assert credential id is not same as hash of access key id for
+        # non-ec2 credentials
+        self.assertNotEqual(r.result['credential']['id'],
+                            sha256(ref['blob']['access']).hexdigest())
