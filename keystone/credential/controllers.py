@@ -15,11 +15,26 @@
 # under the License.
 
 from keystone.common import controller
+from keystone import exception
+import hashlib
+import uuid
 
 
 class CredentialV3(controller.V3Controller):
     collection_name = 'credentials'
     member_name = 'credential'
+
+    def _assign_unique_id(self, ref):
+        """Generates and assigns a unique identifer to a reference."""
+        ref = ref.copy()
+        if ref.get('type', "").lower() == 'ec2':
+            blob = ref.get('blob')
+            if blob.get('access') is None:
+                raise exception.ValidationError('access key not found in blob')
+            ref['id'] = hashlib.sha256(blob['access']).hexdigest()
+            return ref
+        else:
+            return super(CredentialV3, self)._assign_unique_id(ref)
 
     @controller.protected
     def create_credential(self, context, credential):
