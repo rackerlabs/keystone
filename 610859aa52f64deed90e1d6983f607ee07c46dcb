@@ -1,0 +1,378 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//i5I\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "change first \"providers\" to \"provides\"",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i5E\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "change \"properties\" to \"property\"",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i4w\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 11
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "change \"two lines\" to \"line\"",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i4U\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "why not use a set to begin with?",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i30\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "why need to pass these in separately when also passing in auth_context?",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i3g\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "LOG.exception takes a message, not an exception. It gets the exception from the context.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i00\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "e isn\u0027t defined here. Suggest use LOG.exception(). Needs a unit test.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//i0o\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "why this change?",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//izo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "Before this, it was if \u0027token_data\u0027 in token_ref it\u0027s a v3 token and if not it\u0027s assumed to be a v2 token. Now the check for v3 token also includes more otherwise it\u0027s a v2 token. I don\u0027t think this is correct and the extra checking for v3 token fields should go in the v3 leg.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iz0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "we\u0027re not going to get v2 tokens anymore?",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iyo\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "why doesn\u0027t issue_token create token_data with the token_id filled in?",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iyU\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "what about 201 Created response status?",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//ixU\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "suggest stick with \u0027 for strings. Applies throughout this file.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//ixs\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "suggest call this variable project_id.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iwo\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "what if there\u0027s no default domain id?",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iwc\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "suggest call this variable project_id.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//ixE\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "yes.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iwI\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "I think REMOTE_USER check should be before passwordCredentials, see line 72 in the original version. It\u0027s done after token check.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//ivk\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "also returns None. Maybe it should raise an exception if it\u0027s not a valid token.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iuY\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "Rather than having functions to translate, I think we should have a class Token that can be rendered as a V2 token or a V3 token. Token can store all the data that it needs to generate either one.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//ivE\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "I\u0027d think that trusts are not valid for v2 tokens so attempting to convert a v3 token with trust should fail.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iuI\u003d",
+        "filename": "keystone/token/providers/uuid_token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T21:15:15Z",
+      "side": 1,
+      "message": "LOG.exception takes a message as its argument.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
