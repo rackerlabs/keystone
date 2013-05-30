@@ -14,7 +14,10 @@ if os.path.exists(os.path.join(possible_topdir,
     sys.path.insert(0, possible_topdir)
 
 from keystone import cli
+from keystone.common import environment
 from keystone.openstack.common import gettextutils
+
+environment.use_stdlib()
 
 
 if __name__ == '__main__':
