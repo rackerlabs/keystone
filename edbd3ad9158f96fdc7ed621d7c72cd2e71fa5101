@@ -16,6 +16,24 @@
       "revId": "edbd3ad9158f96fdc7ed621d7c72cd2e71fa5101",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//k9Y\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-05-30T04:35:59Z",
+      "side": 1,
+      "message": "@ldbragst, based on tempfile docs, it creates the directory in probably creates it in /tmp or if the user has TEMP set otherwise.",
+      "parentUuid": "AAAAPH//p4U\u003d",
+      "revId": "edbd3ad9158f96fdc7ed621d7c72cd2e71fa5101",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
