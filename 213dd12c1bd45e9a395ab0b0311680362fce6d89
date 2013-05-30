@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//jiE\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 811,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-30T16:45:47Z",
+      "side": 1,
+      "message": "Same question as below",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//jiM\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1017,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-30T16:45:47Z",
+      "side": 1,
+      "message": "Could this potentially get confused if the same objectclass was somehow used for multiple entities?  Is screening by objectclass really safe here?",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
