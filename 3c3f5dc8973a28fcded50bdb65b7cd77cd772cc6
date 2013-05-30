@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//k+8\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-05-30T04:19:16Z",
+      "side": 1,
+      "message": "should be if tenant_id is None",
+      "revId": "3c3f5dc8973a28fcded50bdb65b7cd77cd772cc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
