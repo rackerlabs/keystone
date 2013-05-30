@@ -16,6 +16,24 @@
       "revId": "d56bbde214e5eef27484fb758f68c4f7f2f9ba09",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//lHo\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T02:21:54Z",
+      "side": 1,
+      "message": "I\u0027ll move this code into new_engine so that it gets called any time a new engine is created.",
+      "parentUuid": "AAAAPH//w6Q\u003d",
+      "revId": "d56bbde214e5eef27484fb758f68c4f7f2f9ba09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
