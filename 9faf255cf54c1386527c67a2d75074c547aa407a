@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//iis\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/025_add_index_to_valid.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T22:24:50Z",
+      "side": 1,
+      "message": "seems like it would be easy to merge all this copied code, just pass in idx.create or idx.drop.",
+      "revId": "9faf255cf54c1386527c67a2d75074c547aa407a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
