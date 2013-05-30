@@ -134,6 +134,11 @@ class ApplicationTest(BaseWSGITest):
         self.assertIn("testkey", app.kwargs)
         self.assertEquals("test", app.kwargs["testkey"])
 
+    def test_render_exception(self):
+        e = exception.Unauthorized(message=u'\u7f51\u7edc')
+        resp = wsgi.render_exception(e)
+        self.assertEqual(resp.status_int, 401)
+
 
 class ExtensionRouterTest(BaseWSGITest):
     def test_extensionrouter_local_config(self):
@@ -191,7 +196,7 @@ class MiddlewareTest(BaseWSGITest):
     def test_middleware_exception_error(self):
         class FakeMiddleware(wsgi.Middleware):
             def process_response(self, request, response):
-                raise exception.UnexpectedError("EXCEPTIONERROR")
+                raise exception.UnexpectedError(exception="EXCEPTIONERROR")
 
         req = self._make_request()
         resp = FakeMiddleware(self.app)(req)
