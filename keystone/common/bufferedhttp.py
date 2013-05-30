@@ -31,15 +31,14 @@ BufferedHTTPResponse.
 import time
 import urllib
 
-from eventlet.green import httplib
-
+from keystone.common import environment
 from keystone.common import logging
 
 
 LOG = logging.getLogger(__name__)
 
 
-class BufferedHTTPResponse(httplib.HTTPResponse):
+class BufferedHTTPResponse(environment.httplib.HTTPResponse):
     """HTTPResponse class that buffers reading of headers."""
 
     def __init__(self, sock, debuglevel=0, strict=0,
@@ -53,42 +52,49 @@ class BufferedHTTPResponse(httplib.HTTPResponse):
         self.msg = None
 
         # from the Status-Line of the response
-        self.version = httplib._UNKNOWN  # HTTP-Version
-        self.status = httplib._UNKNOWN  # Status-Code
-        self.reason = httplib._UNKNOWN  # Reason-Phrase
+        self.version = environment.httplib._UNKNOWN  # HTTP-Version
+        self.status = environment.httplib._UNKNOWN  # Status-Code
+        self.reason = environment.httplib._UNKNOWN  # Reason-Phrase
 
-        self.chunked = httplib._UNKNOWN  # is "chunked" being used?
-        self.chunk_left = httplib._UNKNOWN  # bytes left to read in chunk
-        self.length = httplib._UNKNOWN  # number of bytes left in response
-        self.will_close = httplib._UNKNOWN  # conn will close at end of resp
+        # is "chunked" being used?
+        self.chunked = environment.httplib._UNKNOWN
+
+        # bytes left to read in chunk
+        self.chunk_left = environment.httplib._UNKNOWN
+
+        # number of bytes left in response
+        self.length = environment.httplib._UNKNOWN
+
+        # conn will close at end of resp
+        self.will_close = environment.httplib._UNKNOWN
 
     def expect_response(self):
         self.fp = self.sock.makefile('rb', 0)
         version, status, reason = self._read_status()
-        if status != httplib.CONTINUE:
+        if status != environment.httplib.CONTINUE:
             self._read_status = lambda: (version, status, reason)
             self.begin()
         else:
             self.status = status
             self.reason = reason.strip()
             self.version = 11
-            self.msg = httplib.HTTPMessage(self.fp, 0)
+            self.msg = environment.httplib.HTTPMessage(self.fp, 0)
             self.msg.fp = None
 
 
-class BufferedHTTPConnection(httplib.HTTPConnection):
+class BufferedHTTPConnection(environment.httplib.HTTPConnection):
     """HTTPConnection class that uses BufferedHTTPResponse."""
     response_class = BufferedHTTPResponse
 
     def connect(self):
         self._connected_time = time.time()
-        return httplib.HTTPConnection.connect(self)
+        return environment.httplib.HTTPConnection.connect(self)
 
     def putrequest(self, method, url, skip_host=0, skip_accept_encoding=0):
         self._method = method
         self._path = url
-        return httplib.HTTPConnection.putrequest(self, method, url, skip_host,
-                                                 skip_accept_encoding)
+        putrequest = environment.httplib.HTTPConnection.putrequest
+        return putrequest(self, method, url, skip_host, skip_accept_encoding)
 
     def getexpect(self):
         response = BufferedHTTPResponse(self.sock, strict=self.strict,
@@ -97,7 +103,7 @@ class BufferedHTTPConnection(httplib.HTTPConnection):
         return response
 
     def getresponse(self):
-        response = httplib.HTTPConnection.getresponse(self)
+        response = environment.httplib.HTTPConnection.getresponse(self)
         LOG.debug(_('HTTP PERF: %(time).5f seconds to %(method)s '
                   '%(host)s:%(port)s %(path)s)'),
                   {'time': time.time() - self._connected_time,
@@ -158,7 +164,7 @@ def http_connect_raw(ipaddr, port, method, path, headers=None,
 
     """
     if ssl:
-        conn = httplib.HTTPSConnection(
+        conn = environment.httplib.HTTPSConnection(
             '%s:%s' % (ipaddr, port), key_file=key_file, cert_file=cert_file)
     else:
         conn = BufferedHTTPConnection('%s:%s' % (ipaddr, port))
