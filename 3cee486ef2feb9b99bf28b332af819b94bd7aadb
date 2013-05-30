@@ -16,6 +16,24 @@
       "revId": "3cee486ef2feb9b99bf28b332af819b94bd7aadb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//jUE\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T17:56:17Z",
+      "side": 1,
+      "message": "it\u0027s a little more explicit to use a set, so I changed it in the next patch set.",
+      "parentUuid": "AAAAPH//tEU\u003d",
+      "revId": "3cee486ef2feb9b99bf28b332af819b94bd7aadb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
