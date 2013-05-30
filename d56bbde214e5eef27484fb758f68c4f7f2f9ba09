@@ -34,6 +34,24 @@
       "revId": "d56bbde214e5eef27484fb758f68c4f7f2f9ba09",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//lG0\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-30T02:30:39Z",
+      "side": 1,
+      "message": "OK, sounds good. Thanks, Brant!",
+      "parentUuid": "AAAAPH//lHo\u003d",
+      "revId": "d56bbde214e5eef27484fb758f68c4f7f2f9ba09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
