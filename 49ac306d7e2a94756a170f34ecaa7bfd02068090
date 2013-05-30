@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//jN8\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T18:39:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//tXE\u003d",
+      "revId": "49ac306d7e2a94756a170f34ecaa7bfd02068090",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//yJY\u003d",
         "filename": "doc/source/man/keystone-all.rst",
         "patchSetId": 3
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "to ease maintanence, this should be a copy/paste of keystone-all --help ... if this is going to exist in this document at all.",
       "parentUuid": "AAAAPH//xz8\u003d",
+      "revId": "49ac306d7e2a94756a170f34ecaa7bfd02068090",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//jNg\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T18:39:35Z",
+      "side": 1,
+      "message": "Changed the output of keystone-all so that the options have help text.\n\nGiven how config works now, I can\u0027t pick the order of the arguments. I\u0027ll look into it.",
+      "parentUuid": "AAAAPH//tXo\u003d",
       "revId": "49ac306d7e2a94756a170f34ecaa7bfd02068090",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
