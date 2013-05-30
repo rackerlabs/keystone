@@ -67,14 +67,14 @@ class ExceptionTestCase(test.TestCase):
         attribute = uuid.uuid4().hex
         e = exception.ValidationError(target=target, attribute=attribute)
         self.assertValidJsonRendering(e)
-        self.assertIn(target, str(e))
-        self.assertIn(attribute, str(e))
+        self.assertIn(target, e.message)
+        self.assertIn(attribute, e.message)
 
     def test_not_found(self):
         target = uuid.uuid4().hex
         e = exception.NotFound(target=target)
         self.assertValidJsonRendering(e)
-        self.assertIn(target, str(e))
+        self.assertIn(target, e.message)
 
     def test_403_title(self):
         e = exception.Forbidden()
@@ -92,7 +92,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
         risky_info = uuid.uuid4().hex
         e = exception.Unauthorized(message=risky_info)
         self.assertValidJsonRendering(e)
-        self.assertNotIn(risky_info, str(e))
+        self.assertNotIn(risky_info, e.message)
 
     def test_unauthorized_exposure_in_debug(self):
         self.opt(debug=True)
@@ -100,7 +100,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
         risky_info = uuid.uuid4().hex
         e = exception.Unauthorized(message=risky_info)
         self.assertValidJsonRendering(e)
-        self.assertIn(risky_info, str(e))
+        self.assertIn(risky_info, e.message)
 
     def test_forbidden_exposure(self):
         self.opt(debug=False)
@@ -108,7 +108,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
         risky_info = uuid.uuid4().hex
         e = exception.Forbidden(message=risky_info)
         self.assertValidJsonRendering(e)
-        self.assertNotIn(risky_info, str(e))
+        self.assertNotIn(risky_info, e.message)
 
     def test_forbidden_exposure_in_debug(self):
         self.opt(debug=True)
@@ -116,7 +116,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
         risky_info = uuid.uuid4().hex
         e = exception.Forbidden(message=risky_info)
         self.assertValidJsonRendering(e)
-        self.assertIn(risky_info, str(e))
+        self.assertIn(risky_info, e.message)
 
     def test_forbidden_action_exposure(self):
         self.opt(debug=False)
@@ -125,12 +125,12 @@ class SecurityErrorTestCase(ExceptionTestCase):
         action = uuid.uuid4().hex
         e = exception.ForbiddenAction(message=risky_info, action=action)
         self.assertValidJsonRendering(e)
-        self.assertNotIn(risky_info, str(e))
-        self.assertIn(action, str(e))
+        self.assertNotIn(risky_info, e.message)
+        self.assertIn(action, e.message)
 
         e = exception.ForbiddenAction(action=risky_info)
         self.assertValidJsonRendering(e)
-        self.assertIn(risky_info, str(e))
+        self.assertIn(risky_info, e.message)
 
     def test_forbidden_action_exposure_in_debug(self):
         self.opt(debug=True)
@@ -139,11 +139,11 @@ class SecurityErrorTestCase(ExceptionTestCase):
 
         e = exception.ForbiddenAction(message=risky_info)
         self.assertValidJsonRendering(e)
-        self.assertIn(risky_info, str(e))
+        self.assertIn(risky_info, e.message)
 
         e = exception.ForbiddenAction(action=risky_info)
         self.assertValidJsonRendering(e)
-        self.assertIn(risky_info, str(e))
+        self.assertIn(risky_info, e.message)
 
     def test_unicode_message(self):
         message = u'Comment \xe7a va'
@@ -153,3 +153,11 @@ class SecurityErrorTestCase(ExceptionTestCase):
             unicode(e)
         except UnicodeEncodeError:
             self.fail("unicode error message not supported")
+
+    def test_unicode_argument_message(self):
+        self.opt(debug=False)
+
+        risky_info = u'\u7ee7\u7eed\u884c\u7f29\u8fdb\u6216'
+        e = exception.Forbidden(message=risky_info)
+        self.assertValidJsonRendering(e)
+        self.assertNotIn(risky_info, e.message)
