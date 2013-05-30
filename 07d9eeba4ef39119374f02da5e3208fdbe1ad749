@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPH//ijY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T22:19:10Z",
+      "side": 1,
+      "message": "doesn\u0027t this need to be in a finally?",
+      "revId": "07d9eeba4ef39119374f02da5e3208fdbe1ad749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//ijg\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-30T22:19:10Z",
+      "side": 1,
+      "message": "these 2 lines don\u0027t do anything. Remove them.",
+      "revId": "07d9eeba4ef39119374f02da5e3208fdbe1ad749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//3QI\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
