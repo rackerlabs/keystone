@@ -24,10 +24,10 @@ Starting point for routing EC2 requests.
 
 import urlparse
 
-from eventlet.green import httplib
 import webob.dec
 import webob.exc
 
+from keystone.common import environment
 from nova import flags
 from nova import utils
 from nova import wsgi
@@ -75,9 +75,9 @@ class EC2Token(wsgi.Middleware):
         # pylint: disable-msg=E1101
         o = urlparse.urlparse(FLAGS.keystone_ec2_url)
         if o.scheme == 'http':
-            conn = httplib.HTTPConnection(o.netloc)
+            conn = environment.httplib.HTTPConnection(o.netloc)
         else:
-            conn = httplib.HTTPSConnection(o.netloc)
+            conn = environment.httplib.HTTPSConnection(o.netloc)
         conn.request('POST', o.path, body=creds_json, headers=headers)
         response = conn.getresponse().read()
         conn.close()
