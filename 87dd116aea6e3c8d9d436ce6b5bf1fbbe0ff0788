@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//hjk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_migrate_metadata_table_roles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-05-31T09:50:22Z",
+      "side": 1,
+      "message": "So maybe my SQL just isn\u0027t good enough to determine why the old code fails and the new one is correct - could you explain why the original \"and\" version is wrong?  Maybe worth a comment since that is how most people who have written it.",
+      "revId": "87dd116aea6e3c8d9d436ce6b5bf1fbbe0ff0788",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//hjM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_migrate_metadata_table_roles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-05-31T09:50:22Z",
+      "side": 1,
+      "message": "Just checking you have tested this against sqlite, mysql and postgresql....every time we change something like this we need to check due to differences in the support for the various engines.",
+      "revId": "87dd116aea6e3c8d9d436ce6b5bf1fbbe0ff0788",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
