@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//gK8\u003d",
+        "filename": "tests/_sql_livetest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-31T18:28:54Z",
+      "side": 1,
+      "message": "suggest having a base class to share this code between the 2 tests:\n\n class LiveMigrateTests...:\n    extra_config_file \u003d None\n\n    def config_files(...)\n\nThen just need to set extra_config_file in Postgres / Mysql",
+      "revId": "62abd5d85384416dc05aa0a449dab1694caec3e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
