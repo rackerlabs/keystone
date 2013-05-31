@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//f+o\u003d",
+        "filename": "contrib/redhat-eventlet.patch",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-05-31T20:05:42Z",
+      "side": 1,
+      "message": "this is .nova - does it need to be keystone?",
+      "revId": "b5ac5bbf1d241dbeb3d530c322246f26eef6477e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
