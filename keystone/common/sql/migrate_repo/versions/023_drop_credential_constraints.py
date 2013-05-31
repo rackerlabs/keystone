@@ -18,10 +18,6 @@ from migrate import ForeignKeyConstraint
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
 
-MYSQL_FKEY_QUERY = ("select CONSTRAINT_NAME from "
-                    "INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS "
-                    "where table_name = 'credential'")
-
 
 def drop_constraint_mysql(migrate_engine):
     session = sessionmaker(bind=migrate_engine)()
@@ -32,6 +28,13 @@ def drop_constraint_mysql(migrate_engine):
     #INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
     #SQLAlchemy expects the constraint name to be
     # the column name.
+
+    MYSQL_FKEY_QUERY = ("select CONSTRAINT_NAME from "
+                        "INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS "
+                        "where table_name = 'credential' and "
+                        "CONSTRAINT_SCHEMA = '%s'" %
+                        migrate_engine.url.database)
+
     for constraint in session.execute(MYSQL_FKEY_QUERY):
         session.execute('ALTER TABLE credential DROP FOREIGN KEY %s;'
                         % constraint[0])
