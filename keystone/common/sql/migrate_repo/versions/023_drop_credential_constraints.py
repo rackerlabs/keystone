@@ -18,13 +18,8 @@ from migrate import ForeignKeyConstraint
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
 
-MYSQL_FKEY_QUERY = ("select CONSTRAINT_NAME from "
-                    "INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS "
-                    "where table_name = 'credential'")
 
-
-def drop_constraint_mysql(migrate_engine):
-    session = sessionmaker(bind=migrate_engine)()
+def drop_constraint_mysql(migrate_engine, cred_table):
     #http://bugs.mysql.com/bug.php?id=10333
     #MySQL varies from the SQL norm in naming
     #Foreign Keys.  The mapping from the column name
@@ -32,23 +27,26 @@ def drop_constraint_mysql(migrate_engine):
     #INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
     #SQLAlchemy expects the constraint name to be
     # the column name.
-    for constraint in session.execute(MYSQL_FKEY_QUERY):
-        session.execute('ALTER TABLE credential DROP FOREIGN KEY %s;'
-                        % constraint[0])
-    session.commit()
+
+    session = sessionmaker(bind=migrate_engine)()
+    names = [fk.name for fk in cred_table.constraints
+             if set(('user_id', 'project_id')) & set(fk.columns)]
+    for constraint in names:
+        session.execute('ALTER TABLE credential DROP FOREIGN KEY %s;' %
+                        constraint)
 
 
 def remove_constraints(migrate_engine):
     if migrate_engine.name == 'sqlite':
-        return
-    if migrate_engine.name == 'mysql':
-        drop_constraint_mysql(migrate_engine)
         return
     meta = sqlalchemy.MetaData()
     meta.bind = migrate_engine
     user_table = sqlalchemy.Table('user', meta, autoload=True)
     proj_table = sqlalchemy.Table('project', meta, autoload=True)
     cred_table = sqlalchemy.Table('credential', meta, autoload=True)
+    if migrate_engine.name == 'mysql':
+        drop_constraint_mysql(migrate_engine, cred_table)
+        return
     ForeignKeyConstraint(columns=[cred_table.c.user_id],
                          refcolumns=[user_table.c.id]).drop()
     ForeignKeyConstraint(columns=[cred_table.c.project_id],
