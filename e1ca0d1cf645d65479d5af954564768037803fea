@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//fyI\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-05-31T20:47:54Z",
+      "side": 1,
+      "message": "if ref.get(\u0027type\u0027, \u0027\u0027).lower() \u003d\u003d \u0027ec2\u0027:\n\nin case the request is missing \u0027type\u0027, which happens because we can\u0027t prevent garbage in. But we can prevent garbage out. :)",
+      "revId": "e1ca0d1cf645d65479d5af954564768037803fea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//fx8\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-05-31T20:47:54Z",
+      "side": 1,
+      "message": "if blob.get(\u0027access\u0027):\n\nget() would return None if \u0027access\u0027 does not exist. Otherwise, you\u0027ll get a key not found exception.",
+      "revId": "e1ca0d1cf645d65479d5af954564768037803fea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//fw0\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-05-31T20:47:54Z",
+      "side": 1,
+      "message": "return ref",
+      "revId": "e1ca0d1cf645d65479d5af954564768037803fea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//fw4\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-05-31T20:47:54Z",
+      "side": 1,
+      "message": "do\n\nreturn super(CredentialV3, self)._assign_unique_id(ref)\n\ninstead.",
+      "revId": "e1ca0d1cf645d65479d5af954564768037803fea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//fvg\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-05-31T20:47:54Z",
+      "side": 1,
+      "message": "self.assertEqual(r.result[\u0027credential\u0027][\u0027id\u0027], r.result[\u0027credential\u0027][\u0027blob\u0027][\u0027access\u0027])",
+      "revId": "e1ca0d1cf645d65479d5af954564768037803fea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//fwA\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-05-31T20:47:54Z",
+      "side": 1,
+      "message": "no need for this one",
+      "revId": "e1ca0d1cf645d65479d5af954564768037803fea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//fvY\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-05-31T20:47:54Z",
+      "side": 1,
+      "message": "Need a negative test here",
+      "revId": "e1ca0d1cf645d65479d5af954564768037803fea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
