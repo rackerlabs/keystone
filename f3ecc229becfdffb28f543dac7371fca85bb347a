@@ -50,6 +50,24 @@
       "revId": "f3ecc229becfdffb28f543dac7371fca85bb347a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iOI\u003d",
+        "filename": "tests/backend_mysql.conf",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-31T13:43:03Z",
+      "side": 1,
+      "message": "Hrm...I intentionally matched the devstack setup because that way I know my database is initialized.",
+      "parentUuid": "AAAAPH//inU\u003d",
+      "revId": "f3ecc229becfdffb28f543dac7371fca85bb347a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
