@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//iXA\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-31T00:28:11Z",
+      "side": 0,
+      "message": "Should not have.  Put back in, and added to the main interface.",
+      "parentUuid": "AAAAPH//k7w\u003d",
+      "revId": "2879d42de12cfb5a141197debbf7eaa53cd6750f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//k8A\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//iWY\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-31T00:28:11Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "AAAAPH//k8A\u003d",
+      "revId": "2879d42de12cfb5a141197debbf7eaa53cd6750f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//k7M\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2013-05-30T04:54:49Z",
       "side": 0,
       "message": "same, leave the tuple alone",
+      "revId": "2879d42de12cfb5a141197debbf7eaa53cd6750f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iV4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-31T00:28:11Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "AAAAPH//k7M\u003d",
       "revId": "2879d42de12cfb5a141197debbf7eaa53cd6750f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

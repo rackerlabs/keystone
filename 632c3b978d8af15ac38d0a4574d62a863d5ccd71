@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//iW8\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-31T00:28:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//imI\u003d",
+      "revId": "632c3b978d8af15ac38d0a4574d62a863d5ccd71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//imA\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//iWQ\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-31T00:28:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//imA\u003d",
+      "revId": "632c3b978d8af15ac38d0a4574d62a863d5ccd71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//k7U\u003d",
         "filename": "keystone/identity/backends/pam.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2013-05-30T04:54:49Z",
       "side": 1,
       "message": "whoa, never seen that before",
+      "revId": "632c3b978d8af15ac38d0a4574d62a863d5ccd71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iV8\u003d",
+        "filename": "keystone/identity/backends/pam.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-31T00:28:11Z",
+      "side": 1,
+      "message": "Yeah, me neither. Maybe that should come out in the future.",
+      "parentUuid": "AAAAPH//k7U\u003d",
       "revId": "632c3b978d8af15ac38d0a4574d62a863d5ccd71",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2013-05-30T22:15:25Z",
       "side": 1,
       "message": "for reviewers, it would be nice to have the {} named so that I know it\u0027s the context and not something else. So suggest a constant like EMPTY_CONTEXT.",
+      "revId": "632c3b978d8af15ac38d0a4574d62a863d5ccd71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iV0\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-31T00:28:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//ikM\u003d",
       "revId": "632c3b978d8af15ac38d0a4574d62a863d5ccd71",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
