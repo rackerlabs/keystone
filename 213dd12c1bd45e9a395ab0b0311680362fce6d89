@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//iMI\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-31T04:25:20Z",
+      "side": 1,
+      "message": "sounds good.",
+      "parentUuid": "AAAAPH//i9g\u003d",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//i9Y\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-30T20:19:43Z",
       "side": 1,
       "message": "why not use user_id here rather than id? I don\u0027t see what\u0027s gained by having a new variable that\u0027s the same as the other variable.",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iMA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-31T04:25:20Z",
+      "side": 1,
+      "message": "yeah agree. good catch. At one point, with domains, I know I was passing an \"id\" to make it more generic but I didn\u0027t catch it while modifying the code.",
+      "parentUuid": "AAAAPH//i9Y\u003d",
       "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//iF4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-31T04:25:20Z",
+      "side": 1,
+      "message": "Yes, good catch. I actually also realized after I checked in code. I have taken care of it and updating it with next patch.",
+      "parentUuid": "AAAAPH//i9A\u003d",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//jiE\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 9
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//iL0\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 844,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-31T04:25:20Z",
+      "side": 1,
+      "message": "yes, makes sense.",
+      "parentUuid": "AAAAPH//i88\u003d",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//i84\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 9
@@ -115,6 +187,24 @@
       "writtenOn": "2013-05-30T20:19:43Z",
       "side": 1,
       "message": "don\u0027t need to set this here since setting it at 865.",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iLY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-31T04:25:20Z",
+      "side": 1,
+      "message": "yes, agree. Again, at one point, I was setting role_dn comditionaly according to domain or project..and didn\u0027t catch it while modifying the code later :(.",
+      "parentUuid": "AAAAPH//i84\u003d",
       "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//iIo\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-31T04:25:20Z",
+      "side": 1,
+      "message": "Like your suggestion. I think this is the only place I am using it but will double check. Change it to, \nif not project_id or not self.get(role_id) ? \nI see that this increases the scope.",
+      "parentUuid": "AAAAPH//i8w\u003d",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//i78\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 9
@@ -149,6 +257,23 @@
       "writtenOn": "2013-05-30T20:19:43Z",
       "side": 1,
       "message": "suggest make this cleaner by adding to a member_attrs list before set attrs.\n\n member_attrs \u003d dn\n member_attrs.append(self.dumb_member) if self.use_dumb_member\n attrs \u003d [(\u0027objectClass\u0027, [self.object_class]), (self.member_attribute, member_attrs)]",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iDw\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-31T04:25:20Z",
+      "side": 1,
+      "message": "OK, sounds good.",
       "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +314,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//iDI\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1017,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-31T04:25:20Z",
+      "side": 1,
+      "message": "Hi Adam, so we are querying organizationalRole with roleOccupant attribute for a particular dn. Seems like that\u0027s how we are handling it elsewhere..for example, list_project_roles_for_user. Seems like it\u0027s safe. Thoughts? :)\n\nI am thinking on your comment more though. Meanwhile, agree with you on a similar comment on \u0027get_grant\u0027 which I can take care of it in similar way (only objectclass in query vs objectclass and member attribute for a particular dn) .",
+      "parentUuid": "AAAAPH//jiM\u003d",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//lL0\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 9
@@ -218,6 +361,24 @@
       "side": 1,
       "message": "This comment needs to be in the code.",
       "parentUuid": "AAAAPH//lL0\u003d",
+      "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//iHw\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-05-31T04:25:20Z",
+      "side": 1,
+      "message": "OK, cool.",
+      "parentUuid": "AAAAPH//i7Y\u003d",
       "revId": "213dd12c1bd45e9a395ab0b0311680362fce6d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
