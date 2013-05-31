@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//jhw\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-31T18:13:54Z",
+      "side": 1,
+      "message": "Please submit this as a one line bug fix separate from the change.",
+      "revId": "73f19b375ec1b6ea819c718f383df6d5e6e2563c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
