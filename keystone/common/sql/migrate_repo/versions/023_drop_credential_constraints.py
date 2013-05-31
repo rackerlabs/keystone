@@ -16,33 +16,16 @@
 
 from migrate import ForeignKeyConstraint
 import sqlalchemy
-from sqlalchemy.orm import sessionmaker
-
-MYSQL_FKEY_QUERY = ("select CONSTRAINT_NAME from "
-                    "INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS "
-                    "where table_name = 'credential'")
 
 
-def drop_constraint_mysql(migrate_engine):
-    session = sessionmaker(bind=migrate_engine)()
-    #http://bugs.mysql.com/bug.php?id=10333
-    #MySQL varies from the SQL norm in naming
-    #Foreign Keys.  The mapping from the column name
-    #to the actual foreign key is stored in
-    #INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
-    #SQLAlchemy expects the constraint name to be
-    # the column name.
-    for constraint in session.execute(MYSQL_FKEY_QUERY):
-        session.execute('ALTER TABLE credential DROP FOREIGN KEY %s;'
-                        % constraint[0])
-    session.commit()
+def get_constraint_name(table, column_name):
+    fkeys = [fk for fk in table.constraints if column_name in fk.columns]
+    constraint_name = fkeys[0].name
+    return constraint_name
 
 
 def remove_constraints(migrate_engine):
     if migrate_engine.name == 'sqlite':
-        return
-    if migrate_engine.name == 'mysql':
-        drop_constraint_mysql(migrate_engine)
         return
     meta = sqlalchemy.MetaData()
     meta.bind = migrate_engine
@@ -50,9 +33,13 @@ def remove_constraints(migrate_engine):
     proj_table = sqlalchemy.Table('project', meta, autoload=True)
     cred_table = sqlalchemy.Table('credential', meta, autoload=True)
     ForeignKeyConstraint(columns=[cred_table.c.user_id],
-                         refcolumns=[user_table.c.id]).drop()
+                         refcolumns=[user_table.c.id],
+                         name=get_constraint_name(cred_table, 'user_id')
+                         ).drop()
     ForeignKeyConstraint(columns=[cred_table.c.project_id],
-                         refcolumns=[proj_table.c.id]).drop()
+                         refcolumns=[proj_table.c.id],
+                         name=get_constraint_name(cred_table, 'project_id')
+                         ).drop()
 
 
 def add_constraints(migrate_engine):
