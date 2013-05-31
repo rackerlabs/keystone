@@ -33,6 +33,24 @@
       "revId": "87dd116aea6e3c8d9d436ce6b5bf1fbbe0ff0788",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//g70\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/020_migrate_metadata_table_roles.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-05-31T13:58:08Z",
+      "side": 1,
+      "message": "Yes.  It has been tested against all of them.",
+      "parentUuid": "AAAAPH//hjM\u003d",
+      "revId": "87dd116aea6e3c8d9d436ce6b5bf1fbbe0ff0788",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
