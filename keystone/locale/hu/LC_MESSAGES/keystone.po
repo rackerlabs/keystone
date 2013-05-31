@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-05-30 17:05+0000\n"
+"POT-Creation-Date: 2013-05-31 17:05+0000\n"
 "PO-Revision-Date: 2012-12-15 14:14+0000\n"
 "Last-Translator: kelemeng <kelemeng@gnome.hu>\n"
 "Language-Team: hu <LL@li.org>\n"
@@ -190,7 +190,7 @@ msgstr ""
 msgid "RBAC: Adding query filter params (%s)"
 msgstr ""
 
-#: keystone/common/controller.py:331
+#: keystone/common/controller.py:322
 msgid "Invalid token in normalize_domain_id"
 msgstr ""
 
@@ -215,12 +215,12 @@ msgstr "Hitelesítés sikertelen. %s innen: %s"
 msgid "The resource could not be found."
 msgstr "Az erőforrás nem található."
 
-#: keystone/common/wsgi_server.py:59
+#: keystone/common/wsgi_server.py:72
 #, python-format
 msgid "Starting %(arg0)s on %(host)s:%(port)s"
 msgstr "%(arg0)s indítása ezen: %(host)s:%(port)s"
 
-#: keystone/common/wsgi_server.py:119
+#: keystone/common/wsgi_server.py:132
 msgid "Server error"
 msgstr ""
 
@@ -574,22 +574,4 @@ msgstr "Nem vehető fel a token felhasználólistája."
 #: keystone/token/backends/memcache.py:93
 msgid "Unable to add token to revocation list."
 msgstr "A token nem adható a visszavonási listához."
-
-#~ msgid "RBAC: Authorizing %s(%s)"
-#~ msgstr ""
-
-#~ msgid "Invalid LDAP tls certs option: %s. Choose one of: "
-#~ msgstr ""
-
-#~ msgid "Invalid LDAP scope: %s. Choose one of: "
-#~ msgstr ""
-
-#~ msgid "Invalid LDAP TLS_AVAIL option: %s. TLSnot available"
-#~ msgstr ""
-
-#~ msgid "User %s is already a member of group %s"
-#~ msgstr ""
-
-#~ msgid "enforce %s: %s"
-#~ msgstr "%s kikényszerítése: %s"
 

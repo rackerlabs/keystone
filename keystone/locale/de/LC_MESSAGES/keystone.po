@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-05-30 17:05+0000\n"
+"POT-Creation-Date: 2013-05-31 17:05+0000\n"
 "PO-Revision-Date: 2013-05-22 03:45+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: German "
@@ -194,7 +194,7 @@ msgstr ""
 "Rollenbasierte Zugriffssteuerung: Hinzufügen von Abfragefilterparametern "
 "(%s)"
 
-#: keystone/common/controller.py:331
+#: keystone/common/controller.py:322
 msgid "Invalid token in normalize_domain_id"
 msgstr "Ungültiges Token in 'normalize_domain_id'"
 
@@ -219,12 +219,12 @@ msgstr "Autorisierung fehlgeschlagen. %s von %s"
 msgid "The resource could not be found."
 msgstr "Die Ressource konnte nicht gefunden werden."
 
-#: keystone/common/wsgi_server.py:59
+#: keystone/common/wsgi_server.py:72
 #, python-format
 msgid "Starting %(arg0)s on %(host)s:%(port)s"
 msgstr "Starten von %(arg0)s auf %(host)s:%(port)s"
 
-#: keystone/common/wsgi_server.py:119
+#: keystone/common/wsgi_server.py:132
 msgid "Server error"
 msgstr "Serverfehler"
 
@@ -582,16 +582,4 @@ msgstr "Token kann nicht zu Benutzerliste hinzugefügt werden."
 #: keystone/token/backends/memcache.py:93
 msgid "Unable to add token to revocation list."
 msgstr "Token kann nicht zu Widerrufsliste hinzugefügt werden."
-
-#~ msgid "RBAC: Authorizing %s(%s)"
-#~ msgstr "Rollenbasierte Zugriffssteuerung: Autorisierung von %s(%s)"
-
-#~ msgid "Invalid LDAP tls certs option: %s. Choose one of: "
-#~ msgstr ""
-
-#~ msgid "Invalid LDAP TLS_AVAIL option: %s. TLSnot available"
-#~ msgstr ""
-
-#~ msgid "enforce %s: %s"
-#~ msgstr "%s erzwingen: %s"
 
