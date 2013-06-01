@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-05-30 17:05+0000\n"
+"POT-Creation-Date: 2013-06-01 17:05+0000\n"
 "PO-Revision-Date: 2013-05-17 16:06+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: ka_GE <LL@li.org>\n"
@@ -184,7 +184,7 @@ msgstr ""
 msgid "RBAC: Adding query filter params (%s)"
 msgstr ""
 
-#: keystone/common/controller.py:331
+#: keystone/common/controller.py:322
 msgid "Invalid token in normalize_domain_id"
 msgstr ""
 
@@ -209,12 +209,12 @@ msgstr ""
 msgid "The resource could not be found."
 msgstr ""
 
-#: keystone/common/wsgi_server.py:59
+#: keystone/common/wsgi_server.py:72
 #, python-format
 msgid "Starting %(arg0)s on %(host)s:%(port)s"
 msgstr ""
 
-#: keystone/common/wsgi_server.py:119
+#: keystone/common/wsgi_server.py:132
 msgid "Server error"
 msgstr ""
 
@@ -564,61 +564,4 @@ msgstr ""
 #: keystone/token/backends/memcache.py:93
 msgid "Unable to add token to revocation list."
 msgstr ""
-
-#~ msgid "RBAC: Authorizing %s(%s)"
-#~ msgstr ""
-
-#~ msgid "Authorization failed. %s from %s"
-#~ msgstr ""
-
-#~ msgid "Invalid LDAP tls certs option: %s. Choose one of: "
-#~ msgstr ""
-
-#~ msgid "Invalid LDAP scope: %s. Choose one of: "
-#~ msgstr ""
-
-#~ msgid "Invalid LDAP TLS_AVAIL option: %s. TLSnot available"
-#~ msgstr ""
-
-#~ msgid "LDAP add: dn=%s, attrs=%s"
-#~ msgstr ""
-
-#~ msgid "LDAP search: dn=%s, scope=%s, query=%s, attrs=%s"
-#~ msgstr ""
-
-#~ msgid "LDAP modify: dn=%s, modlist=%s"
-#~ msgstr ""
-
-#~ msgid "LDAP delete_ext: dn=%s, serverctrls=%s"
-#~ msgstr ""
-
-#~ msgid "FakeLdap add item: dn=%s, attrs=%s"
-#~ msgstr ""
-
-#~ msgid "FakeLdap modify item: dn=%s attrs=%s"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "FakeLdap modify item failed: item has"
-#~ " no attribute \"%s\" with value "
-#~ "\"%s\" to delete"
-#~ msgstr ""
-
-#~ msgid "FakeLdap search at dn=%s scope=%s query=%s"
-#~ msgstr ""
-
-#~ msgid "Add user %s to tenant %s"
-#~ msgstr ""
-
-#~ msgid "Assign role %s to user %s on tenant %s"
-#~ msgstr ""
-
-#~ msgid "Creating ec2 cred for user %s and tenant %s"
-#~ msgstr ""
-
-#~ msgid "User %s is already a member of group %s"
-#~ msgstr ""
-
-#~ msgid "enforce %s: %s"
-#~ msgstr ""
 

@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: keystone "
-"jenkins.keystone.propose.translation.update.217\n"
+"jenkins.keystone.propose.translation.update.219\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-05-30 17:05+0000\n"
+"POT-Creation-Date: 2013-06-01 17:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -184,7 +184,7 @@ msgstr ""
 msgid "RBAC: Adding query filter params (%s)"
 msgstr ""
 
-#: keystone/common/controller.py:331
+#: keystone/common/controller.py:322
 msgid "Invalid token in normalize_domain_id"
 msgstr ""
 
@@ -209,12 +209,12 @@ msgstr ""
 msgid "The resource could not be found."
 msgstr ""
 
-#: keystone/common/wsgi_server.py:59
+#: keystone/common/wsgi_server.py:72
 #, python-format
 msgid "Starting %(arg0)s on %(host)s:%(port)s"
 msgstr ""
 
-#: keystone/common/wsgi_server.py:119
+#: keystone/common/wsgi_server.py:132
 msgid "Server error"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-05-30 17:05+0000\n"
+"POT-Creation-Date: 2013-06-01 17:05+0000\n"
 "PO-Revision-Date: 2013-05-21 09:13+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Spanish "
@@ -196,7 +196,7 @@ msgstr "RBAC: Autorización otorgada"
 msgid "RBAC: Adding query filter params (%s)"
 msgstr "RBAC: añadiendo parámetros de filtro de consultas (%s)"
 
-#: keystone/common/controller.py:331
+#: keystone/common/controller.py:322
 msgid "Invalid token in normalize_domain_id"
 msgstr "Señal no válida en normalize_domain_id"
 
@@ -221,12 +221,12 @@ msgstr "Ha fallado la autorización. %s de %s"
 msgid "The resource could not be found."
 msgstr "El recurso no se ha podido encontrar."
 
-#: keystone/common/wsgi_server.py:59
+#: keystone/common/wsgi_server.py:72
 #, python-format
 msgid "Starting %(arg0)s on %(host)s:%(port)s"
 msgstr "Iniciando %(arg0)s en %(host)s:%(port)s"
 
-#: keystone/common/wsgi_server.py:119
+#: keystone/common/wsgi_server.py:132
 msgid "Server error"
 msgstr "Error de servidor"
 
@@ -589,16 +589,4 @@ msgstr "No se puede añadir lista de usuarios de señal."
 #: keystone/token/backends/memcache.py:93
 msgid "Unable to add token to revocation list."
 msgstr "No se puede añadir señal a lista de revocación. "
-
-#~ msgid "RBAC: Authorizing %s(%s)"
-#~ msgstr "RBAC: Autorizando %s(%s)"
-
-#~ msgid "Invalid LDAP tls certs option: %s. Choose one of: "
-#~ msgstr ""
-
-#~ msgid "Invalid LDAP TLS_AVAIL option: %s. TLSnot available"
-#~ msgstr ""
-
-#~ msgid "enforce %s: %s"
-#~ msgstr "imponer %s: %s"
 
