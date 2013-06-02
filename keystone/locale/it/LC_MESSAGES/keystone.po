@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-05-30 17:05+0000\n"
+"POT-Creation-Date: 2013-06-02 17:05+0000\n"
 "PO-Revision-Date: 2013-05-17 16:06+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Italian "
@@ -192,7 +192,7 @@ msgstr "RBAC: autorizzazione concessa"
 msgid "RBAC: Adding query filter params (%s)"
 msgstr "RBAC: aggiunta parametri del filtro della query (%s)"
 
-#: keystone/common/controller.py:331
+#: keystone/common/controller.py:322
 msgid "Invalid token in normalize_domain_id"
 msgstr "Token non valido in normalize_domain_id"
 
@@ -217,12 +217,12 @@ msgstr "Autorizzazione non riuscita. %s da %s"
 msgid "The resource could not be found."
 msgstr "Impossibile trovare la risorsa."
 
-#: keystone/common/wsgi_server.py:59
+#: keystone/common/wsgi_server.py:72
 #, python-format
 msgid "Starting %(arg0)s on %(host)s:%(port)s"
 msgstr "Avvio %(arg0)s in %(host)s:%(port)s"
 
-#: keystone/common/wsgi_server.py:119
+#: keystone/common/wsgi_server.py:132
 msgid "Server error"
 msgstr "Errore del server"
 
@@ -578,16 +578,4 @@ msgstr "Impossibile aggiungere un elenco utenti token."
 #: keystone/token/backends/memcache.py:93
 msgid "Unable to add token to revocation list."
 msgstr "Impossibile aggiungere un token ad un elenco di revoca."
-
-#~ msgid "RBAC: Authorizing %s(%s)"
-#~ msgstr "RBAC: autorizzazione %s(%s)"
-
-#~ msgid "Invalid LDAP tls certs option: %s. Choose one of: "
-#~ msgstr ""
-
-#~ msgid "Invalid LDAP TLS_AVAIL option: %s. TLSnot available"
-#~ msgstr ""
-
-#~ msgid "enforce %s: %s"
-#~ msgstr "applica %s: %s"
 

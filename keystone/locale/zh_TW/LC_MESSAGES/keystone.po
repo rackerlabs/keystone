@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-05-30 17:05+0000\n"
+"POT-Creation-Date: 2013-06-02 17:05+0000\n"
 "PO-Revision-Date: 2013-05-22 03:11+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) "
@@ -184,7 +184,7 @@ msgstr "RBAC：已授與權限"
 msgid "RBAC: Adding query filter params (%s)"
 msgstr "RBAC：正在新增查詢過濾器參數 (%s)"
 
-#: keystone/common/controller.py:331
+#: keystone/common/controller.py:322
 msgid "Invalid token in normalize_domain_id"
 msgstr "normalize_domain_id 中的記號無效"
 
@@ -209,12 +209,12 @@ msgstr "授權失敗。%s（自 %s）"
 msgid "The resource could not be found."
 msgstr "找不到資源。"
 
-#: keystone/common/wsgi_server.py:59
+#: keystone/common/wsgi_server.py:72
 #, python-format
 msgid "Starting %(arg0)s on %(host)s:%(port)s"
 msgstr "正在 %(host)s:%(port)s 上啟動 %(arg0)s"
 
-#: keystone/common/wsgi_server.py:119
+#: keystone/common/wsgi_server.py:132
 msgid "Server error"
 msgstr "伺服器錯誤"
 
@@ -564,16 +564,4 @@ msgstr "無法新增記號使用者清單。"
 #: keystone/token/backends/memcache.py:93
 msgid "Unable to add token to revocation list."
 msgstr "無法將記號新增至撤銷清冊。"
-
-#~ msgid "RBAC: Authorizing %s(%s)"
-#~ msgstr "RBAC：正在授權 %s(%s)"
-
-#~ msgid "Invalid LDAP tls certs option: %s. Choose one of: "
-#~ msgstr ""
-
-#~ msgid "Invalid LDAP TLS_AVAIL option: %s. TLSnot available"
-#~ msgstr ""
-
-#~ msgid "enforce %s: %s"
-#~ msgstr "施行 %s：%s"
 
