@@ -16,6 +16,24 @@
       "revId": "b5ac5bbf1d241dbeb3d530c322246f26eef6477e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//eXU\u003d",
+        "filename": "contrib/redhat-eventlet.patch",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-02T23:42:01Z",
+      "side": 1,
+      "message": "That won\u0027t make any difference it\u0027s just the base git diff. This patch is imported from oslo as well so i can\u0027t really make any changes here.",
+      "parentUuid": "AAAAPH//f+o\u003d",
+      "revId": "b5ac5bbf1d241dbeb3d530c322246f26eef6477e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
