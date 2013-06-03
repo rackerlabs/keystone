@@ -439,7 +439,8 @@ class KeystoneClientTests(object):
         client = self.get_client(admin=True)
         user = client.users.create(name=test_username,
                                    password='password',
-                                   email='user1@test.com')
+                                   email='user1@test.com',
+                                   tenant_id=self.tenant_bar['id'])
         self.assertEquals(user.name, test_username)
 
         user = client.users.get(user=user.id)
@@ -466,7 +467,12 @@ class KeystoneClientTests(object):
         self._client(username=test_username,
                      password='password2')
 
+        # attempting to update the tenant with the existing value should work
         user = client.users.update_tenant(user=user, tenant='bar')
+
+        # attempt to change it to something else
+        user = client.users.update_tenant(user=user, tenant='baz')
+
         # TODO(ja): once keystonelight supports default tenant
         #           when you login without specifying tenant, the
         #           token should be scoped to tenant 'bar'
