@@ -60,7 +60,7 @@ v2_EXPECTED_RESPONSE = {
     "links": [
         {
             "rel": "self",
-            "href": "",     # Will get filled in after initialization
+            "href": "",  # Will get filled in after initialization
         },
         v2_HTML_DESCRIPTION,
         v2_PDF_DESCRIPTION
@@ -91,7 +91,7 @@ v3_EXPECTED_RESPONSE = {
     "links": [
         {
             "rel": "self",
-            "href": "",     # Will get filled in after initialization
+            "href": "",  # Will get filled in after initialization
         }
     ],
     "media-types": v3_MEDIA_TYPES
@@ -297,6 +297,11 @@ vnd.openstack.identity-v2.0+xml"/>
       <link href="http://docs.openstack.org/api/openstack-identity-service/\
 2.0/identity-dev-guide-2.0.pdf" type="application/pdf" rel="describedby"/>
     </links>
+    <link href="http://localhost:%(port)s/v2.0/" rel="self"/>
+    <link href="http://docs.openstack.org/api/openstack-identity-service/\
+2.0/content/" type="text/html" rel="describedby"/>
+    <link href="http://docs.openstack.org/api/openstack-identity-service/\
+2.0/identity-dev-guide-2.0.pdf" type="application/pdf" rel="describedby"/>
   </version>
 </versions>
 """ % dict(port=CONF.public_port)
