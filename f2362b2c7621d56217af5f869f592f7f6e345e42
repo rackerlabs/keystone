@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//dKI\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-06-03T15:44:17Z",
+      "side": 1,
+      "message": "Minor nit...we used EMPTY_CONTEXT above (which is nice and explanatory), here we use {}....probably best to be consistent.  Same for lines below.",
+      "revId": "f2362b2c7621d56217af5f869f592f7f6e345e42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
