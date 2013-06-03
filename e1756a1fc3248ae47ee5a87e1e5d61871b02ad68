@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//dRY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-03T15:16:09Z",
+      "side": 1,
+      "message": "couldn\u0027t you have multiple constraints on the same column? in which case, this is just going to return the first such constraint, and may result in the wrong one being dropped?",
+      "revId": "e1756a1fc3248ae47ee5a87e1e5d61871b02ad68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
