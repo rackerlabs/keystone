@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//cdA\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-03T19:27:03Z",
+      "side": 1,
+      "message": "Order imports in alphabetical order, this should fix your Jenkins failure",
+      "revId": "72f889f69261c22bd62a1824821f90ed97f2bf82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
