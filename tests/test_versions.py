@@ -15,6 +15,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import httplib
+import StringIO
+
+from lxml import etree
+
 from keystone import config
 from keystone import controllers
 from keystone.openstack.common import jsonutils
@@ -58,7 +63,7 @@ v2_EXPECTED_RESPONSE = {
     "links": [
         {
             "rel": "self",
-            "href": "",     # Will get filled in after initialization
+            "href": "",  # Will get filled in after initialization
         },
         v2_HTML_DESCRIPTION,
         v2_PDF_DESCRIPTION
@@ -89,7 +94,7 @@ v3_EXPECTED_RESPONSE = {
     "links": [
         {
             "rel": "self",
-            "href": "",     # Will get filled in after initialization
+            "href": "",  # Will get filled in after initialization
         }
     ],
     "media-types": v3_MEDIA_TYPES
@@ -256,3 +261,75 @@ class VersionTestCase(test.TestCase):
         self.assertEqual(resp.status_int, 300)
         data = jsonutils.loads(resp.body)
         self.assertEqual(data, v2_only_response)
+
+    def assertEqualXML(self, a, b):
+        # FIXME(blk-u): this is from test_serializer, refactor to move it up
+        # to tests.TestCase!
+
+        """Parses two XML documents from strings and compares the results.
+
+        This provides easy-to-read failures from nose.
+
+        """
+        parser = etree.XMLParser(remove_blank_text=True)
+
+        def canonical_xml(s):
+            s = s.strip()
+
+            fp = StringIO.StringIO()
+            dom = etree.fromstring(s, parser)
+            dom.getroottree().write_c14n(fp)
+            s = fp.getvalue()
+
+            dom = etree.fromstring(s, parser)
+            return etree.tostring(dom, pretty_print=True)
+
+        a = canonical_xml(a)
+        b = canonical_xml(b)
+        self.assertEqual(a.split('\n'), b.split('\n'))
+
+    def test_version_compatible(self):
+        # The XML version response is compatible with the Folsom version,
+        # where the links to the v2 endpoint were under the version element
+        # and not under the version/links element.
+
+        conn = httplib.HTTPConnection('localhost', CONF.public_port)
+        headers = {'Accept': 'application/xml'}
+        conn.request('GET', '/', headers=headers)
+        resp = conn.getresponse()
+
+        resp_xml = resp.read()
+
+        exp_response_xml = """
+<?xml version="1.0" encoding="UTF-8"?>
+<versions xmlns="http://docs.openstack.org/identity/api/v2.0">
+  <version status="stable" updated="2013-03-06T00:00:00Z" id="v3.0">
+    <media-types>
+      <media-type base="application/json" type="application/\
+vnd.openstack.identity-v3+json"/>
+      <media-type base="application/xml" type="application/\
+vnd.openstack.identity-v3+xml"/>
+    </media-types>
+    <links>
+      <link href="http://localhost:%(port)s/v3/" rel="self"/>
+    </links>
+  </version>
+  <version status="stable" updated="2013-03-06T00:00:00Z" id="v2.0">
+    <media-types>
+      <media-type base="application/json" type="application/\
+vnd.openstack.identity-v2.0+json"/>
+      <media-type base="application/xml" type="application/\
+vnd.openstack.identity-v2.0+xml"/>
+    </media-types>
+    <links>
+      <link href="http://localhost:%(port)s/v2.0/" rel="self"/>
+      <link href="http://docs.openstack.org/api/openstack-identity-service/\
+2.0/content/" type="text/html" rel="describedby"/>
+      <link href="http://docs.openstack.org/api/openstack-identity-service/\
+2.0/identity-dev-guide-2.0.pdf" type="application/pdf" rel="describedby"/>
+    </links>
+  </version>
+</versions>
+""" % dict(port=CONF.public_port)
+
+        self.assertEqualXML(resp_xml, exp_response_xml)
