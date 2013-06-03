@@ -16,6 +16,24 @@
       "revId": "e1756a1fc3248ae47ee5a87e1e5d61871b02ad68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//c/c\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-03T16:29:12Z",
+      "side": 1,
+      "message": "Potentially, but we don\u0027t have that now.  If we have that case in the future, we should differentiate, but that will require more complex code than is currently required.",
+      "parentUuid": "AAAAPH//dRY\u003d",
+      "revId": "e1756a1fc3248ae47ee5a87e1e5d61871b02ad68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
