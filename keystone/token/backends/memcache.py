@@ -23,11 +23,13 @@ from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import jsonutils
+from keystone.openstack.common import timeutils
 from keystone import token
 
 
 CONF = config.CONF
 config.register_str('servers', group='memcache', default='localhost:11211')
+config.register_int('max_compare_and_set_retry', group='memcache', default=16)
 
 
 class Token(token.Driver):
@@ -42,7 +44,13 @@ class Token(token.Driver):
 
     def _get_memcache_client(self):
         memcache_servers = CONF.memcache.servers.split(',')
-        self._memcache_client = memcache.Client(memcache_servers, debug=0)
+        # NOTE(morganfainberg): The memcache client library for python is NOT
+        # thread safe and should not be passed between threads. This is highly
+        # specific to the cas() (compare and set) methods and the caching of
+        # the previous value(s). It appears greenthread should ensure there is
+        # a single data structure per spawned greenthread.
+        self._memcache_client = memcache.Client(memcache_servers, debug=0,
+                                                cache_cas=True)
         return self._memcache_client
 
     def _prefix_token_id(self, token_id):
@@ -77,12 +85,51 @@ class Token(token.Driver):
             token_data = jsonutils.dumps(token_id)
             user_id = data['user']['id']
             user_key = self._prefix_user_id(user_id)
-            if not self.client.append(user_key, ',%s' % token_data):
-                if not self.client.add(user_key, token_data):
-                    if not self.client.append(user_key, ',%s' % token_data):
-                        msg = _('Unable to add token user list.')
-                        raise exception.UnexpectedError(msg)
+            self._update_user_list_with_cas(user_key=user_key,
+                                            token_id=token_data)
         return copy.deepcopy(data_copy)
+
+    def _update_user_list_with_cas(self, user_key, token_id):
+        cas_retry = 0
+        error_msg = _('Unable to add token user list.')
+        current_time = timeutils.normalize_time(
+            timeutils.parse_isotime(timeutils.isotime()))
+
+        self.client.reset_cas()
+
+        while cas_retry <= CONF.memcache.max_compare_and_set_retry:
+            # NOTE(morganfainberg): cas or "compare and set" is a function of
+            # memcache. It will return false if the value has changed since the
+            # last call to client.gets(). This is the memcache supported method
+            # of avoiding race conditions on set().  Memcache is already atomic
+            # on the back-end and serializes operations.
+            #
+            # cas_retry is for tracking our iterations before we give up (in
+            # case memcache is down or something horrible happens we don't
+            # iterate forever trying to compare and set the new value.
+            cas_retry += 1
+            record = self.client.gets(user_key)
+            filtered_list = []
+
+            if record is not None:
+                token_list = jsonutils.loads('[%s]' % record)
+                for token_i in token_list:
+                    ptk = self._prefix_token_id(token.unique_id(token_i))
+                    token_ref = self.client.get(ptk)
+                    if not token_ref:
+                        continue
+
+                    if 'expires' in token_ref:
+                        expires_at = timeutils.normalize_time(
+                            token_ref['expires'])
+                        if expires_at < current_time:
+                            continue
+
+                    filtered_list.append(jsonutils.dumps(token_i))
+            filtered_list.append(token_id)
+            if self.client.cas(user_key, ','.join(filtered_list)):
+                return filtered_list
+        raise exception.UnexpectedError(error_msg)
 
     def _add_to_revocation_list(self, data):
         data_json = jsonutils.dumps(data)
