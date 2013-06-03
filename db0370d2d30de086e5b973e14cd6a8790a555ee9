@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//c2o\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-03T17:14:42Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be in password auth plugin?",
+      "revId": "db0370d2d30de086e5b973e14cd6a8790a555ee9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
