@@ -93,6 +93,22 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
                 self.default_domain_user_id, self.project_id,
                 self.role_id)
 
+
+            self.service_id = uuid.uuid4().hex
+            self.service = self.new_service_ref()
+            self.service['id'] = self.service_id
+            self.catalog_api.create_service(
+               self.service_id,
+               self.service.copy())
+
+            self.endpoint_id = uuid.uuid4().hex
+            self.endpoint = self.new_endpoint_ref(service_id=self.service_id)
+            self.endpoint['id'] = self.endpoint_id
+            #self.endpoint['interface'] = 'admin'
+            self.catalog_api.create_endpoint(
+                self.endpoint_id,
+                self.endpoint.copy())
+
         self.public_server = self.serveapp('keystone', name='main')
         self.admin_server = self.serveapp('keystone', name='admin')
 
@@ -462,6 +478,42 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         self.assertEqual(self.role_id, token['roles'][0]['id'])
 
         return token
+
+
+    def assertValidProjectScopedTokenResponseWithCatalog(self, r, *args, **kwargs):
+        token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
+
+        return token
+
+
+    def assertValidProjectScopedTokenResponseNoCatalog(self, r, *args, **kwargs):
+
+        token = self.assertValidTokenResponse(r, *args, **kwargs)
+
+        self.assertNotIn('catalog', token)
+        self.assertIn('roles', token)
+        self.assertTrue(token['roles'])
+        for role in token['roles']:
+            self.assertIn('id', role)
+            self.assertIn('name', role)
+
+        return token
+
+
+    def assertValidProjectScopedTokenResponseOnlyCatalog(self, r, *args, **kwargs):
+
+        self.assertTrue(r.getheader('X-Subject-Token'))
+        token = r.body['token']
+
+        self.assertIn('catalog', token)
+
+        self.assertNotIn('user', token)
+        self.assertNotIn('roles', token)
+        self.assertNotIn('project', token)
+        self.assertNotIn('domain', token)
+      
+        return token
+
 
     def assertValidProjectTrustScopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidProjectScopedTokenResponse(r, *args, **kwargs)

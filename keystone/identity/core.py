@@ -542,3 +542,54 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()
+
+
+    # endpoint filtering crud
+
+    def create_endpoint_to_project_association(self, endpoint_id, project_id):
+        """Creates an endpoint to project association.
+
+        :raises: keystone.exception.ProjectNotFound,
+                 keystone.exception.EndpointNotFound
+
+        """
+        raise exception.NotImplemented()
+
+
+    def remove_endpoint_to_project_association(self, endpoint_id, project_id):
+        """Removes an endpoint to project association.
+
+        :raises: exception.NotFound
+
+        """
+        raise exception.NotImplemented()
+
+
+    def check_endpoint_in_project(self, endpoint_id, project_id):
+        """Checks if an endpoint is assiciated with a project.
+
+        :raises: keystone.exception.ProjectNotFound,
+                 keystone.exception.EndpointNotFound,
+                 exception.NotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def list_endpoints_in_project(self, project_id):
+        """List all endpoints associated with a project.
+
+		:raises: keystone.exception.ProjectNotFound
+        :returns: a list of endpoint ids or an empty list.
+
+        """
+        raise exception.NotImplemented()
+
+    
+    def list_projects_associated_endpoint(self, endpoint_id):
+        """List all endpoints associated with a project.
+
+		:raises: keystone.exception.EndpointNotFound
+        :returns: a list of projects or an empty list.
+
+        """
+        raise exception.NotImplemented()
