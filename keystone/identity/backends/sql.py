@@ -16,10 +16,10 @@
 
 from keystone import clean
 from keystone.common import sql
-from keystone.common.sql import migration
 from keystone.common import utils
 from keystone import exception
 from keystone import identity
+from keystone.common.sql import migration
 
 
 class User(sql.ModelBase, sql.DictBase):
@@ -134,8 +134,27 @@ class UserGroupMembership(sql.ModelBase, sql.DictBase):
                           primary_key=True)
 
 
+class Endpoint(sql.ModelBase, sql.DictBase):
+    __tablename__ = 'endpoint_v3'
+    attributes = ['id', 'legacy_endpoint_id']
+    id = sql.Column(sql.String(64), primary_key=True)
+    legacy_endpoint_id = sql.Column(sql.String(64))
+
+
+class EndpointFilter(sql.ModelBase, sql.DictBase):
+    """Endpoint filtering join table."""
+    __tablename__ = 'endpoint_filter'
+    endpoint_id = sql.Column(sql.String(64),
+                             sql.ForeignKey('endpoint.id'),
+                             primary_key=True)
+    project_id = sql.Column(sql.String(64),
+                            sql.ForeignKey('project.id'),
+                            primary_key=True)
+
+
 class Identity(sql.Base, identity.Driver):
     # Internal interface to manage the database
+
     def db_sync(self, version=None):
         migration.db_sync(version=version)
 
@@ -186,14 +205,19 @@ class Identity(sql.Base, identity.Driver):
         return (user_ref, tenant_ref, metadata_ref)
 
     def _get_project(self, session, project_id):
-        project_ref = session.query(Project).get(project_id)
-        if project_ref is None:
-            raise exception.ProjectNotFound(project_id=project_id)
+        project_ref = None
+        if project_id is not None:
+            project_ref = session.query(Project).get(project_id)
+            if project_ref is None:
+                raise exception.ProjectNotFound(project_id=project_id)
         return project_ref
 
     def get_project(self, tenant_id):
         session = self.get_session()
-        return self._get_project(session, tenant_id).to_dict()
+        project = self._get_project(session, tenant_id)
+        if project is not None:
+            return project.to_dict()
+        return None
 
     def get_project_by_name(self, tenant_name, domain_id):
         session = self.get_session()
@@ -895,3 +919,57 @@ class Identity(sql.Base, identity.Driver):
 
             session.delete(ref)
             session.flush()
+
+    # Endpoint filtering association CRUD
+
+    def create_endpoint_to_project_association(self, endpoint_id, project_id):
+        session = self.get_session()
+        self.get_project(project_id)
+        query = session.query(EndpointFilter)
+        query = query.filter_by(endpoint_id=endpoint_id)
+        query = query.filter_by(project_id=project_id)
+        rv = query.first()
+        if rv:
+            return
+        with session.begin():
+            session.add(EndpointFilter(endpoint_id=endpoint_id,
+                                       project_id=project_id))
+            session.flush()
+
+    def check_endpoint_in_project(self, endpoint_id, project_id):
+        session = self.get_session()
+        proj = self.get_project(project_id)
+        if proj is None:
+            raise exception.ProjectNotFound(project_id=project_id)
+        query = session.query(EndpointFilter)
+        query = query.filter_by(endpoint_id=endpoint_id)
+        query = query.filter_by(project_id=project_id)
+        if query:
+            return
+
+    def remove_endpoint_to_project_association(self, endpoint_id, project_id):
+        session = self.get_session()
+        query = session.query(EndpointFilter)
+        query = query.filter_by(endpoint_id=endpoint_id)
+        query = query.filter_by(project_id=project_id)
+        association_ref = query.first()
+        if association_ref is None:
+            raise exception.NotFound('Endpoint not associated with Project')
+        with session.begin():
+            session.delete(association_ref)
+            session.flush()
+
+    def list_endpoints_in_project(self, project_id):
+        session = self.get_session()
+        self.get_project(project_id)
+        query = session.query(EndpointFilter)
+        query = query.filter_by(project_id=project_id)
+        association_refs = query.all()
+        return association_refs
+
+    def list_projects_associated_endpoint(self, endpoint_id):
+        session = self.get_session()
+        query = session.query(EndpointFilter)
+        query = query.filter_by(endpoint_id=endpoint_id)
+        association_refs = query.all()
+        return association_refs

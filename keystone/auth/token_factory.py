@@ -174,16 +174,28 @@ class TokenDataHelper(object):
 
         if CONF.trust.enabled and trust:
             user_id = trust['trustor_user_id']
-        if project_id or domain_id:
-            try:
-                service_catalog = self.catalog_api.get_v3_catalog(
-                    self.context, user_id, project_id)
-            # TODO(ayoung): KVS backend needs a sample implementation
-            except exception.NotImplemented:
-                service_catalog = {}
-            # TODO(gyee): v3 service catalog is not quite completed yet
-            # TODO(ayoung): Enforce Endpoints for trust
-            token_data['catalog'] = service_catalog
+
+        try:
+            if domain_id:
+                cat_api = self.catalog_api
+                service_catalog = cat_api.get_v3_catalog(self.context,
+                                                         user_id,
+                                                         project_id)
+                token_data['catalog'] = service_catalog
+
+            if project_id:
+                cat_api = self.catalog_api
+                service_catalog = cat_api.get_v3_filtered_catalog(self.context,
+                                                                  user_id,
+                                                                  project_id)
+                token_data['catalog'] = service_catalog
+
+        # TODO(ayoung): KVS backend needs a sample implementation
+        except exception.NotImplemented:
+            service_catalog = {}
+
+        # TODO(gyee): v3 service catalog is not quite completed yet
+        # TODO(ayoung): Enforce Endpoints for trust
 
     def _populate_token(self, token_data, expires=None, trust=None):
         if not expires:
@@ -198,9 +210,10 @@ class TokenDataHelper(object):
                        trust=None, token=None):
         token_data = {'methods': method_names,
                       'extras': extras}
+        token_parts = ['roles', 'catalog', 'user', 'project', 'domain']
 
         # We've probably already written these to the token
-        for x in ('roles', 'user', 'catalog', 'project', 'domain'):
+        for x in token_parts:
             if token and x in token:
                 token_data[x] = token[x]
 
@@ -224,6 +237,7 @@ def recreate_token_data(context, token_data=None, expires=None,
     Repopulate the ephemeral data and return the new token data.
 
     """
+
     new_expires = expires
     project_id = None
     user_id = None
@@ -263,10 +277,10 @@ def recreate_token_data(context, token_data=None, expires=None,
     if token_data:
         # peel the outer layer so its easier to operate
         token = token_data['token']
-        domain_id = (token['domain']['id'] if 'domain' in token
-                     else None)
-        project_id = (token['project']['id'] if 'project' in token
-                      else None)
+        domain_id = (token['domain']['id']
+                     if 'domain' in token else None)
+        project_id = (token['project']['id']
+                      if 'project' in token else None)
         if not new_expires:
             # support Grizzly-3 to Grizzly-RC1 transition
             # tokens issued in G3 has 'expires' instead of 'expires_at'
