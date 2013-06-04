@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//+vw\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-06-04T17:07:04Z",
+      "side": 1,
+      "message": "Just want to check if the program can exit with the error message and exit code 0f 1, if the server is not able to start.\nsys.exit(\"some error message\")",
+      "revId": "6840b53a3b145bb4fdd716f40271d0106a27016c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
