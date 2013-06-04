@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//+dE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/026_drop_user_group_constraints.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-06-04T19:21:27Z",
+      "side": 1,
+      "message": "This data structure looks hardcoded to me.  Once its created an returned to the caller, how do they know which table is the group_domain_metadata_table, which is the user_project_metadata_table, etc?  Are they expected to just know that the first one is the user_domain_metadata_table and the second one is the group_domain_metadata_table and so on?",
+      "revId": "b082e7ed6d23bba5944706593b112aa701411c5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
