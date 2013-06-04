@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//bwY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T01:55:59Z",
+      "side": 1,
+      "message": "Should this have a link to the bug that the patch that depends on this one fixes?",
+      "revId": "a3d05032dc9082eedee8075080e15e7762b49ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
