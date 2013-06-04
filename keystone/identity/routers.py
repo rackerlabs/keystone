@@ -173,3 +173,24 @@ def append_v3_routers(mapper, routers):
                    controller=role_controller,
                    action='revoke_grant',
                    conditions=dict(method=['DELETE']))
+
+    endpoint_filtering_controller = controllers.EndpointFilterV3()
+    routers.append(
+        router.Router(endpoint_filtering_controller,
+                      'endpoints', 'endpoint'))
+    mapper.connect('/projects/{project_id}/endpoints/{endpoint_id}',
+                   controller=endpoint_filtering_controller,
+                   action='create_endpoint_project_association',
+                   conditions=dict(method=['PUT']))
+    mapper.connect('/projects/{project_id}/endpoints/{endpoint_id}',
+                   controller=endpoint_filtering_controller,
+                   action='check_endpoint_project_association',
+                   conditions=dict(method=['HEAD']))
+    mapper.connect('/projects/{project_id}/endpoints',
+                   controller=endpoint_filtering_controller,
+                   action='get_endpoint_project_associations',
+                   conditions=dict(method=['GET']))
+    mapper.connect('/projects/{project_id}/endpoints/{endpoint_id}',
+                   controller=endpoint_filtering_controller,
+                   action='remove_endpoint_project_association',
+                   conditions=dict(method=['DELETE']))
