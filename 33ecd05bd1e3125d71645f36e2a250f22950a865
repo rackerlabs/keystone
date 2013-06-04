@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//+YU\u003d",
+        "filename": "tools/install_venv_common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T19:47:04Z",
+      "side": 1,
+      "message": "It looks like the code was already applying the patch?",
+      "revId": "33ecd05bd1e3125d71645f36e2a250f22950a865",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
