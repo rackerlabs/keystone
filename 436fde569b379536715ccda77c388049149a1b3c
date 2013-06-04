@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//bwI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T02:02:34Z",
+      "side": 1,
+      "message": "Minor spelling error? Is this suppose to be \u0027tables\u0027?",
+      "revId": "436fde569b379536715ccda77c388049149a1b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//bv0\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T02:02:34Z",
+      "side": 1,
+      "message": "Really really small NIT here, should there be spacing after the # signs and before the words? I haven\u0027t seen a comment format like this in Keystone.",
+      "revId": "436fde569b379536715ccda77c388049149a1b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//bvw\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T02:02:34Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "436fde569b379536715ccda77c388049149a1b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
