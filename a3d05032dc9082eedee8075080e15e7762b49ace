@@ -16,6 +16,23 @@
       "revId": "a3d05032dc9082eedee8075080e15e7762b49ace",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX///0g\u003d",
+        "filename": "tests/test_versions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-06-04T06:19:14Z",
+      "side": 1,
+      "message": "Fantastic that we are adding some XML tests: +1 !!\n\nHow important do we think it is to add xml tests for the other test cases done with json in this class?  If we plan to do that, then we should look at breaking the xml responses down into sub blocks (like is done for json) so that we can more easily create these tests without duplication of expected response data.",
+      "revId": "a3d05032dc9082eedee8075080e15e7762b49ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
