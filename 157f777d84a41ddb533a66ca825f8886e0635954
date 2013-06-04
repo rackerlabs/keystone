@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//b7I\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-04T00:06:14Z",
+      "side": 1,
+      "message": "Seems like this logic should be split into a generalizable portion and moved into keystone/common, and a token specific portion left here.",
+      "revId": "157f777d84a41ddb533a66ca825f8886e0635954",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
