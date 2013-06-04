@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//+NQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T21:07:33Z",
+      "side": 1,
+      "message": "change \"names\" to \"named\"\n\nalso, change \"others\" to \"other RDBMSs\"?",
+      "revId": "e9c5b2143f6d97e970adfdf2a4f4bcecc0e2c536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+NI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T21:07:33Z",
+      "side": 1,
+      "message": "change \"the\" to \"MySQL\u0027s\"",
+      "revId": "e9c5b2143f6d97e970adfdf2a4f4bcecc0e2c536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+M4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T21:07:33Z",
+      "side": 1,
+      "message": "suggest add a comment explains why we don\u0027t do anything.",
+      "revId": "e9c5b2143f6d97e970adfdf2a4f4bcecc0e2c536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+Mc\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T21:07:33Z",
+      "side": 1,
+      "message": "ref_column is the name of the column, not a Column object, see 023_drop_credential_constraints.py line 31.",
+      "revId": "e9c5b2143f6d97e970adfdf2a4f4bcecc0e2c536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
