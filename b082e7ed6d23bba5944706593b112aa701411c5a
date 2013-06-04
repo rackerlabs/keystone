@@ -16,6 +16,24 @@
       "revId": "b082e7ed6d23bba5944706593b112aa701411c5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+YY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/026_drop_user_group_constraints.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-04T22:36:31Z",
+      "side": 1,
+      "message": "This is the migration.  These values will never change, just passed to code that either creates or drops the constraints.  The documentation for the format is in migration_helpers.remove_constraints and  add_constraints",
+      "parentUuid": "AAAAPX//+dE\u003d",
+      "revId": "b082e7ed6d23bba5944706593b112aa701411c5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
