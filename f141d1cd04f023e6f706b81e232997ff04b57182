@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//bvQ\u003d",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-04T02:20:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//b0Q\u003d",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//b0E\u003d",
         "filename": "keystone/common/environment/__init__.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-04T01:50:37Z",
       "side": 1,
       "message": "Same spelling error here",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//bvI\u003d",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-04T02:20:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPH//b0E\u003d",
       "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +174,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPH//bus\u003d",
+        "filename": "tests/test_ipv6.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-04T02:20:11Z",
+      "side": 1,
+      "message": "No i don\u0027t think so, you can import environment as many times as you like. It\u0027s just that only in one place should you call environment.use_eventlet()",
+      "parentUuid": "AAAAPH//bx8\u003d",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//bxY\u003d",
         "filename": "tests/test_ssl.py",
         "patchSetId": 11
@@ -149,6 +203,24 @@
       "writtenOn": "2013-06-04T01:50:37Z",
       "side": 1,
       "message": "(NIT): should the \u0027C\u0027 in CONF be lined up with the \u0027127.0.0.1\u0027 or is this just a rendering issue with Gerrit? I know I have seen it do that before too.",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//bu8\u003d",
+        "filename": "tests/test_ssl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-04T02:20:11Z",
+      "side": 1,
+      "message": "It looks ok to me with the \u0027C\u0027 directly under the \u0027 this is what passes my pep8 scan.",
+      "parentUuid": "AAAAPH//bxY\u003d",
       "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
