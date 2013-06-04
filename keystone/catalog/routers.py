@@ -21,5 +21,11 @@ from keystone.common import router
 def append_v3_routers(mapper, routers):
     routers.append(router.Router(controllers.ServiceV3(),
                                  'services', 'service'))
-    routers.append(router.Router(controllers.EndpointV3(),
+    endpoints_controller = controllers.EndpointV3()
+    routers.append(router.Router(endpoints_controller,
                                  'endpoints', 'endpoint'))
+    mapper.connect('/endpoints/{endpoint_id}/projects',
+                   controller=endpoints_controller,
+                   action='list_associated_projects',
+                   conditions=dict(method=['GET']))
+    

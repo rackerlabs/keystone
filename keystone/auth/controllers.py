@@ -404,5 +404,22 @@ class Auth(controller.V3Controller):
         return token_factory.render_token_data_response(token_id, token_data)
 
     @controller.protected
+    def validate_token_catalog(self, context):
+        token_id = context.get('subject_token_id')
+        self.check_token(context)
+        token_ref = self.token_api.get_token(context, token_id)
+        token_data = token_factory.recreate_token_data(
+            context,
+            token_ref.get('token_data'),
+            token_ref['expires'],
+            token_ref.get('user'),
+            token_ref.get('tenant'))
+        token_catalog = { "token": {
+                               "catalog": token_data['token'].get('catalog') 
+                             }
+                        }
+        return token_factory.render_token_data_response(token_id, token_catalog)
+
+    @controller.protected
     def revocation_list(self, context, auth=None):
         return self.token_controllers_ref.revocation_list(context, auth)

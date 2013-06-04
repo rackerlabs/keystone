@@ -208,3 +208,12 @@ class EndpointV3(controller.V3Controller):
     @controller.protected
     def delete_endpoint(self, context, endpoint_id):
         return self.catalog_api.delete_endpoint(context, endpoint_id)
+
+    @controller.protected
+    def list_associated_projects(self, context, endpoint_id):
+        refs = self.identity_api.list_projects_associated_endpoint(context, endpoint_id)
+        if refs is None:
+            raise exception.NotFound('Endpoint not associated with any Project')
+        from keystone.identity import controllers as identity_controllers
+        projects = [ self.identity_api.get_project(context, x.project_id) for x in refs ]
+        return identity_controllers.ProjectV3.wrap_collection(context, projects)

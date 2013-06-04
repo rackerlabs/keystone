@@ -163,3 +163,18 @@ class CatalogTestCase(test_v3.RestfulTestCase):
 
         # test for bug 1152635 -- this attribute was being returned by v3
         self.assertNotIn('legacy_endpoint_id', endpoint_v3)
+
+
+    # test for endpoint filtering reverse lookup
+    # get all the projects associated with a particular endpoint 
+    def test_get_endpoint_project_associations(self):
+        """GET /endpoints/{endpoint_id}/projects"""
+        self.put('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                     'project_id': self.default_domain_project_id,
+                     'endpoint_id': self.endpoint_id})
+        
+        r = self.get('/endpoints/{endpoint_id}/projects' % {
+                'endpoint_id': self.endpoint_id})
+
+        return self.assertValidProjectListResponse(r)
+        
