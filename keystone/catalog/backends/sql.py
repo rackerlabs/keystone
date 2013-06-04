@@ -21,6 +21,7 @@ from keystone.common import sql
 from keystone.common.sql import migration
 from keystone import config
 from keystone import exception
+from keystone import identity
 
 
 CONF = config.CONF
@@ -50,6 +51,11 @@ class Endpoint(sql.ModelBase, sql.DictBase):
 
 
 class Catalog(sql.Base, catalog.Driver):
+
+    def __init__(self, *args, **kwargs):
+        super(Catalog, self).__init__(*args, **kwargs)
+        self.identity_api = identity.Manager()
+
     def db_sync(self, version=None):
         migration.db_sync(version=version)
 
@@ -131,6 +137,13 @@ class Catalog(sql.Base, catalog.Driver):
         endpoints = session.query(Endpoint)
         return [e.to_dict() for e in list(endpoints)]
 
+    def list_project_endpoints(self, project_id):
+        session = self.get_session()
+        endpoints = self.identity_api.list_endpoints_in_project(self,
+                                                                project_id)
+        return (self._get_endpoint(session, x.endpoint_id).to_dict()
+                for x in endpoints)
+
     def update_endpoint(self, endpoint_id, endpoint_ref):
         session = self.get_session()
         with session.begin():
@@ -182,6 +195,37 @@ class Catalog(sql.Base, catalog.Driver):
 
         services = {}
         for endpoint in self.list_endpoints():
+            # look up the service
+            service_id = endpoint['service_id']
+            services.setdefault(
+                service_id,
+                self.get_service(service_id))
+            service = services[service_id]
+            del endpoint['service_id']
+            endpoint['url'] = core.format_url(endpoint['url'], d)
+            if 'endpoints' in services[service_id]:
+                services[service_id]['endpoints'].append(endpoint)
+            else:
+                services[service_id]['endpoints'] = [endpoint]
+
+        catalog = []
+        for service_id, service in services.iteritems():
+            formatted_service = {}
+            formatted_service['id'] = service['id']
+            formatted_service['type'] = service['type']
+            formatted_service['endpoints'] = service['endpoints']
+            catalog.append(formatted_service)
+
+        return catalog
+
+    #FIXME(fabio): Validate that there is a need for only one get catalog
+    def get_v3_filtered_catalog(self, user_id, tenant_id, metadata=None):
+        d = dict(CONF.iteritems())
+        d.update({'tenant_id': tenant_id,
+                  'user_id': user_id})
+
+        services = {}
+        for endpoint in self.list_project_endpoints(tenant_id):
             # look up the service
             service_id = endpoint['service_id']
             services.setdefault(

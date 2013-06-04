@@ -627,3 +627,111 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, expected_length=0)
         self.assertIn(collection_url, r.result['links']['self'])
+
+    # endpoint project associations crud tests
+    # PUT
+    def test_create_endpoint_project_assoc(self):
+        """PUT /projects/{project_id}/endpoints/{endpoint_id} success."""
+        self.put('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+
+    def test_create_endpoint_project_assoc_noproj(self):
+        """PUT /projects/{project_id}/endpoints/{endpoint_id} no project."""
+        self.put('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': uuid.uuid4().hex,
+                 'endpoint_id': self.endpoint_id},
+                 body='',
+                 expected_status=404)
+
+    def test_create_endpoint_project_assoc_noendp(self):
+        """PUT /projects/{project_id}/endpoints/{endpoint_id} no endpoint."""
+        self.put('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': uuid.uuid4().hex},
+                 body='',
+                 expected_status=404)
+
+    # HEAD
+    def test_check_endpoint_project_assoc(self):
+        """HEAD /projects/{project_id}/endpoints/{endpoint_id} success."""
+        self.put('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.head('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                  'project_id': self.default_domain_project_id,
+                  'endpoint_id': self.endpoint_id})
+
+    def test_check_endpoint_project_assoc_noproj(self):
+        """HEAD /projects/{project_id}/endpoints/{endpoint_id} no project."""
+        self.put('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.head('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                  'project_id': uuid.uuid4().hex,
+                  'endpoint_id': self.endpoint_id},
+                  body='',
+                  expected_status=404)
+
+    def test_check_endpoint_project_assoc_noendp(self):
+        """HEAD /projects/{project_id}/endpoints/{endpoint_id} no endpoint."""
+        self.put('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.head('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                  'project_id': self.default_domain_project_id,
+                  'endpoint_id': uuid.uuid4().hex},
+                  body='',
+                  expected_status=404)
+
+    # GET
+    def test_get_endpoint_project_assoc(self):
+        """GET /projects/{project_id}/endpoints success."""
+        self.put('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        r = self.get('/projects/%(project_id)s/endpoints' % {
+                     'project_id': self.default_domain_project_id})
+        self.assertValidEndpointListResponse(r, self.endpoint)
+
+    def test_get_endpoint_project_assoc_noproj(self):
+        """GET /projects/{project_id}/endpoints no project."""
+        self.put('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.get('/projects/%(project_id)s/endpoints' % {
+                 'project_id': uuid.uuid4().hex},
+                 body='',
+                 expected_status=404)
+
+    # DELETE
+    def test_remove_endpoint_project_assoc(self):
+        """DELETE /projects/{project_id}/endpoints/{endpoint_id} success."""
+        self.put('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.delete('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                    'project_id': self.default_domain_project_id,
+                    'endpoint_id': self.endpoint_id})
+
+    def test_remove_endpoint_project_assoc_noproj(self):
+        """DELETE /projects/{project_id}/endpoints/{endpoint_id} no project."""
+        self.put('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.delete('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                    'project_id': uuid.uuid4().hex,
+                    'endpoint_id': self.endpoint_id},
+                    body='',
+                    expected_status=404)
+
+    def test_remove_endpoint_project_assoc_noendp(self):
+        """DELETE /projects/{project_id}/endpoints/{endpoint_id} no ep."""
+        self.put('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.delete('/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                    'project_id': self.default_domain_project_id,
+                    'endpoint_id': uuid.uuid4().hex},
+                    body='',
+                    expected_status=404)
