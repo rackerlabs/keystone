@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//+Q8\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "Change the name of this variable so that it isn\u0027t the same as a built-in: http://docs.python.org/2/library/functions.html#list\n\nSuggest list_",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+QE\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "remove \"is not None\" since that\u0027s how you\u0027re testing other inputs (like at line 806).",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+P8\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 817,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "rather than re-use dn here, which is a little scary, pick a different name, like project_dn.",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+QM\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "I think search_s will get NO_SUCH_OBJECT only if the dn entry didn\u0027t exist, which would be if the user or group didn\u0027t exist... so shouldn\u0027t Keystone respond with NotFound in that case?",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+Qs\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "we do this in both cases, so should move it up to common area.",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+Po\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "suggest \u0027return res\u0027 here and get rid of line 834 and unindent the rest. Then, as a reviewer, I don\u0027t have to go searching for the end of the else leg to figure out that we don\u0027t do anything after this.",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+Pg\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "why can we use subtree here? aren\u0027t roles directly under project?",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+Pk\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 838,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "suggest print a warning here or something... this would mean there\u0027s no projects entry?",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+PE\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "duplicate code with the if user_id leg should be moved to common spot.",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+O8\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "suggest delete this line.",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+Og\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 877,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "suggest delete this line.",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+Oc\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "and delete this line.",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+RY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "suggest call this _calc_create_member_attrs\n\nadd_dumb_member starts with a verb so I\u0027d assume it\u0027s adding a dumb member to this object when it\u0027s not.",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+RQ\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-04T20:50:08Z",
+      "side": 1,
+      "message": "suggest change the test you\u0027re overriding to not do domain-specific granting, move the domain-specific grant test to a different function and then skip that for LDAP.\n\nYou can do this in a separate commit, I wouldn\u0027t hold up this change for it.",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
