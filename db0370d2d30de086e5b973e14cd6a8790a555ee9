@@ -16,6 +16,24 @@
       "revId": "db0370d2d30de086e5b973e14cd6a8790a555ee9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//btE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-04T19:06:42Z",
+      "side": 1,
+      "message": "Maybe eventually, but that would involve rewriting a wide array of the unit tests.  This is merely a \"pull up\" refactoring from the driver to the manager.",
+      "parentUuid": "AAAAPH//c2o\u003d",
+      "revId": "db0370d2d30de086e5b973e14cd6a8790a555ee9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
