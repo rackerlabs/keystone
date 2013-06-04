@@ -34,6 +34,24 @@
       "revId": "edbd3ad9158f96fdc7ed621d7c72cd2e71fa5101",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX///iM\u003d",
+        "filename": "keystone/middleware/auth_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-06-04T10:06:10Z",
+      "side": 1,
+      "message": "FYI for completeness: man 3 mkdtemp :\n\n     The mkdtemp() function makes the same replacement to the template as in mktemp() and creates the template directory, mode 0700.",
+      "parentUuid": "AAAAPH//k9Y\u003d",
+      "revId": "edbd3ad9158f96fdc7ed621d7c72cd2e71fa5101",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
