@@ -5,6 +5,7 @@ import greenlet
 import logging
 import os
 import signal
+import socket
 import sys
 
 # If ../keystone/__init__.py exists, add ../ to Python search path, so that
@@ -50,7 +51,11 @@ def serve(*servers):
     signal.signal(signal.SIGINT, sigint_handler)
 
     for server in servers:
-        server.start()
+        try:
+            server.start()
+        except socket.error as e:
+            logging.warn('Failed to listen on specified socket : %s' % e)
+            sys.exit(0)
 
     # notify calling process we are ready to serve
     if CONF.onready:
