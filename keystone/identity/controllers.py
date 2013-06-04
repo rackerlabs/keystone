@@ -807,3 +807,50 @@ class RoleV3(controller.V3Controller):
             self._delete_tokens_for_user(context, user_id)
         else:
             self._delete_tokens_for_group(context, group_id)
+
+
+class EndpointFilterV3(controller.V3Controller):
+
+    @controller.protected
+    def create_endpoint_project_association(self, context,
+                                            project_id, endpoint_id):
+        try:
+            endpoint = self.catalog_api.get_endpoint(self, endpoint_id)
+            if endpoint is None:
+                raise exception.EndpointNotFound
+            api = self.identity_api
+            return api.create_endpoint_to_project_association(self,
+                                                              endpoint_id,
+                                                              project_id)
+        except exception.ProjectNotFound as pnf:
+            raise pnf
+
+    @controller.protected
+    def check_endpoint_project_association(self, context,
+                                           project_id, endpoint_id):
+        try:
+            endpoint = self.catalog_api.get_endpoint(context, endpoint_id)
+            if endpoint is None:
+                raise exception.EndpointNotFound
+            id_api = self.identity_api
+            return id_api.check_endpoint_in_project(self, endpoint_id,
+                                                    project_id)
+        except exception.ProjectNotFound as pnf:
+            raise pnf
+
+    @controller.protected
+    def get_endpoint_project_associations(self, context, project_id):
+        refs = self.identity_api.list_endpoints_in_project(self, project_id)
+        from keystone.catalog import controllers as catalog_controllers
+        api = self.catalog_api
+        endpoints = [api.get_endpoint(context, x.endpoint_id) for x in refs]
+        return catalog_controllers.EndpointV3.wrap_collection(context,
+                                                              endpoints)
+
+    @controller.protected
+    def remove_endpoint_project_association(self, context,
+                                            project_id, endpoint_id):
+        id_api = self.identity_api
+        return id_api.remove_endpoint_to_project_association(self,
+                                                             endpoint_id,
+                                                             project_id)
