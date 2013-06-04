@@ -16,6 +16,24 @@
       "revId": "157f777d84a41ddb533a66ca825f8886e0635954",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+ps\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-06-04T17:39:59Z",
+      "side": 1,
+      "message": "I don\u0027t see an easy way (short of using a callback function) to rebuild the user-index-list that we are going to set in the while loop if this is generalized.\n\nThe way cas works here is that if it has changed between when we call client.gets() and when we call client.cas(), the whole list needs to be rebuild from the new values in memcache, as the underlying data has changed.  If we didn\u0027t need to avoid race conditions here (multiple keystone processes, etc) cas wouldn\u0027t be required and the while loop could be removed.  Similarly, if we could canonically rebuild the list without reading the index (which was where Termie\u0027s proposal with the clock mechanism came from) it would avoid the need for cas() as well.",
+      "parentUuid": "AAAAPH//b7I\u003d",
+      "revId": "157f777d84a41ddb533a66ca825f8886e0635954",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
