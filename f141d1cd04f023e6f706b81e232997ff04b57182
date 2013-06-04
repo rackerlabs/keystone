@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//b0Q\u003d",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T01:50:37Z",
+      "side": 1,
+      "message": "Minor spelling error\n\u0027envrionment\u0027 -\u003e \u0027environment\u0027",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//b0E\u003d",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T01:50:37Z",
+      "side": 1,
+      "message": "Same spelling error here",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//bzg\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T01:50:37Z",
+      "side": 1,
+      "message": "Just out of curiosity, this needs to be here to configure the environment before importing anything else correct? How come this isn\u0027t done in other files with \u0027from keystone.common import environment\u0027?",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//by8\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T01:50:37Z",
+      "side": 1,
+      "message": "Why was this pulled out of the keystone imports?",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//bys\u003d",
+        "filename": "tests/test_auth_plugin.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T01:50:37Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//byo\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T01:50:37Z",
+      "side": 1,
+      "message": "And here",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//byU\u003d",
+        "filename": "tests/test_backend_kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T01:50:37Z",
+      "side": 1,
+      "message": "How come we can\u0027t import from keystone.common import environment here and keep test in alphabetical order and keep the configuration from importing it the first time? I could be missing something, just a thought.",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//bx8\u003d",
+        "filename": "tests/test_ipv6.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T01:50:37Z",
+      "side": 1,
+      "message": "Won\u0027t this keep the configuration from importing test as it was imported first?",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//bxY\u003d",
+        "filename": "tests/test_ssl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T01:50:37Z",
+      "side": 1,
+      "message": "(NIT): should the \u0027C\u0027 in CONF be lined up with the \u0027127.0.0.1\u0027 or is this just a rendering issue with Gerrit? I know I have seen it do that before too.",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//bxM\u003d",
+        "filename": "tests/test_ssl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-04T01:50:37Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "f141d1cd04f023e6f706b81e232997ff04b57182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
