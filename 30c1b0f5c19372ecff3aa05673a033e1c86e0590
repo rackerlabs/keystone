@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX///4Q\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-04T05:44:46Z",
+      "side": 1,
+      "message": "if ref.get(\u0027type\u0027, \u0027\u0027).lower() \u003d\u003d \u0027ec2\u0027:\n\nuse single quote for strings",
+      "revId": "30c1b0f5c19372ecff3aa05673a033e1c86e0590",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX///4I\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-04T05:44:46Z",
+      "side": 1,
+      "message": "if not blob:\n    raise exception.ValidationError",
+      "revId": "30c1b0f5c19372ecff3aa05673a033e1c86e0590",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
