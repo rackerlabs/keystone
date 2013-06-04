@@ -36,6 +36,10 @@ def append_v3_routers(mapper, routers):
                    controller=auth_controller,
                    action='validate_token',
                    conditions=dict(method=['GET']))
+    mapper.connect('/auth/tokens/catalog',
+                   controller=auth_controller,
+                   action='validate_token_catalog',
+                   conditions=dict(method=['GET']))
     mapper.connect('/auth/tokens/OS-PKI/revoked',
                    controller=auth_controller,
                    action='revocation_list',
