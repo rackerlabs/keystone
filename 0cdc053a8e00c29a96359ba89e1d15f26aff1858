@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8wc\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-05T13:41:03Z",
+      "side": 1,
+      "message": "Sure, will change the name.",
+      "parentUuid": "AAAAPX//+Q8\u003d",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//+QE\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-04T20:50:08Z",
       "side": 1,
       "message": "remove \"is not None\" since that\u0027s how you\u0027re testing other inputs (like at line 806).",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8wY\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-05T13:41:03Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "AAAAPX//+QE\u003d",
       "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8wQ\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 817,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-05T13:41:03Z",
+      "side": 1,
+      "message": "Yup, will do.",
+      "parentUuid": "AAAAPX//+P8\u003d",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//+QM\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2013-06-04T20:50:08Z",
       "side": 1,
       "message": "I think search_s will get NO_SUCH_OBJECT only if the dn entry didn\u0027t exist, which would be if the user or group didn\u0027t exist... so shouldn\u0027t Keystone respond with NotFound in that case?",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8v8\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-05T13:41:03Z",
+      "side": 1,
+      "message": "Correct, if the dn doesn\u0027t exist it will give NO_SUCH_OBJECT. Since this dn is project dn (as you suggested changing name to project_dn), I will log a warning for NO_SUCH_OBJECT case, similar to your other comment.",
+      "parentUuid": "AAAAPX//+QM\u003d",
       "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8v4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-05T13:41:03Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "AAAAPX//+Qs\u003d",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//+Po\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
@@ -98,6 +188,24 @@
       "writtenOn": "2013-06-04T20:50:08Z",
       "side": 1,
       "message": "suggest \u0027return res\u0027 here and get rid of line 834 and unindent the rest. Then, as a reviewer, I don\u0027t have to go searching for the end of the else leg to figure out that we don\u0027t do anything after this.",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8v0\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-05T13:41:03Z",
+      "side": 1,
+      "message": "OK will do.",
+      "parentUuid": "AAAAPX//+Po\u003d",
       "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8vo\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-05T13:41:03Z",
+      "side": 1,
+      "message": "this search is against \"ou\u003dPorjects\" not for a particular project (where we are using ONELEVEL). Hope it make sense.",
+      "parentUuid": "AAAAPX//+Pg\u003d",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//+Pk\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
@@ -132,6 +258,24 @@
       "writtenOn": "2013-06-04T20:50:08Z",
       "side": 1,
       "message": "suggest print a warning here or something... this would mean there\u0027s no projects entry?",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8vk\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 838,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-05T13:41:03Z",
+      "side": 1,
+      "message": "Correct. Will log warning.",
+      "parentUuid": "AAAAPX//+Pk\u003d",
       "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8vc\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-05T13:41:03Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "AAAAPX//+PE\u003d",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//+O8\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 10
@@ -166,6 +328,24 @@
       "writtenOn": "2013-06-04T20:50:08Z",
       "side": 1,
       "message": "suggest delete this line.",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8vQ\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-05T13:41:03Z",
+      "side": 1,
+      "message": "For this and below two similar comments, if we delete it then in case of user_id\u003dNone and project_id\u003dNone, we will be using undeclared variable later on and that will fail. Please correct me if I am wrong.",
+      "parentUuid": "AAAAPX//+O8\u003d",
       "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +403,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8vM\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-05T13:41:03Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "AAAAPX//+RY\u003d",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//+RQ\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 10
@@ -234,6 +432,24 @@
       "writtenOn": "2013-06-04T20:50:08Z",
       "side": 1,
       "message": "suggest change the test you\u0027re overriding to not do domain-specific granting, move the domain-specific grant test to a different function and then skip that for LDAP.\n\nYou can do this in a separate commit, I wouldn\u0027t hold up this change for it.",
+      "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8vI\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-05T13:41:03Z",
+      "side": 1,
+      "message": "OK, sure.",
+      "parentUuid": "AAAAPX//+RQ\u003d",
       "revId": "0cdc053a8e00c29a96359ba89e1d15f26aff1858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
