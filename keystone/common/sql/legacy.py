@@ -59,6 +59,7 @@ class LegacyMigration(object):
         self.db = sqlalchemy.create_engine(db_string)
         self.identity_driver = identity_sql.Identity()
         self.identity_driver.db_sync()
+        self.assignment = self.identity_driver.get_assignment()
         self.ec2_driver = ec2_sql.Ec2()
         self._data = {}
         self._user_map = {}
@@ -113,7 +114,8 @@ class LegacyMigration(object):
             self._project_map[x.get('id')] = new_dict['id']
             # create
             #print 'create_project(%s, %s)' % (new_dict['id'], new_dict)
-            self.identity_driver.create_project(new_dict['id'], new_dict)
+            (self.assignment.
+             create_project(new_dict['id'], new_dict))
 
     def _migrate_users(self):
         for x in self._data['users']:
@@ -144,7 +146,7 @@ class LegacyMigration(object):
             # track internal ids
             self._role_map[x.get('id')] = new_dict['id']
             # create
-            self.identity_driver.create_role(new_dict['id'], new_dict)
+            self.assignment.create_role(new_dict['id'], new_dict)
 
     def _migrate_user_roles(self):
         for x in self._data['user_roles']:
@@ -162,7 +164,7 @@ class LegacyMigration(object):
             except Exception:
                 pass
 
-            self.identity_driver.add_role_to_user_and_project(
+            self.assignment.add_role_to_user_and_project(
                 user_id, tenant_id, role_id)
 
     def _migrate_tokens(self):
