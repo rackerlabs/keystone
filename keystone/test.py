@@ -35,6 +35,7 @@ gettext.install('keystone', unicode=1)
 from keystone.common import environment
 environment.use_eventlet()
 
+from keystone import assignment
 from keystone import catalog
 from keystone.common import kvs
 from keystone.common import logging
@@ -56,7 +57,7 @@ VENDOR = os.path.join(ROOTDIR, 'vendor')
 TESTSDIR = os.path.join(ROOTDIR, 'tests')
 ETCDIR = os.path.join(ROOTDIR, 'etc')
 CONF = config.CONF
-MANAGERS = [catalog, credential, identity, policy, token, trust]
+MANAGERS = [catalog, credential, identity, policy, token, trust, assignment]
 
 cd = os.chdir
 
