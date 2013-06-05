@@ -92,6 +92,17 @@ class Manager(manager.Manager):
             tenant['description'] = ''
         return self.driver.create_project(tenant_id, tenant)
 
+    def update_user(self, context, user_id, user):
+        """Updates an existing user.
+
+        :raises: keystone.exception.UserNotFound,
+                 keystone.exception.Conflict
+
+        """
+        if 'id' in user and user['id'] != user_id:
+            raise exception.ValidationError('Cannot change user ID')
+        return self.driver.update_user(user_id, user)
+
 
 class Driver(object):
     """Interface description for an Identity driver."""
