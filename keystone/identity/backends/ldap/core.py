@@ -26,6 +26,7 @@ from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone import identity
+from keystone.assignment.backends import ldap as assignments
 
 
 CONF = config.CONF
@@ -47,39 +48,11 @@ class Identity(identity.Driver):
         self.suffix = CONF.ldap.suffix
 
         self.user = UserApi(CONF)
-        self.project = ProjectApi(CONF)
-        self.role = RoleApi(CONF)
         self.group = GroupApi(CONF)
+        self.project = assignments.ProjectApi(CONF)
+        self.role = assignments.RoleApi(CONF)
 
-    def _validate_domain(self, ref):
-        """Validate that either the default domain or nothing is specified.
-
-        Also removes the domain from the ref so that LDAP doesn't have to
-        persist the attribute.
-
-        """
-        ref = ref.copy()
-        domain_id = ref.pop('domain_id', CONF.identity.default_domain_id)
-        self._validate_domain_id(domain_id)
-        return ref
-
-    def _validate_domain_id(self, domain_id):
-        """Validate that the domain ID specified belongs to the default domain.
-
-        """
-        if domain_id != CONF.identity.default_domain_id:
-            raise exception.DomainNotFound(domain_id=domain_id)
-
-    def _set_default_domain(self, ref):
-        """Overrides any domain reference with the default domain."""
-        if isinstance(ref, dict):
-            ref = ref.copy()
-            ref['domain_id'] = CONF.identity.default_domain_id
-            return ref
-        elif isinstance(ref, list):
-            return [self._set_default_domain(x) for x in ref]
-        else:
-            raise ValueError(_('Expected dict or list: %s') % type(ref))
+        self.assignment = assignments.Assignment(self)
 
     # Identity interface
 
@@ -99,39 +72,6 @@ class Identity(identity.Driver):
             raise AssertionError('Invalid user / password')
         return user_ref
 
-    def authorize_for_project(self, user_ref, tenant_id=None):
-        user_id = user_ref['id']
-        tenant_ref = None
-        metadata_ref = {}
-
-        if tenant_id is not None:
-            if tenant_id not in self.get_projects_for_user(user_id):
-                raise AssertionError('Invalid tenant')
-
-            try:
-                tenant_ref = self.get_project(tenant_id)
-                # TODO(termie): this should probably be made into a
-                #               get roles call
-                metadata_ref = self.get_metadata(user_id, tenant_id)
-            except exception.ProjectNotFound:
-                tenant_ref = None
-                metadata_ref = {}
-            except exception.MetadataNotFound:
-                metadata_ref = {}
-
-        user_ref = self._set_default_domain(identity.filter_user(user_ref))
-        return (user_ref, tenant_ref, metadata_ref)
-
-    def get_project(self, tenant_id):
-        return self._set_default_domain(self.project.get(tenant_id))
-
-    def list_projects(self):
-        return self._set_default_domain(self.project.get_all())
-
-    def get_project_by_name(self, tenant_name, domain_id):
-        self._validate_domain_id(domain_id)
-        return self._set_default_domain(self.project.get_by_name(tenant_name))
-
     def _get_user(self, user_id):
         return self.user.get(user_id)
 
@@ -146,71 +86,6 @@ class Identity(identity.Driver):
         self._validate_domain_id(domain_id)
         ref = identity.filter_user(self.user.get_by_name(user_name))
         return self._set_default_domain(ref)
-
-    def get_metadata(self, user_id=None, tenant_id=None,
-                     domain_id=None, group_id=None):
-        if domain_id is not None:
-            raise NotImplemented('Domain metadata not supported by LDAP.')
-        if not self.get_project(tenant_id) or not self.get_user(user_id):
-            return {}
-
-        metadata_ref = self.get_roles_for_user_and_project(user_id, tenant_id)
-        if not metadata_ref:
-            return {}
-        return {'roles': metadata_ref}
-
-    def get_role(self, role_id):
-        return self.role.get(role_id)
-
-    def list_roles(self):
-        return self.role.get_all()
-
-    def get_projects_for_user(self, user_id):
-        self.get_user(user_id)
-        user_dn = self.user._id_to_dn(user_id)
-        associations = (self.role.list_project_roles_for_user
-                        (user_dn, self.project.tree_dn))
-        return [p['id'] for p in
-                self.project.get_user_projects(user_dn, associations)]
-
-    def get_project_users(self, tenant_id):
-        self.get_project(tenant_id)
-        tenant_dn = self.project._id_to_dn(tenant_id)
-        rolegrants = self.role.get_role_assignments(tenant_dn)
-        users = [self.user.get_filtered(self.user._dn_to_id(user_id))
-                 for user_id in
-                 self.project.get_user_dns(tenant_id, rolegrants)]
-        return self._set_default_domain(users)
-
-    def get_roles_for_user_and_project(self, user_id, tenant_id):
-        self.get_user(user_id)
-        self.get_project(tenant_id)
-        user_dn = self.user._id_to_dn(user_id)
-        return [self.role._dn_to_id(a.role_dn)
-                for a in self.role.get_role_assignments
-                (self.project._id_to_dn(tenant_id))
-                if a.user_dn == user_dn]
-
-    def _subrole_id_to_dn(self, role_id, tenant_id):
-        if tenant_id is None:
-            return self.role._id_to_dn(role_id)
-        else:
-            return '%s=%s,%s' % (self.role.id_attr,
-                                 ldap.dn.escape_dn_chars(role_id),
-                                 self.project._id_to_dn(tenant_id))
-
-    def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.get_user(user_id)
-        self.get_project(tenant_id)
-        self.get_role(role_id)
-        user_dn = self.user._id_to_dn(user_id)
-        role_dn = self._subrole_id_to_dn(role_id, tenant_id)
-        self.role.add_user(role_id, role_dn, user_dn, user_id, tenant_id)
-        tenant_dn = self.project._id_to_dn(tenant_id)
-        return UserRoleAssociation(
-            role_dn=role_dn,
-            user_dn=user_dn,
-            tenant_dn=tenant_dn)
 
     # CRUD
     def create_user(self, user_id, user):
@@ -248,55 +123,6 @@ class Identity(identity.Driver):
         self.user.update(user_id, user, old_obj)
         return self._set_default_domain(self.user.get_filtered(user_id))
 
-    def create_project(self, tenant_id, tenant):
-        tenant = self._validate_domain(tenant)
-        tenant['name'] = clean.project_name(tenant['name'])
-        data = tenant.copy()
-        if 'id' not in data or data['id'] is None:
-            data['id'] = str(uuid.uuid4().hex)
-        if 'description' in data and data['description'] in ['', None]:
-            data.pop('description')
-        return self._set_default_domain(self.project.create(data))
-
-    def update_project(self, tenant_id, tenant):
-        tenant = self._validate_domain(tenant)
-        if 'name' in tenant:
-            tenant['name'] = clean.project_name(tenant['name'])
-        return self._set_default_domain(self.project.update(tenant_id, tenant))
-
-    def create_metadata(self, user_id, tenant_id, metadata):
-        return {}
-
-    def create_role(self, role_id, role):
-        try:
-            self.get_role(role_id)
-        except exception.NotFound:
-            pass
-        else:
-            msg = 'Duplicate ID, %s.' % role_id
-            raise exception.Conflict(type='role', details=msg)
-
-        try:
-            self.role.get_by_name(role['name'])
-        except exception.NotFound:
-            pass
-        else:
-            msg = 'Duplicate name, %s.' % role['name']
-            raise exception.Conflict(type='role', details=msg)
-
-        return self.role.create(role)
-
-    def delete_role(self, role_id):
-        return self.role.delete(role_id, self.project.tree_dn)
-
-    def delete_project(self, tenant_id):
-        if self.project.subtree_delete_enabled:
-            self.project.deleteTree(id)
-        else:
-            tenant_dn = self.project._id_to_dn(tenant_id)
-            self.role.roles_delete_subtree_by_project(tenant_dn)
-            self.project.delete(tenant_id)
-
     def delete_user(self, user_id):
         user_dn = self.user._id_to_dn(user_id)
         for ref in self.role.list_global_roles_for_user(user_dn):
@@ -316,17 +142,6 @@ class Identity(identity.Driver):
             self.project.remove_user(user.tenant_id,
                                      self.user._id_to_dn(user_id))
         self.user.delete(user_id)
-
-    def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
-        role_dn = self._subrole_id_to_dn(role_id, tenant_id)
-        return self.role.delete_user(role_dn,
-                                     self.user._id_to_dn(user_id),
-                                     self.project._id_to_dn(tenant_id),
-                                     user_id, role_id)
-
-    def update_role(self, role_id, role):
-        self.get_role(role_id)
-        self.role.update(role_id, role)
 
     def create_group(self, group_id, group):
         group = self._validate_domain(group)
@@ -383,27 +198,6 @@ class Identity(identity.Driver):
                 found = True
                 break
         return found
-
-    def create_domain(self, domain_id, domain):
-        if domain_id == CONF.identity.default_domain_id:
-            msg = 'Duplicate ID, %s.' % domain_id
-            raise exception.Conflict(type='domain', details=msg)
-        raise exception.Forbidden('Domains are read-only against LDAP')
-
-    def get_domain(self, domain_id):
-        self._validate_domain_id(domain_id)
-        return DEFAULT_DOMAIN
-
-    def update_domain(self, domain_id, domain):
-        self._validate_domain_id(domain_id)
-        raise exception.Forbidden('Domains are read-only against LDAP')
-
-    def delete_domain(self, domain_id):
-        self._validate_domain_id(domain_id)
-        raise exception.Forbidden('Domains are read-only against LDAP')
-
-    def list_domains(self):
-        return [DEFAULT_DOMAIN]
 
 
 # TODO(termie): turn this into a data object and move logic to driver
