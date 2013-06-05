@@ -261,6 +261,10 @@ def configure():
 
     register_str(
         'driver',
+        group='assignment',
+        default=None)
+    register_str(
+        'driver',
         group='catalog',
         default='keystone.catalog.backends.sql.Catalog')
     register_str(
