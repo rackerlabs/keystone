@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//9cQ\u003d",
+        "filename": "keystone/token/providers/pki_token.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-05T05:10:36Z",
+      "side": 1,
+      "message": "can this be done as a base or mixin class rather than have PKI rely upon UUID?",
+      "revId": "54474e32de5a3d2f70207167e8f9c95e19f88a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//9cM\u003d",
+        "filename": "keystone/token/providers/pki_token.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-05T05:10:36Z",
+      "side": 1,
+      "message": "Same thing",
+      "revId": "54474e32de5a3d2f70207167e8f9c95e19f88a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//9YQ\u003d",
+        "filename": "keystone/token/providers/uuid_token.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-05T05:10:36Z",
+      "side": 1,
+      "message": "init?",
+      "revId": "54474e32de5a3d2f70207167e8f9c95e19f88a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//9bI\u003d",
+        "filename": "keystone/token/providers/uuid_token.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-05T05:10:36Z",
+      "side": 1,
+      "message": "Can this be done as a base or mixin class rather than have V2 depend upon V3",
+      "revId": "54474e32de5a3d2f70207167e8f9c95e19f88a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
