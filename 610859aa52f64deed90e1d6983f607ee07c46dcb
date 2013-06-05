@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//97o\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-05T00:50:10Z",
+      "side": 1,
+      "message": "We need a sorted unique list. set() make it unique and list() convert it back.",
+      "parentUuid": "AAAAPH//i4U\u003d",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//i30\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 11
@@ -81,6 +99,24 @@
       "writtenOn": "2013-05-30T21:15:15Z",
       "side": 1,
       "message": "why need to pass these in separately when also passing in auth_context?",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//97g\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-05T00:50:10Z",
+      "side": 1,
+      "message": "\u0027expires_at\u0027 is optional in auth_context. I want to put it in the params so\n\n1) it is explicit\n2) mandatory",
+      "parentUuid": "AAAAPH//i30\u003d",
       "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//97c\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-05T00:50:10Z",
+      "side": 1,
+      "message": "right, e is a string exception I think",
+      "parentUuid": "AAAAPH//i3g\u003d",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//i00\u003d",
         "filename": "keystone/auth/plugins/token.py",
         "patchSetId": 11
@@ -115,6 +169,24 @@
       "writtenOn": "2013-05-30T21:15:15Z",
       "side": 1,
       "message": "e isn\u0027t defined here. Suggest use LOG.exception(). Needs a unit test.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//97Y\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-05T00:50:10Z",
+      "side": 1,
+      "message": "good catch! I\u0027ll add a test as well.",
+      "parentUuid": "AAAAPH//i00\u003d",
       "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//97U\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-05T00:50:10Z",
+      "side": 1,
+      "message": "so it is consistent with v2 token. Seem like we neglected the service name when we coded this.",
+      "parentUuid": "AAAAPH//i0o\u003d",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//izo\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 11
@@ -155,6 +245,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//97E\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-05T00:50:10Z",
+      "side": 1,
+      "message": "this is essentially checking for v3 token. For v3 token, token is in token_data. For v2, it would be access in token_data.",
+      "parentUuid": "AAAAPH//izo\u003d",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//iz0\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 11
@@ -166,6 +274,24 @@
       "writtenOn": "2013-05-30T21:15:15Z",
       "side": 1,
       "message": "we\u0027re not going to get v2 tokens anymore?",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//97A\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-05T00:50:10Z",
+      "side": 1,
+      "message": "I am changing it back to v2 tokens.",
+      "parentUuid": "AAAAPH//iz0\u003d",
       "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +383,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//9xc\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-05T00:50:10Z",
+      "side": 1,
+      "message": "there should be a default_domain_id",
+      "parentUuid": "AAAAPH//iwo\u003d",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//iwc\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 11
@@ -325,6 +469,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//9xA\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-05T00:50:10Z",
+      "side": 1,
+      "message": "It is returning None by default.",
+      "parentUuid": "AAAAPH//ivk\u003d",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//iuY\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 11
@@ -336,6 +498,24 @@
       "writtenOn": "2013-05-30T21:15:15Z",
       "side": 1,
       "message": "Rather than having functions to translate, I think we should have a class Token that can be rendered as a V2 token or a V3 token. Token can store all the data that it needs to generate either one.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//9xI\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-05T00:50:10Z",
+      "side": 1,
+      "message": "Correct. We\u0027re going to have v2 and v3 providers.",
+      "parentUuid": "AAAAPH//iuY\u003d",
       "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -359,6 +539,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//9xQ\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-05T00:50:10Z",
+      "side": 1,
+      "message": "Only reason I do this was because trust is in the v2 code. Otherwise, I\u0027d be happy to get rid of it.",
+      "parentUuid": "AAAAPH//ivE\u003d",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//iuI\u003d",
         "filename": "keystone/token/providers/uuid_token.py",
         "patchSetId": 11
@@ -370,6 +568,24 @@
       "writtenOn": "2013-05-30T21:15:15Z",
       "side": 1,
       "message": "LOG.exception takes a message as its argument.",
+      "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//9w4\u003d",
+        "filename": "keystone/token/providers/uuid_token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-05T00:50:10Z",
+      "side": 1,
+      "message": "e should be a string exception as well",
+      "parentUuid": "AAAAPH//iuI\u003d",
       "revId": "610859aa52f64deed90e1d6983f607ee07c46dcb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
