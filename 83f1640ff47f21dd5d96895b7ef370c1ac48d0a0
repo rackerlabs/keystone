@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//654\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T00:02:11Z",
+      "side": 1,
+      "message": "I don\u0027t see a change to keystone.pot in this patch set. Was this missed or it\u0027s not intended to be in the change anymore?",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//65w\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T00:02:11Z",
+      "side": 1,
+      "message": "I don\u0027t understand this change... doesn\u0027t this get done once when the keystone server starts? If so, seems like there\u0027s a better place for it (for example, in bin/keystone-all).",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//65s\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T00:02:11Z",
+      "side": 1,
+      "message": "this is the same as the previous line, so they\u0027ll both get run if no message. Seems like a mistake.",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//65k\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T00:02:11Z",
+      "side": 1,
+      "message": "need a space at the beginning of this string-part.",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//65o\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T00:02:11Z",
+      "side": 1,
+      "message": "add a space after .",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//65g\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T00:02:11Z",
+      "side": 1,
+      "message": "why change from \" to \u0027?",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//65Y\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T00:02:11Z",
+      "side": 1,
+      "message": "Add a space after .",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//65U\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T00:02:11Z",
+      "side": 1,
+      "message": "Need a space at the beginning of this string.",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//65I\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T00:02:11Z",
+      "side": 1,
+      "message": "change the , back to a .\n\nalso, add a space after the .",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//65E\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T00:02:11Z",
+      "side": 1,
+      "message": "why doesn\u0027t str(e) work anymore? Seems like this change could be made so that str(e) still works the way it did before.",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//64w\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T00:02:11Z",
+      "side": 1,
+      "message": "what is this testing? Seems like it should also be testing the response body.",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
