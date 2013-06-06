@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//5c0\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-06T14:49:33Z",
+      "side": 1,
+      "message": "use the built in arguments where possible rather than overriding the entire error message:\n\n  msg \u003d (_(\u0027User %(user_id)s is already a member of group %(group_id)s\u0027) %\n         {\u0027user_id\u0027: user_id, \u0027group_id\u0027: group_id})\n  raise exception.Conflict(type\u003d_(\u0027group assignment\u0027), details\u003dmsg)",
+      "revId": "864cb97fbb9d1778ab24d6e3bed62f5c3230ce9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//5co\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-06T14:49:33Z",
+      "side": 1,
+      "message": "this isn\u0027t a role grant at all -- \"group assignment\"?",
+      "revId": "864cb97fbb9d1778ab24d6e3bed62f5c3230ce9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

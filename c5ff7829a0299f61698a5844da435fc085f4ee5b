@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//5cc\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-06T14:49:33Z",
+      "side": 0,
+      "message": "nice cleanup",
+      "revId": "c5ff7829a0299f61698a5844da435fc085f4ee5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
