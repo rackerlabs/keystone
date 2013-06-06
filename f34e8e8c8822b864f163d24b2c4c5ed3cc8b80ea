@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//4r0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-06T18:53:00Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "AAAAPX//6uQ\u003d",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//6s0\u003d",
         "filename": "keystone/auth/plugins/token.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-06T02:56:28Z",
       "side": 1,
       "message": "use the get_token_version function from token/provider.py",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4q8\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-06T18:53:00Z",
+      "side": 1,
+      "message": "good suggestion",
+      "parentUuid": "AAAAPX//6s0\u003d",
       "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//4qY\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-06T18:53:00Z",
+      "side": 1,
+      "message": "not sure if I understand. This is merely a helper function. Providers can roll their own.",
+      "parentUuid": "AAAAPX//4z0\u003d",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//40Y\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 14
@@ -64,6 +118,24 @@
       "writtenOn": "2013-06-06T17:48:36Z",
       "side": 1,
       "message": "These two functions are not core, but should rather be part of the V2/V3 implementation",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4qI\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-06T18:53:00Z",
+      "side": 1,
+      "message": "this is a utility function. I purposely left them here in case middleware needs them.",
+      "parentUuid": "AAAAPX//40Y\u003d",
       "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//4qA\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-06T18:53:00Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "AAAAPX//42U\u003d",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//42g\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 14
@@ -98,6 +188,24 @@
       "writtenOn": "2013-06-06T17:48:36Z",
       "side": 1,
       "message": "Is there any reason to make this a class?  Most of the functions take context as a parameter.  Would be better to have this as a body of functions.",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4pg\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-06T18:53:00Z",
+      "side": 1,
+      "message": "good point! should be using self.context instead",
+      "parentUuid": "AAAAPX//42g\u003d",
       "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//4nk\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-06T18:53:00Z",
+      "side": 1,
+      "message": "We have to use two managers here because we are supporting V2 an V3 APIs at the same time. Furthermore, for PKI tokens, they can not be manipulated once is signed. That\u0027s the reason we have to use two separate providers instead of translating them in middleware.",
+      "parentUuid": "AAAAPX//41Q\u003d",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//40w\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 14
@@ -132,6 +258,24 @@
       "writtenOn": "2013-06-06T17:48:36Z",
       "side": 1,
       "message": "This is fairly specific.  I think that token issuing should take in a set of attributes and sort it out internally, not have it exposed in the interface.",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4nI\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-06T18:53:00Z",
+      "side": 1,
+      "message": "still need to be Keystone token components. I purposely have auth_context and kwargs for extensibility.",
+      "parentUuid": "AAAAPX//40w\u003d",
       "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//4m8\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-06T18:53:00Z",
+      "side": 1,
+      "message": "are you making a statement or are you implying something wrong with the interface?",
+      "parentUuid": "AAAAPX//40s\u003d",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//40o\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 14
@@ -166,6 +328,24 @@
       "writtenOn": "2013-06-06T17:48:36Z",
       "side": 1,
       "message": "We should not have both validate and check exposed.  People will call the wrong one.",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4m4\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-06T18:53:00Z",
+      "side": 1,
+      "message": "validate_token returns token data while check_token does not",
+      "parentUuid": "AAAAPX//40o\u003d",
       "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//4mk\u003d",
+        "filename": "keystone/token/providers/pki_token.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-06T18:53:00Z",
+      "side": 1,
+      "message": "there are subtle differences in the way the token is created and verified. That\u0027s why they need to be separated.",
+      "parentUuid": "AAAAPX//8Ac\u003d",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//43A\u003d",
         "filename": "keystone/token/providers/uuid_token.py",
         "patchSetId": 14
@@ -200,6 +398,24 @@
       "writtenOn": "2013-06-06T17:48:36Z",
       "side": 1,
       "message": "Why is this function here?",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4mM\u003d",
+        "filename": "keystone/token/providers/uuid_token.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-06T18:53:00Z",
+      "side": 1,
+      "message": "this one does not return token data. It is utilizing validate_token to do the default domain checks.",
+      "parentUuid": "AAAAPX//43A\u003d",
       "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
