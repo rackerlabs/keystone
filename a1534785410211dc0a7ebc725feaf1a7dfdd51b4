@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//4GU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T22:07:48Z",
+      "side": 1,
+      "message": "A blueprint would be helpful. Also, that would improve advertisement of this new feature.",
+      "revId": "a1534785410211dc0a7ebc725feaf1a7dfdd51b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
