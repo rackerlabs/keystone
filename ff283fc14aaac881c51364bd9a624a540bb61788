@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//5+I\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2013-06-06T09:57:34Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be called here",
+      "revId": "ff283fc14aaac881c51364bd9a624a540bb61788",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//594\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2013-06-06T09:57:34Z",
+      "side": 1,
+      "message": "But yes, you need gettext.install() to be called before you import this module since you\u0027re translating this string at import time",
+      "revId": "ff283fc14aaac881c51364bd9a624a540bb61788",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
