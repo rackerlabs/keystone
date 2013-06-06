@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//600\u003d",
+        "filename": "bin/keystone-manage",
+        "patchSetId": 14
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-06T23:58:24Z",
+      "side": 1,
+      "message": "I don\u0027t understand why keystone-manage has to change. It\u0027s not multithreaded in any way.",
+      "revId": "a7a8163a26765b37c9754085ec6aac0783675751",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
