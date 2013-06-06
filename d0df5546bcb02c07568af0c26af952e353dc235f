@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//4mE\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-06T18:54:10Z",
+      "side": 1,
+      "message": "project_api",
+      "revId": "d0df5546bcb02c07568af0c26af952e353dc235f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4mA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-06T18:54:10Z",
+      "side": 1,
+      "message": "project_api",
+      "revId": "d0df5546bcb02c07568af0c26af952e353dc235f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4mg\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-06T18:54:10Z",
+      "side": 1,
+      "message": "we don\u0027t have project_api any more.",
+      "revId": "d0df5546bcb02c07568af0c26af952e353dc235f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4ms\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-06T18:54:10Z",
+      "side": 1,
+      "message": "we don\u0027t have role_api any more right? needs to be taken care.",
+      "revId": "d0df5546bcb02c07568af0c26af952e353dc235f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4lo\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-06T18:54:10Z",
+      "side": 1,
+      "message": "we don\u0027t have user_api now",
+      "revId": "d0df5546bcb02c07568af0c26af952e353dc235f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
