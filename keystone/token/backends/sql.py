@@ -164,8 +164,10 @@ class Token(sql.Base, token.Driver):
     def flush_expired_tokens(self):
         session = self.get_session()
 
-        query = session.query(TokenModel)
-        query = query.filter(TokenModel.expires < timeutils.utcnow())
-        query.delete(synchronize_session=False)
+        q = session.query(TokenModel).filter_by(
+            TokenModel.expires < timeutils.utcnow()).limit(10).subquery()
+        while session.query(TokenModel).filter(
+                TokenModel.id.in_(q)).delete(synchronize_session=False):
+            pass
 
         session.flush()
