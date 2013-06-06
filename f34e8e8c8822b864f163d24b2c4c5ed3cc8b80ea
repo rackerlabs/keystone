@@ -33,6 +33,193 @@
       "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4z0\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-06T17:48:36Z",
+      "side": 1,
+      "message": "This will need to be a pipeline.  Each of the providers needs to be able to say \"yes, this token is in my format\" or \"no, wrong format\" Add this method to the manager, and then each of the drivers needs an is_token_my_format type function",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//40Y\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-06T17:48:36Z",
+      "side": 1,
+      "message": "These two functions are not core, but should rather be part of the V2/V3 implementation",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//42U\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-06T17:48:36Z",
+      "side": 1,
+      "message": "Open that as a bug.  It might be too late.",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//42g\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-06T17:48:36Z",
+      "side": 1,
+      "message": "Is there any reason to make this a class?  Most of the functions take context as a parameter.  Would be better to have this as a body of functions.",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//41Q\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-06T17:48:36Z",
+      "side": 1,
+      "message": "Do we need two mangers?  Seems like it should be one, with ability to multiplex between a wide array of drivers, but each backing a different format. By having two, we are extending a pattern that may not be correct for our usage.",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//40w\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-06T17:48:36Z",
+      "side": 1,
+      "message": "This is fairly specific.  I think that token issuing should take in a set of attributes and sort it out internally, not have it exposed in the interface.",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//40s\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-06T17:48:36Z",
+      "side": 1,
+      "message": "I think that token revocation is an action common to all token formats, and will be processed the same way.",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//40o\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-06T17:48:36Z",
+      "side": 1,
+      "message": "We should not have both validate and check exposed.  People will call the wrong one.",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8Ac\u003d",
+        "filename": "keystone/token/providers/pki_token.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-06T17:48:36Z",
+      "side": 1,
+      "message": "These two classes are identical.  Merge them.\n\nYou need 4 functions.  verify_token_v2/v3  and get_token_id_uuid/pki.  A specific class can then take two function pointers in its constructor.  Or you could do a mixin, which may be more Pythonic.",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//43A\u003d",
+        "filename": "keystone/token/providers/uuid_token.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-06T17:48:36Z",
+      "side": 1,
+      "message": "Why is this function here?",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8Xk\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-06T17:48:36Z",
+      "side": 1,
+      "message": "Nice addition",
+      "revId": "f34e8e8c8822b864f163d24b2c4c5ed3cc8b80ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
