@@ -1806,6 +1806,23 @@ class IdentityTests(object):
                           uuid.uuid4().hex,
                           new_group['id'])
 
+    def test_add_user_to_same_group_twice(self):
+        domain = self._get_domain_fixture()
+        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
+                     'name': uuid.uuid4().hex}
+        self.identity_man.create_group(EMPTY_CONTEXT,
+                                       new_group['id'], new_group)
+        new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
+                    'password': uuid.uuid4().hex, 'enabled': True,
+                    'domain_id': domain['id']}
+        self.identity_man.create_user(EMPTY_CONTEXT, new_user['id'], new_user)
+        self.identity_api.add_user_to_group(new_user['id'],
+                                            new_group['id'])
+        self.assertRaises(exception.Conflict,
+                          self.identity_api.add_user_to_group,
+                          new_user['id'],
+                          new_group['id'])
+
     def test_check_user_in_group(self):
         domain = self._get_domain_fixture()
         new_group = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],

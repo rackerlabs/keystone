@@ -679,17 +679,11 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return identity.filter_user(user_ref.to_dict(include_extra_dict=True))
 
+    @sql.handle_conflicts(type="group assignment")
     def add_user_to_group(self, user_id, group_id):
         session = self.get_session()
         self.get_group(group_id)
         self.get_user(user_id)
-        query = session.query(UserGroupMembership)
-        query = query.filter_by(user_id=user_id)
-        query = query.filter_by(group_id=group_id)
-        rv = query.first()
-        if rv:
-            return
-
         with session.begin():
             session.add(UserGroupMembership(user_id=user_id,
                                             group_id=group_id))
