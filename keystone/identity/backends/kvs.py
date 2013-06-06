@@ -240,6 +240,10 @@ class Identity(kvs.Base, identity.Driver):
         self.get_group(group_id)
         user_ref = self._get_user(user_id)
         groups = set(user_ref.get('groups', []))
+        if group_id in groups:
+            raise exception.Conflict(_(
+                'User %(user_id)s is already a member of group %(group_id)s') %
+                {'user_id': user_id, 'group_id': group_id})
         groups.add(group_id)
         self.update_user(user_id, {'groups': list(groups)})
 
