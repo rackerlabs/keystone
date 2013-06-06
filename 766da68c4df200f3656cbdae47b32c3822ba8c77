@@ -16,6 +16,24 @@
       "revId": "766da68c4df200f3656cbdae47b32c3822ba8c77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//5ts\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-06T13:01:27Z",
+      "side": 1,
+      "message": "--repeat is documented as an obsolete option for pep8 that flake8 doesn\u0027t bother supporting: \"show all occurrences of the same error\"\n\nI don\u0027t know exactly what\u0027s picking up from pep8.txt, but my guess is that jenkins is using that to capture the output of the job? regardless, i didn\u0027t want to change that here",
+      "parentUuid": "AAAAPX//+n0\u003d",
+      "revId": "766da68c4df200f3656cbdae47b32c3822ba8c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
