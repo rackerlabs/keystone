@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//6e4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-06T03:36:12Z",
+      "side": 1,
+      "message": "I\u0027m not sure whether the pot update should be done in my patch, or it will be update by special community member, that\u0027s why I didn\u0027t include updated pot in my patch",
+      "parentUuid": "AAAAPX//654\u003d",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//65w\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//6fM\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-06T03:36:12Z",
+      "side": 1,
+      "message": "yes,you are right, this can be done when the keystone server starts, because it is in bin/keystone-all already.\nIn order to run test_exception after implement exception.py i18n support,I add this, if not, when run test_exception, the \"_\" function can\u0027t be found error occur.",
+      "parentUuid": "AAAAPX//65w\u003d",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//65s\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2013-06-06T00:02:11Z",
       "side": 1,
       "message": "this is the same as the previous line, so they\u0027ll both get run if no message. Seems like a mistake.",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//6fI\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-06T03:36:12Z",
+      "side": 1,
+      "message": "yes, you are right, I\u0027ll fix it in my new patch",
+      "parentUuid": "AAAAPX//65s\u003d",
       "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +226,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//6gE\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-06T03:36:12Z",
+      "side": 1,
+      "message": "str(e) will thrown ascii encoding error when work against unicode message, we shouldn\u0027t use it.",
+      "parentUuid": "AAAAPX//65E\u003d",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//64w\u003d",
         "filename": "tests/test_wsgi.py",
         "patchSetId": 4
@@ -183,6 +255,24 @@
       "writtenOn": "2013-06-06T00:02:11Z",
       "side": 1,
       "message": "what is this testing? Seems like it should also be testing the response body.",
+      "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//6gk\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-06T03:36:12Z",
+      "side": 1,
+      "message": "This tests whether unicode message handled by exception module can be right render. The response body can hanlde unicode message, we have test that during GVT",
+      "parentUuid": "AAAAPX//64w\u003d",
       "revId": "83f1640ff47f21dd5d96895b7ef370c1ac48d0a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
