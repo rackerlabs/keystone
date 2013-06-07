@@ -18,14 +18,27 @@ def downgrade_with_rename(meta, migrate_engine):
 
 def upgrade_with_copy(meta, migrate_engine):
     sql.Table('user', meta, autoload=True)
-    project_table = sql.Table(
-        'project',
-        meta,
-        sql.Column('id', sql.String(64), primary_key=True),
-        sql.Column('name', sql.String(64), unique=True, nullable=False),
-        sql.Column('extra', sql.Text()),
-        sql.Column('description', sql.Text(), nullable=True),
-        sql.Column('enabled', sql.types.Boolean, default=True))
+    if migrate_engine.name == 'ibm_db_sa':
+        # specify a name for the unique constraint so we can reference it
+        # later (e.g. script 016) as needed.
+        project_table = sql.Table(
+            'project',
+            meta,
+            sql.Column('id', sql.String(64), primary_key=True),
+            sql.Column('name', sql.String(64), nullable=False),
+            sql.Column('extra', sql.Text()),
+            sql.Column('description', sql.Text(), nullable=True),
+            sql.Column('enabled', sql.types.Boolean, default=True),
+            sql.UniqueConstraint('name', name='tenant_name_key'))
+    else:
+        project_table = sql.Table(
+            'project',
+            meta,
+            sql.Column('id', sql.String(64), primary_key=True),
+            sql.Column('name', sql.String(64), unique=True, nullable=False),
+            sql.Column('extra', sql.Text()),
+            sql.Column('description', sql.Text(), nullable=True),
+            sql.Column('enabled', sql.types.Boolean, default=True))
     project_table.create(migrate_engine, checkfirst=True)
 
     user_project_membership_table = sql.Table(
@@ -118,7 +131,7 @@ def downgrade_with_copy(meta, migrate_engine):
 def upgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
-    if migrate_engine.name == "sqlite":
+    if migrate_engine.name in ('sqlite', 'ibm_db_sa'):
         upgrade_with_copy(meta, migrate_engine)
     else:
         upgrade_with_rename(meta, migrate_engine)
@@ -127,7 +140,7 @@ def upgrade(migrate_engine):
 def downgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
-    if migrate_engine.name == "sqlite":
+    if migrate_engine.name in ('sqlite', 'ibm_db_sa'):
         downgrade_with_copy(meta, migrate_engine)
     else:
         downgrade_with_rename(meta, migrate_engine)
