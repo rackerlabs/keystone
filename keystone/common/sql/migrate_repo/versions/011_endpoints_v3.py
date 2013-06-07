@@ -16,6 +16,8 @@
 
 import sqlalchemy as sql
 
+from keystone.common.sql import migration_helpers
+
 
 def upgrade(migrate_engine):
     """Create API-version specific endpoint tables."""
@@ -23,7 +25,20 @@ def upgrade(migrate_engine):
     meta.bind = migrate_engine
 
     legacy_table = sql.Table('endpoint', meta, autoload=True)
-    legacy_table.rename('endpoint_v2')
+
+    if migrate_engine.name == 'ibm_db_sa':
+        # DB2 doesn't support renaming a table that has foreign key
+        # constraints, so need to remove/rename/re-add.
+
+        renames = {'endpoint_v2': legacy_table}
+        service_table = sql.Table('service', meta, autoload=True)
+        constraints = [{'table': legacy_table,
+                        'fk_column': 'service_id',
+                        'ref_column': service_table.c.id}]
+        migration_helpers.rename_table_with_suspend_constraints(renames,
+                                                                constraints)
+    else:
+        legacy_table.rename('endpoint_v2')
 
     sql.Table('service', meta, autoload=True)
     new_table = sql.Table(
@@ -51,4 +66,18 @@ def downgrade(migrate_engine):
     new_table.drop()
 
     legacy_table = sql.Table('endpoint_v2', meta, autoload=True)
-    legacy_table.rename('endpoint')
+
+    if migrate_engine.name == 'ibm_db_sa':
+        # DB2 doesn't support renaming a table that has foreign key
+        # constraints, so need to remove/rename/re-add.
+
+        renames = {'endpoint': legacy_table}
+        service_table = sql.Table('service', meta, autoload=True)
+        constraints = [{'table': legacy_table,
+                        'fk_column': 'service_id',
+                        'ref_column': service_table.c.id}]
+        migration_helpers.rename_table_with_suspend_constraints(renames,
+                                                                constraints)
+
+    else:
+        legacy_table.rename('endpoint')
