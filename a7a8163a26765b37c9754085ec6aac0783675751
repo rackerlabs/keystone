@@ -16,6 +16,57 @@
       "revId": "a7a8163a26765b37c9754085ec6aac0783675751",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//31k\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-07T00:11:53Z",
+      "side": 1,
+      "message": "this seems to be fixing a different problem?",
+      "revId": "a7a8163a26765b37c9754085ec6aac0783675751",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//31Y\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-07T00:11:53Z",
+      "side": 1,
+      "message": "same here, why this change?",
+      "revId": "a7a8163a26765b37c9754085ec6aac0783675751",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//32s\u003d",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-07T00:11:53Z",
+      "side": 1,
+      "message": "strings should be wrapped in _() for translation.",
+      "revId": "a7a8163a26765b37c9754085ec6aac0783675751",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
