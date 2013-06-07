@@ -38,11 +38,42 @@ def drop_constraint_mysql(migrate_engine):
     session.commit()
 
 
+def drop_foreign_constraint_db2(session, column):
+    table = column.table
+
+    constraint_names = (
+        [fk.name for fk in table.constraints if column.name in fk.columns])
+
+    if not constraint_names:
+        return
+
+    constraint_name = constraint_names[0]
+
+    sql = "ALTER TABLE %s DROP FOREIGN KEY %s" % (table.name, constraint_name)
+    session.execute(sql)
+    session.commit()
+
+
+def drop_constraint_db2(migrate_engine):
+    # SQLAlchemy doesn't correctly calculate the constraint name so fails to
+    # drop the constraint.
+
+    session = sessionmaker(bind=migrate_engine)()
+    meta = sqlalchemy.MetaData()
+    meta.bind = migrate_engine
+    cred_table = sqlalchemy.Table('credential', meta, autoload=True)
+    drop_foreign_constraint_db2(session, cred_table.c.user_id)
+    drop_foreign_constraint_db2(session, cred_table.c.project_id)
+
+
 def remove_constraints(migrate_engine):
     if migrate_engine.name == 'sqlite':
         return
     if migrate_engine.name == 'mysql':
         drop_constraint_mysql(migrate_engine)
+        return
+    if migrate_engine.name == 'ibm_db_sa':
+        drop_constraint_db2(migrate_engine)
         return
     meta = sqlalchemy.MetaData()
     meta.bind = migrate_engine

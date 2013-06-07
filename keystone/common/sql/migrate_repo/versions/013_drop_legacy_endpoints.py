@@ -14,7 +14,34 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from migrate.changeset.constraint import ForeignKeyConstraint
 import sqlalchemy as sql
+
+
+def rename_db2(meta, from_table, to_table):
+    # Need to drop constraints before renaming the table.
+    old_table = sql.Table(from_table, meta, autoload=True)
+
+    # drop foreign key constraint before rename the table
+    service_table = sql.Table('service', meta, autoload=True)
+
+    fkeys = list(old_table.c.service_id.foreign_keys)
+    if fkeys:
+        fkey_name = fkeys[0].constraint.name
+        fkey = ForeignKeyConstraint(columns=[old_table.c.service_id],
+                                    refcolumns=[service_table.c.id],
+                                    name=fkey_name)
+        fkey.drop()
+
+    old_table.rename(to_table)
+
+    # add foreign key constraint back
+    if fkeys:
+        new_table = sql.Table(to_table, meta, autoload=True)
+        fkey = ForeignKeyConstraint(columns=[new_table.c.service_id],
+                                    refcolumns=[service_table.c.id],
+                                    name=fkey_name)
+        fkey.create()
 
 
 def upgrade(migrate_engine):
@@ -25,8 +52,11 @@ def upgrade(migrate_engine):
     legacy_table = sql.Table('endpoint_v2', meta, autoload=True)
     legacy_table.drop()
 
-    new_table = sql.Table('endpoint_v3', meta, autoload=True)
-    new_table.rename('endpoint')
+    if migrate_engine.name == 'ibm_db_sa':
+        rename_db2(meta, 'endpoint_v3', 'endpoint')
+    else:
+        new_table = sql.Table('endpoint_v3', meta, autoload=True)
+        new_table.rename('endpoint')
 
 
 def downgrade(migrate_engine):
@@ -34,8 +64,11 @@ def downgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
 
-    new_table = sql.Table('endpoint', meta, autoload=True)
-    new_table.rename('endpoint_v3')
+    if migrate_engine.name == 'ibm_db_sa':
+        rename_db2(meta, 'endpoint', 'endpoint_v3')
+    else:
+        new_table = sql.Table('endpoint', meta, autoload=True)
+        new_table.rename('endpoint_v3')
 
     sql.Table('service', meta, autoload=True)
     legacy_table = sql.Table(

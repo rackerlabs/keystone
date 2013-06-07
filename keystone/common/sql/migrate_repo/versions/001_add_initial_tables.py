@@ -79,12 +79,23 @@ def upgrade(migrate_engine):
         sql.Column('tenant_id', sql.String(64)))
     ec2_credential_table.create(migrate_engine, checkfirst=True)
 
-    user_table = sql.Table(
-        'user',
-        meta,
-        sql.Column('id', sql.String(64), primary_key=True),
-        sql.Column('name', sql.String(64), unique=True, nullable=False),
-        sql.Column('extra', sql.Text()))
+    if migrate_engine.name == 'ibm_db_sa':
+        # specify a name for the unique constraint so we can reference it
+        # later (e.g. script 016) as needed.
+        user_table = sql.Table(
+            'user',
+            meta,
+            sql.Column('id', sql.String(64), primary_key=True),
+            sql.Column('name', sql.String(64), nullable=False),
+            sql.Column('extra', sql.Text()),
+            sql.UniqueConstraint('name', name='user_name_key'))
+    else:
+        user_table = sql.Table(
+            'user',
+            meta,
+            sql.Column('id', sql.String(64), primary_key=True),
+            sql.Column('name', sql.String(64), unique=True, nullable=False),
+            sql.Column('extra', sql.Text()))
     user_table.create(migrate_engine, checkfirst=True)
 
     user_tenant_membership_table = sql.Table(
