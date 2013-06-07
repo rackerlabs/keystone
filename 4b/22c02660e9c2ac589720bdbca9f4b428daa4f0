@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Approved+1: Adam Gandelman <adam.gandelman@canonical.com>
+Code-Review+2: Adam Gandelman <adam.gandelman@canonical.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 07 Jun 2013 02:37:52 +0000
+Reviewed-on: https://review.openstack.org/32030
+Project: openstack/keystone
+Branch: refs/heads/stable/grizzly
