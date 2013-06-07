@@ -597,7 +597,13 @@ class SqlUpgradeTests(test.TestCase):
         user_project_metadata_table = sqlalchemy.Table(
             'user_project_metadata', self.metadata, autoload=True)
 
-        r = session.execute('select data from metadata where '
+        data_col = 'data'
+
+        if self.metadata.bind.engine.name == 'ibm_db_sa':
+            # For DB2, need quotes around name to prevent normalizing.
+            data_col = '"data"'
+
+        r = session.execute('select ' + data_col + ' from metadata where '
                             'user_id=:user and tenant_id=:tenant',
                             {'user': user['id'], 'tenant': project['id']})
         test_project1 = json.loads(r.fetchone()['data'])
@@ -605,7 +611,7 @@ class SqlUpgradeTests(test.TestCase):
         self.assertIn(role['id'], test_project1['roles'])
 
         # Test user in project2 has role2
-        r = session.execute('select data from metadata where '
+        r = session.execute('select ' + data_col + ' from metadata where '
                             'user_id=:user and tenant_id=:tenant',
                             {'user': user['id'], 'tenant': project2['id']})
         test_project2 = json.loads(r.fetchone()['data'])
@@ -615,7 +621,8 @@ class SqlUpgradeTests(test.TestCase):
         # Test for user in project has role in user_project_metadata
         # Migration 17 does not properly migrate this data, so this should
         # be None.
-        r = session.execute('select data from user_project_metadata where '
+        r = session.execute('select ' + data_col + ' from '
+                            'user_project_metadata where '
                             'user_id=:user and project_id=:project',
                             {'user': user['id'], 'project': project['id']})
         self.assertIsNone(r.fetchone())
@@ -638,7 +645,8 @@ class SqlUpgradeTests(test.TestCase):
         # The user-project pairs should have all roles from the previous
         # metadata table in addition to any roles currently in
         # user_project_metadata
-        r = session.execute('select data from user_project_metadata where '
+        r = session.execute('select ' + data_col + ' from '
+                            'user_project_metadata where '
                             'user_id=:user and project_id=:project',
                             {'user': user['id'], 'project': project['id']})
         role_ids = json.loads(r.fetchone()['data'])['roles']
@@ -649,7 +657,8 @@ class SqlUpgradeTests(test.TestCase):
 
         # pairs that only existed in old metadata table should be in
         # user_project_metadata
-        r = session.execute('select data from user_project_metadata where '
+        r = session.execute('select ' + data_col + ' from '
+                            'user_project_metadata where '
                             'user_id=:user and project_id=:project',
                             {'user': user['id'], 'project': project2['id']})
         role_ids = json.loads(r.fetchone()['data'])['roles']
