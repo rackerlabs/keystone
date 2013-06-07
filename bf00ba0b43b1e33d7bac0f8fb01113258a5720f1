@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//17s\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-07T20:09:09Z",
+      "side": 1,
+      "message": "TODO(ayoung): move ...\n\nI think we need the semi-colon",
+      "revId": "bf00ba0b43b1e33d7bac0f8fb01113258a5720f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//16Y\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-07T20:09:09Z",
+      "side": 1,
+      "message": "you should only auth with the methods specified in the auth, not all of the them. Otherwise\n\n1) perform may suck because some plugins may need to establish network connection or other initializaiton resource upon invocation\n\n2) unnecessary errors/warnings in the logs\n\n3) a plugin may throw an exception because it can\u0027t verify the data\n\n4) we authenticate more than the client had asked for\n\n5) we can\u0027t distinguish if all of the methods had succeed or only one method had succeeded",
+      "revId": "bf00ba0b43b1e33d7bac0f8fb01113258a5720f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//1uI\u003d",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-07T20:09:09Z",
+      "side": 1,
+      "message": "seems like this is unnessary",
+      "revId": "bf00ba0b43b1e33d7bac0f8fb01113258a5720f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//1uM\u003d",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-07T20:09:09Z",
+      "side": 1,
+      "message": "seems like this is unnecessary",
+      "revId": "bf00ba0b43b1e33d7bac0f8fb01113258a5720f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
