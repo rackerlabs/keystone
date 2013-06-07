@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-05-30 17:05+0000\n"
+"POT-Creation-Date: 2013-06-07 17:04+0000\n"
 "PO-Revision-Date: 2013-05-22 03:45+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: German "
@@ -194,7 +194,7 @@ msgstr ""
 "Rollenbasierte Zugriffssteuerung: Hinzufügen von Abfragefilterparametern "
 "(%s)"
 
-#: keystone/common/controller.py:331
+#: keystone/common/controller.py:322
 msgid "Invalid token in normalize_domain_id"
 msgstr "Ungültiges Token in 'normalize_domain_id'"
 
@@ -219,12 +219,12 @@ msgstr "Autorisierung fehlgeschlagen. %s von %s"
 msgid "The resource could not be found."
 msgstr "Die Ressource konnte nicht gefunden werden."
 
-#: keystone/common/wsgi_server.py:59
+#: keystone/common/wsgi_server.py:72
 #, python-format
 msgid "Starting %(arg0)s on %(host)s:%(port)s"
 msgstr "Starten von %(arg0)s auf %(host)s:%(port)s"
 
-#: keystone/common/wsgi_server.py:119
+#: keystone/common/wsgi_server.py:132
 msgid "Server error"
 msgstr "Serverfehler"
 
@@ -257,13 +257,13 @@ msgid ""
 "\"%(attr_map)s\" must use one of %(keys)s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:603
-#: keystone/identity/backends/kvs.py:631
+#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:596
+#: keystone/identity/backends/kvs.py:624
 #, python-format
 msgid "Duplicate name, %s."
 msgstr "Doppelter Name, %s."
 
-#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:596
+#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:589
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr "Doppelte ID, %s."
@@ -508,11 +508,11 @@ msgstr "Rolle %s Benutzer %s auf Nutzer %s zuweisen"
 msgid "Creating ec2 cred for user %(user_id)s and tenant %(tenant_id)s"
 msgstr "Erstellen von EC2-Berechtigungsnachweis für Benutzer %s und Nutzer %s"
 
-#: keystone/identity/backends/kvs.py:257 keystone/identity/backends/kvs.py:266
+#: keystone/identity/backends/kvs.py:250 keystone/identity/backends/kvs.py:259
 msgid "User not found in group"
 msgstr "Benutzer nicht in Gruppe gefunden"
 
-#: keystone/identity/backends/sql.py:424
+#: keystone/identity/backends/sql.py:418
 #, python-format
 msgid "Cannot remove role that has not been granted, %s"
 msgstr "Nicht gewährte Rolle kann nicht entfernt werden, %s"
@@ -522,21 +522,21 @@ msgstr "Nicht gewährte Rolle kann nicht entfernt werden, %s"
 msgid "Expected dict or list: %s"
 msgstr ""
 
-#: keystone/identity/backends/ldap/core.py:690
+#: keystone/identity/backends/ldap/core.py:688
 #, python-format
 msgid "Role %s not found"
 msgstr "Rolle %s nicht gefunden"
 
-#: keystone/identity/backends/ldap/core.py:907
+#: keystone/identity/backends/ldap/core.py:905
 msgid "Changing Name not supported by LDAP"
 msgstr "Änderung von Namen wird von LDAP nicht unterstützt"
 
-#: keystone/identity/backends/ldap/core.py:920
+#: keystone/identity/backends/ldap/core.py:918
 #, fuzzy, python-format
 msgid "User %(user_id)s is already a member of group %(group_id)s"
 msgstr "Benutzer %s ist bereits Mitglied der Gruppe %s."
 
-#: keystone/identity/backends/ldap/core.py:963
+#: keystone/identity/backends/ldap/core.py:961
 #, python-format
 msgid ""
 "Group member '%(user_dn)s' not found in '%(group_dn)s'. The user should "
@@ -582,16 +582,4 @@ msgstr "Token kann nicht zu Benutzerliste hinzugefügt werden."
 #: keystone/token/backends/memcache.py:93
 msgid "Unable to add token to revocation list."
 msgstr "Token kann nicht zu Widerrufsliste hinzugefügt werden."
-
-#~ msgid "RBAC: Authorizing %s(%s)"
-#~ msgstr "Rollenbasierte Zugriffssteuerung: Autorisierung von %s(%s)"
-
-#~ msgid "Invalid LDAP tls certs option: %s. Choose one of: "
-#~ msgstr ""
-
-#~ msgid "Invalid LDAP TLS_AVAIL option: %s. TLSnot available"
-#~ msgstr ""
-
-#~ msgid "enforce %s: %s"
-#~ msgstr "%s erzwingen: %s"
 
