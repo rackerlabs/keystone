@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//3lY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-07T02:59:25Z",
+      "side": 1,
+      "message": "Thanks,I\u0027ll correct it",
+      "parentUuid": "AAAAPX//5fA\u003d",
+      "revId": "ff283fc14aaac881c51364bd9a624a540bb61788",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//5+I\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-06T09:57:34Z",
       "side": 1,
       "message": "this shouldn\u0027t be called here",
+      "revId": "ff283fc14aaac881c51364bd9a624a540bb61788",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//3k0\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-07T02:59:25Z",
+      "side": 1,
+      "message": "yes, I know that you removed the same code line in keystone.common.config for fixing domain change issue. But if we want implement i18n support in exception.py, it seems that we need reapply this code in it, otherwise, not UT but also keystone-all service fails due to can\u0027t find \"_\" function, that\u0027s why I invite you to join this code review, because I think this may break your in https://review.openstack.org/#/c/28531\nI\u0027m afraid if we want implement the feature, we need to add this.",
+      "parentUuid": "AAAAPX//5+I\u003d",
       "revId": "ff283fc14aaac881c51364bd9a624a540bb61788",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
