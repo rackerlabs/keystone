@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//03o\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-08T15:03:06Z",
+      "side": 1,
+      "message": "user_api :-). replace \"self.user_api._id_to_dn(user_id)\" with \"user_dn\"",
+      "revId": "376f32aa555c5f993a26caa4fdc7e490f7afb31c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//03c\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 847,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-08T15:03:06Z",
+      "side": 1,
+      "message": "I know you have it as #todo here and few other places but just adding this comment so that it doesn\u0027t get overlooked :) if you are planning to take care of them as part of this patch.",
+      "revId": "376f32aa555c5f993a26caa4fdc7e490f7afb31c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
