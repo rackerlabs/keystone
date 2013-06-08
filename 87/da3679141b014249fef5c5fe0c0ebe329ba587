@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Verified+1: SmokeStack
+Approved+1: henry-nash <henryn@linux.vnet.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 08 Jun 2013 00:13:35 +0000
+Reviewed-on: https://review.openstack.org/32193
+Project: openstack/keystone
+Branch: refs/heads/master
