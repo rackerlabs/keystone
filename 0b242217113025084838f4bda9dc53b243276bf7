@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//z/I\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-06-09T17:50:36Z",
+      "side": 1,
+      "message": "I absolutely agree that kvs is the wrong answer.  The question is, should the default be sql or memcache?  The problem with sql is that the DB grows very fast....and we don\u0027t have any (by default) mechanism that cull it.  Memcache will expire the tokens and avoid this (although of course, will not be permanent if you need audit capability).  Personally, I\u0027d vote for memcache.  Probably just worth canvassing the other core\u0027s on this.",
+      "revId": "0b242217113025084838f4bda9dc53b243276bf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
