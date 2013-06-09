@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//0FA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:36:10Z",
+      "side": 1,
+      "message": "Since this patch isn\u0027t changing keystone.pot, the commit message shouldn\u0027t say that it\u0027s changing keystone.pot.",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0E4\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:36:10Z",
+      "side": 1,
+      "message": "If this only affects tests, then move it into the test parts.",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0E0\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:36:10Z",
+      "side": 1,
+      "message": "Remove the space at the end of the string.\n\nChange \"incorrect.The\" to \"incorrect. The\" (add a space)",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0EU\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:36:10Z",
+      "side": 1,
+      "message": "This one should be translated, too.",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0EA\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:36:10Z",
+      "side": 1,
+      "message": "This seems to be changing an interesting test. Suggest change it back.",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0EE\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:36:10Z",
+      "side": 1,
+      "message": "this assert seems useless now, how would the contents of variable wind up in a message that can\u0027t know anything about it? Remove this line.",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0Ek\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:36:10Z",
+      "side": 1,
+      "message": "What\u0027s GVT? Tests should be in the unit tests so they get run often enough to prevent bugs getting through.",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
