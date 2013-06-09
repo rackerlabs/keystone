@@ -14,6 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import re
+
 from keystone.common import logging
 from keystone.common import manager
 from keystone.common import wsgi
@@ -118,12 +120,14 @@ class StatsMiddleware(wsgi.Middleware):
 
     def __init__(self, *args, **kwargs):
         self.stats_api = Manager()
+        self.re_admin = re.compile(":%s$" % CONF.admin_port)
+        self.re_public = re.compile(":%s$" % CONF.public_port)
         return super(StatsMiddleware, self).__init__(*args, **kwargs)
 
     def _resolve_api(self, host):
-        if str(CONF.admin_port) in host:
+        if self.re_admin.search(host):
             return 'admin'
-        elif str(CONF.public_port) in host:
+        elif self.re_public.search(host):
             return 'public'
         else:
             # NOTE(dolph): I don't think this is actually reachable, but hey
