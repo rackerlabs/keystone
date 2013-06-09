@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//0Gg\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:14:34Z",
+      "side": 1,
+      "message": "suggest remove user_key\u003d and token_id\u003d since _update_user_list_with_cas doesn\u0027t use named parameters.",
+      "revId": "8146b322ea6be3d17eece0b3b90fb187fba35308",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0Gc\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:14:34Z",
+      "side": 1,
+      "message": "move this down to where it\u0027s used (just before line 132)",
+      "revId": "8146b322ea6be3d17eece0b3b90fb187fba35308",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0GM\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:14:34Z",
+      "side": 1,
+      "message": "suggest add a comment here \"skip tokens that don\u0027t exist anymore\"",
+      "revId": "8146b322ea6be3d17eece0b3b90fb187fba35308",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0GI\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:14:34Z",
+      "side": 1,
+      "message": "suggest add a comment here \"skip tokens that are expired\"",
+      "revId": "8146b322ea6be3d17eece0b3b90fb187fba35308",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0GE\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:14:34Z",
+      "side": 1,
+      "message": "suggest add a comment here \"sucessfully set so done\". Better would be to log it.",
+      "revId": "8146b322ea6be3d17eece0b3b90fb187fba35308",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0GA\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:14:34Z",
+      "side": 1,
+      "message": "suggest add log message here \"failed to set token list for user %(user_key)s due to conflict #%(cas_retry)d\".",
+      "revId": "8146b322ea6be3d17eece0b3b90fb187fba35308",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0F4\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:14:34Z",
+      "side": 1,
+      "message": "A docstring should be a description of what this function does. Suggest change to a comment.",
+      "revId": "8146b322ea6be3d17eece0b3b90fb187fba35308",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0Fw\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:14:34Z",
+      "side": 1,
+      "message": "change \"will behave\" to \"behaves\" . Otherwise it seems like something you\u0027re planning to do sometime rather than describing how it works.",
+      "revId": "8146b322ea6be3d17eece0b3b90fb187fba35308",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0Fs\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:14:34Z",
+      "side": 1,
+      "message": "change \"will prevent\" to \"prevents\"",
+      "revId": "8146b322ea6be3d17eece0b3b90fb187fba35308",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0Fo\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T15:14:34Z",
+      "side": 1,
+      "message": "change to a comment rather than docstring.",
+      "revId": "8146b322ea6be3d17eece0b3b90fb187fba35308",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
