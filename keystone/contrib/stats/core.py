@@ -127,8 +127,9 @@ class StatsMiddleware(wsgi.Middleware):
             return 'public'
         else:
             # NOTE(dolph): I don't think this is actually reachable, but hey
-            msg = 'Unable to resolve API as either public or admin: %s' % host
-            LOG.warning(msg)
+            # msg = 'Unable to resolve API as either public or admin: %s' \
+            #        % host
+            # LOG.warning(msg)
             return host
 
     def capture_stats(self, host, obj, attributes):
