@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//0HI\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T14:42:51Z",
+      "side": 1,
+      "message": "suggest change to mention credential reference since this is different than the normal _assign_unique_id\n\n Generates and assigns a unique identifer to a credential reference.",
+      "revId": "61ebf12babcfbe578d5a8127475ecc7fa1a77966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0G4\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T14:42:51Z",
+      "side": 1,
+      "message": "super._assign_unique_ref is going to create a copy, so this line should be moved into the if leg (to before line 31, or 38)",
+      "revId": "61ebf12babcfbe578d5a8127475ecc7fa1a77966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0HA\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T14:42:51Z",
+      "side": 1,
+      "message": "the standard library imports should be together. See HACKING.py: https://github.com/openstack/keystone/blob/master/HACKING.rst#imports",
+      "revId": "61ebf12babcfbe578d5a8127475ecc7fa1a77966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0G0\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T14:42:51Z",
+      "side": 1,
+      "message": "should you add a test that if you try to create 2 ec2 credentials with the same access key id that it fails because it\u0027s got a duplicate ID?",
+      "revId": "61ebf12babcfbe578d5a8127475ecc7fa1a77966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
