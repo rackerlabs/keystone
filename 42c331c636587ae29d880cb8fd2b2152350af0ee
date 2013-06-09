@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//0Hw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T14:25:13Z",
+      "side": 1,
+      "message": "is there a blueprint that should be referenced?",
+      "revId": "42c331c636587ae29d880cb8fd2b2152350af0ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0H0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T14:25:13Z",
+      "side": 1,
+      "message": "I don\u0027t see the rafactoring to create a helper file for migrations in this change, so suggest remove this paragraph.",
+      "revId": "42c331c636587ae29d880cb8fd2b2152350af0ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0IA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T14:25:13Z",
+      "side": 1,
+      "message": "change \"lookin\" to \"looking\" (or lookin\u0027)",
+      "revId": "42c331c636587ae29d880cb8fd2b2152350af0ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0Hs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/026_drop_user_group_constraints.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T14:25:13Z",
+      "side": 1,
+      "message": "remove extra blank line.",
+      "revId": "42c331c636587ae29d880cb8fd2b2152350af0ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//0Ho\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T14:25:13Z",
+      "side": 1,
+      "message": "I can see that this will need to change once projects are in separate backend from groups, but does it have to change now?",
+      "revId": "42c331c636587ae29d880cb8fd2b2152350af0ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
