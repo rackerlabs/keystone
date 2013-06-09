@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//0II\u003d",
+        "filename": "keystone/contrib/stats/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-09T14:11:22Z",
+      "side": 1,
+      "message": "remove commented-out code. It\u0027s stored in git.",
+      "revId": "e96eb5d2193764a6d0933c08ab3d12e5b5119a28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
