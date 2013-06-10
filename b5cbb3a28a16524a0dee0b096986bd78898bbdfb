@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPX//xp0\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-10T21:53:48Z",
+      "side": 1,
+      "message": "this *could* log to fatal...\n\n  logging.fatal()\n\nbut i\u0027m not really sure what would be more appropriate... just wanted to mention the option",
+      "revId": "b5cbb3a28a16524a0dee0b096986bd78898bbdfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//36A\u003d",
         "filename": "bin/keystone-all",
         "patchSetId": 4
@@ -13,6 +30,24 @@
       "writtenOn": "2013-06-06T23:36:20Z",
       "side": 1,
       "message": "How do you know the problem is already in use?",
+      "revId": "b5cbb3a28a16524a0dee0b096986bd78898bbdfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//xqU\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-10T21:53:48Z",
+      "side": 1,
+      "message": "you don\u0027t :( http://docs.python.org/2/library/socket.html#socket.error\n\nI provided a bit of a bad example in the last patchset... I was just trying to illustrate that you can pass a string to sys.exit() to achieve a clean non-zero exit.\n\nLooking at the docs for socket.error, it looks like you can do:\n\n  \u003e\u003e\u003e import socket\n  \u003e\u003e\u003e sys.exit(socket.error(98, \u0027Address already in use\u0027))\n  [Errno 98] Address already in use\n\nwhich cleanly renders the last line of the backtrace to stdout. So, in this case, this line could be written as:\n\n  sys.exit(e)",
+      "parentUuid": "AAAAPX//36A\u003d",
       "revId": "b5cbb3a28a16524a0dee0b096986bd78898bbdfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
