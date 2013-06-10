@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//yjU\u003d",
+        "filename": "keystone/contrib/stats/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-06-10T16:50:17Z",
+      "side": 1,
+      "message": "from the look of it you don\u0027t need a regexp but just a :\n\nhost.endswsith(\u0027:%s\u0027 % (CONF.admin_port))\n\nstring comparaison may be more CPU friendly for such used module (if installed in the pipeline) compared to a regexp.",
+      "revId": "204c1d62c128b99065bba7295ea1974c61c4dd17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//yjI\u003d",
+        "filename": "keystone/contrib/stats/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-06-10T16:50:17Z",
+      "side": 1,
+      "message": "same comment as before but with :\n\nhost.endswsith(\u0027:%s\u0027 % (CONF.public_port))",
+      "revId": "204c1d62c128b99065bba7295ea1974c61c4dd17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
