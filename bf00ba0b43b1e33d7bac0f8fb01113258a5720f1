@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//yFI\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-10T19:24:13Z",
+      "side": 1,
+      "message": "For 1), we don\u0027t have any control over the plugins.\n\nFor 2), you are essentially asking a plugin to \"do nothing\" if it is not in the auth methods. Then what\u0027s the point?\n\nFor 5), the existing framework will authenticate exactly according the methods specified in the auth. If a plugin can\u0027t authenticate user, it will throw an exception. If continuation is required, it will return the response payload.\n\nWith your impl, we can\u0027t tell if the all the required plugins had succeeded because you are invoking all the plugins, regardless if they are needed or not.",
+      "parentUuid": "AAAAPX//1o4\u003d",
+      "revId": "bf00ba0b43b1e33d7bac0f8fb01113258a5720f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//1uI\u003d",
         "filename": "keystone/auth/plugins/password.py",
         "patchSetId": 3
