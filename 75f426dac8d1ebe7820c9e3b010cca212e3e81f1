@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//vjc\u003d",
+        "filename": "tests/test_versions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T15:28:21Z",
+      "side": 1,
+      "message": "this would be more appropriately named as test_public_versions_xml given the naming convention used by other tests",
+      "revId": "75f426dac8d1ebe7820c9e3b010cca212e3e81f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
