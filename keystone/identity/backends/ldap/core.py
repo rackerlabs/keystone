@@ -200,7 +200,6 @@ class Identity(identity.Driver):
     def create_user(self, user_id, user):
         user = self._validate_domain(user)
         user['name'] = clean.user_name(user['name'])
-        user['enabled'] = clean.user_enabled(user.get('enabled', True))
         user_ref = self.user.create(user)
         return self._set_default_domain(identity.filter_user(user_ref))
 
@@ -226,6 +225,8 @@ class Identity(identity.Driver):
         tenant = self._validate_domain(tenant)
         if 'name' in tenant:
             tenant['name'] = clean.project_name(tenant['name'])
+        if 'enabled' in tenant:
+            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         return self._set_default_domain(self.project.update(tenant_id, tenant))
 
     def create_metadata(self, user_id, tenant_id, metadata):
