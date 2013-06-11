@@ -478,6 +478,18 @@ class IdentityTests(object):
                           'fake2',
                           tenant2)
 
+    def test_create_project_invalid_enabled_type(self):
+        tenant = {'id': uuid.uuid4().hex,
+                  'name': uuid.uuid4().hex,
+                  'domain_id': DEFAULT_DOMAIN_ID,
+                  # invalid string value
+                  'enabled': "true"}
+        self.assertRaises(exception.ValidationError,
+                          self.identity_man.create_project,
+                          EMPTY_CONTEXT,
+                          tenant['id'],
+                          tenant)
+
     def test_update_project_id_does_nothing(self):
         tenant = {'id': 'fake1', 'name': 'fake1',
                   'domain_id': DEFAULT_DOMAIN_ID}
@@ -1760,10 +1772,49 @@ class IdentityTests(object):
         tenant_ref = self.identity_api.get_project('fake1')
         self.assertEqual(tenant_ref['enabled'], tenant['enabled'])
 
+        # If not present, enabled field should not be updated
+        del tenant['enabled']
+        self.identity_api.update_project('fake1', tenant)
+        tenant_ref = self.identity_api.get_project('fake1')
+        self.assertEqual(tenant_ref['enabled'], False)
+
         tenant['enabled'] = True
         self.identity_api.update_project('fake1', tenant)
         tenant_ref = self.identity_api.get_project('fake1')
         self.assertEqual(tenant_ref['enabled'], tenant['enabled'])
+
+        del tenant['enabled']
+        self.identity_api.update_project('fake1', tenant)
+        tenant_ref = self.identity_api.get_project('fake1')
+        self.assertEqual(tenant_ref['enabled'], True)
+
+        # Integers are valid Python's booleans. Explicitly test it.
+        tenant['enabled'] = 0
+        self.identity_api.update_project('fake1', tenant)
+        tenant_ref = self.identity_api.get_project('fake1')
+        self.assertEqual(tenant_ref['enabled'], False)
+
+        # Any integers other than 0 are interpreted as True
+        tenant['enabled'] = -42
+        self.identity_api.update_project('fake1', tenant)
+        tenant_ref = self.identity_api.get_project('fake1')
+        self.assertEqual(tenant_ref['enabled'], True)
+
+    def test_update_project_enable_fails(self):
+        tenant = {'id': 'fake1',
+                  'name': 'fake1',
+                  'enabled': True,
+                  'domain_id': DEFAULT_DOMAIN_ID}
+        self.identity_api.create_project('fake1', tenant)
+        tenant_ref = self.identity_api.get_project('fake1')
+        self.assertEqual(tenant_ref['enabled'], True)
+
+        # Strings are not valid boolean values
+        tenant['enabled'] = "false"
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_project,
+                          'fake1',
+                          tenant)
 
     def test_add_user_to_group(self):
         domain = self._get_domain_fixture()

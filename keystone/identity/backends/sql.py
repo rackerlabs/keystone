@@ -436,6 +436,7 @@ class Identity(sql.Base, identity.Driver):
     @sql.handle_conflicts(type='project')
     def create_project(self, tenant_id, tenant):
         tenant['name'] = clean.project_name(tenant['name'])
+        tenant['enabled'] = clean.project_enabled(tenant.get('enabled', True))
         session = self.get_session()
         with session.begin():
             tenant_ref = Project.from_dict(tenant)
@@ -449,6 +450,8 @@ class Identity(sql.Base, identity.Driver):
 
         if 'name' in tenant:
             tenant['name'] = clean.project_name(tenant['name'])
+        if 'enabled' in tenant:
+            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
 
         with session.begin():
             tenant_ref = self._get_project(session, tenant_id)

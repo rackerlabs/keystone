@@ -285,6 +285,7 @@ class Identity(kvs.Base, identity.Driver):
 
     def create_project(self, tenant_id, tenant):
         tenant['name'] = clean.project_name(tenant['name'])
+        tenant['enabled'] = clean.project_enabled(tenant.get('enabled', True))
         try:
             self.get_project(tenant_id)
         except exception.ProjectNotFound:
@@ -315,6 +316,8 @@ class Identity(kvs.Base, identity.Driver):
                     raise exception.Conflict(type='tenant', details=msg)
             except exception.NotFound:
                 pass
+        if 'enabled' in tenant:
+            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         # get the old name and delete it too
         try:
             old_project = self.db.get('tenant-%s' % tenant_id)

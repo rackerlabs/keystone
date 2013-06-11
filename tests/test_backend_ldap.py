@@ -113,7 +113,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         tenant_ref = self.identity_api.get_project('fake1')
         self.assertEqual(tenant_ref['id'], 'fake1')
 
-        tenant['enabled'] = 'False'
+        tenant['enabled'] = False
         self.identity_api.update_project('fake1', tenant)
 
         self.identity_api.delete_project('fake1')
@@ -133,7 +133,7 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
                           'fake1',
                           tenant)
 
-        self.tenant_bar['enabled'] = 'False'
+        self.tenant_bar['enabled'] = False
         self.assertRaises(exception.ForbiddenAction,
                           self.identity_api.update_project,
                           self.tenant_bar['id'],
@@ -475,10 +475,9 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         self.identity_api.create_project(project['id'], project)
         project_ref = self.identity_api.get_project(project['id'])
 
-        # NOTE(crazed): If running live test with emulation, there will be
-        #               an enabled key in the project_ref.
-        if self.identity_api.project.enabled_emulation:
-            project['enabled'] = True
+        # NOTE(wenxiang): there will be an enabled key with a default value
+        #               True in the project_ref.
+        project['enabled'] = True
         self.assertDictEqual(project_ref, project)
 
         project['description'] = uuid.uuid4().hex

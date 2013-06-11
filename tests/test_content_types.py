@@ -574,6 +574,70 @@ class CoreApiTests(object):
             expected_status=400)
         self.assertValidErrorResponse(r)
 
+    def test_create_update_project_invalid_enabled_type(self):
+        # Enforce usage of boolean for 'enabled' field in JSON and XML
+        token = self.get_scoped_token()
+
+        # Test CREATE request
+        r = self.admin_request(
+            method='POST',
+            path='/v2.0/tenants',
+            body={
+                'tenant': {
+                    'name': uuid.uuid4().hex,
+                    # In XML, only "true|false" are converted to boolean.
+                    'enabled': "False",
+                },
+            },
+            token=token,
+            expected_status=400)
+        self.assertValidErrorResponse(r)
+
+        r = self.admin_request(
+            method='POST',
+            path='/v2.0/tenants',
+            body={
+                'tenant': {
+                    'name': uuid.uuid4().hex,
+                    # In JSON, 0|1 are not booleans
+                    'enabled': 0,
+                },
+            },
+            token=token,
+            expected_status=400)
+        self.assertValidErrorResponse(r)
+
+        # Test UPDATE request
+        path = '/v2.0/tenants/%(tenant_id)s' % {
+               'tenant_id': self.tenant_bar['id'],
+        }
+
+        r = self.admin_request(
+            method='PUT',
+            path=path,
+            body={
+                'tenant': {
+                    # In XML, only "true|false" are converted to boolean.
+                    'enabled': "False",
+                },
+            },
+            token=token,
+            expected_status=400)
+        self.assertValidErrorResponse(r)
+
+        r = self.admin_request(
+            method='PUT',
+            path=path,
+            body={
+                'tenant': {
+                    # In JSON, 0|1 are not booleans
+                    'enabled': 1,
+                },
+            },
+            token=token,
+            expected_status=400)
+        self.assertValidErrorResponse(r)
+
     def test_error_response(self):
         """This triggers assertValidErrorResponse by convention."""
         self.public_request(path='/v2.0/tenants', expected_status=401)
@@ -832,6 +896,41 @@ class JsonTestCase(RestfulTestCase, CoreApiTests):
             expected_status=400)
         self.assertValidErrorResponse(r)
 
+    def test_create_update_project_json_invalid_enabled_type(self):
+        # Enforce usage of boolean for 'enabled' field in JSON
+        token = self.get_scoped_token()
+
+        # Test CREATE request
+        r = self.admin_request(
+            method='POST',
+            path='/v2.0/tenants',
+            body={
+                'tenant': {
+                    'name': uuid.uuid4().hex,
+                    # In JSON, "true|false" are not boolean
+                    'enabled': "true",
+                },
+            },
+            token=token,
+            expected_status=400)
+        self.assertValidErrorResponse(r)
+
+        # Test UPDATE request
+        r = self.admin_request(
+            method='PUT',
+            path='/v2.0/tenants/%(tenant_id)s' % {
+                 'tenant_id': self.tenant_bar['id'],
+            },
+            body={
+                'tenant': {
+                    # In JSON, "true|false" are not boolean
+                    'enabled': "true",
+                },
+            },
+            token=token,
+            expected_status=400)
+        self.assertValidErrorResponse(r)
+
 
 class XmlTestCase(RestfulTestCase, CoreApiTests):
     xmlns = 'http://docs.openstack.org/identity/api/v2.0'
@@ -1051,7 +1150,7 @@ class XmlTestCase(RestfulTestCase, CoreApiTests):
                 {"tenant":{
                     "name":"test1",
                     "description":"",
-                    "enabled":"true"}
+                    "enabled":true}
                 }
             """,
             convert=False)
