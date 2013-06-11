@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//wUw\u003d",
+        "filename": "keystone/contrib/stats/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-06-11T10:35:12Z",
+      "side": 0,
+      "message": "What about fixing this by having CONF.admin/public_port being a list of ports where you could specify multiple public port (5001/5002/5003 from your example in bug 1189118) so that LOG message is relevant.",
+      "revId": "ad3ba38cdabfcf735d2e4013d51a3892bc4cec4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
