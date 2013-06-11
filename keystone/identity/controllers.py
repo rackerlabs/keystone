@@ -98,6 +98,11 @@ class Tenant(controller.V2Controller):
             msg = 'Name field is required and cannot be empty'
             raise exception.ValidationError(message=msg)
 
+        if ('enabled' in tenant_ref and
+                not isinstance(tenant_ref['enabled'], bool)):
+            msg = 'Enabled field must be a boolean'
+            raise exception.ValidationError(message=msg)
+
         self.assert_admin(context)
         tenant_ref['id'] = tenant_ref.get('id', uuid.uuid4().hex)
         tenant = self.identity_api.create_project(
@@ -107,6 +112,11 @@ class Tenant(controller.V2Controller):
 
     def update_project(self, context, tenant_id, tenant):
         self.assert_admin(context)
+
+        if 'enabled' in tenant and not isinstance(tenant['enabled'], bool):
+            msg = 'Enabled field should be a boolean'
+            raise exception.ValidationError(message=msg)
+
         # Remove domain_id if specified - a v2 api caller should not
         # be specifying that
         clean_tenant = tenant.copy()
