@@ -27,8 +27,10 @@ def get_fkey_constraint_name(table, column_name):
     fkeys = [fk for fk in table.constraints
              if (column_name in fk.columns and
                  isinstance(fk, sqlalchemy.ForeignKeyConstraint))]
-    constraint_name = fkeys[0].name
-    return constraint_name
+    if len(fkeys):
+        return fkeys[0].name
+    else:    
+        return None
 
 
 #  remove_constraints and add_constraints both accept a list of dictionaries
@@ -41,13 +43,15 @@ def get_fkey_constraint_name(table, column_name):
 #               for the constraint.
 def remove_constraints(constraints):
     for constraint_def in constraints:
+        constraint_name = get_fkey_constraint_name(constraint_def['table'],
+            constraint_def['fk_column'])
+        if constraint_name is None:
+            continue
         migrate.ForeignKeyConstraint(
             columns=[getattr(constraint_def['table'].c,
                              constraint_def['fk_column'])],
             refcolumns=[constraint_def['ref_column']],
-            name=(get_fkey_constraint_name
-                  (constraint_def['table'],
-                   constraint_def['fk_column']))).drop()
+            name=constraint_name).drop()
 
 
 def add_constraints(constraints):
