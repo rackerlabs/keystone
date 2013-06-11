@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//wVk\u003d",
+        "filename": "tests/test_contrib_stats_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-06-11T10:29:18Z",
+      "side": 1,
+      "message": "nitpick: i would have used another ip to show a public req than 127.0.0.1",
+      "revId": "8b73171b9e321041f73317b3903b853ead6c8795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
