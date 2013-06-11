@@ -24,11 +24,10 @@ import sqlalchemy
 #  for the constraint, and instead attempts to deduce it from the column.
 #  This fails on MySQL.
 def get_fkey_constraint_name(table, column_name):
-    fkeys = [fk for fk in table.constraints
+    fkeys = [fk.name for fk in table.constraints
              if (column_name in fk.columns and
                  isinstance(fk, sqlalchemy.ForeignKeyConstraint))]
-    constraint_name = fkeys[0].name
-    return constraint_name
+    return fkeys
 
 
 #  remove_constraints and add_constraints both accept a list of dictionaries
@@ -41,13 +40,14 @@ def get_fkey_constraint_name(table, column_name):
 #               for the constraint.
 def remove_constraints(constraints):
     for constraint_def in constraints:
-        migrate.ForeignKeyConstraint(
-            columns=[getattr(constraint_def['table'].c,
-                             constraint_def['fk_column'])],
-            refcolumns=[constraint_def['ref_column']],
-            name=(get_fkey_constraint_name
-                  (constraint_def['table'],
-                   constraint_def['fk_column']))).drop()
+        for constraint_name in (get_fkey_constraint_name
+                                (constraint_def['table'],
+                                 constraint_def['fk_column'])):
+            migrate.ForeignKeyConstraint(
+                columns=[getattr(constraint_def['table'].c,
+                                 constraint_def['fk_column'])],
+                refcolumns=[constraint_def['ref_column']],
+                name=constraint_name).drop()
 
 
 def add_constraints(constraints):
