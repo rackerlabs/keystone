@@ -75,8 +75,7 @@ class Manager(manager.Manager):
 
     def create_user(self, context, user_id, user_ref):
         user = user_ref.copy()
-        user.setdefault('enabled', True)
-        user['enabled'] = clean.user_enabled(user['enabled'])
+        user['enabled'] = clean.user_enabled(user.get('enabled', True))
         return self.driver.create_user(user_id, user)
 
     def create_group(self, context, group_id, group_ref):
@@ -87,8 +86,7 @@ class Manager(manager.Manager):
 
     def create_project(self, context, tenant_id, tenant_ref):
         tenant = tenant_ref.copy()
-        tenant.setdefault('enabled', True)
-        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+        tenant['enabled'] = clean.project_enabled(tenant.get('enabled', True))
         if 'description' not in tenant:
             tenant['description'] = ''
         return self.driver.create_project(tenant_id, tenant)
