@@ -34,6 +34,24 @@
       "revId": "0b242217113025084838f4bda9dc53b243276bf7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//vD4\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T18:00:22Z",
+      "side": 1,
+      "message": "I\u0027d rather limit external dependencies out of the box, so I vote for SQL, although I would lean toward memcache for production as well",
+      "parentUuid": "AAAAPX//z1s\u003d",
+      "revId": "0b242217113025084838f4bda9dc53b243276bf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
