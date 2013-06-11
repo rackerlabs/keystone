@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//vhs\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T15:38:57Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAPX//0HI\u003d",
+      "revId": "61ebf12babcfbe578d5a8127475ecc7fa1a77966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//0G4\u003d",
         "filename": "keystone/credential/controllers.py",
         "patchSetId": 11
@@ -30,6 +48,41 @@
       "writtenOn": "2013-06-09T14:42:51Z",
       "side": 1,
       "message": "super._assign_unique_ref is going to create a copy, so this line should be moved into the if leg (to before line 31, or 38)",
+      "revId": "61ebf12babcfbe578d5a8127475ecc7fa1a77966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//vho\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T15:38:57Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAPX//0G4\u003d",
+      "revId": "61ebf12babcfbe578d5a8127475ecc7fa1a77966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//viE\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T15:38:57Z",
+      "side": 1,
+      "message": "i really don\u0027t like seeing hardcoded special treatment for a particular type of credential here, but not sure what else to suggest :(",
       "revId": "61ebf12babcfbe578d5a8127475ecc7fa1a77966",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//vhk\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T15:38:57Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAPX//0HA\u003d",
+      "revId": "61ebf12babcfbe578d5a8127475ecc7fa1a77966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//0G0\u003d",
         "filename": "tests/test_v3_credential.py",
         "patchSetId": 11
@@ -64,6 +135,24 @@
       "writtenOn": "2013-06-09T14:42:51Z",
       "side": 1,
       "message": "should you add a test that if you try to create 2 ec2 credentials with the same access key id that it fails because it\u0027s got a duplicate ID?",
+      "revId": "61ebf12babcfbe578d5a8127475ecc7fa1a77966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//vhc\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T15:38:57Z",
+      "side": 1,
+      "message": "+1 that would be a *great* test, and it would be easy to write in this module",
+      "parentUuid": "AAAAPX//0G0\u003d",
       "revId": "61ebf12babcfbe578d5a8127475ecc7fa1a77966",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
