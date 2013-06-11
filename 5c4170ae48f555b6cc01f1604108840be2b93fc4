@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//xH0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1297
+      },
+      "writtenOn": "2013-06-11T01:38:08Z",
+      "side": 1,
+      "message": "Reference bug?",
+      "revId": "5c4170ae48f555b6cc01f1604108840be2b93fc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
