@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//vgQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T20:44:37Z",
+      "side": 1,
+      "message": "commit messages should explain why things are changing... the commit itself describes the what. if you have to enumerate changes like this as a summary, then that suggests that the commit is too complex to review.\n\neither rip out this change list, or break down the commit into discrete changes",
+      "parentUuid": "AAAAPX//0FA\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//vfw\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T20:44:37Z",
+      "side": 1,
+      "message": "... why not just cast with unicode() all the time? using str() at all was obviously short sighted",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//0E4\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 6
@@ -30,6 +65,24 @@
       "writtenOn": "2013-06-09T15:36:10Z",
       "side": 1,
       "message": "If this only affects tests, then move it into the test parts.",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//vfA\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T20:44:37Z",
+      "side": 1,
+      "message": "i have no idea what this line is doing, but it definitely doesn\u0027t have anything to do with the comment it\u0027s following \"Tests use this to make exception message format errors fatal\"",
+      "parentUuid": "AAAAPX//0E4\u003d",
       "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//uhQ\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T20:44:37Z",
+      "side": 1,
+      "message": "This is why doc strings are so much better here...",
+      "parentUuid": "AAAAPX//0E0\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//0EU\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 6
@@ -64,6 +135,24 @@
       "writtenOn": "2013-06-09T15:36:10Z",
       "side": 1,
       "message": "This one should be translated, too.",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//uhA\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T20:44:37Z",
+      "side": 1,
+      "message": "I\u0027m not sure it\u0027s ever raised intentionally",
+      "parentUuid": "AAAAPX//0EU\u003d",
       "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//ugo\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T20:44:37Z",
+      "side": 1,
+      "message": "-2; this is explicitly bypassing the goal of the test and represents the introduction of a security vulnerability/exposure",
+      "parentUuid": "AAAAPX//0EA\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//0EE\u003d",
         "filename": "tests/test_exception.py",
         "patchSetId": 6
@@ -104,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//ugE\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T20:44:37Z",
+      "side": 1,
+      "message": "valid point, but instead keep this line in the test. it\u0027s explicitly asserting that with debug\u003dFalse you can\u0027t override the generic message",
+      "parentUuid": "AAAAPX//0EE\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//0Ek\u003d",
         "filename": "tests/test_wsgi.py",
         "patchSetId": 6
@@ -115,6 +240,24 @@
       "writtenOn": "2013-06-09T15:36:10Z",
       "side": 1,
       "message": "What\u0027s GVT? Tests should be in the unit tests so they get run often enough to prevent bugs getting through.",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//ufk\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-11T20:44:37Z",
+      "side": 1,
+      "message": "i don\u0027t follow this comment (what \"GVT\" are you referring to?) -- test looks fine to me?",
+      "parentUuid": "AAAAPX//0Ek\u003d",
       "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
