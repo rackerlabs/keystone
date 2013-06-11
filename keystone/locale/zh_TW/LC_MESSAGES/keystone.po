@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-05-30 17:05+0000\n"
+"POT-Creation-Date: 2013-06-11 17:04+0000\n"
 "PO-Revision-Date: 2013-05-22 03:11+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) "
@@ -120,11 +120,6 @@ msgstr "端點 %s 的格式不正確 - 格式不完整（遺漏了類型通知�
 msgid "Unable to open template file %s"
 msgstr "無法開啟範本檔 %s"
 
-#: keystone/common/bufferedhttp.py:101
-#, python-format
-msgid "HTTP PERF: %(time).5f seconds to %(method)s %(host)s:%(port)s %(path)s)"
-msgstr "HTTP PERF：%(time).5f 秒鐘以 (%(method)s %(host)s:%(port)s %(path)s)"
-
 #: keystone/common/cms.py:42
 #, python-format
 msgid "Verify error: %s"
@@ -184,7 +179,7 @@ msgstr "RBAC：已授與權限"
 msgid "RBAC: Adding query filter params (%s)"
 msgstr "RBAC：正在新增查詢過濾器參數 (%s)"
 
-#: keystone/common/controller.py:331
+#: keystone/common/controller.py:322
 msgid "Invalid token in normalize_domain_id"
 msgstr "normalize_domain_id 中的記號無效"
 
@@ -209,12 +204,12 @@ msgstr "授權失敗。%s（自 %s）"
 msgid "The resource could not be found."
 msgstr "找不到資源。"
 
-#: keystone/common/wsgi_server.py:59
+#: keystone/common/wsgi_server.py:72
 #, python-format
 msgid "Starting %(arg0)s on %(host)s:%(port)s"
 msgstr "正在 %(host)s:%(port)s 上啟動 %(arg0)s"
 
-#: keystone/common/wsgi_server.py:119
+#: keystone/common/wsgi_server.py:132
 msgid "Server error"
 msgstr "伺服器錯誤"
 
@@ -247,13 +242,13 @@ msgid ""
 "\"%(attr_map)s\" must use one of %(keys)s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:603
-#: keystone/identity/backends/kvs.py:631
+#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:596
+#: keystone/identity/backends/kvs.py:624
 #, python-format
 msgid "Duplicate name, %s."
 msgstr "重複的名稱，%s。"
 
-#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:596
+#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:589
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr "重複的 ID，%s。"
@@ -490,11 +485,11 @@ msgstr "將角色 %s 指派給使用者 %s（在 Tenant %s 上）"
 msgid "Creating ec2 cred for user %(user_id)s and tenant %(tenant_id)s"
 msgstr "正在給使用者 %s 及 Tenant %s 建立 EC2 Cred"
 
-#: keystone/identity/backends/kvs.py:257 keystone/identity/backends/kvs.py:266
+#: keystone/identity/backends/kvs.py:250 keystone/identity/backends/kvs.py:259
 msgid "User not found in group"
 msgstr "在群組中找不到使用者"
 
-#: keystone/identity/backends/sql.py:424
+#: keystone/identity/backends/sql.py:418
 #, python-format
 msgid "Cannot remove role that has not been granted, %s"
 msgstr "無法移除尚未授權的角色，%s"
@@ -504,21 +499,21 @@ msgstr "無法移除尚未授權的角色，%s"
 msgid "Expected dict or list: %s"
 msgstr ""
 
-#: keystone/identity/backends/ldap/core.py:690
+#: keystone/identity/backends/ldap/core.py:688
 #, python-format
 msgid "Role %s not found"
 msgstr "找不到角色 %s"
 
-#: keystone/identity/backends/ldap/core.py:907
+#: keystone/identity/backends/ldap/core.py:905
 msgid "Changing Name not supported by LDAP"
 msgstr "LDAP 不支援變更名稱"
 
-#: keystone/identity/backends/ldap/core.py:920
+#: keystone/identity/backends/ldap/core.py:918
 #, fuzzy, python-format
 msgid "User %(user_id)s is already a member of group %(group_id)s"
 msgstr "使用者 %s 已是群組 %s 的成員"
 
-#: keystone/identity/backends/ldap/core.py:963
+#: keystone/identity/backends/ldap/core.py:961
 #, python-format
 msgid ""
 "Group member '%(user_dn)s' not found in '%(group_dn)s'. The user should "
@@ -565,15 +560,6 @@ msgstr "無法新增記號使用者清單。"
 msgid "Unable to add token to revocation list."
 msgstr "無法將記號新增至撤銷清冊。"
 
-#~ msgid "RBAC: Authorizing %s(%s)"
-#~ msgstr "RBAC：正在授權 %s(%s)"
-
-#~ msgid "Invalid LDAP tls certs option: %s. Choose one of: "
-#~ msgstr ""
-
-#~ msgid "Invalid LDAP TLS_AVAIL option: %s. TLSnot available"
-#~ msgstr ""
-
-#~ msgid "enforce %s: %s"
-#~ msgstr "施行 %s：%s"
+#~ msgid "HTTP PERF: %(time).5f seconds to %(method)s %(host)s:%(port)s %(path)s)"
+#~ msgstr "HTTP PERF：%(time).5f 秒鐘以 (%(method)s %(host)s:%(port)s %(path)s)"
 
