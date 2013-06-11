@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//vMY\u003d",
+        "filename": "tests/test_contrib_stats_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2013-06-11T17:30:39Z",
+      "side": 1,
+      "message": "I think public ip addr would not affect this test case.",
+      "parentUuid": "AAAAPX//wVk\u003d",
+      "revId": "8b73171b9e321041f73317b3903b853ead6c8795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//v98\u003d",
         "filename": "tests/test_contrib_stats_core.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-11T13:09:02Z",
       "side": 1,
       "message": "Should we be making sure this is displaying a warning here? Or doesn\u0027t that matter since we can assume the warning is logged once the host is returned?",
+      "revId": "8b73171b9e321041f73317b3903b853ead6c8795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//vMI\u003d",
+        "filename": "tests/test_contrib_stats_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2013-06-11T17:30:39Z",
+      "side": 1,
+      "message": "Bug 1189118, I prefer simply removing this warning info here.",
+      "parentUuid": "AAAAPX//v98\u003d",
       "revId": "8b73171b9e321041f73317b3903b853ead6c8795",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
