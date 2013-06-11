@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//uJA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-11T23:18:49Z",
+      "side": 1,
+      "message": "user_api :-).. I think you missed replacing \"self.user_api._id_to_dn(user_id)\" with \"user_dn\". Thanks!",
+      "revId": "08d47c95195b9754876e024544d92aec16a6fc5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
