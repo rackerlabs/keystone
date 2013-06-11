@@ -16,6 +16,24 @@
       "revId": "0b242217113025084838f4bda9dc53b243276bf7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//z1s\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2013-06-11T09:37:40Z",
+      "side": 1,
+      "message": "Thanks for your advice. I had also thinked about Memcache \u0026 SQL, which one is better? In my opinion: 1. SQL is more popular used than memcache because DB is required while memcache is optional. 2. DB has enough capability to handle token grow fast. Actually, we use DB in a public cloud deployment. ^_^",
+      "parentUuid": "AAAAPX//z/I\u003d",
+      "revId": "0b242217113025084838f4bda9dc53b243276bf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
