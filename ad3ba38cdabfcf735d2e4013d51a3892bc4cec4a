@@ -16,6 +16,24 @@
       "revId": "ad3ba38cdabfcf735d2e4013d51a3892bc4cec4a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//wPE\u003d",
+        "filename": "keystone/contrib/stats/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2013-06-11T11:22:25Z",
+      "side": 0,
+      "message": "In fact, I really prefer using \"multi-worker children processes\" which was the same as nova-api and cinder-api. With multi-worker solution, we could launch more than 1 process listened at the same port, which fix this issue more graceful.",
+      "parentUuid": "AAAAPX//wUw\u003d",
+      "revId": "ad3ba38cdabfcf735d2e4013d51a3892bc4cec4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
