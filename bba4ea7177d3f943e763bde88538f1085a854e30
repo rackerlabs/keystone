@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//v88\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-11T13:15:21Z",
+      "side": 1,
+      "message": "Should line 647 be removed? Maybe in a separate commit?",
+      "revId": "bba4ea7177d3f943e763bde88538f1085a854e30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
