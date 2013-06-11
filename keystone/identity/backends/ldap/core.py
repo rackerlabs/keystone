@@ -215,6 +215,7 @@ class Identity(identity.Driver):
     def create_project(self, tenant_id, tenant):
         tenant = self._validate_domain(tenant)
         tenant['name'] = clean.project_name(tenant['name'])
+        tenant['enabled'] = clean.project_enabled(tenant.get('enabled', True))
         data = tenant.copy()
         if 'id' not in data or data['id'] is None:
             data['id'] = str(uuid.uuid4().hex)
@@ -226,6 +227,8 @@ class Identity(identity.Driver):
         tenant = self._validate_domain(tenant)
         if 'name' in tenant:
             tenant['name'] = clean.project_name(tenant['name'])
+        if 'enabled' in tenant:
+            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         return self._set_default_domain(self.project.update(tenant_id, tenant))
 
     def create_metadata(self, user_id, tenant_id, metadata):
