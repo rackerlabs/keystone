@@ -41,6 +41,7 @@
 # One can override these (publicly known, and hence, insecure) passwords by setting the appropriate
 # environment variables. A common default password for all the services can be used by
 # setting the "SERVICE_PASSWORD" environment variable.
+set -x
 
 ADMIN_PASSWORD=${ADMIN_PASSWORD:-secrete}
 NOVA_PASSWORD=${NOVA_PASSWORD:-${SERVICE_PASSWORD:-nova}}
