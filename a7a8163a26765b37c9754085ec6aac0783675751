@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//3vU\u003d",
+        "filename": "bin/keystone-manage",
+        "patchSetId": 14
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-12T00:20:44Z",
+      "side": 1,
+      "message": "It\u0027s not multithreaded, so we should use the stdlib.\n\nI want it to be that a decision MUST be made to use either stdlib or eventlet. There is no default.",
+      "parentUuid": "AAAAPX//600\u003d",
+      "revId": "a7a8163a26765b37c9754085ec6aac0783675751",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//31k\u003d",
         "filename": "httpd/keystone.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-07T00:11:53Z",
       "side": 1,
       "message": "this seems to be fixing a different problem?",
+      "revId": "a7a8163a26765b37c9754085ec6aac0783675751",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//3vI\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-12T00:20:44Z",
+      "side": 1,
+      "message": "yes, it\u0027s unrelated. i\u0027ll move it to a patch of it\u0027s own.",
+      "parentUuid": "AAAAPX//31k\u003d",
       "revId": "a7a8163a26765b37c9754085ec6aac0783675751",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2013-06-07T00:11:53Z",
       "side": 1,
       "message": "strings should be wrapped in _() for translation.",
+      "revId": "a7a8163a26765b37c9754085ec6aac0783675751",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//uA0\u003d",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-12T00:20:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//32s\u003d",
       "revId": "a7a8163a26765b37c9754085ec6aac0783675751",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
