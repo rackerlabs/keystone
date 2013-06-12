@@ -27,10 +27,10 @@ class CredentialV3(controller.V3Controller):
         ref = self.credential_api.create_credential(ref['id'], ref)
         return CredentialV3.wrap_member(context, ref)
 
-    @controller.protected
-    def list_credentials(self, context):
+    @controller.filterprotected('user_id')
+    def list_credentials(self, context, filters):
         refs = self.credential_api.list_credentials()
-        return CredentialV3.wrap_collection(context, refs)
+        return CredentialV3.wrap_collection(context, refs, filters)
 
     @controller.protected
     def get_credential(self, context, credential_id):
