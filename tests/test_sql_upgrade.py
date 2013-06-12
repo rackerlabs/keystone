@@ -26,6 +26,7 @@ To run these tests against a live database:
     all data will be lost.
 """
 import copy
+import hashlib
 import json
 import uuid
 
@@ -819,6 +820,44 @@ class SqlUpgradeTests(test.TestCase):
         self.assertEqual(ref.url, endpoint['url'])
         self.assertEqual(ref.legacy_endpoint_id, legacy_endpoint_id)
         self.assertEqual(ref.extra, '{}')
+
+    def test_migrate_ec2_credential(self):
+        ec2_credential = {
+            'access': uuid.uuid4().hex,
+            'secret': uuid.uuid4().hex,
+            'user_id': 'foo',
+            'tenant_id': 'bar',
+        }
+        user = {
+            'id': 'foo',
+            'name': 'FOO',
+            'password': 'foo2',
+            'enabled': True,
+            'email': 'foo@bar.com',
+            'extra': json.dumps({'enabled': True})
+        }
+        tenant = {
+            'id': 'bar',
+            'name': 'BAR',
+            'description': 'description',
+            'enabled': True,
+            'extra': json.dumps({'enabled': True})
+        }
+
+        session = self.Session()
+        self.upgrade(7)
+        self.insert_dict(session, 'ec2_credential', ec2_credential)
+        self.insert_dict(session, 'user', user)
+        self.insert_dict(session, 'tenant', tenant)
+        self.upgrade(27)
+        self.assertTableDoesNotExist('ec2_credential')
+        cred_table = sqlalchemy.Table('credential',
+                                      self.metadata,
+                                      autoload=True)
+        expected_credential_id = hashlib.sha256(ec2_credential['access']).hexdigest()
+        cred = session.query(cred_table).filter_by(id=expected_credential_id).one()
+        self.assertEqual(cred.user_id, ec2_credential['user_id'])
+
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
