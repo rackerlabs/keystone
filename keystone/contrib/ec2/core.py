@@ -34,6 +34,7 @@ glance to list images needed to perform the requested task.
 
 """
 
+import json
 import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
@@ -41,7 +42,6 @@ from keystoneclient.contrib.ec2 import utils as ec2_utils
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import extension
-from keystone.common import manager
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
@@ -69,19 +69,6 @@ EXTENSION_DATA = {
     ]}
 extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
-
-
-@dependency.provider('ec2_api')
-class Manager(manager.Manager):
-    """Default pivot point for the EC2 Credentials backend.
-
-    See :mod:`keystone.common.manager.Manager` for more details on how this
-    dynamically calls the backend.
-
-    """
-
-    def __init__(self):
-        super(Manager, self).__init__(CONF.ec2.driver)
 
 
 class Ec2Extension(wsgi.ExtensionRouter):
@@ -117,7 +104,7 @@ class Ec2Extension(wsgi.ExtensionRouter):
             conditions=dict(method=['DELETE']))
 
 
-@dependency.requires('catalog_api', 'ec2_api', 'token_provider_api')
+@dependency.requires('catalog_api', 'credential_api', 'token_provider_api')
 class Ec2Controller(controller.V2Controller):
     def check_signature(self, creds_ref, credentials):
         signer = ec2_utils.Ec2Signer(creds_ref['secret'])
@@ -219,13 +206,16 @@ class Ec2Controller(controller.V2Controller):
 
         self._assert_valid_user_id(user_id)
         self._assert_valid_project_id(tenant_id)
-
+        blob = {'access': uuid.uuid4().hex,
+                'secret': uuid.uuid4().hex}
+        credential_id = utils.hash_access_key(blob['access'])
         cred_ref = {'user_id': user_id,
-                    'tenant_id': tenant_id,
-                    'access': uuid.uuid4().hex,
-                    'secret': uuid.uuid4().hex}
-        self.ec2_api.create_credential(cred_ref['access'], cred_ref)
-        return {'credential': cred_ref}
+                    'project_id': tenant_id,
+                    'blob': json.dumps(blob),
+                    'id': credential_id,
+                    'type': 'ec2'}
+        self.credential_api.create_credential(credential_id, cred_ref)
+        return {'credential': self._convert_v3_to_ec2_credential(cred_ref)}
 
     def get_credentials(self, context, user_id):
         """List all credentials for a user.
@@ -237,7 +227,11 @@ class Ec2Controller(controller.V2Controller):
         if not self._is_admin(context):
             self._assert_identity(context, user_id)
         self._assert_valid_user_id(user_id)
-        return {'credentials': self.ec2_api.list_credentials(user_id)}
+        all_credentials = self.credential_api.list_credentials()
+        credential_refs = self._filter_by_user_id(all_credentials, user_id)
+        return {'credentials':
+                [self._convert_v3_to_ec2_credential(credential)
+                for credential in credential_refs]}
 
     def get_credential(self, context, user_id, credential_id):
         """Retrieve a user's access/secret pair by the access key.
@@ -252,8 +246,7 @@ class Ec2Controller(controller.V2Controller):
         if not self._is_admin(context):
             self._assert_identity(context, user_id)
         self._assert_valid_user_id(user_id)
-        creds = self._get_credentials(credential_id)
-        return {'credential': creds}
+        return {'credential': self._get_credentials(credential_id)}
 
     def delete_credential(self, context, user_id, credential_id):
         """Delete a user's access/secret pair.
@@ -271,7 +264,19 @@ class Ec2Controller(controller.V2Controller):
 
         self._assert_valid_user_id(user_id)
         self._get_credentials(credential_id)
-        return self.ec2_api.delete_credential(credential_id)
+        ec2_credential_id = utils.hash_access_key(credential_id)
+        return self.credential_api.delete_credential(ec2_credential_id)
+
+    def _convert_v3_to_ec2_credential(self, credential):
+
+        blob = json.loads(credential['blob'])
+        return {'user_id': credential['user_id'],
+                'tenant_id': credential['project_id'],
+                'access': blob['access'],
+                'secret': blob['secret']}
+
+    def _filter_by_user_id(self, credential_refs, user_id):
+        return [x for x in credential_refs if x['user_id'] == user_id]
 
     def _get_credentials(self, credential_id):
         """Return credentials from an ID.
@@ -280,10 +285,11 @@ class Ec2Controller(controller.V2Controller):
         :raises exception.Unauthorized: when credential id is invalid
         :returns: credential: dict of ec2 credential.
         """
-        creds = self.ec2_api.get_credential(credential_id)
+        ec2_credential_id = utils.hash_access_key(credential_id)
+        creds = self.credential_api.get_credential(ec2_credential_id)
         if not creds:
             raise exception.Unauthorized(message='EC2 access key not found.')
-        return creds
+        return self._convert_v3_to_ec2_credential(creds)
 
     def _assert_identity(self, context, user_id):
         """Check that the provided token belongs to the user.
@@ -322,7 +328,7 @@ class Ec2Controller(controller.V2Controller):
         :raises exception.Forbidden: on failure
 
         """
-        cred_ref = self.ec2_api.get_credential(credential_id)
+        cred_ref = self.credential_api.get_credential(credential_id)
         if not user_id == cred_ref['user_id']:
             raise exception.Forbidden('Credential belongs to another user')
 
