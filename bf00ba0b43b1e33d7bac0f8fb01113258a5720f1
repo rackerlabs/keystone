@@ -121,6 +121,23 @@
       "revId": "bf00ba0b43b1e33d7bac0f8fb01113258a5720f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//tSA\u003d",
+        "filename": "keystone/auth/plugins/remote.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-06-12T10:31:23Z",
+      "side": 1,
+      "message": "What about adding a flag to allow autocreation of users? This will be based on the METHOD_NAME and disabled by default, of course.\n\nI am thinking in large deployments using X.509 certificates where somebody would want to allow all the users from a CA to enter.",
+      "revId": "bf00ba0b43b1e33d7bac0f8fb01113258a5720f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
