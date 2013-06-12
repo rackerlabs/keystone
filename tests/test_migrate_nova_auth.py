@@ -14,6 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import hashlib
+import json
 import uuid
 
 from keystone import test
@@ -21,7 +23,7 @@ from keystone import test
 from keystone.common.sql import nova
 from keystone.common.sql import util as sql_util
 from keystone import config
-from keystone.contrib.ec2.backends import sql as ec2_sql
+from keystone.credential.backends import sql as ec2_sql
 from keystone import identity
 
 
@@ -76,7 +78,7 @@ class MigrateNovaAuth(test.TestCase):
                      test.testsdir('backend_sql_disk.conf')])
         sql_util.setup_test_database()
         self.identity_api = identity.Manager()
-        self.ec2_api = ec2_sql.Ec2()
+        self.ec2_api = ec2_sql.Credential()
 
     def tearDown(self):
         sql_util.teardown_test_database()
@@ -125,8 +127,10 @@ class MigrateNovaAuth(test.TestCase):
             user_id = users[ec2_cred['user_id']]['id']
             for tenant_id in self.identity_api.get_projects_for_user(user_id):
                 access = '%s:%s' % (tenant_id, ec2_cred['access_key'])
-                cred = self.ec2_api.get_credential(access)
-                actual = cred['secret']
+                credential_id = hashlib.sha256(access).hexdigest()
+                cred = self.ec2_api.get_credential(credential_id)
+                blob = json.loads(cred['blob'])
+                actual = blob['secret']
                 expected = ec2_cred['secret_key']
                 self.assertEqual(expected, actual)
 
