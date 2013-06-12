@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//r6I\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/026_drop_user_group_constraints.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-12T19:53:31Z",
+      "side": 1,
+      "message": "is this needed? seems like it wouldn\u0027t do anything but check if the table exists? could use a comment.",
+      "revId": "7b7800608af87e5f84df97f8fef7a69b4f435946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
