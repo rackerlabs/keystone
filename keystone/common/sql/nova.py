@@ -16,11 +16,13 @@
 
 """Export data from Nova database and import through Identity Service."""
 
+import hashlib
+import json
 import uuid
 
 from keystone.common import logging
 from keystone import config
-from keystone.contrib.ec2.backends import sql as ec2_sql
+from keystone.credential.backends import sql as ec2_sql
 from keystone.identity.backends import sql as identity_sql
 
 
@@ -39,7 +41,7 @@ def import_auth(data):
     _assign_roles(identity_api, data['role_user_tenant_list'],
                   role_map, user_map, tenant_map)
 
-    ec2_api = ec2_sql.Ec2()
+    ec2_api = ec2_sql.Credential()
     ec2_creds = data['ec2_credentials']
     _create_ec2_creds(ec2_api, identity_api, ec2_creds, user_map)
 
@@ -124,14 +126,20 @@ def _create_ec2_creds(ec2_api, identity_api, ec2_creds, user_map):
     for ec2_cred in ec2_creds:
         user_id = user_map[ec2_cred['user_id']]
         for tenant_id in identity_api.get_projects_for_user(user_id):
-            cred_dict = {
+            blob = {
                 'access': '%s:%s' % (tenant_id, ec2_cred['access_key']),
-                'secret': ec2_cred['secret_key'],
+                'secret': ec2_cred['secret_key']
+            }
+            credential_id = hashlib.sha256(blob['access']).hexdigest()
+            cred_dict = {
                 'user_id': user_id,
-                'tenant_id': tenant_id,
+                'blob': json.dumps(blob),
+                'project_id': tenant_id,
+                'id': credential_id,
+                'type': 'ec2'
             }
             LOG.debug(_(
                 'Creating ec2 cred for user %(user_id)s and tenant '
                 '%(tenant_id)s') % {
                     'user_id': user_id, 'tenant_id': tenant_id})
-            ec2_api.create_credential(None, cred_dict)
+            ec2_api.create_credential(credential_id, cred_dict)

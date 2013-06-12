@@ -37,7 +37,6 @@ LOG = logging.getLogger(__name__)
 DRIVERS = dict(
     catalog_api=catalog.Manager(),
     credentials_api=credential.Manager(),
-    ec2_api=ec2.Manager(),
     identity_api=identity.Manager(),
     policy_api=policy.Manager(),
     token_api=token.Manager(),
