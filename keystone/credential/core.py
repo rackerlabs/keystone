@@ -52,7 +52,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_credentials(self):
+    def list_credentials(self, user_id=None):
         """List all credentials in the system.
 
         :returns: a list of credential_refs or an empty list.
