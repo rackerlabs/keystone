@@ -22,6 +22,7 @@ from keystone import test
 
 from keystone.common import sql
 from keystone import config
+from keystoneclient.contrib.ec2 import utils as ec2_utils
 
 import test_keystoneclient
 
@@ -85,6 +86,125 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase, sql.Base):
         client.endpoints.delete(id=endpoint.id)
         self.assertRaises(client_exceptions.NotFound, client.endpoints.delete,
                           id=endpoint.id)
+
+    def _send_ec2_auth_request(self, credentials):
+        client = self.get_client()
+        url = '%s/ec2tokens' % (client.auth_url)
+        (resp, token) = client.request(url=url,
+                                       method='POST',
+                                       body={'credentials': credentials})
+        return resp, token
+
+    def _generate_ec2_credentials(self):
+        client = self.get_client()
+        cred = client.ec2.create(user_id=self.user_foo['id'],
+                                 tenant_id=self.tenant_bar['id'])
+        signer = ec2_utils.Ec2Signer(cred.secret)
+        credentials = {'params': {'SignatureVersion': '2'},
+                       'access': cred.access,
+                       'verb': 'GET',
+                       'host': 'localhost',
+                       'path': '/service/cloud'}
+        signature = signer.generate(credentials)
+        return credentials, signature
+
+    def test_ec2_auth_success(self):
+        credentials, signature = self._generate_ec2_credentials()
+        credentials['signature'] = signature
+        resp, token = self._send_ec2_auth_request(credentials)
+        self.assertEqual(resp.status_code, 200)
+
+    def test_ec2_auth_failure(self):
+        credentials, signature = self._generate_ec2_credentials()
+        credentials['signature'] = uuid.uuid4().hex
+        from keystoneclient import exceptions as client_exceptions
+        self.assertRaises(client_exceptions.Unauthorized,
+                          self._send_ec2_auth_request,
+                          credentials)
+
+    def test_ec2_credential_crud(self):
+        client = self.get_client()
+        creds = client.ec2.list(user_id=self.user_foo['id'])
+        self.assertEquals(creds, [])
+
+        cred = client.ec2.create(user_id=self.user_foo['id'],
+                                 tenant_id=self.tenant_bar['id'])
+        creds = client.ec2.list(user_id=self.user_foo['id'])
+        self.assertEquals(creds, [cred])
+        got = client.ec2.get(user_id=self.user_foo['id'], access=cred.access)
+        self.assertEquals(cred, got)
+
+        client.ec2.delete(user_id=self.user_foo['id'], access=cred.access)
+        creds = client.ec2.list(user_id=self.user_foo['id'])
+        self.assertEquals(creds, [])
+
+    def test_ec2_credentials_create_404(self):
+        from keystoneclient import exceptions as client_exceptions
+        client = self.get_client()
+        self.assertRaises(client_exceptions.NotFound,
+                          client.ec2.create,
+                          user_id=uuid.uuid4().hex,
+                          tenant_id=self.tenant_bar['id'])
+        self.assertRaises(client_exceptions.NotFound,
+                          client.ec2.create,
+                          user_id=self.user_foo['id'],
+                          tenant_id=uuid.uuid4().hex)
+
+    def test_ec2_credentials_delete_404(self):
+        from keystoneclient import exceptions as client_exceptions
+        client = self.get_client()
+        self.assertRaises(client_exceptions.NotFound,
+                          client.ec2.delete,
+                          user_id=uuid.uuid4().hex,
+                          access=uuid.uuid4().hex)
+
+    def test_ec2_credentials_get_404(self):
+        from keystoneclient import exceptions as client_exceptions
+        client = self.get_client()
+        self.assertRaises(client_exceptions.NotFound,
+                          client.ec2.get,
+                          user_id=uuid.uuid4().hex,
+                          access=uuid.uuid4().hex)
+
+    def test_ec2_credentials_list_404(self):
+        from keystoneclient import exceptions as client_exceptions
+        client = self.get_client()
+        self.assertRaises(client_exceptions.NotFound,
+                          client.ec2.list,
+                          user_id=uuid.uuid4().hex)
+
+    def test_ec2_credentials_list_user_forbidden(self):
+        from keystoneclient import exceptions as client_exceptions
+
+        two = self.get_client(self.user_two)
+        self.assertRaises(client_exceptions.Forbidden, two.ec2.list,
+                          user_id=self.user_foo['id'])
+
+    def test_ec2_credentials_get_user_forbidden(self):
+        from keystoneclient import exceptions as client_exceptions
+
+        foo = self.get_client()
+        cred = foo.ec2.create(user_id=self.user_foo['id'],
+                              tenant_id=self.tenant_bar['id'])
+
+        two = self.get_client(self.user_two)
+        self.assertRaises(client_exceptions.Forbidden, two.ec2.get,
+                          user_id=self.user_foo['id'], access=cred.access)
+
+        foo.ec2.delete(user_id=self.user_foo['id'], access=cred.access)
+
+    def test_ec2_credentials_delete_user_forbidden(self):
+        from keystoneclient import exceptions as client_exceptions
+
+        foo = self.get_client()
+        cred = foo.ec2.create(user_id=self.user_foo['id'],
+                              tenant_id=self.tenant_bar['id'])
+
+        two = self.get_client(self.user_two)
+        self.assertRaises(client_exceptions.Forbidden, two.ec2.delete,
+                          user_id=self.user_foo['id'], access=cred.access)
+
+        foo.ec2.delete(user_id=self.user_foo['id'], access=cred.access)
 
     def test_endpoint_create_404(self):
         from keystoneclient import exceptions as client_exceptions
