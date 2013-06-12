@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//r7Y\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-12T19:53:50Z",
+      "side": 1,
+      "message": "Looks like this is fixing a bug in get_project_for_users, which is probably more important than that the test isn\u0027t being skipped. The commit message should describe what was wrong with get_project_for_users.",
+      "revId": "47e0295cb05339c01e6c4330047baa7de21a159a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
