@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//pZ8\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-06-13T15:12:32Z",
+      "side": 1,
+      "message": "why the pop here?  this could really use a comment explaining why the pop was necessary",
+      "revId": "f8364bd2dc1a704c5b1321d26fb878e75d816197",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
