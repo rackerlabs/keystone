@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//pkk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-13T14:21:00Z",
+      "side": 1,
+      "message": "sorry, I forgot to update the commit message",
+      "parentUuid": "AAAAPX//0FA\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//pkg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-13T14:21:00Z",
+      "side": 1,
+      "message": "sure,I\u0027ll update the commit message in my new patch",
+      "parentUuid": "AAAAPX//vgQ\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//vfw\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 6
@@ -48,6 +84,24 @@
       "writtenOn": "2013-06-11T20:44:37Z",
       "side": 1,
       "message": "... why not just cast with unicode() all the time? using str() at all was obviously short sighted",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//pks\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-13T14:21:00Z",
+      "side": 1,
+      "message": "according to my experience, when error contains unicode string, str() function will throw ascii encoding error, but I\u0027m not sure whether I can completely use msg \u003d error.message to replace it, so I still use it to handle non-unicode.",
+      "parentUuid": "AAAAPX//vfw\u003d",
       "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -82,6 +136,24 @@
       "writtenOn": "2013-06-11T20:44:37Z",
       "side": 1,
       "message": "i have no idea what this line is doing, but it definitely doesn\u0027t have anything to do with the comment it\u0027s following \"Tests use this to make exception message format errors fatal\"",
+      "parentUuid": "AAAAPX//0E4\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//pl8\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-13T14:21:00Z",
+      "side": 1,
+      "message": "ok, I\u0027ll check whether move it into test parts can work",
       "parentUuid": "AAAAPX//0E4\u003d",
       "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -124,6 +196,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//plw\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-13T14:21:00Z",
+      "side": 1,
+      "message": "yes, agree, I\u0027ll change the format in my new patch",
+      "parentUuid": "AAAAPX//uhQ\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//pl0\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-13T14:21:00Z",
+      "side": 1,
+      "message": "I\u0027ll change the format in my new patch",
+      "parentUuid": "AAAAPX//0E0\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//0EU\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 6
@@ -153,6 +261,24 @@
       "side": 1,
       "message": "I\u0027m not sure it\u0027s ever raised intentionally",
       "parentUuid": "AAAAPX//0EU\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//plc\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-13T14:21:00Z",
+      "side": 1,
+      "message": "I think if customer\u0027s message isn\u0027t assigned to an AuthPluginException instance, the doc string will be returned, so it should be translated. I\u0027ll write a UT test case to verify it.",
+      "parentUuid": "AAAAPX//uhA\u003d",
       "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -194,6 +320,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//pmM\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-13T14:21:00Z",
+      "side": 1,
+      "message": "sure, I\u0027ll change it back in my new patch",
+      "parentUuid": "AAAAPX//0EA\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//0EE\u003d",
         "filename": "tests/test_exception.py",
         "patchSetId": 6
@@ -223,6 +367,24 @@
       "side": 1,
       "message": "valid point, but instead keep this line in the test. it\u0027s explicitly asserting that with debug\u003dFalse you can\u0027t override the generic message",
       "parentUuid": "AAAAPX//0EE\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//pmE\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-13T14:21:00Z",
+      "side": 1,
+      "message": "ok, I\u0027ll keep the new code in my new patch",
+      "parentUuid": "AAAAPX//ugE\u003d",
       "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -275,6 +437,42 @@
       "writtenOn": "2013-06-11T21:32:07Z",
       "side": 1,
       "message": "this was in response to the comments in patch set 4...\n\nBrant Knudson: what is this testing? Seems like it should also be testing the response body.\n\nDavid Jia: This tests whether unicode message handled by exception module can be right render. The response body can hanlde unicode message, we have test that during GVT",
+      "parentUuid": "AAAAPX//ufk\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//pmQ\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-13T14:21:00Z",
+      "side": 1,
+      "message": "GVT is Globalization Verification Test which test i18n/l10n support. I just want to let you know that I had done a GVT test case except UT to verify whether the new code can read unicode translation from mo file and return the unicode translation with response body together, it\u0027s a test which need to run keystone serviece and call a certain REST API.",
+      "parentUuid": "AAAAPX//uWw\u003d",
+      "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//pmU\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-13T14:21:00Z",
+      "side": 1,
+      "message": "GVT is Globalization Verification Test which test i18n/l10n support. I just want to let you know that I had done a GVT test case except UT to verify whether the new code can read unicode translation from mo file and return the unicode translation with response body together, it\u0027s a test which need to run keystone serviece and call a certain REST API.",
       "parentUuid": "AAAAPX//ufk\u003d",
       "revId": "15aa7cd82212302d3d40481537bb32825cda4cfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
