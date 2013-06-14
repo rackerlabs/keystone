@@ -1,6 +1,8 @@
 import sqlalchemy as sql
 from sqlalchemy.orm import sessionmaker
 
+from keystone.common.sql import migration_helpers
+
 
 def upgrade_with_rename(meta, migrate_engine):
     legacy_table = sql.Table('tenant', meta, autoload=True)
@@ -10,8 +12,26 @@ def upgrade_with_rename(meta, migrate_engine):
 
 
 def downgrade_with_rename(meta, migrate_engine):
+
+    cred_table = sql.Table('credential', meta, autoload=True)
+
     upgrade_table = sql.Table('project', meta, autoload=True)
+
+    constraints = [{'table': cred_table,
+                    'fk_column': 'project_id',
+                    'ref_column': upgrade_table.c.id},
+                   ]
+
+    # Need to recreate credential constraint during rename because otherwise
+    # with MySQL defaulting to MyISAM the constraint is still referencing the
+    # "project" table, leading to an error that the Project table doesn't
+    # exist.
+    migration_helpers.remove_constraints(constraints)
+
     upgrade_table.rename('tenant')
+
+    migration_helpers.add_constraints(constraints)
+
     upgrade_table = sql.Table('user_project_membership', meta, autoload=True)
     upgrade_table.rename('user_tenant_membership')
 

@@ -27,6 +27,10 @@ def get_fkey_constraint_name(table, column_name):
     fkeys = [fk for fk in table.constraints
              if (column_name in fk.columns and
                  isinstance(fk, sqlalchemy.ForeignKeyConstraint))]
+
+    if not fkeys:
+        return
+
     constraint_name = fkeys[0].name
     return constraint_name
 
@@ -41,17 +45,34 @@ def get_fkey_constraint_name(table, column_name):
 #               for the constraint.
 def remove_constraints(constraints):
     for constraint_def in constraints:
+        name = get_fkey_constraint_name(constraint_def['table'],
+                                        constraint_def['fk_column'])
+
+        if not name:
+            continue
+
         migrate.ForeignKeyConstraint(
             columns=[getattr(constraint_def['table'].c,
                              constraint_def['fk_column'])],
             refcolumns=[constraint_def['ref_column']],
-            name=(get_fkey_constraint_name
-                  (constraint_def['table'],
-                   constraint_def['fk_column']))).drop()
+            name=name).drop()
 
 
 def add_constraints(constraints):
     for constraint_def in constraints:
+
+        if constraint_def['table'].kwargs.get('mysql_engine') == 'MyISAM':
+            # Don't try to create constraint when using MyISAM because it's
+            # not supported.
+            continue
+
+        ref_col = constraint_def['ref_column']
+        ref_engine = ref_col.table.kwargs.get('mysql_engine')
+        if ref_engine == 'MyISAM':
+            # Don't try to create constraint when using MyISAM because it's
+            # not supported.
+            continue
+
         migrate.ForeignKeyConstraint(
             columns=[getattr(constraint_def['table'].c,
                              constraint_def['fk_column'])],
