@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//myo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-06-14T14:40:28Z",
+      "side": 1,
+      "message": "The msg looks like a warning to me, instead of error. Why not the same message as above when we raising the same validation error?\nOther changes looks great.",
+      "revId": "feb33e7ffe0c037e8c43f08b3e2dff9109e73323",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
