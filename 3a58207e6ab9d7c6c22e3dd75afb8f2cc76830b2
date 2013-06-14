@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//mDg\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T18:41:39Z",
+      "side": 1,
+      "message": "err, any reason not to use \u003e\u003d1.2.3 ?\n\ni know openstack/requirements defines \u003e\u003d1.0.8, but i\u0027m not sure why we\u0027re pinned to a higher version (i\u0027m guessing we\u0027re incompatible with an intermediate version?)",
+      "revId": "3a58207e6ab9d7c6c22e3dd75afb8f2cc76830b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
