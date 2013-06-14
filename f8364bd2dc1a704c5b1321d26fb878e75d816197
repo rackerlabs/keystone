@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPX//mF4\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T18:30:44Z",
+      "side": 1,
+      "message": "why the indirection?",
+      "revId": "f8364bd2dc1a704c5b1321d26fb878e75d816197",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//mGA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T18:30:44Z",
+      "side": 1,
+      "message": "this conditional belongs in the identity.Manager",
+      "revId": "f8364bd2dc1a704c5b1321d26fb878e75d816197",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//mFk\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T18:30:44Z",
+      "side": 1,
+      "message": "claim TODO\u0027s as your own\n\n  # TODO(name):",
+      "revId": "f8364bd2dc1a704c5b1321d26fb878e75d816197",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//pZ8\u003d",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 6
@@ -13,6 +64,24 @@
       "writtenOn": "2013-06-13T15:12:32Z",
       "side": 1,
       "message": "why the pop here?  this could really use a comment explaining why the pop was necessary",
+      "revId": "f8364bd2dc1a704c5b1321d26fb878e75d816197",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//mFU\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T18:30:44Z",
+      "side": 1,
+      "message": "+1; especially from something that\u0027s not named as a collection",
+      "parentUuid": "AAAAPX//pZ8\u003d",
       "revId": "f8364bd2dc1a704c5b1321d26fb878e75d816197",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
