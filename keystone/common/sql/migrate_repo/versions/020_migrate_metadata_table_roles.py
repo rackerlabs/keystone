@@ -73,7 +73,8 @@ def downgrade(migrate_engine):
             sql.String(64),
             primary_key=True),
         sql.Column('data',
-                   sql.Text()))
+                   sql.Text()),
+        mysql_engine='InnoDB')
     metadata_table.create(migrate_engine, checkfirst=True)
 
     user_project_metadata_table = sql.Table(

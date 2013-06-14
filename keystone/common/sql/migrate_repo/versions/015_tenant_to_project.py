@@ -25,7 +25,8 @@ def upgrade_with_copy(meta, migrate_engine):
         sql.Column('name', sql.String(64), unique=True, nullable=False),
         sql.Column('extra', sql.Text()),
         sql.Column('description', sql.Text(), nullable=True),
-        sql.Column('enabled', sql.types.Boolean, default=True))
+        sql.Column('enabled', sql.types.Boolean, default=True),
+        mysql_engine='InnoDB')
     project_table.create(migrate_engine, checkfirst=True)
 
     user_project_membership_table = sql.Table(
@@ -40,7 +41,8 @@ def upgrade_with_copy(meta, migrate_engine):
             'tenant_id',
             sql.String(64),
             sql.ForeignKey('project.id'),
-            primary_key=True))
+            primary_key=True),
+        mysql_engine='InnoDB')
     user_project_membership_table.create(migrate_engine, checkfirst=True)
 
     session = sessionmaker(bind=migrate_engine)()
@@ -77,7 +79,8 @@ def downgrade_with_copy(meta, migrate_engine):
         sql.Column('name', sql.String(64), unique=True, nullable=False),
         sql.Column('extra', sql.Text()),
         sql.Column('description', sql.Text(), nullable=True),
-        sql.Column('enabled', sql.types.Boolean))
+        sql.Column('enabled', sql.types.Boolean),
+        mysql_engine='InnoDB')
     tenant_table.create(migrate_engine, checkfirst=True)
 
     user_tenant_membership_table = sql.Table(
@@ -92,7 +95,8 @@ def downgrade_with_copy(meta, migrate_engine):
             'tenant_id',
             sql.String(64),
             sql.ForeignKey('tenant.id'),
-            primary_key=True))
+            primary_key=True),
+        mysql_engine='InnoDB')
     user_tenant_membership_table.create(migrate_engine, checkfirst=True)
 
     session = sessionmaker(bind=migrate_engine)()

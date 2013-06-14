@@ -29,7 +29,8 @@ def upgrade(migrate_engine):
         sql.Column('id', sql.String(64), primary_key=True),
         sql.Column('name', sql.String(64), unique=True, nullable=False),
         sql.Column('enabled', sql.Boolean, nullable=False, default=True),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     domain_table.create(migrate_engine, checkfirst=True)
 
     sql.Table('user', meta, autoload=True)
@@ -46,7 +47,8 @@ def upgrade(migrate_engine):
             sql.String(64),
             sql.ForeignKey('domain.id'),
             primary_key=True),
-        sql.Column('data', sql.Text()))
+        sql.Column('data', sql.Text()),
+        mysql_engine='InnoDB')
     user_domain_metadata_table.create(migrate_engine, checkfirst=True)
 
     sql.Table('tenant', meta, autoload=True)
@@ -63,7 +65,8 @@ def upgrade(migrate_engine):
                    sql.ForeignKey('tenant.id')),
         sql.Column('blob', sql.Text(), nullable=False),
         sql.Column('type', sql.String(255), nullable=False),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     credential_table.create(migrate_engine, checkfirst=True)
 
     role = sql.Table('role', meta, autoload=True)
