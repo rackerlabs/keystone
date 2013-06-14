@@ -27,7 +27,8 @@ def upgrade(migrate_engine):
                    sql.String(64),
                    sql.ForeignKey('project.id'),
                    primary_key=True),
-        sql.Column('data', sql.Text()))
+        sql.Column('data', sql.Text()),
+        mysql_engine='InnoDB')
     user_project_role_table.create(migrate_engine, checkfirst=True)
 
     conn = migrate_engine.connect()
@@ -71,7 +72,8 @@ def downgrade(migrate_engine):
             'tenant_id',
             sql.String(64),
             sql.ForeignKey('project.id'),
-            primary_key=True))
+            primary_key=True),
+        mysql_engine='InnoDB')
     user_project_membership_table.create(migrate_engine, checkfirst=True)
 
     user_project_metadata_table = sql.Table(

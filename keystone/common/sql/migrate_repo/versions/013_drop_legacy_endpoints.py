@@ -47,5 +47,6 @@ def downgrade(migrate_engine):
                    sql.String(64),
                    sql.ForeignKey('service.id'),
                    nullable=False),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     legacy_table.create(migrate_engine, checkfirst=True)
