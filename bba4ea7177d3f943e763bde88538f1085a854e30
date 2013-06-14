@@ -16,6 +16,24 @@
       "revId": "bba4ea7177d3f943e763bde88538f1085a854e30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//mqE\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T15:14:06Z",
+      "side": 1,
+      "message": "yeah commented out code should never make it through review...",
+      "parentUuid": "AAAAPX//v88\u003d",
+      "revId": "bba4ea7177d3f943e763bde88538f1085a854e30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
