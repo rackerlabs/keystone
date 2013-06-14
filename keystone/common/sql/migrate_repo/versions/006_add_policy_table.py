@@ -27,7 +27,8 @@ def upgrade(migrate_engine):
         sql.Column('id', sql.String(64), primary_key=True),
         sql.Column('type', sql.String(255), nullable=False),
         sql.Column('blob', sql.Text(), nullable=False),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     policy_table.create(migrate_engine, checkfirst=True)
 
 

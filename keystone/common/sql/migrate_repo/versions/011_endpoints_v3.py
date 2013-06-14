@@ -38,7 +38,8 @@ def upgrade(migrate_engine):
                    sql.ForeignKey('service.id'),
                    nullable=False),
         sql.Column('url', sql.Text(), nullable=False),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     new_table.create(migrate_engine, checkfirst=True)
 
 

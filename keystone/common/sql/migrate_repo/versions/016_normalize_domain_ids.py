@@ -72,7 +72,8 @@ def upgrade_user_table_with_copy(meta, migrate_engine, session):
         sql.Column('name', sql.String(64), unique=True, nullable=False),
         sql.Column('extra', sql.Text()),
         sql.Column('password', sql.String(128)),
-        sql.Column('enabled', sql.Boolean, default=True))
+        sql.Column('enabled', sql.Boolean, default=True),
+        mysql_engine='InnoDB')
     temp_user_table.create(migrate_engine, checkfirst=True)
 
     user_table = sql.Table('user', meta, autoload=True)
@@ -106,7 +107,8 @@ def upgrade_user_table_with_copy(meta, migrate_engine, session):
         sql.Column("enabled", sql.Boolean, default=True),
         sql.Column('domain_id', sql.String(64), sql.ForeignKey('domain.id'),
                    nullable=False),
-        sql.UniqueConstraint('domain_id', 'name'))
+        sql.UniqueConstraint('domain_id', 'name'),
+        mysql_engine='InnoDB')
     user_table.create(migrate_engine, checkfirst=True)
 
     # Finally copy in the data from our temp table and then clean
@@ -141,7 +143,8 @@ def upgrade_project_table_with_copy(meta, migrate_engine, session):
         sql.Column('name', sql.String(64), unique=True, nullable=False),
         sql.Column('extra', sql.Text()),
         sql.Column('description', sql.Text()),
-        sql.Column('enabled', sql.Boolean, default=True))
+        sql.Column('enabled', sql.Boolean, default=True),
+        mysql_engine='InnoDB')
     temp_project_table.create(migrate_engine, checkfirst=True)
 
     project_table = sql.Table('project', meta, autoload=True)
@@ -175,7 +178,8 @@ def upgrade_project_table_with_copy(meta, migrate_engine, session):
         sql.Column('enabled', sql.Boolean, default=True),
         sql.Column('domain_id', sql.String(64), sql.ForeignKey('domain.id'),
                    nullable=False),
-        sql.UniqueConstraint('domain_id', 'name'))
+        sql.UniqueConstraint('domain_id', 'name'),
+        mysql_engine='InnoDB')
     project_table.create(migrate_engine, checkfirst=True)
 
     # Finally copy in the data from our temp table and then clean
@@ -209,7 +213,8 @@ def downgrade_user_table_with_copy(meta, migrate_engine, session):
         sql.Column('name', sql.String(64), unique=True, nullable=False),
         sql.Column('password', sql.String(128)),
         sql.Column('enabled', sql.Boolean, default=True),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     temp_user_table.create(migrate_engine, checkfirst=True)
 
     user_table = sql.Table('user', meta, autoload=True)
@@ -239,7 +244,8 @@ def downgrade_user_table_with_copy(meta, migrate_engine, session):
         sql.Column('name', sql.String(64), unique=True, nullable=False),
         sql.Column('extra', sql.Text()),
         sql.Column('password', sql.String(128)),
-        sql.Column('enabled', sql.Boolean, default=True))
+        sql.Column('enabled', sql.Boolean, default=True),
+        mysql_engine='InnoDB')
     user_table.create(migrate_engine, checkfirst=True)
     _enable_foreign_constraints(session, migrate_engine)
 
@@ -272,7 +278,8 @@ def downgrade_project_table_with_copy(meta, migrate_engine, session):
         sql.Column('name', sql.String(64), unique=True, nullable=False),
         sql.Column('description', sql.Text()),
         sql.Column('enabled', sql.Boolean, default=True),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     temp_project_table.create(migrate_engine, checkfirst=True)
 
     project_table = sql.Table('project', meta, autoload=True)
@@ -302,7 +309,8 @@ def downgrade_project_table_with_copy(meta, migrate_engine, session):
         sql.Column('name', sql.String(64), unique=True, nullable=False),
         sql.Column('extra', sql.Text()),
         sql.Column('description', sql.Text()),
-        sql.Column('enabled', sql.Boolean, default=True))
+        sql.Column('enabled', sql.Boolean, default=True),
+        mysql_engine='InnoDB')
     project_table.create(migrate_engine, checkfirst=True)
     _enable_foreign_constraints(session, migrate_engine)
 
