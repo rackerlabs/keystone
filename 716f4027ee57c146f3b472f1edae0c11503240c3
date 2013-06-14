@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//mEw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T18:39:04Z",
+      "side": 0,
+      "message": "i think this was more explicit in it\u0027s intent before... please undo",
+      "revId": "716f4027ee57c146f3b472f1edae0c11503240c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//mEo\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T18:39:04Z",
+      "side": 0,
+      "message": "same as above",
+      "revId": "716f4027ee57c146f3b472f1edae0c11503240c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//mE4\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T18:39:04Z",
+      "side": 1,
+      "message": "this should be done in the identity.Manager as it applies to all drivers",
+      "revId": "2e6fa63cf629c99ac19a4ef52bb86ed4aa16dcff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//mEk\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T18:39:04Z",
+      "side": 1,
+      "message": "this should be done in the identity.Manager as it applies to all drivers and is not exclusive to this controller",
+      "revId": "2e6fa63cf629c99ac19a4ef52bb86ed4aa16dcff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//mEc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T18:39:04Z",
+      "side": 1,
+      "message": "this should be done in the identity.Manager as it applies to all drivers and is not exclusive to this controller",
+      "revId": "2e6fa63cf629c99ac19a4ef52bb86ed4aa16dcff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
