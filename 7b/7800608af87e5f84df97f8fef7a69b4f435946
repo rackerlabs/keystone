@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Verified+1: SmokeStack
+Approved+1: ayoung <ayoung@redhat.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 14 Jun 2013 03:14:59 +0000
+Reviewed-on: https://review.openstack.org/31555
+Project: openstack/keystone
+Branch: refs/heads/master
