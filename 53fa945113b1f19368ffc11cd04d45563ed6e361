@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//mnE\u003d",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T15:28:37Z",
+      "side": 1,
+      "message": "nice",
+      "revId": "53fa945113b1f19368ffc11cd04d45563ed6e361",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//mm4\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T15:28:37Z",
+      "side": 1,
+      "message": "this technically belongs in its own grouping after nova",
+      "revId": "53fa945113b1f19368ffc11cd04d45563ed6e361",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//mmo\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-14T15:28:37Z",
+      "side": 1,
+      "message": "same as last file\n\n  import swift\n  import webob\n\n  import keystone",
+      "revId": "53fa945113b1f19368ffc11cd04d45563ed6e361",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
