@@ -30,7 +30,8 @@ def downgrade_user_table_with_copy(meta, migrate_engine):
         meta,
         Column('id', String(64), primary_key=True),
         Column('name', String(64), unique=True, nullable=False),
-        Column('extra', Text()))
+        Column('extra', Text()),
+        mysql_engine='InnoDB')
     user_table.create(migrate_engine, checkfirst=True)
 
     orig_user_table = Table('orig_user', meta, autoload=True)
@@ -54,7 +55,8 @@ def downgrade_tenant_table_with_copy(meta, migrate_engine):
         meta,
         Column('id', String(64), primary_key=True),
         Column('name', String(64), unique=True, nullable=False),
-        Column('extra', Text()))
+        Column('extra', Text()),
+        mysql_engine='InnoDB')
     tenant_table.create(migrate_engine, checkfirst=True)
 
     orig_tenant_table = Table('orig_tenant', meta, autoload=True)

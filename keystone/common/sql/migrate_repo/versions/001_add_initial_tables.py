@@ -30,7 +30,8 @@ def upgrade(migrate_engine):
         meta,
         sql.Column('id', sql.String(64), primary_key=True),
         sql.Column('type', sql.String(255)),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     service_table.create(migrate_engine, checkfirst=True)
 
     endpoint_table = sql.Table(
@@ -42,7 +43,8 @@ def upgrade(migrate_engine):
                    sql.String(64),
                    sql.ForeignKey('service.id'),
                    nullable=False),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     endpoint_table.create(migrate_engine, checkfirst=True)
 
     # identity
@@ -51,7 +53,8 @@ def upgrade(migrate_engine):
         'role',
         meta,
         sql.Column('id', sql.String(64), primary_key=True),
-        sql.Column('name', sql.String(255), unique=True, nullable=False))
+        sql.Column('name', sql.String(255), unique=True, nullable=False),
+        mysql_engine='InnoDB')
     role_table.create(migrate_engine, checkfirst=True)
 
     tenant_table = sql.Table(
@@ -59,7 +62,8 @@ def upgrade(migrate_engine):
         meta,
         sql.Column('id', sql.String(64), primary_key=True),
         sql.Column('name', sql.String(64), unique=True, nullable=False),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     tenant_table.create(migrate_engine, checkfirst=True)
 
     metadata_table = sql.Table(
@@ -67,7 +71,8 @@ def upgrade(migrate_engine):
         meta,
         sql.Column('user_id', sql.String(64), primary_key=True),
         sql.Column('tenant_id', sql.String(64), primary_key=True),
-        sql.Column('data', sql.Text()))
+        sql.Column('data', sql.Text()),
+        mysql_engine='InnoDB')
     metadata_table.create(migrate_engine, checkfirst=True)
 
     ec2_credential_table = sql.Table(
@@ -76,7 +81,8 @@ def upgrade(migrate_engine):
         sql.Column('access', sql.String(64), primary_key=True),
         sql.Column('secret', sql.String(64)),
         sql.Column('user_id', sql.String(64)),
-        sql.Column('tenant_id', sql.String(64)))
+        sql.Column('tenant_id', sql.String(64)),
+        mysql_engine='InnoDB')
     ec2_credential_table.create(migrate_engine, checkfirst=True)
 
     user_table = sql.Table(
@@ -84,7 +90,8 @@ def upgrade(migrate_engine):
         meta,
         sql.Column('id', sql.String(64), primary_key=True),
         sql.Column('name', sql.String(64), unique=True, nullable=False),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     user_table.create(migrate_engine, checkfirst=True)
 
     user_tenant_membership_table = sql.Table(
@@ -99,7 +106,8 @@ def upgrade(migrate_engine):
             'tenant_id',
             sql.String(64),
             sql.ForeignKey('tenant.id'),
-            primary_key=True))
+            primary_key=True),
+        mysql_engine='InnoDB')
     user_tenant_membership_table.create(migrate_engine, checkfirst=True)
 
     # token
@@ -109,7 +117,8 @@ def upgrade(migrate_engine):
         meta,
         sql.Column('id', sql.String(64), primary_key=True),
         sql.Column('expires', sql.DateTime()),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     token_table.create(migrate_engine, checkfirst=True)
 
 

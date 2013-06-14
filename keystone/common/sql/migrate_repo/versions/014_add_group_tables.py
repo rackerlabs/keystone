@@ -31,7 +31,8 @@ def upgrade(migrate_engine):
         sql.Column('name', sql.String(64), nullable=False),
         sql.Column('description', sql.Text()),
         sql.Column('extra', sql.Text()),
-        sql.UniqueConstraint('domain_id', 'name'))
+        sql.UniqueConstraint('domain_id', 'name'),
+        mysql_engine='InnoDB')
     group_table.create(migrate_engine, checkfirst=True)
 
     sql.Table('user', meta, autoload=True)
@@ -47,7 +48,8 @@ def upgrade(migrate_engine):
             'group_id',
             sql.String(64),
             sql.ForeignKey('group.id'),
-            primary_key=True))
+            primary_key=True),
+        mysql_engine='InnoDB')
     user_group_membership_table.create(migrate_engine, checkfirst=True)
 
     sql.Table('tenant', meta, autoload=True)
@@ -64,7 +66,8 @@ def upgrade(migrate_engine):
             sql.String(64),
             sql.ForeignKey('tenant.id'),
             primary_key=True),
-        sql.Column('data', sql.Text()))
+        sql.Column('data', sql.Text()),
+        mysql_engine='InnoDB')
     group_project_metadata_table.create(migrate_engine, checkfirst=True)
 
     group_domain_metadata_table = sql.Table(
@@ -80,7 +83,8 @@ def upgrade(migrate_engine):
             sql.String(64),
             sql.ForeignKey('domain.id'),
             primary_key=True),
-        sql.Column('data', sql.Text()))
+        sql.Column('data', sql.Text()),
+        mysql_engine='InnoDB')
     group_domain_metadata_table.create(migrate_engine, checkfirst=True)
 
 

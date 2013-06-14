@@ -45,7 +45,8 @@ def upgrade(migrate_engine):
         sql.Column("impersonation", sql.types.Boolean, nullable=False),
         sql.Column("deleted_at", sql.types.DateTime, nullable=True),
         sql.Column("expires_at", sql.types.DateTime, nullable=True),
-        sql.Column('extra', sql.Text()))
+        sql.Column('extra', sql.Text()),
+        mysql_engine='InnoDB')
     trust_table.create(migrate_engine, checkfirst=True)
 
     trust_role_table = sql.Table(
@@ -54,7 +55,8 @@ def upgrade(migrate_engine):
         sql.Column('trust_id', sql.String(64), primary_key=True,
                    nullable=False),
         sql.Column('role_id', sql.String(64), primary_key=True,
-                   nullable=False))
+                   nullable=False),
+        mysql_engine='InnoDB')
     trust_role_table.create(migrate_engine, checkfirst=True)
 
 
