@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//nIk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-14T12:15:38Z",
+      "side": 1,
+      "message": "This is very nit picky, but if you respin the patch might consider changing \u0027buta\u0027 to \u0027but a\u0027",
+      "revId": "24d6f62c2dc35fcc40142d675f8a159f8142f2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
