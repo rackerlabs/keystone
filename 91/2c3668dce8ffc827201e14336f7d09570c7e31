@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Chmouel Boudjnah <chmouel@enovance.com>
+Approved+1: Adam Gandelman <adam.gandelman@canonical.com>
+Code-Review+2: Adam Gandelman <adam.gandelman@canonical.com>
+Code-Review+1: ldbragst <ldbragst@us.ibm.com>
+Code-Review+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: David Geng <gengjh@cn.ibm.com>
+Code-Review+1: Liang Chen <cbjchen@cn.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 15 Jun 2013 05:06:14 +0000
+Reviewed-on: https://review.openstack.org/28927
+Project: openstack/keystone
+Branch: refs/heads/stable/grizzly
