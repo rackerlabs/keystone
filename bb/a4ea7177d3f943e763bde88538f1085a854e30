@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Chmouel Boudjnah <chmouel@enovance.com>
+Verified+1: SmokeStack
+Code-Review+1: ldbragst <ldbragst@us.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 15 Jun 2013 06:36:10 +0000
+Reviewed-on: https://review.openstack.org/32406
+Project: openstack/keystone
+Branch: refs/heads/master
