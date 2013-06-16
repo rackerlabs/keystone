@@ -450,8 +450,36 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
         return token
 
+    def assertValidScopedTokenNoCatalogResponse(self, r, *args, **kwargs):
+        token = self.assertValidTokenResponse(r, *args, **kwargs)
+
+        self.assertNotIn('catalog', token)
+        self.assertIn('roles', token)
+        self.assertTrue(token['roles'])
+        for role in token['roles']:
+            self.assertIn('id', role)
+            self.assertIn('name', role)
+
+        return token
+
     def assertValidProjectScopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
+
+        self.assertIn('project', token)
+        self.assertIn('id', token['project'])
+        self.assertIn('name', token['project'])
+        self.assertIn('domain', token['project'])
+        self.assertIn('id', token['project']['domain'])
+        self.assertIn('name', token['project']['domain'])
+
+        self.assertEqual(self.role_id, token['roles'][0]['id'])
+
+        return token
+
+    def assertValidProjectScopedTokenNoCatalogResponse(self, r, *args,
+                                                       **kwargs):
+        token = self.assertValidScopedTokenNoCatalogResponse(r, *args,
+                                                             **kwargs)
 
         self.assertIn('project', token)
         self.assertIn('id', token['project'])
