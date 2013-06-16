@@ -445,10 +445,15 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
         return token
 
-    def assertValidScopedTokenResponse(self, r, *args, **kwargs):
+    def assertValidScopedTokenResponse(self, r, require_catalog=True,
+                                       *args, **kwargs):
         token = self.assertValidTokenResponse(r, *args, **kwargs)
 
-        self.assertIn('catalog', token)
+        if require_catalog:
+            self.assertIn('catalog', token)
+        else:
+            self.assertNotIn('catalog', token)
+
         self.assertIn('roles', token)
         self.assertTrue(token['roles'])
         for role in token['roles']:
@@ -457,8 +462,10 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
         return token
 
-    def assertValidProjectScopedTokenResponse(self, r, *args, **kwargs):
-        token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
+    def assertValidProjectScopedTokenResponse(self, r, require_catalog=True,
+                                              *args, **kwargs):
+        token = self.assertValidScopedTokenResponse(r, require_catalog,
+                                                    *args, **kwargs)
 
         self.assertIn('project', token)
         self.assertIn('id', token['project'])

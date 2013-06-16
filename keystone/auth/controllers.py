@@ -289,6 +289,11 @@ class Auth(controller.V3Controller):
             method_names += auth_context.get('method_names', [])
             # make sure the list is unique
             method_names = list(set(method_names))
+
+            include_catalog = True
+            if context and 'query_string' in context:
+                include_catalog = 'nocatalog' not in context['query_string']
+
             (token_id, token_data) = self.token_provider_api.issue_token(
                 user_id=auth_context['user_id'],
                 method_names=method_names,
@@ -296,7 +301,8 @@ class Auth(controller.V3Controller):
                 project_id=project_id,
                 domain_id=domain_id,
                 auth_context=auth_context,
-                trust=trust)
+                trust=trust,
+                include_catalog=include_catalog)
             return render_token_data_response(token_id, token_data,
                                               created=True)
         except exception.TrustNotFound as e:
