@@ -6,6 +6,8 @@ import test_v3
 class CatalogTestCase(test_v3.RestfulTestCase):
     """Test service & endpoint CRUD."""
 
+    content_type = 'json'
+
     def setUp(self):
         super(CatalogTestCase, self).setUp()
 
@@ -163,3 +165,15 @@ class CatalogTestCase(test_v3.RestfulTestCase):
 
         # test for bug 1152635 -- this attribute was being returned by v3
         self.assertNotIn('legacy_endpoint_id', endpoint_v3)
+
+    def test_get_catalog(self):
+        """Call ``GET /catalog``."""
+        token_id = self.get_scoped_token()
+        r = self.get('/catalog',
+                     headers={'X-Auth-Token': token_id})
+        self.assertValidCatalogResponse(r)
+
+
+class CatalogTestCaseXML(CatalogTestCase):
+    """Test service & endpoint CRUD."""
+    content_type = 'xml'
