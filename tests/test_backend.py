@@ -1717,35 +1717,35 @@ class IdentityTests(object):
         self.assertEqual(user_ref['enabled'], True)
 
         user['enabled'] = False
-        self.identity_api.update_user('fake1', user)
+        self.identity_man.update_user(EMPTY_CONTEXT, 'fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], user['enabled'])
 
         # If not present, enabled field should not be updated
         del user['enabled']
-        self.identity_api.update_user('fake1', user)
+        self.identity_man.update_user(EMPTY_CONTEXT, 'fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], False)
 
         user['enabled'] = True
-        self.identity_api.update_user('fake1', user)
+        self.identity_man.update_user(EMPTY_CONTEXT, 'fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], user['enabled'])
 
         del user['enabled']
-        self.identity_api.update_user('fake1', user)
+        self.identity_man.update_user(EMPTY_CONTEXT, 'fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], True)
 
         # Integers are valid Python's booleans. Explicitly test it.
         user['enabled'] = 0
-        self.identity_api.update_user('fake1', user)
+        self.identity_man.update_user(EMPTY_CONTEXT, 'fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], False)
 
         # Any integers other than 0 are interpreted as True
         user['enabled'] = -42
-        self.identity_api.update_user('fake1', user)
+        self.identity_man.update_user(EMPTY_CONTEXT, 'fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], True)
 
@@ -1759,7 +1759,7 @@ class IdentityTests(object):
         # Strings are not valid boolean values
         user['enabled'] = "false"
         self.assertRaises(exception.ValidationError,
-                          self.identity_api.update_user, 'fake1', user)
+                          self.identity_man.update_user, 'fake1', user)
 
     def test_update_project_enable(self):
         tenant = {'id': 'fake1', 'name': 'fake1', 'enabled': True,
