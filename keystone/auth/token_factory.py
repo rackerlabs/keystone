@@ -195,7 +195,7 @@ class TokenDataHelper(object):
 
     def get_token_data(self, user_id, method_names, extras,
                        domain_id=None, project_id=None, expires=None,
-                       trust=None, token=None):
+                       trust=None, token=None, get_catalog=True):
         token_data = {'methods': method_names,
                       'extras': extras}
 
@@ -211,8 +211,11 @@ class TokenDataHelper(object):
         self._populate_scope(token_data, domain_id, project_id)
         self._populate_user(token_data, user_id, domain_id, project_id, trust)
         self._populate_roles(token_data, user_id, domain_id, project_id, trust)
-        self._populate_service_catalog(token_data, user_id, domain_id,
-                                       project_id, trust)
+        
+        if get_catalog:
+            self._populate_service_catalog(token_data, user_id, domain_id,
+                                           project_id, trust)
+
         self._populate_token(token_data, expires, trust)
         return {'token': token_data}
 
@@ -294,6 +297,7 @@ def create_token(context, auth_context, auth_info):
     (domain_id, project_id, trust) = auth_info.get_scope()
     method_names = list(set(auth_info.get_method_names() +
                             auth_context.get('method_names', [])))
+    get_catalog = 'no-catalog' not in context['query_string']
     token_data = token_data_helper.get_token_data(
         auth_context['user_id'],
         method_names,
@@ -301,7 +305,8 @@ def create_token(context, auth_context, auth_info):
         domain_id,
         project_id,
         auth_context.get('expires_at', None),
-        trust)
+        trust,
+        get_catalog=get_catalog)
 
     if CONF.signing.token_format == 'UUID':
         token_id = uuid.uuid4().hex

@@ -143,6 +143,11 @@ class ServiceV3(controller.V3Controller):
         return ServiceV3.wrap_collection(context, refs, filters)
 
     @controller.protected
+    def get_catalog(self, context):
+        refs = self.catalog_api.get_v3_catalog(context)
+        return { "catalog" : refs }
+
+    @controller.protected
     def get_service(self, context, service_id):
         ref = self.catalog_api.get_service(context, service_id)
         return ServiceV3.wrap_member(context, ref)
