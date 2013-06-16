@@ -175,7 +175,8 @@ class Catalog(sql.Base, catalog.Driver):
 
         return catalog
 
-    def get_v3_catalog(self, user_id, tenant_id, metadata=None):
+    def get_v3_catalog(self, user_id, tenant_id, metadata=None): 
+        print ("******** Backend - Get Catalog")   
         d = dict(CONF.iteritems())
         d.update({'tenant_id': tenant_id,
                   'user_id': user_id})
