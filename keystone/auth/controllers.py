@@ -279,6 +279,8 @@ class Auth(controller.V3Controller):
 
     def authenticate_for_token(self, context, auth=None):
         """Authenticate user and issue a token."""
+        include_catalog = 'nocatalog' not in context['query_string']
+
         try:
             auth_info = AuthInfo(context, auth=auth)
             auth_context = {'extras': {}, 'method_names': []}
@@ -296,7 +298,8 @@ class Auth(controller.V3Controller):
                 project_id=project_id,
                 domain_id=domain_id,
                 auth_context=auth_context,
-                trust=trust)
+                trust=trust,
+                include_catalog=include_catalog)
             return render_token_data_response(token_id, token_data,
                                               created=True)
         except exception.TrustNotFound as e:
