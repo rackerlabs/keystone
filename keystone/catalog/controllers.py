@@ -21,7 +21,6 @@ from keystone.common import controller
 from keystone.common import dependency
 from keystone import exception
 
-
 INTERFACES = ['public', 'internal', 'admin']
 
 
@@ -141,6 +140,17 @@ class ServiceV3(controller.V3Controller):
     def list_services(self, context, filters):
         refs = self.catalog_api.list_services(context)
         return ServiceV3.wrap_collection(context, refs, filters)
+
+    def get_catalog(self, context):
+        keyword_dict = {}
+        creds = controller._build_policy_check_credentials(self,
+                                                           'get_catalog',
+                                                           context,
+                                                           keyword_dict)
+        user_id = creds['user_id']
+        project_id = creds['project_id']
+        refs = self.catalog_api.get_v3_catalog(context, user_id, project_id)
+        return {'catalogs': refs}
 
     @controller.protected
     def get_service(self, context, service_id):
