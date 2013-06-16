@@ -19,7 +19,12 @@ from keystone.common import router
 
 
 def append_v3_routers(mapper, routers):
-    routers.append(router.Router(controllers.ServiceV3(),
+    services_controller = controllers.ServiceV3()
+    routers.append(router.Router(services_controller,
                                  'services', 'service'))
+    mapper.connect('/catalog',
+                   controller=services_controller,
+                   action='get_catalog',
+                   conditions=dict(method=['GET']))
     routers.append(router.Router(controllers.EndpointV3(),
                                  'endpoints', 'endpoint'))
