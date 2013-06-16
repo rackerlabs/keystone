@@ -142,6 +142,20 @@ class ServiceV3(controller.V3Controller):
         refs = self.catalog_api.list_services(context)
         return ServiceV3.wrap_collection(context, refs, filters)
 
+    def get_catalog(self, context):
+        keyword_dict = {}
+        creds = controller._build_policy_check_credentials(self,
+                                                           'get_catalog',
+                                                           context,
+                                                           keyword_dict)
+        user_id = creds['user_id']
+        project_id = creds['project_id']
+        if not project_id:
+            exception_message = 'Token must be scoped to a project'
+            raise exception.ValidationError(exception_message)
+        refs = self.catalog_api.get_v3_catalog(context, user_id, project_id)
+        return {'catalogs': refs}
+
     @controller.protected
     def get_service(self, context, service_id):
         ref = self.catalog_api.get_service(context, service_id)
