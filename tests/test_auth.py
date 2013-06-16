@@ -625,7 +625,7 @@ class AuthWithTrust(AuthTest):
                 'project': {
                     'id': self.tenant_baz['id']}}}
         auth_response = (self.auth_v3_controller.authenticate_for_token
-                         ({}, v3_password_data))
+                         ({'query_string': {}}, v3_password_data))
         token = auth_response.headers['X-Subject-Token']
 
         v3_req_with_trust = {
@@ -635,7 +635,7 @@ class AuthWithTrust(AuthTest):
             "scope": {
                 "OS-TRUST:trust": {"id": self.new_trust['id']}}}
         token_auth_response = (self.auth_v3_controller.authenticate_for_token
-                               ({}, v3_req_with_trust))
+                               ({'query_string': {}}, v3_req_with_trust))
         return token_auth_response
 
     def test_create_v3_token_from_trust(self):
