@@ -5,6 +5,7 @@ from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import utils
+from keystone.common import wsgi
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import timeutils
@@ -78,7 +79,7 @@ class Auth(controller.V2Controller):
                 auth_info = self._authenticate_local(
                     context, auth)
 
-        user_ref, tenant_ref, metadata_ref, expiry = auth_info
+        user_ref, tenant_ref, metadata_ref, expiry, bind = auth_info
         core.validate_auth_info(self, user_ref, tenant_ref)
         user_ref = self._filter_domain_id(user_ref)
         if tenant_ref:
@@ -97,6 +98,8 @@ class Auth(controller.V2Controller):
             catalog_ref = {}
 
         auth_token_data['id'] = 'placeholder'
+        if bind:
+            auth_token_data['bind'] = bind
 
         roles_ref = []
         for role_id in metadata_ref.get('roles', []):
@@ -108,6 +111,53 @@ class Auth(controller.V2Controller):
             token_ref=auth_token_data,
             roles_ref=roles_ref,
             catalog_ref=catalog_ref)
+# =======
+#         token_data = Auth.format_token(auth_token_data, roles_ref)
+#
+#         service_catalog = Auth.format_catalog(catalog_ref)
+#         token_data['access']['serviceCatalog'] = service_catalog
+#
+#         if CONF.signing.token_format == 'UUID':
+#             token_id = uuid.uuid4().hex
+#         elif CONF.signing.token_format == 'PKI':
+#             try:
+#                 token_id = cms.cms_sign_token(json.dumps(token_data),
+#                                               CONF.signing.certfile,
+#                                               CONF.signing.keyfile)
+#             except environment.subprocess.CalledProcessError:
+#                 raise exception.UnexpectedError(_(
+#                     'Unable to sign token.'))
+#         else:
+#             raise exception.UnexpectedError(_(
+#                 'Invalid value for token_format: %s.'
+#                 '  Allowed values are PKI or UUID.') %
+#                 CONF.signing.token_format)
+#
+#         token_save_data = {'key': token_id,
+#                            'id': token_id,
+#                            'expires': auth_token_data['expires'],
+#                            'user': user_ref,
+#                            'tenant': tenant_ref,
+#                            'metadata': metadata_ref,
+#                            'trust_id': trust_id}
+#
+#         if bind:
+#             token_save_data['bind'] = bind
+#
+#         try:
+#             self.token_api.create_token(token_id, token_save_data)
+#         except Exception:
+#             exc_info = sys.exc_info()
+#             # an identical token may have been created already.
+#             # if so, return the token_data as it is also identical
+#             try:
+#                 self.token_api.get_token(token_id)
+#             except exception.TokenNotFound:
+#                 raise exc_info[0], exc_info[1], exc_info[2]
+#
+#         token_data['access']['token']['id'] = token_id
+#
+# >>>>>>> Implement Token Binding.
         return token_data
 
     def _authenticate_token(self, context, auth):
@@ -132,6 +182,8 @@ class Auth(controller.V2Controller):
             old_token_ref = self.token_api.get_token(old_token)
         except exception.NotFound as e:
             raise exception.Unauthorized(e)
+
+        wsgi.validate_token_bind(context, old_token_ref)
 
         #A trust token cannot be used to get another token
         if 'trust' in old_token_ref:
@@ -194,7 +246,9 @@ class Auth(controller.V2Controller):
             metadata_ref['trustee_user_id'] = trust_ref['trustee_user_id']
             metadata_ref['trust_id'] = trust_id
 
-        return (current_user_ref, tenant_ref, metadata_ref, expiry)
+        bind = old_token_ref.get('bind', None)
+
+        return (current_user_ref, tenant_ref, metadata_ref, expiry, bind)
 
     def _authenticate_local(self, context, auth):
         """Try to authenticate against the identity backend.
@@ -252,7 +306,7 @@ class Auth(controller.V2Controller):
             user_id, tenant_id)
 
         expiry = core.default_expire_time()
-        return (user_ref, tenant_ref, metadata_ref, expiry)
+        return (user_ref, tenant_ref, metadata_ref, expiry, None)
 
     def _authenticate_external(self, context, auth):
         """Try to authenticate an external user via REMOTE_USER variable.
@@ -261,6 +315,11 @@ class Auth(controller.V2Controller):
         """
         if 'REMOTE_USER' not in context:
             raise ExternalAuthNotApplicable()
+
+        #NOTE(jamielennox): xml and json differ and get confused about what
+        # empty auth should look like so just reset it.
+        if not auth:
+            auth = {}
 
         username = context['REMOTE_USER']
         try:
@@ -276,7 +335,12 @@ class Auth(controller.V2Controller):
             user_id, tenant_id)
 
         expiry = core.default_expire_time()
-        return (user_ref, tenant_ref, metadata_ref, expiry)
+        bind = None
+        if ('kerberos' in CONF.token.bind and
+                context.get('AUTH_TYPE', '').lower() == 'negotiate'):
+            bind = {'kerberos': username}
+
+        return (user_ref, tenant_ref, metadata_ref, expiry, bind)
 
     def _get_auth_token_data(self, user, tenant, metadata, expiry):
         return dict(user=user,
