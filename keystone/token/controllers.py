@@ -8,6 +8,7 @@ from keystone.common import dependency
 from keystone.common import environment
 from keystone.common import logging
 from keystone.common import utils
+from keystone.common import wsgi
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import timeutils
@@ -79,7 +80,7 @@ class Auth(controller.V2Controller):
                 auth_info = self._authenticate_local(
                     context, auth)
 
-        user_ref, tenant_ref, metadata_ref, expiry = auth_info
+        user_ref, tenant_ref, metadata_ref, expiry, bind = auth_info
         core.validate_auth_info(self, user_ref, tenant_ref)
         trust_id = metadata_ref.get('trust_id')
         user_ref = self._filter_domain_id(user_ref)
@@ -99,6 +100,8 @@ class Auth(controller.V2Controller):
             catalog_ref = {}
 
         auth_token_data['id'] = 'placeholder'
+        if bind:
+            auth_token_data['bind'] = bind
 
         roles_ref = []
         for role_id in metadata_ref.get('roles', []):
@@ -125,15 +128,20 @@ class Auth(controller.V2Controller):
                 'Invalid value for token_format: %s.'
                 '  Allowed values are PKI or UUID.') %
                 CONF.signing.token_format)
+
+        token_save_data = {'key': token_id,
+                           'id': token_id,
+                           'expires': auth_token_data['expires'],
+                           'user': user_ref,
+                           'tenant': tenant_ref,
+                           'metadata': metadata_ref,
+                           'trust_id': trust_id}
+
+        if bind:
+            token_save_data['bind'] = bind
+
         try:
-            self.token_api.create_token(
-                token_id, dict(key=token_id,
-                               id=token_id,
-                               expires=auth_token_data['expires'],
-                               user=user_ref,
-                               tenant=tenant_ref,
-                               metadata=metadata_ref,
-                               trust_id=trust_id))
+            self.token_api.create_token(token_id, token_save_data)
         except Exception:
             exc_info = sys.exc_info()
             # an identical token may have been created already.
@@ -169,6 +177,8 @@ class Auth(controller.V2Controller):
             old_token_ref = self.token_api.get_token(old_token)
         except exception.NotFound as e:
             raise exception.Unauthorized(e)
+
+        wsgi.validate_token_bind(context, old_token_ref)
 
         #A trust token cannot be used to get another token
         if 'trust' in old_token_ref:
@@ -238,7 +248,9 @@ class Auth(controller.V2Controller):
             metadata_ref['trustee_user_id'] = trust_ref['trustee_user_id']
             metadata_ref['trust_id'] = trust_id
 
-        return (current_user_ref, tenant_ref, metadata_ref, expiry)
+        bind = old_token_ref.get('bind', None)
+
+        return (current_user_ref, tenant_ref, metadata_ref, expiry, bind)
 
     def _authenticate_local(self, context, auth):
         """Try to authenticate against the identity backend.
@@ -306,7 +318,7 @@ class Auth(controller.V2Controller):
                                context, user_id, tenant_id))
 
         expiry = core.default_expire_time()
-        return (user_ref, tenant_ref, metadata_ref, expiry)
+        return (user_ref, tenant_ref, metadata_ref, expiry, None)
 
     def _authenticate_external(self, context, auth):
         """Try to authenticate an external user via REMOTE_USER variable.
@@ -337,7 +349,12 @@ class Auth(controller.V2Controller):
                                context, user_id, tenant_id))
 
         expiry = core.default_expire_time()
-        return (user_ref, tenant_ref, metadata_ref, expiry)
+        bind = None
+        if ('kerberos' in CONF.token.bind and
+                context.get('AUTH_TYPE', '').lower() == 'negotiate'):
+            bind = {'kerberos': username}
+
+        return (user_ref, tenant_ref, metadata_ref, expiry, bind)
 
     def _get_auth_token_data(self, user, tenant, metadata, expiry):
         return dict(user=user,
@@ -604,6 +621,8 @@ class Auth(controller.V2Controller):
                                  }
                         }
              }
+        if 'bind' in token_ref:
+            o['access']['token']['bind'] = token_ref['bind']
         if 'tenant' in token_ref and token_ref['tenant']:
             token_ref['tenant']['enabled'] = True
             o['access']['token']['tenant'] = token_ref['tenant']
