@@ -60,6 +60,8 @@ class V2TokenDataHelper(object):
                                  }
                         }
              }
+        if 'bind' in token_ref:
+            o['access']['token']['bind'] = token_ref['bind']
         if 'tenant' in token_ref and token_ref['tenant']:
             token_ref['tenant']['enabled'] = True
             o['access']['token']['tenant'] = token_ref['tenant']
@@ -281,7 +283,7 @@ class V3TokenDataHelper(object):
 
     def get_token_data(self, user_id, method_names, extras,
                        domain_id=None, project_id=None, expires=None,
-                       trust=None, token=None):
+                       bind=None, trust=None, token=None):
         token_data = {'methods': method_names,
                       'extras': extras}
 
@@ -294,6 +296,9 @@ class V3TokenDataHelper(object):
         if CONF.trust.enabled and trust:
             if user_id != trust['trustee_user_id']:
                 raise exception.Forbidden()
+
+        if bind:
+            token_data['bind'] = bind
 
         self._populate_scope(token_data, domain_id, project_id)
         self._populate_user(token_data, user_id, domain_id, project_id, trust)
@@ -341,6 +346,7 @@ class Provider(token_provider.Provider):
                         tenant=token_ref['tenant'],
                         metadata=token_ref['metadata'],
                         token_data=token_data,
+                        bind=token_ref.get('bind'),
                         trust_id=token_ref['metadata'].get('trust_id'))
             self.token_api.create_token(token_id, data)
         except Exception:
@@ -374,6 +380,7 @@ class Provider(token_provider.Provider):
             domain_id=domain_id,
             project_id=project_id,
             expires=expires_at,
+            bind=auth_context.get('bind') if auth_context else None,
             trust=trust)
 
         token_id = self._get_token_id(token_data)
@@ -537,6 +544,7 @@ class Provider(token_provider.Provider):
                     ['password', 'token'],
                     {},
                     project_id=project_id,
+                    bind=token_ref.get('bind'),
                     expires=token_ref['expires'])
             return token_data
         except Exception as e:
