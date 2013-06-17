@@ -73,6 +73,47 @@ def mask_password(message, is_unicode=False, secret="***"):
     return result
 
 
+def validate_token_bind(context, token_ref):
+    bind = token_ref.get('bind', {})
+    bind_mode = CONF.token.enforce_token_bind
+
+    if bind_mode == 'disabled':
+        return
+
+    # permissive and strict modes don't require there to be a bind
+    permissive = bind_mode in ('permissive', 'strict')
+
+    # get the named mode if bind_mode is not one of the known
+    name = None if permissive or bind_mode == 'required' else bind_mode
+
+    if not bind:
+        if permissive:
+            return
+        else:
+            LOG.info(_("No bind information present in token"))
+            raise exception.Unauthorized()
+
+    if name and name not in bind:
+        LOG.info(_("Named bind mode %s not in bind information"), name)
+        raise exception.Unauthorized()
+
+    for bind_type, identifier in bind.iteritems():
+        if bind_type == 'kerberos':
+            if not (context.get('AUTH_TYPE', '').lower() == 'negotiate' and
+                    context.get('REMOTE_USER') == identifier):
+                LOG.info(_("Kerberos credentials not present or do not match"))
+                raise exception.Unauthorized()
+        elif bind_mode == 'permissive':
+            LOG.info(_("Ignoring Unknown bind for permissive mode: "
+                       "{%(bind_type)s: %(identifier)s}"),
+                     {'bind_type': bind_type, 'identifier': identifier})
+        else:
+            LOG.info(_("Couldn't verify unknown bind: "
+                       "{%(bind_type)s: %(identifier)s}"),
+                     {'bind_type': bind_type, 'identifier': identifier})
+            raise exception.Unauthorized()
+
+
 class WritableLogger(object):
     """A thin wrapper that responds to `write` and logs."""
 
@@ -167,10 +208,16 @@ class Application(BaseApplication):
         context['headers'] = dict(req.headers.iteritems())
         context['path'] = req.environ['PATH_INFO']
         params = req.environ.get(PARAMS_ENV, {})
-        if 'REMOTE_USER' in req.environ:
-            context['REMOTE_USER'] = req.environ['REMOTE_USER']
-        elif context.get('REMOTE_USER', None) is not None:
-            del context['REMOTE_USER']
+
+        for name in ['REMOTE_USER', 'AUTH_TYPE']:
+            try:
+                context[name] = req.environ[name]
+            except KeyError:
+                try:
+                    del context[name]
+                except KeyError:
+                    pass
+
         params.update(arg_dict)
 
         context.setdefault('is_admin', False)
@@ -233,6 +280,7 @@ class Application(BaseApplication):
             except exception.TokenNotFound as e:
                 raise exception.Unauthorized(e)
 
+            validate_token_bind(context, user_token_ref)
             creds = user_token_ref['metadata'].copy()
 
             try:

@@ -214,6 +214,10 @@ def configure():
     # trust
     register_bool('enabled', group='trust', default=True)
 
+    # binding
+    register_list('bind', group='token', default=[])
+    register_str('enforce_token_bind', group='token', default='permissive')
+
     # ssl
     register_bool('enable', group='ssl', default=False)
     register_str('certfile', group='ssl',

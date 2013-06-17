@@ -39,6 +39,10 @@ class ExternalDefault(object):
             user_ref = auth_info.identity_api.get_user_by_name(username,
                                                                domain_id)
             auth_context['user_id'] = user_ref['id']
+            if ('kerberos' in CONF.token.bind and
+                    context.get('AUTH_TYPE', '').lower() == 'negotiate'):
+                auth_context['bind']['kerberos'] = username
+
         except Exception:
             msg = _('Unable to lookup user %s') % (REMOTE_USER)
             raise exception.Unauthorized(msg)
