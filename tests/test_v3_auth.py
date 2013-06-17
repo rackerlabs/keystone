@@ -1097,6 +1097,40 @@ class TestAuthJSON(test_v3.RestfulTestCase):
                           auth_info,
                           auth_context)
 
+    def test_unscoped_bind_with_remote_user(self):
+        CONF.token.bind = ['kerberos']
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        self.admin_app.extra_environ.update({'REMOTE_USER': 'FOO',
+                                            'AUTH_TYPE': 'Negotiate'})
+        r = self.post('/auth/tokens', body=auth_data)
+        token = self.assertValidUnscopedTokenResponse(r)
+        self.assertEquals(token['bind']['kerberos'], 'FOO')
+
+    def test_project_id_scoped_with_remote_user(self):
+        CONF.token.bind = ['kerberos']
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project['id'])
+        self.admin_app.extra_environ.update({'REMOTE_USER': 'FOO',
+                                            'AUTH_TYPE': 'Negotiate'})
+        r = self.post('/auth/tokens', body=auth_data)
+        token = self.assertValidProjectScopedTokenResponse(r)
+        self.assertEquals(token['bind']['kerberos'], 'FOO')
+
+    def test_bind_not_set_with_remote_user(self):
+        CONF.token.bind = []
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        self.admin_app.extra_environ.update({'REMOTE_USER': 'FOO',
+                                            'AUTH_TYPE': 'Negotiate'})
+        r = self.post('/auth/tokens', body=auth_data)
+        token = self.assertValidUnscopedTokenResponse(r)
+        self.assertNotIn('bind', token)
+
 
 class TestAuthXML(TestAuthJSON):
     content_type = 'xml'

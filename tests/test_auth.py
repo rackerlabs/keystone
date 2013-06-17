@@ -42,7 +42,10 @@ def _build_user_auth(token=None, user_id=None, username=None,
     """
     auth_json = {}
     if token is not None:
-        auth_json['token'] = token
+        try:
+            auth_json['token'] = {'id': token['id']}
+        except KeyError:
+            auth_json['token'] = token
     if username or password:
         auth_json['passwordCredentials'] = {}
     if username is not None:
@@ -369,6 +372,28 @@ class AuthWithToken(AuthTest):
             dict(is_admin=True, query_string={'belongsTo': 'BAR'}),
             token_id=scoped_token_id)
 
+    def test_bind_is_transferred(self):
+        CONF.token.bind = ['kerberos']
+        body_dict = _build_user_auth()
+        context = {'REMOTE_USER': 'FOO', 'AUTH_TYPE': 'Negotiate'}
+        unscoped_token = self.controller.authenticate(context, body_dict)
+
+        bind = unscoped_token['access']['token']['bind']
+        self.assertEqual(bind['kerberos'], 'FOO')
+
+        body_dict = _build_user_auth(
+            token=unscoped_token["access"]["token"],
+            tenant_name="BAR")
+
+        self.assertRaises(
+            exception.Unauthorized,
+            self.controller.authenticate,
+            {}, body_dict)
+
+        scoped_token = self.controller.authenticate(context, body_dict)
+        bind = scoped_token['access']['token']['bind']
+        self.assertEqual(bind['kerberos'], 'FOO')
+
 
 class AuthWithPasswordCredentials(AuthTest):
     def setUp(self):
@@ -426,6 +451,13 @@ class AuthWithPasswordCredentials(AuthTest):
         self.assertRaises(exception.ValidationError,
                           self.controller.authenticate,
                           {}, body_dict)
+
+    def test_bind_without_remote_user(self):
+        CONF.token.bind = ['kerberos']
+        body_dict = _build_user_auth(username="FOO", password="foo2",
+                                     tenant_name="BAR")
+        token = self.controller.authenticate({}, body_dict)
+        self.assertNotIn('bind', token['access']['token'])
 
 
 class AuthWithRemoteUser(AuthTest):
@@ -493,6 +525,20 @@ class AuthWithRemoteUser(AuthTest):
             self.controller.authenticate,
             {'REMOTE_USER': uuid.uuid4().hex},
             body_dict)
+
+    def test_bind_with_kerberos(self):
+        CONF.token.bind = ['kerberos']
+        kerb = {'REMOTE_USER': 'FOO', 'AUTH_TYPE': 'Negotiate'}
+        body_dict = _build_user_auth(tenant_name="BAR")
+        token = self.controller.authenticate(kerb, body_dict)
+        self.assertEqual(token['access']['token']['bind']['kerberos'], 'FOO')
+
+    def test_bind_without_config_opt(self):
+        CONF.token.bind = ['x509']
+        kerb = {'REMOTE_USER': 'FOO', 'AUTH_TYPE': 'Negotiate'}
+        body_dict = _build_user_auth(tenant_name="BAR")
+        token = self.controller.authenticate(kerb, body_dict)
+        self.assertNotIn('bind', token['access']['token'])
 
 
 class AuthWithTrust(AuthTest):

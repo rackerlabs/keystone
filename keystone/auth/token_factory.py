@@ -192,7 +192,7 @@ class TokenDataHelper(object):
 
     def get_token_data(self, user_id, method_names, extras,
                        domain_id=None, project_id=None, expires=None,
-                       trust=None, token=None):
+                       bind=None, trust=None, token=None):
         token_data = {'methods': method_names,
                       'extras': extras}
 
@@ -204,6 +204,9 @@ class TokenDataHelper(object):
         if CONF.trust.enabled and trust:
             if user_id != trust['trustee_user_id']:
                 raise exception.Forbidden()
+
+        if bind:
+            token_data['bind'] = bind
 
         self._populate_scope(token_data, domain_id, project_id)
         self._populate_user(token_data, user_id, domain_id, project_id, trust)
@@ -270,12 +273,15 @@ def recreate_token_data(token_data=None, expires=None,
             new_expires = token.get('expires_at',
                                     token.get('expires'))
         user_id = token['user']['id']
+        bind = token.get('bind', None)
         methods = token['methods']
         extras = token['extras']
     else:
         token = None
         project_id = project_ref['id'] if project_ref else None
         user_id = user_ref['id']
+        bind = None
+
     token_data_helper = TokenDataHelper()
     return token_data_helper.get_token_data(user_id,
                                             methods,
@@ -283,6 +289,7 @@ def recreate_token_data(token_data=None, expires=None,
                                             domain_id,
                                             project_id,
                                             new_expires,
+                                            bind,
                                             token=token)
 
 
@@ -298,6 +305,7 @@ def create_token(auth_context, auth_info):
         domain_id,
         project_id,
         auth_context.get('expires_at', None),
+        auth_context['bind'],
         trust)
 
     if CONF.signing.token_format == 'UUID':
