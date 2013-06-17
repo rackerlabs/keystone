@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//8po\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-06-17T16:59:19Z",
+      "side": 1,
+      "message": "Just wondering can we use different name for this attribute? Because\n1. get_catalog does not sound a boolean \n2. It is a request from the caller to system to include catalog or not so get_catalog does not seems correct\n\nI think \"is_catalog_required\" makes more sens.",
+      "revId": "1bc519b2c3843ca1ee0854a0133c79fddc3d3100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//8l4\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-06-17T16:59:19Z",
+      "side": 1,
+      "message": "why do we want to default?",
+      "revId": "1bc519b2c3843ca1ee0854a0133c79fddc3d3100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
