@@ -1175,6 +1175,117 @@ class TestAuthJSON(test_v3.RestfulTestCase):
                           auth_info,
                           auth_context)
 
+    def test_unscoped_bind_with_remote_user(self):
+        CONF.token.bind = ['kerberos']
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        self.admin_app.extra_environ.update({'REMOTE_USER': 'FOO',
+                                            'AUTH_TYPE': 'Negotiate'})
+        r = self.post('/auth/tokens', body=auth_data)
+        token = self.assertValidUnscopedTokenResponse(r)
+        self.assertEquals(token['bind']['kerberos'], 'FOO')
+
+    def test_project_id_scoped_with_remote_user(self):
+        CONF.token.bind = ['kerberos']
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project['id'])
+        self.admin_app.extra_environ.update({'REMOTE_USER': 'FOO',
+                                            'AUTH_TYPE': 'Negotiate'})
+        r = self.post('/auth/tokens', body=auth_data)
+        token = self.assertValidProjectScopedTokenResponse(r)
+        self.assertEquals(token['bind']['kerberos'], 'FOO')
+
+    def test_bind_not_set_with_remote_user(self):
+        CONF.token.bind = []
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        self.admin_app.extra_environ.update({'REMOTE_USER': 'FOO',
+                                            'AUTH_TYPE': 'Negotiate'})
+        r = self.post('/auth/tokens', body=auth_data)
+        token = self.assertValidUnscopedTokenResponse(r)
+        self.assertNotIn('bind', token)
+
+    #TODO(ayoung): move to TestPKITokenAPIs; it will be run for both formats
+    def test_verify_with_bound_token(self):
+        self.opt_in_group('token', bind='kerberos')
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project['id'])
+        self.admin_app.extra_environ.update({'REMOTE_USER': 'FOO',
+                                            'AUTH_TYPE': 'Negotiate'})
+
+        resp = self.post('/auth/tokens', body=auth_data)
+
+        token = resp.headers.get('X-Subject-Token')
+        headers = {'X-Subject-Token': token}
+        r = self.get('/auth/tokens', headers=headers, token=token)
+        token = self.assertValidProjectScopedTokenResponse(r)
+        self.assertEqual(token['bind']['kerberos'], 'FOO')
+
+    def test_auth_with_bind_token(self):
+        # Currently /v3/auth/tokens has hacky handling of external auth so
+        # this doesn't work as it should, release when external auth is fixed
+        raise nose.exc.SkipTest('Blocked by handling of external auth')
+        CONF.token.bind = ['kerberos']
+
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        self.admin_app.extra_environ.update({'REMOTE_USER': 'FOO',
+                                            'AUTH_TYPE': 'Negotiate'})
+        r = self.post('/auth/tokens', body=auth_data)
+
+        # the unscoped token should have bind information in it
+        token = self.assertValidUnscopedTokenResponse(r)
+        self.assertEqual(token['bind']['kerberos'], 'FOO')
+
+        token = r.headers.get('X-Subject-Token')
+
+        # using unscoped token with remote user succeeds
+        auth_params = {'token': token, 'project_id': self.project_id}
+        auth_data = self.build_authentication_request(**auth_params)
+        r = self.post('/auth/tokens', body=auth_data)
+        token = self.assertValidProjectScopedTokenResponse(r)
+
+        # the bind information should be carried over from the original token
+        self.assertEqual(token['bind']['kerberos'], 'FOO')
+
+    def test_v2_v3_bind_token_intermix(self):
+        self.opt_in_group('token', bind='kerberos')
+
+        # we need our own user registered to the default domain because of
+        # the way external auth works.
+        user_id = uuid.uuid4().hex
+        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id,
+                                 project_id=self.user['project_id'])
+        user['id'] = user_id
+        self.identity_api.create_user(user_id, user)
+
+        self.admin_app.extra_environ.update({'REMOTE_USER': user['name'],
+                                             'AUTH_TYPE': 'Negotiate'})
+        body = {'auth': {}}
+        resp = self.admin_request(path='/v2.0/tokens',
+                                  method='POST',
+                                  body=body)
+
+        v2_token_data = resp.result
+
+        bind = v2_token_data['access']['token']['bind']
+        self.assertEqual(bind['kerberos'], user['name'])
+
+        v2_token_id = v2_token_data['access']['token']['id']
+        headers = {'X-Subject-Token': v2_token_id}
+        resp = self.get('/auth/tokens', headers=headers)
+        token_data = resp.result
+
+        self.assertDictEqual(v2_token_data['access']['token']['bind'],
+                             token_data['token']['bind'])
+
 
 class TestAuthXML(TestAuthJSON):
     content_type = 'xml'

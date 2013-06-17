@@ -31,6 +31,10 @@ class External(object):
             user_info = auth_info.get_method_data('password')
             user_ref = auth_info.lookup_user(user_info['user'])
             auth_context['user_id'] = user_ref['id']
+            
+            if ('kerberos' in CONF.token.bind and 
+                context.get('AUTH_TYPE', '').lower() == 'negotiate'):
+                auth_context['bind']['kerberos'] = username
         else:
             msg = _('Unable to lookup user %s') % (username)
             raise exception.Unauthorized(msg)

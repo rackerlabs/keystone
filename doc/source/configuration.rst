@@ -473,6 +473,43 @@ In addition to changing their password all of the users current tokens will be
 deleted (if the backend used is kvs or sql)
 
 
+Token Binding
+-------------
+
+Token binding refers to the practice of embedding information from external
+authentication providers (like a company's kerberos server) inside the token
+such that the token may only be used in conjunction with that specified
+authentication. This is an additional security mechanism as it means that if
+a token is stolen it will not be usable without also providing the external
+authentication.
+
+To activate token binding you must specify the types of authentication that
+token binding should be used for in ``keystone.conf`` e.g.::
+
+    [token]
+    bind = kerberos
+
+Currently only kerberos is supported.
+
+To enforce checking of token binding the ``enforce_token_bind`` parameter
+should be set to one of the following modes:
+
+* ``disabled`` disable token bind checking
+* ``permissive`` enable bind checking, if a token is bound to a mechanism that
+  is unknown to the server then ignore it. This is the default.
+* ``strict`` enable bind checking, if a token is bound to a mechanism that is
+  unknown to the server then this token should be rejected.
+* ``required`` enable bind checking and require that at least 1 bind mechanism
+  is used for tokens.
+* ``named`` enable bind checking and require that the ``named`` authentication
+  mechanism is used. e.g.::
+
+    [token]
+    enforce_token_bind = kerberos
+
+  *Do not* set ``enforce_token_bind = named``.
+
+
 Sample Configuration Files
 --------------------------
 
