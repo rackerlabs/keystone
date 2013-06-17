@@ -1053,6 +1053,7 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
         return KEYSTONECLIENT_REPO, 'essex-3'
 
     def test_tenant_add_and_remove_user(self):
+        import ipdb; ipdb.set_trace()
         client = self.get_client(admin=True)
         client.roles.add_user_to_tenant(tenant_id=self.tenant_bar['id'],
                                         user_id=self.user_two['id'],

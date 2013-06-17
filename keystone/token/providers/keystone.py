@@ -182,7 +182,7 @@ class V3TokenDataHelper(object):
 
     def get_token_data(self, user_id, method_names, extras,
                        domain_id=None, project_id=None, expires=None,
-                       trust=None, token=None):
+                       bind=None, trust=None, token=None):
         token_data = {'methods': method_names,
                       'extras': extras}
 
@@ -195,6 +195,9 @@ class V3TokenDataHelper(object):
         if CONF.trust.enabled and trust:
             if user_id != trust['trustee_user_id']:
                 raise exception.Forbidden()
+
+        if bind:
+            token_data['bind'] = bind
 
         self._populate_scope(token_data, domain_id, project_id)
         self._populate_user(token_data, user_id, domain_id, project_id, trust)
@@ -259,6 +262,7 @@ class Provider(token_provider.Driver):
             domain_id=domain_id,
             project_id=project_id,
             expires=expires_at,
+            bind=auth_context.get('bind') if auth_context else None,
             trust=trust)
 
         token_id = self._get_token_id(token_data)
@@ -334,6 +338,9 @@ class Provider(token_provider.Driver):
                 if project_ref:
                     project_id = project_ref['id']
                 token_data_helper = V3TokenDataHelper()
+                #FIXME(jamielennox): I'm not sure how this ever gets triggered
+                # but in the event that it does how am i supposed to get bind
+                # information to pass to get_token_data()?
                 token_data = token_data_helper.get_token_data(
                     token_ref['user']['id'],
                     ['password', 'token'],
