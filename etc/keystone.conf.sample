@@ -128,6 +128,9 @@
 # Amount of time a token should remain valid (in seconds)
 # expiration = 86400
 
+# bind =
+# enforce_token_bind = permissive
+
 [policy]
 # driver = keystone.policy.backends.sql.Policy
 

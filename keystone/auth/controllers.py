@@ -225,7 +225,7 @@ class AuthInfo(object):
         :returns: list of auth method names
 
         """
-        return self.auth['identity']['methods']
+        return self.auth['identity']['methods'] or []
 
     def get_method_data(self, method):
         """Get the auth method payload.
@@ -281,7 +281,7 @@ class Auth(controller.V3Controller):
         """Authenticate user and issue a token."""
         try:
             auth_info = AuthInfo(context, auth=auth)
-            auth_context = {'extras': {}, 'method_names': []}
+            auth_context = {'extras': {}, 'method_names': [], 'bind': {}}
             self.authenticate(context, auth_info, auth_context)
             self._check_and_set_default_scoping(auth_info, auth_context)
             (domain_id, project_id, trust) = auth_info.get_scope()
