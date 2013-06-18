@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: keystone "
-"jenkins.keystone.propose.translation.update.234\n"
+"jenkins.keystone.propose.translation.update.235\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-06-17 17:09+0000\n"
+"POT-Creation-Date: 2013-06-18 17:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "%(property_name)s is not a %(display_expected_type)s"
 msgstr ""
 
-#: keystone/test.py:117
+#: keystone/test.py:119
 #, python-format
 msgid "Failed to checkout %s"
 msgstr ""
@@ -242,13 +242,13 @@ msgid ""
 "\"%(attr_map)s\" must use one of %(keys)s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:596
-#: keystone/identity/backends/kvs.py:624
+#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:591
+#: keystone/identity/backends/kvs.py:619
 #, python-format
 msgid "Duplicate name, %s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:589
+#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:584
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr ""
@@ -485,7 +485,7 @@ msgstr ""
 msgid "Creating ec2 cred for user %(user_id)s and tenant %(tenant_id)s"
 msgstr ""
 
-#: keystone/identity/backends/kvs.py:250 keystone/identity/backends/kvs.py:259
+#: keystone/identity/backends/kvs.py:245 keystone/identity/backends/kvs.py:254
 msgid "User not found in group"
 msgstr ""
 
@@ -499,21 +499,21 @@ msgstr ""
 msgid "Expected dict or list: %s"
 msgstr ""
 
-#: keystone/identity/backends/ldap/core.py:681
+#: keystone/identity/backends/ldap/core.py:675
 #, python-format
 msgid "Role %s not found"
 msgstr ""
 
-#: keystone/identity/backends/ldap/core.py:898
+#: keystone/identity/backends/ldap/core.py:892
 msgid "Changing Name not supported by LDAP"
 msgstr ""
 
-#: keystone/identity/backends/ldap/core.py:911
+#: keystone/identity/backends/ldap/core.py:905
 #, python-format
 msgid "User %(user_id)s is already a member of group %(group_id)s"
 msgstr ""
 
-#: keystone/identity/backends/ldap/core.py:954
+#: keystone/identity/backends/ldap/core.py:948
 #, python-format
 msgid ""
 "Group member '%(user_dn)s' not found in '%(group_dn)s'. The user should "
