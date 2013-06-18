@@ -16,6 +16,24 @@
       "revId": "7ccc0fd89632f51a9257cc7c0ed854d7f80d9d8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//6JA\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-18T15:06:50Z",
+      "side": 1,
+      "message": "erm, spec assumes that blob is a string serialized by the client  https://github.com/openstack/identity-api/blob/master/openstack-identity-api/src/markdown/identity-api-v3.md",
+      "parentUuid": "AAAAPn//7TQ\u003d",
+      "revId": "7ccc0fd89632f51a9257cc7c0ed854d7f80d9d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
