@@ -55,7 +55,7 @@ class SqlUpgradeTests(test.TestCase):
                          test.testsdir('test_overrides.conf'),
                          test.testsdir('backend_sql.conf')]
 
-    #override this to sepcify the complete list of configuration files
+    # override this to sepcify the complete list of configuration files
     def config_files(self):
         return self._config_file_list
 
@@ -814,6 +814,35 @@ class SqlUpgradeTests(test.TestCase):
         self.assertEqual(ref.url, endpoint['url'])
         self.assertEqual(ref.legacy_endpoint_id, legacy_endpoint_id)
         self.assertEqual(ref.extra, '{}')
+
+    def test_drop_credential_constraint(self):
+        session = self.Session()
+        self.upgrade(7)
+        self.populate_credential_table()
+        session.commit()
+        self.upgrade(23)
+        cred_table = sqlalchemy.Table("credential",
+                                      self.metadata,
+                                      autoload=True)
+        cred = session.query(cred_table).filter("id='100'").one()
+        self.assertEqual(cred.user_id,
+                         default_fixtures.CREDENTIAL[0]['user_id'])
+
+    def populate_credential_table(self):
+
+        this_table = sqlalchemy.Table("credential",
+                                      self.metadata,
+                                      autoload=True)
+
+        for credential in default_fixtures.CREDENTIAL:
+            blob = json.dumps(credential.pop('blob'))
+            ins = this_table.insert().values(
+                {'id': credential['id'],
+                 'user_id': credential['user_id'],
+                 'project_id': credential['project_id'],
+                 'blob': blob,
+                 'type': credential['type']})
+            self.engine.execute(ins)
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
