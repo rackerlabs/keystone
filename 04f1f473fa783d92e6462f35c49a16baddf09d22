@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//8yU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-18T18:47:11Z",
+      "side": 1,
+      "message": "why do we need separate providers? Could the version be passed in to the provider when it\u0027s called or created?",
+      "revId": "04f1f473fa783d92e6462f35c49a16baddf09d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//8yE\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 16
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-18T18:47:11Z",
+      "side": 1,
+      "message": "What does the provider do besides generate tokens?",
+      "revId": "04f1f473fa783d92e6462f35c49a16baddf09d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//8Qw\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 16
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-18T18:47:11Z",
+      "side": 1,
+      "message": "this looks like a fix for a different problem?",
+      "revId": "04f1f473fa783d92e6462f35c49a16baddf09d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//8QE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-18T18:47:11Z",
+      "side": 1,
+      "message": "LOG.exception already prints out the exception, so don\u0027t have to pass it in.\n\nWhy isn\u0027t this handled already by lines 320-322?",
+      "revId": "04f1f473fa783d92e6462f35c49a16baddf09d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//8PY\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-18T18:47:11Z",
+      "side": 1,
+      "message": "what\u0027s the difference between validate_token and check_token?",
+      "revId": "04f1f473fa783d92e6462f35c49a16baddf09d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//8PU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-18T18:47:11Z",
+      "side": 1,
+      "message": "change \"keystome\" to \"keystone\"",
+      "revId": "04f1f473fa783d92e6462f35c49a16baddf09d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
