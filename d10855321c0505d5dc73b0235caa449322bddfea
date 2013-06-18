@@ -16,6 +16,24 @@
       "revId": "d10855321c0505d5dc73b0235caa449322bddfea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//45U\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-18T22:20:53Z",
+      "side": 1,
+      "message": "unit tests talk directly to the back ends, so unless I go and change all of the unit tests, I need to keep this here.  If I try to change the unit tests, I have to change all of the backends, which is out of the scope of this patch.",
+      "parentUuid": "AAAAPn//55k\u003d",
+      "revId": "d10855321c0505d5dc73b0235caa449322bddfea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
