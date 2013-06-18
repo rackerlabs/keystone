@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//55k\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-06-18T16:21:53Z",
+      "side": 1,
+      "message": "I think the 4 lines above this now in the manager....so I don\u0027t think you need these here...",
+      "revId": "d10855321c0505d5dc73b0235caa449322bddfea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
