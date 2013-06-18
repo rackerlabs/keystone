@@ -17,6 +17,7 @@
 import sqlalchemy
 
 from keystone.common.sql import migration_helpers
+from sqlalchemy.orm import sessionmaker
 
 
 def list_constraints(migrate_engine):
@@ -36,14 +37,105 @@ def list_constraints(migrate_engine):
 
 
 def upgrade(migrate_engine):
-    # SQLite does not support constraints, and querying the constraints
-    # raises an exception
     if migrate_engine.name == 'sqlite':
-        return
-    migration_helpers.remove_constraints(list_constraints(migrate_engine))
+        drop_credential_table__foreign_key_constraints_for_sqlite(
+            migrate_engine)
+    else:
+        migration_helpers.remove_constraints(list_constraints(migrate_engine))
 
 
 def downgrade(migrate_engine):
     if migrate_engine.name == 'sqlite':
-        return
-    migration_helpers.add_constraints(list_constraints(migrate_engine))
+        add_credential_table_foreign_key_constraints_for_sqlite(migrate_engine)
+    else:
+        migration_helpers.add_constraints(list_constraints(migrate_engine))
+
+
+def drop_credential_table__foreign_key_constraints_for_sqlite(migrate_engine):
+    meta = sqlalchemy.MetaData()
+    meta.bind = migrate_engine
+
+    # NOTE (nachiappan-veerappan-nachiappan): SQLite does not support
+    # ALTER TABLE DROP constraint.
+    # So we need to move the data to new credenital table created
+    # without constraints, drop the old table and rename the new
+    # table to credential.
+    sqlalchemy.Table('user', meta, autoload=True)
+    tenant_table = sqlalchemy.Table(
+        'tenant',
+        meta,
+        sqlalchemy.Column('id', sqlalchemy.String(64), primary_key=True),
+        sqlalchemy.Column(
+            'name', sqlalchemy.String(64), unique=True, nullable=False),
+        sqlalchemy.Column('extra', sqlalchemy.Text()))
+    tenant_table.create(migrate_engine, checkfirst=True)
+    cred_table = sqlalchemy.Table('credential', meta, autoload=True)
+
+    session = sessionmaker(bind=migrate_engine)()
+    new_credential_table = sqlalchemy.Table(
+        'new_credential',
+        meta,
+        sqlalchemy.Column('id', sqlalchemy.String(64), primary_key=True),
+        sqlalchemy.Column('user_id',
+                          sqlalchemy.String(64),
+                          nullable=False),
+        sqlalchemy.Column('project_id',
+                          sqlalchemy.String(64)),
+        sqlalchemy.Column('blob', sqlalchemy.Text(), nullable=False),
+        sqlalchemy.Column('type', sqlalchemy.String(255), nullable=False),
+        sqlalchemy.Column('extra', sqlalchemy.Text()))
+    new_credential_table.create(migrate_engine, checkfirst=True)
+
+    insert = new_credential_table.insert()
+    for credential in session.query(cred_table):
+        insert.execute({'id': credential.id,
+                        'user_id': credential.user_id,
+                        'project_id': credential.project_id,
+                        'blob': credential.blob,
+                        'type': credential.type,
+                        'extra': credential.extra})
+    cred_table.drop()
+    tenant_table.drop()
+    new_credential_table.rename('credential')
+    session.commit()
+    session.close()
+
+
+def add_credential_table_foreign_key_constraints_for_sqlite(migrate_engine):
+    meta = sqlalchemy.MetaData()
+    meta.bind = migrate_engine
+
+    cred_table = sqlalchemy.Table('credential', meta, autoload=True)
+    sqlalchemy.Table('user', meta, autoload=True)
+
+    session = sessionmaker(bind=migrate_engine)()
+    old_credential_table = sqlalchemy.Table(
+        'old_credential',
+        meta,
+        sqlalchemy.Column('id', sqlalchemy.String(64), primary_key=True),
+        sqlalchemy.Column('user_id',
+                          sqlalchemy.String(64),
+                          sqlalchemy.ForeignKey('user.id'),
+                          nullable=False),
+        # NOTE (nachiappan-veerappan-nachiappan): Not creating the foriegn
+        # key constraint with project table as version
+        # 15 conflicts with version 7.
+        sqlalchemy.Column('project_id',
+                          sqlalchemy.String(64)),
+        sqlalchemy.Column('blob', sqlalchemy.Text(), nullable=False),
+        sqlalchemy.Column('type', sqlalchemy.String(255), nullable=False),
+        sqlalchemy.Column('extra', sqlalchemy.Text()))
+    old_credential_table.create(migrate_engine, checkfirst=True)
+
+    insert = old_credential_table.insert()
+    for credential in session.query(cred_table):
+        insert.execute({'id': credential.id,
+                        'user_id': credential.user_id,
+                        'project_id': credential.project_id,
+                        'blob': credential.blob,
+                        'type': credential.type,
+                        'extra': credential.extra})
+    cred_table.drop()
+    old_credential_table.rename('credential')
+    session.commit()
+    session.close()
