@@ -16,6 +16,24 @@
       "revId": "3a58207e6ab9d7c6c22e3dd75afb8f2cc76830b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//7W0\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7696
+      },
+      "writtenOn": "2013-06-18T03:26:51Z",
+      "side": 1,
+      "message": "Its not \u003e\u003d1.2.3 to make it inline with \"openstack/requirements value\" , on which all other openstack projects also depend. I have tried the same fix and Jenkins failed since the \"openstack/requirements value(\u003e\u003d1.0.8)\" and the value in keystone requirements(\u003e\u003d1.2.3) did not match. The below log shows the same:\n\nhttp://logs.openstack.org/32254/1/check/gate-keystone-requirements/35/console.html.gz",
+      "parentUuid": "AAAAPX//mDg\u003d",
+      "revId": "3a58207e6ab9d7c6c22e3dd75afb8f2cc76830b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
