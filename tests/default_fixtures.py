@@ -138,3 +138,16 @@ DOMAINS = [
                        'on Identity API v2.'
     }
 ]
+
+CREDENTIAL = [
+    {
+        'id': '100',
+        'user_id': 'foo',
+        'project_id': 'bar',
+        'type': 'ec2',
+        'blob': {
+            "access": "12345",
+            "secret": "12345"
+        }
+    }
+]
