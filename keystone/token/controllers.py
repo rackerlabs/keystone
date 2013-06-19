@@ -1,4 +1,5 @@
 import json
+import sys
 import uuid
 
 from keystone.common import cms
@@ -11,6 +12,7 @@ from keystone import config
 from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone.token import core
+
 
 CONF = config.CONF
 LOG = logging.getLogger(__name__)
@@ -134,14 +136,14 @@ class Auth(controller.V2Controller):
                                         tenant=tenant_ref,
                                         metadata=metadata_ref,
                                         trust_id=trust_id))
-        except Exception as e:
+        except Exception:
+            exc_info = sys.exc_info()
             # an identical token may have been created already.
             # if so, return the token_data as it is also identical
             try:
-                self.token_api.get_token(context=context,
-                                         token_id=token_id)
+                self.token_api.get_token(context=context, token_id=token_id)
             except exception.TokenNotFound:
-                raise e
+                raise exc_info[0], exc_info[1], exc_info[2]
 
         token_data['access']['token']['id'] = token_id
 

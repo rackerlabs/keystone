@@ -13,6 +13,8 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+
+
 import re
 
 from keystone.common import config
@@ -40,10 +42,10 @@ class Error(StandardError):
 
         try:
             message = self._build_message(message, **kwargs)
-        except KeyError as e:
+        except KeyError:
             # if you see this warning in your logs, please raise a bug report
             if _FATAL_EXCEPTION_FORMAT_ERRORS:
-                raise e
+                raise
             else:
                 LOG.warning('missing exception kwargs (programmer error)')
                 message = self.__doc__
