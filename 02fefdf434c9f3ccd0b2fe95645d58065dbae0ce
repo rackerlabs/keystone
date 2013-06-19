@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//2BA\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-06-19T22:27:30Z",
+      "side": 1,
+      "message": "should this instance variable be called as _session instead of _sessionmaker. As sessionmaker factory generates new Session objects when called.",
+      "revId": "02fefdf434c9f3ccd0b2fe95645d58065dbae0ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
