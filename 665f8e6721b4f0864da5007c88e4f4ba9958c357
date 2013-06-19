@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//2xw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/027_add_delegated_auth_tables.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-19T18:10:24Z",
+      "side": 1,
+      "message": "Should the copyright here be 2013 like the other newly added files?",
+      "revId": "665f8e6721b4f0864da5007c88e4f4ba9958c357",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//2xY\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-19T18:10:24Z",
+      "side": 1,
+      "message": "Is this meant to be commented out? Or was this meant to be removed? We should probably remove if it is unnecessary.",
+      "revId": "665f8e6721b4f0864da5007c88e4f4ba9958c357",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//2wY\u003d",
+        "filename": "tests/test_contrib_delegated_auth.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-19T18:10:24Z",
+      "side": 1,
+      "message": "Just curious, does this have to be one test? Or is it possible to break this into smaller ones? One testing the creation of a consumer, one testing the authorization of roles, etc...",
+      "revId": "665f8e6721b4f0864da5007c88e4f4ba9958c357",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
