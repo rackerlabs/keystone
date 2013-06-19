@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//4Rk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-19T06:14:17Z",
+      "side": 1,
+      "message": "wants a description of why. This was commented on when this was submitted the first time and said that there should always be a foreign key constraint.",
+      "revId": "be63e1ec5c93fbaf81916c3ae887235e1c25c9cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//4SM\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-19T06:14:17Z",
+      "side": 1,
+      "message": "it\u0027s petty but if you do fkeys \u003d [ fk.name for fk in table.constraints ...\nand then just return fkeys",
+      "revId": "be63e1ec5c93fbaf81916c3ae887235e1c25c9cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//4R4\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-19T06:14:17Z",
+      "side": 1,
+      "message": "Then you can replace this with a \n\nfor contraint_name in constraint_names:\n    migrate.ForeinKeyConstraint(....",
+      "revId": "be63e1ec5c93fbaf81916c3ae887235e1c25c9cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
