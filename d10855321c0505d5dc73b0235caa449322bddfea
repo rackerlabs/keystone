@@ -34,6 +34,24 @@
       "revId": "d10855321c0505d5dc73b0235caa449322bddfea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//4CA\u003d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-06-19T09:02:21Z",
+      "side": 1,
+      "message": "I believe patch https://review.openstack.org/#/c/33181/3 (that pulled these checks into the manager) also fixed the tests (if there are other tests that it didn\u0027t fix, then I\u0027m not sure how it passed).  The code code above appears to be putting these checks back into the individual driver.",
+      "parentUuid": "AAAAPn//45U\u003d",
+      "revId": "d10855321c0505d5dc73b0235caa449322bddfea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
