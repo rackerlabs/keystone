@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Code-Review+1: Chmouel Boudjnah <chmouel@enovance.com>
+Code-Review+1: guang-yee <guang.yee@hp.com>
+Approved+1: Alan Pevec <apevec@gmail.com>
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Code-Review+1: ldbragst <ldbragst@us.ibm.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: David Geng <gengjh@cn.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 20 Jun 2013 19:54:47 +0000
+Reviewed-on: https://review.openstack.org/30721
+Project: openstack/keystone
+Branch: refs/heads/stable/folsom
