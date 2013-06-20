@@ -16,6 +16,7 @@
 
 """Main entry point into the Token service."""
 
+import copy
 import datetime
 
 from keystone.common import cms
@@ -113,6 +114,17 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.token.driver)
+
+    def get_token(self, token_id):
+        return self.driver.get_token(unique_id(token_id))
+
+    def create_token(self, token_id, data):
+        data_copy = copy.deepcopy(data)
+        data_copy['id'] = unique_id(token_id)
+        return self.driver.create_token(unique_id(token_id), data_copy)
+
+    def delete_token(self, token_id):
+        return self.driver.delete_token(unique_id(token_id))
 
 
 class Driver(object):
