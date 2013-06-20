@@ -14,38 +14,35 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-"""Token Factory"""
+"""UUID Token Provider"""
 
 import json
 import uuid
-import webob
 
-from keystone import catalog
 from keystone.common import cms
+from keystone.common import dependency
 from keystone.common import environment
 from keystone.common import logging
-from keystone.common import utils
 from keystone import config
 from keystone import exception
-from keystone import identity
-from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
-from keystone import token as token_module
+from keystone import token
+from keystone.token import provider as token_provider
 from keystone import trust
 
 
-CONF = config.CONF
-
 LOG = logging.getLogger(__name__)
+CONF = config.CONF
+DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
 
-class TokenDataHelper(object):
+@dependency.requires('catalog_api', 'identity_api')
+class V3TokenDataHelper(object):
     """Token data helper."""
     def __init__(self, context):
-        self.identity_api = identity.Manager()
-        self.catalog_api = catalog.Manager()
-        self.trust_api = trust.Manager()
         self.context = context
+        if CONF.trust.enabled:
+            self.trust_api = trust.Manager()
 
     def _get_filtered_domain(self, domain_id):
         domain_ref = self.identity_api.get_domain(self.context,
@@ -187,7 +184,7 @@ class TokenDataHelper(object):
 
     def _populate_token(self, token_data, expires=None, trust=None):
         if not expires:
-            expires = token_module.default_expire_time()
+            expires = token.default_expire_time()
         if not isinstance(expires, basestring):
             expires = timeutils.isotime(expires, subsecond=True)
         token_data['expires_at'] = expires
@@ -217,155 +214,167 @@ class TokenDataHelper(object):
         return {'token': token_data}
 
 
-def recreate_token_data(context, token_data=None, expires=None,
-                        user_ref=None, project_ref=None):
-    """Recreate token from an existing token.
+@dependency.requires('token_api', 'identity_api')
+class Provider(token_provider.Driver):
+    def __init__(self, *args, **kwargs):
+        super(Provider, self).__init__(*args, **kwargs)
+        if CONF.trust.enabled:
+            self.trust_api = trust.Manager()
 
-    Repopulate the ephemeral data and return the new token data.
+    def get_token_version(self, token_data):
+        if token_data and isinstance(token_data, dict):
+            if 'access' in token_data:
+                return token_provider.V2
+            if 'token' in token_data and 'methods' in token_data['token']:
+                return token_provider.V3
+        raise token_provider.UnsupportedTokenVersionException()
 
-    """
-    new_expires = expires
-    project_id = None
-    user_id = None
-    domain_id = None
-    methods = ['password', 'token']
-    extras = {}
-
-    # NOTE(termie): Let's get some things straight here, because this code
-    #               is wrong but tested as such:
-    # token_data, if it exists, is going to look like:
-    #   {'token': ... the actual token data + a superfluous extras field ...}
-    # this data is actually stored in the database in the 'extras' column and
-    # then deserialized and added to the token_ref, that already has the
-    # the 'expires', 'user_id', and 'id' columns from the db.
-    # the 'user' and 'tenant' fields are being added to the
-    # token_ref due to being deserialized from the 'extras' column
-    #
-    # So, how this all looks in the db:
-    #   id = some_id
-    #   user_id = some_user_id
-    #   expires = some_expiration
-    #   extras = {'user': {'id': some_used_id},
-    #             'tenant': {'id': some_tenant_id},
-    #             'token_data': 'token': {'domain': {'id': some_domain_id},
-    #                                     'project': {'id': some_project_id},
-    #                                     'domain': {'id': some_domain_id},
-    #                                     'user': {'id': some_user_id},
-    #                                     'roles': [{'id': some_role_id}, ...],
-    #                                     'catalog': ...,
-    #                                     'expires_at': some_expiry_time,
-    #                                     'issued_at': now(),
-    #                                     'methods': ['password', 'token'],
-    #                                     'extras': { ... empty? ...}
-    #
-    # TODO(termie): reduce stored token complexity, bug filed at:
-    #               https://bugs.launchpad.net/keystone/+bug/1159990
-    if token_data:
-        # peel the outer layer so its easier to operate
-        token = token_data['token']
-        domain_id = (token['domain']['id'] if 'domain' in token
-                     else None)
-        project_id = (token['project']['id'] if 'project' in token
-                      else None)
-        if not new_expires:
-            # support Grizzly-3 to Grizzly-RC1 transition
-            # tokens issued in G3 has 'expires' instead of 'expires_at'
-            new_expires = token.get('expires_at',
-                                    token.get('expires'))
-        user_id = token['user']['id']
-        methods = token['methods']
-        extras = token['extras']
-    else:
-        token = None
-        project_id = project_ref['id'] if project_ref else None
-        user_id = user_ref['id']
-    token_data_helper = TokenDataHelper(context)
-    return token_data_helper.get_token_data(user_id,
-                                            methods,
-                                            extras,
-                                            domain_id,
-                                            project_id,
-                                            new_expires,
-                                            token=token)
-
-
-def create_token(context, auth_context, auth_info):
-    token_data_helper = TokenDataHelper(context)
-    (domain_id, project_id, trust) = auth_info.get_scope()
-    method_names = list(set(auth_info.get_method_names() +
-                            auth_context.get('method_names', [])))
-    token_data = token_data_helper.get_token_data(
-        auth_context['user_id'],
-        method_names,
-        auth_context['extras'],
-        domain_id,
-        project_id,
-        auth_context.get('expires_at', None),
-        trust)
-
-    if CONF.signing.token_format == 'UUID':
-        token_id = uuid.uuid4().hex
-    elif CONF.signing.token_format == 'PKI':
-        try:
-            token_id = cms.cms_sign_token(json.dumps(token_data),
-                                          CONF.signing.certfile,
-                                          CONF.signing.keyfile)
-        except environment.subprocess.CalledProcessError:
+    def _get_token_id(self, token_data):
+        # TODO(gyee): would it be nice if we can tell the token version from
+        # the token_id?
+        if CONF.signing.token_format == 'UUID':
+            token_id = uuid.uuid4().hex
+        elif CONF.signing.token_format == 'PKI':
+            try:
+                token_id = cms.cms_sign_token(json.dumps(token_data),
+                                              CONF.signing.certfile,
+                                              CONF.signing.keyfile)
+            except environment.subprocess.CalledProcessError:
+                raise exception.UnexpectedError(_(
+                    'Unable to sign token.'))
+        else:
             raise exception.UnexpectedError(_(
-                'Unable to sign token.'))
-    else:
-        raise exception.UnexpectedError(_(
-            'Invalid value for token_format: %s.'
-            '  Allowed values are PKI or UUID.') %
-            CONF.signing.token_format)
-    token_api = token_module.Manager()
-    try:
-        expiry = token_data['token']['expires_at']
-        if isinstance(expiry, basestring):
-            expiry = timeutils.normalize_time(timeutils.parse_isotime(expiry))
-        role_ids = []
-        if 'project' in token_data['token']:
-            # project-scoped token, fill in the v2 token data
-            # all we care are the role IDs
-            role_ids = [role['id'] for role in token_data['token']['roles']]
-        metadata_ref = {'roles': role_ids}
-        data = dict(key=token_id,
-                    id=token_id,
-                    expires=expiry,
-                    user=token_data['token']['user'],
-                    tenant=token_data['token'].get('project'),
-                    metadata=metadata_ref,
-                    token_data=token_data,
-                    trust_id=trust['id'] if trust else None)
-        token_api.create_token(context, token_id, data)
-    except Exception as e:
-        # an identical token may have been created already.
-        # if so, return the token_data as it is also identical
+                'Invalid value for token_format: %s.'
+                '  Allowed values are PKI or UUID.') %
+                CONF.signing.token_format)
+        return token_id
+
+    def _issue_v3_token(self, user_id, method_names,
+                        expires_at=None,
+                        project_id=None, domain_id=None,
+                        auth_context=None, **kwargs):
+        token_data_helper = V3TokenDataHelper(None)
+        trust = kwargs.get('trust')
+        metadata_ref = kwargs.get('metadata_ref')
+        #FIXME(gyee): for V2, trust is stashed in metadata_ref
+        if not trust and metadata_ref and 'trust_id' in metadata_ref:
+            trust = self.trust_api.get_trust(None, metadata_ref['trust_id'])
+        token_data = token_data_helper.get_token_data(
+            user_id,
+            method_names,
+            auth_context.get('extras') if auth_context else None,
+            domain_id=domain_id,
+            project_id=project_id,
+            expires=expires_at,
+            trust=trust)
+
+        token_id = self._get_token_id(token_data)
         try:
-            token_api.get_token(context=context,
-                                token_id=token_id)
-        except exception.TokenNotFound:
-            raise e
+            expiry = token_data['token']['expires_at']
+            if isinstance(expiry, basestring):
+                expiry = timeutils.normalize_time(
+                    timeutils.parse_isotime(expiry))
+            # FIXME(gyee): is there really a need to store roles in metadata?
+            role_ids = []
+            metadata_ref = kwargs.get('metadata_ref', {})
+            if 'project' in token_data['token']:
+                # project-scoped token, fill in the v2 token data
+                # all we care are the role IDs
+                role_ids = [r['id'] for r in token_data['token']['roles']]
+                metadata_ref = {'roles': role_ids}
+            if trust:
+                metadata_ref.setdefault('trust_id', trust['id'])
+                metadata_ref.setdefault('trustee_user_id',
+                                        trust['trustee_user_id'])
+            data = dict(key=token_id,
+                        id=token_id,
+                        expires=expiry,
+                        user=token_data['token']['user'],
+                        tenant=token_data['token'].get('project'),
+                        metadata=metadata_ref,
+                        token_data=token_data,
+                        trust_id=trust['id'] if trust else None)
+            self.token_api.create_token(None, token_id, data)
+        except Exception as e:
+            LOG.exception(_('Failed to issue V3 token'))
+            # an identical token may have been created already.
+            # if so, return the token_data as it is also identical
+            try:
+                self.token_api.get_token(None,
+                                         token_id=token_id)
+            except exception.TokenNotFound:
+                raise e
 
-    return (token_id, token_data)
+        return (token_id, token_data)
 
+    def issue_token(self, user_id, method_names, version='v3.0',
+                    expires_at=None,
+                    project_id=None, domain_id=None,
+                    auth_context=None, **kwargs):
+        if version == token_provider.V3:
+            return self._issue_v3_token(user_id, method_names,
+                                        expires_at=expires_at,
+                                        project_id=project_id,
+                                        domain_id=domain_id,
+                                        auth_context=auth_context,
+                                        **kwargs)
+        raise token_provider.UnsupportedTokenVersionException
 
-def render_token_data_response(token_id, token_data, created=False):
-    """Render token data HTTP response.
+    def _verify_token(self, token_id, belongs_to=None):
+        """Verify the given token and return the token_ref."""
+        token_ref = self.token_api.get_token(None,
+                                             token_id=token_id)
+        assert token_ref
+        if belongs_to:
+            assert token_ref['tenant']['id'] == belongs_to
+        return token_ref
 
-    Stash token ID into the X-Auth-Token header.
+    def revoke_token(self, token_id):
+        self.token_api.delete_token(None, token_id=token_id)
 
-    """
-    headers = [('X-Subject-Token', token_id)]
-    headers.append(('Vary', 'X-Auth-Token'))
-    headers.append(('Content-Type', 'application/json'))
+    def _validate_v3_token(self, token_id, belongs_to=None, **kwargs):
+        try:
+            token_ref = self._verify_token(token_id, belongs_to)
+            # FIXME(gyee): performance or correctness? Should we return the
+            # cached token or reconstruct it? Obviously if we are going with
+            # the cached token, any role, project, or domain name changes
+            # will not be reflected. One may argue that with PKI tokens,
+            # we are essentially doing cached token validation anyway.
+            # Lets go with the cached token strategy. Since token
+            # management layer is now pluggable, one can always provide
+            # their own implementation to suit their needs.
+            token_data = token_ref.get('token_data')
+            if not token_data or 'token' not in token_data:
+                # token ref is created by V2 API
+                project_id = None
+                project_ref = token_ref.get('tenant')
+                if project_ref:
+                    project_id = project_ref['id']
+                token_data_helper = V3TokenDataHelper(None)
+                token_data = token_data_helper.get_token_data(
+                    user_id=token_ref['user']['id'],
+                    method_names=['password', 'token'],
+                    extras={},
+                    domain_id=None,
+                    project_id=project_id,
+                    expires=token_ref['expires'],
+                    trust=None)
+            return token_data
+        except Exception as e:
+            LOG.exception(_('Failed to validate token'))
+            raise exception.Unauthorized(e)
 
-    if created:
-        status = (201, 'Created')
-    else:
-        status = (200, 'OK')
+    def validate_token(self, token_id, belongs_to=None, version='v3.0',
+                       **kwargs):
+        if version == token_provider.V3:
+            return self._validate_v3_token(token_id,
+                                           belongs_to=belongs_to,
+                                           **kwargs)
+        raise token_provider.UnsupportedTokenVersionException
 
-    body = jsonutils.dumps(token_data, cls=utils.SmarterEncoder)
-    return webob.Response(body=body,
-                          status='%s %s' % status,
-                          headerlist=headers)
+    def check_token(self, token_id, belongs_to=None, **kwargs):
+        try:
+            self._verify_token(token_id, belongs_to)
+        except Exception as e:
+            LOG.exception(_('Failed to verify token'))
+            raise exception.Unauthorized(e)
