@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//ztM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-20T19:29:52Z",
+      "side": 1,
+      "message": "extra space in \u0027u sers\u0027",
+      "revId": "4fb3150482c5fb1c52bf07235f3e84b8585978e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
