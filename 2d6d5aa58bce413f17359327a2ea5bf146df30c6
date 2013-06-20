@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//0dk\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7708
+      },
+      "writtenOn": "2013-06-20T13:59:45Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "AAAAPn//2y0\u003d",
+      "revId": "2d6d5aa58bce413f17359327a2ea5bf146df30c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//2y8\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//0dw\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7708
+      },
+      "writtenOn": "2013-06-20T13:59:45Z",
+      "side": 1,
+      "message": "Not pep8. I for one think that\u0027s better for separating imports and comments.",
+      "parentUuid": "AAAAPn//2y8\u003d",
+      "revId": "2d6d5aa58bce413f17359327a2ea5bf146df30c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//2zE\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-06-19T17:56:28Z",
       "side": 1,
       "message": "Why the whitespace add?",
+      "revId": "2d6d5aa58bce413f17359327a2ea5bf146df30c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//0co\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7708
+      },
+      "writtenOn": "2013-06-20T13:59:45Z",
+      "side": 1,
+      "message": "For separating logical blocks.",
+      "parentUuid": "AAAAPn//2zE\u003d",
       "revId": "2d6d5aa58bce413f17359327a2ea5bf146df30c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
