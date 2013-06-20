@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-06-17 17:09+0000\n"
+"POT-Creation-Date: 2013-06-20 17:05+0000\n"
 "PO-Revision-Date: 2013-05-22 03:11+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) "
@@ -120,18 +120,18 @@ msgstr "端點 %s 的格式不正確 - 格式不完整（遺漏了類型通知�
 msgid "Unable to open template file %s"
 msgstr "無法開啟範本檔 %s"
 
-#: keystone/common/cms.py:42
+#: keystone/common/cms.py:26
 #, python-format
 msgid "Verify error: %s"
 msgstr "驗證發生錯誤：%s"
 
-#: keystone/common/cms.py:134
+#: keystone/common/cms.py:118
 msgid ""
 "Signing error: Unable to load certificate - ensure you've configured PKI "
 "with 'keystone-manage pki_setup'"
 msgstr "簽署發生錯誤：無法載入憑證 - 請確保已使用 'keystone-manage pki_setup' 來配置 PKI"
 
-#: keystone/common/cms.py:138
+#: keystone/common/cms.py:122
 #, python-format
 msgid "Signing error: %s"
 msgstr "簽署發生錯誤：%s"
@@ -183,7 +183,7 @@ msgstr "RBAC：正在新增查詢過濾器參數 (%s)"
 msgid "Invalid token in normalize_domain_id"
 msgstr "normalize_domain_id 中的記號無效"
 
-#: keystone/common/utils.py:232
+#: keystone/common/utils.py:233
 msgid ""
 "Error setting up the debug environment. Verify that the option --debug-"
 "url has the format <host>:<port> and that a debugger processes is "
@@ -204,12 +204,17 @@ msgstr "授權失敗。%s（自 %s）"
 msgid "The resource could not be found."
 msgstr "找不到資源。"
 
-#: keystone/common/wsgi_server.py:72
+#: keystone/common/environment/__init__.py:37
+#, python-format
+msgid "Environment configured as: %s"
+msgstr ""
+
+#: keystone/common/environment/eventlet_server.py:51
 #, python-format
 msgid "Starting %(arg0)s on %(host)s:%(port)s"
 msgstr "正在 %(host)s:%(port)s 上啟動 %(arg0)s"
 
-#: keystone/common/wsgi_server.py:132
+#: keystone/common/environment/eventlet_server.py:113
 msgid "Server error"
 msgstr "伺服器錯誤"
 
@@ -242,13 +247,13 @@ msgid ""
 "\"%(attr_map)s\" must use one of %(keys)s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:596
-#: keystone/identity/backends/kvs.py:624
+#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:591
+#: keystone/identity/backends/kvs.py:619
 #, python-format
 msgid "Duplicate name, %s."
 msgstr "重複的名稱，%s。"
 
-#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:589
+#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:584
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr "重複的 ID，%s。"
@@ -485,7 +490,7 @@ msgstr "將角色 %s 指派給使用者 %s（在 Tenant %s 上）"
 msgid "Creating ec2 cred for user %(user_id)s and tenant %(tenant_id)s"
 msgstr "正在給使用者 %s 及 Tenant %s 建立 EC2 Cred"
 
-#: keystone/identity/backends/kvs.py:250 keystone/identity/backends/kvs.py:259
+#: keystone/identity/backends/kvs.py:245 keystone/identity/backends/kvs.py:254
 msgid "User not found in group"
 msgstr "在群組中找不到使用者"
 
@@ -499,21 +504,21 @@ msgstr "無法移除尚未授權的角色，%s"
 msgid "Expected dict or list: %s"
 msgstr ""
 
-#: keystone/identity/backends/ldap/core.py:681
+#: keystone/identity/backends/ldap/core.py:632
 #, python-format
 msgid "Role %s not found"
 msgstr "找不到角色 %s"
 
-#: keystone/identity/backends/ldap/core.py:898
+#: keystone/identity/backends/ldap/core.py:820
 msgid "Changing Name not supported by LDAP"
 msgstr "LDAP 不支援變更名稱"
 
-#: keystone/identity/backends/ldap/core.py:911
+#: keystone/identity/backends/ldap/core.py:833
 #, fuzzy, python-format
 msgid "User %(user_id)s is already a member of group %(group_id)s"
 msgstr "使用者 %s 已是群組 %s 的成員"
 
-#: keystone/identity/backends/ldap/core.py:954
+#: keystone/identity/backends/ldap/core.py:875
 #, python-format
 msgid ""
 "Group member '%(user_dn)s' not found in '%(group_dn)s'. The user should "
