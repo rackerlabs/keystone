@@ -48,6 +48,7 @@ from keystone import identity
 from keystone.openstack.common import timeutils
 from keystone import policy
 from keystone import token
+from keystone.token import provider as token_provider
 from keystone import trust
 
 
@@ -224,8 +225,8 @@ class TestCase(NoModule, unittest.TestCase):
 
     def load_backends(self):
         """Initializes each manager and assigns them to an attribute."""
-        for manager in [assignment, catalog, credential,
-                        identity, policy, token, trust]:
+        for manager in [assignment, catalog, credential, identity, policy,
+                        token, trust, token_provider]:
             manager_name = '%s_api' % manager.__name__.split('.')[-1]
             setattr(self, manager_name, manager.Manager())
 
