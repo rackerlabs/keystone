@@ -16,6 +16,7 @@
 
 """Workflow Logic the Identity service."""
 
+import copy
 import urllib
 import urlparse
 import uuid
@@ -807,3 +808,174 @@ class RoleV3(controller.V3Controller):
             self._delete_tokens_for_user(context, user_id)
         else:
             self._delete_tokens_for_group(context, group_id)
+
+
+class RoleAssignmentV3(controller.V3Controller):
+    """Role assignment entity class.
+
+    TODO (henry-nash) The current implementation does not provide a full
+    first class entity for role-assignment. There is no role_assignment_id
+    and only the list_role_assignment call is supported. Further, since it
+    is not a first class entity, the links for the individual entities
+    reference the individual role grant APIs.
+
+    """
+    collection_name = 'role_assignments'
+    member_name = 'role_assignment'
+
+    @classmethod
+    def wrap_member(cls, context, ref):
+        # Since we are not yet a true collection, we override the wrapper
+        # as have already included the links in the entities
+        pass
+
+    def _format_entity(self, entity):
+        formatted_entity = {}
+        if 'user_id' in entity:
+            formatted_entity['user'] = {'id': entity['user_id']}
+            actor_link = '/users/%s' % entity['user_id']
+        if 'group_id' in entity:
+            formatted_entity['group'] = {'id': entity['group_id']}
+            actor_link = '/groups/%s' % entity['group_id']
+        if 'role_id' in entity:
+            formatted_entity['role'] = {'id': entity['role_id']}
+        if 'project_id' in entity:
+            formatted_entity['scope'] = (
+                {'project': {'id': entity['project_id']}})
+            target_link = '/projects/%s' % entity['project_id']
+        if 'domain_id' in entity:
+            formatted_entity['scope'] = (
+                {'domain': {'id': entity['domain_id']}})
+            target_link = '/domains/%s' % entity['domain_id']
+
+        formatted_entity.setdefault('links', {})
+        formatted_entity['links']['assignment'] = (
+            self.base_url(target_link + actor_link +
+                          '/roles/%s' % entity['role_id']))
+        return formatted_entity
+
+    def _expand_indirect_assignments(self, context, refs):
+        """Processes entity list into all-direct assignments.
+
+        For any group role assignments in the list, create a role assignment
+        entity for each member of that group, and then remove the group
+        assignment entity itself from the list.
+
+        For any new entity created by virtue of group membership, add in an
+        additional link to that membership.
+
+        """
+        def _get_group_members(ref):
+            """Get a list of group members.
+
+            Get the list of group members.  If this fails with
+            GroupNotFound, then log this as a warning, but allow
+            overall processing to continue.
+
+            """
+            try:
+                members = self.identity_api.list_users_in_group(
+                    context, ref['group']['id'])
+            except exception.GroupNotFound:
+                members = []
+                # Log a warning, but then continue with the next listing
+                if 'domain' in ref:
+                    target = 'Domain: %s' % ref['domain'].get('domain_id')
+                elif 'project' in ref:
+                    target = 'Project: %s' % ref['project'].get('project_id')
+                LOG.warning(
+                    _('Group %(group)s not found for role-assignment - '
+                      '%(target)s with Role: %(role)s') % {
+                          'group': ref['group_id'], 'target': target,
+                          'role': ref.get('role_id')})
+            return members
+
+        def _build_equivalent_user_assignment(group_id, template):
+            """Create a user assignment equivalent to the group one.
+
+            The template has had the 'group' entity removed, so
+            substitute a 'user' one, modify the 'assignment' link
+            to match, and add a 'membership' link.
+
+            """
+            user_entry = copy.deepcopy(template)
+            user_entry['user'] = {'id': m['id']}
+            scope = user_entry.get('scope')
+            if 'domain' in scope:
+                target_link = (
+                    '/domains/%s' % scope['domain']['id'])
+            else:
+                target_link = (
+                    '/projects/%s' % scope['project']['id'])
+            user_entry['links']['assignment'] = (
+                self.base_url(target_link + '/users/%s' % m['id'] +
+                              '/roles/%s' % user_entry['role']['id']))
+            user_entry['links']['membership'] = (
+                self.base_url('/groups/%s' % group_id +
+                              '/users/%s' % m['id']))
+            return user_entry
+
+        # Scan the list of entities for and group assignments, expanding
+        # them into equivalent user entities.  Rather than modify the
+        # list we are enumerating, we build a list of entities to add
+        # or remove at the end.
+        refs_to_add = []
+        refs_to_remove = []
+        for r in refs:
+            if 'group' in r:
+                # As it is a group role assignment, first get the list of
+                # members.
+
+                members = _get_group_members(r)
+
+                # Now replace that group role assignment entry with an
+                # equivalent user role assignment for each of the group members
+
+                base_entry = copy.deepcopy(r)
+                refs_to_remove.append(r)
+                group_id = base_entry['group']['id']
+                base_entry.pop('group')
+                for m in members:
+                    user_entry = _build_equivalent_user_assignment(
+                        group_id, base_entry)
+                    refs_to_add.append(user_entry)
+
+        # Finally add/remove any entities we modified
+        for x in refs_to_add:
+            refs.append(x)
+        for x in refs_to_remove:
+            refs.remove(x)
+
+    @controller.filterprotected('group.id', 'role.id',
+                                'scope.domain.id', 'scope.project.id',
+                                'user.id')
+    def list_role_assignments(self, context, filters):
+        """List role assignments.
+
+        TODO (henry-nash) This implementation uses the standard filtering
+        in the V3.wrap_collection. Given the large number of individual
+        assignments, this is pretty inefficient.  An alternative would be
+        to pass the filters into the driver call, so that the list size is
+        kept a minimum.
+
+        """
+        refs = self.identity_api.list_role_assignments(context)
+        formatted_refs = [self._format_entity(x) for x in refs]
+
+        if 'effective' in context['query_string']:
+            self._expand_indirect_assignments(context, formatted_refs)
+
+        return RoleAssignmentV3.wrap_collection(context, formatted_refs,
+                                                filters)
+
+    @controller.protected
+    def get_role_assignment(self, context):
+        raise exception.NotImplemented()
+
+    @controller.protected
+    def update_role_assignment(self, context):
+        raise exception.NotImplemented()
+
+    @controller.protected
+    def delete_role_assignment(self, context):
+        raise exception.NotImplemented()
