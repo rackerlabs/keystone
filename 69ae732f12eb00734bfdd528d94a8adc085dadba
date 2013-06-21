@@ -34,6 +34,24 @@
       "revId": "69ae732f12eb00734bfdd528d94a8adc085dadba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wi8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-21T22:08:46Z",
+      "side": 1,
+      "message": "although it\u0027s a user-facing refactor, i don\u0027t see it as necessary to include it in the list of bugs fixed in havana (it\u0027s certainly not a feature/bp) nor propose it for backporting. the intent is also pretty self-contained and self-explanatory (there\u0027s no \"steps\" to reproduce an issue or anything)",
+      "parentUuid": "AAAAPn//y1E\u003d",
+      "revId": "69ae732f12eb00734bfdd528d94a8adc085dadba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
