@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//y1w\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/027_add_delegated_auth_tables.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-21T04:23:32Z",
+      "side": 1,
+      "message": "If this is an extension, it should not go into the base SQL repository, but into an extension specific repository.  This is not something we are currently doing, but the sqlalchemy migration code supports it.",
+      "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//y9g\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/027_add_delegated_auth_tables.py",
         "patchSetId": 22
@@ -13,6 +30,57 @@
       "writtenOn": "2013-06-21T01:40:24Z",
       "side": 1,
       "message": "probably want to drop the token tables too or explain why not",
+      "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//y1k\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-21T04:23:32Z",
+      "side": 1,
+      "message": "What do you need from req?",
+      "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//y1I\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-21T04:23:32Z",
+      "side": 1,
+      "message": "This is, I think, full impersonation.   Look at what was implemented in trusts:  we want the token to clearly specify both users involved in issueing the token:  the one on whose behalf it is done (trustor) and the one requesting the token (trustee).",
+      "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//y1Q\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-21T04:23:32Z",
+      "side": 1,
+      "message": "Actually, the user should be able to specify a subset of the roles, not all of their roles, which is what I think you meant and actually implemented here.",
       "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
