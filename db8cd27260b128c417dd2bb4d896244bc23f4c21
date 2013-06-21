@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//y28\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-21T03:50:24Z",
+      "side": 1,
+      "message": "Tried clicking the bug link below, does Gerrit pick up on that format? \"bug/XXXXXX? vs. bug XXXXXX?",
+      "revId": "db8cd27260b128c417dd2bb4d896244bc23f4c21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
