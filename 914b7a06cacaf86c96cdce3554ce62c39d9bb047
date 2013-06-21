@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//wx8\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "suggest change this note and add the docs for each before the option, like\n\n # Provides token CRUD.\n # driver \u003d keystone.token.backends.sql.Token\n\n # Provides token operation management, such as generating\n # tokens to be persisted by the driver.\n # provider \u003d keystone.token.providers.keystone_provider.Provider",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wxg\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "why does this need to change? should it be in token_provider_api.issue_token()? (this refers to why lines 290-291 turned into 292-296.)",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wxE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "this used to turn every problem into Unauthorized (e.g., rather than a 500)... was there a security reason for doing this?",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//w3o\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 2
@@ -107,6 +158,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//wwI\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "seems like an odd error to raise, since not looking up a token. Suggest raise a new exception that describes the problem better.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wtw\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "suggest add a comment why this method doesn\u0027t need to do anything in this case.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//w68\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 2
@@ -171,6 +256,482 @@
       "side": 1,
       "message": "should be all the effective roles",
       "parentUuid": "AAAAPn//w24\u003d",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ws0\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "suggest change name of variable to role_refs",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wtA\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "change \"have\" to \"has\"",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ws8\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "could use \"if not roles_ref\"\n\nalso, could move this test up to before line 71, and check for empty roles\n\nalso, I\u0027d prefer it if the caller enforced this, so move this check to the caller instead.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wvg\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "suggest \"User %(user)s doesn\u0027t have access to project %(project)s\"",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wr4\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "Similar comments here as had in _get_project_roles_for_user(), indicating that there\u0027s duplicated code.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wrY\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "wondering if this method should assert that one of domain_id or project_id is not None.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wrM\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "add a comment explaining why this method can do nothing  in this case.\n\nshould this be skipped in case need to set trust info?",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wps\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "should this have been skipped if \u0027OS-TRUST:trust\u0027 in token_data ?",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wpg\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "add a comment explaining why this method can do nothing in this case.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wpE\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "use the default domain?",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wow\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "suggest change to not (token_domain_id or token_project_id) and return right away so reviewers don\u0027t have to check for the else.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//woE\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "is this just looking to see if the user roles are match the trust roles? suggest move it into a function named so that it says what it\u0027s doing.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//woU\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "this seems like a good place to check that the user has no roles.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wpc\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "add a comment explaining why this method can do nothing in this case.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wn8\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "what does this do if project_id is None? Seems like it would generate a catalog that has None for any %(tenant_id)s. Just a comment to myself... not sure what this is supposed to do.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wvM\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "suggest move \"if token\" part outside of loop since it\u0027s not changing.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wvE\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "suggest use named arguments for named parameters, in case someone changes the order.\n\n self._populate_token(token_data, expires\u003dexpires, trust\u003dtrust)",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wl4\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "provide a name for the None argument so reviewers know what it is.\n\n context \u003d None\n token_data_helper \u003d V3TokenDataHelper(context)",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wmo\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "Should take care of FIXMEs in new code.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wls\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "should ensure CONF.trust.enabled before calling this, otherwise would get an error.\n\nAlso, provide the name of the None parameter so I don\u0027t have to go looking for it.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wlY\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "Provide a name for the None parameter.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wlQ\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "should an exception be logged if it\u0027s not really an error?",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wlU\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "provide a name for the None parameter",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wk4\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "see https://review.openstack.org/#/c/33614/",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wk0\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "suggest remove all but version and use **kwargs for the rest, since this fn doesn\u0027t use expires_at etc, just passes it on.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wkc\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "Give a name to the None paratmeter.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wkY\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "there\u0027s a mismatch between the parameters that are kwargs and those that aren\u0027t, also if the kwarg has the same default then leave it out.",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wkU\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T21:56:50Z",
+      "side": 1,
+      "message": "use a named argument for named parameter (belongs_to\u003dbelongs_to) in case someone changes the arguments.",
       "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
