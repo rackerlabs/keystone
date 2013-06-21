@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//wkA\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T22:01:14Z",
+      "side": 1,
+      "message": "nova has a handy save_and_reraise_exception , can we get that in Keystone?",
+      "revId": "2d6d5aa58bce413f17359327a2ea5bf146df30c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//2y8\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 1
@@ -66,6 +83,24 @@
       "side": 1,
       "message": "Not pep8. I for one think that\u0027s better for separating imports and comments.",
       "parentUuid": "AAAAPn//2y8\u003d",
+      "revId": "2d6d5aa58bce413f17359327a2ea5bf146df30c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wkE\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-21T22:01:14Z",
+      "side": 1,
+      "message": "OpenStack guidelines suggest not mixing whitespace changes, see https://wiki.openstack.org/wiki/GitCommitMessages",
+      "parentUuid": "AAAAPn//0dw\u003d",
       "revId": "2d6d5aa58bce413f17359327a2ea5bf146df30c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
