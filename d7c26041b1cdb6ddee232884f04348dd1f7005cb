@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//xwA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/015_tenant_to_project.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-06-21T13:54:54Z",
+      "side": 1,
+      "message": "very helpful comment",
+      "revId": "d7c26041b1cdb6ddee232884f04348dd1f7005cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//xvU\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-06-21T13:54:54Z",
+      "side": 1,
+      "message": "again nice to see comments that are informative",
+      "revId": "d7c26041b1cdb6ddee232884f04348dd1f7005cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
