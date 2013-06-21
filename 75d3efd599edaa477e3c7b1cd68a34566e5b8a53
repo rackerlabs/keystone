@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//wsw\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1849
+      },
+      "writtenOn": "2013-06-21T20:56:04Z",
+      "side": 1,
+      "message": "why do you need this here?   nova just uses gettextutils.install(\u0027nova\u0027) in the binaries (cmd files)",
+      "revId": "75d3efd599edaa477e3c7b1cd68a34566e5b8a53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
