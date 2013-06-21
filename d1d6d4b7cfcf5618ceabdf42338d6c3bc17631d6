@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//xbk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/027_add_delegated_auth_tables.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-06-21T16:16:36Z",
+      "side": 1,
+      "message": "If you have any more info on this, let me know. I\u0027ll try getting it on my own, might ping you on irc",
+      "parentUuid": "AAAAPn//y1w\u003d",
+      "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//y9g\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/027_add_delegated_auth_tables.py",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-21T01:40:24Z",
       "side": 1,
       "message": "probably want to drop the token tables too or explain why not",
+      "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//xzw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/027_add_delegated_auth_tables.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-06-21T16:16:36Z",
+      "side": 1,
+      "message": "Missed that, thank you.",
+      "parentUuid": "AAAAPn//y9g\u003d",
       "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//xcE\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-06-21T16:16:36Z",
+      "side": 1,
+      "message": "it\u0027s used in keystone/contrib/delegated_auth/core.py,\nrequest \u003d context[\u0027request\u0027]\nbut i could get the query_string parameter, it seems to have the same information\n\nWould that be preferred?",
+      "parentUuid": "AAAAPn//y1k\u003d",
+      "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//y1I\u003d",
         "filename": "keystone/contrib/delegated_auth/core.py",
         "patchSetId": 22
@@ -64,6 +118,24 @@
       "writtenOn": "2013-06-21T04:23:32Z",
       "side": 1,
       "message": "This is, I think, full impersonation.   Look at what was implemented in trusts:  we want the token to clearly specify both users involved in issueing the token:  the one on whose behalf it is done (trustor) and the one requesting the token (trustee).",
+      "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//xag\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-06-21T16:16:36Z",
+      "side": 1,
+      "message": "Full impersonation sounds like it\u0027s cloning the user, but its really just allowing a set of roles that the user has. \n\nWhat\u0027s the purpose of the trustee? Better auditing?",
+      "parentUuid": "AAAAPn//y1I\u003d",
       "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
