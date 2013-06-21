@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//w0s\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-21T20:06:41Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "AAAAPn//w3o\u003d",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//w4w\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-21T19:52:41Z",
       "side": 1,
       "message": "Really no clue what this method is doing here? So I may be totally wrong  totally wrong on this\n   1) Why does validate token even need to return 201 Created (OK, u are calling from multiple places)\n   2) Why is content-type determined here?\n   2) This method is used by post and GET. Vary parameter makes sense only in case of GET. We are blindly adding vary to everything",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//w0w\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-21T20:06:41Z",
+      "side": 1,
+      "message": "1) validate token is returning 200 as created\u003dFalse by default. authenticate_for_token() set created\u003dTrue to return a 201\n2) Because we need to create a legitimate HTTP response. Content and its type will get translated correctly in the middleware, depending on the request. See https://github.com/openstack/keystone/blob/master/keystone/middleware/core.py#L144\n3) in v3, create token and validate token returns the exact same thing, different only in status (201 versus 200).",
+      "parentUuid": "AAAAPn//w4w\u003d",
       "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//w0o\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-21T20:06:41Z",
+      "side": 1,
+      "message": "trust is part of metadata for now. I am sure we\u0027ll have to make some tweaks once it becomes core.",
+      "parentUuid": "AAAAPn//w7g\u003d",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//w68\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//w0Y\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-21T20:06:41Z",
+      "side": 1,
+      "message": "good idea!",
+      "parentUuid": "AAAAPn//w68\u003d",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//w24\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2013-06-21T19:52:41Z",
       "side": 1,
       "message": "Just curious, is this going to be simple roles, inherited roles , or effective roles",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//w0Q\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-21T20:06:41Z",
+      "side": 1,
+      "message": "should be all the effective roles",
+      "parentUuid": "AAAAPn//w24\u003d",
       "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
