@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//y4U\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-21T03:35:57Z",
+      "side": 1,
+      "message": "Doc strings for params and return value?",
+      "revId": "5b8d01ff9a3031007b3ae901215bffec816be087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//y4M\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-21T03:35:57Z",
+      "side": 1,
+      "message": "Do we need the print statement here? Isn\u0027t the assert validating the test?",
+      "revId": "5b8d01ff9a3031007b3ae901215bffec816be087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

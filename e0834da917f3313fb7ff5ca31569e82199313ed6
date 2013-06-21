@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//y4Y\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-21T03:35:57Z",
+      "side": 0,
+      "message": "Just curious, why was this line removed?",
+      "revId": "e0834da917f3313fb7ff5ca31569e82199313ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
