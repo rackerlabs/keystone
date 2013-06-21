@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//y9g\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/027_add_delegated_auth_tables.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-21T01:40:24Z",
+      "side": 1,
+      "message": "probably want to drop the token tables too or explain why not",
+      "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
