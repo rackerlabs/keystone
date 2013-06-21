@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//w3o\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-21T19:52:41Z",
+      "side": 1,
+      "message": "Does v3 still have belongsTo?",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//w4w\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-21T19:52:41Z",
+      "side": 1,
+      "message": "Really no clue what this method is doing here? So I may be totally wrong  totally wrong on this\n   1) Why does validate token even need to return 201 Created (OK, u are calling from multiple places)\n   2) Why is content-type determined here?\n   2) This method is used by post and GET. Vary parameter makes sense only in case of GET. We are blindly adding vary to everything",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//w7g\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-21T19:52:41Z",
+      "side": 1,
+      "message": "What happened to other scopes such us \"trust\"? (OK, saw that it is stuffed in kwargs)\n\nCan\u0027t this be generalized to  ScopeType and ScopleTypeId so that it is easy to add some other scope.  Assuming trust is approved to be part of core, then are you  going to move trust from kwargs",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//w68\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-21T19:52:41Z",
+      "side": 1,
+      "message": "To make it consistent, this should have been re factored as\n_get_filtered_project",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//w24\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-21T19:52:41Z",
+      "side": 1,
+      "message": "Just curious, is this going to be simple roles, inherited roles , or effective roles",
+      "revId": "914b7a06cacaf86c96cdce3554ce62c39d9bb047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
