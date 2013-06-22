@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//wVY\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-22T00:54:14Z",
+      "side": 1,
+      "message": "May want to document the callback mechanism here so user understand that the callback is called only once when the engine changes. Also, they\u0027ll need to re-register for a new engine callback.",
+      "revId": "80be4bb20128ae3ad1c29366ee87fb1ba5650156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wVU\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-22T00:54:14Z",
+      "side": 1,
+      "message": "if GLOBLAL_ENGINE !\u003d engine:\n\nwhat if someone calls this with the same engine?",
+      "revId": "80be4bb20128ae3ad1c29366ee87fb1ba5650156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//wWM\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-22T00:54:14Z",
+      "side": 1,
+      "message": "may want to do a try-except here in case a callback don\u0027t play nice",
+      "revId": "80be4bb20128ae3ad1c29366ee87fb1ba5650156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
