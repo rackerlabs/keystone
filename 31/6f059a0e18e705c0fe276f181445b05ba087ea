@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Approved+1: guang-yee <guang.yee@hp.com>
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Verified+1: SmokeStack
+Code-Review+1: ldbragst <ldbragst@us.ibm.com>
+Code-Review+1: nachiappan-veerappan-nachiappan <nachiappan.veerappan-nachiappan@hp.com>
+Code-Review+1: Sahdev Zala <spzala@us.ibm.com>
+Code-Review+1: Liang Chen <cbjchen@linux.vnet.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 22 Jun 2013 01:32:57 +0000
+Reviewed-on: https://review.openstack.org/29336
+Project: openstack/keystone
+Branch: refs/heads/master
