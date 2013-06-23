@@ -16,6 +16,24 @@
       "revId": "75d3efd599edaa477e3c7b1cd68a34566e5b8a53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//vok\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-06-23T06:11:56Z",
+      "side": 1,
+      "message": "we have gettextutils.install(\u0027keystone\u0027) in keystone cmd files too.without the code line, when run UT test case in \"test_exception\", \"_\" function can not be recognized. I belive the issue will occur when other component call exception module without the code line",
+      "parentUuid": "AAAAPn//wsw\u003d",
+      "revId": "75d3efd599edaa477e3c7b1cd68a34566e5b8a53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
