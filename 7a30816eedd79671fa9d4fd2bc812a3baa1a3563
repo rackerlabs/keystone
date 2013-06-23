@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//vrQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-23T04:10:16Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "AAAAPn//vxM\u003d",
+      "revId": "7a30816eedd79671fa9d4fd2bc812a3baa1a3563",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//vxI\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-22T23:10:55Z",
       "side": 1,
       "message": "Type in management",
+      "revId": "7a30816eedd79671fa9d4fd2bc812a3baa1a3563",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//vrM\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-23T04:10:16Z",
+      "side": 1,
+      "message": "not sure if I understand this comment",
+      "parentUuid": "AAAAPn//vxI\u003d",
       "revId": "7a30816eedd79671fa9d4fd2bc812a3baa1a3563",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//vrI\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-23T04:10:16Z",
+      "side": 1,
+      "message": "trust was implemented by another patch. I rather not change the functionality here.",
+      "parentUuid": "AAAAPn//vxE\u003d",
+      "revId": "7a30816eedd79671fa9d4fd2bc812a3baa1a3563",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//vw8\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2013-06-22T23:10:55Z",
       "side": 1,
       "message": "What does the line \nmethod_names +\u003d auth_context.get(\u0027method_names\u0027, []) does",
+      "revId": "7a30816eedd79671fa9d4fd2bc812a3baa1a3563",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//vrE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-23T04:10:16Z",
+      "side": 1,
+      "message": "it aggregates any additional method names from the plugins",
+      "parentUuid": "AAAAPn//vw8\u003d",
       "revId": "7a30816eedd79671fa9d4fd2bc812a3baa1a3563",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//vrA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-23T04:10:16Z",
+      "side": 1,
+      "message": "belongs_to was implemented by the original code. I am simply preserving the functionality. Please file a separate bug if it needs to be corrected at the API level.",
+      "parentUuid": "AAAAPn//vw4\u003d",
+      "revId": "7a30816eedd79671fa9d4fd2bc812a3baa1a3563",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//vw0\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2013-06-22T23:10:55Z",
       "side": 1,
       "message": "If the top layer ( pipeline)  is going to determine  \"Content-Type\", we don\u0027t need \"\nContent-Type here",
+      "revId": "7a30816eedd79671fa9d4fd2bc812a3baa1a3563",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//vq8\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-23T04:10:16Z",
+      "side": 1,
+      "message": "middleware needs to know the existing content type in order to translate it correctly I think. This code was inspired by render_response()\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/wsgi.py#L515\n\nI do think you have a good point here. Internally, Keystone is operating on JSON data so in theory content-type should be provided by middleware.\n\nPerhaps we need a file a bug for enhancement?",
+      "parentUuid": "AAAAPn//vw0\u003d",
       "revId": "7a30816eedd79671fa9d4fd2bc812a3baa1a3563",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//vqw\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-23T04:10:16Z",
+      "side": 1,
+      "message": "for domain-scoped tokens, domain-assigned roles have domain_id in them. See V3 spec.",
+      "parentUuid": "AAAAPn//vwo\u003d",
+      "revId": "7a30816eedd79671fa9d4fd2bc812a3baa1a3563",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//vwk\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 4
@@ -132,6 +258,24 @@
       "writtenOn": "2013-06-22T23:10:55Z",
       "side": 1,
       "message": "Why are we passing the method names [ password, token]",
+      "revId": "7a30816eedd79671fa9d4fd2bc812a3baa1a3563",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//vq0\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-23T04:10:16Z",
+      "side": 1,
+      "message": "because we are reconstructing V3 token from V2 data. Only password and token methods are supported in V2 and we can tell the difference from V2 data itself.",
+      "parentUuid": "AAAAPn//vwk\u003d",
       "revId": "7a30816eedd79671fa9d4fd2bc812a3baa1a3563",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
