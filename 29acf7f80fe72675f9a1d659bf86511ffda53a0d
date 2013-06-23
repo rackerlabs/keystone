@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//vYM\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-23T16:16:26Z",
+      "side": 1,
+      "message": "I thought the length was 255 not 128?\n\nThis indicates that the unit tests are not adequate.",
+      "revId": "29acf7f80fe72675f9a1d659bf86511ffda53a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
