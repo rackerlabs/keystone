@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//tGQ\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 7891
+      },
+      "writtenOn": "2013-06-24T21:38:58Z",
+      "side": 1,
+      "message": "Line 239 seemed to be straight forward. If anyone has any advice on how this could be improved, please let me know.",
+      "revId": "81b1baa23fc5a9f3dfd26636b204e74e1583500d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
