@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-06-17 17:09+0000\n"
+"POT-Creation-Date: 2013-06-24 17:05+0000\n"
 "PO-Revision-Date: 2013-05-21 06:08+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Chinese (China) "
@@ -120,18 +120,18 @@ msgstr "端点 %s 的格式不正确 - 格式不完整（您遗漏了类型通�
 msgid "Unable to open template file %s"
 msgstr "无法打开模板文件 %s"
 
-#: keystone/common/cms.py:42
+#: keystone/common/cms.py:26
 #, python-format
 msgid "Verify error: %s"
 msgstr "发生验证错误：%s"
 
-#: keystone/common/cms.py:134
+#: keystone/common/cms.py:118
 msgid ""
 "Signing error: Unable to load certificate - ensure you've configured PKI "
 "with 'keystone-manage pki_setup'"
 msgstr "发生签名错误：无法装入证书 - 请确保您已使用“keystone-manage pki_setup”配置 PKI"
 
-#: keystone/common/cms.py:138
+#: keystone/common/cms.py:122
 #, python-format
 msgid "Signing error: %s"
 msgstr "发生签名错误：%s"
@@ -183,7 +183,7 @@ msgstr "RBAC：正在添加查询过滤器参数 (%s)"
 msgid "Invalid token in normalize_domain_id"
 msgstr "normalize_domain_id 中的令牌无效"
 
-#: keystone/common/utils.py:232
+#: keystone/common/utils.py:233
 msgid ""
 "Error setting up the debug environment. Verify that the option --debug-"
 "url has the format <host>:<port> and that a debugger processes is "
@@ -204,12 +204,17 @@ msgstr "授权失败。%s 来自 %s"
 msgid "The resource could not be found."
 msgstr "找不到该资源。"
 
-#: keystone/common/wsgi_server.py:72
+#: keystone/common/environment/__init__.py:37
+#, python-format
+msgid "Environment configured as: %s"
+msgstr ""
+
+#: keystone/common/environment/eventlet_server.py:51
 #, python-format
 msgid "Starting %(arg0)s on %(host)s:%(port)s"
 msgstr "正在 %(host)s:%(port)s 上启动 %(arg0)s"
 
-#: keystone/common/wsgi_server.py:132
+#: keystone/common/environment/eventlet_server.py:113
 msgid "Server error"
 msgstr "服务器错误"
 
@@ -242,13 +247,13 @@ msgid ""
 "\"%(attr_map)s\" must use one of %(keys)s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:596
-#: keystone/identity/backends/kvs.py:624
+#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:591
+#: keystone/identity/backends/kvs.py:619
 #, python-format
 msgid "Duplicate name, %s."
 msgstr "名称 %s 重复。"
 
-#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:589
+#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:584
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr "标识 %s 重复。"
@@ -436,7 +441,7 @@ msgstr "FakeLdap search 失败：对于 SCOPE_BASE，找不到 dn"
 msgid "Search scope %s not implemented."
 msgstr "未实现搜索范围 %s。"
 
-#: keystone/common/sql/core.py:205
+#: keystone/common/sql/core.py:201
 #, python-format
 msgid "Got mysql server has gone away: %s"
 msgstr "mysql 服务器已不存在：%s"
@@ -485,40 +490,40 @@ msgstr "请将角色 %s 分配给用户 %s（在租户 %s 上）"
 msgid "Creating ec2 cred for user %(user_id)s and tenant %(tenant_id)s"
 msgstr "正在为用户 %s 和租户 %s 创建 ec2 凭证"
 
-#: keystone/identity/backends/kvs.py:250 keystone/identity/backends/kvs.py:259
+#: keystone/identity/backends/kvs.py:245 keystone/identity/backends/kvs.py:254
 msgid "User not found in group"
 msgstr "在组中找不到用户"
 
-#: keystone/identity/backends/sql.py:425
-#, python-format
-msgid "Cannot remove role that has not been granted, %s"
-msgstr "无法除去尚未授予的角色 %s"
-
-#: keystone/identity/backends/ldap/core.py:82
+#: keystone/identity/backends/ldap.py:82
 #, python-format
 msgid "Expected dict or list: %s"
 msgstr ""
 
-#: keystone/identity/backends/ldap/core.py:681
+#: keystone/identity/backends/ldap.py:632
 #, python-format
 msgid "Role %s not found"
 msgstr "找不到角色 %s"
 
-#: keystone/identity/backends/ldap/core.py:898
+#: keystone/identity/backends/ldap.py:820
 msgid "Changing Name not supported by LDAP"
 msgstr "更改名称不受 LDAP 支持"
 
-#: keystone/identity/backends/ldap/core.py:911
+#: keystone/identity/backends/ldap.py:833
 #, fuzzy, python-format
 msgid "User %(user_id)s is already a member of group %(group_id)s"
 msgstr "用户 %s 已是组 %s 的成员"
 
-#: keystone/identity/backends/ldap/core.py:954
+#: keystone/identity/backends/ldap.py:875
 #, python-format
 msgid ""
 "Group member '%(user_dn)s' not found in '%(group_dn)s'. The user should "
 "be removed from the group. The user will be ignored."
 msgstr ""
+
+#: keystone/identity/backends/sql.py:425
+#, python-format
+msgid "Cannot remove role that has not been granted, %s"
+msgstr "无法除去尚未授予的角色 %s"
 
 #: keystone/openstack/common/policy.py:394
 #, python-format
