@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//tO8\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-24T21:02:04Z",
+      "side": 1,
+      "message": "Gotcha, makes sense",
+      "parentUuid": "AAAAPn//tTI\u003d",
+      "revId": "ae1453d9af9e96d7664c9f4d329ad4810a6d421e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//tX0\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "I thought this was to proper format",
       "parentUuid": "AAAAPn//tX0\u003d",
+      "revId": "ae1453d9af9e96d7664c9f4d329ad4810a6d421e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//tOQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-24T21:02:04Z",
+      "side": 1,
+      "message": "Yep, you\u0027re right. https://review.openstack.org/#/c/30293/\n\nI had my spaces mixed up.",
+      "parentUuid": "AAAAPn//tS4\u003d",
       "revId": "ae1453d9af9e96d7664c9f4d329ad4810a6d421e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
