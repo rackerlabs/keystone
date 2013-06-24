@@ -29,6 +29,7 @@ import default_fixtures
 
 
 CONF = config.CONF
+
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
 
