@@ -16,6 +16,8 @@
 
 import uuid
 
+import sqlalchemy
+
 from keystone import test
 
 from keystone import catalog
@@ -71,6 +73,94 @@ class SqlTests(test.TestCase, sql.Base):
         self.engine.dispose()
         sql.set_global_engine(None)
         super(SqlTests, self).tearDown()
+
+
+class SqlModels(SqlTests):
+    def setUp(self):
+        super(SqlModels, self).setUp()
+
+        self.metadata = sql.ModelBase.metadata
+        self.metadata.bind = self.engine
+
+    def select_table(self, name):
+        table = sqlalchemy.Table(name,
+                                 self.metadata,
+                                 autoload=True)
+        s = sqlalchemy.select([table])
+        return s
+
+    def _test_table_against_model(self, table, cols):
+        user_table = self.select_table(table)
+        for col, type_, length in cols:
+            self.assertIsInstance(user_table.c[col].type, type_)
+            if length:
+                self.assertEquals(user_table.c[col].type.length, length)
+
+    def test_user_model(self):
+        cols = (("id", sql.String, 64),
+                ("name", sql.String, 64),
+                ("password", sql.String, 128),
+                ("domain_id", sql.String, 64),
+                ("enabled", sql.Boolean, None),
+                ("extra", sql.JsonBlob, None))
+        self._test_table_against_model("user", cols)
+
+    def test_group_model(self):
+        cols = (("id", sql.String, 64),
+                ("name", sql.String, 64),
+                ("description", sql.Text, None),
+                ("domain_id", sql.String, 64),
+                ("extra", sql.JsonBlob, None))
+        self._test_table_against_model("group", cols)
+
+    def test_domain_model(self):
+        cols = (("id", sql.String, 64),
+                ("name", sql.String, 64),
+                ("enabled", sql.Boolean, None))
+        self._test_table_against_model("domain", cols)
+
+    def test_project_model(self):
+        cols = (("id", sql.String, 64),
+                ("name", sql.String, 64),
+                ("description", sql.Text, None),
+                ("domain_id", sql.String, 64),
+                ("enabled", sql.Boolean, None),
+                ("extra", sql.JsonBlob, None))
+        self._test_table_against_model("project", cols)
+
+    def test_role_model(self):
+        cols = (("id", sql.String, 64),
+                ("name", sql.String, 64))
+        self._test_table_against_model("role", cols)
+
+    def test_user_project_metadata_model(self):
+        cols = (("user_id", sql.String, 64),
+                ("project_id", sql.String, 64),
+                ("data", sql.JsonBlob, None))
+        self._test_table_against_model("user_project_metadata", cols)
+
+    def test_user_domain_metadata_model(self):
+        cols = (("user_id", sql.String, 64),
+                ("domain_id", sql.String, 64),
+                ("data", sql.JsonBlob, None))
+        self._test_table_against_model("user_domain_metadata", cols)
+
+    def test_group_project_metadata_model(self):
+        cols = (("group_id", sql.String, 64),
+                ("project_id", sql.String, 64),
+                ("data", sql.JsonBlob, None))
+        self._test_table_against_model("group_project_metadata", cols)
+
+    def test_group_domain_metadata_model(self):
+        cols = (("group_id", sql.String, 64),
+                ("domain_id", sql.String, 64),
+                ("data", sql.JsonBlob, None))
+        self._test_table_against_model("group_domain_metadata", cols)
+
+    def test_user_group_membership(self):
+        cols = (("group_id", sql.String, 64),
+                ("user_id", sql.String, 64))
+        self._test_table_against_model("user_group_membership", cols)
 
 
 class SqlIdentity(SqlTests, test_backend.IdentityTests):
