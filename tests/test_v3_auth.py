@@ -26,6 +26,7 @@ import test_v3
 
 
 CONF = config.CONF
+EMPTY_CONTEXT = {}
 
 
 class TestAuthInfo(test_v3.RestfulTestCase):
@@ -426,67 +427,87 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
 
         # Start by creating a couple of domains and projects
         self.domainA = self.new_domain_ref()
-        self.identity_api.create_domain(self.domainA['id'], self.domainA)
+        self.identity_api.create_domain(EMPTY_CONTEXT,
+                                        self.domainA['id'], self.domainA)
         self.domainB = self.new_domain_ref()
-        self.identity_api.create_domain(self.domainB['id'], self.domainB)
+        self.identity_api.create_domain(EMPTY_CONTEXT,
+                                        self.domainB['id'], self.domainB)
         self.projectA = self.new_project_ref(domain_id=self.domainA['id'])
-        self.identity_api.create_project(self.projectA['id'], self.projectA)
+        self.identity_api.create_project(EMPTY_CONTEXT,
+                                         self.projectA['id'], self.projectA)
         self.projectB = self.new_project_ref(domain_id=self.domainA['id'])
-        self.identity_api.create_project(self.projectB['id'], self.projectB)
+        self.identity_api.create_project(EMPTY_CONTEXT,
+                                         self.projectB['id'], self.projectB)
 
         # Now create some users, one in domainA and two of them in domainB
         self.user1 = self.new_user_ref(
             domain_id=self.domainA['id'])
         self.user1['password'] = uuid.uuid4().hex
-        self.identity_api.create_user(self.user1['id'], self.user1)
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      self.user1['id'], self.user1)
 
         self.user2 = self.new_user_ref(
             domain_id=self.domainB['id'])
         self.user2['password'] = uuid.uuid4().hex
-        self.identity_api.create_user(self.user2['id'], self.user2)
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      self.user2['id'], self.user2)
 
         self.user3 = self.new_user_ref(
             domain_id=self.domainB['id'])
         self.user3['password'] = uuid.uuid4().hex
-        self.identity_api.create_user(self.user3['id'], self.user3)
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      self.user3['id'], self.user3)
 
         self.group1 = self.new_group_ref(
             domain_id=self.domainA['id'])
-        self.identity_api.create_group(self.group1['id'], self.group1)
+        self.identity_api.create_group(EMPTY_CONTEXT,
+                                       self.group1['id'], self.group1)
 
         self.group2 = self.new_group_ref(
             domain_id=self.domainA['id'])
-        self.identity_api.create_group(self.group2['id'], self.group2)
+        self.identity_api.create_group(EMPTY_CONTEXT,
+                                       self.group2['id'], self.group2)
 
         self.group3 = self.new_group_ref(
             domain_id=self.domainB['id'])
-        self.identity_api.create_group(self.group3['id'], self.group3)
+        self.identity_api.create_group(EMPTY_CONTEXT,
+                                       self.group3['id'], self.group3)
 
-        self.identity_api.add_user_to_group(self.user1['id'],
+        self.identity_api.add_user_to_group(EMPTY_CONTEXT,
+                                            self.user1['id'],
                                             self.group1['id'])
-        self.identity_api.add_user_to_group(self.user2['id'],
+        self.identity_api.add_user_to_group(EMPTY_CONTEXT,
+                                            self.user2['id'],
                                             self.group1['id'])
-        self.identity_api.add_user_to_group(self.user3['id'],
+        self.identity_api.add_user_to_group(EMPTY_CONTEXT,
+                                            self.user3['id'],
                                             self.group2['id'])
 
         self.role1 = self.new_role_ref()
-        self.identity_api.create_role(self.role1['id'], self.role1)
+        self.identity_api.create_role(EMPTY_CONTEXT,
+                                      self.role1['id'], self.role1)
         self.role2 = self.new_role_ref()
-        self.identity_api.create_role(self.role2['id'], self.role2)
+        self.identity_api.create_role(EMPTY_CONTEXT,
+                                      self.role2['id'], self.role2)
 
-        self.identity_api.create_grant(self.role1['id'],
+        self.identity_api.create_grant(EMPTY_CONTEXT,
+                                       self.role1['id'],
                                        user_id=self.user1['id'],
                                        domain_id=self.domainA['id'])
-        self.identity_api.create_grant(self.role1['id'],
+        self.identity_api.create_grant(EMPTY_CONTEXT,
+                                       self.role1['id'],
                                        user_id=self.user1['id'],
                                        project_id=self.projectA['id'])
-        self.identity_api.create_grant(self.role1['id'],
+        self.identity_api.create_grant(EMPTY_CONTEXT,
+                                       self.role1['id'],
                                        user_id=self.user2['id'],
                                        project_id=self.projectA['id'])
-        self.identity_api.create_grant(self.role1['id'],
+        self.identity_api.create_grant(EMPTY_CONTEXT,
+                                       self.role1['id'],
                                        user_id=self.user3['id'],
                                        project_id=self.projectA['id'])
-        self.identity_api.create_grant(self.role1['id'],
+        self.identity_api.create_grant(EMPTY_CONTEXT,
+                                       self.role1['id'],
                                        group_id=self.group1['id'],
                                        project_id=self.projectA['id'])
 
@@ -515,7 +536,8 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
 
         # create a new role
         role = self.new_role_ref()
-        self.identity_api.create_role(role['id'], role)
+        self.identity_api.create_role(EMPTY_CONTEXT,
+                                      role['id'], role)
 
         # assign a new role
         self.put(
@@ -880,7 +902,8 @@ class TestAuthJSON(test_v3.RestfulTestCase):
     def test_project_id_scoped_token_with_user_id_401(self):
         project_id = uuid.uuid4().hex
         project = self.new_project_ref(domain_id=self.domain_id)
-        self.identity_api.create_project(project_id, project)
+        self.identity_api.create_project(EMPTY_CONTEXT,
+                                         project_id, project)
 
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
@@ -987,10 +1010,12 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         group = self.new_group_ref(
             domain_id=self.domain_id)
         group['id'] = group_id
-        self.identity_api.create_group(group_id, group)
+        self.identity_api.create_group(EMPTY_CONTEXT,
+                                       group_id, group)
 
         # add user to group
-        self.identity_api.add_user_to_group(self.user['id'], group['id'])
+        self.identity_api.add_user_to_group(EMPTY_CONTEXT,
+                                            self.user['id'], group['id'])
 
         # grant the domain role to group
         path = '/domains/%s/groups/%s/roles/%s' % (
@@ -1128,7 +1153,8 @@ class TestTrustAuth(TestAuthInfo):
         self.trustee_user_id = uuid.uuid4().hex
         self.trustee_user = self.new_user_ref(domain_id=self.domain_id)
         self.trustee_user['id'] = self.trustee_user_id
-        self.identity_api.create_user(self.trustee_user_id, self.trustee_user)
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      self.trustee_user_id, self.trustee_user)
 
     def test_create_trust_400(self):
         raise nose.exc.SkipTest('Blocked by bug 1133435')
@@ -1322,7 +1348,8 @@ class TestTrustAuth(TestAuthInfo):
         trustee_user_id = uuid.uuid4().hex
         trustee_user = self.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
         trustee_user['id'] = trustee_user_id
-        self.identity_api.create_user(trustee_user_id, trustee_user)
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      trustee_user_id, trustee_user)
 
         ref = self.new_trust_ref(
             trustor_user_id=self.default_domain_user_id,
@@ -1362,7 +1389,8 @@ class TestTrustAuth(TestAuthInfo):
         trustee_user_id = uuid.uuid4().hex
         trustee_user = self.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
         trustee_user['id'] = trustee_user_id
-        self.identity_api.create_user(trustee_user_id, trustee_user)
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      trustee_user_id, trustee_user)
 
         ref = self.new_trust_ref(
             trustor_user_id=self.default_domain_user_id,

@@ -23,11 +23,11 @@ from keystone.common.sql import util as sql_util
 from keystone import config
 from keystone.contrib.ec2.backends import sql as ec2_sql
 from keystone import identity
-from keystone.identity.backends import sql as identity_sql
 
 
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+EMPTY_CONTEXT = {}
 
 
 FIXTURE = {
@@ -76,8 +76,7 @@ class MigrateNovaAuth(test.TestCase):
                      test.testsdir('backend_sql.conf'),
                      test.testsdir('backend_sql_disk.conf')])
         sql_util.setup_test_database()
-        self.identity_man = identity.Manager()
-        self.identity_api = identity_sql.Identity()
+        self.identity_api = identity.Manager()
         self.ec2_api = ec2_sql.Ec2()
 
     def tearDown(self):
@@ -87,7 +86,7 @@ class MigrateNovaAuth(test.TestCase):
     def _create_role(self, role_name):
         role_id = uuid.uuid4().hex
         role_dict = {'id': role_id, 'name': role_name}
-        self.identity_api.create_role(role_id, role_dict)
+        self.identity_api.create_role(EMPTY_CONTEXT, role_id, role_dict)
 
     def test_import(self):
         self._create_role('role1')
@@ -97,11 +96,13 @@ class MigrateNovaAuth(test.TestCase):
         users = {}
         for user in ['user1', 'user2', 'user3', 'user4']:
             users[user] = self.identity_api.get_user_by_name(
+                EMPTY_CONTEXT,
                 user, DEFAULT_DOMAIN_ID)
 
         tenants = {}
         for tenant in ['proj1', 'proj2', 'proj4']:
             tenants[tenant] = self.identity_api.get_project_by_name(
+                EMPTY_CONTEXT,
                 tenant, DEFAULT_DOMAIN_ID)
 
         membership_map = {
@@ -113,7 +114,8 @@ class MigrateNovaAuth(test.TestCase):
 
         for (old_user, old_projects) in membership_map.iteritems():
             user = users[old_user]
-            membership = self.identity_api.get_projects_for_user(user['id'])
+            membership = self.identity_api.get_projects_for_user(EMPTY_CONTEXT,
+                                                                 user['id'])
             expected = [tenants[t]['id'] for t in old_projects]
             self.assertEqual(set(expected), set(membership))
             for tenant_id in membership:
@@ -121,19 +123,20 @@ class MigrateNovaAuth(test.TestCase):
                 for _user in FIXTURE['users']:
                     if _user['id'] == old_user:
                         password = _user['password']
-                self.identity_man.authenticate({}, user['id'],
+                self.identity_api.authenticate({}, user['id'],
                                                tenant_id, password)
 
         for ec2_cred in FIXTURE['ec2_credentials']:
             user_id = users[ec2_cred['user_id']]['id']
-            for tenant_id in self.identity_api.get_projects_for_user(user_id):
+            for tenant_id in (self.identity_api.
+                              get_projects_for_user(EMPTY_CONTEXT, user_id)):
                 access = '%s:%s' % (tenant_id, ec2_cred['access_key'])
                 cred = self.ec2_api.get_credential(access)
                 actual = cred['secret']
                 expected = ec2_cred['secret_key']
                 self.assertEqual(expected, actual)
 
-        roles = self.identity_api.list_roles()
+        roles = self.identity_api.list_roles(EMPTY_CONTEXT)
         role_names = set([role['name'] for role in roles])
         self.assertEqual(role_names, set(['role2', 'role1', 'role3',
                                           CONF.member_role_name]))
@@ -151,8 +154,10 @@ class MigrateNovaAuth(test.TestCase):
                 user = users[old_user]
                 tenant = tenants[tenant_name]
                 roles = self.identity_api.get_roles_for_user_and_project(
+                    EMPTY_CONTEXT,
                     user['id'], tenant['id'])
-                actual = [self.identity_api.get_role(role_id)['name']
+                actual = [self.identity_api.get_role(EMPTY_CONTEXT,
+                                                     role_id)['name']
                           for role_id in roles]
                 if CONF.member_role_name in actual:
                     actual.remove(CONF.member_role_name)

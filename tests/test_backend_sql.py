@@ -18,20 +18,16 @@ import uuid
 
 from keystone import test
 
-from keystone import catalog
 from keystone.common import sql
 from keystone import config
 from keystone import exception
-from keystone import identity
-from keystone import policy
-from keystone import token
-from keystone import trust
 
 import default_fixtures
 import test_backend
 
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+EMPTY_CONTEXT = {}
 
 
 class SqlTests(test.TestCase, sql.Base):
@@ -42,24 +38,12 @@ class SqlTests(test.TestCase, sql.Base):
                      test.testsdir('test_overrides.conf'),
                      test.testsdir('backend_sql.conf')])
 
-        # initialize managers and override drivers
-        self.catalog_man = catalog.Manager()
-        self.identity_man = identity.Manager()
-        self.token_man = token.Manager()
-        self.trust_man = trust.Manager()
-        self.policy_man = policy.Manager()
+        self.load_backends()
 
         # create tables and keep an engine reference for cleanup.
         # this must be done after the models are loaded by the managers.
         self.engine = self.get_engine()
         sql.ModelBase.metadata.create_all(bind=self.engine)
-
-        # create shortcut references to each driver
-        self.catalog_api = self.catalog_man.driver
-        self.identity_api = self.identity_man.driver
-        self.token_api = self.token_man.driver
-        self.policy_api = self.policy_man.driver
-        self.trust_api = self.trust_man.driver
 
         # populate the engine with tables & fixtures
         self.load_fixtures(default_fixtures)
@@ -75,8 +59,9 @@ class SqlTests(test.TestCase, sql.Base):
 
 class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_password_hashed(self):
-        session = self.identity_api.get_session()
-        user_ref = self.identity_api._get_user(session, self.user_foo['id'])
+        session = self.identity_api.get_session(EMPTY_CONTEXT)
+        user_ref = self.identity_api._get_user(EMPTY_CONTEXT,
+                                               session, self.user_foo['id'])
         self.assertNotEqual(user_ref['password'], self.user_foo['password'])
 
     def test_delete_user_with_project_association(self):
@@ -84,12 +69,16 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'name': uuid.uuid4().hex,
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
-        self.identity_man.create_user({}, user['id'], user)
-        self.identity_api.add_user_to_project(self.tenant_bar['id'],
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      user['id'], user)
+        self.identity_api.add_user_to_project(EMPTY_CONTEXT,
+                                              self.tenant_bar['id'],
                                               user['id'])
-        self.identity_api.delete_user(user['id'])
+        self.identity_api.delete_user(EMPTY_CONTEXT,
+                                      user['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_projects_for_user,
+                          EMPTY_CONTEXT,
                           user['id'])
 
     def test_create_null_user_name(self):
@@ -98,14 +87,17 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
         self.assertRaises(exception.ValidationError,
-                          self.identity_man.create_user, {},
+                          self.identity_api.create_user,
+                          EMPTY_CONTEXT,
                           user['id'],
                           user)
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
+                          EMPTY_CONTEXT,
                           user['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user_by_name,
+                          EMPTY_CONTEXT,
                           user['name'],
                           DEFAULT_DOMAIN_ID)
 
@@ -114,14 +106,17 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                   'name': None,
                   'domain_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
-                          self.identity_man.create_project, {},
+                          self.identity_api.create_project,
+                          EMPTY_CONTEXT,
                           tenant['id'],
                           tenant)
         self.assertRaises(exception.ProjectNotFound,
                           self.identity_api.get_project,
+                          EMPTY_CONTEXT,
                           tenant['id'])
         self.assertRaises(exception.ProjectNotFound,
                           self.identity_api.get_project_by_name,
+                          EMPTY_CONTEXT,
                           tenant['name'],
                           DEFAULT_DOMAIN_ID)
 
@@ -130,10 +125,12 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'name': None}
         self.assertRaises(exception.Conflict,
                           self.identity_api.create_role,
+                          EMPTY_CONTEXT,
                           role['id'],
                           role)
         self.assertRaises(exception.RoleNotFound,
                           self.identity_api.get_role,
+                          EMPTY_CONTEXT,
                           role['id'])
 
     def test_delete_project_with_user_association(self):
@@ -141,11 +138,15 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'name': 'fakeuser',
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
-        self.identity_man.create_user({}, 'fake', user)
-        self.identity_api.add_user_to_project(self.tenant_bar['id'],
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      'fake', user)
+        self.identity_api.add_user_to_project(EMPTY_CONTEXT,
+                                              self.tenant_bar['id'],
                                               user['id'])
-        self.identity_api.delete_project(self.tenant_bar['id'])
-        tenants = self.identity_api.get_projects_for_user(user['id'])
+        self.identity_api.delete_project(EMPTY_CONTEXT,
+                                         self.tenant_bar['id'])
+        tenants = self.identity_api.get_projects_for_user(EMPTY_CONTEXT,
+                                                          user['id'])
         self.assertEquals(tenants, [])
 
     def test_delete_user_with_metadata(self):
@@ -153,13 +154,16 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'name': 'fakeuser',
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
-        self.identity_man.create_user({}, 'fake', user)
-        self.identity_api.create_metadata(user['id'],
+        self.identity_api.create_user({}, 'fake', user)
+        self.identity_api.create_metadata(EMPTY_CONTEXT,
+                                          user['id'],
                                           self.tenant_bar['id'],
                                           {'extra': 'extra'})
-        self.identity_api.delete_user(user['id'])
+        self.identity_api.delete_user(EMPTY_CONTEXT,
+                                      user['id'])
         self.assertRaises(exception.MetadataNotFound,
                           self.identity_api.get_metadata,
+                          EMPTY_CONTEXT,
                           user['id'],
                           self.tenant_bar['id'])
 
@@ -168,13 +172,16 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'name': 'fakeuser',
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
-        self.identity_man.create_user({}, 'fake', user)
-        self.identity_api.create_metadata(user['id'],
+        self.identity_api.create_user({}, 'fake', user)
+        self.identity_api.create_metadata(EMPTY_CONTEXT,
+                                          user['id'],
                                           self.tenant_bar['id'],
                                           {'extra': 'extra'})
-        self.identity_api.delete_project(self.tenant_bar['id'])
+        self.identity_api.delete_project(EMPTY_CONTEXT,
+                                         self.tenant_bar['id'])
         self.assertRaises(exception.MetadataNotFound,
                           self.identity_api.get_metadata,
+                          EMPTY_CONTEXT,
                           user['id'],
                           self.tenant_bar['id'])
 
@@ -196,12 +203,14 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
             'name': uuid.uuid4().hex,
             'domain_id': DEFAULT_DOMAIN_ID,
             arbitrary_key: arbitrary_value}
-        ref = self.identity_man.create_project({}, tenant_id, tenant)
+        ref = self.identity_api.create_project(EMPTY_CONTEXT,
+                                               tenant_id, tenant)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertIsNone(ref.get('extra'))
 
         tenant['name'] = uuid.uuid4().hex
-        ref = self.identity_api.update_project(tenant_id, tenant)
+        ref = self.identity_api.update_project(EMPTY_CONTEXT,
+                                               tenant_id, tenant)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertEqual(arbitrary_value, ref['extra'][arbitrary_key])
 
@@ -224,14 +233,16 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
             'domain_id': DEFAULT_DOMAIN_ID,
             'password': uuid.uuid4().hex,
             arbitrary_key: arbitrary_value}
-        ref = self.identity_man.create_user({}, user_id, user)
+        ref = self.identity_api.create_user(EMPTY_CONTEXT,
+                                            user_id, user)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertIsNone(ref.get('password'))
         self.assertIsNone(ref.get('extra'))
 
         user['name'] = uuid.uuid4().hex
         user['password'] = uuid.uuid4().hex
-        ref = self.identity_api.update_user(user_id, user)
+        ref = self.identity_api.update_user(EMPTY_CONTEXT,
+                                            user_id, user)
         self.assertIsNone(ref.get('password'))
         self.assertIsNone(ref['extra'].get('password'))
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
@@ -254,7 +265,8 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
         }
-        self.catalog_api.create_service(service['id'], service.copy())
+        self.catalog_api.create_service(EMPTY_CONTEXT,
+                                        service['id'], service.copy())
 
         malformed_url = "http://192.168.1.104:$(compute_port)s/v2/$(tenant)s"
         endpoint = {
@@ -264,10 +276,12 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
             'interface': 'public',
             'url': malformed_url,
         }
-        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        self.catalog_api.create_endpoint(EMPTY_CONTEXT,
+                                         endpoint['id'], endpoint.copy())
 
         with self.assertRaises(exception.MalformedEndpoint):
-            self.catalog_api.get_catalog('fake-user', 'fake-tenant')
+            self.catalog_api.get_catalog(EMPTY_CONTEXT,
+                                         'fake-user', 'fake-tenant')
 
     def test_get_catalog_with_empty_public_url(self):
         service = {
@@ -276,7 +290,8 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
         }
-        self.catalog_api.create_service(service['id'], service.copy())
+        self.catalog_api.create_service(EMPTY_CONTEXT,
+                                        service['id'], service.copy())
 
         endpoint = {
             'id': uuid.uuid4().hex,
@@ -285,9 +300,11 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
             'url': '',
             'service_id': service['id'],
         }
-        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        self.catalog_api.create_endpoint(EMPTY_CONTEXT,
+                                         endpoint['id'], endpoint.copy())
 
-        catalog = self.catalog_api.get_catalog('user', 'tenant')
+        catalog = self.catalog_api.get_catalog(EMPTY_CONTEXT,
+                                               'user', 'tenant')
         catalog_endpoint = catalog[endpoint['region']][service['type']]
         self.assertEqual(catalog_endpoint['name'], service['name'])
         self.assertEqual(catalog_endpoint['id'], endpoint['id'])
@@ -302,7 +319,8 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
         }
-        self.catalog_api.create_service(service['id'], service.copy())
+        self.catalog_api.create_service(EMPTY_CONTEXT,
+                                        service['id'], service.copy())
 
         endpoint = {
             'id': uuid.uuid4().hex,
@@ -313,7 +331,8 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
         }
 
         with self.assertRaises(exception.StringLengthExceeded):
-            self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+            self.catalog_api.create_endpoint(EMPTY_CONTEXT,
+                                             endpoint['id'], endpoint.copy())
 
 
 class SqlPolicy(SqlTests, test_backend.PolicyTests):
