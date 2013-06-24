@@ -56,8 +56,7 @@ VENDOR = os.path.join(ROOTDIR, 'vendor')
 TESTSDIR = os.path.join(ROOTDIR, 'tests')
 ETCDIR = os.path.join(ROOTDIR, 'etc')
 CONF = config.CONF
-DRIVERS = {}
-
+MANAGERS = [catalog, credential, identity, policy, token, trust]
 
 cd = os.chdir
 
@@ -75,16 +74,6 @@ def etcdir(*p):
 
 def testsdir(*p):
     return os.path.join(TESTSDIR, *p)
-
-
-def initialize_drivers():
-    DRIVERS['catalog_api'] = catalog.Manager()
-    DRIVERS['credential_api'] = credential.Manager()
-    DRIVERS['identity_api'] = identity.Manager()
-    DRIVERS['policy_api'] = policy.Manager()
-    DRIVERS['token_api'] = token.Manager()
-    DRIVERS['trust_api'] = trust.Manager()
-    return DRIVERS
 
 
 def checkout_vendor(repo, rev):
@@ -234,9 +223,11 @@ class TestCase(NoModule, unittest.TestCase):
             CONF.set_override(k, v)
 
     def load_backends(self):
-        """Create shortcut references to each driver for data manipulation."""
-        for name, manager in initialize_drivers().iteritems():
-            setattr(self, name, manager.driver)
+        """Initializes each manager and assigns them to an attribute."""
+        for manager in MANAGERS:
+            name = manager.__name__.split('.')[1]
+            man = manager.Manager()
+            setattr(self, name + '_api', man)
 
     def load_fixtures(self, fixtures):
         """Hacky basic and naive fixture loading based on a python module.
