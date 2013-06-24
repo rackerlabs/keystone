@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//tE0\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-24T21:46:49Z",
+      "side": 1,
+      "message": "I would rather not touch the trust functionality here. If necessary, it needs to be done in a separate patch.",
+      "parentUuid": "AAAAPn//tK0\u003d",
+      "revId": "8e5ba07ec1e0158b724139ab1fde98758c6d41b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//tKQ\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//tEo\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-24T21:46:49Z",
+      "side": 1,
+      "message": "code is pretty self-explanatory",
+      "parentUuid": "AAAAPn//tKQ\u003d",
+      "revId": "8e5ba07ec1e0158b724139ab1fde98758c6d41b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//tJE\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2013-06-24T21:25:50Z",
       "side": 1,
       "message": "is it work validating the token version? V3.0 or something else?",
+      "revId": "8e5ba07ec1e0158b724139ab1fde98758c6d41b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//tEU\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-24T21:46:49Z",
+      "side": 1,
+      "message": "token_ref is used by both v2 and v3",
+      "parentUuid": "AAAAPn//tJE\u003d",
       "revId": "8e5ba07ec1e0158b724139ab1fde98758c6d41b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
