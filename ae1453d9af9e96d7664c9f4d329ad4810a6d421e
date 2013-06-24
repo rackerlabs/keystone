@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//tcs\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-24T19:52:45Z",
+      "side": 1,
+      "message": "If this is a set, do we need to call length? \n\nif not roles should return the same thing as if not len(roles)?",
+      "revId": "ae1453d9af9e96d7664c9f4d329ad4810a6d421e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//tX0\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-24T19:52:45Z",
+      "side": 1,
+      "message": "(NIT), should this be # TODO(ayoung)? Thought I saw a change of dolphm\u0027s come through that changed TODOs to be of that format.",
+      "revId": "ae1453d9af9e96d7664c9f4d329ad4810a6d421e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
