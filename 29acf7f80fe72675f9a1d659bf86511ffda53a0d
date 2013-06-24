@@ -16,6 +16,24 @@
       "revId": "29acf7f80fe72675f9a1d659bf86511ffda53a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//u30\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-06-24T08:48:46Z",
+      "side": 1,
+      "message": "Indeed, there are no unit test covering that Models are adequate. I\u0027ll commit a separate patch for this.",
+      "parentUuid": "AAAAPn//vYM\u003d",
+      "revId": "29acf7f80fe72675f9a1d659bf86511ffda53a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
