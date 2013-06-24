@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//tYE\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1849
+      },
+      "writtenOn": "2013-06-24T19:49:25Z",
+      "side": 1,
+      "message": "When I removed this line and ran \u0027tox -epy27 -- test_exception\u0027 everything worked.\n\nhttp://paste.openstack.org/show/39176/",
+      "revId": "d6528a682ac5646bce56181bf45c5363624ae8bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
