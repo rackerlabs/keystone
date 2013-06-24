@@ -29,6 +29,7 @@ import default_fixtures
 
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+EMPTY_CONTEXT = {}
 OPENSTACK_REPO = 'https://review.openstack.org/p/openstack'
 KEYSTONECLIENT_REPO = '%s/python-keystoneclient.git' % OPENSTACK_REPO
 
@@ -52,6 +53,7 @@ class CompatTestCase(test.TestCase):
         # TODO(termie): add an admin user to the fixtures and use that user
         # override the fixtures, for now
         self.metadata_foobar = self.identity_api.update_metadata(
+            EMPTY_CONTEXT,
             self.user_foo['id'], self.tenant_bar['id'],
             dict(roles=[self.role_admin['id']], is_admin='1'))
 
@@ -907,8 +909,10 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
             tenant_id = uuid.uuid4().hex
             tenant = {'name': 'tenant-%s' % tenant_id, 'id': tenant_id,
                       'domain_id': DEFAULT_DOMAIN_ID}
-            self.identity_api.create_project(tenant_id, tenant)
-            self.identity_api.add_user_to_project(tenant_id,
+            self.identity_api.create_project(EMPTY_CONTEXT,
+                                             tenant_id, tenant)
+            self.identity_api.add_user_to_project(EMPTY_CONTEXT,
+                                                  tenant_id,
                                                   self.user_foo['id'])
 
         tenants = client.tenants.list()
@@ -934,8 +938,10 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
             tenant_id = uuid.uuid4().hex
             tenant = {'name': 'tenant-%s' % tenant_id, 'id': tenant_id,
                       'domain_id': DEFAULT_DOMAIN_ID}
-            self.identity_api.create_project(tenant_id, tenant)
-            self.identity_api.add_user_to_project(tenant_id,
+            self.identity_api.create_project(EMPTY_CONTEXT,
+                                             tenant_id, tenant)
+            self.identity_api.add_user_to_project(EMPTY_CONTEXT,
+                                                  tenant_id,
                                                   self.user_foo['id'])
 
         tenants = client.tenants.list()

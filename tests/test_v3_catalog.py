@@ -3,6 +3,9 @@ import uuid
 import test_v3
 
 
+EMPTY_CONTEXT = {}
+
+
 class CatalogTestCase(test_v3.RestfulTestCase):
     """Test service & endpoint CRUD."""
 
@@ -13,6 +16,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         self.service = self.new_service_ref()
         self.service['id'] = self.service_id
         self.catalog_api.create_service(
+            EMPTY_CONTEXT,
             self.service_id,
             self.service.copy())
 
@@ -20,6 +24,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         self.endpoint = self.new_endpoint_ref(service_id=self.service_id)
         self.endpoint['id'] = self.endpoint_id
         self.catalog_api.create_endpoint(
+            EMPTY_CONTEXT,
             self.endpoint_id,
             self.endpoint.copy())
 

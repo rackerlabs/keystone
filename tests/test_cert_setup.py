@@ -39,6 +39,7 @@ def rootdir(*p):
 
 CERTDIR = rootdir("certs")
 KEYDIR = rootdir("private")
+EMPTY_CONTEXT = {}
 
 
 class CertSetupTestCase(test.TestCase):
@@ -75,7 +76,7 @@ class CertSetupTestCase(test.TestCase):
                 'password': user['password'],
             },
         }
-        self.identity_api.create_user(user['id'], user)
+        self.identity_api.create_user(EMPTY_CONTEXT, user['id'], user)
         self.assertRaises(exception.UnexpectedError,
                           self.controller.authenticate,
                           {}, body_dict)
