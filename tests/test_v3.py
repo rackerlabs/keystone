@@ -18,7 +18,7 @@ import test_content_types
 
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
-
+EMPTY_CONTEXT = {}
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
 
@@ -49,26 +49,30 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             self.domain_id = uuid.uuid4().hex
             self.domain = self.new_domain_ref()
             self.domain['id'] = self.domain_id
-            self.identity_api.create_domain(self.domain_id, self.domain)
+            self.identity_api.create_domain(EMPTY_CONTEXT,
+                                            self.domain_id, self.domain)
 
             self.project_id = uuid.uuid4().hex
             self.project = self.new_project_ref(
                 domain_id=self.domain_id)
             self.project['id'] = self.project_id
-            self.identity_api.create_project(self.project_id, self.project)
+            self.identity_api.create_project(EMPTY_CONTEXT,
+                                             self.project_id, self.project)
 
             self.user_id = uuid.uuid4().hex
             self.user = self.new_user_ref(
                 domain_id=self.domain_id,
                 project_id=self.project_id)
             self.user['id'] = self.user_id
-            self.identity_api.create_user(self.user_id, self.user)
+            self.identity_api.create_user(EMPTY_CONTEXT,
+                                          self.user_id, self.user)
 
             self.default_domain_project_id = uuid.uuid4().hex
             self.default_domain_project = self.new_project_ref(
                 domain_id=DEFAULT_DOMAIN_ID)
             self.default_domain_project['id'] = self.default_domain_project_id
-            self.identity_api.create_project(self.default_domain_project_id,
+            self.identity_api.create_project(EMPTY_CONTEXT,
+                                             self.default_domain_project_id,
                                              self.default_domain_project)
 
             self.default_domain_user_id = uuid.uuid4().hex
@@ -76,7 +80,8 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
                 domain_id=DEFAULT_DOMAIN_ID,
                 project_id=self.default_domain_project_id)
             self.default_domain_user['id'] = self.default_domain_user_id
-            self.identity_api.create_user(self.default_domain_user_id,
+            self.identity_api.create_user(EMPTY_CONTEXT,
+                                          self.default_domain_user_id,
                                           self.default_domain_user)
 
             # create & grant policy.json's default role for admin_required
@@ -84,13 +89,17 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             self.role = self.new_role_ref()
             self.role['id'] = self.role_id
             self.role['name'] = 'admin'
-            self.identity_api.create_role(self.role_id, self.role)
+            self.identity_api.create_role(EMPTY_CONTEXT,
+                                          self.role_id, self.role)
             self.identity_api.add_role_to_user_and_project(
+                EMPTY_CONTEXT,
                 self.user_id, self.project_id, self.role_id)
             self.identity_api.add_role_to_user_and_project(
+                EMPTY_CONTEXT,
                 self.default_domain_user_id, self.default_domain_project_id,
                 self.role_id)
             self.identity_api.add_role_to_user_and_project(
+                EMPTY_CONTEXT,
                 self.default_domain_user_id, self.project_id,
                 self.role_id)
 

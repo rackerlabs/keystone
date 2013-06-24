@@ -19,6 +19,9 @@ import uuid
 import test_v3
 
 
+EMPTY_CONTEXT = {}
+
+
 class CredentialTestCase(test_v3.RestfulTestCase):
     """Test credential CRUD."""
     def setUp(self):
@@ -31,6 +34,7 @@ class CredentialTestCase(test_v3.RestfulTestCase):
             project_id=self.project_id)
         self.credential['id'] = self.credential_id
         self.credential_api.create_credential(
+            EMPTY_CONTEXT,
             self.credential_id,
             self.credential)
 

@@ -4,6 +4,7 @@ import test_content_types
 
 
 BASE_URL = 'http://127.0.0.1:35357/v2'
+EMPTY_CONTEXT = {}
 
 
 class V2CatalogTestCase(test_content_types.RestfulTestCase):
@@ -13,6 +14,7 @@ class V2CatalogTestCase(test_content_types.RestfulTestCase):
         self.service = self.new_service_ref()
         self.service['id'] = self.service_id
         self.catalog_api.create_service(
+            EMPTY_CONTEXT,
             self.service_id,
             self.service.copy())
 

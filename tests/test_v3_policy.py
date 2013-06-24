@@ -2,6 +2,8 @@ import uuid
 
 import test_v3
 
+EMPTY_CONTEXT = {}
+
 
 class PolicyTestCase(test_v3.RestfulTestCase):
     """Test policy CRUD."""
@@ -12,6 +14,7 @@ class PolicyTestCase(test_v3.RestfulTestCase):
         self.policy = self.new_policy_ref()
         self.policy['id'] = self.policy_id
         self.policy_api.create_policy(
+            EMPTY_CONTEXT,
             self.policy_id,
             self.policy.copy())
 

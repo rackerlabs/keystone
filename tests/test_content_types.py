@@ -28,6 +28,8 @@ from keystone.openstack.common import jsonutils
 
 import default_fixtures
 
+EMPTY_CONTEXT = {}
+
 
 class RestfulTestCase(test.TestCase):
     """Performs restful tests against the WSGI app over HTTP.
@@ -75,6 +77,7 @@ class RestfulTestCase(test.TestCase):
         # TODO(termie): add an admin user to the fixtures and use that user
         # override the fixtures, for now
         self.metadata_foobar = self.identity_api.update_metadata(
+            EMPTY_CONTEXT,
             self.user_foo['id'],
             self.tenant_bar['id'],
             dict(roles=[self.role_admin['id']], is_admin='1'))
@@ -404,6 +407,7 @@ class CoreApiTests(object):
 
     def test_validate_token_service_role(self):
         self.metadata_foobar = self.identity_api.update_metadata(
+            EMPTY_CONTEXT,
             self.user_foo['id'],
             self.tenant_service['id'],
             dict(roles=[self.role_service['id']]))

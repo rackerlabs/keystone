@@ -20,6 +20,8 @@ from keystone import exception
 
 import test_v3
 
+EMPTY_CONTEXT = {}
+
 
 class IdentityTestCase(test_v3.RestfulTestCase):
     """Test domains, projects, users, groups, & role CRUD."""
@@ -31,7 +33,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.group = self.new_group_ref(
             domain_id=self.domain_id)
         self.group['id'] = self.group_id
-        self.identity_api.create_group(self.group_id, self.group)
+        self.identity_api.create_group(EMPTY_CONTEXT,
+                                       self.group_id, self.group)
 
         self.credential_id = uuid.uuid4().hex
         self.credential = self.new_credential_ref(
@@ -39,6 +42,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             project_id=self.project_id)
         self.credential['id'] = self.credential_id
         self.credential_api.create_credential(
+            EMPTY_CONTEXT,
             self.credential_id,
             self.credential)
 
@@ -81,18 +85,22 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         """Call ``PATCH /domains/{domain_id}`` (set enabled=False)."""
         # Create a 2nd set of entities in a 2nd domain
         self.domain2 = self.new_domain_ref()
-        self.identity_api.create_domain(self.domain2['id'], self.domain2)
+        self.identity_api.create_domain(EMPTY_CONTEXT,
+                                        self.domain2['id'], self.domain2)
 
         self.project2 = self.new_project_ref(
             domain_id=self.domain2['id'])
-        self.identity_api.create_project(self.project2['id'], self.project2)
+        self.identity_api.create_project(EMPTY_CONTEXT,
+                                         self.project2['id'], self.project2)
 
         self.user2 = self.new_user_ref(
             domain_id=self.domain2['id'],
             project_id=self.project2['id'])
-        self.identity_api.create_user(self.user2['id'], self.user2)
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      self.user2['id'], self.user2)
 
-        self.identity_api.add_user_to_project(self.project2['id'],
+        self.identity_api.add_user_to_project(EMPTY_CONTEXT,
+                                              self.project2['id'],
                                               self.user2['id'])
 
         # First check a user in that domain can authenticate, via
@@ -179,25 +187,30 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         # Create a 2nd set of entities in a 2nd domain
         self.domain2 = self.new_domain_ref()
-        self.identity_api.create_domain(self.domain2['id'], self.domain2)
+        self.identity_api.create_domain(EMPTY_CONTEXT,
+                                        self.domain2['id'], self.domain2)
 
         self.project2 = self.new_project_ref(
             domain_id=self.domain2['id'])
-        self.identity_api.create_project(self.project2['id'], self.project2)
+        self.identity_api.create_project(EMPTY_CONTEXT,
+                                         self.project2['id'], self.project2)
 
         self.user2 = self.new_user_ref(
             domain_id=self.domain2['id'],
             project_id=self.project2['id'])
-        self.identity_api.create_user(self.user2['id'], self.user2)
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      self.user2['id'], self.user2)
 
         self.group2 = self.new_group_ref(
             domain_id=self.domain2['id'])
-        self.identity_api.create_group(self.group2['id'], self.group2)
+        self.identity_api.create_group(EMPTY_CONTEXT,
+                                       self.group2['id'], self.group2)
 
         self.credential2 = self.new_credential_ref(
             user_id=self.user2['id'],
             project_id=self.project2['id'])
         self.credential_api.create_credential(
+            EMPTY_CONTEXT,
             self.credential2['id'],
             self.credential2)
 
@@ -213,31 +226,41 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # Check all the domain2 relevant entities are gone
         self.assertRaises(exception.DomainNotFound,
                           self.identity_api.get_domain,
+                          EMPTY_CONTEXT,
                           domain_id=self.domain2['id'])
         self.assertRaises(exception.ProjectNotFound,
                           self.identity_api.get_project,
+                          EMPTY_CONTEXT,
                           tenant_id=self.project2['id'])
         self.assertRaises(exception.GroupNotFound,
                           self.identity_api.get_group,
+                          EMPTY_CONTEXT,
                           group_id=self.group2['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
+                          EMPTY_CONTEXT,
                           user_id=self.user2['id'])
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
+                          EMPTY_CONTEXT,
                           credential_id=self.credential2['id'])
 
         # ...and that all self.domain entities are still here
-        r = self.identity_api.get_domain(self.domain['id'])
+        r = self.identity_api.get_domain(EMPTY_CONTEXT,
+                                         self.domain['id'])
         self.assertDictEqual(r, self.domain)
-        r = self.identity_api.get_project(self.project['id'])
+        r = self.identity_api.get_project(EMPTY_CONTEXT,
+                                          self.project['id'])
         self.assertDictEqual(r, self.project)
-        r = self.identity_api.get_group(self.group['id'])
+        r = self.identity_api.get_group(EMPTY_CONTEXT,
+                                        self.group['id'])
         self.assertDictEqual(r, self.group)
-        r = self.identity_api.get_user(self.user['id'])
+        r = self.identity_api.get_user(EMPTY_CONTEXT,
+                                       self.user['id'])
         self.user.pop('password')
         self.assertDictEqual(r, self.user)
-        r = self.credential_api.get_credential(self.credential['id'])
+        r = self.credential_api.get_credential(EMPTY_CONTEXT,
+                                               self.credential['id'])
         self.assertDictEqual(r, self.credential)
 
     # project crud tests
@@ -286,16 +309,19 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         """
         # First check the credential for this project is present
-        r = self.credential_api.get_credential(self.credential['id'])
+        r = self.credential_api.get_credential(EMPTY_CONTEXT,
+                                               self.credential['id'])
         self.assertDictEqual(r, self.credential)
         # Create a second credential with a different project
         self.project2 = self.new_project_ref(
             domain_id=self.domain['id'])
-        self.identity_api.create_project(self.project2['id'], self.project2)
+        self.identity_api.create_project(EMPTY_CONTEXT,
+                                         self.project2['id'], self.project2)
         self.credential2 = self.new_credential_ref(
             user_id=self.user['id'],
             project_id=self.project2['id'])
         self.credential_api.create_credential(
+            EMPTY_CONTEXT,
             self.credential2['id'],
             self.credential2)
 
@@ -308,9 +334,11 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # that reference this project
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
+                          EMPTY_CONTEXT,
                           credential_id=self.credential['id'])
         # But the credential for project2 is unaffected
-        r = self.credential_api.get_credential(self.credential2['id'])
+        r = self.credential_api.get_credential(EMPTY_CONTEXT,
+                                               self.credential2['id'])
         self.assertDictEqual(r, self.credential2)
 
     # user crud tests
@@ -350,11 +378,13 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.user1 = self.new_user_ref(
             domain_id=self.domain['id'])
         self.user1['password'] = uuid.uuid4().hex
-        self.identity_api.create_user(self.user1['id'], self.user1)
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      self.user1['id'], self.user1)
         self.user2 = self.new_user_ref(
             domain_id=self.domain['id'])
         self.user2['password'] = uuid.uuid4().hex
-        self.identity_api.create_user(self.user1['id'], self.user2)
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      self.user1['id'], self.user2)
         self.put('/groups/%(group_id)s/users/%(user_id)s' % {
             'group_id': self.group_id, 'user_id': self.user1['id']})
 
@@ -424,17 +454,20 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         """
         # First check the credential for this user is present
-        r = self.credential_api.get_credential(self.credential['id'])
+        r = self.credential_api.get_credential(EMPTY_CONTEXT,
+                                               self.credential['id'])
         self.assertDictEqual(r, self.credential)
         # Create a second credential with a different user
         self.user2 = self.new_user_ref(
             domain_id=self.domain['id'],
             project_id=self.project['id'])
-        self.identity_api.create_user(self.user2['id'], self.user2)
+        self.identity_api.create_user(EMPTY_CONTEXT,
+                                      self.user2['id'], self.user2)
         self.credential2 = self.new_credential_ref(
             user_id=self.user2['id'],
             project_id=self.project['id'])
         self.credential_api.create_credential(
+            EMPTY_CONTEXT,
             self.credential2['id'],
             self.credential2)
         # Create a token for this user which we can check later
@@ -458,12 +491,15 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # that reference this project
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
+                          EMPTY_CONTEXT,
                           credential_id=self.credential['id'])
         # And the no tokens we remain valid
-        tokens = self.token_api.list_tokens(self.user['id'])
+        tokens = self.token_api.list_tokens(EMPTY_CONTEXT,
+                                            self.user['id'])
         self.assertEquals(len(tokens), 0)
         # But the credential for user2 is unaffected
-        r = self.credential_api.get_credential(self.credential2['id'])
+        r = self.credential_api.get_credential(EMPTY_CONTEXT,
+                                               self.credential2['id'])
         self.assertDictEqual(r, self.credential2)
 
     # group crud tests
