@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//sZE\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T05:26:55Z",
+      "side": 1,
+      "message": "Any reason for extracting this? I don\u0027t disagree but you don\u0027t use it anywhere else.",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//saU\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T05:26:55Z",
+      "side": 1,
+      "message": "Isn\u0027t this already loaded from setUp? there\u0027s no conf change here",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//sZA\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T05:26:55Z",
+      "side": 1,
+      "message": "again",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//sY8\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T05:26:55Z",
+      "side": 1,
+      "message": ".",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//saY\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T05:26:55Z",
+      "side": 1,
+      "message": "twice?",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//sYg\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T05:26:55Z",
+      "side": 1,
+      "message": "twice?",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//sYc\u003d",
+        "filename": "tests/test_backend_templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T05:26:55Z",
+      "side": 1,
+      "message": "delete it",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//sYU\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T05:26:55Z",
+      "side": 1,
+      "message": "EMPTY_CONTEXT",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
