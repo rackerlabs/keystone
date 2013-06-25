@@ -34,6 +34,24 @@
       "revId": "7ccc0fd89632f51a9257cc7c0ed854d7f80d9d8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pxo\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-25T21:50:40Z",
+      "side": 1,
+      "message": "You\u0027re right Dolph. It suppose to be a serialized json blob.",
+      "parentUuid": "AAAAPn//6JA\u003d",
+      "revId": "7ccc0fd89632f51a9257cc7c0ed854d7f80d9d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
