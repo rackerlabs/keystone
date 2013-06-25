@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//sVg\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T05:59:42Z",
+      "side": 1,
+      "message": "you need to add this to cli.py",
+      "revId": "9a7dab8225c2fcc18549c33983cc94f435d70b5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//sYE\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T05:59:42Z",
+      "side": 1,
+      "message": "Floating string?",
+      "revId": "9a7dab8225c2fcc18549c33983cc94f435d70b5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//sWQ\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T05:59:42Z",
+      "side": 1,
+      "message": "why do these need to be added back in?",
+      "revId": "9a7dab8225c2fcc18549c33983cc94f435d70b5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
