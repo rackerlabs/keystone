@@ -72,6 +72,9 @@ class Driver(object):
         domain-scoped token; and 'auth_context' from the authentication
         plugins.
 
+        For V2 tokens, 'token_ref' must present in kwargs.
+        Optionally, kwargs may contain 'roles_ref' and 'catalog_ref'.
+
         :param version: version of the token to be issued
         :type version: string
         :param kwargs: information needed for token creation. Parameters

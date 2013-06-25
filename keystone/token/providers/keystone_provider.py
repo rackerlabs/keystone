@@ -28,6 +28,7 @@ from keystone import config
 from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone import token
+from keystone.token import core
 from keystone.token import provider as token_provider
 from keystone import trust
 
@@ -35,6 +36,108 @@ from keystone import trust
 LOG = logging.getLogger(__name__)
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+
+
+@dependency.requires('catalog_api', 'identity_api')
+class V2TokenDataHelper(object):
+    """Creates V2 token data."""
+    @classmethod
+    def format_token(cls, token_ref, roles_ref, catalog_ref=None):
+        user_ref = token_ref['user']
+        metadata_ref = token_ref['metadata']
+        expires = token_ref.get('expires', core.default_expire_time())
+        if expires is not None:
+            if not isinstance(expires, unicode):
+                expires = timeutils.isotime(expires)
+        o = {'access': {'token': {'id': token_ref['id'],
+                                  'expires': expires,
+                                  'issued_at': timeutils.strtime()
+                                  },
+                        'user': {'id': user_ref['id'],
+                                 'name': user_ref['name'],
+                                 'username': user_ref['name'],
+                                 'roles': roles_ref,
+                                 'roles_links': metadata_ref.get('roles_links',
+                                                                 [])
+                                 }
+                        }
+             }
+        if 'tenant' in token_ref and token_ref['tenant']:
+            token_ref['tenant']['enabled'] = True
+            o['access']['token']['tenant'] = token_ref['tenant']
+        if catalog_ref is not None:
+            o['access']['serviceCatalog'] = V2TokenDataHelper.format_catalog(
+                catalog_ref)
+        if metadata_ref:
+            if 'is_admin' in metadata_ref:
+                o['access']['metadata'] = {'is_admin':
+                                           metadata_ref['is_admin']}
+            else:
+                o['access']['metadata'] = {'is_admin': 0}
+        if 'roles' in metadata_ref:
+            o['access']['metadata']['roles'] = metadata_ref['roles']
+        if CONF.trust.enabled and 'trust_id' in metadata_ref:
+            o['access']['trust'] = {'trustee_user_id':
+                                    metadata_ref['trustee_user_id'],
+                                    'id': metadata_ref['trust_id']
+                                    }
+        return o
+
+    @classmethod
+    def format_catalog(cls, catalog_ref):
+        """Munge catalogs from internal to output format
+        Internal catalogs look like:
+
+        {$REGION: {
+            {$SERVICE: {
+                $key1: $value1,
+                ...
+                }
+            }
+        }
+
+        The legacy api wants them to look like
+
+        [{'name': $SERVICE[name],
+          'type': $SERVICE,
+          'endpoints': [{
+              'tenantId': $tenant_id,
+              ...
+              'region': $REGION,
+              }],
+          'endpoints_links': [],
+         }]
+
+        """
+        if not catalog_ref:
+            return []
+
+        services = {}
+        for region, region_ref in catalog_ref.iteritems():
+            for service, service_ref in region_ref.iteritems():
+                new_service_ref = services.get(service, {})
+                new_service_ref['name'] = service_ref.pop('name')
+                new_service_ref['type'] = service
+                new_service_ref['endpoints_links'] = []
+                service_ref['region'] = region
+
+                endpoints_ref = new_service_ref.get('endpoints', [])
+                endpoints_ref.append(service_ref)
+
+                new_service_ref['endpoints'] = endpoints_ref
+                services[service] = new_service_ref
+
+        return services.values()
+
+    @classmethod
+    def get_token_data(cls, **kwargs):
+        if 'token_ref' not in kwargs:
+            raise ValueError('Require token_ref to create V2 token data')
+        token_ref = kwargs.get('token_ref')
+        roles_ref = kwargs.get('roles_ref', [])
+        catalog_ref = kwargs.get('catalog_ref')
+        return V2TokenDataHelper.format_token(
+            token_ref, roles_ref, catalog_ref)
 
 
 @dependency.requires('catalog_api', 'identity_api')
@@ -207,7 +310,7 @@ class V3TokenDataHelper(object):
         return {'token': token_data}
 
 
-@dependency.requires('token_api', 'identity_api')
+@dependency.requires('token_api', 'identity_api', 'catalog_api')
 class Provider(token_provider.Driver):
     def __init__(self, *args, **kwargs):
         super(Provider, self).__init__(*args, **kwargs)
@@ -241,6 +344,38 @@ class Provider(token_provider.Driver):
                 '  Allowed values are PKI or UUID.') %
                 CONF.signing.token_format)
         return token_id
+
+    def _issue_v2_token(self, **kwargs):
+        # no need for context
+        context = None
+        token_data = V2TokenDataHelper.get_token_data(**kwargs)
+        token_id = self._get_token_id(token_data)
+        token_data['access']['token']['id'] = token_id
+        try:
+            expiry = token_data['access']['token']['expires']
+            token_ref = kwargs.get('token_ref')
+            if isinstance(expiry, basestring):
+                expiry = timeutils.normalize_time(
+                    timeutils.parse_isotime(expiry))
+            data = dict(key=token_id,
+                        id=token_id,
+                        expires=expiry,
+                        user=token_ref['user'],
+                        tenant=token_ref['tenant'],
+                        metadata=token_ref['metadata'],
+                        token_data=token_data,
+                        trust_id=token_ref['metadata'].get('trust_id'))
+            self.token_api.create_token(context, token_id, data)
+        except Exception:
+            exc_info = sys.exc_info()
+            # an identical token may have been created already.
+            # if so, return the token_data as it is also identical
+            try:
+                self.token_api.get_token(context, token_id=token_id)
+            except exception.TokenNotFound:
+                raise exc_info[0], exc_info[1], exc_info[2]
+
+        return (token_id, token_data)
 
     def _issue_v3_token(self, **kwargs):
         # no need for context
@@ -309,6 +444,8 @@ class Provider(token_provider.Driver):
     def issue_token(self, version='v3.0', **kwargs):
         if version == token_provider.V3:
             return self._issue_v3_token(**kwargs)
+        elif version == token_provider.V2:
+            return self._issue_v2_token(**kwargs)
         raise token_provider.UnsupportedTokenVersionException
 
     def _verify_token(self, token_id, belongs_to=None):
@@ -323,6 +460,90 @@ class Provider(token_provider.Driver):
     def revoke_token(self, token_id):
         self.token_api.delete_token(None, token_id=token_id)
 
+    def _assert_default_domain(self, context, token_ref):
+        """Make sure we are operating on default domain only."""
+        if (token_ref.get('token_data') and
+                self.get_token_version(token_ref.get('token_data')) ==
+                token_provider.V3):
+            # this is a V3 token
+            msg = _('Non-default domain is not supported')
+            # user in a non-default is prohibited
+            if (token_ref['token_data']['token']['user']['domain']['id'] !=
+                    DEFAULT_DOMAIN_ID):
+                raise exception.Unauthorized(msg)
+            # domain scoping is prohibited
+            if token_ref['token_data']['token'].get('domain'):
+                raise exception.Unauthorized(
+                    _('Domain scoped token is not supported'))
+            # project in non-default domain is prohibited
+            if token_ref['token_data']['token'].get('project'):
+                project = token_ref['token_data']['token']['project']
+                project_domain_id = project['domain']['id']
+                # scoped to project in non-default domain is prohibited
+                if project_domain_id != DEFAULT_DOMAIN_ID:
+                    raise exception.Unauthorized(msg)
+            # if token is scoped to trust, both trustor and trustee must
+            # be in the default domain. Furthermore, the delegated project
+            # must also be in the default domain
+            metadata_ref = token_ref['metadata']
+            if CONF.trust.enabled and 'trust_id' in metadata_ref:
+                trust_ref = self.trust_api.get_trust(context,
+                                                     metadata_ref['trust_id'])
+                trustee_user_ref = self.identity_api.get_user(
+                    context, trust_ref['trustee_user_id'])
+                if trustee_user_ref['domain_id'] != DEFAULT_DOMAIN_ID:
+                    raise exception.Unauthorized(msg)
+                trustor_user_ref = self.identity_api.get_user(
+                    context, trust_ref['trustor_user_id'])
+                if trustor_user_ref['domain_id'] != DEFAULT_DOMAIN_ID:
+                    raise exception.Unauthorized(msg)
+                project_ref = self.identity_api.get_project(
+                    context, trust_ref['project_id'])
+                if project_ref['domain_id'] != DEFAULT_DOMAIN_ID:
+                    raise exception.Unauthorized(msg)
+
+    def _validate_v2_token(self, token_id, belongs_to=None, **kwargs):
+        try:
+            token_ref = self._verify_token(token_id, belongs_to)
+            self._assert_default_domain(context=None, token_ref=token_ref)
+            # FIXME(gyee): performance or correctness? Should we return the
+            # cached token or reconstruct it? Obviously if we are going with
+            # the cached token, any role, project, or domain name changes
+            # will not be reflected. One may argue that with PKI tokens,
+            # we are essentially doing cached token validation anyway.
+            # Lets go with the cached token strategy. Since token
+            # management layer is now pluggable, one can always provide
+            # their own implementation to suit their needs.
+            token_data = token_ref.get('token_data')
+            if (not token_data or
+                    self.get_token_version(token_data) !=
+                    token_provider.V2):
+                # token is created by old v2 logic
+                metadata_ref = token_ref['metadata']
+                role_refs = []
+                for role_id in metadata_ref.get('roles', []):
+                    role_refs.append(
+                        self.identity_api.get_role(context=None,
+                                                   role_id=role_id))
+
+                # Get a service catalog if possible
+                # This is needed for on-behalf-of requests
+                catalog_ref = None
+                if token_ref.get('tenant'):
+                    catalog_ref = self.catalog_api.get_catalog(
+                        context=None,
+                        user_id=token_ref['user']['id'],
+                        tenant_id=token_ref['tenant']['id'],
+                        metadata=metadata_ref)
+                token_data = V2TokenDataHelper.get_token_data(
+                    token_ref=token_ref,
+                    roles_ref=role_refs,
+                    catalog_ref=catalog_ref)
+            return token_data
+        except Exception as e:
+            LOG.exception(_('Failed to validate token'))
+            raise exception.Unauthorized(e)
+
     def _validate_v3_token(self, token_id, belongs_to=None, **kwargs):
         try:
             token_ref = self._verify_token(token_id, belongs_to)
@@ -335,7 +556,9 @@ class Provider(token_provider.Driver):
             # management layer is now pluggable, one can always provide
             # their own implementation to suit their needs.
             token_data = token_ref.get('token_data')
-            if not token_data or 'token' not in token_data:
+            if (not token_data or
+                    self.get_token_version(token_data) !=
+                    token_provider.V3):
                 # token ref is created by V2 API
                 project_id = None
                 project_ref = token_ref.get('tenant')
@@ -361,11 +584,17 @@ class Provider(token_provider.Driver):
             return self._validate_v3_token(token_id,
                                            belongs_to=belongs_to,
                                            **kwargs)
+        elif version == token_provider.V2:
+            return self._validate_v2_token(token_id,
+                                           belongs_to=belongs_to,
+                                           **kwargs)
         raise token_provider.UnsupportedTokenVersionException
 
     def check_token(self, token_id, belongs_to=None, version='v3.0', **kwargs):
         try:
-            self._verify_token(token_id, belongs_to=belongs_to)
+            token_ref = self._verify_token(token_id, belongs_to=belongs_to)
+            if version == token_provider.V2:
+                self._assert_default_domain(context=None, token_ref=token_ref)
         except Exception as e:
             LOG.exception(_('Failed to verify token'))
             raise exception.Unauthorized(e)
