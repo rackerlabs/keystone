@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//soY\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-25T00:43:15Z",
+      "side": 1,
+      "message": "V2 token provider will be implemented in a separate patch",
+      "parentUuid": "AAAAPn//spo\u003d",
+      "revId": "8e5ba07ec1e0158b724139ab1fde98758c6d41b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//tJE\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 5
@@ -135,6 +153,24 @@
       "writtenOn": "2013-06-25T00:36:06Z",
       "side": 1,
       "message": "In case of v2 token, looks like cached token strategy is not used as its populating token again. Why is it different from v3 as this will make v2 validate token relatively expensive?",
+      "revId": "8e5ba07ec1e0158b724139ab1fde98758c6d41b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//soU\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-25T00:43:15Z",
+      "side": 1,
+      "message": "token data was never cached by v2. V2 implementation only cache some data in token_ref. But we can certainly revisit that issue in a separate patch. I am all for caching v2 token data as well.",
+      "parentUuid": "AAAAPn//so0\u003d",
       "revId": "8e5ba07ec1e0158b724139ab1fde98758c6d41b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
