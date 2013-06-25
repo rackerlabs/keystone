@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//qPg\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-25T20:15:38Z",
+      "side": 1,
+      "message": "Ah, was going to use this for the LDAPIdentityEnabledEmulation and live tests as well.\n\nRemoved",
+      "parentUuid": "AAAAPn//sZE\u003d",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//saU\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-25T05:26:55Z",
       "side": 1,
       "message": "Isn\u0027t this already loaded from setUp? there\u0027s no conf change here",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//qPk\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-25T20:15:38Z",
+      "side": 1,
+      "message": "I think you are right.  This is just a one-for-one change with the origianl code, but I suspect it would test the same thing without this line.",
+      "parentUuid": "AAAAPn//saU\u003d",
       "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//qF0\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-25T20:15:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//sYg\u003d",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//sYc\u003d",
         "filename": "tests/test_backend_templated.py",
         "patchSetId": 2
@@ -121,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//qFw\u003d",
+        "filename": "tests/test_backend_templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-25T20:15:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//sYc\u003d",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//sYU\u003d",
         "filename": "tests/test_migrate_nova_auth.py",
         "patchSetId": 2
@@ -132,6 +204,24 @@
       "writtenOn": "2013-06-25T05:26:55Z",
       "side": 1,
       "message": "EMPTY_CONTEXT",
+      "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//qFQ\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-25T20:15:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//sYU\u003d",
       "revId": "9566ff4b3b5ea25c0a92f1d8868ea7f0772cd441",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
