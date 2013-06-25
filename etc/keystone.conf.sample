@@ -147,7 +147,6 @@
 #cert_subject = /C=US/ST=Unset/L=Unset/O=Unset/CN=localhost
 
 [signing]
-#token_format = PKI
 #certfile = /etc/keystone/pki/certs/signing_cert.pem
 #keyfile = /etc/keystone/pki/private/signing_key.pem
 #ca_certs = /etc/keystone/pki/certs/cacert.pem

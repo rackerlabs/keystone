@@ -48,15 +48,6 @@ class Manager(manager.Manager):
     """
 
     def __init__(self):
-        # TODO(gyee): this is just a temporary hack to make sure
-        # CONF.signing.token_format agrees with CONF.token.provider.
-        # This code will be removed in the subsequent patch to implement
-        # V2 token provider. That patch will remove CONF.signing.token_format
-        # altogether.
-        if (CONF.signing.token_format == 'PKI' and
-                not CONF.token.provider.endswith('pki.Provider')):
-            raise ValueError('token_format conflicts with token provider')
-
         super(Manager, self).__init__(CONF.token.provider)
 
 
@@ -73,13 +64,16 @@ class Provider(object):
         raise exception.NotImplemented()
 
     def issue_token(self, context, version='v3.0', **kwargs):
-        """Issue a V3 token.
+        """Issue a token of a specified version.
 
         For V3 tokens, 'user_id', 'method_names', must present in kwargs.
         Optionally, kwargs may contain 'expires_at' for rescope tokens;
         'project_id' for project-scoped token; 'domain_id' for
         domain-scoped token; and 'auth_context' from the authentication
         plugins.
+
+        For V2 tokens, 'token_ref' must present in kwargs.
+        Optionally, kwargs may contain 'roles_ref' and 'catalog_ref'.
 
         :param context: request context
         :type context: dictionary

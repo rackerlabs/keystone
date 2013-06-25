@@ -233,8 +233,6 @@ def configure():
 
     # signing
     register_str(
-        'token_format', group='signing', default="PKI")
-    register_str(
         'certfile',
         group='signing',
         default="/etc/keystone/ssl/certs/signing_cert.pem")
