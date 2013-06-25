@@ -72,6 +72,9 @@ class Driver(object):
         domain-scoped token; and 'auth_context' from the authentication
         plugins.
 
+        For V2 tokens, 'token_ref' must present in kwargs.
+        Optionally, kwargs may contain 'roles_ref' and 'catalog_ref'.
+
         :param version: version of the token to be issued
         :type version: string
         :param kwargs: information needed for token creation. Parameters
@@ -113,7 +116,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def check_token(self, token_id, belongs_to=None, **kwargs):
+    def check_token(self, token_id, belongs_to=None, version='v3.0', **kwargs):
         """Check the validity of the given V3 token.
 
         Must raise Unauthorized exception if  unable to check token.
@@ -122,6 +125,8 @@ class Driver(object):
         :type token_id: string
         :param belongs_to: identity of the scoped project to validate
         :type belongs_to: string
+        :param version: version of the token to check
+        :type version: string
         :param kwargs: other information to assist token validation
         :type kwargs: free from keyword arguments
         :returns: None
