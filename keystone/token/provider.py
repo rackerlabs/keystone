@@ -64,13 +64,16 @@ class Driver(object):
         raise exception.NotImplemented()
 
     def issue_token(self, context, version='v3.0', **kwargs):
-        """Issue a V3 token.
+        """Issue a token of a specified version.
 
         For V3 tokens, 'user_id', 'method_names', must present in kwargs.
         Optionally, kwargs may contain 'expires_at' for rescope tokens;
         'project_id' for project-scoped token; 'domain_id' for
         domain-scoped token; and 'auth_context' from the authentication
         plugins.
+
+        For V2 tokens, 'token_ref' must present in kwargs.
+        Optionally, kwargs may contain 'roles_ref' and 'catalog_ref'.
 
         :param context: request context
         :type context: dictionary
