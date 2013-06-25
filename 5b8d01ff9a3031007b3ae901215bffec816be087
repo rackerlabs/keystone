@@ -87,6 +87,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//zDc\u003d",
+        "filename": "keystone/catalog/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-25T21:57:58Z",
+      "side": 1,
+      "message": "why is this change necessary?",
+      "revId": "5b8d01ff9a3031007b3ae901215bffec816be087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//y4M\u003d",
         "filename": "tests/test_v3_catalog.py",
         "patchSetId": 6
