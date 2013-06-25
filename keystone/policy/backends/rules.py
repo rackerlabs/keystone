@@ -56,9 +56,14 @@ def init():
 
 
 def _set_rules(data):
+    global _POLICY_PATH
     default_rule = CONF.policy_default_rule
-    common_policy.set_rules(common_policy.Rules.load_json(
-        data, default_rule))
+    try:
+        common_policy.set_rules(common_policy.Rules.load_json(
+            data, default_rule))
+    except Exception:
+        LOG.exception(_('Could not parse policy file: %s') % _POLICY_PATH)
+        raise exception.UnexpectedError()
 
 
 def enforce(credentials, action, target, do_raise=True):
