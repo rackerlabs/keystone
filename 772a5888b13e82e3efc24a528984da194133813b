@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//sIQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-06-25T07:29:19Z",
+      "side": 1,
+      "message": "This is not true. It adds documentation for using basic authentication for keystone running as an Apache WSGI app.",
+      "revId": "772a5888b13e82e3efc24a528984da194133813b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//sNE\u003d",
         "filename": "doc/source/apache-httpd.rst",
         "patchSetId": 1
