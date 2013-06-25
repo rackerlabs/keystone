@@ -17,4 +17,5 @@ name = os.path.basename(__file__)
 if CONF.debug:
     CONF.log_opt_values(logging.getLogger(CONF.prog), logging.DEBUG)
 
-deploy.loadapp('config:%s' % config.find_paste_config(), name=name)
+application = deploy.loadapp('config:%s' % config.find_paste_config(),
+                              name=name)
