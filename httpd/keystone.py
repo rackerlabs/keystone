@@ -17,4 +17,7 @@ name = os.path.basename(__file__)
 if CONF.debug:
     CONF.log_opt_values(logging.getLogger(CONF.prog), logging.DEBUG)
 
-deploy.loadapp('config:%s' % config.find_paste_config(), name=name)
+# NOTE(ldbragst): Load Keystone paste config as an application.
+#                 This fixes bug #1194494.
+application = deploy.loadapp('config:%s' % config.find_paste_config(),
+                             name=name)
