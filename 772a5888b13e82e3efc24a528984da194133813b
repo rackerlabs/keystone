@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//sNE\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T06:52:57Z",
+      "side": 1,
+      "message": "this should be covered by the above: \nInstall mod_nss according to your distribution\n\nThe only other thing that could be considered redhat specific is the location/use of /etc/httpd/conf.d so i\u0027d drop the redhat reference",
+      "revId": "772a5888b13e82e3efc24a528984da194133813b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//sNA\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T06:52:57Z",
+      "side": 1,
+      "message": "There shouldn\u0027t be any port conflicts",
+      "revId": "772a5888b13e82e3efc24a528984da194133813b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//sM4\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T06:52:57Z",
+      "side": 1,
+      "message": "covered by above: \nYou can either hardlink or softlink the files ``main`` and ``admin`` to the file ``keystone.py``\n\nThe wording sucks a bit but i don\u0027t think it needs restating",
+      "revId": "772a5888b13e82e3efc24a528984da194133813b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//sM0\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-25T06:52:57Z",
+      "side": 1,
+      "message": "You only want to capture POST to this location as the other methods are authenticated via token. you can do that with: \n\n\u003cLocation /v2.0/tokens\u003e \n    \u003cLimit POST\u003e\n        AuthType Basic .....\n    \u003c/Limit\u003e \n\u003c/Location\u003e",
+      "revId": "772a5888b13e82e3efc24a528984da194133813b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
