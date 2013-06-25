@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//p2o\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-25T21:43:47Z",
+      "side": 1,
+      "message": "why get_assignment()? Shouldn\u0027t we be invoking assignment.Manager() instead?",
+      "revId": "4e01769020f47f4f5062e42409472df307fd3adf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//p4A\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-25T21:43:47Z",
+      "side": 1,
+      "message": "What are the group assignments omitted? add_user_to_group(), remove_user_from_group(), etc",
+      "revId": "4e01769020f47f4f5062e42409472df307fd3adf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//p2c\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-25T21:43:47Z",
+      "side": 1,
+      "message": "See my previous comment, not sure why this interface is necessary.",
+      "revId": "4e01769020f47f4f5062e42409472df307fd3adf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//p2A\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-25T21:43:47Z",
+      "side": 1,
+      "message": "What is this for? Thought we\u0027ve agreed that this types of functionality will be implemented by the get_user() method where name is part of the query parameter.",
+      "revId": "4e01769020f47f4f5062e42409472df307fd3adf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
