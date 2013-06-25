@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//p/I\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-25T21:16:42Z",
+      "side": 1,
+      "message": "So even though this is done in setUp() we are doing it again? Unless lines 140 - 143 make calling self.load_backends() specific to this test case? I could be missing something.",
+      "revId": "4ecfa3a0c82e05733344e5c2337bf86027afb398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
