@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//spo\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2013-06-25T00:36:06Z",
+      "side": 1,
+      "message": "How v2 call is supported here? Is it going to return token response in v3 or v2 format for v2 create token request?",
+      "revId": "8e5ba07ec1e0158b724139ab1fde98758c6d41b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//tJE\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 5
@@ -101,6 +118,23 @@
       "side": 1,
       "message": "token_ref is used by both v2 and v3",
       "parentUuid": "AAAAPn//tJE\u003d",
+      "revId": "8e5ba07ec1e0158b724139ab1fde98758c6d41b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//so0\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2013-06-25T00:36:06Z",
+      "side": 1,
+      "message": "In case of v2 token, looks like cached token strategy is not used as its populating token again. Why is it different from v3 as this will make v2 validate token relatively expensive?",
       "revId": "8e5ba07ec1e0158b724139ab1fde98758c6d41b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
