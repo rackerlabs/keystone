@@ -16,6 +16,24 @@
       "revId": "4ecfa3a0c82e05733344e5c2337bf86027afb398",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//nfU\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T17:01:44Z",
+      "side": 1,
+      "message": "this call applies the  changes to the CONF to the various backends.  It could be made more efficient, but this is a direct translation of the original call :  self.identity_api \u003d identity.backends.ldap.Identity()",
+      "parentUuid": "AAAAPn//p/I\u003d",
+      "revId": "4ecfa3a0c82e05733344e5c2337bf86027afb398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
