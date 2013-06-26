@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//pSE\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-26T02:11:15Z",
+      "side": 1,
+      "message": "I don\u0027t think i made that clear, you still need the rest of the config options like AuthName and AuthUserFile here they should just be wrapped in the Limit block",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pR8\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-26T02:11:15Z",
+      "side": 1,
+      "message": "You will want a limit block here too.",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pR4\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-06-26T02:11:15Z",
+      "side": 1,
+      "message": "wasn\u0027t this mentioned as a bad idea in another discussion as there is sensitive information in keystone.conf",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
