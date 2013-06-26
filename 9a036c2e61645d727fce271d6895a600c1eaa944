@@ -33,6 +33,24 @@
       "revId": "9a036c2e61645d727fce271d6895a600c1eaa944",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//naI\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-06-26T18:28:52Z",
+      "side": 1,
+      "message": "No because you pass the token and I will get the userID and ProjectID from that",
+      "parentUuid": "AAAAPn//o6w\u003d",
+      "revId": "9a036c2e61645d727fce271d6895a600c1eaa944",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
