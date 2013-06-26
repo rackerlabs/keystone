@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//o64\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-26T06:29:57Z",
+      "side": 1,
+      "message": "Why can\u0027t this be decorator just iike other functions?",
+      "revId": "9a036c2e61645d727fce271d6895a600c1eaa944",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//o6w\u003d",
+        "filename": "tests/test_v3_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-26T06:29:57Z",
+      "side": 1,
+      "message": "Does catalog need to be protected?",
+      "revId": "9a036c2e61645d727fce271d6895a600c1eaa944",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
