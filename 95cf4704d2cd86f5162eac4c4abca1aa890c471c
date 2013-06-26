@@ -16,6 +16,24 @@
       "revId": "95cf4704d2cd86f5162eac4c4abca1aa890c471c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//mt8\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 0,
+      "message": "right, we are check 1) if token exist, and 2) is it a valid PKI token",
+      "parentUuid": "AAAAPn//pPM\u003d",
+      "revId": "95cf4704d2cd86f5162eac4c4abca1aa890c471c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

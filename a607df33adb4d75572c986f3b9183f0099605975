@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//mgE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "k",
+      "parentUuid": "AAAAPn//mq0\u003d",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//mrM\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-26T21:31:43Z",
       "side": 1,
       "message": "remove; this is irrelevant post-merge",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//mf8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "k",
+      "parentUuid": "AAAAPn//mrM\u003d",
       "revId": "a607df33adb4d75572c986f3b9183f0099605975",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//mf4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "k",
+      "parentUuid": "AAAAPn//mrI\u003d",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pPg\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2013-06-26T02:44:58Z",
       "side": 1,
       "message": "CRUD -\u003e Persistence or Backing store.",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//muw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 9
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "k",
+      "parentUuid": "AAAAPn//pPg\u003d",
       "revId": "a607df33adb4d75572c986f3b9183f0099605975",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//muo\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 9
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "k",
+      "parentUuid": "AAAAPn//pPc\u003d",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pPU\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 9
@@ -98,6 +188,24 @@
       "writtenOn": "2013-06-26T02:44:58Z",
       "side": 1,
       "message": "Does this really need api on the end of it?   requires token_provider seems cleaner.",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//muU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "I am following the existing pattern. It is really an interface so I think token_provider_api should be fine.",
+      "parentUuid": "AAAAPn//pPU\u003d",
       "revId": "a607df33adb4d75572c986f3b9183f0099605975",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//mtY\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "Middleware is certainly possible. But I think it should be done in a separate patch though.",
+      "parentUuid": "AAAAPn//pPQ\u003d",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pOs\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 9
@@ -132,6 +258,24 @@
       "writtenOn": "2013-06-26T02:44:58Z",
       "side": 1,
       "message": "keystone.token.providers.keystone.Provider",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ms8\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "k",
+      "parentUuid": "AAAAPn//pOs\u003d",
       "revId": "a607df33adb4d75572c986f3b9183f0099605975",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//mrg\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "what\u0027s the difference? this one is pretty self-explanatory.",
+      "parentUuid": "AAAAPn//pO8\u003d",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pOk\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 9
@@ -166,6 +328,24 @@
       "writtenOn": "2013-06-26T02:44:58Z",
       "side": 1,
       "message": "rename this file keystone if you can.  You might need to do: \n\nfrom __future__ import absolute_import",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//mhw\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "good idea!",
+      "parentUuid": "AAAAPn//pOk\u003d",
       "revId": "a607df33adb4d75572c986f3b9183f0099605975",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//mhg\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "nice catch!",
+      "parentUuid": "AAAAPn//pQs\u003d",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pPk\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 9
@@ -200,6 +398,24 @@
       "writtenOn": "2013-06-26T02:44:58Z",
       "side": 1,
       "message": "Probably misnamed.  populate_token_times?",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//mhQ\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "k",
+      "parentUuid": "AAAAPn//pPk\u003d",
       "revId": "a607df33adb4d75572c986f3b9183f0099605975",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//mhE\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "you can override _ functions I think.",
+      "parentUuid": "AAAAPn//pPs\u003d",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pP8\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 9
@@ -234,6 +468,24 @@
       "writtenOn": "2013-06-26T02:44:58Z",
       "side": 1,
       "message": "We can.  If we get the full token, and not the hash of it, the token ID starts with MII.  So use: https://github.com/openstack/python-keystoneclient/blob/master/keystoneclient/common/cms.py#L78\n\nOf course, we have a duplicated version in Keystone/common/cms.py due to how we run our unit tests.  We need to fix that, but not in this patch.  \n\nI don;\u0027t think that applies here, though.  So please remove this comment.",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//mhA\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "k",
+      "parentUuid": "AAAAPn//pP8\u003d",
       "revId": "a607df33adb4d75572c986f3b9183f0099605975",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//mg4\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "k",
+      "parentUuid": "AAAAPn//pQE\u003d",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pQY\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 9
@@ -274,6 +544,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//mgc\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "Right, but role name or project name changes does invalidate the token. That\u0027s what I was trying to convey.",
+      "parentUuid": "AAAAPn//pQY\u003d",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pQM\u003d",
         "filename": "keystone/token/providers/keystone_provider.py",
         "patchSetId": 9
@@ -285,6 +573,24 @@
       "writtenOn": "2013-06-26T02:44:58Z",
       "side": 1,
       "message": "There really should be a better set of names  to distinguish between validate and check.  I know what you mean, and I find it confusing.",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//mgM\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T22:29:15Z",
+      "side": 1,
+      "message": "I was following the same naming convention as before. Check token does not return token data.",
+      "parentUuid": "AAAAPn//pQM\u003d",
       "revId": "a607df33adb4d75572c986f3b9183f0099605975",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
