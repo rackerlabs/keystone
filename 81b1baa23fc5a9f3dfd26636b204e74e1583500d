@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//md4\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T22:41:45Z",
+      "side": 1,
+      "message": "the two cases that came to mind were custom drivers with names like:\n\n  # includes \u0027mysql\u0027 in the name but provides a sqlite engine\n  \u0027sqlite+better-than-mysql\u0027\n\n  # poorly named but provides a mysql engine\n  \u0027companyx-proprietary\u0027",
+      "parentUuid": "AAAAPn//mhs\u003d",
+      "revId": "81b1baa23fc5a9f3dfd26636b204e74e1583500d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//tGQ\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 1
