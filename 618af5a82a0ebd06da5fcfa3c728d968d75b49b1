@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//nE0\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T19:39:47Z",
+      "side": 1,
+      "message": "every test does NOT need a credential fixture, so it\u0027s misleading and bad practice to put one in this file. please remove the new fixture and only create it where necessary... which just looks like the migration tests",
+      "revId": "618af5a82a0ebd06da5fcfa3c728d968d75b49b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//nD8\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T19:39:47Z",
+      "side": 1,
+      "message": "use single quotes where possible",
+      "revId": "618af5a82a0ebd06da5fcfa3c728d968d75b49b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//nEI\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 832,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T19:39:47Z",
+      "side": 1,
+      "message": "extra whitespace",
+      "revId": "618af5a82a0ebd06da5fcfa3c728d968d75b49b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//nDw\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T19:39:47Z",
+      "side": 1,
+      "message": "this doesn\u0027t need to come from fixtures",
+      "revId": "618af5a82a0ebd06da5fcfa3c728d968d75b49b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
