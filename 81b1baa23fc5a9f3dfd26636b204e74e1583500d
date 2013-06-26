@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//mhs\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 7891
+      },
+      "writtenOn": "2013-06-26T22:20:38Z",
+      "side": 1,
+      "message": "Dolph, I can\u0027t imagine that `drivername` would have entries for both \u0027mysql\u0027 and \u0027sqlite\u0027. If such was the case, then yes, I think that the code you mentioned is probably a better approach.",
+      "parentUuid": "AAAAPn//mjk\u003d",
+      "revId": "81b1baa23fc5a9f3dfd26636b204e74e1583500d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//tGQ\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 1
