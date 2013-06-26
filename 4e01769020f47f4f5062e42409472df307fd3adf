@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//o6Q\u003d",
+        "filename": "keystone/assignment/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-26T06:34:36Z",
+      "side": 1,
+      "message": "I believe  import * in  init is a bad practice",
+      "revId": "4e01769020f47f4f5062e42409472df307fd3adf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//p2o\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
