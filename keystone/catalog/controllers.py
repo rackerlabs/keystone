@@ -197,6 +197,7 @@ class EndpointV3(controller.V3Controller):
 
     @controller.protected
     def update_endpoint(self, context, endpoint_id, endpoint):
+        """Create an association between project and endpoint."""
         self._require_matching_id(endpoint_id, endpoint)
 
         if 'service_id' in endpoint:
@@ -207,10 +208,12 @@ class EndpointV3(controller.V3Controller):
 
     @controller.protected
     def delete_endpoint(self, context, endpoint_id):
+        """Remove the association between project and endpoint."""
         return self.catalog_api.delete_endpoint(context, endpoint_id)
 
     @controller.protected
     def list_associated_projects(self, context, endpoint_id):
+        """Return a list of projects associated with the endpoint."""
         id_api = self.identity_api
         refs = id_api.list_projects_associated_endpoint(context, endpoint_id)
         if refs is None:
