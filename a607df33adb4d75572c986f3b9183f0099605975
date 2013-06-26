@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//mq0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T21:31:43Z",
+      "side": 1,
+      "message": "commits are self-contained changes to the repo... a partial change doesn\u0027t make any sense. remove the \"part 1\" and use the one line summary to describe, in one line, what\u0027s being changed. the first line of the next paragraph looks like a good starting point for a better one line summary",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//mrM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T21:31:43Z",
+      "side": 1,
+      "message": "remove; this is irrelevant post-merge",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//mrI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T21:31:43Z",
+      "side": 1,
+      "message": "remove the reference to \"part 2\"",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pPg\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 9
