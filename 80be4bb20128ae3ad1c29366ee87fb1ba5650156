@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//moA\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-26T22:31:42Z",
+      "side": 1,
+      "message": "Done. Wrote some docstrings.",
+      "parentUuid": "AAAAPn//wVY\u003d",
+      "revId": "80be4bb20128ae3ad1c29366ee87fb1ba5650156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//wVU\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//mns\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-26T22:31:42Z",
+      "side": 1,
+      "message": "Done. Added a unit test to show that it now doesn\u0027t call the callbacks if the engine is the same.",
+      "parentUuid": "AAAAPn//wVU\u003d",
+      "revId": "80be4bb20128ae3ad1c29366ee87fb1ba5650156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//wWM\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2013-06-22T00:54:14Z",
       "side": 1,
       "message": "may want to do a try-except here in case a callback don\u0027t play nice",
+      "revId": "80be4bb20128ae3ad1c29366ee87fb1ba5650156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//mg0\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-26T22:31:42Z",
+      "side": 1,
+      "message": "Done. Added a unit test to show that if the callback function raises then it\u0027s ignored.",
+      "parentUuid": "AAAAPn//wWM\u003d",
       "revId": "80be4bb20128ae3ad1c29366ee87fb1ba5650156",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
