@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//oHM\u003d",
+        "filename": "keystone/assignment/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T14:38:15Z",
+      "side": 1,
+      "message": "This is how the other modules do it:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/__init__.py\n\nIt says that \"everything in core is in the top level namespace of this package.\"",
+      "parentUuid": "AAAAPn//o6Q\u003d",
+      "revId": "4e01769020f47f4f5062e42409472df307fd3adf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//p2o\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-25T21:43:47Z",
       "side": 1,
       "message": "why get_assignment()? Shouldn\u0027t we be invoking assignment.Manager() instead?",
+      "revId": "4e01769020f47f4f5062e42409472df307fd3adf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//oIA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T14:38:15Z",
+      "side": 1,
+      "message": "Interim step, but doing more than this will require new unit tests , and I am trying to keep this patch down to just refactoring.  This is binding the identity and assignment backends to the same backing store, which is necessary to keep from breaking existing deployments.  When we provide a way to configure assignments separate from deployments we will make everything go through Manager.",
+      "parentUuid": "AAAAPn//p2o\u003d",
       "revId": "4e01769020f47f4f5062e42409472df307fd3adf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//oJU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T14:38:15Z",
+      "side": 1,
+      "message": "Those are in the identity backend, not in assignments, as they come out of LDAP etc.",
+      "parentUuid": "AAAAPn//p4A\u003d",
+      "revId": "4e01769020f47f4f5062e42409472df307fd3adf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//p2c\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2013-06-25T21:43:47Z",
       "side": 1,
       "message": "See my previous comment, not sure why this interface is necessary.",
+      "revId": "4e01769020f47f4f5062e42409472df307fd3adf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//oI4\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T14:38:15Z",
+      "side": 1,
+      "message": "It is a step to avoid breaking current deployments.  Currently, the identity and assignment backends need to cross talk to get certain jobs done, and up until now, that was done doing back end specific logic.  What this does is forces the changes to go through the interface, but still allows the default configuration behavior to be \"if id is in sql, assignments is in sql\" and \"if id is in ldap, assignments are in ldap\"",
+      "parentUuid": "AAAAPn//p2c\u003d",
       "revId": "4e01769020f47f4f5062e42409472df307fd3adf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
