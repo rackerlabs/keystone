@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//nFk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T19:32:48Z",
+      "side": 1,
+      "message": "no need to put a period at the end",
+      "revId": "314758ab2fe3e302d90b7a3a5be91ec7715826a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//nFc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T19:32:48Z",
+      "side": 1,
+      "message": "only the one line summary needs to be wrapped at 50 chars... the rest can wrap to 79",
+      "revId": "314758ab2fe3e302d90b7a3a5be91ec7715826a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//y3o\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
         "patchSetId": 2
