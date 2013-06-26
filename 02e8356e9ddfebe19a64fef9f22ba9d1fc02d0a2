@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//mwk\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-26T21:14:45Z",
+      "side": 1,
+      "message": "need try:except on json.loads() to handle bad json serialization.\n\nPython 2.7.3 (default, Apr 10 2013, 06:20:15) \n[GCC 4.6.3] on linux2\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n\u003e\u003e\u003e blob \u003d \u0027{\"abc\":\"def\"d}\u0027\n\u003e\u003e\u003e import json\n\u003e\u003e\u003e json.loads(blob)\nTraceback (most recent call last):\n  File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\n  File \"/usr/lib/python2.7/json/__init__.py\", line 326, in loads\n    return _default_decoder.decode(s)\n  File \"/usr/lib/python2.7/json/decoder.py\", line 366, in decode\n    obj, end \u003d self.raw_decode(s, idx\u003d_w(s, 0).end())\n  File \"/usr/lib/python2.7/json/decoder.py\", line 382, in raw_decode\n    obj, end \u003d self.scan_once(s, idx)\nValueError: Expecting , delimiter: line 1 column 12 (char 12)\n\u003e\u003e\u003e",
+      "revId": "02e8356e9ddfebe19a64fef9f22ba9d1fc02d0a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
