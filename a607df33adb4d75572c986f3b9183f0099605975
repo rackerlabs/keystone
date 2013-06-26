@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//pPg\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 9
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "CRUD -\u003e Persistence or Backing store.",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pPc\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 9
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "So this looks like the builder pattern to me.  The provider is the director, and probably should not be pluggable, but then the builder it self should be replaceable.  I don\u0027t think that what we have here will harm anything, Just that we made the pluggable object too large.  But we can fix that in a future release.\n\n\"Controls the token construction, validation, and revocation operations.\"  Is clearer.",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pPU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "Does this really need api on the end of it?   requires token_provider seems cleaner.",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pPQ\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "Controllers typically do not know much, if anything about HTTP.  This belongs in middleware.",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pOs\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "keystone.token.providers.keystone.Provider",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pO8\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "why can\u0027t you just do token.provider and drop this import?",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pOk\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "rename this file keystone if you can.  You might need to do: \n\nfrom __future__ import absolute_import",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pQs\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "nit: 2 typos.  repopulae  -\u003e repopulate\nexist -\u003e exists",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pPk\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "Probably misnamed.  populate_token_times?",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pPs\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "I am not sure that these should be _ functions.  It seems to me that a template pattern is in effect here, and someone overriding the provider should plan on overriding one of these methods.",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pP8\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "We can.  If we get the full token, and not the hash of it, the token ID starts with MII.  So use: https://github.com/openstack/python-keystoneclient/blob/master/keystoneclient/common/cms.py#L78\n\nOf course, we have a duplicated version in Keystone/common/cms.py due to how we run our unit tests.  We need to fix that, but not in this patch.  \n\nI don;\u0027t think that applies here, though.  So please remove this comment.",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pQE\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "Not going to be changes.  Leave the comment, but remove the FIXME",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pQY\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "Correctness should be that the token is stored in the database.  A different provider could implement a different strategy.  So, I think this fixme can go away, and instead should clearly state:  \n\nWe have the rule that revocation events removes the token.  If a token is in the backing store, it is still valid.",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pQM\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 1,
+      "message": "There really should be a better set of names  to distinguish between validate and check.  I know what you mean, and I find it confusing.",
+      "revId": "a607df33adb4d75572c986f3b9183f0099605975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

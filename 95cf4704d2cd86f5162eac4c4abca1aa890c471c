@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//pPM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T02:44:58Z",
+      "side": 0,
+      "message": "Where did this check end up?  I guess you are just always reading the values our of the database.  Which is sufficient.",
+      "revId": "95cf4704d2cd86f5162eac4c4abca1aa890c471c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
