@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//mjk\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T22:11:18Z",
+      "side": 1,
+      "message": "i don\u0027t think the driver name (e.g. \"mysql+whatever\") really matters? isn\u0027t it the engine name that you want to base this on?\n\n  if engine.name \u003d\u003d \u0027mysql\u0027:",
+      "revId": "81b1baa23fc5a9f3dfd26636b204e74e1583500d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//tGQ\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 1
