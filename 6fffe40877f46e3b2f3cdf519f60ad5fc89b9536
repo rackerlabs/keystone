@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//nRU\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-06-26T18:23:42Z",
+      "side": 1,
+      "message": "It is actually not needed since it has been taken care on the catalog opt-out bp.",
+      "parentUuid": "AAAAPn//pCs\u003d",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pCQ\u003d",
         "filename": "keystone/auth/token_factory.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-26T06:08:14Z",
       "side": 1,
       "message": "What is the value of the parameter project_id in case of DomainScope?",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//nQs\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-06-26T18:23:42Z",
+      "side": 1,
+      "message": "This function is getting a project_id as parameter",
+      "parentUuid": "AAAAPn//pCQ\u003d",
       "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//nQ8\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-06-26T18:23:42Z",
+      "side": 1,
+      "message": "I don\u0027t think so. If the element is there it must have an id",
+      "parentUuid": "AAAAPn//pB4\u003d",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pBU\u003d",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2013-06-26T06:08:14Z",
       "side": 1,
       "message": "This is really inefficient. Can\u0027t you do a simple query  select endpoints where endpoint id  in { id1, id2,...]",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//nPg\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-06-26T18:23:42Z",
+      "side": 1,
+      "message": "The selection is done at the self.identity_api.list_endpoints_in_project. This line only retrieve the endpoint json structure to be composed in the reply.\nThe for cycle is only running on the endpoints associated to the project ...",
+      "parentUuid": "AAAAPn//pBU\u003d",
       "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +187,24 @@
       "writtenOn": "2013-06-26T06:08:14Z",
       "side": 1,
       "message": "What is the normal convention?\n\nGET /Users if there are no users, do we raise exception or return empty list",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//nPM\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-06-26T18:23:42Z",
+      "side": 1,
+      "message": "This is the case where the project_id you passed in the request is wrong\nIn case there are no associations it returns an empty list",
+      "parentUuid": "AAAAPn//pAU\u003d",
       "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
