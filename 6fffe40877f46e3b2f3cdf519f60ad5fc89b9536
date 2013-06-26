@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//pCs\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-26T06:08:14Z",
+      "side": 1,
+      "message": "Just curious, can\u0027t a user validate his token?",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pCQ\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-26T06:08:14Z",
+      "side": 1,
+      "message": "What is the value of the parameter project_id in case of DomainScope?",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pB4\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-26T06:08:14Z",
+      "side": 1,
+      "message": "Will there be a case, where domain is in token, but doesn\u0027t have id, same for project",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pBU\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-26T06:08:14Z",
+      "side": 1,
+      "message": "This is really inefficient. Can\u0027t you do a simple query  select endpoints where endpoint id  in { id1, id2,...]",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pAY\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-26T06:08:14Z",
+      "side": 1,
+      "message": "Why do we need to do a del?",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pAk\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-26T06:08:14Z",
+      "side": 1,
+      "message": "Really don\u0027t understand, why are you formatting in case of single endpoint and not in mulltiple case",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pAU\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-26T06:08:14Z",
+      "side": 1,
+      "message": "What is the normal convention?\n\nGET /Users if there are no users, do we raise exception or return empty list",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//o8k\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-06-26T06:08:14Z",
+      "side": 1,
+      "message": "To me this looks like overkill. A  service has many types of endpoint.  Assume a service has public, internal  and admin endpoint, and for 3 user I need to set the this  assocation for 3 service.  Do I need to make  27 calls?",
+      "revId": "6fffe40877f46e3b2f3cdf519f60ad5fc89b9536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
