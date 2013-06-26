@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//mwE\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T21:17:16Z",
+      "side": 1,
+      "message": "accidental backwards camel_Case?",
+      "revId": "d4e94f09ca0e97732f515ada39375b7082d63e03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//mvo\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-26T21:17:16Z",
+      "side": 1,
+      "message": "can we not just use `data` (backticks) for all db\u0027s?",
+      "revId": "d4e94f09ca0e97732f515ada39375b7082d63e03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
