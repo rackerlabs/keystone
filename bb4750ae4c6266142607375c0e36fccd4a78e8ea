@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//pOE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T03:04:29Z",
+      "side": 1,
+      "message": "This looks like a bug fix.  Is it?",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pNw\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T03:04:29Z",
+      "side": 1,
+      "message": "SHould not be required if you are using @dependency",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pNk\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T03:04:29Z",
+      "side": 1,
+      "message": "Should not be required if you are using @dependency",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pMY\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T03:04:29Z",
+      "side": 1,
+      "message": "This logic doesn\u0027t belong here, either.",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pNg\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T03:04:29Z",
+      "side": 1,
+      "message": "should be from keystone import token.",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pMw\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T03:04:29Z",
+      "side": 1,
+      "message": "Dislike the name helper in these classes.  V2TokenFormat",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pMo\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T03:04:29Z",
+      "side": 1,
+      "message": "V3TokenFormat",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//pNY\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 843,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-26T03:04:29Z",
+      "side": 1,
+      "message": "Good. We need this.  Could be a stand alone patch.  But good as is.",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
