@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//jbs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T21:28:40Z",
+      "side": 1,
+      "message": "I don\u0027t see why the client needs to know that the reason the request failed was because the policy.json wasn\u0027t valid. The error should be logged so that the administrator can take care of it.",
+      "revId": "4fb0b06f9b9df1964a04550728a16222166ab291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jb0\u003d",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T21:28:40Z",
+      "side": 1,
+      "message": "I don\u0027t think we should be raising an error that indicates that the client did something wrong. A 500 Internal Server Error is the appropriate response.",
+      "revId": "4fb0b06f9b9df1964a04550728a16222166ab291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
