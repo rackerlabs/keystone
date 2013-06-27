@@ -79,7 +79,7 @@ class Auth(controller.V2Controller):
                     context, auth)
 
         user_ref, tenant_ref, metadata_ref, expiry = auth_info
-        core.validate_auth_info(self, context, user_ref, tenant_ref)
+        core.validate_auth_info(self, user_ref, tenant_ref)
         trust_id = metadata_ref.get('trust_id')
         user_ref = self._filter_domain_id(user_ref)
         if tenant_ref:
@@ -91,7 +91,6 @@ class Auth(controller.V2Controller):
 
         if tenant_ref:
             catalog_ref = self.catalog_api.get_catalog(
-                context=context,
                 user_id=user_ref['id'],
                 tenant_id=tenant_ref['id'],
                 metadata=metadata_ref)
@@ -102,7 +101,7 @@ class Auth(controller.V2Controller):
 
         roles_ref = []
         for role_id in metadata_ref.get('roles', []):
-            role_ref = self.identity_api.get_role(context, role_id)
+            role_ref = self.identity_api.get_role(role_id)
             roles_ref.append(dict(name=role_ref['name']))
 
         token_data = Auth.format_token(auth_token_data, roles_ref)
@@ -127,19 +126,18 @@ class Auth(controller.V2Controller):
                 CONF.signing.token_format)
         try:
             self.token_api.create_token(
-                context, token_id, dict(key=token_id,
-                                        id=token_id,
-                                        expires=auth_token_data['expires'],
-                                        user=user_ref,
-                                        tenant=tenant_ref,
-                                        metadata=metadata_ref,
-                                        trust_id=trust_id))
+                token_id, dict(key=token_id,
+                               id=token_id,
+                               expires=auth_token_data['expires'],
+                               user=user_ref,
+                               tenant=tenant_ref,
+                               metadata=metadata_ref,
+                               trust_id=trust_id))
         except Exception as e:
             # an identical token may have been created already.
             # if so, return the token_data as it is also identical
             try:
-                self.token_api.get_token(context=context,
-                                         token_id=token_id)
+                self.token_api.get_token(token_id)
             except exception.TokenNotFound:
                 raise e
 
@@ -166,8 +164,7 @@ class Auth(controller.V2Controller):
                                                 size=CONF.max_token_size)
 
         try:
-            old_token_ref = self.token_api.get_token(context=context,
-                                                     token_id=old_token)
+            old_token_ref = self.token_api.get_token(old_token)
         except exception.NotFound as e:
             raise exception.Unauthorized(e)
 
@@ -182,7 +179,7 @@ class Auth(controller.V2Controller):
         if not CONF.trust.enabled and 'trust_id' in auth:
             raise exception.Forbidden('Trusts are disabled.')
         elif CONF.trust.enabled and 'trust_id' in auth:
-            trust_ref = self.trust_api.get_trust(context, auth['trust_id'])
+            trust_ref = self.trust_api.get_trust(auth['trust_id'])
             if trust_ref is None:
                 raise exception.Forbidden()
             if user_id != trust_ref['trustee_user_id']:
@@ -192,13 +189,12 @@ class Auth(controller.V2Controller):
                 if expiry < timeutils.parse_isotime(timeutils.isotime()):
                     raise exception.Forbidden()()
             user_id = trust_ref['trustor_user_id']
-            trustor_user_ref = (self.identity_api.get_user(
-                                context=context,
-                                user_id=trust_ref['trustor_user_id']))
+            trustor_user_ref = self.identity_api.get_user(
+                trust_ref['trustor_user_id'])
             if not trustor_user_ref['enabled']:
                 raise exception.Forbidden()()
             trustee_user_ref = self.identity_api.get_user(
-                context, trust_ref['trustee_user_id'])
+                trust_ref['trustee_user_id'])
             if not trustee_user_ref['enabled']:
                 raise exception.Forbidden()()
             if trust_ref['impersonation'] == 'True':
@@ -207,8 +203,7 @@ class Auth(controller.V2Controller):
                 current_user_ref = trustee_user_ref
 
         else:
-            current_user_ref = self.identity_api.get_user(context=context,
-                                                          user_id=user_id)
+            current_user_ref = self.identity_api.get_user(user_id)
 
         tenant_id = self._get_project_id_from_auth(context, auth)
 
@@ -281,8 +276,7 @@ class Auth(controller.V2Controller):
         if username:
             try:
                 user_ref = self.identity_api.get_user_by_name(
-                    context=context, user_name=username,
-                    domain_id=DEFAULT_DOMAIN_ID)
+                    username, DEFAULT_DOMAIN_ID)
                 user_id = user_ref['id']
             except exception.UserNotFound as e:
                 raise exception.Unauthorized(e)
@@ -291,7 +285,6 @@ class Auth(controller.V2Controller):
 
         try:
             auth_info = self.identity_api.authenticate(
-                context=context,
                 user_id=user_id,
                 password=password,
                 tenant_id=tenant_id)
@@ -324,8 +317,7 @@ class Auth(controller.V2Controller):
         username = context['REMOTE_USER']
         try:
             user_ref = self.identity_api.get_user_by_name(
-                context=context, user_name=username,
-                domain_id=DEFAULT_DOMAIN_ID)
+                username, DEFAULT_DOMAIN_ID)
             user_id = user_ref['id']
         except exception.UserNotFound as e:
             raise exception.Unauthorized(e)
@@ -369,8 +361,7 @@ class Auth(controller.V2Controller):
         if tenant_name:
             try:
                 tenant_ref = self.identity_api.get_project_by_name(
-                    context=context, tenant_name=tenant_name,
-                    domain_id=DEFAULT_DOMAIN_ID)
+                    tenant_name, DEFAULT_DOMAIN_ID)
                 tenant_id = tenant_ref['id']
             except exception.ProjectNotFound as e:
                 raise exception.Unauthorized(e)
@@ -389,7 +380,7 @@ class Auth(controller.V2Controller):
         if domain_name:
             try:
                 domain_ref = self.identity_api._get_domain_by_name(
-                    context=context, domain_name=domain_name)
+                    domain_name)
                 domain_id = domain_ref['id']
             except exception.DomainNotFound as e:
                 raise exception.Unauthorized(e)
@@ -399,7 +390,7 @@ class Auth(controller.V2Controller):
         """Returns the tenant_ref for the user's tenant."""
         tenant_ref = None
         if tenant_id:
-            tenants = self.identity_api.get_projects_for_user(context, user_id)
+            tenants = self.identity_api.get_projects_for_user(user_id)
             if tenant_id not in tenants:
                 msg = 'User %s is unauthorized for tenant %s' % (
                     user_id, tenant_id)
@@ -407,8 +398,7 @@ class Auth(controller.V2Controller):
                 raise exception.Unauthorized(msg)
 
             try:
-                tenant_ref = self.identity_api.get_project(context=context,
-                                                           tenant_id=tenant_id)
+                tenant_ref = self.identity_api.get_project(tenant_id)
             except exception.ProjectNotFound as e:
                 exception.Unauthorized(e)
         return tenant_ref
@@ -421,7 +411,7 @@ class Auth(controller.V2Controller):
         if (user_id or group_id) and (tenant_id or domain_id):
             try:
                 metadata_ref = self.identity_api.get_metadata(
-                    context=context, user_id=user_id, tenant_id=tenant_id,
+                    user_id=user_id, tenant_id=tenant_id,
                     domain_id=domain_id, group_id=group_id)
             except exception.MetadataNotFound:
                 pass
@@ -430,8 +420,7 @@ class Auth(controller.V2Controller):
     def _get_group_metadata_ref(self, context, user_id,
                                 tenant_id=None, domain_id=None):
         """Return any metadata for this project/domain due to group grants."""
-        group_refs = self.identity_api.list_groups_for_user(context=context,
-                                                            user_id=user_id)
+        group_refs = self.identity_api.list_groups_for_user(user_id)
         metadata_ref = {}
         for x in group_refs:
             metadata_ref.update(self._get_metadata_ref(context,
@@ -457,8 +446,7 @@ class Auth(controller.V2Controller):
         Optionally, limited to a token owned by a specific tenant.
 
         """
-        data = self.token_api.get_token(context=context,
-                                        token_id=token_id)
+        data = self.token_api.get_token(token_id)
         if belongs_to:
             if data.get('tenant') is None:
                 raise exception.Unauthorized(
@@ -493,18 +481,17 @@ class Auth(controller.V2Controller):
             # must also be in the default domain
             metadata_ref = token_ref['metadata']
             if CONF.trust.enabled and 'trust_id' in metadata_ref:
-                trust_ref = self.trust_api.get_trust(context,
-                                                     metadata_ref['trust_id'])
+                trust_ref = self.trust_api.get_trust(metadata_ref['trust_id'])
                 trustee_user_ref = self.identity_api.get_user(
-                    context, trust_ref['trustee_user_id'])
+                    trust_ref['trustee_user_id'])
                 if trustee_user_ref['domain_id'] != DEFAULT_DOMAIN_ID:
                     raise exception.Unauthorized(msg)
                 trustor_user_ref = self.identity_api.get_user(
-                    context, trust_ref['trustor_user_id'])
+                    trust_ref['trustor_user_id'])
                 if trustor_user_ref['domain_id'] != DEFAULT_DOMAIN_ID:
                     raise exception.Unauthorized(msg)
                 project_ref = self.identity_api.get_project(
-                    context, trust_ref['project_id'])
+                    trust_ref['project_id'])
                 if project_ref['domain_id'] != DEFAULT_DOMAIN_ID:
                     raise exception.Unauthorized(msg)
 
@@ -541,14 +528,13 @@ class Auth(controller.V2Controller):
         metadata_ref = token_ref['metadata']
         roles_ref = []
         for role_id in metadata_ref.get('roles', []):
-            roles_ref.append(self.identity_api.get_role(context, role_id))
+            roles_ref.append(self.identity_api.get_role(role_id))
 
         # Get a service catalog if possible
         # This is needed for on-behalf-of requests
         catalog_ref = None
         if token_ref.get('tenant'):
             catalog_ref = self.catalog_api.get_catalog(
-                context=context,
                 user_id=token_ref['user']['id'],
                 tenant_id=token_ref['tenant']['id'],
                 metadata=metadata_ref)
@@ -558,11 +544,11 @@ class Auth(controller.V2Controller):
         """Delete a token, effectively invalidating it for authz."""
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
-        self.token_api.delete_token(context=context, token_id=token_id)
+        self.token_api.delete_token(token_id)
 
     @controller.protected
     def revocation_list(self, context, auth=None):
-        tokens = self.token_api.list_revoked_tokens(context)
+        tokens = self.token_api.list_revoked_tokens()
 
         for t in tokens:
             expires = t['expires']
@@ -585,7 +571,6 @@ class Auth(controller.V2Controller):
         catalog_ref = None
         if token_ref.get('tenant'):
             catalog_ref = self.catalog_api.get_catalog(
-                context=context,
                 user_id=token_ref['user']['id'],
                 tenant_id=token_ref['tenant']['id'],
                 metadata=token_ref['metadata'])
