@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//jsI\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-06-27T20:10:15Z",
+      "side": 1,
+      "message": "small typo in comment. Missing \"is\" between id and same",
+      "revId": "528832d7efebbc442e41f83a740f93f0cb9221b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
