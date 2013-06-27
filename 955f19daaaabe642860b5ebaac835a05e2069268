@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//jsY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T20:10:10Z",
+      "side": 1,
+      "message": "Should explain which logic so it\u0027s easier to find in logs.",
+      "revId": "955f19daaaabe642860b5ebaac835a05e2069268",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jsA\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T20:10:10Z",
+      "side": 1,
+      "message": "surround strings in _() for translation. Also, need to name substitution strings since there\u0027s multiple.",
+      "revId": "955f19daaaabe642860b5ebaac835a05e2069268",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
