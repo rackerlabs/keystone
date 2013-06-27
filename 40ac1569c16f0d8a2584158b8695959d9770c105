@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//jK4\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T23:23:04Z",
+      "side": 1,
+      "message": "The git history has this information so remove this line.",
+      "revId": "40ac1569c16f0d8a2584158b8695959d9770c105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
