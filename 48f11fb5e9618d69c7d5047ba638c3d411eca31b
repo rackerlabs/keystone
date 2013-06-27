@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//j3k\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-27T19:16:38Z",
+      "side": 1,
+      "message": "if you want\n\ninclude_catalog \u003d (context and \u0027query_string\u0027 in context and\n    \u0027no-catalog\u0027 not in context[\u0027query_string\u0027])",
+      "revId": "48f11fb5e9618d69c7d5047ba638c3d411eca31b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//j3U\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-06-27T19:16:38Z",
+      "side": 1,
+      "message": "if not project_id:\n    # raise a 400, token must be scoped to a project",
+      "revId": "48f11fb5e9618d69c7d5047ba638c3d411eca31b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
