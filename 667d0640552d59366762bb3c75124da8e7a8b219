@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//jxI\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T19:54:47Z",
+      "side": 1,
+      "message": "What\u0027s an OpenStack user? A user defined in Keystone? What if I haven\u0027t set up any users yet?",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jxA\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T19:54:47Z",
+      "side": 1,
+      "message": "(nit) add . at end of sentence.",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jwo\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T19:54:47Z",
+      "side": 1,
+      "message": "Is this for RedHat-based systems? On my ubuntu system, I\u0027d create it in /etc/apache2/sites-available/\n\nAlso, shouldn\u0027t the /etc/httpd/conf.d/keystone.conf file exist already? Since I would have followed the instructions in  :doc:`HTTPD \u003capache-httpd\u003e`  (mentioned on line 20).",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jwQ\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T19:54:47Z",
+      "side": 1,
+      "message": "Should refer to the httpd server as httpd and not Apache, see http://httpd.apache.org/docs/2.2/programs/httpd.html",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jxs\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T19:54:47Z",
+      "side": 1,
+      "message": "what about v3 of the API?",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pSE\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 3
@@ -47,6 +132,40 @@
       "writtenOn": "2013-06-26T02:11:15Z",
       "side": 1,
       "message": "wasn\u0027t this mentioned as a bad idea in another discussion as there is sensitive information in keystone.conf",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jv4\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T19:54:47Z",
+      "side": 1,
+      "message": "suggest split up a long line with \\",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jv0\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T19:54:47Z",
+      "side": 1,
+      "message": "elide the token id so the line is shorter, just do \"MIICbgYJ...\"",
       "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
