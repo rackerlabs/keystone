@@ -16,6 +16,40 @@
       "revId": "528832d7efebbc442e41f83a740f93f0cb9221b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jLk\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T23:18:04Z",
+      "side": 1,
+      "message": "these tests shouldn\u0027t all have the same docstrings.",
+      "revId": "528832d7efebbc442e41f83a740f93f0cb9221b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jLg\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T23:18:04Z",
+      "side": 1,
+      "message": "these tests shouldn\u0027t all have the same docstrings.",
+      "revId": "528832d7efebbc442e41f83a740f93f0cb9221b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
