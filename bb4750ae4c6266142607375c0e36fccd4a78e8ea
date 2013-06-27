@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//k/Y\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T14:11:24Z",
+      "side": 1,
+      "message": "As far as I can tell, context, user_id, and method_names are being passed on this call. If they\u0027re not used then suggest don\u0027t pass them on this call.",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pNk\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 2
@@ -64,6 +81,23 @@
       "writtenOn": "2013-06-26T03:04:29Z",
       "side": 1,
       "message": "This logic doesn\u0027t belong here, either.",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//k/A\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T14:11:24Z",
+      "side": 1,
+      "message": "same comment as on this call in ec2/core.py. I don\u0027t see context, user_id, or method_names used by this function. If not, remove them.\n\nAlso, the issue_token function could use some documentation if these arguments are really required.",
       "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +149,177 @@
       "writtenOn": "2013-06-26T03:04:29Z",
       "side": 1,
       "message": "V3TokenFormat",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//k64\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T14:11:24Z",
+      "side": 1,
+      "message": "Note that this should probably be changed in the parent review.",
+      "parentUuid": "AAAAPn//pMo\u003d",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//k/8\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T14:11:24Z",
+      "side": 1,
+      "message": "If context isn\u0027t needed then don\u0027t create it. Suggest remove this comment.",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//lAE\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T14:11:24Z",
+      "side": 1,
+      "message": "the only place context is used is at line 374, suggest move it down there.",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//k6g\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T14:11:24Z",
+      "side": 1,
+      "message": "Will get into this exception handling for any number of reasons, for example, if key error at line 355, or parse error from 359. So if the idea is that this is only entered if an identical token was created then this is not the case.\n\nThere should be a specific exception thrown by create_token that can be caught here.",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//k5s\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T14:11:24Z",
+      "side": 1,
+      "message": "Why do V3 tokens need to be in default domain?",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//k5c\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T14:11:24Z",
+      "side": 1,
+      "message": "belongs_to is a keyword argument, so suggest\n\n token_ref \u003d self._verify_token(token_id, belongs_to\u003dbelongs_to)",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//k5k\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T14:11:24Z",
+      "side": 1,
+      "message": "context and token_ref are positional argument, not a keyword argument, so suggest\n\n context \u003d None\n self._assert_default_domain(context, token_ref)\n\nIf context can be None, why is it a positional argument?\n\nSince the internal function is always called with context\u003dNone, change _assert_default_domain so that it doesn\u0027t take context as a parameter.",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//k4w\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T14:11:24Z",
+      "side": 1,
+      "message": "context and role_id are positional parameters, so call that way.",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//k4o\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T14:11:24Z",
+      "side": 1,
+      "message": "context, user_id, and tenant_id are positional parameters, so call that way.\n\nThis is becoming a common comment here... so I\u0027m just going to say go through and check all the function calls and make them consistent with the function spec.",
+      "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//k7o\u003d",
+        "filename": "keystone/token/providers/keystone_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T14:11:24Z",
+      "side": 1,
+      "message": "suggest change \u0027v3.0\u0027 here to token_provider.V3 (Note to self: this comment should be on the parent review).",
       "revId": "bb4750ae4c6266142607375c0e36fccd4a78e8ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
