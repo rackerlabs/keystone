@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//jtQ\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T20:04:57Z",
+      "side": 1,
+      "message": "DEFAULT_ATTRIBUTE_IGNORE isn\u0027t used anymore, so should get rid of it?\n\n(Here and in the other classes, too).",
+      "revId": "5376e227d061f9e05e79e90941ad6b56e9416eda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
