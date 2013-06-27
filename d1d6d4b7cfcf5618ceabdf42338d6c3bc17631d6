@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//kDw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/027_add_delegated_auth_tables.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-06-27T18:14:09Z",
+      "side": 1,
+      "message": "Need more info on this Adam",
+      "parentUuid": "AAAAPn//xbk\u003d",
+      "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//y9g\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/027_add_delegated_auth_tables.py",
         "patchSetId": 22
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "it\u0027s used in keystone/contrib/delegated_auth/core.py,\nrequest \u003d context[\u0027request\u0027]\nbut i could get the query_string parameter, it seems to have the same information\n\nWould that be preferred?",
       "parentUuid": "AAAAPn//y1k\u003d",
+      "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//kD8\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-06-27T18:14:09Z",
+      "side": 1,
+      "message": "actually, I use it to form the oauth request later on too, not just to grab information from.\n\nfor example:\noauth_request \u003d oauth.Request.from_consumer_and_token(\n consumer, token\u003dNone, http_method\u003d\u0027GET\u0027,\nhttp_url\u003drequest.path_url, \u003c\u003c\u003c\nparameters\u003d{\u0027requested_roles\u0027: requested_roles})",
+      "parentUuid": "AAAAPn//xcE\u003d",
       "revId": "d1d6d4b7cfcf5618ceabdf42338d6c3bc17631d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
