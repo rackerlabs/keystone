@@ -17,15 +17,26 @@
 import copy
 
 from keystone.common import kvs
+from keystone.common import logging
 from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone import token
 
+LOG = logging.getLogger(__name__)
+
 
 class Token(kvs.Base, token.Driver):
+    """kvs backend for tokens is deprecated.
+
+    Deprecated in Havana and will be removed in Icehouse, as this backend
+    is not production grade.
+    """
 
     # Public interface
     def get_token(self, token_id):
+        LOG.warn(_("kvs token backend is DEPRECATED use"
+                   "keystone.token.backends.sql or"
+                   "keystone.token.backend.memcache instead."))
         token_id = token.unique_id(token_id)
         try:
             ref = self.db.get('token-%s' % token_id)
