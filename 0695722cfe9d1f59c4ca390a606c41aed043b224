@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//jkQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T20:59:23Z",
+      "side": 1,
+      "message": "Change \"maanger\" to \"manager\"",
+      "revId": "0695722cfe9d1f59c4ca390a606c41aed043b224",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jjU\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T20:59:23Z",
+      "side": 1,
+      "message": "suggest don\u0027t mix whitespace changes, see https://wiki.openstack.org/wiki/GitCommitMessages#Things_to_avoid_when_creating_commits",
+      "revId": "0695722cfe9d1f59c4ca390a606c41aed043b224",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jjI\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2097,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T20:59:23Z",
+      "side": 1,
+      "message": "suggest revert whitespace changes.",
+      "revId": "0695722cfe9d1f59c4ca390a606c41aed043b224",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jig\u003d",
+        "filename": "tests/test_backend_kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T20:59:23Z",
+      "side": 1,
+      "message": "prefer () to continue a line, see PEP8 - http://www.python.org/dev/peps/pep-0008/#maximum-line-length\n\nThis applies throughout this file (82, 84, etc)",
+      "revId": "0695722cfe9d1f59c4ca390a606c41aed043b224",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jiE\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T20:59:23Z",
+      "side": 1,
+      "message": "why do load_backends in setUp() if just going to do it again in the tests? (Just wondering... maybe split out the ones that require different configs and have to load_backends themselves.)",
+      "revId": "0695722cfe9d1f59c4ca390a606c41aed043b224",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jhg\u003d",
+        "filename": "tests/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T20:59:23Z",
+      "side": 1,
+      "message": "is this still needed? (was it ever needed?)",
+      "revId": "0695722cfe9d1f59c4ca390a606c41aed043b224",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//jhc\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T20:59:23Z",
+      "side": 1,
+      "message": "suggest revert whitespace change.",
+      "revId": "0695722cfe9d1f59c4ca390a606c41aed043b224",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
