@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//lwo\u003d",
+        "filename": "keystone/clean.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-06-27T07:39:33Z",
+      "side": 1,
+      "message": "Err, because it is a mistake :-)",
+      "parentUuid": "AAAAPn//m00\u003d",
+      "revId": "822d4636870c38827deac65bdec9bb0396e52c9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//m70\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-26T20:15:26Z",
       "side": 1,
       "message": "would be interesting to test truncation here (create a user name of length \u003e 64, and test the result post-downgrade",
+      "revId": "822d4636870c38827deac65bdec9bb0396e52c9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//lwc\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-06-27T07:39:33Z",
+      "side": 1,
+      "message": "You\u0027re right.",
+      "parentUuid": "AAAAPn//m70\u003d",
       "revId": "822d4636870c38827deac65bdec9bb0396e52c9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
