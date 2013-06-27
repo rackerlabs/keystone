@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//kgU\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T16:07:06Z",
+      "side": 1,
+      "message": "context isn\u0027t used here anymore, so remove it. Can do this in a separate patch.",
+      "revId": "3369aa9a79eab810986fac7b19f52acfd60deca5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//kgQ\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T16:07:06Z",
+      "side": 1,
+      "message": "remove context here, too.",
+      "revId": "3369aa9a79eab810986fac7b19f52acfd60deca5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//kgE\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T16:07:06Z",
+      "side": 1,
+      "message": "remove context here, too.\n\nThis is a common comment, so just suggest go through this file and remove from private methods (e.g., at 420, 443)",
+      "revId": "3369aa9a79eab810986fac7b19f52acfd60deca5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//kfU\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T16:07:06Z",
+      "side": 1,
+      "message": "suggest revert this change since it\u0027s cleanup and not removing context.",
+      "revId": "3369aa9a79eab810986fac7b19f52acfd60deca5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//kjg\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 1
@@ -13,6 +81,41 @@
       "writtenOn": "2013-06-27T15:56:12Z",
       "side": 1,
       "message": "This might hit a Flake 8 our of ABC order rule.",
+      "revId": "3369aa9a79eab810986fac7b19f52acfd60deca5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//kfM\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T16:07:06Z",
+      "side": 1,
+      "message": "Looks like the right order to me. This import is specific to testing.",
+      "parentUuid": "AAAAPn//kjg\u003d",
+      "revId": "3369aa9a79eab810986fac7b19f52acfd60deca5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ke8\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2575,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-27T16:07:06Z",
+      "side": 1,
+      "message": "suggest give a name to this unnamed dict.",
       "revId": "3369aa9a79eab810986fac7b19f52acfd60deca5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
