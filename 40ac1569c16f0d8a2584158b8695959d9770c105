@@ -16,6 +16,24 @@
       "revId": "40ac1569c16f0d8a2584158b8695959d9770c105",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//i3M\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-06-28T03:36:44Z",
+      "side": 1,
+      "message": "Sounds good, gyee wanted me to add a comment here explaining but I can remove and push up a new patch.",
+      "parentUuid": "AAAAPn//jK4\u003d",
+      "revId": "40ac1569c16f0d8a2584158b8695959d9770c105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
