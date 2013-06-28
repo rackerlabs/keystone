@@ -16,6 +16,23 @@
       "revId": "98a603dc88392d9852ebceef702ac8b09feea473",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//hUg\u003d",
+        "filename": "tests/test_backend_kvs.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-28T16:17:10Z",
+      "side": 1,
+      "message": "The other lines were changed but this one wasn\u0027t. (prefer () to continue a line)",
+      "revId": "98a603dc88392d9852ebceef702ac8b09feea473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
