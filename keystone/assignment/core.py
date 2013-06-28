@@ -150,6 +150,16 @@ class Manager(manager.Manager):
         for role_id in roles:
             self.remove_role_from_user_and_project(user_id, tenant_id, role_id)
 
+    def authorize_for_project(self, tenant_id, user_ref):
+        """Authenticate a given user for a tenant.
+        :returns: (user_ref, tenant_ref, metadata_ref)
+        :raises: AssertionError
+        """
+        (user, tenant, metadata) = (self.driver.authorize_for_project
+                                    (tenant_id, user_ref))
+        user = self.driver._set_default_domain(user)
+        return (user, tenant, metadata)
+
 
 class Driver(object):
     def authorize_for_project(self, tenant_id, user_ref):
@@ -401,3 +411,38 @@ class Driver(object):
         :raises: keystone.exception.RoleNotFound
 
         """
+        raise exception.NotImplemented()
+
+    #domain management functions for backends that only allow a single domain.
+    #currently, this is only LDAP, but might be used by PAM or other backends
+    #as well.  This is used by both identity and assignment drivers.
+    def _set_default_domain(self, ref):
+        """If the domain ID has not been set, set it to the default."""
+        if isinstance(ref, dict):
+            if 'domain_id' not in ref:
+                ref = ref.copy()
+                ref['domain_id'] = CONF.identity.default_domain_id
+            return ref
+        elif isinstance(ref, list):
+            return [self._set_default_domain(x) for x in ref]
+        else:
+            raise ValueError(_('Expected dict or list: %s') % type(ref))
+
+    def _validate_default_domain(self, ref):
+        """Validate that either the default domain or nothing is specified.
+
+        Also removes the domain from the ref so that LDAP doesn't have to
+        persist the attribute.
+
+        """
+        ref = ref.copy()
+        domain_id = ref.pop('domain_id', CONF.identity.default_domain_id)
+        self._validate_default_domain_id(domain_id)
+        return ref
+
+    def _validate_default_domain_id(self, domain_id):
+        """Validate that the domain ID specified belongs to the default domain.
+
+        """
+        if domain_id != CONF.identity.default_domain_id:
+            raise exception.DomainNotFound(domain_id=domain_id)

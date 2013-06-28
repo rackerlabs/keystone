@@ -122,15 +122,6 @@ class Manager(manager.Manager):
     def list_projects(self):
         return self.assignment.list_projects()
 
-    def _validate_domain(self, ref):
-        return self.assignment._validate_domain(ref)
-
-    def _validate_domain_id(self, domain_id):
-        return self.assignment._validate_domain_id(domain_id)
-
-    def _set_default_domain(self, ref):
-        return self.assignment._set_default_domain(ref)
-
     def get_metadata(self, user_id=None, tenant_id=None,
                      domain_id=None, group_id=None):
         return self.assignment_api.get_metadata(user_id, tenant_id,
