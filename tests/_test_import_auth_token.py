@@ -1,8 +1,8 @@
 """This is an isolated test to prevent unexpected imports.
 
-This module must be run in isolation, e.g.:
+This module must be run in isolation, e.g.::
 
-  $ ./run_tests.sh _test_import_auth_token.py
+    $ tox _test_import_auth_token
 
 This module can be removed when keystone.middleware.auth_token is removed.
 
