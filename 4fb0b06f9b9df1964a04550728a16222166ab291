@@ -33,6 +33,24 @@
       "revId": "4fb0b06f9b9df1964a04550728a16222166ab291",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//i40\u003d",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7302
+      },
+      "writtenOn": "2013-06-28T02:50:07Z",
+      "side": 1,
+      "message": "this change will only improve the message responded to the client which can help user locate where the issue is, as policy is used everywhere for API calls. We also have some discussion on this defect, please refer to https://bugs.launchpad.net/keystone/+bug/1177623",
+      "parentUuid": "AAAAPn//jb0\u003d",
+      "revId": "4fb0b06f9b9df1964a04550728a16222166ab291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
