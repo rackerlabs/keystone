@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//hEE\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-28T17:42:50Z",
+      "side": 1,
+      "message": "I\u0027d prefer this is called \"mysql_on_checkout\" rather than \"ping_listener\"",
+      "revId": "76b296c0d94a51069c035d4af2ce9d3f0fc5eccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
