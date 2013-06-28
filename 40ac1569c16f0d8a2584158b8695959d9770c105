@@ -34,6 +34,24 @@
       "revId": "40ac1569c16f0d8a2584158b8695959d9770c105",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//iA0\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-28T12:49:45Z",
+      "side": 1,
+      "message": "Add an explanation then, not a link to a bug.",
+      "parentUuid": "AAAAPn//i3M\u003d",
+      "revId": "40ac1569c16f0d8a2584158b8695959d9770c105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
