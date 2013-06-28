@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//hWg\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-06-28T16:13:42Z",
+      "side": 1,
+      "message": "comment should be updated to say  \"references to each manager for data manipulation\"  instead of to each driver",
+      "revId": "98a603dc88392d9852ebceef702ac8b09feea473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
