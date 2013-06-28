@@ -34,6 +34,7 @@ from keystone import exception
 CONF = config.CONF
 LOG = logging.getLogger(__name__)
 KEY_SIZE = 16
+GROUP_KEY_TTL = 900  # 15 minutes
 
 
 @dependency.provider('kds_api')
@@ -116,18 +117,52 @@ class Manager(manager.Manager):
 
         return plain
 
-    def _get_key(self, key_id):
+    def _gen_group_key(self, key_id):
+        """Generates a new group key."""
+        exp = time.time() + GROUP_KEY_TTL
+
+        keyblock = self.crypto.new_key(KEY_SIZE)
+        sig, enc = self._encrypt_keyblock(keyblock)
+
+        gen = self.driver.set_group_key(key_id, exp, sig + enc)
+
+        return keyblock, gen
+
+    def _get_key(self, key_id, gen=0):
         """Decrypts the provided encoded key and returns
         the clear text key.
 
         :param key_id: Key Identifier
         """
         # Get Requestor's encypted key
-        key = self.driver.get_shared_key(key_id)
-        if not key:
-            raise exception.Unauthorized('Invalid Requestor')
+        k = self.driver.get_shared_key(key_id)
+        if not k:
+            raise exception.Forbidden('Invalid Key ID')
+        if 'key_v1' in k:
+            if gen != 0:
+                raise exception.Forbidden('Invalid Key Type')
+            key = base64.b64decode(k['key_v1'])
+        elif 'group_keys' in k:
+            g = k['group_keys']
+            # find a specific generation or throw back an error
+            if gen != 0:
+                key = base64.b64decode(g[gen]['key_v1'])
 
-        return self._decrypt_keyblock(key_id, key)
+            # find one not expired and with at least 10 more
+            # minutes lifetime, otherwise build a new generation
+            else:
+                t = time.time()
+                last_gen = k['generation']
+                if last_gen in g and g[last_gen]['expiration'] > t:
+                    key = base64.b64decode(g[last_gen]['key_v1'])
+                else:
+                    return self._gen_group_key(key_id)
+        else:
+            raise exception.UnexpectedError('Unknown key format')
+
+        plain = self._decrypt_keyblock(key_id, key)
+
+        return plain, gen
 
     def _set_key(self, key_id, keyblock):
         """Encrypts the provided key and stores it.
@@ -137,18 +172,24 @@ class Manager(manager.Manager):
         sig, enc = self._encrypt_keyblock(key_id, keyblock)
         self.driver.set_shared_key(key_id, sig + enc)
 
-    def get_ticket(self, context, req):
-        if not ('metadata' in req):
+    def _common_request(self, req):
+        if 'metadata' not in req:
             raise exception.Forbidden('Invalid Request format')
         try:
             meta = jsonutils.loads(base64.b64decode(req['metadata']))
         except Exception:
             raise exception.Forbidden('Invalid Request format')
 
-        if not ('requestor' in meta):
+        if 'requestor' not in meta:
             raise exception.Forbidden('Invalid Request format')
 
-        rkey = self._get_key(meta['requestor'])
+        # Requests can be made only by non-group identities
+        try:
+            rkey, gen = self._get_key(meta['requestor'], 0)
+        except exception.UnexpectedError:
+            raise exception.Unauthorized('Invalid Request')
+        if gen != 0:
+            raise exception.Unauthorized('Invalid Request')
 
         try:
             signature = self.crypto.sign(rkey, req['metadata'])
@@ -158,21 +199,33 @@ class Manager(manager.Manager):
         if signature != req['signature']:
             raise exception.Unauthorized('Invalid Request')
 
+        #TODO(simo): check and store signature for replay attack detection
+
         timestamp = time.time()
 
         if meta['timestamp'] < (timestamp - self.ttl):
             raise exception.Unauthorized('Invalid Request (expired)')
 
-        #TODO(simo): check and store signature for replay attack detection
+        return meta, rkey, timestamp
 
-        tkey = self._get_key(meta['target'])
+    def get_ticket(self, context, req):
+
+        meta, rkey, timestamp = self._common_request(req)
+
+        source = meta['requestor']
+        target = meta['target']
+
+        tkey, gen = self._get_key(target)
         if not tkey:
-            raise exception.Unauthorized('Invalid Target')
+            raise exception.Unauthorized('Invalid Destination')
+
+        if gen != 0:
+            target += ':' + str(gen)
 
         # use new_key to get a random salt
         rndkey = self.hkdf.extract(rkey, self.crypto.new_key(KEY_SIZE))
 
-        info = '%s,%s,%s' % (meta['requestor'], meta['target'], str(timestamp))
+        info = '%s,%s,%s' % (source, target, str(timestamp))
 
         sek = self.hkdf.expand(rndkey, info, KEY_SIZE * 2)
         skey, ekey = self._split_key(sek, KEY_SIZE)
@@ -184,20 +237,52 @@ class Manager(manager.Manager):
                                   'esek': esek})
 
         rep = dict()
-        metadata = jsonutils.dumps({'source': meta['requestor'],
-                                    'destination': meta['target'],
-                                    'expiration': (keydata['timestamp']
-                                                   + keydata['ttl']),
-                                    'encryption': True})
+        metadata = jsonutils.dumps({'source': source, 'destination': target,
+                                    'expiration': (timestamp + self.ttl)})
         rep['metadata'] = base64.b64encode(metadata)
         rep['ticket'] = self.crypto.encrypt(rkey, ticket)
-        rep['signature'] = self.crypto.sign(rkey,
-                                            (rep['metadata'] + rep['ticket']))
+
+        payload = rep['metadata'] + rep['ticket']
+        rep['signature'] = self.crypto.sign(rkey, payload)
+
+        return {'reply': rep}
+
+    def get_group_key(self, context, req):
+
+        meta, rkey, timestamp = self._common_request(req)
+
+        source = meta['requestor']
+        target = meta['target']
+
+        group = source.split('.')[0]
+
+        if ':' not in target:
+            raise exception.Unauthorized('Invalid Target')
+        grp, generation = target.split(':')
+
+        if group != grp:
+            raise exception.Unauthorized('Invalid Target')
+
+        tkey, gen = self._get_key(group, generation)
+        if not tkey:
+            raise exception.Unauthorized('Invalid Target')
+
+        rep = dict()
+        metadata = jsonutils.dumps({'source': source, 'destination': target,
+                                    'expiration': (timestamp + self.ttl)})
+        rep['metadata'] = base64.b64encode(metadata)
+        rep['group_key'] = self.crypto.encrypt(rkey, tkey)
+
+        payload = rep['metadata'] + rep['group_key']
+        rep['signature'] = self.crypto.sign(rkey, payload)
 
         return {'reply': rep}
 
     def set_key(self, context, req):
         self._set_key(req['owner'], base64.b64decode(req['key']))
+
+    def create_group(self, context, req):
+        self.driver.set_group_key(req['group'])
 
 
 class Driver(object):
