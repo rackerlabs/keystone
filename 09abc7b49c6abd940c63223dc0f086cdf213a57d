@@ -33,6 +33,24 @@
       "revId": "09abc7b49c6abd940c63223dc0f086cdf213a57d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//hM4\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-06-28T16:54:14Z",
+      "side": 1,
+      "message": "So not sure it belongs with the roles....there is an argument that it goes with the grants (since this like a much more generalized version of list_grants).  Hence I originally had this call with that group (i.e. line 68)...but then moved it to its own section on the basis that as we make role_assignment a first class entity in the future, we will want it in its own section (it will have list, create, update, delete)  - the grant section will get depreciated.  However, I\u0027d be OK with us having this on line 68 if people felt that was more appropriate for now.",
+      "parentUuid": "AAAAPn//jag\u003d",
+      "revId": "09abc7b49c6abd940c63223dc0f086cdf213a57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
