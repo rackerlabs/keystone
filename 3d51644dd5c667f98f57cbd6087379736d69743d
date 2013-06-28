@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//hoI\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-28T17:07:43Z",
+      "side": 1,
+      "message": "circular dependency.  One of them needs to be created first.",
+      "parentUuid": "AAAAPn//jmY\u003d",
+      "revId": "3d51644dd5c667f98f57cbd6087379736d69743d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//jl4\u003d",
         "filename": "keystone/common/sql/legacy.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//hnw\u003d",
+        "filename": "keystone/common/sql/legacy.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-28T17:07:43Z",
+      "side": 1,
+      "message": "undone",
+      "parentUuid": "AAAAPn//jl4\u003d",
+      "revId": "3d51644dd5c667f98f57cbd6087379736d69743d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//jmk\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2013-06-27T20:42:35Z",
       "side": 1,
       "message": "why does this reset self.assignment?",
+      "revId": "3d51644dd5c667f98f57cbd6087379736d69743d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//hnI\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-28T17:07:43Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "AAAAPn//jmk\u003d",
       "revId": "3d51644dd5c667f98f57cbd6087379736d69743d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
