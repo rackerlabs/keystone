@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//gsc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/001_add_initial_tables.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-06-28T20:02:39Z",
+      "side": 1,
+      "message": "nice comments!",
+      "revId": "f993a3898adfb864ca55a591e68d80bca3c02850",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
