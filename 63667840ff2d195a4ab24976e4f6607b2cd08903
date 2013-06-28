@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//gnQ\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 23
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-06-28T20:36:25Z",
+      "side": 1,
+      "message": "I only had these in here so the tests would pass, but you mentioned that I could mock stuff in your comment. I will ping you about that, not quite sure how to do it. But if I get that working, I can remove oauth from the pipeline here.",
+      "parentUuid": "AAAAPn//gzo\u003d",
+      "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//gzc\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 23
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-28T19:22:25Z",
       "side": 1,
       "message": "the documented default is sql, which makes more sense than kvs",
+      "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//gnM\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-06-28T20:36:25Z",
+      "side": 1,
+      "message": "Good catch, I\u0027ll change it to sql.",
+      "parentUuid": "AAAAPn//gzc\u003d",
       "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//gmQ\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-06-28T20:36:25Z",
+      "side": 1,
+      "message": "in keystone/contrib/delegated_auth/core.py line 227,\ni use request.path_url; is there another way of getting it?",
+      "parentUuid": "AAAAPn//gzA\u003d",
+      "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//gy0\u003d",
         "filename": "keystone/contrib/delegated_auth/core.py",
         "patchSetId": 23
@@ -64,6 +118,24 @@
       "writtenOn": "2013-06-28T19:22:25Z",
       "side": 1,
       "message": "the API prefix should be OS:DA (or OS-DA, whatever separator we use...) to indicate that it\u0027s an openstack supported API extension\n\nI\u0027d also be in favor of like OS:OAUTH11A or something super specific (so you can run it side by side with alternative implementations / extensions)",
+      "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//gms\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-06-28T20:36:25Z",
+      "side": 1,
+      "message": "Alright, I\u0027m good with OS:OAUTH10A; going to need changing in quite a few spots.",
+      "parentUuid": "AAAAPn//gy0\u003d",
       "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +187,24 @@
       "writtenOn": "2013-06-28T19:22:25Z",
       "side": 1,
       "message": "assertEqual with expected value?",
+      "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//gmA\u003d",
+        "filename": "tests/test_contrib_delegated_auth.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-06-28T20:36:25Z",
+      "side": 1,
+      "message": "Errr.. yeah, I\u0027ll change it up here and in a bunch of other spots.",
+      "parentUuid": "AAAAPn//gyg\u003d",
       "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
