@@ -27,6 +27,9 @@ class KDSController(wsgi.Application):
     def get_ticket(self, context, request):
         return self.kds_api.get_ticket(context, request)
 
+    def get_group_key(self, context, request):
+        return self.kds_api.get_group_key(context, request)
+
     def get_key(self, context, request):
         raise Exception.Forbidden('Not Authorized for this target')
 
@@ -37,3 +40,11 @@ class KDSController(wsgi.Application):
             raise
 
         return self.kds_api.set_key(context, request)
+
+    def create_group(self, context, request):
+        try:
+            self.assert_admin(context)
+        except exception.Unauthorized:
+            raise
+
+        return self.kds_api.create_group(context, request)
