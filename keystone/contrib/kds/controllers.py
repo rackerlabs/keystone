@@ -26,6 +26,13 @@ class KDSController(wsgi.Application):
     def get_ticket(self, context, signature, request):
         return self.kds_api.get_ticket(signature, request)
 
+    def get_group_key(self, context, signature, request):
+        return self.kds_api.get_group_key(signature, request)
+
     def set_key(self, context, name, request):
         self.assert_admin(context)
         return self.kds_api.set_key(name, request)
+
+    def create_group(self, context, name):
+        self.assert_admin(context)
+        return self.kds_api.create_group(name)

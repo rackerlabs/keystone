@@ -33,7 +33,17 @@ class KDSExtension(wsgi.ExtensionRouter):
                        action='get_ticket',
                        conditions=dict(method=['POST']))
 
+        mapper.connect('/kds/group_key/{signature}',
+                       controller=kds_controller,
+                       action='get_group_key',
+                       conditions=dict(method=['POST']))
+
         mapper.connect('/kds/key/{name}',
                        controller=kds_controller,
                        action='set_key',
+                       conditions=dict(method=['PUT']))
+
+        mapper.connect('/kds/group/{name}',
+                       controller=kds_controller,
+                       action='create_group',
                        conditions=dict(method=['PUT']))
