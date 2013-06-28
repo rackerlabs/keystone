@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//hEo\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-28T22:39:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//mwE\u003d",
+      "revId": "d4e94f09ca0e97732f515ada39375b7082d63e03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//mvo\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-26T21:17:16Z",
       "side": 1,
       "message": "can we not just use `data` (backticks) for all db\u0027s?",
+      "revId": "d4e94f09ca0e97732f515ada39375b7082d63e03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//gcM\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-28T22:39:19Z",
+      "side": 1,
+      "message": "Done. I switched to using SQLAlchemy\u0027s queries rather than SQL.\n\n`data` doesn\u0027t work for DB2, it says that the ` is not valid where it\u0027s used.",
+      "parentUuid": "AAAAPn//mvo\u003d",
       "revId": "d4e94f09ca0e97732f515ada39375b7082d63e03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
