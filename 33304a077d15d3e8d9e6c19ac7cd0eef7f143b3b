@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//hrw\u003d",
+        "filename": "tests/test_backend_kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-06-28T14:33:30Z",
+      "side": 1,
+      "message": "prefer () to continue a line, see PEP8 - http://www.python.org/dev/peps/pep-0008/#maximum-line-length\n\nThis applies throughout this file (82, 84, etc)\n\nIf you don\u0027t agree with this rule then update HACKING.rst.\n\nSuggest:\n\n identity.CONF.identity.driver \u003d (\n  \u0027keystone.identity.backends.kvs.Identity\u0027)",
+      "revId": "33304a077d15d3e8d9e6c19ac7cd0eef7f143b3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
