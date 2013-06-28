@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//gd4\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-06-28T21:15:19Z",
+      "side": 1,
+      "message": "So tox was not on my Linux image by default.  So I had to google a few sites to figure out what tox was and how to install.  Looks like what I needed to do was \"sudo pip install tox\".  Can you add a line or two describing what tox is and how to install or provide a link to somewhere that describes how to install it.   This is especially helpful for getting new developers  that don\u0027t come from a Linux background up to speed.",
+      "revId": "0ad277b7629fa7af98ea9aa3bdd21fd9268a8458",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
