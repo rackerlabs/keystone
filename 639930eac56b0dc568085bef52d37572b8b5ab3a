@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//gek\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 11
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-28T21:11:46Z",
+      "side": 1,
+      "message": "Provides token persistence",
+      "revId": "639930eac56b0dc568085bef52d37572b8b5ab3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//gjA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-28T21:11:46Z",
+      "side": 1,
+      "message": "Remove context from all of the api calls.",
+      "revId": "639930eac56b0dc568085bef52d37572b8b5ab3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ggo\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-28T21:11:46Z",
+      "side": 1,
+      "message": "typo",
+      "revId": "639930eac56b0dc568085bef52d37572b8b5ab3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
