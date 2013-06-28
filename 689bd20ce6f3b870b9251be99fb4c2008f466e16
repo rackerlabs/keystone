@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//hJI\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-28T17:26:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//nYo\u003d",
+      "revId": "689bd20ce6f3b870b9251be99fb4c2008f466e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//nYc\u003d",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-26T17:37:10Z",
       "side": 1,
       "message": "it\u0027s not clear that this is an iterable",
+      "revId": "689bd20ce6f3b870b9251be99fb4c2008f466e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//hJA\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-06-28T17:26:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//nYc\u003d",
       "revId": "689bd20ce6f3b870b9251be99fb4c2008f466e16",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
