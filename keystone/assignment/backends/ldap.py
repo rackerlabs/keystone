@@ -103,36 +103,6 @@ class Assignment(assignment.Driver):
         self._validate_domain_id(domain_id)
         return self._set_default_domain(self.project.get_by_name(tenant_name))
 
-    def _validate_domain(self, ref):
-        """Validate that either the default domain or nothing is specified.
-
-        Also removes the domain from the ref so that LDAP doesn't have to
-        persist the attribute.
-
-        """
-        ref = ref.copy()
-        domain_id = ref.pop('domain_id', CONF.identity.default_domain_id)
-        self._validate_domain_id(domain_id)
-        return ref
-
-    def _validate_domain_id(self, domain_id):
-        """Validate that the domain ID specified belongs to the default domain.
-
-        """
-        if domain_id != CONF.identity.default_domain_id:
-            raise exception.DomainNotFound(domain_id=domain_id)
-
-    def _set_default_domain(self, ref):
-        """Overrides any domain reference with the default domain."""
-        if isinstance(ref, dict):
-            ref = ref.copy()
-            ref['domain_id'] = CONF.identity.default_domain_id
-            return ref
-        elif isinstance(ref, list):
-            return [self._set_default_domain(x) for x in ref]
-        else:
-            raise ValueError(_('Expected dict or list: %s') % type(ref))
-
     def create_project(self, tenant_id, tenant):
         tenant = self._validate_domain(tenant)
         tenant['name'] = clean.project_name(tenant['name'])
