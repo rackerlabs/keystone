@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//g6w\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-28T18:23:16Z",
+      "side": 1,
+      "message": "these aren\u0027t managers at all, though...\n\ncan this list just be hardcoded into the load_backends method below?",
+      "revId": "138ff0309cefab69f2eff8317840d7f5b8d5dec2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//g6o\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-28T18:23:16Z",
+      "side": 1,
+      "message": "based on the above:\n\n  for module in [catalog, credential, identity, policy, token, trust]:",
+      "revId": "138ff0309cefab69f2eff8317840d7f5b8d5dec2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//g78\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-28T18:23:16Z",
+      "side": 1,
+      "message": "the [1] is super arbitrary and fragile :-/ ... if you\u0027re going to do this dynamically, i\u0027d suggest:\n\n  manager_name \u003d \u0027%s_api\u0027 % module.__name__.split(\u0027.\u0027)[-1]",
+      "revId": "138ff0309cefab69f2eff8317840d7f5b8d5dec2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//g6E\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-28T18:23:16Z",
+      "side": 1,
+      "message": "and then:\n\n  setattr(self, manager_name, module.Manager())",
+      "revId": "138ff0309cefab69f2eff8317840d7f5b8d5dec2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
