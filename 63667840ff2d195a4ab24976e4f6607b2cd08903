@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//gzo\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 23
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-28T19:22:25Z",
+      "side": 1,
+      "message": "new extensions should ship disabled by default (so there shouldn\u0027t be any changes to the pipeline here (the filter can be included above, for sure)",
+      "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//gzc\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-28T19:22:25Z",
+      "side": 1,
+      "message": "the documented default is sql, which makes more sense than kvs",
+      "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//gzA\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-28T19:22:25Z",
+      "side": 1,
+      "message": "i haevn\u0027t (yet) seen how this is used, but do you really need the entire request object? i\u0027d much prefer to include more specific primitives in context, as done for query_string, etc below",
+      "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//gy0\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-28T19:22:25Z",
+      "side": 1,
+      "message": "the API prefix should be OS:DA (or OS-DA, whatever separator we use...) to indicate that it\u0027s an openstack supported API extension\n\nI\u0027d also be in favor of like OS:OAUTH11A or something super specific (so you can run it side by side with alternative implementations / extensions)",
+      "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//gys\u003d",
+        "filename": "tests/test_contrib_delegated_auth.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-28T19:22:25Z",
+      "side": 1,
+      "message": "meh, i like functional tests that express actual use cases",
+      "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//gyo\u003d",
+        "filename": "tests/test_contrib_delegated_auth.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-28T19:22:25Z",
+      "side": 1,
+      "message": "the backslash continuation police will find you",
+      "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//gyg\u003d",
+        "filename": "tests/test_contrib_delegated_auth.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-28T19:22:25Z",
+      "side": 1,
+      "message": "assertEqual with expected value?",
+      "revId": "63667840ff2d195a4ab24976e4f6607b2cd08903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
