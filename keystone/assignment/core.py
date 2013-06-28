@@ -27,6 +27,19 @@ CONF = config.CONF
 LOG = logging.getLogger(__name__)
 
 
+def set_default_domain(ref):
+    """If the domain ID has not been set, set it to the default."""
+    if isinstance(ref, dict):
+        if 'domain_id' not in ref:
+            ref = ref.copy()
+            ref['domain_id'] = CONF.identity.default_domain_id
+        return ref
+    elif isinstance(ref, list):
+        return [set_default_domain(x) for x in ref]
+    else:
+        raise ValueError(_('Expected dict or list: %s') % type(ref))
+
+
 @dependency.provider('assignment_api')
 class Manager(manager.Manager):
     """Default pivot point for the Assignment backend.
@@ -65,6 +78,16 @@ class Manager(manager.Manager):
                     # no group grant, skip
                     pass
             return role_list
+
+    def authorize_for_project(self, tenant_id, user_ref):
+        """Authenticate a given user for a tenant.
+        :returns: (user_ref, tenant_ref, metadata_ref)
+        :raises: AssertionError
+        """
+        (user, tenant, metadata) = (self.driver.authorize_for_project
+                                    (tenant_id, user_ref))
+        user = set_default_domain(user)
+        return (user, tenant, metadata)
 
         def _get_user_project_roles(user_id, tenant_id):
             metadata_ref = {}
@@ -401,3 +424,27 @@ class Driver(object):
         :raises: keystone.exception.RoleNotFound
 
         """
+
+    #LDAP specific domain management functions
+    def _validate_domain(self, ref):
+        """Validate that either the default domain or nothing is specified.
+
+        Also removes the domain from the ref so that LDAP doesn't have to
+        persist the attribute.
+
+        """
+        ref = ref.copy()
+        domain_id = ref.pop('domain_id', CONF.identity.default_domain_id)
+        self._validate_domain_id(domain_id)
+        return ref
+
+    def _validate_domain_id(self, domain_id):
+        """Validate that the domain ID specified belongs to the default domain.
+
+        """
+        if domain_id != CONF.identity.default_domain_id:
+            raise exception.DomainNotFound(domain_id=domain_id)
+
+    def _set_default_domain(self, ref):
+        """If the domain ID has not been set, set it to the default."""
+        return set_default_domain(ref)
