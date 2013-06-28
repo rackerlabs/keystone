@@ -48,7 +48,11 @@ class Assignment(sql.Base, assignment.Driver):
                 metadata_ref = {}
             except exception.MetadataNotFound:
                 metadata_ref = {}
-        user_ref = identity.filter_user(user_ref.to_dict())
+        if isinstance(user_ref, dict):
+            user_ref = identity.filter_user(user_ref)
+        else:
+            user_ref = identity.filter_user(user_ref.to_dict())
+
         return (user_ref, tenant_ref, metadata_ref)
 
     def _get_project(self, session, project_id):
@@ -118,10 +122,11 @@ class Assignment(sql.Base, assignment.Driver):
 
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None):
+        if user_id:
+            self.identity_api.get_user(user_id)
+
         session = self.get_session()
         self._get_role(session, role_id)
-        if user_id:
-            self.identity_api._get_user(session, user_id)
         if group_id:
             self.identity_api._get_group(session, group_id)
         if domain_id:
@@ -150,9 +155,9 @@ class Assignment(sql.Base, assignment.Driver):
                     domain_id=None, project_id=None):
         session = self.get_session()
         if user_id:
-            self.identity_api._get_user(session, user_id)
+            self.identity_api.get_user(user_id)
         if group_id:
-            self.identity_api._get_group(session, group_id)
+            self.identity_api.get_group(group_id)
         if domain_id:
             self._get_domain(session, domain_id)
         if project_id:
@@ -170,9 +175,9 @@ class Assignment(sql.Base, assignment.Driver):
         session = self.get_session()
         role_ref = self._get_role(session, role_id)
         if user_id:
-            self.identity_api._get_user(session, user_id)
+            self.identity_api.get_user(user_id)
         if group_id:
-            self.identity_api._get_group(session, group_id)
+            self.identity_api.get_group(group_id)
         if domain_id:
             self._get_domain(session, domain_id)
         if project_id:
@@ -193,7 +198,7 @@ class Assignment(sql.Base, assignment.Driver):
         session = self.get_session()
         self._get_role(session, role_id)
         if user_id:
-            self.identity_api._get_user(session, user_id)
+            self.identity_api.get_user(user_id)
         if group_id:
             self.identity_api._get_group(session, group_id)
         if domain_id:
@@ -227,8 +232,8 @@ class Assignment(sql.Base, assignment.Driver):
         return [tenant_ref.to_dict() for tenant_ref in tenant_refs]
 
     def get_projects_for_user(self, user_id):
+        self.identity_api.get_user(user_id)
         session = self.get_session()
-        self.identity_api._get_user(session, user_id)
         query = session.query(UserProjectGrant)
         query = query.filter_by(user_id=user_id)
         membership_refs = query.all()
@@ -252,8 +257,8 @@ class Assignment(sql.Base, assignment.Driver):
             pass
 
     def get_roles_for_user_and_project(self, user_id, tenant_id):
+        self.identity_api.get_user(user_id)
         session = self.get_session()
-        self.identity_api._get_user(session, user_id)
         self._get_project(session, tenant_id)
         metadata_ref = {}
         self._get_user_project_roles(metadata_ref, user_id, tenant_id)
@@ -261,8 +266,8 @@ class Assignment(sql.Base, assignment.Driver):
         return list(set(metadata_ref.get('roles', [])))
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
+        self.identity_api.get_user(user_id)
         session = self.get_session()
-        self.identity_api._get_user(session, user_id)
         self._get_project(session, tenant_id)
         self._get_role(session, role_id)
         try:
