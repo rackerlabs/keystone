@@ -15,9 +15,39 @@
 # under the License.
 
 import base64
+import copy
+import time
 
 from keystone.common import sql
 
+'''
+There are 2 types of keys we save here.
+Individual keys and group keys.
+
+Individual keys are identified by an id string and in 'key' is a
+dictionary the contains only the base64-encoded encrypted key in a
+field named 'key_v1'.
+Example:
+    id = 'compute.abc.example.com'
+    key = {'key_v1': 'ERWERewre.....'}
+
+Group keys use a more complex key payload, where multiple
+'generations' of keys are stored with expiration times, as well as a
+generation counter.
+Example:
+    id = 'scheduler'
+    key = {'generation': 10,
+           'group_keys': {'9': {'key_v1': 'ERWERewre.....',
+                                'expiration': 1234567890
+                         },
+                          '10': {'key_v1': 'GFDSAFhjhkd.....',
+                                 'expiration': 1234509876
+                         }
+          }
+
+'''
+
+EXPIRATION_TIME = 600
 
 class Keys(sql.ModelBase, sql.DictBase):
     __tablename__ = 'kds_keys'
@@ -48,6 +78,72 @@ class KDS(sql.Base):
             session.add(key_ref)
             session.flush()
 
+    def set_group_key(self, kds_id, expiration=None, key=None):
+        session = self.get_session()
+
+        if key is None:
+            # Create new group
+            with session.begin():
+                n = dict()
+                n['id'] = kds_id
+                n['key'] = {'generation': 0, 'group_keys': dict()}
+                key_ref = Keys.from_dict(n)
+                session.add(key_ref)
+                session.flush()
+            return 0
+
+        key_ref = None
+        d = None
+        n = None
+        gen = 0
+        with session.begin():
+            try:
+                key_ref = session.query(Keys).filter_by(id=kds_id).first()
+            except:
+                pass
+
+            if key_ref is not None:
+                d = key_ref.to_dict()
+
+            # get current entry if any, parse it and retrieve each
+            # referenced generation key, then delete all the keys expired
+            # by more than 10 minutes in a deepcopy
+            if d is not None and 'key' in d:
+                k = d['key']
+                if 'generation' in k:
+                    gen = k['generation']
+                if 'group_keys' in k:
+                    t = time.time() - EXPIRATION_TIME
+                    ks = k['group_keys']
+                    for g in ks:
+                        if ks[g]['expiration'] < t:
+                            if n is None:
+                                n = copy.deepcopy(d)
+                            del n['key']['group_keys'][g]
+            else:
+                n = dict()
+                n['key'] = {'generation': 0, 'group_keys': dict()}
+
+            if n is None:
+                n = copy.deepcopy(d)
+
+            gen = gen + 1
+            n['key']['generation'] = gen
+            n['key']['group_keys'][gen] = {'expiration': expiration,
+                                           'key_v1': base64.b64encode(key)}
+
+            # first delete old if any
+            if key_ref is not None:
+                session.delete(key_ref)
+
+            # now store new generation list
+            key_ref = Keys.from_dict(n)
+            session.add(key_ref)
+
+            session.flush()
+
+        return gen
+
     def get_shared_key(self, kds_id):
         session = self.get_session()
         key_ref = session.query(Keys).filter_by(id=kds_id).first()
@@ -55,4 +151,4 @@ class KDS(sql.Base):
             return None
         d = key_ref.to_dict()
         k = d.pop('key', None)
-        return base64.b64decode(k['key_v1'])
+        return k
