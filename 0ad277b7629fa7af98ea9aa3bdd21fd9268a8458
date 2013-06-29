@@ -16,6 +16,24 @@
       "revId": "0ad277b7629fa7af98ea9aa3bdd21fd9268a8458",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//fcw\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-06-29T18:00:48Z",
+      "side": 1,
+      "message": "interesting... tox is missing from our test-requirements.txt, and in fact, every other project including openstack/requirements... i\u0027d like to find out the reason behind that (if any) before proceeding. if tox can be added to openstack/requirements, then we can add it to our test-requirements.txt and we don\u0027t need to provide any additional documentation to install it.",
+      "parentUuid": "AAAAPn//gd4\u003d",
+      "revId": "0ad277b7629fa7af98ea9aa3bdd21fd9268a8458",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
