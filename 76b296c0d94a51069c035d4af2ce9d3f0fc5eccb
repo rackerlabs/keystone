@@ -16,6 +16,24 @@
       "revId": "76b296c0d94a51069c035d4af2ce9d3f0fc5eccb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//e7Y\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7891
+      },
+      "writtenOn": "2013-06-30T16:52:36Z",
+      "side": 1,
+      "message": "I can go for that! I will make the change and push it to review on Monday.",
+      "parentUuid": "AAAAPn//hEE\u003d",
+      "revId": "76b296c0d94a51069c035d4af2ce9d3f0fc5eccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
