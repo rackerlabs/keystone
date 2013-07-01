@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//cpQ\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "While I appreciate a useful comment, lines 186-190 aren\u0027t specific to this function so maybe belong at the class level.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cjk\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "suggest change self.db.get(\u0027metadata-%s-%s\u0027 % (meta_id1, meta_id2)) to self.db.get(key), since I think this is just rebuilding the original key.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ciI\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "suggest use TODO(henry-nash): , per HACKING.rst, https://github.com/openstack/keystone/blame/master/HACKING.rst#L17",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ch4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "If there isn\u0027t a V2 of this, suggest remove the V3.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cxk\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -36,6 +104,125 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ceU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 868,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "since this function doesn\u0027t \u0027continue\u0027, suggest remove \", but then continue with the next listing\"",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cfQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "target could potentially be not defined here, which would fail. Suggest always set target to something.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ceA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 891,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "\u0027scope\u0027 could be None here, in which case this would fail.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cds\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 899,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "suggest have a single format for string, like\n\n \u0027%s/users/%s/roles/%s\u0027 % (target_link, m[\u0027id\u0027], user_entry[\u0027role\u0027][\u0027id\u0027])",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cdo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 902,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "similar comment here.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cdg\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "change \"for and group\" to \"for group\"",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cdI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 934,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "suggest remove before add, since it\u0027ll be smaller.\n\nAlso, might be easier to build a new list rather than change the existing one... this looks like it\u0027s about O(n^3)",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cw0\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -47,6 +234,159 @@
       "writtenOn": "2013-07-01T18:38:02Z",
       "side": 1,
       "message": "Same comment as above applies here",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cbg\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "change \"exit\" to \"exist\"",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//caU\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "seems unnecessary since will already fail if it\u0027s None, suggest remove this line.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cZc\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "what is this testing? Could use a comment since I can\u0027t figure it out by looking at it.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cZY\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 750,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "what is this testing? Could use a comment since I can\u0027t figure it out by looking at it.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cY8\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "Is this used? If not, remove it.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cYk\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "why is this a member variable?",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cYc\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "Add a comment why it\u0027s OK to ignore this.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cX4\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "suggest not call this crud since role assignments only supports read.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cXc\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T20:55:11Z",
+      "side": 1,
+      "message": "add \"and\" before project.",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
