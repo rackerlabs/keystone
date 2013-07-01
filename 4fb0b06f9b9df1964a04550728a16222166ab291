@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//cDo\u003d",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T22:33:20Z",
+      "side": 1,
+      "message": "LOG.exception already prints out all the information about the exception. Suggest change this to:\n\n LOG.exception(_(\u0027Failed to parse the policy file.\u0027))",
+      "revId": "4fb0b06f9b9df1964a04550728a16222166ab291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//jb0\u003d",
         "filename": "keystone/policy/backends/rules.py",
         "patchSetId": 2
@@ -48,6 +65,24 @@
       "side": 1,
       "message": "this change will only improve the message responded to the client which can help user locate where the issue is, as policy is used everywhere for API calls. We also have some discussion on this defect, please refer to https://bugs.launchpad.net/keystone/+bug/1177623",
       "parentUuid": "AAAAPn//jb0\u003d",
+      "revId": "4fb0b06f9b9df1964a04550728a16222166ab291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cD8\u003d",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T22:33:20Z",
+      "side": 1,
+      "message": "I tried this and the server responds with a 500, so it wasn\u0027t changed to a 400 as I had expected. I still would rather we didn\u0027t provide this information back to the client. Having it in the log is adequate.",
+      "parentUuid": "AAAAPn//i40\u003d",
       "revId": "4fb0b06f9b9df1964a04550728a16222166ab291",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
