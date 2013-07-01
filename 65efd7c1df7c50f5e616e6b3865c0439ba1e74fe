@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//cGQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T22:16:19Z",
+      "side": 1,
+      "message": "there\u0027s no \"fake\" backend, so suggest just change \"fake or sql\" to just \"sql\"",
+      "revId": "65efd7c1df7c50f5e616e6b3865c0439ba1e74fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cGE\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T22:16:19Z",
+      "side": 1,
+      "message": "shouldn\u0027t we suggest to use the sql or memcache backends instead?",
+      "revId": "65efd7c1df7c50f5e616e6b3865c0439ba1e74fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
