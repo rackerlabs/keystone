@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//b/U\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T23:12:24Z",
+      "side": 1,
+      "message": "add DocImpact because this is going to affect docs.",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b/k\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T23:12:24Z",
+      "side": 1,
+      "message": "use () to continue long lines, see https://github.com/openstack/keystone/blame/master/HACKING.rst#L14",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b/c\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T23:12:24Z",
+      "side": 1,
+      "message": "use keyword argument for keyword parameter, so use\n\n bind\u003dauth_context[\u0027bind\u0027]",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b/A\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T23:12:24Z",
+      "side": 1,
+      "message": "suggest use \"not bind\"",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b/Q\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T23:12:24Z",
+      "side": 1,
+      "message": "wrap strings in _() for translation. This applies throughout this file (at lines 97, etc)",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b+E\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T23:12:24Z",
+      "side": 1,
+      "message": "use () to continue long lines, see https://github.com/openstack/keystone/blame/master/HACKING.rst#L14",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b90\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T23:12:24Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently. This applies throughout this file.",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b9o\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T23:12:24Z",
+      "side": 1,
+      "message": "this looks like it\u0027s testing something other than \"bind is transferred\" ... move it to a separate test?",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
