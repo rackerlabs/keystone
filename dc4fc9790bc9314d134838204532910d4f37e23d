@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//cJo\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T21:57:43Z",
+      "side": 1,
+      "message": "Is there any way to also run these tests in test_sql_upgrade.py, so it also validates a database created with the migrate path?",
+      "revId": "dc4fc9790bc9314d134838204532910d4f37e23d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
