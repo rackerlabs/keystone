@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//cAs\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T22:54:49Z",
+      "side": 1,
+      "message": "submit a new review that gets rid of this line.",
+      "revId": "0a3092e225c4fa8b898818b19951086d501cf251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cAk\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T22:54:49Z",
+      "side": 1,
+      "message": "remove \"return\"",
+      "revId": "0a3092e225c4fa8b898818b19951086d501cf251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cAg\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T22:54:49Z",
+      "side": 1,
+      "message": "why check for message is unicode if not message?",
+      "revId": "0a3092e225c4fa8b898818b19951086d501cf251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cAU\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T22:54:49Z",
+      "side": 1,
+      "message": "this isn\u0027t doing anything now because the code at line 56 uses self.message.",
+      "revId": "0a3092e225c4fa8b898818b19951086d501cf251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cAM\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T22:54:49Z",
+      "side": 1,
+      "message": "Looks like we don\u0027t need to do re.sub() anymore because you\u0027ve changed all the messages so that they don\u0027t have extra whitespace.",
+      "revId": "0a3092e225c4fa8b898818b19951086d501cf251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cAA\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T22:54:49Z",
+      "side": 1,
+      "message": "don\u0027t need to strip() either.",
+      "revId": "0a3092e225c4fa8b898818b19951086d501cf251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b/4\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T22:54:49Z",
+      "side": 1,
+      "message": "add a space at the beginning of the string on this line.",
+      "revId": "0a3092e225c4fa8b898818b19951086d501cf251",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
