@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//b9I\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T23:16:30Z",
+      "side": 1,
+      "message": "move \"for creating ec2 credential\" to after the ``",
+      "revId": "c7c8981ac797b4d16abf659e9365bdbe8e3be0df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b9E\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T23:16:30Z",
+      "side": 1,
+      "message": "move \" for creating non-ec2 credential\" to after the ``",
+      "revId": "c7c8981ac797b4d16abf659e9365bdbe8e3be0df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b9A\u003d",
+        "filename": "tests/test_v3_credential.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-01T23:16:30Z",
+      "side": 1,
+      "message": "move \" for creating ...\" to after the ``",
+      "revId": "c7c8981ac797b4d16abf659e9365bdbe8e3be0df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
