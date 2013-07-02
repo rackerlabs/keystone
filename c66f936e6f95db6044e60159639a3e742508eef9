@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//b4Q\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-02T02:46:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//b/U\u003d",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//b/k\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-01T23:12:24Z",
       "side": 1,
       "message": "use () to continue long lines, see https://github.com/openstack/keystone/blame/master/HACKING.rst#L14",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b4U\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-02T02:46:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//b/k\u003d",
       "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//b38\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-02T02:46:37Z",
+      "side": 1,
+      "message": "arguably not a keyword parameter as it is always provided, it\u0027s in this position because trust is not used as a keyword provider here.\n\nProbably increases readability though so, done.",
+      "parentUuid": "AAAAPn//b/c\u003d",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//b/A\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2013-07-01T23:12:24Z",
       "side": 1,
       "message": "suggest use \"not bind\"",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b2I\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-02T02:46:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//b/A\u003d",
       "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//b2E\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-02T02:46:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//b/Q\u003d",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//b+E\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2013-07-01T23:12:24Z",
       "side": 1,
       "message": "use () to continue long lines, see https://github.com/openstack/keystone/blame/master/HACKING.rst#L14",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//b2M\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-02T02:46:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//b+E\u003d",
       "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//b3I\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-02T02:46:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//b90\u003d",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//b9o\u003d",
         "filename": "tests/test_auth.py",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2013-07-01T23:12:24Z",
       "side": 1,
       "message": "this looks like it\u0027s testing something other than \"bind is transferred\" ... move it to a separate test?",
+      "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//bs8\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-02T02:46:37Z",
+      "side": 1,
+      "message": "Renamed the entire test. To get to the next point you would have to do all the previous steps anyway and testing the same thing twice.",
+      "parentUuid": "AAAAPn//b9o\u003d",
       "revId": "c66f936e6f95db6044e60159639a3e742508eef9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
