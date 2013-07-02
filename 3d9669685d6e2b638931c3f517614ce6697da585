@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//bl4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-07-02T04:40:26Z",
+      "side": 1,
+      "message": "How are we handling  REMOTE_USER??  If the user is externally authenticated, what will happen to RBAC?",
+      "revId": "3d9669685d6e2b638931c3f517614ce6697da585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//blw\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-07-02T04:40:26Z",
+      "side": 1,
+      "message": "Sorry, don\u0027t understand, does this mean  check_token is not available in v3",
+      "revId": "3d9669685d6e2b638931c3f517614ce6697da585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//bls\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-07-02T04:40:26Z",
+      "side": 1,
+      "message": "Is this a valid assertion?   Can\u0027t I revoke my token?",
+      "revId": "3d9669685d6e2b638931c3f517614ce6697da585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//blo\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-07-02T04:40:26Z",
+      "side": 1,
+      "message": "V2 token doesn\u0027t have enabled as per v2 spec",
+      "revId": "3d9669685d6e2b638931c3f517614ce6697da585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//blk\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-07-02T04:40:26Z",
+      "side": 1,
+      "message": "Which spec does this code refer to?\n\nhttp://docs.openstack.org/api/openstack-identity-service/2.0/content/POST_authenticate_v2.0_tokens_Token_Operations.html\n\nAs per this spec, v2 token doesn\u0027t have meta_data",
+      "revId": "3d9669685d6e2b638931c3f517614ce6697da585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
