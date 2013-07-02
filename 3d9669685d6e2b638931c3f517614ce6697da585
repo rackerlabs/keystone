@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//bcs\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-02T06:09:16Z",
+      "side": 1,
+      "message": "RBAC does not change regardless how the user is authenticated. Currently REMOTE_USER simply means Keystone does not need to authenticate the user again. Once authenticated, user will get a token, which is no different then user authenticated an Keystone internal mechanism (i.e. username/password).",
+      "parentUuid": "AAAAPn//bl4\u003d",
+      "revId": "3d9669685d6e2b638931c3f517614ce6697da585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//blw\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-02T04:40:26Z",
       "side": 1,
       "message": "Sorry, don\u0027t understand, does this mean  check_token is not available in v3",
+      "revId": "3d9669685d6e2b638931c3f517614ce6697da585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//bcg\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-02T06:09:16Z",
+      "side": 1,
+      "message": "it does. token_provider_api works for both v2 and v3. Version is one of the parameters.",
+      "parentUuid": "AAAAPn//blw\u003d",
       "revId": "3d9669685d6e2b638931c3f517614ce6697da585",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//bcc\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-02T06:09:16Z",
+      "side": 1,
+      "message": "Not with V2 you don\u0027t. Only user with is_admin flag set to true can do it. That usually means using the *special* ADMIN static token. :)",
+      "parentUuid": "AAAAPn//bls\u003d",
+      "revId": "3d9669685d6e2b638931c3f517614ce6697da585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//blo\u003d",
         "filename": "keystone/token/providers/keystone.py",
         "patchSetId": 4
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//bcQ\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-02T06:09:16Z",
+      "side": 1,
+      "message": "it does. This code has always been there. I am simply move it here.",
+      "parentUuid": "AAAAPn//blo\u003d",
+      "revId": "3d9669685d6e2b638931c3f517614ce6697da585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//blk\u003d",
         "filename": "keystone/token/providers/keystone.py",
         "patchSetId": 4
@@ -81,6 +153,24 @@
       "writtenOn": "2013-07-02T04:40:26Z",
       "side": 1,
       "message": "Which spec does this code refer to?\n\nhttp://docs.openstack.org/api/openstack-identity-service/2.0/content/POST_authenticate_v2.0_tokens_Token_Operations.html\n\nAs per this spec, v2 token doesn\u0027t have meta_data",
+      "revId": "3d9669685d6e2b638931c3f517614ce6697da585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//bcI\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-02T06:09:16Z",
+      "side": 1,
+      "message": "This is legacy Keystone code. I am not changing any functionality here.",
+      "parentUuid": "AAAAPn//blk\u003d",
       "revId": "3d9669685d6e2b638931c3f517614ce6697da585",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
