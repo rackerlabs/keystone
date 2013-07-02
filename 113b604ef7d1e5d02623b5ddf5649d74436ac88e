@@ -34,6 +34,24 @@
       "revId": "113b604ef7d1e5d02623b5ddf5649d74436ac88e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Y9M\u003d",
+        "filename": "tests/test_no_admin_token_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-02T20:50:17Z",
+      "side": 1,
+      "message": "I think I might have figured it out... check out the new patch set. \n\nIf we\u0027re not supposed to use serveapp then why is it there?",
+      "parentUuid": "AAAAPn//Zig\u003d",
+      "revId": "113b604ef7d1e5d02623b5ddf5649d74436ac88e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
