@@ -109,7 +109,7 @@ class Manager(manager.Manager):
 class Driver(object):
     """Interface description for an Identity driver."""
 
-    def authenticate_user(self, user_id, password):
+    def authenticate_user(self, user_id=None, password=None):
         """Authenticate a given user and password.
         :returns: user_ref
         :raises: AssertionError
