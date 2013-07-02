@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//Yek\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-02T23:58:38Z",
+      "side": 1,
+      "message": "amen!",
+      "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//YYs\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-02T23:58:38Z",
+      "side": 1,
+      "message": "is that a common HTTP practice for evaluating boolean query parameters? I would think \u0027False\u0027 and \u0027false\u0027 are also valid.\n\nMaybe a good function to have in openstack.common if we don\u0027t have one already, for consistency.",
+      "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//YYI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 971,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-02T23:58:38Z",
+      "side": 1,
+      "message": "you are overriding wrap_member() anyway, why not move _format_entity() there?",
+      "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Yc4\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-02T23:58:38Z",
+      "side": 1,
+      "message": "May need to move this to assignments backend. Not sure if you want to make yours depended on ayoung\u0027s patch\n\nhttps://review.openstack.org/#/c/33745/",
+      "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//YR8\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-02T23:58:38Z",
+      "side": 1,
+      "message": "probably don\u0027t need this test as the tests in test_v3_identity are more comprehensive",
+      "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//YP4\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-02T23:58:38Z",
+      "side": 1,
+      "message": "XML test cases? See test_v3_auth.py, just need to subclass IdentityTestCase and change the content-type to xml",
+      "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
