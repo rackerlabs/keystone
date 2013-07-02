@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//YXs\u003d",
+        "filename": "tests/test_no_admin_token_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-02T23:22:48Z",
+      "side": 1,
+      "message": "Using app.request is tricky and was done that way to make a common requests entry point for the content_type tests as this kept it close to the original structure. You can use admin_app.post_json directly here\n\nhttp://webtest.pythonpaste.org/en/latest/testapp.html#making-json-requests",
+      "revId": "00fd8fd07e7f47d6d5b30e34da2bfc32e121a8ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//YXc\u003d",
+        "filename": "tests/test_no_admin_token_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-02T23:22:48Z",
+      "side": 1,
+      "message": "use admin_app.get",
+      "revId": "00fd8fd07e7f47d6d5b30e34da2bfc32e121a8ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
