@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//ifU\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-07-02T10:44:28Z",
+      "side": 1,
+      "message": "This title is misleading. Change it to something like \"Apache Basic Authentication example\".",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//jxI\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 3
