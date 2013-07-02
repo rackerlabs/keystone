@@ -116,7 +116,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def authorize_for_project(self, tenant_id, user_ref):
+    def authorize_for_project(self, user_ref, tenant_id=None):
         """Authenticate a given user for a tenant.
         :returns: (user_ref, tenant_ref, metadata_ref)
         :raises: AssertionError
