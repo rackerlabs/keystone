@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ZvA\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Trouble is, all we have is the overall kvs identity driver class....of which role assignment is a subset - so didn\u0027t feel it quiet appropriate there...",
+      "parentUuid": "AAAAPn//cpQ\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cjk\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-01T20:55:11Z",
       "side": 1,
       "message": "suggest change self.db.get(\u0027metadata-%s-%s\u0027 % (meta_id1, meta_id2)) to self.db.get(key), since I think this is just rebuilding the original key.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Zu0\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cjk\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ZuA\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//ciI\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//ch4\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2013-07-01T20:55:11Z",
       "side": 1,
       "message": "If there isn\u0027t a V2 of this, suggest remove the V3.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ZtY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "We could do...although I was following the convention we used for DomainsV3 and GroupV3, which also did not have V2 counterparts.",
+      "parentUuid": "AAAAPn//ch4\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//Zss\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cxk\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cxc\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -98,6 +188,24 @@
       "writtenOn": "2013-07-01T18:38:02Z",
       "side": 1,
       "message": "Add NOTE?",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Zso\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cxc\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ZrE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 868,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//ceU\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cfQ\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -132,6 +258,24 @@
       "writtenOn": "2013-07-01T20:55:11Z",
       "side": 1,
       "message": "target could potentially be not defined here, which would fail. Suggest always set target to something.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ZrA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cfQ\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//Zoc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 891,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Well, only with a corrupt DB...there must always be a domain or a project (we check this on creation of role assignment) - are you concerned about just having defensive code that doesn\u0027t break (I am just wary of placing integrity checks in too many places reducing code readability)",
+      "parentUuid": "AAAAPn//ceA\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cds\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -166,6 +328,24 @@
       "writtenOn": "2013-07-01T20:55:11Z",
       "side": 1,
       "message": "suggest have a single format for string, like\n\n \u0027%s/users/%s/roles/%s\u0027 % (target_link, m[\u0027id\u0027], user_entry[\u0027role\u0027][\u0027id\u0027])",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ZPQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 899,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cds\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ZPU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 902,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cdo\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cdg\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -200,6 +398,24 @@
       "writtenOn": "2013-07-01T20:55:11Z",
       "side": 1,
       "message": "change \"for and group\" to \"for group\"",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ZPI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cdg\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ZMY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 934,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cdI\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cw0\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -234,6 +468,24 @@
       "writtenOn": "2013-07-01T18:38:02Z",
       "side": 1,
       "message": "Same comment as above applies here",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ZOw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 942,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cw0\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ZMU\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cbg\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//caU\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 3
@@ -268,6 +538,24 @@
       "writtenOn": "2013-07-01T20:55:11Z",
       "side": 1,
       "message": "seems unnecessary since will already fail if it\u0027s None, suggest remove this line.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ZMI\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//caU\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ZLM\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Its an xor test...comment added!",
+      "parentUuid": "AAAAPn//cZc\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cZY\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 3
@@ -302,6 +608,24 @@
       "writtenOn": "2013-07-01T20:55:11Z",
       "side": 1,
       "message": "what is this testing? Could use a comment since I can\u0027t figure it out by looking at it.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ZLI\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 750,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cZY\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ZLE\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cY8\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cYk\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 3
@@ -336,6 +678,24 @@
       "writtenOn": "2013-07-01T20:55:11Z",
       "side": 1,
       "message": "why is this a member variable?",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ZK8\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "shouldn\u0027t be...fixed",
+      "parentUuid": "AAAAPn//cYk\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -359,6 +719,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ZKs\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cYc\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cX4\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 3
@@ -370,6 +748,24 @@
       "writtenOn": "2013-07-01T20:55:11Z",
       "side": 1,
       "message": "suggest not call this crud since role assignments only supports read.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ZKY\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cX4\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -393,6 +789,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ZKU\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cXc\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cvo\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 3
@@ -404,6 +818,24 @@
       "writtenOn": "2013-07-01T18:38:02Z",
       "side": 1,
       "message": "This comment is kind of hard to follow. Might need some rewording.",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ZJ8\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cvo\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -427,6 +859,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ZJ4\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cvI\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cvE\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 3
@@ -444,6 +894,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//ZJU\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 849,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "We could possibly, but try to typically keep to minimum that amount of prep work each test does...i.e. only create what you need.  Creating a standard setup would likely either create too little (to be common) or to much...so decided against doing that",
+      "parentUuid": "AAAAPn//cvE\u003d",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cnA\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 3
@@ -455,6 +923,24 @@
       "writtenOn": "2013-07-01T19:19:44Z",
       "side": 1,
       "message": "typo...\"list of effective...\"",
+      "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ZJQ\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-02T20:54:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//cnA\u003d",
       "revId": "0c10f9df4e5221e14325c7a406afc7917db396dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
