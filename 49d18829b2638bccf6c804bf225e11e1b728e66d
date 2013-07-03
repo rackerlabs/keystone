@@ -124,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//VcA\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//V7g\u003d",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//WIc\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 5
@@ -194,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//Vb8\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//V7Y\u003d",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//V50\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 5
@@ -205,6 +241,24 @@
       "writtenOn": "2013-07-03T18:40:26Z",
       "side": 1,
       "message": "Not sure what this docstring means... it\u0027s a controller not an entity. Suggest remove this line.",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Vbs\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//V50\u003d",
       "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -228,6 +282,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//Vbo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//V5w\u003d",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//V2M\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 5
@@ -239,6 +311,24 @@
       "writtenOn": "2013-07-03T18:40:26Z",
       "side": 1,
       "message": "(nit) remove this docstring since it adds nothing, it\u0027s just the name of the function.",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//VbY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//V2M\u003d",
       "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -262,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//VbU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 965,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//V2E\u003d",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//V0k\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 5
@@ -279,6 +387,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//VbQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 980,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//V0k\u003d",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//V0U\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 5
@@ -290,6 +416,24 @@
       "writtenOn": "2013-07-03T18:40:26Z",
       "side": 1,
       "message": "remove this docstring since it\u0027s just the function name.",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Vag\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//V0U\u003d",
       "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -348,6 +492,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//VZ4\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//VzE\u003d",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//Vyw\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 5
@@ -359,6 +521,24 @@
       "writtenOn": "2013-07-03T18:40:26Z",
       "side": 1,
       "message": "use named arguments for named parameters, e.g.\n\n self.assertValidRoleAssignment(entity, ref\u003dref, url\u003durl)",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//VaU\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//Vyw\u003d",
       "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -382,6 +562,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//VZ8\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//Vyg\u003d",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//VyI\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 5
@@ -393,6 +591,24 @@
       "writtenOn": "2013-07-03T18:40:26Z",
       "side": 1,
       "message": "seems like this code should be in the server since the server does the same thing.",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//VYE\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "somewhat, I agree, but then always good to have your test code not rely too much on utilities in the thing you are testing :-)",
+      "parentUuid": "AAAAPn//VyI\u003d",
       "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -416,6 +632,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//VZU\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "A user has to be owned by some domain....",
+      "parentUuid": "AAAAPn//Vww\u003d",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//VpQ\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 5
@@ -427,6 +661,24 @@
       "writtenOn": "2013-07-03T18:40:26Z",
       "side": 1,
       "message": "there\u0027s lots of duplicate code here that could be consolidated.",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//VYc\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:31:03Z",
+      "side": 1,
+      "message": "we could do that...I have tended to minimze being too clever in the test code so that you can see exactly what is happening, as opposed to too much \"depth\" in terms of consolidated functions.  If you feel strongly about it, I\u0027ll look at re-working it, otherwise maybe OK for now?",
+      "parentUuid": "AAAAPn//VpQ\u003d",
       "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
