@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//WMA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-03T18:01:21Z",
+      "side": 1,
+      "message": "why is it OK to now start using the flatten directory structure here when it wasn\u0027t used previously? Why doesn\u0027t that break something somewhere???",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//WLg\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-03T18:01:21Z",
+      "side": 1,
+      "message": "Very helpful comment.  Thanks for adding it!",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//WJk\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-03T18:01:21Z",
+      "side": 1,
+      "message": "Just curiously, if the user is not found why can you safely assume that meta_id2 must be a group_id???",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//WIc\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-03T18:01:21Z",
+      "side": 1,
+      "message": "wow, didn\u0027t realize these weren\u0027t all in a single table yet.",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Vwg\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-03T18:01:21Z",
+      "side": 1,
+      "message": "do you need to add code so that if the LDAP driver is invoked it returns a not implemented / unavailable or whatever?",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
