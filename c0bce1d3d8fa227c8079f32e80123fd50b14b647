@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//Xp0\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-03T06:19:14Z",
+      "side": 1,
+      "message": "The order has switched. From the commit message, I am surprised nothing has broken so far consider the drivers have user_ref as the second argument.",
+      "revId": "c0bce1d3d8fa227c8079f32e80123fd50b14b647",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
