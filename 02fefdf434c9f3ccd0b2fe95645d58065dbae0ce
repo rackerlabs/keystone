@@ -34,6 +34,24 @@
       "revId": "02fefdf434c9f3ccd0b2fe95645d58065dbae0ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//VII\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-07-03T21:51:28Z",
+      "side": 1,
+      "message": "I had a question reading the sqlalchemy.orm.sessionmaker api doc whether the call\nself._sessionmaker \u003d self._sessionmaker or self.get_sessionmaker(\nself._engine)\n\nreturns a factory or session object. Now after re-reading the documentation, I understand that it returns a factory. There is no change required. Code looks good.",
+      "parentUuid": "AAAAPn//VLQ\u003d",
+      "revId": "02fefdf434c9f3ccd0b2fe95645d58065dbae0ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
