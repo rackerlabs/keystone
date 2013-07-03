@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//VTA\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-03T20:42:07Z",
+      "side": 1,
+      "message": "if user1 doesn\u0027t have to be a member variable, change this so that user1 isn\u0027t a member variable. i.e., remove self. if it\u0027s not needed.",
+      "revId": "fa10d4945ca9658eff02b1d8e917fde50d6576ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
