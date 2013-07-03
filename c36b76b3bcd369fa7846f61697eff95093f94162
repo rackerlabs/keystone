@@ -34,6 +34,24 @@
       "revId": "c36b76b3bcd369fa7846f61697eff95093f94162",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//VNQ\u003d",
+        "filename": "tests/test_no_admin_token_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-03T21:16:27Z",
+      "side": 1,
+      "message": "ok, found a workaround, can pass the REMOTE_ADDR in the environment.",
+      "parentUuid": "AAAAPn//VOw\u003d",
+      "revId": "c36b76b3bcd369fa7846f61697eff95093f94162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
