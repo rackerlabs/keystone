@@ -41,27 +41,49 @@ def provider(name):
 
 
 def requires(*dependencies):
-    """Inject specified dependencies from the registry into the instance."""
-    def wrapper(self, *args, **kwargs):
-        """Inject each dependency from the registry."""
-        self.__wrapped_init__(*args, **kwargs)
+    """Inject specified dependencies from the registry into the instance.
 
-        for dependency in self._dependencies:
-            if dependency not in REGISTRY:
-                raise UnresolvableDependencyException(dependency)
-            setattr(self, dependency, REGISTRY[dependency])
+    For a dependency 'dep_api' creates a class level function:
+      - cls.get_dep_api()
+    and a instance level property
+      - self.dep_api
+
+    On class init it will also guarantee that all dependencies are met
+    """
+
+    def class_prop(name):
+        @classmethod
+        def func(cls):
+            try:
+                return REGISTRY[name]
+            except KeyError:
+                raise UnresolvableDependencyException(name)
+
+        return func
+
+    def inst_prop(name):
+        @property
+        def func(self):
+            return getattr(self, name)()
+        return func
+
+    def wrap_init(init):
+        # this is not really needed except for consistency with the old way
+        def __wrapped_init__(self, *args, **kwargs):
+            for dep in dependencies:
+                getattr(self, dep)
+
+            init(self, *args, **kwargs)
+
+        return __wrapped_init__
 
     def wrapped(cls):
-        """Note the required dependencies on the object for later injection.
+        for dep in dependencies:
+            name = 'get_%s' % dep
+            setattr(cls, name, class_prop(dep))
+            setattr(cls, dep, inst_prop(name))
 
-        The dependencies of the parent class are combined with that of the
-        child class to create a new set of dependencies.
-        """
-        existing_dependencies = getattr(cls, '_dependencies', set())
-        cls._dependencies = existing_dependencies.union(dependencies)
-        if not hasattr(cls, '__wrapped_init__'):
-            cls.__wrapped_init__ = cls.__init__
-            cls.__init__ = wrapper
+        cls.__init__ = wrap_init(cls.__init__)
         return cls
 
     return wrapped
