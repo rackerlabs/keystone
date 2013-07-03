@@ -16,6 +16,24 @@
       "revId": "63de46e72cabc3dd3526c04a56c023b46110fe3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//VDk\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-03T21:56:03Z",
+      "side": 1,
+      "message": "I changed load_backend behavior so that the ec2 backend is also loaded.",
+      "parentUuid": "AAAAPn//Xjk\u003d",
+      "revId": "63de46e72cabc3dd3526c04a56c023b46110fe3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
