@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//YIk\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T01:10:57Z",
+      "side": 1,
+      "message": "So Dolphm and I had this discussion when I implemented policy checking on filter parameters for Grizzly, and the issues was if you accept anything other than zero, then you get into discussions on whether you should support (for example) False, false, no etc.  So the decision was made to stick to \u00270\u0027 only. \n\nAs to having this in common - nice idea, perhaps, if it\u0027s OK, I could come back and do that re-factor once we have this in there.",
+      "parentUuid": "AAAAPn//YYs\u003d",
+      "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//YYI\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2013-07-02T23:58:38Z",
       "side": 1,
       "message": "you are overriding wrap_member() anyway, why not move _format_entity() there?",
+      "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//YHs\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 971,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T01:10:57Z",
+      "side": 1,
+      "message": "So, wrap_member \"formats\" one entry in the collection.  Since, in the case of expanding group entries-\u003euser entries, by the time you get to wrap_member you would have lost what group it was, so you don\u0027t have the information to create the \u0027membership\u0027 link",
+      "parentUuid": "AAAAPn//YYI\u003d",
       "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//YHY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T01:10:57Z",
+      "side": 1,
+      "message": "We will end up having to do a bit of re-factoring, yes",
+      "parentUuid": "AAAAPn//Yc4\u003d",
+      "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//YR8\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 4
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//YHI\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T01:10:57Z",
+      "side": 1,
+      "message": "Just thought it was worth testing the drivers separately - will become more so if we push filtering down into the driver level in the future.",
+      "parentUuid": "AAAAPn//YR8\u003d",
+      "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//YP4\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 4
@@ -98,6 +170,24 @@
       "writtenOn": "2013-07-02T23:58:38Z",
       "side": 1,
       "message": "XML test cases? See test_v3_auth.py, just need to subclass IdentityTestCase and change the content-type to xml",
+      "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//YF4\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T01:10:57Z",
+      "side": 1,
+      "message": "Excellent idea! Unfortunately I just tried that and a bunch of other tests broke - so I have raised a separate bug to implement xml tests for Identity",
+      "parentUuid": "AAAAPn//YP4\u003d",
       "revId": "876cd2ea5bcf7889d5c58d287eb09ed6cea577e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
