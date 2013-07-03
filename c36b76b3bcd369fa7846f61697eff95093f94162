@@ -16,6 +16,24 @@
       "revId": "c36b76b3bcd369fa7846f61697eff95093f94162",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//VOw\u003d",
+        "filename": "tests/test_no_admin_token_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-03T21:07:52Z",
+      "side": 1,
+      "message": "This is the error I get when I don\u0027t have a token:\n\n Traceback (most recent call last):                                                     \n  File \"/opt/stack/keystone/tests/test_no_admin_token_auth.py\", line 54, in test_request_no_admin_token_auth\n    self.admin_app.get(REQ_PATH, headers\u003d{\u0027X-Auth-Token\u0027: \u0027NotAdminToken\u0027})                                 \n  File \"/opt/stack/keystone/.venv/local/lib/python2.7/site-packages/webtest/app.py\", line 199, in get       \n    expect_errors\u003dexpect_errors)                                                                            \n  File \"/opt/stack/keystone/.venv/local/lib/python2.7/site-packages/webtest/app.py\", line 489, in do_request\n    self._check_status(status, res)                                                                         \n  File \"/opt/stack/keystone/.venv/local/lib/python2.7/site-packages/webtest/app.py\", line 518, in _check_status\n    res)                                                                                                       \n AppError: Bad response: 500 Internal Server Error (not 200 OK or 3xx redirect for  \n http://localhost/v2.0/tenants/tenants/tenants/tenants)\n\n \u0027{\"error\": {\"message\": \"An unexpected error prevented the server from fulfilling your request. \\\u0027REMOTE_ADDR\\\u0027\", \"code\": 500, \"title\": \"Internal Server Error\"}}\u0027\n\nI get a 500 error and not a 401.",
+      "parentUuid": "AAAAPn//Vrs\u003d",
+      "revId": "c36b76b3bcd369fa7846f61697eff95093f94162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
