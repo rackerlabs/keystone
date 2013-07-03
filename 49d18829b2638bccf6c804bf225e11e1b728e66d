@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//VvU\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-03T18:08:58Z",
+      "side": 1,
+      "message": "that\u0027s why we have unit tests (I hope) :-)",
+      "parentUuid": "AAAAPn//WMA\u003d",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//WLg\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 5
@@ -64,6 +82,24 @@
       "writtenOn": "2013-07-03T18:01:21Z",
       "side": 1,
       "message": "wow, didn\u0027t realize these weren\u0027t all in a single table yet.",
+      "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Vu4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-03T18:08:58Z",
+      "side": 1,
+      "message": "yeah, not sure why we stash role assignments in metadata to begin with. +1000 to consolidate them into a single table. Role assignment should really be a first class citizen.",
+      "parentUuid": "AAAAPn//WIc\u003d",
       "revId": "49d18829b2638bccf6c804bf225e11e1b728e66d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
