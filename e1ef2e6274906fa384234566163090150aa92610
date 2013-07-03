@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//VUo\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-03T20:33:59Z",
+      "side": 1,
+      "message": "This still contains SQL that might not work with all databases. Maybe you could use filter_by(id\u003duser_id) ?",
+      "revId": "e1ef2e6274906fa384234566163090150aa92610",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
