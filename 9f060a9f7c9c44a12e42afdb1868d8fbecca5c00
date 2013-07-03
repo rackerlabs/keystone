@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//U4A\u003d",
+        "filename": "keystone/credential/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-03T23:20:56Z",
+      "side": 1,
+      "message": "delete is the classmethod which calls the credential_api with the id.",
+      "parentUuid": "AAAAPn//Ve0\u003d",
+      "revId": "9f060a9f7c9c44a12e42afdb1868d8fbecca5c00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//Vf0\u003d",
         "filename": "keystone/credential/credential.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-03T19:37:27Z",
       "side": 1,
       "message": "You could have named this method update/instead of save.  Class method is called update",
+      "revId": "9f060a9f7c9c44a12e42afdb1868d8fbecca5c00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//U40\u003d",
+        "filename": "keystone/credential/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-03T23:20:56Z",
+      "side": 1,
+      "message": "Right, but it\u0027s not pretty to have a class method and an instance method of the same name. There is an example here: http://stackoverflow.com/questions/5892619/static-and-instance-methods-in-python which could be modified but i\u0027m treating this a little as a proof of concept and don\u0027t want to get into that sort of thing",
+      "parentUuid": "AAAAPn//Vf0\u003d",
       "revId": "9f060a9f7c9c44a12e42afdb1868d8fbecca5c00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//U4Y\u003d",
+        "filename": "keystone/credential/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-03T23:20:56Z",
+      "side": 1,
+      "message": "I guess it could be done here, eventually there would probably be a model base class that held that. At the moment i\u0027m going for a simple extraction, there are a number of things that could be optimized. Like for example where list is called it is always filtered by either project_id or user_id, these filters should probably be on the model but that is an optimization.",
+      "parentUuid": "AAAAPn//Vgc\u003d",
+      "revId": "9f060a9f7c9c44a12e42afdb1868d8fbecca5c00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//VfQ\u003d",
         "filename": "keystone/credential/credential.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2013-07-03T19:37:27Z",
       "side": 1,
       "message": "Better to follow an uniform pattern. \n\ncredential.save() -- model does the save, which in turn calls api.save\ndelete -- directly calls api.delete()",
+      "revId": "9f060a9f7c9c44a12e42afdb1868d8fbecca5c00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//U3M\u003d",
+        "filename": "keystone/credential/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-03T23:20:56Z",
+      "side": 1,
+      "message": "True this does the opposite but for a reason. Some of these things need to be accessable in a way that doesn\u0027t require the object to be loaded.\n\nWhen we call .save() we have an object, i don\u0027t think there is the need to create an object just to delete it. To have this call credential.destroy we would have to create a new credential and at this point the only thing we know about is the id. I expect later that Credential.new or __init__ is a good place to do validation and calling Credential.new(id\u003dcredential_id).destroy() won\u0027t work.",
+      "parentUuid": "AAAAPn//VfQ\u003d",
       "revId": "9f060a9f7c9c44a12e42afdb1868d8fbecca5c00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
