@@ -16,6 +16,24 @@
       "revId": "fa10d4945ca9658eff02b1d8e917fde50d6576ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//VRU\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-03T20:52:15Z",
+      "side": 1,
+      "message": "ahh, right...probably better to do that as a general re-factor of the whole v3 identity test...since that seems to be the style of most tests (i.e. to use member variables where, in fact, the don\u0027t need to be).",
+      "parentUuid": "AAAAPn//VTA\u003d",
+      "revId": "fa10d4945ca9658eff02b1d8e917fde50d6576ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
