@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//Vrs\u003d",
+        "filename": "tests/test_no_admin_token_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-03T18:25:10Z",
+      "side": 1,
+      "message": "You really don\u0027t need to go through all that trouble. All you really care is getting a 401 instead of 500. You just need\n\nself.admin_app.request(REQ_PATH, headers\u003d{\u0027X-Auth-Token\u0027: \u0027Bogus\u0027}, expected_status\u003d401)\n\nYou don\u0027t need line 42-71",
+      "revId": "c36b76b3bcd369fa7846f61697eff95093f94162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
