@@ -33,6 +33,40 @@
       "revId": "e0010ccef89facb2e050f2d2dfaab8c03e0f4533",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Vgg\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2013-07-03T19:22:36Z",
+      "side": 1,
+      "message": "I don\u0027t think using message for this attribute name is a good idea, since it shadows Exception.message - use msg_format or similar. See I304f31edec20b1293cf6c8de931415590fde6752",
+      "revId": "e0010ccef89facb2e050f2d2dfaab8c03e0f4533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Vgk\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2013-07-03T19:22:36Z",
+      "side": 1,
+      "message": "The Exception.message attribute is deprecated - what was wrong with using str(e) ?",
+      "revId": "e0010ccef89facb2e050f2d2dfaab8c03e0f4533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
