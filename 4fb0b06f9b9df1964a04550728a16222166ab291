@@ -86,6 +86,24 @@
       "revId": "4fb0b06f9b9df1964a04550728a16222166ab291",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Xn0\u003d",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-03T06:28:34Z",
+      "side": 1,
+      "message": "May even consider moving the policy file parsing logic to startup. Something like this should prevent Keystone from even starting up as Keystone is essentially crippled without the policies.",
+      "parentUuid": "AAAAPn//cD8\u003d",
+      "revId": "4fb0b06f9b9df1964a04550728a16222166ab291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
