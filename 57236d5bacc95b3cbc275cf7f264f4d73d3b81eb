@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//XnI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/027_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-03T06:41:42Z",
+      "side": 1,
+      "message": "2013",
+      "revId": "57236d5bacc95b3cbc275cf7f264f4d73d3b81eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//XnQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/027_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-03T06:41:42Z",
+      "side": 1,
+      "message": "imports must be in alphabetical order",
+      "revId": "57236d5bacc95b3cbc275cf7f264f4d73d3b81eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//XlE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/027_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-03T06:41:42Z",
+      "side": 1,
+      "message": "no need to load blob, just compare blobs only",
+      "revId": "57236d5bacc95b3cbc275cf7f264f4d73d3b81eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Xk8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/027_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-03T06:41:42Z",
+      "side": 1,
+      "message": "you want to check for user_id and project_id also",
+      "revId": "57236d5bacc95b3cbc275cf7f264f4d73d3b81eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
