@@ -24,6 +24,7 @@ import uuid
 from keystone.common import controller
 from keystone.common import logging
 from keystone import config
+from keystone import credential
 from keystone import exception
 
 
@@ -573,9 +574,9 @@ class ProjectV3(controller.V3Controller):
 
     def _delete_project(self, context, project_id):
         # Delete any credentials that reference this project
-        for cred in self.credential_api.list_credentials():
-            if cred['project_id'] == project_id:
-                self.credential_api.delete_credential(cred['id'])
+        for cred in credential.Credential.list():
+            if cred.project_id == project_id:
+                cred.destroy()
         # Finally delete the project itself - the backend is
         # responsible for deleting any role assignments related
         # to this project
@@ -641,9 +642,9 @@ class UserV3(controller.V3Controller):
 
     def _delete_user(self, context, user_id):
         # Delete any credentials that reference this user
-        for cred in self.credential_api.list_credentials():
-            if cred['user_id'] == user_id:
-                self.credential_api.delete_credential(cred['id'])
+        for cred in credential.Credential.list():
+            if cred.user_id == user_id:
+                cred.destroy()
 
         # Make sure any tokens are marked as deleted
         self._delete_tokens_for_user(user_id)

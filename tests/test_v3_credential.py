@@ -14,7 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
+from keystone import credential
 
 import test_v3
 
@@ -25,14 +25,10 @@ class CredentialTestCase(test_v3.RestfulTestCase):
 
         super(CredentialTestCase, self).setUp()
 
-        self.credential_id = uuid.uuid4().hex
-        self.credential = self.new_credential_ref(
+        credential_data = self.new_credential_ref(
             user_id=self.user['id'],
             project_id=self.project_id)
-        self.credential['id'] = self.credential_id
-        self.credential_api.create_credential(
-            self.credential_id,
-            self.credential)
+        self.credential = credential.Credential.create(**credential_data)
 
     def test_list_credentials(self):
         """Call ``GET /credentials``."""
@@ -46,7 +42,8 @@ class CredentialTestCase(test_v3.RestfulTestCase):
 
     def test_create_credential(self):
         """Call ``POST /credentials``."""
-        ref = self.new_credential_ref(user_id=self.user['id'])
+        credential_data = self.new_credential_ref(user_id=self.user['id'])
+        ref = credential.Credential.new(**credential_data)
         r = self.post(
             '/credentials',
             body={'credential': ref})
@@ -56,23 +53,27 @@ class CredentialTestCase(test_v3.RestfulTestCase):
         """Call ``GET /credentials/{credential_id}``."""
         r = self.get(
             '/credentials/%(credential_id)s' % {
-                'credential_id': self.credential_id})
+                'credential_id': self.credential.id})
         self.assertValidCredentialResponse(r, self.credential)
 
     def test_update_credential(self):
         """Call ``PATCH /credentials/{credential_id}``."""
-        ref = self.new_credential_ref(
+        credential_data = self.new_credential_ref(
             user_id=self.user['id'],
             project_id=self.project_id)
+        ref = credential.Credential.new(**credential_data)
         del ref['id']
+        print "created cred", self.credential.id
+        print "update with", ref
         r = self.patch(
             '/credentials/%(credential_id)s' % {
-                'credential_id': self.credential_id},
+                'credential_id': self.credential.id},
             body={'credential': ref})
+        ref['id'] = self.credential.id
         self.assertValidCredentialResponse(r, ref)
 
     def test_delete_credential(self):
         """Call ``DELETE /credentials/{credential_id}``."""
         self.delete(
             '/credentials/%(credential_id)s' % {
-                'credential_id': self.credential_id})
+                'credential_id': self.credential.id})

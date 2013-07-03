@@ -15,6 +15,7 @@
 # under the License.
 
 from keystone.common import controller
+from keystone.credential import credential as c
 
 
 class CredentialV3(controller.V3Controller):
@@ -23,27 +24,26 @@ class CredentialV3(controller.V3Controller):
 
     @controller.protected
     def create_credential(self, context, credential):
-        ref = self._assign_unique_id(self._normalize_dict(credential))
-        ref = self.credential_api.create_credential(ref['id'], ref)
-        return CredentialV3.wrap_member(context, ref)
+        ref = c.Credential.create(**self._normalize_dict(credential))
+        return self.wrap_member(context, ref)
 
     @controller.protected
     def list_credentials(self, context):
-        refs = self.credential_api.list_credentials()
-        return CredentialV3.wrap_collection(context, refs)
+        refs = c.Credential.list()
+        return self.wrap_collection(context, refs)
 
     @controller.protected
     def get_credential(self, context, credential_id):
-        ref = self.credential_api.get_credential(credential_id)
-        return CredentialV3.wrap_member(context, ref)
+        ref = c.Credential.get(credential_id)
+        return self.wrap_member(context, ref)
 
     @controller.protected
     def update_credential(self, context, credential_id, credential):
         self._require_matching_id(credential_id, credential)
-
-        ref = self.credential_api.update_credential(credential_id, credential)
-        return CredentialV3.wrap_member(context, ref)
+        credential['id'] = credential_id
+        ref = c.Credential.update(**credential)
+        return self.wrap_member(context, ref)
 
     @controller.protected
     def delete_credential(self, context, credential_id):
-        return self.credential_api.delete_credential(credential_id)
+        c.Credential.delete(credential_id)
