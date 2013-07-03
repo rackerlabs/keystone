@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//WSk\u003d",
+        "filename": "tests/test_no_admin_token_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-03T15:33:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//YUI\u003d",
+      "revId": "903ce955f11bd6a24e2aac29c5fb60aaa61626a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//YUE\u003d",
         "filename": "tests/test_no_admin_token_auth.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-02T23:46:46Z",
       "side": 1,
       "message": "which i guess would make this part of setUp",
+      "revId": "903ce955f11bd6a24e2aac29c5fb60aaa61626a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//WSg\u003d",
+        "filename": "tests/test_no_admin_token_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-03T15:33:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//YUE\u003d",
       "revId": "903ce955f11bd6a24e2aac29c5fb60aaa61626a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//WSY\u003d",
+        "filename": "tests/test_no_admin_token_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-03T15:33:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//YT8\u003d",
+      "revId": "903ce955f11bd6a24e2aac29c5fb60aaa61626a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//YKY\u003d",
         "filename": "tests/test_no_admin_token_auth.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2013-07-03T00:35:14Z",
       "side": 1,
       "message": "you really don\u0027t need all that, all you care is getting a 401 instead of 500 for an operation which requires admin role",
+      "revId": "903ce955f11bd6a24e2aac29c5fb60aaa61626a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//WR8\u003d",
+        "filename": "tests/test_no_admin_token_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-03T15:33:56Z",
+      "side": 1,
+      "message": "@gyee - I don\u0027t know how I\u0027m going to perform a request without a token.",
+      "parentUuid": "AAAAPn//YKY\u003d",
       "revId": "903ce955f11bd6a24e2aac29c5fb60aaa61626a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
