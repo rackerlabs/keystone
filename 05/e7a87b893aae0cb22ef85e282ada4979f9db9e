@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+1: Alvaro Lopez Garcia <aloga@ifca.unican.es>
+Verified+1: SmokeStack
+Approved+1: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 03 Jul 2013 15:57:11 +0000
+Reviewed-on: https://review.openstack.org/34266
+Project: openstack/keystone
+Branch: refs/heads/master
