@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//Xjk\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-03T06:50:09Z",
+      "side": 1,
+      "message": "shouldn\u0027t we be overriding load_backend() and have the logic there?",
+      "revId": "63de46e72cabc3dd3526c04a56c023b46110fe3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
