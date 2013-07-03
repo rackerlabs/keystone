@@ -50,6 +50,23 @@
       "revId": "903ce955f11bd6a24e2aac29c5fb60aaa61626a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//YKY\u003d",
+        "filename": "tests/test_no_admin_token_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-03T00:35:14Z",
+      "side": 1,
+      "message": "you really don\u0027t need all that, all you care is getting a 401 instead of 500 for an operation which requires admin role",
+      "revId": "903ce955f11bd6a24e2aac29c5fb60aaa61626a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
