@@ -15,7 +15,6 @@
 # under the License.
 
 import unittest2 as unittest
-import uuid
 
 from keystone.common import dependency
 
@@ -107,6 +106,14 @@ class TestDependencyInjection(unittest.TestCase):
         self.assertIsInstance(consumer.api, Provider)
         self.assertTrue(consumer.get_value())
 
+    def assertCallable(self, obj, name):
+        try:
+            func = getattr(obj, name)
+        except AttributeError:
+            self.fail("No such function: %s.%s" % (obj, name))
+        else:
+            self.assertTrue(callable(func))
+
     def test_inherited_dependency(self):
         class Interface(object):
             def do_work(self):
@@ -141,15 +148,11 @@ class TestDependencyInjection(unittest.TestCase):
         consumer = ChildConsumer()
 
         # dependencies should be naturally inherited
-        self.assertEqual(
-            ParentConsumer._dependencies,
-            set(['first_api']))
-        self.assertEqual(
-            ChildConsumer._dependencies,
-            set(['first_api', 'second_api']))
-        self.assertEqual(
-            consumer._dependencies,
-            set(['first_api', 'second_api']))
+        self.assertCallable(ParentConsumer, 'get_first_api')
+        self.assertCallable(ChildConsumer, 'get_first_api')
+        self.assertCallable(ChildConsumer, 'get_second_api')
+        self.assertCallable(consumer, 'get_first_api')
+        self.assertCallable(consumer, 'get_second_api')
 
         # the expected dependencies should be available to the consumer
         self.assertIs(consumer.first_api, first_api)
@@ -159,9 +162,12 @@ class TestDependencyInjection(unittest.TestCase):
         consumer.do_work_with_dependencies()
 
     def test_unresolvable_dependency(self):
-        @dependency.requires(uuid.uuid4().hex)
+        @dependency.requires('invalid_dep')
         class Consumer(object):
             pass
 
         with self.assertRaises(dependency.UnresolvableDependencyException):
-            Consumer()
+            Consumer.get_invalid_dep()
+
+        with self.assertRaises(dependency.UnresolvableDependencyException):
+            Consumer().invalid_dep
