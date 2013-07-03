@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//ViM\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-03T19:14:58Z",
+      "side": 1,
+      "message": "remove \"return\"",
+      "revId": "e0010ccef89facb2e050f2d2dfaab8c03e0f4533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//ViI\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-03T19:14:58Z",
+      "side": 1,
+      "message": "why check for message is unicode if not message? message could only be None or an empty string, so what\u0027s the difference if it\u0027s unicode or not?",
+      "revId": "e0010ccef89facb2e050f2d2dfaab8c03e0f4533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
