@@ -18,3 +18,4 @@
 from keystone.credential import controllers
 from keystone.credential.core import *
 from keystone.credential import routers
+from keystone.credential.credential import Credential

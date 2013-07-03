@@ -16,6 +16,7 @@
 
 import uuid
 
+from keystone import credential
 from keystone import exception
 
 import test_v3
@@ -33,14 +34,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.group['id'] = self.group_id
         self.identity_api.create_group(self.group_id, self.group)
 
-        self.credential_id = uuid.uuid4().hex
-        self.credential = self.new_credential_ref(
-            user_id=self.user['id'],
-            project_id=self.project_id)
-        self.credential['id'] = self.credential_id
-        self.credential_api.create_credential(
-            self.credential_id,
-            self.credential)
+        credential_data = self.new_credential_ref(user_id=self.user['id'],
+                                                  project_id=self.project_id)
+        credential_data['id'] = uuid.uuid4().hex
+        self.credential = credential.Credential.create(**credential_data)
 
     # domain crud tests
 
@@ -194,12 +191,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             domain_id=self.domain2['id'])
         self.identity_api.create_group(self.group2['id'], self.group2)
 
-        self.credential2 = self.new_credential_ref(
+        credential_data = self.new_credential_ref(
             user_id=self.user2['id'],
             project_id=self.project2['id'])
-        self.credential_api.create_credential(
-            self.credential2['id'],
-            self.credential2)
+        self.credential2 = credential.Credential.create(**credential_data)
 
         # Now disable the new domain and delete it
         self.domain2['enabled'] = False
@@ -224,8 +219,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                           self.identity_api.get_user,
                           user_id=self.user2['id'])
         self.assertRaises(exception.CredentialNotFound,
-                          self.credential_api.get_credential,
-                          credential_id=self.credential2['id'])
+                          credential.Credential.get,
+                          credential_id=self.credential2.id)
 
         # ...and that all self.domain entities are still here
         r = self.identity_api.get_domain(self.domain['id'])
@@ -237,7 +232,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.identity_api.get_user(self.user['id'])
         self.user.pop('password')
         self.assertDictEqual(r, self.user)
-        r = self.credential_api.get_credential(self.credential['id'])
+        r = credential.Credential.get(self.credential.id)
         self.assertDictEqual(r, self.credential)
 
     # project crud tests
@@ -286,18 +281,17 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         """
         # First check the credential for this project is present
-        r = self.credential_api.get_credential(self.credential['id'])
+        r = credential.Credential.get(self.credential.id)
         self.assertDictEqual(r, self.credential)
+
         # Create a second credential with a different project
         self.project2 = self.new_project_ref(
             domain_id=self.domain['id'])
         self.identity_api.create_project(self.project2['id'], self.project2)
-        self.credential2 = self.new_credential_ref(
+        credential_data = self.new_credential_ref(
             user_id=self.user['id'],
             project_id=self.project2['id'])
-        self.credential_api.create_credential(
-            self.credential2['id'],
-            self.credential2)
+        credential2 = credential.Credential.create(**credential_data)
 
         # Now delete the project
         self.delete(
@@ -307,11 +301,11 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # Deleting the project should have deleted any credentials
         # that reference this project
         self.assertRaises(exception.CredentialNotFound,
-                          self.credential_api.get_credential,
-                          credential_id=self.credential['id'])
+                          credential.Credential.get,
+                          credential_id=self.credential.id)
         # But the credential for project2 is unaffected
-        r = self.credential_api.get_credential(self.credential2['id'])
-        self.assertDictEqual(r, self.credential2)
+        r = credential.Credential.get(credential2.id)
+        self.assertDictEqual(r, credential2)
 
     # user crud tests
 
@@ -424,19 +418,18 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         """
         # First check the credential for this user is present
-        r = self.credential_api.get_credential(self.credential['id'])
+        r = credential.Credential.get(self.credential.id)
         self.assertDictEqual(r, self.credential)
         # Create a second credential with a different user
         self.user2 = self.new_user_ref(
             domain_id=self.domain['id'],
             project_id=self.project['id'])
         self.identity_api.create_user(self.user2['id'], self.user2)
-        self.credential2 = self.new_credential_ref(
+        credential_data = self.new_credential_ref(
             user_id=self.user2['id'],
             project_id=self.project['id'])
-        self.credential_api.create_credential(
-            self.credential2['id'],
-            self.credential2)
+        credential2 = credential.Credential.create(**credential_data)
+
         # Create a token for this user which we can check later
         # gets deleted
         auth_data = self.build_authentication_request(
@@ -457,14 +450,14 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # Deleting the user should have deleted any credentials
         # that reference this project
         self.assertRaises(exception.CredentialNotFound,
-                          self.credential_api.get_credential,
-                          credential_id=self.credential['id'])
+                          credential.Credential.get,
+                          credential_id=self.credential.id)
         # And the no tokens we remain valid
         tokens = self.token_api.list_tokens(self.user['id'])
         self.assertEquals(len(tokens), 0)
         # But the credential for user2 is unaffected
-        r = self.credential_api.get_credential(self.credential2['id'])
-        self.assertDictEqual(r, self.credential2)
+        r = credential.Credential.get(credential2.id)
+        self.assertDictEqual(r, credential2)
 
     # group crud tests
 
