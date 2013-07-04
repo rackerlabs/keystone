@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//Uds\u003d",
+        "filename": "keystone/credential/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-07-04T03:00:22Z",
+      "side": 1,
+      "message": "Just curious. What kind of  design pattern is this?\n\nNormally we have  credetnial-api - use credential model. (i.e)it acts on credential model. Why does model have dependency on api?\n\nWon\u0027t it be something like CredentialController  uses credential-api which works on credential model.\n\nIdeally I would have preferred\n\nController works on rest model, and api layer works on backend model. Credential is a good example for it.   \"blob\" is a good data structure for rest, but not good for  backend as you can\u0027t query on it.  If you use nosql backend such as mongo, then \"blob\" will work",
+      "revId": "9f060a9f7c9c44a12e42afdb1868d8fbecca5c00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//Ve0\u003d",
         "filename": "keystone/credential/credential.py",
         "patchSetId": 1
