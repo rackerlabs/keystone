@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPn//Ujk\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-04T02:11:08Z",
+      "side": 1,
+      "message": "what do you as see the need for kwargs here? I would think that everything could be specified and the implementation does not use it.",
+      "revId": "e78c333af1358500955f1762316b99698ee209c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//UjU\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-04T02:11:08Z",
+      "side": 1,
+      "message": "same re kwargs",
+      "revId": "e78c333af1358500955f1762316b99698ee209c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Uj8\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-04T02:11:08Z",
+      "side": 1,
+      "message": "It\u0027s not just UUID",
+      "revId": "e78c333af1358500955f1762316b99698ee209c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//cPY\u003d",
         "filename": "keystone/token/providers/keystone.py",
         "patchSetId": 13
@@ -13,6 +64,58 @@
       "writtenOn": "2013-07-01T21:22:12Z",
       "side": 1,
       "message": "Can\u0027t you think of another name for this file? We already have keystone.py which is httpd file\n\u0027",
+      "revId": "e78c333af1358500955f1762316b99698ee209c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//UhE\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-04T02:11:08Z",
+      "side": 1,
+      "message": "it won\u0027t matter when the UUID / PKI splt happends",
+      "parentUuid": "AAAAPn//cPY\u003d",
+      "revId": "e78c333af1358500955f1762316b99698ee209c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//brA\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-04T02:11:08Z",
+      "side": 1,
+      "message": "why not just have them all as named parameters \u003dNone?",
+      "revId": "e78c333af1358500955f1762316b99698ee209c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Ujw\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-04T02:11:08Z",
+      "side": 1,
+      "message": "version is ignored",
       "revId": "e78c333af1358500955f1762316b99698ee209c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
