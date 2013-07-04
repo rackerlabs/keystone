@@ -19,7 +19,6 @@ import uuid
 from keystone import test
 
 from keystone.common.sql import nova
-from keystone.common.sql import util as sql_util
 from keystone import config
 from keystone.contrib.ec2.backends import sql as ec2_sql
 from keystone import identity
@@ -74,12 +73,12 @@ class MigrateNovaAuth(test.TestCase):
                      test.testsdir('test_overrides.conf'),
                      test.testsdir('backend_sql.conf'),
                      test.testsdir('backend_sql_disk.conf')])
-        sql_util.setup_test_database()
+        test.setup_test_database()
         self.identity_api = identity.Manager()
         self.ec2_api = ec2_sql.Ec2()
 
     def tearDown(self):
-        sql_util.teardown_test_database()
+        test.teardown_test_database()
         super(MigrateNovaAuth, self).tearDown()
 
     def _create_role(self, role_name):

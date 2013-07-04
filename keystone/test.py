@@ -17,6 +17,7 @@
 import datetime
 import errno
 import os
+import shutil
 import socket
 import StringIO
 import sys
@@ -38,6 +39,7 @@ environment.use_eventlet()
 from keystone import catalog
 from keystone.common import kvs
 from keystone.common import logging
+from keystone.common import sql
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
@@ -55,6 +57,8 @@ ROOTDIR = os.path.dirname(os.path.abspath(os.curdir))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
 TESTSDIR = os.path.join(ROOTDIR, 'tests')
 ETCDIR = os.path.join(ROOTDIR, 'etc')
+TMPDIR = os.path.join(TESTSDIR, 'tmp')
+
 CONF = config.CONF
 
 cd = os.chdir
@@ -73,6 +77,10 @@ def etcdir(*p):
 
 def testsdir(*p):
     return os.path.join(TESTSDIR, *p)
+
+
+def tmpdir(*p):
+    return os.path.join(TMPDIR, *p)
 
 
 def checkout_vendor(repo, rev):
@@ -105,6 +113,26 @@ def checkout_vendor(repo, rev):
         LOG.warning(_('Failed to checkout %s'), repo)
     cd(working_dir)
     return revdir
+
+
+def setup_test_database():
+    db = tmpdir('test.db')
+    pristine = tmpdir('test.db.pristine')
+
+    try:
+        if os.path.exists(db):
+            os.unlink(db)
+        if not os.path.exists(pristine):
+            sql.migration.db_sync()
+            shutil.copyfile(db, pristine)
+        else:
+            shutil.copyfile(pristine, db)
+    except Exception:
+        pass
+
+
+def teardown_test_database():
+    sql.core.set_global_engine(None)
 
 
 class TestClient(object):
