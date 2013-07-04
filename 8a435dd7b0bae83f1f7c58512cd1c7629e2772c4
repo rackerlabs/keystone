@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//USA\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-04T06:36:38Z",
+      "side": 1,
+      "message": "This can be a one liner but at least combine these \n\nif context and \u0027query_string\u0027 in context:",
+      "revId": "8a435dd7b0bae83f1f7c58512cd1c7629e2772c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//UQc\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-04T06:36:38Z",
+      "side": 1,
+      "message": "This may have been discussed already, but what is this authorization supposed to mean? \n\nWe are getting the catalog for the X-Auth-Token and there are no policy_api implications for this? Shouldn\u0027t this get the catalog for X-Subject-Token and probably X-Auth-Token if not present?",
+      "revId": "8a435dd7b0bae83f1f7c58512cd1c7629e2772c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
