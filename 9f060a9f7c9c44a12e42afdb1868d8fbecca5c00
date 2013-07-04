@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//UcY\u003d",
+        "filename": "keystone/credential/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-04T03:30:37Z",
+      "side": 1,
+      "message": "MVC, controllers we have, this is the model, views may or may not ever need to be separated out. The *_api is the backing store for a model.\n\nCurrently the representation of credential et al is just a dictionary, and while it is less obvious here, particularly over in token i think there are a lot of functions that should be located on the instance of the model rather than providing a dictionary as a parameter to functions in common or in the controllers.\n\nThe api is quite low level and is largely concerned with persistence. I want to hide the api layer (maybe one day transition from the current api structure to providers creating subclass of the model or at least make models a part of the api) so that when operating in the controller we don\u0027t need to be aware of the structure of the object in the database (which is typically what the api gives) or the structure that will be presented to the Rest API.  \n\nAgain i think these gains would be more obvious in another component but i want to get some discussion over the concept and things like function naming.\n\nAlso it is something that will need to be done in digestible chunks, if i can not mess with the current role of *_api then it is easier to explain.",
+      "parentUuid": "AAAAPn//Uds\u003d",
+      "revId": "9f060a9f7c9c44a12e42afdb1868d8fbecca5c00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//Ve0\u003d",
         "filename": "keystone/credential/credential.py",
         "patchSetId": 1
