@@ -68,15 +68,6 @@ class Manager(manager.Manager):
         self.assignment = assignment_api
         self.driver.assignment = assignment_api
 
-    def authenticate(self, user_id=None, tenant_id=None, password=None):
-        """Authenticate a given user and password and
-        authorize them for a tenant.
-        :returns: (user_ref, tenant_ref, metadata_ref)
-        :raises: AssertionError
-        """
-        user_ref = self.driver.authenticate_user(user_id, password)
-        return self.assignment_api.authorize_for_project(user_ref, tenant_id)
-
     def create_user(self, user_id, user_ref):
         user = user_ref.copy()
         user['name'] = clean.user_name(user['name'])
@@ -110,9 +101,6 @@ class Manager(manager.Manager):
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         return self.assignment_api.update_project(tenant_id, tenant)
 
-    def authorize_for_project(self, user_ref, tenant_id=None):
-        return self.assignment.authorize_for_project(user_ref, tenant_id)
-
     def get_project_by_name(self, tenant_name, domain_id):
         return self.assignment.get_project_by_name(tenant_name, domain_id)
 
@@ -121,6 +109,9 @@ class Manager(manager.Manager):
 
     def list_projects(self):
         return self.assignment.list_projects()
+    
+    def delete_project(self, tenant_id):
+        return self.assignment.delete_project(tenant_id)
 
     def _validate_domain(self, ref):
         return self.assignment._validate_domain(ref)
@@ -131,16 +122,17 @@ class Manager(manager.Manager):
     def _set_default_domain(self, ref):
         return self.assignment._set_default_domain(ref)
 
-    def get_metadata(self, user_id=None, tenant_id=None,
-                     domain_id=None, group_id=None):
-        return self.assignment_api.get_metadata(user_id, tenant_id,
-                                                domain_id, group_id)
-
     def get_role(self, role_id):
         return self.assignment.get_role(role_id)
 
     def list_roles(self):
         return self.assignment.list_roles()
+
+    def update_role(self, role_id, role):
+        return self.assignment.update_role(role_id, role)
+
+    def delete_role(self, role_id):
+        return self.assignment.delete_role(role_id)
 
     def get_projects_for_user(self, user_id):
         return self.assignment.get_projects_for_user(user_id)
@@ -164,45 +156,13 @@ class Manager(manager.Manager):
         return (self.assignment_api.add_role_to_user_and_project
                 (user_id, tenant_id, role_id))
 
-    def create_metadata(self, user_id, tenant_id, metadata):
-        return self.assignment.create_metadata(user_id, tenant_id, metadata)
-
-    def create_role(self, role_id, role):
-        return self.assignment.create_role(role_id, role)
-
-    def delete_role(self, role_id):
-        return self.assignment.delete_role(role_id)
-
-    def delete_project(self, tenant_id):
-        return self.assignment.delete_project(tenant_id)
-
     def remove_role_from_user_and_project(self, user_id,
-                                          tenant_id, role_id):
+                                     tenant_id, role_id):
         return (self.assignment_api.remove_role_from_user_and_project
                 (user_id, tenant_id, role_id))
 
-    def update_role(self, role_id, role):
-        return self.assignment.update_role(role_id, role)
-
-    def create_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None):
-        return (self.assignment_api.create_grant
-                (role_id, user_id, group_id, domain_id, project_id))
-
-    def list_grants(self, user_id=None, group_id=None,
-                    domain_id=None, project_id=None):
-        return (self.assignment_api.list_grants
-                (user_id, group_id, domain_id, project_id))
-
-    def get_grant(self, role_id, user_id=None, group_id=None,
-                  domain_id=None, project_id=None):
-        return (self.assignment_api.get_grant
-                (role_id, user_id, group_id, domain_id, project_id))
-
-    def delete_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None):
-        return (self.assignment_api.delete_grant
-                (role_id, user_id, group_id, domain_id, project_id))
+    def create_role(self, role_id, role):
+        return self.assignment.create_role(role_id, role)
 
     def create_domain(self, domain_id, domain):
         return self.assignment.create_domain(domain_id, domain)
@@ -231,10 +191,25 @@ class Manager(manager.Manager):
     def remove_user_from_project(self, tenant_id, user_id):
         return self.assignment.remove_user_from_project(tenant_id, user_id)
 
-    def update_metadata(self, user_id, tenant_id, metadata,
-                        domain_id=None, group_id=None):
-        return (self.assignment_api.update_metadata
-                (user_id, tenant_id, metadata, domain_id, group_id))
+    def create_grant(self, role_id, user_id=None, group_id=None,
+                     domain_id=None, project_id=None):
+        return (self.assignment.create_grant(role_id, user_id, group_id,
+            domain_id, project_id))
+
+    def list_grants(self, user_id=None, group_id=None,
+                    domain_id=None, project_id=None):
+        return (self.assignment.list_grants(user_id, group_id,
+            domain_id, project_id))
+
+    def get_grant(self, role_id, user_id=None, group_id=None,
+                  domain_id=None, project_id=None):
+        return (self.assignment.get_grant(role_id, user_id, group_id,
+            domain_id, project_id))
+
+    def delete_grant(self, role_id, user_id=None, group_id=None,
+                     domain_id=None, project_id=None):
+        return (self.assignment.delete_grant(role_id, user_id, group_id,
+            domain_id, project_id))
 
     def list_role_assignments(self):
         return self.assignment_api.list_role_assignments()
