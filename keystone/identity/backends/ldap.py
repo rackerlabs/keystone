@@ -97,30 +97,7 @@ class Identity(identity.Driver):
                 raise AssertionError('Invalid user / password')
         except Exception:
             raise AssertionError('Invalid user / password')
-        return user_ref
-
-    def authorize_for_project(self, user_ref, tenant_id=None):
-        user_id = user_ref['id']
-        tenant_ref = None
-        metadata_ref = {}
-
-        if tenant_id is not None:
-            if tenant_id not in self.get_projects_for_user(user_id):
-                raise AssertionError('Invalid tenant')
-
-            try:
-                tenant_ref = self.get_project(tenant_id)
-                # TODO(termie): this should probably be made into a
-                #               get roles call
-                metadata_ref = self.get_metadata(user_id, tenant_id)
-            except exception.ProjectNotFound:
-                tenant_ref = None
-                metadata_ref = {}
-            except exception.MetadataNotFound:
-                metadata_ref = {}
-
-        user_ref = self._set_default_domain(identity.filter_user(user_ref))
-        return (user_ref, tenant_ref, metadata_ref)
+        return self._set_default_domain(identity.filter_user(user_ref))
 
     def get_project(self, tenant_id):
         return self._set_default_domain(self.project.get(tenant_id))

@@ -69,8 +69,8 @@ class Manager(manager.Manager):
         :returns: (user_ref, tenant_ref, metadata_ref)
         :raises: AssertionError
         """
-        user_ref = self.driver.authenticate_user(user_id, password)
-        return self.driver.authorize_for_project(user_ref, tenant_id)
+        return self.driver.authenticate_user(user_id, password)
+#        return self.driver.authorize_for_project(user_ref, tenant_id)
 
     def create_user(self, user_id, user_ref):
         user = user_ref.copy()
@@ -112,13 +112,6 @@ class Driver(object):
     def authenticate_user(self, user_id, password):
         """Authenticate a given user and password.
         :returns: user_ref
-        :raises: AssertionError
-        """
-        raise exception.NotImplemented()
-
-    def authorize_for_project(self, tenant_id, user_ref):
-        """Authenticate a given user for a tenant.
-        :returns: (user_ref, tenant_ref, metadata_ref)
         :raises: AssertionError
         """
         raise exception.NotImplemented()

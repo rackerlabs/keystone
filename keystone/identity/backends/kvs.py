@@ -31,24 +31,7 @@ class Identity(kvs.Base, identity.Driver):
             raise AssertionError('Invalid user / password')
         if not utils.check_password(password, user_ref.get('password')):
             raise AssertionError('Invalid user / password')
-        return user_ref
-
-    def authorize_for_project(self, user_ref, tenant_id=None):
-        user_id = user_ref['id']
-        tenant_ref = None
-        metadata_ref = {}
-        if tenant_id is not None:
-            if tenant_id not in self.get_projects_for_user(user_id):
-                raise AssertionError('Invalid tenant')
-            try:
-                tenant_ref = self.get_project(tenant_id)
-                metadata_ref = self.get_metadata(user_id, tenant_id)
-            except exception.ProjectNotFound:
-                tenant_ref = None
-                metadata_ref = {}
-            except exception.MetadataNotFound:
-                metadata_ref = {}
-        return (identity.filter_user(user_ref), tenant_ref, metadata_ref)
+        return identity.filter_user(user_ref)
 
     def get_project(self, tenant_id):
         try:
