@@ -154,7 +154,7 @@ class Identity(sql.Base, identity.Driver):
         return utils.check_password(password, user_ref.password)
 
     # Identity interface
-    def authenticate_user(self, user_id=None, password=None):
+    def authenticate(self, user_id=None, password=None):
         session = self.get_session()
         user_ref = None
         try:
@@ -163,27 +163,7 @@ class Identity(sql.Base, identity.Driver):
             raise AssertionError('Invalid user / password')
         if not self._check_password(password, user_ref):
             raise AssertionError('Invalid user / password')
-        return user_ref
-
-    def authorize_for_project(self, user_ref, tenant_id=None):
-        user_id = user_ref['id']
-        tenant_ref = None
-        metadata_ref = {}
-        if tenant_id is not None:
-            # FIXME(gyee): this should really be
-            # get_roles_for_user_and_project() after the dusts settle
-            if tenant_id not in self.get_projects_for_user(user_id):
-                raise AssertionError('Invalid project')
-            try:
-                tenant_ref = self.get_project(tenant_id)
-                metadata_ref = self.get_metadata(user_id, tenant_id)
-            except exception.ProjectNotFound:
-                tenant_ref = None
-                metadata_ref = {}
-            except exception.MetadataNotFound:
-                metadata_ref = {}
-        user_ref = identity.filter_user(user_ref.to_dict())
-        return (user_ref, tenant_ref, metadata_ref)
+        return identity.filter_user(user_ref.to_dict())
 
     def _get_project(self, session, project_id):
         project_ref = session.query(Project).get(project_id)
@@ -225,8 +205,8 @@ class Identity(sql.Base, identity.Driver):
             user_refs.append(identity.filter_user(user_ref.to_dict()))
         return user_refs
 
-    def get_metadata(self, user_id=None, tenant_id=None,
-                     domain_id=None, group_id=None):
+    def _get_metadata(self, user_id=None, tenant_id=None,
+                      domain_id=None, group_id=None):
         session = self.get_session()
 
         if user_id:
@@ -264,8 +244,8 @@ class Identity(sql.Base, identity.Driver):
             self._get_project(session, project_id)
 
         try:
-            metadata_ref = self.get_metadata(user_id, project_id,
-                                             domain_id, group_id)
+            metadata_ref = self._get_metadata(user_id, project_id,
+                                              domain_id, group_id)
             is_new = False
         except exception.MetadataNotFound:
             metadata_ref = {}
@@ -274,11 +254,11 @@ class Identity(sql.Base, identity.Driver):
         roles.add(role_id)
         metadata_ref['roles'] = list(roles)
         if is_new:
-            self.create_metadata(user_id, project_id, metadata_ref,
-                                 domain_id, group_id)
+            self._create_metadata(user_id, project_id, metadata_ref,
+                                  domain_id, group_id)
         else:
-            self.update_metadata(user_id, project_id, metadata_ref,
-                                 domain_id, group_id)
+            self._update_metadata(user_id, project_id, metadata_ref,
+                                  domain_id, group_id)
 
     def list_grants(self, user_id=None, group_id=None,
                     domain_id=None, project_id=None):
@@ -293,8 +273,8 @@ class Identity(sql.Base, identity.Driver):
             self._get_project(session, project_id)
 
         try:
-            metadata_ref = self.get_metadata(user_id, project_id,
-                                             domain_id, group_id)
+            metadata_ref = self._get_metadata(user_id, project_id,
+                                              domain_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
         return [self.get_role(x) for x in metadata_ref.get('roles', [])]
@@ -313,8 +293,8 @@ class Identity(sql.Base, identity.Driver):
             self._get_project(session, project_id)
 
         try:
-            metadata_ref = self.get_metadata(user_id, project_id,
-                                             domain_id, group_id)
+            metadata_ref = self._get_metadata(user_id, project_id,
+                                              domain_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
         role_ids = set(metadata_ref.get('roles', []))
@@ -336,8 +316,8 @@ class Identity(sql.Base, identity.Driver):
             self._get_project(session, project_id)
 
         try:
-            metadata_ref = self.get_metadata(user_id, project_id,
-                                             domain_id, group_id)
+            metadata_ref = self._get_metadata(user_id, project_id,
+                                              domain_id, group_id)
             is_new = False
         except exception.MetadataNotFound:
             metadata_ref = {}
@@ -349,11 +329,11 @@ class Identity(sql.Base, identity.Driver):
             raise exception.RoleNotFound(role_id=role_id)
         metadata_ref['roles'] = list(roles)
         if is_new:
-            self.create_metadata(user_id, project_id, metadata_ref,
-                                 domain_id, group_id)
+            self._create_metadata(user_id, project_id, metadata_ref,
+                                  domain_id, group_id)
         else:
-            self.update_metadata(user_id, project_id, metadata_ref,
-                                 domain_id, group_id)
+            self._update_metadata(user_id, project_id, metadata_ref,
+                                  domain_id, group_id)
 
     def list_projects(self):
         session = self.get_session()
@@ -374,7 +354,7 @@ class Identity(sql.Base, identity.Driver):
         self._get_project(session, tenant_id)
         self._get_role(session, role_id)
         try:
-            metadata_ref = self.get_metadata(user_id, tenant_id)
+            metadata_ref = self._get_metadata(user_id, tenant_id)
             is_new = False
         except exception.MetadataNotFound:
             metadata_ref = {}
@@ -387,13 +367,13 @@ class Identity(sql.Base, identity.Driver):
         roles.add(role_id)
         metadata_ref['roles'] = list(roles)
         if is_new:
-            self.create_metadata(user_id, tenant_id, metadata_ref)
+            self._create_metadata(user_id, tenant_id, metadata_ref)
         else:
-            self.update_metadata(user_id, tenant_id, metadata_ref)
+            self._update_metadata(user_id, tenant_id, metadata_ref)
 
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         try:
-            metadata_ref = self.get_metadata(user_id, tenant_id)
+            metadata_ref = self._get_metadata(user_id, tenant_id)
             roles = set(metadata_ref.get('roles', []))
             if role_id not in roles:
                 raise exception.RoleNotFound(message=_(
@@ -402,7 +382,7 @@ class Identity(sql.Base, identity.Driver):
             roles.remove(role_id)
             metadata_ref['roles'] = list(roles)
             if len(roles):
-                self.update_metadata(user_id, tenant_id, metadata_ref)
+                self._update_metadata(user_id, tenant_id, metadata_ref)
             else:
                 session = self.get_session()
                 q = session.query(UserProjectGrant)
@@ -467,8 +447,8 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
 
     @sql.handle_conflicts(type='metadata')
-    def create_metadata(self, user_id, tenant_id, metadata,
-                        domain_id=None, group_id=None):
+    def _create_metadata(self, user_id, tenant_id, metadata,
+                         domain_id=None, group_id=None):
         session = self.get_session()
         with session.begin():
             if user_id:
@@ -493,8 +473,8 @@ class Identity(sql.Base, identity.Driver):
         return metadata
 
     @sql.handle_conflicts(type='metadata')
-    def update_metadata(self, user_id, tenant_id, metadata,
-                        domain_id=None, group_id=None):
+    def _update_metadata(self, user_id, tenant_id, metadata,
+                         domain_id=None, group_id=None):
         session = self.get_session()
         with session.begin():
             if user_id:

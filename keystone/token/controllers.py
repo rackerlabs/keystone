@@ -207,17 +207,10 @@ class Auth(controller.V2Controller):
         else:
             current_user_ref = self.identity_api.get_user(user_id)
 
+        metadata_ref = {}
         tenant_id = self._get_project_id_from_auth(auth)
-
-        tenant_ref = self._get_project_ref(user_id, tenant_id)
-        metadata_ref = self._get_metadata_ref(user_id, tenant_id)
-
-        # TODO(henry-nash): If no tenant was specified, instead check for a
-        # domain and find any related user/group roles
-
-        self._append_roles(metadata_ref,
-                           self._get_group_metadata_ref(
-                               context, user_id, tenant_id))
+        tenant_ref, metadata_ref['roles'] = self._get_project_roles_and_ref(
+            user_id, tenant_id)
 
         expiry = old_token_ref['expires']
         if CONF.trust.enabled and 'trust_id' in auth:
@@ -283,27 +276,17 @@ class Auth(controller.V2Controller):
             except exception.UserNotFound as e:
                 raise exception.Unauthorized(e)
 
-        tenant_id = self._get_project_id_from_auth(auth)
-
         try:
-            auth_info = self.identity_api.authenticate(
+            user_ref = self.identity_api.authenticate(
                 user_id=user_id,
-                password=password,
-                tenant_id=tenant_id)
+                password=password)
         except AssertionError as e:
             raise exception.Unauthorized(e)
-        (user_ref, tenant_ref, metadata_ref) = auth_info
 
-        # By now we will have authorized and if a tenant/project was
-        # specified, we will have obtained its metadata.  In this case
-        # we just need to add in any group roles.
-        #
-        # TODO(henry-nash): If no tenant was specified, instead check for a
-        # domain and find any related user/group roles
-
-        self._append_roles(metadata_ref,
-                           self._get_group_metadata_ref(
-                               context, user_id, tenant_id))
+        metadata_ref = {}
+        tenant_id = self._get_project_id_from_auth(auth)
+        tenant_ref, metadata_ref['roles'] = self._get_project_roles_and_ref(
+            user_id, tenant_id)
 
         expiry = core.default_expire_time()
         return (user_ref, tenant_ref, metadata_ref, expiry)
@@ -324,17 +307,10 @@ class Auth(controller.V2Controller):
         except exception.UserNotFound as e:
             raise exception.Unauthorized(e)
 
+        metadata_ref = {}
         tenant_id = self._get_project_id_from_auth(auth)
-
-        tenant_ref = self._get_project_ref(user_id, tenant_id)
-        metadata_ref = self._get_metadata_ref(user_id, tenant_id)
-
-        # TODO(henry-nash): If no tenant was specified, instead check for a
-        # domain and find any related user/group roles
-
-        self._append_roles(metadata_ref,
-                           self._get_group_metadata_ref(
-                               context, user_id, tenant_id))
+        tenant_ref, metadata_ref['roles'] = self._get_project_roles_and_ref(
+            user_id, tenant_id)
 
         expiry = core.default_expire_time()
         return (user_ref, tenant_ref, metadata_ref, expiry)
@@ -405,40 +381,26 @@ class Auth(controller.V2Controller):
                 exception.Unauthorized(e)
         return tenant_ref
 
-    def _get_metadata_ref(self, user_id=None, tenant_id=None, domain_id=None,
-                          group_id=None):
-        """Returns metadata_ref for a user or group in a tenant or domain."""
+    def _get_project_roles_and_ref(self, user_id, tenant_id):
+        """Returns the project roles for this user, and the project ref."""
 
-        metadata_ref = {}
-        if (user_id or group_id) and (tenant_id or domain_id):
+        tenant_ref = None
+        role_list = []
+        if tenant_id:
             try:
-                metadata_ref = self.identity_api.get_metadata(
-                    user_id=user_id, tenant_id=tenant_id,
-                    domain_id=domain_id, group_id=group_id)
-            except exception.MetadataNotFound:
-                pass
-        return metadata_ref
+                tenant_ref = self.identity_api.get_project(tenant_id)
+                role_list = self.identity_api.get_roles_for_user_and_project(
+                    user_id, tenant_id)
+            except exception.ProjectNotFound as e:
+                exception.Unauthorized(e)
 
-    def _get_group_metadata_ref(self, context, user_id,
-                                tenant_id=None, domain_id=None):
-        """Return any metadata for this project/domain due to group grants."""
-        group_refs = self.identity_api.list_groups_for_user(user_id)
-        metadata_ref = {}
-        for x in group_refs:
-            metadata_ref.update(self._get_metadata_ref(
-                group_id=x['id'], tenant_id=tenant_id, domain_id=domain_id))
-        return metadata_ref
+            if len(role_list) == 0:
+                msg = 'User %s is unauthorized for tenant %s' % (
+                    user_id, tenant_id)
+                LOG.warning(msg)
+                raise exception.Unauthorized(msg)
 
-    def _append_roles(self, metadata, additional_metadata):
-        """Add additional roles to the roles in metadata.
-
-        The final set of roles represents the union of existing roles and
-        additional roles.
-        """
-
-        first = set(metadata.get('roles', []))
-        second = set(additional_metadata.get('roles', []))
-        metadata['roles'] = list(first.union(second))
+        return (tenant_ref, role_list)
 
     def _get_token_ref(self, token_id, belongs_to=None):
         """Returns a token if a valid one exists.
