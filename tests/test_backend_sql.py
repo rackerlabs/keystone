@@ -320,3 +320,7 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
 
 class SqlPolicy(SqlTests, test_backend.PolicyTests):
     pass
+
+
+class SqlInheritance(SqlTests, test_backend.InheritanceTests):
+    pass
