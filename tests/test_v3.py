@@ -330,7 +330,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
                 links['previous'])
 
     def assertValidListResponse(self, resp, key, entity_validator, ref=None,
-                                expected_length=None):
+                                expected_length=None, keys_to_check=None):
         """Make assertions common to all API list responses.
 
         If a reference is provided, it's ID will be searched for in the
@@ -351,11 +351,12 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
         for entity in entities:
             self.assertIsNotNone(entity)
-            self.assertValidEntity(entity)
+            self.assertValidEntity(entity, keys_to_check=keys_to_check)
             entity_validator(entity)
         if ref:
             entity = [x for x in entities if x['id'] == ref['id']][0]
-            self.assertValidEntity(entity, ref)
+            self.assertValidEntity(entity, ref=ref,
+                                   keys_to_check=keys_to_check)
             entity_validator(entity, ref)
         return entities
 
@@ -364,17 +365,21 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         """Make assertions common to all API responses."""
         entity = resp.result.get(key)
         self.assertIsNotNone(entity)
-        self.assertValidEntity(entity, *args, **kwargs)
+        keys = kwargs.pop('keys_to_check', None)
+        self.assertValidEntity(entity, keys_to_check=keys, *args, **kwargs)
         entity_validator(entity, *args, **kwargs)
         return entity
 
-    def assertValidEntity(self, entity, ref=None):
+    def assertValidEntity(self, entity, ref=None, keys_to_check=None):
         """Make assertions common to all API entities.
 
         If a reference is provided, the entity will also be compared against
         the reference.
         """
-        keys = ['name', 'description', 'enabled']
+        if keys_to_check:
+            keys = keys_to_check
+        else:
+            keys = ['name', 'description', 'enabled']
 
         for k in ['id'] + keys:
             msg = '%s unexpectedly None in %s' % (k, entity)
@@ -697,6 +702,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             resp,
             'roles',
             self.assertValidRole,
+            keys_to_check=['name'],
             *args,
             **kwargs)
 
@@ -705,6 +711,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             resp,
             'role',
             self.assertValidRole,
+            keys_to_check=['name'],
             *args,
             **kwargs)
 
