@@ -147,7 +147,7 @@ class Assignment(assignment.Driver):
         metadata_ref = _get_roles_for_just_user_and_project(user_id, tenant_id)
         if not metadata_ref:
             return {}
-        return {'roles': metadata_ref}
+        return {'roles': [self._role_to_dict(r, False) for r in metadata_ref]}
 
     def get_role(self, role_id):
         return self.role.get(role_id)
@@ -192,6 +192,9 @@ class Assignment(assignment.Driver):
             role_dn=role_dn,
             user_dn=user_dn,
             tenant_dn=tenant_dn)
+
+    def _list_projects_for_domain(self, domain_id):
+        return [x['id'] for x in self.list_projects()]
 
     def _create_metadata(self, user_id, tenant_id, metadata):
         return {}

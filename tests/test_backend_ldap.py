@@ -584,6 +584,10 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         raise nose.exc.SkipTest(
             'N/A: LDAP does not support multiple domains')
 
+    def test_list_projects_for_alternate_domain(self):
+        raise nose.exc.SkipTest(
+            'N/A: LDAP does not support multiple domains')
+
     def test_move_group_between_domains_with_clashing_names_fails(self):
         raise nose.exc.SkipTest('Blocked by bug 1101276')
 
