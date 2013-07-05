@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//Qw8\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1177,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-05T19:04:43Z",
+      "side": 1,
+      "message": "Agreed - I have made this a separate test.",
+      "parentUuid": "AAAAPn//Q24\u003d",
+      "revId": "9131a3e6746698c4cd4b225d46adb7e867f8c28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//Q20\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-05T18:15:58Z",
       "side": 1,
       "message": "delete rather than commenting out",
+      "revId": "9131a3e6746698c4cd4b225d46adb7e867f8c28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Qww\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-05T19:04:43Z",
+      "side": 1,
+      "message": "oops, missed that..thanks.",
+      "parentUuid": "AAAAPn//Q20\u003d",
       "revId": "9131a3e6746698c4cd4b225d46adb7e867f8c28d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
