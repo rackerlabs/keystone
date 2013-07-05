@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//Q6k\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-07-05T17:48:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//USA\u003d",
+      "revId": "8a435dd7b0bae83f1f7c58512cd1c7629e2772c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//UQc\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-04T06:36:38Z",
       "side": 1,
       "message": "This may have been discussed already, but what is this authorization supposed to mean? \n\nWe are getting the catalog for the X-Auth-Token and there are no policy_api implications for this? Shouldn\u0027t this get the catalog for X-Subject-Token and probably X-Auth-Token if not present?",
+      "revId": "8a435dd7b0bae83f1f7c58512cd1c7629e2772c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Q6Y\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-07-05T17:48:40Z",
+      "side": 1,
+      "message": "X-Subject-Token is only for the token related operations (as far as I understand it).\nThe X-Auth-Token will be passed and must be associated to a project scoped token so then I can retrieve the user_id and project_id required to produce a catalog.",
+      "parentUuid": "AAAAPn//UQc\u003d",
       "revId": "8a435dd7b0bae83f1f7c58512cd1c7629e2772c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
