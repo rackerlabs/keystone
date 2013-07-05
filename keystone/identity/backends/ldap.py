@@ -74,6 +74,7 @@ class Identity(identity.Driver):
                 raise AssertionError('Invalid user / password')
         except Exception:
             raise AssertionError('Invalid user / password')
+
         return self.assignment._set_default_domain(
             identity.filter_user(user_ref))
 
