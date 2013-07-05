@@ -29,6 +29,8 @@ import copy
 import json
 import uuid
 
+import nose.exc
+
 from migrate.versioning import api as versioning_api
 import sqlalchemy
 
@@ -823,6 +825,215 @@ class SqlUpgradeTests(test.TestCase):
         self.assertEqual(ref.url, endpoint['url'])
         self.assertEqual(ref.legacy_endpoint_id, legacy_endpoint_id)
         self.assertEqual(ref.extra, '{}')
+
+    def test_assignment_metadata_migration(self):
+
+        if self.engine.name == 'sqlite':
+            raise nose.exc.SkipTest('sqlite migrations no longer supported')
+
+        self.upgrade(27)
+        # Scaffolding
+        session = self.Session()
+        domain_table = sqlalchemy.Table('domain', self.metadata, autoload=True)
+        user_table = sqlalchemy.Table('user', self.metadata, autoload=True)
+        group_table = sqlalchemy.Table('group', self.metadata, autoload=True)
+        role_table = sqlalchemy.Table('role', self.metadata, autoload=True)
+        project_table = sqlalchemy.Table(
+            'project', self.metadata, autoload=True)
+        user_project_metadata_table = sqlalchemy.Table(
+            'user_project_metadata', self.metadata, autoload=True)
+        user_domain_metadata_table = sqlalchemy.Table(
+            'user_domain_metadata', self.metadata, autoload=True)
+        group_project_metadata_table = sqlalchemy.Table(
+            'group_project_metadata', self.metadata, autoload=True)
+        group_domain_metadata_table = sqlalchemy.Table(
+            'group_domain_metadata', self.metadata, autoload=True)
+
+        # Create a Domain
+        domain = {'id': uuid.uuid4().hex,
+                  'name': uuid.uuid4().hex,
+                  'enabled': True}
+        session.execute(domain_table.insert().values(domain))
+
+        # Create anther Domain
+        domain2 = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'enabled': True}
+        session.execute(domain_table.insert().values(domain2))
+
+        # Create a Project
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'domain_id': domain['id'],
+                   'extra': "{}"}
+        session.execute(project_table.insert().values(project))
+
+        # Create another Project
+        project2 = {'id': uuid.uuid4().hex,
+                    'name': uuid.uuid4().hex,
+                    'domain_id': domain['id'],
+                    'extra': "{}"}
+        session.execute(project_table.insert().values(project2))
+
+        # Create a User
+        user = {'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex,
+                'domain_id': domain['id'],
+                'password': uuid.uuid4().hex,
+                'enabled': True,
+                'extra': json.dumps({})}
+        session.execute(user_table.insert().values(user))
+
+        # Create a Group
+        group = {'id': uuid.uuid4().hex,
+                 'name': uuid.uuid4().hex,
+                 'domain_id': domain['id'],
+                 'extra': json.dumps({})}
+        session.execute(group_table.insert().values(group))
+
+        # Create roles
+        role_list = []
+        for _ in range(7):
+            role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+            session.execute(role_table.insert().values(role))
+            role_list.append(role)
+
+        # Grant Role to User on Project
+        role_grant = {'user_id': user['id'],
+                      'project_id': project['id'],
+                      'data': json.dumps({'roles': [role_list[0]['id']]})}
+        session.execute(
+            user_project_metadata_table.insert().values(role_grant))
+
+        role_grant = {'user_id': user['id'],
+                      'project_id': project2['id'],
+                      'data': json.dumps({'roles': [role_list[1]['id']]})}
+        session.execute(
+            user_project_metadata_table.insert().values(role_grant))
+
+        # Grant Role to Group on different Project
+        role_grant = {'group_id': group['id'],
+                      'project_id': project2['id'],
+                      'data': json.dumps({'roles': [role_list[2]['id']]})}
+        session.execute(
+            group_project_metadata_table.insert().values(role_grant))
+
+        # Grant Role to User on Domain
+        role_grant = {'user_id': user['id'],
+                      'domain_id': domain['id'],
+                      'data': json.dumps({'roles': [role_list[3]['id']]})}
+        session.execute(user_domain_metadata_table.insert().values(role_grant))
+
+        # Grant Role to Group on Domain
+        role_grant = {'group_id': group['id'],
+                      'domain_id': domain['id'],
+                      'data': json.dumps(
+                          {'roles': [role_list[4]['id']],
+                           'other': 'somedata'})}
+        session.execute(
+            group_domain_metadata_table.insert().values(role_grant))
+
+        session.commit()
+
+        self.upgrade(28)
+
+        r = session.execute('select data from user_project_metadata where '
+                            'user_id=:user and project_id=:project',
+                            {'user': user['id'], 'project': project['id']})
+
+        data = json.loads(r.fetchone()['data'])
+        self.assertEqual(len(data['roles']), 1)
+        self.assertIn({'id': role_list[0]['id']}, data['roles'])
+
+        r = session.execute('select data from user_project_metadata where '
+                            'user_id=:user and project_id=:project',
+                            {'user': user['id'], 'project': project2['id']})
+
+        data = json.loads(r.fetchone()['data'])
+        self.assertEqual(len(data['roles']), 1)
+        self.assertIn({'id': role_list[1]['id']}, data['roles'])
+
+        r = session.execute('select data from group_project_metadata where '
+                            'group_id=:group and project_id=:project',
+                            {'group': group['id'], 'project': project2['id']})
+        data = json.loads(r.fetchone()['data'])
+        self.assertEqual(len(data['roles']), 1)
+        self.assertIn({'id': role_list[2]['id']}, data['roles'])
+
+        r = session.execute('select data from user_domain_metadata where '
+                            'user_id=:user and domain_id=:domain',
+                            {'user': user['id'], 'domain': domain['id']})
+        data = json.loads(r.fetchone()['data'])
+        self.assertEqual(len(data['roles']), 1)
+        self.assertIn({'id': role_list[3]['id']}, data['roles'])
+
+        r = session.execute('select data from group_domain_metadata where '
+                            'group_id=:group and domain_id=:domain',
+                            {'group': group['id'], 'domain': domain['id']})
+        data = json.loads(r.fetchone()['data'])
+        self.assertEqual(len(data['roles']), 1)
+        self.assertIn({'id': role_list[4]['id']}, data['roles'])
+        self.assertIn('other', data)
+
+        # Now add an entry that has one regular and one inherited role
+        role_grant = {'user_id': user['id'],
+                      'domain_id': domain2['id'],
+                      'data': json.dumps(
+                          {'roles': [{'id': role_list[5]['id']},
+                                     {'id': role_list[6]['id'],
+                                      'inherited_to': 'projects'}]})}
+        session.execute(user_domain_metadata_table.insert().values(role_grant))
+
+        session.commit()
+        self.downgrade(27)
+
+        r = session.execute('select data from user_project_metadata where '
+                            'user_id=:user and project_id=:project',
+                            {'user': user['id'], 'project': project['id']})
+
+        data = json.loads(r.fetchone()['data'])
+        self.assertEqual(len(data['roles']), 1)
+        self.assertIn(role_list[0]['id'], data['roles'])
+
+        r = session.execute('select data from user_project_metadata where '
+                            'user_id=:user and project_id=:project',
+                            {'user': user['id'], 'project': project2['id']})
+
+        data = json.loads(r.fetchone()['data'])
+        self.assertEqual(len(data['roles']), 1)
+        self.assertIn(role_list[1]['id'], data['roles'])
+
+        r = session.execute('select data from group_project_metadata where '
+                            'group_id=:group and project_id=:project',
+                            {'group': group['id'], 'project': project2['id']})
+        data = json.loads(r.fetchone()['data'])
+        self.assertEqual(len(data['roles']), 1)
+        self.assertIn(role_list[2]['id'], data['roles'])
+
+        r = session.execute('select data from user_domain_metadata where '
+                            'user_id=:user and domain_id=:domain',
+                            {'user': user['id'], 'domain': domain['id']})
+        data = json.loads(r.fetchone()['data'])
+        self.assertEqual(len(data['roles']), 1)
+        self.assertIn(role_list[3]['id'], data['roles'])
+
+        r = session.execute('select data from group_domain_metadata where '
+                            'group_id=:group and domain_id=:domain',
+                            {'group': group['id'], 'domain': domain['id']})
+        data = json.loads(r.fetchone()['data'])
+        self.assertEqual(len(data['roles']), 1)
+        self.assertIn(role_list[4]['id'], data['roles'])
+        self.assertIn('other', data)
+
+        # For user-domain2, where we had one regular and one inherited role,
+        # only the direct role should remain, the inherited role should
+        # have been deleted during the downgrade
+        r = session.execute('select data from user_domain_metadata where '
+                            'user_id=:user and domain_id=:domain',
+                            {'user': user['id'], 'domain': domain2['id']})
+        data = json.loads(r.fetchone()['data'])
+        self.assertEqual(len(data['roles']), 1)
+        self.assertIn(role_list[5]['id'], data['roles'])
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
