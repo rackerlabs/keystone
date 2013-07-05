@@ -138,12 +138,12 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
         self.identity_api.create_user('fake', user)
-        self.identity_api.create_metadata(user['id'],
-                                          self.tenant_bar['id'],
-                                          {'extra': 'extra'})
+        self.identity_api._create_metadata(user['id'],
+                                           self.tenant_bar['id'],
+                                           {'extra': 'extra'})
         self.identity_api.delete_user(user['id'])
         self.assertRaises(exception.MetadataNotFound,
-                          self.identity_api.get_metadata,
+                          self.identity_api._get_metadata,
                           user['id'],
                           self.tenant_bar['id'])
 
@@ -153,12 +153,12 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
         self.identity_api.create_user('fake', user)
-        self.identity_api.create_metadata(user['id'],
-                                          self.tenant_bar['id'],
-                                          {'extra': 'extra'})
+        self.identity_api._create_metadata(user['id'],
+                                           self.tenant_bar['id'],
+                                           {'extra': 'extra'})
         self.identity_api.delete_project(self.tenant_bar['id'])
         self.assertRaises(exception.MetadataNotFound,
-                          self.identity_api.get_metadata,
+                          self.identity_api._get_metadata,
                           user['id'],
                           self.tenant_bar['id'])
 

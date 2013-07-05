@@ -282,9 +282,9 @@ class TestCase(NoModule, unittest.TestCase):
                 #               so this may be futile
                 del metadata_ref['user_id']
                 del metadata_ref['tenant_id']
-                rv = self.identity_api.create_metadata(metadata['user_id'],
-                                                       metadata['tenant_id'],
-                                                       metadata_ref)
+                rv = self.identity_api._create_metadata(metadata['user_id'],
+                                                        metadata['tenant_id'],
+                                                        metadata_ref)
                 setattr(self,
                         'metadata_%s%s' % (metadata['user_id'],
                                            metadata['tenant_id']), rv)
