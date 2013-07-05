@@ -65,14 +65,6 @@ class PamIdentity(identity.Driver):
         user = {'id': user_id, 'name': user_id}
         return user
 
-    def authorize_for_project(self, user_ref, tenant_id=None):
-        user_id = user_ref['id']
-        metadata = {}
-        if user_id == 'root':
-            metadata['is_admin'] = True
-        tenant = {'id': user_id, 'name': user_id}
-        return (user_ref, tenant, metadata)
-
     def get_project(self, tenant_id):
         return {'id': tenant_id, 'name': tenant_id}
 
