@@ -51,7 +51,7 @@ class CompatTestCase(test.TestCase):
         #               is all working
         # TODO(termie): add an admin user to the fixtures and use that user
         # override the fixtures, for now
-        self.metadata_foobar = self.identity_api.update_metadata(
+        self.metadata_foobar = self.identity_api._update_metadata(
             self.user_foo['id'], self.tenant_bar['id'],
             dict(roles=[self.role_admin['id']], is_admin='1'))
 
