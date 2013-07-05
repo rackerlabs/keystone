@@ -231,7 +231,8 @@ class Identity(sql.Base, identity.Driver):
             raise exception.MetadataNotFound()
 
     def create_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None):
+                     domain_id=None, project_id=None,
+                     inherited_to_projects=False):
         session = self.get_session()
         self._get_role(session, role_id)
         if user_id:
@@ -250,9 +251,10 @@ class Identity(sql.Base, identity.Driver):
         except exception.MetadataNotFound:
             metadata_ref = {}
             is_new = True
-        roles = set(metadata_ref.get('roles', []))
-        roles.add(role_id)
-        metadata_ref['roles'] = list(roles)
+
+        metadata_ref['roles'] = self._add_role_to_role_dicts(
+            role_id, inherited_to_projects, metadata_ref.get('roles', []))
+
         if is_new:
             self._create_metadata(user_id, project_id, metadata_ref,
                                   domain_id, group_id)
@@ -261,7 +263,8 @@ class Identity(sql.Base, identity.Driver):
                                   domain_id, group_id)
 
     def list_grants(self, user_id=None, group_id=None,
-                    domain_id=None, project_id=None):
+                    domain_id=None, project_id=None,
+                    inherited_to_projects=False):
         session = self.get_session()
         if user_id:
             self._get_user(session, user_id)
@@ -277,10 +280,14 @@ class Identity(sql.Base, identity.Driver):
                                               domain_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
-        return [self.get_role(x) for x in metadata_ref.get('roles', [])]
+
+        return [self.get_role(x) for x in
+                self._roles_from_role_dicts(metadata_ref.get('roles', []),
+                                            inherited_to_projects)]
 
     def get_grant(self, role_id, user_id=None, group_id=None,
-                  domain_id=None, project_id=None):
+                  domain_id=None, project_id=None,
+                  inherited_to_projects=False):
         session = self.get_session()
         role_ref = self._get_role(session, role_id)
         if user_id:
@@ -297,13 +304,15 @@ class Identity(sql.Base, identity.Driver):
                                               domain_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
-        role_ids = set(metadata_ref.get('roles', []))
+        role_ids = set(self._roles_from_role_dicts(
+            metadata_ref.get('roles', []), inherited_to_projects))
         if role_id not in role_ids:
             raise exception.RoleNotFound(role_id=role_id)
         return role_ref.to_dict()
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None):
+                     domain_id=None, project_id=None,
+                     inherited_to_projects=False):
         session = self.get_session()
         self._get_role(session, role_id)
         if user_id:
@@ -322,13 +331,17 @@ class Identity(sql.Base, identity.Driver):
         except exception.MetadataNotFound:
             metadata_ref = {}
             is_new = True
-        roles = set(metadata_ref.get('roles', []))
+
         try:
-            roles.remove(role_id)
+            metadata_ref['roles'] = self._remove_role_from_role_dicts(
+                role_id, inherited_to_projects, metadata_ref.get('roles', []))
         except KeyError:
             raise exception.RoleNotFound(role_id=role_id)
-        metadata_ref['roles'] = list(roles)
+
         if is_new:
+            # TODO(henry-nash) It seems odd that you would create a new
+            # entry in response to trying to delete a role that was not
+            # assigned.  Although benign, this should probably be removed.
             self._create_metadata(user_id, project_id, metadata_ref,
                                   domain_id, group_id)
         else:
@@ -359,13 +372,16 @@ class Identity(sql.Base, identity.Driver):
         except exception.MetadataNotFound:
             metadata_ref = {}
             is_new = True
-        roles = set(metadata_ref.get('roles', []))
-        if role_id in roles:
+
+        try:
+            metadata_ref['roles'] = self._add_role_to_role_dicts(
+                role_id, False, metadata_ref.get('roles', []),
+                allow_existing=False)
+        except KeyError:
             msg = ('User %s already has role %s in tenant %s'
                    % (user_id, role_id, tenant_id))
             raise exception.Conflict(type='role grant', details=msg)
-        roles.add(role_id)
-        metadata_ref['roles'] = list(roles)
+
         if is_new:
             self._create_metadata(user_id, tenant_id, metadata_ref)
         else:
@@ -374,14 +390,15 @@ class Identity(sql.Base, identity.Driver):
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         try:
             metadata_ref = self._get_metadata(user_id, tenant_id)
-            roles = set(metadata_ref.get('roles', []))
-            if role_id not in roles:
+            try:
+                metadata_ref['roles'] = self._remove_role_from_role_dicts(
+                    role_id, False, metadata_ref.get('roles', []))
+            except KeyError:
                 raise exception.RoleNotFound(message=_(
                     'Cannot remove role that has not been granted, %s') %
                     role_id)
-            roles.remove(role_id)
-            metadata_ref['roles'] = list(roles)
-            if len(roles):
+
+            if len(metadata_ref['roles']):
                 self._update_metadata(user_id, tenant_id, metadata_ref)
             else:
                 session = self.get_session()

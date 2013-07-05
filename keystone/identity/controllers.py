@@ -747,6 +747,16 @@ class RoleV3(controller.V3Controller):
             msg = 'Specify a user or group, not both'
             raise exception.ValidationError(msg)
 
+    def _check_if_inherited(self, context):
+        result = False
+        if context['path'].startswith('OS-INHERIT'):
+            if not CONF.os_inerit.enabled:
+                raise exception.Forbidden(
+                    _('OS-INERIT Extension is disabled.'))
+            if context['path'].endswith('inherited_to_projects'):
+                result = True
+        return result
+
     @controller.protected
     def create_grant(self, context, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None):
@@ -755,7 +765,8 @@ class RoleV3(controller.V3Controller):
         self._require_user_xor_group(user_id, group_id)
 
         self.identity_api.create_grant(
-            role_id, user_id, group_id, domain_id, project_id)
+            role_id, user_id, group_id, domain_id, project_id,
+            self._check_if_inherited(context))
 
     @controller.protected
     def list_grants(self, context, user_id=None, group_id=None,
@@ -765,7 +776,8 @@ class RoleV3(controller.V3Controller):
         self._require_user_xor_group(user_id, group_id)
 
         refs = self.identity_api.list_grants(
-            user_id, group_id, domain_id, project_id)
+            user_id, group_id, domain_id, project_id,
+            self._check_if_inherited(context))
         return RoleV3.wrap_collection(context, refs)
 
     @controller.protected
@@ -776,7 +788,8 @@ class RoleV3(controller.V3Controller):
         self._require_user_xor_group(user_id, group_id)
 
         self.identity_api.get_grant(
-            role_id, user_id, group_id, domain_id, project_id)
+            role_id, user_id, group_id, domain_id, project_id,
+            self._check_if_inherited(context))
 
     @controller.protected
     def revoke_grant(self, context, role_id, user_id=None, group_id=None,
@@ -786,7 +799,8 @@ class RoleV3(controller.V3Controller):
         self._require_user_xor_group(user_id, group_id)
 
         self.identity_api.delete_grant(
-            role_id, user_id, group_id, domain_id, project_id)
+            role_id, user_id, group_id, domain_id, project_id,
+            self._check_if_inherited(context))
 
         # Now delete any tokens for this user or, in the case of a group,
         # tokens from all the uses who are members of this group.
