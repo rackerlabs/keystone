@@ -63,15 +63,6 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.identity.driver)
 
-    def authenticate(self, user_id=None, tenant_id=None, password=None):
-        """Authenticate a given user and password and
-        authorize them for a tenant.
-        :returns: (user_ref, tenant_ref, metadata_ref)
-        :raises: AssertionError
-        """
-        user_ref = self.driver.authenticate_user(user_id, password)
-        return self.driver.authorize_for_project(user_ref, tenant_id)
-
     def create_user(self, user_id, user_ref):
         user = user_ref.copy()
         user['name'] = clean.user_name(user['name'])
@@ -109,16 +100,9 @@ class Manager(manager.Manager):
 class Driver(object):
     """Interface description for an Identity driver."""
 
-    def authenticate_user(self, user_id, password):
+    def authenticate(self, user_id, password):
         """Authenticate a given user and password.
         :returns: user_ref
-        :raises: AssertionError
-        """
-        raise exception.NotImplemented()
-
-    def authorize_for_project(self, tenant_id, user_ref):
-        """Authenticate a given user for a tenant.
-        :returns: (user_ref, tenant_ref, metadata_ref)
         :raises: AssertionError
         """
         raise exception.NotImplemented()
@@ -199,8 +183,8 @@ class Driver(object):
             group_refs = self.list_groups_for_user(user_id=user_id)
             for x in group_refs:
                 try:
-                    metadata_ref = self.get_metadata(group_id=x['id'],
-                                                     tenant_id=tenant_id)
+                    metadata_ref = self._get_metadata(group_id=x['id'],
+                                                      tenant_id=tenant_id)
                     role_list += metadata_ref.get('roles', [])
                 except exception.MetadataNotFound:
                     # no group grant, skip
@@ -210,8 +194,8 @@ class Driver(object):
         def _get_user_project_roles(user_id, tenant_id):
             metadata_ref = {}
             try:
-                metadata_ref = self.get_metadata(user_id=user_id,
-                                                 tenant_id=tenant_id)
+                metadata_ref = self._get_metadata(user_id=user_id,
+                                                  tenant_id=tenant_id)
             except exception.MetadataNotFound:
                 pass
             return metadata_ref.get('roles', [])
@@ -240,8 +224,8 @@ class Driver(object):
             group_refs = self.list_groups_for_user(user_id=user_id)
             for x in group_refs:
                 try:
-                    metadata_ref = self.get_metadata(group_id=x['id'],
-                                                     domain_id=domain_id)
+                    metadata_ref = self._get_metadata(group_id=x['id'],
+                                                      domain_id=domain_id)
                     role_list += metadata_ref.get('roles', [])
                 except (exception.MetadataNotFound, exception.NotImplemented):
                     # MetadataNotFound implies no group grant, so skip.
@@ -253,8 +237,8 @@ class Driver(object):
         def _get_user_domain_roles(user_id, domain_id):
             metadata_ref = {}
             try:
-                metadata_ref = self.get_metadata(user_id=user_id,
-                                                 domain_id=domain_id)
+                metadata_ref = self._get_metadata(user_id=user_id,
+                                                  domain_id=domain_id)
             except (exception.MetadataNotFound, exception.NotImplemented):
                 # MetadataNotFound implies no user grants.
                 # Ignore NotImplemented since not all backends support
@@ -284,35 +268,6 @@ class Driver(object):
         :raises: keystone.exception.UserNotFound,
                  keystone.exception.ProjectNotFound,
                  keystone.exception.RoleNotFound
-
-        """
-        raise exception.NotImplemented()
-
-    # metadata crud
-    def get_metadata(self, user_id=None, tenant_id=None,
-                     domain_id=None, group_id=None):
-        """Gets the metadata for the specified user/group on project/domain.
-
-        :raises: keystone.exception.MetadataNotFound
-        :returns: metadata
-
-        """
-        raise exception.NotImplemented()
-
-    def create_metadata(self, user_id, tenant_id, metadata,
-                        domain_id=None, group_id=None):
-        """Creates the metadata for the specified user/group on project/domain.
-
-        :returns: metadata created
-
-        """
-        raise exception.NotImplemented()
-
-    def update_metadata(self, user_id, tenant_id, metadata,
-                        domain_id=None, group_id=None):
-        """Updates the metadata for the specified user/group on project/domain.
-
-        :returns: metadata updated
 
         """
         raise exception.NotImplemented()
