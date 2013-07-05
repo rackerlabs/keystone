@@ -627,3 +627,19 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, expected_length=0)
         self.assertIn(collection_url, r.result['links']['self'])
+
+    def test_crud_user_inherited_domain_role_grants(self):
+        base_collection_url = (
+            '/OS-INHERIT/domains/%(domain_id)s/users/%(user_id)s/roles' % {
+                'domain_id': self.domain_id,
+                'user_id': self.user['id']})
+        member_url = '%(collection_url)s/%(role_id)s/inherited_to_projects' % {
+            'collection_url': base_collection_url,
+            'role_id': self.role_id}
+        collection_url = base_collection_url + '/inherited_to_projects'
+
+        self.put(member_url)
+        self.head(member_url)
+        r = self.get(collection_url)
+        self.assertValidRoleListResponse(r, ref=self.role)
+        self.assertIn(collection_url, r.result['links']['self'])

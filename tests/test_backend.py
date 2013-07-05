@@ -1040,12 +1040,17 @@ class IdentityTests(object):
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'domain_id': domain1['id'], 'enabled': True}
         self.identity_api.create_group(group1['id'], group1)
+        group2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'domain_id': domain1['id'], 'enabled': True}
+        self.identity_api.create_group(group2['id'], group2)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': domain1['id']}
         self.identity_api.create_project(project1['id'], project1)
 
         self.identity_api.add_user_to_group(user1['id'],
                                             group1['id'])
+        self.identity_api.add_user_to_group(user1['id'],
+                                            group2['id'])
 
         roles_ref = self.identity_api.list_grants(
             user_id=user1['id'],

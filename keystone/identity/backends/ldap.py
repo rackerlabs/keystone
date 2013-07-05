@@ -145,7 +145,7 @@ class Identity(identity.Driver):
         metadata_ref = _get_roles_for_just_user_and_project(user_id, tenant_id)
         if not metadata_ref:
             return {}
-        return {'roles': metadata_ref}
+        return {'roles': [self._role_to_dict(r, False) for r in metadata_ref]}
 
     def get_role(self, role_id):
         return self.role.get(role_id)

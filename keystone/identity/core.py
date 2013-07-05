@@ -100,6 +100,35 @@ class Manager(manager.Manager):
 class Driver(object):
     """Interface description for an Identity driver."""
 
+    def _role_to_dict(self, role_id, inherited):
+        role_dict = {'id': role_id}
+        if inherited:
+            role_dict['inherited_to'] = 'projects'
+        return role_dict
+
+    def _roles_from_role_dicts(self, dict_list, inherited):
+        role_list = []
+        for d in dict_list:
+            if ((not d.get('inherited_to') and not inherited) or
+               (d.get('inherited_to') == 'projects' and inherited)):
+                role_list.append(d['id'])
+        return role_list
+
+    def _add_role_to_role_dicts(self, role_id, inherited, dict_list,
+                                allow_existing=True):
+        role_set = set([frozenset(r.items()) for r in dict_list])
+        key = frozenset(self._role_to_dict(role_id, inherited).items())
+        if not allow_existing and key in role_set:
+            raise KeyError
+        role_set.add(key)
+        return [dict(r) for r in role_set]
+
+    def _remove_role_from_role_dicts(self, role_id, inherited, dict_list):
+        role_set = set([frozenset(r.items()) for r in dict_list])
+        role_set.remove(frozenset(self._role_to_dict(role_id,
+                                                     inherited).items()))
+        return [dict(r) for r in role_set]
+
     def authenticate(self, user_id, password):
         """Authenticate a given user and password.
         :returns: user_ref
@@ -185,7 +214,8 @@ class Driver(object):
                 try:
                     metadata_ref = self._get_metadata(group_id=x['id'],
                                                       tenant_id=tenant_id)
-                    role_list += metadata_ref.get('roles', [])
+                    role_list += self._roles_from_role_dicts(
+                        metadata_ref.get('roles', {}), False)
                 except exception.MetadataNotFound:
                     # no group grant, skip
                     pass
@@ -198,7 +228,9 @@ class Driver(object):
                                                   tenant_id=tenant_id)
             except exception.MetadataNotFound:
                 pass
-            return metadata_ref.get('roles', [])
+            print metadata_ref
+            return self._roles_from_role_dicts(
+                metadata_ref.get('roles', {}), False)
 
         self.get_user(user_id)
         self.get_project(tenant_id)
@@ -226,7 +258,8 @@ class Driver(object):
                 try:
                     metadata_ref = self._get_metadata(group_id=x['id'],
                                                       domain_id=domain_id)
-                    role_list += metadata_ref.get('roles', [])
+                    role_list += self._roles_from_role_dicts(
+                        metadata_ref.get('roles', {}), False)
                 except (exception.MetadataNotFound, exception.NotImplemented):
                     # MetadataNotFound implies no group grant, so skip.
                     # Ignore NotImplemented since not all backends support
@@ -244,7 +277,8 @@ class Driver(object):
                 # Ignore NotImplemented since not all backends support
                 # domains.
                 pass
-            return metadata_ref.get('roles', [])
+            return self._roles_from_role_dicts(
+                metadata_ref.get('roles', {}), False)
 
         self.get_user(user_id)
         self.get_domain(domain_id)
@@ -268,6 +302,26 @@ class Driver(object):
         :raises: keystone.exception.UserNotFound,
                  keystone.exception.ProjectNotFound,
                  keystone.exception.RoleNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def create_grant(self, role_id, user_id=None, group_id=None,
+                     domain_id=None, project_id=None,
+                     inherited_to_projects=False):
+        """Assigns a role to a domain or project.
+
+        The role assignment may be for a user or a group. If it is
+        being assigned to a domain, then optionally it may be
+        specified as inherited to owned projects (this requires
+        the OS-INHERIT extension to be enabled)
+
+        :raises: keystone.exception.UserNotFound,
+                 keystone.exception.GroupNotFound,
+                 keystone.exception.ProjectNotFound,
+                 keystone.exception.DomanNotFound,
+                 keystone.exception.RoleNotFound,
+                 keystone.exception.MetadataNotFound
 
         """
         raise exception.NotImplemented()
