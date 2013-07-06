@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//P+o\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2013-07-06T07:28:19Z",
+      "side": 1,
+      "message": "The first pass is to make user1 a member of group1, not as the comment says group2",
+      "revId": "1686913a88c6e8c100b761e6a710036800c9c3fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
