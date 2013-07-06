@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3///6k\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-06T17:09:00Z",
+      "side": 1,
+      "message": "hmm, looks like a merge issue, these were deleted...",
+      "revId": "fb26eba58963cefc6a7292e6ca76013fa3cd1aaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3///6g\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-06T17:09:00Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "fb26eba58963cefc6a7292e6ca76013fa3cd1aaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
