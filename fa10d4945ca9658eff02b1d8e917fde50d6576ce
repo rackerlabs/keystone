@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAP3//9dA\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-08T15:04:14Z",
+      "side": 1,
+      "message": "+5",
+      "revId": "fa10d4945ca9658eff02b1d8e917fde50d6576ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//VTA\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 6
