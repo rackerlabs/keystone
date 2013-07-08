@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//7+I\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-08T21:34:54Z",
+      "side": 1,
+      "message": "thanks..yes - wanted to just suppress...better to let it fall through to the next block which will raise unathorized anyway",
+      "parentUuid": "AAAAP3//8Sc\u003d",
+      "revId": "b7aca360d428a3a7d0584644c55e4f9948cb6a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//8SI\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-08T19:54:27Z",
       "side": 1,
       "message": "python!\n\n  if not role_list:",
+      "revId": "b7aca360d428a3a7d0584644c55e4f9948cb6a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//7+E\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-08T21:34:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//8SI\u003d",
       "revId": "b7aca360d428a3a7d0584644c55e4f9948cb6a72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//7+A\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-08T21:34:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//8SA\u003d",
+      "revId": "b7aca360d428a3a7d0584644c55e4f9948cb6a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//8Rw\u003d",
         "filename": "tests/test_migrate_nova_auth.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2013-07-08T19:54:27Z",
       "side": 1,
       "message": "this whole module can be deleted, as it\u0027s directly supporting diablo -\u003e essex",
+      "revId": "b7aca360d428a3a7d0584644c55e4f9948cb6a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//79Y\u003d",
+        "filename": "tests/test_migrate_nova_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-08T21:34:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//8Rw\u003d",
       "revId": "b7aca360d428a3a7d0584644c55e4f9948cb6a72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
