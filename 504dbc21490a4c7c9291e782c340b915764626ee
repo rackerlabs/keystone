@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//8DA\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-08T21:36:58Z",
+      "side": 1,
+      "message": "good catch!",
+      "revId": "504dbc21490a4c7c9291e782c340b915764626ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
