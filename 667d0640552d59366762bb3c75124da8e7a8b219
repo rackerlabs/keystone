@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//9Qo\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T15:47:32Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAPn//ifU\u003d",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//jxI\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 3
@@ -36,6 +54,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//9Qk\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T15:47:32Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAPn//jxI\u003d",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//9Qg\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T15:47:32Z",
+      "side": 1,
+      "message": "``.htpasswd``",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//jxA\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 3
@@ -47,6 +100,24 @@
       "writtenOn": "2013-06-27T19:54:47Z",
       "side": 1,
       "message": "(nit) add . at end of sentence.",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//9Qc\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T15:47:32Z",
+      "side": 1,
+      "message": "+1; ``keystone.py``",
+      "parentUuid": "AAAAPn//jxA\u003d",
       "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +226,58 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//9QA\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T15:47:32Z",
+      "side": 1,
+      "message": "would strongly recommend not making keystone.conf globally readable",
+      "parentUuid": "AAAAPn//pR4\u003d",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//9Pk\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T15:47:32Z",
+      "side": 1,
+      "message": "if you\u0027re going to instruct someone to do this, maybe show how to do it",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//9P4\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T15:47:32Z",
+      "side": 1,
+      "message": "maybe just personal preference, but i\u0027d assume any instructions are being done as root or sudo is applied as necessary by the end user of the docs",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//jv4\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 3
@@ -166,6 +289,23 @@
       "writtenOn": "2013-06-27T19:54:47Z",
       "side": 1,
       "message": "suggest split up a long line with \\",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//9Pc\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T15:47:32Z",
+      "side": 1,
+      "message": "there\u0027s a whole page in openstack-manuals about how to verify a keystone install using keystoneclient... why duplicate that effort and why bother using curl? not sure this is indented properly for rst either",
       "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
