@@ -16,6 +16,177 @@
       "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8Eg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T21:02:36Z",
+      "side": 1,
+      "message": "\"So if I am going to create my own provider, where is it recommended that I put my code?\" in your own package\n\n\"I have to guess regarding where to put and how to structure my new token provider plugin\" agree, the interface should be documented, with a trivial implementation",
+      "parentUuid": "AAAAP3//8U4\u003d",
+      "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8Ew\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T21:02:36Z",
+      "side": 1,
+      "message": "use all 79 chars",
+      "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8Eo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T21:02:36Z",
+      "side": 1,
+      "message": "why is this randomly indented? this isn\u0027t python",
+      "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8D8\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 14
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T21:02:36Z",
+      "side": 1,
+      "message": "keystone_provider? it\u0027s already in keystone\u0027s namespace... and doesn\u0027t match the actual package naming you used.. regardless, nesting \u0027keystone\u0027 in there is not helpful or useful as a descriptive name",
+      "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8CU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T21:02:36Z",
+      "side": 1,
+      "message": "v2 garbage",
+      "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8Co\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T21:02:36Z",
+      "side": 1,
+      "message": "this is garbage from v2 and isn\u0027t in the v3 spec... remove it from the v3 implementation",
+      "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8DI\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T21:02:36Z",
+      "side": 1,
+      "message": "docs conflict with implementation\n\nwhy not just call the keystone.common method with an X-Subject-Token instead of copy/pasting code around?",
+      "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8CQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T21:02:36Z",
+      "side": 1,
+      "message": "why all the namespacing? if there\u0027s only one \"provider\" then what  are the two extra packages for?",
+      "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8B8\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T21:02:36Z",
+      "side": 1,
+      "message": "why does anything outside the token_api need to reference this?",
+      "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8CE\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T21:02:36Z",
+      "side": 1,
+      "message": "there\u0027s a provider module and providers package? please fix",
+      "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
