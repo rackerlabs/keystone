@@ -16,6 +16,24 @@
       "revId": "c0bce1d3d8fa227c8079f32e80123fd50b14b647",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8YE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T19:39:19Z",
+      "side": 1,
+      "message": "as long as the drivers are consistent with expectations, this is just for documentation.",
+      "parentUuid": "AAAAPn//Xp0\u003d",
+      "revId": "c0bce1d3d8fa227c8079f32e80123fd50b14b647",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
