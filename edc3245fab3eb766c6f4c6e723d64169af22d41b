@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//9PI\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T15:49:57Z",
+      "side": 1,
+      "message": "this would fail as a doctest... should be\n\n  keystone.fancy_api.Wadl(latest_version\u003d\u00271.3\u0027)\n\ngranted it was broken before, as well",
+      "revId": "edc3245fab3eb766c6f4c6e723d64169af22d41b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//9Ow\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T15:49:57Z",
+      "side": 1,
+      "message": "same issue as above",
+      "revId": "edc3245fab3eb766c6f4c6e723d64169af22d41b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
