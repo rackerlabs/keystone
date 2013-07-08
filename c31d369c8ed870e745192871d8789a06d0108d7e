@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//8a0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/027_username_length.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T19:33:58Z",
+      "side": 1,
+      "message": "when can we just say migrations are not supported on sqlite and stop testing it? :\u0027(",
+      "revId": "c31d369c8ed870e745192871d8789a06d0108d7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8ag\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T19:33:58Z",
+      "side": 1,
+      "message": "we normally break queries up into multiple lines\n\n  q \u003d session.query(user_table.c.name)\n  q \u003d q.filter(...)\n  ref \u003d q.one()\n  user_name \u003d ref[0]",
+      "revId": "c31d369c8ed870e745192871d8789a06d0108d7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8ao\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T19:33:58Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "c31d369c8ed870e745192871d8789a06d0108d7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
