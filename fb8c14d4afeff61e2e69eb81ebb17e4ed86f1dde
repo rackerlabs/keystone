@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//9Kk\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T16:08:30Z",
+      "side": 1,
+      "message": "why are these lists? either do them as code blocks after a double colon, or just do them ``inline``",
+      "revId": "fb8c14d4afeff61e2e69eb81ebb17e4ed86f1dde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//9Kc\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T16:08:30Z",
+      "side": 1,
+      "message": "then remove and refactor accordingly?",
+      "revId": "fb8c14d4afeff61e2e69eb81ebb17e4ed86f1dde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
