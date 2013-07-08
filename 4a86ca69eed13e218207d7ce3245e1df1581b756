@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//+0E\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-08T05:26:12Z",
+      "side": 1,
+      "message": "thanks for catching that Henry, i created https://review.openstack.org/#/c/36023/ to address this issue.",
+      "parentUuid": "AAAAPn//Pyw\u003d",
+      "revId": "4a86ca69eed13e218207d7ce3245e1df1581b756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//Pyk\u003d",
         "filename": "keystone/contrib/delegated_auth/core.py",
         "patchSetId": 29
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-06T15:28:16Z",
       "side": 1,
       "message": "As an aside, see https://review.openstack.org/#/c/35897/ which    requires you to call \"get_roles_for_user_and_project() instead of get_metadata().  Depending on which merges first, one of these will need to rebase.",
+      "revId": "4a86ca69eed13e218207d7ce3245e1df1581b756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//+0A\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-08T05:26:12Z",
+      "side": 1,
+      "message": "Thanks for the heads up.",
+      "parentUuid": "AAAAPn//Pyk\u003d",
       "revId": "4a86ca69eed13e218207d7ce3245e1df1581b756",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
