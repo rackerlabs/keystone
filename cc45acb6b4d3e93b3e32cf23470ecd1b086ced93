@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//7+0\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-08T21:19:28Z",
+      "side": 1,
+      "message": "Code in the controller looks so much cleaner!",
+      "revId": "cc45acb6b4d3e93b3e32cf23470ecd1b086ced93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//7/I\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-08T21:19:28Z",
+      "side": 1,
+      "message": "I appreciate all the comments you put in the driver",
+      "revId": "cc45acb6b4d3e93b3e32cf23470ecd1b086ced93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//7+Q\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-08T21:19:28Z",
+      "side": 1,
+      "message": "This helps  with my previous comment on the other patch regarding having only one sample. Now you have two! Would still be good to have a statement in the rst on where new plugins should be added. But this helps a lot!",
+      "revId": "cc45acb6b4d3e93b3e32cf23470ecd1b086ced93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
