@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//+wo\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-08T06:15:49Z",
+      "side": 1,
+      "message": "I was thinking kwargs would provide the flexibility where token providers are invoke by 3rd party extensions (i.e. stuff in keystone/contrib/) and additional parameters are needed. For example, if and when we decided to have an extension to bind a given token to an service or endpoint, we may pass in service ID or endpoint IDs in addition to belongs_to",
+      "parentUuid": "AAAAPn//Ujk\u003d",
+      "revId": "e78c333af1358500955f1762316b99698ee209c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//UjU\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 13
@@ -47,6 +65,24 @@
       "writtenOn": "2013-07-04T02:11:08Z",
       "side": 1,
       "message": "It\u0027s not just UUID",
+      "revId": "e78c333af1358500955f1762316b99698ee209c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//+xM\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-08T06:15:49Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "AAAAPn//Uj8\u003d",
       "revId": "e78c333af1358500955f1762316b99698ee209c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//+xQ\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-08T06:15:49Z",
+      "side": 1,
+      "message": "I tend to agree with ayoung that UUID and PKI are just different mechanism, not different providers in the sense that the token data are the same for both",
+      "parentUuid": "AAAAPn//UhE\u003d",
+      "revId": "e78c333af1358500955f1762316b99698ee209c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//brA\u003d",
         "filename": "keystone/token/providers/keystone.py",
         "patchSetId": 13
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//+xU\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-08T06:15:49Z",
+      "side": 1,
+      "message": "I want to use kwargs here so to make this class easier to extend",
+      "parentUuid": "AAAAPn//brA\u003d",
+      "revId": "e78c333af1358500955f1762316b99698ee209c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//Ujw\u003d",
         "filename": "keystone/token/providers/keystone.py",
         "patchSetId": 13
@@ -116,6 +188,24 @@
       "writtenOn": "2013-07-04T02:11:08Z",
       "side": 1,
       "message": "version is ignored",
+      "revId": "e78c333af1358500955f1762316b99698ee209c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//+xc\u003d",
+        "filename": "keystone/token/providers/keystone.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-08T06:15:49Z",
+      "side": 1,
+      "message": "version is used in V2 token provider. This interface is shared by all versions.",
+      "parentUuid": "AAAAPn//Ujw\u003d",
       "revId": "e78c333af1358500955f1762316b99698ee209c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
