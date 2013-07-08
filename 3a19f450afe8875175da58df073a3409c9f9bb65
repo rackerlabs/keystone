@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//84M\u003d",
+        "filename": "keystone/assignment/__init__.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-08T17:43:57Z",
+      "side": 1,
+      "message": "2013\n\nI wish this stuff can be automated in Jenkins. I mean automatically injecting the copyright and license statement at the top of each file.",
+      "revId": "3a19f450afe8875175da58df073a3409c9f9bb65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//8zw\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-08T17:43:57Z",
+      "side": 1,
+      "message": "no default?",
+      "revId": "3a19f450afe8875175da58df073a3409c9f9bb65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
