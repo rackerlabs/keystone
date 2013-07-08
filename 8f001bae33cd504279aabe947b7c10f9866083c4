@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//8M0\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-08T20:15:19Z",
+      "side": 1,
+      "message": "blob implies string, base64 encoded things, etc",
+      "revId": "8f001bae33cd504279aabe947b7c10f9866083c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
