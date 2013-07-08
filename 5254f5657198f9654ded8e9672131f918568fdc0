@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//8U4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-08T19:50:10Z",
+      "side": 1,
+      "message": "OK so you made the token provider pluggable but there is only one example.  So if I am going to create my own provider, where is it recommended that I put my code?  Since you don\u0027t provide an extra example of a very simple template plugin (and only provide the production level plugin), I have to guess regarding where to put and how to structure my new token provider plugin.  Ideally it would be great to have a dummy sample plugin that had a trivial implementation and well commented that would provide folks a template on how to create their own plugin. Assuming that is too much work an alternative would be to recommend where new Token Provide plugins should be placed in the code structure and to explicitly point out that the interface they need to implement is in the Token Provider Driver class.",
+      "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
