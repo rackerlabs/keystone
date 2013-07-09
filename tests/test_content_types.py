@@ -23,6 +23,7 @@ import webtest
 
 from keystone import test
 
+from keystone.common import extension
 from keystone.common import serializer
 from keystone.openstack.common import jsonutils
 
@@ -334,14 +335,14 @@ class CoreApiTests(object):
         self.assertValidVersionResponse(r)
 
     def test_public_extensions(self):
-        self.public_request(path='/v2.0/extensions',)
-
-        # TODO(dolph): can't test this without any public extensions defined
-        # self.assertValidExtensionListResponse(r)
+        r = self.public_request(path='/v2.0/extensions')
+        self.assertValidExtensionListResponse(r,
+                                              extension.PUBLIC_EXTENSIONS)
 
     def test_admin_extensions(self):
-        r = self.admin_request(path='/v2.0/extensions',)
-        self.assertValidExtensionListResponse(r)
+        r = self.admin_request(path='/v2.0/extensions')
+        self.assertValidExtensionListResponse(r,
+                                              extension.ADMIN_EXTENSIONS)
 
     def test_admin_extensions_404(self):
         self.admin_request(path='/v2.0/extensions/invalid-extension',
@@ -620,12 +621,15 @@ class JsonTestCase(RestfulTestCase, CoreApiTests):
         for link in extension.get('links'):
             self.assertValidExtensionLink(link)
 
-    def assertValidExtensionListResponse(self, r):
+    def assertValidExtensionListResponse(self, r, expected):
         self.assertIsNotNone(r.result.get('extensions'))
         self.assertIsNotNone(r.result['extensions'].get('values'))
         self.assertNotEmpty(r.result['extensions'].get('values'))
         for extension in r.result['extensions']['values']:
             self.assertValidExtension(extension)
+        for extension in expected:
+            self.assertIn(expected[extension],
+                          r.result['extensions']['values'])
 
     def assertValidExtensionResponse(self, r):
         self.assertValidExtension(r.result.get('extension'))
