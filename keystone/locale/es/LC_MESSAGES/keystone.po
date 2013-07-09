@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-07-08 17:06+0000\n"
+"POT-Creation-Date: 2013-07-09 17:05+0000\n"
 "PO-Revision-Date: 2013-05-21 09:13+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Spanish "
@@ -207,12 +207,12 @@ msgstr ""
 msgid "arg_dict: %s"
 msgstr "arg_dict: %s"
 
-#: keystone/common/wsgi.py:186
+#: keystone/common/wsgi.py:188
 #, fuzzy, python-format
 msgid "Authorization failed. %(exception)s from %(remote_addr)s"
 msgstr "Ha fallado la autorización. %s de %s"
 
-#: keystone/common/wsgi.py:429
+#: keystone/common/wsgi.py:431
 msgid "The resource could not be found."
 msgstr "El recurso no se ha podido encontrar."
 
@@ -259,13 +259,13 @@ msgid ""
 "\"%(attr_map)s\" must use one of %(keys)s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:630
-#: keystone/identity/backends/kvs.py:658
+#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:621
+#: keystone/identity/backends/kvs.py:649
 #, python-format
 msgid "Duplicate name, %s."
 msgstr "Nombre duplicado, %s."
 
-#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:623
+#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:614
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr "ID duplicado, %s."
@@ -466,7 +466,11 @@ msgstr ""
 msgid "Search scope %s not implemented."
 msgstr "Ámbito de búsqueda %s no implementado."
 
-#: keystone/common/sql/core.py:198
+#: keystone/common/sql/core.py:126
+msgid "Global engine callback raised."
+msgstr ""
+
+#: keystone/common/sql/core.py:240
 #, python-format
 msgid "Got mysql server has gone away: %s"
 msgstr "Se ha notificado que mysql server ha desaparecido: %s"
@@ -522,7 +526,7 @@ msgid ""
 "%(role)s"
 msgstr ""
 
-#: keystone/identity/backends/kvs.py:284 keystone/identity/backends/kvs.py:293
+#: keystone/identity/backends/kvs.py:275 keystone/identity/backends/kvs.py:284
 msgid "User not found in group"
 msgstr "Usuario no encontrado en grupo"
 
@@ -531,28 +535,28 @@ msgstr "Usuario no encontrado en grupo"
 msgid "Expected dict or list: %s"
 msgstr ""
 
-#: keystone/identity/backends/ldap.py:376
+#: keystone/identity/backends/ldap.py:378
 #, python-format
 msgid ""
 "Group member '%(user_dn)s' not found in '%(group_id)s'. The user should "
 "be removed from the group. The user will be ignored."
 msgstr ""
 
-#: keystone/identity/backends/ldap.py:638
+#: keystone/identity/backends/ldap.py:640
 #, python-format
 msgid "Role %s not found"
 msgstr "No se ha encontrado el rol %s"
 
-#: keystone/identity/backends/ldap.py:826
+#: keystone/identity/backends/ldap.py:828
 msgid "Changing Name not supported by LDAP"
 msgstr "LDAP no soporta el cambio de nombre"
 
-#: keystone/identity/backends/ldap.py:839
+#: keystone/identity/backends/ldap.py:841
 #, fuzzy, python-format
 msgid "User %(user_id)s is already a member of group %(group_id)s"
 msgstr "El usuario %s ya es miembro del grupo %s"
 
-#: keystone/identity/backends/sql.py:462
+#: keystone/identity/backends/sql.py:436
 #, python-format
 msgid "Cannot remove role that has not been granted, %s"
 msgstr "No se puede eliminar un rol que no se ha otorgado, %s"
@@ -610,11 +614,4 @@ msgstr ""
 #: keystone/token/backends/memcache.py:172
 msgid "Unable to add token to revocation list."
 msgstr "No se puede añadir señal a lista de revocación. "
-
-#~ msgid ""
-#~ "Group member '%(user_dn)s' not found in"
-#~ " '%(group_dn)s'. The user should be "
-#~ "removed from the group. The user "
-#~ "will be ignored."
-#~ msgstr ""
 

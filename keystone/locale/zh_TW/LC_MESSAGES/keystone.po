@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-07-08 17:06+0000\n"
+"POT-Creation-Date: 2013-07-09 17:05+0000\n"
 "PO-Revision-Date: 2013-05-22 03:11+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) "
@@ -195,12 +195,12 @@ msgstr ""
 msgid "arg_dict: %s"
 msgstr "arg_dict：%s"
 
-#: keystone/common/wsgi.py:186
+#: keystone/common/wsgi.py:188
 #, fuzzy, python-format
 msgid "Authorization failed. %(exception)s from %(remote_addr)s"
 msgstr "授權失敗。%s（自 %s）"
 
-#: keystone/common/wsgi.py:429
+#: keystone/common/wsgi.py:431
 msgid "The resource could not be found."
 msgstr "找不到資源。"
 
@@ -247,13 +247,13 @@ msgid ""
 "\"%(attr_map)s\" must use one of %(keys)s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:630
-#: keystone/identity/backends/kvs.py:658
+#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:621
+#: keystone/identity/backends/kvs.py:649
 #, python-format
 msgid "Duplicate name, %s."
 msgstr "重複的名稱，%s。"
 
-#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:623
+#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:614
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr "重複的 ID，%s。"
@@ -441,7 +441,11 @@ msgstr "FakeLdap 搜尋失敗：找不到 SCOPE_BASE 的 DN"
 msgid "Search scope %s not implemented."
 msgstr "未實作搜尋範圍 %s。"
 
-#: keystone/common/sql/core.py:198
+#: keystone/common/sql/core.py:126
+msgid "Global engine callback raised."
+msgstr ""
+
+#: keystone/common/sql/core.py:240
 #, python-format
 msgid "Got mysql server has gone away: %s"
 msgstr "已取得 mysql 伺服器已斷線的訊息：%s"
@@ -497,7 +501,7 @@ msgid ""
 "%(role)s"
 msgstr ""
 
-#: keystone/identity/backends/kvs.py:284 keystone/identity/backends/kvs.py:293
+#: keystone/identity/backends/kvs.py:275 keystone/identity/backends/kvs.py:284
 msgid "User not found in group"
 msgstr "在群組中找不到使用者"
 
@@ -506,28 +510,28 @@ msgstr "在群組中找不到使用者"
 msgid "Expected dict or list: %s"
 msgstr ""
 
-#: keystone/identity/backends/ldap.py:376
+#: keystone/identity/backends/ldap.py:378
 #, python-format
 msgid ""
 "Group member '%(user_dn)s' not found in '%(group_id)s'. The user should "
 "be removed from the group. The user will be ignored."
 msgstr ""
 
-#: keystone/identity/backends/ldap.py:638
+#: keystone/identity/backends/ldap.py:640
 #, python-format
 msgid "Role %s not found"
 msgstr "找不到角色 %s"
 
-#: keystone/identity/backends/ldap.py:826
+#: keystone/identity/backends/ldap.py:828
 msgid "Changing Name not supported by LDAP"
 msgstr "LDAP 不支援變更名稱"
 
-#: keystone/identity/backends/ldap.py:839
+#: keystone/identity/backends/ldap.py:841
 #, fuzzy, python-format
 msgid "User %(user_id)s is already a member of group %(group_id)s"
 msgstr "使用者 %s 已是群組 %s 的成員"
 
-#: keystone/identity/backends/sql.py:462
+#: keystone/identity/backends/sql.py:436
 #, python-format
 msgid "Cannot remove role that has not been granted, %s"
 msgstr "無法移除尚未授權的角色，%s"
@@ -585,11 +589,4 @@ msgstr ""
 #: keystone/token/backends/memcache.py:172
 msgid "Unable to add token to revocation list."
 msgstr "無法將記號新增至撤銷清冊。"
-
-#~ msgid ""
-#~ "Group member '%(user_dn)s' not found in"
-#~ " '%(group_dn)s'. The user should be "
-#~ "removed from the group. The user "
-#~ "will be ignored."
-#~ msgstr ""
 
