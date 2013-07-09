@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//4f4\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-09T20:31:11Z",
+      "side": 1,
+      "message": "I don\u0027t think so.  The logic could be reused buy , say the PAM provider in the future.  I\u0027ll change the comment to indicate more explicitly why this is here.",
+      "parentUuid": "AAAAP3//4lE\u003d",
+      "revId": "2d40b68a31a6470ff36e1b9b9cc2cb2104d00803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//4k8\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 7
