@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//53g\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-09T14:10:37Z",
+      "side": 1,
+      "message": "I thought the goal was to implement a UUID \"provider\" and a PKI \"provider\"",
+      "revId": "352838ffa6f29356572c5e942b4532d0753bac8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//54M\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-09T14:10:37Z",
+      "side": 1,
+      "message": "79 char",
+      "revId": "352838ffa6f29356572c5e942b4532d0753bac8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
