@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//4lE\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-09T20:20:33Z",
+      "side": 1,
+      "message": "Should you put LDAP in the method name since this is an LDAP specific domain management function?  I think this will make the code easier to read when this method is called.",
+      "revId": "2d40b68a31a6470ff36e1b9b9cc2cb2104d00803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//4k8\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-09T20:20:33Z",
+      "side": 1,
+      "message": "Should you put LDAP in the method name since this is an LDAP specific domain management function?  I think this will make the code easier to read when this method is called.",
+      "revId": "2d40b68a31a6470ff36e1b9b9cc2cb2104d00803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//4k4\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-09T20:20:33Z",
+      "side": 1,
+      "message": "Should you put LDAP in the method name since this is an LDAP specific domain management function?  I think this will make the code easier to read when this method is called.",
+      "revId": "2d40b68a31a6470ff36e1b9b9cc2cb2104d00803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
