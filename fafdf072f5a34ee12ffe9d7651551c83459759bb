@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//4hI\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-09T20:52:45Z",
+      "side": 0,
+      "message": "i don\u0027t see where any of this was moved to? was it already copied to to common.ldap and is now duplicated here? if so, could make this a discrete change",
+      "revId": "fafdf072f5a34ee12ffe9d7651551c83459759bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
