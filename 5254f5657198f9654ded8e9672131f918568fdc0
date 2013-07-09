@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//6Dk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-09T12:57:51Z",
+      "side": 1,
+      "message": "I was thinking that a very simple token provider that just did basic uuid tokens with in-memory storage (a big dictionary)  to clearly illustrate what methods need to be implemented with lots of annotation. Might be best for someone other than gyee to try and write this.   What if we just open up this requirement as a bug and I\u0027ll take ownership of writing this sample?",
+      "parentUuid": "AAAAP3//7hg\u003d",
+      "revId": "5254f5657198f9654ded8e9672131f918568fdc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//8Ew\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 14
