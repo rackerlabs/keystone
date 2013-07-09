@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//4eE\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-09T20:47:49Z",
+      "side": 1,
+      "message": "_validate_default_domain as the method name would better capture what this method does",
+      "revId": "07505228a79762397f5256f90f969aba4cc2c972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//4dk\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-09T20:47:49Z",
+      "side": 1,
+      "message": "_validate_default_domain_id as the method name would better capture what this method does",
+      "revId": "07505228a79762397f5256f90f969aba4cc2c972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
