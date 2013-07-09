@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//62I\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-07-09T07:26:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//8ag\u003d",
+      "revId": "c31d369c8ed870e745192871d8789a06d0108d7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//8ao\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 18
@@ -47,6 +65,24 @@
       "writtenOn": "2013-07-08T19:33:58Z",
       "side": 1,
       "message": "remove",
+      "revId": "c31d369c8ed870e745192871d8789a06d0108d7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//62M\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-07-09T07:26:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//8ao\u003d",
       "revId": "c31d369c8ed870e745192871d8789a06d0108d7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
