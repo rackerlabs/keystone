@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//0so\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-10T21:25:49Z",
+      "side": 1,
+      "message": "why is there an conf based \"if\" in the test?  You should control for this.  BOth options should be exercised explicitly.",
+      "revId": "4f9706dcaa2dc455abd8a7e1217692dbb8bb29a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
