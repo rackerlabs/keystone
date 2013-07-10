@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//04k\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-10T20:39:31Z",
+      "side": 1,
+      "message": "I think this breaks a fix that went in that basically deals with sqlite and constraints.  The solution there is ugly, but involves dropping and recreating the table.",
+      "revId": "cd8fa2b0e7ca002b7621fe0e35b921154946e12b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
