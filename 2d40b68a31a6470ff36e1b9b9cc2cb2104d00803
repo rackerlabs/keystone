@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//3u0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-10T01:54:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//4hs\u003d",
+      "revId": "2d40b68a31a6470ff36e1b9b9cc2cb2104d00803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//4cs\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-09T20:52:45Z",
       "side": 1,
       "message": "this should be a base manager method rather than duplicated",
+      "revId": "2d40b68a31a6470ff36e1b9b9cc2cb2104d00803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//3u4\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-10T01:54:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//4cs\u003d",
       "revId": "2d40b68a31a6470ff36e1b9b9cc2cb2104d00803",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//3vg\u003d",
+        "filename": "tests/backend_ldap_sql.conf",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-10T01:54:48Z",
+      "side": 1,
+      "message": "I thought of that, but this is explicit, and will still test correctly if the defaults were to change.",
+      "parentUuid": "AAAAP3//4cE\u003d",
+      "revId": "2d40b68a31a6470ff36e1b9b9cc2cb2104d00803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//4b4\u003d",
         "filename": "tests/test_backend_mixed.py",
         "patchSetId": 7
@@ -133,6 +187,24 @@
       "writtenOn": "2013-07-09T20:52:45Z",
       "side": 1,
       "message": "the test_backend_* modules test specific backends... this module introduces 2 skipped tests, an empty test, and a test that belongs in a different module... just remove the delete the whole thing and put the one test where it belongs.. in test_backend_sql or whatever",
+      "revId": "2d40b68a31a6470ff36e1b9b9cc2cb2104d00803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//3u8\u003d",
+        "filename": "tests/test_backend_mixed.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-10T01:54:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//4b4\u003d",
       "revId": "2d40b68a31a6470ff36e1b9b9cc2cb2104d00803",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
