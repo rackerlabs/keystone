@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAP3//1ms\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-10T17:09:25Z",
+      "side": 1,
+      "message": "revise to reflect multiple providers",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//1ls\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-10T17:09:25Z",
+      "side": 1,
+      "message": "this is ugly",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//1lc\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-10T17:09:25Z",
+      "side": 1,
+      "message": "why is a \"provider\" suddenly a \"backend\"? indicative of a confused architecture...",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//3N4\u003d",
         "filename": "keystone/token/providers/pki.py",
         "patchSetId": 16
@@ -49,6 +100,92 @@
       "side": 1,
       "message": "I\u0027m actually OK with this just due to the historical precedent.  UUID vs PKI is not a great naming convention anyway, and so what we really have here is \"primary key\"  versus \"signed document\"  but the \"signed docuemtn\" approach uses the primary key approach.  and extends it with PKI document signing.",
       "parentUuid": "AAAAP3//1q4\u003d",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//1k0\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-10T17:09:25Z",
+      "side": 1,
+      "message": "then have them extend the same abstract base class",
+      "parentUuid": "AAAAP3//1q4\u003d",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//1lA\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-10T17:09:25Z",
+      "side": 1,
+      "message": "why is a \"provider\" a \"driver\"?",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//1kM\u003d",
+        "filename": "tests/test_uuid_token_provider.conf",
+        "patchSetId": 16
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-10T17:09:25Z",
+      "side": 1,
+      "message": "i hope you\u0027re checking somewhere this kind of redundant configuration doesn\u0027t conflict.\n\nan existing config file that opts for token_format \u003d UUID will suddenly be broken when the default token \"provider\" is for PKI",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//1js\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-10T17:09:25Z",
+      "side": 1,
+      "message": "NO. i really doubt this behaves the way you expect. do not initialize to an empty list. and why is it plural?",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//1kI\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-10T17:09:25Z",
+      "side": 1,
+      "message": "what does that mean?",
       "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
