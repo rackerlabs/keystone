@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//2Io\u003d",
+        "filename": "keystone/common/extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-10T14:25:52Z",
+      "side": 1,
+      "message": "UPPERCASE constants",
+      "revId": "eb5affff11047875d2d47eed20d690a59a406a08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//2IM\u003d",
+        "filename": "keystone/common/extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-10T14:25:52Z",
+      "side": 1,
+      "message": "suburl -\u003e url_prefix?",
+      "revId": "eb5affff11047875d2d47eed20d690a59a406a08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//2H8\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-10T14:25:52Z",
+      "side": 1,
+      "message": "UPPERCASE",
+      "revId": "eb5affff11047875d2d47eed20d690a59a406a08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
