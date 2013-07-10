@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//3N4\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-10T07:49:42Z",
+      "side": 1,
+      "message": "I\u0027ve been overruled before on this but this is ugly. In no OO sense is a PKI token a refinement or subclass of a uuid token. They should either share a base class or share util functions.",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
