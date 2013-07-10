@@ -16,6 +16,24 @@
       "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//1q4\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-10T16:10:23Z",
+      "side": 1,
+      "message": "Only difference between a PKI and UUID token is the way the token ID is generated. Therefore it make sense to have PKI provider subclass UUID class. UUID is a base class.\n\nV3TokenDataHelper is the utility class to put together the token data prior to signing. To make it easier for you, I\u0027ll move the V3TokenDataHelper to __init__() so you can extend it to add the Kerberos data.",
+      "parentUuid": "AAAAP3//3N4\u003d",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
