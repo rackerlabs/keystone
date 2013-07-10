@@ -34,6 +34,24 @@
       "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//1lg\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-10T16:24:42Z",
+      "side": 1,
+      "message": "I\u0027m actually OK with this just due to the historical precedent.  UUID vs PKI is not a great naming convention anyway, and so what we really have here is \"primary key\"  versus \"signed document\"  but the \"signed docuemtn\" approach uses the primary key approach.  and extends it with PKI document signing.",
+      "parentUuid": "AAAAP3//1q4\u003d",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
