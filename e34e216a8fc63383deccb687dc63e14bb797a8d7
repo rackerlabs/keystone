@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//1Wk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-10T17:35:32Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "AAAAP3//1ms\u003d",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//1ls\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 16
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//1V8\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-10T17:35:32Z",
+      "side": 1,
+      "message": "Is there a better way to do this?",
+      "parentUuid": "AAAAP3//1ls\u003d",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//1lc\u003d",
         "filename": "keystone/test.py",
         "patchSetId": 16
@@ -47,6 +83,24 @@
       "writtenOn": "2013-07-10T17:09:25Z",
       "side": 1,
       "message": "why is a \"provider\" suddenly a \"backend\"? indicative of a confused architecture...",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//1Ws\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-10T17:35:32Z",
+      "side": 1,
+      "message": "provider is implemented with the same mechanism as backend drivers\n\nI suppose I can create a separate load_token_provider() if that\u0027s why it takes?",
+      "parentUuid": "AAAAP3//1lc\u003d",
       "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -124,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//1Vw\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-10T17:35:32Z",
+      "side": 1,
+      "message": "so both UUID and PKI provider extend the same abstract class only to override _get_token_id()? Not sure what we gain by doing that.",
+      "parentUuid": "AAAAP3//1k0\u003d",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//1lA\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 16
@@ -135,6 +207,24 @@
       "writtenOn": "2013-07-10T17:09:25Z",
       "side": 1,
       "message": "why is a \"provider\" a \"driver\"?",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//1Vg\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-10T17:35:32Z",
+      "side": 1,
+      "message": "because it is using the same driver mechanism",
+      "parentUuid": "AAAAP3//1lA\u003d",
       "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -158,6 +248,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//1U4\u003d",
+        "filename": "tests/test_uuid_token_provider.conf",
+        "patchSetId": 16
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-10T17:35:32Z",
+      "side": 1,
+      "message": "I would like to get rid of token_format altogether. Only place still needs it is in the SQL code where the token ID is larger then the database column allows. We made an exception for that. But we should be storing the hash of the token ID for PKI tokens.",
+      "parentUuid": "AAAAP3//1kM\u003d",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//1js\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 16
@@ -175,6 +283,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//1UQ\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-10T17:35:32Z",
+      "side": 1,
+      "message": "it basically allows additional overrides from its child classes. Is there a better way to do this? I basically want to test different token providers.",
+      "parentUuid": "AAAAP3//1js\u003d",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//1kI\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 16
@@ -186,6 +312,24 @@
       "writtenOn": "2013-07-10T17:09:25Z",
       "side": 1,
       "message": "what does that mean?",
+      "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//1UM\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-10T17:35:32Z",
+      "side": 1,
+      "message": "allowing subclasses to have addition config overrides",
+      "parentUuid": "AAAAP3//1kI\u003d",
       "revId": "e34e216a8fc63383deccb687dc63e14bb797a8d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
