@@ -71,6 +71,33 @@ place::
 
 .. _`python-keystoneclient`: https://github.com/openstack/python-keystoneclient
 
+Database Schema Migrations
+--------------------------
+
+Keystone uses the SQLAlchemy-migrate
+_`SQLAlchemy-migrate`:http://code.google.com/p/sqlalchemy-migrate/ to migrate the SQL database
+between revisions.  For core components, the migrations are kept in a central
+repository under keystone/common/sql/migrate_repo.
+
+Extensions should be created as directories under `keystone/contrib`.  An
+extension that requires sql migrations should not change the common repository,
+but should instead have its own repository.  This repository should be in the
+extension's directory in `keystone/contrib/<extension>/migrate_repo.`  In
+addition it needs a subdirectory named `versions`.  For example. if the
+extension name is `my_extension` then the directory structure would be
+`keystone/contrib/my_extension/migrate_repo/versions/`.  For the migration
+o work, both the migrate_repo and versions subdirectories should have empty
+__init__.py files.  SQLAlchemy-migrate will look for a configuration file in
+the migrate_repo named migrate.cfg. This conforms to a Key/value ini file
+format.  A sample config file with the minimal set of values is::
+
+    [db_settings]
+    repository_id=my_extension
+    version_table=migrate_version
+    required_dbs=[]
+
+The directory `keystone/contrib/example` contains a sample extension migration.
+
 Initial Sample Data
 -------------------
 
