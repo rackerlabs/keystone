@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//yE0\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:13:25Z",
+      "side": 0,
+      "message": "nice",
+      "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//yEA\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:13:25Z",
+      "side": 0,
+      "message": "i like that we can drop all these",
+      "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//yDE\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:13:25Z",
+      "side": 0,
+      "message": "-2; this looks like you\u0027re suppressing a regression for a security vulnerability by having it test PKI instead of UUID... please explain",
+      "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

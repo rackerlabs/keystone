@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//yFI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:13:25Z",
+      "side": 1,
+      "message": "nice",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//yEo\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:13:25Z",
+      "side": 1,
+      "message": "see previous review about importing provider into token/__init__.py",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//yEQ\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:13:25Z",
+      "side": 1,
+      "message": "it\u0027s not a backend, why is it here?",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//yDw\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:13:25Z",
+      "side": 1,
+      "message": "nice refactor; if nothing outside this class needs unique_id anymore, then it should be made to be a \"private\" method of this manager class, e.g. _unique_id()",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//yCM\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:13:25Z",
+      "side": 1,
+      "message": "-2; see a previous review and DO NOT use use object references as default arguments\n\nthis whole architecture is just dumb though. perhaps expose the list of configuration files and allow child classes to manipulate it directly",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//yAk\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:13:25Z",
+      "side": 1,
+      "message": "-2; DO NOT DO",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
