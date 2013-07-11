@@ -71,7 +71,7 @@ class SqlUpgradeTests(test.TestCase):
                                                   autocommit=False)
 
         self.initialize_sql()
-        self.repo_path = migration._find_migrate_repo()
+        self.repo_path = migration.find_migrate_repo()
         self.schema = versioning_api.ControlledSchema.create(
             self.engine,
             self.repo_path, 0)
