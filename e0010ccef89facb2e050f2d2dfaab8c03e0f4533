@@ -139,6 +139,24 @@
       "revId": "e0010ccef89facb2e050f2d2dfaab8c03e0f4533",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//z7c\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-07-11T03:18:50Z",
+      "side": 1,
+      "message": "Mark,\n\n   I\u0027d like to explain why I encountered the error I mentioned in my\nprevious reply. I carelessly forgot a factor which impacted the UT\nresult.\n   In order to verify my solution via running keystone services and\ncalling API to produce translated exception message, I captured\nmessage \"The request you have made requires authentication.\" \nin exception.ValidationError into keystone.po, added some \nChinese characters as its translation and produce keystone.mo,\n then deployed mo file into default locale folder. The Chinese \ncharacters can be loaded by test_exception too, then str cause\n UnicodeEncodeError. This is the truth.\n   Str always causes UnicodeEncodeError due to its work way,\n it\u0027s unnecessary, we can remove them",
+      "parentUuid": "AAAAPn//Vgk\u003d",
+      "revId": "e0010ccef89facb2e050f2d2dfaab8c03e0f4533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
