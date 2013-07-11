@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//yOw\u003d",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T14:29:45Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAPn//cDo\u003d",
+      "revId": "4fb0b06f9b9df1964a04550728a16222166ab291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//jb0\u003d",
         "filename": "keystone/policy/backends/rules.py",
         "patchSetId": 2
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "+1 to Guang\u0027s sugestion.",
       "parentUuid": "AAAAPn//Xn0\u003d",
+      "revId": "4fb0b06f9b9df1964a04550728a16222166ab291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//yOE\u003d",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T14:29:45Z",
+      "side": 1,
+      "message": "Explicitly raising an exception.UnexpectedError() would be more desirable than raising a ValueError and expecting it to be wrapped, though.\n\nBrant: I wouldn\u0027t expect a 400 at all. The request may have been fine as-is, but it is keystone\u0027s configuration that is broken.",
+      "parentUuid": "AAAAPn//Xf8\u003d",
       "revId": "4fb0b06f9b9df1964a04550728a16222166ab291",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
