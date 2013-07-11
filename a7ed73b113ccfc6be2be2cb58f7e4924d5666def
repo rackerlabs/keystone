@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//xEo\u003d",
+        "filename": "keystone/common/extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-11T19:58:36Z",
+      "side": 1,
+      "message": "might be useful to document here what goes in extension_data.",
+      "revId": "a7ed73b113ccfc6be2be2cb58f7e4924d5666def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xEM\u003d",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-11T19:58:36Z",
+      "side": 1,
+      "message": "(typo) \"Openstack\" -\u003e \"OpenStack\" (camel-case S)\n\nAlso, maybe change \"Admin\" to \"Administration\"",
+      "revId": "a7ed73b113ccfc6be2be2cb58f7e4924d5666def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xEQ\u003d",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-11T19:58:36Z",
+      "side": 1,
+      "message": "(typo) \"Openstack\" -\u003e \"OpenStack\" (camel-case S)",
+      "revId": "a7ed73b113ccfc6be2be2cb58f7e4924d5666def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//w2w\u003d",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-11T19:58:36Z",
+      "side": 1,
+      "message": "suggest change \"Admin Operations\" to \"administrative operations\"",
+      "revId": "a7ed73b113ccfc6be2be2cb58f7e4924d5666def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//w2E\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-11T19:58:36Z",
+      "side": 1,
+      "message": "change \"Openstack\" to \"OpenStack\"",
+      "revId": "a7ed73b113ccfc6be2be2cb58f7e4924d5666def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//w1s\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-11T19:58:36Z",
+      "side": 1,
+      "message": "change \"Openstack\" to \"OpenStack\"\n\nlowercase \"credentials\"\n\nchange \"backend\" to \"operations\" ?",
+      "revId": "a7ed73b113ccfc6be2be2cb58f7e4924d5666def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//w1U\u003d",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-11T19:58:36Z",
+      "side": 1,
+      "message": "change \"Openstack\" to \"OpenStack\"",
+      "revId": "a7ed73b113ccfc6be2be2cb58f7e4924d5666def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//w1M\u003d",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-11T19:58:36Z",
+      "side": 1,
+      "message": "change \"Openstack\" to \"OpenStack\"",
+      "revId": "a7ed73b113ccfc6be2be2cb58f7e4924d5666def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
