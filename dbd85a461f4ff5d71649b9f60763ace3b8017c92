@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//x1s\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Since token providers are pluggable and can be 3rd customized providers, they may not play nice. All I am doing here is just to log any errors coming from the provider.",
+      "parentUuid": "AAAAP3//x84\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x+A\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 19
@@ -47,6 +65,24 @@
       "writtenOn": "2013-07-11T15:34:11Z",
       "side": 1,
       "message": "what\u0027s up with the belongs_to\u003dNone ? remove it",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xt8\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x+A\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xpc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Yeah, the patch started when context was still being passed into all the backends.",
+      "parentUuid": "AAAAP3//x9g\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x9Y\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 19
@@ -81,6 +135,24 @@
       "writtenOn": "2013-07-11T15:34:11Z",
       "side": 1,
       "message": "remove context",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xjI\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x9Y\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xjE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x9U\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x9Q\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 19
@@ -115,6 +205,24 @@
       "writtenOn": "2013-07-11T15:34:11Z",
       "side": 1,
       "message": "remove",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xi8\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x9Q\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xio\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "That\u0027ll work, but I\u0027ll have to rename provider.Manager to provider.ProviderManager to avoid name clash with core.Manager",
+      "parentUuid": "AAAAP3//yEo\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//yEQ\u003d",
         "filename": "keystone/test.py",
         "patchSetId": 19
@@ -149,6 +275,24 @@
       "writtenOn": "2013-07-11T15:13:25Z",
       "side": 1,
       "message": "it\u0027s not a backend, why is it here?",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xuc\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "because token_provider is implement using the same mechanism as backends. I need a way to make it available for the tests. If this is not the appropriate place, perhaps I can move it up to the setUp() method? Any other suggestion?",
+      "parentUuid": "AAAAP3//yEQ\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xdg\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "the test code make use of unique_id() so I\u0027ll leave it as is for now",
+      "parentUuid": "AAAAP3//yDw\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x8o\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 19
@@ -183,6 +345,24 @@
       "writtenOn": "2013-07-11T15:34:11Z",
       "side": 1,
       "message": "be explicit about *what* kwargs. i don\u0027t find it acceptable that an interface definition can\u0027t be explicit about what it expects...",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xbY\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "this interface is for both V2 and V3. I orginally have all the parameters list. Some of them are optional, depending on the version of the token to issue. Brant suggested putting all of them into kwargs in one of the earlier reviews. I though having them as kwargs is more flexible too.\n\nI can go back to the original params list if that\u0027s we it takes. I am fine either way.",
+      "parentUuid": "AAAAP3//x8o\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +386,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xdQ\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x8s\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x8M\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 19
@@ -217,6 +415,24 @@
       "writtenOn": "2013-07-11T15:34:11Z",
       "side": 1,
       "message": "i\u0027d really like to stop using default arguments and kwargs in driver interfaces. if the signature can\u0027t be explicit about what it\u0027s doing, then it just leads to broken drivers and bugs.\n\nthe version also shouldn\u0027t appear here at all. HTTP API version is a view/controller concern, not one addressed by the backend",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xc0\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "belongs_to is optional as this interface is for both v2 and v3.\n\nThis interface is for both V2 and V3 tokens. The version parameter dictates which token version to issue.",
+      "parentUuid": "AAAAP3//x8M\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +456,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xbE\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "to avoid name clashing. see line 22 \"import uuid\"",
+      "parentUuid": "AAAAP3//x4w\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x4c\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 19
@@ -251,6 +485,24 @@
       "writtenOn": "2013-07-11T15:44:57Z",
       "side": 1,
       "message": "it\u0027s okay (and desirable) to include a message explaining why the forbidden is being raised. it\u0027ll only be exposed to the API if keystone is running in debug mode\n\n  raise exception.Forbidden(_(\u0027Trustor is disabled.\u0027))",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xa4\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x4c\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +526,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xZ8\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x4U\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x4I\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 19
@@ -285,6 +555,24 @@
       "writtenOn": "2013-07-11T15:44:57Z",
       "side": 1,
       "message": "i18n",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xZ4\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Good catch!",
+      "parentUuid": "AAAAP3//x4I\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +596,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xZ0\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x4A\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x38\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 19
@@ -319,6 +625,24 @@
       "writtenOn": "2013-07-11T15:44:57Z",
       "side": 1,
       "message": "see above",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xZs\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x38\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -342,6 +666,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xZY\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "any unexpected errors from validation so client will see a 401 instead of 500",
+      "parentUuid": "AAAAP3//x3s\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x3o\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 19
@@ -353,6 +695,24 @@
       "writtenOn": "2013-07-11T15:44:57Z",
       "side": 1,
       "message": "what are you catching? be more specific",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xZU\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "any unexpected errors from validation so client will see a 401 instead of 500",
+      "parentUuid": "AAAAP3//x3o\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -376,6 +736,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xZI\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Oh, its about time. I was wonder about the same thing when I refactoring the code.\n\nI would be thrill to get rid of it. :)",
+      "parentUuid": "AAAAP3//x7g\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x60\u003d",
         "filename": "tests/test_token_provider.py",
         "patchSetId": 19
@@ -387,6 +765,24 @@
       "writtenOn": "2013-07-11T15:44:57Z",
       "side": 1,
       "message": "no service name?",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xYY\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "I was wondering about the same thing. Service name wasn\u0027t in the original v3 spec. But the service catalog has since been taken out of the spec and its now a placeholder. :)\n\nBut yeah, I agree, we should have service name.",
+      "parentUuid": "AAAAP3//x60\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -410,6 +806,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xYE\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x7A\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x7Q\u003d",
         "filename": "tests/test_token_provider.py",
         "patchSetId": 19
@@ -421,6 +835,24 @@
       "writtenOn": "2013-07-11T15:34:11Z",
       "side": 1,
       "message": "GARBAGE, REMOVE",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xYA\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x7Q\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -444,6 +876,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xXk\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x7U\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x7Y\u003d",
         "filename": "tests/test_token_provider.py",
         "patchSetId": 19
@@ -461,6 +911,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xXg\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//x7Y\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//yCM\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 19
@@ -472,6 +940,24 @@
       "writtenOn": "2013-07-11T15:13:25Z",
       "side": 1,
       "message": "-2; see a previous review and DO NOT use use object references as default arguments\n\nthis whole architecture is just dumb though. perhaps expose the list of configuration files and allow child classes to manipulate it directly",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xW4\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "let me think this one over. Basically, we need a way to switch different providers.",
+      "parentUuid": "AAAAP3//yCM\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -512,6 +998,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xWc\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//yAA\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x/s\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 19
@@ -523,6 +1027,24 @@
       "writtenOn": "2013-07-11T15:34:11Z",
       "side": 1,
       "message": "all these changes to add _id seem superfluous and debatable. the header is not called X-Subject-Token-Id for a reason... it\u0027s not an identifier from the client\u0027s perspective",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xWs\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 1,
+      "message": "I can undo this change. Not worth fighting this battle. :)",
+      "parentUuid": "AAAAP3//x/s\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

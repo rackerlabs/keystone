@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//x9E\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 0,
+      "message": "the mechanism for setting expiration at token creation is exactly the same for both UUID and PKI tokens. For rescope tokens, expiration should be maintained regardless of token format.",
+      "parentUuid": "AAAAP3//yDE\u003d",
+      "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x/c\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 19
@@ -64,6 +82,24 @@
       "writtenOn": "2013-07-11T15:34:11Z",
       "side": 0,
       "message": "same concern again... this looks like your\u0027e suddenly testing PKI tokens instead",
+      "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xXM\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 0,
+      "message": "I have separate tests for UUID and PKI tokens\n\nSee TestUUIDTokenAPIs and TestPKITokenAPIs",
+      "parentUuid": "AAAAP3//x/c\u003d",
       "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//xXA\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 0,
+      "message": "I am actually adding test coverage. See TestUUIDTokenAPIs and TestPKITokenAPIs.",
+      "parentUuid": "AAAAP3//x58\u003d",
+      "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x54\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 19
@@ -98,6 +152,24 @@
       "writtenOn": "2013-07-11T15:44:57Z",
       "side": 0,
       "message": "why are you removing test coverage?",
+      "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//xW8\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-11T17:54:01Z",
+      "side": 0,
+      "message": "I am actually adding test coverage. See TestUUIDTokenAPIs and TestPKITokenAPIs.",
+      "parentUuid": "AAAAP3//x54\u003d",
       "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
