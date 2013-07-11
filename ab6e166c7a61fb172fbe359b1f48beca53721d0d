@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//wns\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T20:52:23Z",
+      "side": 1,
+      "message": "this seems overly defensive ...  why would you not have an auth_info.context? (and what\u0027s the difference between auth_context and auth_info.context?!)\n\n  include_catalog \u003d \u0027no-catalog\u0027 not in auth_info.context.get(\u0027query_string\u0027, {})",
+      "revId": "ab6e166c7a61fb172fbe359b1f48beca53721d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//wnQ\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T20:52:23Z",
+      "side": 1,
+      "message": "this is the only line that is unique to this assertion... refactor the assertion hierarchy to eliminate the duplication you\u0027ve created below this line",
+      "revId": "ab6e166c7a61fb172fbe359b1f48beca53721d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//wnM\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T20:52:23Z",
+      "side": 1,
+      "message": "same as the above, stop copy pasting large chunks of code",
+      "revId": "ab6e166c7a61fb172fbe359b1f48beca53721d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
