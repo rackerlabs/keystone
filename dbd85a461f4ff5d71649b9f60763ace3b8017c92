@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//w5w\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T19:59:04Z",
+      "side": 1,
+      "message": "the interface should document the exceptions it\u0027s expected to raise. anything else is a 500 because the provider is broken",
+      "parentUuid": "AAAAP3//x1s\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x+A\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 19
@@ -264,6 +282,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//w5o\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T19:59:04Z",
+      "side": 1,
+      "message": "no you don\u0027t, reference it as token.provider.Manager externally",
+      "parentUuid": "AAAAP3//xio\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//yEQ\u003d",
         "filename": "keystone/test.py",
         "patchSetId": 19
@@ -299,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//w5c\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T19:59:04Z",
+      "side": 1,
+      "message": "i don\u0027t have an alternative suggestion, i\u0027m just red flagging confusing architecture",
+      "parentUuid": "AAAAP3//xuc\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//yDw\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 19
@@ -328,6 +382,24 @@
       "side": 1,
       "message": "the test code make use of unique_id() so I\u0027ll leave it as is for now",
       "parentUuid": "AAAAP3//yDw\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//w44\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T19:59:04Z",
+      "side": 1,
+      "message": "i thought you removed that from all the test code?",
+      "parentUuid": "AAAAP3//xdg\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -468,6 +540,24 @@
       "side": 1,
       "message": "to avoid name clashing. see line 22 \"import uuid\"",
       "parentUuid": "AAAAP3//x4w\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//w3k\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T19:59:04Z",
+      "side": 1,
+      "message": "it tries to implicitly import itself, otherwise? happy to keep it, i just didn\u0027t see a reason for it at first glance",
+      "parentUuid": "AAAAP3//xbE\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -684,6 +774,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//w3Y\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T19:59:04Z",
+      "side": 1,
+      "message": "unexpected errors should be 500\u0027s because something unexpected its broken",
+      "parentUuid": "AAAAP3//xZY\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x3o\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 19
@@ -713,6 +821,24 @@
       "side": 1,
       "message": "any unexpected errors from validation so client will see a 401 instead of 500",
       "parentUuid": "AAAAP3//x3o\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//w3U\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T19:59:04Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "AAAAP3//xZU\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -958,6 +1084,24 @@
       "side": 1,
       "message": "let me think this one over. Basically, we need a way to switch different providers.",
       "parentUuid": "AAAAP3//yCM\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//w2U\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T19:59:04Z",
+      "side": 1,
+      "message": "self.config() might be designed the way you want already... i swear we do something similar to this in another test suite",
+      "parentUuid": "AAAAP3//xW4\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

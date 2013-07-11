@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//w24\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T19:59:04Z",
+      "side": 0,
+      "message": "this class used to have a test for uuid and one for pki... any reason you can\u0027t add that back? i\u0027d rather be safe to prevent regressions",
+      "parentUuid": "AAAAP3//x9E\u003d",
+      "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x/c\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 19
@@ -135,6 +153,24 @@
       "side": 0,
       "message": "I am actually adding test coverage. See TestUUIDTokenAPIs and TestPKITokenAPIs.",
       "parentUuid": "AAAAP3//x58\u003d",
+      "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//w08\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T19:59:04Z",
+      "side": 0,
+      "message": "ah, i didn\u0027t see this as a refactor. cool!",
+      "parentUuid": "AAAAP3//xXA\u003d",
       "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
