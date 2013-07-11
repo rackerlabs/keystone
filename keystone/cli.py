@@ -19,13 +19,17 @@ from __future__ import absolute_import
 import grp
 import os
 import pwd
+import pkgutil
+
 
 from oslo.config import cfg
 import pbr.version
 
+from keystone.common import extension
 from keystone.common import openssl
 from keystone.common.sql import migration
 from keystone import config
+from keystone import contrib
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone import token
@@ -65,6 +69,25 @@ class DbSync(BaseApp):
             driver = importutils.import_object(getattr(CONF, k).driver)
             if hasattr(driver, 'db_sync'):
                 driver.db_sync(CONF.command.version)
+        pkgpath = os.path.dirname(contrib.__file__)
+        for name in [name for _, name, _ in pkgutil.iter_modules([pkgpath])]:
+            package_name = "%s.%s.migrate_repo" % (contrib.__name__, name) 
+            try:
+                package = importutils.import_module(package_name)
+                repo_path=os.path.abspath(os.path.dirname(package.__file__))
+            except Exception as e:
+                continue
+            try:
+                migration.db_version_control(version=None, repo_path=repo_path)
+            except Exception as e:
+                pass
+            try:
+                print "running db_sync on %s" % package_name
+                migration.db_sync(version=None, repo_path=repo_path)
+            except Exception as e:
+                print e
+                pass
+
 
 
 class DbVersion(BaseApp):
