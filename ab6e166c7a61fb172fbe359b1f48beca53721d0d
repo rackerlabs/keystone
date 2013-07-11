@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//we4\u003d",
+        "filename": "keystone/auth/token_factory.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-07-11T22:13:45Z",
+      "side": 1,
+      "message": "the auth_context is actually empty and does not contain the request context (I agree is weird ...).\nPlease look at auth/controllers:\nauth_info \u003d AuthInfo(context, auth\u003dauth)\nauth_context \u003d {\u0027extras\u0027: {}, \u0027method_names\u0027: []}\nThat\u0027s why I used the auth_info.context.\n\nI didn\u0027t check the context before but there are all bunch of tests that do not send context and would fail. I think this makes it more robust.",
+      "parentUuid": "AAAAP3//wns\u003d",
+      "revId": "ab6e166c7a61fb172fbe359b1f48beca53721d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//wnQ\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 14
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//wYc\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-07-11T22:13:45Z",
+      "side": 1,
+      "message": "I\u0027ll take care of that",
+      "parentUuid": "AAAAP3//wnQ\u003d",
+      "revId": "ab6e166c7a61fb172fbe359b1f48beca53721d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//wnM\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 14
@@ -47,6 +83,24 @@
       "writtenOn": "2013-07-11T20:52:23Z",
       "side": 1,
       "message": "same as the above, stop copy pasting large chunks of code",
+      "revId": "ab6e166c7a61fb172fbe359b1f48beca53721d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//wYY\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-07-11T22:13:45Z",
+      "side": 1,
+      "message": "I\u0027ll take care of that",
+      "parentUuid": "AAAAP3//wnM\u003d",
       "revId": "ab6e166c7a61fb172fbe359b1f48beca53721d0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
