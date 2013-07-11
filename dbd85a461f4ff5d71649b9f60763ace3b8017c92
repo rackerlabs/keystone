@@ -223,6 +223,142 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//x4w\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:44:57Z",
+      "side": 1,
+      "message": ".. why?",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x4c\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:44:57Z",
+      "side": 1,
+      "message": "it\u0027s okay (and desirable) to include a message explaining why the forbidden is being raised. it\u0027ll only be exposed to the API if keystone is running in debug mode\n\n  raise exception.Forbidden(_(\u0027Trustor is disabled.\u0027))",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x4U\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:44:57Z",
+      "side": 1,
+      "message": "see above",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x4I\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:44:57Z",
+      "side": 1,
+      "message": "i18n",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x4A\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:44:57Z",
+      "side": 1,
+      "message": "i18n",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x38\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:44:57Z",
+      "side": 1,
+      "message": "see above",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x3s\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:44:57Z",
+      "side": 1,
+      "message": "what are you catching? be more specific",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x3o\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:44:57Z",
+      "side": 1,
+      "message": "what are you catching? be more specific",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x7g\u003d",
         "filename": "tests/test_token_provider.py",
         "patchSetId": 19
@@ -234,6 +370,40 @@
       "writtenOn": "2013-07-11T15:34:11Z",
       "side": 1,
       "message": "there\u0027s an open bug against this garbage being included in the token... REMOVE",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x60\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:44:57Z",
+      "side": 1,
+      "message": "no service name?",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x7A\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:44:57Z",
+      "side": 1,
+      "message": "open bug against this, REMOVE. this is NOT part of the API",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
