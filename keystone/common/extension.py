@@ -14,9 +14,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from migrate.versioning import api as versioning_api
+
 ADMIN_EXTENSIONS = {}
 PUBLIC_EXTENSIONS = {}
-
 
 def register_admin_extension(url_prefix, extension_data):
     ADMIN_EXTENSIONS[url_prefix] = extension_data
@@ -24,3 +25,4 @@ def register_admin_extension(url_prefix, extension_data):
 
 def register_public_extension(url_prefix, extension_data):
     PUBLIC_EXTENSIONS[url_prefix] = extension_data
+
