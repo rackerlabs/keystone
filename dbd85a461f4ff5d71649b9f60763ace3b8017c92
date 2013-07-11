@@ -19,6 +19,108 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//x84\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "I\u0027d really like to know what you\u0027re catching here?",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x+A\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "what\u0027s up with the belongs_to\u003dNone ? remove it",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x9g\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "remove context",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x9Y\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "remove context",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x9U\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "don\u0027t use kwargs here",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x9Q\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//yEo\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 19
@@ -70,6 +172,125 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//x8o\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "be explicit about *what* kwargs. i don\u0027t find it acceptable that an interface definition can\u0027t be explicit about what it expects...",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x8s\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "i don\u0027t see any of the uuid provider methods actually utilizing context (and they shouldn\u0027t, anyway) ... remove context from the entire interface",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x8M\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "i\u0027d really like to stop using default arguments and kwargs in driver interfaces. if the signature can\u0027t be explicit about what it\u0027s doing, then it just leads to broken drivers and bugs.\n\nthe version also shouldn\u0027t appear here at all. HTTP API version is a view/controller concern, not one addressed by the backend",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x7g\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "there\u0027s an open bug against this garbage being included in the token... REMOVE",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x7Q\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "GARBAGE, REMOVE",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x7U\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "there\u0027s no ID",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x7Y\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "open bug against this garbage, REMOVE",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//yCM\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 19
@@ -98,6 +319,40 @@
       "writtenOn": "2013-07-11T15:13:25Z",
       "side": 1,
       "message": "-2; DO NOT DO",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//yAA\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "this is redundant with the code. don\u0027t bother commenting unless you\u0027re explaining *why* the code does something",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//x/s\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-11T15:34:11Z",
+      "side": 1,
+      "message": "all these changes to add _id seem superfluous and debatable. the header is not called X-Subject-Token-Id for a reason... it\u0027s not an identifier from the client\u0027s perspective",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
