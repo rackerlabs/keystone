@@ -16,6 +16,24 @@
       "revId": "1b482bdabd2febbe66babf77f2de2c7884bd0e19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//w9k\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-11T19:28:46Z",
+      "side": 1,
+      "message": "It is noted elsewhere the LDAP only supports a single domain.",
+      "parentUuid": "AAAAP3//xOk\u003d",
+      "revId": "1b482bdabd2febbe66babf77f2de2c7884bd0e19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
