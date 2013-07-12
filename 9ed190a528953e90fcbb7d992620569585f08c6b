@@ -211,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//swU\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-12T19:55:34Z",
+      "side": 1,
+      "message": "Yes, Forbidden more closely meets the intention here:\nThe request was a valid request, but the server is refusing to respond to it.[2] Unlike a 401 Unauthorized response, authenticating will make no difference.[2] On servers where authentication is required, this commonly means that the provided credentials were successfully authenticated but that the credentials still do not grant the client permission to access the resource (e.g. a recognized user attempting to access restricted content).",
+      "parentUuid": "AAAAP3//s04\u003d",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//tkU\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 20
