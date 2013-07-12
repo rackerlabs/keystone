@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//szA\u003d",
+        "filename": "keystone/common/extension.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-12T19:44:21Z",
+      "side": 1,
+      "message": "extra blank line here?",
+      "revId": "d407b7e5e94eec1ea6d119702df578436c417556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//szY\u003d",
+        "filename": "keystone/common/extension.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-12T19:44:21Z",
+      "side": 1,
+      "message": "change \"away\" to \"a way\"",
+      "revId": "d407b7e5e94eec1ea6d119702df578436c417556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//syw\u003d",
+        "filename": "keystone/common/extension.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-12T19:44:21Z",
+      "side": 1,
+      "message": "What\u0027s the difference between an admin extension and public extension? I thought in v3 the admin and public are served through the same endpoint?\n\nAre deployers limited in what pipeline(s) they can put an extension into?",
+      "revId": "d407b7e5e94eec1ea6d119702df578436c417556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//s0E\u003d",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-12T19:44:21Z",
+      "side": 1,
+      "message": "suggest remove the extensions argument since it\u0027s not used.\n\ncould just remove the __init__ function.",
+      "revId": "d407b7e5e94eec1ea6d119702df578436c417556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//s0A\u003d",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-12T19:44:21Z",
+      "side": 1,
+      "message": "suggest add a @property extensions in this base class so that users of Extensions know that this property is available.",
+      "revId": "d407b7e5e94eec1ea6d119702df578436c417556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//sz4\u003d",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-12T19:44:21Z",
+      "side": 1,
+      "message": "remove the __init__ function. PublicExtensions doesn\u0027t have one.",
+      "revId": "d407b7e5e94eec1ea6d119702df578436c417556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//sz0\u003d",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-12T19:44:21Z",
+      "side": 1,
+      "message": "this is a bit more involved and a suggestion so take it or leave it if you don\u0027t think it\u0027s a good idea.\n\nI don\u0027t think we should have a new keystone.common.extensions module. Instead, have an EXTENSIONS in AdminExtensions and PublicExtensions and then when register, would do\n\nAdminExtensions.register_extension(url_prefix, extension_data)\n\nor\n\nPublicExtensions.register_extension(url_prefix, extension_data)\n\n(could just call the function register() since Extensions is already mentioned)\n\nThen you don\u0027t have 2 functions that differ in the admin/public part (which looks to me like a namespace problem).",
+      "revId": "d407b7e5e94eec1ea6d119702df578436c417556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
