@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//s34\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T19:37:25Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "AAAAP3//tfc\u003d",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//tfo\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 20
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-12T16:15:49Z",
       "side": 1,
       "message": "why on earth are you logging an exception?! what is expected to raise an assertion error?",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//s3w\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T19:37:25Z",
+      "side": 1,
+      "message": "yeah you\u0027re right, that stuff should be in the plugin",
+      "parentUuid": "AAAAP3//tfo\u003d",
       "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//s2g\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T19:37:25Z",
+      "side": 1,
+      "message": "k, I\u0027ll update the comment",
+      "parentUuid": "AAAAP3//tho\u003d",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//tdU\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 20
@@ -81,6 +135,24 @@
       "writtenOn": "2013-07-12T16:15:49Z",
       "side": 1,
       "message": "what exception? this is useless",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//s2M\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T19:37:25Z",
+      "side": 1,
+      "message": "I was thinking database exceptions, etc. Maybe better to let them bubble up instead.",
+      "parentUuid": "AAAAP3//tdU\u003d",
       "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//s04\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T19:37:25Z",
+      "side": 1,
+      "message": "This should\u0027ve been a 403 when attempting to rescope a trust token. 401 implies user have no permission. 403 implies the operation is not allowed.",
+      "parentUuid": "AAAAP3//tjY\u003d",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//tkU\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 20
@@ -138,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//szk\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T19:37:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//tkU\u003d",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//tkM\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 20
@@ -149,6 +257,24 @@
       "writtenOn": "2013-07-12T16:15:49Z",
       "side": 1,
       "message": "remove",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//szc\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T19:37:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//tkM\u003d",
       "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
