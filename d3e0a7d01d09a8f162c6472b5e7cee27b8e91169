@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//tuk\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-12T15:11:17Z",
+      "side": 1,
+      "message": "remove blank line - should be no change to this file",
+      "revId": "d3e0a7d01d09a8f162c6472b5e7cee27b8e91169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
