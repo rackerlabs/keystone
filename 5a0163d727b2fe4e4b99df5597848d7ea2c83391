@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//s9g\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-12T18:48:18Z",
+      "side": 1,
+      "message": "why is this driver calling directly into another driver??",
+      "revId": "5a0163d727b2fe4e4b99df5597848d7ea2c83391",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//s84\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-12T18:48:18Z",
+      "side": 1,
+      "message": "wtf?\n\ni thought \"assignment\" was separated from identity? this is a joke",
+      "revId": "5a0163d727b2fe4e4b99df5597848d7ea2c83391",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
