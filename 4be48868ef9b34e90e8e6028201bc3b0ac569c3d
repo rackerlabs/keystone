@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//sqQ\u003d",
+        "filename": "tests/default_fixtures.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-12T20:25:37Z",
+      "side": 1,
+      "message": "Nice!!!",
+      "revId": "4be48868ef9b34e90e8e6028201bc3b0ac569c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
