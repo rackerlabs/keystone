@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAP3//vNY\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T06:03:54Z",
+      "side": 1,
+      "message": "not sure if I understand this change. Where does authorize_for_project() come from and who uses it? I don\u0027t see any drivers implement this.",
+      "revId": "1b482bdabd2febbe66babf77f2de2c7884bd0e19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//vPg\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T06:03:54Z",
+      "side": 1,
+      "message": "don\u0027t we need _set_default_domain(tenant)?",
+      "revId": "1b482bdabd2febbe66babf77f2de2c7884bd0e19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//xOk\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 11
@@ -31,6 +65,23 @@
       "side": 1,
       "message": "It is noted elsewhere the LDAP only supports a single domain.",
       "parentUuid": "AAAAP3//xOk\u003d",
+      "revId": "1b482bdabd2febbe66babf77f2de2c7884bd0e19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//vL8\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T06:03:54Z",
+      "side": 1,
+      "message": "default domain ref needs to be a global variable. Otherwise, if we have to update something, we have to update it in multiple places.",
       "revId": "1b482bdabd2febbe66babf77f2de2c7884bd0e19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
