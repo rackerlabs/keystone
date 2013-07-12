@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAP3//saM\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T21:31:48Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "4be48868ef9b34e90e8e6028201bc3b0ac569c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//sqQ\u003d",
         "filename": "tests/default_fixtures.py",
         "patchSetId": 14
