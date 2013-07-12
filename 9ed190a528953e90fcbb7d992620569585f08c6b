@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//tfc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-12T16:15:49Z",
+      "side": 1,
+      "message": "authenticate?",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//tfo\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-12T16:15:49Z",
+      "side": 1,
+      "message": "why on earth are you logging an exception?! what is expected to raise an assertion error?",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//tgk\u003d",
+        "filename": "keystone/token/__init__.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-12T16:15:49Z",
+      "side": 1,
+      "message": "cool",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//tho\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-12T16:15:49Z",
+      "side": 1,
+      "message": "backwards compatibility for existing configurations needs to be maintained for grizzly+2",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//tdU\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-12T16:15:49Z",
+      "side": 1,
+      "message": "what exception? this is useless",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//tdQ\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-12T16:15:49Z",
+      "side": 1,
+      "message": "useless",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//tjY\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-12T16:15:49Z",
+      "side": 1,
+      "message": "i\u0027m not clear on why this should change to forbidden?",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//tkU\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-12T16:15:49Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//tkM\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-12T16:15:49Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "9ed190a528953e90fcbb7d992620569585f08c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
