@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//t8c\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-12T14:26:26Z",
+      "side": 0,
+      "message": "This failed style checks on the last patch verification as it was an unused import.",
+      "revId": "aacbb5fedc9757a327a2dcac7c5258aae6b141b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
