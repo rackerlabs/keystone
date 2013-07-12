@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//wi8\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T00:05:53Z",
+      "side": 1,
+      "message": "k, let it raise baby! :)",
+      "parentUuid": "AAAAP3//w5w\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x+A\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 19
@@ -353,6 +371,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//wjE\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T00:05:53Z",
+      "side": 1,
+      "message": "k, I\u0027ll move it out of load_backends() to avoid confusion",
+      "parentUuid": "AAAAP3//w5c\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//yDw\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 19
@@ -400,6 +436,24 @@
       "side": 1,
       "message": "i thought you removed that from all the test code?",
       "parentUuid": "AAAAP3//xdg\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//wXI\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T00:05:53Z",
+      "side": 1,
+      "message": "Done, removed all of them",
+      "parentUuid": "AAAAP3//w44\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -792,6 +846,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//wHU\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T00:05:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//w3Y\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x3o\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 19
@@ -839,6 +911,24 @@
       "side": 1,
       "message": "see above",
       "parentUuid": "AAAAP3//xZU\u003d",
+      "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//wHQ\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T00:05:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//w3U\u003d",
       "revId": "dbd85a461f4ff5d71649b9f60763ace3b8017c92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

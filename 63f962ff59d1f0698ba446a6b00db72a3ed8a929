@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//wHM\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T00:05:53Z",
+      "side": 0,
+      "message": "token_format will be removed as we will be using provider.\n\nI\u0027ll move this test to TestUUIDTokenAPIs and TestPKITokenAPIs in the v2 token patch.",
+      "parentUuid": "AAAAP3//w24\u003d",
+      "revId": "63f962ff59d1f0698ba446a6b00db72a3ed8a929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//x/c\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 19
