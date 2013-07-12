@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-07-11 17:05+0000\n"
+"POT-Creation-Date: 2013-07-12 17:05+0000\n"
 "PO-Revision-Date: 2013-06-28 06:06+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Polish (Poland) "
@@ -39,7 +39,7 @@ msgstr ""
 msgid "%(property_name)s is not a %(display_expected_type)s"
 msgstr ""
 
-#: keystone/test.py:106
+#: keystone/test.py:114
 #, python-format
 msgid "Failed to checkout %s"
 msgstr ""
