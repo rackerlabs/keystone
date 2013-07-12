@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//s3U\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-12T19:11:43Z",
+      "side": 1,
+      "message": "these two should be above the session call, I think",
+      "revId": "f3196d94b91a79b27d07d01a651b7d98ee694b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
