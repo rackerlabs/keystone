@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//sUs\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-12T21:57:03Z",
+      "side": 1,
+      "message": "why do we need line 859-876? All we care is no catalog is returned. That\u0027s all we really need.\n\nauth_data \u003d self.build_authentication_request(\n            user_id\u003dself.user[\u0027id\u0027],\n            password\u003dself.user[\u0027password\u0027],\n            project_id\u003dself.project[\u0027id\u0027])\n        r \u003d self.post(\u0027/auth/tokens?nocatalog\u0027, body\u003dauth_data)\n        self.assertValidProjectScopedTokenResponse(r, False)",
+      "revId": "bce27e596ebe9be8ea469ff5312a898578b429c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
