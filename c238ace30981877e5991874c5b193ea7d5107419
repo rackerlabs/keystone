@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//rUc\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-13T21:37:15Z",
+      "side": 1,
+      "message": "Nice to have pulled this up to here!",
+      "revId": "c238ace30981877e5991874c5b193ea7d5107419",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//rUo\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-13T21:37:15Z",
+      "side": 1,
+      "message": "do we ever use the ref returned?  I couldn\u0027t see it...",
+      "revId": "c238ace30981877e5991874c5b193ea7d5107419",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
