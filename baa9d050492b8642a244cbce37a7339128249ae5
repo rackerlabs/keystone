@@ -34,6 +34,23 @@
       "revId": "baa9d050492b8642a244cbce37a7339128249ae5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//rPg\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-07-13T22:30:31Z",
+      "side": 1,
+      "message": "I understand that you are just trying to refactor existing code. But this code is wrong.\n\n1)  Since in v3 username is unique within a domain, we can\u0027t get correct user id from user name\n2) Code assumes that  in case of external auth, client is going to send userid/password instead of username/pasword\n3)  So I can send any valid user id and not necessarily the remote_user\u0027s user id. This looks like  a security hole\n4)  Looks like password in request doesn\u0027t matter in case of external auth. Any password should work.\n\nAm is missing something here?",
+      "revId": "baa9d050492b8642a244cbce37a7339128249ae5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
