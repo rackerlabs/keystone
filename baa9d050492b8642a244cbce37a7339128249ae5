@@ -16,6 +16,24 @@
       "revId": "baa9d050492b8642a244cbce37a7339128249ae5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//sSM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-13T04:01:53Z",
+      "side": 1,
+      "message": "Haneef, yes, but I think that it might not make sense to.  For a Multifactor deployment, you would want it all in one plugin, just checking that the proper number of factors were used.  Otherwise, you should probably let the front end dictate which forms are used, and just have generic backend that does the same thing regardless of X509/Kerberos.  \n\nThis is just for Keystone, though, and not for the auth_token middelware.  That will come later, as part of the token binding work.",
+      "parentUuid": "AAAAP3//tXE\u003d",
+      "revId": "baa9d050492b8642a244cbce37a7339128249ae5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
