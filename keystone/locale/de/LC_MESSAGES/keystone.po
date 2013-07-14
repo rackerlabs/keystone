@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-07-11 17:05+0000\n"
+"POT-Creation-Date: 2013-07-14 17:05+0000\n"
 "PO-Revision-Date: 2013-05-22 03:45+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: German "
@@ -38,23 +38,23 @@ msgstr "%(property_name)s sollte nicht größer als %(max_length)s Zeichen sein.
 msgid "%(property_name)s is not a %(display_expected_type)s"
 msgstr ""
 
-#: keystone/test.py:106
+#: keystone/test.py:114
 #, python-format
 msgid "Failed to checkout %s"
 msgstr "%s wurde nicht ausgecheckt"
 
-#: keystone/assignment/backends/ldap.py:110
+#: keystone/assignment/core.py:449
 #, python-format
 msgid "Expected dict or list: %s"
 msgstr ""
 
-#: keystone/assignment/backends/ldap.py:456
+#: keystone/assignment/backends/ldap.py:426
 #: keystone/identity/backends/ldap.py:433
 #, python-format
 msgid "Role %s not found"
 msgstr "Rolle %s nicht gefunden"
 
-#: keystone/assignment/backends/sql.py:244
+#: keystone/assignment/backends/sql.py:250
 #, python-format
 msgid "Cannot remove role that has not been granted, %s"
 msgstr "Nicht gewährte Rolle kann nicht entfernt werden, %s"
@@ -569,6 +569,20 @@ msgstr "Kein Handler für Übereinstimmungen des Typs %s"
 #, python-format
 msgid "Failed to understand rule %(rule)r"
 msgstr "Regel '%(rule)r' konnte nicht verstanden werden"
+
+#: keystone/openstack/common/crypto/utils.py:29
+msgid "An unknown error occurred in crypto utils."
+msgstr ""
+
+#: keystone/openstack/common/crypto/utils.py:36
+#, python-format
+msgid "Block size of %(given)d is too big, max = %(maximum)d"
+msgstr ""
+
+#: keystone/openstack/common/crypto/utils.py:45
+#, python-format
+msgid "Length of %(given)d is too long, max = %(maximum)d"
+msgstr ""
 
 #: keystone/policy/backends/rules.py:93
 #, python-format
