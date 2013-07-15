@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//ndk\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:53:22Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "AAAAP3//npQ\u003d",
+      "revId": "6283e55454b10f671323f4370aeef901046be016",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//nnE\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-15T19:25:58Z",
       "side": 1,
       "message": "So you mention PKI tokens in this comment but it appears you structured the code to split UUID and PKI into 2 separate providers. So I don\u0027t think referring to PKI tokens in this UUID provider makes sense. Also, V2 tokens did not provide PKI support so that is why the V2 token patch is not the patch that is providing a PKI provider, correct?",
+      "revId": "6283e55454b10f671323f4370aeef901046be016",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nc8\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:53:22Z",
+      "side": 1,
+      "message": "This code is common to and shared by both uuid and pki providers. Pki provider inherited from uuid provider. We do optionally support PKI tokens since Grizzly.",
+      "parentUuid": "AAAAP3//nnE\u003d",
       "revId": "6283e55454b10f671323f4370aeef901046be016",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
