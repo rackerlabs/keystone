@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//nRA\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "One of the main reasons to have the config switch is so that if you enable it for a bit, create some inherited roles, then you want to be able to mute all those inherited roles if you decide you want to turn off the extension.  So it is not just about removing the ability to call one of the grant APIs",
+      "parentUuid": "AAAAP3//oDk\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//oDQ\u003d",
         "filename": "keystone/assignment/backends/kvs.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-15T19:50:07Z",
       "side": 1,
       "message": "Just a general statement. Why are we even wasting time supporting KVS for the assignment stuff?",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nQY\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "...we just need decide to drop that as a team!",
+      "parentUuid": "AAAAP3//oDQ\u003d",
       "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//nPQ\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "So we know that we can\u0027t get called if the extension is disabled (the controller checks this)...but we should check \u0026 refuse inherited roles on projects",
+      "parentUuid": "AAAAP3//neU\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//n/E\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2013-07-15T19:50:07Z",
       "side": 1,
       "message": "yeah, wtf\n\nif MetadataNotFound or role_id not in metadata_ref[\u0027roles\u0027], we should just returned. What\u0027s the point of creating a new ref?",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nOs\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "beats the hell out of me...but thought I should fix that in a separate patch",
+      "parentUuid": "AAAAP3//n/E\u003d",
       "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//nOo\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "agreed.",
+      "parentUuid": "AAAAP3//nm4\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//nlA\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 13
@@ -98,6 +188,24 @@
       "writtenOn": "2013-07-15T19:50:07Z",
       "side": 1,
       "message": "wait, this logic looks the same as create_grant(). Time for refactor?",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nOU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "maybe right",
+      "parentUuid": "AAAAP3//nlA\u003d",
       "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//nOg\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "I was just keeping the existing behaviour....in case something relied on it...",
+      "parentUuid": "AAAAP3//nkk\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//nkY\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 13
@@ -132,6 +258,24 @@
       "writtenOn": "2013-07-15T19:50:07Z",
       "side": 1,
       "message": "delete_grant()?",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nOI\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "as per comment on create grant.",
+      "parentUuid": "AAAAP3//nkY\u003d",
       "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//nNo\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "yep, good idea",
+      "parentUuid": "AAAAP3//njw\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//nis\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -166,6 +328,24 @@
       "writtenOn": "2013-07-15T19:50:07Z",
       "side": 1,
       "message": "is role_list unique?",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nNc\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "not sure what you mean, sorry?",
+      "parentUuid": "AAAAP3//nis\u003d",
       "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//nNM\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "Good idea",
+      "parentUuid": "AAAAP3//nuY\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//nq0\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -200,6 +398,24 @@
       "writtenOn": "2013-07-15T19:50:07Z",
       "side": 1,
       "message": "may want to check to see if the set exist first before removing it",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nMg\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//nq0\u003d",
       "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//nJ0\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "wouldn\u0027t it be hard to use the actual controller call (since the filtering is done via the v3 wrapper).  I could just call the list_projects driver call and filer that....but thought it more efficient to actually pass the search filter into the DB.",
+      "parentUuid": "AAAAP3//nfQ\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//no8\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/028_update_assignment_metadata.py",
         "patchSetId": 13
@@ -240,6 +474,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//nJg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/028_update_assignment_metadata.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "actually, that\u0027s a good point - nice catch.",
+      "parentUuid": "AAAAP3//no8\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//neA\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 13
@@ -251,6 +503,24 @@
       "writtenOn": "2013-07-15T19:50:07Z",
       "side": 1,
       "message": "that\u0027s the reason I like the extension routes in keystone/contrib, disabling it is as simple as remoting it from the pipeline.",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nJI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:00:07Z",
+      "side": 1,
+      "message": "ahh, but the idea is that if we disable the extension, then we want to filter out any DB entries made while the extension was enabled...hence it is not as simple as just removing the pipeline entries.",
+      "parentUuid": "AAAAP3//neA\u003d",
       "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
