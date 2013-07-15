@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//mfk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-15T23:54:16Z",
+      "side": 1,
+      "message": "this line is a duplicate of line 7. remove one of them.",
+      "revId": "aaff2fa36bcb2c07f6710d493747d6f859c812a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//mfY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-15T23:54:16Z",
+      "side": 1,
+      "message": "this first part is a phrase and not a sentence.\n\nChange to \"OpenStack client requirements should not have an upper bound ...\"",
+      "revId": "aaff2fa36bcb2c07f6710d493747d6f859c812a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//mfg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-15T23:54:16Z",
+      "side": 1,
+      "message": "what does this sentence have to do with Keystone?",
+      "revId": "aaff2fa36bcb2c07f6710d493747d6f859c812a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//mfo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-15T23:54:16Z",
+      "side": 1,
+      "message": "this is a duplicate of line 18. remove one of them.",
+      "revId": "aaff2fa36bcb2c07f6710d493747d6f859c812a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
