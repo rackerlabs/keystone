@@ -899,8 +899,8 @@ class RoleAssignmentV3(controller.V3Controller):
                 target_link = (
                     '/projects/%s' % scope['project']['id'])
             user_entry['links']['assignment'] = (
-                self.base_url('%s/users/%s/roles/%s' %
-                              (target_link, m['id'],
+                self.base_url('%s/groups/%s/roles/%s' %
+                              (target_link, group_id,
                                user_entry['role']['id'])))
             user_entry['links']['membership'] = (
                 self.base_url('/groups/%s/users/%s' %
