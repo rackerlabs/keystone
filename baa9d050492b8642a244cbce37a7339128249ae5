@@ -51,6 +51,24 @@
       "revId": "baa9d050492b8642a244cbce37a7339128249ae5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//qiQ\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-15T00:15:04Z",
+      "side": 1,
+      "message": "REMOTE_USER is completely broken in v3, but you are right, i didn\u0027t think it was that broken. The fact that remote user is present means that the user is authenticated, but because username is taken from the payload and not the REMOTE_USER variable any user authenticated externally could spoof themselves as any other user.\n\nRegarding password, REMOTE_USER is what apache sends to say that this user has been authenticated by (for example) kerberos or basic auth. We can then say that the auth has already happened, the \u0027password\u0027 section should just be used to get domain information until we figure out how that will work with external auth, so yes we are right to ignore that password (it would probably not be provided). \n\nI\u0027m not sure what a valid fix is at the moment though.",
+      "parentUuid": "AAAAP3//rPg\u003d",
+      "revId": "baa9d050492b8642a244cbce37a7339128249ae5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
