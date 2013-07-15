@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//m/4\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 0,
+      "message": "no need for line 644 and 645",
+      "revId": "74561b92aa5ca9b9d70c92a317952ff7ce066c0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//m/0\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 0,
+      "message": "self.assertIn(cred, creds)",
+      "revId": "74561b92aa5ca9b9d70c92a317952ff7ce066c0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nBo\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 0,
+      "message": "s/got/actual_cred/g",
+      "revId": "74561b92aa5ca9b9d70c92a317952ff7ce066c0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//m/w\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 0,
+      "message": "assertNotIn",
+      "revId": "74561b92aa5ca9b9d70c92a317952ff7ce066c0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//m+c\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 0,
+      "message": "why are you doing import here? Shouldn\u0027t these go to the top of the file?",
+      "revId": "74561b92aa5ca9b9d70c92a317952ff7ce066c0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//m+Y\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 0,
+      "message": "Same as above. Might want to move client to __init__. i.e.\n\nself.client \u003d get_client()",
+      "revId": "74561b92aa5ca9b9d70c92a317952ff7ce066c0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//m9Q\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 0,
+      "message": "might want to add a test case for creating a credential without tenant_id",
+      "revId": "74561b92aa5ca9b9d70c92a317952ff7ce066c0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//m80\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 697,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 0,
+      "message": "two sound like a bad name for an instance of client. Might want to name it user_two_client or something to distinguish it from admin user client.",
+      "revId": "74561b92aa5ca9b9d70c92a317952ff7ce066c0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

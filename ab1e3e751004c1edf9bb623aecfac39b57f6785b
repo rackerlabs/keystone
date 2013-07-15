@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//nHk\u003d",
+        "filename": "keystone/common/sql/legacy.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 1,
+      "message": "Looks like you are using hashlib.sh256 in multiple places. You may want to get 31290 in first. Refactor the code to isolate the create credential_id from access functionality and have to patch make use of it.\n\nhttps://review.openstack.org/#/c/31290/18/keystone/credential/controllers.py",
+      "revId": "ab1e3e751004c1edf9bb623aecfac39b57f6785b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nHA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/028_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 1,
+      "message": "2013",
+      "revId": "ab1e3e751004c1edf9bb623aecfac39b57f6785b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nFc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/028_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 1,
+      "message": "should be drop() statement come before commit() and close()?",
+      "revId": "ab1e3e751004c1edf9bb623aecfac39b57f6785b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nDI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/028_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 1,
+      "message": "need to check both user_id and tenant_id\n\nbtw, have you look at my comments from patch #1?",
+      "revId": "ab1e3e751004c1edf9bb623aecfac39b57f6785b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nHI\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 1,
+      "message": "Looks like you are using hashlib.sh256 in multiple places. You may want to get 31290 in first. Refactor the code to isolate the create credential_id from access functionality and have to patch make use of it.\n\nhttps://review.openstack.org/#/c/31290/18/keystone/credential/controllers.py",
+      "revId": "ab1e3e751004c1edf9bb623aecfac39b57f6785b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nCg\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 1,
+      "message": "Looks like you are using hashlib.sh256 in multiple places. You may want to get 31290 in first. Refactor the code to isolate the create credential_id from access functionality and have to patch make use of it.\n\nhttps://review.openstack.org/#/c/31290/18/keystone/credential/controllers.py",
+      "revId": "ab1e3e751004c1edf9bb623aecfac39b57f6785b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//m4E\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 1,
+      "message": "you are calling get_client() in every test, time to refactor",
+      "revId": "ab1e3e751004c1edf9bb623aecfac39b57f6785b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//m4U\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 1,
+      "message": "no need for line 127 and 128, doesn\u0027t matter if user have any existing credential",
+      "revId": "ab1e3e751004c1edf9bb623aecfac39b57f6785b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//m3c\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 1,
+      "message": "why are you doing import here?",
+      "revId": "ab1e3e751004c1edf9bb623aecfac39b57f6785b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//m6M\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T21:55:31Z",
+      "side": 1,
+      "message": "might want to check to make sure tenant_ids are also equal",
+      "revId": "ab1e3e751004c1edf9bb623aecfac39b57f6785b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
