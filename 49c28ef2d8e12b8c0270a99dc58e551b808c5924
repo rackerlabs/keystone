@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//pLM\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-07-15T13:41:36Z",
+      "side": 1,
+      "message": "I think, it\u0027s will be better if you will catch some known exception here, not Exception.",
+      "revId": "49c28ef2d8e12b8c0270a99dc58e551b808c5924",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//pLI\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-07-15T13:41:36Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "49c28ef2d8e12b8c0270a99dc58e551b808c5924",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//pLE\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-07-15T13:41:36Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "49c28ef2d8e12b8c0270a99dc58e551b808c5924",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
