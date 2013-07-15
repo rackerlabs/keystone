@@ -16,6 +16,24 @@
       "revId": "099f9dc0a5ac884b462a1292896e4b39ce740841",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nIE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 884,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-15T21:02:21Z",
+      "side": 1,
+      "message": "Well maybe its 75% right :-)  We are still creating a user entry....it\u0027s just that the assignment link points back to the group grant....I\u0027ll amend as you suggest.  Good catch.",
+      "parentUuid": "AAAAP3//nKM\u003d",
+      "revId": "099f9dc0a5ac884b462a1292896e4b39ce740841",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
