@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//oDk\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "Not sure what\u0027s the proper way to do extension. I was under the impression that we need to park the extensions in keystone/contrib. Disabling an extension simply means removing it from the pipeline.\n\nBut OS-TRUST didn\u0027t follow this pattern so I am not sure. But since OS-INHERIT have heavy dependency on the existing role schema so I don\u0027t have strong objection for mingling the code. But should the routers be in keystone/contrib then? I still prefer the pipeline approach. But I got a feeling I am minority on this one. :)",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//oDQ\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "Just a general statement. Why are we even wasting time supporting KVS for the assignment stuff?",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//neU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "you should check to make sure inherited_to_projects flag is only applicable to domain role grant only, and make sure the extension is enabled.",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//n/E\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "yeah, wtf\n\nif MetadataNotFound or role_id not in metadata_ref[\u0027roles\u0027], we should just returned. What\u0027s the point of creating a new ref?",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nm4\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "yeah, we don\u0027t have the list projects for user API anymore. We need to go back to the drawing board on that one after we finish the role APIs.",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nlA\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "wait, this logic looks the same as create_grant(). Time for refactor?",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nkk\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "I am not sure about raising Conflict here. If grant already exist, just do nothing.",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nkY\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "delete_grant()?",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//njw\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "s/tenant/project/g",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nis\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "is role_list unique?",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nuY\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "may want to drop a comment here to clarify what \u0027allow_existing\u0027 is for",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nq0\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "may want to check to see if the set exist first before removing it",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//nfQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "why is this one needed? Can\u0027t you use identity.controller.get_projects() filtered by domain_id?",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//no8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/028_update_assignment_metadata.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "may want to discard the inherited roles are they are meaningless in the older versions",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//neA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-15T19:50:07Z",
+      "side": 1,
+      "message": "that\u0027s the reason I like the extension routes in keystone/contrib, disabling it is as simple as remoting it from the pipeline.",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
