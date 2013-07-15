@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//nKM\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 884,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-15T20:54:48Z",
+      "side": 1,
+      "message": "Given how you changed the code below is this comment still valid?   Shouldn\u0027t it say something like:  \nThe assignment link returned for roles that are included by virtue of group membership should refer to the group assignment that led to this role",
+      "revId": "099f9dc0a5ac884b462a1292896e4b39ce740841",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
