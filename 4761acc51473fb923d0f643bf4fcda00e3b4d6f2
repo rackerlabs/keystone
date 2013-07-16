@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//imY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T20:15:48Z",
+      "side": 1,
+      "message": "\u0027other\u0027?",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iio\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T20:15:48Z",
+      "side": 1,
+      "message": "(NIT): this is probably a gerrit issue, but might need to ensure enctype and hashtype are aligned.",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iic\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T20:15:48Z",
+      "side": 1,
+      "message": "Since we aren\u0027t doing any logic under this method would it make more sense to just use m.mkey instead of a method that just returns it? We can return mkey from m already without having to explicitly define a getter method for it.",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iiQ\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T20:15:48Z",
+      "side": 1,
+      "message": "then this here could just be mkey \u003d m.mkey",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iiI\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T20:15:48Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
