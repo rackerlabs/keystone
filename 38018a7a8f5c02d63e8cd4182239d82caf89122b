@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//iPI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T21:21:04Z",
+      "side": 1,
+      "message": "remove the sentence starting with \u0027once enabled\u0027 .. it\u0027s way out of scope for this doc\n\nalso remove the corresponding PUT example\n\n``keystone.conf``",
+      "revId": "38018a7a8f5c02d63e8cd4182239d82caf89122b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iO0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/028_fixup_group_metadata.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T21:21:04Z",
+      "side": 1,
+      "message": "nice catch lol",
+      "revId": "38018a7a8f5c02d63e8cd4182239d82caf89122b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
