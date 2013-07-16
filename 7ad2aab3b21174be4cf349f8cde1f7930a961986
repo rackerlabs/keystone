@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//h/E\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T22:11:10Z",
+      "side": 1,
+      "message": "change \"authemntication\" to \"authentication\"",
+      "revId": "7ad2aab3b21174be4cf349f8cde1f7930a961986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//h+8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T22:11:10Z",
+      "side": 1,
+      "message": "change \"an containing\" to \"a containing\" (an to a)",
+      "revId": "7ad2aab3b21174be4cf349f8cde1f7930a961986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//h+s\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T22:11:10Z",
+      "side": 1,
+      "message": "change \"lists\" to \"list\"",
+      "revId": "7ad2aab3b21174be4cf349f8cde1f7930a961986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//h+M\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T22:11:10Z",
+      "side": 1,
+      "message": "what would happen if they did put \"external\" in the methods? should have a test.",
+      "revId": "7ad2aab3b21174be4cf349f8cde1f7930a961986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//h9w\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T22:11:10Z",
+      "side": 1,
+      "message": "(nit) there\u0027s 2 spaces between \"that  will\", remove one of them (doesn\u0027t matter to me which)",
+      "revId": "7ad2aab3b21174be4cf349f8cde1f7930a961986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//h9Q\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T22:11:10Z",
+      "side": 1,
+      "message": "(nit) same here.",
+      "revId": "7ad2aab3b21174be4cf349f8cde1f7930a961986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//h7s\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1227,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T22:11:10Z",
+      "side": 1,
+      "message": "Now I\u0027m wondering what happens if the ExternalDomain plugin is used and the domain is passed in through REMOTE_USER ? Does the \u0027password\u0027 method somehow get the user\u0027s domain from the plugin?",
+      "revId": "7ad2aab3b21174be4cf349f8cde1f7930a961986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
