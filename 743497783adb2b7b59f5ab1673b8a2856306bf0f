@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//irc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T19:56:13Z",
+      "side": 1,
+      "message": "Here how do I set one of the previous mentioned modes if I can\u0027t explicitly define it, if I don\u0027t want the \u0027permissive\u0027 default?",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//ixE\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 13
@@ -36,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//irI\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T19:56:13Z",
+      "side": 1,
+      "message": "I agree, especially since we should use \u0027enforce_token_bind \u003d named\u0027 according to the docs in this change.",
+      "parentUuid": "AAAAP3//ixE\u003d",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//iw0\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 13
@@ -47,6 +82,24 @@
       "writtenOn": "2013-07-16T19:41:42Z",
       "side": 1,
       "message": "Why did you need to add the or [] ?",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iqs\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T19:56:13Z",
+      "side": 1,
+      "message": "So we ensure either the contents of self.auth[\u0027identity\u0027][\u0027methods\u0027] is returned or an empty set? This is just making sure we don\u0027t return None?",
+      "parentUuid": "AAAAP3//iw0\u003d",
       "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +134,23 @@
       "writtenOn": "2013-07-16T19:41:42Z",
       "side": 1,
       "message": "good comment!",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ioI\u003d",
+        "filename": "tests/test_token_bind.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T19:56:13Z",
+      "side": 1,
+      "message": "slick",
       "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
