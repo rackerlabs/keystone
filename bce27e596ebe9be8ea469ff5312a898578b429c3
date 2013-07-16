@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAP3//kHc\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T14:38:53Z",
+      "side": 1,
+      "message": "require_catalog ? expect_catalog ?",
+      "revId": "bce27e596ebe9be8ea469ff5312a898578b429c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//sUs\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 16
@@ -13,6 +30,41 @@
       "writtenOn": "2013-07-12T21:57:03Z",
       "side": 1,
       "message": "why do we need line 859-876? All we care is no catalog is returned. That\u0027s all we really need.\n\nauth_data \u003d self.build_authentication_request(\n            user_id\u003dself.user[\u0027id\u0027],\n            password\u003dself.user[\u0027password\u0027],\n            project_id\u003dself.project[\u0027id\u0027])\n        r \u003d self.post(\u0027/auth/tokens?nocatalog\u0027, body\u003dauth_data)\n        self.assertValidProjectScopedTokenResponse(r, False)",
+      "revId": "bce27e596ebe9be8ea469ff5312a898578b429c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//kHk\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T14:38:53Z",
+      "side": 1,
+      "message": "the test case as written looks totally valid to me... it\u0027s a request that would normally generate a catalog, which now should not.\n\ni think we definitely need the test case you\u0027re describing *in addition* to this one, as written. so, there\u0027d be a test case for explicitly scoping a project and a test case for implicitly scoping to the user\u0027s default project... and asserting that no catalog is present in either response.",
+      "parentUuid": "AAAAP3//sUs\u003d",
+      "revId": "bce27e596ebe9be8ea469ff5312a898578b429c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//kH4\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T14:38:53Z",
+      "side": 1,
+      "message": "the False is arbitrary and non-obvious.. specify it as a kwarg, e.g. catalog\u003dFalse",
       "revId": "bce27e596ebe9be8ea469ff5312a898578b429c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
