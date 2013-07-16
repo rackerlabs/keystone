@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//mL4\u003d",
+        "filename": "keystone/auth/plugins/external_default.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-16T01:53:53Z",
+      "side": 1,
+      "message": "what about: \n\nnames \u003d REMOTE_USER.split(\u0027@\u0027) \nusername \u003d names.pop(0)\nif names:\n    domain_name \u003d names[0] \n    # get domain id\nelse:\n    # default domain id",
+      "revId": "15f4b70de37327064c3a8bf08a0e05787f997829",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//mLI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-16T01:53:53Z",
+      "side": 1,
+      "message": "shouldn\u0027t this default to external_default? otherwise we are changing behaviour",
+      "revId": "15f4b70de37327064c3a8bf08a0e05787f997829",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
