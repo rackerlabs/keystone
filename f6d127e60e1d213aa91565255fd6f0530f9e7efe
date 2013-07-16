@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//ie4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/028_fixup_group_metadata.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T20:30:42Z",
+      "side": 1,
+      "message": "(perhaps) a more conventional way to do this would be to include an empty sqlite-specific migration script",
+      "revId": "f6d127e60e1d213aa91565255fd6f0530f9e7efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
