@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//iiA\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-07-16T20:23:20Z",
+      "side": 1,
+      "message": "can we set master key file name it in config?",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//igA\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-07-16T20:23:20Z",
+      "side": 1,
+      "message": "Wondering why KDS is storing the shared keys? In Kerberos style auth KDC is not responsible for storing the keys.\nHope I am not missing anything.",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//iio\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 2
