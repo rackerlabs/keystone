@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//iS0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T21:36:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//ico\u003d",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//ifg\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 7
@@ -64,6 +82,24 @@
       "writtenOn": "2013-07-16T20:27:51Z",
       "side": 1,
       "message": "Where is this method \"external\" populated?  I don\u0027t think user is going to send this.  Is external authentication entity going to populate this?\n\nAlso for this external auth to work, we expect external authenticating entity to populate few things and also in certain specific format.  Can this be documented somewhere?",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iSA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T21:36:22Z",
+      "side": 1,
+      "message": "external is configured in the [auth] section just like other plugins.  It is a special one, in that it is triggered by REMOTE_USER instead of an explict list in the token.  It does not require any additional data in the token.",
+      "parentUuid": "AAAAP3//ifg\u003d",
       "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//iSU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T21:36:22Z",
+      "side": 1,
+      "message": "that probably goes for all of the auth plugins.  Lets make that a separate patch.",
+      "parentUuid": "AAAAP3//ihw\u003d",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//ihs\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 7
@@ -98,6 +152,24 @@
       "writtenOn": "2013-07-16T20:33:43Z",
       "side": 1,
       "message": "suggest have a base class for the plugins.",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iOg\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T21:36:22Z",
+      "side": 1,
+      "message": "no need yet, but we can refactor to that when we do.",
+      "parentUuid": "AAAAP3//ihs\u003d",
       "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//iOc\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T21:36:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//ihk\u003d",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//if0\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 7
@@ -149,6 +239,24 @@
       "writtenOn": "2013-07-16T20:22:28Z",
       "side": 1,
       "message": "why do we need ExternalDefault? seem like ExternalDomain is good enough",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iRk\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T21:36:22Z",
+      "side": 1,
+      "message": "Yes, but default is the current expected behavior. External domain is an expansion, but might mess up current deployments.",
+      "parentUuid": "AAAAP3//if0\u003d",
       "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +280,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//iRg\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T21:36:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//igc\u003d",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//icE\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 7
@@ -183,6 +309,24 @@
       "writtenOn": "2013-07-16T20:38:56Z",
       "side": 1,
       "message": "suggest put external first like the sample config file.",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iNo\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T21:36:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//icE\u003d",
       "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +350,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//iWc\u003d",
+        "filename": "tests/auth_plugin_external_disabled.conf",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T21:36:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//igo\u003d",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//idA\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 7
@@ -217,6 +379,24 @@
       "writtenOn": "2013-07-16T20:33:43Z",
       "side": 1,
       "message": "suggest add a testcase where have method_names with password to validate that \"external Plugin is now executed in conjunction with the auth methods\"",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iIQ\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1202,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T21:36:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//idA\u003d",
       "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
