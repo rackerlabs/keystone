@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//jgk\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-07-16T17:12:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//kHc\u003d",
+      "revId": "bce27e596ebe9be8ea469ff5312a898578b429c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//sUs\u003d",
         "filename": "tests/test_v3_auth.py",
         "patchSetId": 16
@@ -48,6 +66,42 @@
       "side": 1,
       "message": "the test case as written looks totally valid to me... it\u0027s a request that would normally generate a catalog, which now should not.\n\ni think we definitely need the test case you\u0027re describing *in addition* to this one, as written. so, there\u0027d be a test case for explicitly scoping a project and a test case for implicitly scoping to the user\u0027s default project... and asserting that no catalog is present in either response.",
       "parentUuid": "AAAAP3//sUs\u003d",
+      "revId": "bce27e596ebe9be8ea469ff5312a898578b429c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//jT0\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-07-16T17:12:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//sUs\u003d",
+      "revId": "bce27e596ebe9be8ea469ff5312a898578b429c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//jTw\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-07-16T17:12:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//kHk\u003d",
       "revId": "bce27e596ebe9be8ea469ff5312a898578b429c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
