@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//iu4\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T19:36:40Z",
+      "side": 1,
+      "message": "(NIT): would it be useful to have a little bit of logging, kicking some info back to the user on the ImportError before continuing with the loop?",
+      "revId": "e6532ff1dba657cea9cfdf14b5538aaedf3b4955",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iwk\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T19:36:40Z",
+      "side": 1,
+      "message": "so here, from the old implementation we now have a public method that is implemented from a private method (def _find_migrate_repo())? In this case if we wanted to have a private implementation wouldn\u0027t we be using the public method as a conduit to the private method where the logic is?",
+      "revId": "e6532ff1dba657cea9cfdf14b5538aaedf3b4955",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ivs\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T19:36:40Z",
+      "side": 1,
+      "message": "Under this implementation I don\u0027t *think* we would need the if check here would we? Since in _find_migrate_repo we don\u0027t ever pass in anything as package that carries over to this method?",
+      "revId": "e6532ff1dba657cea9cfdf14b5538aaedf3b4955",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iwQ\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T19:36:40Z",
+      "side": 1,
+      "message": "I guess I would have expected the logic from line 82 - 89 to be implemented in the private method and this is where we would make that call.",
+      "revId": "e6532ff1dba657cea9cfdf14b5538aaedf3b4955",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ivU\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T19:36:40Z",
+      "side": 1,
+      "message": "... and here is where we would perform the logic from def find_migrate_repo?",
+      "revId": "e6532ff1dba657cea9cfdf14b5538aaedf3b4955",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
