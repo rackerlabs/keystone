@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//meU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T00:05:41Z",
+      "side": 1,
+      "message": "should not be do your own import. Instead, we should create an external auth method and let the plug-in do its thing. i.e.\n\n{\"auth\": {\n  \"identity\": {\n    \"methods\": [\"external\"]\n  }\n}\n\nexternal auth plugin should be able to extract everything else from the context",
+      "revId": "9d481acbc07d0cda2c2ebfe5f37650b559555f21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//mew\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T00:05:41Z",
+      "side": 1,
+      "message": "Disabled? Why? If \u0027external\u0027 is not part of _DEFAULT_AUTH_METHODS, it is disabled by defualt.",
+      "revId": "9d481acbc07d0cda2c2ebfe5f37650b559555f21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
