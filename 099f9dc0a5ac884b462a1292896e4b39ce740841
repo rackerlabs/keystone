@@ -34,6 +34,24 @@
       "revId": "099f9dc0a5ac884b462a1292896e4b39ce740841",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//lI0\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 884,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T10:08:14Z",
+      "side": 1,
+      "message": "Actually, that was a great comment to make.  As I went back to change the comment, I realised that the implication was that I could simplify the code further.  Thanks.",
+      "parentUuid": "AAAAP3//nIE\u003d",
+      "revId": "099f9dc0a5ac884b462a1292896e4b39ce740841",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
