@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAP3//ioU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T20:13:20Z",
+      "side": 1,
+      "message": "This should probably have a DocImpact.",
+      "revId": "8894cf0c9b1003dbd1679d3c89dd8b64b243ded8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//inw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T20:13:20Z",
+      "side": 1,
+      "message": "change \"inow\" to \"now\".",
+      "revId": "8894cf0c9b1003dbd1679d3c89dd8b64b243ded8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//i1g\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 6
@@ -13,6 +47,108 @@
       "writtenOn": "2013-07-16T19:21:13Z",
       "side": 1,
       "message": "Very cool. I like that",
+      "revId": "8894cf0c9b1003dbd1679d3c89dd8b64b243ded8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ilc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T20:13:20Z",
+      "side": 1,
+      "message": "there should be some indication that auth_context is an in-out parameter... for example, auth_context_in_out\u003dauth_context",
+      "revId": "8894cf0c9b1003dbd1679d3c89dd8b64b243ded8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ijc\u003d",
+        "filename": "keystone/auth/plugins/external_default.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T20:13:20Z",
+      "side": 1,
+      "message": "suggest have a base class for the plugins.",
+      "revId": "8894cf0c9b1003dbd1679d3c89dd8b64b243ded8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ikU\u003d",
+        "filename": "keystone/auth/plugins/external_default.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T20:13:20Z",
+      "side": 1,
+      "message": "there should be some indication that auth_context is an in-out parameter... suggest call it auth_context_in_out.",
+      "revId": "8894cf0c9b1003dbd1679d3c89dd8b64b243ded8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ikE\u003d",
+        "filename": "keystone/auth/plugins/external_default.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T20:13:20Z",
+      "side": 1,
+      "message": "suggest move this out of the try, otherwise creating the message at 43 would fail if there\u0027s no context[\u0027REMOTE_USER\u0027]",
+      "revId": "8894cf0c9b1003dbd1679d3c89dd8b64b243ded8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iiw\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1190,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T20:13:20Z",
+      "side": 1,
+      "message": "this should be a constant rather than copy-pasting it.",
+      "revId": "8894cf0c9b1003dbd1679d3c89dd8b64b243ded8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iig\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1195,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T20:13:20Z",
+      "side": 1,
+      "message": "suggest add a testcase where have method_names with password to validate that \"external Plugin is now executed in conjunction with the auth methods\"",
       "revId": "8894cf0c9b1003dbd1679d3c89dd8b64b243ded8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
