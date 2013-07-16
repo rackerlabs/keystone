@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//ico\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T20:38:56Z",
+      "side": 1,
+      "message": "seems like this line should be below \"methods\"",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//ifg\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 7
@@ -149,6 +166,23 @@
       "writtenOn": "2013-07-16T20:22:28Z",
       "side": 1,
       "message": "no need for this one",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//icE\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T20:38:56Z",
+      "side": 1,
+      "message": "suggest put external first like the sample config file.",
       "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
