@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//lzA\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T05:57:29Z",
+      "side": 1,
+      "message": "We have such use case? I would think you either enable it at the beginning or you don\u0027t.\n\nYou really don\u0027t need a flag to tell you if the extension is enabled or not. You can just inspect the pipeline to see if your extension is there.",
+      "parentUuid": "AAAAP3//nRA\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//oDQ\u003d",
         "filename": "keystone/assignment/backends/kvs.py",
         "patchSetId": 13
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "...we just need decide to drop that as a team!",
       "parentUuid": "AAAAP3//oDQ\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ly8\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T05:57:29Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAP3//nQY\u003d",
       "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -136,6 +172,24 @@
       "side": 1,
       "message": "beats the hell out of me...but thought I should fix that in a separate patch",
       "parentUuid": "AAAAP3//n/E\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ly0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T05:57:29Z",
+      "side": 1,
+      "message": "agreed",
+      "parentUuid": "AAAAP3//nOs\u003d",
       "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -247,6 +301,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//lyw\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T05:57:29Z",
+      "side": 1,
+      "message": "that\u0027s fine. We can decide on that one later, in a separate patch.",
+      "parentUuid": "AAAAP3//nOg\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//nkY\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 13
@@ -352,6 +424,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//lyc\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T05:57:29Z",
+      "side": 1,
+      "message": "we need to make sure role_list contains unique members. Say I have a role \"Admin\" granted to a user for a project. Then later I grant the same \"Admin\" role to the domain, inherited by projects. Would role_list ended up with two same \"Admin\" roles?",
+      "parentUuid": "AAAAP3//nNc\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//nuY\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -451,6 +541,24 @@
       "side": 1,
       "message": "wouldn\u0027t it be hard to use the actual controller call (since the filtering is done via the v3 wrapper).  I could just call the list_projects driver call and filer that....but thought it more efficient to actually pass the search filter into the DB.",
       "parentUuid": "AAAAP3//nfQ\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//lyM\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T05:57:29Z",
+      "side": 1,
+      "message": "We\u0027ll need to optimized the filters eventually anyway. We should avoid having to maintain different code paths if we don\u0027t have to. I made that mistake with the v2 and v3 auth.",
+      "parentUuid": "AAAAP3//nJ0\u003d",
       "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
