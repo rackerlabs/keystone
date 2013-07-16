@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//ii4\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T20:09:51Z",
+      "side": 1,
+      "message": "No.  This is more a case of misusing exceptions.  If the exception is thrown, the extension does not have a migrate repo, and we should just carry on.",
+      "parentUuid": "AAAAP3//iu4\u003d",
+      "revId": "e6532ff1dba657cea9cfdf14b5538aaedf3b4955",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//iwk\u003d",
         "filename": "keystone/common/sql/migration.py",
         "patchSetId": 8
@@ -64,6 +82,23 @@
       "writtenOn": "2013-07-16T19:36:40Z",
       "side": 1,
       "message": "I guess I would have expected the logic from line 82 - 89 to be implemented in the private method and this is where we would make that call.",
+      "revId": "e6532ff1dba657cea9cfdf14b5538aaedf3b4955",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ii0\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T20:09:51Z",
+      "side": 1,
+      "message": "Got rid of the internal function, put it all in the external.",
       "revId": "e6532ff1dba657cea9cfdf14b5538aaedf3b4955",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
