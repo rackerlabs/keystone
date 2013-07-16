@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//jvA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T16:30:00Z",
+      "side": 1,
+      "message": "agreed.",
+      "parentUuid": "AAAAP3//kBA\u003d",
+      "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//kAI\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-16T15:34:54Z",
       "side": 1,
       "message": "this whole method can also be reduced to\n\n  return (CONF.os_inherit.enabled and\n          context[\u0027path\u0027].startswith(\u0027/OS-INHERIT\u0027) and\n          context[\u0027path\u0027].endswith(\u0027/inherited_to_projects\u0027))",
+      "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ju8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T16:30:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//kAI\u003d",
       "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//jg4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T16:30:00Z",
+      "side": 1,
+      "message": "An excellent idea!  Done.",
+      "parentUuid": "AAAAP3//j/c\u003d",
+      "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//j+w\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 14
@@ -64,6 +118,24 @@
       "writtenOn": "2013-07-16T15:34:54Z",
       "side": 1,
       "message": "suffix?",
+      "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//jhE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T16:30:00Z",
+      "side": 1,
+      "message": "nice.  Done",
+      "parentUuid": "AAAAP3//j+w\u003d",
       "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//jvw\u003d",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T16:30:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//j9c\u003d",
+      "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//j0A\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 14
@@ -98,6 +188,24 @@
       "writtenOn": "2013-07-16T15:34:54Z",
       "side": 1,
       "message": ":( see latest posts on list ... we need to support sqlite at least through havana\n\ncheck out nova\u0027s approach to shuffling data around in sqlite",
+      "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//jgY\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 832,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T16:30:00Z",
+      "side": 1,
+      "message": "Ok, have to work at this - it\u0027l be harder than we think - since I can\u0027t even load the table without it blowing up.  Have to see if I can recreate a tenant table and see if that get\u0027s us over the hump!",
+      "parentUuid": "AAAAP3//j0A\u003d",
       "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
