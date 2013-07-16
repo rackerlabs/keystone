@@ -19,6 +19,91 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//iZA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "capitalize Kerberos",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iY0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "we shouldn\u0027t document it like this because it\u0027s not the case.\n\nI think we should say that it\u0027s now possible for the services to validate the extra bind information in the token or something.",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iYg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "put ``kerberos`` in quotes.",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iX8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "suggest don\u0027t put named in quotes here since it makes it seems like you should use \"named\" as the value.",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iWM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "should this be a list to allow requiring multiple named authentication mechanisms?",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//irc\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 13
@@ -106,6 +191,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//iXM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "this looks like it\u0027s fixing a different problem? suggest submit it as a separate change.",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//iv8\u003d",
         "filename": "keystone/common/serializer.py",
         "patchSetId": 13
@@ -117,6 +219,108 @@
       "writtenOn": "2013-07-16T19:41:42Z",
       "side": 1,
       "message": "good catch!",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iVU\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "suggest move this after 81 since don\u0027t need it if bind_mode \u003d\u003d \u0027disabled\u0027",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iUk\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "suggest add a comment here why it\u0027s ok to just return here...\n\n # Nothing to do because there\u0027s no bind data and it\u0027s not required.",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iTA\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "seems like it would be useful to an administrator trying to figure out why this isn\u0027t working to know which one it is, so suggest split this up.",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iRs\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "suggest add an else leg and log a successful kerberos bind.",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iSw\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "lowercase \"unknown\"\n\nAlso, make it a debug.",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iQ4\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "why are we doing this in so many places?",
       "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +344,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//iQQ\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "this looks like a fix for a different problem, if so, submit it separately.",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iPo\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "suggest add new arguments at the end.",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//ioI\u003d",
         "filename": "tests/test_token_bind.py",
         "patchSetId": 13
@@ -151,6 +389,23 @@
       "writtenOn": "2013-07-16T19:56:13Z",
       "side": 1,
       "message": "slick",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iNU\u003d",
+        "filename": "tests/test_token_bind.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:24:46Z",
+      "side": 1,
+      "message": "use named argument for named parameters, e.g., use_kerberos\u003dval, success\u003dsuccess",
       "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
