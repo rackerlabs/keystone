@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//ihM\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T20:17:05Z",
+      "side": 1,
+      "message": "sounds good, thanks for the clarification",
+      "parentUuid": "AAAAP3//ii4\u003d",
+      "revId": "e6532ff1dba657cea9cfdf14b5538aaedf3b4955",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//iwk\u003d",
         "filename": "keystone/common/sql/migration.py",
         "patchSetId": 8
