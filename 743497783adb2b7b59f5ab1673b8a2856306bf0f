@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//ixk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-16T19:41:42Z",
+      "side": 1,
+      "message": "I would have liked to seen some of this in the api document",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ixE\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-16T19:41:42Z",
+      "side": 1,
+      "message": "would be good to have a comment here that lists all the possible values you can use for enforce_token_bind",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iw0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-16T19:41:42Z",
+      "side": 1,
+      "message": "Why did you need to add the or [] ?",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iv8\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-16T19:41:42Z",
+      "side": 1,
+      "message": "good catch!",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//ivc\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-16T19:41:42Z",
+      "side": 1,
+      "message": "good comment!",
+      "revId": "743497783adb2b7b59f5ab1673b8a2856306bf0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
