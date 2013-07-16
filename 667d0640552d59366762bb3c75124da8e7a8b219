@@ -226,6 +226,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//mIc\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-16T02:14:18Z",
+      "side": 1,
+      "message": "Is this too restrictive of a limit block?  I know you can issue a GET with a token id to the admin under the standalone keystone.  (It also works under port 5000, off the top of my head I can\u0027t remember if this is ever used on the admin port by anything)",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//pR8\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 3
@@ -323,6 +340,23 @@
       "writtenOn": "2013-07-08T15:47:32Z",
       "side": 1,
       "message": "maybe just personal preference, but i\u0027d assume any instructions are being done as root or sudo is applied as necessary by the end user of the docs",
+      "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//mJo\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-16T02:14:18Z",
+      "side": 1,
+      "message": "I\u0027d probably recommend using configtest here before the restart.  If they are using apache elsewhere for other services on this system (in some cases), it could cause an outage.\n\nSimple check can show if they\u0027ll error before issuing the restart.",
       "revId": "667d0640552d59366762bb3c75124da8e7a8b219",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
