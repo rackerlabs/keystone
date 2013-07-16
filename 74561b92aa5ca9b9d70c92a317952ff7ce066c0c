@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//iWg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T21:03:30Z",
+      "side": 1,
+      "message": "Should this NOTE have a name next to it?",
+      "revId": "74561b92aa5ca9b9d70c92a317952ff7ce066c0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iWY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-16T21:03:30Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "74561b92aa5ca9b9d70c92a317952ff7ce066c0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
