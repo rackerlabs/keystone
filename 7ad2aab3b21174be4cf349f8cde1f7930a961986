@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//h0E\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T22:59:24Z",
+      "side": 1,
+      "message": "401 if REMOTE_USER is not in the context. But yeah, agree with adding a test.",
+      "parentUuid": "AAAAP3//h+M\u003d",
+      "revId": "7ad2aab3b21174be4cf349f8cde1f7930a961986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//h9w\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 8
@@ -133,6 +151,24 @@
       "side": 1,
       "message": "OK, I\u0027m convinced this isn\u0027t a problem since they\u0027d have to pass the username and domain info in the post data separately from how REMOTE_USER gets set.",
       "parentUuid": "AAAAP3//h7s\u003d",
+      "revId": "7ad2aab3b21174be4cf349f8cde1f7930a961986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//hyk\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1227,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T22:59:24Z",
+      "side": 1,
+      "message": "right, remote user plugin extracts domain name from REMOTE_USER. It does not make use of anything from the request payload.",
+      "parentUuid": "AAAAP3//h7I\u003d",
       "revId": "7ad2aab3b21174be4cf349f8cde1f7930a961986",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
