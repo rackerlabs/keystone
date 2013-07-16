@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//h50\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T22:22:33Z",
+      "side": 1,
+      "message": "we shouldn\u0027t have explicit SQL because it might not work with all databases. Use sqlalchemy\u0027s ability to build queries.",
+      "revId": "c7e9c3ec7c91dabe5aaad5b9be9983d9a08478cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
