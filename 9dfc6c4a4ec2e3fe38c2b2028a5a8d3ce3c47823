@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//mcw\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-16T00:15:29Z",
+      "side": 1,
+      "message": "Wouldn\u0027t this make more sense to make the same function with package being an optional kwarg, default set to \"None\".  if package is None just return __file__ instead of package.__file__ ? allowing _find_migrate_repo() and find_migrate_repo() to be the same.\n\nThis just feels a bit like it violates DRY.  if it\u0027s supposed to be a non-private module version, perhaps just call the private one directly with the right arguments?",
+      "revId": "9dfc6c4a4ec2e3fe38c2b2028a5a8d3ce3c47823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
