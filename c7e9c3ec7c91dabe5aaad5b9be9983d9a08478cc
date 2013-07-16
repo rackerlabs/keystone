@@ -16,6 +16,24 @@
       "revId": "c7e9c3ec7c91dabe5aaad5b9be9983d9a08478cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//h34\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T22:30:55Z",
+      "side": 1,
+      "message": "So as a general principle, I agree with you.  Unfortunately we do this quite a lot - and hence I test it against all supported databases to eb sure.  Can I suggest, we raised a separate issue to come back and refactor all of that i one go?",
+      "parentUuid": "AAAAP3//h50\u003d",
+      "revId": "c7e9c3ec7c91dabe5aaad5b9be9983d9a08478cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
