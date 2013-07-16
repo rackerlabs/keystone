@@ -34,6 +34,24 @@
       "revId": "c7e9c3ec7c91dabe5aaad5b9be9983d9a08478cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//hr4\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T23:38:21Z",
+      "side": 1,
+      "message": "OK, new patch on its way!!!!",
+      "parentUuid": "AAAAP3//h34\u003d",
+      "revId": "c7e9c3ec7c91dabe5aaad5b9be9983d9a08478cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
