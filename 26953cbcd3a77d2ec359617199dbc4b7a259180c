@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//kBA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T15:34:54Z",
+      "side": 1,
+      "message": "if an extension is disabled, then then a 404 should have been raised by the router... i don\u0027t understand how/why you would get this far, but a disabled extension should not be allowed to introduce a 403",
+      "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//kAI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T15:34:54Z",
+      "side": 1,
+      "message": "this whole method can also be reduced to\n\n  return (CONF.os_inherit.enabled and\n          context[\u0027path\u0027].startswith(\u0027/OS-INHERIT\u0027) and\n          context[\u0027path\u0027].endswith(\u0027/inherited_to_projects\u0027))",
+      "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//j/c\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T15:34:54Z",
+      "side": 1,
+      "message": "this needs a docstring badly",
+      "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//j+w\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T15:34:54Z",
+      "side": 1,
+      "message": "suffix?",
+      "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//j9c\u003d",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T15:34:54Z",
+      "side": 1,
+      "message": "check if the extension is enabled here, and only here... this is what extension routers are for",
+      "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//j0A\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 832,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T15:34:54Z",
+      "side": 1,
+      "message": ":( see latest posts on list ... we need to support sqlite at least through havana\n\ncheck out nova\u0027s approach to shuffling data around in sqlite",
+      "revId": "26953cbcd3a77d2ec359617199dbc4b7a259180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
