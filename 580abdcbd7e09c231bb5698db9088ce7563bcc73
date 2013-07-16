@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAP3//ifg\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-07-16T20:27:51Z",
+      "side": 1,
+      "message": "Where is this method \"external\" populated?  I don\u0027t think user is going to send this.  Is external authentication entity going to populate this?\n\nAlso for this external auth to work, we expect external authenticating entity to populate few things and also in certain specific format.  Can this be documented somewhere?",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//if0\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 7
