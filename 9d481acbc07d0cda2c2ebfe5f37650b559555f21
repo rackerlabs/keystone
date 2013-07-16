@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//mbk\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T01:39:13Z",
+      "side": 1,
+      "message": "You might recall that we had that and you nacked that approach.  However, we also have to keep in mind that people are already doing REMOTE_USER auth, and adding any thing custom to the body of the request will mess them up.  I think that this approach is the right balance.  I see absolutely no benefit to making the user add something to the body of the request. All that does it break the client and make integration even harder.\n\nI\u0027ve modified the patch so that REMOTE_USER triggers a code path that happens before the pipeline, but doesn;t stop the pipleline from executing.  We can make an external plugin that acts as part of the pipeline in the future if it is required.",
+      "parentUuid": "AAAAP3//meU\u003d",
+      "revId": "9d481acbc07d0cda2c2ebfe5f37650b559555f21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//mew\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-16T00:05:41Z",
       "side": 1,
       "message": "Disabled? Why? If \u0027external\u0027 is not part of _DEFAULT_AUTH_METHODS, it is disabled by defualt.",
+      "revId": "9d481acbc07d0cda2c2ebfe5f37650b559555f21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//mbg\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-16T01:39:13Z",
+      "side": 1,
+      "message": "No.  REMOTE_USER is a different code path.  This is just the ultra-conservative approach for the external approach.",
+      "parentUuid": "AAAAP3//mew\u003d",
       "revId": "9d481acbc07d0cda2c2ebfe5f37650b559555f21",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
