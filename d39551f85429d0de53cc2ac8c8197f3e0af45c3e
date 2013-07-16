@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//iAQ\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:56:29Z",
+      "side": 1,
+      "message": "what should happen if the query_string has nocatalog\u003dfalse?",
+      "revId": "d39551f85429d0de53cc2ac8c8197f3e0af45c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//iBM\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-16T21:56:29Z",
+      "side": 1,
+      "message": "suggest use a named argument for a named parameter, so change require_catalog to require_catalog\u003drequire_catalog\n\nalternatively, looks like could remove the require_catalog\u003dTrue from this function since kwargs is passed on anyways.",
+      "revId": "d39551f85429d0de53cc2ac8c8197f3e0af45c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
