@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//jIM\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T18:11:01Z",
+      "side": 1,
+      "message": "oops, that was meant to be deleted...I had already done as you suggested and added a domain_is parameter to list_projects().  Just forgot to delete this WIP.  Good catch.",
+      "parentUuid": "AAAAP3//jRk\u003d",
+      "revId": "1bc9d6643cd79fd788f4fd850dd9cc21db40e982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//jP0\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-16T17:46:15Z",
       "side": 1,
       "message": "Nit: \"prime key\" should be \"primary key\"",
+      "revId": "1bc9d6643cd79fd788f4fd850dd9cc21db40e982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//jIU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T18:11:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//jP0\u003d",
       "revId": "1bc9d6643cd79fd788f4fd850dd9cc21db40e982",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//jIc\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T18:11:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//jO4\u003d",
+      "revId": "1bc9d6643cd79fd788f4fd850dd9cc21db40e982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//jNg\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 15
@@ -64,6 +118,24 @@
       "writtenOn": "2013-07-16T17:46:15Z",
       "side": 1,
       "message": "This might be easier to read if you define the string in it\u0027s own variable.  It might also be easier to read with the dict style substitutions: %(domain_id)s instead of just %s.  \n\nThis is more of an thought than saying this can\u0027t be left as is.",
+      "revId": "1bc9d6643cd79fd788f4fd850dd9cc21db40e982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//jH4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T18:11:01Z",
+      "side": 1,
+      "message": "Thanks for the idea, you may be right, might come back in and do a little refactor later.",
+      "parentUuid": "AAAAP3//jNg\u003d",
       "revId": "1bc9d6643cd79fd788f4fd850dd9cc21db40e982",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
