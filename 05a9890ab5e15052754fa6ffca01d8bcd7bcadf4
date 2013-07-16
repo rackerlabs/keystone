@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//ilM\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-16T20:00:17Z",
+      "side": 1,
+      "message": "get_token won\u0027t always be called (see the PKI token flow, for example); I\u0027d suggest moving this to __init__",
+      "revId": "05a9890ab5e15052754fa6ffca01d8bcd7bcadf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
