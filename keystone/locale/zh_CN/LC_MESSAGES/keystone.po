@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-07-11 17:05+0000\n"
+"POT-Creation-Date: 2013-07-16 17:04+0000\n"
 "PO-Revision-Date: 2013-05-21 06:08+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Chinese (China) "
@@ -38,79 +38,66 @@ msgstr "%(property_name)s 不应该超过 %(max_length)s 个字符。"
 msgid "%(property_name)s is not a %(display_expected_type)s"
 msgstr ""
 
-#: keystone/test.py:106
+#: keystone/test.py:114
 #, python-format
 msgid "Failed to checkout %s"
 msgstr "未能检出 %s"
 
-#: keystone/assignment/backends/ldap.py:110
+#: keystone/assignment/core.py:449
 #, python-format
 msgid "Expected dict or list: %s"
 msgstr ""
 
-#: keystone/assignment/backends/ldap.py:456
+#: keystone/assignment/backends/ldap.py:426
 #: keystone/identity/backends/ldap.py:433
 #, python-format
 msgid "Role %s not found"
 msgstr "找不到角色 %s"
 
-#: keystone/assignment/backends/sql.py:244
+#: keystone/assignment/backends/sql.py:250
 #, python-format
 msgid "Cannot remove role that has not been granted, %s"
 msgstr "无法除去尚未授予的角色 %s"
 
-#: keystone/auth/controllers.py:72
+#: keystone/auth/controllers.py:71
 #, python-format
 msgid "Project is disabled: %s"
 msgstr "项目已禁用：%s"
 
-#: keystone/auth/controllers.py:78 keystone/auth/plugins/password.py:38
+#: keystone/auth/controllers.py:77 keystone/auth/plugins/password.py:38
 #, python-format
 msgid "Domain is disabled: %s"
 msgstr "域已禁用：%s"
 
-#: keystone/auth/controllers.py:84 keystone/auth/plugins/password.py:44
+#: keystone/auth/controllers.py:83 keystone/auth/plugins/password.py:44
 #, python-format
 msgid "User is disabled: %s"
 msgstr "用户已禁用：%s"
 
-#: keystone/auth/controllers.py:259
+#: keystone/auth/controllers.py:262
 msgid "Scoping to both domain and project is not allowed"
 msgstr "不允许同时将作用域限定到域和项目"
 
-#: keystone/auth/controllers.py:262
+#: keystone/auth/controllers.py:265
 msgid "Scoping to both domain and trust is not allowed"
 msgstr "不允许同时将作用域限定到域和信任"
 
-#: keystone/auth/controllers.py:265
+#: keystone/auth/controllers.py:268
 msgid "Scoping to both project and trust is not allowed"
 msgstr "不允许同时将作用域限定到项目和信任"
 
-#: keystone/auth/controllers.py:325
+#: keystone/auth/controllers.py:337
 #, python-format
 msgid "Unable to lookup user %s"
 msgstr "无法查找用户 %s"
 
-#: keystone/auth/controllers.py:355
+#: keystone/auth/controllers.py:367
 msgid "User not found"
 msgstr "找不到用户"
 
-#: keystone/auth/token_factory.py:79
-msgid "User have no access to project"
-msgstr "用户对项目没有任何访问权限"
-
-#: keystone/auth/token_factory.py:94
-msgid "User have no access to domain"
-msgstr "用户对域没有任何访问权限"
-
-#: keystone/auth/token_factory.py:311 keystone/token/controllers.py:119
-msgid "Unable to sign token."
-msgstr "无法对令牌进行签名。"
-
-#: keystone/auth/token_factory.py:314 keystone/token/controllers.py:122
-#, python-format
-msgid "Invalid value for token_format: %s.  Allowed values are PKI or UUID."
-msgstr "token_format 的值 %s 无效。允许值是 PKI 或 UUID。"
+#: keystone/auth/plugins/password.py:112
+msgid "Invalid username or password"
+msgstr ""
 
 #: keystone/catalog/core.py:38
 #, python-format
@@ -457,11 +444,11 @@ msgstr "FakeLdap search 失败：对于 SCOPE_BASE，找不到 dn"
 msgid "Search scope %s not implemented."
 msgstr "未实现搜索范围 %s。"
 
-#: keystone/common/sql/core.py:126
+#: keystone/common/sql/core.py:119
 msgid "Global engine callback raised."
 msgstr ""
 
-#: keystone/common/sql/core.py:240
+#: keystone/common/sql/core.py:233
 #, python-format
 msgid "Got mysql server has gone away: %s"
 msgstr "mysql 服务器已不存在：%s"
@@ -552,10 +539,33 @@ msgstr "对于类型为 %s 的匹配项，不存在任何处理程序"
 msgid "Failed to understand rule %(rule)r"
 msgstr "未能理解规则 %(rule)r"
 
+#: keystone/openstack/common/crypto/utils.py:29
+msgid "An unknown error occurred in crypto utils."
+msgstr ""
+
+#: keystone/openstack/common/crypto/utils.py:36
+#, python-format
+msgid "Block size of %(given)d is too big, max = %(maximum)d"
+msgstr ""
+
+#: keystone/openstack/common/crypto/utils.py:45
+#, python-format
+msgid "Length of %(given)d is too long, max = %(maximum)d"
+msgstr ""
+
 #: keystone/policy/backends/rules.py:93
 #, python-format
 msgid "enforce %(action)s: %(credentials)s"
 msgstr ""
+
+#: keystone/token/controllers.py:119 keystone/token/providers/pki.py:43
+msgid "Unable to sign token."
+msgstr "无法对令牌进行签名。"
+
+#: keystone/token/controllers.py:122
+#, python-format
+msgid "Invalid value for token_format: %s.  Allowed values are PKI or UUID."
+msgstr "token_format 的值 %s 无效。允许值是 PKI 或 UUID。"
 
 #: keystone/token/controllers.py:396
 #, python-format
@@ -595,4 +605,36 @@ msgstr ""
 #: keystone/token/backends/memcache.py:172
 msgid "Unable to add token to revocation list."
 msgstr "无法将令牌添加至撤销列表。"
+
+#: keystone/token/providers/uuid.py:90
+msgid "Trustor is disabled."
+msgstr ""
+
+#: keystone/token/providers/uuid.py:135
+msgid "Trustee have no delegated roles."
+msgstr ""
+
+#: keystone/token/providers/uuid.py:144
+#, python-format
+msgid "User %(user_id)s have no access to project %(project_id)s"
+msgstr ""
+
+#: keystone/token/providers/uuid.py:149
+#, python-format
+msgid "User %(user_id)s have no access to domain %(domain_id)s"
+msgstr ""
+
+#: keystone/token/providers/uuid.py:199
+msgid "User is not a trustee."
+msgstr ""
+
+#: keystone/token/providers/uuid.py:337 keystone/token/providers/uuid.py:348
+msgid "Failed to verify token"
+msgstr ""
+
+#~ msgid "User have no access to project"
+#~ msgstr "用户对项目没有任何访问权限"
+
+#~ msgid "User have no access to domain"
+#~ msgstr "用户对域没有任何访问权限"
 
