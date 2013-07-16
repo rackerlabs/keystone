@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//if0\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T20:22:28Z",
+      "side": 1,
+      "message": "why do we need ExternalDefault? seem like ExternalDomain is good enough",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//igc\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T20:22:28Z",
+      "side": 1,
+      "message": "no need for this one",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//igo\u003d",
+        "filename": "tests/auth_plugin_external_disabled.conf",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-16T20:22:28Z",
+      "side": 1,
+      "message": "you don\u0027t need ExternalDisabled, simply removing \u0027external\u0027 from the methods list will disable external auth\n\nalso, may want to drop a couple of lines in configuration.rst explaining how to disable external auth",
+      "revId": "580abdcbd7e09c231bb5698db9088ce7563bcc73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
