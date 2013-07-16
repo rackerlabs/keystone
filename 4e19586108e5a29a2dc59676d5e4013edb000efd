@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//lII\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T13:28:47Z",
+      "side": 1,
+      "message": "So as to a use case, I just thought that this was sensible practice, but I can be persuaded out of it if we feel it is not necessary to support :-)",
+      "parentUuid": "AAAAP3//lzA\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//oDQ\u003d",
         "filename": "keystone/assignment/backends/kvs.py",
         "patchSetId": 13
@@ -266,6 +284,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//lBQ\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T13:28:47Z",
+      "side": 1,
+      "message": "I think I\u0027d rather leave that to a separate patch...some minor subtleties in error reporting etc....don\u0027t want to confuse that with an extension patch",
+      "parentUuid": "AAAAP3//nOU\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//nkk\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 13
@@ -354,6 +390,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//lBI\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T13:28:47Z",
+      "side": 1,
+      "message": "I think I\u0027d rather leave that to a separate patch...some minor subtleties in error reporting etc....don\u0027t want to confuse that with an extension patch",
+      "parentUuid": "AAAAP3//nOI\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//njw\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -436,6 +490,24 @@
       "side": 1,
       "message": "we need to make sure role_list contains unique members. Say I have a role \"Admin\" granted to a user for a project. Then later I grant the same \"Admin\" role to the domain, inherited by projects. Would role_list ended up with two same \"Admin\" roles?",
       "parentUuid": "AAAAP3//nNc\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//lA8\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T13:28:47Z",
+      "side": 1,
+      "message": "Ah, ok, understand your point - It is made unique in the function that calls it below, when the two lists are combined.",
+      "parentUuid": "AAAAP3//lyc\u003d",
       "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -559,6 +631,24 @@
       "side": 1,
       "message": "We\u0027ll need to optimized the filters eventually anyway. We should avoid having to maintain different code paths if we don\u0027t have to. I made that mistake with the v2 and v3 auth.",
       "parentUuid": "AAAAP3//nJ0\u003d",
+      "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//k2c\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-16T13:28:47Z",
+      "side": 1,
+      "message": "Have added domain_id as an optionally parameter to the driver list_projects() call and now use that.  This is what an optimized controller call would need to use anyway.",
+      "parentUuid": "AAAAP3//lyM\u003d",
       "revId": "4e19586108e5a29a2dc59676d5e4013edb000efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
