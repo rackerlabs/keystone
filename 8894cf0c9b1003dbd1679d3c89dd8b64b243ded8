@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//i1g\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-16T19:21:13Z",
+      "side": 1,
+      "message": "Very cool. I like that",
+      "revId": "8894cf0c9b1003dbd1679d3c89dd8b64b243ded8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
