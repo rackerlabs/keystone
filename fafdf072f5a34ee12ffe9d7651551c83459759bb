@@ -16,6 +16,23 @@
       "revId": "fafdf072f5a34ee12ffe9d7651551c83459759bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//hbI\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 8183
+      },
+      "writtenOn": "2013-07-17T01:27:26Z",
+      "side": 1,
+      "message": "it looks like RoleApi() and ProjectApi() have moved to assignment/backends/ldap.py so these should be removed...",
+      "revId": "fafdf072f5a34ee12ffe9d7651551c83459759bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
