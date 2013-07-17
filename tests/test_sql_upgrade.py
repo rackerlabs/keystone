@@ -39,14 +39,14 @@ from keystone.common.sql import migration
 from keystone import config
 
 import default_fixtures
+import test_backend_sql
 
 
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
 
-class SqlUpgradeTests(test.TestCase):
-
+class BaseSqlUpgradeTest(test.TestCase):
     def initialize_sql(self):
         self.metadata = sqlalchemy.MetaData()
         self.metadata.bind = self.engine
@@ -60,7 +60,7 @@ class SqlUpgradeTests(test.TestCase):
         return self._config_file_list
 
     def setUp(self):
-        super(SqlUpgradeTests, self).setUp()
+        super(BaseSqlUpgradeTest, self).setUp()
 
         self.config(self.config_files())
         self.base = sql.Base()
@@ -85,8 +85,61 @@ class SqlUpgradeTests(test.TestCase):
                                  autoload=True)
         self.downgrade(0)
         table.drop(self.engine, checkfirst=True)
-        super(SqlUpgradeTests, self).tearDown()
+        super(BaseSqlUpgradeTest, self).tearDown()
 
+    def upgrade(self, *args, **kwargs):
+        self._migrate(*args, **kwargs)
+
+    def downgrade(self, *args, **kwargs):
+        self._migrate(*args, downgrade=True, **kwargs)
+
+    def _migrate(self, version, repository=None, downgrade=False):
+        repository = repository or self.repo_path
+        err = ''
+        version = versioning_api._migrate_version(self.schema,
+                                                  version,
+                                                  not downgrade,
+                                                  err)
+        changeset = self.schema.changeset(version)
+        for ver, change in changeset:
+            self.schema.runchange(ver, change, changeset.step)
+        self.assertEqual(self.schema.version, version)
+
+    def _mysql_check_all_tables_innodb(self):
+        database = self.engine.url.database
+
+        connection = self.engine.connect()
+        # sanity check
+        total = connection.execute("SELECT count(*) "
+                                   "from information_schema.TABLES "
+                                   "where TABLE_SCHEMA='%(database)s'" %
+                                   locals())
+        self.assertTrue(total.scalar() > 0, "No tables found. Wrong schema?")
+
+        noninnodb = connection.execute("SELECT table_name "
+                                       "from information_schema.TABLES "
+                                       "where TABLE_SCHEMA='%(database)s' "
+                                       "and ENGINE!='InnoDB' "
+                                       "and TABLE_NAME!='migrate_version'" %
+                                       locals())
+        names = [x[0] for x in noninnodb]
+        self.assertEqual(names, [],
+                         "Non-InnoDB tables exist")
+
+        connection.close()
+
+
+class SqlUpgradeTestSchema(BaseSqlUpgradeTest, test_backend_sql.SqlModels):
+    def initialize_sql(self):
+        self.metadata = sql.ModelBase.metadata
+        self.metadata.bind = self.engine
+
+    def setUp(self):
+        super(SqlUpgradeTestSchema, self).setUp()
+        self.upgrade(self.max_version)
+
+
+class SqlUpgradeTests(BaseSqlUpgradeTest):
     def test_blank_db_to_start(self):
         self.assertTableDoesNotExist('user')
 
@@ -1245,44 +1298,3 @@ class SqlUpgradeTests(test.TestCase):
             pass
         else:
             raise AssertionError('Table "%s" already exists' % table_name)
-
-    def upgrade(self, *args, **kwargs):
-        self._migrate(*args, **kwargs)
-
-    def downgrade(self, *args, **kwargs):
-        self._migrate(*args, downgrade=True, **kwargs)
-
-    def _migrate(self, version, repository=None, downgrade=False):
-        repository = repository or self.repo_path
-        err = ''
-        version = versioning_api._migrate_version(self.schema,
-                                                  version,
-                                                  not downgrade,
-                                                  err)
-        changeset = self.schema.changeset(version)
-        for ver, change in changeset:
-            self.schema.runchange(ver, change, changeset.step)
-        self.assertEqual(self.schema.version, version)
-
-    def _mysql_check_all_tables_innodb(self):
-        database = self.engine.url.database
-
-        connection = self.engine.connect()
-        # sanity check
-        total = connection.execute("SELECT count(*) "
-                                   "from information_schema.TABLES "
-                                   "where TABLE_SCHEMA='%(database)s'" %
-                                   locals())
-        self.assertTrue(total.scalar() > 0, "No tables found. Wrong schema?")
-
-        noninnodb = connection.execute("SELECT table_name "
-                                       "from information_schema.TABLES "
-                                       "where TABLE_SCHEMA='%(database)s' "
-                                       "and ENGINE!='InnoDB' "
-                                       "and TABLE_NAME!='migrate_version'" %
-                                       locals())
-        names = [x[0] for x in noninnodb]
-        self.assertEqual(names, [],
-                         "Non-InnoDB tables exist")
-
-        connection.close()
