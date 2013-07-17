@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn///G0\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-17T23:57:17Z",
+      "side": 1,
+      "message": "What\u0027s the purpose of this change?",
+      "revId": "7e5a8cb94211e2a3de84ba2013f05184772c2525",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn///Gk\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-17T23:57:17Z",
+      "side": 1,
+      "message": "functions shouldn\u0027t have side-effects if they\u0027re not necessary. In this case, it looks like this is going to change a class-scoped member so that next time the exception is raised its msg_fmt is going to be different.",
+      "revId": "7e5a8cb94211e2a3de84ba2013f05184772c2525",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
