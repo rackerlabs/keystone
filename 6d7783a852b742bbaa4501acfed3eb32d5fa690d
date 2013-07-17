@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//hAY\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-17T03:58:58Z",
+      "side": 1,
+      "message": "(nit) this should be debug",
+      "revId": "6d7783a852b742bbaa4501acfed3eb32d5fa690d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//g+Y\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-17T03:58:58Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be TestAuthExternalDomainJSON?",
+      "revId": "6d7783a852b742bbaa4501acfed3eb32d5fa690d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//g+U\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-17T03:58:58Z",
+      "side": 1,
+      "message": "this looks like it\u0027s fixing a different problem.",
+      "revId": "6d7783a852b742bbaa4501acfed3eb32d5fa690d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//g88\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1357,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-17T03:58:58Z",
+      "side": 1,
+      "message": "Where\u0027s the documentation change for the v2 tokens?",
+      "revId": "6d7783a852b742bbaa4501acfed3eb32d5fa690d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
