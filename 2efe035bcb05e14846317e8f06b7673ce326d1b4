@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//hVk\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-17T01:43:27Z",
+      "side": 1,
+      "message": "require_catalog should be a named parameter, like require_catalog\u003dTrue at line 448 rather than using kwargs.pop().",
+      "revId": "2efe035bcb05e14846317e8f06b7673ce326d1b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
