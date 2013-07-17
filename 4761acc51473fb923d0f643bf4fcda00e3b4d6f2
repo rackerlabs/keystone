@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//eiA\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-17T17:11:31Z",
+      "side": 1,
+      "message": "This is just the default, of course you can also set it in the config, or were you asking to \u0027not\u0027 set a default ?",
+      "parentUuid": "AAAAP3//iiA\u003d",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//igA\u003d",
         "filename": "keystone/contrib/kds/backends/sql.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2013-07-16T20:23:20Z",
       "side": 1,
       "message": "Wondering why KDS is storing the shared keys? In Kerberos style auth KDC is not responsible for storing the keys.\nHope I am not missing anything.",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//eh0\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-17T17:11:31Z",
+      "side": 1,
+      "message": "Kerberos is a \u0027shared key\u0027 system, it stores shared keys.\nThe KDC itself does not store them that duty is normally performed by kadmin, but I do not see any reason to create this artifical distinction in KDS.",
+      "parentUuid": "AAAAP3//igA\u003d",
       "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//ehU\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-17T17:11:31Z",
+      "side": 1,
+      "message": "are they not ? Sorry I guess I fail to see the issue, and tox didn\u0027t complain",
+      "parentUuid": "AAAAP3//iio\u003d",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//iic\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 2
@@ -81,6 +135,24 @@
       "writtenOn": "2013-07-16T20:15:48Z",
       "side": 1,
       "message": "Since we aren\u0027t doing any logic under this method would it make more sense to just use m.mkey instead of a method that just returns it? We can return mkey from m already without having to explicitly define a getter method for it.",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//egg\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-17T17:11:31Z",
+      "side": 1,
+      "message": "at the moment we load the master key at __init__ time and keep it in memory, however when I started to write the interface I had in mind that we may want to allow to dynamically rotate it. In that case a helper function will allow us to plug in the correct logic to know which key to return.\n\nDo you think it is really important to avoid using the function until further logic will be available ?",
+      "parentUuid": "AAAAP3//iic\u003d",
       "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
