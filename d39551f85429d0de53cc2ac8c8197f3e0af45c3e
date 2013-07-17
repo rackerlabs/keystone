@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//h8c\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-07-17T01:06:19Z",
+      "side": 1,
+      "message": "Done.\nI also changed some tests for auth that were not passing a context",
+      "parentUuid": "AAAAP3//h9U\u003d",
+      "revId": "d39551f85429d0de53cc2ac8c8197f3e0af45c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//iBM\u003d",
         "filename": "tests/test_v3.py",
         "patchSetId": 19
@@ -65,6 +83,24 @@
       "writtenOn": "2013-07-16T22:05:15Z",
       "side": 1,
       "message": "true and true",
+      "parentUuid": "AAAAP3//iBM\u003d",
+      "revId": "d39551f85429d0de53cc2ac8c8197f3e0af45c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//hbc\u003d",
+        "filename": "tests/test_v3.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-07-17T01:06:19Z",
+      "side": 1,
+      "message": "Done. Incorporated into the kwargs. I had to change the call hierarchy because the addition of a new param was creating issues with several other tests not expecting the param.",
       "parentUuid": "AAAAP3//iBM\u003d",
       "revId": "d39551f85429d0de53cc2ac8c8197f3e0af45c3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
