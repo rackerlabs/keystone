@@ -18,6 +18,7 @@ import uuid
 
 import ldap
 
+from keystone import assignment
 from keystone import clean
 from keystone.common import ldap as common_ldap
 from keystone.common import logging
@@ -48,6 +49,7 @@ class Identity(identity.Driver):
 
         self.user = UserApi(CONF)
         self.group = GroupApi(CONF)
+        self.assignment = assignment.Driver()
 
     def default_assignment_driver(self):
         return "keystone.assignment.backends.ldap.Assignment"
