@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn///wg\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-17T19:53:29Z",
+      "side": 1,
+      "message": "this looks like it should be refactored into two functions... one that produces the entity, and one that uses the entity to produce an url",
+      "revId": "2af9ce342788fdd3e407141a233c5393b061ffb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn///ww\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-17T19:53:29Z",
+      "side": 1,
+      "message": "i guess flake8 doesn\u0027t run against tests/ ?",
+      "revId": "2af9ce342788fdd3e407141a233c5393b061ffb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
