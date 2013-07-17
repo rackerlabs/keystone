@@ -124,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//eVs\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-17T17:53:38Z",
+      "side": 1,
+      "message": "No worries, probably just Gerrit rendering differently.",
+      "parentUuid": "AAAAP3//ehU\u003d",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//iic\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 2
@@ -153,6 +171,24 @@
       "side": 1,
       "message": "at the moment we load the master key at __init__ time and keep it in memory, however when I started to write the interface I had in mind that we may want to allow to dynamically rotate it. In that case a helper function will allow us to plug in the correct logic to know which key to return.\n\nDo you think it is really important to avoid using the function until further logic will be available ?",
       "parentUuid": "AAAAP3//iic\u003d",
+      "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//eVA\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-17T17:53:38Z",
+      "side": 1,
+      "message": "Possibly, I can see both sides of it. We could add the def _get_master_key() method when we know we will have logic supported there. Either way works.",
+      "parentUuid": "AAAAP3//egg\u003d",
       "revId": "4761acc51473fb923d0f643bf4fcda00e3b4d6f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
