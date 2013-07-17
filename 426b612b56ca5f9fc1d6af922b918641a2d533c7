@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//hX8\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-17T01:28:12Z",
+      "side": 1,
+      "message": "?",
+      "revId": "426b612b56ca5f9fc1d6af922b918641a2d533c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//hYA\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-17T01:28:12Z",
+      "side": 1,
+      "message": "?",
+      "revId": "426b612b56ca5f9fc1d6af922b918641a2d533c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
