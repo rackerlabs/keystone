@@ -43,3 +43,27 @@ class Db2MigrateTests(test_sql_upgrade.SqlUpgradeTests):
                  _config_file_list[:])
         files.append("backend_db2.conf")
         return files
+
+
+class PostgresqlMigrateSchemaTests(test_sql_upgrade.SqlUpgradeSchemaTests):
+    def config_files(self):
+        files = (test_sql_upgrade.SqlUpgradeTests.
+                 _config_file_list[:])
+        files.append("backend_postgresql.conf")
+        return files
+
+
+class MysqlMigrateSchemaTests(test_sql_upgrade.SqlUpgradeSchemaTests):
+    def config_files(self):
+        files = (test_sql_upgrade.SqlUpgradeTests.
+                 _config_file_list[:])
+        files.append("backend_mysql.conf")
+        return files
+
+
+class Db2MigrateSchemaTests(test_sql_upgrade.SqlUpgradeSchemaTests):
+    def config_files(self):
+        files = (test_sql_upgrade.SqlUpgradeTests.
+                 _config_file_list[:])
+        files.append("backend_db2.conf")
+        return files
