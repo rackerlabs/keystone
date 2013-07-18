@@ -118,6 +118,40 @@
       "revId": "c09726d44a81450bcab7eb7658dec5653fccf001",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//89I\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-18T15:49:14Z",
+      "side": 1,
+      "message": "i\u0027m not sure what\u0027s wrong with this? why can\u0027t users specify a custom class..? that\u0027s the goal of making it pluggable\n\nif the value error is suppressing an import error, then this needs to be fixed",
+      "revId": "c09726d44a81450bcab7eb7658dec5653fccf001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//874\u003d",
+        "filename": "tests/test_token_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-18T15:49:14Z",
+      "side": 1,
+      "message": "i feel like this should raise an error, or just not be tested. it looks to illustrate that in order to use a custom provider, you have to set signing format to \u0027CUSTOM\u0027 which goes against the notion that we\u0027re deprecating the option",
+      "revId": "c09726d44a81450bcab7eb7658dec5653fccf001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
