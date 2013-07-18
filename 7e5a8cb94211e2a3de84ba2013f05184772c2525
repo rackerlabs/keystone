@@ -87,6 +87,24 @@
       "revId": "7e5a8cb94211e2a3de84ba2013f05184772c2525",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//95Y\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-07-18T10:21:45Z",
+      "side": 1,
+      "message": "The simplest and reasonable way to fix all issue is applying msg_fmt and using unicode to replace str in wsgi.render_exception. Please review my newest patch",
+      "parentUuid": "AAAAQn///Gk\u003d",
+      "revId": "7e5a8cb94211e2a3de84ba2013f05184772c2525",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
