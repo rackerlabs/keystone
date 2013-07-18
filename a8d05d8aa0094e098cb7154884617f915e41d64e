@@ -34,6 +34,24 @@
       "revId": "a8d05d8aa0094e098cb7154884617f915e41d64e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//9KU\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T15:00:10Z",
+      "side": 1,
+      "message": "sounds good, thanks for the clarification.",
+      "parentUuid": "AAAAQn//+Ns\u003d",
+      "revId": "a8d05d8aa0094e098cb7154884617f915e41d64e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
