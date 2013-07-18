@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//8A8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T20:07:07Z",
+      "side": 1,
+      "message": "Hmm what happened here? Looking at the diff from patch set 10 and I don\u0027t see the name you added next to the note with the format: \n\n# NOTE(nachiappan-veerappan-nachiappan):",
+      "revId": "acd4e55c723e15761b5b3f589ef680f7f7638a6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//8A4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T20:07:07Z",
+      "side": 1,
+      "message": "Same here: \n\n# NOTE(nachiappan-veerappan-nachiappan):",
+      "revId": "acd4e55c723e15761b5b3f589ef680f7f7638a6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
