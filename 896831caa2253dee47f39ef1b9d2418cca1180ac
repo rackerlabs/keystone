@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//9Hk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T15:08:56Z",
+      "side": 1,
+      "message": "Here could we change this to # NOTE(nachiappan): as documented in keystone/HACKING.rst\n\nI used nachiappan as an example. You can change that name however you see fit.",
+      "revId": "896831caa2253dee47f39ef1b9d2418cca1180ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//9HI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/023_drop_credential_constraints.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T15:08:56Z",
+      "side": 1,
+      "message": "Here could we change this to # NOTE(nachiappan): as documented in keystone/HACKING.rst\n\nI used nachiappan as an example. You can change that name however you see fit.",
+      "revId": "896831caa2253dee47f39ef1b9d2418cca1180ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
