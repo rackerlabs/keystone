@@ -69,6 +69,24 @@
       "revId": "7e5a8cb94211e2a3de84ba2013f05184772c2525",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//9+I\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-07-18T09:58:46Z",
+      "side": 1,
+      "message": "Brant,\nI\u0027d like to correct my wrong statements. We can apply \"msg_fmt\", I add a new\nfunction \"format_message\" after learning Mark\u0027s code patches for nova, then we don\u0027t\nneed to check unicode in wsgi.render_exception function to avoid unicode encoding \nerror and successfully implement the module\u0027s i18n support. Sorry for any misleading,\nplease review my new patch.",
+      "parentUuid": "AAAAQn///Gk\u003d",
+      "revId": "7e5a8cb94211e2a3de84ba2013f05184772c2525",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
