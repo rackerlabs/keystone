@@ -33,6 +33,91 @@
       "revId": "c09726d44a81450bcab7eb7658dec5653fccf001",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//9AI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-18T15:44:52Z",
+      "side": 1,
+      "message": "use None to detect that it\u0027s not set; an empty string is a valid value that a user could specify via\n\n  provider \u003d",
+      "revId": "c09726d44a81450bcab7eb7658dec5653fccf001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//8/8\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-18T15:44:52Z",
+      "side": 1,
+      "message": "if CONF.token.provider is not None",
+      "revId": "c09726d44a81450bcab7eb7658dec5653fccf001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//8/k\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-18T15:44:52Z",
+      "side": 1,
+      "message": "use the full expected package path:\n\n  and CONF.token.provider !\u003d \u0027keystone.token.providers.pki.Provider\u0027",
+      "revId": "c09726d44a81450bcab7eb7658dec5653fccf001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//8+Y\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-18T15:44:52Z",
+      "side": 1,
+      "message": "use the built in oen\n\n  raise exception.UnexpectedError(\u0027[signing] token_format conflicts with [token] provider in keystone.conf\u0027)",
+      "revId": "c09726d44a81450bcab7eb7658dec5653fccf001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//898\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-18T15:44:52Z",
+      "side": 1,
+      "message": "s/unsupported/unrecognized/ \n\nand add the expected values:\n\n  Must be either \u0027UUID\u0027 or \u0027PKI\u0027",
+      "revId": "c09726d44a81450bcab7eb7658dec5653fccf001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
