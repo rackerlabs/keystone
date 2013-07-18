@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//81g\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T16:17:42Z",
+      "side": 1,
+      "message": "us -\u003e use?",
+      "revId": "06e373b9ffbc45f89130884bdf82cc69d8178c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//80c\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 2
@@ -13,6 +30,40 @@
       "writtenOn": "2013-07-18T16:13:47Z",
       "side": 1,
       "message": "the concatanation is unnecessary",
+      "revId": "06e373b9ffbc45f89130884bdf82cc69d8178c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//80I\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T16:17:42Z",
+      "side": 1,
+      "message": "Is the \u0027+\u0027 required here?",
+      "revId": "06e373b9ffbc45f89130884bdf82cc69d8178c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//80E\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T16:17:42Z",
+      "side": 1,
+      "message": "Is the \u0027+\u0027 required here?",
       "revId": "06e373b9ffbc45f89130884bdf82cc69d8178c6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
