@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//9CE\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-18T15:39:30Z",
+      "side": 1,
+      "message": "i kind of feel like this whole comment can be removed?",
+      "revId": "c09726d44a81450bcab7eb7658dec5653fccf001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//9Bs\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-18T15:39:30Z",
+      "side": 1,
+      "message": "I think this would be sufficient\n\n  # Deprecated in favor of [token] provider\n\nthe rest can be communicated via error messages",
+      "revId": "c09726d44a81450bcab7eb7658dec5653fccf001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
