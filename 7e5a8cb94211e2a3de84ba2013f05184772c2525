@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//+LA\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-07-18T08:41:17Z",
+      "side": 1,
+      "message": "I didn\u0027t notice this change when I was doing merging for rebase, I\u0027ll remove it",
+      "parentUuid": "AAAAQn///G0\u003d",
+      "revId": "7e5a8cb94211e2a3de84ba2013f05184772c2525",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn///Gk\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 19
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-17T23:57:17Z",
       "side": 1,
       "message": "functions shouldn\u0027t have side-effects if they\u0027re not necessary. In this case, it looks like this is going to change a class-scoped member so that next time the exception is raised its msg_fmt is going to be different.",
+      "revId": "7e5a8cb94211e2a3de84ba2013f05184772c2525",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//+Kc\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-07-18T08:41:17Z",
+      "side": 1,
+      "message": "I do this change in order to fix test_wsgi.test_middleware_exception_error failure due \nto apply msg_fmt. I recheck it in running system, you are right, it change class-\nscoped member, then error message is impacted.\nSo I think we\u0027d better not use msg_fmt to replace class member message, I\u0027ll roll\n back to my previous solution, it works well.",
+      "parentUuid": "AAAAQn///Gk\u003d",
       "revId": "7e5a8cb94211e2a3de84ba2013f05184772c2525",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
