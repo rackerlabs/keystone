@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//8T4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/030_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T18:41:05Z",
+      "side": 1,
+      "message": "(NIT): ensure these parameters are aligned with \u0027credential\u0027. I understand this could be an issue with Gerrit too.",
+      "revId": "d09a5b6cad55d63363b3b3b466d491ff560a5d80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//8T0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/030_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T18:41:05Z",
+      "side": 1,
+      "message": "Same",
+      "revId": "d09a5b6cad55d63363b3b3b466d491ff560a5d80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//8TY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/030_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T18:41:05Z",
+      "side": 1,
+      "message": "(NIT): capitalize \u0027i\u0027 and document with # NOTE(userid):",
+      "revId": "d09a5b6cad55d63363b3b3b466d491ff560a5d80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//8Rs\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T18:41:05Z",
+      "side": 1,
+      "message": "Suggestion here, for the sake of not using \u0027\\\u0027 could we go to a new line on the second parameter.\n\n        (resp, token) \u003d self.default_client.request(url\u003durl,\n                                                    method\u003d\u0027POST\u0027,\n\nThis would help readability and not involve using \u0027\\\u0027 to keep the call under 80 characters.",
+      "revId": "d09a5b6cad55d63363b3b3b466d491ff560a5d80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//8Q8\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T18:41:05Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "d09a5b6cad55d63363b3b3b466d491ff560a5d80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//8Qs\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-18T18:41:05Z",
+      "side": 1,
+      "message": "Same comment here for cred_1, cred_2, cred_3",
+      "revId": "d09a5b6cad55d63363b3b3b466d491ff560a5d80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
