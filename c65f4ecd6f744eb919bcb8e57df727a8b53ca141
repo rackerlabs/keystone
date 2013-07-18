@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//9Ts\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-07-18T14:22:52Z",
+      "side": 1,
+      "message": "Minor suggestion - break the sentence as, \n\"kvs token backend is DEPRECATED. Use \"keystone......\" \nOR\n\"kvs token backend is DEPRECATED, use \"keystone....\"",
+      "revId": "c65f4ecd6f744eb919bcb8e57df727a8b53ca141",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
