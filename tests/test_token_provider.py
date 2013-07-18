@@ -394,3 +394,41 @@ class TestTokenProvider(test.TestCase):
         self.opt_in_group('token',
                           provider='keystone.token.providers.pki.Provider')
         token.provider.Manager()
+
+    def test_default_token_format(self):
+        self.assertEqual(token.provider.Manager.check_and_get_token_provider(),
+                         'keystone.token.providers.pki.Provider')
+
+    def test_uuid_token_format_and_no_provider(self):
+        self.opt_in_group('signing', token_format='UUID')
+        self.assertEqual(token.provider.Manager.check_and_get_token_provider(),
+                         'keystone.token.providers.uuid.Provider')
+
+    def test_unsupported_token_format(self):
+        self.opt_in_group('signing', token_format='CUSTOM')
+        self.assertRaises(ValueError,
+                          token.provider.Manager.check_and_get_token_provider)
+
+    def test_provider_override_token_format(self):
+        self.opt_in_group('token',
+                          provider='keystone.token.providers.pki.Test')
+        self.assertRaises(ValueError,
+                          token.provider.Manager.check_and_get_token_provider)
+
+        self.opt_in_group('signing', token_format='UUID')
+        self.opt_in_group('token',
+                          provider='keystone.token.providers.uuid.Provider')
+        self.assertEqual(token.provider.Manager.check_and_get_token_provider(),
+                         'keystone.token.providers.uuid.Provider')
+
+        self.opt_in_group('signing', token_format='PKI')
+        self.opt_in_group('token',
+                          provider='keystone.token.providers.pki.Provider')
+        self.assertEqual(token.provider.Manager.check_and_get_token_provider(),
+                         'keystone.token.providers.pki.Provider')
+
+        self.opt_in_group('signing', token_format='CUSTOM')
+        self.opt_in_group('token',
+                          provider='my.package.MyProvider')
+        self.assertEqual(token.provider.Manager.check_and_get_token_provider(),
+                         'my.package.MyProvider')

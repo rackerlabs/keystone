@@ -128,6 +128,8 @@
 # driver = keystone.token.backends.sql.Token
 
 # Controls the token construction, validation, and revocation operations.
+# Note this property is unset by default. If set, the 'token_format' property
+# in the [signing] must agree with the provider.
 # provider = keystone.token.providers.pki.Provider
 
 # Amount of time a token should remain valid (in seconds)
@@ -161,7 +163,11 @@
 #cert_subject = /C=US/ST=Unset/L=Unset/O=Unset/CN=localhost
 
 [signing]
+# Note token_format have been deprecated in favor of provider in the [token]
+# section. If provider property in the [token] section is set, it must agrees
+# with token_format.
 #token_format = PKI
+
 #certfile = /etc/keystone/pki/certs/signing_cert.pem
 #keyfile = /etc/keystone/pki/private/signing_key.pem
 #ca_certs = /etc/keystone/pki/certs/cacert.pem

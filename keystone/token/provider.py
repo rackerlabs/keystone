@@ -47,17 +47,35 @@ class Manager(manager.Manager):
 
     """
 
-    def __init__(self):
-        # FIXME(gyee): we are deprecating CONF.signing.token_format. This code
-        # is to ensure the token provider configuration agrees with
-        # CONF.signing.token_format.
-        if ((CONF.signing.token_format == 'PKI' and
-                not CONF.token.provider.endswith('.pki.Provider')) or
-                (CONF.signing.token_format == 'UUID' and
-                    not CONF.token.provider.endswith('uuid.Provider'))):
-            raise ValueError('token_format conflicts with token provider')
+    @classmethod
+    def check_and_get_token_provider(cls):
+        """Make sure we still support token_format for backward compatibility.
 
-        super(Manager, self).__init__(CONF.token.provider)
+        Return the provider based on token_format if provider property is not
+        set. Otherwise, ignore token_format and return the configured provider
+        instead.
+
+        """
+        if len(CONF.token.provider.strip()) > 0:
+            # FIXME(gyee): we are deprecating CONF.signing.token_format. This
+            # code is to ensure the token provider configuration agrees with
+            # CONF.signing.token_format.
+            if ((CONF.signing.token_format == 'PKI' and
+                    not CONF.token.provider.endswith('.pki.Provider')) or
+                    (CONF.signing.token_format == 'UUID' and
+                        not CONF.token.provider.endswith('uuid.Provider'))):
+                raise ValueError('token_format conflicts with token provider')
+            return CONF.token.provider
+        else:
+            if CONF.signing.token_format == 'PKI':
+                return 'keystone.token.providers.pki.Provider'
+            elif CONF.signing.token_format == 'UUID':
+                return 'keystone.token.providers.uuid.Provider'
+            else:
+                raise ValueError('unsupported token format')
+
+    def __init__(self):
+        super(Manager, self).__init__(self.check_and_get_token_provider())
 
 
 class Provider(object):
