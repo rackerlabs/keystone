@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//7cM\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-07-18T23:02:56Z",
+      "side": 1,
+      "message": "Hi Dolph, can you please give an example of how this error message will look like? I am curious about whether it will show \"CONF.signing.token_format\" value after : ? \nThanks!",
+      "revId": "76888e1ee21326adf1f4d44b64da81479fcde6c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
