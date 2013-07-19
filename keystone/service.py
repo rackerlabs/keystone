@@ -16,8 +16,10 @@
 
 import routes
 
+from keystone import assignment
 from keystone import auth
 from keystone import catalog
+from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import wsgi
 from keystone import config
@@ -35,6 +37,7 @@ CONF = config.CONF
 LOG = logging.getLogger(__name__)
 
 DRIVERS = dict(
+    assignment_api=assignment.Manager(),
     catalog_api=catalog.Manager(),
     credentials_api=credential.Manager(),
     ec2_api=ec2.Manager(),
@@ -43,6 +46,8 @@ DRIVERS = dict(
     token_api=token.Manager(),
     trust_api=trust.Manager(),
     token_provider_api=token.provider.Manager())
+
+dependency.resolve_future_dependencies()
 
 
 @logging.fail_gracefully

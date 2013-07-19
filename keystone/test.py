@@ -44,12 +44,14 @@ from keystone.common import sql
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
+from keystone.contrib import ec2
 from keystone import credential
 from keystone import exception
 from keystone import identity
 from keystone.openstack.common import timeutils
 from keystone import policy
 from keystone import token
+from keystone.token import provider as token_provider
 from keystone import trust
 
 
@@ -252,10 +254,21 @@ class TestCase(NoModule, unittest.TestCase):
 
     def load_backends(self):
         """Initializes each manager and assigns them to an attribute."""
+
+        from keystone.common import dependency
+
+        print("test.load_backends: clearing registry")
+        dependency.REGISTRY = {}
+
         for manager in [assignment, catalog, credential, identity, policy,
-                        token, trust]:
+                        token, trust, token_provider, ec2]:
             manager_name = '%s_api' % manager.__name__.split('.')[-1]
-            setattr(self, manager_name, manager.Manager())
+
+            manager_instance = manager.Manager()
+
+            setattr(self, manager_name, manager_instance)
+
+        dependency.resolve_future_dependencies()
 
     def load_fixtures(self, fixtures):
         """Hacky basic and naive fixture loading based on a python module.
