@@ -16,6 +16,8 @@
 
 REGISTRY = {}
 
+_future_dependencies = {}
+
 
 class UnresolvableDependencyException(Exception):
     def __init__(self, name):
@@ -32,6 +34,8 @@ def provider(name):
                 init(self, *args, **kwargs)
                 REGISTRY[name] = self
 
+                resolve_future_dependencies(name)
+
             return __wrapped_init__
 
         cls.__init__ = wrapped(cls.__init__)
@@ -41,6 +45,8 @@ def provider(name):
 
 
 def requires(*dependencies):
+    global _future_dependencies
+
     """Inject specified dependencies from the registry into the instance."""
     def wrapper(self, *args, **kwargs):
         """Inject each dependency from the registry."""
@@ -48,7 +54,13 @@ def requires(*dependencies):
 
         for dependency in self._dependencies:
             if dependency not in REGISTRY:
-                raise UnresolvableDependencyException(dependency)
+                if dependency in _future_dependencies:
+                    _future_dependencies[dependency] += [self]
+                else:
+                    _future_dependencies[dependency] = [self]
+
+                continue
+
             setattr(self, dependency, REGISTRY[dependency])
 
     def wrapped(cls):
@@ -65,3 +77,25 @@ def requires(*dependencies):
         return cls
 
     return wrapped
+
+
+def resolve_future_dependencies(provider_name=None):
+    global _future_dependencies
+
+    if provider_name:
+        targets = _future_dependencies.pop(provider_name, [])
+
+        for target in targets:
+            setattr(target, provider_name, REGISTRY[provider_name])
+
+        return
+
+    try:
+        for dependency, targets in _future_dependencies.iteritems():
+            if dependency not in REGISTRY:
+                raise UnresolvableDependencyException(dependency)
+
+            for target in targets:
+                setattr(target, dependency, REGISTRY[dependency])
+    finally:
+        _future_dependencies.clear()
