@@ -138,6 +138,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//5Zo\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2013-07-19T16:31:41Z",
+      "side": 1,
+      "message": "Does this mean only users with admin rights can work with oAuth ? There might be cases where a non privileged user will want to delegate a subset of her roles (for example access to a swift container)",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//7ME\u003d",
         "filename": "keystone/contrib/delegated_auth/core.py",
         "patchSetId": 37
