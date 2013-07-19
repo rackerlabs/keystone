@@ -86,7 +86,7 @@ class PolicyTestCase(test.TestCase):
         these_rules = common_policy.Rules(
             dict((k, common_policy.parse_rule(v))
                  for k, v in self.rules.items()))
-        common_policy.set_rules(these_rules)
+        rules._set_rules(these_rules)
 
     def tearDown(self):
         rules.reset()
@@ -172,7 +172,7 @@ class DefaultPolicyTestCase(test.TestCase):
         these_rules = common_policy.Rules(
             dict((k, common_policy.parse_rule(v))
                  for k, v in self.rules.items()), default_rule)
-        common_policy.set_rules(these_rules)
+        rules._set_rules(these_rules)
 
     def tearDown(self):
         super(DefaultPolicyTestCase, self).setUp()
@@ -183,7 +183,7 @@ class DefaultPolicyTestCase(test.TestCase):
                           self.credentials, "example:exist", {})
 
     def test_not_found_policy_calls_default(self):
-        rules.enforce(self.credentials, "example:noexist", {})
+        rules.enforce(self.credentials, "example:noexist", {}, False)
 
     def test_default_not_found(self):
         self._set_rules("default_noexist")

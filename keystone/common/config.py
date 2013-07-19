@@ -21,58 +21,13 @@ from oslo.config import cfg
 
 from keystone.common import logging
 
-
 _DEFAULT_LOG_FORMAT = "%(asctime)s %(levelname)8s [%(name)s] %(message)s"
 _DEFAULT_LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 _DEFAULT_AUTH_METHODS = ['external', 'password', 'token']
 
-COMMON_CLI_OPTS = [
-    cfg.BoolOpt('debug',
-                short='d',
-                default=False,
-                help='Print debugging output (set logging level to '
-                     'DEBUG instead of default WARNING level).'),
-    cfg.BoolOpt('verbose',
-                short='v',
-                default=False,
-                help='Print more verbose output (set logging level to '
-                     'INFO instead of default WARNING level).'),
-]
-
-LOGGING_CLI_OPTS = [
-    cfg.StrOpt('log-config',
-               metavar='PATH',
-               help='If this option is specified, the logging configuration '
-                    'file specified is used and overrides any other logging '
-                    'options specified. Please see the Python logging module '
-                    'documentation for details on logging configuration '
-                    'files.'),
-    cfg.StrOpt('log-format',
-               default=_DEFAULT_LOG_FORMAT,
-               metavar='FORMAT',
-               help='A logging.Formatter log message format string which may '
-                    'use any of the available logging.LogRecord attributes.'),
-    cfg.StrOpt('log-date-format',
-               default=_DEFAULT_LOG_DATE_FORMAT,
-               metavar='DATE_FORMAT',
-               help='Format string for %%(asctime)s in log records.'),
-    cfg.StrOpt('log-file',
-               metavar='PATH',
-               help='Name of log file to output. '
-                    'If not set, logging will go to stdout.'),
-    cfg.StrOpt('log-dir',
-               help='The directory in which to store log files. '
-                    '(will be prepended to --log-file)'),
-    cfg.BoolOpt('use-syslog',
-                default=False,
-                help='Use syslog for logging.'),
-    cfg.StrOpt('syslog-log-facility',
-               default='LOG_USER',
-               help='syslog facility to receive log lines.')
-]
-
 CONF = cfg.CONF
-
+CONF.import_opt('policy_file', 'keystone.openstack.common.policy')
+CONF.import_opt('policy_default_rule', 'keystone.openstack.common.policy')
 
 def setup_logging(conf):
     """Sets up the logging options for a log with supplied name
@@ -176,9 +131,6 @@ def register_cli_int(*args, **kw):
 
 
 def configure():
-    CONF.register_cli_opts(COMMON_CLI_OPTS)
-    CONF.register_cli_opts(LOGGING_CLI_OPTS)
-
     register_cli_bool('standard-threads', default=False,
                       help='Do not monkey-patch threading system modules.')
 
@@ -197,8 +149,6 @@ def configure():
     register_str('admin_endpoint', default='http://localhost:%(admin_port)s/')
     register_str('onready')
     register_str('auth_admin_prefix', default='')
-    register_str('policy_file', default='policy.json')
-    register_str('policy_default_rule', default=None)
     # default max request size is 112k
     register_int('max_request_body_size', default=114688)
     register_int('max_param_size', default=64)
