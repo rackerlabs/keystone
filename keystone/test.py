@@ -266,7 +266,9 @@ class TestCase(NoModule, unittest.TestCase):
         # only call load_backends once.
         dependency.reset()
 
-        for manager in [assignment, ec2, catalog, credential, identity, policy,
+        # NOTE(blk-u): identity must be first to ensure that it's available to
+        # the assignment backend.
+        for manager in [identity, assignment, ec2, catalog, credential, policy,
                         token, token_provider, trust]:
             manager_name = '%s_api' % manager.__name__.split('.')[-1]
             setattr(self, manager_name, manager.Manager())
