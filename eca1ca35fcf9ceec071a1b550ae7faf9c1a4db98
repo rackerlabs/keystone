@@ -16,6 +16,24 @@
       "revId": "eca1ca35fcf9ceec071a1b550ae7faf9c1a4db98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//6BE\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-19T13:17:57Z",
+      "side": 1,
+      "message": "The default setting is None. The identity driver has a default assignment driver, so the actual value of the assignment driver is calculated based on the identity driver.",
+      "parentUuid": "AAAAQn//6og\u003d",
+      "revId": "eca1ca35fcf9ceec071a1b550ae7faf9c1a4db98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
