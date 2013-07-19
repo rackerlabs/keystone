@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//6og\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-19T08:25:46Z",
+      "side": 1,
+      "message": "Good...although don\u0027t we normally include the default setting as part of the commented out setting?  E.g. in this case it would be:\n\n# driver \u003d keystone.assignment.backends.sql.Assignment",
+      "revId": "eca1ca35fcf9ceec071a1b550ae7faf9c1a4db98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
