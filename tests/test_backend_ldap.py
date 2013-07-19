@@ -567,7 +567,7 @@ class LDAPIdentity(test.TestCase, BaseLDAPIdentity):
 
         # NOTE(crazed): If running live test with emulation, there will be
         #               an enabled key in the project_ref.
-        if self.identity_api.driver.project.enabled_emulation:
+        if self.assignment_api.driver.project.enabled_emulation:
             project['enabled'] = True
         self.assertDictEqual(project_ref, project)
 
