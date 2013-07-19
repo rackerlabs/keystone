@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//4VY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-19T21:39:26Z",
+      "side": 1,
+      "message": "Does this pertain to a bug number or blueprint? If not it might be worth it to add a little more to the commit message to justify the change.",
+      "revId": "2a1b9c51ac8d89ae287b6f501d9cb06cfe56e4f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
