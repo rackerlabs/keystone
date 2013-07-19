@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//4Vs\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-19T21:37:42Z",
+      "side": 1,
+      "message": "(NIT): this is a very nit picky thing, but the description in the commit message does a good job of explaining *why* we should do this. Should we add a little condensed explanation here as a note?",
+      "revId": "a4f4704fb1872dfdbb664eb5ce243fccb3617460",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
