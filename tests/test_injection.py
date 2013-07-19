@@ -165,3 +165,4 @@ class TestDependencyInjection(unittest.TestCase):
 
         with self.assertRaises(dependency.UnresolvableDependencyException):
             Consumer()
+            dependency.resolve_future_dependencies()
