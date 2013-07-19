@@ -256,7 +256,9 @@ class TestCase(NoModule, unittest.TestCase):
     def load_backends(self):
         """Initializes each manager and assigns them to an attribute."""
         dependency.REGISTRY.clear()
-        for manager in [assignment, catalog, credential, identity, policy,
+        # NOTE(blk-u): identity must be first to ensure that it's available to
+        # the assignment backend.
+        for manager in [identity, assignment, catalog, credential, policy,
                         token, trust, token_provider, ec2]:
             manager_name = '%s_api' % manager.__name__.split('.')[-1]
             setattr(self, manager_name, manager.Manager())
