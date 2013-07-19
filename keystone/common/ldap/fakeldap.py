@@ -296,6 +296,8 @@ class FakeLdap(object):
         if server_fail:
             raise ldap.SERVER_DOWN
 
+        print("fakeldap search with query=%s" % query)
+
         LOG.debug(
             _('FakeLdap search at dn=%(dn)s scope=%(scope)s query=%(query)s') %
             {'dn': dn, 'scope': SCOPE_NAMES.get(scope, scope), 'query': query})
