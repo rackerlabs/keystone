@@ -271,7 +271,9 @@ def configure():
     register_str(
         'driver',
         group='assignment',
-        default=None)
+        default='keystone.assignment.backends.sql.Assignment')
+    # FIXME(blk-u): Should be able to calc the assignment backend from the
+    # identity backend.
     register_str(
         'driver',
         group='catalog',
