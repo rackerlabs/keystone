@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//4XE\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-19T21:33:15Z",
+      "side": 1,
+      "message": "Plans to remove the commented out code?",
+      "revId": "9344186d301b9434b8ad29db4d10176132c19145",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//4Xg\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-19T21:33:15Z",
+      "side": 1,
+      "message": "Don\u0027t we need to define:\n\nglobal _future_dependencies\n\nhere as well?",
+      "revId": "9344186d301b9434b8ad29db4d10176132c19145",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//4Xk\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-19T21:33:15Z",
+      "side": 1,
+      "message": "Don\u0027t we need to define:\n\nglobal _future_dependencies\n\nhere as well?",
+      "revId": "9344186d301b9434b8ad29db4d10176132c19145",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
