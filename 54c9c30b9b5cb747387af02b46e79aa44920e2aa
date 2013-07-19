@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//7L0\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-19T01:09:55Z",
+      "side": 1,
+      "message": "Maybe KVS should warn when it\u0027s used...(token KVS for example() probably not as relevant as it is/was not the default.",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//7Nk\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-19T01:09:55Z",
+      "side": 1,
+      "message": "you might want to define the consumer-%s (and other substitutions) in one location and reference the strings from there.  Makes updating (if a change of key is desired) easier.\n\nSince this is KVS (dev/testing) it doesn\u0027t really need to be changed",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//7Ng\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-19T01:09:55Z",
+      "side": 1,
+      "message": "nit: this for loop appears to be superfluous, you could do something like: old_consumer_dict.update(consumer)",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//7NY\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-19T01:09:55Z",
+      "side": 1,
+      "message": "This loop might not really be needed.  Likely it would be easier to read and be clearer with simple if-checks and assignment or try/excepts.  This comment can be safely ignored if you expect the attributes to be set in this case to expand to a larger list.\n\nThe use of setattr/getattr could also be avoided, with the elimination of this loop.  Overall, that should be more maintainable and easier to see what is going on in the future.  (though it will be more lines of code).",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//7Mc\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-19T01:09:55Z",
+      "side": 1,
+      "message": "Does this need a description (see TODO)?",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//7NQ\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-19T01:09:55Z",
+      "side": 1,
+      "message": "You are going to want to put some guarding in here to prevent invalid data being passed and probably raise out bad request instead of an exception and a straight ISE.\n\nOne example case is that request.GET is a dict, and dict.get() returns a NoneType as default, so if oauth_consumer_key doesn\u0027t exist you get None back on the .get().  Split cannot be called on NoneType and you end up with an ISE instead of a more useful error.\n\nThere should also be tests for BadRequests/invalid requests being sent through.",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//7NM\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-19T01:09:55Z",
+      "side": 1,
+      "message": "See above note on guarding against bad data.",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//7NI\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-19T01:09:55Z",
+      "side": 1,
+      "message": "See above note on guarding against bad data.",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//7ME\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-19T01:09:55Z",
+      "side": 1,
+      "message": "don\u0027t recreate the set everytime, move the set creation above the for loop.  This might be a good case for a frozenset.",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
