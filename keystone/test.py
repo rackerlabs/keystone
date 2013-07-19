@@ -38,18 +38,21 @@ environment.use_eventlet()
 
 from keystone import assignment
 from keystone import catalog
+from keystone.common import dependency
 from keystone.common import kvs
 from keystone.common import logging
 from keystone.common import sql
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
+from keystone.contrib import ec2
 from keystone import credential
 from keystone import exception
 from keystone import identity
 from keystone.openstack.common import timeutils
 from keystone import policy
 from keystone import token
+from keystone.token import provider as token_provider
 from keystone import trust
 
 
@@ -239,6 +242,11 @@ class TestCase(NoModule, unittest.TestCase):
             for path in self._paths:
                 if path in sys.path:
                     sys.path.remove(path)
+
+            # Clear the registry of providers so that providers from previous
+            # tests aren't used.
+            dependency.reset()
+
             kvs.INMEMDB.clear()
             CONF.reset()
 
@@ -252,8 +260,14 @@ class TestCase(NoModule, unittest.TestCase):
 
     def load_backends(self):
         """Initializes each manager and assigns them to an attribute."""
-        for manager in [assignment, catalog, credential, identity, policy,
-                        token, trust]:
+
+        # TODO(blk-u): Shouldn't need to clear the registry here, but some
+        # tests call load_backends multiple times. These should be fixed to
+        # only call load_backends once.
+        dependency.reset()
+
+        for manager in [assignment, ec2, catalog, credential, identity, policy,
+                        token, token_provider, trust]:
             manager_name = '%s_api' % manager.__name__.split('.')[-1]
             setattr(self, manager_name, manager.Manager())
 
