@@ -78,6 +78,12 @@ def trunc_password(password):
         raise exception.ValidationError(attribute='string', target='password')
 
 
+def hash_access_key(access):
+    hash_ = hashlib.sha256()
+    hash_.update(access)
+    return hash_.hexdigest()
+
+
 def hash_user_password(user):
     """Hash a user dict's password without modifying the passed-in dict."""
     try:
