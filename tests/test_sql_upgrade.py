@@ -26,6 +26,7 @@ To run these tests against a live database:
     all data will be lost.
 """
 import copy
+import hashlib
 import json
 import uuid
 
@@ -55,7 +56,7 @@ class SqlUpgradeTests(test.TestCase):
                          test.testsdir('test_overrides.conf'),
                          test.testsdir('backend_sql.conf')]
 
-    #override this to sepcify the complete list of configuration files
+    # override this to sepcify the complete list of configuration files
     def config_files(self):
         return self._config_file_list
 
@@ -1121,6 +1122,46 @@ class SqlUpgradeTests(test.TestCase):
         data = json.loads(r.fetchone()['data'])
         self.assertEqual(len(data['roles']), 1)
         self.assertIn(role_list[5]['id'], data['roles'])
+
+    def test_migrate_ec2_credential(self):
+        ec2_credential = {
+            'access': uuid.uuid4().hex,
+            'secret': uuid.uuid4().hex,
+            'user_id': 'foo',
+            'tenant_id': 'bar',
+        }
+        user = {
+            'id': 'foo',
+            'name': 'FOO',
+            'password': 'foo2',
+            'enabled': True,
+            'email': 'foo@bar.com',
+            'extra': json.dumps({'enabled': True})
+        }
+        tenant = {
+            'id': 'bar',
+            'name': 'BAR',
+            'description': 'description',
+            'enabled': True,
+            'extra': json.dumps({'enabled': True})
+        }
+
+        session = self.Session()
+        self.upgrade(7)
+        self.insert_dict(session, 'ec2_credential', ec2_credential)
+        self.insert_dict(session, 'user', user)
+        self.insert_dict(session, 'tenant', tenant)
+        self.upgrade(31)
+        self.assertTableDoesNotExist('ec2_credential')
+        cred_table = sqlalchemy.Table('credential',
+                                      self.metadata,
+                                      autoload=True)
+        expected_credential_id = hashlib.sha256(
+            ec2_credential['access']).hexdigest()
+        cred = session.query(cred_table).filter_by(
+            id=expected_credential_id).one()
+        self.assertEqual(cred.user_id, ec2_credential['user_id'])
+        self.assertEqual(cred.project_id, ec2_credential['tenant_id'])
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
