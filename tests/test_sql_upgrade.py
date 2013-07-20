@@ -36,6 +36,8 @@ from keystone import test
 
 from keystone.common import sql
 from keystone.common.sql import migration
+from keystone.common import utils
+
 from keystone import config
 
 import default_fixtures
@@ -69,6 +71,7 @@ class SqlMigrateBase(test.TestCase):
 
         # create and share a single sqlalchemy engine for testing
         self.engine = self.base.get_engine(allow_global_engine=False)
+        sql.core.set_global_engine(self.engine)
         self.Session = self.base.get_sessionmaker(engine=self.engine,
                                                   autocommit=False)
 
@@ -87,6 +90,7 @@ class SqlMigrateBase(test.TestCase):
                                  autoload=True)
         self.downgrade(0)
         table.drop(self.engine, checkfirst=True)
+        sql.core.set_global_engine(None)
         super(SqlMigrateBase, self).tearDown()
 
     def select_table(self, name):
@@ -1237,6 +1241,111 @@ class SqlUpgradeTests(SqlMigrateBase):
         cred = session.query(cred_table).filter("id='100'").one()
         self.assertEqual(cred.user_id,
                          ec2_credential['user_id'])
+
+    def test_migrate_ec2_credential(self):
+        user = {
+            'id': 'foo',
+            'name': 'FOO',
+            'password': 'foo2',
+            'enabled': True,
+            'email': 'foo@bar.com',
+            'extra': json.dumps({'enabled': True})
+        }
+        tenant = {
+            'id': 'bar',
+            'name': 'BAR',
+            'description': 'description',
+            'enabled': True,
+            'extra': json.dumps({'enabled': True})
+        }
+        ec2_credential = {
+            'access': uuid.uuid4().hex,
+            'secret': uuid.uuid4().hex,
+            'user_id': user['id'],
+            'tenant_id': tenant['id'],
+        }
+        session = self.Session()
+        self.upgrade(7)
+        self.insert_dict(session, 'ec2_credential', ec2_credential)
+        self.insert_dict(session, 'user', user)
+        self.insert_dict(session, 'tenant', tenant)
+        self.upgrade(31)
+        self.assertTableDoesNotExist('ec2_credential')
+        cred_table = sqlalchemy.Table('credential',
+                                      self.metadata,
+                                      autoload=True)
+        expected_credential_id = utils.hash_access_key(
+            ec2_credential['access'])
+        cred = session.query(cred_table).filter_by(
+            id=expected_credential_id).one()
+        self.assertEqual(cred.user_id, ec2_credential['user_id'])
+        self.assertEqual(cred.project_id, ec2_credential['tenant_id'])
+        # test list credential using credential manager.
+        from keystone import credential
+        credential_api = credential.Manager()
+        self.assertNotEmpty(credential_api.
+                            list_credentials(
+                            **{'user_id': ec2_credential['user_id']}))
+        self.downgrade(30)
+        session.commit()
+        self.assertTableExists('ec2_credential')
+        ec2_cred_table = sqlalchemy.Table('ec2_credential',
+                                          self.metadata,
+                                          autoload=True)
+        ec2_cred = session.query(ec2_cred_table).filter_by(
+            access=ec2_credential['access']).one()
+        self.assertEqual(ec2_cred.user_id, ec2_credential['user_id'])
+
+    def test_migrate_ec2_credential_conflict(self):
+        user = {
+            'id': 'foo',
+            'name': 'FOO',
+            'password': 'foo2',
+            'enabled': True,
+            'email': 'foo@bar.com',
+            'extra': json.dumps({'enabled': True})
+        }
+        tenant_1 = {
+            'id': 'bar',
+            'name': 'BAR',
+            'description': 'description',
+            'enabled': True,
+            'extra': json.dumps({'enabled': True})
+        }
+        tenant_2 = {
+            'id': 'baz',
+            'name': 'BAZ',
+            'description': 'description',
+            'enabled': True,
+            'extra': json.dumps({'enabled': True})
+        }
+        ec2_credential = {
+            'access': uuid.uuid4().hex,
+            'secret': uuid.uuid4().hex,
+            'user_id': user['id'],
+            'tenant_id': tenant_1['id'],
+        }
+        blob = {'access': ec2_credential['access'],
+                'secret': ec2_credential['secret']}
+        v3_credential = {
+            'id': utils.hash_access_key(ec2_credential['access']),
+            'user_id': user['id'],
+            # change the project id to simulate a conflict
+            'project_id': tenant_2['id'],
+            'blob': json.dumps(blob),
+            'type': 'ec2',
+            'extra': json.dumps({})
+        }
+        session = self.Session()
+        self.upgrade(7)
+        self.insert_dict(session, 'ec2_credential', ec2_credential)
+        self.insert_dict(session, 'user', user)
+        self.insert_dict(session, 'tenant', tenant_1)
+        self.insert_dict(session, 'tenant', tenant_2)
+        self.upgrade(30)
+        self.insert_dict(session, 'credential', v3_credential)
+        from keystone import exception
+        self.assertRaises(exception.Conflict, self.upgrade, 31)
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
