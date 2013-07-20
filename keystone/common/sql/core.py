@@ -18,10 +18,7 @@
 import functools
 
 import sqlalchemy as sql
-import sqlalchemy.engine.url
-from sqlalchemy.exc import DisconnectionError
 from sqlalchemy.ext import declarative
-import sqlalchemy.orm
 from sqlalchemy.orm.attributes import InstrumentedAttribute
 import sqlalchemy.pool
 from sqlalchemy import types as sql_types
@@ -29,6 +26,9 @@ from sqlalchemy import types as sql_types
 from keystone.common import logging
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.db import exception as db_exc
+from keystone.openstack.common.db.sqlalchemy import models
+from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import jsonutils
 
 
@@ -108,6 +108,9 @@ def set_global_engine(engine):
         # It's the same engine so nothing to do.
         return
 
+    if engine is None:
+        session.cleanup()
+
     GLOBAL_ENGINE = engine
 
     cbs = GLOBAL_ENGINE_CALLBACKS
@@ -146,7 +149,7 @@ class JsonBlob(sql_types.TypeDecorator):
         return jsonutils.loads(value)
 
 
-class DictBase(object):
+class DictBase(models.ModelBase):
     attributes = []
 
     @classmethod
@@ -175,79 +178,13 @@ class DictBase(object):
 
         return d
 
-    def __setitem__(self, key, value):
-        setattr(self, key, value)
-
-    def __getitem__(self, key):
-        return getattr(self, key)
-
-    def get(self, key, default=None):
-        return getattr(self, key, default)
-
-    def __iter__(self):
-        self._i = iter(sqlalchemy.orm.object_mapper(self).columns)
-        return self
-
-    def next(self):
-        n = self._i.next().name
-        return n
-
-    def update(self, values):
-        """Make the model object behave like a dict."""
-        for k, v in values.iteritems():
-            setattr(self, k, v)
-
-    def iteritems(self):
-        """Make the model object behave like a dict.
-
-        Includes attributes from joins.
-
-        """
-        return dict([(k, getattr(self, k)) for k in self])
-        #local = dict(self)
-        #joined = dict([(k, v) for k, v in self.__dict__.iteritems()
-        #               if not k[0] == '_'])
-        #local.update(joined)
-        #return local.iteritems()
-
-
-def mysql_on_checkout(dbapi_conn, connection_rec, connection_proxy):
-    """Ensures that MySQL connections checked out of the pool are alive.
-
-    Borrowed from:
-    http://groups.google.com/group/sqlalchemy/msg/a4ce563d802c929f
-
-    Error codes caught:
-    * 2006 MySQL server has gone away
-    * 2013 Lost connection to MySQL server during query
-    * 2014 Commands out of sync; you can't run this command now
-    * 2045 Can't open shared memory; no answer from server (%lu)
-    * 2055 Lost connection to MySQL server at '%s', system error: %d
-
-    from http://dev.mysql.com/doc/refman/5.6/en/error-messages-client.html
-    """
-    try:
-        dbapi_conn.cursor().execute('select 1')
-    except dbapi_conn.OperationalError as e:
-        if e.args[0] in (2006, 2013, 2014, 2045, 2055):
-            logging.warn(_('Got mysql server has gone away: %s'), e)
-            raise DisconnectionError("Database server went away")
-        else:
-            raise
-
 
 # Backends
 class Base(object):
-    _engine = None
-    _sessionmaker = None
-
     def get_session(self, autocommit=True, expire_on_commit=False):
         """Return a SQLAlchemy session."""
-        self._engine = self._engine or self.get_engine()
-        self._sessionmaker = self._sessionmaker or self.get_sessionmaker(
-            self._engine)
-        return self._sessionmaker(autocommit=autocommit,
-                                  expire_on_commit=expire_on_commit)
+        return session.get_session(
+            autocommit=autocommit, expire_on_commit=expire_on_commit)
 
     def get_engine(self, allow_global_engine=True):
         """Return a SQLAlchemy engine.
@@ -258,21 +195,22 @@ class Base(object):
 
         """
         def new_engine():
-            connection_dict = sql.engine.url.make_url(CONF.sql.connection)
+            connection_dict = sql.engine.url.make_url(CONF.database.connection)
 
             engine_config = {
                 'convert_unicode': True,
                 'echo': CONF.debug and CONF.verbose,
-                'pool_recycle': CONF.sql.idle_timeout,
+                'pool_recycle': CONF.database.idle_timeout,
             }
 
             if 'sqlite' in connection_dict.drivername:
                 engine_config['poolclass'] = sqlalchemy.pool.StaticPool
 
-            engine = sql.create_engine(CONF.sql.connection, **engine_config)
+            engine = sql.create_engine(
+                CONF.database.connection, **engine_config)
 
             if engine.name == 'mysql':
-                sql.event.listen(engine, 'checkout', mysql_on_checkout)
+                sql.event.listen(engine, 'checkout', session.ping_listener)
 
             return engine
 
@@ -282,10 +220,10 @@ class Base(object):
         if GLOBAL_ENGINE:
             return GLOBAL_ENGINE
 
-        engine = new_engine()
+        engine = session.get_engine(sqlite_fk=False, slave_engine=False)
 
         # auto-build the db to support wsgi server w/ in-memory backend
-        if CONF.sql.connection == 'sqlite://':
+        if CONF.database.connection == 'sqlite://':
             ModelBase.metadata.create_all(bind=engine)
 
         set_global_engine(engine)
@@ -295,10 +233,8 @@ class Base(object):
     def get_sessionmaker(self, engine, autocommit=True,
                          expire_on_commit=False):
         """Return a SQLAlchemy sessionmaker using the given engine."""
-        return sqlalchemy.orm.sessionmaker(
-            bind=engine,
-            autocommit=autocommit,
-            expire_on_commit=expire_on_commit)
+        return session.get_maker(
+            engine, autocommit=autocommit, expire_on_commit=expire_on_commit)
 
 
 def handle_conflicts(type='object'):
@@ -310,5 +246,12 @@ def handle_conflicts(type='object'):
                 return method(*args, **kwargs)
             except (IntegrityError, OperationalError) as e:
                 raise exception.Conflict(type=type, details=str(e.orig))
+            except db_exc.DBDuplicateEntry as e:
+                msg = "Duplicate values in column(s) {0}".format(
+                    ", ".join(e.columns))
+                raise exception.Conflict(type=type, details=msg)
+            except db_exc.DBError as e:
+                raise exception.Conflict(type=type,
+                                         details=str(e.inner_exception.orig))
         return wrapper
     return decorator

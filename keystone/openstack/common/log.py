@@ -156,8 +156,8 @@ log_opts = [
 ]
 
 CONF = cfg.CONF
-CONF.register_cli_opts(common_cli_opts)
-CONF.register_cli_opts(logging_cli_opts)
+# CONF.register_cli_opts(common_cli_opts)
+# CONF.register_cli_opts(logging_cli_opts)
 CONF.register_opts(generic_log_opts)
 CONF.register_opts(log_opts)
 
