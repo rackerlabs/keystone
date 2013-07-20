@@ -47,28 +47,9 @@ LOGGING_CLI_OPTS = [
                     'options specified. Please see the Python logging module '
                     'documentation for details on logging configuration '
                     'files.'),
-    cfg.StrOpt('log-format',
-               default=_DEFAULT_LOG_FORMAT,
-               metavar='FORMAT',
-               help='A logging.Formatter log message format string which may '
-                    'use any of the available logging.LogRecord attributes.'),
-    cfg.StrOpt('log-date-format',
-               default=_DEFAULT_LOG_DATE_FORMAT,
-               metavar='DATE_FORMAT',
-               help='Format string for %%(asctime)s in log records.'),
-    cfg.StrOpt('log-file',
-               metavar='PATH',
-               help='Name of log file to output. '
-                    'If not set, logging will go to stdout.'),
-    cfg.StrOpt('log-dir',
-               help='The directory in which to store log files. '
-                    '(will be prepended to --log-file)'),
     cfg.BoolOpt('use-syslog',
                 default=False,
                 help='Use syslog for logging.'),
-    cfg.StrOpt('syslog-log-facility',
-               default='LOG_USER',
-               help='syslog facility to receive log lines.')
 ]
 
 CONF = cfg.CONF
@@ -260,11 +241,6 @@ def configure():
     register_str('ca_password', group='signing', default=None)
     register_str('cert_subject', group='signing',
                  default='/C=US/ST=Unset/L=Unset/O=Unset/CN=www.example.com')
-
-    # sql
-    register_str('connection', group='sql', secret=True,
-                 default='sqlite:///keystone.db')
-    register_int('idle_timeout', group='sql', default=200)
 
     #assignment has no default for backward compatibility reasons.
     #If assignment is not specified, the identity driver chooses the backend
