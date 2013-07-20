@@ -16,6 +16,24 @@
       "revId": "76888e1ee21326adf1f4d44b64da81479fcde6c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//3Ug\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-20T21:14:37Z",
+      "side": 1,
+      "message": "I don\u0027t understand this comment.   This looks like a simple string literal concatenation.  Why do you think a value is being substituted into the string?",
+      "parentUuid": "AAAAQn//7cM\u003d",
+      "revId": "76888e1ee21326adf1f4d44b64da81479fcde6c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
