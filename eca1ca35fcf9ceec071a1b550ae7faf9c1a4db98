@@ -52,6 +52,24 @@
       "revId": "eca1ca35fcf9ceec071a1b550ae7faf9c1a4db98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//3yI\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-20T06:31:34Z",
+      "side": 1,
+      "message": "Ahh, OK..got it.  Thanks.",
+      "parentUuid": "AAAAQn//4B4\u003d",
+      "revId": "eca1ca35fcf9ceec071a1b550ae7faf9c1a4db98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
