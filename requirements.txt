@@ -14,4 +14,6 @@ passlib
 lxml
 iso8601>=0.1.4
 python-keystoneclient>=0.3.0
-oslo.config>=1.1.0
+
+-f http://tarballs.openstack.org/oslo.config/oslo.config-1.2.0a3.tar.gz#egg=oslo.config-1.2.0a3
+oslo.config>=1.2.0a3
