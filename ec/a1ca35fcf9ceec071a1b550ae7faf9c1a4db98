@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Arvind Tiwari <arvind.tiwari@hp.com>
+Verified+1: SmokeStack
+Approved+1: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Sun, 21 Jul 2013 17:47:01 +0000
+Reviewed-on: https://review.openstack.org/37739
+Project: openstack/keystone
+Branch: refs/heads/master
