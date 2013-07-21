@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//3C8\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-21T15:05:41Z",
+      "side": 1,
+      "message": "Add a comment here that says why we can ignore this exception.",
+      "revId": "a35786722531e0888a2fb5539f0bdd29494d187d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
