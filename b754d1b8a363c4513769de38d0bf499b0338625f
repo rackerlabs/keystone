@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//0t8\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T17:01:41Z",
+      "side": 1,
+      "message": "I have no idea, [assignment] is not part of my change",
+      "parentUuid": "AAAAQn//03Y\u003d",
+      "revId": "b754d1b8a363c4513769de38d0bf499b0338625f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//03U\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-22T16:55:46Z",
       "side": 1,
       "message": "Why the extra # here?",
+      "revId": "b754d1b8a363c4513769de38d0bf499b0338625f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0t0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T17:01:41Z",
+      "side": 1,
+      "message": "error when I rebase the patches, I\u0027ll clean it up for a following push",
+      "parentUuid": "AAAAQn//03U\u003d",
       "revId": "b754d1b8a363c4513769de38d0bf499b0338625f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
