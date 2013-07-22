@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//2Ak\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 37
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2013-07-22T09:06:30Z",
+      "side": 1,
+      "message": "oauth_extension has to be added to the pipeline for the oauth service to be usable. This should be there by default, or documented somewhere at least.",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//7L0\u003d",
         "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
         "patchSetId": 37
