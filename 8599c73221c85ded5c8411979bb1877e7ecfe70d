@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//0K4\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "This driver doesn\u0027t seem to exist.  I would also encourage the use of the SQL driver as the default and KVS as a development/testing override if needed (when KVS is implemented).  The reasoning is the same for making the Token driver default to SQL, KVS causes strange behavior (due to memory not being shared) running under httpd.",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0Jw\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "If we always raise forbidden, should this even be exposed via the routers?  Or is there more code pending here?",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0Kw\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "You should use the \"with\" statement for file operations.\nwith os.open(...) as f:\n    ....",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0Ks\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "You should use the with statement for file operations:\nwith os.open(...) as f:\n   ...",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0Ko\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "This seem superfluous unless _get_master_key is doing more work than simply returning self.mkey.  If _get_master_key will be doing more, you should consider making .mkey an @property decorated method.\n\nIf you keep _get_master_key, having that method raise the unepxected error makes more sense than raising it explicitly in each method that calls _get_master_key()",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0KU\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "for maintanability, since you are doing the slices in more than one location the same way, it would make sense to put them into their own method and return skey and ekey",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0KM\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "Does it make sense to store the key (sig and enc) as a single value and do the slices every time?  \n\nI\u0027m inclined to think that it would make more sense to make sig and enc as two separate elements that the driver returns from .get_shared_key().\n\nThis doesn\u0027t really need to change, just thinking about options / approach",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0G8\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "I don\u0027t believe bareword \"raise\" is valid.  raise requires an explicit exception.",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0KE\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "Nit: _set_key doesn\u0027t return anything. docstring should match reality.",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0I4\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "See above comment on possible separate method for the expand/slices.",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0Ho\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "Do you really want to expose that this expired instead of just \"invalid request\" (no change needed, just curious if this information should be exposed).",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0IY\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "See above about method to expand/slice key.  In this case you\u0027d b64 encode the results (just not in-line)",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0KA\u003d",
+        "filename": "keystone/contrib/kds/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-22T20:39:21Z",
+      "side": 1,
+      "message": "Looking at the underlying controller, it looks like this could be used for an update type action (you do a delete if it exists), therefore wouldn\u0027t PUT, POST be appropriate?",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
