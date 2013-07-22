@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//0R4\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 37
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-22T22:21:43Z",
+      "side": 1,
+      "message": "way back in an earlier patch, it was removed as per dolphm\u0027s request; I\u0027ll be sure to document it in the api spec (or wherever is appropriate)",
+      "parentUuid": "AAAAQn//2Ak\u003d",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//7L0\u003d",
         "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
         "patchSetId": 37
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-19T01:09:55Z",
       "side": 1,
       "message": "Maybe KVS should warn when it\u0027s used...(token KVS for example() probably not as relevant as it is/was not the default.",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0O8\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/kvs.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-22T22:21:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//7L0\u003d",
       "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//0O4\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-22T22:21:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//7Ng\u003d",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//7NY\u003d",
         "filename": "keystone/contrib/delegated_auth/backends/sql.py",
         "patchSetId": 37
@@ -81,6 +135,24 @@
       "writtenOn": "2013-07-19T01:09:55Z",
       "side": 1,
       "message": "This loop might not really be needed.  Likely it would be easier to read and be clearer with simple if-checks and assignment or try/excepts.  This comment can be safely ignored if you expect the attributes to be set in this case to expand to a larger list.\n\nThe use of setattr/getattr could also be avoided, with the elimination of this loop.  Overall, that should be more maintainable and easier to see what is going on in the future.  (though it will be more lines of code).",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0OU\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-22T22:21:43Z",
+      "side": 1,
+      "message": "I don\u0027t think any other attributes will need to be set in the future, so i\u0027m going to hold off from changing this right now.",
+      "parentUuid": "AAAAQn//7NY\u003d",
       "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//0NY\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-22T22:21:43Z",
+      "side": 1,
+      "message": "I\u0027m not sure, i\u0027ll wait til https://bugs.launchpad.net/keystone/+bug/928059 is resolved",
+      "parentUuid": "AAAAQn//7Mc\u003d",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//7NQ\u003d",
         "filename": "keystone/contrib/delegated_auth/core.py",
         "patchSetId": 37
@@ -115,6 +205,24 @@
       "writtenOn": "2013-07-19T01:09:55Z",
       "side": 1,
       "message": "You are going to want to put some guarding in here to prevent invalid data being passed and probably raise out bad request instead of an exception and a straight ISE.\n\nOne example case is that request.GET is a dict, and dict.get() returns a NoneType as default, so if oauth_consumer_key doesn\u0027t exist you get None back on the .get().  Split cannot be called on NoneType and you end up with an ISE instead of a more useful error.\n\nThere should also be tests for BadRequests/invalid requests being sent through.",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0Lg\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-22T22:21:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//7NQ\u003d",
       "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//0Lc\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-22T22:21:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//7NM\u003d",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//7NI\u003d",
         "filename": "keystone/contrib/delegated_auth/core.py",
         "patchSetId": 37
@@ -149,6 +275,24 @@
       "writtenOn": "2013-07-19T01:09:55Z",
       "side": 1,
       "message": "See above note on guarding against bad data.",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0LU\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-22T22:21:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//7NI\u003d",
       "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//0NQ\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-22T22:21:43Z",
+      "side": 1,
+      "message": "Matthieu, you are correct, a non privileged user should be able to perform this too, i will remove this line.",
+      "parentUuid": "AAAAQn//5Zo\u003d",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//7ME\u003d",
         "filename": "keystone/contrib/delegated_auth/core.py",
         "patchSetId": 37
@@ -183,6 +345,24 @@
       "writtenOn": "2013-07-19T01:09:55Z",
       "side": 1,
       "message": "don\u0027t recreate the set everytime, move the set creation above the for loop.  This might be a good case for a frozenset.",
+      "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0NM\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-22T22:21:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//7ME\u003d",
       "revId": "54c9c30b9b5cb747387af02b46e79aa44920e2aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
