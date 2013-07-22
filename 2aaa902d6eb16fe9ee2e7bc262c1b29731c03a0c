@@ -16,6 +16,24 @@
       "revId": "2aaa902d6eb16fe9ee2e7bc262c1b29731c03a0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//2sI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-07-22T00:02:13Z",
+      "side": 1,
+      "message": "No, I guess sees is not a technical term but i mean that it finds or locates the wrong module. I can reword if anyone is bothered by it.",
+      "parentUuid": "AAAAQn//4VQ\u003d",
+      "revId": "2aaa902d6eb16fe9ee2e7bc262c1b29731c03a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
