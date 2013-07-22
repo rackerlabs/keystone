@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//z6E\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-22T21:43:03Z",
+      "side": 1,
+      "message": "Could also use: \n\n:param kds_id: description of variable kds_id\n\n:param expiration: description and default\n\n:param key: description... etc.\n\n:returns: description of return value\n\nformatted like: https://github.com/openstack/keystone/blob/master/keystone/config.py#L48",
+      "revId": "44aabbe85e09bc44a7aae8d78b9c5cf37e1d768f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
