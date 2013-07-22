@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//1bY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-22T13:56:12Z",
+      "side": 1,
+      "message": "remove \u0027wor\u0027?",
+      "revId": "fe31df94d45f197b263357a569b426e4dc11df95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//1bI\u003d",
+        "filename": "keystone/openstack/common/log.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-22T13:56:12Z",
+      "side": 1,
+      "message": "Were these changes sync\u0027d from Oslo-incubator?\n\nhttps://github.com/openstack/oslo-incubator/blob/master/openstack/common/log.py#L158",
+      "revId": "fe31df94d45f197b263357a569b426e4dc11df95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
