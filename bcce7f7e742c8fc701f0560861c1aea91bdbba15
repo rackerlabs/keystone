@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//1PE\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T15:05:36Z",
+      "side": 1,
+      "message": "I am not sure yet, which is why I left it in here for now.",
+      "parentUuid": "AAAAQn//794\u003d",
+      "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//79E\u003d",
         "filename": "keystone/contrib/kds/backends/sql.py",
         "patchSetId": 2
@@ -64,6 +82,24 @@
       "writtenOn": "2013-07-18T20:38:51Z",
       "side": 1,
       "message": "Might be worth it to use the doc strings of this method to explain the variables and what we are returning, since the return value differs depending on the situation.",
+      "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//1O8\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T15:05:36Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "AAAAQn//79E\u003d",
       "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//1NQ\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T15:05:36Z",
+      "side": 1,
+      "message": "We return 0 to mean \u0027this is generation number 0\u0027. Generation number 0 has a special meaning of course.\nWhen we actually add a key we return a generation number different than 0.\nShould we change the type of returned value depending on how the function is invoked ? I feel we just make it more difficult to use that way we no real gain. Errors are always reported via exceptions anyway...",
+      "parentUuid": "AAAAQn//79g\u003d",
+      "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//79Y\u003d",
         "filename": "keystone/contrib/kds/backends/sql.py",
         "patchSetId": 2
@@ -98,6 +152,24 @@
       "writtenOn": "2013-07-18T20:38:51Z",
       "side": 1,
       "message": "Consider renaming variables \u0027d\u0027 and \u0027n\u0027 to be something a little more descriptive, unless this is an established convention.",
+      "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//1NM\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T15:05:36Z",
+      "side": 1,
+      "message": "ok I\u0027ll change them",
+      "parentUuid": "AAAAQn//79Y\u003d",
       "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//1NI\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T15:05:36Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "AAAAQn//79I\u003d",
+      "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//788\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 2
@@ -132,6 +222,24 @@
       "writtenOn": "2013-07-18T20:38:51Z",
       "side": 1,
       "message": "(NIT): min -\u003e minutes",
+      "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//1LM\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T15:05:36Z",
+      "side": 1,
+      "message": "ack",
+      "parentUuid": "AAAAQn//788\u003d",
       "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//1LA\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T15:05:36Z",
+      "side": 1,
+      "message": "I think it is sufficiently understandable given it is immediately used, and allows for more compact code without the need to break the next call in multiple lines.",
+      "parentUuid": "AAAAQn//78w\u003d",
+      "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//770\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 2
@@ -166,6 +292,24 @@
       "writtenOn": "2013-07-18T20:38:51Z",
       "side": 1,
       "message": "Where are we checking in the logic below if a generation has a lifetime of 10 minutes or more?",
+      "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//1Ks\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T15:05:36Z",
+      "side": 1,
+      "message": "Uhmm we don\u0027t, good cactch",
+      "parentUuid": "AAAAQn//770\u003d",
       "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +333,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//1Kk\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T15:05:36Z",
+      "side": 1,
+      "message": "yep, need to sutract 10 min from t",
+      "parentUuid": "AAAAQn//77k\u003d",
+      "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//77I\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 2
@@ -206,6 +368,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//1J4\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T15:05:36Z",
+      "side": 1,
+      "message": "We need to decrypt the key before returning it, so we go from key -\u003e plain.\nIn case we generate a new key we do not need to do that as we already have the plaintext so _gen_group_key() returns that directly.",
+      "parentUuid": "AAAAQn//77I\u003d",
+      "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//760\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 2
@@ -217,6 +397,24 @@
       "writtenOn": "2013-07-18T20:38:51Z",
       "side": 1,
       "message": "With the added functionality in _get_key it might be worth it to pull the signature checkout out into its own function, call it from here, and handle accordingly. It would be more useable if you had to do this later in the code?",
+      "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//1Jc\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-22T15:05:36Z",
+      "side": 1,
+      "message": "I am not sure I see the advantage.",
+      "parentUuid": "AAAAQn//760\u003d",
       "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
