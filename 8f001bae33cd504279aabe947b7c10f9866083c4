@@ -16,6 +16,24 @@
       "revId": "8f001bae33cd504279aabe947b7c10f9866083c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//0EI\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-22T20:53:30Z",
+      "side": 1,
+      "message": "Dolph, I think we have a common understanding that blob is a serialized JSON string. Can you please bless this review now?",
+      "parentUuid": "AAAAP3//8M0\u003d",
+      "revId": "8f001bae33cd504279aabe947b7c10f9866083c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
