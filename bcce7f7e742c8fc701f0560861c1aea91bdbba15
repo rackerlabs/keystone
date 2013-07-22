@@ -316,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//z40\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-22T21:41:39Z",
+      "side": 1,
+      "message": "I suppose this would be addressed in a different patch?",
+      "parentUuid": "AAAAQn//1Ks\u003d",
+      "revId": "bcce7f7e742c8fc701f0560861c1aea91bdbba15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//77k\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 2
