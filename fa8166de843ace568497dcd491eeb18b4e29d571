@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//xB8\u003d",
+        "filename": "keystone/common/sql/alembic/env.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-23T16:24:13Z",
+      "side": 1,
+      "message": "from the example docs, should this be wrapped in a try/finally to always attempt to close the connection?",
+      "revId": "fa8166de843ace568497dcd491eeb18b4e29d571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
