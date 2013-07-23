@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//xW4\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-23T15:03:57Z",
+      "side": 1,
+      "message": "lines 74 - 79 are common code with the below else statement. Thinking this should be pulled out so that it is outside of the if/else. That way if something is changed to the logic it only needs to be done in one place.",
+      "revId": "b47092cc8fa1d92ad890998d47b717b40c4fea8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//xV0\u003d",
+        "filename": "tests/test_s3_token_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-23T15:03:57Z",
+      "side": 1,
+      "message": "This is just a suggestion, but would it be more readable to split this test up into \u0027good\u0027 path and \u0027bad\u0027 path tests separately? Just thinking in the case that the logic in the method being tested fails, we have a lot of assertEquals and assertRaises here for one test. Thoughts?",
+      "revId": "b47092cc8fa1d92ad890998d47b717b40c4fea8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
