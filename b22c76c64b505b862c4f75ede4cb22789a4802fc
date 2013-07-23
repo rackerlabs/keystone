@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//w/Y\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2013-07-23T16:44:10Z",
+      "side": 1,
+      "message": "the token ends up listing every role from the original user, instead of just the ones defined with the request token.\nI think it could be done in this fashion, from the patch implementing trusts: https://github.com/openstack/keystone/blob/603a5146b33c95bd40d798f5d3912dc190a4d3ba/keystone/token/providers/uuid.py#L209",
+      "revId": "b22c76c64b505b862c4f75ede4cb22789a4802fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
