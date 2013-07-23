@@ -16,6 +16,23 @@
       "revId": "ddf141fd8725f3767f1014fcf4058dc8644bbd39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//wQA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/030_drop_credential_constraint_sqlite.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-07-23T20:56:25Z",
+      "side": 1,
+      "message": "The commit message has the same typo.",
+      "revId": "ddf141fd8725f3767f1014fcf4058dc8644bbd39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
