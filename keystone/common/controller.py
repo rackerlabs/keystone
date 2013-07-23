@@ -107,6 +107,16 @@ def protected(f):
     return wrapper
 
 
+def prepareprotection(f):
+    """Wraps API calls with role based access controls (RBAC)."""
+    @functools.wraps(f)
+    def wrapper(self, context, *args, **kwargs):
+        prep_info = {'f_name': f.__name__,
+                     'input_attr': kwargs}
+        return f(self, context, prep_info, *args, **kwargs)
+    return wrapper
+
+
 def filterprotected(*filters):
     """Wraps filtered API calls with role based access controls (RBAC)."""
 
@@ -333,3 +343,24 @@ class V3Controller(V2Controller):
     def _filter_domain_id(self, ref):
         """Override v2 filter to let domain_id out for v3 calls."""
         return ref
+
+    def targetprotected(self, context, prep_info, target_attr=None):
+        """Provide call protection using both calling and target attributes."""
+        if 'is_admin' in context and context['is_admin']:
+            LOG.warning(_('RBAC: Bypassing authorization'))
+        else:
+            action = 'identity:%s' % prep_info['f_name']
+            # TODO(henry-nash) need to log the target attributes as well
+            creds = _build_policy_check_credentials(self, action,
+                                                    context,
+                                                    prep_info['input_attr'])
+            # Build the dict the policy engine will check against from both the
+            # parameters passed into the call we are protecting (which was
+            # stored in the prep_info by prepareprotection()), plus the target
+            # attributes provided.
+            policy_dict = {}
+            if target_attr:
+                policy_dict = {'t': target_attr}
+            policy_dict.update(prep_info['input_attr'])
+            self.policy_api.enforce(creds, action, flatten(policy_dict))
+            LOG.debug(_('RBAC: Authorization granted'))
