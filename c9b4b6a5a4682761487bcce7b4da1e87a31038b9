@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//y20\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/030_drop_credential_constraint_sqlite.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-23T17:33:18Z",
+      "side": 1,
+      "message": "any reason for the double underscores instead of one?",
+      "revId": "c9b4b6a5a4682761487bcce7b4da1e87a31038b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
