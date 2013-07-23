@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//yMI\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2013-07-23T09:38:16Z",
+      "side": 1,
+      "message": "More explicit messages would be nice when using exception.Unauthorized - it took me some time to realize I should be using role names rather than role IDs ...",
+      "revId": "abcbd03ed5b168cc0eb2f9f5816d6fcca6ce2d8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
