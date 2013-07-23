@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//xJU\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6835
+      },
+      "writtenOn": "2013-07-23T15:57:39Z",
+      "side": 1,
+      "message": "It\u0027s not same between two block codes:\n    73~75 vs 81~83: path.split first and not first\n    77~78 vs 85~87: count \u003e maxsegs [+1] and the follow one has one more condition\n    76 \u003d 84\n    79 \u003d 88",
+      "parentUuid": "AAAAQn//xW4\u003d",
+      "revId": "b47092cc8fa1d92ad890998d47b717b40c4fea8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//xV0\u003d",
         "filename": "tests/test_s3_token_middleware.py",
         "patchSetId": 2
