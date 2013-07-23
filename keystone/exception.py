@@ -61,6 +61,18 @@ class Error(StandardError):
             message = message.strip()
         return message
 
+    def obfuscate_error(self):
+        """Obfuscate the specific error code if required."""
+
+        # TODO(henry-nash) We should support a config setting which ensures
+        # we hide the difference between errors like unauthorized and
+        # NotFound, to stop leakage of information to unauthorized users.
+        # In such a scenario, we mght set the code to NotFound.
+        #
+        # For now, however, just return the error that was passed in.
+
+        return self
+
 
 class ValidationError(Error):
     """Expecting to find %(attribute)s in %(target)s.
