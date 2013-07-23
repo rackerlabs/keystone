@@ -85,7 +85,15 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
 
         self.role = self.new_role_ref()
         self.identity_api.create_role(self.role['id'], self.role)
+        self.role1 = self.new_role_ref()
+        self.identity_api.create_role(self.role1['id'], self.role1)
         self.identity_api.create_grant(self.role['id'],
+                                       user_id=self.user1['id'],
+                                       domain_id=self.domainA['id'])
+        self.identity_api.create_grant(self.role['id'],
+                                       user_id=self.user2['id'],
+                                       domain_id=self.domainA['id'])
+        self.identity_api.create_grant(self.role1['id'],
                                        user_id=self.user1['id'],
                                        domain_id=self.domainA['id'])
 
@@ -167,6 +175,69 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         url_by_name = '/users/%s' % self.user1['id']
         r = self.get(url_by_name, auth=self.auth)
         self.assertEquals(self.user1['id'], r.result['user']['id'])
+
+    def test_get_user_protected_match_target(self):
+        """GET /users/{id} (match target)
+
+        Test Plan:
+        - Update policy to protect api by domain_id
+        - Try and read a user who is in DomainB with a token scoped
+          to Domain A - this should fail
+        - Retry this for a user who is in Domain A, which should succeed.
+
+        """
+        new_policy = {'identity:get_user':
+                      [["domain_id:%(t.user.domain_id)s"]]}
+        self._set_policy(new_policy)
+        self.auth = self.build_authentication_request(
+            user_id=self.user1['id'],
+            password=self.user1['password'],
+            domain_id=self.domainA['id'])
+        url_by_name = '/users/%s' % self.user2['id']
+        r = self.get(url_by_name, auth=self.auth,
+                     expected_status=exception.ForbiddenAction.code)
+
+        url_by_name = '/users/%s' % self.user1['id']
+        r = self.get(url_by_name, auth=self.auth)
+        self.assertEquals(self.user1['id'], r.result['user']['id'])
+
+    def test_revoke_grant_protected_match_target(self):
+        """REVOKE /domains/{id}/users/{id}/roles/{id} (match target)
+
+        Test Plan:
+        - Update policy to protect api by domain_id of entities in
+          the grant
+        - Try and delete the existing grant that has a user who is
+          from a different domain - this should fail.
+        - Retry this for a user who is in Domain A, which should succeed.
+
+        """
+        new_policy = {'identity:revoke_grant':
+                      [["domain_id:%(t.user.domain_id)s"]]}
+        self._set_policy(new_policy)
+        collection_url = (
+            '/domains/%(domain_id)s/users/%(user_id)s/roles' % {
+                'domain_id': self.domainA['id'],
+                'user_id': self.user2['id']})
+        member_url = '%(collection_url)s/%(role_id)s' % {
+            'collection_url': collection_url,
+            'role_id': self.role['id']}
+
+        self.auth = self.build_authentication_request(
+            user_id=self.user1['id'],
+            password=self.user1['password'],
+            domain_id=self.domainA['id'])
+        self.delete(member_url, auth=self.auth,
+                    expected_status=exception.ForbiddenAction.code)
+
+        collection_url = (
+            '/domains/%(domain_id)s/users/%(user_id)s/roles' % {
+                'domain_id': self.domainA['id'],
+                'user_id': self.user1['id']})
+        member_url = '%(collection_url)s/%(role_id)s' % {
+            'collection_url': collection_url,
+            'role_id': self.role1['id']}
+        self.delete(member_url, auth=self.auth)
 
     def test_list_users_protected_by_domain(self):
         """GET /users?domain_id=mydomain (protected)

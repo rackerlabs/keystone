@@ -607,9 +607,10 @@ class UserV3(controller.V3Controller):
         refs = self.identity_api.list_users_in_group(group_id)
         return UserV3.wrap_collection(context, refs, filters)
 
-    @controller.protected
-    def get_user(self, context, user_id):
+    @controller.prepareprotection
+    def get_user(self, context, protection, user_id):
         ref = self.identity_api.get_user(user_id)
+        self.targetprotected(context, protection, {self.member_name: ref})
         return UserV3.wrap_member(context, ref)
 
     @controller.protected
@@ -753,6 +754,28 @@ class RoleV3(controller.V3Controller):
                 context['path'].startswith('/OS-INHERIT') and
                 context['path'].endswith('/inherited_to_projects'))
 
+    def _check_protection(self, context, protection, user_id=None,
+                          group_id=None, domain_id=None, project_id=None):
+        """Check protection for role grant APIs.
+
+        The policy rule might want to inspect attributes of any of the entities
+        involved in the grant.  So we get these and pass them to the
+        targetprotected() handler in the controller.
+
+        """
+        ref = {}
+        if user_id:
+            ref['user'] = self.identity_api.get_user(user_id)
+        else:
+            ref['group'] = self.identity_api.get_group(group_id)
+
+        if domain_id:
+            ref['domain'] = self.assignment_api.get_domain(domain_id)
+        else:
+            ref['project'] = self.assignment_api.get_project(project_id)
+
+        self.targetprotected(context, protection, ref)
+
     @controller.protected
     def create_grant(self, context, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None):
@@ -787,12 +810,14 @@ class RoleV3(controller.V3Controller):
             role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
 
-    @controller.protected
-    def revoke_grant(self, context, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None):
+    @controller.prepareprotection
+    def revoke_grant(self, context, protection, role_id, user_id=None,
+                     group_id=None, domain_id=None, project_id=None):
         """Revokes a role from user/group on either a domain or project."""
         self._require_domain_xor_project(domain_id, project_id)
         self._require_user_xor_group(user_id, group_id)
+        self._check_protection(context, protection, user_id, group_id,
+                               domain_id, project_id)
 
         self.identity_api.delete_grant(
             role_id, user_id, group_id, domain_id, project_id,
