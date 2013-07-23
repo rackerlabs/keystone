@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//wfI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/030_kds_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-23T19:23:28Z",
+      "side": 1,
+      "message": "255 will succeed.  256 will fail",
+      "revId": "8c297b6daff327be69d04d3b775e72e6302e105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
