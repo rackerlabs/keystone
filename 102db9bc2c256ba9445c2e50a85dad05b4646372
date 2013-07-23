@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//xfM\u003d",
+        "filename": "keystone/openstack/common/local.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-23T14:11:37Z",
+      "side": 1,
+      "message": "I thought this wasn\u0027t suppose to be sync\u0027d with Keystone yet? ayoung had concerns about hard dependencies on Eventlet. Working on separating this: \n\nhttps://review.openstack.org/#/c/34834/",
+      "revId": "102db9bc2c256ba9445c2e50a85dad05b4646372",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
