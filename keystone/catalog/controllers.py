@@ -128,6 +128,10 @@ class ServiceV3(controller.V3Controller):
     collection_name = 'services'
     member_name = 'service'
 
+    def __init__(self):
+        super(ServiceV3, self).__init__()
+        self.get_member_from_driver = self.catalog_api.get_service
+
     @controller.protected
     def create_service(self, context, service):
         ref = self._assign_unique_id(self._normalize_dict(service))
@@ -162,6 +166,10 @@ class ServiceV3(controller.V3Controller):
 class EndpointV3(controller.V3Controller):
     collection_name = 'endpoints'
     member_name = 'endpoint'
+
+    def __init__(self):
+        super(EndpointV3, self).__init__()
+        self.get_member_from_driver = self.catalog_api.get_endpoint
 
     @classmethod
     def filter_endpoint(cls, ref):

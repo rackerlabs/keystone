@@ -25,6 +25,10 @@ class CredentialV3(controller.V3Controller):
     collection_name = 'credentials'
     member_name = 'credential'
 
+    def __init__(self):
+        super(CredentialV3, self).__init__()
+        self.get_member_from_driver = self.credential_api.get_credential
+
     def _assign_unique_id(self, ref):
         # Generates and assigns a unique identifer to
         # a credential reference.
