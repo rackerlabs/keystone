@@ -21,6 +21,14 @@ class CredentialV3(controller.V3Controller):
     collection_name = 'credentials'
     member_name = 'credential'
 
+    def _check_target(self, context, protection, credential_id):
+        try:
+            ref = self.credential_api.get_credential(credential_id)
+        except Exception as e:
+            raise e.obfuscate_error()
+        self.targetprotected(context, protection, {self.member_name: ref})
+        return ref
+
     @controller.protected
     def create_credential(self, context, credential):
         ref = self._assign_unique_id(self._normalize_dict(credential))
@@ -32,18 +40,21 @@ class CredentialV3(controller.V3Controller):
         refs = self.credential_api.list_credentials()
         return CredentialV3.wrap_collection(context, refs)
 
-    @controller.protected
-    def get_credential(self, context, credential_id):
-        ref = self.credential_api.get_credential(credential_id)
+    @controller.prepareprotection
+    def get_credential(self, context, protection, credential_id):
+        ref = self._check_target(context, protection, credential_id)
         return CredentialV3.wrap_member(context, ref)
 
-    @controller.protected
-    def update_credential(self, context, credential_id, credential):
+    @controller.prepareprotection
+    def update_credential(self, context, protection,
+                          credential_id, credential):
+        self._check_target(context, protection, credential_id)
         self._require_matching_id(credential_id, credential)
 
         ref = self.credential_api.update_credential(credential_id, credential)
         return CredentialV3.wrap_member(context, ref)
 
-    @controller.protected
-    def delete_credential(self, context, credential_id):
+    @controller.prepareprotection
+    def delete_credential(self, context, protection, credential_id):
+        self._check_target(context, protection, credential_id)
         return self.credential_api.delete_credential(credential_id)
