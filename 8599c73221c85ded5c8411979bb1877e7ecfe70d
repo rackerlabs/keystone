@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//w6c\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "I though a valid URI would be better, as it will allow to specify something different in future if needed. See for example how I allow both inline and file configuration for services keys in oslo-incubator by using file:// vs key:",
+      "parentUuid": "AAAAQn//zIE\u003d",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//0K4\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-22T20:39:21Z",
       "side": 1,
       "message": "This driver doesn\u0027t seem to exist.  I would also encourage the use of the SQL driver as the default and KVS as a development/testing override if needed (when KVS is implemented).  The reasoning is the same for making the Token driver default to SQL, KVS causes strange behavior (due to memory not being shared) running under httpd.",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//w6U\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "Yeah sorry, never meant to use kvs, this is a copy\u0026paste error, thanks for spotting it. Will fix before next review",
+      "parentUuid": "AAAAQn//0K4\u003d",
       "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//w6M\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "Do you have suggestions ? I want to pass no matter what error comes up.",
+      "parentUuid": "AAAAQn//zH0\u003d",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//zHg\u003d",
         "filename": "keystone/contrib/kds/backends/sql.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2013-07-23T02:35:08Z",
       "side": 1,
       "message": "nit: why pop key like it may not be present but [\u0027key_v1\u0027]? It will fail if the pop returns None.",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//w54\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "true, I will change to d[\u0027key\u0027][\u0027key_v1\u0027]  and let an exception bubble up if something fails",
+      "parentUuid": "AAAAQn//zHg\u003d",
       "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//w5Q\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "Initially I meant to use get_key also for get_group_key(), but ended up not doing that I will remove get_key() entirely from next review, thanks for spotting this.",
+      "parentUuid": "AAAAQn//0Jw\u003d",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//zFY\u003d",
         "filename": "keystone/contrib/kds/controllers.py",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2013-07-23T02:35:08Z",
       "side": 1,
       "message": "so why catch it?",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//w5A\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "I think I was doing something else at some point, and then forgot to remove the try/except when the only thing left was \u0027raise\u0027, I\u0027ll remove, thanks",
+      "parentUuid": "AAAAQn//zFY\u003d",
       "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//w30\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "AAAAQn//0Kw\u003d",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//0Ks\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 4
@@ -132,6 +258,24 @@
       "writtenOn": "2013-07-22T20:39:21Z",
       "side": 1,
       "message": "You should use the with statement for file operations:\nwith os.open(...) as f:\n   ...",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//w3w\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "AAAAQn//0Ks\u003d",
       "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//wxQ\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "yeah makes sense, moving exception in the function",
+      "parentUuid": "AAAAQn//0Ko\u003d",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//0KU\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 4
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//www\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "ack",
+      "parentUuid": "AAAAQn//0KU\u003d",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//0KM\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 4
@@ -183,6 +363,24 @@
       "writtenOn": "2013-07-22T20:39:21Z",
       "side": 1,
       "message": "Does it make sense to store the key (sig and enc) as a single value and do the slices every time?  \n\nI\u0027m inclined to think that it would make more sense to make sig and enc as two separate elements that the driver returns from .get_shared_key().\n\nThis doesn\u0027t really need to change, just thinking about options / approach",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//wvs\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "signing and encryption keys are the result of a derivation, we store a service key encrypted in a master key.\nIf we stored signing and encryption key we would never be able to add different derivations in the future, this is why generally in cryptography they are always computed at time of use and not stored.",
+      "parentUuid": "AAAAQn//0KM\u003d",
       "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -224,6 +422,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//wvA\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "it is valid python but not nice, thanks for catching it",
+      "parentUuid": "AAAAQn//0G8\u003d",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//0KE\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 4
@@ -241,6 +457,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//wuw\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "should have said \u0027and save it\u0027, fixing",
+      "parentUuid": "AAAAQn//0KE\u003d",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//0I4\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 4
@@ -252,6 +486,24 @@
       "writtenOn": "2013-07-22T20:39:21Z",
       "side": 1,
       "message": "See above comment on possible separate method for the expand/slices.",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//wuo\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "fixin\u0027",
+      "parentUuid": "AAAAQn//0I4\u003d",
       "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -292,6 +544,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//wuQ\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "yeah I changed it recently as I used \u0027\\x00\u0027 instead of \u0027,\u0027 initially, until I realized \u0027,\u0027 is ok as it is a character that cannot be found in a topic name anyway, so it is safe as separator. Will fix the format.",
+      "parentUuid": "AAAAQn//zFs\u003d",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//0IY\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 4
@@ -303,6 +573,24 @@
       "writtenOn": "2013-07-22T20:39:21Z",
       "side": 1,
       "message": "See above about method to expand/slice key.  In this case you\u0027d b64 encode the results (just not in-line)",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//wuA\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "yup",
+      "parentUuid": "AAAAQn//0IY\u003d",
       "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -338,6 +626,24 @@
       "side": 1,
       "message": "Could go either way but i would say no, stick with PUT. \n\nWhen i perform a POST to a location i expect it to create a new record. eg POST /customer creates a customer later accessible at /customer/customerid (sticking with a non-keystone example as it is a restful idea rather than something that keystone necessarily does)\n\nAs this is later accessible at the same location i\u0027d classify that an in place operation and thus a PUT",
       "parentUuid": "AAAAQn//0KA\u003d",
+      "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//wsQ\u003d",
+        "filename": "keystone/contrib/kds/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-23T18:15:19Z",
+      "side": 1,
+      "message": "agree with jamie",
+      "parentUuid": "AAAAQn//zEs\u003d",
       "revId": "8599c73221c85ded5c8411979bb1877e7ecfe70d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
