@@ -408,6 +408,10 @@ class DomainV3(controller.V3Controller):
     collection_name = 'domains'
     member_name = 'domain'
 
+    def __init__(self):
+        super(DomainV3, self).__init__()
+        self.get_member_from_driver = self.assignment_api.get_domain
+
     @controller.protected
     def create_domain(self, context, domain):
         self._require_attribute(domain, 'name')
@@ -421,12 +425,12 @@ class DomainV3(controller.V3Controller):
         refs = self.identity_api.list_domains()
         return DomainV3.wrap_collection(context, refs, filters)
 
-    @controller.protected
+    @controller.targetprotected
     def get_domain(self, context, domain_id):
         ref = self.identity_api.get_domain(domain_id)
         return DomainV3.wrap_member(context, ref)
 
-    @controller.protected
+    @controller.targetprotected
     def update_domain(self, context, domain_id, domain):
         self._require_matching_id(domain_id, domain)
 
@@ -515,7 +519,7 @@ class DomainV3(controller.V3Controller):
         for user in user_ids:
             user_cntl._delete_user(context, user)
 
-    @controller.protected
+    @controller.targetprotected
     def delete_domain(self, context, domain_id):
         # explicitly forbid deleting the default domain (this should be a
         # carefully orchestrated manual process involving configuration
@@ -551,6 +555,10 @@ class ProjectV3(controller.V3Controller):
     collection_name = 'projects'
     member_name = 'project'
 
+    def __init__(self):
+        super(ProjectV3, self).__init__()
+        self.get_member_from_driver = self.assignment_api.get_project
+
     @controller.protected
     def create_project(self, context, project):
         self._require_attribute(project, 'name')
@@ -570,12 +578,12 @@ class ProjectV3(controller.V3Controller):
         refs = self.identity_api.list_user_projects(user_id)
         return ProjectV3.wrap_collection(context, refs, filters)
 
-    @controller.protected
+    @controller.targetprotected
     def get_project(self, context, project_id):
-        ref = self.identity_api.get_project(project_id)
+        ref = self.assignment_api.get_project(project_id)
         return ProjectV3.wrap_member(context, ref)
 
-    @controller.protected
+    @controller.targetprotected
     def update_project(self, context, project_id, project):
         self._require_matching_id(project_id, project)
 
@@ -600,7 +608,7 @@ class ProjectV3(controller.V3Controller):
         # to this project
         return self.identity_api.delete_project(project_id)
 
-    @controller.protected
+    @controller.targetprotected
     def delete_project(self, context, project_id):
         return self._delete_project(context, project_id)
 
@@ -608,6 +616,17 @@ class ProjectV3(controller.V3Controller):
 class UserV3(controller.V3Controller):
     collection_name = 'users'
     member_name = 'user'
+
+    def __init__(self):
+        super(UserV3, self).__init__()
+        self.get_member_from_driver = self.identity_api.get_user
+
+    def _check_user_and_group_target(self, context, protection,
+                                     user_id, group_id):
+        ref = {}
+        ref['user'] = self.identity_api.get_user(user_id)
+        ref['group'] = self.identity_api.get_group(group_id)
+        self.targetprotected(context, protection, ref)
 
     @controller.protected
     def create_user(self, context, user):
@@ -631,14 +650,14 @@ class UserV3(controller.V3Controller):
             domain_scope=self._get_domain_id_for_request(context))
         return UserV3.wrap_collection(context, refs, filters)
 
-    @controller.protected
+    @controller.targetprotected
     def get_user(self, context, user_id):
         ref = self.identity_api.get_user(
             user_id,
             domain_scope=self._get_domain_id_for_request(context))
         return UserV3.wrap_member(context, ref)
 
-    @controller.protected
+    @controller.targetprotected
     def update_user(self, context, user_id, user):
         self._require_matching_id(user_id, user)
         ref = self.identity_api.update_user(
@@ -651,8 +670,10 @@ class UserV3(controller.V3Controller):
 
         return UserV3.wrap_member(context, ref)
 
-    @controller.protected
-    def add_user_to_group(self, context, user_id, group_id):
+    @controller.prepareprotection
+    def add_user_to_group(self, context, protection, user_id, group_id):
+        self._check_user_and_group_target(context, protection,
+                                          user_id, group_id)
         self.identity_api.add_user_to_group(
             user_id, group_id,
             domain_scope=self._get_domain_id_for_request(context))
@@ -660,14 +681,18 @@ class UserV3(controller.V3Controller):
         # immediate effect
         self._delete_tokens_for_user(user_id)
 
-    @controller.protected
-    def check_user_in_group(self, context, user_id, group_id):
+    @controller.prepareprotection
+    def check_user_in_group(self, context, protection, user_id, group_id):
+        self._check_user_and_group_target(context, protection,
+                                          user_id, group_id)
         return self.identity_api.check_user_in_group(
             user_id, group_id,
             domain_scope=self._get_domain_id_for_request(context))
 
-    @controller.protected
-    def remove_user_from_group(self, context, user_id, group_id):
+    @controller.prepareprotection
+    def remove_user_from_group(self, context, protection, user_id, group_id):
+        self._check_user_and_group_target(context, protection,
+                                          user_id, group_id)
         self.identity_api.remove_user_from_group(
             user_id, group_id,
             domain_scope=self._get_domain_id_for_request(context))
@@ -688,7 +713,7 @@ class UserV3(controller.V3Controller):
         return self.identity_api.delete_user(
             user_id, domain_scope=domain_id)
 
-    @controller.protected
+    @controller.targetprotected
     def delete_user(self, context, user_id):
         return self._delete_user(context, user_id)
 
@@ -696,6 +721,10 @@ class UserV3(controller.V3Controller):
 class GroupV3(controller.V3Controller):
     collection_name = 'groups'
     member_name = 'group'
+
+    def __init__(self):
+        super(GroupV3, self).__init__()
+        self.get_member_from_driver = self.identity_api.get_group
 
     @controller.protected
     def create_group(self, context, group):
@@ -719,14 +748,14 @@ class GroupV3(controller.V3Controller):
             domain_scope=self._get_domain_id_for_request(context))
         return GroupV3.wrap_collection(context, refs, filters)
 
-    @controller.protected
+    @controller.targetprotected
     def get_group(self, context, group_id):
         ref = self.identity_api.get_group(
             group_id,
             domain_scope=self._get_domain_id_for_request(context))
         return GroupV3.wrap_member(context, ref)
 
-    @controller.protected
+    @controller.targetprotected
     def update_group(self, context, group_id, group):
         self._require_matching_id(group_id, group)
 
@@ -749,7 +778,7 @@ class GroupV3(controller.V3Controller):
         for user in user_refs:
             self._delete_tokens_for_user(user['id'])
 
-    @controller.protected
+    @controller.targetprotected
     def delete_group(self, context, group_id):
         return self._delete_group(context, group_id)
 
@@ -757,6 +786,10 @@ class GroupV3(controller.V3Controller):
 class RoleV3(controller.V3Controller):
     collection_name = 'roles'
     member_name = 'role'
+
+    def __init__(self):
+        super(RoleV3, self).__init__()
+        self.get_member_from_driver = self.assignment_api.get_role
 
     @controller.protected
     def create_role(self, context, role):
@@ -771,19 +804,19 @@ class RoleV3(controller.V3Controller):
         refs = self.identity_api.list_roles()
         return RoleV3.wrap_collection(context, refs, filters)
 
-    @controller.protected
+    @controller.targetprotected
     def get_role(self, context, role_id):
-        ref = self.identity_api.get_role(role_id)
+        ref = self.assignment_api.get_role(role_id)
         return RoleV3.wrap_member(context, ref)
 
-    @controller.protected
+    @controller.targetprotected
     def update_role(self, context, role_id, role):
         self._require_matching_id(role_id, role)
 
         ref = self.identity_api.update_role(role_id, role)
         return RoleV3.wrap_member(context, ref)
 
-    @controller.protected
+    @controller.targetprotected
     def delete_role(self, context, role_id):
         return self.identity_api.delete_role(role_id)
 
@@ -802,46 +835,80 @@ class RoleV3(controller.V3Controller):
                 context['path'].startswith('/OS-INHERIT') and
                 context['path'].endswith('/inherited_to_projects'))
 
-    @controller.protected
-    def create_grant(self, context, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None):
+    def _check_protection(self, context, protection, role_id=None,
+                          user_id=None, group_id=None,
+                          domain_id=None, project_id=None):
+        """Check protection for role grant APIs.
+
+        The policy rule might want to inspect attributes of any of the entities
+        involved in the grant.  So we get these and pass them to the
+        targetprotected() handler in the controller.
+
+        """
+        ref = {}
+        if role_id:
+            ref['role'] = self.identity_api.get_role(role_id)
+        if user_id:
+            ref['user'] = self.identity_api.get_user(user_id)
+        else:
+            ref['group'] = self.identity_api.get_group(group_id)
+
+        if domain_id:
+            ref['domain'] = self.assignment_api.get_domain(domain_id)
+        else:
+            ref['project'] = self.assignment_api.get_project(project_id)
+
+        self.targetprotected(context, protection, ref)
+
+    @controller.prepareprotection
+    def create_grant(self, context, protection, role_id, user_id=None,
+                     group_id=None, domain_id=None, project_id=None):
         """Grants a role to a user or group on either a domain or project."""
         self._require_domain_xor_project(domain_id, project_id)
         self._require_user_xor_group(user_id, group_id)
+        self._check_protection(context, protection, role_id, user_id, group_id,
+                               domain_id, project_id)
 
         self.identity_api.create_grant(
             role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
 
-    @controller.protected
-    def list_grants(self, context, user_id=None, group_id=None,
-                    domain_id=None, project_id=None):
+    @controller.prepareprotection
+    def list_grants(self, context, protection, user_id=None,
+                    group_id=None, domain_id=None, project_id=None):
         """Lists roles granted to user/group on either a domain or project."""
         self._require_domain_xor_project(domain_id, project_id)
         self._require_user_xor_group(user_id, group_id)
+        self._check_protection(context, protection, role_id=None,
+                               user_id=user_id, group_id=group_id,
+                               domain_id=domain_id, project_id=project_id)
 
         refs = self.identity_api.list_grants(
             user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
         return RoleV3.wrap_collection(context, refs)
 
-    @controller.protected
-    def check_grant(self, context, role_id, user_id=None, group_id=None,
-                    domain_id=None, project_id=None):
+    @controller.prepareprotection
+    def check_grant(self, context, protection, role_id, user_id=None,
+                    group_id=None, domain_id=None, project_id=None):
         """Checks if a role has been granted on either a domain or project."""
         self._require_domain_xor_project(domain_id, project_id)
         self._require_user_xor_group(user_id, group_id)
+        self._check_protection(context, protection, role_id, user_id, group_id,
+                               domain_id, project_id)
 
         self.identity_api.get_grant(
             role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
 
-    @controller.protected
-    def revoke_grant(self, context, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None):
+    @controller.prepareprotection
+    def revoke_grant(self, context, protection, role_id, user_id=None,
+                     group_id=None, domain_id=None, project_id=None):
         """Revokes a role from user/group on either a domain or project."""
         self._require_domain_xor_project(domain_id, project_id)
         self._require_user_xor_group(user_id, group_id)
+        self._check_protection(context, protection, role_id, user_id, group_id,
+                               domain_id, project_id)
 
         self.identity_api.delete_grant(
             role_id, user_id, group_id, domain_id, project_id,
