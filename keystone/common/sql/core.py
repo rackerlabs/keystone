@@ -236,6 +236,62 @@ def mysql_on_checkout(dbapi_conn, connection_rec, connection_proxy):
             raise
 
 
+        """Return a SQLAlchemy engine.
+
+        If allow_global_engine is True and an in-memory sqlite connection
+        string is provided by CONF, all backends will share a global sqlalchemy
+        engine.
+
+        """
+def new_engine():
+    connection_dict = sql.engine.url.make_url(CONF.sql.connection)
+
+    engine_config = {
+        'convert_unicode': True,
+        'echo': CONF.debug and CONF.verbose,
+        'pool_recycle': CONF.sql.idle_timeout,
+    }
+
+    if 'sqlite' in connection_dict.drivername:
+        engine_config['poolclass'] = sqlalchemy.pool.StaticPool
+
+    engine = sql.create_engine(CONF.sql.connection, **engine_config)
+
+    if engine.name == 'mysql':
+        sql.event.listen(engine, 'checkout', mysql_on_checkout)
+
+    return engine
+
+
+def get_engine(allow_global_engine=True):
+
+
+    if not allow_global_engine:
+        return new_engine()
+
+    if GLOBAL_ENGINE:
+        return GLOBAL_ENGINE
+
+    engine = new_engine()
+
+    # auto-build the db to support wsgi server w/ in-memory backend
+    if CONF.sql.connection == 'sqlite://':
+        ModelBase.metadata.create_all(bind=engine)
+
+    set_global_engine(engine)
+
+    return engine
+
+
+def get_sessionmaker(engine, autocommit=True,
+                     expire_on_commit=False):
+    """Return a SQLAlchemy sessionmaker using the given engine."""
+    return sqlalchemy.orm.sessionmaker(
+        bind=engine,
+        autocommit=autocommit,
+        expire_on_commit=expire_on_commit)
+
+
 # Backends
 class Base(object):
     _engine = None
@@ -250,55 +306,12 @@ class Base(object):
                                   expire_on_commit=expire_on_commit)
 
     def get_engine(self, allow_global_engine=True):
-        """Return a SQLAlchemy engine.
-
-        If allow_global_engine is True and an in-memory sqlite connection
-        string is provided by CONF, all backends will share a global sqlalchemy
-        engine.
-
-        """
-        def new_engine():
-            connection_dict = sql.engine.url.make_url(CONF.sql.connection)
-
-            engine_config = {
-                'convert_unicode': True,
-                'echo': CONF.debug and CONF.verbose,
-                'pool_recycle': CONF.sql.idle_timeout,
-            }
-
-            if 'sqlite' in connection_dict.drivername:
-                engine_config['poolclass'] = sqlalchemy.pool.StaticPool
-
-            engine = sql.create_engine(CONF.sql.connection, **engine_config)
-
-            if engine.name == 'mysql':
-                sql.event.listen(engine, 'checkout', mysql_on_checkout)
-
-            return engine
-
-        if not allow_global_engine:
-            return new_engine()
-
-        if GLOBAL_ENGINE:
-            return GLOBAL_ENGINE
-
-        engine = new_engine()
-
-        # auto-build the db to support wsgi server w/ in-memory backend
-        if CONF.sql.connection == 'sqlite://':
-            ModelBase.metadata.create_all(bind=engine)
-
-        set_global_engine(engine)
-
-        return engine
+        return get_engine(allow_global_engine)
 
     def get_sessionmaker(self, engine, autocommit=True,
                          expire_on_commit=False):
         """Return a SQLAlchemy sessionmaker using the given engine."""
-        return sqlalchemy.orm.sessionmaker(
-            bind=engine,
-            autocommit=autocommit,
-            expire_on_commit=expire_on_commit)
+        return get_sessionmaker(engine, autocommit, expire_on_commit)
 
 
 def handle_conflicts(type='object'):
