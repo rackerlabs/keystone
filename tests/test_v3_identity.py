@@ -1535,3 +1535,129 @@ class IdentityIneritanceTestCase(test_v3.RestfulTestCase):
             role_id=role_list[4]['id'], inherited_to_projects=True)
         self.assertRoleAssignmentInListResponse(r, ud_entity, link_url=ud_url)
         self.assertRoleAssignmentInListResponse(r, gd_entity, link_url=gd_url)
+
+
+class EndpointFilterTestCase(test_v3.RestfulTestCase):
+    """Test OS-EP-FILTER extension"""
+
+    def setUp(self):
+        self.orig_extension_enablement = config.CONF.os_ep_filter.enabled
+        self.opt_in_group('os_ep_filter', enabled=True)
+        super(EndpointFilterTestCase, self).setUp()
+
+    def tearDown(self):
+        super(EndpointFilterTestCase, self).tearDown()
+        self.opt_in_group('os_ep_filter', enabled=self.orig_extension_enablement)
+
+    # endpoint-project associations crud tests
+    # PUT
+    def test_create_endpoint_project_assoc(self):
+        """PUT /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id} success."""
+        self.put('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id},
+                 body='',
+                 expected_status=204)
+
+    def test_create_endpoint_project_assoc_noproj(self):
+        """PUT OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id} no project."""
+        self.put('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': uuid.uuid4().hex,
+                 'endpoint_id': self.endpoint_id},
+                 body='',
+                 expected_status=404)
+
+    def test_create_endpoint_project_assoc_noendp(self):
+        """PUT /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id} no endpoint."""
+        self.put('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': uuid.uuid4().hex},
+                 body='',
+                 expected_status=404)
+
+    # HEAD
+    def test_check_endpoint_project_assoc(self):
+        """HEAD /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id} success."""
+        self.put('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.head('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                  'project_id': self.default_domain_project_id,
+                  'endpoint_id': self.endpoint_id},
+                  expected_status=204)
+
+    def test_check_endpoint_project_assoc_noproj(self):
+        """HEAD /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id} no project."""
+        self.put('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.head('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                  'project_id': uuid.uuid4().hex,
+                  'endpoint_id': self.endpoint_id},
+                  body='',
+                  expected_status=404)
+
+    def test_check_endpoint_project_assoc_noendp(self):
+        """HEAD /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id} no endpoint."""
+        self.put('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.head('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                  'project_id': self.default_domain_project_id,
+                  'endpoint_id': uuid.uuid4().hex},
+                  body='',
+                  expected_status=404)
+
+    # GET
+    def test_get_endpoint_project_assoc(self):
+        """GET /OS-EP-FILTER/projects/{project_id}/endpoints success."""
+        self.put('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        r = self.get('/OS-EP-FILTER/projects/%(project_id)s/endpoints' % {
+                     'project_id': self.default_domain_project_id})
+        self.assertValidEndpointListResponse(r, self.endpoint)
+
+    def test_get_endpoint_project_assoc_noproj(self):
+        """GET /OS-EP-FILTER/projects/{project_id}/endpoints no project."""
+        self.put('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.get('/OS-EP-FILTER/projects/%(project_id)s/endpoints' % {
+                 'project_id': uuid.uuid4().hex},
+                 body='',
+                 expected_status=404)
+
+    # DELETE
+    def test_remove_endpoint_project_assoc(self):
+        """DELETE /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id} success."""
+        self.put('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.delete('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                    'project_id': self.default_domain_project_id,
+                    'endpoint_id': self.endpoint_id},
+                    expected_status=204)
+
+    def test_remove_endpoint_project_assoc_noproj(self):
+        """DELETE /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id} no project."""
+        self.put('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id},
+                 headers={'X-Auth-Token': 'ADMIN'})
+        self.delete('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                    'project_id': uuid.uuid4().hex,
+                    'endpoint_id': self.endpoint_id},
+                    body='',
+                    expected_status=404)
+
+    def test_remove_endpoint_project_assoc_noendp(self):
+        """DELETE /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id} no ep."""
+        self.put('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.default_domain_project_id,
+                 'endpoint_id': self.endpoint_id})
+        self.delete('/OS-EP-FILTER/projects/%(project_id)s/endpoints/%(endpoint_id)s' % {
+                    'project_id': self.default_domain_project_id,
+                    'endpoint_id': uuid.uuid4().hex},
+                    body='',
+                    expected_status=404)
