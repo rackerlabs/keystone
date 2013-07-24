@@ -64,6 +64,12 @@ class Manager(manager.Manager):
         ``provider`` instead.
 
         """
+
+        if not CONF.signing.token_format:
+            if not CONF.token.provider:
+                return PKI_PROVIDER
+            return CONF.token.provider
+
         if CONF.token.provider is not None:
             # NOTE(gyee): we are deprecating CONF.signing.token_format. This
             # code is to ensure the token provider configuration agrees with
