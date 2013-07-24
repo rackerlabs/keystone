@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//tSI\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-24T17:40:12Z",
+      "side": 1,
+      "message": "I don\u0027t know what a documented default is, so I don\u0027t have an answer.",
+      "parentUuid": "AAAAQn//vek\u003d",
+      "revId": "d9ad2b1f1ce05d3786e64e03eb895337a3807181",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//ve8\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//tSQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-24T17:40:12Z",
+      "side": 1,
+      "message": "The default in the sample config file should match the default in config.py. Deprecated config options can have defaults, I guess, but it makes it impossible for the code to know if it wasn\u0027t set explicitly by the user.",
+      "parentUuid": "AAAAQn//ve8\u003d",
+      "revId": "d9ad2b1f1ce05d3786e64e03eb895337a3807181",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//vfM\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-07-24T04:08:49Z",
       "side": 1,
       "message": "This is just a suggestion, but I think with this check here and the once below (which went in recently I believe), we should document this check with a little explanation as to why we returning PKI_PROVIDER when CONF.token.provider isn\u0027t set. \n\nAnother thing we might be able to do is to incorporate the new check (68 - 72) in the else statement below, as it fills the same condition. This would require the _msg to be changed as noted in the bug report.",
+      "revId": "d9ad2b1f1ce05d3786e64e03eb895337a3807181",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//tRo\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-24T17:40:12Z",
+      "side": 1,
+      "message": "I think this is taken care of in the latest patch set. I didn\u0027t change _msg because I think it\u0027s accurate as is.",
+      "parentUuid": "AAAAQn//vfM\u003d",
       "revId": "d9ad2b1f1ce05d3786e64e03eb895337a3807181",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
