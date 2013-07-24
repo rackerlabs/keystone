@@ -134,6 +134,11 @@
 
 # template_file = default_catalog.templates
 
+[endpoint_filter]
+# extension for creating associations between project and endpoints in order to
+# provide a tailored catalog for project-scoped token requests.
+# driver = keystone.contrib.endpoint_filter.backends.sql.EndpointFilter
+
 [token]
 # Provides token persistence.
 # driver = keystone.token.backends.sql.Token
