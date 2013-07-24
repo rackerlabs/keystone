@@ -14,10 +14,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import os
 import uuid
 
 from keystone import config
+from keystone import contrib
+from keystone.common.sql import migration
 from keystone import exception
+from keystone.openstack.common import importutils
 
 import test_v3
 
