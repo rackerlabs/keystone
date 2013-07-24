@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//tDg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-24T18:45:31Z",
+      "side": 1,
+      "message": "I opened bug 1204605 and updated the commit message because this is required for that fix. Done.",
+      "parentUuid": "AAAAQn//vbs\u003d",
+      "revId": "3c928a43416db84d9d72662d65000fdd6b4cad26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//vbw\u003d",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-24T04:39:14Z",
       "side": 1,
       "message": "Would it be useful to add a unit test here even though there isn\u0027t any logic being executed? Just in the event there is refactoring...",
+      "revId": "3c928a43416db84d9d72662d65000fdd6b4cad26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//tDQ\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-24T18:45:31Z",
+      "side": 1,
+      "message": "this is a good idea. I\u0027ll add one.",
+      "parentUuid": "AAAAQn//vbw\u003d",
       "revId": "3c928a43416db84d9d72662d65000fdd6b4cad26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
