@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//veU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/030_drop_credential_constraint_sqlite.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-24T04:09:46Z",
+      "side": 1,
+      "message": "Looks good! Thanks for fixing this",
+      "revId": "0a401529947c98ab761256e233b157071a57ab70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
