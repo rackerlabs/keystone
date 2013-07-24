@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//sk4\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-24T21:26:30Z",
+      "side": 1,
+      "message": "this is not a SecurityErrorTestCase, it\u0027s testing regular exceptions, so this method should be moved to the ExceptionTestCase class.\n\nActually, ExceptionTestCase already has this so I don\u0027t think it\u0027s needed.",
+      "revId": "6ce0559a870a200092c4a2333d41fe0c11b16f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
