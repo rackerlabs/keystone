@@ -123,6 +123,11 @@
 
 # template_file = default_catalog.templates
 
+[os_ep_filter]
+# create associations between project and endpoints in order to provide
+# a tailored catalog for project-scoped token requests
+# enabled = False
+
 [token]
 # Provides token persistence.
 # driver = keystone.token.backends.sql.Token

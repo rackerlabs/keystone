@@ -1860,3 +1860,145 @@ class TestTrustAuth(TestAuthInfo):
         self.get('/OS-TRUST/trusts?trustor_user_id=%s' %
                  self.user_id, expected_status=401,
                  token=trust_token)
+
+
+class EndpointFilterTestCase(test_v3.RestfulTestCase):
+    """Test OS-EP-FILTER extension."""
+
+    def setUp(self):
+        self.orig_extension_enablement = config.CONF.os_ep_filter.enabled
+        self.opt_in_group('os_ep_filter', enabled=True)
+        super(EndpointFilterTestCase, self).setUp()
+
+    def tearDown(self):
+        super(EndpointFilterTestCase, self).tearDown()
+        self.opt_in_group('os_ep_filter',
+                          enabled=self.orig_extension_enablement)
+
+    def test_default_project_id_scoped_token_with_user_id_ep_filter(self):
+        # create a second project to work with
+        ref = self.new_project_ref(domain_id=self.domain_id)
+        r = self.post('/projects', body={'project': ref})
+        project = self.assertValidProjectResponse(r, ref)
+
+        # grant the user a role on the project
+        self.put(
+            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+                'user_id': self.user['id'],
+                'project_id': project['id'],
+                'role_id': self.role['id']})
+
+        # set the user's preferred project
+        body = {'user': {'default_project_id': project['id']}}
+        r = self.patch('/users/%(user_id)s' % {
+            'user_id': self.user['id']},
+            body=body)
+        self.assertValidUserResponse(r)
+
+        # add one endpoint to the project
+        self.put('/OS-EP-FILTER/projects/%(project_id)s'
+                 '/endpoints/%(endpoint_id)s' % {
+                 'project_id': project['id'],
+                 'endpoint_id': self.endpoint_id},
+                 body='',
+                 expected_status=204)
+
+        # attempt to authenticate without requesting a project
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        r = self.post('/auth/tokens', body=auth_data)
+        self.assertValidProjectScopedTokenResponse(
+            r,
+            require_catalog=True,
+            endpoint_filter=True,
+            ep_filter_assoc=1)
+        self.assertEqual(r.result['token']['project']['id'], project['id'])
+
+    def test_implicit_project_id_scoped_token_with_user_id_ep_filter(self):
+        # attempt to authenticate without requesting a project
+
+        # add one endpoint to default project
+        self.put('/OS-EP-FILTER/projects/%(project_id)s'
+                 '/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.project['id'],
+                 'endpoint_id': self.endpoint_id},
+                 body='',
+                 expected_status=204)
+
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project['id'])
+        r = self.post('/auth/tokens', body=auth_data)
+        self.assertValidProjectScopedTokenResponse(
+            r,
+            require_catalog=True,
+            endpoint_filter=True,
+            ep_filter_assoc=1)
+        self.assertEqual(r.result['token']['project']['id'],
+                         self.project['id'])
+
+    def test_default_project_id_scoped_token_ep_filter_no_catalog(self):
+        # create a second project to work with
+        ref = self.new_project_ref(domain_id=self.domain_id)
+        r = self.post('/projects', body={'project': ref})
+        project = self.assertValidProjectResponse(r, ref)
+
+        # grant the user a role on the project
+        self.put(
+            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+                'user_id': self.user['id'],
+                'project_id': project['id'],
+                'role_id': self.role['id']})
+
+        # set the user's preferred project
+        body = {'user': {'default_project_id': project['id']}}
+        r = self.patch('/users/%(user_id)s' % {
+            'user_id': self.user['id']},
+            body=body)
+        self.assertValidUserResponse(r)
+
+        # add one endpoint to the project
+        self.put('/OS-EP-FILTER/projects/%(project_id)s'
+                 '/endpoints/%(endpoint_id)s' % {
+                 'project_id': project['id'],
+                 'endpoint_id': self.endpoint_id},
+                 body='',
+                 expected_status=204)
+
+        # attempt to authenticate without requesting a project
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        r = self.post('/auth/tokens?nocatalog', body=auth_data)
+        self.assertValidProjectScopedTokenResponse(
+            r,
+            require_catalog=False,
+            endpoint_filter=True,
+            ep_filter_assoc=1)
+        self.assertEqual(r.result['token']['project']['id'], project['id'])
+
+    def test_implicit_project_id_scoped_token_ep_filter_no_catalog(self):
+        # attempt to authenticate without requesting a project
+
+        # add one endpoint to default project
+        self.put('/OS-EP-FILTER/projects/%(project_id)s'
+                 '/endpoints/%(endpoint_id)s' % {
+                 'project_id': self.project['id'],
+                 'endpoint_id': self.endpoint_id},
+                 body='',
+                 expected_status=204)
+
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project['id'])
+        r = self.post('/auth/tokens?nocatalog', body=auth_data)
+        self.assertValidProjectScopedTokenResponse(
+            r,
+            require_catalog=False,
+            endpoint_filter=True,
+            ep_filter_assoc=1)
+        self.assertEqual(r.result['token']['project']['id'],
+                         self.project['id'])
