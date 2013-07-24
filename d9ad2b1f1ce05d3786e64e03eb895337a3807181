@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//vek\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-24T04:08:49Z",
+      "side": 1,
+      "message": "In config.py there isn\u0027t a default for this, should there be a documented default?",
+      "revId": "d9ad2b1f1ce05d3786e64e03eb895337a3807181",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//ve8\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-24T04:08:49Z",
+      "side": 1,
+      "message": "I take it we don\u0027t provide defaults for deprecated config opts?",
+      "revId": "d9ad2b1f1ce05d3786e64e03eb895337a3807181",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//vfM\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-24T04:08:49Z",
+      "side": 1,
+      "message": "This is just a suggestion, but I think with this check here and the once below (which went in recently I believe), we should document this check with a little explanation as to why we returning PKI_PROVIDER when CONF.token.provider isn\u0027t set. \n\nAnother thing we might be able to do is to incorporate the new check (68 - 72) in the else statement below, as it fills the same condition. This would require the _msg to be changed as noted in the bug report.",
+      "revId": "d9ad2b1f1ce05d3786e64e03eb895337a3807181",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
