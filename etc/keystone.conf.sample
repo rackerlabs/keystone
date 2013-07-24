@@ -128,11 +128,17 @@
 [catalog]
 # dynamic, sql-based backend (supports API/CLI-based management commands)
 # driver = keystone.catalog.backends.sql.Catalog
+# driver = keystone.contrib.endpoint_filter.catalog_sql.OS_EP_Filter_Catalog
 
 # static, file-based backend (does *NOT* support any management commands)
 # driver = keystone.catalog.backends.templated.TemplatedCatalog
 
 # template_file = default_catalog.templates
+
+[os_ep_filter]
+# create associations between project and endpoints in order to provide
+# a tailored catalog for project-scoped token requests
+# enabled = False
 
 [token]
 # Provides token persistence.

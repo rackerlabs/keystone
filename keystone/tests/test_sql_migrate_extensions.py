@@ -27,6 +27,7 @@ To run these tests against a live database:
 """
 
 from keystone.contrib import example
+from keystone.contrib import endpoint_filter
 
 import test_sql_upgrade
 
@@ -45,3 +46,20 @@ class SqlUpgradeExampleExtension(test_sql_upgrade.SqlMigrateBase):
         self.assertTableColumns('example', ['id', 'type', 'extra'])
         self.downgrade(0, repository=self.repo_path)
         self.assertTableDoesNotExist('example')
+
+class SqlUpgradeEPFilterExtension(test_sql_upgrade.SqlMigrateBase):
+    def repo_package(self):
+        return endpoint_filter
+
+    def test_upgrade(self):
+        self.assertTableDoesNotExist('endpoint_filter')
+        self.upgrade(1, repository=self.repo_path)
+        self.assertTableColumns('endpoint_filter',
+            ['endpoint_id', 'project_id'])
+
+    def test_downgrade(self):
+        self.upgrade(1, repository=self.repo_path)
+        self.assertTableColumns('endpoint_filter',
+            ['endpoint_id', 'project_id'])
+        self.downgrade(0, repository=self.repo_path)
+        self.assertTableDoesNotExist('endpoint_filter')
