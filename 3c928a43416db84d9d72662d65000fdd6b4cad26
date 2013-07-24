@@ -69,6 +69,24 @@
       "revId": "3c928a43416db84d9d72662d65000fdd6b4cad26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//s2A\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-24T19:51:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//vbw\u003d",
+      "revId": "3c928a43416db84d9d72662d65000fdd6b4cad26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
