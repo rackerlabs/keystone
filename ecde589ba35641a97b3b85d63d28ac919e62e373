@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//sgs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-24T22:31:12Z",
+      "side": 1,
+      "message": "change \"extenstions\" to \"extensions\"",
+      "revId": "ecde589ba35641a97b3b85d63d28ac919e62e373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//sgU\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-24T22:31:12Z",
+      "side": 1,
+      "message": "Since version can be None, suggest use version\u003dNone",
+      "revId": "ecde589ba35641a97b3b85d63d28ac919e62e373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//sfM\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-24T22:31:12Z",
+      "side": 1,
+      "message": "use repo_path\u003drepo_path here since it\u0027s a keyword argument.",
+      "revId": "ecde589ba35641a97b3b85d63d28ac919e62e373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
