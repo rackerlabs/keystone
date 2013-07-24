@@ -101,6 +101,20 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
                 self.default_domain_user_id, self.project_id,
                 self.role_id)
 
+            self.service_id = uuid.uuid4().hex
+            self.service = self.new_service_ref()
+            self.service['id'] = self.service_id
+            self.catalog_api.create_service(
+                self.service_id,
+                self.service.copy())
+
+            self.endpoint_id = uuid.uuid4().hex
+            self.endpoint = self.new_endpoint_ref(service_id=self.service_id)
+            self.endpoint['id'] = self.endpoint_id
+            self.catalog_api.create_endpoint(
+                self.endpoint_id,
+                self.endpoint.copy())
+
         self.public_server = self.serveapp('keystone', name='main')
         self.admin_server = self.serveapp('keystone', name='admin')
 
@@ -452,10 +466,17 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
     def assertValidScopedTokenResponse(self, r, *args, **kwargs):
         require_catalog = kwargs.pop('require_catalog', True)
+        endpoint_filter = kwargs.pop('endpoint_filter', False)
+        ep_filter_assoc = kwargs.pop('ep_filter_assoc', 0)
         token = self.assertValidTokenResponse(r, *args, **kwargs)
 
         if require_catalog:
             self.assertIn('catalog', token)
+            # sub test for the OS-EP-FILTER extension enabled
+            if endpoint_filter:
+                # verify the catalog hs no more than the endpoints
+                # associated in the catalog using the ep filter assoc
+                self.assertTrue(len(token['catalog']) < ep_filter_assoc + 1)
         else:
             self.assertNotIn('catalog', token)
 

@@ -217,6 +217,9 @@ def configure():
     # os_inherit
     register_bool('enabled', group='os_inherit', default=False)
 
+    # os_ep_filter
+    register_bool('enabled', group='os_ep_filter', default=False)
+
     # binding
     register_list('bind', group='token', default=[])
     register_str('enforce_token_bind', group='token', default='permissive')

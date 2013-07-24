@@ -181,7 +181,15 @@ class Catalog(sql.Base, catalog.Driver):
                   'user_id': user_id})
 
         services = {}
-        for endpoint in self.list_endpoints():
+        endpoints = self.list_endpoints()
+
+        if config.CONF.os_ep_filter.enabled:
+            from keystone.contrib.endpoint_filter import core as ep_filter
+            ep_filter_api = ep_filter.Manager()
+            refs = ep_filter_api.list_endpoints_in_project(tenant_id)
+            endpoints = [self.get_endpoint(x.endpoint_id) for x in refs]
+
+        for endpoint in endpoints:
             # look up the service
             service_id = endpoint['service_id']
             services.setdefault(
