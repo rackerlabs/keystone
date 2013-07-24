@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//sn4\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-24T21:02:57Z",
+      "side": 1,
+      "message": "I think with this change you\u0027ll also need to update tests/_sql_livetest.py so that it has live tests for SqlUpgradeTestSchema in addition to SqlUpgradeTests",
+      "revId": "a8d05d8aa0094e098cb7154884617f915e41d64e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//ff8\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 1
