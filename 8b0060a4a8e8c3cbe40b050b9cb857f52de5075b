@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//pYI\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-25T20:57:41Z",
+      "side": 1,
+      "message": "self.code and self.title are actual class attributes, but self.message !\u003d self.msg_fmt .. i find that a bit misleading. it\u0027d also be nice if \u0027msg_fmt\u0027 was a bit more intuitively named as well, it seems unnecessarily cryptic",
+      "revId": "8b0060a4a8e8c3cbe40b050b9cb857f52de5075b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
