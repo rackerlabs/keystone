@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//r4c\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-25T03:00:18Z",
+      "side": 1,
+      "message": "Awesome, thanks!",
+      "parentUuid": "AAAAQn//tDg\u003d",
+      "revId": "3c928a43416db84d9d72662d65000fdd6b4cad26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//vbw\u003d",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 4
