@@ -599,7 +599,8 @@ class UserV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users(self, context, filters):
-        refs = self.identity_api.list_users()
+        refs = self.identity_api.list_users(
+            domain_scope=self._get_domain_id_for_request(context))
         return UserV3.wrap_collection(context, refs, filters)
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
@@ -609,13 +610,15 @@ class UserV3(controller.V3Controller):
 
     @controller.protected
     def get_user(self, context, user_id):
-        ref = self.identity_api.get_user(user_id)
+        ref = self.identity_api.get_user(
+            user_id, domain_scope=self._get_domain_id_for_request(context))
         return UserV3.wrap_member(context, ref)
 
     @controller.protected
     def update_user(self, context, user_id, user):
         self._require_matching_id(user_id, user)
-        ref = self.identity_api.update_user(user_id, user)
+        ref = self.identity_api.update_user(
+            user_id, user, domain_scope=self._get_domain_id_for_request(context))
 
         if user.get('password') or not user.get('enabled', True):
             # revoke all tokens owned by this user
@@ -650,7 +653,8 @@ class UserV3(controller.V3Controller):
         # Finally delete the user itself - the backend is
         # responsible for deleting any role assignments related
         # to this user
-        return self.identity_api.delete_user(user_id)
+        return self.identity_api.delete_user(
+            user_id, domain_scope=self._get_domain_id_for_request(context))
 
     @controller.protected
     def delete_user(self, context, user_id):
