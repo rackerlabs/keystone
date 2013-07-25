@@ -120,299 +120,360 @@ def setup_logging(conf):
     root_logger.addHandler(handler)
 
 
-def setup_authentication():
+def setup_authentication(conf=None):
     # register any non-default auth methods here (used by extensions, etc)
-    for method_name in CONF.auth.methods:
+    if conf is None:
+        conf = CONF
+    for method_name in conf.auth.methods:
         if method_name not in _DEFAULT_AUTH_METHODS:
-            register_str(method_name, group="auth")
+            conf.register_opt(cfg.StrOpt(method_name), group='auth')
 
 
-def register_str(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = kw.pop('group', None)
-    return conf.register_opt(cfg.StrOpt(*args, **kw), group=group)
+def configure(conf=None):
+    if conf is None:
+        conf = CONF
 
+    conf.register_cli_opts(COMMON_CLI_OPTS)
+    conf.register_cli_opts(LOGGING_CLI_OPTS)
 
-def register_cli_str(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = kw.pop('group', None)
-    return conf.register_cli_opt(cfg.StrOpt(*args, **kw), group=group)
+    conf.register_cli_opt(
+        cfg.BoolOpt('standard-threads', default=False,
+                    help='Do not monkey-patch threading system modules.'))
+    conf.register_cli_opt(
+        cfg.StrOpt('pydev-debug-host', default=None,
+                   help='Host to connect to for remote debugger.'))
+    conf.register_cli_opt(
+        cfg.IntOpt('pydev-debug-port', default=None,
+                   help='Port to connect to for remote debugger.'))
 
-
-def register_list(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = kw.pop('group', None)
-    return conf.register_opt(cfg.ListOpt(*args, **kw), group=group)
-
-
-def register_cli_list(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = kw.pop('group', None)
-    return conf.register_cli_opt(cfg.ListOpt(*args, **kw), group=group)
-
-
-def register_bool(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = kw.pop('group', None)
-    return conf.register_opt(cfg.BoolOpt(*args, **kw), group=group)
-
-
-def register_cli_bool(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = kw.pop('group', None)
-    return conf.register_cli_opt(cfg.BoolOpt(*args, **kw), group=group)
-
-
-def register_int(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = kw.pop('group', None)
-    return conf.register_opt(cfg.IntOpt(*args, **kw), group=group)
-
-
-def register_cli_int(*args, **kw):
-    conf = kw.pop('conf', CONF)
-    group = kw.pop('group', None)
-    return conf.register_cli_opt(cfg.IntOpt(*args, **kw), group=group)
-
-
-def configure():
-    CONF.register_cli_opts(COMMON_CLI_OPTS)
-    CONF.register_cli_opts(LOGGING_CLI_OPTS)
-
-    register_cli_bool('standard-threads', default=False,
-                      help='Do not monkey-patch threading system modules.')
-
-    register_cli_str('pydev-debug-host', default=None,
-                     help='Host to connect to for remote debugger.')
-    register_cli_int('pydev-debug-port', default=None,
-                     help='Port to connect to for remote debugger.')
-
-    register_str('admin_token', secret=True, default='ADMIN')
-    register_str('bind_host', default='0.0.0.0')
-    register_int('compute_port', default=8774)
-    register_int('admin_port', default=35357)
-    register_int('public_port', default=5000)
-    register_str(
-        'public_endpoint', default='http://localhost:%(public_port)s/')
-    register_str('admin_endpoint', default='http://localhost:%(admin_port)s/')
-    register_str('onready')
-    register_str('auth_admin_prefix', default='')
-    register_str('policy_file', default='policy.json')
-    register_str('policy_default_rule', default=None)
+    conf.register_opt(cfg.StrOpt('admin_token', secret=True, default='ADMIN'))
+    conf.register_opt(cfg.StrOpt('bind_host', default='0.0.0.0'))
+    conf.register_opt(cfg.IntOpt('compute_port', default=8774))
+    conf.register_opt(cfg.IntOpt('admin_port', default=35357))
+    conf.register_opt(cfg.IntOpt('public_port', default=5000))
+    conf.register_opt(cfg.StrOpt(
+        'public_endpoint',
+        default='http://localhost:%(public_port)s/'))
+    conf.register_opt(cfg.StrOpt('admin_endpoint',
+                      default='http://localhost:%(admin_port)s/'))
+    conf.register_opt(cfg.StrOpt('onready'))
+    conf.register_opt(cfg.StrOpt('auth_admin_prefix', default=''))
+    conf.register_opt(cfg.StrOpt('policy_file', default='policy.json'))
+    conf.register_opt(cfg.StrOpt('policy_default_rule', default=None))
     # default max request size is 112k
-    register_int('max_request_body_size', default=114688)
-    register_int('max_param_size', default=64)
+    conf.register_opt(cfg.IntOpt('max_request_body_size', default=114688))
+    conf.register_opt(cfg.IntOpt('max_param_size', default=64))
     # we allow tokens to be a bit larger to accommodate PKI
-    register_int('max_token_size', default=8192)
-    register_str(
-        'member_role_id', default='9fe2ff9ee4384b1894a90878d3e92bab')
-    register_str('member_role_name', default='_member_')
+    conf.register_opt(cfg.IntOpt('max_token_size', default=8192))
+    conf.register_opt(cfg.StrOpt('member_role_id',
+                                 default='9fe2ff9ee4384b1894a90878d3e92bab'))
+    conf.register_opt(cfg.StrOpt('member_role_name', default='_member_'))
 
     # identity
-    register_str('default_domain_id', group='identity', default='default')
+    conf.register_opt(cfg.StrOpt('default_domain_id', default='default'),
+                      group='identity')
+    conf.register_opt(cfg.BoolOpt('domain_specific_drivers_enabled',
+                                  default=False),
+                      group='identity')
+    conf.register_opt(cfg.StrOpt('domain_config_dir',
+                                 default='/etc/keystone/domains'),
+                      group='identity')
 
     # trust
-    register_bool('enabled', group='trust', default=True)
+    conf.register_opt(cfg.BoolOpt('enabled', default=True), group='trust')
 
     # os_inherit
-    register_bool('enabled', group='os_inherit', default=False)
+    conf.register_opt(cfg.BoolOpt('enabled', default=False),
+                      group='os_inherit')
 
     # binding
-    register_list('bind', group='token', default=[])
-    register_str('enforce_token_bind', group='token', default='permissive')
+    conf.register_opt(cfg.ListOpt('bind', default=[]), group='token')
+    conf.register_opt(cfg.StrOpt('enforce_token_bind', default='permissive'),
+                      group='token')
 
     # ssl
-    register_bool('enable', group='ssl', default=False)
-    register_str('certfile', group='ssl',
-                 default="/etc/keystone/ssl/certs/keystone.pem")
-    register_str('keyfile', group='ssl',
-                 default="/etc/keystone/ssl/private/keystonekey.pem")
-    register_str('ca_certs', group='ssl',
-                 default="/etc/keystone/ssl/certs/ca.pem")
-    register_str('ca_key', group='ssl',
-                 default="/etc/keystone/ssl/certs/cakey.pem")
-    register_bool('cert_required', group='ssl', default=False)
-    register_int('key_size', group='ssl', default=1024)
-    register_int('valid_days', group='ssl', default=3650)
-    register_str('ca_password', group='ssl', default=None)
-    register_str('cert_subject', group='ssl',
-                 default='/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost')
+    conf.register_opt(cfg.BoolOpt('enable', default=False), group='ssl')
+    conf.register_opt(
+        cfg.StrOpt('certfile', default="/etc/keystone/ssl/certs/keystone.pem"),
+        group='ssl')
+    conf.register_opt(
+        cfg.StrOpt('keyfile',
+                   default="/etc/keystone/ssl/private/keystonekey.pem"),
+        group='ssl')
+    conf.register_opt(
+        cfg.StrOpt('ca_certs', default="/etc/keystone/ssl/certs/ca.pem"),
+        group='ssl')
+    conf.register_opt(
+        cfg.StrOpt('ca_key', default="/etc/keystone/ssl/certs/cakey.pem"),
+        group='ssl')
+    conf.register_opt(cfg.BoolOpt('cert_required', default=False), group='ssl')
+    conf.register_opt(cfg.IntOpt('key_size', default=1024), group='ssl')
+    conf.register_opt(cfg.IntOpt('valid_days', default=3650), group='ssl')
+    conf.register_opt(cfg.StrOpt('ca_password', default=None), group='ssl')
+    conf.register_opt(
+        cfg.StrOpt('cert_subject',
+                   default='/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost'),
+        group='ssl')
 
     # signing
-    register_str(
-        'token_format', group='signing', default=None)
-    register_str(
-        'certfile',
-        group='signing',
-        default="/etc/keystone/ssl/certs/signing_cert.pem")
-    register_str(
-        'keyfile',
-        group='signing',
-        default="/etc/keystone/ssl/private/signing_key.pem")
-    register_str(
-        'ca_certs',
-        group='signing',
-        default="/etc/keystone/ssl/certs/ca.pem")
-    register_str('ca_key', group='signing',
-                 default="/etc/keystone/ssl/certs/cakey.pem")
-    register_int('key_size', group='signing', default=2048)
-    register_int('valid_days', group='signing', default=3650)
-    register_str('ca_password', group='signing', default=None)
-    register_str('cert_subject', group='signing',
-                 default='/C=US/ST=Unset/L=Unset/O=Unset/CN=www.example.com')
+    conf.register_opt(cfg.StrOpt('token_format', default=None),
+                      group='signing')
+    conf.register_opt(
+        cfg.StrOpt('certfile',
+                   default="/etc/keystone/ssl/certs/signing_cert.pem"),
+        group='signing')
+    conf.register_opt(
+        cfg.StrOpt('keyfile',
+                   default="/etc/keystone/ssl/private/signing_key.pem"),
+        group='signing')
+    conf.register_opt(
+        cfg.StrOpt('ca_certs', default="/etc/keystone/ssl/certs/ca.pem"),
+        group='signing')
+    conf.register_opt(
+        cfg.StrOpt('ca_key', default="/etc/keystone/ssl/certs/cakey.pem"),
+        group='signing')
+    conf.register_opt(cfg.IntOpt('key_size', default=2048), group='signing')
+    conf.register_opt(cfg.IntOpt('valid_days', default=3650), group='signing')
+    conf.register_opt(cfg.StrOpt('ca_password', default=None), group='signing')
+    conf.register_opt(
+        cfg.StrOpt(
+            'cert_subject',
+            default='/C=US/ST=Unset/L=Unset/O=Unset/CN=www.example.com'),
+        group='signing')
 
     # sql
-    register_str('connection', group='sql', secret=True,
-                 default='sqlite:///keystone.db')
-    register_int('idle_timeout', group='sql', default=200)
+    conf.register_opt(
+        cfg.StrOpt('connection', secret=True, default='sqlite:///keystone.db'),
+        group='sql')
+    conf.register_opt(cfg.IntOpt('idle_timeout', default=200), group='sql')
+
+    # driver
 
     #assignment has no default for backward compatibility reasons.
     #If assignment is not specified, the identity driver chooses the backend
-    register_str(
-        'driver',
-        group='assignment',
-        default=None)
-    register_str(
-        'driver',
-        group='catalog',
-        default='keystone.catalog.backends.sql.Catalog')
-    register_str(
-        'driver',
-        group='identity',
-        default='keystone.identity.backends.sql.Identity')
-    register_str(
-        'driver',
-        group='credential',
-        default='keystone.credential.backends.sql.Credential')
-    register_str(
-        'driver',
-        group='policy',
-        default='keystone.policy.backends.sql.Policy')
-    register_str(
-        'driver', group='token', default='keystone.token.backends.sql.Token')
-    register_str(
-        'driver', group='trust', default='keystone.trust.backends.sql.Trust')
-    register_str(
-        'driver', group='ec2', default='keystone.contrib.ec2.backends.kvs.Ec2')
-    register_str(
-        'driver',
-        group='stats',
-        default='keystone.contrib.stats.backends.kvs.Stats')
+    conf.register_opt(
+        cfg.StrOpt('driver', default=None),
+        group='assignment')
+    conf.register_opt(
+        cfg.StrOpt('driver',
+                   default='keystone.catalog.backends.sql.Catalog'),
+        group='catalog')
+    conf.register_opt(
+        cfg.StrOpt('driver',
+                   default='keystone.identity.backends.sql.Identity'),
+        group='identity')
+    conf.register_opt(
+        cfg.StrOpt('driver',
+                   default='keystone.credential.backends.sql.Credential'),
+        group='credential')
+    conf.register_opt(
+        cfg.StrOpt('driver', default='keystone.policy.backends.sql.Policy'),
+        group='policy')
+    conf.register_opt(
+        cfg.StrOpt('driver', default='keystone.token.backends.sql.Token'),
+        group='token')
+    conf.register_opt(
+        cfg.StrOpt('driver', default='keystone.trust.backends.sql.Trust'),
+        group='trust')
+    conf.register_opt(
+        cfg.StrOpt('driver', default='keystone.contrib.ec2.backends.kvs.Ec2'),
+        group='ec2')
+    conf.register_opt(
+        cfg.StrOpt('driver',
+                   default='keystone.contrib.stats.backends.kvs.Stats'),
+        group='stats')
 
     # ldap
-    register_str('url', group='ldap', default='ldap://localhost')
-    register_str('user', group='ldap', default=None)
-    register_str('password', group='ldap', secret=True, default=None)
-    register_str('suffix', group='ldap', default='cn=example,cn=com')
-    register_bool('use_dumb_member', group='ldap', default=False)
-    register_str('dumb_member', group='ldap', default='cn=dumb,dc=nonexistent')
-    register_bool('allow_subtree_delete', group='ldap', default=False)
-    register_str('query_scope', group='ldap', default='one')
-    register_int('page_size', group='ldap', default=0)
-    register_str('alias_dereferencing', group='ldap', default='default')
+    conf.register_opt(cfg.StrOpt('url', default='ldap://localhost'),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('user', default=None),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('password', secret=True, default=None),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('suffix', default='cn=example,cn=com'),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('use_dumb_member', default=False),
+                      group='ldap')
+    conf.register_opt(
+        cfg.StrOpt('dumb_member', default='cn=dumb,dc=nonexistent'),
+        group='ldap')
+    conf.register_opt(cfg.BoolOpt('allow_subtree_delete', default=False),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('query_scope', default='one'), group='ldap')
+    conf.register_opt(cfg.IntOpt('page_size', default=0), group='ldap')
+    conf.register_opt(cfg.StrOpt('alias_dereferencing', default='default'),
+                      group='ldap')
 
-    register_str('user_tree_dn', group='ldap', default=None)
-    register_str('user_filter', group='ldap', default=None)
-    register_str('user_objectclass', group='ldap', default='inetOrgPerson')
-    register_str('user_id_attribute', group='ldap', default='cn')
-    register_str('user_name_attribute', group='ldap', default='sn')
-    register_str('user_mail_attribute', group='ldap', default='email')
-    register_str('user_pass_attribute', group='ldap', default='userPassword')
-    register_str('user_enabled_attribute', group='ldap', default='enabled')
-    register_str(
-        'user_domain_id_attribute', group='ldap', default='businessCategory')
-    register_int('user_enabled_mask', group='ldap', default=0)
-    register_str('user_enabled_default', group='ldap', default='True')
-    register_list(
-        'user_attribute_ignore', group='ldap', default='tenant_id,tenants')
-    register_bool('user_allow_create', group='ldap', default=True)
-    register_bool('user_allow_update', group='ldap', default=True)
-    register_bool('user_allow_delete', group='ldap', default=True)
-    register_bool('user_enabled_emulation', group='ldap', default=False)
-    register_str('user_enabled_emulation_dn', group='ldap', default=None)
-    register_list(
-        'user_additional_attribute_mapping', group='ldap', default=None)
+    conf.register_opt(cfg.StrOpt('user_tree_dn', default=None), group='ldap')
+    conf.register_opt(cfg.StrOpt('user_filter', default=None), group='ldap')
+    conf.register_opt(cfg.StrOpt('user_objectclass', default='inetOrgPerson'),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('user_id_attribute', default='cn'),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('user_name_attribute', default='sn'),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('user_mail_attribute', default='email'),
+                      group='ldap')
+    conf.register_opt(
+        cfg.StrOpt('user_pass_attribute', default='userPassword'),
+        group='ldap')
+    conf.register_opt(cfg.StrOpt('user_enabled_attribute', default='enabled'),
+                      group='ldap')
+    conf.register_opt(
+        cfg.StrOpt('user_domain_id_attribute', default='businessCategory'),
+        group='ldap')
+    conf.register_opt(cfg.IntOpt('user_enabled_mask', default=0), group='ldap')
+    conf.register_opt(
+        cfg.StrOpt('user_enabled_default', default='True'),
+        group='ldap')
+    conf.register_opt(
+        cfg.ListOpt('user_attribute_ignore', default='tenant_id,tenants'),
+        group='ldap')
+    conf.register_opt(cfg.BoolOpt('user_allow_create', default=True),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('user_allow_update', default=True),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('user_allow_delete', default=True),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('user_enabled_emulation', default=False),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('user_enabled_emulation_dn', default=None),
+                      group='ldap')
+    conf.register_opt(
+        cfg.ListOpt('user_additional_attribute_mapping', default=None),
+        group='ldap')
 
-    register_str('tenant_tree_dn', group='ldap', default=None)
-    register_str('tenant_filter', group='ldap', default=None)
-    register_str('tenant_objectclass', group='ldap', default='groupOfNames')
-    register_str('tenant_id_attribute', group='ldap', default='cn')
-    register_str('tenant_member_attribute', group='ldap', default='member')
-    register_str('tenant_name_attribute', group='ldap', default='ou')
-    register_str('tenant_desc_attribute', group='ldap', default='description')
-    register_str('tenant_enabled_attribute', group='ldap', default='enabled')
-    register_str(
-        'tenant_domain_id_attribute', group='ldap', default='businessCategory')
-    register_list('tenant_attribute_ignore', group='ldap', default='')
-    register_bool('tenant_allow_create', group='ldap', default=True)
-    register_bool('tenant_allow_update', group='ldap', default=True)
-    register_bool('tenant_allow_delete', group='ldap', default=True)
-    register_bool('tenant_enabled_emulation', group='ldap', default=False)
-    register_str('tenant_enabled_emulation_dn', group='ldap', default=None)
-    register_list(
-        'tenant_additional_attribute_mapping', group='ldap', default=None)
+    conf.register_opt(cfg.StrOpt('tenant_tree_dn', default=None), group='ldap')
+    conf.register_opt(cfg.StrOpt('tenant_filter', default=None), group='ldap')
+    conf.register_opt(cfg.StrOpt('tenant_objectclass', default='groupOfNames'),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('tenant_id_attribute', default='cn'),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('tenant_member_attribute', default='member'),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('tenant_name_attribute', default='ou'),
+                      group='ldap')
+    conf.register_opt(
+        cfg.StrOpt('tenant_desc_attribute', default='description'),
+        group='ldap')
+    conf.register_opt(
+        cfg.StrOpt('tenant_enabled_attribute', default='enabled'),
+        group='ldap')
+    conf.register_opt(
+        cfg.StrOpt('tenant_domain_id_attribute', default='businessCategory'),
+        group='ldap')
+    conf.register_opt(cfg.ListOpt('tenant_attribute_ignore', default=''),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('tenant_allow_create', default=True),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('tenant_allow_update', default=True),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('tenant_allow_delete', default=True),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('tenant_enabled_emulation', default=False),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('tenant_enabled_emulation_dn', default=None),
+                      group='ldap')
+    conf.register_opt(
+        cfg.ListOpt('tenant_additional_attribute_mapping', default=None),
+        group='ldap')
 
-    register_str('role_tree_dn', group='ldap', default=None)
-    register_str('role_filter', group='ldap', default=None)
-    register_str(
-        'role_objectclass', group='ldap', default='organizationalRole')
-    register_str('role_id_attribute', group='ldap', default='cn')
-    register_str('role_name_attribute', group='ldap', default='ou')
-    register_str('role_member_attribute', group='ldap', default='roleOccupant')
-    register_list('role_attribute_ignore', group='ldap', default='')
-    register_bool('role_allow_create', group='ldap', default=True)
-    register_bool('role_allow_update', group='ldap', default=True)
-    register_bool('role_allow_delete', group='ldap', default=True)
-    register_list(
-        'role_additional_attribute_mapping', group='ldap', default=None)
+    conf.register_opt(cfg.StrOpt('role_tree_dn', default=None), group='ldap')
+    conf.register_opt(cfg.StrOpt('role_filter', default=None), group='ldap')
+    conf.register_opt(
+        cfg.StrOpt('role_objectclass', default='organizationalRole'),
+        group='ldap')
+    conf.register_opt(cfg.StrOpt('role_id_attribute', default='cn'),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('role_name_attribute', default='ou'),
+                      group='ldap')
+    conf.register_opt(
+        cfg.StrOpt('role_member_attribute', default='roleOccupant'),
+        group='ldap')
+    conf.register_opt(cfg.ListOpt('role_attribute_ignore', default=''),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('role_allow_create', default=True),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('role_allow_update', default=True),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('role_allow_delete', default=True),
+                      group='ldap')
+    conf.register_opt(
+        cfg.ListOpt('role_additional_attribute_mapping', default=None),
+        group='ldap')
 
-    register_str('group_tree_dn', group='ldap', default=None)
-    register_str('group_filter', group='ldap', default=None)
-    register_str('group_objectclass', group='ldap', default='groupOfNames')
-    register_str('group_id_attribute', group='ldap', default='cn')
-    register_str('group_name_attribute', group='ldap', default='ou')
-    register_str('group_member_attribute', group='ldap', default='member')
-    register_str('group_desc_attribute', group='ldap', default='description')
-    register_str(
-        'group_domain_id_attribute', group='ldap', default='businessCategory')
-    register_list('group_attribute_ignore', group='ldap', default='')
-    register_bool('group_allow_create', group='ldap', default=True)
-    register_bool('group_allow_update', group='ldap', default=True)
-    register_bool('group_allow_delete', group='ldap', default=True)
-    register_list(
-        'group_additional_attribute_mapping', group='ldap', default=None)
+    conf.register_opt(cfg.StrOpt('group_tree_dn', default=None), group='ldap')
+    conf.register_opt(cfg.StrOpt('group_filter', default=None), group='ldap')
+    conf.register_opt(
+        cfg.StrOpt('group_objectclass', default='groupOfNames'),
+        group='ldap')
+    conf.register_opt(cfg.StrOpt('group_id_attribute', default='cn'),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('group_name_attribute', default='ou'),
+                      group='ldap')
+    conf.register_opt(cfg.StrOpt('group_member_attribute', default='member'),
+                      group='ldap')
+    conf.register_opt(
+        cfg.StrOpt('group_desc_attribute', default='description'),
+        group='ldap')
+    conf.register_opt(
+        cfg.StrOpt('group_domain_id_attribute', default='businessCategory'),
+        group='ldap')
+    conf.register_opt(cfg.ListOpt('group_attribute_ignore', default=''),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('group_allow_create', default=True),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('group_allow_update', default=True),
+                      group='ldap')
+    conf.register_opt(cfg.BoolOpt('group_allow_delete', default=True),
+                      group='ldap')
+    conf.register_opt(
+        cfg.ListOpt('group_additional_attribute_mapping', default=None),
+        group='ldap')
 
-    register_str('tls_cacertfile', group='ldap', default=None)
-    register_str('tls_cacertdir', group='ldap', default=None)
-    register_bool('use_tls', group='ldap', default=False)
-    register_str('tls_req_cert', group='ldap', default='demand')
+    conf.register_opt(cfg.StrOpt('tls_cacertfile', default=None), group='ldap')
+    conf.register_opt(cfg.StrOpt('tls_cacertdir', default=None), group='ldap')
+    conf.register_opt(cfg.BoolOpt('use_tls', default=False), group='ldap')
+    conf.register_opt(cfg.StrOpt('tls_req_cert', default='demand'),
+                      group='ldap')
 
     # pam
-    register_str('userid', group='pam', default=None)
-    register_str('password', group='pam', default=None)
+    conf.register_opt(cfg.StrOpt('userid', default=None), group='pam')
+    conf.register_opt(cfg.StrOpt('password', default=None), group='pam')
 
     # default authentication methods
-    register_list('methods', group='auth', default=_DEFAULT_AUTH_METHODS)
-    register_str(
-        'password', group='auth', default='keystone.auth.plugins.token.Token')
-    register_str(
-        'token', group='auth',
-        default='keystone.auth.plugins.password.Password')
+    conf.register_opt(
+        cfg.ListOpt('methods', default=_DEFAULT_AUTH_METHODS), group='auth')
+    conf.register_opt(
+        cfg.StrOpt('password', default='keystone.auth.plugins.token.Token'),
+        group='auth')
+    conf.register_opt(
+        cfg.StrOpt('token', default='keystone.auth.plugins.password.Password'),
+        group='auth')
     #deals with REMOTE_USER authentication
-    register_str(
-        'external',
-        group='auth',
-        default='keystone.auth.plugins.external.ExternalDefault')
+    conf.register_opt(
+        cfg.StrOpt('external',
+                   default='keystone.auth.plugins.external.ExternalDefault'),
+        group='auth')
     # register any non-default auth methods here (used by extensions, etc)
-    for method_name in CONF.auth.methods:
-        if method_name not in _DEFAULT_AUTH_METHODS:
-            register_str(method_name, group='auth')
+    setup_authentication(conf)
 
     # PasteDeploy config file
-    register_str('config_file', group='paste_deploy', default=None)
+    conf.register_opt(cfg.StrOpt('config_file', default=None),
+                      group='paste_deploy')
 
     # token provider
-    register_str(
-        'provider',
-        group='token',
-        default=None)
+    conf.register_opt(cfg.StrOpt('provider', default=None), group='token')
+
+    # memcache
+    conf.register_opt(
+        cfg.StrOpt('servers', default='localhost:11211'), group='memcache')
+    conf.register_opt(
+        cfg.IntOpt('max_compare_and_set_retry', default=16), group='memcache')
+
+    # misc
+    conf.register_opt(
+        cfg.StrOpt('template_file', default='default_catalog.templates'),
+        group='catalog')
+    conf.register_opt(cfg.IntOpt('crypt_strength', default=40000))
+    conf.register_opt(cfg.IntOpt('expiration', default=86400), group='token')
