@@ -88,6 +88,7 @@ class UserAuthInfo(object):
                 domain_ref = self.identity_api.get_domain(
                     user_ref['domain_id'])
                 self._assert_domain_is_enabled(domain_ref)
+            self.domain_id = domain_ref['id']
         except exception.UserNotFound as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
@@ -106,7 +107,8 @@ class Password(auth.AuthMethodHandler):
         try:
             self.identity_api.authenticate(
                 user_id=user_info.user_id,
-                password=user_info.password)
+                password=user_info.password,
+                domain_scope=user_info.domain_id)
         except AssertionError:
             # authentication failed because of invalid username or password
             msg = _('Invalid username or password')
