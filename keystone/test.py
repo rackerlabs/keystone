@@ -295,9 +295,12 @@ class TestCase(NoModule, unittest.TestCase):
             for domain in fixtures.DOMAINS:
                 try:
                     rv = self.identity_api.create_domain(domain['id'], domain)
-                except (exception.Conflict, exception.NotImplemented):
+                except exception.Conflict:
+                    rv = self.identity_api.get_domain(domain['id'])
+                except exception.NotImplemented:
+                    rv = domain
                     pass
-                setattr(self, 'domain_%s' % domain['id'], domain)
+                setattr(self, 'domain_%s' % domain['id'], rv)
 
             for tenant in fixtures.TENANTS:
                 try:
