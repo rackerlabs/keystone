@@ -39,13 +39,18 @@ DEFAULT_DOMAIN = {
 
 
 class Identity(identity.Driver):
-    def __init__(self):
+    def __init__(self, conf=None):
         super(Identity, self).__init__()
-        self.user = UserApi(CONF)
-        self.group = GroupApi(CONF)
+        if conf is None:
+            conf = CONF
+        self.user = UserApi(conf)
+        self.group = GroupApi(conf)
 
     def default_assignment_driver(self):
         return "keystone.assignment.backends.ldap.Assignment"
+
+    def is_domain_aware(self):
+        return False
 
     # Identity interface
 
@@ -66,36 +71,31 @@ class Identity(identity.Driver):
                 raise AssertionError('Invalid user / password')
         except Exception:
             raise AssertionError('Invalid user / password')
-        return self.assignment_api._set_default_domain(
-            identity.filter_user(user_ref))
+        return identity.filter_user(user_ref)
 
     def _get_user(self, user_id):
         return self.user.get(user_id)
 
     def get_user(self, user_id):
-        ref = identity.filter_user(self._get_user(user_id))
-        return self.assignment_api._set_default_domain(ref)
+        return identity.filter_user(self._get_user(user_id))
 
     def list_users(self):
-        return self.assignment_api._set_default_domain(self.user.get_all())
+        return self.user.get_all()
 
     def get_user_by_name(self, user_name, domain_id):
-        self.assignment_api._validate_default_domain_id(domain_id)
-        ref = identity.filter_user(self.user.get_by_name(user_name))
-        return self.assignment_api._set_default_domain(ref)
+        # domain_id will already have been handled in the Manager layer,
+        # parameter left in so this matches the Driver specification
+        return identity.filter_user(self.user.get_by_name(user_name))
 
     # CRUD
     def create_user(self, user_id, user):
-        user = self.assignment_api._validate_default_domain(user)
         user_ref = self.user.create(user)
         tenant_id = user.get('tenant_id')
         if tenant_id is not None:
             self.assignment_api.add_user_to_project(tenant_id, user_id)
-        return (self.assignment_api._set_default_domain
-                (identity.filter_user(user_ref)))
+        return identity.filter_user(user_ref)
 
     def update_user(self, user_id, user):
-        user = self.assignment_api._validate_default_domain(user)
         if 'id' in user and user['id'] != user_id:
             raise exception.ValidationError('Cannot change user ID')
         old_obj = self.user.get(user_id)
@@ -118,8 +118,7 @@ class Identity(identity.Driver):
             user['enabled_nomask'] = old_obj['enabled_nomask']
             self.user.mask_enabled_attribute(user)
         self.user.update(user_id, user, old_obj)
-        return (self.assignment_api._set_default_domain
-                (self.user.get_filtered(user_id)))
+        return self.user.get_filtered(user_id)
 
     def delete_user(self, user_id):
         self.assignment_api.delete_user(user_id)
