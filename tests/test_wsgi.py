@@ -14,10 +14,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import uuid
+
+from babel import localedata
+import gettext
+
 from keystone import test
 
 from keystone.common import wsgi
 from keystone import exception
+from keystone.openstack.common import gettextutils
 from keystone.openstack.common import jsonutils
 
 
@@ -212,3 +218,81 @@ class WSGIFunctionTest(test.TestCase):
         message = 'test = "param1" : "value"'
         self.assertEqual(wsgi.mask_password(message),
                          'test = "param1" : "value"')
+
+
+class LocalizedResponseTest(test.TestCase):
+    def setUp(self):
+        super(LocalizedResponseTest, self).setUp()
+        gettextutils._AVAILABLE_LANGUAGES = []
+
+    def tearDown(self):
+        gettextutils._AVAILABLE_LANGUAGES = []
+        super(LocalizedResponseTest, self).tearDown()
+
+    def set_expected_languages(self, all_locales=[], avail_locales=None):
+        # Override localedata.locale_identifiers to return some locales.
+        def returns_some_locales(*args, **kwargs):
+            return all_locales
+
+        self.stubs.Set(localedata, 'locale_identifiers', returns_some_locales)
+
+        # Override gettext.find to return other than None for some languages.
+        def fake_gettext_find(*args, **kwargs):
+            if avail_locales is None:
+                # All locales are available.
+                return True
+            languages = kwargs.get('languages', [])
+            return (languages[0] in avail_locales) or None
+
+        self.stubs.Set(gettext, 'find', fake_gettext_find)
+
+    def test_request_match_default(self):
+        # The default language if no Accept-Language is provided is en_US
+        req = wsgi.Request.blank('/')
+        self.assertEquals(req.best_match_language(), 'en_US')
+
+    def test_request_match_language_expected(self):
+        # If Accept-Language is a supported language, best_match_language()
+        # returns it.
+
+        self.set_expected_languages(all_locales=['it'])
+
+        req = wsgi.Request.blank('/', headers={'Accept-Language': 'it'})
+        self.assertEquals(req.best_match_language(), 'it')
+
+    def test_request_match_language_unexpected(self):
+        # If Accept-Language is a language we do not support,
+        # best_match_language() returns the default.
+
+        self.set_expected_languages(all_locales=['it'])
+
+        req = wsgi.Request.blank('/', headers={'Accept-Language': 'zh'})
+        self.assertEquals(req.best_match_language(), 'en_US')
+
+    def test_localized_message(self):
+        # If the accept-language header is set on the request, the localized
+        # message is returned by calling get_localized_message.
+
+        LANG_ID = uuid.uuid4().hex
+        ORIGINAL_TEXT = uuid.uuid4().hex
+        TRANSLATED_TEXT = uuid.uuid4().hex
+
+        self.set_expected_languages(all_locales=[LANG_ID])
+
+        def fake_get_localized_message(message, user_locale):
+            if (user_locale == LANG_ID and
+                    message == ORIGINAL_TEXT):
+                return TRANSLATED_TEXT
+
+        self.stubs.Set(gettextutils, 'get_localized_message',
+                       fake_get_localized_message)
+
+        error = exception.NotFound(message=ORIGINAL_TEXT)
+        resp = wsgi.render_exception(error, user_locale=LANG_ID)
+        result = jsonutils.loads(resp.body)
+
+        exp = {'error': {'message': TRANSLATED_TEXT,
+                         'code': 404,
+                         'title': 'Not Found'}}
+
+        self.assertEqual(exp, result)
