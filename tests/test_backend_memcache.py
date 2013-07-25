@@ -146,7 +146,7 @@ class MemcacheToken(test.TestCase, test_backend.TokenTests):
         expired_token_id = uuid.uuid4().hex
         user_id = unicode(uuid.uuid4().hex)
 
-        expire_delta = datetime.timedelta(seconds=86400)
+        expire_delta = datetime.timedelta(seconds=3600)
 
         valid_data = {'id': valid_token_id, 'a': 'b',
                       'user': {'id': user_id}}
