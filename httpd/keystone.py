@@ -7,7 +7,7 @@ from keystone.common import logging
 from keystone import config
 from keystone.openstack.common import gettextutils
 
-gettextutils.install('keystone')
+gettextutils.install('keystone', lazy=True)
 
 LOG = logging.getLogger(__name__)
 CONF = config.CONF
