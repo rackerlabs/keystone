@@ -32,7 +32,6 @@ from keystone import exception
 
 
 CONF = config.CONF
-config.register_int('crypt_strength', default=40000)
 
 LOG = logging.getLogger(__name__)
 
