@@ -96,6 +96,27 @@ order:
 PasteDeploy configuration file is specified by the ``config_file`` parameter in ``[paste_deploy]`` section of the primary configuration file. If the parameter
 is not an absolute path, then Keystone looks for it in the same directories as above. If not specified, WSGI pipeline definitions are loaded from the primary configuration file.
 
+Keystone supports the option to specify identity driver configurations on a domain by
+domain basis, allowing, for example, a specific domain to have its own LDAP or SQL
+server. This is configured by specifying the following options:
+
+[identity]
+domain_specific_drivers_enabled = True
+domain_config_dir = '/etc/keystone/domains'
+
+With the above specified, keystone will look in the ``domain_config_dir`` for config
+files of the form:
+
+keystone.<domain_name>.conf
+
+where <domain_name> is the name of the domain for which these options are to
+be applied.
+
+Options given in the domain specific configuration file will override those in the
+primary configuration file for the specified domain only. Domains without a specific
+configuration file will continue to use the options from the primary configuration
+file.
+
 Authentication Plugins
 ----------------------
 
