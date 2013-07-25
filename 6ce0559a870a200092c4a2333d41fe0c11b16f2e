@@ -16,6 +16,24 @@
       "revId": "6ce0559a870a200092c4a2333d41fe0c11b16f2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//r0k\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-07-25T03:46:04Z",
+      "side": 1,
+      "message": "yes, you are right, this is duplicate with same test case in ExceptionTestCase, it\u0027s unnecessary, I\u0027ll remove it",
+      "parentUuid": "AAAAQn//sk4\u003d",
+      "revId": "6ce0559a870a200092c4a2333d41fe0c11b16f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
