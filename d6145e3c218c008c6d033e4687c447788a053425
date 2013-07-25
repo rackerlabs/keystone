@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//qzE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/030_kds_table.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-25T13:28:42Z",
+      "side": 1,
+      "message": "What would be stored in \u0027extra\u0027?",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//qvA\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-25T13:28:42Z",
+      "side": 1,
+      "message": "Documentation should be provided in the sample config stating that this option needs to start with \u0027file:\u0027 in order to be used properly.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//qvM\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-25T13:28:42Z",
+      "side": 1,
+      "message": "Might be helpful to have a comment here giving some information on why an exception was raised.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
