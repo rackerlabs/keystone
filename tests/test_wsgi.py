@@ -14,10 +14,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from babel import localedata
+import gettext
+
 from keystone import test
 
 from keystone.common import wsgi
 from keystone import exception
+from keystone.openstack.common import gettextutils
 from keystone.openstack.common import jsonutils
 
 
@@ -210,3 +214,113 @@ class MiddlewareTest(BaseWSGITest):
         app = factory(self.app)
         self.assertIn("testkey", app.kwargs)
         self.assertEquals("test", app.kwargs["testkey"])
+
+
+class LocalizedResponseTest(test.TestCase):
+    def setUp(self):
+        super(LocalizedResponseTest, self).setUp()
+        wsgi._AVAILABLE_LANGUAGES = []
+
+    def tearDown(self):
+        wsgi._AVAILABLE_LANGUAGES = []
+        super(LocalizedResponseTest, self).tearDown()
+
+    class TestMessage(gettextutils.Message):
+        def __unicode__(self):
+            return 'locale is %s' % self.locale
+
+    def set_expected_languages(self, all_locales=[], avail_locales=None):
+        # Override localedata.locale_identifiers to return some locales.
+        def returns_some_locales(*args, **kwargs):
+            return all_locales
+
+        self.stubs.Set(localedata, 'locale_identifiers', returns_some_locales)
+
+        # Override gettext.find to return other than None for some languages.
+        def fake_gettext_find(*args, **kwargs):
+            if avail_locales is None:
+                # All locales are availale.
+                return True
+            languages = kwargs.get('languages')
+            return (languages[0] in avail_locales) or None
+
+        self.stubs.Set(gettext, 'find', fake_gettext_find)
+
+    def test_get_languages_no_languages(self):
+        # en_US is there if no languages available.
+        self.assertEquals(wsgi.get_available_languages(), ['en_US'])
+
+    def test_get_languages_other_languages(self):
+        # Other languages are there if available and found, else not there.
+
+        self.set_expected_languages(all_locales=['it', 'ha_NG'],
+                                    avail_locales=['it'])
+
+        self.assertEquals(set(wsgi.get_available_languages()),
+                          set(['en_US', 'it']))
+
+    def test_request_match_default(self):
+        # The default language if no Accept-Language is provided is en_US
+        req = wsgi.Request.blank('/')
+        self.assertEquals(req.best_match_language(), 'en_US')
+
+    def test_request_match_language_expected(self):
+        # If Accept-Language is a supported language, best_match_language()
+        # returns it.
+
+        self.set_expected_languages(all_locales=['it'])
+
+        req = wsgi.Request.blank('/', headers={'Accept-Language': 'it'})
+        self.assertEquals(req.best_match_language(), 'it')
+
+    def test_request_match_language_unexpected(self):
+        # If Accept-Language is a language we do not support,
+        # best_match_language() returns the default.
+
+        self.set_expected_languages(all_locales=['it'])
+
+        req = wsgi.Request.blank('/', headers={'Accept-Language': 'zh'})
+        self.assertEquals(req.best_match_language(), 'en_US')
+
+    def test_get_localized_Message_locale(self):
+        # If the message is a gettextutils.Message, and locale provided,
+        # the locale is set on the message and it's unicoded.
+
+        msg = self.TestMessage(msg='something', domain='keystone')
+        res = wsgi.get_localized_message(locale='test1', message=msg)
+
+        self.assertEqual(res, 'locale is test1')
+
+    def test_get_localized_Message_no_locale(self):
+        # If the message is a gettextutils.Message, and locale not provided,
+        # the locale is not set on the message and it's unicoded.
+
+        msg = self.TestMessage(msg='something', domain='keystone')
+        res = wsgi.get_localized_message(locale=None, message=msg)
+
+        self.assertEqual(res, 'locale is None')
+
+    def test_get_localized_not_Message(self):
+        # If the message is not a gettextutils.Message, it's just unicoded.
+        res = wsgi.get_localized_message(locale='test1', message='something')
+        self.assertEqual(res, unicode('something'))
+
+    def test_localized_message(self):
+        # If the accept-language header is set on the request, the localized
+        # message is returned by calling get_localized_message.
+
+        self.set_expected_languages(all_locales=['it'])
+
+        def fake_get_localized_message(locale, message):
+            if (locale == 'it' and
+                    message == "The resource could not be found."):
+                return "Impossibile trovare la risorsa."
+
+        self.stubs.Set(wsgi, 'get_localized_message',
+                       fake_get_localized_message)
+
+        text = 'The resource could not be found.'
+        error = exception.NotFound(message=text)
+        request = wsgi.Request.blank('/', headers={'Accept-Language': 'it'})
+        resp = wsgi.render_exception(error, request=request)
+        self.assertIn("Impossibile trovare la risorsa.", resp.body)
