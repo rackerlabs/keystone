@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//pXw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-25T20:59:40Z",
+      "side": 1,
+      "message": "the one line summary is the only one that needs to be shorter than the rest",
+      "revId": "8b0060a4a8e8c3cbe40b050b9cb857f52de5075b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//pX0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-25T20:59:40Z",
+      "side": 1,
+      "message": "wrap the rest of your commit messages at 79 char, not whatever this is",
+      "revId": "8b0060a4a8e8c3cbe40b050b9cb857f52de5075b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//pYI\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 24
@@ -13,6 +47,23 @@
       "writtenOn": "2013-07-25T20:57:41Z",
       "side": 1,
       "message": "self.code and self.title are actual class attributes, but self.message !\u003d self.msg_fmt .. i find that a bit misleading. it\u0027d also be nice if \u0027msg_fmt\u0027 was a bit more intuitively named as well, it seems unnecessarily cryptic",
+      "revId": "8b0060a4a8e8c3cbe40b050b9cb857f52de5075b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//pXs\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-25T20:59:40Z",
+      "side": 1,
+      "message": "this could be made into a docstr now",
       "revId": "8b0060a4a8e8c3cbe40b050b9cb857f52de5075b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
