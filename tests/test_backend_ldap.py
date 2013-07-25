@@ -46,6 +46,16 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                      test.testsdir('test_overrides.conf'),
                      test.testsdir('backend_ldap.conf')])
 
+    def _set_domain_configs(self):
+        self.identity_api._load_domain_config(
+            [test.etcdir('keystone.conf.sample'),
+             test.testsdir('test_overrides.conf'),
+             test.testsdir('backend_ldap.conf'),
+             # TODO(henry-nash) do this properly with some test
+             # config files in the test dir
+             '/etc/keystone/domains/keystone.henry.conf'],
+            'henry')
+
     def test_build_tree(self):
         """Regression test for building the tree names
         """
@@ -57,6 +67,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         user = {'id': 'fake1',
                 'name': 'fake1',
                 'password': 'fakepass1',
+                'domain_id': CONF.identity.default_domain_id,
                 'tenants': ['bar']}
         self.identity_api.create_user('fake1', user)
         user_ref = self.identity_api.get_user('fake1')
@@ -79,6 +90,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         user = {'id': 'fake1',
                 'name': 'fake1',
                 'password': 'fakepass1',
+                'domain_id': CONF.identity.default_domain_id,
                 'tenants': ['bar']}
         self.assertRaises(exception.ForbiddenAction,
                           self.identity_api.create_user,
@@ -205,18 +217,21 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         # Create a group
         group_id = None
-        group = dict(name=uuid.uuid4().hex)
+        group = dict(name=uuid.uuid4().hex,
+                     domain_id=CONF.identity.default_domain_id)
         group_id = self.identity_api.create_group(group_id, group)['id']
 
         # Create a couple of users and add them to the group.
         user_id = None
-        user = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex)
+        user = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex,
+                    domain_id=CONF.identity.default_domain_id)
         user_1_id = self.identity_api.create_user(user_id, user)['id']
 
         self.identity_api.add_user_to_group(user_1_id, group_id)
 
         user_id = None
-        user = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex)
+        user = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex,
+                    domain_id=CONF.identity.default_domain_id)
         user_2_id = self.identity_api.create_user(user_id, user)['id']
 
         self.identity_api.add_user_to_group(user_2_id, group_id)
@@ -289,6 +304,7 @@ class LDAPIdentity(test.TestCase, BaseLDAPIdentity):
         self.clear_database()
 
         self.load_backends()
+        self._set_domain_configs()
         self.load_fixtures(default_fixtures)
 
     def test_configurable_allowed_project_actions(self):
@@ -458,7 +474,8 @@ class LDAPIdentity(test.TestCase, BaseLDAPIdentity):
         CONF.ldap.user_enabled_mask = 2
         CONF.ldap.user_enabled_default = 512
         self.clear_database()
-        user = {'id': 'fake1', 'name': 'fake1', 'enabled': True}
+        user = {'id': 'fake1', 'name': 'fake1', 'enabled': True,
+                'domain_id': CONF.identity.default_domain_id}
         self.identity_api.create_user('fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], True)
@@ -510,6 +527,7 @@ class LDAPIdentity(test.TestCase, BaseLDAPIdentity):
             'id': 'extra_attributes',
             'name': 'EXTRA_ATTRIBUTES',
             'password': 'extra',
+            'domain_id': CONF.identity.default_domain_id
         }
         self.identity_api.create_user(user['id'], user)
         dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
