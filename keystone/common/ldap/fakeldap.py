@@ -298,7 +298,8 @@ class FakeLdap(object):
 
         LOG.debug(
             _('FakeLdap search at dn=%(dn)s scope=%(scope)s query=%(query)s') %
-            {'dn': dn, 'scope': SCOPE_NAMES.get(scope, scope), 'query': query})
+            {'dn': dn, 'scope': SCOPE_NAMES.get(scope, scope), 'query':
+             query.decode('utf-8')})
         if scope == ldap.SCOPE_BASE:
             try:
                 item_dict = self.db['%s%s' % (self.__prefix, dn)]

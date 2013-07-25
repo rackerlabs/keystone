@@ -290,6 +290,26 @@ class BaseLdap(object):
                                          values['id'])
 
     def create(self, values):
+        #Encode to utf-8. Boolean, list, dict can not be encoded.
+        #Nesting is done only to cover test with create_user with
+        #name in the unicode.
+        #NOTE(spzala): Python 3 has a default encoding set to utf-8. This code
+        #is tested setting the default encoding to utf-8 and for ascii
+        #user name as well to see it's not breaking anything.
+        #If we decide to go this route, can add more test.
+        values_unicode = {}
+        for key, value in values.items():
+            if isinstance(value, bool):
+                values_unicode[key] = value
+            elif isinstance(value, list):
+                for list_item in value:
+                    if not isinstance(list_item, bool):
+                        values_unicode[key] = list_item.encode('utf-8')
+                    else:
+                        values_unicode[key] = list_item
+            else:
+                values_unicode[key] = value.encode('utf-8')
+
         if not self.allow_create:
             action = _('LDAP %s create') % self.options_name
             raise exception.ForbiddenAction(action=action)
@@ -297,7 +317,7 @@ class BaseLdap(object):
         conn = self.get_connection()
         object_classes = self.structural_classes + [self.object_class]
         attrs = [('objectClass', object_classes)]
-        for k, v in values.iteritems():
+        for k, v in values_unicode.iteritems():
             if k == 'id' or k in self.attribute_ignore:
                 continue
             if v is not None:
@@ -312,8 +332,23 @@ class BaseLdap(object):
         if 'groupOfNames' in object_classes and self.use_dumb_member:
             attrs.append(('member', [self.dumb_member]))
 
-        conn.add_s(self._id_to_dn(values['id']), attrs)
-        return values
+        conn.add_s(self._id_to_dn(values_unicode['id']), attrs)
+
+        #Decode
+        values_decode = {}
+        for key, value in values_unicode.items():
+            if isinstance(value, bool):
+                values_decode[key] = value
+            elif isinstance(value, list):
+                for list_item in value:
+                    if not isinstance(list_item, bool):
+                        values_decode[key] = list_item.decode('utf-8')
+                    else:
+                        values_decode[key] = list_item
+            else:
+                values_decode[key] = value.decode('utf-8')
+
+        return values_decode
 
     def _ldap_get(self, id, filter=None):
         conn = self.get_connection()
@@ -355,6 +390,7 @@ class BaseLdap(object):
             return self._ldap_res_to_model(res)
 
     def get_by_name(self, name, filter=None):
+        name = name.encode('utf-8')
         query = ('(%s=%s)' % (self.attribute_mapping['name'],
                               ldap_filter.escape_filter_chars(name)))
         res = self.get_all(query)
@@ -516,7 +552,7 @@ class LdapWrapper(object):
                 'attrs=%(attrlist)s') % {
                     'dn': dn,
                     'scope': scope,
-                    'query': query,
+                    'query': query.decode('utf-8'),
                     'attrlist': attrlist})
         if self.page_size:
             res = self.paged_search_s(dn, scope, query, attrlist)
