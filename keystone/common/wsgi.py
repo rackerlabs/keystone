@@ -20,8 +20,11 @@
 
 """Utility methods for working with WSGI servers."""
 
+import gettext
+import os
 import re
 
+from babel import localedata
 import routes.middleware
 import webob.dec
 import webob.exc
@@ -30,6 +33,7 @@ from keystone.common import config
 from keystone.common import logging
 from keystone.common import utils
 from keystone import exception
+from keystone.openstack.common import gettextutils
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 
@@ -133,8 +137,39 @@ class WritableLogger(object):
         self.logger.log(self.level, msg)
 
 
+_AVAILABLE_LANGUAGES = []
+
+
+def get_available_languages():
+    """Lazily build and return a list of available languages on the
+       current host.
+    """
+    global _AVAILABLE_LANGUAGES
+
+    if _AVAILABLE_LANGUAGES:
+        return _AVAILABLE_LANGUAGES
+
+    all_available = localedata.list()
+    find = lambda x: gettext.find(
+        'keystone', localedir=os.environ.get('KEYSTONE_LOCALEDIR'),
+        languages=[x])
+
+    available = [i for i in all_available if find(i) is not None]
+    # en_US should always be available,
+    # since our inline message strings are en_US
+    available.append('en_US')
+    _AVAILABLE_LANGUAGES = available
+    return available
+
+
 class Request(webob.Request):
-    pass
+    def best_match_language(self):
+        """Determines the best available locale from the Accept-Language
+        HTTP header passed in the request.
+        """
+
+        return self.accept_language.best_match(get_available_languages(),
+                                               default_match='en_US')
 
 
 class BaseApplication(object):
@@ -242,16 +277,17 @@ class Application(BaseApplication):
             LOG.warning(
                 _('Authorization failed. %(exception)s from %(remote_addr)s') %
                 {'exception': e, 'remote_addr': req.environ['REMOTE_ADDR']})
-            return render_exception(e)
+            return render_exception(e, request=req)
         except exception.Error as e:
             LOG.warning(e)
-            return render_exception(e)
+            return render_exception(e, request=req)
         except TypeError as e:
             LOG.exception(e)
-            return render_exception(exception.ValidationError(e))
+            return render_exception(exception.ValidationError(e), request=req)
         except Exception as e:
             LOG.exception(e)
-            return render_exception(exception.UnexpectedError(exception=e))
+            return render_exception(exception.UnexpectedError(exception=e),
+                                    request=req)
 
         if result is None:
             return render_response(status=(204, 'No Content'))
@@ -376,13 +412,15 @@ class Middleware(Application):
             return self.process_response(request, response)
         except exception.Error as e:
             LOG.warning(e)
-            return render_exception(e)
+            return render_exception(e, request=request)
         except TypeError as e:
             LOG.exception(e)
-            return render_exception(exception.ValidationError(e))
+            return render_exception(exception.ValidationError(e),
+                                    request=request)
         except Exception as e:
             LOG.exception(e)
-            return render_exception(exception.UnexpectedError(exception=e))
+            return render_exception(exception.UnexpectedError(exception=e),
+                                    request=request)
 
 
 class Debug(Middleware):
@@ -484,7 +522,8 @@ class Router(object):
         match = req.environ['wsgiorg.routing_args'][1]
         if not match:
             return render_exception(
-                exception.NotFound(_('The resource could not be found.')))
+                exception.NotFound(_('The resource could not be found.')),
+                request=req)
         app = match['controller']
         return app
 
@@ -578,12 +617,27 @@ def render_response(body=None, status=None, headers=None):
                           headerlist=headers)
 
 
-def render_exception(error):
+def get_localized_message(locale, message):
+    """Gets the translated version in the given locale of the message."""
+    if (isinstance(message, gettextutils.Message)):
+        if locale:
+            message.locale = locale
+        return unicode(message)
+    else:
+        return unicode(message)
+
+
+def render_exception(error, request=None):
     """Forms a WSGI response based on the current error."""
+    if request and isinstance(request, Request):
+        locale = request.best_match_language()
+    else:
+        locale = None
+
     body = {'error': {
         'code': error.code,
         'title': error.title,
-        'message': str(error)
+        'message': get_localized_message(locale, error.args[0])
     }}
     if isinstance(error, exception.AuthPluginException):
         body['error']['identity'] = error.authentication
