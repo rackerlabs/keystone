@@ -1511,7 +1511,8 @@ class IdentityTests(object):
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.update_user,
                           user_id,
-                          {'id': user_id})
+                          {'id': user_id,
+                           'domain_id': DEFAULT_DOMAIN_ID})
 
     def test_delete_user_with_project_association(self):
         user = {'id': uuid.uuid4().hex,
