@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//r4Q\u003d",
+        "filename": "tests/test_injection.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-25T03:02:35Z",
+      "side": 1,
+      "message": "Perfect, thanks for adding this.",
+      "revId": "013c5ae866aeda97d8a56892bac3b74a0c952d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
