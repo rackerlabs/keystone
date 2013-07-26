@@ -408,7 +408,7 @@ class TestCase(NoModule, unittest.TestCase):
             s = socket.socket(socket.AF_INET6)
         except socket.error as e:
             if e.errno == errno.EAFNOSUPPORT:
-                raise nose.exc.SkipTest("IPv6 is not enabled in the system")
+                self.skipTest("IPv6 is not enabled in the system")
             else:
                 raise
         else:
