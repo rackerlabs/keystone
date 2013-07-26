@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//mic\u003d",
+        "filename": "keystone/common/logging.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T18:28:32Z",
+      "side": 1,
+      "message": "does this have to be 1? I think True would be a little more obvious. (1 indicates that maybe you could pass 2 and it would do something different)",
+      "revId": "bf2157fc536b4cbcce83f54668ce24959253d662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
