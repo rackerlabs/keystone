@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//mf8\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T18:46:47Z",
+      "side": 1,
+      "message": "rather than copy-pasting, this should go into oslo-incubator.",
+      "revId": "bb34d9334dfd3dfe0f713d05d189320b1725e7d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//mfM\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T18:46:47Z",
+      "side": 1,
+      "message": "The bug report says that work has to happen on the swift side to use the standard logging mechanism. Has that been done already?",
+      "revId": "bb34d9334dfd3dfe0f713d05d189320b1725e7d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
