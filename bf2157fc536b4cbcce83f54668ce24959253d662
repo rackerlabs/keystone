@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//maM\u003d",
+        "filename": "keystone/common/logging.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-26T19:22:14Z",
+      "side": 1,
+      "message": "you could just remove this comment",
+      "revId": "bf2157fc536b4cbcce83f54668ce24959253d662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//mic\u003d",
         "filename": "keystone/common/logging.py",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2013-07-26T18:28:32Z",
       "side": 1,
       "message": "does this have to be 1? I think True would be a little more obvious. (1 indicates that maybe you could pass 2 and it would do something different)",
+      "revId": "bf2157fc536b4cbcce83f54668ce24959253d662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//maU\u003d",
+        "filename": "keystone/common/logging.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-07-26T19:22:14Z",
+      "side": 1,
+      "message": "+1; i couldn\u0027t actually find an example in the docs that wasn\u0027t receiving a tuple, but the convention is certainly to pass exc_info\u003dTrue",
+      "parentUuid": "AAAAQn//mic\u003d",
       "revId": "bf2157fc536b4cbcce83f54668ce24959253d662",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
