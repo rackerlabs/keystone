@@ -18,6 +18,7 @@
 
 from keystone import assignment
 from keystone import clean
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import manager
@@ -68,6 +69,14 @@ class Manager(manager.Manager):
         self.assignment_api = assignment_api
         self.driver.assignment_api = assignment_api
 
+    @cache.on_arguments()
+    def get_user(self, user_id):
+        return self.driver.get_user(user_id)
+
+    @cache.on_arguments()
+    def get_user_by_name(self, user_name, domain_id):
+        return self.driver.get_user_by_name(user_name, domain_id)
+
     def create_user(self, user_id, user_ref):
         user = user_ref.copy()
         user['name'] = clean.user_name(user['name'])
@@ -101,31 +110,40 @@ class Manager(manager.Manager):
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         return self.assignment_api.update_project(tenant_id, tenant)
 
+    @cache.on_arguments()
     def get_project_by_name(self, tenant_name, domain_id):
         return self.assignment_api.get_project_by_name(tenant_name, domain_id)
 
+    @cache.on_arguments()
     def get_project(self, tenant_id):
         return self.assignment_api.get_project(tenant_id)
 
+    @cache.on_arguments()
     def list_projects(self, domain_id=None):
         return self.assignment_api.list_projects(domain_id)
 
+    @cache.on_arguments()
     def get_role(self, role_id):
         return self.assignment_api.get_role(role_id)
 
+    @cache.on_arguments()
     def list_roles(self):
         return self.assignment_api.list_roles()
 
+    @cache.on_arguments()
     def get_projects_for_user(self, user_id):
         return self.assignment_api.get_projects_for_user(user_id)
 
+    @cache.on_arguments()
     def get_project_users(self, tenant_id):
         return self.assignment_api.get_project_users(tenant_id)
 
+    @cache.on_arguments()
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         return self.assignment_api.get_roles_for_user_and_project(
             user_id, tenant_id)
 
+    @cache.on_arguments()
     def get_roles_for_user_and_domain(self, user_id, domain_id):
         return (self.assignment_api.get_roles_for_user_and_domain
                 (user_id, domain_id))
@@ -186,9 +204,11 @@ class Manager(manager.Manager):
     def create_domain(self, domain_id, domain):
         return self.assignment_api.create_domain(domain_id, domain)
 
+    @cache.on_arguments()
     def get_domain_by_name(self, domain_name):
         return self.assignment_api.get_domain_by_name(domain_name)
 
+    @cache.on_arguments()
     def get_domain(self, domain_id):
         return self.assignment_api.get_domain(domain_id)
 
@@ -198,9 +218,11 @@ class Manager(manager.Manager):
     def delete_domain(self, domain_id):
         return self.assignment_api.delete_domain(domain_id)
 
+    @cache.on_arguments()
     def list_domains(self):
         return self.assignment_api.list_domains()
 
+    @cache.on_arguments()
     def list_user_projects(self, user_id):
         return self.assignment_api.list_user_projects(user_id)
 
@@ -210,6 +232,7 @@ class Manager(manager.Manager):
     def remove_user_from_project(self, tenant_id, user_id):
         return self.assignment_api.remove_user_from_project(tenant_id, user_id)
 
+    @cache.on_arguments()
     def list_role_assignments(self):
         return self.assignment_api.list_role_assignments()
 

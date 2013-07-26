@@ -208,6 +208,11 @@ def configure():
         'member_role_id', default='9fe2ff9ee4384b1894a90878d3e92bab')
     register_str('member_role_name', default='_member_')
 
+    # caching
+    register_int('duration', group='cache', default=0)
+    register_str('host', group='cache', default='127.0.0.1')
+    register_int('port', group='cache', default=6379)
+
     # identity
     register_str('default_domain_id', group='identity', default='default')
 

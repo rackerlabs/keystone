@@ -17,6 +17,7 @@
 
 """Main entry point into the Catalog service."""
 
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import manager
@@ -64,6 +65,11 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.catalog.driver)
 
+    @cache.on_arguments()
+    def list_services(self):
+        return self.driver.list_services()
+
+    @cache.on_arguments()
     def get_service(self, service_id):
         try:
             return self.driver.get_service(service_id)
@@ -89,12 +95,14 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
+    @cache.on_arguments()
     def get_endpoint(self, endpoint_id):
         try:
             return self.driver.get_endpoint(endpoint_id)
         except exception.NotFound:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
+    @cache.on_arguments()
     def get_catalog(self, user_id, tenant_id, metadata=None):
         try:
             return self.driver.get_catalog(user_id, tenant_id, metadata)

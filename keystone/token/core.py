@@ -19,6 +19,7 @@
 import copy
 import datetime
 
+from keystone.common import cache
 from keystone.common import cms
 from keystone.common import dependency
 from keystone.common import logging
@@ -114,6 +115,7 @@ class Manager(manager.Manager):
         """
         return cms.cms_hash_token(token_id)
 
+    @cache.on_arguments()
     def get_token(self, token_id):
         return self.driver.get_token(self._unique_id(token_id))
 
@@ -124,6 +126,9 @@ class Manager(manager.Manager):
 
     def delete_token(self, token_id):
         return self.driver.delete_token(self._unique_id(token_id))
+
+    def list_revoked_tokens(self):
+        return self.driver.list_revoked_tokens()
 
 
 class Driver(object):
