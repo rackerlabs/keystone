@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//o2M\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-07-26T02:36:45Z",
+      "side": 1,
+      "message": "Thanks for your comments, I\u0027ll clean commit message",
+      "parentUuid": "AAAAQn//pX0\u003d",
+      "revId": "8b0060a4a8e8c3cbe40b050b9cb857f52de5075b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//pYI\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 24
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//o2I\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-07-26T02:36:45Z",
+      "side": 1,
+      "message": "yes, I agree, I\u0027ll correct this comment and use msg_format to replace msg_fmt to avoid any misleading",
+      "parentUuid": "AAAAQn//pYI\u003d",
+      "revId": "8b0060a4a8e8c3cbe40b050b9cb857f52de5075b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//pXs\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 24
@@ -64,6 +100,24 @@
       "writtenOn": "2013-07-25T20:59:40Z",
       "side": 1,
       "message": "this could be made into a docstr now",
+      "revId": "8b0060a4a8e8c3cbe40b050b9cb857f52de5075b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//o2A\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 7138
+      },
+      "writtenOn": "2013-07-26T02:36:45Z",
+      "side": 1,
+      "message": "I\u0027ll change this into a docstr",
+      "parentUuid": "AAAAQn//pXs\u003d",
       "revId": "8b0060a4a8e8c3cbe40b050b9cb857f52de5075b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
