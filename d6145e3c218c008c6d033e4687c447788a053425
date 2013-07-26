@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//mAM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "change \"othe\" to \"other\"",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//mAA\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "all the new options in config.py need to be listed in this file.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//qzE\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/030_kds_table.py",
         "patchSetId": 8
@@ -13,6 +47,142 @@
       "writtenOn": "2013-07-25T13:28:42Z",
       "side": 1,
       "message": "What would be stored in \u0027extra\u0027?",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//l/Q\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "what about extra?",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//l+k\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "when the entry is inserted below it uses hashlib.sha256(kds_id).hexdigest() for the id, so doesn\u0027t this have to do the same?",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//l+s\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "add a comment here says why you can ignore any kind of exception that comes from this code.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//l+I\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "this bit of code \"hashlib.sha256(kds_id).hexdigest()\" is copied in a couple of places, suggest move it to its own function.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//l9g\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "suggest put these in alphabetical order.\n\nThis class doesn\u0027t use any of these except for kds_api, so suggest remove the rest.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//l9Q\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "why can\u0027t we use RBAC for this?",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//l8o\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "shouldn\u0027t the config option be an int so you don\u0027t have to parse?",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//l8g\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "config options don\u0027t get stripped already?",
       "revId": "d6145e3c218c008c6d033e4687c447788a053425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -36,6 +206,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//l8c\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "opt[len(\u0027file://\u0027):] is copied all over the place, suggest do this once.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//qvM\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 8
@@ -47,6 +234,57 @@
       "writtenOn": "2013-07-25T13:28:42Z",
       "side": 1,
       "message": "Might be helpful to have a comment here giving some information on why an exception was raised.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//l9A\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "strings need to be wrapped in _() so they can be translated.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//l9I\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "suggest do this first.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//l7Y\u003d",
+        "filename": "keystone/contrib/kds/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-26T22:41:30Z",
+      "side": 1,
+      "message": "these actions needs to be put in the sample policy.json file.",
       "revId": "d6145e3c218c008c6d033e4687c447788a053425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
