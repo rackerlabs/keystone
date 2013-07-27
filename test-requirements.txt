@@ -43,4 +43,4 @@ http://tarballs.openstack.org/swift/swift-master.tar.gz#egg=swift
 netifaces
 
 # For translations processing
-Babel
+Babel>=0.9.6,<1.0 # Babel 1.0 doesn't work with pip 1.4, bug 1205546
