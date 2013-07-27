@@ -223,6 +223,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//lxw\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-27T00:57:47Z",
+      "side": 1,
+      "message": "I think using .startswith() would be significantly more clear instead of the slicing here.  Still go with Brant\u0027s suggestion and only do this once.",
+      "parentUuid": "AAAAQn//l8c\u003d",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//qvM\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 8
