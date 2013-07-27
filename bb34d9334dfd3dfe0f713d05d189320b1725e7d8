@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//lgA\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6835
+      },
+      "writtenOn": "2013-07-27T05:19:39Z",
+      "side": 1,
+      "message": "really? this is just a swift-style split, why oslo get it for others? I prefer to put split_path in this s3_token.py \u003e keystone common place \u003e oslo (I\u0027ll email a core of oslo asking what does he think about this)",
+      "parentUuid": "AAAAQn//mf8\u003d",
+      "revId": "bb34d9334dfd3dfe0f713d05d189320b1725e7d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//mfM\u003d",
         "filename": "keystone/middleware/s3_token.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-26T18:46:47Z",
       "side": 1,
       "message": "The bug report says that work has to happen on the swift side to use the standard logging mechanism. Has that been done already?",
+      "revId": "bb34d9334dfd3dfe0f713d05d189320b1725e7d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//lf8\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6835
+      },
+      "writtenOn": "2013-07-27T05:19:39Z",
+      "side": 1,
+      "message": "I think adam young\u0027s original meaning is that swift is imported here but only use its get_logger function, and split_path function. That\u0027s not a good dependency. So he wants remove swift dependency and use a common logging here. So, do something in swift is not necessary. That\u0027s my thought, let me get him here.",
+      "parentUuid": "AAAAQn//mfM\u003d",
       "revId": "bb34d9334dfd3dfe0f713d05d189320b1725e7d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
