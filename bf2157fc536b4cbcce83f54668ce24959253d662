@@ -51,6 +51,24 @@
       "revId": "bf2157fc536b4cbcce83f54668ce24959253d662",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//lnc\u003d",
+        "filename": "keystone/common/logging.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6835
+      },
+      "writtenOn": "2013-07-27T02:44:39Z",
+      "side": 1,
+      "message": "@Dolph logging_mudole_path/logging/__init__.py Logger.exception(self, ...), you could find it, but I think you and @Brant are right, exc_info\u003dTrue is more obviout",
+      "parentUuid": "AAAAQn//maU\u003d",
+      "revId": "bf2157fc536b4cbcce83f54668ce24959253d662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
