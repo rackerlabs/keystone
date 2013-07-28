@@ -101,7 +101,7 @@ class Assignment(assignment.Driver):
             msg = 'Domain metadata not supported by LDAP'
             raise exception.NotImplemented(message=msg)
         if (not self.get_project(tenant_id) or
-                not self.identity_api.get_user(user_id)):
+                not user_id or not self.identity_api.get_user(user_id)):
             return {}
 
         metadata_ref = _get_roles_for_just_user_and_project(user_id, tenant_id)
