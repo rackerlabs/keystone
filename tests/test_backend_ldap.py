@@ -632,6 +632,40 @@ class LDAPIdentity(test.TestCase, BaseLDAPIdentity):
         self.skipTest(
             'N/A: LDAP does not support multiple domains')
 
+    def test_get_roles_for_user_and_project(self):
+        user_ref = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                    'domain_id': CONF.identity.default_domain_id,
+                    'password': uuid.uuid4().hex,
+                    'enabled': True}
+        self.identity_api.create_user(user_ref['id'], user_ref)
+
+        project_ref = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                       'domain_id': CONF.identity.default_domain_id}
+        self.identity_api.create_project(project_ref['id'], project_ref)
+
+        group_id = None
+        group = dict(name=uuid.uuid4().hex)
+        group_id = self.identity_api.create_group(group_id, group)['id']
+        self.identity_api.add_user_to_group(user_ref['id'], group_id)
+
+        role_ref_list = []
+        for i in range(2):
+            role_ref = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+            self.identity_api.create_role(role_ref['id'], role_ref)
+            role_ref_list.append(role_ref)
+
+            self.identity_api.add_role_to_user_and_project(
+                user_id=user_ref['id'],
+                tenant_id=project_ref['id'],
+                role_id=role_ref['id'])
+
+        role_list = self.assignment_api.get_roles_for_user_and_project(
+            user_id=user_ref["id"],
+            tenant_id=project_ref["id"])
+
+        self.assertEqual(set(role_list),
+                         set([role_ref["id"] for role_ref in role_ref_list]))
+
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def setUp(self):
