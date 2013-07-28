@@ -1,0 +1,412 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//kWU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_add_delegated_auth_tables.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "It would make sense to add an index on Consumer_key since _delete_request_tokens does a query on RequestToken and filters by consumer_key.  This should make sure that the DB doesn\u0027t get hit too hard if we have a large number of items in RequestToken",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kWY\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/sql.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "It would make sense to add an index on Consumer_key since _delete_request_tokens does a query on RequestToken and filters by consumer_key.  This should make sure that the DB doesn\u0027t get hit too hard if we have a large number of items in RequestToken",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kVU\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "(NIT): For consistency, Drivers in other \"core.py\" files are at the bottom under the functional classes.",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kWM\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "(NIT): you could use: if not consumer.get(\u0027name\u0027):\n\nIt seems to be a little more direct than needing the \"or\". This doesn\u0027t really need to be changed unless you\u0027re mucking around in this file some more.",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kWI\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "String should be wrapped in _() for translation.",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kUM\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "Does this need to invalidate tokens?  In cases where we update user information we need to invalidate tokens.  It seems like an update might warrant this.\n\nBut I am not 100% sure.",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kUI\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "You need to make sure that only the tokens for the OAuth consumer are deleted.  The top level _delete_tokens_for_user is a very, very wide net to cast and will invalidate _all_ tokens for the user.  There has been changes to limit this to tenant and/or trust.  I am fairly certain we don\u0027t want to delete _every_ active token for the user, but only ones pertaining to the OAuth Consumer.",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kUE\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "See above note on _delete_tokens_for_user.",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kWE\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "It doesn\u0027t look like you need assignment_api here, consider removing if it isn\u0027t actually used.",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kU0\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "String should be wrapped in _() for translation.",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kU8\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "(NIT): if you make req_role_names a set, you could eliminate the inner for loop and just do a \"if req_role in req_role_names:\" (you could do this with the list as well and get a loop behind the scenes) but the set() is more efficient (similar to dict) lookup.\n\nThis is likely never going to be a performance bottleneck without a massive number of roles.",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kV0\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "string should be wrapped in _() for translation",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kVw\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "string should be wrapped in _() for translation",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kVs\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "string should be wrapped in _() for translation",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kVo\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "string should be wrapped in _() for translation",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kVk\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "string should be wrapped in _() for translation",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kVg\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "string should be wrapped in _() for translation",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kV4\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "string should be wrapped in _() for translation",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kV8\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "string should be wrapped in _() for translation",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kWA\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "string should be wrapped in _() for translation.",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kT4\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "(NIT): this could simply be cred_set \u003d set(creds.get(\u0027roles\u0027, []))  or something similar rather than a for loop.",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kVc\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "string should be wrapped in _() for translation",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kT0\u003d",
+        "filename": "tests/test_v3_delegated_auth.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "If update needs to invalidate tokens, please add a check for that here.",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//kTw\u003d",
+        "filename": "tests/test_v3_delegated_auth.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-28T23:01:13Z",
+      "side": 1,
+      "message": "Once you make sure that the token deletes are for that specific consumer, make sure that only those tokens are deleted.  (e.g. make sure you have non-consumer tokens and they persist beyond the delete)",
+      "revId": "3c663ff6a8413fd8f84a2cbd908d92138165be5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
