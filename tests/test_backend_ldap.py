@@ -632,6 +632,14 @@ class LDAPIdentity(test.TestCase, BaseLDAPIdentity):
         self.skipTest(
             'N/A: LDAP does not support multiple domains')
 
+    def test_get_metadata_userid_None(self):
+        # Check whether the metadata return empty dict rather
+        # than throw "Could not find user" exception.
+        metadata_ref = self.assignment_api._get_metadata(
+                            user_id=None,
+                            tenant_id=self.tenant_bar['id'])
+        self.assertEqual(metadata_ref, {})
+
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def setUp(self):
