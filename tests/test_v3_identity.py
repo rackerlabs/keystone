@@ -1135,6 +1135,7 @@ class IdentityIneritanceTestCase(test_v3.RestfulTestCase):
         self.assertIn(collection_url, r.result['links']['self'])
 
     def test_crud_inherited_role_grants_failed_if_disabled(self):
+        super(IdentityIneritanceTestCase, self).tearDown()
         # Disable the extension and check no API calls can be issued
         self.opt_in_group('os_inherit', enabled=False)
         super(IdentityIneritanceTestCase, self).setUp()
