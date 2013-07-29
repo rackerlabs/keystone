@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//hpE\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-29T20:02:33Z",
+      "side": 1,
+      "message": "Sorry, I should have clarified more on my first comment: \n\nmaybe here we could add an exception and detail it with a little more information (or reuse an exception?) https://github.com/openstack/keystone/blob/master/keystone/exception.py",
+      "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
