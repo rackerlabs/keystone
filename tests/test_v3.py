@@ -40,6 +40,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         load_sample_data should be set to false.
 
         """
+        super(RestfulTestCase, self).setUp()
         self.config(self.config_files())
 
         test.setup_test_database()
@@ -115,6 +116,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         #drop the policy rules
         CONF.reset()
         rules.reset()
+        super(RestfulTestCase, self).tearDown()
 
     def new_ref(self):
         """Populates a ref with attributes common to all API entities."""

@@ -29,7 +29,7 @@ import mox
 import nose.exc
 from paste import deploy
 import stubout
-import unittest2 as unittest
+import testtools
 
 gettext.install('keystone', unicode=1)
 
@@ -204,7 +204,7 @@ class NoModule(object):
         sys.meta_path.insert(0, finder)
 
 
-class TestCase(NoModule, unittest.TestCase):
+class TestCase(NoModule, testtools.TestCase):
     def __init__(self, *args, **kw):
         super(TestCase, self).__init__(*args, **kw)
         self._paths = []
@@ -354,7 +354,18 @@ class TestCase(NoModule, unittest.TestCase):
 
     def assertDictContainsSubset(self, expected, actual, msg=None):
         """Checks whether actual is a superset of expected."""
-        safe_repr = unittest.util.safe_repr
+
+        def safe_repr(obj, short=False):
+            _MAX_LENGTH = 80
+            try:
+                result = repr(obj)
+            except Exception:
+                result = object.__repr__(obj)
+            if not short or len(result) < _MAX_LENGTH:
+                return result
+            return result[:_MAX_LENGTH] + ' [truncated]...'
+
+
         missing = []
         mismatched = []
         for key, value in expected.iteritems():

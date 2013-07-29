@@ -1137,7 +1137,6 @@ class IdentityIneritanceTestCase(test_v3.RestfulTestCase):
     def test_crud_inherited_role_grants_failed_if_disabled(self):
         # Disable the extension and check no API calls can be issued
         self.opt_in_group('os_inherit', enabled=False)
-        super(IdentityIneritanceTestCase, self).setUp()
 
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role['id'], role)
