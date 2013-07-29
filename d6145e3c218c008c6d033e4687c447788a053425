@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//jIg\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "AAAAQn//mAA\u003d",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//qzE\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/030_kds_table.py",
         "patchSetId": 8
@@ -47,6 +65,24 @@
       "writtenOn": "2013-07-25T13:28:42Z",
       "side": 1,
       "message": "What would be stored in \u0027extra\u0027?",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//jIk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/030_kds_table.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "uhmm I think I had issues creating the table with out it initially, and then left it there.\nI\u0027ll remove if possible.",
+      "parentUuid": "AAAAQn//qzE\u003d",
       "revId": "d6145e3c218c008c6d033e4687c447788a053425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//jIc\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "not used, will address that",
+      "parentUuid": "AAAAQn//l/Q\u003d",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//l+k\u003d",
         "filename": "keystone/contrib/kds/backends/sql.py",
         "patchSetId": 8
@@ -81,6 +135,24 @@
       "writtenOn": "2013-07-26T22:41:30Z",
       "side": 1,
       "message": "when the entry is inserted below it uses hashlib.sha256(kds_id).hexdigest() for the id, so doesn\u0027t this have to do the same?",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//jIU\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "well here it is looking at \u0027name\u0027 not \u0027id\u0027, but I cn change this too for consistency and given \u0027id\u0027 will be indexed while name\u0027s not",
+      "parentUuid": "AAAAQn//l+k\u003d",
       "revId": "d6145e3c218c008c6d033e4687c447788a053425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//jHs\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "I\u0027ll ad a self._id_from_name() function",
+      "parentUuid": "AAAAQn//l+I\u003d",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//l9g\u003d",
         "filename": "keystone/contrib/kds/controllers.py",
         "patchSetId": 8
@@ -132,6 +222,24 @@
       "writtenOn": "2013-07-26T22:41:30Z",
       "side": 1,
       "message": "suggest put these in alphabetical order.\n\nThis class doesn\u0027t use any of these except for kds_api, so suggest remove the rest.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//jHo\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "the others are needed for assert_admin(0 apparently, I tried w/o initially",
+      "parentUuid": "AAAAQn//l9g\u003d",
       "revId": "d6145e3c218c008c6d033e4687c447788a053425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//jHY\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "I do not think creating keys will need to be delegated, but RBAC support can be added later if needed, keeping it simple for now",
+      "parentUuid": "AAAAQn//l9Q\u003d",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//l8o\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 8
@@ -166,6 +292,24 @@
       "writtenOn": "2013-07-26T22:41:30Z",
       "side": 1,
       "message": "shouldn\u0027t the config option be an int so you don\u0027t have to parse?",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//jHA\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "It, is, I\u0027ll remove the cast",
+      "parentUuid": "AAAAQn//l8o\u003d",
       "revId": "d6145e3c218c008c6d033e4687c447788a053425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +333,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//jGo\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "probably, and I just turned master_key -\u003e master_key_file locally and dropped file://\nIt makes no sense to offer anything but a file here.",
+      "parentUuid": "AAAAQn//l8g\u003d",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//qvA\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 8
@@ -200,6 +362,24 @@
       "writtenOn": "2013-07-25T13:28:42Z",
       "side": 1,
       "message": "Documentation should be provided in the sample config stating that this option needs to start with \u0027file:\u0027 in order to be used properly.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//jGk\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "will remove file:// starting part, it will just be a path",
+      "parentUuid": "AAAAQn//qvA\u003d",
       "revId": "d6145e3c218c008c6d033e4687c447788a053425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -241,6 +421,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//jGc\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "will be replaced by CONF.kds.master_key_file",
+      "parentUuid": "AAAAQn//l8c\u003d",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//jGU\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "will remove so no problem anymore",
+      "parentUuid": "AAAAQn//lxw\u003d",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//qvM\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 8
@@ -252,6 +468,24 @@
       "writtenOn": "2013-07-25T13:28:42Z",
       "side": 1,
       "message": "Might be helpful to have a comment here giving some information on why an exception was raised.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//jGA\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAAQn//qvM\u003d",
       "revId": "d6145e3c218c008c6d033e4687c447788a053425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -275,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//jGM\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "These are low level exceptions, do they really need translation ? They won\u0027t be seen by final users afaik, just admins.",
+      "parentUuid": "AAAAQn//l9A\u003d",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//l9I\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 8
@@ -292,6 +544,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//jGE\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAAQn//l9I\u003d",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//l7Y\u003d",
         "filename": "keystone/contrib/kds/routers.py",
         "patchSetId": 8
@@ -303,6 +573,24 @@
       "writtenOn": "2013-07-26T22:41:30Z",
       "side": 1,
       "message": "these actions needs to be put in the sample policy.json file.",
+      "revId": "d6145e3c218c008c6d033e4687c447788a053425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//jHE\u003d",
+        "filename": "keystone/contrib/kds/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-29T13:33:59Z",
+      "side": 1,
+      "message": "Extensions do not have their API in there, I do not think KDS\u0027s stuff is supposed to go in that file.",
+      "parentUuid": "AAAAQn//l7Y\u003d",
       "revId": "d6145e3c218c008c6d033e4687c447788a053425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
