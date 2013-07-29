@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//hr0\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-29T19:48:19Z",
+      "side": 1,
+      "message": "probably should expand this comment to explain that identity_api is different from the other apis below to mitigate the circular dependency it would otherwise have with assignment_api. If not someone will come by in a month or two and try and \"clean this wackiness up\"",
+      "revId": "87f98ff18bba9c05f4c0884b7681d6ec3a43fdcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//hrs\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-29T19:48:19Z",
+      "side": 1,
+      "message": "does it need to be first or just before assignment???",
+      "revId": "87f98ff18bba9c05f4c0884b7681d6ec3a43fdcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
