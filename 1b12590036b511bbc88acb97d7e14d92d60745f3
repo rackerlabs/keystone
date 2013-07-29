@@ -16,6 +16,23 @@
       "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//hsI\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-29T19:44:23Z",
+      "side": 1,
+      "message": "specify? Also, should this be changed in a separate commit since it isn\u0027t functional to this change?",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
