@@ -17,7 +17,7 @@
 import logging
 
 import stubout
-import unittest2 as unittest
+import testtools
 import webob
 
 from swift.common import utils as swift_utils
@@ -72,7 +72,7 @@ class FakeHTTPConnection(object):
         pass
 
 
-class S3TokenMiddlewareTestBase(unittest.TestCase):
+class S3TokenMiddlewareTestBase(testtools.TestCase):
     def setUp(self):
         super(S3TokenMiddlewareTestBase, self).setUp()
 
