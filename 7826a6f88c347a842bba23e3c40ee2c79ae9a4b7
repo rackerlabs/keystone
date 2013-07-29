@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//hek\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-07-29T21:04:03Z",
+      "side": 1,
+      "message": "This was removed (since its ugly) in the latest version of the patch in nova and also the common one in oslo-incubator. Instead of assigning to the variable later, we just append to the list.",
+      "revId": "7826a6f88c347a842bba23e3c40ee2c79ae9a4b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
