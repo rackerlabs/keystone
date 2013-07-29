@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//hr4\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-29T19:46:30Z",
+      "side": 1,
+      "message": "Should we be adding a unit test for this since we are adding a logical break?",
+      "revId": "b1606da379518c8e56a498262a0dc75d318e072b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
