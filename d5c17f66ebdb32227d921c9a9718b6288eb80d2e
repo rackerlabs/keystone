@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//iNw\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-07-29T16:47:21Z",
+      "side": 1,
+      "message": "I think it should be:\n\"%s.%s.sql.migrate_repo\"\nright?",
+      "revId": "d5c17f66ebdb32227d921c9a9718b6288eb80d2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
