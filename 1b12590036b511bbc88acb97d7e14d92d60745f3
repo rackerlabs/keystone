@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//htw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-29T19:35:34Z",
+      "side": 1,
+      "message": "So there isn\u0027t a way to downgrade this functionality.  Doesn\u0027t there need to be?",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
