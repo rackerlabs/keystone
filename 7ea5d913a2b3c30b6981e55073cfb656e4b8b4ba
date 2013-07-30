@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//gic\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-30T02:15:52Z",
+      "side": 1,
+      "message": "This seems like a strange name for a class.  It should be named OAuthController or OAuthV3Controller",
+      "revId": "7ea5d913a2b3c30b6981e55073cfb656e4b8b4ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
