@@ -14,6 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from sqlalchemy import Index
+
 from keystone import assignment
 from keystone import clean
 from keystone.common import sql
@@ -657,9 +659,10 @@ class Domain(sql.ModelBase, sql.DictBase):
     __tablename__ = 'domain'
     attributes = ['id', 'name', 'enabled']
     id = sql.Column(sql.String(64), primary_key=True)
-    name = sql.Column(sql.String(64), unique=True, nullable=False)
-    enabled = sql.Column(sql.Boolean, default=True)
+    name = sql.Column(sql.String(64), nullable=False)
+    enabled = sql.Column(sql.Boolean, default=True, nullable=False)
     extra = sql.Column(sql.JsonBlob())
+    __table_args__ = (sql.UniqueConstraint('name'), {})
 
 
 class Project(sql.ModelBase, sql.DictBase):
@@ -670,7 +673,7 @@ class Project(sql.ModelBase, sql.DictBase):
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
                            nullable=False)
     description = sql.Column(sql.Text())
-    enabled = sql.Column(sql.Boolean)
+    enabled = sql.Column(sql.Boolean, default=False)
     extra = sql.Column(sql.JsonBlob())
     # Unique constraint across two columns to create the separation
     # rather than just only 'name' being unique
@@ -681,8 +684,9 @@ class Role(sql.ModelBase, sql.DictBase):
     __tablename__ = 'role'
     attributes = ['id', 'name']
     id = sql.Column(sql.String(64), primary_key=True)
-    name = sql.Column(sql.String(64), unique=True, nullable=False)
+    name = sql.Column(sql.String(255), unique=True, nullable=False)
     extra = sql.Column(sql.JsonBlob())
+    __table_args__ = (sql.UniqueConstraint('name'), {})
 
 
 class BaseGrant(sql.DictBase):
@@ -720,29 +724,40 @@ class BaseGrant(sql.DictBase):
 
 class UserProjectGrant(sql.ModelBase, BaseGrant):
     __tablename__ = 'user_project_metadata'
-    user_id = sql.Column(sql.String(64),
-                         primary_key=True)
-    project_id = sql.Column(sql.String(64),
+    user_id = sql.Column(sql.String(64), primary_key=True)
+    project_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'),
                             primary_key=True)
     data = sql.Column(sql.JsonBlob())
+    __table_args__ = (
+        Index('project_id', 'project_id'),
+    )
 
 
 class UserDomainGrant(sql.ModelBase, BaseGrant):
     __tablename__ = 'user_domain_metadata'
     user_id = sql.Column(sql.String(64), primary_key=True)
-    domain_id = sql.Column(sql.String(64), primary_key=True)
+    domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
+                           primary_key=True)
     data = sql.Column(sql.JsonBlob())
+    __table_args__ = (
+        Index('domain_id', 'domain_id'),
+    )
 
 
 class GroupProjectGrant(sql.ModelBase, BaseGrant):
     __tablename__ = 'group_project_metadata'
     group_id = sql.Column(sql.String(64), primary_key=True)
-    project_id = sql.Column(sql.String(64), primary_key=True)
+    project_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'),
+                            primary_key=True)
     data = sql.Column(sql.JsonBlob())
+    __table_args__ = (
+        Index('group_project_metadata_project_id_fkey', 'project_id'),
+    )
 
 
 class GroupDomainGrant(sql.ModelBase, BaseGrant):
     __tablename__ = 'group_domain_metadata'
     group_id = sql.Column(sql.String(64), primary_key=True)
-    domain_id = sql.Column(sql.String(64), primary_key=True)
+    domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
+                           primary_key=True)
     data = sql.Column(sql.JsonBlob())
