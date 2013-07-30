@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//gsc\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-30T01:10:54Z",
+      "side": 1,
+      "message": "Please submit it to oslo, but we can use it here until oslo gets it.",
+      "parentUuid": "AAAAQn//lgA\u003d",
+      "revId": "bb34d9334dfd3dfe0f713d05d189320b1725e7d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//mfM\u003d",
         "filename": "keystone/middleware/s3_token.py",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "I think adam young\u0027s original meaning is that swift is imported here but only use its get_logger function, and split_path function. That\u0027s not a good dependency. So he wants remove swift dependency and use a common logging here. So, do something in swift is not necessary. That\u0027s my thought, let me get him here.",
       "parentUuid": "AAAAQn//mfM\u003d",
+      "revId": "bb34d9334dfd3dfe0f713d05d189320b1725e7d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//gs4\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-30T01:10:54Z",
+      "side": 1,
+      "message": "is the above line such that you don\u0027t need to change everywhere that is currently using self.logger?",
+      "parentUuid": "AAAAQn//lf8\u003d",
       "revId": "bb34d9334dfd3dfe0f713d05d189320b1725e7d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
