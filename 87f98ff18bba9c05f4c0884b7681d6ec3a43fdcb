@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//dQE\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-30T22:10:14Z",
+      "side": 1,
+      "message": "Done. I hope someone does come by in a month or two and \"clean this wackiness up\".",
+      "parentUuid": "AAAAQn//hr0\u003d",
+      "revId": "87f98ff18bba9c05f4c0884b7681d6ec3a43fdcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//hrs\u003d",
         "filename": "keystone/test.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-29T19:48:19Z",
       "side": 1,
       "message": "does it need to be first or just before assignment???",
+      "revId": "87f98ff18bba9c05f4c0884b7681d6ec3a43fdcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//dQA\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-30T22:10:14Z",
+      "side": 1,
+      "message": "Done. You\u0027re correct that identity only has to be before assignment and not necessarily first.",
+      "parentUuid": "AAAAQn//hrs\u003d",
       "revId": "87f98ff18bba9c05f4c0884b7681d6ec3a43fdcb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
