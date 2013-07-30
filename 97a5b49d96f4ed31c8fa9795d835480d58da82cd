@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//emE\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-07-30T15:19:44Z",
+      "side": 0,
+      "message": "Just out of curiosity, why remove these? Shouldn\u0027t they be calling the inherited setUp() tearDown() methods from the superclass?",
+      "revId": "97a5b49d96f4ed31c8fa9795d835480d58da82cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
