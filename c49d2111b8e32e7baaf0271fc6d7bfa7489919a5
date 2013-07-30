@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//gxQ\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-30T00:56:19Z",
+      "side": 1,
+      "message": "As this is an extension, and will be disabled by default in Keystone, this should be a config file comment, not an actual change.",
+      "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//gxA\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-30T00:56:19Z",
+      "side": 1,
+      "message": "This kind of registration can happen in the extension directory.  It makes sense for it to be included with the extension code, and not here.",
+      "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//gwQ\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-30T00:56:19Z",
+      "side": 1,
+      "message": "Why does this require the policy and token apis?  Even identity is a stretch, but the others are almost certainly wrong",
+      "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//hpE\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 9
@@ -13,6 +64,40 @@
       "writtenOn": "2013-07-29T20:02:33Z",
       "side": 1,
       "message": "Sorry, I should have clarified more on my first comment: \n\nmaybe here we could add an exception and detail it with a little more information (or reuse an exception?) https://github.com/openstack/keystone/blob/master/keystone/exception.py",
+      "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//gv8\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-30T00:56:19Z",
+      "side": 1,
+      "message": "remove context from the parameter list.\n\nPut an empty implementation of get_ticket into the driver.",
+      "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//gvo\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-30T00:56:19Z",
+      "side": 1,
+      "message": "The driver should have the public interface implemented by the driver.  Put an empty `set_key` implementation there, and a comment that it should only inherit the implementation from the Manager.",
       "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
