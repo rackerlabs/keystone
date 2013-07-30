@@ -37,6 +37,74 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//gr8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-30T01:19:40Z",
+      "side": 1,
+      "message": "Just migrate all credentials to EC2.",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//grU\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-30T01:19:40Z",
+      "side": 1,
+      "message": "move this to routers.py",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//grQ\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-30T01:19:40Z",
+      "side": 1,
+      "message": "move this to controllers.py",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//gqw\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 641,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-30T01:19:40Z",
+      "side": 1,
+      "message": "Don\u0027t remove these tests.  They should still run.",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//hsI\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 3
