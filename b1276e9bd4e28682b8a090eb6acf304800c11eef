@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//dSA\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-30T21:53:57Z",
+      "side": 1,
+      "message": "It seems that with the way the code works, there is no reason to accept max_length here, as all of the code isn\u0027t actually passing it.  I would remove this if-block.\n\nIt doesn\u0027t really impact anything to leave it, but it is superfluous with the way the code currently works..",
+      "revId": "b1276e9bd4e28682b8a090eb6acf304800c11eef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
