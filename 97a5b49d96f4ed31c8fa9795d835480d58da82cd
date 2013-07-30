@@ -16,6 +16,24 @@
       "revId": "97a5b49d96f4ed31c8fa9795d835480d58da82cd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//dVg\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-30T21:44:23Z",
+      "side": 0,
+      "message": "@ldbragst - they don\u0027t need to be here if they just do a pass. generally speaking it is better to not have a method that just calls super(). Removing these is the right course of action.",
+      "parentUuid": "AAAAQn//emE\u003d",
+      "revId": "97a5b49d96f4ed31c8fa9795d835480d58da82cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//dVA\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-30T21:44:23Z",
+      "side": 1,
+      "message": "(NIT): I would probably have used getattr() here instead of the if hasattr()/else model, since getattr can return an alternative if the attribute is non-existent: e.g.\n\nexcName \u003d getattr(expected_exception, \u0027__name__\u0027, str(expected_exception)\n\nSince this is in the tests, it\u0027s not super important to change.",
+      "revId": "c1fae74b6898d3de74fbe0b15bcd7209d349c210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//dUk\u003d",
+        "filename": "tests/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-30T21:44:23Z",
+      "side": 1,
+      "message": "good catch!",
+      "revId": "c1fae74b6898d3de74fbe0b15bcd7209d349c210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
