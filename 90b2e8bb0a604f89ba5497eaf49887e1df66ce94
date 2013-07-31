@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//b4w\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-31T08:44:22Z",
+      "side": 1,
+      "message": "Is there a reason for define the unique constraints this way, as opposed to the \"unique\u003dTrue\" on the field itself?",
+      "revId": "90b2e8bb0a604f89ba5497eaf49887e1df66ce94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//b7E\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-31T08:44:22Z",
+      "side": 1,
+      "message": "I think we want to remove the \"unique\u003dTrue\" term here if we are going to use table_args below",
+      "revId": "90b2e8bb0a604f89ba5497eaf49887e1df66ce94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//b4E\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-31T08:44:22Z",
+      "side": 1,
+      "message": "Out of interest, do other projects also test for uniqueness and FKs ?",
+      "revId": "90b2e8bb0a604f89ba5497eaf49887e1df66ce94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
