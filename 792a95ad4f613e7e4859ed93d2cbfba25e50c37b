@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//aHo\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-31T16:59:28Z",
+      "side": 1,
+      "message": "I think you are trying to say that the extension should create a new directory under contrib with this directory name being the name of the extension and this is where the extension package should go.  This part is not clear in the prose. And then you can go onto say that in this package extension directory,  extensions that require a sql migration should create a directory named migrate_repo with a subdirectory named versions.",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//aGY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-07-31T16:59:28Z",
+      "side": 1,
+      "message": "What are the important values that must be placed in the configuration file?  Would be good to mention the critical key values that are expected to be in this config file",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
