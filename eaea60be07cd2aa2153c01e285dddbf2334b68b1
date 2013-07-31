@@ -34,6 +34,24 @@
       "revId": "eaea60be07cd2aa2153c01e285dddbf2334b68b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//bhg\u003d",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-31T10:28:53Z",
+      "side": 1,
+      "message": "Ahh, so you\u0027re saying that when we dropped the FKs, the fields stayed as indexes?  Wow.  If that is the case, perhaps it would be a good idea for the TODO comment to state this (and that these are indexes that need to be removed, rather than formal constraints)",
+      "parentUuid": "AAAAQn//bjY\u003d",
+      "revId": "eaea60be07cd2aa2153c01e285dddbf2334b68b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
