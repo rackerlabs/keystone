@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//cuY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-07-31T01:52:54Z",
+      "side": 1,
+      "message": "* During downgrade i will migrate all credentials of type \u0027ec2\u0027 to the ec2_credential table.",
+      "parentUuid": "AAAAQn//cu4\u003d",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//grU\u003d",
         "filename": "keystone/contrib/ec2/core.py",
         "patchSetId": 3
