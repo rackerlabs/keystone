@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//chE\u003d",
+        "filename": "tests/test_v3_delegated_auth.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-31T04:14:09Z",
+      "side": 1,
+      "message": "you may want to have a test that verifies that a consumer create with no name raises the proper exception",
+      "revId": "0151d16bcca5977346fda7059bd2880aab5501dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//cgM\u003d",
+        "filename": "tests/test_v3_delegated_auth.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-31T04:14:09Z",
+      "side": 1,
+      "message": "You may want to add a test verifying that you get expected results from a get with an id that doesn\u0027t exist.",
+      "revId": "0151d16bcca5977346fda7059bd2880aab5501dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//cgI\u003d",
+        "filename": "tests/test_v3_delegated_auth.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-07-31T04:14:09Z",
+      "side": 1,
+      "message": "You may want to add in consumer_key/consumer_secrets to be updated (which should be thrown out in the update -- so the checks that consumer_key \u003d\u003d original_key (etc) are still valid).",
+      "revId": "0151d16bcca5977346fda7059bd2880aab5501dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
