@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//ZXQ\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-31T20:13:52Z",
+      "side": 1,
+      "message": "Not sure if that\u0027s the proper way to specify a link. Perhaps\n\n_`SQLAlchemy-migrate`: http://code.google.com/p/sqlalchemy-migrate/",
+      "revId": "1c5de6d34f84ebc8fa992d3fdce23ed447eb6af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//ZXA\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-31T20:13:52Z",
+      "side": 1,
+      "message": "missing /\n\n`keystone/contrib/\u003cextension\u003e/migrate_repo.`",
+      "revId": "1c5de6d34f84ebc8fa992d3fdce23ed447eb6af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//ZuE\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 13
@@ -13,6 +47,23 @@
       "writtenOn": "2013-07-31T18:22:45Z",
       "side": 1,
       "message": "I generated the docs and this doesn\u0027t look right. Change the : here to :: , then I think that the following lines have to be indented a space.",
+      "revId": "1c5de6d34f84ebc8fa992d3fdce23ed447eb6af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//ZVk\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-31T20:13:52Z",
+      "side": 1,
+      "message": "I would\u0027ve expected more tests on the contrib migration.",
       "revId": "1c5de6d34f84ebc8fa992d3fdce23ed447eb6af3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
