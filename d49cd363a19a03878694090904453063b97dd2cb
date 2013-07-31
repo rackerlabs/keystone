@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//buI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-31T09:31:12Z",
+      "side": 1,
+      "message": "For clarity (since keystone has now frozen its schema for Havana), it might be good just to state that no actual schema change is taking place, we are just correcting errors in the model definitions.",
+      "revId": "d49cd363a19a03878694090904453063b97dd2cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
