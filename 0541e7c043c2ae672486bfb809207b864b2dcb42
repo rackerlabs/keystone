@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//bzU\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-31T09:24:56Z",
+      "side": 1,
+      "message": "Ouch! That\u0027s bad!\n\nI think, however, this should not be nullable",
+      "revId": "0541e7c043c2ae672486bfb809207b864b2dcb42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//bzw\u003d",
         "filename": "keystone/credential/backends/sql.py",
         "patchSetId": 2
@@ -48,6 +65,23 @@
       "side": 1,
       "message": "Doesn\u0027t \"default\u003dTrue\" guarantee that it isn\u0027t NULL?",
       "parentUuid": "AAAAQn//bzg\u003d",
+      "revId": "0541e7c043c2ae672486bfb809207b864b2dcb42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//bvs\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-31T09:24:56Z",
+      "side": 1,
+      "message": "I think user_id is also not nullable",
       "revId": "0541e7c043c2ae672486bfb809207b864b2dcb42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
