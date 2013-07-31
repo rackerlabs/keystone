@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//ZuE\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-31T18:22:45Z",
+      "side": 1,
+      "message": "I generated the docs and this doesn\u0027t look right. Change the : here to :: , then I think that the following lines have to be indented a space.",
+      "revId": "1c5de6d34f84ebc8fa992d3fdce23ed447eb6af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
