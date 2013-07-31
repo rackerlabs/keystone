@@ -33,6 +33,24 @@
       "revId": "0541e7c043c2ae672486bfb809207b864b2dcb42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//byc\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7293
+      },
+      "writtenOn": "2013-07-31T09:08:38Z",
+      "side": 1,
+      "message": "Doesn\u0027t \"default\u003dTrue\" guarantee that it isn\u0027t NULL?",
+      "parentUuid": "AAAAQn//bzg\u003d",
+      "revId": "0541e7c043c2ae672486bfb809207b864b2dcb42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
