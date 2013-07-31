@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//cBU\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-31T07:56:22Z",
+      "side": 1,
+      "message": "So although this seems like a sensible check, the actual proper fix is to remove this line!  We really don\u0027t want cross-calls (i.e. assignment -\u003e identity) happening within the driver itself - this should be handled within the Manger or Controller.  In fact, if you look at all the cases where _get_metadata() is called, the user is always checked for existance before being this function is called.",
+      "revId": "f9a2b7bf016587e40505ceb54448a713bd5d4e0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
