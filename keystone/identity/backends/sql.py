@@ -28,8 +28,8 @@ class User(sql.ModelBase, sql.DictBase):
     name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
                            nullable=False)
-    password = sql.Column(sql.String(128))
-    enabled = sql.Column(sql.Boolean)
+    password = sql.Column(sql.String(128), nullable=True)
+    enabled = sql.Column(sql.Boolean, nullable=True)
     extra = sql.Column(sql.JsonBlob())
     # Unique constraint across two columns to create the separation
     # rather than just only 'name' being unique

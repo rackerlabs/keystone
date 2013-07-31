@@ -20,9 +20,9 @@ from keystone.common import sql
 class Ec2Credential(sql.ModelBase, sql.DictBase):
     __tablename__ = 'ec2_credential'
     access = sql.Column(sql.String(64), primary_key=True)
-    secret = sql.Column(sql.String(64))
-    user_id = sql.Column(sql.String(64))
-    tenant_id = sql.Column(sql.String(64))
+    secret = sql.Column(sql.String(64), nullable=True)
+    user_id = sql.Column(sql.String(64), nullable=True)
+    tenant_id = sql.Column(sql.String(64), nullable=True)
 
     @classmethod
     def from_dict(cls, user_dict):

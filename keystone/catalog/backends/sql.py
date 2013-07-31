@@ -30,7 +30,7 @@ class Service(sql.ModelBase, sql.DictBase):
     __tablename__ = 'service'
     attributes = ['id', 'type']
     id = sql.Column(sql.String(64), primary_key=True)
-    type = sql.Column(sql.String(255))
+    type = sql.Column(sql.String(255), nullable=True)
     extra = sql.Column(sql.JsonBlob())
 
 
@@ -39,13 +39,13 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     attributes = ['id', 'interface', 'region', 'service_id', 'url',
                   'legacy_endpoint_id']
     id = sql.Column(sql.String(64), primary_key=True)
-    legacy_endpoint_id = sql.Column(sql.String(64))
-    interface = sql.Column(sql.String(8), primary_key=True)
-    region = sql.Column('region', sql.String(255))
+    legacy_endpoint_id = sql.Column(sql.String(64), nullable=True)
+    interface = sql.Column(sql.String(8))
+    region = sql.Column(sql.String(255), nullable=True)
     service_id = sql.Column(sql.String(64),
                             sql.ForeignKey('service.id'),
                             nullable=False)
-    url = sql.Column(sql.Text())
+    url = sql.Column(sql.Text(), nullable=False)
     extra = sql.Column(sql.JsonBlob())
 
 

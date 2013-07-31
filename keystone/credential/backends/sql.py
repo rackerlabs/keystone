@@ -14,6 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from sqlalchemy import Index
+
 from keystone.common import sql
 from keystone.common.sql import migration
 from keystone import credential
@@ -26,10 +28,14 @@ class CredentialModel(sql.ModelBase, sql.DictBase):
     id = sql.Column(sql.String(64), primary_key=True)
     user_id = sql.Column(sql.String(64),
                          nullable=False)
-    project_id = sql.Column(sql.String(64))
+    project_id = sql.Column(sql.String(64), nullable=True)
     blob = sql.Column(sql.JsonBlob(), nullable=False)
     type = sql.Column(sql.String(255), nullable=False)
     extra = sql.Column(sql.JsonBlob())
+    __table_args__ = (
+        Index('user_id', 'user_id'),
+        Index('credential_project_id_fkey', 'project_id')
+    )
 
 
 class Credential(sql.Base, credential.Driver):
