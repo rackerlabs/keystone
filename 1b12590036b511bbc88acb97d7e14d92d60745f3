@@ -160,6 +160,57 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//ZTs\u003d",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-31T20:27:11Z",
+      "side": 1,
+      "message": "def list_credentials(self, filters\u003d{})\n\nAlso, we need to construct the filters in credential controller and pass that in.",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//ZT4\u003d",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-31T20:27:11Z",
+      "side": 1,
+      "message": "if user_id in filters:\n    query \u003d query.filter_by(user_id\u003dfilters[\u0027user_id\u0027])",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//ZU4\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-07-31T20:27:11Z",
+      "side": 1,
+      "message": "def list_credentials(self, filters\u003d{})\n\nwhere filters is a dictionary constructed from the query string. In general, we should let the backend drivers optimize as much as it could in order to gain performance advantage.",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//gqw\u003d",
         "filename": "tests/test_keystoneclient.py",
         "patchSetId": 3
