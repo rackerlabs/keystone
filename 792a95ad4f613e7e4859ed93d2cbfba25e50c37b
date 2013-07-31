@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//Zwk\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-31T18:15:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//Z6I\u003d",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//aHo\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 12
@@ -47,6 +65,24 @@
       "writtenOn": "2013-07-31T17:44:21Z",
       "side": 1,
       "message": "change \"name\" to \"named\"",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Zwg\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-31T18:15:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//aHo\u003d",
       "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//Zwc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-31T18:15:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//aGY\u003d",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//ZwY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-31T18:15:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//Z6M\u003d",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//Z5A\u003d",
         "filename": "keystone/cli.py",
         "patchSetId": 12
@@ -98,6 +170,24 @@
       "writtenOn": "2013-07-31T17:44:21Z",
       "side": 1,
       "message": "suggest add a comment here why this exception can be ignored... \"# This extension doesn\u0027t provide migrations\"",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Zu8\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-31T18:15:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//Z5A\u003d",
       "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//Zu4\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-31T18:15:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//Z4I\u003d",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//Z3M\u003d",
         "filename": "keystone/cli.py",
         "patchSetId": 12
@@ -132,6 +240,24 @@
       "writtenOn": "2013-07-31T17:44:21Z",
       "side": 1,
       "message": "Can I get the version for an extension?",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//ZwE\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-07-31T18:15:19Z",
+      "side": 1,
+      "message": "I would suggest that as an additional RFE.",
+      "parentUuid": "AAAAQn//Z3M\u003d",
       "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
