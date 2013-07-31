@@ -1455,6 +1455,13 @@ class IdentityTests(object):
         tenants = self.identity_api.get_projects_for_user(self.user_foo['id'])
         self.assertIn(self.tenant_baz['id'], tenants)
 
+    def test_add_user_to_project_missing_default_role(self):
+        self.assignment_api.delete_role(CONF.member_role_id)
+        self.identity_api.add_user_to_project(self.tenant_baz['id'],
+                                              self.user_foo['id'])
+        tenants = self.identity_api.get_projects_for_user(self.user_foo['id'])
+        self.assertIn(self.tenant_baz['id'], tenants)
+
     def test_add_user_to_project_404(self):
         self.assertRaises(exception.ProjectNotFound,
                           self.identity_api.add_user_to_project,
