@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//bk4\u003d",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-31T10:11:13Z",
+      "side": 1,
+      "message": "So, as indicated earlier, these constraints are dropped for non-sqlite in migration 023 and for sqlite in 030.  So is there a reason to still have these here?",
+      "revId": "eaea60be07cd2aa2153c01e285dddbf2334b68b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
