@@ -16,6 +16,24 @@
       "revId": "b1276e9bd4e28682b8a090eb6acf304800c11eef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//ZB8\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-31T21:55:35Z",
+      "side": 1,
+      "message": "I agree, I don\u0027t see trunc_password called from anywhere but this module, and they don\u0027t use max_length, so it would be more obvious if the argument wasn\u0027t there.",
+      "parentUuid": "AAAAQn//dSA\u003d",
+      "revId": "b1276e9bd4e28682b8a090eb6acf304800c11eef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
