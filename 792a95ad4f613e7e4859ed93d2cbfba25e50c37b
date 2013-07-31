@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//Z6I\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-31T17:44:21Z",
+      "side": 1,
+      "message": "change \"the Sql Alchemy migrations tool\" to \"SQLAlchemy-migrate (http://code.google.com/p/sqlalchemy-migrate/)\"\n\nI think this will be easier for developers to find.",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//aHo\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 12
@@ -19,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//Z6g\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-31T17:44:21Z",
+      "side": 1,
+      "message": "change \"name\" to \"named\"",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//aGY\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 12
@@ -30,6 +64,74 @@
       "writtenOn": "2013-07-31T16:59:28Z",
       "side": 1,
       "message": "What are the important values that must be placed in the configuration file?  Would be good to mention the critical key values that are expected to be in this config file",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Z6M\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-31T17:44:21Z",
+      "side": 1,
+      "message": "suggest change \"The migration tool\" to \"SQLAlchemy-migrate\"",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Z5A\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-31T17:44:21Z",
+      "side": 1,
+      "message": "suggest add a comment here why this exception can be ignored... \"# This extension doesn\u0027t provide migrations\"",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Z4I\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-31T17:44:21Z",
+      "side": 1,
+      "message": "capitalize \"Running\"\n\nsuggest use contrib.__name__ here rather than package_name.",
+      "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Z3M\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-07-31T17:44:21Z",
+      "side": 1,
+      "message": "Can I get the version for an extension?",
       "revId": "792a95ad4f613e7e4859ed93d2cbfba25e50c37b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
