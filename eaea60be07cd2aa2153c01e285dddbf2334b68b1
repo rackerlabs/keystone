@@ -16,6 +16,24 @@
       "revId": "eaea60be07cd2aa2153c01e285dddbf2334b68b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//bjY\u003d",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-07-31T10:20:18Z",
+      "side": 1,
+      "message": "For mysql only ForeignKey contraints had been removed. \nBut if you see in database you will see extra indexes for this fields\n(only for mysql).\nCREATE TABLE `credential` (\n  `id` varchar(64) NOT NULL,\n  `user_id` varchar(64) NOT NULL,\n  `project_id` varchar(64) DEFAULT NULL,\n  `blob` text NOT NULL,\n  `type` varchar(255) NOT NULL,\n  `extra` text,\n  PRIMARY KEY (`id`),\n  KEY `user_id` (`user_id`),\n  KEY `credential_project_id_fkey` (`project_id`)\n) ENGINE\u003dInnoDB DEFAULT CHARSET\u003dutf8;",
+      "parentUuid": "AAAAQn//bk4\u003d",
+      "revId": "eaea60be07cd2aa2153c01e285dddbf2334b68b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
