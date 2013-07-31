@@ -16,6 +16,24 @@
       "revId": "f9a2b7bf016587e40505ceb54448a713bd5d4e0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//cAg\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-07-31T08:03:20Z",
+      "side": 1,
+      "message": "..actually, (now having looked a bit more closely), I think the correct fix is to just leave the check for \"not user_id\" in, but remove the \"not self.identity_api.get_user(user_id)\" component.",
+      "parentUuid": "AAAAQn//cBU\u003d",
+      "revId": "f9a2b7bf016587e40505ceb54448a713bd5d4e0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
