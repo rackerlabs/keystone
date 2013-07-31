@@ -16,6 +16,7 @@
 
 import copy
 import datetime
+from sqlalchemy import Index
 
 
 from keystone.common import sql
@@ -32,7 +33,11 @@ class TokenModel(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
     valid = sql.Column(sql.Boolean(), default=True)
     user_id = sql.Column(sql.String(64))
-    trust_id = sql.Column(sql.String(64), nullable=True)
+    trust_id = sql.Column(sql.String(64))
+    __table_args__ = (
+        Index('ix_token_expires', 'expires'),
+        Index('ix_token_valid', 'valid')
+    )
 
 
 class Token(sql.Base, token.Driver):
