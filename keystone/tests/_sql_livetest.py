@@ -14,11 +14,21 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import test_backend_sql
 import test_sql_upgrade
+
 
 from keystone import config
 
 CONF = config.CONF
+
+
+class PostgresqlToken(test_backend_sql.SqlToken):
+    def config_files(self):
+        files = (test_sql_upgrade.SqlUpgradeTests.
+                 _config_file_list[:])
+        files.append("backend_postgresql.conf")
+        return files
 
 
 class PostgresqlMigrateTests(test_sql_upgrade.SqlUpgradeTests):
@@ -26,6 +36,14 @@ class PostgresqlMigrateTests(test_sql_upgrade.SqlUpgradeTests):
         files = (test_sql_upgrade.SqlUpgradeTests.
                  _config_file_list[:])
         files.append("backend_postgresql.conf")
+        return files
+
+
+class MysqlToken(test_backend_sql.SqlToken):
+    def config_files(self):
+        files = (test_sql_upgrade.SqlUpgradeTests.
+                 _config_file_list[:])
+        files.append("backend_mysql.conf")
         return files
 
 

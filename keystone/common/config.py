@@ -70,7 +70,9 @@ FILE_OPTIONS = {
         cfg.IntOpt('expiration', default=86400),
         cfg.StrOpt('provider', default=None),
         cfg.StrOpt('driver',
-                   default='keystone.token.backends.sql.Token')],
+                   default='keystone.token.backends.sql.Token'),
+        cfg.BoolOpt('auto_clean_expired', default=False)],
+
     'ssl': [
         cfg.BoolOpt('enable', default=False),
         cfg.StrOpt('certfile',

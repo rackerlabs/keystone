@@ -22,6 +22,7 @@ from keystone.common import sql
 from keystone import config
 from keystone import exception
 from keystone.tests import core as test
+from keystone.token.backends import sql as token_sql
 
 import default_fixtures
 import test_backend
@@ -334,7 +335,15 @@ class SqlTrust(SqlTests, test_backend.TrustTests):
 
 
 class SqlToken(SqlTests, test_backend.TokenTests):
-    pass
+    def test_auto_clean_expired(self):
+        CONF.token.auto_clean_expired = True
+        expired_token_id = self.create_expired_token()
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_api.get_token, expired_token_id)
+        self.token_api.list_revoked_tokens()
+        session = self.token_api.driver.get_session()
+        token_ref = session.query(token_sql.TokenModel).get(expired_token_id)
+        self.assertIsNone(token_ref)
 
 
 class SqlCatalog(SqlTests, test_backend.CatalogTests):
