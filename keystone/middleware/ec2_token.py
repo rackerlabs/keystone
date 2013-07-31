@@ -55,6 +55,7 @@ class EC2Token(wsgi.Middleware):
         auth_params = dict(req.params)
         # Not part of authentication args
         auth_params.pop('Signature')
+        auth_params.pop('AWSAccessKeyId')
 
         # Authenticate the request.
         creds = {
