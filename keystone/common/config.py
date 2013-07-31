@@ -416,3 +416,8 @@ def configure():
         'provider',
         group='token',
         default=None)
+
+    register_bool(
+        'auto_clean_expired',
+        group='token',
+        default=False)

@@ -19,9 +19,13 @@ import datetime
 
 
 from keystone.common import sql
+from keystone import config
 from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone import token
+
+
+CONF = config.CONF
 
 
 class TokenModel(sql.ModelBase, sql.DictBase):
@@ -64,6 +68,8 @@ class Token(sql.Base, token.Driver):
         with session.begin():
             session.add(token_ref)
             session.flush()
+        if CONF.token.auto_clean_expired:
+            self.flush_expired_tokens()
         return token_ref.to_dict()
 
     def delete_token(self, token_id):

@@ -2350,16 +2350,22 @@ class TokenTests(object):
                           self.token_api.delete_token,
                           uuid.uuid4().hex)
 
-    def test_expired_token(self):
+    def create_expired_token(self):
         token_id = uuid.uuid4().hex
         expire_time = timeutils.utcnow() - datetime.timedelta(minutes=1)
-        data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
+        data = {'id_hash': token_id,
+                'id': token_id,
+                'a': 'b',
                 'expires': expire_time,
                 'trust_id': None,
                 'user': {'id': 'testuserid'}}
         data_ref = self.token_api.create_token(token_id, data)
         data_ref.pop('user_id')
         self.assertDictEqual(data_ref, data)
+        return token_id
+
+    def test_expired_token(self):
+        token_id = self.create_expired_token()
         self.assertRaises(exception.TokenNotFound,
                           self.token_api.get_token, token_id)
 
