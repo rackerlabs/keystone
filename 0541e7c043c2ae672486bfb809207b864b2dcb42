@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//bzw\u003d",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-07-31T09:04:36Z",
+      "side": 1,
+      "message": "Please mark as TODO: should be deleted. There are extra constraints remained after deletion of ForeignKey (only for mysql dialect). (23 migration).",
+      "revId": "0541e7c043c2ae672486bfb809207b864b2dcb42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//bzg\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-07-31T09:04:36Z",
+      "side": 1,
+      "message": "Missing nullable\u003dFalse.",
+      "revId": "0541e7c043c2ae672486bfb809207b864b2dcb42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
