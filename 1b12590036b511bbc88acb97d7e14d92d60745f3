@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//cu4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-07-31T01:49:47Z",
+      "side": 1,
+      "message": "Ok. I will migrate all credentials of type \u0027ec2\u0027 to the credential table.",
+      "parentUuid": "AAAAQn//gr8\u003d",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//grU\u003d",
         "filename": "keystone/contrib/ec2/core.py",
         "patchSetId": 3
@@ -65,6 +83,24 @@
       "writtenOn": "2013-07-30T01:19:40Z",
       "side": 1,
       "message": "move this to routers.py",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//cuw\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-07-31T01:49:47Z",
+      "side": 1,
+      "message": "ok.",
+      "parentUuid": "AAAAQn//grU\u003d",
       "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//cus\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-07-31T01:49:47Z",
+      "side": 1,
+      "message": "ok.",
+      "parentUuid": "AAAAQn//grQ\u003d",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//gqw\u003d",
         "filename": "tests/test_keystoneclient.py",
         "patchSetId": 3
@@ -99,6 +153,24 @@
       "writtenOn": "2013-07-30T01:19:40Z",
       "side": 1,
       "message": "Don\u0027t remove these tests.  They should still run.",
+      "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//cu0\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 641,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-07-31T01:49:47Z",
+      "side": 1,
+      "message": "I moved the tests to test_keystoneclient_sql.py as Credential backend is used. Credential backend only supports sql.",
+      "parentUuid": "AAAAQn//gqw\u003d",
       "revId": "1b12590036b511bbc88acb97d7e14d92d60745f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
