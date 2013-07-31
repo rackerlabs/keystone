@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//byI\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-07-31T09:15:08Z",
+      "side": 1,
+      "message": "Our blueprint covers all mistakes in models, migrations and implies an adding of test for checking models with migrations.\nThese changes needs by this test and also they increase visibility (we can see all constraint in one place).",
+      "parentUuid": "AAAAQn//b4w\u003d",
+      "revId": "90b2e8bb0a604f89ba5497eaf49887e1df66ce94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//b7E\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//bx0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-07-31T09:15:08Z",
+      "side": 1,
+      "message": "Agree.",
+      "parentUuid": "AAAAQn//b7E\u003d",
+      "revId": "90b2e8bb0a604f89ba5497eaf49887e1df66ce94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//b4E\u003d",
         "filename": "tests/test_backend_sql.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2013-07-31T08:44:22Z",
       "side": 1,
       "message": "Out of interest, do other projects also test for uniqueness and FKs ?",
+      "revId": "90b2e8bb0a604f89ba5497eaf49887e1df66ce94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//bxA\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-07-31T09:15:08Z",
+      "side": 1,
+      "message": "There are a testing cover in Nova project that check all migrations. There are tests for each migration that check pre-migration and after-migration state. It had done for upgrade and for downgrade modes. Some of migration add/change UniqueConstraint.",
+      "parentUuid": "AAAAQn//b4E\u003d",
       "revId": "90b2e8bb0a604f89ba5497eaf49887e1df66ce94",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
