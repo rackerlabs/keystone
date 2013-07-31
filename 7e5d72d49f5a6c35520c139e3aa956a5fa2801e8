@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//cEs\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-07-31T07:53:23Z",
+      "side": 1,
+      "message": "There is no default value in database. Remove please this attribute.",
+      "revId": "7e5d72d49f5a6c35520c139e3aa956a5fa2801e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//cCg\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-07-31T07:53:23Z",
+      "side": 1,
+      "message": "Delete please this index. It will be created with ForeignKey constraint.",
+      "revId": "7e5d72d49f5a6c35520c139e3aa956a5fa2801e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//cDU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-07-31T07:53:23Z",
+      "side": 1,
+      "message": "Delete please this index. It will be created with ForeignKey constraint.",
+      "revId": "7e5d72d49f5a6c35520c139e3aa956a5fa2801e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//cCE\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-07-31T07:53:23Z",
+      "side": 1,
+      "message": "Delete please this index. It will be created with ForeignKey constraint.",
+      "revId": "7e5d72d49f5a6c35520c139e3aa956a5fa2801e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
