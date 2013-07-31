@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//bC0\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-31T13:04:18Z",
+      "side": 1,
+      "message": "Many other extensions are installed by default, why kds shouldn\u0027t ?\nWhere should I put the \u0027config file comment\u0027 then ?",
+      "parentUuid": "AAAAQn//gxQ\u003d",
+      "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//gxA\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-30T00:56:19Z",
       "side": 1,
       "message": "This kind of registration can happen in the extension directory.  It makes sense for it to be included with the extension code, and not here.",
+      "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//bCs\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-31T13:04:18Z",
+      "side": 1,
+      "message": "Directly in core.py ?",
+      "parentUuid": "AAAAQn//gxA\u003d",
       "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//bCQ\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-31T13:04:18Z",
+      "side": 1,
+      "message": "I do not know why but when I tried to use assert_admin() I recall I had to add these or it would produce a backtrace, I will retry to removing as many as possible.",
+      "parentUuid": "AAAAQn//gwQ\u003d",
+      "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//hpE\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2013-07-29T20:02:33Z",
       "side": 1,
       "message": "Sorry, I should have clarified more on my first comment: \n\nmaybe here we could add an exception and detail it with a little more information (or reuse an exception?) https://github.com/openstack/keystone/blob/master/keystone/exception.py",
+      "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//bCI\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-31T13:04:18Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAAQn//hpE\u003d",
       "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//bB8\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-31T13:04:18Z",
+      "side": 1,
+      "message": "ah yeah forgot about it, why isn\u0027t there any enforcement about the content of the Driver class, seem like it is not really useful in the current form.\n\nAlso I am confused, isn\u0027t the driver a template for the backend driver ? there is no get_ticket in the backend ...",
+      "parentUuid": "AAAAQn//gv8\u003d",
+      "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//gvo\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 9
@@ -98,6 +188,24 @@
       "writtenOn": "2013-07-30T00:56:19Z",
       "side": 1,
       "message": "The driver should have the public interface implemented by the driver.  Put an empty `set_key` implementation there, and a comment that it should only inherit the implementation from the Manager.",
+      "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//bB0\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-07-31T13:04:18Z",
+      "side": 1,
+      "message": "I am truly confused now.",
+      "parentUuid": "AAAAQn//gvo\u003d",
       "revId": "c49d2111b8e32e7baaf0271fc6d7bfa7489919a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
