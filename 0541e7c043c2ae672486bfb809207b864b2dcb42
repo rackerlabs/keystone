@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//brM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7293
+      },
+      "writtenOn": "2013-07-31T09:41:21Z",
+      "side": 1,
+      "message": "Of course I will.",
+      "parentUuid": "AAAAQn//brw\u003d",
+      "revId": "0541e7c043c2ae672486bfb809207b864b2dcb42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//bzU\u003d",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 2
