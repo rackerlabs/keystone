@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//WBk\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-01T17:41:20Z",
+      "side": 1,
+      "message": "according to the code in base_url, we should \"allow a missing trailing slash in the config\", but this code doesn\u0027t (there needs to be a before v3).\n\nI think this should use self.base_url() so that the logic can be correct and not be duplicated.",
+      "revId": "23d9f010bb9722b217ba430c16cb14ed634fcb95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
