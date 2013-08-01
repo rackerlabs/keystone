@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//VYo\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-01T20:21:02Z",
+      "side": 1,
+      "message": "I\u0027m also fine with copying until oslo gets it.",
+      "parentUuid": "AAAAQn//gsc\u003d",
+      "revId": "bb34d9334dfd3dfe0f713d05d189320b1725e7d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//mfM\u003d",
         "filename": "keystone/middleware/s3_token.py",
         "patchSetId": 3
