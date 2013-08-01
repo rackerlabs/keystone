@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//WIc\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-08-01T17:06:42Z",
+      "side": 1,
+      "message": "Cool. Thanks!",
+      "parentUuid": "AAAAQn//WO0\u003d",
+      "revId": "cd47bb3715c31e978df060ca01336970c89eccca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//Wbk\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "So it is just a domain name.  If by \u0027server\u0027 you mean LDAP server, well that depends what is in the domain config file - it would specify the LDAP server name if that\u0027s what you wanted (or indeed an SQL DB - since, to answer your second point, you can specify any of the available backends as the one you want for your domain)",
       "parentUuid": "AAAAQn//Wbk\u003d",
+      "revId": "cd47bb3715c31e978df060ca01336970c89eccca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//WIs\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-08-01T17:06:42Z",
+      "side": 1,
+      "message": "Thanks, Henry! Since for each domain there is a conf. file, so for multiple domains in a single server I believe there will be multiple conf. files and each need to have the server detail (e.g. server name, user and password)?",
+      "parentUuid": "AAAAQn//WOI\u003d",
       "revId": "cd47bb3715c31e978df060ca01336970c89eccca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
