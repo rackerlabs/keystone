@@ -16,6 +16,24 @@
       "revId": "836f64b7fda8394e9193619ce96eed38d2b7db38",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//VAE\u003d",
+        "filename": "keystone/token/providers/test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-01T21:35:23Z",
+      "side": 1,
+      "message": "Whoa.  That isn\u0027t supposed to be there, didn\u0027t even realize it was added to the git repo.",
+      "parentUuid": "AAAAQn//VGM\u003d",
+      "revId": "836f64b7fda8394e9193619ce96eed38d2b7db38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
