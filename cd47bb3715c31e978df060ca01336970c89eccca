@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//Wc4\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-08-01T15:45:15Z",
+      "side": 1,
+      "message": "Does this dir has to be at a specific location? can it be named anything?",
+      "revId": "cd47bb3715c31e978df060ca01336970c89eccca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Wbk\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-08-01T15:45:15Z",
+      "side": 1,
+      "message": "So \u003cdomain_name\u003e is a valid domain name and a server name as well, right?\nFor multiple domains in a server, we will have a conf file for a server and each of the domains? or a server conf can specify multiple domains? \nI think we are talking about LDAP servers/domains only, right? In that case may be it\u0027s a good idea to reflect that in the name - like keystone.ldap.\u003cdomain_name\u003e.conf?",
+      "revId": "cd47bb3715c31e978df060ca01336970c89eccca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
