@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//Yu4\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 48
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-01T00:10:05Z",
+      "side": 1,
+      "message": "Recommend making request_token_expiry in seconds.\n\nComments should be above the individual options:\n\n# Specify how quickly the request token will expire (in hours)\n# request_token_expiry \u003d 8\n\n...",
+      "revId": "2ffe03468cf6dcf7b80f860f879a0c279652cd7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Yu0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 48
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-01T00:10:05Z",
+      "side": 1,
+      "message": "You don\u0027t need to change this one to seconds, but perhaps it might make sense to do so for more granular than 1-day life time.  Not sure how useful that would be, I\u0027ll defer to your judgement.",
+      "revId": "2ffe03468cf6dcf7b80f860f879a0c279652cd7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//YuA\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-01T00:10:05Z",
+      "side": 1,
+      "message": "this isn\u0027t guarenteed to not throw an exception as .get() returns a NoneType as the default.  You could end up getting None if token_ref_dict doesn\u0027t have \u0027token_data\u0027, which would though an attribute not found error when you try and call .get() on it.\n\nMaybe use something like: \nif \u0027token_data\u0027 in token_ref_dict:\n\nand move the subsequent parts of the conditional within that if-scope.",
+      "revId": "2ffe03468cf6dcf7b80f860f879a0c279652cd7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//YuU\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-01T00:10:05Z",
+      "side": 1,
+      "message": "(NIT): This return False is superfluous and can be removed since outside of the scope of the \"if token:\" check is the catch-all return false.",
+      "revId": "2ffe03468cf6dcf7b80f860f879a0c279652cd7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
