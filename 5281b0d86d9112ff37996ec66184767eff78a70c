@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//SOs\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-08-02T15:26:48Z",
+      "side": 1,
+      "message": "password is not part of tenant. You need to deal this case in update_user",
+      "revId": "5281b0d86d9112ff37996ec66184767eff78a70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//SN8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-08-02T15:26:48Z",
+      "side": 1,
+      "message": "What will happen to the roles?",
+      "revId": "5281b0d86d9112ff37996ec66184767eff78a70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
