@@ -184,3 +184,9 @@ class MemcacheToken(test.TestCase, test_backend.TokenTests):
             exception.UnexpectedError,
             self.token_api.driver._update_user_list_with_cas,
             user_key, token_data)
+
+    def test_delete_user_remove_user_tokens(self):
+        pass
+
+    def test_disable_user_remove_user_tokens(self):
+        pass
