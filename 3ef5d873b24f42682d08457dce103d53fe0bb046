@@ -104,6 +104,24 @@
       "revId": "3ef5d873b24f42682d08457dce103d53fe0bb046",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//RdE\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T19:17:20Z",
+      "side": 1,
+      "message": "the extra parens are not necessary, are unconventional and make these function calls nearly unreadable. please remove them",
+      "parentUuid": "AAAAQn//R4Y\u003d",
+      "revId": "3ef5d873b24f42682d08457dce103d53fe0bb046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
