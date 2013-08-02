@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//SQ4\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-08-02T15:16:35Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this default role be available in the system by default.  I believe this is bootstrap data something similar to  ADMIN token, and Default Domain. We should not be creating this in code",
+      "revId": "3ef5d873b24f42682d08457dce103d53fe0bb046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//UFw\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
