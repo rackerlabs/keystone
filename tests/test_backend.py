@@ -22,6 +22,7 @@ from keystone import test
 from keystone.catalog import core
 from keystone import config
 from keystone import exception
+from keystone import identity
 from keystone.openstack.common import timeutils
 
 import default_fixtures
@@ -2209,6 +2210,75 @@ class IdentityTests(object):
 
 
 class TokenTests(object):
+    def test_disable_user_remove_user_tokens(self):
+        tenant_controller = identity.controllers.Tenant()
+
+        # Create a project
+        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'domain_id': DEFAULT_DOMAIN_ID}
+        self.identity_api.create_project(project['id'], project)
+
+        # Create a user.
+        user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                'domain_id': DEFAULT_DOMAIN_ID,
+                'password': uuid.uuid4().hex,
+                'enabled': True}
+        self.identity_api.create_user(user['id'], user)
+
+        # Associate the user to the project.
+        self.identity_api.add_user_to_project(project['id'], user['id'])
+
+        # Create a token for that user/project.
+        token_id = self.create_token_sample_data(
+            tenant_id=project['id'], user_id=user['id'])
+
+        # Test if the token has been properly created.
+        tokens = self.token_api.list_tokens(user_id=user['id'])
+        self.assertEquals(len(tokens), 1)
+
+        # Disable the project.
+        project['enabled'] = False
+        context = dict(is_admin=True, query_string={})
+        tenant_controller.update_project(context, project['id'], project)
+
+        # Test that the token has been removed.
+        tokens = self.token_api.list_tokens(user_id=user['id'])
+        self.assertNotIn(token_id, tokens)
+
+    def test_delete_user_remove_user_tokens(self):
+        tenant_controller = identity.controllers.Tenant()
+
+        # Create a project
+        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'domain_id': DEFAULT_DOMAIN_ID}
+        self.identity_api.create_project(project['id'], project)
+
+        # Create a user.
+        user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                'domain_id': DEFAULT_DOMAIN_ID,
+                'password': uuid.uuid4().hex,
+                'enabled': True}
+        self.identity_api.create_user(user['id'], user)
+
+        # Associate the user to the project.
+        self.identity_api.add_user_to_project(project['id'], user['id'])
+
+        # Create a token for that user/project.
+        token_id = self.create_token_sample_data(
+            tenant_id=project['id'], user_id=user['id'])
+
+        # Test if the token has been properly created.
+        tokens = self.token_api.list_tokens(user_id=user['id'])
+        self.assertEquals(len(tokens), 1)
+
+        # Delete the project.
+        context = dict(is_admin=True, query_string={})
+        tenant_controller.delete_project(context, project['id'])
+
+        # Test that the token has been removed.
+        tokens = self.token_api.list_tokens(user_id=user['id'])
+        self.assertNotIn(token_id, tokens)
+
     def _create_token_id(self):
         # Token must start with MII here otherwise it fails the asn1 test
         # and is not hashed in a SQL backend.
