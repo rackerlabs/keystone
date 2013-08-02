@@ -53,6 +53,14 @@ class SqlTests(test.TestCase, sql.Base):
         self.user_foo['enabled'] = True
 
     def tearDown(self):
+        for table in ['group_project_metadata',
+                       'group_domain_metadata',
+                       'user_domain_metadata',
+                       'user_group_membership',
+                       'user_project_metadata',
+                       'user',
+                       'group']:
+            sql.ModelBase.metadata.drop(bind=self.engine)
         sql.ModelBase.metadata.drop_all(bind=self.engine)
         self.engine.dispose()
         sql.set_global_engine(None)
