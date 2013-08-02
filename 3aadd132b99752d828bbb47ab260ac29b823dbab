@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//SqU\u003d",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T13:44:07Z",
+      "side": 1,
+      "message": "(HACKING) import modules\n\n  import sqlalchemy",
+      "revId": "3aadd132b99752d828bbb47ab260ac29b823dbab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
