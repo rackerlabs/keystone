@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//Sew\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T14:35:10Z",
+      "side": 1,
+      "message": "this doesn\u0027t look like a fix. if a user_id is specified that doesn\u0027t exist, a 404 should be raised instead of returning an empty dict",
+      "revId": "c989bba236d8e2b29da3461314c43deebc7abba1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//Zu0\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 4
