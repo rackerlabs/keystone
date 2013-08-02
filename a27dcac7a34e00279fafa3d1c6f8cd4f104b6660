@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//SBc\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T16:17:39Z",
+      "side": 1,
+      "message": "because... ?",
+      "revId": "a27dcac7a34e00279fafa3d1c6f8cd4f104b6660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//SAw\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T16:17:39Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "a27dcac7a34e00279fafa3d1c6f8cd4f104b6660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//SAc\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T16:17:39Z",
+      "side": 1,
+      "message": "if all you need out of the request is a language... then pass *that* to render_exception instead of an entire request object?",
+      "revId": "a27dcac7a34e00279fafa3d1c6f8cd4f104b6660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
