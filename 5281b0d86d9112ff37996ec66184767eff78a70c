@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//SMo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-08-02T15:30:13Z",
+      "side": 1,
+      "message": "tks that was a bad copy and paste.",
+      "parentUuid": "AAAAQn//SOs\u003d",
+      "revId": "5281b0d86d9112ff37996ec66184767eff78a70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//SN8\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-02T15:26:48Z",
       "side": 1,
       "message": "What will happen to the roles?",
+      "revId": "5281b0d86d9112ff37996ec66184767eff78a70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//SM0\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-08-02T15:30:13Z",
+      "side": 1,
+      "message": "Do you mean what happen to the roles when the project has been deleted? I guess this is out of this scope of this patch.",
+      "parentUuid": "AAAAQn//SN8\u003d",
       "revId": "5281b0d86d9112ff37996ec66184767eff78a70c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
