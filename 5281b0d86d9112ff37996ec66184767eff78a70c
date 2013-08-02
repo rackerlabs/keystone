@@ -69,6 +69,24 @@
       "revId": "5281b0d86d9112ff37996ec66184767eff78a70c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Rbo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T19:22:54Z",
+      "side": 1,
+      "message": "user-project-role assignments?",
+      "parentUuid": "AAAAQn//SM0\u003d",
+      "revId": "5281b0d86d9112ff37996ec66184767eff78a70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
