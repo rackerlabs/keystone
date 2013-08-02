@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//SU4\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-08-02T15:07:28Z",
+      "side": 1,
+      "message": "I believe this is going to introduce more defects. Many calls use default parameter and there are few cases where the order of parameter is not correct in keystone.  Python convention is to rely on name\u003dvalue  rather than order of the parameters. By removing name\u003d value paradigm in the calling code, you are relying on caller passing the params in correct order which is true in compiled languages such as java but not in python",
+      "revId": "5519e1ba16f59f302cda6e8db8f5423eed376ddf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
