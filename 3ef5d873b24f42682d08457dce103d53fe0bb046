@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//UGM\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-08-02T03:08:27Z",
+      "side": 1,
+      "message": "Minor - why extra parentheses? :-) .. suggest to remove it.",
+      "revId": "3ef5d873b24f42682d08457dce103d53fe0bb046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//UFw\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-08-02T03:08:27Z",
+      "side": 1,
+      "message": "Suggest remove extra parentheses.",
+      "revId": "3ef5d873b24f42682d08457dce103d53fe0bb046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
