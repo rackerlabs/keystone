@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//TTU\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6835
+      },
+      "writtenOn": "2013-08-02T08:54:37Z",
+      "side": 1,
+      "message": "let me add a comment here",
+      "parentUuid": "AAAAQn//VYo\u003d",
+      "revId": "bb34d9334dfd3dfe0f713d05d189320b1725e7d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//mfM\u003d",
         "filename": "keystone/middleware/s3_token.py",
         "patchSetId": 3
@@ -120,6 +138,24 @@
       "side": 1,
       "message": "is the above line such that you don\u0027t need to change everywhere that is currently using self.logger?",
       "parentUuid": "AAAAQn//lf8\u003d",
+      "revId": "bb34d9334dfd3dfe0f713d05d189320b1725e7d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//TTw\u003d",
+        "filename": "keystone/middleware/s3_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6835
+      },
+      "writtenOn": "2013-08-02T08:54:37Z",
+      "side": 1,
+      "message": "Yes, it\u0027s trying to follow origin style",
+      "parentUuid": "AAAAQn//gs4\u003d",
       "revId": "bb34d9334dfd3dfe0f713d05d189320b1725e7d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
