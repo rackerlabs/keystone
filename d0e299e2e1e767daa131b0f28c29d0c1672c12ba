@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//RcU\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T19:19:53Z",
+      "side": 1,
+      "message": "imports are grouped as follows:\n\n  imports from stdlib\n\n  imports from external deps\n\n  imports from local project\n\nwith a single blank line between each",
+      "revId": "d0e299e2e1e767daa131b0f28c29d0c1672c12ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
