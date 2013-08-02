@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//RwE\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-08-02T17:50:44Z",
+      "side": 1,
+      "message": "FLAGS may not be defined as part of your changes. Is there a existing test case for testing this changes?",
+      "revId": "be89836fa442f60e145a5d5beb0fe74b13f08025",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
