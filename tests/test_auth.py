@@ -21,12 +21,13 @@ from keystone import test
 from keystone import auth
 from keystone import config
 from keystone import exception
+from keystone import identity
 from keystone.openstack.common import timeutils
 from keystone import token
 from keystone import trust
 
 import default_fixtures
-
+from test_backend import TokenTests
 
 CONF = config.CONF
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
@@ -840,6 +841,34 @@ class TokenExpirationTest(AuthTest):
     def test_maintain_uuid_token_expiration(self):
         self.opt_in_group('signing', token_format='UUID')
         self._maintain_token_expiration()
+
+
+class IdentityTest(AuthTest, TokenTests):
+    def setUp(self):
+        super(IdentityTest, self).setUp()
+        self.tenant_controller = identity.controllers.Tenant()
+
+    def test_disable_user_remove_user_tokens(self):
+        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'domain_id': identity.controllers.DEFAULT_DOMAIN_ID}
+        self.identity_api.create_project(project['id'], project)
+
+        user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                'domain_id': identity.controllers.DEFAULT_DOMAIN_ID,
+                'password': uuid.uuid4().hex,
+                'enabled': True}
+        self.identity_api.create_user(user['id'], user)
+        self.identity_api.add_user_to_project(project['id'], user['id'])
+        token_id = self.create_token_sample_data(tenant_id=project['id'],
+                                                 user_id=user['id'])
+
+        project['enabled'] = False
+        context = dict(is_admin=True, query_string={})
+
+        self.tenant_controller.update_project(context, project['id'], project)
+        tokens = self.token_api.list_tokens(user_id=user['id'])
+
+        self.assertNotIn(token_id, tokens)
 
 
 class NonDefaultAuthTest(test.TestCase):
