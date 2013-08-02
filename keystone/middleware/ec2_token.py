@@ -28,15 +28,12 @@ from eventlet.green import httplib
 import webob.dec
 import webob.exc
 
-from nova import flags
-from nova import utils
-from nova import wsgi
+from keystone.openstack.common import jsonutils
+from keystone.common import wsgi
 
-
-FLAGS = flags.FLAGS
-flags.DEFINE_string('keystone_ec2_url',
-                    'http://localhost:5000/v2.0/ec2tokens',
-                    'URL to get token from ec2 request.')
+#'URL to get token from ec2 request.')
+flags = {'keystone_ec2_url',
+         'http://localhost:5000/v2.0/ec2tokens'}
 
 
 class EC2Token(wsgi.Middleware):
@@ -67,7 +64,7 @@ class EC2Token(wsgi.Middleware):
                 'params': auth_params,
             }
         }
-        creds_json = utils.dumps(creds)
+        creds_json = jsonutils.dumps(creds)
         headers = {'Content-Type': 'application/json'}
 
         # Disable 'has no x member' pylint error
