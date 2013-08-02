@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//SCg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 49
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T16:09:09Z",
+      "side": 1,
+      "message": "none of this list belongs in the commit message... it will all be meaningless downstream",
+      "revId": "6404ca265d775b08bbeb88c3276b6140b42f3ef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
