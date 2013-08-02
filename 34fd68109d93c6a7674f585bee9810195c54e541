@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//Siw\u003d",
+        "filename": "tests/_sql_livetest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T14:13:18Z",
+      "side": 1,
+      "message": "why not use self instead of referencing an object that doesn\u0027t exist?",
+      "revId": "34fd68109d93c6a7674f585bee9810195c54e541",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//SiQ\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T14:13:18Z",
+      "side": 1,
+      "message": "i would think that the upgrade would occur in a test method, not in setup... or am i missing something?",
+      "revId": "34fd68109d93c6a7674f585bee9810195c54e541",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
