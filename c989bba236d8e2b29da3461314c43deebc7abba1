@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//SbU\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-02T14:49:46Z",
+      "side": 1,
+      "message": "So I think the issues is that _get_metdata() for ldap only supports project and user.  The fix that was being attempted was to stop it blowing up if you passing group_id instead of user_id.  \n\nIn fact, there is no need to check existance of tenant_id (this is always done before the method is called), sp perhaps teh clearest thing would be to be explicit as to what we are trying to catch here, namely:\n\nif (not tenant_id or not user_id)\n    return {}",
+      "parentUuid": "AAAAQn//Sew\u003d",
+      "revId": "c989bba236d8e2b29da3461314c43deebc7abba1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//Zu0\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 4
