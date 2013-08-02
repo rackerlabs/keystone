@@ -16,6 +16,24 @@
       "revId": "5519e1ba16f59f302cda6e8db8f5423eed376ddf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Re4\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T19:09:39Z",
+      "side": 1,
+      "message": "valid concern but i\u0027d rather counter it by having more explicitly readable method calls into managers, and never using overloading manager methods with multiple purposes",
+      "parentUuid": "AAAAQn//SU4\u003d",
+      "revId": "5519e1ba16f59f302cda6e8db8f5423eed376ddf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
