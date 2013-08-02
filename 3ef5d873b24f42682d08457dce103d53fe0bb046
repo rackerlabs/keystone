@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//R4k\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-02T16:54:43Z",
+      "side": 1,
+      "message": "pep8 wrapping",
+      "parentUuid": "AAAAQn//UGM\u003d",
+      "revId": "3ef5d873b24f42682d08457dce103d53fe0bb046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//SQ4\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//R4g\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-02T16:54:43Z",
+      "side": 1,
+      "message": "Not for KVS or LDAP, only in SQL.",
+      "parentUuid": "AAAAQn//SQ4\u003d",
+      "revId": "3ef5d873b24f42682d08457dce103d53fe0bb046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//UFw\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2013-08-02T03:08:27Z",
       "side": 1,
       "message": "Suggest remove extra parentheses.",
+      "revId": "3ef5d873b24f42682d08457dce103d53fe0bb046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//R4Y\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-02T16:54:43Z",
+      "side": 1,
+      "message": "pep8 line wrapping",
+      "parentUuid": "AAAAQn//UFw\u003d",
       "revId": "3ef5d873b24f42682d08457dce103d53fe0bb046",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
