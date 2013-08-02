@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//SeY\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T14:44:02Z",
+      "side": 1,
+      "message": "migrate is not stdlib",
+      "revId": "58cbe9c44cf41e59352a976b66832f6cc128ed4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Sc0\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T14:44:02Z",
+      "side": 1,
+      "message": "so, this argument inexplicably (from an end user\u0027s perspective, anyway) doesn\u0027t apply in any way to extensions ... i don\u0027t really find that intuitive/acceptable",
+      "revId": "58cbe9c44cf41e59352a976b66832f6cc128ed4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//SeE\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T14:44:02Z",
+      "side": 1,
+      "message": "this is overwriting the i18n function _()",
+      "revId": "58cbe9c44cf41e59352a976b66832f6cc128ed4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Sd8\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-02T14:44:02Z",
+      "side": 1,
+      "message": "remove print statement",
+      "revId": "58cbe9c44cf41e59352a976b66832f6cc128ed4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
