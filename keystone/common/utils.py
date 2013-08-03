@@ -215,6 +215,10 @@ def hash_signed_token(signed_text):
     hash_.update(signed_text)
     return hash_.hexdigest()
 
+def hash_access_key(access):
+    hash_ = hashlib.sha256()
+    hash_.update(access)
+    return hash_.hexdigest()
 
 def setup_remote_pydev_debug():
     if CONF.pydev_debug_host and CONF.pydev_debug_port:
