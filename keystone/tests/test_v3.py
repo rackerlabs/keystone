@@ -42,7 +42,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
                          tests.testsdir('backend_sql.conf'),
                          tests.testsdir('backend_sql_disk.conf')]
 
-    #override this to sepcify the complete list of configuration files
+    # override this to sepcify the complete list of configuration files
     def config_files(self):
         return self._config_file_list
 
@@ -168,7 +168,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         self.remove_generated_paste_config()
         # need to reset the plug-ins
         auth.controllers.AUTH_METHODS = {}
-        #drop the policy rules
+        # drop the policy rules
         CONF.reset()
         rules.reset()
         super(RestfulTestCase, self).tearDown()
@@ -1038,7 +1038,48 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             auth_data['scope'] = self.build_auth_scope(**kwargs)
         return {'auth': auth_data}
 
+    def build_signature_authentication_request(
+            self, signature=None, access=None,
+            algorithm=None, data_to_sign=None,
+            **kwargs):
+        """Build signature auth dictionary.
+
+        It will create an signature auth dictionary based on all the arguments
+        that it receives.
+        """
+
+        auth_data = {}
+        auth_data['identity'] = {'methods': []}
+        if signature:
+            auth_data['identity']['methods'].append('signature')
+            if 'project_id' in kwargs:
+                auth_data['identity']['signature'] = self.build_signature_auth(
+                    signature, access, algorithm, data_to_sign,
+                    kwargs.get('project_id'))
+            else:
+                auth_data['identity']['signature'] = self.build_signature_auth(
+                    signature, access, algorithm, data_to_sign)
+        if kwargs:
+            auth_data['scope'] = self.build_auth_scope(**kwargs)
+        return {'auth': auth_data}
+
+    def build_signature_auth(self, signature=None, access=None,
+                             algorithm=None, data_to_sign=None,
+                             project_id=None):
+        signature_data = {}
+        signature_data['signature'] = signature
+        if access:
+            signature_data['access'] = access
+        if algorithm:
+            signature_data['algorithm'] = algorithm
+        if data_to_sign:
+            signature_data['data_to_sign'] = data_to_sign
+        if project_id:
+            signature_data['project_id'] = project_id
+        return signature_data
+
 
 class VersionTestCase(RestfulTestCase):
+
     def test_get_version(self):
         pass
