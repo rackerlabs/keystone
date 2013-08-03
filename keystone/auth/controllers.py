@@ -14,7 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-
+from keystone.auth import auth_utils
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
@@ -24,7 +24,6 @@ from keystone import identity
 from keystone.openstack.common import importutils
 from keystone.openstack.common import log as logging
 from keystone import token
-from keystone import trust
 
 
 LOG = logging.getLogger(__name__)
@@ -53,8 +52,8 @@ class AuthInfo(object):
     """Encapsulation of "auth" request."""
 
     def __init__(self, context, auth=None):
+        self.auth_utils = auth_utils.AuthUtils()
         self.identity_api = identity.Manager()
-        self.trust_api = trust.Manager()
         self.context = context
         self.auth = auth
         self._scope_data = (None, None, None)
@@ -64,99 +63,6 @@ class AuthInfo(object):
         # trust scope: (None, None, trust_ref)
         # unscoped: (None, None, None)
         self._validate_and_normalize_auth_data()
-
-    def _assert_project_is_enabled(self, project_ref):
-        # ensure the project is enabled
-        if not project_ref.get('enabled', True):
-            msg = _('Project is disabled: %s') % project_ref['id']
-            LOG.warning(msg)
-            raise exception.Unauthorized(msg)
-
-    def _assert_domain_is_enabled(self, domain_ref):
-        if not domain_ref.get('enabled'):
-            msg = _('Domain is disabled: %s') % (domain_ref['id'])
-            LOG.warning(msg)
-            raise exception.Unauthorized(msg)
-
-    def _assert_user_is_enabled(self, user_ref):
-        if not user_ref.get('enabled', True):
-            msg = _('User is disabled: %s') % (user_ref['id'])
-            LOG.warning(msg)
-            raise exception.Unauthorized(msg)
-
-    def _lookup_domain(self, domain_info):
-        domain_id = domain_info.get('id')
-        domain_name = domain_info.get('name')
-        domain_ref = None
-        if not domain_id and not domain_name:
-            raise exception.ValidationError(attribute='id or name',
-                                            target='domain')
-        try:
-            if domain_name:
-                domain_ref = self.identity_api.get_domain_by_name(domain_name)
-            else:
-                domain_ref = self.identity_api.get_domain(domain_id)
-        except exception.DomainNotFound as e:
-            LOG.exception(e)
-            raise exception.Unauthorized(e)
-        self._assert_domain_is_enabled(domain_ref)
-        return domain_ref
-
-    def _lookup_project(self, project_info):
-        project_id = project_info.get('id')
-        project_name = project_info.get('name')
-        project_ref = None
-        if not project_id and not project_name:
-            raise exception.ValidationError(attribute='id or name',
-                                            target='project')
-        try:
-            if project_name:
-                if 'domain' not in project_info:
-                    raise exception.ValidationError(attribute='domain',
-                                                    target='project')
-                domain_ref = self._lookup_domain(project_info['domain'])
-                project_ref = self.identity_api.get_project_by_name(
-                    project_name, domain_ref['id'])
-            else:
-                project_ref = self.identity_api.get_project(project_id)
-        except exception.ProjectNotFound as e:
-            LOG.exception(e)
-            raise exception.Unauthorized(e)
-        self._assert_project_is_enabled(project_ref)
-        return project_ref
-
-    def _lookup_trust(self, trust_info):
-        trust_id = trust_info.get('id')
-        if not trust_id:
-            raise exception.ValidationError(attribute='trust_id',
-                                            target='trust')
-        trust = self.trust_api.get_trust(trust_id)
-        if not trust:
-            raise exception.TrustNotFound(trust_id=trust_id)
-        return trust
-
-    def lookup_user(self, user_info):
-        user_id = user_info.get('id')
-        user_name = user_info.get('name')
-        user_ref = None
-        if not user_id and not user_name:
-            raise exception.ValidationError(attribute='id or name',
-                                            target='user')
-        try:
-            if user_name:
-                if 'domain' not in user_info:
-                    raise exception.ValidationError(attribute='domain',
-                                                    target='user')
-                domain_ref = self._lookup_domain(user_info['domain'])
-                user_ref = self.identity_api.get_user_by_name(
-                    user_name, domain_ref['id'])
-            else:
-                user_ref = self.identity_api.get_user(user_id)
-        except exception.UserNotFound as e:
-            LOG.exception(e)
-            raise exception.Unauthorized(e)
-        self._assert_user_is_enabled(user_ref)
-        return user_ref
 
     def _validate_and_normalize_scope_data(self):
         """Validate and normalize scope data."""
@@ -170,19 +76,21 @@ class AuthInfo(object):
                 target='scope')
 
         if 'project' in self.auth['scope']:
-            project_ref = self._lookup_project(self.auth['scope']['project'])
+            project_ref = self.auth_utils.lookup_project(
+                self.auth['scope']['project'])
             self._scope_data = (None, project_ref['id'], None)
         elif 'domain' in self.auth['scope']:
-            domain_ref = self._lookup_domain(self.auth['scope']['domain'])
+            domain_ref = self.auth_utils.lookup_domain(
+                self.auth['scope']['domain'])
             self._scope_data = (domain_ref['id'], None, None)
         elif 'OS-TRUST:trust' in self.auth['scope']:
             if not CONF.trust.enabled:
                 raise exception.Forbidden('Trusts are disabled.')
-            trust_ref = self._lookup_trust(
+            trust_ref = self.auth_utils.lookup_trust(
                 self.auth['scope']['OS-TRUST:trust'])
             # TODO(ayoung): when trusts support domains, fill in domain data
             if 'project_id' in trust_ref:
-                project_ref = self._lookup_project(
+                project_ref = self.auth_utils.lookup_project(
                     {'id': trust_ref['project_id']})
                 self._scope_data = (None, project_ref['id'], trust_ref)
             else:
