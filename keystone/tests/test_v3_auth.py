@@ -13,6 +13,7 @@
 # under the License.
 
 import json
+import urllib
 import uuid
 
 from keystone import auth
@@ -20,6 +21,8 @@ from keystone.common import cms
 from keystone import config
 from keystone import exception
 from keystone.tests import core as test
+
+from keystone.openstack.common.crypto import utils
 
 import test_v3
 
@@ -33,6 +36,7 @@ class TestAuthInfo(test_v3.RestfulTestCase):
     # building helper functions, they cause backend databases and fixtures
     # to be loaded unnecessarily.  Separating out the helper functions from
     # this base class would improve efficiency (Bug #1134836)
+
     def setUp(self, load_sample_data=False):
         super(TestAuthInfo, self).setUp(load_sample_data=load_sample_data)
 
@@ -96,6 +100,7 @@ class TestAuthInfo(test_v3.RestfulTestCase):
 
 
 class TestPKITokenAPIs(test_v3.RestfulTestCase):
+
     def config_files(self):
         conf_files = super(TestPKITokenAPIs, self).config_files()
         conf_files.append(test.testsdir('test_pki_token_provider.conf'))
@@ -330,8 +335,102 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase):
         r = self.get('/auth/tokens/OS-PKI/revoked')
         self.assertIn('signed', r.result)
 
+    @staticmethod
+    def _get_utf8_value(value):
+        """Get the UTF8-encoded version of a value."""
+        if not isinstance(value, str) and not isinstance(value, unicode):
+            value = str(value)
+        if isinstance(value, unicode):
+            return value.encode('utf-8')
+        else:
+            return value
+
+    @staticmethod
+    def _canonical_qs(params):
+        keys = params.keys()
+        keys.sort()
+        pairs = []
+        for key in keys:
+            val = TestPKITokenAPIs._get_utf8_value(params[key])
+            val = urllib.quote(val, safe='-_~')
+            pairs.append(urllib.quote(key, safe='') + '=' + val)
+        qs = '&'.join(pairs)
+        return qs
+
+    def _calc_data_to_sign_ec2(self, **kwargs):
+        """Generate AWS signature version 2 string."""
+        string_to_sign = '%s\n%s\n%s\n' % (kwargs['req_params'].get('verb'),
+                                           kwargs['req_params'].get('host'),
+                                           kwargs['req_params'].get('path'))
+        string_to_sign += TestPKITokenAPIs._canonical_qs(
+            kwargs['req_params'].get('params'))
+        return string_to_sign
+
+    def _generate_default_user_ec2_credentials(self, cred):
+        blob = json.loads(cred['blob'])
+        req_params = {
+            'params': {'SignatureVersion': '2', 'SignatureMethod': 'SHA256'},
+            'access': blob['access'],
+            'verb': 'GET',
+            'host': 'localhost',
+            'path': '/service/cloud',
+        }
+        data_to_sign = self._calc_data_to_sign_ec2(req_params=req_params)
+        signer = utils.SymmetricCrypto(hashtype='SHA256')
+        signature = signer.sign(
+            TestPKITokenAPIs._get_utf8_value(blob['secret']), data_to_sign)
+        return data_to_sign, signature
+
+    def test_v3_signature_auth_success(self):
+        ref = self.new_credential_ref(
+            user_id=self.user['id'], project_id=self.project_id)
+        blob = {"access": uuid.uuid4().hex,
+                "secret": uuid.uuid4().hex}
+        ref['blob'] = json.dumps(blob)
+        ref['type'] = 'ec2'
+        cred = self.post(
+            '/credentials',
+            body={'credential': ref})
+        self.assertValidCredentialResponse(cred, ref)
+        data_to_sign, signature = self._generate_default_user_ec2_credentials(
+            cred.result['credential'])
+        auth_data = self.build_signature_authentication_request(
+            signature, blob['access'],
+            'SHA256', data_to_sign,
+            project_id=self.project_id)
+        headers = {'X-Subject-Token': self.get_scoped_token()}
+        resp = self.post('/auth/tokens', headers=headers, body=auth_data)
+        self.assertValidProjectScopedTokenResponse(resp)
+        self.assertEqual(resp.status_code, 201)
+
+    def test_v3_signature_auth_failure(self):
+        ref = self.new_credential_ref(
+            user_id=self.user['id'], project_id=self.project_id)
+        blob = {"access": uuid.uuid4().hex,
+                "secret": uuid.uuid4().hex}
+        ref['blob'] = json.dumps(blob)
+        ref['type'] = 'ec2'
+        cred = self.post(
+            '/credentials',
+            body={'credential': ref})
+        self.assertValidCredentialResponse(cred, ref)
+        # change the value of the secret key in credential
+        invalid_blob = {"access": blob['access'],
+                        "secret": 'invalid'}
+        cred.result['credential']['blob'] = json.dumps(invalid_blob)
+        data_to_sign, signature = self._generate_default_user_ec2_credentials(
+            cred.result['credential'])
+        auth_data = self.build_signature_authentication_request(
+            signature, blob['access'],
+            'SHA256', data_to_sign,
+            project_id=self.project_id)
+        headers = {'X-Subject-Token': self.get_scoped_token()}
+        self.post('/auth/tokens', headers=headers,
+                  body=auth_data, expected_status=401)
+
 
 class TestUUIDTokenAPIs(TestPKITokenAPIs):
+
     def config_files(self):
         conf_files = super(TestUUIDTokenAPIs, self).config_files()
         conf_files.append(test.testsdir('test_uuid_token_provider.conf'))
@@ -354,6 +453,7 @@ class TestUUIDTokenAPIs(TestPKITokenAPIs):
 
 
 class TestTokenRevoking(test_v3.RestfulTestCase):
+
     """Test token revocation on the v3 Identity API."""
 
     def setUp(self):
@@ -824,6 +924,7 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
 
 
 class TestAuthExternalDisabled(test_v3.RestfulTestCase):
+
     def config_files(self):
         list = self._config_file_list[:]
         list.append('auth_plugin_external_disabled.conf')
@@ -1356,8 +1457,8 @@ class TestAuthJSON(test_v3.RestfulTestCase):
                           auth_context)
 
     def test_remote_user_and_password(self):
-        #both REMOTE_USER and password methods must pass.
-        #note that they do not have to match
+        # both REMOTE_USER and password methods must pass.
+        # note that they do not have to match
         auth_data = self.build_authentication_request(
             user_domain_id=self.domain['id'],
             username=self.user['name'],
@@ -1369,8 +1470,8 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         api.authenticate(context, auth_info, auth_context)
 
     def test_remote_user_and_explicit_external(self):
-        #both REMOTE_USER and password methods must pass.
-        #note that they do not have to match
+        # both REMOTE_USER and password methods must pass.
+        # note that they do not have to match
         auth_data = self.build_authentication_request(
             user_domain_id=self.domain['id'],
             username=self.user['name'],
@@ -1388,7 +1489,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
                           auth_context)
 
     def test_remote_user_bad_password(self):
-        #both REMOTE_USER and password methods must pass.
+        # both REMOTE_USER and password methods must pass.
         auth_data = self.build_authentication_request(
             user_domain_id=self.domain['id'],
             username=self.user['name'],
@@ -1413,7 +1514,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         token = self.assertValidUnscopedTokenResponse(r)
         self.assertNotIn('bind', token)
 
-    #TODO(ayoung): move to TestPKITokenAPIs; it will be run for both formats
+    # TODO(ayoung): move to TestPKITokenAPIs; it will be run for both formats
     def test_verify_with_bound_token(self):
         self.opt_in_group('token', bind='kerberos')
         auth_data = self.build_authentication_request(
@@ -1487,6 +1588,7 @@ class TestAuthXML(TestAuthJSON):
 
 
 class TestTrustOptional(test_v3.RestfulTestCase):
+
     def setUp(self, *args, **kwargs):
         self.opt_in_group('trust', enabled=False)
         super(TestTrustOptional, self).setUp(*args, **kwargs)
@@ -1504,6 +1606,7 @@ class TestTrustOptional(test_v3.RestfulTestCase):
 
 
 class TestTrustAuth(TestAuthInfo):
+
     def setUp(self):
         self.opt_in_group('trust', enabled=True)
         super(TestTrustAuth, self).setUp(load_sample_data=True)
