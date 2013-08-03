@@ -1108,6 +1108,46 @@ class RestfulTestCase(rest.RestfulTestCase):
         auth_context = {'extras': {}, 'method_names': []}
         return context, auth_info, auth_context
 
+    def build_signature_authentication_request(
+            self, signature=None, access=None,
+            algorithm=None, data_to_sign=None,
+            **kwargs):
+        """Build signature auth dictionary.
+
+        It will create an signature auth dictionary based on all the arguments
+        that it receives.
+        """
+
+        auth_data = {}
+        auth_data['identity'] = {'methods': []}
+        if signature:
+            auth_data['identity']['methods'].append('signature')
+            if 'project_id' in kwargs:
+                auth_data['identity']['signature'] = self.build_signature_auth(
+                    signature, access, algorithm, data_to_sign,
+                    kwargs.get('project_id'))
+            else:
+                auth_data['identity']['signature'] = self.build_signature_auth(
+                    signature, access, algorithm, data_to_sign)
+        if kwargs:
+            auth_data['scope'] = self.build_auth_scope(**kwargs)
+        return {'auth': auth_data}
+
+    def build_signature_auth(self, signature=None, access=None,
+                             algorithm=None, data_to_sign=None,
+                             project_id=None):
+        signature_data = {}
+        signature_data['signature'] = signature
+        if access:
+            signature_data['access'] = access
+        if algorithm:
+            signature_data['algorithm'] = algorithm
+        if data_to_sign:
+            signature_data['data_to_sign'] = data_to_sign
+        if project_id:
+            signature_data['project_id'] = project_id
+        return signature_data
+
 
 class VersionTestCase(RestfulTestCase):
     def test_get_version(self):

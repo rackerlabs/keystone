@@ -13,6 +13,7 @@
 # under the License.
 
 import json
+import urllib
 import uuid
 
 from keystone import auth
@@ -21,6 +22,8 @@ from keystone import config
 from keystone import exception
 from keystone import tests
 from keystone.tests import test_v3
+
+from keystone.openstack.common.crypto import utils
 
 
 CONF = config.CONF
@@ -335,6 +338,96 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase):
         # make sure we have a CRL
         r = self.get('/auth/tokens/OS-PKI/revoked')
         self.assertIn('signed', r.result)
+
+    @staticmethod
+    def _get_utf8_value(value):
+        """Get the UTF8-encoded version of a value."""
+        if not isinstance(value, str) and not isinstance(value, unicode):
+            value = str(value)
+        if isinstance(value, unicode):
+            return value.encode('utf-8')
+        else:
+            return value
+
+    @staticmethod
+    def _canonical_qs(params):
+        keys = params.keys()
+        keys.sort()
+        pairs = []
+        for key in keys:
+            val = TestPKITokenAPIs._get_utf8_value(params[key])
+            val = urllib.quote(val, safe='-_~')
+            pairs.append(urllib.quote(key, safe='') + '=' + val)
+        qs = '&'.join(pairs)
+        return qs
+
+    def _calc_data_to_sign_ec2(self, **kwargs):
+        """Generate AWS signature version 2 string."""
+        string_to_sign = '%s\n%s\n%s\n' % (kwargs['req_params'].get('verb'),
+                                           kwargs['req_params'].get('host'),
+                                           kwargs['req_params'].get('path'))
+        string_to_sign += TestPKITokenAPIs._canonical_qs(
+            kwargs['req_params'].get('params'))
+        return string_to_sign
+
+    def _generate_default_user_ec2_credentials(self, cred):
+        blob = json.loads(cred['blob'])
+        req_params = {
+            'params': {'SignatureVersion': '2', 'SignatureMethod': 'SHA256'},
+            'access': blob['access'],
+            'verb': 'GET',
+            'host': 'localhost',
+            'path': '/service/cloud',
+        }
+        data_to_sign = self._calc_data_to_sign_ec2(req_params=req_params)
+        signer = utils.SymmetricCrypto(hashtype='SHA256')
+        signature = signer.sign(
+            TestPKITokenAPIs._get_utf8_value(blob['secret']), data_to_sign)
+        return data_to_sign, signature
+
+    def test_v3_signature_auth_success(self):
+        ref = self.new_credential_ref(
+            user_id=self.user['id'], project_id=self.project_id)
+        blob = {"access": uuid.uuid4().hex,
+                "secret": uuid.uuid4().hex}
+        ref['blob'] = json.dumps(blob)
+        ref['type'] = 'ec2'
+        cred = self.post(
+            '/credentials',
+            body={'credential': ref})
+        self.assertValidCredentialResponse(cred, ref)
+        data_to_sign, signature = self._generate_default_user_ec2_credentials(
+            cred.result['credential'])
+        auth_data = self.build_signature_authentication_request(
+            signature, blob['access'],
+            'SHA256', data_to_sign,
+            project_id=self.project_id)
+        resp = self.post('/auth/tokens', body=auth_data)
+        self.assertValidProjectScopedTokenResponse(resp)
+        self.assertEqual(resp.status_code, 201)
+
+    def test_v3_signature_auth_failure(self):
+        ref = self.new_credential_ref(
+            user_id=self.user['id'], project_id=self.project_id)
+        blob = {"access": uuid.uuid4().hex,
+                "secret": uuid.uuid4().hex}
+        ref['blob'] = json.dumps(blob)
+        ref['type'] = 'ec2'
+        cred = self.post(
+            '/credentials',
+            body={'credential': ref})
+        self.assertValidCredentialResponse(cred, ref)
+        # change the value of the secret key in credential
+        invalid_blob = {"access": blob['access'],
+                        "secret": 'invalid'}
+        cred.result['credential']['blob'] = json.dumps(invalid_blob)
+        data_to_sign, signature = self._generate_default_user_ec2_credentials(
+            cred.result['credential'])
+        auth_data = self.build_signature_authentication_request(
+            signature, blob['access'],
+            'SHA256', data_to_sign,
+            project_id=self.project_id)
+        self.post('/auth/tokens', body=auth_data, expected_status=401)
 
 
 class TestUUIDTokenAPIs(TestPKITokenAPIs):
