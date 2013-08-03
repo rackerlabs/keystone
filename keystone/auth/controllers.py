@@ -282,6 +282,8 @@ class Auth(controller.V3Controller):
         include_catalog = 'nocatalog' not in context['query_string']
 
         try:
+            import pdb
+            pdb.set_trace()
             auth_info = AuthInfo(context, auth=auth)
             auth_context = {'extras': {}, 'method_names': [], 'bind': {}}
             self.authenticate(context, auth_info, auth_context)
