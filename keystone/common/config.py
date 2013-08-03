@@ -17,7 +17,7 @@
 from oslo.config import cfg
 
 
-_DEFAULT_AUTH_METHODS = ['external', 'password', 'token']
+_DEFAULT_AUTH_METHODS = ['external', 'password', 'token', 'signature']
 
 
 FILE_OPTIONS = {
@@ -252,9 +252,16 @@ FILE_OPTIONS = {
                    default='keystone.auth.plugins.password.Password'),
         cfg.StrOpt('token',
                    default='keystone.auth.plugins.token.Token'),
+        cfg.StrOpt('signature',
+                   default='keystone.auth.plugins.signature.Signature'),
         #deals with REMOTE_USER authentication
         cfg.StrOpt('external',
                    default='keystone.auth.plugins.external.DefaultDomain')],
+    'signature': [
+        cfg.StrOpt('credential_type', default='ec2'),
+        cfg.StrOpt('signing_key_attribute', default='secret'),
+        cfg.ListOpt('supported_algorithms',
+                    default=['SHA', 'SHA224', 'SHA256', 'SHA384', 'SHA512'])],
     'paste_deploy': [
         cfg.StrOpt('config_file', default=None)],
     'memcache': [

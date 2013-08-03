@@ -19,6 +19,7 @@ from keystone import auth
 from keystone.common import cms
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.crypto import utils
 from keystone import tests
 from keystone.tests import test_v3
 
@@ -382,6 +383,16 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase):
         # make sure we have a CRL
         r = self.get('/auth/tokens/OS-PKI/revoked')
         self.assertIn('signed', r.result)
+
+    def test_v3_auth_with_names(self):
+        auth_data = self.build_authentication_request(
+            username=self.user['name'],
+            user_domain_name=self.domain['name'],
+            project_name=self.project['name'],
+            project_domain_name=self.domain['name'],
+            password=self.user['password'])
+        resp = self.post('/auth/tokens', body=auth_data)
+        self.assertIn('X-Subject-Token', resp.headers)
 
 
 class TestUUIDTokenAPIs(TestPKITokenAPIs):
@@ -2504,3 +2515,168 @@ class TestAPIProtectionWithoutAuthContextMiddleware(test_v3.RestfulTestCase):
                    'environment': {}}
         r = auth_controller.validate_token(context)
         self.assertEqual(r.status_code, 200)
+
+
+class BaseSignatureAuthTest(test_v3.RestfulTestCase):
+    DEFAULT_ALGORITHM = 'SHA256'
+
+    def _create_ec2_credential(self, project_id=None):
+        blob = {'access': uuid.uuid4().hex,
+                'secret': uuid.uuid4().hex}
+        return self._create_credential('ec2', blob, project_id=project_id)
+
+    def _create_credential(self, cred_type, blob, project_id=None):
+        cred_ref = self.new_credential_ref(
+            user_id=self.user['id'],
+            project_id=project_id,
+            cred_type=cred_type,
+            blob=json.dumps(blob))
+        response = self.post(
+            '/credentials',
+            body={'credential': cred_ref})
+        self.assertValidCredentialResponse(response, cred_ref)
+        return response.result['credential']
+
+    def _generate_signature(self, cred, algorithm, signing_key=None):
+        blob = json.loads(cred['blob'])
+        data_to_sign = uuid.uuid4().hex
+        signer = utils.SymmetricCrypto(hashtype=algorithm)
+        if not signing_key:
+            # json.loads() yield unicode so we have to stringify signing key
+            signing_key = str(blob[CONF.signature.signing_key_attribute])
+        # signature is base64 encoded by default
+        signature = signer.sign(signing_key, data_to_sign)
+
+        return cred['id'], data_to_sign, signature
+
+    def _generate_signature_auth_request(
+            self, cred, signing_key=None, **kwargs):
+        algorithm = kwargs.pop('algorithm', self.DEFAULT_ALGORITHM)
+        credential_id, data_to_sign, signature = self._generate_signature(
+            cred,
+            algorithm,
+            signing_key=signing_key)
+        return self.build_signature_auth_request(signature,
+                                                 credential_id,
+                                                 algorithm,
+                                                 data_to_sign,
+                                                 **kwargs)
+
+    def setUp(self):
+        super(BaseSignatureAuthTest, self).setUp()
+        # credential two credentials, one with project scoped and one without
+        self.cred_with_project_scope = self._create_ec2_credential(
+            project_id=self.project_id)
+        self.cred_without_scope = self._create_ec2_credential()
+
+
+class TestSignatureAuth(BaseSignatureAuthTest):
+    def setUp(self):
+        super(TestSignatureAuth, self).setUp()
+
+    def test_missing_credential_id(self):
+        auth_data = self._generate_signature_auth_request(
+            self.cred_without_scope, project_id=self.project_id)
+        auth_data['auth']['identity']['signature'].pop('credential_id')
+        self.post('/auth/tokens', body=auth_data, expected_status=400)
+
+    def test_unsupported_signing_algorithm(self):
+        auth_data = self._generate_signature_auth_request(
+            self.cred_without_scope,
+            project_id=self.project_id,
+            algorithm='MD5')
+        self.post('/auth/tokens', body=auth_data, expected_status=401)
+
+    def test_credential_type_not_allowed(self):
+        signing_key_attr = uuid.uuid4().hex
+        blob = {signing_key_attr: uuid.uuid4().hex,
+                uuid.uuid4().hex: uuid.uuid4().hex}
+        random_cred = self._create_credential(uuid.uuid4().hex,
+                                              blob)
+        auth_data = self._generate_signature_auth_request(
+            random_cred,
+            signing_key=blob[signing_key_attr])
+        self.post('/auth/tokens', body=auth_data, expected_status=401)
+
+    def test_signature_auth_with_access(self):
+        # Use 'access' instead of 'credential_id' in signature dict is
+        # allowed.
+        auth_data = self._generate_signature_auth_request(
+            self.cred_without_scope, project_id=self.project_id)
+        blob = json.loads(self.cred_without_scope['blob'])
+        auth_data['auth']['identity']['signature'].pop('credential_id')
+        auth_data['auth']['identity']['signature']['access'] = blob['access']
+        resp = self.post('/auth/tokens', body=auth_data)
+        self.assertValidProjectScopedTokenResponse(resp)
+        self.assertEqual(resp.status_code, 201)
+
+    def test_scope_token_request_with_unscoped_cred(self):
+        # A scope token request with signature auth using an unscoped
+        # credential is allowed.
+        auth_data = self._generate_signature_auth_request(
+            self.cred_without_scope, project_id=self.project_id)
+        resp = self.post('/auth/tokens', body=auth_data)
+        self.assertValidProjectScopedTokenResponse(resp)
+        self.assertEqual(resp.status_code, 201)
+
+    def test_unscope_token_request_with_unscoped_cred(self):
+        # An unscope token request with signature auth using an unscoped
+        # credential is allowed.
+        auth_data = self._generate_signature_auth_request(
+            self.cred_without_scope)
+        resp = self.post('/auth/tokens', body=auth_data)
+        self.assertValidUnscopedTokenResponse(resp)
+        self.assertEqual(resp.status_code, 201)
+
+    def test_unscope_token_request_with_project_scoped_cred_failed(self):
+        # An unscope token request with signature auth using a credential
+        # that is scoped to a project should failed.
+        auth_data = self._generate_signature_auth_request(
+            self.cred_with_project_scope)
+        self.post('/auth/tokens', body=auth_data, expected_status=401)
+
+    def test_scope_token_request_with_project_scoped_cred(self):
+        # An unscope token request with signature auth using a credential
+        # that is scoped to a project should failed.
+        auth_data = self._generate_signature_auth_request(
+            self.cred_with_project_scope, project_id=self.project_id)
+        resp = self.post('/auth/tokens', body=auth_data)
+        self.assertValidProjectScopedTokenResponse(resp)
+        self.assertEqual(resp.status_code, 201)
+
+    def test_scoped_project_id_mismatch(self):
+        # A project-scope token request with signature auth using a credential
+        # that is scoped to a different project should failed.
+        random_project = self.new_project_ref(domain_id=self.domain['id'])
+        random_project_ref = self.assignment_api.create_project(
+            random_project['id'], random_project)
+        auth_data = self._generate_signature_auth_request(
+            self.cred_with_project_scope, project_id=random_project_ref['id'])
+        self.post('/auth/tokens', body=auth_data, expected_status=401)
+
+
+class TestSignatureAuthCustomConfig(BaseSignatureAuthTest):
+    def config_files(self):
+        conf_files = super(TestSignatureAuthCustomConfig, self).config_files()
+        conf_files.append(tests.dirs.tests('test_signature_auth_plugin.conf'))
+        return conf_files
+
+    def setUp(self):
+        super(TestSignatureAuthCustomConfig, self).setUp()
+        # Type 'custom' and attribute 'abc_key' are configured in
+        # test_signature_auth.conf
+        blob = {'abc_key': uuid.uuid4().hex,
+                uuid.uuid4().hex: uuid.uuid4().hex}
+        self.custom_cred = self._create_credential('custom',
+                                                   blob)
+
+    def test_signature_auth_with_custom_config(self):
+        # Test signture generated with 'MD5' and credential with 'custom' type
+        # are allowed.
+        auth_data = self._generate_signature_auth_request(
+            self.custom_cred,
+            algorithm='MD5',
+            project_id=self.project_id)
+        resp = self.post('/auth/tokens', body=auth_data)
+        self.assertValidProjectScopedTokenResponse(resp)
+        self.assertEqual(resp.status_code, 201)

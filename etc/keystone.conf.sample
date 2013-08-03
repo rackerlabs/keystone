@@ -471,11 +471,25 @@
 # user_additional_attribute_mapping =
 
 [auth]
-methods = external,password,token,oauth1
+methods = external,password,token,oauth1,signature
 #external = keystone.auth.plugins.external.DefaultDomain
 password = keystone.auth.plugins.password.Password
 token = keystone.auth.plugins.token.Token
 oauth1 = keystone.auth.plugins.oauth1.OAuth
+#signature =  keystone.auth.plugins.signature.Signature
+
+[signature]
+# signature authentication plugin configurations
+
+# Type of credential allowed to generate the HMAC signature.
+# credential_type = ec2
+
+# The attribute in the credential blob which contains the signing key.
+# signing_key_attribute = secret
+
+# Supported (HMAC) signature algorithms. It is a comma-separated list of
+# algorithm names supported by pycrypto's Crypto.hash module.
+# supported_algorithms = SHA,SHA224,SHA256,SHA384,SHA512
 
 [memcache]
 # servers = localhost:11211

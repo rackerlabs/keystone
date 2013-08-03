@@ -18,6 +18,7 @@ import json
 
 import six
 
+from keystone.auth import auth_utils
 from keystone.common import cms
 from keystone.common import controller
 from keystone.common import dependency
@@ -62,6 +63,7 @@ class AuthInfo(object):
         return auth_info
 
     def __init__(self, context, auth=None):
+        self.auth_utils = auth_utils.AuthUtils()
         self.context = context
         self.auth = auth
         self._scope_data = (None, None, None)
@@ -177,19 +179,21 @@ class AuthInfo(object):
                 target='scope')
 
         if 'project' in self.auth['scope']:
-            project_ref = self._lookup_project(self.auth['scope']['project'])
+            project_ref = self.auth_utils.lookup_project(
+                self.auth['scope']['project'])
             self._scope_data = (None, project_ref['id'], None)
         elif 'domain' in self.auth['scope']:
-            domain_ref = self._lookup_domain(self.auth['scope']['domain'])
+            domain_ref = self.auth_utils.lookup_domain(
+                self.auth['scope']['domain'])
             self._scope_data = (domain_ref['id'], None, None)
         elif 'OS-TRUST:trust' in self.auth['scope']:
             if not CONF.trust.enabled:
                 raise exception.Forbidden('Trusts are disabled.')
-            trust_ref = self._lookup_trust(
+            trust_ref = self.auth_utils.lookup_trust(
                 self.auth['scope']['OS-TRUST:trust'])
             # TODO(ayoung): when trusts support domains, fill in domain data
             if 'project_id' in trust_ref:
-                project_ref = self._lookup_project(
+                project_ref = self.auth_utils.lookup_project(
                     {'id': trust_ref['project_id']})
                 self._scope_data = (None, project_ref['id'], trust_ref)
             else:

@@ -224,11 +224,12 @@ class RestfulTestCase(rest.RestfulTestCase):
         ref['domain_id'] = domain_id
         return ref
 
-    def new_credential_ref(self, user_id, project_id=None):
+    def new_credential_ref(self, user_id, project_id=None,
+                           cred_type=None, blob=None):
         ref = self.new_ref()
         ref['user_id'] = user_id
-        ref['blob'] = uuid.uuid4().hex
-        ref['type'] = uuid.uuid4().hex
+        ref['blob'] = blob or uuid.uuid4().hex
+        ref['type'] = cred_type or uuid.uuid4().hex
         if project_id:
             ref['project_id'] = project_id
         return ref
@@ -1110,6 +1111,36 @@ class RestfulTestCase(rest.RestfulTestCase):
         auth_info = auth.controllers.AuthInfo.create(no_context, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         return context, auth_info, auth_context
+
+    def build_signature_auth_request(
+            self, signature, credential_id,
+            algorithm, data_to_sign,
+            **kwargs):
+        """Build signature auth dictionary.
+
+        It will create an signature auth dictionary based on all the arguments
+        that it receives.
+        """
+
+        signature_info = {
+            'signature': signature,
+            'credential_id': credential_id,
+            'algorithm': algorithm,
+            'data_to_sign': data_to_sign
+        }
+        project_id = kwargs.get('project_id')
+        if project_id:
+            signature_info['project_id'] = project_id
+
+        auth_data = {
+            'identity': {
+                'methods': ['signature'],
+                'signature': signature_info
+            }
+        }
+        if kwargs:
+            auth_data['scope'] = self.build_auth_scope(**kwargs)
+        return {'auth': auth_data}
 
 
 class VersionTestCase(RestfulTestCase):
