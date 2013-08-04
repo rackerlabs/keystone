@@ -246,7 +246,7 @@ class AuthInfo(object):
         :returns: (domain_id, project_id, trust_ref).
                    If scope to a project, (None, project_id, None)
                    will be returned.
-                   If scoped to a domain, (domain_id, None,None)
+                   If scoped to a domain, (domain_id, None, None)
                    will be returned.
                    If scoped to a trust, (None, project_id, trust_ref),
                    Will be returned, where the project_id comes from the
@@ -291,15 +291,20 @@ class Auth(controller.V3Controller):
             method_names += auth_context.get('method_names', [])
             # make sure the list is unique
             method_names = list(set(method_names))
+            expires_at = auth_context.get('expires_at')
 
-            (token_id, token_data) = self.token_provider_api.issue_token(
+        # NOTE(morganfainberg): use named args (kwargs) here for clarity.
+        # Caching will occur at the controller level not at the provider_api
+        # object level.
+            (token_id, token_data) = self.token_provider_api.issue_v3_token(
                 user_id=auth_context['user_id'],
                 method_names=method_names,
-                expires_at=auth_context.get('expires_at'),
+                expires_at=expires_at,
                 project_id=project_id,
                 domain_id=domain_id,
                 auth_context=auth_context,
                 trust=trust,
+                metadata_ref=None,
                 include_catalog=include_catalog)
             return render_token_data_response(token_id, token_data,
                                               created=True)
@@ -356,7 +361,7 @@ class Auth(controller.V3Controller):
     @controller.protected
     def check_token(self, context):
         token_id = context.get('subject_token_id')
-        self.token_provider_api.check_token(token_id)
+        self.token_provider_api.check_v3_token(token_id)
 
     @controller.protected
     def revoke_token(self, context):
@@ -366,7 +371,7 @@ class Auth(controller.V3Controller):
     @controller.protected
     def validate_token(self, context):
         token_id = context.get('subject_token_id')
-        token_data = self.token_provider_api.validate_token(token_id)
+        token_data = self.token_provider_api.validate_v3_token(token_id)
         return render_token_data_response(token_id, token_data)
 
     @controller.protected
