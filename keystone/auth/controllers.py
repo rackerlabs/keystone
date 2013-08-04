@@ -291,16 +291,11 @@ class Auth(controller.V3Controller):
             method_names += auth_context.get('method_names', [])
             # make sure the list is unique
             method_names = list(set(method_names))
+            expires_at = auth_context.get('expires_at')
 
-            (token_id, token_data) = self.token_provider_api.issue_token(
-                user_id=auth_context['user_id'],
-                method_names=method_names,
-                expires_at=auth_context.get('expires_at'),
-                project_id=project_id,
-                domain_id=domain_id,
-                auth_context=auth_context,
-                trust=trust,
-                include_catalog=include_catalog)
+            (token_id, token_data) = self.token_provider_api.issue_v3_token(
+                auth_context['user_id'], method_names, expires_at, project_id,
+                domain_id, auth_context, trust, None, include_catalog)
             return render_token_data_response(token_id, token_data,
                                               created=True)
         except exception.TrustNotFound as e:
@@ -356,7 +351,7 @@ class Auth(controller.V3Controller):
     @controller.protected
     def check_token(self, context):
         token_id = context.get('subject_token_id')
-        self.token_provider_api.check_token(token_id)
+        self.token_provider_api.check_v3_token(token_id)
 
     @controller.protected
     def revoke_token(self, context):
@@ -366,7 +361,7 @@ class Auth(controller.V3Controller):
     @controller.protected
     def validate_token(self, context):
         token_id = context.get('subject_token_id')
-        token_data = self.token_provider_api.validate_token(token_id)
+        token_data = self.token_provider_api.validate_v3_token(token_id)
         return render_token_data_response(token_id, token_data)
 
     @controller.protected
