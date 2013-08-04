@@ -110,17 +110,29 @@ class Provider(object):
         """
         raise exception.NotImplemented()
 
-    def issue_token(self, version='v3.0', **kwargs):
-        """Issue a V3 token.
+    def issue_v2_token(self, token_ref, roles_ref=None, catalog_ref=None):
+        """Issue a V2 token.
+
+        :param token_ref: token data to generate token from
+        :type token_ref: dict
+        :param roles_ref: optional roles list
+        :type roles_ref: dict
+        :param catalog_ref: optional catalog information
+        :type catalog_ref: dict
+        :return: (token_id, token_data)
+        """
+        raise exception.NotImplemented()
+
+    def issue_v3_token(self, user_id, method_names, expires_at=None,
+                       project_id=None, domain_id=None, metadata_ref=None,
+                       include_catalog=True):
+        """Issue a V3 Token.
 
         For V3 tokens, 'user_id', 'method_names', must present in kwargs.
         Optionally, kwargs may contain 'expires_at' for rescope tokens;
         'project_id' for project-scoped token; 'domain_id' for
         domain-scoped token; and 'auth_context' from the authentication
         plugins.
-
-        For V2 tokens, 'token_ref' must be present in kwargs.
-        Optionally, kwargs may contain 'roles_ref' and 'catalog_ref'.
 
         :param context: request context
         :type context: dictionary
@@ -130,7 +142,6 @@ class Provider(object):
                        may be different depending on token version.
         :type kwargs: dictionary
         :returns: (token_id, token_data)
-
         """
         raise exception.NotImplemented()
 
@@ -160,8 +171,23 @@ class Provider(object):
         """
         raise exception.NotImplemented()
 
+    def validate_token(self, token_id, belongs_to=None, version='v3.0'):
+        try:
+            # FIXME(morganfainberg): make version method selection programmatic
+            # instead of requiring individual if-checks. Better yet, move up to
+            # the driver base. All _validate_<version>_token() methods should
+            # also have the same signatures.
+            if version == token.provider.V3:
+                return self._validate_v3_token(token_id, belongs_to=belongs_to)
+            elif version == token.provider.V2:
+                return self._validate_v2_token(token_id, belongs_to=belongs_to)
+            raise token.provider.UnsupportedTokenVersionException()
+        except (exception.TokenNotFound, exception.ValidationError) as e:
+            LOG.exception(_('Failed to verify token'))
+            raise exception.Unauthorized(e)
+
     def check_token(self, token_id, belongs_to=None, version='v3.0'):
-        """Check the validity of the given V3 token.
+        """Check the validity of the given token.
 
         Must raise Unauthorized exception if  unable to check token.
 
@@ -175,3 +201,4 @@ class Provider(object):
         :raises: keystone.exception.Unauthorized
 
         """
+        raise exception.NotImplemented()
