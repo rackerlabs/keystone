@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//Oaw\u003d",
+        "filename": "tests/_sql_livetest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-08-05T07:18:19Z",
+      "side": 1,
+      "message": "I don\u0027t know, I\u0027ve just duplicated the above code here, but inherited from \"test_sql_upgrade.SqlUpgradeSchemaTests\"",
+      "parentUuid": "AAAAQn//Siw\u003d",
+      "revId": "34fd68109d93c6a7674f585bee9810195c54e541",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//SiQ\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-02T14:13:18Z",
       "side": 1,
       "message": "i would think that the upgrade would occur in a test method, not in setup... or am i missing something?",
+      "revId": "34fd68109d93c6a7674f585bee9810195c54e541",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Oa4\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-08-05T07:18:19Z",
+      "side": 1,
+      "message": "The idea is to run all the schema tests not in a freshly created database, but in a database that has been migrated, from 0 to max version, that is why we are making the full upgrade here.",
+      "parentUuid": "AAAAQn//SiQ\u003d",
       "revId": "34fd68109d93c6a7674f585bee9810195c54e541",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
