@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//NOo\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1173,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-05T14:04:32Z",
+      "side": 1,
+      "message": "It might be a good idea to test the downgrade as well, ensuing that the indexes have re-appeared.",
+      "revId": "c8baf3484bb72e14b97d540a83ee1c9728bd966c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
