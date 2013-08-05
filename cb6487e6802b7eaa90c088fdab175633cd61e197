@@ -69,6 +69,24 @@
       "revId": "cb6487e6802b7eaa90c088fdab175633cd61e197",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LtA\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-05T20:16:26Z",
+      "side": 1,
+      "message": "Example of something that would cause an issue:\n\ndef test(roles\u003d[]):\n   new_role \u003d get_new_role()\n   roles.append(new_role)\n\nThat example above would make the default argument for \"test\" include the new_role.  It\u0027s safer to just ensure only immutable arguments are used unless you _really_ want to change the default argument at runtime.  Default arguments are instantiated exactly one time per method/function (not on each call, it would be inefficient to do so)",
+      "parentUuid": "AAAAQn//LuM\u003d",
+      "revId": "cb6487e6802b7eaa90c088fdab175633cd61e197",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
