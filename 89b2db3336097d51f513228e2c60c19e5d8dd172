@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//MlA\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-05T16:49:39Z",
+      "side": 1,
+      "message": "I think that, instead of adding this parameter to each file, we should make an objects and provide the same method signature as above.  So instead of \nregister_str(*args, **kw):\nwe call\nconf.register_str(*args, **kw)\n\nthen the code to do \t    \n\nif conf is None:\n\t        conf \u003d CONF\n\nshould be done at the top level of the configure function only once.",
+      "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//MnQ\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
@@ -13,6 +30,74 @@
       "writtenOn": "2013-08-05T16:27:50Z",
       "side": 1,
       "message": "oops, will remove that.",
+      "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Mkk\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-05T16:49:39Z",
+      "side": 1,
+      "message": "It is not really clear which driver you are selecting here.  Suggest  self._select_driver(domain_id) becomes self._select_id_driver(domain_id)",
+      "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//MkU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-05T16:49:39Z",
+      "side": 1,
+      "message": "This function really belongs on the driver, but I suspect it is here for backwards compat.",
+      "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//MkA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-05T16:49:39Z",
+      "side": 1,
+      "message": "To-\u003eDo",
+      "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//MjU\u003d",
+        "filename": "tests/keystone.Default.conf",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-05T16:49:39Z",
+      "side": 1,
+      "message": "This file is strangely named, between the Cap in the D and the fact that it is seeming to compete withe test_overides.  Suggest renaming it and commenting on what it is used for.",
       "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
