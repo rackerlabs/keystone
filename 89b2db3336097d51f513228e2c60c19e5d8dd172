@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//MOw\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-05T18:07:08Z",
+      "side": 1,
+      "message": "Looks like a good suggestion, I\u0027ll re-work this file.",
+      "parentUuid": "AAAAQn//MlA\u003d",
+      "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//MnQ\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//MOU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-05T18:07:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//Mkk\u003d",
+      "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//MkU\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
@@ -64,6 +100,24 @@
       "writtenOn": "2013-08-05T16:49:39Z",
       "side": 1,
       "message": "This function really belongs on the driver, but I suspect it is here for backwards compat.",
+      "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//MOI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-05T18:07:08Z",
+      "side": 1,
+      "message": "could you expand on what you mean by \"belongs on the driver\"?",
+      "parentUuid": "AAAAQn//MkU\u003d",
       "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//MOg\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-05T18:07:08Z",
+      "side": 1,
+      "message": "In, fact I can delete the whole comment, since I have now done this.",
+      "parentUuid": "AAAAQn//MkA\u003d",
+      "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//MjU\u003d",
         "filename": "tests/keystone.Default.conf",
         "patchSetId": 11
@@ -98,6 +170,24 @@
       "writtenOn": "2013-08-05T16:49:39Z",
       "side": 1,
       "message": "This file is strangely named, between the Cap in the D and the fact that it is seeming to compete withe test_overides.  Suggest renaming it and commenting on what it is used for.",
+      "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//MO4\u003d",
+        "filename": "tests/keystone.Default.conf",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-05T18:07:08Z",
+      "side": 1,
+      "message": "Fair comment, since it is called keystone.Default.conf because this is the domains specific configuration file for the default domain, for which the domain_id is \"Default\"",
+      "parentUuid": "AAAAQn//MjU\u003d",
       "revId": "89b2db3336097d51f513228e2c60c19e5d8dd172",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
