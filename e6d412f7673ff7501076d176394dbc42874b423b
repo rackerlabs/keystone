@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//LX0\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T22:12:09Z",
+      "side": 1,
+      "message": "this new option needs to be added to the sample config file. Also, I think there should be a comment that this only applies to the SQL backend. (maybe it belongs in the sql section of the config and not the token?)",
+      "revId": "e6d412f7673ff7501076d176394dbc42874b423b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LXk\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2364,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T22:12:09Z",
+      "side": 1,
+      "message": "suggest move the assert to test_expired_token.",
+      "revId": "e6d412f7673ff7501076d176394dbc42874b423b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
