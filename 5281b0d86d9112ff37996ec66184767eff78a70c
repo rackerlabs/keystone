@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//LKk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T23:24:46Z",
+      "side": 1,
+      "message": "Change first \"Disable\" to \"Revoke\"\n\nchange \"disabe\" to \"disable\"",
+      "revId": "5281b0d86d9112ff37996ec66184767eff78a70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LKM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T23:24:46Z",
+      "side": 1,
+      "message": "Change \"Disable\" to \"Revoke\"\n\nAlso, should \"belonging\" be \"scoped\"?",
+      "revId": "5281b0d86d9112ff37996ec66184767eff78a70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//SOs\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 1
