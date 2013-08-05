@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//LPY\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T23:03:00Z",
+      "side": 1,
+      "message": "suggest log what happened here...\n\n LOG.info(_(\"Creating the default role %s because it does not exist.\") %\n  config.CONF.member_role_id)\n\nBecause if somebody is using read-only LDAP this is going to fail and we should try to make it obvious why this is happening... maybe they\u0027ll be able to figure out that they need to create the role themselves or change the default.\n\nAlso, they might have some other errors and warnings in their logs from the failure so they might be interested to know what happened.",
+      "revId": "3ee1e8fea7d4e536116babc4914da4ed68174a45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LOo\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T23:03:00Z",
+      "side": 1,
+      "message": "suggest format these lines so they\u0027re the same as the call at 185-188 so that it\u0027s obvious that it\u0027s the same thing again.",
+      "revId": "3ee1e8fea7d4e536116babc4914da4ed68174a45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LOc\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1463,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T23:03:00Z",
+      "side": 1,
+      "message": "suggest check that the role now exists.",
+      "revId": "3ee1e8fea7d4e536116babc4914da4ed68174a45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
