@@ -1162,6 +1162,15 @@ class SqlUpgradeTests(test.TestCase):
         self.assertEqual(cred.user_id,
                          ec2_credential['user_id'])
 
+    def test_drop_credential_indexes(self):
+        self.upgrade(31)
+        table = sqlalchemy.Table('credential', self.metadata, autoload=True)
+        index_data = [(idx.name, idx.columns.keys())
+                      for idx in table.indexes]
+        self.assertNotIn(('user_id', ['user_id']), index_data)
+        self.assertNotIn(('credential_project_id_fkey', ['project_id']),
+                         index_data)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
