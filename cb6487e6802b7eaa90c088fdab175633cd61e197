@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//Lto\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-05T20:13:58Z",
+      "side": 1,
+      "message": "There is still some work to be done around this code.  There are some changes I am still looking at that will change how the system handles versioning of token-formats.",
+      "parentUuid": "AAAAQn//MNc\u003d",
+      "revId": "cb6487e6802b7eaa90c088fdab175633cd61e197",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//MM0\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-05T18:12:30Z",
       "side": 1,
       "message": "Can\u0027t this be added in parameter list as default parameter?\n\nrole_ref \u003d []",
+      "revId": "cb6487e6802b7eaa90c088fdab175633cd61e197",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LuM\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-05T20:13:58Z",
+      "side": 1,
+      "message": "You do not want to use lists or dicts as default arguments, they are mutable.  if you change the reference, it will change the reference for the default values for subsequent calls.\n\nStrings, Ints, NoneType, etc are immutable, and assignment into the variable replaces the reference instead of modifying it.\n\nIn short: be very careful when using mutable arguments as defaults.",
+      "parentUuid": "AAAAQn//MM0\u003d",
       "revId": "cb6487e6802b7eaa90c088fdab175633cd61e197",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
