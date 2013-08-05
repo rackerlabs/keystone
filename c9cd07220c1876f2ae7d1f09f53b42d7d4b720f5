@@ -2,6 +2,142 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//LWA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T22:43:09Z",
+      "side": 1,
+      "message": "(nit) change \"extentions\" to \"extensions\"",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LVo\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T22:43:09Z",
+      "side": 1,
+      "message": "(nit) remove \"the\"",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LVI\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T22:43:09Z",
+      "side": 1,
+      "message": "suggest change \"should\" to \"must\"",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LU0\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T22:43:09Z",
+      "side": 1,
+      "message": "change . to , after \"For example\"",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LUs\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T22:43:09Z",
+      "side": 1,
+      "message": "change \"should\" to \"must\"",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LVU\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T22:43:09Z",
+      "side": 1,
+      "message": "I think the recent change to not migrate the extension repo with db_sync is going to surprise developers and they will constantly be trying to change it so that their extension migration happens automatically. So I suggest adding a new paragraph here explaining that the developer will need to do `keystone-migrate db_sync --extension my_extension` to apply their migration.",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LRo\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T22:43:09Z",
+      "side": 1,
+      "message": "prior to this change, if all the backends were configured for non-db and I ran db_sync, it would just do nothing because none of the backends implement db_sync(). Now it\u0027s going to create the tables even if no backend is SQL. Is this change in behavior intentional? If so, mention it in the commit message.",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LTQ\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T22:43:09Z",
+      "side": 1,
+      "message": "looks like the different driver.db_syncs aren\u0027t used anymore, do you plan to remove these functions?",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//LbE\u003d",
         "filename": "keystone/cli.py",
         "patchSetId": 17
@@ -13,6 +149,23 @@
       "writtenOn": "2013-08-05T21:55:54Z",
       "side": 1,
       "message": "How come this does not use internationalization? Is this not a user facing string?",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LTw\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T22:43:09Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem like an error to me... seems like it \"worked\"\n\nI think it would be an error if the extension didn\u0027t exist.",
       "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -47,6 +200,23 @@
       "writtenOn": "2013-08-05T21:55:54Z",
       "side": 1,
       "message": "since you are touching this file can you fix the typo on this line as well?",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LR4\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T22:43:09Z",
+      "side": 1,
+      "message": "suggest move this function up to SqlMigrateBase as the default implementation.",
       "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
