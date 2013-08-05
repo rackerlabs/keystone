@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//LJo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_drop_credential_indexes.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-05T23:26:52Z",
+      "side": 1,
+      "message": "add a comment why this only applies to mysql.",
+      "revId": "c8baf3484bb72e14b97d540a83ee1c9728bd966c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//NOo\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 6
