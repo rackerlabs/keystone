@@ -87,6 +87,24 @@
       "revId": "5281b0d86d9112ff37996ec66184767eff78a70c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//NtI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-08-05T11:45:28Z",
+      "side": 1,
+      "message": "@dolph maybe I am misunderstanding my patch is here to fix to delete user tokens of a tenant when disabling/deleting such tenant. \n\nI would not mind to do a follow-up patch to properly delete roles assigned to that user/project when that project is deleted/disabled but I would argue those are different patches (although touching the same code).\n\nIf you do think that this review should be a \"fix delete_project to properly delete everything\" then I\u0027ll change the patch appropriately.",
+      "parentUuid": "AAAAQn//Rbo\u003d",
+      "revId": "5281b0d86d9112ff37996ec66184767eff78a70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
