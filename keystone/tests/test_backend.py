@@ -2016,6 +2016,53 @@ class IdentityTests(object):
                 found = True
         self.assertTrue(found)
 
+    def test_list_groups_for_user(self):
+        domain = self._get_domain_fixture()
+        test_groups = []
+        test_users = []
+
+        for x in range(0, 2):
+            new_user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                        'password': uuid.uuid4().hex, 'enabled': True,
+                        'domain_id': domain['id']}
+            test_users.append(new_user)
+            self.identity_api.create_user(new_user['id'], new_user)
+
+        for x in range(0, 2):
+            group_refs = self.identity_api.list_groups_for_user(
+                test_users[x]['id'])
+            self.assertEquals(len(group_refs), 0)
+
+        for x in range(0, 3):
+            new_group = {'id': uuid.uuid4().hex,
+                         'domain_id': domain['id'],
+                         'name': uuid.uuid4().hex}
+            self.identity_api.create_group(new_group['id'], new_group)
+            test_groups.append(new_group)
+
+            group_refs = self.identity_api.list_groups_for_user(
+                test_users[0]['id'])
+            self.assertEquals(len(group_refs), x)
+
+            self.identity_api.add_user_to_group(
+                test_users[0]['id'],
+                new_group['id'])
+            group_refs = self.identity_api.list_groups_for_user(
+                test_users[0]['id'])
+            self.assertEquals(len(group_refs), x + 1)
+
+            group_refs = self.identity_api.list_groups_for_user(
+                test_users[1]['id'])
+            self.assertEquals(len(group_refs), 0)
+
+        for x in range(0, 3):
+            self.identity_api.remove_user_from_group(
+                test_users[0]['id'],
+                test_groups[x]['id'])
+            group_refs = self.identity_api.list_groups_for_user(
+                test_users[0]['id'])
+            self.assertEquals(len(group_refs), 2 - x)
+
     def test_remove_user_from_group(self):
         domain = self._get_domain_fixture()
         new_group = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
