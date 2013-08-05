@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//LbE\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-08-05T21:55:54Z",
+      "side": 1,
+      "message": "How come this does not use internationalization? Is this not a user facing string?",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//LbM\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-08-05T21:55:54Z",
+      "side": 1,
+      "message": "How come this does not use internationalization? Is this not a user facing string?",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Lao\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-08-05T21:55:54Z",
+      "side": 1,
+      "message": "since you are touching this file can you fix the typo on this line as well?",
+      "revId": "c9cd07220c1876f2ae7d1f09f53b42d7d4b720f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
