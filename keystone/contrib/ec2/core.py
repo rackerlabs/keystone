@@ -221,7 +221,10 @@ class Ec2Controller(controller.V2Controller):
         cred_ref = {'user_id': user_id,
                     'tenant_id': tenant_id,
                     'access': uuid.uuid4().hex,
-                    'secret': uuid.uuid4().hex}
+                    'secret': uuid.uuid4().hex,
+                    'token_id': None,
+                    'trustee_id': None,
+                    }
         self.ec2_api.create_credential(cred_ref['access'], cred_ref)
         return {'credential': cred_ref}
 
