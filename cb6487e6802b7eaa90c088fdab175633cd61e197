@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//K0Y\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-06T01:58:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//LZ0\u003d",
+      "revId": "cb6487e6802b7eaa90c088fdab175633cd61e197",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//MNc\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2013-08-05T20:13:58Z",
       "side": 1,
       "message": "There is still some work to be done around this code.  There are some changes I am still looking at that will change how the system handles versioning of token-formats.",
+      "parentUuid": "AAAAQn//MNc\u003d",
+      "revId": "cb6487e6802b7eaa90c088fdab175633cd61e197",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//K0U\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-06T01:58:17Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAAQn//MNc\u003d",
       "revId": "cb6487e6802b7eaa90c088fdab175633cd61e197",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
