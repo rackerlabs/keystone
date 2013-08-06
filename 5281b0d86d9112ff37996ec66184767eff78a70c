@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//Ktw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-08-06T03:26:02Z",
+      "side": 1,
+      "message": "I guess scoped sounds better here.",
+      "parentUuid": "AAAAQn//LKM\u003d",
+      "revId": "5281b0d86d9112ff37996ec66184767eff78a70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//SOs\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 1
