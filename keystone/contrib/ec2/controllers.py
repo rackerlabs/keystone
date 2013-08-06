@@ -96,6 +96,13 @@ class Ec2Controller(controller.V2Controller):
         creds_ref = self._get_credentials(credentials['access'])
         self.check_signature(creds_ref, credentials)
 
+        # check whether the keypair is linked to a trust token or not
+        # if so, return the token used to create the keypair.
+        if creds_ref['token_id']:
+            #NOTE(mhu): should we check first the validity of the token?
+            # or leave it to the token api afterwards ?
+            return self.token_api.get_token(creds_ref['token_id'])
+
         # TODO(termie): don't create new tokens every time
         # TODO(termie): this is copied from TokenController.authenticate
         token_id = uuid.uuid4().hex
@@ -126,7 +133,30 @@ class Ec2Controller(controller.V2Controller):
             auth_token_data, roles_ref, catalog_ref)
         return token_data
 
-    def create_credential(self, context, user_id, tenant_id):
+    def create_credential_from_token(self, context, user_id, tenant_id):
+        """Create a secret/access pair for use with ec2 style auth.
+
+        Generates a new set of credentials linked to the provided token.
+        The token must have been issued from a trust.
+
+        :param context: standard context
+        :param user_id: id of user
+        :param tenant_id: id of tenant
+        :returns: credential: dict of ec2 credential
+        """
+
+        token_ref = self.token_api.get_token(context['token_id'])
+        self._assert_trust_token(token_ref)
+        trust = token_ref["token_data"]["token"]["OS-TRUST:trust"]
+        trustor_id = trust["trustor_user"]["id"]
+        return self.create_credential(context,
+                                      trustor_id,
+                                      tenant_id,
+                                      token_ref['id'],
+                                      user_id)
+
+    def create_credential(self, context, user_id, tenant_id,
+                          token_id=None, trustee_id=None):
         """Create a secret/access pair for use with ec2 style auth.
 
         Generates a new set of credentials that map the user/tenant
@@ -135,6 +165,8 @@ class Ec2Controller(controller.V2Controller):
         :param context: standard context
         :param user_id: id of user
         :param tenant_id: id of tenant
+        :param token_id: a trust token id, if relevant
+        :param trustee_id: the trustee id, if relevant
         :returns: credential: dict of ec2 credential
         """
         if not self._is_admin(context):
@@ -143,7 +175,9 @@ class Ec2Controller(controller.V2Controller):
         self._assert_valid_user_id(user_id)
         self._assert_valid_project_id(tenant_id)
         blob = {'access': uuid.uuid4().hex,
-                'secret': uuid.uuid4().hex}
+                'secret': uuid.uuid4().hex,
+                'token_id': token_id,
+                'trustee_id': trustee_id}
         credential_id = utils.hash_access_key(blob['access'])
         cred_ref = {'user_id': user_id,
                     'project_id': tenant_id,
@@ -209,7 +243,9 @@ class Ec2Controller(controller.V2Controller):
         return {'user_id': credential.get('user_id'),
                 'tenant_id': credential.get('project_id'),
                 'access': blob.get('access'),
-                'secret': blob.get('secret')}
+                'secret': blob.get('secret'),
+                'token_id': blob.get('token_id'),
+                'trustee_id': blob.get('trustee_id')}
 
     def _get_credentials(self, credential_id):
         """Return credentials from an ID.
@@ -238,7 +274,13 @@ class Ec2Controller(controller.V2Controller):
             raise exception.Unauthorized(e)
 
         if token_ref['user'].get('id') != user_id:
-            raise exception.Forbidden(_('Token belongs to another user'))
+            if not token_ref.get("OS-TRUST:trust"):
+                raise exception.Forbidden(_('Token belongs to another user'))
+            else:
+                trustee = token_ref["OS-TRUST:trust"]["trustee_user"].get('id')
+                if trustee != user_id:
+                    msg = 'Trust Token belongs to another user'
+                    raise exception.Forbidden(msg)
 
     def _is_admin(self, context):
         """Wrap admin assertion error return statement.
@@ -263,7 +305,20 @@ class Ec2Controller(controller.V2Controller):
         """
         cred_ref = self.credential_api.get_credential(credential_id)
         if user_id != cred_ref['user_id']:
-            raise exception.Forbidden(_('Credential belongs to another user'))
+            if user_id != cred_ref['trustee_id']:
+                msg = 'Credential belongs to another user'
+                raise exception.Forbidden(msg)
+
+    def _assert_trust_token(self, token):
+        """Ensure that the token was issued from a trust.
+
+        :param token: a token.
+        :raises exception.Forbidden if token wasn't issued by a trust
+
+        """
+        if not token["token_data"]["token"].get("OS-TRUST:trust"):
+            msg = 'Token must be issued by a trust'
+            raise exception.Forbidden(msg)
 
     def _assert_valid_user_id(self, user_id):
         """Ensure a valid user id.
