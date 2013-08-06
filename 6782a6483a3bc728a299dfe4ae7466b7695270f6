@@ -1,0 +1,582 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//H8c\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "change \"specifc\" to \"specific\"",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//H8M\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "change \"User\" to \"users\"",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//H8I\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "add a DocImpact tag.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//H68\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "change : to :: for rst",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//H64\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "change : to :: for rst",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//H6M\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "This should say that by default the feature is disabled and need to set domain_specific_drivers_enabled to True to enable it.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//H3M\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "should be IntOpt -- we need unit tests to catch this.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//H24\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "this is a StrOpt... again, unit tests needed.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//H20\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "This is a BoolOpt.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hzo\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "was this meant to be removed since the same code is at line 127?",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hyo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "suggest just return here.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hyg\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "suggest just return here.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hyc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "return",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hrs\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "use named parameter for named argument... domain_scope\u003ddomain_id",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hro\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "use named parameter for named argument... domain_scope\u003ddomain_id",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//HrU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "change \"The identity manager\" to \"This class\" so it\u0027s obvious this is referring to this class and not some other class.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//HrQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "change \"dir\" to \"directory\"",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//HrE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "change \"of these\" to \"file\"",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//HrA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "change \"the Manager\" to \"this class\"",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//HnQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "suggest do\n\n domain_config \u003d self.domain_configs[domain_id]\n\nso don\u0027t need to use self.domain_configs[domain_id] on every line.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hn0\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "suggest do conf_dir \u003d CONF.identity.domain_config_dir at start of function and use that instead of CONF.identity.domain_config_dir to make this a little more readable.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//How\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "change \"dir\" to \"directory\" for translation",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hog\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "meant to return here since conf_dir doesn\u0027t exist?",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hos\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "handle case when len(names) !\u003d 3.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//HnM\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "just return self.domain_configs[domain_id][\u0027driver\u0027]",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//HnE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "just return self.driver",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hms\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "just return self.domain_configs[domain_id][\u0027cfg\u0027]",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hmk\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "just return CONF",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//HsQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "just return CONF.identity.default_domain_id",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hjg\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "these 2 lines are copy/pasted several times, suggest move them to a method.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//HjA\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "remove this useless line",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hiw\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1515,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "why does this test need to change? update_user requires a domain_id now whereas before it didn\u0027t? This seems like an incompatibility.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//HiE\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "suggest undo whitespace changes.",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hhw\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:42:52Z",
+      "side": 1,
+      "message": "why does this test need to change?",
+      "revId": "6782a6483a3bc728a299dfe4ae7466b7695270f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
