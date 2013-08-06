@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//KaE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-08-06T06:30:49Z",
+      "side": 1,
+      "message": "Project doesn\u0027t have password",
+      "revId": "be35f9adefa97552dc86bd35323eb147a5ff3e20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
