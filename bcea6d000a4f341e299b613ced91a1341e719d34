@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//ImE\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-06T17:29:55Z",
+      "side": 1,
+      "message": "i\u0027m struggling to understand the goal of this check. it would be slightly stronger (and perhaps useful) if you did:\n\n  if tenant_id is None or user_id is None:\n    return {}\n\nbut why would that ever be useful?\n\n_get_roles_for_just_user_and_project() will immediately be called with the same arguments, which actually validates both entities anyway",
+      "revId": "bcea6d000a4f341e299b613ced91a1341e719d34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Ik4\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-06T17:29:55Z",
+      "side": 1,
+      "message": "why would this ever be called this way? how is this a useful test? it doesn\u0027t represent any sort of actual use case",
+      "revId": "bcea6d000a4f341e299b613ced91a1341e719d34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Iko\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-06T17:29:55Z",
+      "side": 1,
+      "message": "same as above.. the combination of arguments is meaningless",
+      "revId": "bcea6d000a4f341e299b613ced91a1341e719d34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
