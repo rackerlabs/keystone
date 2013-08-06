@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//IxA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-08-06T16:34:20Z",
+      "side": 1,
+      "message": "comment -- password was changed should be removed",
+      "revId": "df585cd1015111f6d7a4d75ab512dfe94dcbd30c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
