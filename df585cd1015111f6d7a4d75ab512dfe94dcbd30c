@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//Ig0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T20:54:18Z",
+      "side": 1,
+      "message": "remove \"say\"",
+      "revId": "df585cd1015111f6d7a4d75ab512dfe94dcbd30c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//IO8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T20:54:18Z",
+      "side": 1,
+      "message": "change \"clearing\" to \"deleting\"",
+      "revId": "df585cd1015111f6d7a4d75ab512dfe94dcbd30c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//IxA\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -13,6 +47,23 @@
       "writtenOn": "2013-08-06T16:34:20Z",
       "side": 1,
       "message": "comment -- password was changed should be removed",
+      "revId": "df585cd1015111f6d7a4d75ab512dfe94dcbd30c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//IPc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T20:54:18Z",
+      "side": 1,
+      "message": "+1, remove \"password was changed or the\"",
       "revId": "df585cd1015111f6d7a4d75ab512dfe94dcbd30c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
