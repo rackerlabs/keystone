@@ -35,6 +35,11 @@ class Ec2Extension(wsgi.ExtensionRouter):
             action='create_credential',
             conditions=dict(method=['POST']))
         mapper.connect(
+            '/users/{user_id}/credentials/OS-EC2/from_token',
+            controller=ec2_controller,
+            action='create_credential_from_token',
+            conditions=dict(method=['POST']))
+        mapper.connect(
             '/users/{user_id}/credentials/OS-EC2',
             controller=ec2_controller,
             action='get_credentials',

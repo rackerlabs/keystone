@@ -2233,3 +2233,116 @@ class TestTrustAuth(TestAuthInfo):
         self.get('/OS-TRUST/trusts?trustor_user_id=%s' %
                  self.user_id, expected_status=401,
                  token=trust_token)
+
+    def _create_keypair(self, user, trust_token=None):
+        if trust_token:
+            path = '/users/%s/credentials/OS-EC2/from_token/' %\
+                self.trustee_user_id
+            r = self.post(path,
+                          token=trust_token,
+                          body={'tenant_id': self.project_id},
+                          expected_status=200)
+        else:
+            path = '/users/%s/credentials/OS-EC2/' % user['id']
+            kwargs = {'user_id': user['id'],
+                      'password': user['password']}
+            if user == self.user:
+                kwargs['project_id'] = self.project_id
+            auth_data = self.build_authentication_request(**kwargs)
+            r = self.post('/auth/tokens', body=auth_data)
+            token = r.headers.get('X-Subject-Token')
+            r = self.post(path,
+                          body={'tenant_id': self.project_id},
+                          token=token,
+                          expected_status=200)
+        return r
+
+    def test_generate_ec2_keypair_from_trust_token(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            role_ids=[self.role_id])
+        del ref['id']
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r, ref)
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+        r = self.post('/auth/tokens', body=auth_data)
+        trust_token = r.headers.get('X-Subject-Token')
+        trust_token_desc = r.result['token']
+        # keypair creation returns 200, should it be 201 ?
+        ec2creds = self.post(
+            '/users/%s/credentials/OS-EC2/from_token/' % self.trustee_user_id,
+            token=trust_token,
+            body={'tenant_id': self.project_id},
+            expected_status=200)
+        access = ec2creds.result['credential']['access']
+        secret = ec2creds.result['credential']['secret']
+        # Use helper functions from keystoneclient
+        from keystoneclient.contrib.ec2 import utils as ec2_utils
+        signer = ec2_utils.Ec2Signer(secret)
+        credentials = {'params': {'SignatureVersion': '2'},
+                       'access': access,
+                       'verb': 'GET',
+                       'host': 'localhost',
+                       'path': '/thisisgoingtowork'}
+        signature = signer.generate(credentials)
+        credentials['signature'] = signature
+
+        resp = self.post('/ec2tokens',
+                         body={'credentials': credentials},
+                         expected_status=200)
+        token_desc = resp.result['token_data']['token']
+        token = resp.result['key']
+        self.assertEqual(trust_token_desc, token_desc)
+        self.assertEqual(trust_token, token)
+
+    def test_list_ec2_keypairs_as_trustor(self):
+        # when an ec2 keypair is generated from a trust token, it must
+        # appear when listed as the trustor or the trustee.
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            role_ids=[self.role_id])
+        del ref['id']
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r, ref)
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+        r = self.post('/auth/tokens', body=auth_data)
+        trust_token = r.headers.get('X-Subject-Token')
+
+        # create an ec2 keypair as trustor
+        self._create_keypair(self.user)
+        # create an ec2 keypair from the trust
+        self._create_keypair(self.trustee_user, trust_token)
+        # the trustor must see 2 new keypairs
+        r = self.get('/users/%s/credentials/OS-EC2/' % self.user_id)
+        self.assertEqual(len(r.result['credentials']), 2)
+
+    def test_delete_ec2_keypair_as_trustor(self):
+        # a trustor should be able to delete a keypair created by a trustee.
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            role_ids=[self.role_id])
+        del ref['id']
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r, ref)
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+        r = self.post('/auth/tokens', body=auth_data)
+        trust_token = r.headers.get('X-Subject-Token')
+        r = self._create_keypair(self.trustee_user, trust_token)
+        cred_id = r.result['credential']['access']
+        self.delete('/users/%s/credentials/OS-EC2/%s' % (self.user_id,
+                                                         cred_id))
