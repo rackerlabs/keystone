@@ -57,6 +57,11 @@ match if key expiry is to behave as expected.
 
 .. _`memcached`: http://memcached.org/
 
+.. NOTE::
+
+    Memcache token driver works with local timezone.
+
+
 Configuration Files
 ===================
 
