@@ -23,6 +23,8 @@ class Ec2Credential(sql.ModelBase, sql.DictBase):
     secret = sql.Column(sql.String(64))
     user_id = sql.Column(sql.String(64))
     tenant_id = sql.Column(sql.String(64))
+    token_id = sql.Column(sql.String(64), nullable=True)
+    trustee_id = sql.Column(sql.String(64), nullable=True)
 
     @classmethod
     def from_dict(cls, user_dict):
@@ -45,7 +47,9 @@ class Ec2(sql.Base):
     def list_credentials(self, user_id):
         session = self.get_session()
         query = session.query(Ec2Credential)
-        credential_refs = query.filter_by(user_id=user_id)
+        trustor_refs = query.filter_by(user_id=user_id)
+        trustee_refs = query.filter_by(trustee_id=user_id)
+        credential_refs = trustor_refs.union(trustee_refs)
         return [x.to_dict() for x in credential_refs]
 
     # CRUD

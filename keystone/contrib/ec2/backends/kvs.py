@@ -26,7 +26,8 @@ class Ec2(kvs.Base):
     def list_credentials(self, user_id):
         credential_ids = self.db.get('credential_list', [])
         rv = [self.get_credential(x) for x in credential_ids]
-        return [x for x in rv if x['user_id'] == user_id]
+        return [x for x in rv if (x['user_id'] == user_id or
+                                  x['trustee_id'] == user_id)]
 
     # CRUD
     def create_credential(self, credential_id, credential):
