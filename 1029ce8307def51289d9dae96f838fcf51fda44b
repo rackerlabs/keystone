@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//He4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:57:01Z",
+      "side": 1,
+      "message": "change \",odified\" to \"modified\"",
+      "revId": "1029ce8307def51289d9dae96f838fcf51fda44b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//HfE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-06T22:57:01Z",
+      "side": 1,
+      "message": "add a DocImpact tag",
+      "revId": "1029ce8307def51289d9dae96f838fcf51fda44b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
