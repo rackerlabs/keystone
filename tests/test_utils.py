@@ -29,6 +29,10 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import datetime
+import os
+import time
+
 from keystone import test
 
 from keystone.common import utils
@@ -64,3 +68,21 @@ class UtilsTestCase(test.TestCase):
         self.assertFalse(utils.auth_str_equal('a', 'aaaaa'))
         self.assertFalse(utils.auth_str_equal('aaaaa', 'a'))
         self.assertFalse(utils.auth_str_equal('ABC123', 'abc123'))
+
+    def test_unixtime(self):
+        tz_original = None
+        if 'TZ' in os.environ:
+            tz_original = os.environ['TZ']
+        dt = datetime.datetime(1970, 1, 2, 3, 4, 56, 0)
+        epoch_ans = 56 + 4 * 60 + 3 * 3600 + 86400
+        for d in ['+0', '-11', '-8', '-5', '+5', '+8', '+14']:
+            os.environ['TZ'] = 'UTC' + d
+            time.tzset()
+            epoch = utils.unixtime(dt)
+            self.assertTrue(epoch == epoch_ans)
+
+        if tz_original is None:
+            del os.environ['TZ']
+        else:
+            os.environ['TZ'] = tz_original
+        time.tzset()
