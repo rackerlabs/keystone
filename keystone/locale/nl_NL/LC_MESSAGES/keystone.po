@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-08-02 17:05+0000\n"
+"POT-Creation-Date: 2013-08-06 17:05+0000\n"
 "PO-Revision-Date: 2013-07-29 22:01+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Dutch (Netherlands) "
@@ -393,7 +393,7 @@ msgstr ""
 msgid "Authorization failed. %(exception)s from %(remote_addr)s"
 msgstr ""
 
-#: keystone/common/wsgi.py:487
+#: keystone/common/wsgi.py:486
 msgid "The resource could not be found."
 msgstr ""
 
@@ -748,12 +748,12 @@ msgstr ""
 msgid "enforce %(action)s: %(credentials)s"
 msgstr ""
 
-#: keystone/token/controllers.py:378
+#: keystone/token/controllers.py:376
 #, python-format
 msgid "User %(u_id)s is unauthorized for tenant %(t_id)s"
 msgstr ""
 
-#: keystone/token/controllers.py:395 keystone/token/controllers.py:398
+#: keystone/token/controllers.py:393 keystone/token/controllers.py:396
 msgid "Token does not belong to specified tenant."
 msgstr ""
 

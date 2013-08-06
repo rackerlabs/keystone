@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-08-02 17:05+0000\n"
+"POT-Creation-Date: 2013-08-06 17:05+0000\n"
 "PO-Revision-Date: 2013-05-21 09:13+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Spanish "
@@ -403,7 +403,7 @@ msgstr "arg_dict: %s"
 msgid "Authorization failed. %(exception)s from %(remote_addr)s"
 msgstr "Ha fallado la autorización. %s de %s"
 
-#: keystone/common/wsgi.py:487
+#: keystone/common/wsgi.py:486
 msgid "The resource could not be found."
 msgstr "El recurso no se ha podido encontrar."
 
@@ -771,12 +771,12 @@ msgstr ""
 msgid "enforce %(action)s: %(credentials)s"
 msgstr ""
 
-#: keystone/token/controllers.py:378
+#: keystone/token/controllers.py:376
 #, python-format
 msgid "User %(u_id)s is unauthorized for tenant %(t_id)s"
 msgstr ""
 
-#: keystone/token/controllers.py:395 keystone/token/controllers.py:398
+#: keystone/token/controllers.py:393 keystone/token/controllers.py:396
 msgid "Token does not belong to specified tenant."
 msgstr "La señal no pertenece al arrendatario especificado."
 
@@ -876,7 +876,4 @@ msgstr ""
 
 #~ msgid "Invalid value for token_format: %s.  Allowed values are PKI or UUID."
 #~ msgstr ""
-#~ "Valor no válido para token_format: %s."
-#~ " Los valores permitidos son PKI o "
-#~ "UUID."
 
