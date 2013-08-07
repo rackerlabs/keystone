@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//DXc\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-07T21:20:24Z",
+      "side": 1,
+      "message": "change the name of this function to format_url since it\u0027s not just tenant and user id.",
+      "revId": "db923396a92dfec79eea7741cf053e5b07f03573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//DW4\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-07T21:20:24Z",
+      "side": 1,
+      "message": "why not format the URLs when add to catalog rather than changing it afterwards?\n\n(for example, do it at the same time as remove_service_id, call it process_endpoint() or something)",
+      "revId": "db923396a92dfec79eea7741cf053e5b07f03573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
