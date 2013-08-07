@@ -47,6 +47,7 @@ ModelBase = declarative.declarative_base()
 Column = sql.Column
 Index = sql.Index
 String = sql.String
+Integer = sql.Integer
 ForeignKey = sql.ForeignKey
 DateTime = sql.DateTime
 IntegrityError = sql.exc.IntegrityError
