@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//EhY\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-07T16:33:05Z",
+      "side": 1,
+      "message": "why was this changed? d used to contain all the CONF items, but now it doesn\u0027t.",
+      "revId": "079fe32416b1ba1bf02e425f883bdd402713b6c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Ef8\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-07T16:33:05Z",
+      "side": 1,
+      "message": "why was this changed to not \"d \u003d dict(CONF.iteritems())\"?",
+      "revId": "079fe32416b1ba1bf02e425f883bdd402713b6c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
