@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//EhI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-07T16:26:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//EoE\u003d",
+      "revId": "21686b7a5c725fa8134d338b4ea2aaa50822918f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//En4\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-07T16:20:14Z",
       "side": 1,
       "message": "change \"causing keystone will\" to \"causing Keystone to\"\n\nchange \"config\" to \"configuration\"",
+      "revId": "21686b7a5c725fa8134d338b4ea2aaa50822918f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//EhQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-07T16:26:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//En4\u003d",
       "revId": "21686b7a5c725fa8134d338b4ea2aaa50822918f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
