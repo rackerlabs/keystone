@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//EpI\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1167,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-07T16:01:04Z",
+      "side": 1,
+      "message": "why will the test fail? isn\u0027t len(table.indexes) \u003d\u003d 0 for postgres or sqlite?",
+      "parentUuid": "AAAAQn//GeA\u003d",
+      "revId": "98f85ab2f6ee2e50e96240e4afb94ff81388c548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//Ihc\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 7
