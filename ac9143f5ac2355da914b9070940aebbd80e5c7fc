@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//EqY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-07T15:59:36Z",
+      "side": 1,
+      "message": "suggest also change \"clear\" to \"delete\".",
+      "parentUuid": "AAAAQn//FYM\u003d",
+      "revId": "ac9143f5ac2355da914b9070940aebbd80e5c7fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//FYY\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 4
