@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//Dnc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-07T20:03:51Z",
+      "side": 1,
+      "message": "i\u0027m wondering if this should be refactored into 2 or 3 different explicit methods... e.g.\n\n  issue_project_scoped_token()\n  issue_domain_scoped_token()\n\nnot sure if trusts should a be third one, or a wrapper to one of the above",
+      "revId": "8efce6d8f196225baa1c5cdeaff6b08e1fa08949",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//HTg\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 5
