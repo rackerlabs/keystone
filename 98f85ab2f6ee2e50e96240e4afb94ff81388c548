@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//GeA\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1167,
+      "author": {
+        "id": 7293
+      },
+      "writtenOn": "2013-08-07T07:07:29Z",
+      "side": 1,
+      "message": "This migration is relevant only for mysql. For all other migrations the indexes were successfully dropped. So if I remove these lines the tests will fail.",
+      "parentUuid": "AAAAQn//Ihg\u003d",
+      "revId": "98f85ab2f6ee2e50e96240e4afb94ff81388c548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//Ihc\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 7
