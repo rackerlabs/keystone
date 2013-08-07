@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//HTg\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-07T00:15:12Z",
+      "side": 1,
+      "message": "Docstring needs to be fixed.",
+      "revId": "8efce6d8f196225baa1c5cdeaff6b08e1fa08949",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//HTc\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-07T00:15:12Z",
+      "side": 1,
+      "message": "see above note.",
+      "revId": "8efce6d8f196225baa1c5cdeaff6b08e1fa08949",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
