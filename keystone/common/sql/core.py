@@ -46,6 +46,7 @@ ModelBase = declarative.declarative_base()
 # For exporting to other modules
 Column = sql.Column
 String = sql.String
+Integer = sql.Integer
 ForeignKey = sql.ForeignKey
 DateTime = sql.DateTime
 IntegrityError = sql.exc.IntegrityError
