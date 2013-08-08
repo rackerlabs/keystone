@@ -237,14 +237,16 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
     def _ldap_res_to_model(self, res):
         obj = super(UserApi, self)._ldap_res_to_model(res)
         if self.enabled_mask != 0:
+            obj.setdefault('enabled', self.enabled_default)
             obj['enabled_nomask'] = obj['enabled']
-            obj['enabled'] = ((obj['enabled'] & self.enabled_mask) !=
+            obj['enabled'] = ((int(obj['enabled']) & self.enabled_mask) !=
                               self.enabled_mask)
         return obj
 
     def mask_enabled_attribute(self, values):
         value = values['enabled']
         values.setdefault('enabled_nomask', self.enabled_default)
+        values['enabled_nomask'] = int(values['enabled_nomask'])
         if value != ((values['enabled_nomask'] & self.enabled_mask) !=
                      self.enabled_mask):
             values['enabled_nomask'] ^= self.enabled_mask
