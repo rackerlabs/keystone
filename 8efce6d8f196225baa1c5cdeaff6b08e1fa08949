@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//Cg4\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-08T02:14:43Z",
+      "side": 1,
+      "message": "I think this would be a good cleanup at the controller level (here), but I have some minor concerns about the added complexity to the provider due to the way scoping currently works.  Right now, unscoped, and various scoped tokens all get handled in the same interface.\n\nThis would likely require at least method beyond you outlined: issue_unscoped_token()\n\nTrust could just wrap around any/all methods that support trusts.\n\nI\u0027ll look at it a bit more closely and see if it makes sense to do this split.",
+      "parentUuid": "AAAAQn//Dnc\u003d",
+      "revId": "8efce6d8f196225baa1c5cdeaff6b08e1fa08949",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//HTg\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 5
