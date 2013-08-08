@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//DvA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-08T14:57:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//EYw\u003d",
+      "revId": "3d238bb7a57c10896225322c37e4923fea5fb28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//EYo\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-07T16:54:17Z",
       "side": 1,
       "message": "indent this line a space.",
+      "revId": "3d238bb7a57c10896225322c37e4923fea5fb28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//DvE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-08T14:57:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//EYo\u003d",
       "revId": "3d238bb7a57c10896225322c37e4923fea5fb28c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
