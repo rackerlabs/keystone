@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//CNY\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-08-08T04:19:39Z",
+      "side": 1,
+      "message": "This section would be more understandable if you just did it in a regular loop. Not enough to -1 though.",
+      "revId": "b920d15b01b21831999030b0becbc1da988ee638",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
