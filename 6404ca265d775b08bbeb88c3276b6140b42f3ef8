@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//APg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_add_delegated_auth_tables.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-08T16:00:10Z",
+      "side": 1,
+      "message": "done in my dev environment. i want to put in a few more changes before i upload a new patch",
+      "parentUuid": "AAAAQn//ATY\u003d",
+      "revId": "6404ca265d775b08bbeb88c3276b6140b42f3ef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//AS0\u003d",
         "filename": "keystone/contrib/delegated_auth/core.py",
         "patchSetId": 49
