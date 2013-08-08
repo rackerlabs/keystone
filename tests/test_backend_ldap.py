@@ -318,11 +318,12 @@ class LDAPIdentity(test.TestCase, test_backend.IdentityTests):
         self.assertNotIn('name', role_ref)
 
     def test_user_enable_attribute_mask(self):
-        CONF.ldap.user_enabled_attribute = 'enabled'
         CONF.ldap.user_enabled_mask = 2
         CONF.ldap.user_enabled_default = 512
         self.clear_database()
         self.identity_api = identity.backends.ldap.Identity()
+        self.load_fixtures(default_fixtures)
+
         user = {'id': 'fake1', 'name': 'fake1', 'enabled': True}
         self.identity_api.create_user('fake1', user)
         user_ref = self.identity_api.get_user('fake1')
