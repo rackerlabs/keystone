@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//BzY\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 6968
+      },
+      "writtenOn": "2013-08-08T07:42:19Z",
+      "side": 1,
+      "message": "Double period at the end of the comment",
+      "revId": "925dd366b09ba239a29f9a9bbcf6546f9a9a48e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
