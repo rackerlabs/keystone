@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn/+/BY\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 4992
+      },
+      "writtenOn": "2013-08-08T21:52:56Z",
+      "side": 1,
+      "message": "Comment should be disable \"project\", not user",
+      "revId": "8010f279cfadfcc4d16e1e950766f84b7a19365a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+/Bo\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 4992
+      },
+      "writtenOn": "2013-08-08T21:52:56Z",
+      "side": 1,
+      "message": "Comment should be delete \"project\", not user",
+      "revId": "8010f279cfadfcc4d16e1e950766f84b7a19365a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
