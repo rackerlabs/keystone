@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//BDU\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 8247
+      },
+      "writtenOn": "2013-08-08T12:54:53Z",
+      "side": 1,
+      "message": "You can set name\u003d\"new_user\" instead of creating a variable for it. It shortens the code.",
+      "revId": "fb88bdded75da78f34d51e43bd440b2ba4c8ff3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
