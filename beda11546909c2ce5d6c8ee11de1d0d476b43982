@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//A24\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 6737
+      },
+      "writtenOn": "2013-08-08T13:51:33Z",
+      "side": 1,
+      "message": "I totally agree. I am happy to refactor these tests. Perhaps as part of a separate bug though so as not to confuse.",
+      "parentUuid": "AAAAQn//A90\u003d",
+      "revId": "beda11546909c2ce5d6c8ee11de1d0d476b43982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//A9Y\u003d",
         "filename": "tests/test_keystoneclient.py",
         "patchSetId": 2
