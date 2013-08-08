@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//A8s\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-08-08T13:22:17Z",
+      "side": 1,
+      "message": "don\u0027t show PEP8 text for each error.",
+      "revId": "d97782ec70ef0b799c8e99ec3a23d8a3279ff57a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
