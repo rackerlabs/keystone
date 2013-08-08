@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//AWw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-08-08T15:40:24Z",
+      "side": 1,
+      "message": "Had you intended to put some more details after \"with\"?",
+      "revId": "398c5d31985fe5790d414ba6d909ca2224ed5274",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//AWs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-08-08T15:40:24Z",
+      "side": 1,
+      "message": "Same question here.",
+      "revId": "398c5d31985fe5790d414ba6d909ca2224ed5274",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//AVU\u003d",
+        "filename": "tests/backend_sql.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-08-08T15:40:24Z",
+      "side": 1,
+      "message": "Change this to a more generic user and password.",
+      "revId": "398c5d31985fe5790d414ba6d909ca2224ed5274",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
