@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//AjQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:36:06Z",
+      "side": 1,
+      "message": "probably don\u0027t want the quotes here.",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Ai0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:36:06Z",
+      "side": 1,
+      "message": "this sentence fragment is awkward, unnecessary, and should be terminated with extreme prejudice.",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//AiQ\u003d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:36:06Z",
+      "side": 1,
+      "message": "Was this moved to common config?",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//AgQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:36:06Z",
+      "side": 1,
+      "message": "one possibility is, instead of conf.register_opt over again is to put all of the options into an array and then register them with the array versions just like we do with COMMON_CLI_OPTS and LOGGINC_CLI OPTS.\n\nIt might even make sense to do one array per section for visual documentations.\n\nLDAP_OPTS \u003d [cfg.StrOpt(\u0027url\u0027, default\u003d\u0027ldap://localhost\u0027)]\n\nfor opt in LDAP_OPTS:\n   conf.register_opt(opt, \u0027ldap\u0027)\n\n\nwe could also do this in a dictionary:\n\n{ \u0027ldap\u0027: [cfg.StrOpt(\u0027url\u0027, default\u003d\u0027ldap://localhost\u0027)]}\n\nwhich might be even clearer.",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Aew\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:36:06Z",
+      "side": 1,
+      "message": "Remove the underscore, as it looks like subclasses need this function.",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//AeM\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:36:06Z",
+      "side": 1,
+      "message": "I assume you pull this out to avoid putting a dependency on oslo config into this file?",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Ad8\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:36:06Z",
+      "side": 1,
+      "message": "I love this change.  So good when you see things cleaned up across the board.",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Ac8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:36:06Z",
+      "side": 1,
+      "message": "Seems clunky.  I wonder if this value should somehow come out of @controller.filterprotected",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Aao\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:36:06Z",
+      "side": 1,
+      "message": "\u0027needs to be\u0027",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//AaY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:36:06Z",
+      "side": 1,
+      "message": "o -\u003e on",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//AaE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:36:06Z",
+      "side": 1,
+      "message": "is this going to be in the hot path?  It might have a performance implication.  Can you get this down to a single boolean check after the first time it is called?  Or, even better, somehow make it an object that is lazy created, so that the hot path is optimized.",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//AZI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:36:06Z",
+      "side": 1,
+      "message": "I would prefer it if the configuration and management of the domains was its own class, and not internal functions to the Manager.",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
