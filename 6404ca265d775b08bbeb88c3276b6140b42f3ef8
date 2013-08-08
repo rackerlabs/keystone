@@ -16,6 +16,74 @@
       "revId": "6404ca265d775b08bbeb88c3276b6140b42f3ef8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Mxs\u003d",
+        "filename": "keystone/common/oauth.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:45:50Z",
+      "side": 1,
+      "message": "This file does not make sense in common.  Why is it here?",
+      "revId": "6404ca265d775b08bbeb88c3276b6140b42f3ef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//ATY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_add_delegated_auth_tables.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:45:50Z",
+      "side": 1,
+      "message": "move to an extension specific repository",
+      "revId": "6404ca265d775b08bbeb88c3276b6140b42f3ef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//AS0\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:45:50Z",
+      "side": 1,
+      "message": "split this file up into core, routers and controllers.",
+      "revId": "6404ca265d775b08bbeb88c3276b6140b42f3ef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//ASg\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-08T15:45:50Z",
+      "side": 1,
+      "message": "This should be Keystone token, not a new custom type",
+      "revId": "6404ca265d775b08bbeb88c3276b6140b42f3ef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
