@@ -52,6 +52,24 @@
       "revId": "3a58207e6ab9d7c6c22e3dd75afb8f2cc76830b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+70s\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-08-09T18:02:44Z",
+      "side": 1,
+      "message": "Global requirements for WebOb has been updated\nhttps://github.com/openstack/requirements/commit/4f81f419a1430b5e44feb299ce061f592064a7dd",
+      "parentUuid": "AAAAPn//7W0\u003d",
+      "revId": "3a58207e6ab9d7c6c22e3dd75afb8f2cc76830b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
