@@ -19,7 +19,6 @@ import functools
 
 import sqlalchemy as sql
 import sqlalchemy.engine.url
-from sqlalchemy.exc import DisconnectionError
 from sqlalchemy.ext import declarative
 import sqlalchemy.orm
 from sqlalchemy.orm.attributes import InstrumentedAttribute
@@ -29,6 +28,8 @@ from sqlalchemy import types as sql_types
 from keystone.common import logging
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import models
+from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import jsonutils
 
 
@@ -148,8 +149,13 @@ class JsonBlob(sql_types.TypeDecorator):
         return jsonutils.loads(value)
 
 
-class DictBase(object):
+class DictBase(models.ModelBase):
     attributes = []
+
+    def __getitem__(self, key):
+        if key in self.extra:
+            return self.extra[key]
+        return getattr(self, key)
 
     @classmethod
     def from_dict(cls, d):
@@ -177,68 +183,6 @@ class DictBase(object):
 
         return d
 
-    def __setitem__(self, key, value):
-        setattr(self, key, value)
-
-    def __getitem__(self, key):
-        if key in self.extra:
-            return self.extra[key]
-        return getattr(self, key)
-
-    def get(self, key, default=None):
-        return getattr(self, key, default)
-
-    def __iter__(self):
-        self._i = iter(sqlalchemy.orm.object_mapper(self).columns)
-        return self
-
-    def next(self):
-        n = self._i.next().name
-        return n
-
-    def update(self, values):
-        """Make the model object behave like a dict."""
-        for k, v in values.iteritems():
-            setattr(self, k, v)
-
-    def iteritems(self):
-        """Make the model object behave like a dict.
-
-        Includes attributes from joins.
-
-        """
-        return dict([(k, getattr(self, k)) for k in self])
-        #local = dict(self)
-        #joined = dict([(k, v) for k, v in self.__dict__.iteritems()
-        #               if not k[0] == '_'])
-        #local.update(joined)
-        #return local.iteritems()
-
-
-def mysql_on_checkout(dbapi_conn, connection_rec, connection_proxy):
-    """Ensures that MySQL connections checked out of the pool are alive.
-
-    Borrowed from:
-    http://groups.google.com/group/sqlalchemy/msg/a4ce563d802c929f
-
-    Error codes caught:
-    * 2006 MySQL server has gone away
-    * 2013 Lost connection to MySQL server during query
-    * 2014 Commands out of sync; you can't run this command now
-    * 2045 Can't open shared memory; no answer from server (%lu)
-    * 2055 Lost connection to MySQL server at '%s', system error: %d
-
-    from http://dev.mysql.com/doc/refman/5.6/en/error-messages-client.html
-    """
-    try:
-        dbapi_conn.cursor().execute('select 1')
-    except dbapi_conn.OperationalError as e:
-        if e.args[0] in (2006, 2013, 2014, 2045, 2055):
-            logging.warn(_('Got mysql server has gone away: %s'), e)
-            raise DisconnectionError("Database server went away")
-        else:
-            raise
-
 
 # Backends
 class Base(object):
@@ -263,21 +207,22 @@ class Base(object):
 
         """
         def new_engine():
-            connection_dict = sql.engine.url.make_url(CONF.sql.connection)
+            connection_dict = sql.engine.url.make_url(CONF.database.connection)
 
             engine_config = {
                 'convert_unicode': True,
                 'echo': CONF.debug and CONF.verbose,
-                'pool_recycle': CONF.sql.idle_timeout,
+                'pool_recycle': CONF.database.idle_timeout,
             }
 
             if 'sqlite' in connection_dict.drivername:
                 engine_config['poolclass'] = sqlalchemy.pool.StaticPool
 
-            engine = sql.create_engine(CONF.sql.connection, **engine_config)
+            engine = sql.create_engine(CONF.database.connection,
+                                       **engine_config)
 
             if engine.name == 'mysql':
-                sql.event.listen(engine, 'checkout', mysql_on_checkout)
+                sql.event.listen(engine, 'checkout', session.ping_listener)
 
             return engine
 
@@ -290,7 +235,7 @@ class Base(object):
         engine = new_engine()
 
         # auto-build the db to support wsgi server w/ in-memory backend
-        if CONF.sql.connection == 'sqlite://':
+        if CONF.database.connection == 'sqlite://':
             ModelBase.metadata.create_all(bind=engine)
 
         set_global_engine(engine)
