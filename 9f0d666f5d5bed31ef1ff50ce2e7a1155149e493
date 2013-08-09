@@ -34,6 +34,24 @@
       "revId": "9f0d666f5d5bed31ef1ff50ce2e7a1155149e493",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+8pY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-09T14:39:28Z",
+      "side": 1,
+      "message": "That is a good idea and I refactored so that keystone/bin/keystone-all, keystone/cli.py, and keystone/httpd/keystone.py all use /keystone/openstack/common/log as logging. The problem is that there are some things in /keystone/common/logging.py that might not be in keystone/openstack/common/log.py, see trace pertaining to global log level: \n\nhttp://paste.openstack.org/show/43707/\n\nSo if we just switch out the setup_logging function with setup from keystone/openstack/common/log.py then we would be fine. If we implement keystone/openstack/common/log as logging in keystone/cli.py, keystone/httpd/keystone.py and keystone/bin/keystone-all then there are some assumed operations of the old implementation (keystone/common/logging.py). \n\nWondering how we should proceed with this. This might require us to make some changes to Oslo\u0027s logging module given the current implementation of logging in Keystone.",
+      "parentUuid": "AAAAQn/+8wc\u003d",
+      "revId": "9f0d666f5d5bed31ef1ff50ce2e7a1155149e493",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
