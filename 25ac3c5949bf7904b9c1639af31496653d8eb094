@@ -16,6 +16,24 @@
       "revId": "25ac3c5949bf7904b9c1639af31496653d8eb094",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+9rk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_drop_credential_indexes.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7293
+      },
+      "writtenOn": "2013-08-09T07:48:48Z",
+      "side": 1,
+      "message": "As far as I can see none of the files in keystone, including recently added ones, have \"Foundation\" in their Copyright. So I\u0027m not sure I should change it here.",
+      "parentUuid": "AAAAQn/++aM\u003d",
+      "revId": "25ac3c5949bf7904b9c1639af31496653d8eb094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
