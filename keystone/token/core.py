@@ -27,6 +27,8 @@ from keystone import config
 from keystone import exception
 from keystone.openstack.common import timeutils
 
+from keystone.common import cache
+
 
 CONF = config.CONF
 config.register_int('expiration', group='token', default=86400)
@@ -114,6 +116,7 @@ class Manager(manager.Manager):
         """
         return cms.cms_hash_token(token_id)
 
+    @cache.on_arguments()
     def get_token(self, token_id):
         return self.driver.get_token(self._unique_id(token_id))
 
@@ -123,7 +126,42 @@ class Manager(manager.Manager):
         return self.driver.create_token(self._unique_id(token_id), data_copy)
 
     def delete_token(self, token_id):
-        return self.driver.delete_token(self._unique_id(token_id))
+        token_ref = self.driver.get_token(self._unique_id(token_id))
+        self.driver.delete_token(self._unique_id(token_id))
+        self.get_token.invalidate(token_id)
+        self.list_tokens.invalidate()
+        self.list_tokens.invalidate(token_ref['user_id'])
+        if token_ref.get('trust_id'):
+            self.list_tokens_for_trust.invalidate(token_ref['user_id'])
+        if token_ref.get('tenant') and token_ref['tenant'].get('id'):
+            self.list_tokens.invalidate(token_ref['user_id'],
+                                        token_ref['tenant']['id'])
+        self.list_revoked_tokens.invalidate()
+
+    def delete_tokens(self, user_id, tenant_id=None, trust_id=None):
+        if trust_id:
+            token_list = self.driver.list_tokens_for_trust(user_id, trust_id)
+            self.driver.delete_tokens(user_id, tenant_id, trust_id)
+            self.list_tokens_for_trust.invalidate(user_id, trust_id)
+        else:
+            token_list = self.driver.list_tokens(user_id, tenant_id)
+            self.driver.delete_tokens(user_id, tenant_id, trust_id)
+            self.list_tokens.invalidate(user_id, tenant_id, trust_id)
+        self.list_revoked_tokens.invalidate()
+        for token in token_list:
+            self.get_token.invalidate(token)
+
+    @cache.on_arguments()
+    def list_tokens(self, user_id, tenant_id=None):
+        return self.driver.list_tokens(user_id, tenant_id)
+
+    @cache.on_arguments()
+    def list_tokens_for_trust(self, user_id, trust_id):
+        return self.driver.list_tokens_for_trust(user_id, trust_id)
+
+    @cache.on_arguments()
+    def list_revoked_tokens(self):
+        return self.driver.list_revoked_tokens()
 
 
 class Driver(object):
@@ -194,8 +232,7 @@ class Driver(object):
         if trust_id:
             token_list = self.list_tokens_for_trust(user_id, trust_id)
         else:
-            token_list = self.list_tokens(user_id,
-                                          tenant_id)
+            token_list = self.list_tokens(user_id, tenant_id)
         for token in token_list:
             try:
                 self.delete_token(token)

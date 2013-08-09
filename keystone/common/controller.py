@@ -156,7 +156,7 @@ class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
 
     def _delete_tokens_for_trust(self, user_id, trust_id):
-        self.token_api.delete_tokens(user_id, trust_id=trust_id)
+        self.token_api.delete_tokens(user_id, None, trust_id)
 
     def _delete_tokens_for_user(self, user_id, project_id=None):
         #First delete tokens that could get other tokens.

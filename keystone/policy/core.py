@@ -22,6 +22,7 @@ from keystone.common import manager
 from keystone import config
 from keystone import exception
 
+from keystone.common import cache
 
 CONF = config.CONF
 
@@ -38,23 +39,39 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.policy.driver)
 
+    @cache.on_arguments()
     def get_policy(self, policy_id):
         try:
             return self.driver.get_policy(policy_id)
         except exception.NotFound:
             raise exception.PolicyNotFound(policy_id=policy_id)
 
+    @cache.on_arguments()
+    def list_policies(self):
+        return self.driver.list_policies()
+
+    def create_policy(self, policy_id, policy):
+        ret = self.driver.create_policy(policy_id, policy)
+        self.list_policies.invalidate()
+        return ret
+
     def update_policy(self, policy_id, policy):
         if 'id' in policy and policy_id != policy['id']:
             raise exception.ValidationError('Cannot change policy ID')
         try:
-            return self.driver.update_policy(policy_id, policy)
+            ret = self.driver.update_policy(policy_id, policy)
+            self.get_policy.invalidate(policy_id)
+            self.list_policies.invalidate()
+            return ret
         except exception.NotFound:
             raise exception.PolicyNotFound(policy_id=policy_id)
 
     def delete_policy(self, policy_id):
         try:
-            return self.driver.delete_policy(policy_id)
+            ret = self.driver.delete_policy(policy_id)
+            self.get_policy.invalidate(policy_id)
+            self.list_policies.invalidate()
+            return ret
         except exception.NotFound:
             raise exception.PolicyNotFound(policy_id=policy_id)
 

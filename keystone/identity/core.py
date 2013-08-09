@@ -23,6 +23,8 @@ from keystone.common import manager
 from keystone import config
 from keystone import exception
 
+from keystone.common import cache
+
 
 CONF = config.CONF
 
@@ -69,7 +71,9 @@ class Manager(manager.Manager):
         user['name'] = clean.user_name(user['name'])
         user.setdefault('enabled', True)
         user['enabled'] = clean.user_enabled(user['enabled'])
-        return self.driver.create_user(user_id, user)
+        ret = self.driver.create_user(user_id, user)
+        self.list_users.invalidate()
+        return ret
 
     def update_user(self, user_id, user_ref):
         user = user_ref.copy()
@@ -77,25 +81,74 @@ class Manager(manager.Manager):
             user['name'] = clean.user_name(user['name'])
         if 'enabled' in user:
             user['enabled'] = clean.user_enabled(user['enabled'])
-        return self.driver.update_user(user_id, user)
+        ret = self.driver.update_user(user_id, user)
+        self.get_user.invalidate(user_id)
+        self.get_user_by_name.invalidate(ret['name'], ret['domain_id'])
+        self.list_users.invalidate()
+        return ret
+
+    def delete_user(self, user_id):
+        user_ref = self.driver.get_user(user_id)
+        self.driver.delete_user(user_id)
+        self.list_users.invalidate()
+        self.get_user.invalidate(user_id)
+        self.get_user_by_name.invalidate(user_ref['name'],
+                                         user_ref['domain_id'])
+
+    @cache.on_arguments()
+    def get_user(self, user_id):
+        return self.driver.get_user(user_id)
+
+    @cache.on_arguments()
+    def list_users(self):
+        return self.driver.list_users()
+
+    @cache.on_arguments()
+    def get_user_by_name(self, user_name, domain_id):
+        return self.driver.get_user_by_name(user_name, domain_id)
 
     def create_group(self, group_id, group_ref):
         group = group_ref.copy()
         group.setdefault('description', '')
         return self.driver.create_group(group_id, group)
 
+    def update_group(self, group_id, group):
+        ret = self.driver.update_group(group_id, group)
+        self.list_groups.invalidate()
+        self.get_group.invalidate(group_id)
+        return ret
+
+    def delete_group(self, group_id):
+        self.driver.delete_group(group_id)
+        self.get_group.invalidate(group_id)
+        self.list_groups.invalidate(group_id)
+
+    @cache.on_arguments()
+    def get_group(self, group_id):
+        return self.driver.get_group(group_id)
+
+    @cache.on_arguments()
+    def list_groups(self):
+        return self.driver.list_groups()
+
+    def add_user_to_group(self, user_id, group_id):
+        ret = self.driver.add_user_to_group(user_id, group_id)
+        self.list_groups_for_user.invalidate(user_id)
+        return ret
+
+    def remove_user_from_group(self, user_id, group_id):
+        self.driver.remove_user_from_group(user_id, group_id)
+        self.list_groups_for_user.invalidate(user_id)
+
+    @cache.on_arguments()
+    def list_groups_for_user(self, user_id):
+        return self.driver.list_groups_for_user(user_id)
+
     def create_project(self, tenant_id, tenant_ref):
-        tenant = tenant_ref.copy()
-        tenant.setdefault('enabled', True)
-        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
-        tenant.setdefault('description', '')
-        return self.assignment_api.create_project(tenant_id, tenant)
+        return self.assignment_api.create_project(tenant_id, tenant_ref)
 
     def update_project(self, tenant_id, tenant_ref):
-        tenant = tenant_ref.copy()
-        if 'enabled' in tenant:
-            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
-        return self.assignment_api.update_project(tenant_id, tenant)
+        return self.assignment_api.update_project(tenant_id, tenant_ref)
 
     def get_project_by_name(self, tenant_name, domain_id):
         return self.assignment_api.get_project_by_name(tenant_name, domain_id)

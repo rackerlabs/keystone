@@ -22,6 +22,8 @@ from keystone.common import manager
 from keystone import config
 from keystone import exception
 
+from keystone.common import cache
+
 
 CONF = config.CONF
 
@@ -39,6 +41,36 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.trust.driver)
+
+    @cache.on_arguments()
+    def get_trust(self, trust_id):
+        return self.driver.get_trust(trust_id)
+
+    @cache.on_arguments()
+    def list_trusts(self):
+        return self.driver.list_trusts()
+
+    # FIXME(morganfainberg): enable caching of this trust calls. Requires
+    # logic to properly invalidate cache.
+    #@cache.on_arguments()
+    #def list_trusts_for_trustee(self, trustee):
+    #    return self.driver.list_trusts_for_trustee(trustee)
+
+    # FIXME(morganfainberg): enable caching of this trust calls. Requires
+    # logic to properly invalidate cache.
+    #@cache.on_arguments()
+    #def list_trusts_for_trustor(self, trustor):
+    #    return self.driver.list_trusts_for_trustor(trustor)
+
+    def create_trust(self, trust_id, trust, roles):
+        ret = self.driver.create_trust(trust_id, trust, roles)
+        self.list_trusts.invalidate()
+        return ret
+
+    def delete_trust(self, trust_id):
+        self.driver.delete_trust(trust_id)
+        self.list_trusts.invalidate()
+        self.get_trust.invalidate(trust_id)
 
 
 class Driver(object):
@@ -59,4 +91,7 @@ class Driver(object):
         raise exception.NotImplemented()
 
     def list_trusts_for_trustor(self, trustor):
+        raise exception.NotImplemented()
+
+    def delete_trust(self, trust_id):
         raise exception.NotImplemented()

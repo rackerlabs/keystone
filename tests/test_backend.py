@@ -2269,8 +2269,8 @@ class TokenTests(object):
         self.assertEquals(len(tokens), 2)
         self.assertIn(token_id2, tokens)
         self.assertIn(token_id1, tokens)
-        self.token_api.delete_tokens(user_id='testuserid',
-                                     tenant_id='testtenantid')
+        self.token_api.delete_tokens('testuserid',
+                                     'testtenantid')
         tokens = self.token_api.list_tokens('testuserid')
         self.assertEquals(len(tokens), 0)
         self.assertRaises(exception.TokenNotFound,
@@ -2283,7 +2283,7 @@ class TokenTests(object):
     def test_delete_tokens_trust(self):
         tokens = self.token_api.list_tokens('testuserid')
         self.assertEquals(len(tokens), 0)
-        token_id1 = self.create_token_sample_data(tenant_id='testtenantid',
+        token_id1 = self.create_token_sample_data('testtenantid',
                                                   trust_id='testtrustid')
         token_id2 = self.create_token_sample_data(tenant_id='testtenantid',
                                                   user_id="testuserid1",
@@ -2291,9 +2291,9 @@ class TokenTests(object):
         tokens = self.token_api.list_tokens('testuserid')
         self.assertEquals(len(tokens), 1)
         self.assertIn(token_id1, tokens)
-        self.token_api.delete_tokens(user_id='testuserid',
-                                     tenant_id='testtenantid',
-                                     trust_id='testtrustid')
+        self.token_api.delete_tokens('testuserid',
+                                     'testtenantid',
+                                     'testtrustid')
         self.assertRaises(exception.TokenNotFound,
                           self.token_api.get_token, token_id1)
         self.token_api.get_token(token_id2)

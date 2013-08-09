@@ -16,11 +16,14 @@
 
 """Main entry point into the assignment service."""
 
+from keystone import clean
 from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import manager
 from keystone import config
 from keystone import exception
+
+from keystone.common import cache
 
 
 CONF = config.CONF
@@ -55,6 +58,7 @@ class Manager(manager.Manager):
 
         super(Manager, self).__init__(assignment_driver)
 
+    @cache.on_arguments()
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         """Get the roles associated with a user within given project.
 
@@ -124,6 +128,7 @@ class Manager(manager.Manager):
         # Use set() to process the list to remove any duplicates
         return list(set(user_role_list + group_role_list))
 
+    @cache.on_arguments()
     def get_roles_for_user_and_domain(self, user_id, domain_id):
         """Get the roles associated with a user within given domain.
 
@@ -193,6 +198,10 @@ class Manager(manager.Manager):
                 user_id,
                 tenant_id,
                 config.CONF.member_role_id)
+        self.get_roles_for_user_and_project.invalidate(user_id, tenant_id)
+        self.get_project_users.invalidate(tenant_id)
+        self.get_roles_for_user_and_project.invalidate(user_id, tenant_id)
+        self.list_role_assignments.invalidate()
 
     def remove_user_from_project(self, tenant_id, user_id):
         """Remove user from a tenant
@@ -206,6 +215,157 @@ class Manager(manager.Manager):
             raise exception.NotFound(tenant_id)
         for role_id in roles:
             self.remove_role_from_user_and_project(user_id, tenant_id, role_id)
+        self.get_roles_for_user_and_project.invalidate(user_id, tenant_id)
+        self.get_projects_for_user.invalidate(user_id)
+        self.get_project_users.invalidate(tenant_id)
+        self.list_role_assignments.invalidate()
+
+    def update_project(self, tenant_id, tenant_ref):
+        tenant = tenant_ref.copy()
+        if 'enabled' in tenant:
+            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+        updated_ref = self.driver.update_project(tenant_id, tenant)
+        self.get_project.invalidate(tenant_id)
+        self.get_project_by_name.invalidate(updated_ref['name'],
+                                            updated_ref['domain_id'])
+        self.list_projects.invalidate()
+        self.list_projects.invalidate(updated_ref['domain_id'])
+        return updated_ref
+
+    def create_project(self, tenant_id, tenant_ref):
+        tenant = tenant_ref.copy()
+        tenant.setdefault('enabled', True)
+        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+        tenant.setdefault('description', '')
+        ret = self.driver.create_project(tenant_id, tenant_ref)
+        self.list_projects.invalidate()
+        self.list_projects.invalidate(ret['domain_id'])
+        return ret
+
+    @cache.on_arguments()
+    def get_project(self, project_id):
+        return self.driver.get_project(project_id)
+
+    @cache.on_arguments()
+    def get_project_by_name(self, tenant_name, domain_id):
+        return self.driver.get_project_by_name(tenant_name, domain_id)
+
+    @cache.on_arguments()
+    def get_project_users(self, tenant_id):
+        return self.driver.get_project_users(tenant_id)
+
+    @cache.on_arguments()
+    def get_projects_for_user(self, user_id):
+        return self.driver.get_projects_for_user(user_id)
+
+    @cache.on_arguments()
+    def list_projects(self, domain_id=None):
+        return self.driver.list_projects(domain_id)
+
+    @cache.on_arguments()
+    def list_grants(self, user_id=None, group_id=None, domain_id=None,
+                    project_id=None, inherited_to_projects=False):
+        return self.driver.list_grants(user_id, group_id, domain_id,
+                                       project_id, inherited_to_projects)
+
+    @cache.on_arguments()
+    def get_grant(self, role_id, user_id=None, group_id=None, domain_id=None,
+                  project_id=None, inherited_to_projects=False):
+        return self.driver.get_grant(role_id, user_id, group_id, domain_id,
+                                     project_id, inherited_to_projects)
+
+    def delete_grant(self, role_id, user_id=None, group_id=None,
+                     domain_id=None, project_id=None,
+                     inherited_to_projects=False):
+        self.driver.delete_grant(role_id, user_id, group_id, domain_id,
+                                 project_id, inherited_to_projects)
+        self.list_grants.invalidate(user_id, group_id, domain_id, project_id,
+                                    inherited_to_projects)
+        self.get_grant.invalidate(role_id, user_id, group_id, domain_id,
+                                  project_id, inherited_to_projects)
+        self.list_role_assignments.invalidate()
+
+    def create_grant(self, role_id, user_id=None, group_id=None,
+                     domain_id=None, project_id=None,
+                     inherited_to_projects=False):
+        ret = self.driver.create_grant(role_id, user_id, group_id, domain_id,
+                                       project_id, inherited_to_projects)
+        self.list_grants.invalidate(user_id, group_id, domain_id,
+                                    project_id, inherited_to_projects)
+        self.list_role_assignments.invalidate()
+        return ret
+
+    @cache.on_arguments()
+    def get_domain(self, domain_id):
+        return self.driver.get_domain(domain_id)
+
+    @cache.on_arguments()
+    def get_domain_by_name(self, domain_name):
+        return self.driver.get_domain_by_name(domain_name)
+
+    @cache.on_arguments()
+    def list_domains(self):
+        return self.driver.list_domains()
+
+    def create_domain(self, domain_id, domain):
+        ret = self.driver.create_domain(domain_id, domain)
+        self.list_domains.invalidate()
+        return ret
+
+    def update_domain(self, domain_id, domain):
+        ret = self.driver.update_domain(domain_id, domain)
+        self.list_domains.invalidate()
+        self.get_domain.invalidate(domain_id)
+        self.get_domain_by_name.invalidate(domain_id, ret['name'])
+        return ret
+
+    def delete_domain(self, domain_id):
+        ref = self.driver.get_domain(domain_id)
+        self.driver.delete_domain(domain_id)
+        self.list_domains.invalidate()
+        self.get_domain.invalidate(domain_id)
+        self.get_domain_by_name.invalidate(ref['name'])
+        self.list_role_assignments.invalidate()
+
+    @cache.on_arguments()
+    def list_role_assignments(self):
+        return self.driver.list_role_assignments()
+
+    @cache.on_arguments()
+    def get_role(self, role_id):
+        return self.driver.get_role(role_id)
+
+    @cache.on_arguments()
+    def list_roles(self):
+        return self.driver.list_roles()
+
+    def create_role(self, role_id, role):
+        ret = self.driver.create_role(role_id, role)
+        self.list_roles.invalidate()
+        return ret
+
+    def update_role(self, role_id, role):
+        ret = self.driver.update_role(role_id, role)
+        self.list_roles.invalidate()
+        self.get_role.invalidate(role_id)
+        return ret
+
+    def delete_role(self, role_id):
+        # FIXME(morganfainberg): invalidate cache for all grants for the role
+        self.driver.delete_role(role_id)
+        self.list_roles.invalidate()
+        self.get_role.invalidate(role_id)
+        self.list_role_assignments.invalidate()
+
+    def delete_user(self, user_id):
+        # FIXME(morganfainberg): invalidate all grant cache for the user
+        self.driver.delete_user(user_id)
+        self.list_role_assignments.invalidate()
+
+    def delete_group(self, group_id):
+        # FIXME(morganfainberg): invalidate all grant cache for the group
+        self.driver.delete_group(group_id)
+        self.list_role_assignments.invalidate()
 
 
 class Driver(object):

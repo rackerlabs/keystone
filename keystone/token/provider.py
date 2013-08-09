@@ -16,7 +16,7 @@
 
 """Token provider interface."""
 
-
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import manager
@@ -44,6 +44,7 @@ class UnsupportedTokenVersionException(Exception):
 
 
 @dependency.provider('token_provider_api')
+@dependency.requires('token_api')
 class Manager(manager.Manager):
     """Default pivot point for the token provider backend.
 
@@ -98,6 +99,47 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(self.get_token_provider())
 
+    @cache.on_arguments()
+    def issue_v2_token(self, token_ref, roles_ref=None, catalog_ref=None):
+        return self.driver.issue_v2_token(token_ref, roles_ref, catalog_ref)
+
+    @cache.on_arguments()
+    def issue_v3_token(self, user_id, method_names, expires_at=None,
+                       project_id=None, domain_id=None, auth_context=None,
+                       trust=None, metadata_ref=None, include_catalog=True):
+        return self.driver.issue_v3_token(user_id, method_names, expires_at,
+                                          project_id, domain_id, auth_context,
+                                          trust, metadata_ref, include_catalog)
+
+    def revoke_token(self, token_id):
+        token_ref = self.token_api.get_token(token_id)
+        ret = self.driver.revoke_token(token_id)
+        project_ref = token_ref.get('tenant')
+        if project_ref:
+            self.validate_v2_token.invalidate(token_id, project_ref.get('id'))
+            self.check_v2_token.invalidate(token_id, project_ref.get('id'))
+        self.validate_v2_token.invalidate(token_id)
+        self.validate_v3_token.invalidate(token_id)
+        self.check_v2_token.invalidate(token_id)
+        self.check_v3_token.invalidate(token_id)
+        return ret
+
+    @cache.on_arguments()
+    def validate_v2_token(self, token_id, belongs_to=None):
+        return self.driver.validate_v2_token(token_id, belongs_to)
+
+    @cache.on_arguments()
+    def check_v2_token(self, token_id, belongs_to=None):
+        return self.driver.validate_v2_token(token_id, belongs_to)
+
+    @cache.on_arguments()
+    def check_v3_token(self, token_id):
+        return self.driver.check_v3_token(token_id)
+
+    @cache.on_arguments()
+    def validate_v3_token(self, token_id):
+        return self.driver.validate_v3_token(token_id)
+
 
 class Provider(object):
     """Interface description for a Token provider."""
@@ -126,7 +168,7 @@ class Provider(object):
 
     def issue_v3_token(self, user_id, method_names, expires_at=None,
                        project_id=None, domain_id=None, auth_context=None,
-                       metadata_ref=None, include_catalog=True):
+                       trust=None, metadata_ref=None, include_catalog=True):
         """Issue a V3 Token.
 
         :param user_id: identity of the user
@@ -141,6 +183,8 @@ class Provider(object):
         :type domain_id: string
         :param auth_context: optional context from the authorization plugins
         :type auth_context: dict
+        :param trust: optional trust data
+        :type trust: dict
         :param metadata_ref: optional metadata reference
         :type metadata_ref: dict
         :param include_catalog: optional, include the catalog in token data

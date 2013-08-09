@@ -106,7 +106,7 @@ class Auth(controller.V2Controller):
         # Caching will occur at the controller level not at the provider_api
         # object level.
         (token_id, token_data) = self.token_provider_api.issue_v2_token(
-            auth_token_data, roles_ref=roles_ref, catalog_ref=catalog_ref)
+            auth_token_data, roles_ref, catalog_ref)
         return token_data
 
     def _authenticate_token(self, context, auth):
