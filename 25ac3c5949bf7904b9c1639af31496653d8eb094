@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn/++aM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_drop_credential_indexes.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-09T01:51:52Z",
+      "side": 1,
+      "message": "I believe this should be changed from \u0027LLC\u0027 to \u0027Foundation\u0027, not 100% sure but it\u0027s been a while since I\u0027ve seen LLC in the copyright.",
+      "revId": "25ac3c5949bf7904b9c1639af31496653d8eb094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
