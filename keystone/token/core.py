@@ -19,6 +19,7 @@
 import copy
 import datetime
 
+from keystone.common import cache
 from keystone.common import cms
 from keystone.common import dependency
 from keystone.common import logging
@@ -114,6 +115,7 @@ class Manager(manager.Manager):
         """
         return cms.cms_hash_token(token_id)
 
+    @cache.on_arguments(namespace='token.driver')
     def get_token(self, token_id):
         return self.driver.get_token(self._unique_id(token_id))
 
@@ -122,8 +124,28 @@ class Manager(manager.Manager):
         data_copy['id'] = self._unique_id(token_id)
         return self.driver.create_token(self._unique_id(token_id), data_copy)
 
-    def delete_token(self, token_id):
-        return self.driver.delete_token(self._unique_id(token_id))
+    def delete_token(self, token_id, bulk=False):
+        ret = self.driver.delete_token(self._unique_id(token_id))
+        self.get_token.invalidate(token_id)
+        self.list_revoked_tokens.invalidate()
+        return ret
+
+    def delete_tokens(self, user_id, tenant_id=None, trust_id=None):
+        token_list = self.driver.list_tokens(user_id, tenant_id, trust_id)
+        ret = self.driver.delete_tokens(user_id, tenant_id, trust_id)
+        self.list_revoked_tokens.invalidate()
+        self.list_tokens.invalidate(user_id, tenant_id, trust_id)
+        for token in token_list:
+            self.get_token.invalidate(token)
+        return ret
+
+    @cache.on_arguments(namespace='token.driver')
+    def list_tokens(self, user_id, tenant_id=None, trust_id=None):
+        return self.driver.list_tokens(user_id, tenant_id, trust_id)
+
+    @cache.on_arguments(namespace='token.driver')
+    def list_revoked_tokens(self):
+        return self.driver.list_revoked_tokens()
 
 
 class Driver(object):

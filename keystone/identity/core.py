@@ -17,6 +17,7 @@
 """Main entry point into the Identity service."""
 
 from keystone import clean
+#from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import manager
@@ -85,17 +86,10 @@ class Manager(manager.Manager):
         return self.driver.create_group(group_id, group)
 
     def create_project(self, tenant_id, tenant_ref):
-        tenant = tenant_ref.copy()
-        tenant.setdefault('enabled', True)
-        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
-        tenant.setdefault('description', '')
-        return self.assignment_api.create_project(tenant_id, tenant)
+        return self.assignment_api.create_project(tenant_id, tenant_ref)
 
     def update_project(self, tenant_id, tenant_ref):
-        tenant = tenant_ref.copy()
-        if 'enabled' in tenant:
-            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
-        return self.assignment_api.update_project(tenant_id, tenant)
+        return self.assignment_api.update_project(tenant_id, tenant_ref)
 
     def get_project_by_name(self, tenant_name, domain_id):
         return self.assignment_api.get_project_by_name(tenant_name, domain_id)

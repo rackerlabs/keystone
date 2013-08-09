@@ -133,6 +133,12 @@ def register_str(*args, **kw):
     return conf.register_opt(cfg.StrOpt(*args, **kw), group=group)
 
 
+def register_multi_str(*args, **kw):
+    conf = kw.pop('conf', CONF)
+    group = kw.pop('group', None)
+    return conf.register_opt(cfg.MultiStrOpt(*args, **kw), group=group)
+
+
 def register_cli_str(*args, **kw):
     conf = kw.pop('conf', CONF)
     group = kw.pop('group', None)
@@ -207,6 +213,15 @@ def configure():
     register_str(
         'member_role_id', default='9fe2ff9ee4384b1894a90878d3e92bab')
     register_str('member_role_name', default='_member_')
+
+    # caching
+    register_str('conf_prefix', group='cache', default='cache.keystone')
+    register_int('expiration_time', group='cache', default=0)
+    # default behavior is to not-cache anything, use a do-nothing backend.
+    register_str('backend', group='cache', default='dogpile.cache.memory')
+    register_multi_str('backend_argument', group='cache', default=[])
+    register_list('proxyclasses', group='cache', default=[])
+    register_bool('enable', group='cache', default=True)
 
     # identity
     register_str('default_domain_id', group='identity', default='default')

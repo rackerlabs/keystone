@@ -293,19 +293,9 @@ class Auth(controller.V3Controller):
             method_names = list(set(method_names))
             expires_at = auth_context.get('expires_at')
 
-        # NOTE(morganfainberg): use named args (kwargs) here for clarity.
-        # Caching will occur at the controller level not at the provider_api
-        # object level.
             (token_id, token_data) = self.token_provider_api.issue_v3_token(
-                user_id=auth_context['user_id'],
-                method_names=method_names,
-                expires_at=expires_at,
-                project_id=project_id,
-                domain_id=domain_id,
-                auth_context=auth_context,
-                trust=trust,
-                metadata_ref=None,
-                include_catalog=include_catalog)
+                auth_context['user_id'], method_names, expires_at, project_id,
+                domain_id, auth_context, trust, None, include_catalog)
             return render_token_data_response(token_id, token_data,
                                               created=True)
         except exception.TrustNotFound as e:

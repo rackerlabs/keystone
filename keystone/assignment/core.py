@@ -16,6 +16,8 @@
 
 """Main entry point into the assignment service."""
 
+from keystone import clean
+#from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import manager
@@ -194,6 +196,19 @@ class Manager(manager.Manager):
             raise exception.NotFound(tenant_id)
         for role_id in roles:
             self.remove_role_from_user_and_project(user_id, tenant_id, role_id)
+
+    def update_project(self, tenant_id, tenant_ref):
+        tenant = tenant_ref.copy()
+        if 'enabled' in tenant:
+            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+        return self.driver.update_project(tenant_id, tenant)
+
+    def create_project(self, tenant_id, tenant_ref):
+        tenant = tenant_ref.copy()
+        tenant.setdefault('enabled', True)
+        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+        tenant.setdefault('description', '')
+        return self.driver.create_project(tenant_id, tenant_ref)
 
 
 class Driver(object):

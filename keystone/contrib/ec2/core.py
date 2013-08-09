@@ -195,11 +195,8 @@ class Ec2Controller(controller.V2Controller):
                                metadata=metadata_ref,
                                id='placeholder')
 
-        # NOTE(morganfainberg): use named args (kwargs) here for clarity.
-        # Caching will occur at the controller level not at the provider_api
-        # object level.
         (token_id, token_data) = self.token_provider_api.issue_v2_token(
-            auth_token_data, roles_ref=roles_ref, catalog_ref=catalog_ref)
+            auth_token_data, roles_ref, catalog_ref)
         return token_data
 
     def create_credential(self, context, user_id, tenant_id):

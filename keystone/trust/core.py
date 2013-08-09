@@ -16,6 +16,7 @@
 
 """Main entry point into the Identity service."""
 
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import logging
 from keystone.common import manager
@@ -40,6 +41,27 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.trust.driver)
 
+    @cache.on_arguments(namespace='trust')
+    def get_trust(self, trust_id):
+        return self.driver.get_trust(trust_id)
+
+    @cache.on_arguments(namespace='trust')
+    def list_trusts(self):
+        return self.driver.list_trusts()
+
+    @cache.on_arguments(namespace='trust')
+    def list_trusts_for_trustee(self, trustee):
+        return self.driver.list_trusts_for_trustee(trustee)
+
+    @cache.on_arguments(namespace='trust')
+    def list_trusts_for_trustor(self, trustor):
+        return self.driver.list_trusts_for_trustor(trustor)
+
+    def create_trust(self, trust_id, trust, roles):
+        ret = self.driver.create_trust(trust_id, trust, roles)
+        self.list_trusts.invalidate()
+        #FIXME(morganfainberg): invalidate the proper "trust_for_*" method
+        return ret
 
 class Driver(object):
     def create_trust(self, trust_id, trust, roles):
