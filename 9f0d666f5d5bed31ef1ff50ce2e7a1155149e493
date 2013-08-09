@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn/++XE\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-08-09T02:26:55Z",
+      "side": 1,
+      "message": "just ditch this function, you\u0027re not using conf anyway.\n\nChange keystone-all and httpd to call logging from openstack.common",
+      "revId": "9f0d666f5d5bed31ef1ff50ce2e7a1155149e493",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
