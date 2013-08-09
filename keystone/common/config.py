@@ -179,11 +179,6 @@ def configure():
     register_str('cert_subject', group='signing',
                  default='/C=US/ST=Unset/L=Unset/O=Unset/CN=www.example.com')
 
-    # sql
-    register_str('connection', group='sql', secret=True,
-                 default='sqlite:///keystone.db')
-    register_int('idle_timeout', group='sql', default=200)
-
     #assignment has no default for backward compatibility reasons.
     #If assignment is not specified, the identity driver chooses the backend
     register_str(
