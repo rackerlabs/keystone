@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn/++Ko\u003d",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-09T04:23:35Z",
+      "side": 1,
+      "message": "Looks like there is an errant space at the front of this line causing the formatting to be off by the OpenStack docs site.  I didn\u0027t see it checking with an editor that might be more forgiving.",
+      "revId": "053e3d92887efb26a529dec253f47123d608b710",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
