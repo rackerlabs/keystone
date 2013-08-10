@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn/+6Wc\u003d",
+        "filename": ".gitignore",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7996
+      },
+      "writtenOn": "2013-08-10T01:03:19Z",
+      "side": 1,
+      "message": "Good idea! Should we do *.mo in general?",
+      "revId": "61347902fea82509b193a747bdfe280fe9ede6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+6Wg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7996
+      },
+      "writtenOn": "2013-08-10T01:03:19Z",
+      "side": 1,
+      "message": "Nit: \"it is now possible\" or \"it is possible\"",
+      "revId": "61347902fea82509b193a747bdfe280fe9ede6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/+65k\u003d",
         "filename": "bin/keystone-all",
         "patchSetId": 8
@@ -13,6 +47,23 @@
       "writtenOn": "2013-08-09T21:24:13Z",
       "side": 1,
       "message": "Great Comment!  Thanks!",
+      "revId": "61347902fea82509b193a747bdfe280fe9ede6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+6Vk\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 7996
+      },
+      "writtenOn": "2013-08-10T01:03:19Z",
+      "side": 1,
+      "message": "get_localized_message() already returns unicode",
       "revId": "61347902fea82509b193a747bdfe280fe9ede6f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
