@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Verified+1: SmokeStack
+Approved+1: Morgan Fainberg <m@metacloud.com>
+Code-Review+2: Morgan Fainberg <m@metacloud.com>
+Code-Review+1: Sahdev Zala <spzala@us.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 10 Aug 2013 00:43:16 +0000
+Reviewed-on: https://review.openstack.org/39476
+Project: openstack/keystone
+Branch: refs/heads/master
