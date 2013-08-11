@@ -413,3 +413,7 @@ class SqlPolicy(SqlTests, test_backend.PolicyTests):
 
 class SqlInheritance(SqlTests, test_backend.InheritanceTests):
     pass
+
+
+class SqlFilterTests(SqlTests, test_backend.FilterTests):
+    pass

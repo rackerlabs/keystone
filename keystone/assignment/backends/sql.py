@@ -19,7 +19,11 @@ from keystone import clean
 from keystone.common import dependency
 from keystone.common import sql
 from keystone.common.sql import migration
+from keystone import config
 from keystone import exception
+
+
+CONF = config.CONF
 
 
 @dependency.requires('identity_api')
@@ -28,6 +32,12 @@ class Assignment(sql.Base, assignment.Driver):
     # Internal interface to manage the database
     def db_sync(self, version=None):
         migration.db_sync(version=version)
+
+    def _get_list_limit(self):
+        if CONF.identity.list_limit is None:
+            return CONF.list_limit
+        else:
+            return CONF.assignment.list_limit
 
     def _get_project(self, session, project_id):
         project_ref = session.query(Project).get(project_id)
@@ -208,15 +218,12 @@ class Assignment(sql.Base, assignment.Driver):
             self._update_metadata(user_id, project_id, metadata_ref,
                                   domain_id, group_id)
 
-    def list_projects(self, domain_id=None):
+    def list_projects(self, query_dict=None, valid_filters=None):
         session = self.get_session()
-        if domain_id:
-            self._get_domain(session, domain_id)
-
         query = session.query(Project)
-        if domain_id:
-            query = query.filter_by(domain_id=domain_id)
-        project_refs = query.all()
+        project_refs = self.filter_and_paginate(
+            Project, query, query_dict, valid_filters,
+            limit=self._get_list_limit())
         return [project_ref.to_dict() for project_ref in project_refs]
 
     def get_projects_for_user(self, user_id):
@@ -461,9 +468,12 @@ class Assignment(sql.Base, assignment.Driver):
             session.flush()
         return ref.to_dict()
 
-    def list_domains(self):
+    def list_domains(self, query_dict=None, valid_filters=None):
         session = self.get_session()
-        refs = session.query(Domain).all()
+        query = session.query(Domain)
+        refs = self.filter_and_paginate(
+            Domain, query, query_dict, valid_filters,
+            limit=self._get_list_limit())
         return [ref.to_dict() for ref in refs]
 
     def _get_domain(self, session, domain_id):

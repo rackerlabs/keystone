@@ -246,6 +246,10 @@ class Manager(manager.Manager):
         driver = self._select_identity_driver(domain_id)
         return (domain_id, driver)
 
+    def _mark_domain_id_filter_satisfied(self, query_dict):
+        if query_dict is not None and 'domain_id' in query_dict:
+            query_dict.pop('domain_id)')
+
     # The actual driver calls - these are pre/post processed here as
     # part of the Manager layer to make sure we:
     #
@@ -294,9 +298,15 @@ class Manager(manager.Manager):
         return ref
 
     @domains_configured
-    def list_users(self, domain_scope=None):
+    def list_users(self, domain_scope=None, query_dict=None,
+                   valid_filters=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        user_list = driver.list_users()
+        if not driver.is_domain_aware():
+            # We are effectively satisfying any domain_id filter by the above
+            # driver selection, so remove any such filter    
+            self._mark_domain_id_filter_satisfied(query_dict)    
+        user_list = driver.list_users(
+            query_dict=query_dict, valid_filters=valid_filters)
         if not driver.is_domain_aware():
             user_list = self._set_domain_id(user_list, domain_id)
         return user_list
@@ -379,9 +389,15 @@ class Manager(manager.Manager):
         return group_list
 
     @domains_configured
-    def list_groups(self, domain_scope=None):
+    def list_groups(self, domain_scope=None, query_dict=None,
+                    valid_filters=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        group_list = driver.list_groups()
+        if not driver.is_domain_aware():
+            # We are effectively satisfying any domain_id filter by the above
+            # driver selection, so remove any such filter    
+            self._mark_domain_id_filter_satisfied(query_dict)  
+        group_list = driver.list_groups(
+            query_dict=query_dict, valid_filters=valid_filters)
         if not driver.is_domain_aware():
             group_list = self._set_domain_id(group_list, domain_id)
         return group_list
@@ -422,8 +438,10 @@ class Manager(manager.Manager):
     def get_project(self, tenant_id):
         return self.assignment_api.get_project(tenant_id)
 
-    def list_projects(self, domain_id=None):
-        return self.assignment_api.list_projects(domain_id)
+    def list_projects(self, query_dict=None, valid_filters=None):
+        return self.assignment_api.list_projects(
+            query_dict=query_dict,
+            valid_filters=valid_filters)
 
     def get_role(self, role_id):
         return self.assignment_api.get_role(role_id)
@@ -513,8 +531,9 @@ class Manager(manager.Manager):
     def delete_domain(self, domain_id):
         return self.assignment_api.delete_domain(domain_id)
 
-    def list_domains(self):
-        return self.assignment_api.list_domains()
+    def list_domains(self, query_dict=None, valid_filters=None):
+        return self.assignment_api.list_domains(
+            query_dict=query_dict, valid_filters=valid_filters)
 
     def list_user_projects(self, user_id):
         return self.assignment_api.list_user_projects(user_id)
@@ -548,8 +567,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_users(self):
-        """List all users in the system.
+    def list_users(self, query_dict=None, valid_filters=None):
+        """List users in the system.
+
+        If any entry in 'valid_filters' is specified in 'query_dict', then
+        filter the results based on those criteria.
 
         :returns: a list of user_refs or an empty list.
 
@@ -635,8 +657,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_groups(self):
-        """List all groups in the system.
+    def list_groups(self, query_dict=None, valid_filters=None):
+        """List groups in the system.
+
+        If any entry in 'valid_filters' is specified in 'query_dict', then
+        filter the results based on those criteria.
 
         :returns: a list of group_refs or an empty list.
 

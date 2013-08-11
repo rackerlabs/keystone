@@ -367,8 +367,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_domains(self):
-        """List all domains in the system.
+    def list_domains(self, query_dict=None, valid_filters=None):
+        """List domains in the system.
+
+        If any entry in 'valid_filters' is specified in 'query_dict', then
+        filter the results based on those criteria.
 
         :returns: a list of domain_refs or an empty list.
 
@@ -419,8 +422,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_projects(self, domain_id=None):
+    def list_projects(self, query_dict=None, valid_filters=None):
         """List all projects in the system.
+
+        If any entry in 'valid_filters' is specified in 'query_dict', then
+        filter the results based on those criteria.
 
         :returns: a list of project_refs or an empty list.
 
