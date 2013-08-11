@@ -99,6 +99,13 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.ServiceNotFound(service_id=service_id)
 
+    @manager.response_truncated
+    def list_services(self, hints=None):
+        # NOTE(henry-nash): Since the advantage of filtering or list limiting
+        # of services at the driver level is minimal, we leave this to the
+        # caller.
+        return self.driver.list_services()
+
     def create_endpoint(self, endpoint_id, endpoint_ref):
         try:
             return self.driver.create_endpoint(endpoint_id, endpoint_ref)
@@ -118,6 +125,13 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
+    @manager.response_truncated
+    def list_endpoints(self, hints=None):
+        # NOTE(henry-nash): Since the advantage of filtering or list limiting
+        # of endpoints at the driver level is minimal, we leave this to the
+        # caller.
+        return self.driver.list_endpoints()
+
     def get_catalog(self, user_id, tenant_id, metadata=None):
         try:
             return self.driver.get_catalog(user_id, tenant_id, metadata)
@@ -128,6 +142,9 @@ class Manager(manager.Manager):
 @six.add_metaclass(abc.ABCMeta)
 class Driver(object):
     """Interface description for an Catalog driver."""
+
+    def _get_list_limit(self):
+        return CONF.catalog.list_limit or CONF.list_limit
 
     @abc.abstractmethod
     def create_region(self, region_id, region_ref):
