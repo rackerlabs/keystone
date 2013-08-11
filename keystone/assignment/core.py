@@ -367,8 +367,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_domains(self):
-        """List all domains in the system.
+    def list_domains(self, query_dict=None, valid_filters=None):
+        """List domains in the system.
+
+        If any entry in 'valid_filters' is specified in 'query_dict', then
+        filter the results based on those criteria if possible.
 
         :returns: a list of domain_refs or an empty list.
 
@@ -419,16 +422,22 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_projects(self, domain_id=None):
+    def list_projects(self, query_dict=None, valid_filters=None):
         """List all projects in the system.
+
+        If any entry in 'valid_filters' is specified in 'query_dict', then
+        filter the results based on those criteria if possible.
 
         :returns: a list of project_refs or an empty list.
 
         """
         raise exception.NotImplemented()
 
-    def list_user_projects(self, user_id):
-        """List all projects associated with a given user.
+    def list_user_projects(self, user_id, query_dict=None, valid_filters=None):
+        """List projects associated with a given user.
+
+        If any entry in 'valid_filters' is specified in 'query_dict', then
+        filter the results based on those criteria if possible.
 
         :returns: a list of project_refs or an empty list.
 
@@ -472,8 +481,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_roles(self):
-        """List all roles in the system.
+    def list_roles(self, query_dict=None, valid_filters=None):
+        """List roles in the system.
+
+        If any entry in 'valid_filters' is specified in 'query_dict', then
+        filter the results based on those criteria if possible.
 
         :returns: a list of role_refs or an empty list.
 
