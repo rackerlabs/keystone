@@ -47,7 +47,8 @@ FILE_OPTIONS = {
         cfg.StrOpt('member_role_id',
                    default='9fe2ff9ee4384b1894a90878d3e92bab'),
         cfg.StrOpt('member_role_name', default='_member_'),
-        cfg.IntOpt('crypt_strength', default=40000)],
+        cfg.IntOpt('crypt_strength', default=40000),
+        cfg.IntOpt('list_limit', default=100)],
     'identity': [
         cfg.StrOpt('default_domain_id', default='default'),
         cfg.BoolOpt('domain_specific_drivers_enabled',

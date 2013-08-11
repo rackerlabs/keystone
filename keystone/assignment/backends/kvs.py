@@ -465,7 +465,7 @@ class Assignment(kvs.Base, assignment.Driver):
         self.db.set('domain_list', list(domain_list))
         return domain
 
-    def list_domains(self):
+    def list_domains(self, query_string=None, filters=None):
         domain_ids = self.db.get('domain_list', [])
         return [self.get_domain(x) for x in domain_ids]
 

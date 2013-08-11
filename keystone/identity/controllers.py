@@ -418,8 +418,11 @@ class DomainV3(controller.V3Controller):
 
     @controller.filterprotected('enabled', 'name')
     def list_domains(self, context, filters):
-        refs = self.identity_api.list_domains()
-        return DomainV3.wrap_collection(context, refs, filters)
+        query_string = context['query_string'].copy()
+        refs = self.identity_api.list_domains(
+            query_string=query_string,
+            filters=filters)
+        return DomainV3.wrap_collection(context, refs, filters, query_string)
 
     @controller.protected
     def get_domain(self, context, domain_id):
@@ -620,9 +623,12 @@ class UserV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users(self, context, filters):
+        query_string = context['query_string'].copy()
         refs = self.identity_api.list_users(
-            domain_scope=self._get_domain_id_for_request(context))
-        return UserV3.wrap_collection(context, refs, filters)
+            domain_scope=self._get_domain_id_for_request(context),
+            query_string=query_string,
+            filters=filters)
+        return UserV3.wrap_collection(context, refs, filters, query_string)
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users_in_group(self, context, filters, group_id):

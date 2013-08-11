@@ -133,6 +133,21 @@ def check_password(password, hashed):
     return passlib.hash.sha512_crypt.verify(password_utf8, hashed)
 
 
+def attr_as_boolean(val_attr):
+    """Matches attributes allowing for booleans as strings.
+
+    We test explicitly for a value that defines it as 'False',
+    which also means that the existence of the attribute with
+    no value implies 'True'
+
+    """
+    if (isinstance(val_attr, basestring) and
+            val_attr == '0'):
+        return False
+    else:
+        return True
+
+
 # From python 2.7
 def check_output(*popenargs, **kwargs):
     r"""Run command with arguments and return its output as a byte string.
