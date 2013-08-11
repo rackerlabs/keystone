@@ -40,8 +40,18 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.credential.driver)
 
+    def list_credentials(self, **filters):
+        ref_list = self.driver.list_credentials(**filters)
+        return self._trim_to_limit(ref_list)
+
 
 class Driver(object):
+    def _get_list_limit(self):
+        if CONF.credential.list_limit is None:
+            return CONF.list_limit
+        else:
+            return CONF.credential.list_limit
+
     # credential crud
 
     def create_credential(self, credential_id, credential):
