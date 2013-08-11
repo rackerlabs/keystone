@@ -694,6 +694,23 @@ should be set to one of the following modes:
   mechanism called ``named``.
 
 
+Limiting the number of entities returned in a collection
+--------------------------------------------------------
+
+Keystone provides a method of setting a limit to the number of entities
+returned in a collection, which is useful to prevent overly long response
+times for list queries that have not specified a sufficently narrow filter.
+This limit can be set globally by setting ``list_limit`` in the default section
+of ``keystone.conf``, with no limit set by default.  Individual driver
+sections may override this global value with a specific limit, for example::
+
+    [assignment]
+    list_limit = 100
+
+If a response to ``list_{entity}`` call has been truncted, then the response
+status code will be 203 (Subset).
+
+
 Sample Configuration Files
 --------------------------
 
