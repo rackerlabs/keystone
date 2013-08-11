@@ -25,6 +25,7 @@ from keystone import exception
 from keystone.openstack.common import timeutils
 
 import default_fixtures
+import filter_pagination
 
 
 CONF = config.CONF
@@ -1694,7 +1695,11 @@ class IdentityTests(object):
     def test_list_users(self):
         users = self.identity_api.list_users()
         for test_user in default_fixtures.USERS:
-            self.assertTrue(x for x in users if x['id'] == test_user['id'])
+            found = False
+            for x in users:
+                if x['id'] == test_user['id']:
+                    found = True
+            self.assertTrue(found)
 
     def test_list_groups(self):
         group1 = {
@@ -1740,7 +1745,9 @@ class IdentityTests(object):
 
     def test_list_projects_for_domain(self):
         project_ids = ([x['id'] for x in
-                       self.assignment_api.list_projects(DEFAULT_DOMAIN_ID)])
+                       self.assignment_api.list_projects(
+                           query_dict={'domain_id': DEFAULT_DOMAIN_ID},
+                           valid_filters=['domain_id'])])
         self.assertEquals(len(project_ids), 4)
         self.assertIn(self.tenant_bar['id'], project_ids)
         self.assertIn(self.tenant_baz['id'], project_ids)
@@ -1757,7 +1764,9 @@ class IdentityTests(object):
                     'domain_id': domain1['id']}
         self.assignment_api.create_project(project2['id'], project2)
         project_ids = ([x['id'] for x in
-                       self.assignment_api.list_projects(domain1['id'])])
+                       self.assignment_api.list_projects(
+                           query_dict={'domain_id': domain1['id']},
+                           valid_filters=['domain_id'])])
         self.assertEquals(len(project_ids), 2)
         self.assertIn(project1['id'], project_ids)
         self.assertIn(project2['id'], project_ids)
@@ -2847,3 +2856,158 @@ class InheritanceTests(object):
         self.assertIn(role_list[0]['id'], combined_role_list)
         self.assertIn(role_list[2]['id'], combined_role_list)
         self.assertIn(role_list[3]['id'], combined_role_list)
+
+
+class FilterTests(filter_pagination.FilterPaginationTests):
+    def test_list_users_filtered(self):
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(domain1['id'], domain1)
+
+        # Create 20 users, 14 of which are in domain1
+        domain1_user_list = self._create_user_data(
+            20, domain_id=domain1['id'], split=5)
+
+        valid_filters = ['domain_id', 'email', 'enabled', 'name']
+
+        # Should get back the 14 users in domain1
+        query_string = {'domain_id': domain1['id']}
+        users = self.identity_api.list_users(
+            query_dict=query_string,
+            valid_filters=valid_filters)
+        self.assertEqual(len(users), 14)
+        self._match_with_list(users, domain1_user_list)
+        # Check the driver has removed the filter from the query
+        self.assertNotIn('domain_id', query_string)
+
+        # Try filtering to get one an exact item out of the list
+        query_string = {'name': domain1_user_list[10]['name']}
+        users = self.identity_api.list_users(
+            query_dict=query_string,
+            valid_filters=valid_filters)
+        self.assertEqual(len(users), 1)
+        self.assertEqual(users[0]['id'], domain1_user_list[10]['id'])
+        # Check the driver has removed the filter from the query
+        self.assertNotIn('name', query_string)
+
+    def _test_list_users_filtered_and_limited(self):
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(domain1['id'], domain1)
+
+        # Create 20 users, 14 of which are in domain1
+        domain1_user_list = self._create_user_data(
+            20, domain_id=domain1['id'], split=5)
+
+        valid_filters = ['domain_id', 'email', 'enabled', 'name']
+
+        old_list_limit = CONF.list_limit
+        old_identity_list_limit = CONF.identity.list_limit
+
+        CONF.list_limit = 10
+        # Should get back the first 10 users in domain1
+        query_string = {'domain_id': domain1['id']}
+        users = self.identity_api.list_users(
+            query_dict=query_string,
+            valid_filters=valid_filters)
+        self.assertEqual(len(users), 10)
+        self._match_with_list(users, domain1_user_list)
+        # Check the driver has removed the filter from the query
+        self.assertNotIn('domain_id', query_string)
+
+        # Override with driver specific limit
+        CONF.identity_list_limit = 5
+        # Should get back the first 5 users in domain1
+        query_string = {'domain_id': domain1['id']}
+        users = self.identity_api.list_users(
+            query_dict=query_string,
+            valid_filters=valid_filters)
+        self.assertEqual(len(users), 5)
+        self._match_with_list(users, domain1_user_list)
+        # Check the driver has removed the filter from the query
+        self.assertNotIn('domain_id', query_string)
+
+        CONF.list_limit = old_list_limit
+        CONF.identity.list_limit = old_identity_list_limit
+
+    def test_list_users_inexact_filtered(self):
+        # Create 20 users
+        user_list = self._create_user_data(20)
+        # Set up some names that we can filter on
+        user = user_list[5]
+        user['name'] = 'The'
+        self.identity_api.update_user(user['id'], user)
+        user = user_list[6]
+        user['name'] = 'The Ministry'
+        self.identity_api.update_user(user['id'], user)
+        user = user_list[7]
+        user['name'] = 'The Ministry of'
+        self.identity_api.update_user(user['id'], user)
+        user = user_list[8]
+        user['name'] = 'The Ministry of Silly'
+        self.identity_api.update_user(user['id'], user)
+        user = user_list[9]
+        user['name'] = 'The Ministry of Silly Walks'
+        self.identity_api.update_user(user['id'], user)
+        # ...and one for useful case insensitivity testing
+        user = user_list[10]
+        user['name'] = 'The ministry of silly walks OF'
+        self.identity_api.update_user(user['id'], user)
+
+        valid_filters = ['domain_id', 'email', 'enabled', 'name']
+
+        # TODO(henry-nash): Sqlalchemy 0.7 defaults to case insensitivity
+        # so once we find a way of changing that (maybe on a call-by-call
+        # basis), need to change the expected test results here.
+
+        query_string = {'name__contains': 'Ministry'}
+        users = self.identity_api.list_users(
+            query_dict=query_string,
+            valid_filters=valid_filters)
+        self.assertEqual(len(users), 5)
+        self._match_with_list(users, user_list,
+                              list_start=6, list_end=11)
+        self.assertNotIn('name__contains', query_string)
+
+        query_string = {'name__icontains': 'ministry'}
+        users = self.identity_api.list_users(
+            query_dict=query_string,
+            valid_filters=valid_filters)
+        self.assertEqual(len(users), 5)
+        self._match_with_list(users, user_list,
+                              list_start=6, list_end=11)
+        self.assertNotIn('name__icontains', query_string)
+
+        query_string = {'name__startswith': 'The'}
+        users = self.identity_api.list_users(
+            query_dict=query_string,
+            valid_filters=valid_filters)
+        self.assertEqual(len(users), 6)
+        self._match_with_list(users, user_list,
+                              list_start=5, list_end=11)
+        self.assertNotIn('name__startswith', query_string)
+
+        query_string = {'name__istartswith': 'The'}
+        users = self.identity_api.list_users(
+            query_dict=query_string,
+            valid_filters=valid_filters)
+        self.assertEqual(len(users), 6)
+        self._match_with_list(users, user_list,
+                              list_start=5, list_end=11)
+        self.assertNotIn('name__istartswith', query_string)
+
+        query_string = {'name__endswith': 'of'}
+        users = self.identity_api.list_users(
+            query_dict=query_string,
+            valid_filters=valid_filters)
+        self.assertEqual(len(users), 2)
+        self.assertEqual(users[0]['id'], user_list[7]['id'])
+        self.assertEqual(users[1]['id'], user_list[10]['id'])
+        self.assertNotIn('name__endswith', query_string)
+
+        query_string = {'name__iendswith': 'of'}
+        users = self.identity_api.list_users(
+            query_dict=query_string,
+            valid_filters=valid_filters)
+        self.assertEqual(len(users), 2)
+        self.assertEqual(users[0]['id'], user_list[7]['id'])
+        self.assertEqual(users[1]['id'], user_list[10]['id'])
+        self.assertNotIn('name__iendswith', query_string)

@@ -26,6 +26,7 @@ from sqlalchemy.orm.attributes import InstrumentedAttribute
 import sqlalchemy.pool
 from sqlalchemy import types as sql_types
 
+from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import jsonutils
@@ -309,6 +310,142 @@ class Base(object):
     def clear_engine(self):
         self._engine = None
         self._sessionmaker = None
+
+    def filter(self, model, query, request_dict, valid_filters):
+        """Applies filtering to a query.
+
+        :param model: the table model in question
+        :param query: query to apply filters to
+        :param request_dict: dictionary of filters.  This will be modified
+                             to remove any filters that have been satisfied.
+        :param valid_filters: list of keys to apply filtering to
+
+        :returns satisfied, query: satisfied is True if all valid filters could
+                                   be added to the query
+
+        """
+        def inexact_filter(model, query, item, request_dict):
+            """Applies an inexact filter to a query.
+
+            :param model: the table model in question
+            :param query: query to apply filters to
+            :param item: item the filter in question
+            :param request_dict: dictionary of filters
+
+            :returns satisfied, query: satisfied is True if all valid filters
+                                       could be added to the query
+
+            """
+            key, value = item.split('__', 1)
+            column_attr = getattr(model, key)
+
+            if value not in utils.INEXACT_FILTERS_SUPPORTED:
+                # Better to error out now, rather than fail to match the filter
+                # here, do a (potentially big) unfiltered query, pass it back
+                # to the contoller and then just fail there.
+                msg = _('Unsupported inexact string filter: %s') % item
+                raise exception.ValidationError(msg)
+
+            if value == 'contains':
+                query_term = column_attr.like('%%%s%%' % request_dict[item])
+            elif value == 'icontains':
+                query_term = column_attr.ilike('%%%s%%' % request_dict[item])
+            elif value == 'startswith':
+                query_term = column_attr.like('%s%%' % request_dict[item])
+            elif value == 'istartswith':
+                query_term = column_attr.ilike('%s%%' % request_dict[item])
+            elif value == 'endswith':
+                query_term = column_attr.like('%%%s' % request_dict[item])
+            elif value == 'iendswith':
+                query_term = column_attr.ilike('%%%s' % request_dict[item])
+            else:
+                msg = (_('Missing code for inexact filter: %s') % item)
+                LOG.debug(msg)
+                return (False, query)
+
+            return (True, query.filter(query_term))
+
+        filter_dict = {}
+        all_filters_satisifed = True
+        for key in valid_filters:
+            if key in request_dict:
+                if isinstance(model.__table__.c[key].type,
+                              sqlalchemy.types.Boolean):
+                    filter_dict[key] = utils.attr_as_boolean(
+                        request_dict.pop(key))
+                else:
+                    filter_dict[key] = request_dict.pop(key)
+            else:
+                # Check for inexact filter requests
+                for item in request_dict:
+                    if item.startswith(key + '__'):
+                        satisfied, query = inexact_filter(
+                            model, query, item, request_dict)
+                        # If we could satisfy it then remove from the
+                        # request_dict, else ensure we tell the caller
+                        # function that we need some help at a higher level.
+                        if satisfied:
+                            request_dict.pop(item)
+                        else:
+                            all_filters_satisifed = False
+                        break
+
+        # Apply any exact filers we built up
+        if filter_dict:
+            query = query.filter_by(**filter_dict)
+
+        return (all_filters_satisifed, query)
+
+    def paginate_or_limit(self, query, request_dict, limit):
+        """Applies pagination or limit to a query.
+
+        If no pagination requested, then apply any supplied upper limit.
+
+        :param query: query to apply filters to
+        :param request_dict: dictionary of filters
+        :param limit: hard limit to apply if no pagination
+
+        :returns updated query
+
+        """
+        # TODO(henry-nash): Add pagination support here
+
+        # If no pagination requested, set an upper limit if supplied
+        if limit is not None:
+            query = query.limit(limit)
+        return query
+
+    def filter_and_paginate(self, model, query, request_dict,
+                            valid_filters, limit=None):
+        """Applies filtering and pagination/limit to a query.
+
+        :param model: table model
+        :param query: query to apply filters to
+        :param request_dict: dictionary of filters.  This will be modified
+                             to remove any filters that have been satisfied.
+        :param valid_filters: list of keys to apply filtering to
+        :param limit: hard limit to apply if no pagination
+
+        :returns updated query
+
+        """
+        ok_to_paginate = True
+        if request_dict is not None and valid_filters is not None:
+            ok_to_paginate, query = self.filter(model, query,
+                                                request_dict, valid_filters)
+
+        # We can only try and paginate or limit here if we supported all the
+        # specified filters, sine otherwise this will mess up the results. Any
+        # unsatisfied filters will have been left in the request_dict for the
+        # controller to handle.
+        #
+        # At the moment, we guarantee to satisfy all supported filters, but
+        # this principle may be useful in the future.
+
+        if ok_to_paginate:
+            return self.paginate_or_limit(query, request_dict, limit)
+        else:
+            return query
 
 
 def handle_conflicts(type='object'):
