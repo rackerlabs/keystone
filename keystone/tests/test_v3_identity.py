@@ -1307,6 +1307,7 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
             'project_id': project1['id']})
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(r)
+        print(r.result.get('role_assignments'))
         self.assertEqual(len(r.result.get('role_assignments')), 3)
 
         unused, up_entity = _build_role_assignment_url_and_entity(

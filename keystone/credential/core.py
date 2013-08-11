@@ -42,6 +42,7 @@ class Manager(manager.Manager):
 
 
 class Driver(object):
+
     # credential crud
 
     def create_credential(self, credential_id, credential):

@@ -104,6 +104,7 @@ class Manager(manager.Manager):
 
 class Driver(object):
     """Interface description for an Catalog driver."""
+
     def create_service(self, service_id, service_ref):
         """Creates a new service.
 
