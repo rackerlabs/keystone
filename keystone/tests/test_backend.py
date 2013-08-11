@@ -34,6 +34,7 @@ from keystone.tests import filtering
 from keystone.tests import test_utils
 from keystone.token import provider
 
+
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
@@ -1984,6 +1985,8 @@ class IdentityTests(object):
         self.assertIn(self.tenant_baz['id'], project_ids)
 
     def test_list_projects_for_domain(self):
+        directives = listdirectives.ListDirectives(
+            query_dict={'domain_id': DEFAULT_DOMAIN_ID})
         project_ids = ([x['id'] for x in
                        self.assignment_api.list_projects_in_domain(
                            DEFAULT_DOMAIN_ID, driver_hints.Hints())])
@@ -2002,6 +2005,9 @@ class IdentityTests(object):
         project2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': domain1['id']}
         self.assignment_api.create_project(project2['id'], project2)
+        directives = listdirectives.ListDirectives(
+            query_dict={'domain_id': domain1['id']})
+
         project_ids = ([x['id'] for x in
                        self.assignment_api.list_projects_in_domain(
                            domain1['id'], driver_hints.Hints())])
@@ -4002,6 +4008,61 @@ class FilterTests(filtering.FilterTests):
             self.assertEqual(entities[0]['id'], domain1_entity_list[10]['id'])
             # Check the driver has removed the filter from the list hints
             self.assertFalse(filtering.name_in_filter('name', hints))
+
+            self._delete_test_data(entity, entity_list)
+            self._delete_test_data(entity, domain1_entity_list)
+
+    def test_list_users_filtered_and_limited(self):
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(domain1['id'], domain1)
+
+        for entity in ['user', 'group', 'project']:
+            # Create 20 entities, 14 of which are in domain1
+            entity_list = self._create_test_data(entity, 6)
+            domain1_entity_list = self._create_test_data(entity, 14,
+                                                         domain1['id'])
+
+            # Not all are valid on each type of entity.
+            valid_filters = ['domain_id', 'email', 'enabled', 'name']
+
+            old_list_limit = CONF.list_limit
+            old_identity_list_limit = CONF.identity.list_limit
+            old_assignment_list_limit = CONF.assignment.list_limit
+
+            self.opt(list_limit=10)
+            # Should get back just 10 users in domain1
+            query_string = {'domain_id': domain1['id']}
+            directives = listdirectives.ListDirectives(
+                query_dict=query_string,
+                valid_filters=valid_filters)
+            entities = self._list_entities(entity)(list_directives=directives)
+            self.assertEqual(len(entities), 10)
+            self._match_with_list(entities, domain1_entity_list)
+            # Check the driver has removed the filter from the list directives
+            self.assertFalse(filter_pagination.nameinfilter('domain_id',
+                                                            directives))
+
+            # Override with driver specific limit
+            if entity == 'project':
+                self.opt_in_group('assignment', list_limit=5)
+            else:
+                self.opt_in_group('identity', list_limit=5)
+            # Should get back just 5 users in domain1
+            query_string = {'domain_id': domain1['id']}
+            directives = listdirectives.ListDirectives(
+                query_dict=query_string,
+                valid_filters=valid_filters)
+            entities = self._list_entities(entity)(list_directives=directives)
+            self.assertEqual(len(entities), 5)
+            self._match_with_list(entities, domain1_entity_list)
+            # Check the driver has removed the filter from the list directives
+            self.assertFalse(filter_pagination.nameinfilter('domain_id',
+                                                            directives))
+
+            self.opt(list_limit=old_list_limit)
+            self.opt_in_group('identity', list_limit=old_identity_list_limit)
+            self.opt_in_group('assignment',
+                              list_limit=old_assignment_list_limit)
 
             self._delete_test_data(entity, entity_list)
             self._delete_test_data(entity, domain1_entity_list)
