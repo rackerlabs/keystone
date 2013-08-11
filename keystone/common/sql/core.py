@@ -365,7 +365,26 @@ class Base(object):
 
         return query
 
-    def filter_and_paginate(self, model, query, list_directives):
+    def paginate_or_limit(self, query, list_directives, limit):
+        """Applies pagination or limit to a query.
+
+        If no pagination requested, then apply any supplied upper limit.
+
+        :param query: query to apply filters to
+        :param list_directives: comtains filters & pagiantors
+        :param limit: hard limit to apply if no pagination
+
+        :returns updated query
+
+        """
+        # TODO(henry-nash): Add pagination support here
+
+        # If no pagination requested, set an upper limit if supplied
+        if limit is not None:
+            query = query.limit(limit)
+        return query
+
+    def filter_and_paginate(self, model, query, list_directives, limit=None):
         """Applies filtering and pagination/limit to a query.
 
         :param model: table model
@@ -375,6 +394,7 @@ class Base(object):
                                 be marked in list_directive so that the
                                 caller will know if any filters remain to be
                                 satisfied.
+        :param limit: hard limit to apply if no pagination
 
         :returns updated query
 
@@ -382,7 +402,17 @@ class Base(object):
         if list_directives is not None and list_directives.filteritems():
             query = self.filter(model, query, list_directives)
 
-        return query
+        # NOTE(henry-nash): We can only try and paginate or limit here if we
+        # supported all the specified filters, sine otherwise this will mess
+        # up the results. Any unsatisfied filters will have been left in
+        # list_directives for the controller to handle.
+
+        if (list_directives is not None and
+                list_directives.filteritems() is None):
+                    return self.paginate_or_limit(query, list_directives,
+                                                  limit)
+        else:
+            return query
 
 
 def handle_conflicts(type='object'):

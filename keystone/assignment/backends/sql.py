@@ -212,7 +212,8 @@ class Assignment(sql.Base, assignment.Driver):
         session = self.get_session()
         query = session.query(Project)
         project_refs = self.filter_and_paginate(
-            Project, query, list_directives)
+            Project, query, list_directives,
+            limit=self._get_list_limit())
         print([project_ref.to_dict() for project_ref in project_refs])
         return [project_ref.to_dict() for project_ref in project_refs]
 
@@ -462,7 +463,8 @@ class Assignment(sql.Base, assignment.Driver):
         session = self.get_session()
         query = session.query(Domain)
         refs = self.filter_and_paginate(
-            Domain, query, list_directives)
+            Domain, query, list_directives,
+            limit=self._get_list_limit())
         return [ref.to_dict() for ref in refs]
 
     def _get_domain(self, session, domain_id):
@@ -552,7 +554,8 @@ class Assignment(sql.Base, assignment.Driver):
         session = self.get_session()
         query = session.query(Role)
         refs = self.filter_and_paginate(
-            Role, query, list_directives)
+            Role, query, list_directives,
+            limit=self._get_list_limit())
         return [ref.to_dict() for ref in refs]
 
     def _get_role(self, session, role_id):
