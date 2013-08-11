@@ -285,7 +285,7 @@ class V3Controller(wsgi.Application):
 
         Returns the wrapped collection, which includes:
         - Executing any filtering not already carried out
-        - Paginating if necessary
+        - Paginate or truncate to a set limit if necessary
         - Adds 'self' links in every member
         - Adds 'next', 'self' and 'prev' links for the whole collection.
 
@@ -293,8 +293,8 @@ class V3Controller(wsgi.Application):
                         and query string
         :param refs: the list of members of the collection
         :param hints: list hints, containing any relevant
-                      filters. Any filters already satisfied by drivers
-                      will have been removed
+                      filters and limit. Any filters already satisfied by
+                      drivers will have been removed
         """
         # Check if there are any filters in hints that were not
         # handled by the drivers. The driver will not have paginated or
@@ -304,7 +304,7 @@ class V3Controller(wsgi.Application):
         if hints is not None:
             refs = cls.filter_by_attributes(refs, hints)
 
-        refs = cls.paginate(context, refs)
+        refs = cls.paginate_or_limit(context, refs, hints)
 
         for ref in refs:
             cls.wrap_member(context, ref)
@@ -317,11 +317,21 @@ class V3Controller(wsgi.Application):
         return container
 
     @classmethod
-    def paginate(cls, context, refs):
-        """Paginates a list of references by page & per_page query strings."""
-        # FIXME(dolph): client needs to support pagination first
-        return refs
+    def paginate_or_limit(cls, context, refs, hints):
+        """Paginates or limits a list of references."""
+        # FIXME(dolph, henry-nash): client needs to support pagination first,
+        # for now we just see if we need to limit.
+        if hints is None:
+            return refs
 
+        list_limit = hints.get_limit()
+        if list_limit and len(refs) > list_limit:
+            context['status'] = (203, 'Subset')
+            return refs[:list_limit]
+        else:
+            return refs
+
+        # The following code is unreachable for now
         page = context['query_string'].get('page', 1)
         per_page = context['query_string'].get('per_page', 30)
         return refs[per_page * (page - 1):per_page * page]

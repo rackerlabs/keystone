@@ -208,7 +208,7 @@ class TrustV3(controller.V3Controller):
                 trust['expires_at'] = (timeutils.isotime
                                        (trust['expires_at'],
                                         subsecond=True))
-        return TrustV3.wrap_collection(context, trusts, hints=[])
+        return TrustV3.wrap_collection(context, trusts)
 
     @controller.protected()
     def delete_trust(self, context, trust_id):

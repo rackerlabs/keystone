@@ -238,15 +238,18 @@ class Application(BaseApplication):
         elif isinstance(result, webob.exc.WSGIHTTPException):
             return result
 
-        response_code = self._get_response_code(req)
+        response_code = self._get_response_code(context, req)
         return render_response(body=result, status=response_code)
 
-    def _get_response_code(self, req):
+    def _get_response_code(self, context, req):
         req_method = req.environ['REQUEST_METHOD']
         controller = importutils.import_class('keystone.common.controller')
         code = None
-        if isinstance(self, controller.V3Controller) and req_method == 'POST':
-            code = (201, 'Created')
+        if isinstance(self, controller.V3Controller):
+            if req_method == 'POST':
+                code = (201, 'Created')
+            elif req_method == 'GET' and 'status' in context:
+                code = context['status']
         return code
 
     def _normalize_arg(self, arg):
