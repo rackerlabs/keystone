@@ -19,6 +19,24 @@ import functools
 from keystone.openstack.common import importutils
 
 
+def response_truncated(f):
+    """Truncate the list returned by the wrapped function.
+
+    A _get_list_limit() method is required to be present in the object
+    class hierarchy, which returns the limit to which we will truncate.
+
+    """
+    @functools.wraps(f)
+    def wrapper(self, *args, **kwargs):
+        ref_list = f(self, *args, **kwargs)
+        list_limit = self.driver._get_list_limit()
+        if list_limit and len(ref_list) > list_limit:
+            return ref_list[:list_limit]
+        else:
+            return ref_list
+    return wrapper
+
+
 class Manager(object):
     """Base class for intermediary request layer.
 
