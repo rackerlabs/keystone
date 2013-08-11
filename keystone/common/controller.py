@@ -19,6 +19,8 @@ import functools
 import uuid
 
 from keystone.common import dependency
+from keystone.common import driver_hints
+from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
 from keystone import exception
@@ -284,10 +286,37 @@ class V3Controller(V2Controller):
         return {cls.member_name: ref}
 
     @classmethod
-    def wrap_collection(cls, context, refs, filters=[]):
-        for f in filters:
-            refs = cls.filter_by_attribute(context, refs, f)
+    def wrap_collection(cls, context, refs, hints=None):
+        """Wrap a collection, checking for filtering and pagination.
 
+        Returns the wrapped collection, which includes:
+        - Executing any filtering not already carried out
+        - Paginating if necessary
+        - Adds 'self' links in every member
+        - Adds 'next', 'self' and 'prev' links for the whole collection.
+
+        :param context: the current context, containing the original url path
+                        and query string
+        :param refs: the list of members of the collection
+        :param hints: list hints, containing any relevant
+                                filters. Any filters satisfied already applied
+                                by drivers will have been marked as satisfied,
+                                any remaining must be applied here.
+        """
+        # Check if there are any filters in hints that were not
+        # handled by the drivers. The driver will not have paginated or
+        # limited the output if it found there were filters it was unable to
+        # handle.
+        #
+        # If hints is None, then this means that the controller has
+        # not asked its drivers to do any filtering at all, so we should build
+        # the hints object here.
+
+        if hints is None:
+            hints = driver_hints.Hints(
+                query_dict=context['query_string'])
+
+        refs = cls.filter_by_attributes(refs, hints)
         refs = cls.paginate(context, refs)
 
         for ref in refs:
@@ -311,8 +340,8 @@ class V3Controller(V2Controller):
         return refs[per_page * (page - 1):per_page * page]
 
     @classmethod
-    def filter_by_attribute(cls, context, refs, attr):
-        """Filters a list of references by query string value."""
+    def filter_by_attributes(cls, refs, hints):
+        """Filters a list of references by filter values."""
 
         def _attr_match(ref_attr, val_attr):
             """Matches attributes allowing for booleans as strings.
@@ -323,19 +352,53 @@ class V3Controller(V2Controller):
 
             """
             if type(ref_attr) is bool:
-                if (isinstance(val_attr, basestring) and
-                        val_attr == '0'):
-                    val = False
-                else:
-                    val = True
-                return (ref_attr == val)
+                return ref_attr == utils.attr_as_boolean(val_attr)
             else:
-                return (ref_attr == val_attr)
+                return ref_attr == val_attr
 
-        if attr in context['query_string']:
-            value = context['query_string'][attr]
-            return [r for r in refs if _attr_match(
-                flatten(r).get(attr), value)]
+        def _inexact_attr_match(filter, ref):
+            """Applies an inexact filter to a result dict.
+
+            :param filter: the filter in question
+            :param ref: the dict to check
+
+            :returns True if there is a match
+
+            """
+            comparator = filter['comparator']
+            key = filter['name']
+
+            if key in ref:
+                filter_value = filter['value']
+                ref_value = ref[key]
+                if not filter['case_sensitive']:
+                    filter_value = filter_value.lower()
+                    ref_value = ref_value.lower()
+
+                if comparator == 'contains':
+                    return (filter_value in ref_value)
+                elif comparator == 'startswith':
+                    return ref_value.startswith(filter_value)
+                elif comparator == 'endswith':
+                    return ref_value.endswith(filter_value)
+                else:
+                    msg = (_('Unsupported inexact filter, ignoring: %s') % key)
+                    LOG.debug(msg)
+                    return True
+
+            return False
+
+        for filter in hints.filters():
+            if filter['comparator'] == 'equals':
+                attr = filter['name']
+                value = filter['value']
+                refs = [r for r in refs if _attr_match(
+                    flatten(r).get(attr), value)]
+            else:
+                # It might be an inexact filter
+                refs = [r for r in refs if _inexact_attr_match(
+                    filter, r)]
+
         return refs
 
     def _require_matching_id(self, value, ref):
