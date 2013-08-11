@@ -328,8 +328,12 @@ class V3Controller(V2Controller):
     @classmethod
     def paginate(cls, context, refs):
         """Paginates a list of references by page & per_page query strings."""
-        # FIXME(dolph): client needs to support pagination first,
-        return refs
+        # FIXME(dolph, henry-nash): client needs to support pagination first,
+        # for now we just see if we need to limit.
+        if CONF.list_limit and len(refs) > CONF.list_limit:
+            return refs[:CONF.list_limit]
+        else:
+            return refs
 
         page = context['query_string'].get('page', 1)
         per_page = context['query_string'].get('per_page', 30)
