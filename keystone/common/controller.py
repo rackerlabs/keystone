@@ -257,6 +257,81 @@ class V3Controller(V2Controller):
                              implies no filtering has yet been done.
 
         """
+        def build_url(path, query_dict, increment, ref_count):
+            """Build a collection link.
+
+            Build and return one of the prev, self, next links, based on:
+
+            - the path provided
+            - the current page specified in query_dict
+            - the page increment we want (-1 is previous, 0 is self and
+              +1 is next)
+            - ref-count, the number of entries in this page, which compared to
+              per_page to determine if we have a full page.
+
+            If page is not specified in query-dict, then we are not paginating
+            and previous and next should return None
+
+            """
+            if query_dict is not None and 'page' in query_dict:
+                new_dict = update_page_in_query(query_dict, increment,
+                                                ref_count)
+                if new_dict is not None:
+                    query_list = []
+                    for x in new_dict:
+                        query_list.append('%s=%s' % (x, new_dict[x]))
+                    query_string = '&'.join(query_list)
+                    new_path = '%(path)s?%(query_string)s' % {
+                        'path': path,
+                        'query_string': query_string}
+                    return cls.base_url(new_path)
+                else:
+                    # We are paginating but have run off the start or end
+                    return None
+            else:
+                # We are not paginating, so only the self link is required
+                if increment == 0:
+                    return cls.base_url(path)
+                else:
+                    return None
+
+        def update_page_in_query(query_dict, increment, ref_count):
+            """Return a new dict with the page number updated.
+
+            Given current page number in query_dict, return an new, updated
+            dict based on the page increment required.
+
+            Return None if we have run off the start or end.
+
+            """
+            # We have already validates that any specified page or page size
+            # are integers, so not need to check for TypeError
+            page = query_dict.get('page')
+            per_page = int(query_dict.get('per_page', 30))
+            if page is None:
+                # A query string of 'page=' is interpreted as page 1
+                page = 1
+            else:
+                page = int(page)
+
+            new_dict = query_dict.copy()
+            page += increment
+            new_dict['page'] = page
+
+            # If the prev page is less than 1 or there is no next page
+            # since we did not have a full page this time, then indicate
+            # we should return a None url to the caller.
+            #
+            # This algorithm obviously does mean that in the case of the
+            # last page being exactly full, we will incorrectly include
+            # a next pointer.  However, that small issue avoids the need
+            # for a look ahead read being percolated up from the driver
+            # layer and is considered a reasonable trade-off.
+            if page < 1 or (ref_count != per_page and increment == 1):
+                return None
+            else:
+                return new_dict
+
         # If query_string was not specified, then this implies the driver has
         # not done any filtering at all, and we should just use the original
         # context query string.
@@ -272,6 +347,9 @@ class V3Controller(V2Controller):
         for f in filters:
             refs = cls._filter_by_attribute(query_string, refs, f)
 
+        # This is safe whether the driver paginated or not, since
+        # it will only take action if more than a page size has been
+        # returned
         refs = cls.paginate(context, refs)
 
         for ref in refs:
@@ -279,24 +357,42 @@ class V3Controller(V2Controller):
 
         container = {cls.collection_name: refs}
         container['links'] = {
-            'next': None,
-            'self': cls.base_url(path=context['path']),
-            'previous': None}
+            'next': build_url(context['path'], context['query_string'],
+                              1, len(refs)),
+            'self': build_url(context['path'], context['query_string'],
+                              0, len(refs)),
+            'previous': build_url(context['path'], context['query_string'],
+                                  -1, len(refs))}
         return container
 
     @classmethod
     def paginate(cls, context, refs):
-        """Paginates a list of references by page & per_page query strings."""
-        # FIXME(dolph, henry-nash): client needs to support pagination first,
-        # for now we just see if we need to limit.
-        if CONF.list_limit and len(refs) > CONF.list_limit:
-            return refs[:CONF.list_limit]
-        else:
-            return refs
+        """Paginates a list of references, if not already done by the diver."""
 
-        page = context['query_string'].get('page', 1)
-        per_page = context['query_string'].get('per_page', 30)
-        return refs[per_page * (page - 1):per_page * page]
+        # Load and validate the page and page_size
+        try:
+            per_page = int(context['query_string'].get('per_page', 30))
+            if 'page' in context['query_string']:
+                page = context['query_string'].get('page')
+                if page is None:
+                    # A query string of 'page=' is interpreted as page 1
+                    page = 1
+                else:
+                    page = int(page)
+        except TypeError:
+            raise exception.ValidationError(
+                _('Page and page size must be an integer'))
+
+        if len(refs) > per_page:
+            # The driver returned more than a page size, so must be incapable
+            # of pagination, so we must do it on its behalf, provided the
+            # client has indicated they want this.
+            if 'page' in context['query_string']:
+                return refs[per_page * (page - 1):per_page * page]
+            elif CONF.list_limit and len(refs) > CONF.list_limit:
+                return refs[:CONF.list_limit]
+
+        return refs
 
     @classmethod
     def filter_by_attribute(cls, context, refs, attr):
