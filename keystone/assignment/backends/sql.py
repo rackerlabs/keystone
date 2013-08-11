@@ -208,15 +208,18 @@ class Assignment(sql.Base, assignment.Driver):
             self._update_metadata(session, user_id, project_id, metadata_ref,
                                   domain_id, group_id)
 
-    def list_projects(self, domain_id=None):
-        with self.transaction() as session:
-            if domain_id:
-                self._get_domain(session, domain_id)
+    def list_projects(self, hints):
+        session = self.get_session()
+        query = session.query(Project)
+        project_refs = self.filter(Project, query, hints)
+        return [project_ref.to_dict() for project_ref in project_refs]
 
+    def list_projects_in_domain(self, domain_id, hints):
+        with self.transaction() as session:
+            self._get_domain(session, domain_id)
             query = session.query(Project)
-            if domain_id:
-                query = query.filter_by(domain_id=domain_id)
-            project_refs = query.all()
+            query = query.filter_by(domain_id=domain_id)
+            project_refs = self.filter(Project, query, hints)
             return [project_ref.to_dict() for project_ref in project_refs]
 
     def list_projects_for_user(self, user_id, group_ids):
@@ -520,9 +523,10 @@ class Assignment(sql.Base, assignment.Driver):
             session.add(ref)
         return ref.to_dict()
 
-    def list_domains(self):
+    def list_domains(self, hints):
         with self.transaction() as session:
-            refs = session.query(Domain).all()
+            query = session.query(Domain)
+            refs = self.filter(Domain, query, hints)
             return [ref.to_dict() for ref in refs]
 
     def _get_domain(self, session, domain_id):
@@ -572,9 +576,10 @@ class Assignment(sql.Base, assignment.Driver):
             session.add(ref)
             return ref.to_dict()
 
-    def list_roles(self):
+    def list_roles(self, hints):
         with self.transaction() as session:
-            refs = session.query(Role).all()
+            query = session.query(Role)
+            refs = self.filter(Role, query, hints)
             return [ref.to_dict() for ref in refs]
 
     def _get_role(self, session, role_id):

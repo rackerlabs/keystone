@@ -23,6 +23,7 @@ import uuid
 from keystone.assignment import controllers as assignment_controllers
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import driver_hints
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log
@@ -276,16 +277,20 @@ class UserV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users(self, context, filters):
+        hints = UserV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_users(
-            domain_scope=self._get_domain_id_for_request(context))
-        return UserV3.wrap_collection(context, refs, filters)
+            domain_scope=self._get_domain_id_for_request(context),
+            hints=hints)
+        return UserV3.wrap_collection(context, refs, hints=hints)
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users_in_group(self, context, filters, group_id):
+        hints = UserV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_users_in_group(
             group_id,
-            domain_scope=self._get_domain_id_for_request(context))
-        return UserV3.wrap_collection(context, refs, filters)
+            domain_scope=self._get_domain_id_for_request(context),
+            hints=hints)
+        return UserV3.wrap_collection(context, refs, hints=hints)
 
     @controller.protected()
     def get_user(self, context, user_id):
@@ -376,16 +381,20 @@ class GroupV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'name')
     def list_groups(self, context, filters):
+        hints = GroupV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_groups(
-            domain_scope=self._get_domain_id_for_request(context))
-        return GroupV3.wrap_collection(context, refs, filters)
+            domain_scope=self._get_domain_id_for_request(context),
+            hints=hints)
+        return GroupV3.wrap_collection(context, refs, hints=hints)
 
     @controller.filterprotected('name')
     def list_groups_for_user(self, context, filters, user_id):
+        hints = GroupV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_groups_for_user(
             user_id,
-            domain_scope=self._get_domain_id_for_request(context))
-        return GroupV3.wrap_collection(context, refs, filters)
+            domain_scope=self._get_domain_id_for_request(context),
+            hints=hints)
+        return GroupV3.wrap_collection(context, refs, hints=hints)
 
     @controller.protected()
     def get_group(self, context, group_id):

@@ -353,8 +353,10 @@ class DomainV3(controller.V3Controller):
 
     @controller.filterprotected('enabled', 'name')
     def list_domains(self, context, filters):
-        refs = self.assignment_api.list_domains()
-        return DomainV3.wrap_collection(context, refs, filters)
+        hints = DomainV3.build_driver_hints(context, filters)
+        refs = self.assignment_api.list_domains(hints=hints)
+        return DomainV3.wrap_collection(context, refs,
+                                        hints=hints)
 
     @controller.protected()
     def get_domain(self, context, domain_id):
@@ -392,13 +394,17 @@ class ProjectV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'enabled', 'name')
     def list_projects(self, context, filters):
-        refs = self.assignment_api.list_projects()
-        return ProjectV3.wrap_collection(context, refs, filters)
+        hints = ProjectV3.build_driver_hints(context, filters)
+        refs = self.assignment_api.list_projects(hints=hints)
+        return ProjectV3.wrap_collection(context, refs, filters,
+                                         hints=hints)
 
     @controller.filterprotected('enabled', 'name')
     def list_user_projects(self, context, filters, user_id):
-        refs = self.assignment_api.list_projects_for_user(user_id)
-        return ProjectV3.wrap_collection(context, refs, filters)
+        hints = ProjectV3.build_driver_hints(context, filters)
+        refs = self.assignment_api.list_projects_for_user(user_id,
+                                                          hints=hints)
+        return ProjectV3.wrap_collection(context, refs, hints=hints)
 
     @controller.protected()
     def get_project(self, context, project_id):
@@ -436,8 +442,10 @@ class RoleV3(controller.V3Controller):
 
     @controller.filterprotected('name')
     def list_roles(self, context, filters):
-        refs = self.assignment_api.list_roles()
-        return RoleV3.wrap_collection(context, refs, filters)
+        hints = RoleV3.build_driver_hints(context, filters)
+        refs = self.assignment_api.list_roles(
+            hints=hints)
+        return RoleV3.wrap_collection(context, refs, hints=hints)
 
     @controller.protected()
     def get_role(self, context, role_id):
@@ -853,6 +861,7 @@ class RoleAssignmentV3(controller.V3Controller):
         # to pass the filters into the driver call, so that the list size is
         # kept a minimum.
 
+        hints = self.build_driver_hints(context, filters)
         refs = self.assignment_api.list_role_assignments()
         formatted_refs = (
             [self._format_entity(x) for x in refs
@@ -864,7 +873,7 @@ class RoleAssignmentV3(controller.V3Controller):
 
             formatted_refs = self._expand_indirect_assignments(formatted_refs)
 
-        return self.wrap_collection(context, formatted_refs, filters)
+        return self.wrap_collection(context, formatted_refs, hints=hints)
 
     @controller.protected()
     def get_role_assignment(self, context):
