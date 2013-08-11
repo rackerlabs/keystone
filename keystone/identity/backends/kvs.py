@@ -60,7 +60,7 @@ class Identity(kvs.Base, identity.Driver):
         return identity.filter_user(
             self._get_user_by_name(user_name, domain_id))
 
-    def list_users(self):
+    def list_users(self, query_dict=None, valid_filters=None):
         user_ids = self.db.get('user_list', [])
         return [self.get_user(x) for x in user_ids]
 
@@ -187,7 +187,7 @@ class Identity(kvs.Base, identity.Driver):
         self.db.set('group_list', list(group_list))
         return group
 
-    def list_groups(self):
+    def list_groups(self, query_dict=None, valid_filters=None):
         group_ids = self.db.get('group_list', [])
         return [self.get_group(x) for x in group_ids]
 
