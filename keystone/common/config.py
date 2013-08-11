@@ -47,7 +47,8 @@ FILE_OPTIONS = {
         cfg.StrOpt('member_role_id',
                    default='9fe2ff9ee4384b1894a90878d3e92bab'),
         cfg.StrOpt('member_role_name', default='_member_'),
-        cfg.IntOpt('crypt_strength', default=40000)],
+        cfg.IntOpt('crypt_strength', default=40000),
+        cfg.IntOpt('list_limit', default=None)],
     'identity': [
         cfg.StrOpt('default_domain_id', default='default'),
         cfg.BoolOpt('domain_specific_drivers_enabled',
@@ -57,7 +58,8 @@ FILE_OPTIONS = {
         cfg.StrOpt('driver',
                    default=('keystone.identity.backends'
                             '.sql.Identity')),
-        cfg.IntOpt('max_password_length', default=4096)],
+        cfg.IntOpt('max_password_length', default=4096),
+        cfg.IntOpt('list_limit', default=None)],
     'trust': [
         cfg.BoolOpt('enabled', default=True),
         cfg.StrOpt('driver',
@@ -111,7 +113,8 @@ FILE_OPTIONS = {
         # assignment has no default for backward compatibility reasons.
         # If assignment driver is not specified, the identity driver chooses
         # the backend
-        cfg.StrOpt('driver', default=None)],
+        cfg.StrOpt('driver', default=None),
+        cfg.IntOpt('list_limit', default=None)],
     'credential': [
         cfg.StrOpt('driver',
                    default=('keystone.credential.backends'

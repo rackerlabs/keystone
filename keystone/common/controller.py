@@ -3,6 +3,7 @@ import functools
 import uuid
 
 from keystone.common import dependency
+from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
 from keystone import exception
@@ -238,10 +239,117 @@ class V3Controller(V2Controller):
         return {cls.member_name: ref}
 
     @classmethod
-    def wrap_collection(cls, context, refs, filters=[]):
-        for f in filters:
-            refs = cls.filter_by_attribute(context, refs, f)
+    def wrap_collection(cls, context, refs, filters=[], query_string=None):
+        """Wrap a collection, checking for filtering and pagination.
 
+        Returns the wrapped collection, which includes:
+        - Executing any filtering not already carried out
+        - Paginating if necessary
+        - Adds 'self' links in every member
+        - Adds 'next', 'self' and 'prev' links for the whole collection.
+
+        :param context: the current context, containing the original url path
+                        and query string
+        :param refs: the list of members of the collection
+        :param filters: list of valid keys to apply filtering to
+        :param query_string: modified query string that has any filters already
+                             handled removed. If this is not present, this
+                             implies no filtering has yet been done.
+
+        """
+        def build_url(path, query_dict, increment, ref_count):
+            """Build a collection link.
+
+            Build and return one of the prev, self, next links, based on:
+
+            - the path provided
+            - the current page specified in query_dict
+            - the page increment we want (-1 is previous, 0 is self and
+              +1 is next)
+            - ref-count, the number of entries in this page, which compared to
+              per_page to determine if we have a full page.
+
+            If page is not specified in query-dict, then we are not paginating
+            and previous and next should return None
+
+            """
+            if query_dict is not None and 'page' in query_dict:
+                new_dict = update_page_in_query(query_dict, increment,
+                                                ref_count)
+                if new_dict is not None:
+                    query_list = []
+                    for x in new_dict:
+                        query_list.append('%s=%s' % (x, new_dict[x]))
+                    query_string = '&'.join(query_list)
+                    new_path = '%(path)s?%(query_string)s' % {
+                        'path': path,
+                        'query_string': query_string}
+                    return cls.base_url(new_path)
+                else:
+                    # We are paginating but have run off the start or end
+                    return None
+            else:
+                # We are not paginating, so only the self link is required
+                if increment == 0:
+                    return cls.base_url(path)
+                else:
+                    return None
+
+        def update_page_in_query(query_dict, increment, ref_count):
+            """Return a new dict with the page number updated.
+
+            Given current page number in query_dict, return an new, updated
+            dict based on the page increment required.
+
+            Return None if we have run off the start or end.
+
+            """
+            # We have already validates that any specified page or page size
+            # are integers, so not need to check for TypeError
+            page = query_dict.get('page')
+            per_page = int(query_dict.get('per_page', 30))
+            if page is None:
+                # A query string of 'page=' is interpreted as page 1
+                page = 1
+            else:
+                page = int(page)
+
+            new_dict = query_dict.copy()
+            page += increment
+            new_dict['page'] = page
+
+            # If the prev page is less than 1 or there is no next page
+            # since we did not have a full page this time, then indicate
+            # we should return a None url to the caller.
+            #
+            # This algorithm obviously does mean that in the case of the
+            # last page being exactly full, we will incorrectly include
+            # a next pointer.  However, that small issue avoids the need
+            # for a look ahead read being percolated up from the driver
+            # layer and is considered a reasonable trade-off.
+            if page < 1 or (ref_count != per_page and increment == 1):
+                return None
+            else:
+                return new_dict
+
+        # If query_string was not specified, then this implies the driver has
+        # not done any filtering at all, and we should just use the original
+        # context query string.
+        #
+        # If driver layer did do some filtering, then it will have removed
+        # any filters that it supported from 'query_string', so we now check
+        # if there are any that it did not handle.  The driver will not have
+        # paginated or limited the output if it found there were filters it
+        # was unable to handle.
+
+        if query_string is None:
+            query_string = context['query_string']
+        for f in filters:
+            refs = cls._filter_by_attribute(query_string, refs, f)
+
+        # This is safe whether the driver paginated or not, since
+        # it will only take action if more than a page size has been
+        # returned
         refs = cls.paginate(context, refs)
 
         for ref in refs:
@@ -249,23 +357,51 @@ class V3Controller(V2Controller):
 
         container = {cls.collection_name: refs}
         container['links'] = {
-            'next': None,
-            'self': cls.base_url(path=context['path']),
-            'previous': None}
+            'next': build_url(context['path'], context['query_string'],
+                              1, len(refs)),
+            'self': build_url(context['path'], context['query_string'],
+                              0, len(refs)),
+            'previous': build_url(context['path'], context['query_string'],
+                                  -1, len(refs))}
         return container
 
     @classmethod
     def paginate(cls, context, refs):
-        """Paginates a list of references by page & per_page query strings."""
-        # FIXME(dolph): client needs to support pagination first
-        return refs
+        """Paginates a list of references, if not already done by the diver."""
 
-        page = context['query_string'].get('page', 1)
-        per_page = context['query_string'].get('per_page', 30)
-        return refs[per_page * (page - 1):per_page * page]
+        # Load and validate the page and page_size
+        try:
+            per_page = int(context['query_string'].get('per_page', 30))
+            if 'page' in context['query_string']:
+                page = context['query_string'].get('page')
+                if page is None:
+                    # A query string of 'page=' is interpreted as page 1
+                    page = 1
+                else:
+                    page = int(page)
+        except TypeError:
+            raise exception.ValidationError(
+                _('Page and page size must be an integer'))
+
+        if len(refs) > per_page:
+            # The driver returned more than a page size, so must be incapable
+            # of pagination, so we must do it on its behalf, provided the
+            # client has indicated they want this.
+            if 'page' in context['query_string']:
+                return refs[per_page * (page - 1):per_page * page]
+            elif CONF.list_limit and len(refs) > CONF.list_limit:
+                return refs[:CONF.list_limit]
+
+        return refs
 
     @classmethod
     def filter_by_attribute(cls, context, refs, attr):
+        """Filters a list of references by context query string value."""
+        return cls._filter_by_attribute(cls, context['query_string'],
+                                        refs, attr)
+
+    @classmethod
+    def _filter_by_attribute(cls, query_string, refs, attr):
         """Filters a list of references by query string value."""
 
         def _attr_match(ref_attr, val_attr):
@@ -277,19 +413,53 @@ class V3Controller(V2Controller):
 
             """
             if type(ref_attr) is bool:
-                if (isinstance(val_attr, basestring) and
-                        val_attr == '0'):
-                    val = False
-                else:
-                    val = True
-                return (ref_attr == val)
+                return (ref_attr == utils.attr_as_boolean(val_attr))
             else:
                 return (ref_attr == val_attr)
 
-        if attr in context['query_string']:
-            value = context['query_string'][attr]
+        def _inexact_attr_match(item, item_value, ref):
+            """Applies an inexact filter to a result dict.
+
+            :param item: the filter in question
+            :param item_value: the filter value
+            :param ref: the dict to check
+
+            :returns True if there is a match
+
+            """
+            key, value = item.split('__', 1)
+            if value not in utils.INEXACT_FILTERS_SUPPORTED:
+                msg = _('Unsupported inexact string filter: %s') % item
+                raise exception.ValidationError(msg)
+
+            if key in ref:
+                if value == 'contains':
+                    return (item_value in ref[key])
+                if value == 'icontains':
+                    return (item_value.lower() in ref[key].lower())
+                elif value == 'startswith':
+                    return ref[key].startswith(item_value)
+                elif value == 'istartswith':
+                    return ref[key].lower().startswith(item_value.lower())
+                elif value == 'endswith':
+                    return ref[key].endswith(item_value)
+                elif value == 'iendswith':
+                    return ref[key].lower().endswith(item_value.lower())
+                else:
+                    msg = (_('Missing code for inexact filter: %s') % item)
+                    LOG.debug(msg)
+            return False
+
+        if attr in query_string:
+            value = query_string[attr]
             return [r for r in refs if _attr_match(
                 flatten(r).get(attr), value)]
+        else:
+            # It might be an inexact filter
+            for item in query_string:
+                if item.startswith(attr + '__'):
+                    return [r for r in refs if _inexact_attr_match(
+                        item, query_string[item], r)]
         return refs
 
     def _require_matching_id(self, value, ref):

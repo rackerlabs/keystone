@@ -18,8 +18,12 @@ from keystone.common import dependency
 from keystone.common import sql
 from keystone.common.sql import migration
 from keystone.common import utils
+from keystone import config
 from keystone import exception
 from keystone import identity
+
+
+CONF = config.CONF
 
 
 class User(sql.ModelBase, sql.DictBase):
@@ -71,6 +75,12 @@ class Identity(sql.Base, identity.Driver):
     def db_sync(self, version=None):
         migration.db_sync(version=version)
 
+    def _get_list_limit(self):
+        if CONF.identity.list_limit is None:
+            return CONF.list_limit
+        else:
+            return CONF.identity.list_limit
+
     def _check_password(self, password, user_ref):
         """Check the specified password against the data store.
 
@@ -112,9 +122,12 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return identity.filter_user(user_ref.to_dict())
 
-    def list_users(self):
+    def list_users(self, query_dict=None, valid_filters=None):
         session = self.get_session()
-        user_refs = session.query(User)
+        query = session.query(User)
+        user_refs = self.filter_and_paginate(
+            User, query, query_dict, valid_filters,
+            limit=self._get_list_limit())
         return [identity.filter_user(x.to_dict()) for x in user_refs]
 
     def _get_user(self, session, user_id):
@@ -198,7 +211,13 @@ class Identity(sql.Base, identity.Driver):
             session.delete(membership_ref)
             session.flush()
 
-    def list_groups_for_user(self, user_id):
+    def list_groups_for_user(self, user_id,
+                             query_dict=None, valid_filters=None):
+        # TODO(henry-nash) We could implement full filtering  here by turning
+        # the query below into a join.  However, since it is likely to be a
+        # fairly rare occurrence to filter on more than the user_id already
+        # being used here, this is left as  future enhancement and until then
+        # we leave it for the controller to do for us.
         session = self.get_session()
         self.get_user(user_id)
         query = session.query(UserGroupMembership)
@@ -206,7 +225,13 @@ class Identity(sql.Base, identity.Driver):
         membership_refs = query.all()
         return [self.get_group(x.group_id) for x in membership_refs]
 
-    def list_users_in_group(self, group_id):
+    def list_users_in_group(self, group_id,
+                            query_dict=None, valid_filters=None):
+        # TODO(henry-nash) We could implement full filtering  here by turning
+        # the query below into a join.  However, since it is likely to be a
+        # fairly rare occurrence to filter on more than the user_id already
+        # being used here, this is left as  future enhancement and until then
+        # we leave it for the controller to do for us.
         session = self.get_session()
         self.get_group(group_id)
         query = session.query(UserGroupMembership)
@@ -239,9 +264,12 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return ref.to_dict()
 
-    def list_groups(self):
+    def list_groups(self, query_dict=None, valid_filters=None):
         session = self.get_session()
-        refs = session.query(Group).all()
+        query = session.query(Group)
+        refs = self.filter_and_paginate(
+            Group, query, query_dict, valid_filters,
+            limit=self._get_list_limit())
         return [ref.to_dict() for ref in refs]
 
     def _get_group(self, session, group_id):
