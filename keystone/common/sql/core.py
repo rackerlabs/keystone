@@ -26,6 +26,8 @@ from sqlalchemy.orm.attributes import InstrumentedAttribute
 import sqlalchemy.pool
 from sqlalchemy import types as sql_types
 
+from keystone.common import listdirectives
+from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone.openstack.common.db.sqlalchemy import models
@@ -278,6 +280,109 @@ class Base(object):
     def clear_engine(self):
         self._engine = None
         self._sessionmaker = None
+
+    def filter(self, model, query, list_directives):
+        """Applies filtering to a query.
+
+        :param model: the table model in question
+        :param query: query to apply filters to
+        :param list_directives: list directives, containing any relevant
+                                filters. Any filters satisfied here will
+                                be marked in list_directive so that the
+                                caller will know if any filters remain to be
+                                satisfied.
+
+        :returns query: query, updated with any filters satisfied
+
+        """
+        def inexact_filter(model, query, key, filter, list_directives):
+            """Applies an inexact filter to a query.
+
+            :param model: the table model in question
+            :param query: query to apply filters to
+            :param key: filter ID in question
+            :param filter: the dict that describes this filter
+            :param list_directives: the directives for this list query. If we
+                                    satisfy this filter here, we should mark
+                                    it so in list_directives.
+
+            :returns query: query updated to add any inexact filters we could
+                            satisfy
+
+            """
+            column_attr = getattr(model, filter['name'])
+
+            if (filter['comparator'] not in
+                    listdirectives.INEXACT_FILTERS_SUPPORTED):
+                        # Better to error out now, rather than fail to match
+                        # the filter here, do a (potentially big) un-filtered
+                        # query, pass it back to the controller and then just
+                        # fail there.
+                        msg = (_('Unsupported inexact string filter: %s') %
+                               filter['name'])
+                        raise exception.ValidationError(msg)
+
+            # TODO(henry-nash): Sqlalchemy 0.7 defaults to case insensitivity
+            # so once we find a way of changing that (maybe on a call-by-call
+            # basis), we can add support for the case sensitive versions of
+            # the filters below.  For now, these case sensitive versions will
+            # be handled at the controller level.
+
+            if filter['casesensitive']:
+                return query
+
+            if filter['comparator'] == 'contains':
+                query_term = column_attr.ilike('%%%s%%' % filter['value'])
+            elif filter['comparator'] == 'startswith':
+                query_term = column_attr.ilike('%s%%' % filter['value'])
+            elif filter['comparator'] == 'endswith':
+                query_term = column_attr.ilike('%%%s' % filter['value'])
+            else:
+                return query
+
+            list_directives.markfiltersatisfied(key)
+            return query.filter(query_term)
+
+        filter_dict = {}
+
+        for fkey, filter in list_directives.filteritems():
+            # TODO(henry-nash) Check if name is valid column, if not skip
+            if filter['comparator'] == 'equals':
+                key = filter['name']
+                if isinstance(model.__table__.c[key].type,
+                              sqlalchemy.types.Boolean):
+                    filter_dict[key] = utils.attr_as_boolean(filter['value'])
+                else:
+                    filter_dict[key] = filter['value']
+                list_directives.markfiltersatisfied(fkey)
+            else:
+                query = inexact_filter(model, query, fkey, filter,
+                                       list_directives)
+
+        # Apply any exact filters we built up
+        if filter_dict:
+            query = query.filter_by(**filter_dict)
+
+        return query
+
+    def filter_and_paginate(self, model, query, list_directives):
+        """Applies filtering and pagination/limit to a query.
+
+        :param model: table model
+        :param query: query to apply filters to
+        :param list_directives: containing any relevant filters or pagination
+                                directives. Any filters satisfied here will
+                                be marked in list_directive so that the
+                                caller will know if any filters remain to be
+                                satisfied.
+
+        :returns updated query
+
+        """
+        if list_directives is not None and list_directives.filteritems():
+            query = self.filter(model, query, list_directives)
+
+        return query
 
 
 def handle_conflicts(type='object'):

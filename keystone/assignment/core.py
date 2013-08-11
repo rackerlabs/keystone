@@ -388,8 +388,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_domains(self):
-        """List all domains in the system.
+    def list_domains(self, list_directives=None):
+        """List domains in the system.
+
+        :param list_directives: list directives, which the driver should
+                                implement if at all possible.
 
         :returns: a list of domain_refs or an empty list.
 
@@ -440,16 +443,23 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_projects(self, domain_id=None):
+    def list_projects(self, list_directives=None):
         """List all projects in the system.
+
+        :param list_directives: list directives, which the driver should
+                                implement if at all possible.
 
         :returns: a list of project_refs or an empty list.
 
         """
         raise exception.NotImplemented()
 
-    def list_user_projects(self, user_id):
-        """List all projects associated with a given user.
+    def list_user_projects(self, user_id, list_directives=None):
+        """List projects associated with a given user.
+
+        :param user_id : the user in question
+        :param list_directives: list directives, which the driver should
+                                implement if at all possible.
 
         :returns: a list of project_refs or an empty list.
 
@@ -493,8 +503,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_roles(self):
-        """List all roles in the system.
+    def list_roles(self, list_directives=None):
+        """List roles in the system.
+
+        :param list_directives: list directives, which the driver should
+                                implement if at all possible.
 
         :returns: a list of role_refs or an empty list.
 
