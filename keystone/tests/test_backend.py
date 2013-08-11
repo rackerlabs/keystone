@@ -34,6 +34,7 @@ from keystone.tests import filtering
 from keystone.tests import test_utils
 from keystone.token import provider
 
+
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
@@ -2002,6 +2003,7 @@ class IdentityTests(object):
         project2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': domain1['id']}
         self.assignment_api.create_project(project2['id'], project2)
+
         project_ids = ([x['id'] for x in
                        self.assignment_api.list_projects_in_domain(
                            domain1['id'])])
@@ -4002,6 +4004,55 @@ class FilterTests(filtering.FilterTests):
             self.assertEqual(entities[0]['id'], domain1_entity_list[10]['id'])
             # Check the driver has removed the filter from the list hints
             self.assertFalse(filtering.name_in_filter('name', hints))
+
+            self._delete_test_data(entity, entity_list)
+            self._delete_test_data(entity, domain1_entity_list)
+
+    def test_list_users_filtered_and_limited(self):
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(domain1['id'], domain1)
+
+        for entity in ['user', 'group', 'project']:
+            # Create 20 entities, 14 of which are in domain1
+            entity_list = self._create_test_data(entity, 6)
+            domain1_entity_list = self._create_test_data(entity, 14,
+                                                         domain1['id'])
+
+            old_list_limit = CONF.list_limit
+            old_identity_list_limit = CONF.identity.list_limit
+            old_assignment_list_limit = CONF.assignment.list_limit
+
+            self.opt(list_limit=10)
+            # Should get back just 10 users in domain1
+            hints = driver_hints.Hints()
+            hints.add_filter('domain_id', domain1['id'])
+            hints.set_limit(10)
+            entities = self._list_entities(entity)(hints=hints)
+            # Remember that at the driver level we alwys get one more entry
+            # than we asked for so that the controller can tell if we need
+            # tell the caller we haev truncated the list
+            self.assertEqual(len(entities), hints.get_limit() + 1)
+            self._match_with_list(entities, domain1_entity_list)
+            # Check the driver has removed the filter from the list directives
+
+            # Override with driver specific limit
+            if entity == 'project':
+                self.opt_in_group('assignment', list_limit=5)
+            else:
+                self.opt_in_group('identity', list_limit=5)
+
+            # Should get back just 5 users in domain1
+            hints = driver_hints.Hints()
+            hints.add_filter('domain_id', domain1['id'])
+            hints.set_limit(5)
+            entities = self._list_entities(entity)(hints=hints)
+            self.assertEqual(len(entities), hints.get_limit() + 1)
+            self._match_with_list(entities, domain1_entity_list)
+
+            self.opt(list_limit=old_list_limit)
+            self.opt_in_group('identity', list_limit=old_identity_list_limit)
+            self.opt_in_group('assignment',
+                              list_limit=old_assignment_list_limit)
 
             self._delete_test_data(entity, entity_list)
             self._delete_test_data(entity, domain1_entity_list)

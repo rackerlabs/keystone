@@ -245,22 +245,59 @@ class Base(object):
 
         return query
 
-    def filter(self, model, query, hints):
-        """Applies filtering to a query.
+    def _paginate_or_limit(self, query, hints):
+        """Applies pagination or limit to a query.
 
-        :param model: table model
+        If no pagination requested, then apply any supplied upper limit.
+
         :param query: query to apply filters to
-        :param hints: contains the list of filters yet to be satisfied.
-                      Any filters satisfied here will be removed so that
-                      the caller will know if any filters remain.
+        :param hints: contains the list of filters as well as pagination
+                      and limit details.
 
         :returns updated query
 
         """
-        if hints is not None and hasattr(hints, 'filters'):
-            query = self._filter(model, query, hints)
+        # TODO(henry-nash): Add pagination support here
 
+        # If no pagination requested, set an upper limit if supplied
+        if hints is not None:
+            list_limit = hints.get_limit()
+            if list_limit:
+                query = query.limit(list_limit)
         return query
+
+    def filter_paginate_limit(self, model, query, hints):
+        """Applies filtering and pagination/limit to a query.
+
+        :param model: table model
+        :param query: query to apply filters to
+        :param hints: contains the list of filters, pagination and limit
+                      details. Any filters satisfied here will be removed so
+                      that the caller will know if any filters remain.
+
+        :returns updated query
+
+        """
+        # If there are no hints, all need to do is check for
+        # any list limiting required and we're done
+        #if hints is None or not hasattr(hints, 'filters'):
+        #    return self._paginate_or_limit(query, hints)
+        if hints is None:
+            return query
+
+        # Now check if we have any filter items
+        #if hints is not None:
+        query = self._filter(model, query, hints)
+
+        # NOTE(henry-nash): We can only try and paginate or limit here if we
+        # supported all the specified filters, since otherwise this will mess
+        # up the results. Any unsatisfied filters will have been left in
+        # list_directives for the controller to handle.
+
+        if not hints.filters():
+            return self._paginate_or_limit(query, hints)
+        else:
+            return query
 
 
 def handle_conflicts(conflict_type='object'):

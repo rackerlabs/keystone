@@ -53,6 +53,12 @@
 # If true, use synchronous mode for sqlite
 # sqlite_synchronous = True
 
+# The maximum number of entities that will be returned in a collection can be
+# set with list_limit, with no limit set by default.  This global limit may be
+# then overridden for a specific driver, by specifying a list_limit in the
+# appropriate section (e.g. [assignment])
+# list_limit =
+
 # === Logging Options ===
 # Print debugging output
 # (includes plaintext request logging, potentially including passwords)
