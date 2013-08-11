@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3///rw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//AjQ\u003d",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//Ai0\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-08T15:36:06Z",
       "side": 1,
       "message": "this sentence fragment is awkward, unnecessary, and should be terminated with extreme prejudice.",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///rs\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//Ai0\u003d",
       "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3///OM\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 15
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQ3///hU\u003d",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//AiQ\u003d",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 15
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-08T15:36:06Z",
       "side": 1,
       "message": "Was this moved to common config?",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///ro\u003d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "AAAAQn//AiQ\u003d",
       "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3///OQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": "Have implemented the first idea (list of options for each group)",
+      "parentUuid": "AAAAQn//AgQ\u003d",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//Aew\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 15
@@ -98,6 +188,24 @@
       "writtenOn": "2013-08-08T15:36:06Z",
       "side": 1,
       "message": "Remove the underscore, as it looks like subclasses need this function.",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///rk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": "So agree with the principle...although I was following the convention!  Looks like nearly all these call (e.g. _assign_unique_id, _normalise_domain, _require_matching_id etc. all have under-score prefixes).  Suggest a separate re-factor across all these calls to clean up - I\u0027ll raise a separate bug.",
+      "parentUuid": "AAAAQn//Aew\u003d",
       "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3///rg\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": "Yes, and to allow it to be included in all config instances",
+      "parentUuid": "AAAAQn//AeM\u003d",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//Ad8\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 15
@@ -132,6 +258,24 @@
       "writtenOn": "2013-08-08T15:36:06Z",
       "side": 1,
       "message": "I love this change.  So good when you see things cleaned up across the board.",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///rc\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": ":-)",
+      "parentUuid": "AAAAQn//Ad8\u003d",
       "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3///rY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": "So it could, since it checks to see if the domain is in the token, by making it pass domain_scope into the wrapped function like it does the filters.  However, I just wonder if that is overloading it too much - since it\u0027s job is really to check protection including filters?  We\u0027d also have to change contoller.protected as well, to also pass in domain_scope",
+      "parentUuid": "AAAAQn//Ac8\u003d",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//Aao\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 15
@@ -166,6 +328,24 @@
       "writtenOn": "2013-08-08T15:36:06Z",
       "side": 1,
       "message": "\u0027needs to be\u0027",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///rQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//Aao\u003d",
       "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3///rM\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//AaY\u003d",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//AaE\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 15
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3///q8\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": "So once the first call has been made, the domain_configs will be created, so won\u0027t the first boolean check do exactly that (which is why I check it first)?  I must admit, not sure if the wrapper semantics creates other overhead?",
+      "parentUuid": "AAAAQn//AaE\u003d",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//AZI\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 15
@@ -217,6 +433,24 @@
       "writtenOn": "2013-08-08T15:36:06Z",
       "side": 1,
       "message": "I would prefer it if the configuration and management of the domains was its own class, and not internal functions to the Manager.",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///nU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-11T19:55:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//AZI\u003d",
       "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
