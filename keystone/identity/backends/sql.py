@@ -116,7 +116,8 @@ class Identity(sql.Base, identity.Driver):
         session = self.get_session()
         query = session.query(User)
         user_refs = self.filter_and_paginate(
-            User, query, list_directives)
+            User, query, list_directives,
+            limit=self._get_list_limit())
         return [identity.filter_user(x.to_dict()) for x in user_refs]
 
     def _get_user(self, session, user_id):
@@ -254,7 +255,8 @@ class Identity(sql.Base, identity.Driver):
         session = self.get_session()
         query = session.query(Group)
         refs = self.filter_and_paginate(
-            Group, query, list_directives)
+            Group, query, list_directives,
+            limit=self._get_list_limit())
         return [ref.to_dict() for ref in refs]
 
     def _get_group(self, session, group_id):

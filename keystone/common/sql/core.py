@@ -365,23 +365,58 @@ class Base(object):
 
         return query
 
-    def filter_and_paginate(self, model, query, list_directives):
+    def paginate_or_limit(self, query, list_directives, limit):
+        """Applies pagination or limit to a query.
+
+        If no pagination requested, then apply any supplied upper limit.
+
+        :param query: query to apply filters to
+        :param list_directives: comtains filters & pagiantors
+        :param limit: hard limit to apply if no pagination
+
+        :returns updated query
+
+        """
+        # TODO(henry-nash): Add pagination support here
+
+        # If no pagination requested, set an upper limit if supplied
+        if limit is not None:
+            query = query.limit(limit)
+        return query
+
+    def filter_and_paginate(self, model, query, list_directives, limit=None):
         """Applies filtering and pagination/limit to a query.
 
         :param model: table model
         :param query: query to apply filters to
         :param list_directives: containing any relevant filters or pagination
+
                                 directives. Any filters applied here will be
                                 marked as satisfied so that the caller will
                                 know if any filters remain to be applied.
+        :param limit: hard limit to apply if no pagination
 
         :returns updated query
 
         """
-        if list_directives is not None and list_directives.filter_items():
+        # If there are no list_directives, all need to do is check for
+        # any list limiting required
+        if list_directives is None:
+            return self.paginate_or_limit(query, list_directives, limit)
+
+        # Now check if we have any filter items
+        if list_directives.filter_items():
             query = self.filter(model, query, list_directives)
 
-        return query
+        # NOTE(henry-nash): We can only try and paginate or limit here if we
+        # supported all the specified filters, since otherwise this will mess
+        # up the results. Any unsatisfied filters will have been left in
+        # list_directives for the controller to handle.
+
+        if list_directives.filter_items() is None:
+            return self.paginate_or_limit(query, list_directives, limit)
+        else:
+            return query
 
 
 def handle_conflicts(type='object'):

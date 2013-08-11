@@ -1269,6 +1269,9 @@ class RoleAssignmentV3(controller.V3Controller):
         formatted_refs = (
             [self._format_entity(x) for x in refs
              if self._filter_inherited(x)])
+        for x in formatted_refs:
+            print
+            print (x)
 
         if ('effective' in context['query_string'] and
                 self._query_filter_is_true(

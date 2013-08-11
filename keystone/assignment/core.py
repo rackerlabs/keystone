@@ -302,6 +302,18 @@ class Manager(manager.Manager):
         self.driver.delete_role(role_id)
         self.get_role.invalidate(self, role_id)
 
+    @manager.response_truncated
+    def list_projects(self, list_directives=None):
+        return self.driver.list_projects(list_directives=list_directives)
+
+    @manager.response_truncated
+    def list_domains(self, list_directives=None):
+        return self.driver.list_domains(list_directives=list_directives)
+
+    @manager.response_truncated
+    def list_roles(self, list_directives=None):
+        return self.driver.list_roles(list_directives=list_directives)
+
 
 class Driver(object):
 
@@ -338,6 +350,9 @@ class Driver(object):
         role_set.remove(frozenset(self._role_to_dict(role_id,
                                                      inherited).items()))
         return [dict(r) for r in role_set]
+
+    def _get_list_limit(self):
+        return CONF.assignment.list_limit or CONF.list_limit
 
     def get_project_by_name(self, tenant_name, domain_id):
         """Get a tenant by name.
