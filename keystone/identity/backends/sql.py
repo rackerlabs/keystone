@@ -75,6 +75,12 @@ class Identity(sql.Base, identity.Driver):
     def db_sync(self, version=None):
         migration.db_sync(version=version)
 
+    def _get_list_limit(self):
+        if CONF.identity.list_limit is None:
+            return CONF.list_limit
+        else:
+            return CONF.identity.list_limit
+
     def _check_password(self, password, user_ref):
         """Check the specified password against the data store.
 

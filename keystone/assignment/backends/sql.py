@@ -33,6 +33,12 @@ class Assignment(sql.Base, assignment.Driver):
     def db_sync(self, version=None):
         migration.db_sync(version=version)
 
+    def _get_list_limit(self):
+        if CONF.identity.list_limit is None:
+            return CONF.list_limit
+        else:
+            return CONF.assignment.list_limit
+
     def _get_project(self, session, project_id):
         project_ref = session.query(Project).get(project_id)
         if project_ref is None:

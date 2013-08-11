@@ -106,6 +106,10 @@
 # exist to order to maintain support for your v2 clients.
 # default_domain_id = default
 #
+# list_limit allows you to limit the number of entities that will be returned
+# in a collection from the identity driver, with no limit set by default.
+# list_limit = None
+#
 # A subset (or all) of domains can have their own identity driver, each with
 # their own partial configuration file in a domain configuration directory.
 # Only values specific to the domain need to be placed in the domain specific
