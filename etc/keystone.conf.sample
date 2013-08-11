@@ -82,6 +82,11 @@
 # or a module with notify() method:
 # onready = keystone.common.systemd
 
+# list_limit allows you to limit the number of entities that will be returned
+# in a collection, with no limit set by default.  This may also be defined at
+# the driver level by setting list_limit within the appropriate section
+# list_limit = None
+
 [sql]
 # The SQLAlchemy connection string used to connect to the database
 # connection = sqlite:///keystone.db
