@@ -146,6 +146,31 @@ The contract for a driver for ``list_{entity}`` methods is therefore:
   Hints reference, and removing any such satisfied filters.
 
 
+Filtering responsibilities between controllers and drivers
+----------------------------------------------------------
+ 
+Keystone supports the specification of filtering on list queries as part of the
+v3 identity API. By default these queries are satisfied in the controller
+class when a controller calls the wrap_collection method at the end of a
+``list_{entity}`` method.  However, to enable optimum performance, any driver
+can implement some or all of the specified filters (for example, by adding
+filtering to the generated SQL statements to generate the list).
+
+The communication of the filter details between the controller level and its
+drivers is handled by the passing of a reference to a Hints object,
+which is a list dicts describing the filters. A driver that satisfies a filter
+must delete the filter from the Hints object so that when it is returned
+back to the controller level, it can know to only execute any unsatisfied
+filters.
+
+The contract for a driver for ``list_{entity}`` methods is therefore:
+
+* It MUST return a list of entities of the specified type
+* It MAY either just return all such entities, or alternatively reduce the
+  list by filtering for one or more of the specified filters in the passed
+  Hints reference, and removing any such satisfied filters.
+
+
 Testing
 -------
 

@@ -21,6 +21,7 @@ import abc
 import six
 
 from keystone.common import dependency
+from keystone.common import driver_hints
 from keystone.common import manager
 from keystone import config
 from keystone import exception
@@ -44,9 +45,17 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.credential.driver)
 
+    @manager.response_truncated
+    def list_credentials(self, hints=None):
+        return self.driver.list_credentials(hints or driver_hints.Hints())
+
 
 @six.add_metaclass(abc.ABCMeta)
 class Driver(object):
+
+    def _get_list_limit(self):
+        return CONF.credential.list_limit or CONF.list_limit
+
     # credential crud
 
     @abc.abstractmethod
@@ -59,7 +68,19 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def list_credentials(self, **filters):
+    def list_credentials(self, hints=None):
+        """List credentials in the system.
+
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
+
+        :returns: a list of credential_refs or an empty list.
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def list_filtered_credentials(self, **filters):
         """List all credentials in the system applying filters.
 
         :returns: a list of credential_refs or an empty list.

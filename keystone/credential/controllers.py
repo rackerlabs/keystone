@@ -60,8 +60,10 @@ class CredentialV3(controller.V3Controller):
 
     @controller.protected()
     def list_credentials(self, context):
-        refs = self.credential_api.list_credentials()
-        return CredentialV3.wrap_collection(context, refs)
+        filters = []
+        hints = CredentialV3.build_driver_hints(context, filters)
+        refs = self.credential_api.list_credentials(hints=hints)
+        return CredentialV3.wrap_collection(context, refs, hints=hints)
 
     @controller.protected()
     def get_credential(self, context, credential_id):

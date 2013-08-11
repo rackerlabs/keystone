@@ -47,7 +47,17 @@ class Credential(sql.Base, credential.Driver):
             session.add(ref)
         return ref.to_dict()
 
-    def list_credentials(self, **filters):
+    def list_credentials(self, hints):
+        session = self.get_session()
+        query = session.query(CredentialModel)
+        refs = self.filter_paginate_limit(CredentialModel, query, hints)
+        return [ref.to_dict() for ref in refs]
+
+    # NOTE(henry-nash): The difference between this method and the generic
+    # list method above is that in that this is used as an internal call
+    # where any filters MUST be implemented - whereas hints in any generic
+    # list call are optional.
+    def list_filtered_credentials(self, **filters):
         session = self.get_session()
         query = session.query(CredentialModel)
         if 'user_id' in filters:

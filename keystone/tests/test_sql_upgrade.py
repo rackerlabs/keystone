@@ -1392,7 +1392,7 @@ class SqlUpgradeTests(SqlMigrateBase):
         # test list credential using credential manager.
         credential_api = credential.Manager()
         self.assertNotEmpty(credential_api.
-                            list_credentials(
+                            list_filtered_credentials(
                             user_id=ec2_credential['user_id']))
         self.downgrade(32)
         session.commit()

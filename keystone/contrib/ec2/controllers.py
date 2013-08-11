@@ -174,7 +174,7 @@ class Ec2Controller(controller.V2Controller):
         if not self._is_admin(context):
             self._assert_identity(context, user_id)
         self._assert_valid_user_id(user_id)
-        credential_refs = self.credential_api.list_credentials(
+        credential_refs = self.credential_api.list_filtered_credentials(
             user_id=user_id)
         return {'credentials':
                 [self._convert_v3_to_ec2_credential(credential)
