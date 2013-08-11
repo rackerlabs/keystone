@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3///WM\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 0,
+      "message": "why removing tests?",
+      "revId": "55ca347e2527249aab82a3e98afed06f95490b7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

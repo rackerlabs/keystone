@@ -1,0 +1,701 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3///gg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "why is this here?",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///gk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "pick a different name because this will mask the built-in",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///fg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "change name to \"check_credential_exists\" (add an s)",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///dc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "suggest\n\n if credential is None:\n   return\n\nthen don\u0027t have to indent next 10 lines.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///eQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "how could blob be None here? get_blob_from_credential can\u0027t return None as far as I can tell.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///fo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "Please add a comment here to explain what\u0027s being checked? I can\u0027t figure it out.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///fY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "add \"with different secret\" to this message?",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///fc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "Please add a comment here to explain what\u0027s being checked? I can\u0027t figure it out.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///fU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "add \"with different project\" to this message?",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///ew\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "suggest move this up to right after convert_ec2_to_v3_credential (line 63) so that they\u0027re easier to compare.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///dQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "does downgrade need to re-do what\u0027s done in 005_set_utf8_character_set.py (set utf-8 character set and foreign_key_checks\u003d0)?\n\nalso, in 027_set_engine_mysql_innodb.py the database is set to innoDB, so probably need to do that, too.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///cw\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "change tenant to project",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///co\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "change tenants to projects",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///ck\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "change tenant to project\n\nchange \"wishs\" to \"wishes\"",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///cc\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "change \"openstack\" to \"OpenStack\"",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///cU\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "capitalize Nova and Keystone",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///cQ\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "capitalize Glance",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///aY\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "capitalize OpenStack",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///aE\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "capitalize OpenStack",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///Z0\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "remove a \"the\"",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///Zg\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "does this need to be JSON encoded? it\u0027s not really a blob if it\u0027s not JSON-encoded.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///Y4\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "suggest use user_id\u003duser_id rather than this oddity.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///ZA\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "there\u0027s a function with the same name in migrate_ec2_credentials_table, suggest move to a common place and share it.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///ZQ\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "use credential[\u0027blob\u0027] rather than get since the later code at 214 will fail if there\u0027s no blob in credential",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///YM\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "wrap string in _() so that it gets translated",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///YE\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "use !\u003d",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///YA\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "wrap in _() for translation",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///Xk\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "change the argument to project_id",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///Xo\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "change tenant to project",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///Xg\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "change to project_ref",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///Wg\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "this docstring isn\u0027t accurate anymore now that the filters are allowed, please update.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///Wc\u003d",
+        "filename": "tests/test_contrib_s3_core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "why do we need to do this? load_backends set token_provider_api. Suggest remove this line.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///WE\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "undo whitespace changes.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///Vo\u003d",
+        "filename": "tests/test_keystoneclient_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "move this import up with the rest of the imports",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///VM\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "revert whitespace change",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///Uw\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1284,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "move this import up with the rest of the imports",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///UM\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1308,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "change \"tenant\" to \"project\"",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///UI\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1315,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "change \"tenant\" to \"project\"",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///UU\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1333,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "suggest change \"change\" to \"set\"",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///Us\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1347,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "move this import up with the other imports",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3///TQ\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1348,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T16:42:30Z",
+      "side": 1,
+      "message": "should also add a test for conflict when the secret is different.\n\nAlso, add a test for an invalid blob in credential (get_blob_from_credential raises)",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
