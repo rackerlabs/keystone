@@ -21,9 +21,11 @@ import uuid
 from keystone.tests import core as test
 
 from keystone.catalog import core
+from keystone.common import driver_hints
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import timeutils
+from keystone.tests import filtering
 
 import default_fixtures
 
@@ -1786,7 +1788,8 @@ class IdentityTests(object):
 
     def test_list_projects_for_domain(self):
         project_ids = ([x['id'] for x in
-                       self.assignment_api.list_projects(DEFAULT_DOMAIN_ID)])
+                       self.assignment_api.list_projects_in_domain(
+                           DEFAULT_DOMAIN_ID, driver_hints.Hints())])
         self.assertEquals(len(project_ids), 4)
         self.assertIn(self.tenant_bar['id'], project_ids)
         self.assertIn(self.tenant_baz['id'], project_ids)
@@ -1802,8 +1805,10 @@ class IdentityTests(object):
         project2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': domain1['id']}
         self.assignment_api.create_project(project2['id'], project2)
+
         project_ids = ([x['id'] for x in
-                       self.assignment_api.list_projects(domain1['id'])])
+                       self.assignment_api.list_projects_in_domain(
+                           domain1['id'], driver_hints.Hints())])
         self.assertEquals(len(project_ids), 2)
         self.assertIn(project1['id'], project_ids)
         self.assertIn(project2['id'], project_ids)
@@ -3142,3 +3147,130 @@ class InheritanceTests(object):
         self.assertIn(role_list[0]['id'], combined_role_list)
         self.assertIn(role_list[2]['id'], combined_role_list)
         self.assertIn(role_list[3]['id'], combined_role_list)
+
+
+class FilterTests(filtering.FilterTests):
+    def test_list_users_filtered(self):
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(domain1['id'], domain1)
+
+        for entity in ['user', 'group', 'project']:
+            # Create 20 entities, 14 of which are in domain1
+            entity_list = self._create_test_data(entity, 6)
+            domain1_entity_list = self._create_test_data(entity, 14,
+                                                         domain1['id'])
+
+            # Should get back the 14 entities in domain1
+            hints = driver_hints.Hints()
+            hints.add_filter('domain_id', domain1['id'])
+            entities = self._list_entities(entity)(hints=hints)
+            self.assertEqual(len(entities), 14)
+            self._match_with_list(entities, domain1_entity_list)
+            # Check the driver has removed the filter from the list hints
+            self.assertFalse(filtering.name_in_filter('domain_id', hints))
+
+            # Try filtering to get one an exact item out of the list
+            hints = driver_hints.Hints()
+            hints.add_filter('name', domain1_entity_list[10]['name'])
+            entities = self._list_entities(entity)(hints=hints)
+            self.assertEqual(len(entities), 1)
+            self.assertEqual(entities[0]['id'], domain1_entity_list[10]['id'])
+            # Check the driver has removed the filter from the list hints
+            self.assertFalse(filtering.name_in_filter('name', hints))
+
+            self._delete_test_data(entity, entity_list)
+            self._delete_test_data(entity, domain1_entity_list)
+
+    def test_list_users_inexact_filtered(self):
+        self.skipTest('Inexact filters not yet supported')
+        # Create 20 users
+        user_list = self._create_test_data('user', 20)
+        # Set up some names that we can filter on
+        user = user_list[5]
+        user['name'] = 'The'
+        self.identity_api.update_user(user['id'], user)
+        user = user_list[6]
+        user['name'] = 'The Ministry'
+        self.identity_api.update_user(user['id'], user)
+        user = user_list[7]
+        user['name'] = 'The Ministry of'
+        self.identity_api.update_user(user['id'], user)
+        user = user_list[8]
+        user['name'] = 'The Ministry of Silly'
+        self.identity_api.update_user(user['id'], user)
+        user = user_list[9]
+        user['name'] = 'The Ministry of Silly Walks'
+        self.identity_api.update_user(user['id'], user)
+        # ...and one for useful case insensitivity testing
+        user = user_list[10]
+        user['name'] = 'The ministry of silly walks OF'
+        self.identity_api.update_user(user['id'], user)
+
+        supported_filters = ['domain_id', 'email', 'enabled', 'name']
+
+        # TODO(henry-nash): Sqlalchemy 0.7 defaults to case insensitivity
+        # so once we find a way of changing that (maybe on a call-by-call
+        # basis), need to add tests for that here.
+
+        query_string = {'name__icontains': 'ministry'}
+        hints = driver_hints.Hints(
+            query_dict=query_string,
+            supported_filters=supported_filters)
+        users = self.identity_api.list_users(hints=hints)
+        self.assertEqual(len(users), 5)
+        self._match_with_list(users, user_list,
+                              list_start=6, list_end=11)
+        #TODO(henry-nash) Check inexact filter has been removed.
+
+        query_string = {'name__istartswith': 'The'}
+        hints = driver_hints.Hints(
+            query_dict=query_string,
+            supported_filters=supported_filters)
+        users = self.identity_api.list_users(hints=hints)
+        self.assertEqual(len(users), 6)
+        self._match_with_list(users, user_list,
+                              list_start=5, list_end=11)
+        #TODO(henry-nash) Check inexact filter has been removed.
+
+        query_string = {'name__iendswith': 'of'}
+        hints = driver_hints.Hints(
+            query_dict=query_string,
+            supported_filters=supported_filters)
+        users = self.identity_api.list_users(hints=hints)
+        self.assertEqual(len(users), 2)
+        self.assertEqual(users[0]['id'], user_list[7]['id'])
+        self.assertEqual(users[1]['id'], user_list[10]['id'])
+        #TODO(henry-nash) Check inexact filter has been removed.
+
+        self._delete_test_data('user', user_list)
+
+    def test_filter_sql_injection_attack(self):
+        """Test against sql injection attack on filters
+
+        Test Plan:
+        - Attempt to get all entities back by passing a two-term attribute
+        - Attempt to piggyback filter to damage DB (e.g. drop table)
+
+        """
+        # Check we have some users
+        users = self.identity_api.list_users()
+        self.assertTrue(len(users) > 0)
+
+        hints = driver_hints.Hints()
+        hints.add_filter('name', "anything' or 'x'='x")
+        users = self.identity_api.list_users(hints=hints)
+        self.assertEqual(len(users), 0)
+
+        # See if we can add a SQL command...use the group table instead of the
+        # user table since 'user' is reserved word for SQLAlchemy.
+        group = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                 'domain_id': DEFAULT_DOMAIN_ID}
+        self.identity_api.create_group(group['id'], group)
+
+        hints = driver_hints.Hints()
+        hints.add_filter('name', "x'; drop table group")
+        groups = self.identity_api.list_groups(hints=hints)
+        self.assertEqual(len(groups), 0)
+
+        groups = self.identity_api.list_groups()
+        self.assertTrue(len(groups) > 0)

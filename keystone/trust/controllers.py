@@ -206,7 +206,8 @@ class TrustV3(controller.V3Controller):
         global_roles = self.identity_api.list_roles()
         for trust in trusts:
             self._fill_in_roles(context, trust, global_roles)
-        return TrustV3.wrap_collection(context, trusts)
+
+        return TrustV3.wrap_collection(context, trusts, hints=[])
 
     @controller.protected()
     def delete_trust(self, context, trust_id):
