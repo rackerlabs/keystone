@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3///jc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_drop_credential_indexes.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T14:14:09Z",
+      "side": 1,
+      "message": "There\u0027s documentation for what to do for copyrights here: https://wiki.openstack.org/wiki/Documentation/Copyright\n\nand here: https://wiki.openstack.org/wiki/LegalIssuesFAQ",
+      "parentUuid": "AAAAQn/+9rk\u003d",
+      "revId": "25ac3c5949bf7904b9c1639af31496653d8eb094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/+6xk\u003d",
         "filename": "tests/test_sql_upgrade.py",
         "patchSetId": 8
