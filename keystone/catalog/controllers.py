@@ -19,6 +19,7 @@ import uuid
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import listdirectives
 from keystone import exception
 
 
@@ -142,8 +143,12 @@ class ServiceV3(controller.V3Controller):
 
     @controller.filterprotected('type')
     def list_services(self, context, filters):
+        directives = listdirectives.ListDirectives(
+            query_dict=context['query_string'],
+            valid_filters=filters)
         refs = self.catalog_api.list_services()
-        return ServiceV3.wrap_collection(context, refs, filters)
+        return ServiceV3.wrap_collection(context, refs,
+                                         list_directives=directives)
 
     @controller.protected()
     def get_service(self, context, service_id):
@@ -194,8 +199,12 @@ class EndpointV3(controller.V3Controller):
 
     @controller.filterprotected('interface', 'service_id')
     def list_endpoints(self, context, filters):
+        directives = listdirectives.ListDirectives(
+            query_dict=context['query_string'],
+            valid_filters=filters)
         refs = self.catalog_api.list_endpoints()
-        return EndpointV3.wrap_collection(context, refs, filters)
+        return EndpointV3.wrap_collection(context, refs,
+                                          list_directives=directives)
 
     @controller.protected()
     def get_endpoint(self, context, endpoint_id):
