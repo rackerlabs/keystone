@@ -118,6 +118,24 @@ Once run, you can see the sample data that has been created by using the
 
     $ tools/with_venv.sh keystone --token ADMIN --endpoint http://127.0.0.1:35357/v2.0/ user-list
 
+
+Filtering responsibilities between controllers and drivers
+----------------------------------------------------------
+
+Keystone supports the specification of filtering on list queries. By default
+these queries are satisfied in the V3Controller class when a controller calls
+the wrap_collection method at the end of a list_{entity} method.  However, to
+enable optimum performance, any driver can implement some or all of the
+specified filters (for example, by adding filtering to the generated SQL
+statements to generate the list).
+
+The communication between the controller level and its drivers is handled by
+the passing of a reference a dict containing the specified query string
+elements. A driver that implements a filter should remove the satisfied query
+from the query_dict so that when it is returned back to the V3Controller level,
+it can know to execute any unsatisfied filters.
+
+
 Running Tests
 =============
 

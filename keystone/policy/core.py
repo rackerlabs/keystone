@@ -52,6 +52,14 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.PolicyNotFound(policy_id=policy_id)
 
+    def list_policies(self):
+        ref_list = self.driver.list_policies()
+        list_limit = self.driver._get_list_limit()
+        if list_limit and len(ref_list) > list_limit:
+            return ref_list[:list_limit]
+        else:
+            return ref_list
+
     def delete_policy(self, policy_id):
         try:
             return self.driver.delete_policy(policy_id)
@@ -60,6 +68,12 @@ class Manager(manager.Manager):
 
 
 class Driver(object):
+    def _get_list_limit(self):
+        if CONF.policy.list_limit is None:
+            return CONF.list_limit
+        else:
+            return CONF.policy.list_limit
+
     def enforce(self, context, credentials, action, target):
         """Verify that a user is authorized to perform action.
 
