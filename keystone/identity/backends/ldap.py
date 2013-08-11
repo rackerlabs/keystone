@@ -81,7 +81,7 @@ class Identity(identity.Driver):
     def get_user(self, user_id):
         return identity.filter_user(self._get_user(user_id))
 
-    def list_users(self):
+    def list_users(self, query_string=None, filters=None):
         return self.user.get_all_filtered()
 
     def get_user_by_name(self, user_name, domain_id):

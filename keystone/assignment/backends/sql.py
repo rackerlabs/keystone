@@ -19,7 +19,11 @@ from keystone import clean
 from keystone.common import dependency
 from keystone.common import sql
 from keystone.common.sql import migration
+from keystone import config
 from keystone import exception
+
+
+CONF = config.CONF
 
 
 @dependency.requires('identity_api')
@@ -461,9 +465,11 @@ class Assignment(sql.Base, assignment.Driver):
             session.flush()
         return ref.to_dict()
 
-    def list_domains(self):
+    def list_domains(self, query_string=None, filters=None):
         session = self.get_session()
-        refs = session.query(Domain).all()
+        refs = session.query(Domain)
+        refs = self.filter_and_paginate(
+            Domain, refs, query_string, filters, limit=CONF.list_limit)
         return [ref.to_dict() for ref in refs]
 
     def _get_domain(self, session, domain_id):

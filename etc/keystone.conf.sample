@@ -82,6 +82,10 @@
 # or a module with notify() method:
 # onready = keystone.common.systemd
 
+# list_limit allows you to limit the number of entities that will be returned
+# in a collection
+# list_limit = 100
+
 [sql]
 # The SQLAlchemy connection string used to connect to the database
 # connection = sqlite:///keystone.db

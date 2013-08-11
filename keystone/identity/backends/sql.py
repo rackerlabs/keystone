@@ -18,8 +18,12 @@ from keystone.common import dependency
 from keystone.common import sql
 from keystone.common.sql import migration
 from keystone.common import utils
+from keystone import config
 from keystone import exception
 from keystone import identity
+
+
+CONF = config.CONF
 
 
 class User(sql.ModelBase, sql.DictBase):
@@ -112,9 +116,11 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return identity.filter_user(user_ref.to_dict())
 
-    def list_users(self):
+    def list_users(self, query_string=None, filters=None):
         session = self.get_session()
-        user_refs = session.query(User)
+        query = session.query(User)
+        user_refs = self.filter_and_paginate(
+            User, query, query_string, filters, limit=CONF.list_limit)
         return [identity.filter_user(x.to_dict()) for x in user_refs]
 
     def _get_user(self, session, user_id):

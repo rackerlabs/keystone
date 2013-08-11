@@ -294,9 +294,9 @@ class Manager(manager.Manager):
         return ref
 
     @domains_configured
-    def list_users(self, domain_scope=None):
+    def list_users(self, domain_scope=None, query_string=None, filters=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        user_list = driver.list_users()
+        user_list = driver.list_users(query_string, filters)
         if not driver.is_domain_aware():
             user_list = self._set_domain_id(user_list, domain_id)
         return user_list
@@ -513,8 +513,9 @@ class Manager(manager.Manager):
     def delete_domain(self, domain_id):
         return self.assignment_api.delete_domain(domain_id)
 
-    def list_domains(self):
-        return self.assignment_api.list_domains()
+    def list_domains(self, query_string=None, filters=None):
+        return self.assignment_api.list_domains(
+            query_string=query_string, filters=filters)
 
     def list_user_projects(self, user_id):
         return self.assignment_api.list_user_projects(user_id)
@@ -548,8 +549,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_users(self):
-        """List all users in the system.
+    def list_users(self, query_string=None, filters=None):
+        """List users in the system.
+
+        If any entry in 'filters' is specified in 'query_string', then
+        filter the results based on those criteria.
 
         :returns: a list of user_refs or an empty list.
 

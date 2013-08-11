@@ -217,7 +217,7 @@ class Assignment(assignment.Driver):
         self._validate_default_domain_id(domain_id)
         raise exception.Forbidden('Domains are read-only against LDAP')
 
-    def list_domains(self):
+    def list_domains(self, query_string=None, filters=None):
         return [assignment.DEFAULT_DOMAIN]
 
 #Bulk actions on User From identity

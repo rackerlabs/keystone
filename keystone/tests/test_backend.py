@@ -1694,7 +1694,11 @@ class IdentityTests(object):
     def test_list_users(self):
         users = self.identity_api.list_users()
         for test_user in default_fixtures.USERS:
-            self.assertTrue(x for x in users if x['id'] == test_user['id'])
+            found = False
+            for x in users:
+                if x['id'] == test_user['id']:
+                    found = True
+            self.assertTrue(found)
 
     def test_list_groups(self):
         group1 = {
@@ -2847,3 +2851,59 @@ class InheritanceTests(object):
         self.assertIn(role_list[0]['id'], combined_role_list)
         self.assertIn(role_list[2]['id'], combined_role_list)
         self.assertIn(role_list[3]['id'], combined_role_list)
+
+
+class FilterPaginationTests(object):
+    def _match_with_list(self, total_list, start, end, this_batch):
+        for x in range(start, end):
+            found = False
+            for user in this_batch:
+                if user['id'] == total_list[x]['id']:
+                    found = True
+            self.assertTrue(found)
+
+    def _create_user(self, domain_id):
+        # Make sure our user.id's will order before any of the default
+        # fixtures
+        new_user = {'id': 'aaaa' + uuid.uuid4().hex,
+                    'name': uuid.uuid4().hex,
+                    'password': uuid.uuid4().hex, 'enabled': True,
+                    'domain_id': domain_id}
+        self.identity_api.create_user(new_user['id'], new_user)
+        return new_user
+
+    def test_list_users_filtered(self):
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(domain1['id'], domain1)
+
+        domain1_user_list = []
+        for x in range(65):
+            if x > 30:
+                the_domain_id = domain1['id']
+            else:
+                the_domain_id = DEFAULT_DOMAIN_ID
+
+            new_user = self._create_user(the_domain_id)
+            if the_domain_id == domain1['id']:
+                domain1_user_list.append(new_user)
+
+        valid_filters = ['domain_id', 'email', 'enabled', 'name']
+
+        # Should get back the 35 users in domain1
+        query_string={'domain_id': domain1['id']}
+        users = self.identity_api.list_users(
+            query_string=query_string,
+            filters=valid_filters)
+        self._match_with_list(domain1_user_list, 0, 34, users)
+        # Check the driver has removed the filter from the query
+        self.assertNotIn('domain_id', query_string)
+
+        # Try filtering to get one an exact item out of the list
+        query_string={'name': domain1_user_list[10]['name']}
+        users = self.identity_api.list_users(
+            query_string=query_string,
+            filters=valid_filters)
+        self.assertEqual(len(users), 1)
+        self.assertEqual(users[0]['id'], domain1_user_list[10]['id'])
+        # Check the driver has removed the filter from the query
+        self.assertNotIn('name', query_string)

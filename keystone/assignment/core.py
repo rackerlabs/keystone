@@ -367,8 +367,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_domains(self):
-        """List all domains in the system.
+    def list_domains(self, query_string=None, filters=None):
+        """List domains in the system.
+
+        If any entry in 'filters' is specified in 'query_string', then
+        filter the results based on those criteria.
 
         :returns: a list of domain_refs or an empty list.
 
