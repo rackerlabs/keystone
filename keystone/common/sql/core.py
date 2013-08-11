@@ -406,9 +406,20 @@ class Base(object):
         :returns updated query
 
         """
-        # TODO(henry-nash): Add pagination support here
+        if request_dict:
+            page = request_dict.get('page', None)
+            if page is not None:
+                try:
+                    per_page = int(request_dict.get('per_page', 30))
+                    query = query.order_by('id')
+                    query = query.limit(per_page)
+                    query = query.offset(per_page * (int(page) - 1))
+                    return query
+                except TypeError:
+                    raise exception.ValidationError(
+                        _('Page and page size must be an integer'))
 
-        # If no pagination requested, set an upper limit if supplied
+        # No pagination, so set an upper limit if supplied
         if limit is not None:
             query = query.limit(limit)
         return query
