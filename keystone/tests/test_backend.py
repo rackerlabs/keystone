@@ -23,6 +23,7 @@ import uuid
 from six import moves
 
 from keystone.catalog import core
+from keystone.common import driver_hints
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import timeutils
@@ -1982,7 +1983,8 @@ class IdentityTests(object):
 
     def test_list_projects_for_domain(self):
         project_ids = ([x['id'] for x in
-                       self.assignment_api.list_projects(DEFAULT_DOMAIN_ID)])
+                       self.assignment_api.list_projects_in_domain(
+                           DEFAULT_DOMAIN_ID, driver_hints.Hints())])
         self.assertEqual(len(project_ids), 4)
         self.assertIn(self.tenant_bar['id'], project_ids)
         self.assertIn(self.tenant_baz['id'], project_ids)
@@ -1998,8 +2000,10 @@ class IdentityTests(object):
         project2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': domain1['id']}
         self.assignment_api.create_project(project2['id'], project2)
+
         project_ids = ([x['id'] for x in
-                       self.assignment_api.list_projects(domain1['id'])])
+                       self.assignment_api.list_projects_in_domain(
+                           domain1['id'], driver_hints.Hints())])
         self.assertEqual(len(project_ids), 2)
         self.assertIn(project1['id'], project_ids)
         self.assertIn(project2['id'], project_ids)
