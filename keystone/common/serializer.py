@@ -143,6 +143,7 @@ class XmlDeserializer(object):
             return {'links': self._deserialize_links(element)}
 
         links = None
+        truncated = None
         for child in [self.walk_element(x) for x in element
                       if not isinstance(x, ENTITY_TYPE)]:
             if list_item_tag:
@@ -152,7 +153,10 @@ class XmlDeserializer(object):
                 if list_item_tag in child:
                     values.append(child[list_item_tag])
                 else:
-                    links = child['links']
+                    if 'links' in child:
+                        links = child['links']
+                    else:
+                        truncated = child['truncated']
             else:
                 values = dict(values.items() + child.items())
 
@@ -167,6 +171,9 @@ class XmlDeserializer(object):
             d['links'].setdefault('next')
             d['links'].setdefault('previous')
 
+        if truncated:
+            d['truncated'] = truncated
+
         return d
 
 
@@ -178,6 +185,7 @@ class XmlSerializer(object):
 
         """
         links = None
+        truncated = None
         # FIXME(dolph): skipping links for now
         for key in d.keys():
             if '_links' in key:
@@ -188,7 +196,13 @@ class XmlSerializer(object):
                     # we have multiple links
                     raise Exception('Multiple links found')
                 links = d.pop(key)
-
+            # FIXME(henry-nash): special-case truncation attribute in
+            # collections
+            if 'truncated' == key:
+                if truncated:
+                    # we have multiple attributes
+                    raise Exception('Multiple truncation attributes found')
+                truncated = d.pop(key)
         assert len(d.keys()) == 1, ('Cannot encode more than one root '
                                     'element: %s' % d.keys())
 
@@ -210,6 +224,10 @@ class XmlSerializer(object):
         if links:
             self._populate_links(root, links)
 
+        # FIXME(henry-nash): special-case attribute for now
+        if truncated:
+            self._populate_truncated(root, truncated)
+
         # TODO(dolph): you can get a doctype from lxml, using ElementTrees
         return '%s\n%s' % (DOCTYPE, etree.tostring(root, pretty_print=True))
 
@@ -222,6 +240,11 @@ class XmlSerializer(object):
                 link.set('href', six.text_type(v))
                 links.append(link)
         element.append(links)
+
+    def _populate_truncated(self, element, truncated_value):
+        truncated = etree.Element('truncated')
+        self._populate_bool(truncated, 'truncated', truncated_value)
+        element.append(truncated)
 
     def _populate_list(self, element, k, v):
         """Populates an element with a key & list value."""

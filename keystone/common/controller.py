@@ -268,7 +268,7 @@ class V3Controller(wsgi.Application):
 
         Returns the wrapped collection, which includes:
         - Executing any filtering not already carried out
-        - Paginating if necessary
+        - Truncate to a set limit if necessary
         - Adds 'self' links in every member
         - Adds 'next', 'self' and 'prev' links for the whole collection.
 
@@ -276,8 +276,8 @@ class V3Controller(wsgi.Application):
                         and query string
         :param refs: the list of members of the collection
         :param hints: list hints, containing any relevant
-                      filters. Any filters already satisfied by drivers
-                      will have been removed
+                      filters and limit. Any filters already satisfied by
+                      drivers will have been removed
         """
         # Check if there are any filters in hints that were not
         # handled by the drivers. The driver will not have paginated or
@@ -287,7 +287,7 @@ class V3Controller(wsgi.Application):
         if hints is not None:
             refs = cls.filter_by_attributes(refs, hints)
 
-        refs = cls.paginate(context, refs)
+        list_limited, refs = cls.limit(refs, hints)
 
         for ref in refs:
             cls.wrap_member(context, ref)
@@ -297,17 +297,33 @@ class V3Controller(wsgi.Application):
             'next': None,
             'self': cls.base_url(path=context['path']),
             'previous': None}
+
+        if list_limited:
+            container['truncated'] = True
+
         return container
 
     @classmethod
-    def paginate(cls, context, refs):
-        """Paginates a list of references by page & per_page query strings."""
-        # FIXME(dolph): client needs to support pagination first
-        return refs
+    def limit(cls, refs, hints):
+        """Limits a list of entities.
 
-        page = context['query_string'].get('page', 1)
-        per_page = context['query_string'].get('per_page', 30)
-        return refs[per_page * (page - 1):per_page * page]
+        :param refs: the list of members of the collection
+        :param hints: hints, containing, among other things, the limit required
+
+        :returns: boolean indicating whether the list was truncated, as well
+                  as the list of (truncated if necessary) entities.
+
+        """
+        limited = False
+        if hints is None:
+            return limited, refs
+
+        list_limit = hints.get_limit()
+        if list_limit and len(refs) > list_limit:
+            limited = True
+            return limited, refs[:list_limit]
+        else:
+            return limited, refs
 
     @classmethod
     def filter_by_attributes(cls, refs, hints):
