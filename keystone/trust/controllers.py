@@ -193,7 +193,7 @@ class TrustV3(controller.V3Controller):
             trusts += (self.trust_api.
                        list_trusts_for_trustor(user_id))
         if 'trustee_user_id' in query:
-            user_id = query['trustee_user_id']
+            user_id = query[('trustee_user_id')]
             calling_user_id = self._get_user_id(context)
             if user_id != calling_user_id:
                 raise exception.Forbidden()
@@ -208,7 +208,7 @@ class TrustV3(controller.V3Controller):
                 trust['expires_at'] = (timeutils.isotime
                                        (trust['expires_at'],
                                         subsecond=True))
-        return TrustV3.wrap_collection(context, trusts, hints=[])
+        return TrustV3.wrap_collection(context, trusts)
 
     @controller.protected()
     def delete_trust(self, context, trust_id):

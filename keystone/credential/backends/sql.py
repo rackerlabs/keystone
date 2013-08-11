@@ -47,7 +47,7 @@ class Credential(sql.Base, credential.Driver):
             session.add(ref)
         return ref.to_dict()
 
-    def list_credentials(self, **filters):
+    def list_credentials(self, hints):
         session = self.get_session()
         query = session.query(CredentialModel)
         if 'user_id' in filters:
