@@ -3202,3 +3202,75 @@ class FilterTests(filter_pagination.FilterPaginationTests):
             query_dict_in_out=query_string,
             valid_filters=valid_filters)
         self.assertTrue(len(groups) > 0)
+
+
+class PaginationTests(filter_pagination.FilterPaginationTests):
+    def test_list_entities_paginated(self):
+        for entity in ['user', 'group', 'project']:
+            entity_list = self._create_test_data(entity, 65)
+            sorted_entity_list = sorted(entity_list, key=lambda k: k['id'])
+
+            entities = self._list_entities(entity)(
+                query_dict_in_out={'page': 1})
+            self._match_with_list(entities, sorted_entity_list,
+                                  list_start=0, list_end=30)
+            entities = self._list_entities(entity)(
+                query_dict_in_out={'page': 2})
+            self._match_with_list(entities, sorted_entity_list,
+                                  list_start=30, list_end=60)
+            entities = self._list_entities(entity)(
+                query_dict_in_out={'page': 3})
+            self._match_with_list(entities, sorted_entity_list,
+                                  batch_size=5, list_start=60, list_end=65)
+
+            # Now change the page size, and make sure we get the first few
+            # pages back correctly
+            entities = self._list_entities(entity)(
+                query_dict_in_out={'page': 1, 'per_page': 10})
+            self._match_with_list(entities, sorted_entity_list,
+                                  list_start=0, list_end=10)
+            entities = self._list_entities(entity)(
+                query_dict_in_out={'page': 2, 'per_page': 10})
+            self._match_with_list(entities, sorted_entity_list,
+                                  list_start=10, list_end=20)
+
+            self._delete_test_data(entity, entity_list)
+
+    def test_list_entities_filtered_and_paged(self):
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(domain1['id'], domain1)
+
+        for entity in ['user', 'group', 'project']:
+            # Create 65 users, 34 of which are in domain1
+            entity_list = self._create_test_data(entity, 31)
+            domain1_entity_list = self._create_test_data(entity, 34,
+                                                         domain1['id'])
+
+            sorted_entity_list = sorted(domain1_entity_list,
+                                        key=lambda k: k['id'])
+
+            # Not all are valid on each type of entity.
+            valid_filters = ['domain_id', 'email', 'enabled', 'name']
+
+            # Should get back the first 30 entities in domain1
+            query_string = {'domain_id': domain1['id'], 'page': 1}
+            entities = self._list_entities(entity)(
+                query_dict_in_out=query_string,
+                valid_filters=valid_filters)
+            self._match_with_list(entities, sorted_entity_list,
+                                  list_start=0, list_end=30)
+            # Check the driver has removed the filter from the query
+            self.assertNotIn('domain_id', query_string)
+
+            # Try filtering to get one an exact item out of the list
+            query_string = {'name': sorted_entity_list[10]['name']}
+            entities = self._list_entities(entity)(
+                query_dict_in_out=query_string,
+                valid_filters=valid_filters)
+            self.assertEqual(len(entities), 1)
+            self.assertEqual(entities[0]['id'], sorted_entity_list[10]['id'])
+            # Check the driver has removed the filter from the query
+            self.assertNotIn('name', query_string)
+
+            self._delete_test_data(entity, entity_list)
+            self._delete_test_data(entity, domain1_entity_list)

@@ -309,7 +309,8 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             token = kwargs.pop('token', None)
             if not token:
                 token = self.get_scoped_token()
-        path = '/v3' + path
+        if '/v3' not in path:
+            path = '/v3' + path
 
         return self.admin_request(path=path, token=token, **kwargs)
 

@@ -19,7 +19,11 @@ from keystone import clean
 from keystone.common import dependency
 from keystone.common import sql
 from keystone.common.sql import migration
+from keystone import config
 from keystone import exception
+
+
+CONF = config.CONF
 
 
 @dependency.requires('identity_api')

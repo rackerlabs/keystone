@@ -18,8 +18,12 @@ from keystone.common import dependency
 from keystone.common import sql
 from keystone.common.sql import migration
 from keystone.common import utils
+from keystone import config
 from keystone import exception
 from keystone import identity
+
+
+CONF = config.CONF
 
 
 class User(sql.ModelBase, sql.DictBase):
