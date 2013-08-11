@@ -18,8 +18,12 @@ from keystone.common import dependency
 from keystone.common import sql
 from keystone.common.sql import migration
 from keystone.common import utils
+from keystone import config
 from keystone import exception
 from keystone import identity
+
+
+CONF = config.CONF
 
 
 class User(sql.ModelBase, sql.DictBase):
@@ -71,6 +75,12 @@ class Identity(sql.Base, identity.Driver):
     def db_sync(self, version=None):
         migration.db_sync(version=version)
 
+    def _get_list_limit(self):
+        if CONF.identity.list_limit is None:
+            return CONF.list_limit
+        else:
+            return CONF.identity.list_limit
+
     def _check_password(self, password, user_ref):
         """Check the specified password against the data store.
 
@@ -112,9 +122,12 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return identity.filter_user(user_ref.to_dict())
 
-    def list_users(self):
+    def list_users(self, query_dict=None, valid_filters=None):
         session = self.get_session()
-        user_refs = session.query(User)
+        query = session.query(User)
+        user_refs = self.filter_and_paginate(
+            User, query, query_dict, valid_filters,
+            limit=self._get_list_limit())
         return [identity.filter_user(x.to_dict()) for x in user_refs]
 
     def _get_user(self, session, user_id):
