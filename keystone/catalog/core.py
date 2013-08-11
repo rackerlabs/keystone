@@ -76,6 +76,14 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.ServiceNotFound(service_id=service_id)
 
+    def list_services(self):
+        ref_list = self.driver.list_services()
+        list_limit = self.driver._get_list_limit()
+        if list_limit and len(ref_list) > list_limit:
+            return ref_list[:list_limit]
+        else:
+            return ref_list
+
     def create_endpoint(self, endpoint_id, endpoint_ref):
         try:
             return self.driver.create_endpoint(endpoint_id, endpoint_ref)
@@ -95,6 +103,14 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
+    def list_endpoints(self):
+        ref_list = self.driver.list_endpoints()
+        list_limit = self.driver._get_list_limit()
+        if list_limit and len(ref_list) > list_limit:
+            return ref_list[:list_limit]
+        else:
+            return ref_list
+
     def get_catalog(self, user_id, tenant_id, metadata=None):
         try:
             return self.driver.get_catalog(user_id, tenant_id, metadata)
@@ -104,6 +120,12 @@ class Manager(manager.Manager):
 
 class Driver(object):
     """Interface description for an Catalog driver."""
+    def _get_list_limit(self):
+        if CONF.catalog.list_limit is None:
+            return CONF.list_limit
+        else:
+            return CONF.catalog.list_limit
+
     def create_service(self, service_id, service_ref):
         """Creates a new service.
 

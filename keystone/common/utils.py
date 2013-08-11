@@ -34,6 +34,11 @@ from keystone.openstack.common import log as logging
 CONF = config.CONF
 
 LOG = logging.getLogger(__name__)
+# TODO(henry-nash) Include the supported inexact filters in this array to
+# trigger support in the code, once the appropriate api reviews are complete
+# for IceHouse.  Inexact filters currently planned for support are:
+# 'contains', 'icontains', 'startswith', 'istartswith', 'endswith', 'iendswith'
+INEXACT_FILTERS_SUPPORTED = []
 
 
 def read_cached_file(filename, cache_info, reload_func=None):
@@ -137,6 +142,21 @@ def check_password(password, hashed):
         return False
     password_utf8 = trunc_password(password).encode('utf-8')
     return passlib.hash.sha512_crypt.verify(password_utf8, hashed)
+
+
+def attr_as_boolean(val_attr):
+    """Matches attributes allowing for booleans as strings.
+
+    We test explicitly for a value that defines it as 'False',
+    which also means that the existence of the attribute with
+    no value implies 'True'
+
+    """
+    if (isinstance(val_attr, basestring) and
+            val_attr == '0'):
+        return False
+    else:
+        return True
 
 
 # From python 2.7
