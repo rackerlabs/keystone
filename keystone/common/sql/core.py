@@ -245,22 +245,57 @@ class Base(object):
 
         return query
 
-    def filter(self, model, query, hints):
-        """Applies filtering to a query.
+    def _paginate_or_limit(self, query, hints):
+        """Applies pagination or limit to a query.
 
-        :param model: table model
+        If no pagination requested, then apply any supplied upper limit.
+
         :param query: query to apply filters to
-        :param hints: contains the list of filters yet to be satisfied.
-                      Any filters satisfied here will be removed so that
-                      the caller will know if any filters remain.
+        :param hints: contains the list of filters as well as pagination
+                      and limit details.
 
         :returns updated query
 
         """
-        if hints is not None:
-            query = self._filter(model, query, hints)
+        # NOTE(henry-nash): If we were to implement pagination, we would
+        # add it here.
 
+        # If we satisfied all the filers, set an upper limit if supplied
+        if hints is not None:
+            list_limit = hints.get_limit()
+            if list_limit:
+                query = query.limit(list_limit)
         return query
+
+    def filter_paginate_limit(self, model, query, hints):
+        """Applies filtering and pagination/limit to a query.
+
+        :param model: table model
+        :param query: query to apply filters to
+        :param hints: contains the list of filters, pagination and limit
+                      details. Any filters satisfied here will be removed so
+                      that the caller will know if any filters remain.
+
+        :returns updated query
+
+        """
+        if hints is None:
+            return query
+
+        # First try and satisfy any filters
+        query = self._filter(model, query, hints)
+
+        # NOTE(henry-nash): Any unsatisfied filters will have been left in
+        # the hints list for the controller to handle. We can only try and
+        # paginate or limit here if all the filters are already satisfied,
+        # since if not, doing so might mess up the final results. If there are
+        # still unsatisfied filters, we have to leave any pagination and
+        # limiting to the controller as well.
+
+        if not hints.filters():
+            return self._paginate_or_limit(query, hints)
+        else:
+            return query
 
 
 def handle_conflicts(conflict_type='object'):

@@ -144,6 +144,47 @@ The contract for a driver for ``list_{entity}`` methods is therefore:
   list by filtering for one or more of the specified filters in the passed
   Hints reference, and removing any such satisfied filters.
 
+Filtering responsibilities between controllers and drivers
+----------------------------------------------------------
+
+Keystone supports the specification of filtering on list queries as part of the
+v3 identity API. By default these queries are satisfied in the controller
+class when a controller calls the wrap_collection method at the end of a
+``list_{entity}`` method.  However, to enable optimum performance, any driver
+can implement some or all of the specified filters (for example, by adding
+filtering to the generated SQL statements to generate the list).
+
+The communication of the filter details between the controller level and its
+drivers is handled by the passing of a reference to a Hints object,
+which is a list dicts describing the filters. A driver that satisfies a filter
+must delete the filter from the Hints object so that when it is returned
+back to the controller level, it can know to only execute any unsatisfied
+filters.
+
+The contract for a driver for ``list_{entity}`` methods is therefore:
+
+* It MUST return a list of entities of the specified type
+* It MAY either just return all such entities, or alternatively reduce the
+  list by filtering for one or more of the specified filters in the passed
+  Hints reference, and removing any such satisfied filters.
+
+
+Entity list truncation by drivers
+---------------------------------
+
+Keystone supports the ability for a deployment to restrict the number of
+entries returned from ``list_{entity}`` methods, typically to prevent poorly
+formed searches (e.g. without sufficient filters) from becoming a performance
+issue.
+
+These limits are set in the configuration file, either for a specific driver or
+across all drivers.  These limits are read at the Manager level and passed into
+individual drivers as part of the Hints list object. A driver should try and
+honor any such limit if possible, but if it is unable to do so then it may
+ignore it (and the truncation of the returned list of entities will happen at
+the controller level).
+
+
 Testing
 -------
 
