@@ -15,6 +15,7 @@
 # under the License.
 
 from keystone.common import controller
+from keystone.common import listdirectives
 
 
 class PolicyV3(controller.V3Controller):
@@ -32,8 +33,12 @@ class PolicyV3(controller.V3Controller):
 
     @controller.filterprotected('type')
     def list_policies(self, context, filters):
+        directives = listdirectives.ListDirectives(
+            query_dict=context['query_string'],
+            supported_filters=filters)
         refs = self.policy_api.list_policies()
-        return PolicyV3.wrap_collection(context, refs, filters)
+        return PolicyV3.wrap_collection(context, refs,
+                                        list_directives=directives)
 
     @controller.protected()
     def get_policy(self, context, policy_id):

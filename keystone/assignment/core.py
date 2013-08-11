@@ -20,6 +20,7 @@
 from keystone import clean
 from keystone.common import cache
 from keystone.common import dependency
+from keystone.common import listdirectives
 from keystone.common import manager
 from keystone import config
 from keystone import exception
@@ -260,6 +261,14 @@ class Manager(manager.Manager):
             self.get_domain_by_name.set(ret, self, ret['name'])
         return ret
 
+    def list_domains(self, list_directives=None):
+        if list_directives is None:
+            return self.driver.list_domains(
+                list_directives=listdirectives.ListDirectives())
+        else:
+            return self.driver.list_domains(
+                list_directives=list_directives)
+
     def update_domain(self, domain_id, domain):
         ret = self.driver.update_domain(domain_id, domain)
         self.get_domain.invalidate(self, domain_id)
@@ -271,6 +280,22 @@ class Manager(manager.Manager):
         self.driver.delete_domain(domain_id)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, domain['name'])
+
+    def list_projects(self, list_directives=None):
+        if list_directives is None:
+            return self.driver.list_projects(
+                list_directives=listdirectives.ListDirectives())
+        else:
+            return self.driver.list_projects(
+                list_directives=list_directives)
+
+    def list_user_projects(self, user_id, list_directives=None):
+        if list_directives is None:
+            return self.driver.list_user_projects(
+                user_id, list_directives=listdirectives.ListDirectives())
+        else:
+            return self.driver.list_user_projects(
+                user_id, list_directives=list_directives)
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=CONF.assignment.cache_time)
@@ -292,6 +317,14 @@ class Manager(manager.Manager):
         if SHOULD_CACHE(ret):
             self.get_role.set(ret, self, role_id)
         return ret
+
+    def list_roles(self, list_directives=None):
+        if list_directives is None:
+            return self.driver.list_roles(
+                list_directives=listdirectives.ListDirectives())
+        else:
+            return self.driver.list_roles(
+                list_directives=list_directives)
 
     def update_role(self, role_id, role):
         ret = self.driver.update_role(role_id, role)
@@ -464,8 +497,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_domains(self):
-        """List all domains in the system.
+    def list_domains(self, list_directives):
+        """List domains in the system.
+
+        :param list_directives: list directives, which the driver should
+                                implement if at all possible.
 
         :returns: a list of domain_refs or an empty list.
 
@@ -516,16 +552,23 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_projects(self, domain_id=None):
-        """List all projects in the system.
+    def list_projects(self, list_directives):
+        """List projects in the system.
+
+        :param list_directives: list directives, which the driver should
+                                implement if at all possible.
 
         :returns: a list of project_refs or an empty list.
 
         """
         raise exception.NotImplemented()
 
-    def list_user_projects(self, user_id):
-        """List all projects associated with a given user.
+    def list_user_projects(self, user_id, list_directives=None):
+        """List projects associated with a given user.
+
+        :param user_id : the user in question
+        :param list_directives: list directives, which the driver should
+                                implement if at all possible.
 
         :returns: a list of project_refs or an empty list.
 
@@ -569,8 +612,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_roles(self):
-        """List all roles in the system.
+    def list_roles(self, list_directives):
+        """List roles in the system.
+
+        :param list_directives: list directives, which the driver should
+                                implement if at all possible.
 
         :returns: a list of role_refs or an empty list.
 
