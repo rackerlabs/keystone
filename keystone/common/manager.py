@@ -44,3 +44,10 @@ class Manager(object):
             return f(*args, **kw)
         setattr(self, name, _wrapper)
         return _wrapper
+
+    def _trim_to_limit(self, ref_list):
+        list_limit = self.driver._get_list_limit()
+        if list_limit and len(ref_list) > list_limit:
+            return ref_list[:list_limit]
+        else:
+            return ref_list
