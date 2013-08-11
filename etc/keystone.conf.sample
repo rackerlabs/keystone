@@ -82,6 +82,13 @@
 # or a module with notify() method:
 # onready = keystone.common.systemd
 
+# The maximum number of entities that will be returned in a collection from the
+# identity or assignment drivers can be set with list_limit, with no limit set
+# by default.  If list_limit is specified in the general section it will apply
+# to both drivers, alternatively this may also be specified separately for each
+# driver in the [identity] or [assignment] sections.
+# list_limit = None
+
 [sql]
 # The SQLAlchemy connection string used to connect to the database
 # connection = sqlite:///keystone.db
@@ -99,6 +106,10 @@
 # There is nothing special about this domain, other than the fact that it must
 # exist to order to maintain support for your v2 clients.
 # default_domain_id = default
+#
+# list_limit allows you to limit the number of entities that will be returned
+# in a collection from the identity driver, with no limit set by default.
+# list_limit = None
 #
 # A subset (or all) of domains can have their own identity driver, each with
 # their own partial configuration file in a domain configuration directory.

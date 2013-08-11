@@ -26,6 +26,7 @@ from sqlalchemy.orm.attributes import InstrumentedAttribute
 import sqlalchemy.pool
 from sqlalchemy import types as sql_types
 
+from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import jsonutils
@@ -309,6 +310,76 @@ class Base(object):
     def clear_engine(self):
         self._engine = None
         self._sessionmaker = None
+
+    def filter(self, model, query, request_dict, valid_filters):
+        """Applies filtering to a query.
+
+        Returns the updated query.  Modifies request_dict argument
+        to remove filters consumed.
+
+        :param model: the table model in question
+        :param query: query to apply filters to
+        :param request_dict: dictionary of filters
+        :param valid_filters: list of keys to apply filtering to
+
+        """
+        filter_dict = {}
+        for key in valid_filters:
+            if key in request_dict:
+                if isinstance(model.__table__.c[key].type,
+                              sqlalchemy.types.Boolean):
+                    filter_dict[key] = utils.attr_as_boolean(
+                        request_dict.pop(key))
+                else:
+                    filter_dict[key] = request_dict.pop(key)
+
+        if filter_dict:
+            query = query.filter_by(**filter_dict)
+        return query
+
+    def paginate_or_limit(self, query, request_dict, limit):
+        """Applies pagination or limit to a query.
+
+        :param query: query to apply filters to
+        :param request_dict: dictionary of filters
+        :param limit: hard limit to apply if no pagination
+
+        Returns the updated query. If no pagination requested, then apply any
+        supplied upper limit.
+
+        """
+        # TODO(henry-nash): Add pagination support here
+
+        # If no pagination requested, set an upper limit if supplied
+        if limit is not None:
+            query = query.limit(limit)
+        return query
+
+    def filter_and_paginate(self, model, query, request_dict,
+                            valid_filters, limit=None):
+        """Applies filtering and pagination/limit to a query.
+
+        Returns the updated query.  Modifies request_dict argument
+        to remove filters consumed.
+
+        :param model: table model
+        :param query: query to apply filters to
+        :param request_dict: dictionary of filters
+        :param valid_filters: list of keys to apply filtering to
+        :param limit: hard limit to apply if no pagination
+
+        """
+        if request_dict is not None and valid_filters is not None:
+            query = self.filter(model, query, request_dict, valid_filters)
+
+        # We can only try and paginate or limit here if we supported all the
+        # specified filters.  Currently, we guarantee to do that, but in the
+        # future if there are some that we do not, then we should only
+        # call the paginate_or_limit method if we satisfied all those
+        # requested. If we were unable to satisfy them all, then we should let
+        # the controller do the final filtering followed by pagination and
+        # limiting.
+        return self.paginate_or_limit(query, request_dict, limit)
 
 
 def handle_conflicts(type='object'):
