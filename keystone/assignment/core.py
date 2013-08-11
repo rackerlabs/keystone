@@ -226,6 +226,21 @@ class Manager(manager.Manager):
         for role_id in roles:
             self.remove_role_from_user_and_project(user_id, tenant_id, role_id)
 
+    @manager.truncated
+    def list_projects(self, query_dict_in_out=None, valid_filters=None):
+        return self.driver.list_projects(
+            query_dict_in_out=query_dict_in_out, valid_filters=valid_filters)
+
+    @manager.truncated
+    def list_domains(self, query_dict_in_out=None, valid_filters=None):
+        return self.driver.list_domains(
+            query_dict_in_out=query_dict_in_out, valid_filters=valid_filters)
+
+    @manager.truncated
+    def list_roles(self, query_dict_in_out=None, valid_filters=None):
+        return self.driver.list_roles(
+            query_dict_in_out=query_dict_in_out, valid_filters=valid_filters)
+
 
 class Driver(object):
 
@@ -262,6 +277,9 @@ class Driver(object):
         role_set.remove(frozenset(self._role_to_dict(role_id,
                                                      inherited).items()))
         return [dict(r) for r in role_set]
+
+    def _get_list_limit(self):
+        return CONF.assignment.list_limit or CONF.list_limit
 
     def get_project_by_name(self, tenant_name, domain_id):
         """Get a tenant by name.
@@ -388,8 +406,16 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_domains(self):
-        """List all domains in the system.
+    def list_domains(self, query_dict_in_out=None, valid_filters=None):
+        """List domains in the system.
+
+        :param query_dict_in_out: dictionary of requested filters. If possible,
+                                  the driver should filter the results based on
+                                  these, provide they are also listed in
+                                  valid_filters. Any filter it does apply
+                                  should then be removed from the dict to
+                                  indicate this fact to the caller.
+        :param valid_filters: list of valid keys to apply filtering to
 
         :returns: a list of domain_refs or an empty list.
 
@@ -440,16 +466,34 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_projects(self, domain_id=None):
+    def list_projects(self, query_dict_in_out=None, valid_filters=None):
         """List all projects in the system.
+
+        :param query_dict_in_out: dictionary of requested filters. If possible,
+                                  the driver should filter the results based on
+                                  these, provide they are also listed in
+                                  valid_filters. Any filter it does apply
+                                  should then be removed from the dict to
+                                  indicate this fact to the caller.
+        :param valid_filters: list of valid keys to apply filtering to
 
         :returns: a list of project_refs or an empty list.
 
         """
         raise exception.NotImplemented()
 
-    def list_user_projects(self, user_id):
-        """List all projects associated with a given user.
+    def list_user_projects(self, user_id,
+                           query_dict_in_out=None, valid_filters=None):
+        """List projects associated with a given user.
+
+        :param user_id : the user in question
+        :param query_dict_in_out: dictionary of requested filters. If possible,
+                                  the driver should filter the results based on
+                                  these, provide they are also listed in
+                                  valid_filters. Any filter it does apply
+                                  should then be removed from the dict to
+                                  indicate this fact to the caller.
+        :param valid_filters: list of valid keys to apply filtering to
 
         :returns: a list of project_refs or an empty list.
 
@@ -493,8 +537,16 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_roles(self):
-        """List all roles in the system.
+    def list_roles(self, query_dict_in_out=None, valid_filters=None):
+        """List roles in the system.
+
+        :param query_dict_in_out: dictionary of requested filters. If possible,
+                                  the driver should filter the results based on
+                                  these, provide they are also listed in
+                                  valid_filters. Any filter it does apply
+                                  should then be removed from the dict to
+                                  indicate this fact to the caller.
+        :param valid_filters: list of valid keys to apply filtering to
 
         :returns: a list of role_refs or an empty list.
 

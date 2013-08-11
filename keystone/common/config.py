@@ -47,7 +47,8 @@ FILE_OPTIONS = {
         cfg.StrOpt('member_role_id',
                    default='9fe2ff9ee4384b1894a90878d3e92bab'),
         cfg.StrOpt('member_role_name', default='_member_'),
-        cfg.IntOpt('crypt_strength', default=40000)],
+        cfg.IntOpt('crypt_strength', default=40000),
+        cfg.IntOpt('list_limit', default=None)],
     'identity': [
         cfg.StrOpt('default_domain_id', default='default'),
         cfg.BoolOpt('domain_specific_drivers_enabled',
@@ -57,7 +58,8 @@ FILE_OPTIONS = {
         cfg.StrOpt('driver',
                    default=('keystone.identity.backends'
                             '.sql.Identity')),
-        cfg.IntOpt('max_password_length', default=4096)],
+        cfg.IntOpt('max_password_length', default=4096),
+        cfg.IntOpt('list_limit', default=None)],
     'trust': [
         cfg.BoolOpt('enabled', default=True),
         cfg.StrOpt('driver',
@@ -132,11 +134,13 @@ FILE_OPTIONS = {
         # assignment has no default for backward compatibility reasons.
         # If assignment driver is not specified, the identity driver chooses
         # the backend
-        cfg.StrOpt('driver', default=None)],
+        cfg.StrOpt('driver', default=None),
+        cfg.IntOpt('list_limit', default=None)],
     'credential': [
         cfg.StrOpt('driver',
                    default=('keystone.credential.backends'
-                            '.sql.Credential'))],
+                            '.sql.Credential')),
+        cfg.IntOpt('list_limit', default=None)],
     'oauth1': [
         cfg.StrOpt('driver',
                    default='keystone.contrib.oauth1.backends.sql.OAuth1'),
@@ -144,7 +148,8 @@ FILE_OPTIONS = {
         cfg.IntOpt('access_token_duration', default=86400)],
     'policy': [
         cfg.StrOpt('driver',
-                   default='keystone.policy.backends.sql.Policy')],
+                   default='keystone.policy.backends.sql.Policy'),
+        cfg.IntOpt('list_limit', default=None)],
     'ec2': [
         cfg.StrOpt('driver',
                    default='keystone.contrib.ec2.backends.kvs.Ec2')],
@@ -264,7 +269,8 @@ FILE_OPTIONS = {
         cfg.StrOpt('template_file',
                    default='default_catalog.templates'),
         cfg.StrOpt('driver',
-                   default='keystone.catalog.backends.sql.Catalog')]}
+                   default='keystone.catalog.backends.sql.Catalog'),
+        cfg.IntOpt('list_limit', default=None)]}
 
 
 CONF = cfg.CONF

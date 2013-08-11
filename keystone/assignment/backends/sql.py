@@ -208,15 +208,12 @@ class Assignment(sql.Base, assignment.Driver):
             self._update_metadata(user_id, project_id, metadata_ref,
                                   domain_id, group_id)
 
-    def list_projects(self, domain_id=None):
+    def list_projects(self, query_dict_in_out=None, valid_filters=None):
         session = self.get_session()
-        if domain_id:
-            self._get_domain(session, domain_id)
-
         query = session.query(Project)
-        if domain_id:
-            query = query.filter_by(domain_id=domain_id)
-        project_refs = query.all()
+        project_refs = self.filter_and_paginate(
+            Project, query, query_dict_in_out, valid_filters,
+            limit=self._get_list_limit())
         return [project_ref.to_dict() for project_ref in project_refs]
 
     def get_projects_for_user(self, user_id):
@@ -461,9 +458,12 @@ class Assignment(sql.Base, assignment.Driver):
             session.flush()
         return ref.to_dict()
 
-    def list_domains(self):
+    def list_domains(self, query_dict_in_out=None, valid_filters=None):
         session = self.get_session()
-        refs = session.query(Domain).all()
+        query = session.query(Domain)
+        refs = self.filter_and_paginate(
+            Domain, query, query_dict_in_out, valid_filters,
+            limit=self._get_list_limit())
         return [ref.to_dict() for ref in refs]
 
     def _get_domain(self, session, domain_id):
@@ -508,7 +508,8 @@ class Assignment(sql.Base, assignment.Driver):
             session.delete(ref)
             session.flush()
 
-    def list_user_projects(self, user_id):
+    def list_user_projects(self, user_id,
+                           query_dict_in_out=None, valid_filters=None):
 
         # FIXME(henry-nash) The following should take into account
         # both group and inherited roles. In fact, I don't see why this
@@ -516,6 +517,11 @@ class Assignment(sql.Base, assignment.Driver):
         # with 'get_roles_for_user_and_project()'.  Further, this
         # call seems essentially the same as 'get_projects_for_user()'
         # earlier in this driver.  Both should be removed.
+
+        # TODO(henry-nash): Once we replace the existing grant tables with
+        # a more normalized table structure, we will be able to implement
+        # filtering here.  Until then, we'll just ignore it and let the
+        # controller do it.
 
         session = self.get_session()
         user = self.identity_api.get_user(user_id)
@@ -544,9 +550,12 @@ class Assignment(sql.Base, assignment.Driver):
             session.flush()
         return ref.to_dict()
 
-    def list_roles(self):
+    def list_roles(self, query_dict_in_out=None, valid_filters=None):
         session = self.get_session()
-        refs = session.query(Role).all()
+        query = session.query(Role)
+        refs = self.filter_and_paginate(
+            Role, query, query_dict_in_out, valid_filters,
+            limit=self._get_list_limit())
         return [ref.to_dict() for ref in refs]
 
     def _get_role(self, session, role_id):

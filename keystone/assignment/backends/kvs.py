@@ -35,12 +35,13 @@ class Assignment(kvs.Base, assignment.Driver):
         except exception.NotFound:
             raise exception.ProjectNotFound(project_id=tenant_id)
 
-    def list_projects(self, domain_id=None):
+    def list_projects(self, query_dict_in_out=None, valid_filters=None):
         project_keys = filter(lambda x: x.startswith("tenant-"),
                               self.db.keys())
         project_refs = [self.db.get(key) for key in project_keys]
 
-        if domain_id:
+        if query_dict_in_out is not None and 'domain_id' in query_dict_in_out:
+            domain_id = query_dict_in_out.pop('domain_id')
             self.get_domain(domain_id)
             project_refs = filter(lambda x: domain_id in x['domain_id'],
                                   project_refs)
@@ -97,7 +98,7 @@ class Assignment(kvs.Base, assignment.Driver):
         except exception.NotFound:
             raise exception.RoleNotFound(role_id=role_id)
 
-    def list_roles(self):
+    def list_roles(self, query_dict_in_out=None, valid_filters=None):
         role_ids = self.db.get('role_list', [])
         return [self.get_role(x) for x in role_ids]
 
@@ -465,7 +466,7 @@ class Assignment(kvs.Base, assignment.Driver):
         self.db.set('domain_list', list(domain_list))
         return domain
 
-    def list_domains(self):
+    def list_domains(self, query_dict_in_out=None, valid_filters=None):
         domain_ids = self.db.get('domain_list', [])
         return [self.get_domain(x) for x in domain_ids]
 
