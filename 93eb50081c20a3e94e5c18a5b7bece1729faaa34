@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3///hU\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 15
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-11T14:50:53Z",
+      "side": 1,
+      "message": "remove \u0027 from the value",
+      "revId": "93eb50081c20a3e94e5c18a5b7bece1729faaa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//AiQ\u003d",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 15
