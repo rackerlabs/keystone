@@ -62,9 +62,9 @@ class Assignment(assignment.Driver):
     def get_project(self, tenant_id):
         return self._set_default_domain(self.project.get(tenant_id))
 
-    def list_projects(self, domain_id=None):
+    def list_projects(self, list_directives=None):
         # We don't support multiple domains within this driver, so ignore
-        # any domain passed.
+        # any domain passed in list_directives
         return self._set_default_domain(self.project.get_all())
 
     def get_project_by_name(self, tenant_name, domain_id):
@@ -112,7 +112,7 @@ class Assignment(assignment.Driver):
     def get_role(self, role_id):
         return self.role.get(role_id)
 
-    def list_roles(self):
+    def list_roles(self, list_directives=None):
         return self.role.get_all()
 
     def get_projects_for_user(self, user_id):
@@ -215,7 +215,7 @@ class Assignment(assignment.Driver):
         self._validate_default_domain_id(domain_id)
         raise exception.Forbidden('Domains are read-only against LDAP')
 
-    def list_domains(self):
+    def list_domains(self, list_directives=None):
         return [assignment.DEFAULT_DOMAIN]
 
 #Bulk actions on User From identity

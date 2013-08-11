@@ -112,9 +112,11 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return identity.filter_user(user_ref.to_dict())
 
-    def list_users(self):
+    def list_users(self, list_directives=None):
         session = self.get_session()
-        user_refs = session.query(User)
+        query = session.query(User)
+        user_refs = self.filter_and_paginate(
+            User, query, list_directives)
         return [identity.filter_user(x.to_dict()) for x in user_refs]
 
     def _get_user(self, session, user_id):
@@ -198,14 +200,24 @@ class Identity(sql.Base, identity.Driver):
             session.delete(membership_ref)
             session.flush()
 
-    def list_groups_for_user(self, user_id):
+    def list_groups_for_user(self, user_id, list_directives=None):
+        # TODO(henry-nash) We could implement full filtering  here by turning
+        # the query below into a join.  However, since it is likely to be a
+        # fairly rare occurrence to filter on more than the user_id already
+        # being used here, this is left as  future enhancement and until then
+        # we leave it for the controller to do for us.
         session = self.get_session()
         self.get_user(user_id)
         query = session.query(Group).join(UserGroupMembership)
         query = query.filter(UserGroupMembership.user_id == user_id)
         return [g.to_dict() for g in query]
 
-    def list_users_in_group(self, group_id):
+    def list_users_in_group(self, group_id, list_directives=None):
+        # TODO(henry-nash) We could implement full filtering  here by turning
+        # the query below into a join.  However, since it is likely to be a
+        # fairly rare occurrence to filter on more than the user_id already
+        # being used here, this is left as  future enhancement and until then
+        # we leave it for the controller to do for us.
         session = self.get_session()
         self.get_group(group_id)
         query = session.query(User).join(UserGroupMembership)
@@ -238,9 +250,11 @@ class Identity(sql.Base, identity.Driver):
             session.flush()
         return ref.to_dict()
 
-    def list_groups(self):
+    def list_groups(self, list_directives=None):
         session = self.get_session()
-        refs = session.query(Group).all()
+        query = session.query(Group)
+        refs = self.filter_and_paginate(
+            Group, query, list_directives)
         return [ref.to_dict() for ref in refs]
 
     def _get_group(self, session, group_id):
