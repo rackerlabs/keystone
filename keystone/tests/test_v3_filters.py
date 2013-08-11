@@ -31,6 +31,7 @@ CONF = config.CONF
 class IdentityTestFilteredCase(filtering.FilterTests,
                                test_v3.RestfulTestCase):
     """Test filter enforcement on the v3 Identity API."""
+    content_type = 'json'
 
     def setUp(self):
         """Setup for Identity Filter Test Cases."""
@@ -258,6 +259,88 @@ class IdentityTestFilteredCase(filtering.FilterTests,
 
         self._delete_test_data('user', user_list)
 
+    def test_list_limit(self):
+        """GET /<entities> (limited)
+
+        Test Plan:
+        - For each type of entity:
+            - Update policy for no protection on api
+            - Add a bunch of entities
+            - Set the global list limit to 5, and check that getting all
+            - entities only returns 5
+            - Set the driver list_limit to 4, and check that now only 4 are
+            - returned
+
+        """
+        self.orig_list_limit = CONF.list_limit
+        self.orig_identity_list_limit = CONF.identity.list_limit
+        self.orig_assignment_list_limit = CONF.assignment.list_limit
+        self.orig_catalog_list_limit = CONF.catalog.list_limit
+
+        # TODO(henry-nash) Ideally the policy setting would happen in the
+        # entity for-loop below, using a string substitution of 'plural'.
+        # However, that appears to lead to unreliable policy checking - i.e.
+        # multiple calls to _set_policy doesn't work properly (Bug #1271273).
+
+        self._set_policy({"identity:list_users": [],
+                          "identity:list_groups": [],
+                          "identity:list_projects": [],
+                          "identity:list_services": []})
+
+        for entity in ['user', 'group', 'project']:
+            # Create 10 entities
+            plural = '%ss' % entity
+            if entity in ['user', 'group']:
+                driver = 'identity'
+            else:
+                driver = 'assignment'
+
+            entity_list = self._create_test_data(entity, 10)
+
+            self.opt(list_limit=5)
+            self.opt_in_group(driver, list_limit=None)
+            r = self.get('/%s' % plural, auth=self.auth)
+            self.assertEqual(len(r.result.get(plural)), 5)
+            self.assertTrue(r.result.get('truncated'))
+
+            self.opt_in_group(driver, list_limit=4)
+            r = self.get('/%s' % plural, auth=self.auth)
+            self.assertEqual(len(r.result.get(plural)), 4)
+            self.assertTrue(r.result.get('truncated'))
+
+            self._delete_test_data(entity, entity_list)
+
+        # Also try an entity that is not supported at the driver level, to make
+        # sure this is handled by the Manager layer
+
+        service_list = []
+        for _ in range(10):
+            new_entity = {'id': uuid.uuid4().hex, 'type': uuid.uuid4().hex}
+            service = self.catalog_api.create_service(new_entity['id'],
+                                                      new_entity)
+            service_list.append(service)
+
+        self.opt(list_limit=5)
+        self.opt_in_group('catalog', list_limit=4)
+
+        r = self.get('/services', auth=self.auth)
+        self.assertEqual(len(r.result.get('services')), 4)
+        self.assertTrue(r.result.get('truncated'))
+
+        self.opt_in_group('identity', list_limit=self.orig_identity_list_limit)
+        self.opt_in_group('assignment',
+                          list_limit=self.orig_assignment_list_limit)
+        self.opt_in_group('catalog', list_limit=self.orig_catalog_list_limit)
+        self.opt(list_limit=self.orig_list_limit)
+
+        # Try one last list - this time without a limit and check that the
+        # truncated attribute is not present
+        r = self.get('/services', auth=self.auth)
+        self.assertIsNone(r.result.get('truncated'))
+
+        for service in service_list:
+            self.catalog_api.delete_service(service['id'])
+
     def test_filter_sql_injection_attack(self):
         """GET /users?name=<injected sql_statement>
 
@@ -287,3 +370,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         url_by_name = "/groups"
         r = self.get(url_by_name, auth=self.auth)
         self.assertTrue(len(r.result.get('groups')) > 0)
+
+
+class IdentityTestFilteredCaseXML(IdentityTestFilteredCase):
+    content_type = 'xml'
