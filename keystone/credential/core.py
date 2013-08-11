@@ -47,6 +47,12 @@ class Manager(manager.Manager):
 
 @six.add_metaclass(abc.ABCMeta)
 class Driver(object):
+
+#    def _get_list_limit(self):
+        # We don't support a diver specific limit for credentials, so just
+        # return any overall limit
+#        return CONF.list_limit
+
     # credential crud
 
     @abc.abstractmethod
