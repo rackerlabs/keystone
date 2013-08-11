@@ -55,11 +55,18 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.PolicyNotFound(policy_id=policy_id)
 
+    @manager.response_truncated
+    def list_policies(self):
+        return self.driver.list_policies()
+
     def delete_policy(self, policy_id):
         try:
             return self.driver.delete_policy(policy_id)
         except exception.NotFound:
             raise exception.PolicyNotFound(policy_id=policy_id)
+
+    def _get_list_limit(self):
+        return CONF.policy.list_limit or CONF.list_limit
 
 
 @six.add_metaclass(abc.ABCMeta)

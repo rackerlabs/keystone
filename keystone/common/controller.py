@@ -304,7 +304,7 @@ class V3Controller(wsgi.Application):
         if hints is not None:
             refs = cls.filter_by_attributes(refs, hints)
 
-        refs = cls.paginate(context, refs)
+        refs = cls.paginate_or_limit(context, refs)
 
         for ref in refs:
             cls.wrap_member(context, ref)
@@ -317,10 +317,14 @@ class V3Controller(wsgi.Application):
         return container
 
     @classmethod
-    def paginate(cls, context, refs):
+    def paginate_or_limit(cls, context, refs):
         """Paginates a list of references by page & per_page query strings."""
-        # FIXME(dolph): client needs to support pagination first
-        return refs
+        # FIXME(dolph, henry-nash): client needs to support pagination first,
+        # for now we just see if we need to limit.
+        if CONF.list_limit and len(refs) > CONF.list_limit:
+            return refs[:CONF.list_limit]
+        else:
+            return refs
 
         page = context['query_string'].get('page', 1)
         per_page = context['query_string'].get('per_page', 30)

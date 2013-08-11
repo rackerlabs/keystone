@@ -211,7 +211,8 @@ class Assignment(sql.Base, assignment.Driver):
     def list_projects(self, hints):
         with self.transaction() as session:
             query = session.query(Project)
-            project_refs = self.filter(Project, query, hints)
+            project_refs = self.filter_paginate_limit(
+                Project, query, hints, limit=self._get_list_limit())
             return [project_ref.to_dict() for project_ref in project_refs]
 
     def list_projects_in_domain(self, domain_id, hints):
@@ -219,7 +220,7 @@ class Assignment(sql.Base, assignment.Driver):
             self._get_domain(session, domain_id)
             query = session.query(Project)
             query = query.filter_by(domain_id=domain_id)
-            project_refs = self.filter(Project, query, hints)
+            project_refs = self.filter_paginate_limit(Project, query, hints)
             return [project_ref.to_dict() for project_ref in project_refs]
 
     def list_projects_for_user(self, user_id, group_ids, hints):
@@ -531,7 +532,8 @@ class Assignment(sql.Base, assignment.Driver):
     def list_domains(self, hints):
         with self.transaction() as session:
             query = session.query(Domain)
-            refs = self.filter(Domain, query, hints)
+            refs = self.filter_paginate_limit(Domain, query, hints,
+                                              limit=self._get_list_limit())
             return [ref.to_dict() for ref in refs]
 
     def _get_domain(self, session, domain_id):
@@ -584,7 +586,8 @@ class Assignment(sql.Base, assignment.Driver):
     def list_roles(self, hints):
         with self.transaction() as session:
             query = session.query(Role)
-            refs = self.filter(Role, query, hints)
+            refs = self.filter_paginate_limit(
+                Role, query, hints, limit=self._get_list_limit())
             return [ref.to_dict() for ref in refs]
 
     def _get_role(self, session, role_id):
