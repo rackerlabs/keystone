@@ -4006,6 +4006,61 @@ class FilterTests(filtering.FilterTests):
             self._delete_test_data(entity, entity_list)
             self._delete_test_data(entity, domain1_entity_list)
 
+    def test_list_entities_filtered_and_limited(self):
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(domain1['id'], domain1)
+
+        for entity in ['user', 'group', 'project']:
+            # Create 20 entities, 14 of which are in domain1
+            entity_list = self._create_test_data(entity, 6)
+            domain1_entity_list = self._create_test_data(entity, 14,
+                                                         domain1['id'])
+
+            old_list_limit = CONF.list_limit
+            old_identity_list_limit = CONF.identity.list_limit
+            old_assignment_list_limit = CONF.assignment.list_limit
+
+            self.opt(list_limit=10)
+            # Should get back just 10 users in domain1
+            hints = driver_hints.Hints()
+            hints.add_filter('domain_id', domain1['id'])
+            entities = self._list_entities(entity)(hints=hints)
+            # Remember that at the driver level we alwys get one more entry
+            # than we asked for so that the controller can tell if we need
+            # tell the caller we haev truncated the list
+            self.assertEqual(len(entities), hints.get_limit() + 1)
+            self._match_with_list(entities, domain1_entity_list)
+            # Check the driver has removed the filter from the list directives
+
+            # Override with driver specific limit
+            if entity == 'project':
+                self.opt_in_group('assignment', list_limit=5)
+            else:
+                self.opt_in_group('identity', list_limit=5)
+
+            # Should get back just 5 users in domain1
+            hints = driver_hints.Hints()
+            hints.add_filter('domain_id', domain1['id'])
+            entities = self._list_entities(entity)(hints=hints)
+            self.assertEqual(len(entities), hints.get_limit() + 1)
+            self._match_with_list(entities, domain1_entity_list)
+
+            # Finally, let's pretend we want to get the full list of entities,
+            # even with the limits set, as part of some internal calculation.
+            # Calling the API without a hints list should achieve this, and
+            # return at least the 20 entries we created (there may be other
+            # entities lying around ceated by other tests/setup).
+            entities = self._list_entities(entity)()
+            self.assertTrue(len(entities) >= 20)
+
+            self.opt(list_limit=old_list_limit)
+            self.opt_in_group('identity', list_limit=old_identity_list_limit)
+            self.opt_in_group('assignment',
+                              list_limit=old_assignment_list_limit)
+
+            self._delete_test_data(entity, entity_list)
+            self._delete_test_data(entity, domain1_entity_list)
+
     def test_list_users_inexact_filtered(self):
         self.skipTest('Inexact filters do not work against MySQL')
         # Create 20 users

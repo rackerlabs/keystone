@@ -47,6 +47,10 @@ class Manager(manager.Manager):
 
 @six.add_metaclass(abc.ABCMeta)
 class Driver(object):
+
+    def _get_list_limit(self):
+        pass
+
     # credential crud
 
     @abc.abstractmethod

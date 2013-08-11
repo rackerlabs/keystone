@@ -58,3 +58,11 @@ class ListHintsTests(test.TestCase):
         for filters in hints2.filters():
             filter_count += 1
         self.assertEqual(filter_count, 2)
+
+    def test_limits(self):
+        hints = driver_hints.Hints()
+        self.assertEqual(hints.get_limit(), None)
+        hints.set_limit(10)
+        self.assertEqual(hints.get_limit(), 10)
+        hints.set_limit(11)
+        self.assertEqual(hints.get_limit(), 11)
