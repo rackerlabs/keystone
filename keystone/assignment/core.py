@@ -260,6 +260,9 @@ class Manager(manager.Manager):
             self.get_domain_by_name.set(ret, self, ret['name'])
         return ret
 
+    def list_domains(self, hints=None):
+        return self.driver.list_domains(hints or [])
+
     def update_domain(self, domain_id, domain):
         ret = self.driver.update_domain(domain_id, domain)
         self.get_domain.invalidate(self, domain_id)
@@ -271,6 +274,15 @@ class Manager(manager.Manager):
         self.driver.delete_domain(domain_id)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, domain['name'])
+
+    def list_projects(self, hints):
+        return self.driver.list_projects(hints or [])
+
+    def list_projects_in_domain(self, domain_id, hints):
+        return self.driver.list_projects_in_domain(domain_id, hints or [])
+
+    def list_user_projects(self, user_id, hints=None):
+        return self.driver.list_user_projects(user_id, hints or [])
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=CONF.assignment.cache_time)
@@ -292,6 +304,9 @@ class Manager(manager.Manager):
         if SHOULD_CACHE(ret):
             self.get_role.set(ret, self, role_id)
         return ret
+
+    def list_roles(self, hints=None):
+        return self.driver.list_roles(hints or [])
 
     def update_role(self, role_id, role):
         ret = self.driver.update_role(role_id, role)
@@ -338,6 +353,9 @@ class Driver(object):
         role_set.remove(frozenset(self._role_to_dict(role_id,
                                                      inherited).items()))
         return [dict(r) for r in role_set]
+
+    def _get_list_limit(self):
+        return CONF.assignment.list_limit or CONF.list_limit
 
     def get_project_by_name(self, tenant_name, domain_id):
         """Get a tenant by name.
@@ -464,8 +482,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_domains(self):
-        """List all domains in the system.
+    def list_domains(self, hints):
+        """List domains in the system.
+
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
 
         :returns: a list of domain_refs or an empty list.
 
@@ -516,16 +537,37 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_projects(self, domain_id=None):
-        """List all projects in the system.
+    def list_projects(self, hints):
+        """List projects in the system.
+
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
 
         :returns: a list of project_refs or an empty list.
 
         """
         raise exception.NotImplemented()
 
-    def list_user_projects(self, user_id):
-        """List all projects associated with a given user.
+    def list_projects_in_domain(self, domain_id, hints):
+        """List projects in the system.
+
+        :param domain_id: the driver MUST only return projects
+                          within this domain.
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
+
+
+        :returns: a list of project_refs or an empty list.
+
+        """
+        raise exception.NotImplemented()
+
+    def list_user_projects(self, user_id, hints=None):
+        """List projects associated with a given user.
+
+        :param user_id : the user in question
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
 
         :returns: a list of project_refs or an empty list.
 
@@ -569,8 +611,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_roles(self):
-        """List all roles in the system.
+    def list_roles(self, hints):
+        """List roles in the system.
+
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
 
         :returns: a list of role_refs or an empty list.
 
