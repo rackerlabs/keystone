@@ -3,6 +3,7 @@ import functools
 import uuid
 
 from keystone.common import dependency
+from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
 from keystone import exception
@@ -268,9 +269,32 @@ class V3Controller(V2Controller):
         return {cls.member_name: ref}
 
     @classmethod
-    def wrap_collection(cls, context, refs, filters=[]):
+    def wrap_collection(cls, context, refs, filters=[], query_string=None):
+        """Wrap a collection, checking for filtering and pagination.
+
+        Returns the wrapped collection, which includes:
+        - Executing any filtering not already carried out
+        - Paginating if necessary
+        - Adds 'self' links in every member
+        - Adds 'next', 'self' and 'prev' links for the whole collection.
+
+        :param context: the current context, containing the original url path
+                        and query string
+        :param refs: the list of members of the collection
+        :param filters: list of valid keys to apply filtering to
+        :param query_string: modified query string that has any filters already
+                             handled removed. If this is not present, this
+                             implies no filtering has yet been done.
+
+        """
+        # Check if there are any filters that were not handled by the drivers.
+        # The driver will not have paginated or limited the output if it found
+        # there were filters it was unable to handle.
+
+        if query_string is None:
+            query_string = context['query_string']
         for f in filters:
-            refs = cls.filter_by_attribute(context, refs, f)
+            refs = cls._filter_by_attribute(query_string, refs, f)
 
         refs = cls.paginate(context, refs)
 
@@ -287,8 +311,12 @@ class V3Controller(V2Controller):
     @classmethod
     def paginate(cls, context, refs):
         """Paginates a list of references by page & per_page query strings."""
-        # FIXME(dolph): client needs to support pagination first
-        return refs
+        # FIXME(dolph, henry-nash): client needs to support pagination first,
+        # for now we just see if we need to limit.
+        if CONF.list_limit and len(refs) > CONF.list_limit:
+            return refs[:CONF.list_limit]
+        else:
+            return refs
 
         page = context['query_string'].get('page', 1)
         per_page = context['query_string'].get('per_page', 30)
@@ -296,6 +324,12 @@ class V3Controller(V2Controller):
 
     @classmethod
     def filter_by_attribute(cls, context, refs, attr):
+        """Filters a list of references by context query string value."""
+        return cls._filter_by_attribute(cls, context['query_string'],
+                                        refs, attr)
+
+    @classmethod
+    def _filter_by_attribute(cls, query_string, refs, attr):
         """Filters a list of references by query string value."""
 
         def _attr_match(ref_attr, val_attr):
@@ -307,19 +341,55 @@ class V3Controller(V2Controller):
 
             """
             if type(ref_attr) is bool:
-                if (isinstance(val_attr, basestring) and
-                        val_attr == '0'):
-                    val = False
-                else:
-                    val = True
-                return (ref_attr == val)
+                return (ref_attr == utils.attr_as_boolean(val_attr))
             else:
                 return (ref_attr == val_attr)
 
-        if attr in context['query_string']:
-            value = context['query_string'][attr]
+        def _inexact_attr_match(item, item_value, ref):
+            """Applies an inexact filter to a result dict.
+
+            :param item: the filter in question
+            :param item_value: the filter value
+            :param ref: the dict to check
+
+            :returns True if there is a match
+
+            """
+            key, value = item.split('__', 1)
+            if value not in utils.INEXACT_FILTERS_SUPPORTED:
+                msg = _('Unsupported inexact string filter: %s') % item
+                raise exception.ValidationError(msg)
+
+            if key in ref:
+                if value == 'contains':
+                    return (item_value in ref[key])
+                elif value == 'icontains':
+                    return (item_value.lower() in ref[key].lower())
+                elif value == 'startswith':
+                    return ref[key].startswith(item_value)
+                elif value == 'istartswith':
+                    return ref[key].lower().startswith(item_value.lower())
+                elif value == 'endswith':
+                    return ref[key].endswith(item_value)
+                elif value == 'iendswith':
+                    return ref[key].lower().endswith(item_value.lower())
+                else:
+                    msg = (_('Missing code for inexact filter: %s') % item)
+                    LOG.debug(msg)
+                    return True
+
+            return False
+
+        if attr in query_string:
+            value = query_string[attr]
             return [r for r in refs if _attr_match(
                 flatten(r).get(attr), value)]
+        else:
+            # It might be an inexact filter
+            for item in query_string:
+                if item.startswith(attr + '__'):
+                    return [r for r in refs if _inexact_attr_match(
+                        item, query_string[item], r)]
         return refs
 
     def _require_matching_id(self, value, ref):

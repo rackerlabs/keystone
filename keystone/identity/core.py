@@ -247,6 +247,10 @@ class Manager(manager.Manager):
         driver = self._select_identity_driver(domain_id)
         return (domain_id, driver)
 
+    def _mark_domain_id_filter_satisfied(self, query_dict_in_out):
+        if query_dict_in_out is not None and 'domain_id' in query_dict_in_out:
+            query_dict_in_out.pop('domain_id)')
+
     # The actual driver calls - these are pre/post processed here as
     # part of the Manager layer to make sure we:
     #
@@ -296,12 +300,18 @@ class Manager(manager.Manager):
         return ref
 
     @domains_configured
-    def list_users(self, domain_scope=None):
+    def list_users(self, domain_scope=None, query_dict_in_out=None,
+                   valid_filters=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        user_list = driver.list_users()
         if not driver.is_domain_aware():
-            user_list = self._set_domain_id(user_list, domain_id)
-        return user_list
+            # We are effectively satisfying any domain_id filter by the above
+            # driver selection, so remove any such filter
+            self._mark_domain_id_filter_satisfied(query_dict_in_out)
+        ref_list = driver.list_users(
+            query_dict_in_out=query_dict_in_out, valid_filters=valid_filters)
+        if not driver.is_domain_aware():
+            ref_list = self._set_domain_id(ref_list, domain_id)
+        return self._trim_to_limit(ref_list)
 
     @notifications.updated('user')
     @domains_configured
@@ -375,28 +385,50 @@ class Manager(manager.Manager):
         driver.remove_user_from_group(user_id, group_id)
 
     @domains_configured
-    def list_groups_for_user(self, user_id, domain_scope=None):
+    def list_groups_for_user(self, user_id, domain_scope=None,
+                             query_dict_in_out=None, valid_filters=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        group_list = driver.list_groups_for_user(user_id)
         if not driver.is_domain_aware():
-            group_list = self._set_domain_id(group_list, domain_id)
-        return group_list
+            # We are effectively satisfying any domain_id filter by the above
+            # driver selection, so remove any such filter
+            self._mark_domain_id_filter_satisfied(query_dict_in_out)
+        ref_list = driver.list_groups_for_user(
+            user_id,
+            query_dict_in_out=query_dict_in_out,
+            valid_filters=valid_filters)
+        if not driver.is_domain_aware():
+            ref_list = self._set_domain_id(ref_list, domain_id)
+        return self._trim_to_limit(ref_list)
 
     @domains_configured
-    def list_groups(self, domain_scope=None):
+    def list_groups(self, domain_scope=None, query_dict_in_out=None,
+                    valid_filters=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        group_list = driver.list_groups()
         if not driver.is_domain_aware():
-            group_list = self._set_domain_id(group_list, domain_id)
-        return group_list
+            # We are effectively satisfying any domain_id filter by the above
+            # driver selection, so remove any such filter
+            self._mark_domain_id_filter_satisfied(query_dict_in_out)
+        ref_list = driver.list_groups(
+            query_dict_in_out=query_dict_in_out, valid_filters=valid_filters)
+        if not driver.is_domain_aware():
+            ref_list = self._set_domain_id(ref_list, domain_id)
+        return self._trim_to_limit(ref_list)
 
     @domains_configured
-    def list_users_in_group(self, group_id, domain_scope=None):
+    def list_users_in_group(self, group_id, domain_scope=None,
+                            query_dict_in_out=None, valid_filters=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        user_list = driver.list_users_in_group(group_id)
         if not driver.is_domain_aware():
-            user_list = self._set_domain_id(user_list, domain_id)
-        return user_list
+            # We are effectively satisfying any domain_id filter by the above
+            # driver selection, so remove any such filter
+            self._mark_domain_id_filter_satisfied(query_dict_in_out)
+        ref_list = driver.list_users_in_group(
+            group_id,
+            query_dict_in_out=query_dict_in_out,
+            valid_filters=valid_filters)
+        if not driver.is_domain_aware():
+            ref_list = self._set_domain_id(ref_list, domain_id)
+        return self._trim_to_limit(ref_list)
 
     @domains_configured
     def check_user_in_group(self, user_id, group_id, domain_scope=None):
@@ -426,14 +458,18 @@ class Manager(manager.Manager):
     def get_project(self, tenant_id):
         return self.assignment_api.get_project(tenant_id)
 
-    def list_projects(self, domain_id=None):
-        return self.assignment_api.list_projects(domain_id)
+    def list_projects(self, query_dict_in_out=None, valid_filters=None):
+        return self.assignment_api.list_projects(
+            query_dict_in_out=query_dict_in_out,
+            valid_filters=valid_filters)
 
     def get_role(self, role_id):
         return self.assignment_api.get_role(role_id)
 
-    def list_roles(self):
-        return self.assignment_api.list_roles()
+    def list_roles(self, query_dict_in_out=None, valid_filters=None):
+        return self.assignment_api.list_roles(
+            query_dict_in_out=query_dict_in_out,
+            valid_filters=valid_filters)
 
     def get_projects_for_user(self, user_id):
         return self.assignment_api.get_projects_for_user(user_id)
@@ -517,11 +553,16 @@ class Manager(manager.Manager):
     def delete_domain(self, domain_id):
         return self.assignment_api.delete_domain(domain_id)
 
-    def list_domains(self):
-        return self.assignment_api.list_domains()
+    def list_domains(self, query_dict_in_out=None, valid_filters=None):
+        return self.assignment_api.list_domains(
+            query_dict_in_out=query_dict_in_out, valid_filters=valid_filters)
 
-    def list_user_projects(self, user_id):
-        return self.assignment_api.list_user_projects(user_id)
+    def list_user_projects(self, user_id,
+                           query_dict_in_out=None, valid_filters=None):
+        return self.assignment_api.list_user_projects(
+            user_id,
+            query_dict_in_out=query_dict_in_out,
+            valid_filters=valid_filters)
 
     def add_user_to_project(self, tenant_id, user_id):
         return self.assignment_api.add_user_to_project(tenant_id, user_id)
@@ -535,6 +576,13 @@ class Manager(manager.Manager):
 
 class Driver(object):
     """Interface description for an Identity driver."""
+
+    def _get_list_limit(self):
+        if CONF.identity.list_limit is None:
+            return CONF.list_limit
+        else:
+            return CONF.identity.list_limit
+
     def authenticate(self, user_id, password):
         """Authenticate a given user and password.
         :returns: user_ref
@@ -552,16 +600,23 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_users(self):
-        """List all users in the system.
+    def list_users(self, query_dict_in_out=None, valid_filters=None):
+        """List users in the system.
+
+        If any entry in 'valid_filters' is specified in 'query_dict_in_out',
+        then filter the results based on those criteria if possible.
 
         :returns: a list of user_refs or an empty list.
 
         """
         raise exception.NotImplemented()
 
-    def list_users_in_group(self, group_id):
-        """List all users in a group.
+    def list_users_in_group(self, group_id,
+                            query_dict_in_out=None, valid_filters=None):
+        """List users in a group.
+
+        If any entry in 'valid_filters' is specified in 'query_dict_in_out',
+        then filter the results based on those criteria if possible.
 
         :returns: a list of user_refs or an empty list.
 
@@ -639,16 +694,23 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_groups(self):
-        """List all groups in the system.
+    def list_groups(self, query_dict_in_out=None, valid_filters=None):
+        """List groups in the system.
+
+        If any entry in 'valid_filters' is specified in 'query_dict_in_out',
+        then filter the results based on those criteria if possible.
 
         :returns: a list of group_refs or an empty list.
 
         """
         raise exception.NotImplemented()
 
-    def list_groups_for_user(self, user_id):
-        """List all groups a user is in
+    def list_groups_for_user(self, user_id,
+                             query_dict_in_out=None, valid_filters=None):
+        """List groups a user is in
+
+        If any entry in 'valid_filters' is specified in 'query_dict_in_out',
+        then filter the results based on those criteria if possible.
 
         :returns: a list of group_refs or an empty list.
 
