@@ -205,6 +205,28 @@ class Manager(manager.Manager):
         for role_id in roles:
             self.remove_role_from_user_and_project(user_id, tenant_id, role_id)
 
+    def _trim_to_limit(self, ref_list):
+        list_limit = self.driver._get_list_limit()
+        if list_limit and len(ref_list) > list_limit:
+            return ref_list[:list_limit]
+        else:
+            return ref_list
+
+    def list_projects(self, query_dict_in_out=None, valid_filters=None):
+        ref_list = self.driver.list_projects(
+            query_dict_in_out=query_dict_in_out, valid_filters=valid_filters)
+        return self._trim_to_limit(ref_list)
+
+    def list_domains(self, query_dict_in_out=None, valid_filters=None):
+        ref_list = self.driver.list_domains(
+            query_dict_in_out=query_dict_in_out, valid_filters=valid_filters)
+        return self._trim_to_limit(ref_list)
+
+    def list_roles(self, query_dict_in_out=None, valid_filters=None):
+        ref_list = self.driver.list_roles(
+            query_dict_in_out=query_dict_in_out, valid_filters=valid_filters)
+        return self._trim_to_limit(ref_list)
+
 
 class Driver(object):
 
@@ -241,6 +263,12 @@ class Driver(object):
         role_set.remove(frozenset(self._role_to_dict(role_id,
                                                      inherited).items()))
         return [dict(r) for r in role_set]
+
+    def _get_list_limit(self):
+        if CONF.assignment.list_limit is None:
+            return CONF.list_limit
+        else:
+            return CONF.assignment.list_limit
 
     def get_project_by_name(self, tenant_name, domain_id):
         """Get a tenant by name.
@@ -367,8 +395,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_domains(self):
-        """List all domains in the system.
+    def list_domains(self, query_dict_in_out=None, valid_filters=None):
+        """List domains in the system.
+
+        If any entry in 'valid_filters' is specified in 'query_dict_in_out',
+        then filter the results based on those criteria if possible.
 
         :returns: a list of domain_refs or an empty list.
 
@@ -419,16 +450,23 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_projects(self, domain_id=None):
+    def list_projects(self, query_dict_in_out=None, valid_filters=None):
         """List all projects in the system.
+
+        If any entry in 'valid_filters' is specified in 'query_dict_in_out',
+        then filter the results based on those criteria if possible.
 
         :returns: a list of project_refs or an empty list.
 
         """
         raise exception.NotImplemented()
 
-    def list_user_projects(self, user_id):
-        """List all projects associated with a given user.
+    def list_user_projects(self, user_id,
+                           query_dict_in_out=None, valid_filters=None):
+        """List projects associated with a given user.
+
+        If any entry in 'valid_filters' is specified in 'query_dict_in_out',
+        then filter the results based on those criteria if possible.
 
         :returns: a list of project_refs or an empty list.
 
@@ -472,8 +510,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_roles(self):
-        """List all roles in the system.
+    def list_roles(self, query_dict_in_out=None, valid_filters=None):
+        """List roles in the system.
+
+        If any entry in 'valid_filters' is specified in 'query_dict_in_out',
+        then filter the results based on those criteria if possible.
 
         :returns: a list of role_refs or an empty list.
 
