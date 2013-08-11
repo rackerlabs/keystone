@@ -99,6 +99,10 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.ServiceNotFound(service_id=service_id)
 
+    @manager.response_truncated
+    def list_services(self):
+        return self.driver.list_services()
+
     def create_endpoint(self, endpoint_id, endpoint_ref):
         try:
             return self.driver.create_endpoint(endpoint_id, endpoint_ref)
@@ -118,11 +122,18 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
+    @manager.response_truncated
+    def list_endpoints(self):
+        return self.driver.list_endpoints()
+
     def get_catalog(self, user_id, tenant_id, metadata=None):
         try:
             return self.driver.get_catalog(user_id, tenant_id, metadata)
         except exception.NotFound:
             raise exception.NotFound('Catalog not found for user and tenant')
+
+    def _get_list_limit(self):
+        return CONF.catalog.list_limit or CONF.list_limit
 
 
 @six.add_metaclass(abc.ABCMeta)
