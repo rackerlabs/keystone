@@ -26,6 +26,7 @@ from sqlalchemy.orm.attributes import InstrumentedAttribute
 import sqlalchemy.pool
 from sqlalchemy import types as sql_types
 
+from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone.openstack.common.db.sqlalchemy import models
@@ -296,6 +297,99 @@ class Base(object):
     def clear_engine(self):
         self._engine = None
         self._sessionmaker = None
+
+    def _filter(self, model, query, hints):
+        """Applies filtering to a query.
+
+        :param model: the table model in question
+        :param query: query to apply filters to
+        :param hints: list directives, containing any relevant
+                                filters. Any filters satisfied here will
+                                be marked in list_directive so that the
+                                caller will know if any filters remain to be
+                                satisfied.
+
+        :returns query: query, updated with any filters satisfied
+
+        """
+        def inexact_filter(model, query, filter, hints):
+            """Applies an inexact filter to a query.
+
+            :param model: the table model in question
+            :param query: query to apply filters to
+            :param key: filter ID in question
+            :param filter: the dict that describes this filter
+            :param hints: the directives for this list query. If we
+                                    satisfy this filter here, we should mark
+                                    it so in hints.
+
+            :returns query: query updated to add any inexact filters we could
+                            satisfy
+
+            """
+            column_attr = getattr(model, filter['name'])
+
+            # TODO(henry-nash): Sqlalchemy 0.7 defaults to case insensitivity
+            # so once we find a way of changing that (maybe on a call-by-call
+            # basis), we can add support for the case sensitive versions of
+            # the filters below.  For now, these case sensitive versions will
+            # be handled at the controller level.
+
+            if filter['case_sensitive']:
+                return query
+
+            if filter['comparator'] == 'contains':
+                query_term = column_attr.ilike('%%%s%%' % filter['value'])
+            elif filter['comparator'] == 'startswith':
+                query_term = column_attr.ilike('%s%%' % filter['value'])
+            elif filter['comparator'] == 'endswith':
+                query_term = column_attr.ilike('%%%s' % filter['value'])
+            else:
+                # It's a filter we don't understand, so let the caller
+                # work out if they need to do something with it.
+                return query
+
+            hints.mark_filter_satisfied(filter)
+            return query.filter(query_term)
+
+        filter_dict = {}
+
+        for filter in hints.filters():
+            # TODO(henry-nash) Check if name is valid column, if not skip
+            if filter['comparator'] == 'equals':
+                key = filter['name']
+                if isinstance(getattr(model, key).property.columns[0].type,
+                              sqlalchemy.types.Boolean):
+                    filter_dict[key] = utils.attr_as_boolean(filter['value'])
+                else:
+                    filter_dict[key] = filter['value']
+                hints.mark_filter_satisfied(filter)
+            else:
+                query = inexact_filter(model, query, filter, hints)
+
+        # Apply any exact filters we built up
+        if filter_dict:
+            query = query.filter_by(**filter_dict)
+
+        return query
+
+    def filter(self, model, query, hints):
+        """Applies filtering to a query.
+
+        :param model: table model
+        :param query: query to apply filters to
+        :param hints: containing any relevant filter hints.
+                      Any filters applied here will be marked as
+                      satisfied so that the caller will know if any
+                      filters remain to be applied.
+
+        :returns updated query
+
+        """
+        if hints is not None and hasattr(hints, 'filters'):
+            query = self._filter(model, query, hints)
+
+        return query
 
 
 def handle_conflicts(type='object'):

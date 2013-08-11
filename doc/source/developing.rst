@@ -120,6 +120,31 @@ Once run, you can see the sample data that has been created by using the
 
     $ tools/with_venv.sh keystone --token ADMIN --endpoint http://127.0.0.1:35357/v2.0/ user-list
 
+
+Filtering responsibilities between controllers and drivers
+----------------------------------------------------------
+
+Keystone supports the specification of filtering on list queries as part of the
+v3 identity API. By default these queries are satisfied in the controller
+class when a controller calls the wrap_collection method at the end of a
+``list_{entity}`` method.  However, to enable optimum performance, any driver
+can implement some or all of the specified filters (for example, by adding
+filtering to the generated SQL statements to generate the list).
+
+The communication between the controller level and its drivers is handled by
+the passing of a reference to a Hints object containing, which is a list
+dicts describing the filters. A driver that implements a filter must mark the
+filter satisfied in the Hints object so that when it is returned back to the
+controller level, it can know to execute any unsatisfied filters.
+
+The contract for a driver for ``list_{entity}`` methods is therefore:
+
+* It MUST return a list of entities of the specified type
+* It MAY either just return all such entities, or alternatively reduce the
+  list by filtering for one or more of the specified filters in the passed
+  Hints reference, and marking any such filters satisfied.
+
+
 Running Tests
 =============
 

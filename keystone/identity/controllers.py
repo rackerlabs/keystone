@@ -22,6 +22,7 @@ import urlparse
 import uuid
 
 from keystone.common import controller
+from keystone.common import driver_hints
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log as logging
@@ -486,8 +487,10 @@ class DomainV3(controller.V3Controller):
 
     @controller.filterprotected('enabled', 'name')
     def list_domains(self, context, filters):
-        refs = self.identity_api.list_domains()
-        return DomainV3.wrap_collection(context, refs, filters)
+        hints = DomainV3.build_driver_hints(context, filters)
+        refs = self.identity_api.list_domains(hints=hints)
+        return DomainV3.wrap_collection(context, refs,
+                                        hints=hints)
 
     @controller.protected()
     def get_domain(self, context, domain_id):
@@ -634,13 +637,17 @@ class ProjectV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'enabled', 'name')
     def list_projects(self, context, filters):
-        refs = self.identity_api.list_projects()
-        return ProjectV3.wrap_collection(context, refs, filters)
+        hints = ProjectV3.build_driver_hints(context, filters)
+        refs = self.identity_api.list_projects(hints=hints)
+        return ProjectV3.wrap_collection(context, refs,
+                                         hints=hints)
 
     @controller.filterprotected('enabled', 'name')
     def list_user_projects(self, context, filters, user_id):
-        refs = self.identity_api.list_projects_for_user(user_id)
-        return ProjectV3.wrap_collection(context, refs, filters)
+        hints = ProjectV3.build_driver_hints(context, filters)
+        refs = self.identity_api.list_projects_for_user(user_id, hints=hints)
+        return ProjectV3.wrap_collection(context, refs,
+                                         hints=hints)
 
     @controller.protected()
     def get_project(self, context, project_id):
@@ -703,16 +710,20 @@ class UserV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users(self, context, filters):
+        hints = UserV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_users(
-            domain_scope=self._get_domain_id_for_request(context))
-        return UserV3.wrap_collection(context, refs, filters)
+            domain_scope=self._get_domain_id_for_request(context),
+            hints=hints)
+        return UserV3.wrap_collection(context, refs, hints=hints)
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users_in_group(self, context, filters, group_id):
+        hints = UserV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_users_in_group(
             group_id,
-            domain_scope=self._get_domain_id_for_request(context))
-        return UserV3.wrap_collection(context, refs, filters)
+            domain_scope=self._get_domain_id_for_request(context),
+            hints=hints)
+        return UserV3.wrap_collection(context, refs, hints=hints)
 
     @controller.protected()
     def get_user(self, context, user_id):
@@ -795,16 +806,20 @@ class GroupV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'name')
     def list_groups(self, context, filters):
+        hints = GroupV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_groups(
-            domain_scope=self._get_domain_id_for_request(context))
-        return GroupV3.wrap_collection(context, refs, filters)
+            domain_scope=self._get_domain_id_for_request(context),
+            hints=hints)
+        return GroupV3.wrap_collection(context, refs, hints=hints)
 
     @controller.filterprotected('name')
     def list_groups_for_user(self, context, filters, user_id):
+        hints = GroupV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_groups_for_user(
             user_id,
-            domain_scope=self._get_domain_id_for_request(context))
-        return GroupV3.wrap_collection(context, refs, filters)
+            domain_scope=self._get_domain_id_for_request(context),
+            hints=hints)
+        return GroupV3.wrap_collection(context, refs, hints=hints)
 
     @controller.protected()
     def get_group(self, context, group_id):
@@ -859,8 +874,10 @@ class RoleV3(controller.V3Controller):
 
     @controller.filterprotected('name')
     def list_roles(self, context, filters):
-        refs = self.identity_api.list_roles()
-        return RoleV3.wrap_collection(context, refs, filters)
+        hints = RoleV3.build_driver_hints(context, filters)
+        refs = self.identity_api.list_roles(
+            hints=hints)
+        return RoleV3.wrap_collection(context, refs, hints=hints)
 
     @controller.protected()
     def get_role(self, context, role_id):
@@ -1203,11 +1220,12 @@ class RoleAssignmentV3(controller.V3Controller):
                 # It's an inherited domain role - so get the list of projects
                 # owned by this domain. A domain scope is guaranteed since we
                 # checked this when we built the refs list
+                domain_id = r['scope']['domain']['id']
                 project_ids = (
-                    [x['id'] for x in self.assignment_api.list_projects(
-                        r['scope']['domain']['id'])])
+                    [x['id'] for x in
+                     self.assignment_api.list_projects_in_domain(
+                         domain_id, driver_hints.Hints())])
                 base_entry = copy.deepcopy(r)
-                domain_id = base_entry['scope']['domain']['id']
                 base_entry['scope'].pop('domain')
                 # For each project, create an equivalent role assignment
                 for p in project_ids:
@@ -1286,7 +1304,8 @@ class RoleAssignmentV3(controller.V3Controller):
         # to pass the filters into the driver call, so that the list size is
         # kept a minimum.
 
-        refs = self.assignment_api.list_role_assignments()
+        hints = self.build_driver_hints(context, filters)
+        refs = self.identity_api.list_role_assignments()
         formatted_refs = (
             [self._format_entity(x) for x in refs
              if self._filter_inherited(x)])
@@ -1297,7 +1316,7 @@ class RoleAssignmentV3(controller.V3Controller):
 
             formatted_refs = self._expand_indirect_assignments(formatted_refs)
 
-        return self.wrap_collection(context, formatted_refs, filters)
+        return self.wrap_collection(context, formatted_refs, hints=hints)
 
     @controller.protected()
     def get_role_assignment(self, context):

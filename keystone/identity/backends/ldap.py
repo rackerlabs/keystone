@@ -82,7 +82,7 @@ class Identity(identity.Driver):
     def get_user(self, user_id):
         return identity.filter_user(self._get_user(user_id))
 
-    def list_users(self):
+    def list_users(self, hints):
         return self.user.get_all_filtered()
 
     def get_user_by_name(self, user_name, domain_id):
@@ -148,15 +148,15 @@ class Identity(identity.Driver):
         user_dn = self.user._id_to_dn(user_id)
         self.group.remove_user(user_dn, group_id, user_id)
 
-    def list_groups_for_user(self, user_id):
+    def list_groups_for_user(self, user_id, hints):
         self.get_user(user_id)
         user_dn = self.user._id_to_dn(user_id)
         return self.group.list_user_groups(user_dn)
 
-    def list_groups(self):
+    def list_groups(self, hints):
         return self.group.get_all()
 
-    def list_users_in_group(self, group_id):
+    def list_users_in_group(self, group_id, hints):
         self.get_group(group_id)
         users = []
         for user_dn in self.group.list_group_users(group_id):
@@ -173,7 +173,7 @@ class Identity(identity.Driver):
     def check_user_in_group(self, user_id, group_id):
         self.get_user(user_id)
         self.get_group(group_id)
-        user_refs = self.list_users_in_group(group_id)
+        user_refs = self.list_users_in_group(group_id, [])
         found = False
         for x in user_refs:
             if x['id'] == user_id:
