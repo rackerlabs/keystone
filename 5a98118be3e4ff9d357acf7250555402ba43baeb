@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//734\u003d",
+        "filename": "keystone/contrib/ec2/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-12T19:43:37Z",
+      "side": 1,
+      "message": "(NIT): We might be able to utilize a little more of the space here and keep some of the parameters on the first line.",
+      "revId": "5a98118be3e4ff9d357acf7250555402ba43baeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//72s\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1882,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-12T19:43:37Z",
+      "side": 1,
+      "message": "Same comment here on \u0027 and \"",
+      "revId": "5a98118be3e4ff9d357acf7250555402ba43baeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//724\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1886,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-12T19:43:37Z",
+      "side": 1,
+      "message": "Add a space between # and Use?",
+      "revId": "5a98118be3e4ff9d357acf7250555402ba43baeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//72w\u003d",
+        "filename": "tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1897,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-12T19:43:37Z",
+      "side": 1,
+      "message": "Should we have consistency between \" and \u0027?",
+      "revId": "5a98118be3e4ff9d357acf7250555402ba43baeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
