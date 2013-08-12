@@ -52,6 +52,24 @@
       "revId": "f066e9d74f9870372c2ac5d9ca986551b3a21510",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//+dE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-12T08:13:48Z",
+      "side": 1,
+      "message": "I just added a comment to the bug itself.  A couple of questions:\n\n1) Surely the fix we want is to actually implement changing the default project it?\n2) I\u0027m not sure we should be explicit in checking what can be modified here, since we do allow addition customer fields to be passed in the request block and keystone will store this in the extra DB field.  This isn\u0027t  a very well documented feature, but I think some implementations in the field use this.",
+      "parentUuid": "AAAAQ3//+do\u003d",
+      "revId": "f066e9d74f9870372c2ac5d9ca986551b3a21510",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
