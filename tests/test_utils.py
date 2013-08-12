@@ -29,8 +29,11 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import uuid
+
 from keystone import test
 
+from keystone.common import ldap as common_ldap
 from keystone.common import utils
 
 
@@ -64,3 +67,14 @@ class UtilsTestCase(test.TestCase):
         self.assertFalse(utils.auth_str_equal('a', 'aaaaa'))
         self.assertFalse(utils.auth_str_equal('aaaaa', 'a'))
         self.assertFalse(utils.auth_str_equal('ABC123', 'abc123'))
+
+
+class DnNormalizeTest(test.TestCase):
+    def test_normalize(self):
+        # Can normalize a DN, the attribute names are lowercased.
+        id_ = uuid.uuid4().hex
+        dn_str = 'CN=%s,OU=Groups,DC=sys1' % id_
+        dn_str_norm = common_ldap.normalize_dn_str(dn_str)
+        exp_norm = 'cn=%s,ou=Groups,dc=sys1' % id_
+
+        self.assertEqual(dn_str_norm, exp_norm)
