@@ -51,6 +51,24 @@
       "revId": "008750cdb6fd140c9baf4d1af205152097571514",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//+Ag\u003d",
+        "filename": "tests/test_backend_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-08-12T10:44:34Z",
+      "side": 1,
+      "message": "well so that would work for sql and kvs but memcache test does not provide a identity backend and can\u0027t create project with it (i.e: no self.identity_api object).\n\nI can try to create a token provider for memcache and have a identity provider in sql but that\u0027s a bit overkill since I believe the proper way to solve that is to have test_auth_v3 converted to test_auth_v2.",
+      "parentUuid": "AAAAQ3///hg\u003d",
+      "revId": "008750cdb6fd140c9baf4d1af205152097571514",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
