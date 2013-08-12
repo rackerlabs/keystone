@@ -29,8 +29,11 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import uuid
+
 from keystone.tests import core as test
 
+from keystone.common import ldap as common_ldap
 from keystone.common import utils
 
 
@@ -64,3 +67,18 @@ class UtilsTestCase(test.TestCase):
         self.assertFalse(utils.auth_str_equal('a', 'aaaaa'))
         self.assertFalse(utils.auth_str_equal('aaaaa', 'a'))
         self.assertFalse(utils.auth_str_equal('ABC123', 'abc123'))
+
+
+class DnEqualsTest(test.TestCase):
+    def test_equals(self):
+        # Two DNs are equal even if the attributes are capitalized differently.
+        id_ = uuid.uuid4().hex
+        dn1 = 'CN=%s,OU=Groups,DC=sys1' % id_
+        dn2 = 'cn=%s,ou=Groups,dc=sys1' % id_
+        self.assertTrue(common_ldap.dn_equals(dn1, dn2))
+
+    def test_not_equals(self):
+        # Two DNs are not equal when the attribute value is different.
+        dn1 = 'CN=%s,OU=Groups,DC=sys1' % uuid.uuid4().hex
+        dn2 = 'CN=%s,OU=Groups,DC=sys1' % uuid.uuid4().hex
+        self.assertFalse(common_ldap.dn_equals(dn1, dn2))

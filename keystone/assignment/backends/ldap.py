@@ -97,7 +97,7 @@ class Assignment(assignment.Driver):
             return [self.role._dn_to_id(a.role_dn)
                     for a in self.role.get_role_assignments
                     (self.project._id_to_dn(tenant_id))
-                    if a.user_dn == user_dn]
+                    if common_ldap.dn_equals(a.user_dn, user_dn)]
 
         if domain_id is not None:
             msg = 'Domain metadata not supported by LDAP'
