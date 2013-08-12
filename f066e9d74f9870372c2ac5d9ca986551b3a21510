@@ -34,6 +34,24 @@
       "revId": "f066e9d74f9870372c2ac5d9ca986551b3a21510",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//+dc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-08-12T08:11:20Z",
+      "side": 1,
+      "message": "thanks, got it",
+      "parentUuid": "AAAAQ3//+do\u003d",
+      "revId": "f066e9d74f9870372c2ac5d9ca986551b3a21510",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
