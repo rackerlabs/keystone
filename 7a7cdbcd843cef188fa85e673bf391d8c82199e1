@@ -16,6 +16,24 @@
       "revId": "7a7cdbcd843cef188fa85e673bf391d8c82199e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//8Co\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2479,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-08-12T18:58:25Z",
+      "side": 1,
+      "message": "I agree that the backend calling the controller layer is not right, my original thought was that a test_v2_auth.py was needed but out of scope of this review. \n\nI would not have a problem to remove that part of the code but before I do that, I\u0027d love that we have some sort of consensus of what\u0027s need to be done.\n\nhaving to go the in and around of iterations of this reviews until everyone is pleased is getting a bit tiresome.",
+      "parentUuid": "AAAAQ3//8no\u003d",
+      "revId": "7a7cdbcd843cef188fa85e673bf391d8c82199e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
