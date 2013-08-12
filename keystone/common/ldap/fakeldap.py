@@ -29,8 +29,8 @@ import shelve
 
 import ldap
 
-from keystone.common import logging
 from keystone.common import utils
+from keystone.openstack.common import log as logging
 
 
 SCOPE_NAMES = {

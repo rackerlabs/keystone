@@ -18,10 +18,10 @@ import copy
 import uuid
 
 from keystone.common import extension
-from keystone.common import logging
 from keystone.common import wsgi
 from keystone import exception
 from keystone import identity
+from keystone.openstack.common import log as logging
 
 
 LOG = logging.getLogger(__name__)

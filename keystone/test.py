@@ -40,7 +40,6 @@ from keystone import assignment
 from keystone import catalog
 from keystone.common import dependency
 from keystone.common import kvs
-from keystone.common import logging
 from keystone.common import sql
 from keystone.common import utils
 from keystone.common import wsgi
@@ -49,6 +48,7 @@ from keystone.contrib import ec2
 from keystone import credential
 from keystone import exception
 from keystone import identity
+from keystone.openstack.common import log as logging
 from keystone.openstack.common import timeutils
 from keystone import policy
 from keystone import token
