@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//7tU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 52
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-12T23:14:32Z",
+      "side": 1,
+      "message": "This probably needs DocImpact as well",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6/I\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 52
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-12T23:14:32Z",
+      "side": 1,
+      "message": "This should mirror the default in the config.py  Either unset here or config needs to have 28800 as the default.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6/E\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 52
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-12T23:14:32Z",
+      "side": 1,
+      "message": "This should mirror the default in the config.py  Either unset or config needs to have 86400 as the default.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7Bo\u003d",
+        "filename": "keystone/auth/plugins/oauth.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-12T23:14:32Z",
+      "side": 1,
+      "message": "(NIT) I would move this if-block up to the highest point in the function.  This saves extra work (no external communication) if the ids do not match.  It looks like this could be moved up to line 51 or so.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7sM\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-12T23:14:32Z",
+      "side": 1,
+      "message": "(NIT): Perhaps, since you\u0027re doing the same code for multiple types \"if \u003cthing\u003e in token_ref[\u0027token_data\u0027][\u0027token\u0027]\" this should be abstracted into a method and/or a set with a for loop to check for existence.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7OA\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-12T23:14:32Z",
+      "side": 1,
+      "message": "By default request tokens and access tokens do not expire?  This should mirror what is in the sample.conf",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6/M\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/sql.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-12T23:14:32Z",
+      "side": 1,
+      "message": "If an index is added in the migration file, make sure to add the same index here.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7Ls\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-12T23:14:32Z",
+      "side": 1,
+      "message": "recommend adding a break here since you\u0027ve found a valid project, no need to iterate further.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7NM\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-12T23:14:32Z",
+      "side": 1,
+      "message": "Should this be a ProjectNotFound and not an Unauthorized?  I\u0027m inclined to say this should be an Unauthorized as well.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7LI\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-12T23:14:32Z",
+      "side": 1,
+      "message": "(NIT): some of the functions in here have potential to raise exceptions, you should document the possible raises in the docstring.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7DE\u003d",
+        "filename": "keystone/contrib/delegated_auth/migrate_repo/versions/001_add_delegated_auth_tables.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-12T23:14:32Z",
+      "side": 1,
+      "message": "Theoretically there might be a case where you should index on authorizing_user_id.  This is because the list_access_token does a filter on authorizing_user_id, meaning that if you have a large number of tokens, it could have poor performance.  I am not convinced this is needed without more \"real use case\" data.\n\nI\u0027ll leave it to you to determine if indexing here would make sense.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6/8\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-12T23:14:32Z",
+      "side": 1,
+      "message": "You need to ensure that the memcache and kvs token drivers do the right things with the consumer_id being passed to them.\n\nYou have the SQL one working as expected, so likely this code needs to be able to understand consumer_id as well.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
