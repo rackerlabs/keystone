@@ -20,9 +20,8 @@ import ldap
 from ldap import filter as ldap_filter
 
 from keystone.common.ldap import fakeldap
-from keystone.common import logging
 from keystone import exception
-
+from keystone.openstack.common import log as logging
 
 LOG = logging.getLogger(__name__)
 

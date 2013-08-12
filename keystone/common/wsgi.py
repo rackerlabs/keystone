@@ -27,11 +27,11 @@ import webob.dec
 import webob.exc
 
 from keystone.common import config
-from keystone.common import logging
 from keystone.common import utils
 from keystone import exception
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
+from keystone.openstack.common import log as logging
 
 
 CONF = config.CONF
@@ -120,17 +120,6 @@ def validate_token_bind(context, token_ref):
                        "{%(bind_type)s: %(identifier)s}"),
                      {'bind_type': bind_type, 'identifier': identifier})
             raise exception.Unauthorized()
-
-
-class WritableLogger(object):
-    """A thin wrapper that responds to `write` and logs."""
-
-    def __init__(self, logger, level=logging.DEBUG):
-        self.logger = logger
-        self.level = level
-
-    def write(self, msg):
-        self.logger.log(self.level, msg)
 
 
 class Request(webob.Request):
@@ -455,7 +444,7 @@ class Router(object):
         # if we're only running in debug, bump routes' internal logging up a
         # notch, as it's very spammy
         if CONF.debug:
-            logging.getLogger('routes.middleware').setLevel(logging.INFO)
+            logging.getLogger('routes.middleware')
 
         self.map = mapper
         self._router = routes.middleware.RoutesMiddleware(self._dispatch,
