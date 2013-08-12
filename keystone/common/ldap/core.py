@@ -100,6 +100,21 @@ def ldap_scope(scope):
                 'options': ', '.join(LDAP_SCOPES.keys())})
 
 
+def dn_equals(dn1, dn2):
+    """Returns True if both DNs are the same, otherwise False."""
+
+    def normalize_dn(dn_str):
+        dn = ldap.dn.str2dn(dn_str)
+        norm = []
+        for part in dn:
+            name, val, i = part[0]
+            name = name.lower()
+            norm.append([(name, val, i)])
+        return ldap.dn.dn2str(norm)
+
+    return normalize_dn(dn1) == normalize_dn(dn2)
+
+
 class BaseLdap(object):
     DEFAULT_SUFFIX = "dc=example,dc=com"
     DEFAULT_OU = None
