@@ -93,11 +93,12 @@ class Assignment(assignment.Driver):
         def _get_roles_for_just_user_and_project(user_id, tenant_id):
             self.identity_api.get_user(user_id)
             self.get_project(tenant_id)
-            user_dn = self.user._id_to_dn(user_id)
+            user_dn = common_ldap.normalize_dn_str(
+               self.user._id_to_dn(user_id))
             return [self.role._dn_to_id(a.role_dn)
                     for a in self.role.get_role_assignments
                     (self.project._id_to_dn(tenant_id))
-                    if a.user_dn == user_dn]
+                    if common_ldap.normalize_dn_str(a.user_dn) == user_dn]
 
         if domain_id is not None:
             msg = 'Domain metadata not supported by LDAP'
