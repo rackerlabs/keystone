@@ -674,6 +674,7 @@ class IdentityTests(object):
         self.assertIn('member', roles_ref_ids)
 
     def test_get_role_grants_for_user_and_project_404(self):
+        self.skipTest('No longer a viable business rule.')
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.list_grants,
                           user_id=uuid.uuid4().hex,
@@ -685,6 +686,11 @@ class IdentityTests(object):
                           project_id=uuid.uuid4().hex)
 
     def test_add_role_grant_to_user_and_project_404(self):
+        #this logic needs to be checked in the controller
+        #Not in the Backend.  The assignment API does not
+        #need to enforce it, and there are use cases where
+        #it does not make sense to check it.
+        self.skipTest('No longer a viable business rule.')
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.create_grant,
                           user_id=uuid.uuid4().hex,
@@ -1360,14 +1366,14 @@ class IdentityTests(object):
             user_id=user1['id'],
             group_id=group1['id'])
         self.identity_api.delete_user(user1['id'])
-        self.assertRaises(exception.UserNotFound,
-                          self.identity_api.list_grants,
-                          user_id=user1['id'],
-                          project_id=project1['id'])
-        self.assertRaises(exception.UserNotFound,
-                          self.identity_api.list_grants,
-                          user_id=user1['id'],
-                          domain_id=domain1['id'])
+#         self.assertRaises(exception.UserNotFound,
+#                           self.identity_api.list_grants,
+#                           user_id=user1['id'],
+#                           project_id=project1['id'])
+#         self.assertRaises(exception.UserNotFound,
+#                           self.identity_api.list_grants,
+#                           user_id=user1['id'],
+#                           domain_id=domain1['id'])
         self.assertRaises(exception.NotFound,
                           self.identity_api.check_user_in_group,
                           user1['id'],
@@ -1408,14 +1414,19 @@ class IdentityTests(object):
             user_id=user1['id'],
             group_id=group1['id'])
         self.identity_api.delete_group(group1['id'])
-        self.assertRaises(exception.GroupNotFound,
-                          self.identity_api.list_grants,
-                          group_id=group1['id'],
-                          project_id=project1['id'])
-        self.assertRaises(exception.GroupNotFound,
-                          self.identity_api.list_grants,
-                          group_id=group1['id'],
-                          domain_id=domain1['id'])
+        # These checks are no longer viable as the LDAP
+        # backends do not supply notifications if a group
+        # is deleted. This merely ties assignments to the
+        # Identity API, which should be a controller check,
+        # Not an API check.
+#        self.assertRaises(exception.GroupNotFound,
+#                          self.identity_api.list_grants,
+#                          group_id=group1['id'],
+#                          project_id=project1['id'])
+#        self.assertRaises(exception.GroupNotFound,
+#                          self.identity_api.list_grants,
+#                          group_id=group1['id'],
+#                          domain_id=domain1['id'])
         self.identity_api.get_user(user1['id'])
 
     def test_delete_domain_with_user_group_project_links(self):
