@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//+lg\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-08-12T07:23:30Z",
+      "side": 1,
+      "message": "nit: \n\nself.assertTrue(user_ref[\u0027enabled\u0027])",
+      "revId": "7b00dc26de35e9e285cfa56d57a8ba7785851827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//+lc\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-08-12T07:23:30Z",
+      "side": 1,
+      "message": "nit:\n\nself.assertFalse(user_ref[\u0027enabled\u0027])",
+      "revId": "7b00dc26de35e9e285cfa56d57a8ba7785851827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
