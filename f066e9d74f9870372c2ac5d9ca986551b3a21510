@@ -16,6 +16,24 @@
       "revId": "f066e9d74f9870372c2ac5d9ca986551b3a21510",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//+do\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 8278
+      },
+      "writtenOn": "2013-08-12T08:09:55Z",
+      "side": 1,
+      "message": "Hi Victor, we also can not change \u0027id\u0027, OpenStack will check it in \nself.identity_api.update_user() method.",
+      "parentUuid": "AAAAQ3//+mQ\u003d",
+      "revId": "f066e9d74f9870372c2ac5d9ca986551b3a21510",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
