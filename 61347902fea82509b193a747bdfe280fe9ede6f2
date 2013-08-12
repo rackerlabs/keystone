@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//9Jk\u003d",
+        "filename": ".gitignore",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-12T14:50:35Z",
+      "side": 1,
+      "message": "I just found this handy while doing development and testing, and this is where the files seem to go, so I\u0027d like to leave it more specific until someone else finds it useful.",
+      "parentUuid": "AAAAQn/+6Wc\u003d",
+      "revId": "61347902fea82509b193a747bdfe280fe9ede6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/+6Wg\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-10T01:03:19Z",
       "side": 1,
       "message": "Nit: \"it is now possible\" or \"it is possible\"",
+      "revId": "61347902fea82509b193a747bdfe280fe9ede6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//9Hc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-12T14:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/+6Wg\u003d",
       "revId": "61347902fea82509b193a747bdfe280fe9ede6f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//9H8\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-12T14:50:35Z",
+      "side": 1,
+      "message": "@Luis - get_localized_message() doesn\u0027t always return unicode. In the case where the message (error.args[0]) is not an instance of openstack.common.Message. See https://github.com/openstack/oslo-incubator/blob/master/openstack/common/gettextutils.py#L278\n\nA unit test fails if the unicode() function is not used, test_middleware_type_error, https://github.com/openstack/keystone/blob/master/tests/test_wsgi.py#L152",
+      "parentUuid": "AAAAQn/+6Vk\u003d",
+      "revId": "61347902fea82509b193a747bdfe280fe9ede6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/+64o\u003d",
         "filename": "tests/test_wsgi.py",
         "patchSetId": 8
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//9Hg\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-12T14:50:35Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "AAAAQn/+64o\u003d",
+      "revId": "61347902fea82509b193a747bdfe280fe9ede6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/+64w\u003d",
         "filename": "tests/test_wsgi.py",
         "patchSetId": 8
@@ -98,6 +170,24 @@
       "writtenOn": "2013-08-09T21:24:13Z",
       "side": 1,
       "message": "typo, availale should be available",
+      "revId": "61347902fea82509b193a747bdfe280fe9ede6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//9Ho\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-12T14:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/+64w\u003d",
       "revId": "61347902fea82509b193a747bdfe280fe9ede6f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
