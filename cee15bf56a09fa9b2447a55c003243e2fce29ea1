@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//68o\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-12T23:31:30Z",
+      "side": 1,
+      "message": "I don\u0027t think the logic is quite correct. This if check here should be first so that attribute_ignore is handled first like it was before.",
+      "revId": "cee15bf56a09fa9b2447a55c003243e2fce29ea1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
