@@ -52,6 +52,24 @@
       "revId": "7a7cdbcd843cef188fa85e673bf391d8c82199e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//79A\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2479,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-08-12T19:16:32Z",
+      "side": 1,
+      "message": "@henry would you be opposed to have the tests in test_keystoneclient.py?",
+      "parentUuid": "AAAAQ3//79s\u003d",
+      "revId": "7a7cdbcd843cef188fa85e673bf391d8c82199e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
