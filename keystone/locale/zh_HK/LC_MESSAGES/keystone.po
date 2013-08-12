@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-08-02 17:05+0000\n"
+"POT-Creation-Date: 2013-08-12 06:00+0000\n"
 "PO-Revision-Date: 2013-07-29 22:01+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Chinese (Hong Kong) "
@@ -36,6 +36,10 @@ msgstr ""
 #: keystone/clean.py:36
 #, python-format
 msgid "%(property_name)s is not a %(display_expected_type)s"
+msgstr ""
+
+#: keystone/cli.py:82 keystone/cli.py:118
+msgid "This extension does not provide migrations."
 msgstr ""
 
 #: keystone/exception.py:48
@@ -194,7 +198,12 @@ msgstr ""
 msgid "Failed to checkout %s"
 msgstr ""
 
-#: keystone/assignment/core.py:529
+#: keystone/assignment/core.py:187
+#, python-format
+msgid "Creating the default role %s because it does not exist."
+msgstr ""
+
+#: keystone/assignment/core.py:543
 #, python-format
 msgid "Expected dict or list: %s"
 msgstr ""
@@ -205,7 +214,7 @@ msgstr ""
 msgid "Cannot remove role that has not been granted, %s"
 msgstr ""
 
-#: keystone/assignment/backends/ldap.py:418
+#: keystone/assignment/backends/ldap.py:403
 #, python-format
 msgid "Role %s not found"
 msgstr ""
@@ -345,7 +354,12 @@ msgstr ""
 msgid "Invalid token in normalize_domain_id"
 msgstr ""
 
-#: keystone/common/utils.py:233
+#: keystone/common/utils.py:74
+#, python-format
+msgid "Truncating user password to %s characters."
+msgstr ""
+
+#: keystone/common/utils.py:232
 msgid ""
 "Error setting up the debug environment. Verify that the option --debug-"
 "url has the format <host>:<port> and that a debugger processes is "
@@ -393,7 +407,7 @@ msgstr ""
 msgid "Authorization failed. %(exception)s from %(remote_addr)s"
 msgstr ""
 
-#: keystone/common/wsgi.py:487
+#: keystone/common/wsgi.py:486
 msgid "The resource could not be found."
 msgstr ""
 
@@ -426,52 +440,52 @@ msgstr ""
 msgid "Invalid LDAP scope: %(scope)s. Choose one of: %(options)s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:189
+#: keystone/common/ldap/core.py:198
 #, python-format
 msgid ""
 "Invalid additional attribute mapping: \"%s\". Format must be "
 "<ldap_attribute>:<keystone_attribute>"
 msgstr ""
 
-#: keystone/common/ldap/core.py:195
+#: keystone/common/ldap/core.py:204
 #, python-format
 msgid ""
 "Invalid additional attribute mapping: \"%(item)s\". Value "
 "\"%(attr_map)s\" must use one of %(keys)s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:279 keystone/identity/backends/kvs.py:177
+#: keystone/common/ldap/core.py:288 keystone/identity/backends/kvs.py:177
 #: keystone/identity/backends/kvs.py:205
 #, python-format
 msgid "Duplicate name, %s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:289 keystone/identity/backends/kvs.py:170
+#: keystone/common/ldap/core.py:298 keystone/identity/backends/kvs.py:170
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:294
+#: keystone/common/ldap/core.py:303
 #, python-format
 msgid "LDAP %s create"
 msgstr ""
 
-#: keystone/common/ldap/core.py:372
+#: keystone/common/ldap/core.py:381
 #, python-format
 msgid "LDAP %s update"
 msgstr ""
 
-#: keystone/common/ldap/core.py:405
+#: keystone/common/ldap/core.py:414
 #, python-format
 msgid "LDAP %s delete"
 msgstr ""
 
-#: keystone/common/ldap/core.py:430
+#: keystone/common/ldap/core.py:439
 #, python-format
 msgid "LDAP init: url=%s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:431
+#: keystone/common/ldap/core.py:440
 #, python-format
 msgid ""
 "LDAP init: use_tls=%(use_tls)s\n"
@@ -481,64 +495,64 @@ msgid ""
 "tls_avail=%(tls_avail)s\n"
 msgstr ""
 
-#: keystone/common/ldap/core.py:450
+#: keystone/common/ldap/core.py:459
 msgid "Invalid TLS / LDAPS combination"
 msgstr ""
 
-#: keystone/common/ldap/core.py:454
+#: keystone/common/ldap/core.py:463
 #, python-format
 msgid "Invalid LDAP TLS_AVAIL option: %s. TLS not available"
 msgstr ""
 
-#: keystone/common/ldap/core.py:464
+#: keystone/common/ldap/core.py:473
 #, python-format
 msgid "tls_cacertfile %s not found or is not a file"
 msgstr ""
 
-#: keystone/common/ldap/core.py:476
+#: keystone/common/ldap/core.py:485
 #, python-format
 msgid "tls_cacertdir %s not found or is not a directory"
 msgstr ""
 
-#: keystone/common/ldap/core.py:483
+#: keystone/common/ldap/core.py:492
 #, python-format
 msgid "LDAP TLS: invalid TLS_REQUIRE_CERT Option=%s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:497
+#: keystone/common/ldap/core.py:506
 #, python-format
 msgid "LDAP bind: dn=%s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:508
+#: keystone/common/ldap/core.py:517
 #, python-format
 msgid "LDAP add: dn=%(dn)s, attrs=%(attrs)s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:514
+#: keystone/common/ldap/core.py:523
 #, python-format
 msgid ""
 "LDAP search: dn=%(dn)s, scope=%(scope)s, query=%(query)s, "
 "attrs=%(attrlist)s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:567
+#: keystone/common/ldap/core.py:576
 msgid ""
 "LDAP Server does not support paging. Disable paging in keystone.conf to "
 "avoid this message."
 msgstr ""
 
-#: keystone/common/ldap/core.py:584
+#: keystone/common/ldap/core.py:593
 #, python-format
 msgid "LDAP modify: dn=%(dn)s, modlist=%(modlist)s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:590
+#: keystone/common/ldap/core.py:599
 #, python-format
 msgid "LDAP delete: dn=%s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:595
+#: keystone/common/ldap/core.py:604
 #, python-format
 msgid "LDAP delete_ext: dn=%(dn)s, serverctrls=%(serverctrls)s"
 msgstr ""
@@ -634,11 +648,11 @@ msgstr ""
 msgid "Search scope %s not implemented."
 msgstr ""
 
-#: keystone/common/sql/core.py:119
+#: keystone/common/sql/core.py:121
 msgid "Global engine callback raised."
 msgstr ""
 
-#: keystone/common/sql/core.py:233
+#: keystone/common/sql/core.py:237
 #, python-format
 msgid "Got mysql server has gone away: %s"
 msgstr ""
@@ -648,7 +662,7 @@ msgstr ""
 msgid "Cannot migrate EC2 credential: %s"
 msgstr ""
 
-#: keystone/common/sql/migration.py:47
+#: keystone/common/sql/migration.py:57
 msgid "version should be an integer"
 msgstr ""
 
@@ -705,13 +719,33 @@ msgid ""
 "be removed from the group. The user will be ignored."
 msgstr ""
 
-#: keystone/identity/backends/ldap.py:334
+#: keystone/identity/backends/ldap.py:317
 msgid "Changing Name not supported by LDAP"
 msgstr ""
 
-#: keystone/identity/backends/ldap.py:347
+#: keystone/identity/backends/ldap.py:330
 #, python-format
 msgid "User %(user_id)s is already a member of group %(group_id)s"
+msgstr ""
+
+#: keystone/openstack/common/log.py:244
+#, python-format
+msgid "Deprecated: %s"
+msgstr ""
+
+#: keystone/openstack/common/log.py:336
+#, python-format
+msgid "Error loading logging config %(log_config)s: %(err_msg)s"
+msgstr ""
+
+#: keystone/openstack/common/log.py:386
+#, python-format
+msgid "syslog facility must be one of: %s"
+msgstr ""
+
+#: keystone/openstack/common/log.py:556
+#, python-format
+msgid "Fatal call to deprecated config: %(msg)s"
 msgstr ""
 
 #: keystone/openstack/common/policy.py:394
@@ -748,12 +782,12 @@ msgstr ""
 msgid "enforce %(action)s: %(credentials)s"
 msgstr ""
 
-#: keystone/token/controllers.py:378
+#: keystone/token/controllers.py:374
 #, python-format
 msgid "User %(u_id)s is unauthorized for tenant %(t_id)s"
 msgstr ""
 
-#: keystone/token/controllers.py:395 keystone/token/controllers.py:398
+#: keystone/token/controllers.py:391 keystone/token/controllers.py:394
 msgid "Token does not belong to specified tenant."
 msgstr ""
 
