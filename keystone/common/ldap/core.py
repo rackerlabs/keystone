@@ -101,6 +101,33 @@ def ldap_scope(scope):
                 'options': ', '.join(LDAP_SCOPES.keys())})
 
 
+def normalize_dn(dn):
+    """Normalize DN.
+
+    Given a DN in ldap.dn representation, normalizes it by lowercasing the
+    attribute names.
+
+    """
+    norm = []
+    for part in dn:
+        name, val, i = part[0]
+        name = name.lower()
+        norm.append([(name, val, i)])
+    return norm
+
+
+def normalize_dn_str(dn_str):
+    """Normalize DN.
+
+    Given a DN in string representation, normalizes it by lowercasing the
+    attribute names.
+
+    """
+    dn = ldap.dn.str2dn(dn_str)
+    res = ldap.dn.dn2str(normalize_dn(dn))
+    return res
+
+
 class BaseLdap(object):
     DEFAULT_SUFFIX = "dc=example,dc=com"
     DEFAULT_OU = None
