@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//9B8\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-12T15:11:28Z",
+      "side": 1,
+      "message": "@Victor - this is not a minor change and completely changes what\u0027s being validated. Using assertTrue will not verify that user_ref[\u0027enabled\u0027] is a Boolean as expected. self.assertTrue(user_ref[\u0027enabled\u0027]) passes even if user_ref[\u0027enabled\u0027] is 514 or a non-empty list or any number of other non-Booleans someone might mistakenly put in there. So self.assertIs(user_ref[\u0027enabled\u0027], True) is the correct way to test that the backend is working correctly and returning a Boolean that is True.",
+      "parentUuid": "AAAAQ3//+lg\u003d",
+      "revId": "7b00dc26de35e9e285cfa56d57a8ba7785851827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//+lc\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-12T07:23:30Z",
       "side": 1,
       "message": "nit:\n\nself.assertFalse(user_ref[\u0027enabled\u0027])",
+      "revId": "7b00dc26de35e9e285cfa56d57a8ba7785851827",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//9B0\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-12T15:11:28Z",
+      "side": 1,
+      "message": "same response here.",
+      "parentUuid": "AAAAQ3//+lc\u003d",
       "revId": "7b00dc26de35e9e285cfa56d57a8ba7785851827",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
