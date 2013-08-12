@@ -86,6 +86,24 @@
       "revId": "25ac3c5949bf7904b9c1639af31496653d8eb094",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//+sc\u003d",
+        "filename": "tests/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1177,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-08-12T06:05:12Z",
+      "side": 1,
+      "message": "31 migration works only for mysql dialect (there are no extra indexes for credential table in other dialect). Upgrade method removes extra indexes and downgrade restores database state. Test checks that downgrade restores indexes for mysql and does not anything for other. Actual state of tests checks only sqlite dialect. But there is optional test _sql_livetest.py that uses this code for testing. So, for _sql_livetest.py it will work (tested in local mode).",
+      "parentUuid": "AAAAQn/+6xk\u003d",
+      "revId": "25ac3c5949bf7904b9c1639af31496653d8eb094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
