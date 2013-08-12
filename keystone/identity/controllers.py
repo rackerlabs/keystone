@@ -216,6 +216,11 @@ class User(controller.V2Controller):
             msg = 'Enabled field should be a boolean'
             raise exception.ValidationError(message=msg)
 
+        can_be_modified = ["name", "email", "enabled", "password"]
+        for k in user:
+            if k != 'id' and k not in can_be_modified:
+                raise exception.ValidationError('Cannot change %s' % k)
+
         user_ref = self.identity_api.update_user(user_id, user)
 
         if user.get('password') or not user.get('enabled', True):
