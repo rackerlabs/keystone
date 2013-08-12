@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//8no\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2479,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-12T16:57:02Z",
+      "side": 1,
+      "message": "I know we have been having issues as to where this test lives, but it can\u0027t be right that a test of the backend calls the controller layer.  I notice you are formally testing the controller layer in the test_v3_auth.py tests, so if there is to be test at this level then it should be ensuring the backend fucntions that the controllers rely on work as designed....which would be the token deletion functions...which may already be suitably tested.",
+      "revId": "7a7cdbcd843cef188fa85e673bf391d8c82199e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
