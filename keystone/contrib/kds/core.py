@@ -302,6 +302,16 @@ class Manager(manager.Manager):
     def create_group(self, name):
         self.driver.set_group_key(name)
 
+    def delete_key(self, name):
+        if '.' not in name:
+            raise exception.Unauthorized('Invalid Request')
+        self.driver.del_key(name)
+
+    def delete_group(self, name):
+        if '.' in name:
+            raise exception.Unauthorized('Invalid Request')
+        self.driver.del_key(name)
+
 
 class Driver(object):
     """Interface description for a KDS driver."""
@@ -312,6 +322,10 @@ class Driver(object):
 
     def set_group_key(self, kds_id, expiration=None, key=None):
         """Set or Create group key object."""
+        raise exception.NotImplemented()
+
+    def del_group_key(self, kds_id):
+        """Delete group key object."""
         raise exception.NotImplemented()
 
     def get_shared_key(self, kds_id):

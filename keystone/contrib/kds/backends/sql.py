@@ -175,3 +175,13 @@ class KDS(sql.Base):
             return None
         d = key_ref.to_dict()
         return d['key']
+
+    def del_key(self, kds_id):
+        session = self.get_session()
+
+        # Remove group key
+        with session.begin():
+            id = self._id_from_name(kds_id)
+            key_ref = session.query(Keys).filter_by(id=id).first()
+            session.delete(key_ref)
+            session.flush()

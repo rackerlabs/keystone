@@ -36,3 +36,11 @@ class KDSController(wsgi.Application):
     def create_group(self, context, name):
         self.assert_admin(context)
         return self.kds_api.create_group(name)
+
+    def del_key(self, context, name):
+        self.assert_admin(context)
+        return self.kds_api.delete_key(name)
+
+    def delete_group(self, context, name):
+        self.assert_admin(context)
+        return self.kds_api.delete_group(name)

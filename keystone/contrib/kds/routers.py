@@ -47,3 +47,13 @@ class KDSExtension(wsgi.ExtensionRouter):
                        controller=kds_controller,
                        action='create_group',
                        conditions=dict(method=['PUT']))
+
+        mapper.connect('/kds/key/{name}',
+                       controller=kds_controller,
+                       action='del_key',
+                       conditions=dict(method=['DELETE']))
+
+        mapper.connect('/kds/group/{name}',
+                       controller=kds_controller,
+                       action='delete_group',
+                       conditions=dict(method=['DELETE']))
