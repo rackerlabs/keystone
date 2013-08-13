@@ -106,6 +106,24 @@
       "revId": "f066e9d74f9870372c2ac5d9ca986551b3a21510",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//5xM\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-13T08:23:59Z",
+      "side": 1,
+      "message": "Ah, reading the note in the bug made more sense.  I think henry is right on, we should back-fill the code to support changing the tenant rather than removing the ability to change it.",
+      "parentUuid": "AAAAQ3//5yo\u003d",
+      "revId": "f066e9d74f9870372c2ac5d9ca986551b3a21510",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
