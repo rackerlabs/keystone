@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//460\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-08-13T13:11:35Z",
+      "side": 1,
+      "message": "I\u0027m not sure about this. If we will split this path into two parts, one of them (with patches to python2.6) will looks unnecessary...",
+      "parentUuid": "AAAAQ3//6vo\u003d",
+      "revId": "fa9f4d98540a8cfeaa7a35e397965634f393bd9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//6uQ\u003d",
         "filename": "keystone/test.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//46U\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-08-13T13:11:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQ3//6uQ\u003d",
+      "revId": "fa9f4d98540a8cfeaa7a35e397965634f393bd9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//6ls\u003d",
         "filename": "tests/test_injection.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2013-08-13T01:46:35Z",
       "side": 1,
       "message": "I\u0027d prefer it if this was one function, maybe like\n\n def try_this():\n    Consumer()\n    dependency.resolve_future_dependencies()\n\n self.assertRaises(dependency.UnresolvableDependencyException, try_this)",
+      "revId": "fa9f4d98540a8cfeaa7a35e397965634f393bd9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//458\u003d",
+        "filename": "tests/test_injection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-08-13T13:11:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQ3//6ls\u003d",
       "revId": "fa9f4d98540a8cfeaa7a35e397965634f393bd9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2013-08-13T01:46:35Z",
       "side": 1,
       "message": "what\u0027s this for?",
+      "revId": "fa9f4d98540a8cfeaa7a35e397965634f393bd9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//478\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1158,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-08-13T13:11:35Z",
+      "side": 1,
+      "message": "in this test we should disable the extension - override `os_inherit` option in config and call setUp() method. So setUp() called two times when this test run.\nIt\u0027s worked because we haven\u0027t call super(...).seUp() and super(...).tearDown() in RestfulTestCase() class - base class. Now there is no possibility to do call setUp() twice so I called tearDown() before setUp() will call second time.\n\nTo fix it, moved this test to separate class.",
+      "parentUuid": "AAAAQ3//6kU\u003d",
       "revId": "fa9f4d98540a8cfeaa7a35e397965634f393bd9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
