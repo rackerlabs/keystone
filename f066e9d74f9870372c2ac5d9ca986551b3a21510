@@ -88,6 +88,24 @@
       "revId": "f066e9d74f9870372c2ac5d9ca986551b3a21510",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//5yo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-13T08:19:32Z",
+      "side": 1,
+      "message": "I think Henry was advocating the inverse, allow arbitrary properties to be set instead of block everything except \"name\", \"email\", \"enabled\", \"password\".  \n\nWe have a review open to allow arbitrary fields for projects.  Should users really prevent the storage of extra fields like this? I think limiting this keystone is the wrong approach, we should ease the restriction in the CLI if anything.",
+      "parentUuid": "AAAAQ3//50w\u003d",
+      "revId": "f066e9d74f9870372c2ac5d9ca986551b3a21510",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
