@@ -584,6 +584,13 @@ def render_exception(error):
         'title': error.title,
         'message': unicode(error)
     }}
+    headers = []
+
     if isinstance(error, exception.AuthPluginException):
         body['error']['identity'] = error.authentication
-    return render_response(status=(error.code, error.title), body=body)
+    elif isinstance(error, exception.Unauthorized):
+        headers.append(('WWW-Authenticate',
+                        'Keystone uri="%s"' % CONF.public_endpoint))
+    return render_response(status=(error.code, error.title),
+                           body=body,
+                           headers=headers)

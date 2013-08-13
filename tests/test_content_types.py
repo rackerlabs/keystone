@@ -599,6 +599,10 @@ class CoreApiTests(object):
                                  expected_status=400)
         self.assertValidErrorResponse(res)
 
+    def test_www_authenticate_header(self):
+        r = self.public_request(path='/v2.0/tenants', expected_status=401)
+        self.assertIn('Keystone uri', r.headers.get('WWW-Authenticate'))
+
 
 class JsonTestCase(RestfulTestCase, CoreApiTests):
     content_type = 'json'
