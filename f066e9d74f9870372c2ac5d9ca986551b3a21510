@@ -70,6 +70,24 @@
       "revId": "f066e9d74f9870372c2ac5d9ca986551b3a21510",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//50w\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 8278
+      },
+      "writtenOn": "2013-08-13T08:08:29Z",
+      "side": 1,
+      "message": "Hi henry,\nIf we do not do such restrict in REST API, it will cause we can update\nany property expect \u0027id\u0027 via REST api, but via CLI, we just can update \u0027name\u0027, \u0027email\u0027, \u0027enabled\u0027, it is inconsistent. \nUse OpenStack CLI command----\u0027keystone help update-user\u0027, we can see we can only update \u0027name\u0027, \u0027email\u0027 and \u0027enabled\u0027, for the other property, we can not to update, but from rest api, we can change any property expect \u0027id\u0027, such as change the tenantId or projectId, even one no-existed property. We should to make the code change to make sure REST API has same restrict with CLI command.",
+      "parentUuid": "AAAAQ3//+dE\u003d",
+      "revId": "f066e9d74f9870372c2ac5d9ca986551b3a21510",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
