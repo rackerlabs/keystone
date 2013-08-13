@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//3Jg\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-13T20:13:49Z",
+      "side": 1,
+      "message": "can\u0027t this be done as a decorator still?  It should be executed on __call__  see http://www.artima.com/weblogs/viewpost.jsp?thread\u003d240808",
+      "revId": "0b73082fce2a1f75bcdca8b02f2820fe93b810ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//3I8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-13T20:13:49Z",
+      "side": 1,
+      "message": "make this into a a decorator class with botjh __init__ and __call__ methds .   prepare is in __init__ and targetprotected is in __call__",
+      "revId": "0b73082fce2a1f75bcdca8b02f2820fe93b810ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
