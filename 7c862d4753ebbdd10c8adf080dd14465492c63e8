@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//3UY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2013-08-13T19:53:32Z",
+      "side": 1,
+      "message": "any reason for the class name not to follow pep8?",
+      "revId": "7c862d4753ebbdd10c8adf080dd14465492c63e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
