@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//6O8\u003d",
+        "filename": "tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-13T05:12:13Z",
+      "side": 1,
+      "message": "This fix seems sub-optimal.  Does it make sense to make the driver/manager have a list_token_for_trust to prevent the need for an explicit None to be passed for the sake of getting caching?",
+      "revId": "e5c4a7d310daa327c329e9c19a1320489b1bbb55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
