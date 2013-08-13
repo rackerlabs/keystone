@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//3BU\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-13T20:39:36Z",
+      "side": 1,
+      "message": "How would _get_roles_for_just_user_and_project() be immediately called? He\u0027s returning an empty set for the metadata.",
+      "parentUuid": "AAAAQn//ImE\u003d",
+      "revId": "bcea6d000a4f341e299b613ced91a1341e719d34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//Ik4\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 5
