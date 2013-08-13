@@ -16,6 +16,24 @@
       "revId": "7c862d4753ebbdd10c8adf080dd14465492c63e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//2iQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-13T22:52:58Z",
+      "side": 1,
+      "message": "Excellent point.  Will upload new patch that fixes this.",
+      "parentUuid": "AAAAQ3//3UY\u003d",
+      "revId": "7c862d4753ebbdd10c8adf080dd14465492c63e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
