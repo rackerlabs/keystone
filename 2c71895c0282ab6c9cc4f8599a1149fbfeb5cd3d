@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//4LI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-13T16:03:47Z",
+      "side": 1,
+      "message": "I find it strange that v could be None and then we compare it with old_obj[k] ... how could that be None?\n\nWhy don\u0027t we have to check that old_obj[k] exists? (the later code doesn\u0027t so it must be ok)\n\nI think it would be clearer if this check was moved into the checks (at line 398 and at line 406).\n\nBut I think what\u0027s here will work.",
+      "revId": "2c71895c0282ab6c9cc4f8599a1149fbfeb5cd3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
