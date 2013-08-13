@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//6mI\u003d",
+        "filename": "tests/test_exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-13T01:46:35Z",
+      "side": 0,
+      "message": "thank you!",
+      "revId": "db9535cfb46db4a4f3a7fdb565ea9be4db2a9ef6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

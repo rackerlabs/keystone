@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//6vo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-13T01:46:35Z",
+      "side": 1,
+      "message": "would be better if these changes were done in separate commits. See https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "fa9f4d98540a8cfeaa7a35e397965634f393bd9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6uQ\u003d",
+        "filename": "keystone/test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-13T01:46:35Z",
+      "side": 1,
+      "message": "use new format:\n\n except expected_exception as exc_value:",
+      "revId": "fa9f4d98540a8cfeaa7a35e397965634f393bd9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6ls\u003d",
+        "filename": "tests/test_injection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-13T01:46:35Z",
+      "side": 1,
+      "message": "I\u0027d prefer it if this was one function, maybe like\n\n def try_this():\n    Consumer()\n    dependency.resolve_future_dependencies()\n\n self.assertRaises(dependency.UnresolvableDependencyException, try_this)",
+      "revId": "fa9f4d98540a8cfeaa7a35e397965634f393bd9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6kc\u003d",
+        "filename": "tests/test_policy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-13T01:46:35Z",
+      "side": 1,
+      "message": "weird!",
+      "revId": "fa9f4d98540a8cfeaa7a35e397965634f393bd9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6kU\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-13T01:46:35Z",
+      "side": 1,
+      "message": "what\u0027s this for?",
+      "revId": "fa9f4d98540a8cfeaa7a35e397965634f393bd9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
