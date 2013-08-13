@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//5Dc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 7708
+      },
+      "writtenOn": "2013-08-13T12:12:28Z",
+      "side": 1,
+      "message": "So can done?\n\nreturn \u0027%s\u003d%s,%s\u0027 % (self.id_attr.lower(),",
+      "revId": "6b2fc30c8ab4f7ac409169a0653d536cdb4838df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
