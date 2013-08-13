@@ -110,11 +110,11 @@ class Token(kvs.Base, token.Driver):
                         tokens.append(token.split('-', 1)[1])
         return tokens
 
-    def list_tokens(self, user_id, tenant_id=None, trust_id=None):
-        if trust_id:
-            return self._list_tokens_for_trust(trust_id)
-        else:
-            return self._list_tokens_for_user(user_id, tenant_id)
+    def list_tokens(self, user_id, tenant_id=None):
+        return self._list_tokens_for_user(user_id, tenant_id)
+
+    def list_tokens_for_trust(self, user_id, trust_id):
+        return self._list_tokens_for_trust(trust_id)
 
     def list_revoked_tokens(self):
         tokens = []
