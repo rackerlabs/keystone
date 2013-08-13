@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//6A4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 52
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-13T06:22:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQ3//7tU\u003d",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//6/I\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 52
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-12T23:14:32Z",
       "side": 1,
       "message": "This should mirror the default in the config.py  Either unset here or config needs to have 28800 as the default.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6RI\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 52
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-13T06:22:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQ3//6/I\u003d",
       "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//6Q8\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 52
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-13T06:22:28Z",
+      "side": 1,
+      "message": "same as above.",
+      "parentUuid": "AAAAQ3//6/E\u003d",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//7Bo\u003d",
         "filename": "keystone/auth/plugins/oauth.py",
         "patchSetId": 52
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-12T23:14:32Z",
       "side": 1,
       "message": "(NIT) I would move this if-block up to the highest point in the function.  This saves extra work (no external communication) if the ids do not match.  It looks like this could be moved up to line 51 or so.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6Qg\u003d",
+        "filename": "keystone/auth/plugins/oauth.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-13T06:22:28Z",
+      "side": 1,
+      "message": "Actually, i get consumer_id *from* the access token up on line 49. Removing the entire conditional.",
+      "parentUuid": "AAAAQ3//7Bo\u003d",
       "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//6PY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-13T06:22:28Z",
+      "side": 1,
+      "message": "Updated to 28800 and 86400.",
+      "parentUuid": "AAAAQ3//7OA\u003d",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//6/M\u003d",
         "filename": "keystone/contrib/delegated_auth/backends/sql.py",
         "patchSetId": 52
@@ -115,6 +205,24 @@
       "writtenOn": "2013-08-12T23:14:32Z",
       "side": 1,
       "message": "If an index is added in the migration file, make sure to add the same index here.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6M4\u003d",
+        "filename": "keystone/contrib/delegated_auth/backends/sql.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-13T06:22:28Z",
+      "side": 1,
+      "message": "Added this a few lines up:\n__table_args__ \u003d (\n        sql.Index(\u0027ix_consumer_id\u0027, \u0027id\u0027)\n    )",
+      "parentUuid": "AAAAQ3//6/M\u003d",
       "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//6Ms\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-13T06:22:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQ3//7Ls\u003d",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//7NM\u003d",
         "filename": "keystone/contrib/delegated_auth/core.py",
         "patchSetId": 52
@@ -149,6 +275,24 @@
       "writtenOn": "2013-08-12T23:14:32Z",
       "side": 1,
       "message": "Should this be a ProjectNotFound and not an Unauthorized?  I\u0027m inclined to say this should be an Unauthorized as well.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6KA\u003d",
+        "filename": "keystone/contrib/delegated_auth/core.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-13T06:22:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQ3//7NM\u003d",
       "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +333,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//6L4\u003d",
+        "filename": "keystone/contrib/delegated_auth/migrate_repo/versions/001_add_delegated_auth_tables.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-13T06:22:28Z",
+      "side": 1,
+      "message": "I think, you meant that it would go a few lines down (in the access token table).\n\nI\u0027m not convinced yet either, but it\u0027s easy enough to add, so why not.",
+      "parentUuid": "AAAAQ3//7DE\u003d",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//6/8\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 52
@@ -200,6 +362,24 @@
       "writtenOn": "2013-08-12T23:14:32Z",
       "side": 1,
       "message": "You need to ensure that the memcache and kvs token drivers do the right things with the consumer_id being passed to them.\n\nYou have the SQL one working as expected, so likely this code needs to be able to understand consumer_id as well.",
+      "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6BA\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-13T06:22:28Z",
+      "side": 1,
+      "message": "Good call, I added consumer_id to list_tokens, and modified the kvs and memcache backends.",
+      "parentUuid": "AAAAQ3//6/8\u003d",
       "revId": "72f5b97be53c5ee8a3087558f7d8b70a54af83b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
