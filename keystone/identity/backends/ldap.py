@@ -102,8 +102,6 @@ class Identity(identity.Driver):
         if 'id' in user and user['id'] != user_id:
             raise exception.ValidationError('Cannot change user ID')
         old_obj = self.user.get(user_id)
-        if 'name' in user and old_obj.get('name') != user['name']:
-            raise exception.Conflict('Cannot change user name')
 
         if 'tenant_id' in user and \
                 old_obj.get('tenant_id') != user['tenant_id']:
