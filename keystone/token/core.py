@@ -191,22 +191,34 @@ class Driver(object):
         :raises: keystone.exception.TokenNotFound
 
         """
-        token_list = self.list_tokens(user_id,
-                                      tenant_id=tenant_id,
-                                      trust_id=trust_id)
+        if trust_id:
+            token_list = self.list_tokens_for_trust(user_id, trust_id)
+        else:
+            token_list = self.list_tokens(user_id,
+                                          tenant_id)
         for token in token_list:
             try:
                 self.delete_token(token)
             except exception.NotFound:
                 pass
 
-    def list_tokens(self, user_id, tenant_id=None, trust_id=None):
+    def list_tokens(self, user_id, tenant_id=None):
         """Returns a list of current token_id's for a user
 
         :param user_id: identity of the user
         :type user_id: string
         :param tenant_id: identity of the tenant
         :type tenant_id: string
+        :returns: list of token_id's
+
+        """
+        raise exception.NotImplemented()
+
+    def list_tokens_for_trust(self, user_id, trust_id):
+        """Returns a list of current token_id's for a user
+
+        :param user_id: identity of the user
+        :type user_id: string
         :param trust_id: identified of the trust
         :type trust_id: string
         :returns: list of token_id's
