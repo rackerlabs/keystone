@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//3BI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-13T20:40:06Z",
+      "side": 1,
+      "message": "I don\u0027t think this will link to the blueprint. Try: \n\nblueprint endpoint-filtering",
+      "revId": "051c5aad062c3fb318dfc3a4405bb19fc20c4742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//3Bc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-13T20:40:06Z",
+      "side": 1,
+      "message": "Might be able to remove \u0027Implemented the endpoint filtering blueprint\u0027 part since that is what blueprint usually implies.",
+      "revId": "051c5aad062c3fb318dfc3a4405bb19fc20c4742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
