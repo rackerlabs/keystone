@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//62w\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_username_length.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-13T00:09:20Z",
+      "side": 1,
+      "message": "also add , \u0027ibm_db_sa\u0027 for DB2; alternatively, make it not mysql because it\u0027s the only one that seems to truncate.",
+      "revId": "7dc582c730df476c069d8b453b0c7b33a58a54ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//62s\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_username_length.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-13T00:09:20Z",
+      "side": 1,
+      "message": "add \"and DB2\"",
+      "revId": "7dc582c730df476c069d8b453b0c7b33a58a54ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
