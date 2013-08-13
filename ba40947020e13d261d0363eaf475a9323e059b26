@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQ3//28Q\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-13T20:53:21Z",
+      "side": 1,
+      "message": "Might need to split this up into \u0027Fixes bug 1172106\u0027, the link doesn\u0027t work as is.",
+      "revId": "ba40947020e13d261d0363eaf475a9323e059b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//H7g\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
