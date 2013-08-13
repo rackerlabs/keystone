@@ -2281,7 +2281,7 @@ class TokenTests(object):
         self.token_api.get_token(token_id3)
 
     def test_delete_tokens_trust(self):
-        tokens = self.token_api.list_tokens(user_id='testuserid')
+        tokens = self.token_api.list_tokens('testuserid')
         self.assertEquals(len(tokens), 0)
         token_id1 = self.create_token_sample_data(tenant_id='testtenantid',
                                                   trust_id='testtrustid')
@@ -2343,7 +2343,7 @@ class TokenTests(object):
     def test_token_list_trust(self):
         trust_id = uuid.uuid4().hex
         token_id5 = self.create_token_sample_data(trust_id=trust_id)
-        tokens = self.token_api.list_tokens('testuserid', trust_id=trust_id)
+        tokens = self.token_api.list_tokens_for_trust('testuserid', trust_id)
         self.assertEquals(len(tokens), 1)
         self.assertIn(token_id5, tokens)
 

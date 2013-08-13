@@ -180,7 +180,13 @@ class Token(token.Driver):
         self._add_to_revocation_list(data)
         return result
 
-    def list_tokens(self, user_id, tenant_id=None, trust_id=None):
+    def list_tokens(self, user_id, tenant_id=None):
+        return self._list_tokens(user_id, tenant_id)
+
+    def list_tokens_for_trust(self, user_id, trust_id):
+        return self._list_tokens(user_id, trust_id=trust_id)
+
+    def _list_tokens(self, user_id, tenant_id=None, trust_id=None):
         tokens = []
         user_key = self._prefix_user_id(user_id)
         user_record = self.client.get(user_key) or ""
