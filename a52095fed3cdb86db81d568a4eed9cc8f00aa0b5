@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//3K0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-13T20:07:42Z",
+      "side": 1,
+      "message": "Because SQL migrations requires it for work on the ec2 credential table.",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3///gk\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/031_migrate_ec2credentials_table_credentials.py",
         "patchSetId": 9
