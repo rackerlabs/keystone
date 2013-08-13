@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQ3//23E\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-13T21:16:50Z",
+      "side": 1,
+      "message": "Redo this as a comparison  function instead of one that mutates the results?  I don\u0027t want someone using it by accident and converting data sent to the server.",
+      "revId": "6b2fc30c8ab4f7ac409169a0653d536cdb4838df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//5Dc\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
@@ -31,6 +48,23 @@
       "side": 1,
       "message": "Not sure what the question is here, or if there\u0027s a suggestion to change something. I guess we could lowercase the id_attr here, but it\u0027s typically lowercase already (the default config is \u0027cn\u0027). Also, the LDAP server is going to do whatever it wants with DNs sent to it. For example, Active Directory will uppercase the attribute names in the DNs when an entry is added or a member or roleOccupant is added.",
       "parentUuid": "AAAAQ3//5Dc\u003d",
+      "revId": "6b2fc30c8ab4f7ac409169a0653d536cdb4838df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//3AE\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-13T21:16:50Z",
+      "side": 1,
+      "message": "AD, as that is not the only directory server that does this, but just describe the behaviour.",
       "revId": "6b2fc30c8ab4f7ac409169a0653d536cdb4838df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
