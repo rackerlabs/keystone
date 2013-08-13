@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH////U\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-13T23:44:14Z",
+      "side": 1,
+      "message": "don\u0027t reinvent bugs -- use oslo timeutils",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
