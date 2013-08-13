@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//2uk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-08-13T21:48:07Z",
+      "side": 1,
+      "message": "Ah.. glad that you noticed. I think it always work this way before but I am seeing that it\u0027s not showing the link somehow. I will change it with next commit. Thanks!",
+      "parentUuid": "AAAAQ3//28Q\u003d",
+      "revId": "ba40947020e13d261d0363eaf475a9323e059b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//H7g\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-06T21:11:22Z",
       "side": 1,
       "message": "Should these two comments be combined?",
+      "revId": "ba40947020e13d261d0363eaf475a9323e059b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//2u4\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-08-13T21:48:07Z",
+      "side": 1,
+      "message": "Hi Lance, sure. thanks. I am seeing changes in the current approach and the comment may need to change accordingly but I will keep in mind the work progress.",
+      "parentUuid": "AAAAQn//H7g\u003d",
       "revId": "ba40947020e13d261d0363eaf475a9323e059b26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
