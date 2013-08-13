@@ -101,9 +101,10 @@ class Identity(identity.Driver):
         user = self.assignment_api._validate_default_domain(user)
         if 'id' in user and user['id'] != user_id:
             raise exception.ValidationError('Cannot change user ID')
+        for u in self.user.get_all():
+            if user['id'] != u['id'] and user['name'] == u['name']:
+                raise exception.Conflict('Cannot rename duplicate user name')
         old_obj = self.user.get(user_id)
-        if 'name' in user and old_obj.get('name') != user['name']:
-            raise exception.Conflict('Cannot change user name')
 
         if 'tenant_id' in user and \
                 old_obj.get('tenant_id') != user['tenant_id']:
