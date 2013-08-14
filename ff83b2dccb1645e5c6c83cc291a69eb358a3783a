@@ -237,6 +237,193 @@
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///lM\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:36:26Z",
+      "side": 1,
+      "message": "this request body should be documented in the spec ... it\u0027s not",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///lg\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:36:26Z",
+      "side": 1,
+      "message": "save a line of code and put this in the dict above",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///lc\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:36:26Z",
+      "side": 1,
+      "message": "same",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///lQ\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:36:26Z",
+      "side": 1,
+      "message": "the scope can be applied implicitly from the access token\u0027s authorized project... the client shouldn\u0027t have to specify it here",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///k4\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:36:26Z",
+      "side": 1,
+      "message": "explain why!\n\n  # this is poorly written\n\nis not helpful",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///kg\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:36:26Z",
+      "side": 1,
+      "message": "secret",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///kc\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:36:26Z",
+      "side": 1,
+      "message": "secret",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///kY\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:36:26Z",
+      "side": 1,
+      "message": "secret",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///kU\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:36:26Z",
+      "side": 1,
+      "message": "secret",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///j0\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:36:26Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///js\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:36:26Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
