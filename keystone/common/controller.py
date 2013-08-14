@@ -127,13 +127,14 @@ def filterprotected(*filters):
                 # First  any query filter parameters
                 target = dict()
                 if len(filters) > 0:
-                    for filter in filters:
-                        if filter in context['query_string']:
-                            target[filter] = context['query_string'][filter]
+                    for filter_item in filters:
+                        if filter_item in context['query_string']:
+                            target[filter_item] = \
+                                context['query_string'][filter_item]
 
                     LOG.debug(_('RBAC: Adding query filter params (%s)') % (
-                        ', '.join(['%s=%s' % (filter, target[filter])
-                                  for filter in target])))
+                        ', '.join(['%s=%s' % (filter_item, target[filter_item])
+                                  for filter_item in target])))
 
                 # Now any formal url parameters
                 for key in kwargs:
