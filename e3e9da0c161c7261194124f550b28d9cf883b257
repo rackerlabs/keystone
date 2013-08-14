@@ -2,6 +2,125 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAARH//8T8\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "Your migration file does not include the ForeignKey, you should remove it here.",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8T4\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "Your migration file does not include the ForeignKey, you should remove it here.",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8TE\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "This comment should be removed.",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8Tc\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "This if-block, as written, is superfluous, as it returns \"None\", and a method implicitly returns None.  It looks like you are missing something here.",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8SM\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "String needs to be wrapped in _() for translation.",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8Qg\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "Make sure the docstring reflects proper raising, it looks like you moved this raise to the controller and the SQL driver doesn\u0027t raise this exception.",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8Qk\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "Make sure the docstring reflects proper raising, it looks like you moved this raise to the controller and the SQL driver doesn\u0027t raise this exception.",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//9go\u003d",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 15
@@ -30,6 +149,193 @@
       "writtenOn": "2013-08-14T15:16:35Z",
       "side": 1,
       "message": "Controllers go in controllers.py",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8OI\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be needed, the catalog api raises EndpointNotFound if the endpoint_id isn\u0027t valid",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8OE\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "This should not be needed, get_project raises ProjectNotFound for an invalid project_id",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8Nw\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "A comment here as to why you\u0027re catching and re-raising the exception would be good.  As it stands there feels like there is something missing here.",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8No\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be needed, the catalog api raises EndpointNotFound if the endpoint_id isn\u0027t valid",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8Ng\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "This should not be needed, get_project raises ProjectNotFound for an invalid project_id",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8Nc\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "Why are you catching and re-raising the same exception here?",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8NQ\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "This should not be needed, get_project raises ProjectNotFound for an invalid project_id",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8O4\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "String needs to be wrapped in _() for translation.",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8P4\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "Is there a reason this import is here instead of at the top?",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8O0\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "String needs to be wrapped in _() for translation.",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8QQ\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-14T21:36:24Z",
+      "side": 1,
+      "message": "Is there a reason you\u0027re doing this import here instead at the top?",
       "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
