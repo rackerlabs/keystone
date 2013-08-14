@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//73c\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-14T23:45:22Z",
+      "side": 1,
+      "message": "is this part not accurate anymore?",
+      "revId": "862dd7296db3796bd7e7741dca5432a68eaaf2ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//734\u003d",
+        "filename": "tests/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-14T23:45:22Z",
+      "side": 1,
+      "message": "change 73-75 to\n\n tz_original \u003d os.environ.get(\u0027TZ\u0027)",
+      "revId": "862dd7296db3796bd7e7741dca5432a68eaaf2ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//74A\u003d",
+        "filename": "tests/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-14T23:45:22Z",
+      "side": 1,
+      "message": "use assertEqual here so we\u0027ll get a nicer error message.",
+      "revId": "862dd7296db3796bd7e7741dca5432a68eaaf2ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//73o\u003d",
+        "filename": "tests/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-14T23:45:22Z",
+      "side": 1,
+      "message": "84-88 has to be done even if the assert fails and raises, so this should be in finally: , and 76-82 in try:",
+      "revId": "862dd7296db3796bd7e7741dca5432a68eaaf2ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
