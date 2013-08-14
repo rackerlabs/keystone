@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//840\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-14T18:02:43Z",
+      "side": 1,
+      "message": "In response to dolphm\u0027s comment on moving this to the manager. How are we going to get around requiring the context? Here we have context passed in and we can use the in the notification. The notification api requires context be passed in. \n\nhttps://github.com/openstack/oslo-incubator/blob/master/openstack/common/notifier/api.py#L95\n\nIf we move this to the manager and implement it there, we don\u0027t have the context available to us to pass it in. Thoughts on how we should approach this?",
+      "revId": "8b893ae5905a6ebbeefbef92594b8fab7a8f1c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
