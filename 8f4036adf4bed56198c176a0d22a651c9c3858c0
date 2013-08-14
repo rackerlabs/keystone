@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//9I4\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6928
+      },
+      "writtenOn": "2013-08-14T17:03:00Z",
+      "side": 1,
+      "message": "Nit: Should be prefixed with _?",
+      "revId": "8f4036adf4bed56198c176a0d22a651c9c3858c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//9JI\u003d",
+        "filename": "tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6928
+      },
+      "writtenOn": "2013-08-14T17:03:00Z",
+      "side": 1,
+      "message": "Strictly speaking this should return a string to behave like gettext.find",
+      "revId": "8f4036adf4bed56198c176a0d22a651c9c3858c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
