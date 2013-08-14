@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//9/4\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-14T13:18:30Z",
+      "side": 1,
+      "message": "You are going to need a migration.  See https://github.com/openstack/keystone/blob/master/doc/source/developing.rst#database-schema-migrations  for how to implement.",
+      "revId": "91f5b37aa448d76828330c531027cfcf92bf717a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//+AI\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-14T13:18:30Z",
+      "side": 1,
+      "message": "Combine user and proejct quota into a single table and just have a type field. That way we can potentially extend quotas to other objects.   We know that Domains should have quotas at a minimum.",
+      "revId": "91f5b37aa448d76828330c531027cfcf92bf717a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//+AY\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-14T13:18:30Z",
+      "side": 1,
+      "message": "Drop the foreign key constraint, as the user might be stored in LDAP.  It is in a separate backend, and you won\u0027t have referential integrity constraints.",
+      "revId": "91f5b37aa448d76828330c531027cfcf92bf717a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//+AQ\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-14T13:18:30Z",
+      "side": 1,
+      "message": "Same thing with FK contstraint.",
+      "revId": "91f5b37aa448d76828330c531027cfcf92bf717a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//9/Q\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-14T13:18:30Z",
+      "side": 1,
+      "message": "Line too long",
+      "revId": "91f5b37aa448d76828330c531027cfcf92bf717a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//9/U\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-14T13:18:30Z",
+      "side": 1,
+      "message": "Line too long",
+      "revId": "91f5b37aa448d76828330c531027cfcf92bf717a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//9/Y\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-14T13:18:30Z",
+      "side": 1,
+      "message": "Line too long",
+      "revId": "91f5b37aa448d76828330c531027cfcf92bf717a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//9/k\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-14T13:18:30Z",
+      "side": 1,
+      "message": "Blank line at end of file PEP8",
+      "revId": "91f5b37aa448d76828330c531027cfcf92bf717a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
