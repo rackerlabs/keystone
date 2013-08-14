@@ -21,6 +21,7 @@ from keystone.common import dependency
 from keystone.common import manager
 from keystone import config
 from keystone import exception
+from keystone import notifications
 from keystone.openstack.common import log as logging
 
 
@@ -78,6 +79,7 @@ class Manager(manager.Manager):
 
     def create_endpoint(self, endpoint_id, endpoint_ref):
         try:
+            notifications.notify_created(endpoint_id, 'endpoint')
             return self.driver.create_endpoint(endpoint_id, endpoint_ref)
         except exception.NotFound:
             service_id = endpoint_ref.get('service_id')
@@ -85,6 +87,7 @@ class Manager(manager.Manager):
 
     def delete_endpoint(self, endpoint_id):
         try:
+            notifications.notify_deleted(endpoint_id, 'endpoint')
             return self.driver.delete_endpoint(endpoint_id)
         except exception.NotFound:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
