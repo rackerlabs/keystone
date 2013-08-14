@@ -753,6 +753,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//75M\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-08-14T23:33:48Z",
+      "side": 1,
+      "message": "Brant: I am passing the keyword argument as you suggested. I might have made a mistake when i was trying to implement your suggestion. Updating your suggested fix in patch set 11.",
+      "parentUuid": "AAAARH//8vM\u003d",
+      "revId": "a52095fed3cdb86db81d568a4eed9cc8f00aa0b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3///ZA\u003d",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 9
