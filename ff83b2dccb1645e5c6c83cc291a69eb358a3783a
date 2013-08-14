@@ -257,6 +257,57 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///gE\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:52:37Z",
+      "side": 1,
+      "message": "save the bytes\n\n  token_data[\u0027OS-OAUTH1\u0027] \u003d {\u0027access_token_id\u0027: access_token[\u0027id\u0027]}",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///hU\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:52:37Z",
+      "side": 1,
+      "message": "drop consumer id",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///hI\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:52:37Z",
+      "side": 1,
+      "message": "this conditional doesn\u0027t make any sense to me? if you have an access token but not an oauth token..? why would that be the case?",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///lM\u003d",
         "filename": "tests/test_v3_oauth1.py",
         "patchSetId": 58
