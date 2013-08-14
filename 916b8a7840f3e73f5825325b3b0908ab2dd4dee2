@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//8rc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-14T19:06:41Z",
+      "side": 1,
+      "message": "Does this correlate to a bug or blueprint?",
+      "revId": "916b8a7840f3e73f5825325b3b0908ab2dd4dee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//8qk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-14T19:06:41Z",
+      "side": 1,
+      "message": "This is not modifying any functionality, should that be documented in the commit message?",
+      "revId": "916b8a7840f3e73f5825325b3b0908ab2dd4dee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
