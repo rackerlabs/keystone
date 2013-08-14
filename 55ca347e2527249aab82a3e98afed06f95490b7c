@@ -16,6 +16,24 @@
       "revId": "55ca347e2527249aab82a3e98afed06f95490b7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//2gk\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-08-14T23:12:18Z",
+      "side": 0,
+      "message": "I moved the test to test_keystoneclient_sql.py as the changes posted in this review will be using credential manager.",
+      "parentUuid": "AAAAQ3///WM\u003d",
+      "revId": "55ca347e2527249aab82a3e98afed06f95490b7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
