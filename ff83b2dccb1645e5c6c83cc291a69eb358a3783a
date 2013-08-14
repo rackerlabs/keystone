@@ -158,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//9Fc\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T17:16:41Z",
+      "side": 1,
+      "message": "I am now using timeutils and jsonutils throughout the patch set.",
+      "parentUuid": "AAAARH////U\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///+8\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 58
@@ -379,6 +397,24 @@
       "side": 1,
       "message": "probably giving away too much info",
       "parentUuid": "AAAARH///Cs\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//9Ek\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T17:16:41Z",
+      "side": 1,
+      "message": "changed it to just NotFound()",
+      "parentUuid": "AAAARH//99A\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -856,6 +892,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//9F4\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T17:16:41Z",
+      "side": 1,
+      "message": "I spaced them out",
+      "parentUuid": "AAAARH///cY\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///cU\u003d",
         "filename": "tests/test_v3_oauth1.py",
         "patchSetId": 58
@@ -867,6 +921,24 @@
       "writtenOn": "2013-08-14T13:37:17Z",
       "side": 1,
       "message": "sorry, i missed this\n\n  OAUTH1_PASTE_FILE",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//9VM\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T17:16:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///cU\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
