@@ -240,6 +240,23 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///iY\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:39:52Z",
+      "side": 1,
+      "message": "context[\u0027params\u0027].get(\u0027oauth_consumer_key\u0027)",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///lM\u003d",
         "filename": "tests/test_v3_oauth1.py",
         "patchSetId": 58
