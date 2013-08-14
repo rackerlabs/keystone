@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAARH///mI\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "remove this, this is just lazy",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///mM\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "the query string contains req.GET stuff ... you don\u0027t need the whole request",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH////U\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 58
@@ -13,6 +47,193 @@
       "writtenOn": "2013-08-13T23:44:14Z",
       "side": 1,
       "message": "don\u0027t reinvent bugs -- use oslo timeutils",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///+8\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "i\u0027m not sure what this is used for, but i really doubt you can trust the data in HTTP_HOST, etc, to be relevant. use CONF.public_endpoint or CONF.admin_endpoint",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///y0\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "this is specified as a POST request",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///yw\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "this is specified as POST request",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///nI\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "this should just be \u0027secret\u0027",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///nE\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "this should be a 404 not found",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///mw\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "why would there not be an id? if there IS a reason, this can be simplified to:\n\n  access_token_id \u003d formatted_entity.get(\u0027id\u0027)",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///mk\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "\u0027requested_roles\u0027 is not in the spec",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///mc\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "\u0027access_secret\u0027 is not in the spec",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///mo\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///mU\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "this should be a 404",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///mQ\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:28:30Z",
+      "side": 1,
+      "message": "this is not in the spec",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
