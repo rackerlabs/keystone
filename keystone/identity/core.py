@@ -26,6 +26,7 @@ from keystone.common import dependency
 from keystone.common import manager
 from keystone import config
 from keystone import exception
+from keystone import notifications
 from keystone.openstack.common import importutils
 from keystone.openstack.common import log as logging
 
@@ -275,6 +276,7 @@ class Manager(manager.Manager):
         ref = driver.create_user(user_id, user)
         if not driver.is_domain_aware():
             ref = self._set_domain_id(ref, domain_id)
+        notifications.notify_created(user_id, 'user')
         return ref
 
     @domains_configured
@@ -315,12 +317,15 @@ class Manager(manager.Manager):
         ref = driver.update_user(user_id, user)
         if not driver.is_domain_aware():
             ref = self._set_domain_id(ref, domain_id)
+        notifications.notify_updated(user_id, 'user')
         return ref
 
     @domains_configured
     def delete_user(self, user_id, domain_scope=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        driver.delete_user(user_id)
+        deleted_user = driver.delete_user(user_id)
+        notifications.notify_deleted(user_id, 'user')
+        return deleted_user
 
     @domains_configured
     def create_group(self, group_id, group_ref):
@@ -408,13 +413,17 @@ class Manager(manager.Manager):
         tenant.setdefault('enabled', True)
         tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         tenant.setdefault('description', '')
-        return self.assignment_api.create_project(tenant_id, tenant)
+        created_project = self.assignment_api.create_project(tenant_id, tenant)
+        notifications.notify_created(tenant_id, 'project')
+        return created_project
 
     def update_project(self, tenant_id, tenant_ref):
         tenant = tenant_ref.copy()
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
-        return self.assignment_api.update_project(tenant_id, tenant)
+        updated_project = self.assignment_api.update_project(tenant_id, tenant)
+        notifications.notify_updated(tenant_id, 'project')
+        return updated_project
 
     def get_project_by_name(self, tenant_name, domain_id):
         return self.assignment_api.get_project_by_name(tenant_name, domain_id)
@@ -460,7 +469,9 @@ class Manager(manager.Manager):
         return self.assignment_api.delete_role(role_id)
 
     def delete_project(self, tenant_id):
-        return self.assignment_api.delete_project(tenant_id)
+        deleted_project = self.assignment_api.delete_project(tenant_id)
+        notifications.notify_deleted(tenant_id, 'project')
+        return deleted_project
 
     def remove_role_from_user_and_project(self, user_id,
                                           tenant_id, role_id):
