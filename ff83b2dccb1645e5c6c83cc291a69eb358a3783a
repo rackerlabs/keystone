@@ -257,6 +257,23 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///es\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T02:56:52Z",
+      "side": 1,
+      "message": "this is insanely defensive (not sure i understand why) and very verbose. i would think that only the OS-OAUTH1 object might be missing, in which case this entire thing reduces to:\n\n  return token_ref_dict[\u0027token_data\u0027][\u0027token\u0027].get(\u0027OS-OAUTH1\u0027, {})[\u0027consumer_id\u0027] \u003d\u003d consumer_id",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///gE\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 58
