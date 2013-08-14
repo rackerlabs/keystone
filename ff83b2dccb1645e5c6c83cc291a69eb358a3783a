@@ -210,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//9W4\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T15:53:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//9kk\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///y0\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 58
@@ -255,6 +273,24 @@
       "writtenOn": "2013-08-14T15:14:22Z",
       "side": 1,
       "message": "This should be in a file called controllers.py",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//9Ww\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T15:53:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//9kg\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -506,6 +542,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//9Ws\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T15:53:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//9kU\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///mU\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 58
@@ -575,6 +629,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//9Wo\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T15:53:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//9kE\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///iY\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 58
@@ -603,6 +675,24 @@
       "writtenOn": "2013-08-14T15:14:22Z",
       "side": 1,
       "message": "This and the manager stay in core, along with any helper functions you want exposed.",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//9Wk\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T15:53:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//9jw\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
