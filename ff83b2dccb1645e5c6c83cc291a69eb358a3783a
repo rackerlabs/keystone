@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//+9U\u003d",
+        "filename": "keystone/auth/plugins/oauth.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "it\u0027s a function from https://review.openstack.org/#/c/29130/58/keystone/contrib/oauth1/core.py \nwhy would that be broken?",
+      "parentUuid": "AAAARH///eM\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///d4\u003d",
         "filename": "keystone/auth/plugins/oauth.py",
         "patchSetId": 58
@@ -30,6 +48,41 @@
       "writtenOn": "2013-08-14T03:00:56Z",
       "side": 1,
       "message": "seems like this should just be done in middleware on *every* request... if it\u0027s a valid oauth-signed request, then add something like oauth1_verified \u003d True to the environment",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//+9E\u003d",
+        "filename": "keystone/auth/plugins/oauth.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "going to ask that that be taken up as a bug. it\u0027ll involve some tinkering.",
+      "parentUuid": "AAAARH///d4\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///PI\u003d",
+        "filename": "keystone/common/oauth.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "I removed this file, and put these under the core.py file in contrib.",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +157,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//+zM\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "this part, and the part about changing the request_token and access_token to POST, as well as requiring request.environ in wsgi.py are all related. i\u0027ll ping you tmrw.",
+      "parentUuid": "AAAARH///+8\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///y0\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 58
@@ -155,6 +226,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///DM\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///nI\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///nE\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 58
@@ -172,6 +261,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///Cs\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "OK, keeping the message the same though.. unless that\u0027s giving away too much info.",
+      "parentUuid": "AAAARH///nE\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///mw\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 58
@@ -183,6 +290,24 @@
       "writtenOn": "2013-08-14T02:28:30Z",
       "side": 1,
       "message": "why would there not be an id? if there IS a reason, this can be simplified to:\n\n  access_token_id \u003d formatted_entity.get(\u0027id\u0027)",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///Ck\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "there would never not be an id, removing the conditional.",
+      "parentUuid": "AAAARH///mw\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +348,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//+y0\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "true. but again, it\u0027s saved in the backend, i\u0027m not exposing it to the user. And i need to save it to the backend.",
+      "parentUuid": "AAAARH///mc\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///mo\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 58
@@ -240,6 +383,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//+ys\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "authorizing_user_id is in the spec?\nhttps://github.com/openstack/identity-api/blob/master/openstack-identity-api/v3/src/markdown/identity-api-v3-os-oauth1-ext.md#get-authorized-access-token-get-usersuser_idos-oauth1access_tokensaccess_token_id",
+      "parentUuid": "AAAARH///mo\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///mU\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 58
@@ -251,6 +412,24 @@
       "writtenOn": "2013-08-14T02:28:30Z",
       "side": 1,
       "message": "this should be a 404",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///Cg\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "okay, but keeping msg the same.",
+      "parentUuid": "AAAARH///mU\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +487,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///O0\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "It was defensive for the sake of being defensive.\nCondensed it to:\n\noauth \u003d token_ref_dict[\u0027token_data\u0027][\u0027token\u0027].get(\u0027OS-OAUTH1\u0027, {})\nreturn oauth and oauth[\u0027consumer_id\u0027] \u003d\u003d consumer_id",
+      "parentUuid": "AAAARH///es\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///gE\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 58
@@ -342,6 +539,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///Nw\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "so, this was a change i wanted to add to the oauth spec; i want to put consumer_id back into the oauth section of the token.\n\nreason: when we delete an access token, i grab the consumer id and call delete_tokens with that consumer id (to revoke any issued tokens). In delete_tokens, I can just compare consumer_ids and delete any issued tokens. Otherwise I\u0027d have to call the oauth_api.get_access_token using the access_token  to get the consumer_id. That seems round-about, and having the consumer_id in there seems simpler.",
+      "parentUuid": "AAAARH///hU\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///hI\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 58
@@ -353,6 +568,24 @@
       "writtenOn": "2013-08-14T02:52:37Z",
       "side": 1,
       "message": "this conditional doesn\u0027t make any sense to me? if you have an access token but not an oauth token..? why would that be the case?",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///NI\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "changing to just:\nif access_token:",
+      "parentUuid": "AAAARH///hI\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -376,6 +609,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///Mg\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "yes, agreed 100%, I will upload a new patch for this to the oauth spec.",
+      "parentUuid": "AAAARH///lM\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///lg\u003d",
         "filename": "tests/test_v3_oauth1.py",
         "patchSetId": 58
@@ -387,6 +638,24 @@
       "writtenOn": "2013-08-14T02:36:26Z",
       "side": 1,
       "message": "save a line of code and put this in the dict above",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///MQ\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///lg\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -410,6 +679,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///MM\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///lc\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///lQ\u003d",
         "filename": "tests/test_v3_oauth1.py",
         "patchSetId": 58
@@ -421,6 +708,24 @@
       "writtenOn": "2013-08-14T02:36:26Z",
       "side": 1,
       "message": "the scope can be applied implicitly from the access token\u0027s authorized project... the client shouldn\u0027t have to specify it here",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///DQ\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "I\u0027m not certain on how to do this, going to bug you on irc.",
+      "parentUuid": "AAAARH///lQ\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -444,6 +749,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///F4\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "Better explanation!\n#(stevemar) bit of a hack, we have to use port 80 instead of the\n# usual port 5000 we\u0027ve been using above. For all the other oauth\n# based requests, we\u0027ve passed the request directly to the controller,\n# but for auth/tokens specifically, we are using self.admin_request\n# which doesn\u0027t let you specify the initial url/port.",
+      "parentUuid": "AAAARH///k4\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///kg\u003d",
         "filename": "tests/test_v3_oauth1.py",
         "patchSetId": 58
@@ -455,6 +778,24 @@
       "writtenOn": "2013-08-14T02:36:26Z",
       "side": 1,
       "message": "secret",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///EU\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///kg\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -478,6 +819,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///EM\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///kc\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///kY\u003d",
         "filename": "tests/test_v3_oauth1.py",
         "patchSetId": 58
@@ -489,6 +848,24 @@
       "writtenOn": "2013-08-14T02:36:26Z",
       "side": 1,
       "message": "secret",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///EI\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///kY\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -512,6 +889,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///EE\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///kU\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///j0\u003d",
         "filename": "tests/test_v3_oauth1.py",
         "patchSetId": 58
@@ -529,6 +924,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///Ds\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///j0\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///js\u003d",
         "filename": "tests/test_v3_oauth1.py",
         "patchSetId": 58
@@ -540,6 +953,24 @@
       "writtenOn": "2013-08-14T02:36:26Z",
       "side": 1,
       "message": "same as above",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///Do\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-14T08:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///js\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
