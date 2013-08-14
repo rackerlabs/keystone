@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//9go\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-14T15:16:35Z",
+      "side": 1,
+      "message": "this goes in routers.py",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//9gk\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-14T15:16:35Z",
+      "side": 1,
+      "message": "Controllers go in controllers.py",
+      "revId": "e3e9da0c161c7261194124f550b28d9cf883b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
