@@ -25,6 +25,7 @@ from keystone.common import controller
 from keystone.common import logging
 from keystone import config
 from keystone import exception
+from keystone import notifications
 
 
 CONF = config.CONF
@@ -101,6 +102,7 @@ class Tenant(controller.V2Controller):
         tenant = self.identity_api.create_project(
             tenant_ref['id'],
             self._normalize_domain_id(context, tenant_ref))
+        notifications.send_update(context, None, tenant_ref, 'identity')
         return {'tenant': self._filter_domain_id(tenant)}
 
     def update_project(self, context, tenant_id, tenant):
@@ -111,11 +113,13 @@ class Tenant(controller.V2Controller):
         clean_tenant.pop('domain_id', None)
         tenant_ref = self.identity_api.update_project(
             tenant_id, clean_tenant)
+        notifications.send_update(context, tenant, tenant_ref, 'identity')
         return {'tenant': tenant_ref}
 
     def delete_project(self, context, tenant_id):
         self.assert_admin(context)
         self.identity_api.delete_project(tenant_id)
+        notifications.send_update(context, tenant_id, None, 'identity')
 
     def get_project_users(self, context, tenant_id, **kw):
         self.assert_admin(context)
