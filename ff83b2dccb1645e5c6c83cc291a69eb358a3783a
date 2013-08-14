@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//990\u003d",
+        "filename": "keystone/auth/plugins/oauth.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T13:37:17Z",
+      "side": 1,
+      "message": "you can\u0027t reliably rebuild a URL from the environment... use CONF.public_endpoint / CONF.admin_endpoint",
+      "parentUuid": "AAAARH//+9U\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///d4\u003d",
         "filename": "keystone/auth/plugins/oauth.py",
         "patchSetId": 58
@@ -279,6 +297,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//99A\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T13:37:17Z",
+      "side": 1,
+      "message": "probably giving away too much info",
+      "parentUuid": "AAAARH///Cs\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///mw\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 58
@@ -395,6 +431,24 @@
       "side": 1,
       "message": "authorizing_user_id is in the spec?\nhttps://github.com/openstack/identity-api/blob/master/openstack-identity-api/v3/src/markdown/identity-api-v3-os-oauth1-ext.md#get-authorized-access-token-get-usersuser_idos-oauth1access_tokensaccess_token_id",
       "parentUuid": "AAAARH///mo\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//98w\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T13:37:17Z",
+      "side": 1,
+      "message": "++ i was looking at the wrong response example for this one",
+      "parentUuid": "AAAARH//+ys\u003d",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -557,6 +611,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//97g\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T13:37:17Z",
+      "side": 1,
+      "message": "that doesn\u0027t explain why you need to expose it to the user? it\u0027s just more bloat for bloated tokens :(",
+      "parentUuid": "AAAARH///Nw\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///hI\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 58
@@ -586,6 +658,40 @@
       "side": 1,
       "message": "changing to just:\nif access_token:",
       "parentUuid": "AAAARH///hI\u003d",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///cY\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T13:37:17Z",
+      "side": 1,
+      "message": "webtest and webob are not stdlib",
+      "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///cU\u003d",
+        "filename": "tests/test_v3_oauth1.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-14T13:37:17Z",
+      "side": 1,
+      "message": "sorry, i missed this\n\n  OAUTH1_PASTE_FILE",
       "revId": "ff83b2dccb1645e5c6c83cc291a69eb358a3783a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
