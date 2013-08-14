@@ -22,6 +22,7 @@ from keystone.common import logging
 from keystone.common import manager
 from keystone import config
 from keystone import exception
+from keystone import notifications
 
 
 CONF = config.CONF
@@ -89,12 +90,14 @@ class Manager(manager.Manager):
         tenant.setdefault('enabled', True)
         tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         tenant.setdefault('description', '')
+        notifications.send_update(None, tenant, 'identity')
         return self.assignment_api.create_project(tenant_id, tenant)
 
     def update_project(self, tenant_id, tenant_ref):
         tenant = tenant_ref.copy()
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+        notifications.send_update(tenant, tenant_ref, 'identity')
         return self.assignment_api.update_project(tenant_id, tenant)
 
     def get_project_by_name(self, tenant_name, domain_id):
@@ -141,6 +144,7 @@ class Manager(manager.Manager):
         return self.assignment_api.delete_role(role_id)
 
     def delete_project(self, tenant_id):
+        notifications.send_update(tenant_id, None, 'identity')
         return self.assignment_api.delete_project(tenant_id)
 
     def remove_role_from_user_and_project(self, user_id,
