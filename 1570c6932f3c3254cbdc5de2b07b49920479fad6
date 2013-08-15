@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//6oE\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 18
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7yo\u003d",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//7yg\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-15T01:01:44Z",
       "side": 1,
       "message": ", should be ;",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//6oY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 18
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7yg\u003d",
       "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//6n8\u003d",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7yU\u003d",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//7xw\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 18
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-15T01:01:44Z",
       "side": 1,
       "message": "(nit) use \u0027 for strings",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//6nY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7xw\u003d",
       "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//6nU\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "While that is true....it this means that ], needs to align with the key values....which kind of breaks up the easy scanning down the file looking for your key value....so pros and cons.",
+      "parentUuid": "AAAARH//7w4\u003d",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//7wU\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 18
@@ -98,6 +188,24 @@
       "writtenOn": "2013-08-15T01:01:44Z",
       "side": 1,
       "message": "move this comment next to line 113.",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//6nM\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7wU\u003d",
       "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//6nI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7wQ\u003d",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//7vs\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 18
@@ -132,6 +258,24 @@
       "writtenOn": "2013-08-15T01:01:44Z",
       "side": 1,
       "message": "suggest remove this line and then can unindent 18 lines.",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//6mc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7vs\u003d",
       "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//6mY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7u4\u003d",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//7tk\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 18
@@ -166,6 +328,24 @@
       "writtenOn": "2013-08-15T01:01:44Z",
       "side": 1,
       "message": "why doesn\u0027t this function do anything if not self.configured? suggest add a comment.",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//6lk\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7tk\u003d",
       "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//6lg\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7sc\u003d",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//7sQ\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 18
@@ -200,6 +398,24 @@
       "writtenOn": "2013-08-15T01:01:44Z",
       "side": 1,
       "message": "change \"fucntion\" to \"function\"",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//6lc\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7sQ\u003d",
       "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//6lY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7sM\u003d",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//7q0\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 18
@@ -234,6 +468,24 @@
       "writtenOn": "2013-08-15T01:01:44Z",
       "side": 1,
       "message": "another way to do this that would not require a wrapper for each method, is to wait for assignment_api to be assigned. A property handler for assignment_api could set the property and then configure domains.\n\nAlternatively, could call a method in the identity driver from resolve_future_dependencies (https://github.com/openstack/keystone/blob/master/keystone/common/dependency.py#L80)",
+      "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//6lU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-15T09:20:39Z",
+      "side": 1,
+      "message": "Agreed - I might look into that as a future optimisation, if that becomes necessary.",
+      "parentUuid": "AAAARH//7q0\u003d",
       "revId": "1570c6932f3c3254cbdc5de2b07b49920479fad6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
