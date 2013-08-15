@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//7oc\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1548,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T01:11:46Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be necessary because an ancestor tearDown resets the config to the default. https://github.com/openstack/keystone/blob/master/keystone/tests/core.py#L251\n\nSo suggest remove tearDown, and can remove 1542.",
+      "revId": "3e899ef1c05ab15f6b361e27c2568dca8e45f082",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
