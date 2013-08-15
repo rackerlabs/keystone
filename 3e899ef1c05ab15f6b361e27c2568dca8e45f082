@@ -16,6 +16,24 @@
       "revId": "3e899ef1c05ab15f6b361e27c2568dca8e45f082",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//60U\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1548,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-08-15T07:37:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//7oc\u003d",
+      "revId": "3e899ef1c05ab15f6b361e27c2568dca8e45f082",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
