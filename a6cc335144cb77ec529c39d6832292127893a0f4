@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//4F0\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-15T21:03:03Z",
+      "side": 1,
+      "message": "the outer parens can be removed",
+      "revId": "a6cc335144cb77ec529c39d6832292127893a0f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//4GU\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-15T21:03:03Z",
+      "side": 1,
+      "message": "what about this test is specific to ldap? why is it not in test_backend.py?",
+      "revId": "a6cc335144cb77ec529c39d6832292127893a0f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//4GY\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 646,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-15T21:03:03Z",
+      "side": 1,
+      "message": "remove this line",
+      "revId": "a6cc335144cb77ec529c39d6832292127893a0f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
