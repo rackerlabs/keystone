@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//4lI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T18:51:16Z",
+      "side": 1,
+      "message": "I could use some help with what the suggested change here. This function should not be mutating the dn passed in, so I\u0027ll add a test to make sure that\u0027s not happening. Otherwise, I think you\u0027re asking for a function like:\n\ndef compare_dns(dn1, dn2):\n   def normalize_dn(dn): ...\n\n  return normalize_dn(dn1) \u003d\u003d normalize_dn(dn2)\n\n?\n\nThis works for me.",
+      "parentUuid": "AAAAQ3//23E\u003d",
+      "revId": "6b2fc30c8ab4f7ac409169a0653d536cdb4838df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//5Dc\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
