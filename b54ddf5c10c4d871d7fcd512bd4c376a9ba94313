@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//3nY\u003d",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T23:38:14Z",
+      "side": 1,
+      "message": "make html always worked for me, but this works too.",
+      "revId": "b54ddf5c10c4d871d7fcd512bd4c376a9ba94313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
