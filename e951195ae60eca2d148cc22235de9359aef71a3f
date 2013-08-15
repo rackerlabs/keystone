@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//3tY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/032_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T23:09:56Z",
+      "side": 1,
+      "message": "change \"exist\" to \"exists\" (add s)",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3tI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/032_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T23:09:56Z",
+      "side": 1,
+      "message": "when have multiple substitution strings in a message, should use named, for translation (even though this isn\u0027t translated it may be in future).\n\nso change like \u0027Credential %(access)s already exists ...",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3tA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/032_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T23:09:56Z",
+      "side": 1,
+      "message": "similar comment here as at line 62.",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3sE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/032_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T23:09:56Z",
+      "side": 1,
+      "message": "rather than alter, use mysql_engine\u003d\u0027InnoDB\u0027 at line 91 like they do in the Nova migrations, see https://github.com/openstack/nova/blob/master/nova/db/sqlalchemy/migrate_repo/versions/193_cinder_cleanup.py#L62\n\nalso, I think mysql_charset\u003d\u0027utf8\u0027 at line 91 will take care of 95-99.",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3r4\u003d",
+        "filename": "keystone/common/sql/nova.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T23:09:56Z",
+      "side": 1,
+      "message": "revert change to remove ,\n\nsee https://github.com/openstack-dev/hacking/blame/master/HACKING.rst#L133",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3r0\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T23:09:56Z",
+      "side": 1,
+      "message": "wrap string in _() for translation.",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3rY\u003d",
+        "filename": "keystone/tests/test_contrib_s3_core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T23:09:56Z",
+      "side": 1,
+      "message": "revert whitespace change.",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3rE\u003d",
+        "filename": "keystone/tests/test_keystoneclient_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T23:09:56Z",
+      "side": 1,
+      "message": "move this import to after line 18 (and add a space after it), see https://github.com/openstack-dev/hacking/blame/master/HACKING.rst#L57",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3q8\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1306,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T23:09:56Z",
+      "side": 1,
+      "message": "change **{\u0027user_id\u0027: ec2_credential[\u0027user_id\u0027]} to user_id\u003dec2_credential[\u0027user_id\u0027]",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3uU\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1366,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T23:09:56Z",
+      "side": 1,
+      "message": "this is a separate test so put it in a different function.",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3uc\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1386,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T23:09:56Z",
+      "side": 1,
+      "message": "this is a separate test so put it in a different function.",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
