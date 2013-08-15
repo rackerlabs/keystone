@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//46A\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-15T17:37:55Z",
+      "side": 0,
+      "message": "thanks for cleaning up this... \"style\"",
+      "revId": "da3afa39d86ce55703960b574024b110b740bd4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
