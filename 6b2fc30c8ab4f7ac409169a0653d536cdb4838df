@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//30E\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T22:15:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQ3//23E\u003d",
+      "revId": "6b2fc30c8ab4f7ac409169a0653d536cdb4838df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//5Dc\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
@@ -136,6 +154,24 @@
       "writtenOn": "2013-08-13T21:16:50Z",
       "side": 1,
       "message": "AD, as that is not the only directory server that does this, but just describe the behaviour.",
+      "revId": "6b2fc30c8ab4f7ac409169a0653d536cdb4838df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3zo\u003d",
+        "filename": "keystone/common/ldap/fakeldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T22:15:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQ3//3AE\u003d",
       "revId": "6b2fc30c8ab4f7ac409169a0653d536cdb4838df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
