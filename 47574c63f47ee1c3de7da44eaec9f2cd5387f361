@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//70E\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T00:02:59Z",
+      "side": 1,
+      "message": "(nit) change \"removed\" to \"revoked\" or \"invalidated\"",
+      "revId": "47574c63f47ee1c3de7da44eaec9f2cd5387f361",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//7zw\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T00:02:59Z",
+      "side": 1,
+      "message": "(nit) change \"removed\" to \"revoked\" or \"invalidated\"",
+      "revId": "47574c63f47ee1c3de7da44eaec9f2cd5387f361",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//7zU\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1210,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T00:02:59Z",
+      "side": 1,
+      "message": "could use a better explanation why skipping",
+      "revId": "47574c63f47ee1c3de7da44eaec9f2cd5387f361",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
