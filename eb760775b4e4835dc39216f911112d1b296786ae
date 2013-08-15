@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//3wg\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1532,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T22:33:10Z",
+      "side": 1,
+      "message": "typo here, change \"IdentityIneritanceDisableTestCase\" to \"IdentityInheritanceDisableTestCase\" (add h)\n\nalso, change \"Disable\" to \"Disabled\"\n\nsorry, didn\u0027t notice this last time.",
+      "revId": "eb760775b4e4835dc39216f911112d1b296786ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3wA\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1537,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-15T22:33:10Z",
+      "side": 1,
+      "message": "here, too, of course.",
+      "revId": "eb760775b4e4835dc39216f911112d1b296786ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
