@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//4XM\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-08-15T19:56:37Z",
+      "side": 1,
+      "message": "The list of resources notifications will be sent for still needs to be verified once the code is ready.",
+      "revId": "2a09745ff82c90db2186e20248e2969c9d08588a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
