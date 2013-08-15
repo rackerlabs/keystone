@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//6ts\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4234
+      },
+      "writtenOn": "2013-08-15T08:28:38Z",
+      "side": 1,
+      "message": "I guess so. I guess we don\u0027t need to run memcached with UTC+0 timezone because memcached use UTC in internal. I found a discussion about it. https://groups.google.com/forum/#!searchin/memcached/timezone/memcached/Nv5w-IEsVx0/LRHUkxllT-oJ\n\nBut I don\u0027t check auth_token middleware. So I avoided to rewrite this part and added note.\n\nIf we can confirm that auth_token also works without UTC+0 timezone, I think this part will be deprecated.",
+      "parentUuid": "AAAARH//73c\u003d",
+      "revId": "862dd7296db3796bd7e7741dca5432a68eaaf2ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//734\u003d",
         "filename": "tests/test_utils.py",
         "patchSetId": 2
