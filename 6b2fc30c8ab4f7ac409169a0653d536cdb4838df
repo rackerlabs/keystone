@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//5KI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-15T16:31:00Z",
+      "side": 1,
+      "message": "(NIT): normalize_dn_str will always be the entry point for this functionality right? If so would it be worth it to make normalize_dn -\u003e _normalize_dn?",
+      "revId": "6b2fc30c8ab4f7ac409169a0653d536cdb4838df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//5Dc\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
