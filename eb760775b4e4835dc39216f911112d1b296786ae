@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//2Xw\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1532,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-08-16T09:01:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//3wg\u003d",
+      "revId": "eb760775b4e4835dc39216f911112d1b296786ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//3wA\u003d",
         "filename": "tests/test_v3_identity.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-15T22:33:10Z",
       "side": 1,
       "message": "here, too, of course.",
+      "revId": "eb760775b4e4835dc39216f911112d1b296786ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//2Xs\u003d",
+        "filename": "tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1537,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-08-16T09:01:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//3wA\u003d",
       "revId": "eb760775b4e4835dc39216f911112d1b296786ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
