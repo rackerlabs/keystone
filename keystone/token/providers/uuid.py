@@ -460,10 +460,17 @@ class Provider(token.provider.Provider):
     def _verify_token(self, token_id, belongs_to=None):
         """Verify the given token and return the token_ref."""
         token_ref = self.token_api.get_token(token_id)
-        assert token_ref
+        return self._verify_token_ref(token_ref, belongs_to)
+
+    def _verify_token_ref(self, token_ref, belongs_to=None):
+        """Verify the given token and return the token_ref."""
+        if not(token_ref):
+            raise exception.Unauthorized()
         if belongs_to:
-            assert (token_ref['tenant'] and
-                    token_ref['tenant']['id'] == belongs_to)
+            if not (token_ref['tenant'] and
+                    token_ref['tenant']['id'] == belongs_to):
+                raise exception.Unauthorized()
+
         return token_ref
 
     def revoke_token(self, token_id):
@@ -510,9 +517,9 @@ class Provider(token.provider.Provider):
                 if project_ref['domain_id'] != DEFAULT_DOMAIN_ID:
                     raise exception.Unauthorized(msg)
 
-    def _validate_v2_token(self, token_id, belongs_to=None, **kwargs):
+    def _validate_v2_token(self, token_id, token_ref, belongs_to=None,
+                           **kwargs):
         try:
-            token_ref = self._verify_token(token_id, belongs_to=belongs_to)
             self._assert_default_domain(token_ref)
             # FIXME(gyee): performance or correctness? Should we return the
             # cached token or reconstruct it? Obviously if we are going with
@@ -549,8 +556,7 @@ class Provider(token.provider.Provider):
             LOG.exception(_('Failed to validate token'))
             raise exception.Unauthorized(e)
 
-    def _validate_v3_token(self, token_id):
-        token_ref = self._verify_token(token_id)
+    def _validate_v3_token(self, token_id, token_ref):
         # FIXME(gyee): performance or correctness? Should we return the
         # cached token or reconstruct it? Obviously if we are going with
         # the cached token, any role, project, or domain name changes
@@ -575,12 +581,24 @@ class Provider(token.provider.Provider):
                 expires=token_ref['expires'])
         return token_data
 
-    def validate_token(self, token_id, belongs_to=None, version='v3.0'):
+    def _is_v3_token(self, token_ref):
+        return 'token_data' in token_ref and 'token' in token_ref['token_data']
+
+    def validate_token(self, token_id, belongs_to=None,
+                       version=token.provider.V3):
         try:
+            token_ref = self.token_api.get_token(token_id)
+            self._verify_token_ref(token_ref, belongs_to=belongs_to)
+            if version is None:
+                if self._is_v3_token(token_ref):
+                    version = token.provider.V3
+                else:
+                    version = token.provider.V2
             if version == token.provider.V3:
-                return self._validate_v3_token(token_id)
+                return self._validate_v3_token(token_id, token_ref)
             elif version == token.provider.V2:
                 return self._validate_v2_token(token_id,
+                                               token_ref,
                                                belongs_to=belongs_to)
             raise token.provider.UnsupportedTokenVersionException()
         except exception.TokenNotFound as e:

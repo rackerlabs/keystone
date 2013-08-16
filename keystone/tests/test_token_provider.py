@@ -351,7 +351,7 @@ class TestTokenProvider(test.TestCase):
                           'bogus_version')
 
     def test_validate_token(self):
-        self.assertRaises(token.provider.UnsupportedTokenVersionException,
+        self.assertRaises(exception.Unauthorized,
                           self.token_provider_api.validate_token,
                           uuid.uuid4().hex,
                           None,
