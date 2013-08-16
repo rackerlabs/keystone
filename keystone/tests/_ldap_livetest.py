@@ -82,7 +82,7 @@ class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
         #logic is different from the fake backend.
         user_api = identity_ldap.UserApi(CONF)
         self.assertTrue(user_api)
-        self.assertEquals(user_api.tree_dn, CONF.ldap.user_tree_dn)
+        self.assertEqual(user_api.tree_dn, CONF.ldap.user_tree_dn)
 
     def tearDown(self):
         test.TestCase.tearDown(self)
