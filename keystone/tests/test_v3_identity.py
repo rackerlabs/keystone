@@ -526,7 +526,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                           self.credential['id'])
         # And the no tokens we remain valid
         tokens = self.token_api.list_tokens(self.user['id'])
-        self.assertEquals(len(tokens), 0)
+        self.assertEqual(len(tokens), 0)
         # But the credential for user2 is unaffected
         r = self.credential_api.get_credential(self.credential2['id'])
         self.assertDictEqual(r, self.credential2)

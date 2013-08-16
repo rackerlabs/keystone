@@ -68,8 +68,8 @@ class ImportLegacy(test.TestCase):
 
         admin_id = '1'
         user_ref = self.identity_api.get_user(admin_id)
-        self.assertEquals(user_ref['name'], 'admin')
-        self.assertEquals(user_ref['enabled'], True)
+        self.assertEqual(user_ref['name'], 'admin')
+        self.assertEqual(user_ref['enabled'], True)
 
         # check password hashing
         user_ref = self.identity_man.authenticate(
@@ -85,8 +85,8 @@ class ImportLegacy(test.TestCase):
 
         admin_id = '1'
         user_ref = self.identity_api.get_user(admin_id)
-        self.assertEquals(user_ref['name'], 'admin')
-        self.assertEquals(user_ref['enabled'], True)
+        self.assertEqual(user_ref['name'], 'admin')
+        self.assertEqual(user_ref['enabled'], True)
 
         # check password hashing
         user_ref = self.identity_man.authenticate(
@@ -102,8 +102,8 @@ class ImportLegacy(test.TestCase):
 
         admin_id = 'c93b19ea3fa94484824213db8ac0afce'
         user_ref = self.identity_api.get_user(admin_id)
-        self.assertEquals(user_ref['name'], 'admin')
-        self.assertEquals(user_ref['enabled'], True)
+        self.assertEqual(user_ref['name'], 'admin')
+        self.assertEqual(user_ref['enabled'], True)
 
         # check password hashing
         user_ref = self.identity_man.authenticate(

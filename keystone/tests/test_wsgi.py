@@ -98,7 +98,7 @@ class ApplicationTest(BaseWSGITest):
 
         app = FakeApp.factory({}, testkey="test")
         self.assertIn("testkey", app.kwargs)
-        self.assertEquals("test", app.kwargs["testkey"])
+        self.assertEqual("test", app.kwargs["testkey"])
 
     def test_render_exception(self):
         e = exception.Unauthorized(message=u'\u7f51\u7edc')
@@ -115,7 +115,7 @@ class ExtensionRouterTest(BaseWSGITest):
         factory = FakeRouter.factory({}, testkey="test")
         app = factory(self.app)
         self.assertIn("testkey", app.kwargs)
-        self.assertEquals("test", app.kwargs["testkey"])
+        self.assertEqual("test", app.kwargs["testkey"])
 
 
 class MiddlewareTest(BaseWSGITest):
@@ -146,7 +146,7 @@ class MiddlewareTest(BaseWSGITest):
         req = self._make_request()
         req.environ['REMOTE_ADDR'] = '127.0.0.1'
         resp = FakeMiddleware(self.app)(req)
-        self.assertEquals(resp.status_int, exception.Unauthorized.code)
+        self.assertEqual(resp.status_int, exception.Unauthorized.code)
 
     def test_middleware_type_error(self):
         class FakeMiddleware(wsgi.Middleware):
@@ -157,7 +157,7 @@ class MiddlewareTest(BaseWSGITest):
         req.environ['REMOTE_ADDR'] = '127.0.0.1'
         resp = FakeMiddleware(self.app)(req)
         # This is a validationerror type
-        self.assertEquals(resp.status_int, exception.ValidationError.code)
+        self.assertEqual(resp.status_int, exception.ValidationError.code)
 
     def test_middleware_exception_error(self):
         class FakeMiddleware(wsgi.Middleware):
@@ -166,7 +166,7 @@ class MiddlewareTest(BaseWSGITest):
 
         req = self._make_request()
         resp = FakeMiddleware(self.app)(req)
-        self.assertEquals(resp.status_int, exception.UnexpectedError.code)
+        self.assertEqual(resp.status_int, exception.UnexpectedError.code)
         self.assertIn("EXCEPTIONERROR", resp.body)
 
     def test_middleware_local_config(self):
@@ -177,7 +177,7 @@ class MiddlewareTest(BaseWSGITest):
         factory = FakeMiddleware.factory({}, testkey="test")
         app = factory(self.app)
         self.assertIn("testkey", app.kwargs)
-        self.assertEquals("test", app.kwargs["testkey"])
+        self.assertEqual("test", app.kwargs["testkey"])
 
 
 class WSGIFunctionTest(test.TestCase):

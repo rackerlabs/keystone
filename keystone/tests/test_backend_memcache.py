@@ -162,7 +162,7 @@ class MemcacheToken(test.TestCase, test_backend.TokenTests):
         user_key = self.token_api.driver._prefix_user_id(user_id)
         user_record = self.token_api.driver.client.get(user_key)
         user_token_list = jsonutils.loads('[%s]' % user_record)
-        self.assertEquals(len(user_token_list), 2)
+        self.assertEqual(len(user_token_list), 2)
         expired_token_ptk = self.token_api.driver._prefix_token_id(
             expired_token_id)
         expired_token = self.token_api.driver.client.get(expired_token_ptk)
@@ -172,7 +172,7 @@ class MemcacheToken(test.TestCase, test_backend.TokenTests):
         self.token_api.create_token(second_valid_token_id, second_valid_data)
         user_record = self.token_api.driver.client.get(user_key)
         user_token_list = jsonutils.loads('[%s]' % user_record)
-        self.assertEquals(len(user_token_list), 2)
+        self.assertEqual(len(user_token_list), 2)
 
     def test_cas_failure(self):
         self.token_api.driver.client.reject_cas = True

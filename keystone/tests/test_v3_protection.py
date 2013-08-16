@@ -166,7 +166,7 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self._set_policy(new_policy)
         url_by_name = '/users/%s' % self.user1['id']
         r = self.get(url_by_name, auth=self.auth)
-        self.assertEquals(self.user1['id'], r.result['user']['id'])
+        self.assertEqual(self.user1['id'], r.result['user']['id'])
 
     def test_list_users_protected_by_domain(self):
         """GET /users?domain_id=mydomain (protected)

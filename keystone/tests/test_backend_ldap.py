@@ -51,7 +51,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         """
         user_api = identity.backends.ldap.UserApi(CONF)
         self.assertTrue(user_api)
-        self.assertEquals(user_api.tree_dn, "ou=Users,%s" % CONF.ldap.suffix)
+        self.assertEqual(user_api.tree_dn, "ou=Users,%s" % CONF.ldap.suffix)
 
     def test_configurable_allowed_user_actions(self):
         user = {'id': 'fake1',
@@ -234,9 +234,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
     def test_list_domains(self):
         domains = self.identity_api.list_domains()
-        self.assertEquals(
-            domains,
-            [assignment.DEFAULT_DOMAIN])
+        self.assertEqual(domains, [assignment.DEFAULT_DOMAIN])
 
     def test_authenticate_requires_simple_bind(self):
         user = {
@@ -402,9 +400,8 @@ class LDAPIdentity(test.TestCase, BaseLDAPIdentity):
         tenant_ref = self.identity_api.get_project(self.tenant_baz['id'])
         self.assertEqual(tenant_ref['id'], self.tenant_baz['id'])
         self.assertEqual(tenant_ref['name'], self.tenant_baz['name'])
-        self.assertEqual(
-            tenant_ref['description'],
-            self.tenant_baz['description'])
+        self.assertEqual(tenant_ref['description'],
+                         self.tenant_baz['description'])
         self.assertEqual(tenant_ref['enabled'], self.tenant_baz['enabled'])
 
         CONF.ldap.tenant_name_attribute = 'description'
@@ -618,7 +615,7 @@ class LDAPIdentity(test.TestCase, BaseLDAPIdentity):
 
         combined_role_list = self.identity_api.get_roles_for_user_and_project(
             user1['id'], project1['id'])
-        self.assertEquals(len(combined_role_list), 2)
+        self.assertEqual(len(combined_role_list), 2)
         self.assertIn(role_list[0]['id'], combined_role_list)
         self.assertIn(role_list[1]['id'], combined_role_list)
 
@@ -628,7 +625,7 @@ class LDAPIdentity(test.TestCase, BaseLDAPIdentity):
 
         combined_role_list = self.identity_api.get_roles_for_user_and_domain(
             user1['id'], CONF.identity.default_domain_id)
-        self.assertEquals(len(combined_role_list), 0)
+        self.assertEqual(len(combined_role_list), 0)
 
     def test_list_projects_for_alternate_domain(self):
         self.skipTest(
@@ -736,7 +733,7 @@ class LdapIdentitySqlAssignment(sql.Base, test.TestCase, BaseLDAPIdentity):
 
     def test_list_domains(self):
         domains = self.identity_api.list_domains()
-        self.assertEquals(domains, [assignment.DEFAULT_DOMAIN])
+        self.assertEqual(domains, [assignment.DEFAULT_DOMAIN])
 
     def test_project_filter(self):
         self.skipTest(
