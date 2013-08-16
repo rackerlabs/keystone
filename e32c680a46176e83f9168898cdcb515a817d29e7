@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//3gc\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-16T00:44:36Z",
+      "side": 1,
+      "message": "s/IBM Corp/Openstack Foundation",
+      "revId": "e32c680a46176e83f9168898cdcb515a817d29e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3iI\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-16T00:44:36Z",
+      "side": 1,
+      "message": "Curious, why noqa here?",
+      "revId": "e32c680a46176e83f9168898cdcb515a817d29e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3fc\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-16T00:44:36Z",
+      "side": 1,
+      "message": "I feel \u0027identity\u0027 will be used for all notifications in keystone; would it be worth removing it as a parameter and just setting it down at _send_update_notification?",
+      "revId": "e32c680a46176e83f9168898cdcb515a817d29e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3fo\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-16T00:44:36Z",
+      "side": 1,
+      "message": "is there nothing more specific than just Exception?",
+      "revId": "e32c680a46176e83f9168898cdcb515a817d29e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3f0\u003d",
+        "filename": "tests/test_notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-16T00:44:36Z",
+      "side": 1,
+      "message": "fix this header too",
+      "revId": "e32c680a46176e83f9168898cdcb515a817d29e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3fs\u003d",
+        "filename": "tests/test_notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-16T00:44:36Z",
+      "side": 1,
+      "message": "if you\u0027re not using it, you might be able to get rid of it.",
+      "revId": "e32c680a46176e83f9168898cdcb515a817d29e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
