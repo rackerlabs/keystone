@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//0b8\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-16T19:05:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//3fc\u003d",
+      "revId": "e32c680a46176e83f9168898cdcb515a817d29e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//3fo\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 4
@@ -64,6 +82,24 @@
       "writtenOn": "2013-08-16T00:44:36Z",
       "side": 1,
       "message": "is there nothing more specific than just Exception?",
+      "revId": "e32c680a46176e83f9168898cdcb515a817d29e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//0bY\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-16T19:05:14Z",
+      "side": 1,
+      "message": "Hey Steve, here I followed the implementation standard that Nova is using for this:\n\nhttps://github.com/openstack/nova/blob/master/nova/notifications.py#L114\n\nI could implement a specific exception here: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/exception.py\n\nand call that instead if that is more desirable?",
+      "parentUuid": "AAAARH//3fo\u003d",
       "revId": "e32c680a46176e83f9168898cdcb515a817d29e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +134,24 @@
       "writtenOn": "2013-08-16T00:44:36Z",
       "side": 1,
       "message": "if you\u0027re not using it, you might be able to get rid of it.",
+      "revId": "e32c680a46176e83f9168898cdcb515a817d29e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//0aM\u003d",
+        "filename": "tests/test_notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-16T19:05:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//3fs\u003d",
       "revId": "e32c680a46176e83f9168898cdcb515a817d29e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
