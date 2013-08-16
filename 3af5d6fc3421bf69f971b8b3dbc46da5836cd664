@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//3jQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-16T00:14:59Z",
+      "side": 1,
+      "message": "I\u0027d rather not see the backslash used this way. \nIf keeping the line of code under 80 characters is an issue, change `filter_item` to just `item`.",
+      "revId": "3af5d6fc3421bf69f971b8b3dbc46da5836cd664",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
