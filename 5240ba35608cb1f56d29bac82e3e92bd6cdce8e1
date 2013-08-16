@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//3HY\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "This is duplicating line 48 (previously added in another patch you rebased onto, i\u0027m sure)",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3Hs\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "See question in the migration about nullable fields, just a sanitity check.",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3Ho\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "See question in the migration about nullable fields, just a sanitity check.",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3Ks\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "Copyright should be: Copyright 2013 OpenStack Foundation\n\n(all new files should be updated to reflect this)",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3LM\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "String needs to be wrapped in _() for translation.",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3LQ\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "use named parameters: \u0027/users/%(user_id)s/OS-OAUTH1/access_tokens/%(access_token_id)s/roles\u0027 ... with a dict of keys/values\n\nyou should do another pass to see if I missed any, but I think I tagged them all.",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3LE\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "Use named parameters for substitutions.",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3LA\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "Use named substitutions.",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3KQ\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "(NIT) A comment with an example of what the headers would look like might make sense here so the slicing is a bit more straightforward.",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3Jo\u003d",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/001_add_oauth_tables.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "Just as a sanity check, there are no values here that cannot be null (except id)?",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3Jk\u003d",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/001_add_oauth_tables.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "Just as a sanity check, there are no values here that cannot be null (except id)?",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3JA\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "use named substitutions",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3JI\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "use named substitutions",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3I8\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "use named substitutions",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3I4\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "use named substitutions",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3I0\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "use named substitutions",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3IY\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "You need to make sure this mirrors the driver, you\u0027re missing the consumer part.  You likely are also missing a _list_tokens_for_consumer private method (in line with the rest)",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3II\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T03:29:19Z",
+      "side": 1,
+      "message": "Make sure there is a test for listing tokens by consumer.",
+      "revId": "5240ba35608cb1f56d29bac82e3e92bd6cdce8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
