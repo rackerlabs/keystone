@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//z98\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-16T21:28:12Z",
+      "side": 1,
+      "message": "wrap in _() so that this string gets translated.",
+      "revId": "cb96abb473b3cde90fdb2a870fc5fdae1116f450",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
