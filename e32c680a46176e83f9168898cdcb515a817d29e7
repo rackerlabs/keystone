@@ -106,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//0NU\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-16T20:11:49Z",
+      "side": 1,
+      "message": "If we know what type of exception will surface, we could do your second suggestion. Otherwise, i guess if nova is using it that way, then that\u0027s good enough I suppose.",
+      "parentUuid": "AAAARH//0bY\u003d",
+      "revId": "e32c680a46176e83f9168898cdcb515a817d29e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//3f0\u003d",
         "filename": "tests/test_notifications.py",
         "patchSetId": 4
