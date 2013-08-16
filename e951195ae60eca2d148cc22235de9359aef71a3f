@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//3dE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/032_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T00:59:33Z",
+      "side": 1,
+      "message": "(NIT) change \"exist\" to \"exists\" (comment on line 58)",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//3tA\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/032_migrate_ec2credentials_table_credentials.py",
         "patchSetId": 11
@@ -53,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "AAAARH//3c0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/032_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T00:59:33Z",
+      "side": 1,
+      "message": "(NIT) same as line 65",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//3sE\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/032_migrate_ec2credentials_table_credentials.py",
         "patchSetId": 11
@@ -64,6 +98,24 @@
       "writtenOn": "2013-08-15T23:09:56Z",
       "side": 1,
       "message": "rather than alter, use mysql_engine\u003d\u0027InnoDB\u0027 at line 91 like they do in the Nova migrations, see https://github.com/openstack/nova/blob/master/nova/db/sqlalchemy/migrate_repo/versions/193_cinder_cleanup.py#L62\n\nalso, I think mysql_charset\u003d\u0027utf8\u0027 at line 91 will take care of 95-99.",
+      "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//3co\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/032_migrate_ec2credentials_table_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-16T00:59:33Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAARH//3sE\u003d",
       "revId": "e951195ae60eca2d148cc22235de9359aef71a3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
