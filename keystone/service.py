@@ -20,6 +20,7 @@ import routes
 from keystone import assignment
 from keystone import auth
 from keystone import catalog
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import config
@@ -43,6 +44,8 @@ LOG = logging.getLogger(__name__)
 # The default assignment driver is determined by the identity driver, so the
 # identity driver must be available to the assignment manager.
 _IDENTITY_API = identity.Manager()
+
+cache.configure_cache_region(CONF, cache.REGION)
 
 DRIVERS = dict(
     assignment_api=assignment.Manager(),
