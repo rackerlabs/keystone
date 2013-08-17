@@ -17,6 +17,7 @@
 """Token provider interface."""
 
 
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import manager
 from keystone import config
@@ -26,6 +27,7 @@ from keystone.openstack.common import log as logging
 
 CONF = config.CONF
 LOG = logging.getLogger(__name__)
+SHOULD_CACHE = cache.should_cache_fn('token')
 
 
 # supported token versions
@@ -96,6 +98,24 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(self.get_token_provider())
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=CONF.token.cache_ttl)
+    def validate_v3_token(self, token_id):
+        return self.driver.validate_v3_token(token_id)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=CONF.token.cache_ttl)
+    def check_v3_token(self, token_id):
+        return self.driver.check_v3_token(token_id)
+
+    def invalidate_individual_token_cache(self, token_id):
+        """Invalidate the provider cache for a given token_id."""
+        # NOTE(morganfainberg): invalidate takes the exact same arguments as
+        # the normal method, this means we need to pass "self" in (which gets
+        # stripped off).
+        self.validate_v3_token.invalidate(self, token_id)
+        self.check_v3_token.invalidate(self, token_id)
 
 
 class Provider(object):

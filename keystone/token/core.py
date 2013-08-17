@@ -19,6 +19,7 @@
 import copy
 import datetime
 
+from keystone.common import cache
 from keystone.common import cms
 from keystone.common import dependency
 from keystone.common import manager
@@ -31,6 +32,8 @@ from keystone.openstack.common import timeutils
 CONF = config.CONF
 
 LOG = logging.getLogger(__name__)
+
+SHOULD_CACHE = cache.should_cache_fn('token')
 
 
 def default_expire_time():
@@ -90,6 +93,7 @@ def validate_auth_info(self, user_ref, tenant_ref):
             raise exception.Unauthorized(msg)
 
 
+@dependency.requires('token_provider_api')
 @dependency.provider('token_api')
 class Manager(manager.Manager):
     """Default pivot point for the Token backend.
@@ -114,6 +118,8 @@ class Manager(manager.Manager):
         """
         return cms.cms_hash_token(token_id)
 
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=CONF.token.cache_ttl)
     def get_token(self, token_id):
         return self.driver.get_token(self._unique_id(token_id))
 
@@ -123,7 +129,39 @@ class Manager(manager.Manager):
         return self.driver.create_token(self._unique_id(token_id), data_copy)
 
     def delete_token(self, token_id):
-        return self.driver.delete_token(self._unique_id(token_id))
+        self.driver.delete_token(self._unique_id(token_id))
+        self._invalidate_individual_token_cache(token_id)
+        self.invalidate_revocation_list()
+
+    def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
+                      consumer_id=None):
+        token_list = self.driver.list_tokens(user_id, tenant_id, trust_id,
+                                             consumer_id)
+        self.driver.delete_tokens(user_id, tenant_id, trust_id, consumer_id)
+        for token_id in token_list:
+            self._invalidate_individual_token_cache(token_id)
+        self.invalidate_revocation_list()
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE)
+    def list_revoked_tokens(self):
+        return self.driver.list_revoked_tokens()
+
+    def _invalidate_individual_token_cache(self, token_id):
+        """Invalidate the token driver cache for a given token_id."""
+        # NOTE(morganfainberg): invalidate takes the exact same arguments as
+        # the normal method, this means we need to pass "self" in (which gets
+        # stripped off).
+        self.get_token.invalidate(self, token_id)
+        self.token_provider_api.invalidate_individual_token_cache(token_id)
+
+    def invalidate_revocation_list(self):
+        # NOTE(morganfainberg): we should always be keeping the revoked tokens
+        # list in memory, calling refresh in this case instead of ensures a
+        # cache hit when list_revoked_tokens is called again. This is an
+        # exception to the rule.  Note that ``self`` needs to be passed to
+        # refresh() because of the way the invalidation/refresh methods work on
+        # determining cache-keys.
+        self.list_revoked_tokens.refresh(self)
 
 
 class Driver(object):
