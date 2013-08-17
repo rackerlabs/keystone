@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH//zeM\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-17T02:01:36Z",
+      "side": 1,
+      "message": "With foreign key constraints you would need to reverse the order you delete things.",
+      "revId": "bcaa3072f37d3af3f9d526f18f311411ceeae160",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//zm0\u003d",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/001_add_oauth_tables.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-17T02:01:36Z",
+      "side": 1,
+      "message": "Not a show stopper, but shouldn\u0027t these be foreign_keys?",
+      "revId": "bcaa3072f37d3af3f9d526f18f311411ceeae160",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
