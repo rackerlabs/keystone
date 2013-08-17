@@ -76,6 +76,7 @@ following sections:
 * ``[identity]`` - identity system driver configuration
 * ``[catalog]`` - service catalog driver configuration
 * ``[token]`` - token driver & token provider configuration
+* ``[cache]`` - caching layer configuration
 * ``[policy]`` - policy system driver configuration for RBAC
 * ``[signing]`` - cryptographic signatures for PKI based tokens
 * ``[ssl]`` - SSL configuration
