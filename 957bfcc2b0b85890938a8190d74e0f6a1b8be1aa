@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn///2k\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-18T23:29:17Z",
+      "side": 1,
+      "message": "ok, let me look at that....since I\u0027m actually not doing any obfuscating here (just trying to lay the ground work), I may pull this entirely and re-look at it when we feel we really do need to do this.",
+      "parentUuid": "AAAARn///+k\u003d",
+      "revId": "957bfcc2b0b85890938a8190d74e0f6a1b8be1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn///+Y\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 11
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn///2c\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-18T23:29:17Z",
+      "side": 1,
+      "message": "Yes, it includes the api parameters covered by @controller.protected and the target ones.  So policy.json files written for just the former will still work fine.",
+      "parentUuid": "AAAARn///+Y\u003d",
+      "revId": "957bfcc2b0b85890938a8190d74e0f6a1b8be1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn///+Q\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 11
@@ -47,6 +83,24 @@
       "writtenOn": "2013-08-18T21:26:11Z",
       "side": 1,
       "message": "same question here - does the implementation of this provide backwards compatibility for policy.json files written against the behavior of @controller.protected?",
+      "revId": "957bfcc2b0b85890938a8190d74e0f6a1b8be1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn///2Y\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-18T23:29:17Z",
+      "side": 1,
+      "message": "Yes, it includes the api parameters covered by @controller.protected and the target ones.  So policy.json files written for just the former will still work fine.",
+      "parentUuid": "AAAARn///+Q\u003d",
       "revId": "957bfcc2b0b85890938a8190d74e0f6a1b8be1aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
