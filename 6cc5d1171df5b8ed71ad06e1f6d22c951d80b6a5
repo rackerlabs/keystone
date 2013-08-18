@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn///2A\u003d",
+        "filename": "keystone/openstack/common/db/sqlalchemy/session.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-08-18T23:46:29Z",
+      "side": 1,
+      "message": "eventlet, but it is only used in one place",
+      "revId": "6cc5d1171df5b8ed71ad06e1f6d22c951d80b6a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn///2Q\u003d",
+        "filename": "keystone/openstack/common/lockutils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-08-18T23:46:29Z",
+      "side": 1,
+      "message": "This one can be replaced by threading semaphore as I understand the monkey patch should get it.",
+      "revId": "6cc5d1171df5b8ed71ad06e1f6d22c951d80b6a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
