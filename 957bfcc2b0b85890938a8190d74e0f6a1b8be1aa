@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn///+k\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-18T21:26:11Z",
+      "side": 1,
+      "message": "This is a super nasty approach for when debug is enabled... errors should *never* be obfuscated. SecurityError is designed to handle this scenario -- why isn\u0027t it in use here? Raise something that extends SecurityError with a detailed error message (suppressed when debug\u003dFalse) and api-appropriate error code",
+      "revId": "957bfcc2b0b85890938a8190d74e0f6a1b8be1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn///+Y\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-18T21:26:11Z",
+      "side": 1,
+      "message": "does the implementation of this provide backwards compatibility for policy.json files written against the behavior of @controller.protected?",
+      "revId": "957bfcc2b0b85890938a8190d74e0f6a1b8be1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn///+Q\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-18T21:26:11Z",
+      "side": 1,
+      "message": "same question here - does the implementation of this provide backwards compatibility for policy.json files written against the behavior of @controller.protected?",
+      "revId": "957bfcc2b0b85890938a8190d74e0f6a1b8be1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
