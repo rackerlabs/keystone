@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//8Mg\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-19T22:43:38Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s required to list \u0027id\u0027 in immutable_attrs as it will be skipped explicitly in the if-check.",
+      "revId": "78d90df536f84b0dc1486cfd4b96fc6149ed31e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
