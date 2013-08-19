@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//9Zk\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-19T17:39:59Z",
+      "side": 1,
+      "message": "IN general keep the formatting so it is clear what the paramter change is.",
+      "revId": "d20885acaf81a5f12669fbed4b4a96e36b2c756c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
