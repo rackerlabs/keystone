@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//8Yk\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 849,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T22:05:15Z",
+      "side": 1,
+      "message": "suggest combine:\n\n user \u003d {\u0027name\u0027: \u0027myname@mydivision\u0027}",
+      "revId": "b0c15b8c03b7d602574cf61ba5fb3d6c0255871b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8YU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 853,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T22:05:15Z",
+      "side": 1,
+      "message": "give a name to the None parameter here so reviewers know what it is.",
+      "revId": "b0c15b8c03b7d602574cf61ba5fb3d6c0255871b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
