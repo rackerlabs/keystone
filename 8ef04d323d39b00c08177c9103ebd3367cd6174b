@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//9oM\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 21
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:15:04Z",
+      "side": 1,
+      "message": "not sure this should be enabled by default.",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9do\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:15:04Z",
+      "side": 1,
+      "message": "s/LLC/Foundation",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9f0\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:15:04Z",
+      "side": 1,
+      "message": "add nullable\u003dFalse to both columns",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9f8\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:15:04Z",
+      "side": 1,
+      "message": "remove if not needed",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9io\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:15:04Z",
+      "side": 1,
+      "message": "you can remove the __init__ from this, if in the dependency.requires you add \u0027ep_filter_api\u0027 too.",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9jg\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:15:04Z",
+      "side": 1,
+      "message": "i\u0027m pretty sure identity api will raise ProjectNotFound if a project can\u0027t be found, not sure about how the catalog_api works.",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9lw\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:15:04Z",
+      "side": 1,
+      "message": "Add information about arguments too:\n\n        :param endpoint_id: identity of the endpoint\n        :type endpoint_id: string\n        :param project_id: identity of the project\n        :type project_id: string\n        :returns: .... not sure what this returns yet.",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9k0\u003d",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:15:04Z",
+      "side": 1,
+      "message": "remove if not necessary.",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9kE\u003d",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:15:04Z",
+      "side": 1,
+      "message": "if neither entries can have null values, then add nullable\u003dFalse to both columns.",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
