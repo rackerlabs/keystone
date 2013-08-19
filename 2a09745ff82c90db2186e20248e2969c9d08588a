@@ -33,6 +33,24 @@
       "revId": "2a09745ff82c90db2186e20248e2969c9d08588a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9sY\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-08-19T16:19:08Z",
+      "side": 1,
+      "message": "Good suggestion.  This has been updated in the documentation, as well as the code change that\u0027s up for review.",
+      "parentUuid": "AAAARH//4G8\u003d",
+      "revId": "2a09745ff82c90db2186e20248e2969c9d08588a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
