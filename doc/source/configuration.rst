@@ -57,6 +57,11 @@ match if key expiry is to behave as expected.
 
 .. _`memcached`: http://memcached.org/
 
+.. NOTE::
+
+    Deprecated. Both Keystone and Memcached don't require UTC timezone.
+
+
 Configuration Files
 ===================
 
