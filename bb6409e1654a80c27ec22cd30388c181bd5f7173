@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAARn///hc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-19T05:50:39Z",
+      "side": 1,
+      "message": "You should fix the configuration description with this in mind instead of just utilizing a note here.  You are contradicting the information provided above, and it isn\u0027t really clear what this means.",
+      "revId": "bb6409e1654a80c27ec22cd30388c181bd5f7173",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//3ww\u003d",
         "filename": "keystone/tests/test_utils.py",
         "patchSetId": 3
@@ -13,6 +30,24 @@
       "writtenOn": "2013-08-15T22:29:10Z",
       "side": 1,
       "message": "use assertEqual here so we\u0027ll get a nicer error message.",
+      "revId": "bb6409e1654a80c27ec22cd30388c181bd5f7173",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn///hU\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-19T05:50:39Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAARH//3ww\u003d",
       "revId": "bb6409e1654a80c27ec22cd30388c181bd5f7173",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
