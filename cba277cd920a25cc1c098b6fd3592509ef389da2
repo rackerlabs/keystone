@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//8RI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "how many change ids do we need?\n\nwas this meant to be separate commits because that would make more sense.",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8DY\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "doesn\u0027t look like this is used.",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8EM\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "add a comment to explain why need to do this.",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8D8\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "add a comment here why the following are problems.",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8D0\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "suggest log something in all these cases, or provide more info in the exception.",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8DQ\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "add a comment here why need to do the following this way (check for expires_at, expires, and token/expires",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8DE\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "is this comment still in the right place? looks like it actually belongs before 58.",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8CM\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1310,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "would be nice if didn\u0027t have to duplicate /auth/tokens string... suggest have a method self.authenticate_token(auth_data)",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8B8\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "change \"token\" to \"token_ref\"",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8CE\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "change to \n\n if not token_ref:",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8Bo\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "suggest remove belongs_to since it\u0027s not used.",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7/4\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "remove **kwargs.",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8BE\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "this looks familiar... saw it in auth/plugin/tokens.py.",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8A0\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 602,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T23:47:05Z",
+      "side": 1,
+      "message": "remove belongs_to since it was already handled at line 591.",
+      "revId": "cba277cd920a25cc1c098b6fd3592509ef389da2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
