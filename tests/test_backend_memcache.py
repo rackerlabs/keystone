@@ -14,16 +14,20 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import uuid
 
 import memcache
 
 from keystone.common import utils
+from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone import test
+from keystone import token
 from keystone.token.backends import memcache as token_memcache
 
 import test_backend
+import test_utils
 
 
 class MemcacheClient(object):
@@ -96,3 +100,33 @@ class MemcacheToken(test.TestCase, test_backend.TokenTests):
     def test_list_tokens_unicode_user_id(self):
         user_id = unicode(uuid.uuid4().hex)
         self.token_api.list_tokens(user_id)
+
+    def test_token_expire_timezone(self):
+
+        @test_utils.timezone
+        def _create_token(expire_time):
+            token_id = uuid.uuid4().hex
+            user_id = unicode(uuid.uuid4().hex)
+            data = {'id': token_id, 'a': 'b', 'user': {'id': user_id},
+                    'expires': expire_time
+                    }
+            self.token_api.create_token(token_id, data)
+            return data
+
+        for d in ['+0', '-11', '-8', '-5', '+5', '+8', '+14']:
+            test_utils.TZ = 'UTC' + d
+            expire_time = timeutils.utcnow() + \
+                datetime.timedelta(minutes=1)
+            data_in = _create_token(expire_time)
+            data_get = None
+            data_get = self.token_api.get_token(data_in['id'])
+
+            self.assertIsNotNone(data_get, "TZ=%s" % test_utils.TZ)
+            self.assertEquals(data_in['id'], data_get['id'],
+                              "TZ=%s" % test_utils.TZ)
+
+            expire_time_expired = timeutils.utcnow() + \
+                datetime.timedelta(minutes=-1)
+            data_in = _create_token(expire_time_expired)
+            self.assertRaises(exception.TokenNotFound,
+                              self.token_api.get_token, data_in['id'])
