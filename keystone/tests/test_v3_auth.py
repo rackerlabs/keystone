@@ -843,6 +843,18 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'], self.user['id'])
 
+        # Now test to make sure the user name can, itself, contain the
+        # '@' character.
+        user = {}
+        user['name'] = 'myname@mydivision'
+        self.identity_api.update_user(self.user['id'], user)
+        context = {'REMOTE_USER': '%s@%s' %
+                   (user['name'], self.domain['name'])}
+        auth_info = auth.controllers.AuthInfo(None, auth_data)
+        auth_context = {'extras': {}, 'method_names': []}
+        api.authenticate(context, auth_info, auth_context)
+        self.assertEqual(auth_context['user_id'], self.user['id'])
+
     def test_project_id_scoped_with_remote_user(self):
         CONF.token.bind = ['kerberos']
         auth_data = self.build_authentication_request(
