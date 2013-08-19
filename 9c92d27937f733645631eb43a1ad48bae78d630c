@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//794\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 7629
+      },
+      "writtenOn": "2013-08-19T23:56:11Z",
+      "side": 0,
+      "message": "IMHO: if the calling code can\u0027t handle empty lists then there\u0027s a problem in the calling code. This method should return an empty list of no groups were found for a user. If that happens and no groups for a user is a problem there should be a rule expressing *exactly* that somewhere (but not here).\n\nIf the user_id is not defined how did the user_id make it to this point? There\u0027s a bug in the calling code that should guard against operations on non-existent users.",
+      "parentUuid": "AAAARn//7/0\u003d",
+      "revId": "9c92d27937f733645631eb43a1ad48bae78d630c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//7/s\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 1
