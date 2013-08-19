@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//9Z4\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:39:02Z",
+      "side": 1,
+      "message": "nit, add: \", defaults to \"identity\".\"",
+      "revId": "6a04516c85c1e0182ff977b1c701355eededd3c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9aE\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:39:02Z",
+      "side": 1,
+      "message": "+1 for the comment.",
+      "revId": "6a04516c85c1e0182ff977b1c701355eededd3c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
