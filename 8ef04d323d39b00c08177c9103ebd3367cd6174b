@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//8Eo\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 21
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-19T23:53:38Z",
+      "side": 1,
+      "message": "Actually this means where the filter is positioned in the pipeline. The configuration settings defaults are set to enable\u003dFalse. So it  is disabled by default.",
+      "parentUuid": "AAAARn//9oM\u003d",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//9do\u003d",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-19T17:15:04Z",
       "side": 1,
       "message": "s/LLC/Foundation",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8E4\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-19T23:53:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//9do\u003d",
       "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//8FA\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-19T23:53:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//9f0\u003d",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//9f8\u003d",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 21
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//8E8\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-19T23:53:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//9f8\u003d",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//9io\u003d",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 21
@@ -81,6 +153,24 @@
       "writtenOn": "2013-08-19T17:15:04Z",
       "side": 1,
       "message": "you can remove the __init__ from this, if in the dependency.requires you add \u0027ep_filter_api\u0027 too.",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8Fk\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-19T23:53:38Z",
+      "side": 1,
+      "message": "It does not work. I believe this is because the ep_filter_api is an extension. Good suggestion, though",
+      "parentUuid": "AAAARn//9io\u003d",
       "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//8Hw\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-19T23:53:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//9lw\u003d",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//9k0\u003d",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
         "patchSetId": 21
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//8Js\u003d",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-19T23:53:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//9k0\u003d",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//9kE\u003d",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
         "patchSetId": 21
@@ -149,6 +275,24 @@
       "writtenOn": "2013-08-19T17:15:04Z",
       "side": 1,
       "message": "if neither entries can have null values, then add nullable\u003dFalse to both columns.",
+      "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//8JU\u003d",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-19T23:53:38Z",
+      "side": 1,
+      "message": "Yes, these were foreign keys, so it makes sense to enforce that are null",
+      "parentUuid": "AAAARn//9kE\u003d",
       "revId": "8ef04d323d39b00c08177c9103ebd3367cd6174b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
