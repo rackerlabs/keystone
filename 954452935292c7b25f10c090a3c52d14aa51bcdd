@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//9Ek\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-19T19:10:31Z",
+      "side": 1,
+      "message": "Here we just need to be able to send an ID of the resource that is changing.",
+      "parentUuid": "AAAARn//9YQ\u003d",
+      "revId": "954452935292c7b25f10c090a3c52d14aa51bcdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//9YE\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//9C8\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-19T19:10:31Z",
+      "side": 1,
+      "message": "Notifications.py is designed so that if we want to pass in information about the old resource we can, and the notifier will send the updated version or the ID of the resource that was changed.",
+      "parentUuid": "AAAARn//9YE\u003d",
+      "revId": "954452935292c7b25f10c090a3c52d14aa51bcdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//9Xo\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2013-08-19T17:49:31Z",
       "side": 1,
       "message": "Since we\u0027ll also be adding these to groups, roles, etc... i\u0027m wondering if \u0027project\u0027 should be defined up top. Just an open question...",
+      "revId": "954452935292c7b25f10c090a3c52d14aa51bcdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9Ec\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-19T19:10:31Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "parentUuid": "AAAARn//9Xo\u003d",
       "revId": "954452935292c7b25f10c090a3c52d14aa51bcdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
