@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//9YQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:49:31Z",
+      "side": 1,
+      "message": "should you be sending tenant, and not tenant_id?",
+      "revId": "954452935292c7b25f10c090a3c52d14aa51bcdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9YE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:49:31Z",
+      "side": 1,
+      "message": "i\u0027m a bit confused if we should be sending ids or refs.",
+      "revId": "954452935292c7b25f10c090a3c52d14aa51bcdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//9Xo\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-19T17:49:31Z",
+      "side": 1,
+      "message": "Since we\u0027ll also be adding these to groups, roles, etc... i\u0027m wondering if \u0027project\u0027 should be defined up top. Just an open question...",
+      "revId": "954452935292c7b25f10c090a3c52d14aa51bcdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
