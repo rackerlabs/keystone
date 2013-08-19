@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//9a0\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-19T17:36:20Z",
+      "side": 1,
+      "message": "suggest remove \"as logging\" since it\u0027s not necessary",
+      "revId": "f64ca65ad4cd9542b858031f3b44a92c400d72d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
