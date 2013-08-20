@@ -68,6 +68,24 @@
       "revId": "6619f9c6bcd2b0b435263233f9fa1eddcc6db4f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//5jY\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2045,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-20T13:53:07Z",
+      "side": 1,
+      "message": "because group_refs lists how many groups the user is in, but the user doesn\u0027t get added to a group until 2 lines below!\nsort of a pre-test condition.",
+      "parentUuid": "AAAARn//7Jg\u003d",
+      "revId": "6619f9c6bcd2b0b435263233f9fa1eddcc6db4f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
