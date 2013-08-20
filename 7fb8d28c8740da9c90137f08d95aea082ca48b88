@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//42k\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-20T16:19:28Z",
+      "side": 1,
+      "message": "I think I should rename these wrapper methods... \u0027create_notification\u0027 sounds like creating a notification not notifying when a resource has been created. I think \u0027notify_created\u0027 might be more appropriate. Thoughts?",
+      "revId": "7fb8d28c8740da9c90137f08d95aea082ca48b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
