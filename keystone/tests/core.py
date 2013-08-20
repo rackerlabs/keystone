@@ -330,6 +330,9 @@ class TestCase(BaseTestCase):
 
     def config_overrides(self):
         self.config_fixture.config(policy_file=dirs.etc('policy.json'))
+        self.config_fixture.config(public_workers=2)
+        self.config_fixture.config(admin_workers=2)
+        self.config_fixture.config(policy_file=dirs.etc('policy.json'))
         self.config_fixture.config(
             group='auth',
             methods=['keystone.auth.plugins.external.DefaultDomain',
