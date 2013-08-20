@@ -16,6 +16,24 @@
       "revId": "ecd9bde6c18459a18fa21149add9ee7289cce889",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//4Pc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7996
+      },
+      "writtenOn": "2013-08-20T19:33:08Z",
+      "side": 1,
+      "message": "It does, I will add it thanks.",
+      "parentUuid": "AAAARn//4mo\u003d",
+      "revId": "ecd9bde6c18459a18fa21149add9ee7289cce889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
