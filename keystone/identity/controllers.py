@@ -223,6 +223,30 @@ class User(controller.V2Controller):
             msg = 'Enabled field should be a boolean'
             raise exception.ValidationError(message=msg)
 
+        # Remove the member role from the old tenant.
+        if user.get('tenantId'):
+            self.identity_api.get_project(user['tenantId'])
+            original_user = self.get_user(context, user_id)['user']
+            old_project_id = original_user.get('tenantId')
+            if old_project_id and old_project_id != user['tenantId']:
+                roles = self.get_roles_for_user_and_project(
+                    user_id, old_project_id)
+                member_role_id = config.CONF.member_role_id
+                if member_role_id in roles:
+                    self.identity_api.remove_user_membership_from_project(
+                        old_project_id, user_id)
+
+            # If user already has member role in new tenant, just ignore it
+            try:
+                self.identity_api.add_user_to_project(
+                    user['tenantId'], user_id)
+            except exception.Conflict:
+                LOG.debug(
+                    _('Conflict: user %(user_id)s already has member role'
+                      'in project %(project_id)s') % {
+                          'user_id': user_id,
+                          'project_id': user['tenantId']})
+
         user_ref = self.identity_api.update_user(user_id, user)
 
         if user.get('password') or not user.get('enabled', True):
@@ -243,16 +267,6 @@ class User(controller.V2Controller):
 
     def update_user_project(self, context, user_id, user):
         """Update the default tenant."""
-        self.assert_admin(context)
-
-        try:
-            # ensure that we're a member of that tenant
-            self.identity_api.add_user_to_project(
-                user.get('tenantId'), user_id)
-        except exception.Conflict:
-            # we're already a member of that tenant
-            pass
-
         return self.update_user(context, user_id, user)
 
 

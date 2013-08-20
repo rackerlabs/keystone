@@ -1503,6 +1503,28 @@ class IdentityTests(object):
                           self.tenant_baz['id'],
                           self.user_foo['id'])
 
+    def test_remove_user_membership_from_project(self):
+        self.identity_api.add_user_to_project(self.tenant_baz['id'],
+                                              self.user_foo['id'])
+        self.identity_api.remove_user_membership_from_project(
+            self.tenant_baz['id'], self.user_foo['id'])
+        roles = self.identity_api.get_roles_for_user_and_project(
+            self.user_foo['id'], self.tenant_baz['id'])
+        self.assertNotIn(self.role_member['id'], roles)
+
+    def test_remove_user_membership_from_project_raises_404(self):
+        self.assertRaises(
+            exception.RoleNotFound,
+            self.identity_api.remove_user_membership_from_project,
+            uuid.uuid4().hex,
+            self.user_foo['id'])
+
+        self.assertRaises(
+            exception.RoleNotFound,
+            self.identity_api.remove_user_membership_from_project,
+            self.tenant_bar['id'],
+            uuid.uuid4().hex)
+
     def test_get_projects_for_user_404(self):
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_projects_for_user,
@@ -1912,6 +1934,26 @@ class IdentityTests(object):
                           self.identity_api.update_user,
                           'fake1',
                           user)
+
+    def test_update_user_tenant(self):
+        user = {'id': 'fake1', 'name': 'fake1', 'enabled': True,
+                'domain_id': DEFAULT_DOMAIN_ID,
+                'tenantId': self.tenant_bar['id']}
+        self.identity_api.create_user('fake1', user)
+        user_ref = self.identity_api.get_user('fake1')
+        self.assertEqual(user_ref['tenantId'], self.tenant_bar['id'])
+
+        user['tenantId'] = self.tenant_baz['id']
+        self.identity_api.update_user('fake1', user)
+        user_ref = self.identity_api.get_user('fake1')
+        self.assertEqual(user_ref['tenantId'], self.tenant_baz['id'])
+
+        roles = self.identity_api.get_roles_for_user_and_project(
+            user['id'], user['tenantId'])
+        self.assertIn(self.role_member['id'], roles)
+        roles = self.identity_api.get_roles_for_user_and_project(
+            user['id'], self.tenant_bar['id'])
+        self.assertNotIn(self.role_member['id'], roles)
 
     def test_update_project_enable(self):
         tenant = {'id': 'fake1', 'name': 'fake1', 'enabled': True,
