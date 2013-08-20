@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAARn//4hI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-20T17:50:26Z",
+      "side": 1,
+      "message": "Consider adding a little bit explaining why this change is being purposed. This helps understand the change from a reviewer perspective. It is easier to see what is being added by looking at the commit/review, but understanding why is often very useful.",
+      "revId": "e9d9359a0608acf9f25711afb7ac7301ea34822e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//65A\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2013-08-20T08:17:01Z",
       "side": 1,
       "message": "Ok, so this great for the new default tenant/project.  However, what about the old one (if there was one)?  It isn\u0027t correct to simply call remove_user_from_project() since I think that will remove all roles....but what we want to do is to remove the \"member\" role from the old default project.  I\u0027d suggest you create a new method in the assignment manager called something like: remove_user_membership_from_project() which just removes the member role.  You can see how this role is added in add_user_to_project in that same assignment Manager",
+      "revId": "e9d9359a0608acf9f25711afb7ac7301ea34822e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//4hY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-20T17:50:26Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAARn//65A\u003d",
       "revId": "e9d9359a0608acf9f25711afb7ac7301ea34822e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
