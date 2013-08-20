@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//4Rw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-20T19:12:37Z",
+      "side": 1,
+      "message": "if @targetprotected provides backwards compatibility for @protected, then why not just revise the implementation of @protected?",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//4f0\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 13
