@@ -26,7 +26,6 @@ Usual usage in an openstack.common module:
 
 import copy
 import gettext
-import logging.handlers
 import os
 import re
 import UserString
@@ -255,17 +254,28 @@ def get_available_languages(domain):
     # NOTE(mrodden): en_US should always be available (and first in case
     # order matters) since our in-line message strings are en_US
     _AVAILABLE_LANGUAGES.append('en_US')
-    # NOTE(luisg): Babel <1.0 used a function called list(), which was
-    # renamed to locale_identifiers() in >=1.0, the requirements master list
-    # requires >=0.9.6, uncapped, so defensively work with both. We can remove
-    # this check when the master list updates to >=1.0, and all projects udpate
-    list_identifiers = (getattr(localedata, 'list', None) or
-                        getattr(localedata, 'locale_identifiers'))
-    locale_identifiers = list_identifiers()
-    for i in locale_identifiers:
+    for i in get_all_available_languages():
         if find(i) is not None:
             _AVAILABLE_LANGUAGES.append(i)
     return _AVAILABLE_LANGUAGES
+
+
+def get_all_available_languages():
+    """Lists all the locale identifiers available to the system.
+
+    This method is really a wrapper over the functionality provided by Babel.
+    Babel <1.0 used a function called list(), which was renamed to
+    locale_identifiers() in >=1.0, the requirements master list
+    requires >=0.9.6, uncapped, this method defensively works with both.
+
+    NOTE(luisg): We can remove this method and use
+    localedata.locale_identifiers()directly when the global requirements list
+    (https://github.com/openstack/requirements/blob/master/global-requirements.txt) # noqa
+    updates to >=1.0, and all projects udpate.
+    """
+    list_identifiers = (getattr(localedata, 'list', None) or
+                        getattr(localedata, 'locale_identifiers'))
+    return list_identifiers()
 
 
 def get_localized_message(message, user_locale):
@@ -276,30 +286,3 @@ def get_localized_message(message, user_locale):
         return unicode(message)
     else:
         return message
-
-
-class LocaleHandler(logging.Handler):
-    """Handler that can have a locale associated to translate Messages.
-
-    A quick example of how to utilize the Message class above.
-    LocaleHandler takes a locale and a target logging.Handler object
-    to forward LogRecord objects to after translating the internal Message.
-    """
-
-    def __init__(self, locale, target):
-        """Initialize a LocaleHandler
-
-        :param locale: locale to use for translating messages
-        :param target: logging.Handler object to forward
-                       LogRecord objects to after translation
-        """
-        logging.Handler.__init__(self)
-        self.locale = locale
-        self.target = target
-
-    def emit(self, record):
-        if isinstance(record.msg, Message):
-            # set the locale and resolve to a string
-            record.msg.locale = self.locale
-
-        self.target.emit(record)
