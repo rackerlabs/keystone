@@ -213,6 +213,12 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_multi_group_grants_on_project_domain(self):
         self.skipTest('Blocked by bug 1101287')
 
+    def test_remove_user_membership_from_project(self):
+        self.skipTest('Blocked by bug 1219739')
+
+    def test_remove_user_membership_from_project_raises_404(self):
+        self.skipTest('Blocked by bug 1219739')
+
     def test_list_group_members_missing_entry(self):
         """List group members with deleted user.
 
