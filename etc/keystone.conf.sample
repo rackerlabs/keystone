@@ -16,6 +16,11 @@
 # public_endpoint = http://localhost:%(public_port)s/
 # admin_endpoint = http://localhost:%(admin_port)s/
 
+# The number of worker processes to serve the public and admin WSGI
+# applications respectively.
+# public_workers = 2
+# admin_workers = 2
+
 # The port number which the OpenStack Compute service listens on
 # compute_port = 8774
 

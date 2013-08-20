@@ -35,6 +35,8 @@ FILE_OPTIONS = {
                    default='http://localhost:%(public_port)s/'),
         cfg.StrOpt('admin_endpoint',
                    default='http://localhost:%(admin_port)s/'),
+        cfg.IntOpt('public_workers', default=2),
+        cfg.IntOpt('admin_workers', default=2),
         cfg.StrOpt('onready'),
         cfg.StrOpt('auth_admin_prefix', default=''),
         cfg.StrOpt('policy_file', default='policy.json'),
