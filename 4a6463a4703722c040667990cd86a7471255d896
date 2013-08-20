@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//4TY\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2013-08-20T19:05:18Z",
+      "side": 1,
+      "message": "I have one question - since the message is sent before the actual action occurs, how we should treat the case of a endpoint/resource creation fails?",
+      "revId": "4a6463a4703722c040667990cd86a7471255d896",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
