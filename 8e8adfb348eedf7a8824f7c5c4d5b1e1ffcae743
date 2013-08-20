@@ -223,6 +223,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//7AQ\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:38:53Z",
+      "side": 1,
+      "message": "or at the very least the methods calling _validate_v3_token should properly handle the case of it raising up UserNotFound.\n\n(somehow that last 1/2 sentence was dropped off when I hit save)",
+      "parentUuid": "AAAARn//7GM\u003d",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//7MQ\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 2
