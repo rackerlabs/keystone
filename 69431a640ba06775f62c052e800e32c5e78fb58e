@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//708\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-20T01:11:39Z",
+      "side": 1,
+      "message": "split this line to shorten it, put the url on its own line.",
+      "revId": "69431a640ba06775f62c052e800e32c5e78fb58e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//70s\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-20T01:11:39Z",
+      "side": 1,
+      "message": "I think CONF.public_endpoint should be (CONF.public_endpoint % CONF). The default public_endpoint is CONF.public_endpoint (it\u0027s a format string).",
+      "revId": "69431a640ba06775f62c052e800e32c5e78fb58e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//70Q\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-20T01:11:39Z",
+      "side": 1,
+      "message": "can\u0027t the entire value of the WWW-Authenticate header be validated?",
+      "revId": "69431a640ba06775f62c052e800e32c5e78fb58e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//70o\u003d",
+        "filename": "tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1108,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-20T01:11:39Z",
+      "side": 1,
+      "message": "revert whitespace change.",
+      "revId": "69431a640ba06775f62c052e800e32c5e78fb58e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
