@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//4gU\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-20T18:00:34Z",
+      "side": 1,
+      "message": "this should default to None because it\u0027s expected to be a callable ... it\u0027s never otherwise a string",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//4gA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-20T18:00:34Z",
+      "side": 1,
+      "message": "this is named like a decorator, so it\u0027s unclear what exactly the action being performed here is, without going to look at the implementation of targetprotected()",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//4f4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-20T18:00:34Z",
+      "side": 1,
+      "message": "this seems like an abuse of a decorator ... why can\u0027t the function call out to build the \u0027protection\u0027 parameter (whatever that is)?",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//4f0\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-20T18:00:34Z",
+      "side": 1,
+      "message": "this looks like a change that is out of scope / should be merged separately?",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
