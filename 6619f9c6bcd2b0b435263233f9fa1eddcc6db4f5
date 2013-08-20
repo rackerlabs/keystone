@@ -51,6 +51,23 @@
       "revId": "6619f9c6bcd2b0b435263233f9fa1eddcc6db4f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7Jg\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2045,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-20T06:36:19Z",
+      "side": 1,
+      "message": "...to the points above, I am confused!  Why isn\u0027t x zero here since you haven\u0027t added any users to the new groups yet?",
+      "revId": "6619f9c6bcd2b0b435263233f9fa1eddcc6db4f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
