@@ -86,6 +86,24 @@
       "revId": "6619f9c6bcd2b0b435263233f9fa1eddcc6db4f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//5iE\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2045,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-20T14:12:53Z",
+      "side": 1,
+      "message": "ah, oh, sorry I get it...hard to keep track of which \u0027x loop\u0027 you are in...\nSo I do find this hard to follow in general..clever, but for some reason hard to keep track of the x, x + 1, x -2 etc.\nMaybe just some comments would help to explain what is going on?",
+      "parentUuid": "AAAARn//5jY\u003d",
+      "revId": "6619f9c6bcd2b0b435263233f9fa1eddcc6db4f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
