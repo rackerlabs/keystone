@@ -597,13 +597,143 @@ class CoreApiTests(object):
                                  expected_status=400)
         self.assertValidErrorResponse(res)
 
+    def _get_user_id(self, r):
+        """Helper method to return user ID from a response.
+
+        This needs to be overridden by child classes for on their content type.
+
+        """
+        raise NotImplementedError()
+
+    def _get_role_id(self, r):
+        """Helper method to return a role ID from a response.
+
+        This needs to be overridden by child classes for on their content type.
+
+        """
+        raise NotImplementedError()
+
+    def _get_role_name(self, r):
+        """Helper method to return role NAME from a response.
+
+        This needs to be overridden by child classes for on their content type.
+
+        """
+        raise NotImplementedError()
+
+    def _get_project_id(self, r):
+        """Helper method to return project ID from a response.
+
+        This needs to be overridden by child classes for on their content type.
+
+        """
+        raise NotImplementedError()
+
+    def assertRoleNotExists(self, r):
+        raise NotImplementedError()
+
+    def test_update_user_tenant(self):
+        token = self.get_scoped_token()
+
+        # Create a new user$
+        r = self.admin_request(
+            method='POST',
+            path='/v2.0/users',
+            body={
+                'user': {
+                    'name': uuid.uuid4().hex,
+                    'password': uuid.uuid4().hex,
+                    'tenantId': self.tenant_bar['id'],
+                    'enabled': True,
+                },
+            },
+            token=token,
+            expected_status=200)
+
+        user_id = self._get_user_id(r.result)
+
+        # Check if member_role is in tenant_bar
+        r = self.admin_request(
+            method='GET',
+            path='/v2.0/tenants/' + self.tenant_bar['id'] +
+                 '/users/' + user_id + '/roles',
+            body={},
+            token=token,
+            expected_status=200)
+        self.assertEqual(self._get_role_name(r.result), '_member_')
+
+        # Create a new tenant
+        r = self.admin_request(
+            method='POST',
+            path='/v2.0/tenants',
+            body={
+                'tenant': {
+                    'name': 'test_update_user',
+                    'description': 'A description ...',
+                    'enabled': True,
+                },
+            },
+            token=token,
+            expected_status=200)
+
+        project_id = self._get_project_id(r.result)
+
+        # Update user's tenant
+        r = self.admin_request(
+            method='PUT',
+            path='/v2.0/users/%(user_id)s' % {
+                'user_id': user_id,
+            },
+            body={
+                'user': {
+                    'tenantId': project_id,
+                },
+            },
+            token=token,
+            expected_status=200)
+
+        # 'member_role' should be in new_tenant
+        r = self.admin_request(
+            method='GET',
+            path='/v2.0/tenants/' + project_id +
+                 '/users/' + user_id + '/roles',
+            body={},
+            token=token,
+            expected_status=200)
+        self.assertEqual(self._get_role_name(r.result), '_member_')
+
+        # 'member_role' should not be in tenant_bar any more
+        r = self.admin_request(
+            method='GET',
+            path='/v2.0/tenants/' + self.tenant_bar['id'] +
+                 '/users/' + user_id + '/roles',
+            body={},
+            token=token,
+            expected_status=200)
+        self.assertRoleNotExists(r.result)
+
 
 class JsonTestCase(RestfulTestCase, CoreApiTests):
     content_type = 'json'
 
+    def _get_user_id(self, r):
+        return r['user']['id']
+
+    def _get_role_name(self, r):
+        return r['roles'][0]['name']
+
+    def _get_role_id(self, r):
+        return r['roles'][0]['id']
+
+    def _get_project_id(self, r):
+        return r['tenant']['id']
+
     def _get_token_id(self, r):
         """Applicable only to JSON."""
         return r.result['access']['token']['id']
+
+    def assertRoleNotExists(self, r):
+        self.assertEqual(r['roles'], [])
 
     def assertValidErrorResponse(self, r):
         self.assertIsNotNone(r.result.get('error'))
@@ -836,6 +966,21 @@ class JsonTestCase(RestfulTestCase, CoreApiTests):
 class XmlTestCase(RestfulTestCase, CoreApiTests):
     xmlns = 'http://docs.openstack.org/identity/api/v2.0'
     content_type = 'xml'
+
+    def _get_user_id(self, r):
+        return r.get('id')
+
+    def _get_role_name(self, r):
+        return r[0].get('name')
+
+    def _get_role_id(self, r):
+        return r[0].get('id')
+
+    def _get_project_id(self, r):
+        return r.get('id')
+
+    def assertRoleNotExists(self, r):
+        self.assertEqual(len(r), 0)
 
     def _get_token_id(self, r):
         return r.result.find(self._tag('token')).get('id')
