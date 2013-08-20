@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//7OE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "remove change id line",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7OA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "move up above bug, or remove",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7lk\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "A comment on why response.get(\u0027access\u0027) should be the default.\n\n(rephrasing bknudson\u0027s comment from patchset 1)",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7P0\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "(bknudson comment from patchset 1): add comment here why the following are problems",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7Pk\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "(bknudson comment from patchset 1): suggest log something in all these cases or provide more info in the exception.",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7UE\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "(bknudson comment): add a comment here why need to do the following this way (check for expires_at, expires, and token/expires",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7iE\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "(bknudson\u0027s comment from previous patchset): is this comment still in the right place? looks like it actually belongs before 58.",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7IE\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "rmove token_id, it shouldn\u0027t be passed to self._validate_v2_token, self._verify_token handles the use of token_id",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7Iw\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "remove token_id, it isn\u0027t used.\n\n(bknudson comment from patchset 1): remove belongs_to, since it\u0027s not used.",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7eA\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "**kwargs should be gone (was added back in during rebase)",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7I8\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "remove token_id, it shouldn\u0027t be passed to ._validate_v3_token, _verify_token uses it to do the lookup.",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7JE\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "remove token_id, it isn\u0027t used.",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7GM\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "it appears that this might have the chance to raise up UserNotFound if the user doesn\u0027t exist, where .get_token_data calls into ._populate_user.  If this is possible, this should be turned into a Unauthorized.",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7MQ\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "Discard in favor of using self.get_token_version.",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7LI\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "the above two lines should become: token_ref \u003d self._verify_token(token_id, belongs_to\u003dbelongs_to)\n\nThe try/except can be removed from this method, as _verify_token catches TokenNotFound and raises Unauthorized.",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7MA\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "should use self.get_token_version instead, will make the if/else if/elif/ easier to follow",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//7Os\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-20T07:13:26Z",
+      "side": 1,
+      "message": "remove belongs_to since it was already handled 593 (bknudson comment)",
+      "revId": "8e8adfb348eedf7a8824f7c5c4d5b1e1ffcae743",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
