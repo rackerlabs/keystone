@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//4mQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-20T17:29:26Z",
+      "side": 1,
+      "message": "(NIT): Could we rewrite this describing the importance of why we need to do this?\n\nRemoving \u0027support for the legacy commands\u0027 documentation because...",
+      "revId": "1d9edae128dd336bce0192c1c76c0e550ec0dda4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
