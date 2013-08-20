@@ -222,6 +222,14 @@ class User(controller.V2Controller):
         if 'enabled' in user and not isinstance(user['enabled'], bool):
             msg = 'Enabled field should be a boolean'
             raise exception.ValidationError(message=msg)
+        # Check tenantId if want to update it
+        if 'tenantId' in user:
+            try:
+                self.identity_api.add_user_to_project(
+                    user.get('tenantId'), user_id)
+            except exception.Conflict:
+                # we're already a member of that tenant
+                pass
 
         user_ref = self.identity_api.update_user(user_id, user)
 
