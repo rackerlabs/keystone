@@ -190,7 +190,7 @@ Writing Tests
 -------------
 
 To add tests covering all drivers, update the relevant base test class
-(``test_backend.py``, ``test_legacy_compat.py``, and
+(``test_backend.py``, and
 ``test_keystoneclient.py``).
 
 To add new drivers, subclass the ``test_backend.py`` (look towards
