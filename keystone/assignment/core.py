@@ -226,6 +226,16 @@ class Manager(manager.Manager):
         for role_id in roles:
             self.remove_role_from_user_and_project(user_id, tenant_id, role_id)
 
+    def remove_user_membership_from_project(self, tenant_id, user_id):
+        """Remove user member_role from a tenant
+
+        :raises: keystone.exception.ProjectNotFound,
+                 keystone.exception.UserNotFound
+
+        """
+        role_id = config.CONF.member_role_id
+        self.remove_role_from_user_and_project(user_id, tenant_id, role_id)
+
 
 class Driver(object):
 
