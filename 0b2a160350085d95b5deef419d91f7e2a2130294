@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//4lE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-20T17:36:12Z",
+      "side": 0,
+      "message": "This looks like a similar commit to: https://review.openstack.org/#/c/42828/\n\nWe should stick with one and abandon the other if they are redundant.",
+      "revId": "0b2a160350085d95b5deef419d91f7e2a2130294",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
