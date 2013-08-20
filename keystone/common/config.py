@@ -69,6 +69,8 @@ FILE_OPTIONS = {
                         'to set this value if the base URL contains a path '
                         '(e.g. /prefix/v2.0) or the endpoint should be found '
                         'on a different server.'),
+        cfg.IntOpt('public_workers', default=1),
+        cfg.IntOpt('admin_workers', default=1),
         # default max request size is 112k
         cfg.IntOpt('max_request_body_size', default=114688,
                    help='Enforced by optional sizelimit middleware '
