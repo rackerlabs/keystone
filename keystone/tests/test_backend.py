@@ -1501,6 +1501,28 @@ class IdentityTests(object):
                           self.tenant_baz['id'],
                           self.user_foo['id'])
 
+    def test_remove_user_membership_from_project(self):
+        self.identity_api.add_user_to_project(self.tenant_baz['id'],
+                                              self.user_foo['id'])
+        self.identity_api.remove_user_membership_from_project(
+            self.tenant_baz['id'], self.user_foo['id'])
+        roles = self.identity_api.get_roles_for_user_and_project(
+            self.user_foo['id'], self.tenant_baz['id'])
+        self.assertNotIn(self.role_member['id'], roles)
+
+    def test_remove_user_membership_from_project_raises_404(self):
+        self.assertRaises(
+            exception.RoleNotFound,
+            self.identity_api.remove_user_membership_from_project,
+            uuid.uuid4().hex,
+            self.user_foo['id'])
+
+        self.assertRaises(
+            exception.RoleNotFound,
+            self.identity_api.remove_user_membership_from_project,
+            self.tenant_bar['id'],
+            uuid.uuid4().hex)
+
     def test_get_projects_for_user_404(self):
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_projects_for_user,
