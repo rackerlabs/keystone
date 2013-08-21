@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//0po\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-21T14:35:41Z",
+      "side": 1,
+      "message": "you\u0027re producing a notification even if the driver call fails for some reason...",
+      "revId": "14180b68d87b679d396917fdd22a3fcf5e69d16e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
