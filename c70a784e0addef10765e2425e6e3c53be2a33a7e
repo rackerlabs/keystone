@@ -52,6 +52,24 @@
       "revId": "c70a784e0addef10765e2425e6e3c53be2a33a7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//ytM\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-08-21T21:45:59Z",
+      "side": 1,
+      "message": "Line 79 should do it",
+      "parentUuid": "AAAARn//zEo\u003d",
+      "revId": "c70a784e0addef10765e2425e6e3c53be2a33a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
