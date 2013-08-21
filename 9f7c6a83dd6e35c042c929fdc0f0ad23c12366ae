@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAARn//0ZE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-21T15:13:35Z",
+      "side": 1,
+      "message": "This says that only one entity may ever be used to protect calls in a controller. That seems a little limiting.  Identity means we may need to do somthing  user \u003d X or  group\u003dy.",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//0Yg\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-21T15:13:35Z",
+      "side": 1,
+      "message": "This means we fetch twice.  It also means we bypass caching, when it comes.\n\nThis check should be done on the way out, not on the way in.  It also should probably be done at the driver level, not the controller.",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//4gU\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 13
