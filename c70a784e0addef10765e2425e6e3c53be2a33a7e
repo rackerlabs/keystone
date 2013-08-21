@@ -34,6 +34,24 @@
       "revId": "c70a784e0addef10765e2425e6e3c53be2a33a7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//zEo\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-21T20:46:58Z",
+      "side": 1,
+      "message": "That\u0027s correct - we do believe the external system (although we do, effectively, check the user is part of the domain down on line 79",
+      "parentUuid": "AAAARn//zNg\u003d",
+      "revId": "c70a784e0addef10765e2425e6e3c53be2a33a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
