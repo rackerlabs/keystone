@@ -16,6 +16,24 @@
       "revId": "14180b68d87b679d396917fdd22a3fcf5e69d16e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//0T0\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-21T15:17:48Z",
+      "side": 1,
+      "message": "I can move this outside the try/except block so that it is only executed if the resource is created/updated/deleted successfully. Good catch, thanks!",
+      "parentUuid": "AAAARn//0po\u003d",
+      "revId": "14180b68d87b679d396917fdd22a3fcf5e69d16e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
