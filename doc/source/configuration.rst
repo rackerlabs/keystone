@@ -248,6 +248,12 @@ behavior is that subsystem caching is enabled, but the global toggle is set to d
     leave this set to True.  If the cache backend provides a key-mangler, this
     option has no effect.
 
+Current keystone systems that have caching capabilities:
+    * ``token``
+        Due to the sensitive nature of tokens (and short life-span) tokens have a separate cache ttl
+        that can be specified in the ``[token]`` configuration section, ``cache_ttl``, that represents
+        the cache expiration time of token caching, and token validation caching in seconds.
+
 For more information about the different backends (and configuration options):
     * `dogpile.cache.backends.memory`_
     * `dogpile.cache.backends.memcached`_
