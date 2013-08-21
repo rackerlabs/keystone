@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//0HE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-21T15:57:56Z",
+      "side": 1,
+      "message": "So this is designed to cover the standard case only, more complex ones are done with @prepareprotection and then a function in the controller method itself (e.g. see the grant() calls)",
+      "parentUuid": "AAAARn//0ZE\u003d",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//0Yg\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-21T15:13:35Z",
       "side": 1,
       "message": "This means we fetch twice.  It also means we bypass caching, when it comes.\n\nThis check should be done on the way out, not on the way in.  It also should probably be done at the driver level, not the controller.",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//0Ho\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-21T15:57:56Z",
+      "side": 1,
+      "message": "Well, I don\u0027t think we can do it on the way out...what about delete?",
+      "parentUuid": "AAAARn//0Yg\u003d",
       "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//0GY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-21T15:57:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//4gU\u003d",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//4gA\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-20T18:00:34Z",
       "side": 1,
       "message": "this is named like a decorator, so it\u0027s unclear what exactly the action being performed here is, without going to look at the implementation of targetprotected()",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//0HA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-21T15:57:56Z",
+      "side": 1,
+      "message": "Agreed...I will make this clearer.",
+      "parentUuid": "AAAARn//4gA\u003d",
       "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//0Gk\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-21T15:57:56Z",
+      "side": 1,
+      "message": "So one of the problems was that there doesn\u0027t seem to be a (recommended and clean) way of getting the method name once we are inside it (while a decorator does have this)",
+      "parentUuid": "AAAARn//4f4\u003d",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//4Rw\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 13
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//0Fg\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-21T15:57:56Z",
+      "side": 1,
+      "message": "That is a good point.  Now that I automatically create the \u0027id\u0027 parameter, I could check to see if this is in kwargs, and hence deduce that I should also include the target in the policy checks.  Let me investigate that.",
+      "parentUuid": "AAAARn//4Rw\u003d",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//4f0\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 13
@@ -115,6 +223,24 @@
       "writtenOn": "2013-08-20T18:00:34Z",
       "side": 1,
       "message": "this looks like a change that is out of scope / should be merged separately?",
+      "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//0GE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-21T15:57:56Z",
+      "side": 1,
+      "message": "Fair enough!",
+      "parentUuid": "AAAARn//4f0\u003d",
       "revId": "9f7c6a83dd6e35c042c929fdc0f0ad23c12366ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
