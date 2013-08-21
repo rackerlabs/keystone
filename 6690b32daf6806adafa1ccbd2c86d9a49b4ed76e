@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//zAs\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-08-21T21:11:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//0ic\u003d",
+      "revId": "6690b32daf6806adafa1ccbd2c86d9a49b4ed76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//0i0\u003d",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-21T14:48:23Z",
       "side": 1,
       "message": "flip the tenant / project relationship around... use \"project\" as the primary terminology and and put (tenant) in parens as the second, explanatory terminology.",
+      "revId": "6690b32daf6806adafa1ccbd2c86d9a49b4ed76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//zAo\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-08-21T21:11:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//0i0\u003d",
       "revId": "6690b32daf6806adafa1ccbd2c86d9a49b4ed76e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//zAg\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-08-21T21:11:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//0iM\u003d",
+      "revId": "6690b32daf6806adafa1ccbd2c86d9a49b4ed76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//0h4\u003d",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-21T14:48:23Z",
       "side": 1,
       "message": "s/tenant/project/",
+      "revId": "6690b32daf6806adafa1ccbd2c86d9a49b4ed76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//y+0\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-08-21T21:11:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//0h4\u003d",
       "revId": "6690b32daf6806adafa1ccbd2c86d9a49b4ed76e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
