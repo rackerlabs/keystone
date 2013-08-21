@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//zy0\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-08-21T16:58:37Z",
+      "side": 1,
+      "message": "Don\u0027t we want to check whether the user really belongs to that domain? If there are policy rules based on domain, then it can be spoofed",
+      "revId": "c70a784e0addef10765e2425e6e3c53be2a33a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
