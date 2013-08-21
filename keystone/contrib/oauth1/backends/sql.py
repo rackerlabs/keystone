@@ -152,18 +152,18 @@ class OAuth1(sql.Base):
     def update_consumer(self, consumer_id, consumer):
         session = self.get_session()
         with session.begin():
-            consumer_ref = self._get_consumer(consumer_id)
-            old_consumer_dict = consumer_ref.to_dict()
+            old_con_ref = session.query(Consumer).get(consumer_id)
+            if old_con_ref is None:
+                raise exception.NotFound(_('Consumer not found'))
+            old_consumer_dict = old_con_ref.to_dict()
             old_consumer_dict.update(consumer)
-            new_consumer = Consumer.from_dict(old_consumer_dict)
+            new_con_ref = Consumer.from_dict(old_consumer_dict)
             for attr in Consumer.attributes:
-                if (attr != 'id' or attr != 'secret'):
-                            setattr(consumer_ref,
-                                    attr,
-                                    getattr(new_consumer, attr))
-            consumer_ref.extra = new_consumer.extra
+                if (attr == 'description'):
+                    setattr(old_con_ref, attr, getattr(new_con_ref, attr))
+            old_con_ref.extra = new_con_ref.extra
             session.flush()
-        return core.filter_consumer(consumer_ref.to_dict())
+        return core.filter_consumer(old_con_ref.to_dict())
 
     def create_request_token(self, consumer_id, roles,
                              project_id, token_duration):
