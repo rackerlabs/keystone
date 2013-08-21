@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//0Bs\u003d",
+        "filename": "keystone/common/#controller.py#",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-21T16:07:06Z",
+      "side": 1,
+      "message": "assume didn\u0027t mean to include this file.",
+      "revId": "d782ac6e771f458f302c05384b53dd70f9a87138",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//0Bg\u003d",
+        "filename": "keystone/tests/_ldap_livetest.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-21T16:07:06Z",
+      "side": 1,
+      "message": "change \"os\" to \"so\"\n\nAlso, FakeLDAP does have filter support https://github.com/openstack/keystone/blob/master/keystone/common/ldap/fakeldap.py#L46",
+      "revId": "d782ac6e771f458f302c05384b53dd70f9a87138",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
