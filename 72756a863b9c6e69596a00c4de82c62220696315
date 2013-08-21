@@ -121,6 +121,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//04c\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-21T13:30:47Z",
+      "side": 1,
+      "message": "++ I knew it extensions could be referenced with the decorator, just couldn\u0027t remember the bit about adding it to keystone/services.py. thanks morgan.",
+      "parentUuid": "AAAARn//2ws\u003d",
+      "revId": "72756a863b9c6e69596a00c4de82c62220696315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//2q0\u003d",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 23
