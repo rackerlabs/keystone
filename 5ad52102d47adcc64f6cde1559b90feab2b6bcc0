@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//0r0\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-21T14:32:39Z",
+      "side": 1,
+      "message": "what\u0027s the actual exception you\u0027re expecting here?",
+      "revId": "5ad52102d47adcc64f6cde1559b90feab2b6bcc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//0rU\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-21T14:32:39Z",
+      "side": 1,
+      "message": "i assume you\u0027re not expecting _send_notification() to produce any exceptions of it\u0027s own, so I would expect it to handle exceptions from notifier_api",
+      "revId": "5ad52102d47adcc64f6cde1559b90feab2b6bcc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
