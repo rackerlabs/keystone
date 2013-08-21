@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//zHc\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-21T20:37:28Z",
+      "side": 1,
+      "message": "this test would not fail if the notification were not sent.  Set a vairable in the interior function that gets checked by the outermost function",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
