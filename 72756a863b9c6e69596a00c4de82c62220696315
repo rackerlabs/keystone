@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAARn//3MY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 23
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-21T06:49:06Z",
+      "side": 1,
+      "message": "I think this should probably be documented as a requirement to make your extension work, but as i recall only the actual defaults should be in the sample config.",
+      "revId": "72756a863b9c6e69596a00c4de82c62220696315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//3MI\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-21T06:49:06Z",
+      "side": 1,
+      "message": "You\u0027ll need to add in the apache software license header in this file.",
+      "revId": "72756a863b9c6e69596a00c4de82c62220696315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//2tA\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-21T06:49:06Z",
+      "side": 1,
+      "message": "use the @dependancy.requires() decorator on the class instead.  see my comment about this in your controllers.py file.",
+      "revId": "72756a863b9c6e69596a00c4de82c62220696315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//3Oo\u003d",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 23
@@ -30,6 +81,74 @@
       "writtenOn": "2013-08-21T00:53:11Z",
       "side": 1,
       "message": "nit: 2013, and the header should be OpenStack Foundation",
+      "revId": "72756a863b9c6e69596a00c4de82c62220696315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//2wk\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-21T06:49:06Z",
+      "side": 1,
+      "message": "ep_filter_api should be in this list (see comment on line 28) for help getting that to work (noticed in a previous patchset you said it wasn\u0027t working for you)",
+      "revId": "72756a863b9c6e69596a00c4de82c62220696315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//2ws\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-21T06:49:06Z",
+      "side": 1,
+      "message": "You can remove __init__ and use @dependancy.requires mechanism (see line 24 comment).\n\nTo make this work, you\u0027ll need to add in your manager into the keystone/services.py file. Look at how the oauth1 manager is put in the dictionary.\n\nSecond, add your module into keystone/tests/core.py (look again at oauth1 as an example).  That should make the decorator work for your tests as well.",
+      "revId": "72756a863b9c6e69596a00c4de82c62220696315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//2q0\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-21T06:49:06Z",
+      "side": 1,
+      "message": "You will need up update to use the oslo logging library you can do so by changing the line to:\n\nfrom keystone.openstack.common import log as logging",
+      "revId": "72756a863b9c6e69596a00c4de82c62220696315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//2tU\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-21T06:49:06Z",
+      "side": 1,
+      "message": "This line looks like it was added by mistake, you should remove it.",
       "revId": "72756a863b9c6e69596a00c4de82c62220696315",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
