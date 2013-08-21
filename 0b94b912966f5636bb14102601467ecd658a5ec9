@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//zIs\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-21T20:34:16Z",
+      "side": 1,
+      "message": "remove from here, and do in the assignment api for all assignment calls",
+      "revId": "0b94b912966f5636bb14102601467ecd658a5ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//zIo\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-21T20:34:16Z",
+      "side": 1,
+      "message": "remove from here, and do in the assignment api for all assignment calls",
+      "revId": "0b94b912966f5636bb14102601467ecd658a5ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//zIc\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-21T20:34:16Z",
+      "side": 1,
+      "message": "remove from here, and do in the assignment api for all assignment calls",
+      "revId": "0b94b912966f5636bb14102601467ecd658a5ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
