@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//22U\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-21T04:27:31Z",
+      "side": 1,
+      "message": "I know this is 300 seconds, but state it anyway. Don\u0027t want reader to think it\u0027s anything else.",
+      "revId": "194f90963426b28c4c43eadcfa23d61fddc7afeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//22E\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-21T04:27:31Z",
+      "side": 1,
+      "message": "same here, no unit of time mentioned.",
+      "revId": "194f90963426b28c4c43eadcfa23d61fddc7afeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//214\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-21T04:27:31Z",
+      "side": 1,
+      "message": "bump this up to the top of the section?",
+      "revId": "194f90963426b28c4c43eadcfa23d61fddc7afeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//210\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-21T04:27:31Z",
+      "side": 1,
+      "message": "s/toklen/token?",
+      "revId": "194f90963426b28c4c43eadcfa23d61fddc7afeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
