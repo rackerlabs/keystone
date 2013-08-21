@@ -16,6 +16,24 @@
       "revId": "c70a784e0addef10765e2425e6e3c53be2a33a7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//zNg\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-08-21T20:10:46Z",
+      "side": 1,
+      "message": "if I understand correctly how REMOTE_USER works it\u0027s by saying trust whatever the other auth system is giving it to me so I guess that would be unnecessary, right?",
+      "parentUuid": "AAAARn//zy0\u003d",
+      "revId": "c70a784e0addef10765e2425e6e3c53be2a33a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
