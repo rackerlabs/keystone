@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//zX8\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-21T19:13:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//zxk\u003d",
+      "revId": "5ad52102d47adcc64f6cde1559b90feab2b6bcc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//zw8\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 10
@@ -106,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//zZI\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-21T19:13:38Z",
+      "side": 1,
+      "message": "Here I am just building a payload with the information we want in the notification, mainly the resource ID, similar to the way notifications are sent in Nova:\n\nhttps://github.com/openstack/nova/blob/master/nova/notifications.py",
+      "parentUuid": "AAAARn//zw8\u003d",
+      "revId": "5ad52102d47adcc64f6cde1559b90feab2b6bcc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//zws\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 10
@@ -117,6 +153,24 @@
       "writtenOn": "2013-08-21T17:07:46Z",
       "side": 1,
       "message": "Host is always None.  All the calls are passing it as None Is it so?",
+      "revId": "5ad52102d47adcc64f6cde1559b90feab2b6bcc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//zYU\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-21T19:13:38Z",
+      "side": 1,
+      "message": "We need to pass in the host so that we can use it to get a publisher id, this can be changed however to get a publisher id for a different host: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/openstack/common/notifier/api.py#L86",
+      "parentUuid": "AAAARn//zws\u003d",
       "revId": "5ad52102d47adcc64f6cde1559b90feab2b6bcc0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
