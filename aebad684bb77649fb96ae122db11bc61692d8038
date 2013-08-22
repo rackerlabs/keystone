@@ -70,6 +70,142 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//xQE\u003d",
+        "filename": "keystone/contrib/endpoint_filter/__init__.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T03:38:44Z",
+      "side": 1,
+      "message": "LLC and wrong year. Recommend removing the Copyright line altogether from your newly added files.  It makes it one less thing you need to worry about, and they aren\u0027t really needed.\n\nFor more info see:\nhttps://wiki.openstack.org/wiki/LegalIssuesFAQ#Copyright_Headers",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xQI\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T03:38:44Z",
+      "side": 1,
+      "message": "year is wrong, see my other comment about possibly removing the \"copyright\" line altogether.",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xPA\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T03:38:44Z",
+      "side": 1,
+      "message": "year is wrong, see my other comment about possibly removing the \"copyright\" line altogether.",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xTk\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T03:38:44Z",
+      "side": 1,
+      "message": "Should this method raise an exception of some sort if the association already exists?  Or if there was an error creating the association?  Right now this method will always return None, regardless of success or failure.",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xUc\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T03:38:44Z",
+      "side": 1,
+      "message": "This method will always return none, success or otherwise.  It appears this should raise an exception if it doesn\u0027t match anything.  suggest making this similar to:\n\nif not query:\n    raise exception.NotFound(_(\u0027Endpoint not associated with Project\u0027))",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xUQ\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T03:38:44Z",
+      "side": 1,
+      "message": "string in the exception needs to be wrapped in _() for translation",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xNA\u003d",
+        "filename": "keystone/contrib/endpoint_filter/configuration.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T03:38:44Z",
+      "side": 1,
+      "message": "Your RST seems a little off, recommend using a previewer and make sure it looks correctly rendered.",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xO8\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T03:38:44Z",
+      "side": 1,
+      "message": "year is wrong, see my other comment about possibly removing the \"copyright\" line altogether.",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//x5Q\u003d",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 24
@@ -87,6 +223,23 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//xTU\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T03:38:44Z",
+      "side": 1,
+      "message": "As we discussed in IRC, make sure your docstrings for the methods on this Driver class reflect what the methods should really raise/return etc.  and make sure the driver (sql in your case) behaves as it is supposed to.",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//x5I\u003d",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 24
@@ -98,6 +251,40 @@
       "writtenOn": "2013-08-22T00:46:46Z",
       "side": 1,
       "message": "stop abbreviating \u0027endpoint\u0027 randomly",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xO4\u003d",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T03:38:44Z",
+      "side": 1,
+      "message": "year is wrong, see my other comment about possibly removing the \"copyright\" line altogether.",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xO0\u003d",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T03:38:44Z",
+      "side": 1,
+      "message": "year is wrong, see my other comment about possibly removing the \"copyright\" line altogether.",
       "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -132,6 +319,23 @@
       "writtenOn": "2013-08-22T00:46:46Z",
       "side": 1,
       "message": "endpoint_filter_api",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xR8\u003d",
+        "filename": "keystone/tests/test_v3_os_ep_filter.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T03:38:44Z",
+      "side": 1,
+      "message": "LLC and year is wrong, see my other comment about possibly removing the \"copyright\" line altogether.",
       "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
