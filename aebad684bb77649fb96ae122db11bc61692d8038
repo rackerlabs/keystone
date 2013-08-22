@@ -50,6 +50,91 @@
       "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x5c\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-22T00:46:46Z",
+      "side": 1,
+      "message": "absolutely no one knows what \u0027ep\u0027 means. be sufficiently verbose and rename this to \u0027endpoint_filter\u0027 (given that the implementation resides in openstack, i also think that os_ is redundant and can be removed)",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x5Q\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-22T00:46:46Z",
+      "side": 1,
+      "message": "link directly to the extension doc?",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x5I\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-22T00:46:46Z",
+      "side": 1,
+      "message": "stop abbreviating \u0027endpoint\u0027 randomly",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x48\u003d",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-22T00:46:46Z",
+      "side": 1,
+      "message": "stop abbreviating \u0027endpoint\u0027 randomly",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x5Y\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-22T00:46:46Z",
+      "side": 1,
+      "message": "endpoint_filter_api",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
