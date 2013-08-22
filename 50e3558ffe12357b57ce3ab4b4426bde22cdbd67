@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//yUA\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-22T00:19:27Z",
+      "side": 1,
+      "message": "Any reason why this can\u0027t be in the default policy.json? Are these backward incompatible changes?",
+      "revId": "50e3558ffe12357b57ce3ab4b4426bde22cdbd67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//yFE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-22T00:19:27Z",
+      "side": 1,
+      "message": "What? Controller have to implicitly invoke check_protection()? What if they don\u0027t or forgot to? Will there be no protection or denied all?",
+      "revId": "50e3558ffe12357b57ce3ab4b4426bde22cdbd67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//yNM\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-22T00:19:27Z",
+      "side": 1,
+      "message": "Don\u0027t you want args as well. Or are you expecting the create_\u003cresource\u003e() methods to explicit check for access. What if new code didn\u0027t that check, would it still be \"secured-by-default\"?",
+      "revId": "50e3558ffe12357b57ce3ab4b4426bde22cdbd67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//yBw\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-22T00:19:27Z",
+      "side": 1,
+      "message": "This seem like an overly complication. It only works in conjunction with explicit invocation of check_protection.",
+      "revId": "50e3558ffe12357b57ce3ab4b4426bde22cdbd67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
