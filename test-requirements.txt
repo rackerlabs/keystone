@@ -6,10 +6,6 @@ pysqlite
 # Optional backend: Memcache
 python-memcached
 
-# Optional backend: LDAP
-# authenticate against an existing LDAP server
-python-ldap==2.3.13
-
 # Testing
 # computes code coverage percentages
 coverage

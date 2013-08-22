@@ -22,6 +22,7 @@ from keystone.tests import core as test
 
 from keystone.common import openssl
 from keystone import exception
+from keystone.openstack.common import log as logging
 from keystone import token
 
 import default_fixtures
@@ -92,6 +93,27 @@ class CertSetupTestCase(test.TestCase):
         self.assertTrue(os.path.exists(CONF.ssl.ca_certs))
         self.assertTrue(os.path.exists(CONF.ssl.certfile))
         self.assertTrue(os.path.exists(CONF.ssl.keyfile))
+
+    def test_create_ssl_certs_invalid_subject(self):
+        CONF.ssl.cert_subject = 'foobar'
+
+        self.assertRaises(ValueError,
+                          openssl.ConfigureSSL,
+                          None, None)
+
+    def test_create_ssl_certs_openssl_subject_fatal_deprecated(self):
+        CONF.ssl.cert_subject = '/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost'
+        CONF.fatal_deprecations = True
+
+        self.assertRaises(logging.DeprecatedConfig,
+                          openssl.ConfigureSSL,
+                          None, None)
+
+    def test_create_ssl_certs_rfc_subject_fatal_deprecated(self):
+        CONF.ssl.cert_subject = 'CN=localhost,O=Unset,L=Unset,ST=Unset,C=US'
+        CONF.fatal_deprecations = True
+
+        openssl.ConfigureSSL(None, None)
 
     def tearDown(self):
         try:
