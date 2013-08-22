@@ -86,7 +86,8 @@ FILE_OPTIONS = {
         cfg.IntOpt('valid_days', default=3650),
         cfg.StrOpt('ca_password', default=None),
         cfg.StrOpt('cert_subject',
-                   default='/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost')],
+                   default='CN=localhost,'
+                   'O=Unset,L=Unset,ST=Unset,C=US')],
     'signing': [
         cfg.StrOpt('token_format', default=None),
         cfg.StrOpt('certfile',
@@ -101,8 +102,8 @@ FILE_OPTIONS = {
         cfg.IntOpt('valid_days', default=3650),
         cfg.StrOpt('ca_password', default=None),
         cfg.StrOpt('cert_subject',
-                   default=('/C=US/ST=Unset/L=Unset/O=Unset/'
-                            'CN=www.example.com'))],
+                   default=('CN=www.example.com,'
+                            'O=Unset,L=Unset,ST=Unset,C=US'))],
     'sql': [
         cfg.StrOpt('connection', secret=True,
                    default='sqlite:///keystone.db'),
