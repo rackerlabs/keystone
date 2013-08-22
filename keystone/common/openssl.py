@@ -18,6 +18,7 @@
 import os
 import stat
 
+from keystone.common import dn_conv
 from keystone.common import environment
 from keystone import config
 from keystone.openstack.common import log as logging
@@ -43,6 +44,19 @@ class BaseCertificateConfigure(object):
     """
 
     def __init__(self, conf_obj, keystone_user, keystone_group, **kwargs):
+
+        # Make sure certificate subject is in correct format
+        cert_subject = conf_obj.cert_subject
+        if dn_conv.is_openssl_dn(cert_subject):
+            LOG.deprecated('OpenSSL style format deprecated, '
+                           'use RFC-4514 format instead. '
+                           'Subject "%s" should be "%s" instead.',
+                           cert_subject,
+                           dn_conv.openssl_dn_to_rfc_dn(cert_subject))
+        else:
+            cert_subject = dn_conv.rfc_dn_to_openssl_dn(cert_subject)
+
+        # Initialize
         self.conf_dir = os.path.dirname(conf_obj.ca_certs)
         self.use_keystone_user = keystone_user
         self.use_keystone_group = keystone_group
@@ -58,7 +72,7 @@ class BaseCertificateConfigure(object):
                                'signing_cert': conf_obj.certfile,
                                'key_size': int(conf_obj.key_size),
                                'valid_days': int(conf_obj.valid_days),
-                               'cert_subject': conf_obj.cert_subject,
+                               'cert_subject': cert_subject,
                                'ca_password': conf_obj.ca_password}
 
         try:
