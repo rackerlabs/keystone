@@ -2,6 +2,210 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAARn//x1g\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "suggest reword to remove \"commit\" since everything in gerrit is a commit.",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x1o\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "capitalize Keystone",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x1M\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "don\u0027t need to rename the import, so suggest remove \"as logging\"",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x1Y\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "add another blank line here to separate imports from code.",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x0w\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "remove \"this defaults to None\" since it\u0027s redundant (applies in the other docstrings too)",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x0Q\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "is this supposed to be host\u003dhost?",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x0Y\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "messages should be unique so that we can figure out where it\u0027s being sent from, so suggest add \"Failed to send \u0027create\u0027 resource notification\u0027 or something.\n\nAlso, if we\u0027re going to wrap all _send_notification in try/except everywhere, then suggest put the try/except in _send_notification instead.",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xzw\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "these strings are all similar except for the operation (see 33 and 50). Suggest move this string construction into _send_notification to share it.",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x0A\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "this is always called with service\u003d\u0027identity\u0027, so suggest don\u0027t take it as a parameter and hard-code it.\n\nSame with host. It\u0027s always None so don\u0027t need to have it as a parameter.",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xzU\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "I don\u0027t understand this sentence. why would notifications be implemented in the Manager classes?\n\nIt might be useful to allow passing in the context as an optional parameter... but if it\u0027s not used now then might as well wait until it\u0027s actually useful since it\u0027s easy to change.",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xy4\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "don\u0027t need to rename the import, so remove \"as test\"",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xyo\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "I thought that the notifications module had an implementation that recorded notifications for testing?",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//zHc\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 11
@@ -13,6 +217,23 @@
       "writtenOn": "2013-08-21T20:37:28Z",
       "side": 1,
       "message": "this test would not fail if the notification were not sent.  Set a vairable in the interior function that gets checked by the outermost function",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xyY\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T01:19:18Z",
+      "side": 1,
+      "message": "the comment should state what behavior it\u0027s testing.",
       "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
