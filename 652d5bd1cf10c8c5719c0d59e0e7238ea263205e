@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX////A\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//x1g\u003d",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//x1o\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-22T01:19:18Z",
       "side": 1,
       "message": "capitalize Keystone",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX///+8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//x1o\u003d",
       "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//uuE\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//x1M\u003d",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//x1Y\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-22T01:19:18Z",
       "side": 1,
       "message": "add another blank line here to separate imports from code.",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//uuA\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//x1Y\u003d",
       "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//ur8\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//x0w\u003d",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//x0Q\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 11
@@ -98,6 +188,24 @@
       "writtenOn": "2013-08-22T01:19:18Z",
       "side": 1,
       "message": "is this supposed to be host\u003dhost?",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//urw\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "yes, done",
+      "parentUuid": "AAAARn//x0Q\u003d",
       "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//um4\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//x0Y\u003d",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//xzw\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 11
@@ -132,6 +258,24 @@
       "writtenOn": "2013-08-22T01:19:18Z",
       "side": 1,
       "message": "these strings are all similar except for the operation (see 33 and 50). Suggest move this string construction into _send_notification to share it.",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//uio\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "This implementation was suggested by Morgan and stevemar. This makes calling which type of notification from other parts of Keystone explicit and easier to interact with instead of passing in multiple resource ids and detecting what operation took place (see the earlier implementations).",
+      "parentUuid": "AAAARn//xzw\u003d",
       "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//uoM\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "I have hardcoded service, but not sure if I should do it will host since that can be something that can be passed in to get a different publisher_id",
+      "parentUuid": "AAAARn//x0A\u003d",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//xzU\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 11
@@ -166,6 +328,24 @@
       "writtenOn": "2013-08-22T01:19:18Z",
       "side": 1,
       "message": "I don\u0027t understand this sentence. why would notifications be implemented in the Manager classes?\n\nIt might be useful to allow passing in the context as an optional parameter... but if it\u0027s not used now then might as well wait until it\u0027s actually useful since it\u0027s easy to change.",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//unk\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "We can\u0027t optionally pass the context since it is required by the notifier api in Oslo-incubator. We also want to implement this in the Manager to avoid implementing the same notification in all the drivers/backends. \n\nSee dolphm\u0027s explaination in the previous patch sets. He suggested the notification call be implemented in the Manager for this reason. Since there is no context available in the Mangers we have to build one. ayoung, stevemar, and I talked about this in IRC and ayoung suggested that we just pass an empty context since it doesn\u0027t effect Keystone that much to send it anyway.",
+      "parentUuid": "AAAARn//xzU\u003d",
       "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//uPg\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//xy4\u003d",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//xyo\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 11
@@ -200,6 +398,24 @@
       "writtenOn": "2013-08-22T01:19:18Z",
       "side": 1,
       "message": "I thought that the notifications module had an implementation that recorded notifications for testing?",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//uO0\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "It does, but here I was just trying to ensure that notifications.notify_created included the resource in the event type, which doesn\u0027t necessarily mean we need to invoke the test notifier.",
+      "parentUuid": "AAAARn//xyo\u003d",
       "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX////g\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//zHc\u003d",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//xyY\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 11
@@ -234,6 +468,24 @@
       "writtenOn": "2013-08-22T01:19:18Z",
       "side": 1,
       "message": "the comment should state what behavior it\u0027s testing.",
+      "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAR3////w\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:17:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//xyY\u003d",
       "revId": "652d5bd1cf10c8c5719c0d59e0e7238ea263205e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
