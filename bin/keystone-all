@@ -29,6 +29,8 @@ from keystone.openstack.common import importutils
 
 CONF = config.CONF
 
+# The default max password size for passlib
+MAX_PASSWORD_SIZE_FOR_PASSLIB = '4096'
 
 def create_server(conf, name, host, port):
     app = deploy.loadapp('config:%s' % conf, name=name)
@@ -71,6 +73,11 @@ if __name__ == '__main__':
     # so that error messages in responses can be translated according to the
     # Accept-Language in the request rather than the Keystone server locale.
     gettextutils.install('keystone', lazy=True)
+
+    # Sanitize the PASSLIB_MAX_PASSWORD_SIZE environment variable
+    # in order to get rid of the unhandled PasswordSizeError
+    # and other unexpected security issues of passlib.
+    os.environ['PASSLIB_MAX_PASSWORD_SIZE'] = MAX_PASSWORD_SIZE_FOR_PASSLIB
 
     dev_conf = os.path.join(possible_topdir,
                             'etc',
