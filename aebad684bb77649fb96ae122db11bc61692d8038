@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//x6A\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 24
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-22T00:42:55Z",
+      "side": 1,
+      "message": "definitely keep this here to make it easy for deployers to insert it into the pipeline",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x6E\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 24
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-22T00:42:55Z",
+      "side": 1,
+      "message": "but don\u0027t include it in the default pipeline (i.e. disabled by default)",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//x50\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 24
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-22T00:42:55Z",
+      "side": 1,
+      "message": "the \u0027enabled\u0027 flag is completely redundant with whether or not the extension is available in the pipeline. other \"extensions\" that require an \u0027enabled\u0027 flag are using it as a hack. you don\u0027t need to follow that anti-pattern",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
