@@ -251,7 +251,7 @@ class LocalizedResponseTest(test.TestCase):
     def test_request_match_default(self):
         # The default language if no Accept-Language is provided is en_US
         req = wsgi.Request.blank('/')
-        self.assertEquals(req.best_match_language(), 'en_US')
+        self.assertEquals(req.best_match_language(), None)
 
     def test_request_match_language_expected(self):
         # If Accept-Language is a supported language, best_match_language()
@@ -269,7 +269,7 @@ class LocalizedResponseTest(test.TestCase):
         self._set_expected_languages(all_locales=['it'])
 
         req = wsgi.Request.blank('/', headers={'Accept-Language': 'zh'})
-        self.assertEquals(req.best_match_language(), 'en_US')
+        self.assertEquals(req.best_match_language(), None)
 
     def test_localized_message(self):
         # If the accept-language header is set on the request, the localized
