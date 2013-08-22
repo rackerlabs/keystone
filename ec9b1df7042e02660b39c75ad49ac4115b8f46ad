@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//x+I\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-22T00:26:51Z",
+      "side": 1,
+      "message": "what\u0027s self.filter and why it needs to be concatenated to this one?",
+      "revId": "ec9b1df7042e02660b39c75ad49ac4115b8f46ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
