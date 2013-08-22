@@ -172,6 +172,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//xCw\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-22T04:41:27Z",
+      "side": 1,
+      "message": "a common way of doing this might be:\n\nmsg \u003d _(\u0027Endpoint %s not associated with Project\u0027 %s) % endpoint_id, project_id\n\nraise exception.NotFound(message\u003dmsg)",
+      "parentUuid": "AAAARn//xUQ\u003d",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//xNA\u003d",
         "filename": "keystone/contrib/endpoint_filter/configuration.rst",
         "patchSetId": 24
@@ -200,6 +218,57 @@
       "writtenOn": "2013-08-22T03:38:44Z",
       "side": 1,
       "message": "year is wrong, see my other comment about possibly removing the \"copyright\" line altogether.",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xB4\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-22T04:41:27Z",
+      "side": 1,
+      "message": "You should have a think about what type of protection you need here (i.e. so that any policy file rules can be enforced.  Have a look at, say, the identity controller....you\u0027ll see that each of the api methods have a wrapper around them (e.g. @protected).",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xCU\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-22T04:41:27Z",
+      "side": 1,
+      "message": "So great that you are concerned about error codes.  However, the usual way we do this is let the drive layer raise the right error and we dont try and catch it at the controller level unless we need to really do some work based upon it....so you can just let it escape...no need do any checks here.",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//xCQ\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-22T04:41:27Z",
+      "side": 1,
+      "message": "As above, it\u0027s OK to just let the drive layer raise the right error and to not try and catch it at the controller level unless we need to really do some work based upon it....so you can just let it escape...no need do any checks here.\n\nSame for all the similar calls in this file",
       "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
