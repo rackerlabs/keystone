@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//umw\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T16:33:46Z",
+      "side": 1,
+      "message": "revert whitespace change.",
+      "revId": "236d13044ca10edf4edf8c7f192d8bed06a4bf0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//umU\u003d",
+        "filename": "keystone/tests/test_keystoneclient_sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T16:33:46Z",
+      "side": 1,
+      "message": "suggest remove \", *args, **kwargs\" .",
+      "revId": "236d13044ca10edf4edf8c7f192d8bed06a4bf0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
