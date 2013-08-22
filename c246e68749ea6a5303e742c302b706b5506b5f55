@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//voQ\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T12:35:49Z",
+      "side": 1,
+      "message": "use assertIs for testing against a singleton",
+      "revId": "c246e68749ea6a5303e742c302b706b5506b5f55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//voM\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-22T12:35:49Z",
+      "side": 1,
+      "message": "use assertIs for testing against a singleton",
+      "revId": "c246e68749ea6a5303e742c302b706b5506b5f55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
