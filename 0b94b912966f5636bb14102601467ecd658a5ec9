@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX///7c\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:33:48Z",
+      "side": 1,
+      "message": "The assignment Manager doesn\u0027t have project CRUD, that lives within the assignment.Driver class. I\u0027ll have to add that to the assignment.Manager but I think that should be a different commit since this one is specifically for notifications. \n\nThis was changed to be implemented in the Mangers because of Dolph\u0027s first comment on the patch \n\nDolph Mathews\t\tAug 14\n\nPatch Set 1: I would prefer that you didn\u0027t merge this\n\nrather than the controllers, i think the managers should emit notifications. that way, it doesn\u0027t matter which api or driver is in use, the notifications are emitted the same way",
+      "parentUuid": "AAAARn//xwk\u003d",
+      "revId": "0b94b912966f5636bb14102601467ecd658a5ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//zIo\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX///7M\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:33:48Z",
+      "side": 1,
+      "message": "see response above",
+      "parentUuid": "AAAARn//zIo\u003d",
+      "revId": "0b94b912966f5636bb14102601467ecd658a5ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//zIc\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
@@ -65,6 +101,24 @@
       "writtenOn": "2013-08-21T20:34:16Z",
       "side": 1,
       "message": "remove from here, and do in the assignment api for all assignment calls",
+      "revId": "0b94b912966f5636bb14102601467ecd658a5ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX///7I\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-22T18:33:48Z",
+      "side": 1,
+      "message": "see response above",
+      "parentUuid": "AAAARn//zIc\u003d",
       "revId": "0b94b912966f5636bb14102601467ecd658a5ec9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
