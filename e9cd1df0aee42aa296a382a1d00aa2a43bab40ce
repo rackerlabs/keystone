@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//+n0\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T23:51:57Z",
+      "side": 1,
+      "message": "recommend: make _get_consumer accept a session argument, with a default of None.  Only create a new session in _get_consumer if session is none.  This keeps the \"consumer get\" code all in one place (easier to maintain).",
+      "revId": "e9cd1df0aee42aa296a382a1d00aa2a43bab40ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//+ng\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T23:51:57Z",
+      "side": 1,
+      "message": "(NIT) If you only support description, is there a better way than looping through all attributes to set it?  You could probably just do a direct assignment here.  Recommend removing the for-loop",
+      "revId": "e9cd1df0aee42aa296a382a1d00aa2a43bab40ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
