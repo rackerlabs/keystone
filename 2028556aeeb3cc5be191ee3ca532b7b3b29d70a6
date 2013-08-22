@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASX//+r0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T23:31:37Z",
+      "side": 1,
+      "message": "suggest: removing this line, you\u0027ve covered the what the patch provides and how you approach it.",
+      "revId": "2028556aeeb3cc5be191ee3ca532b7b3b29d70a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//+sQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-22T23:31:37Z",
+      "side": 1,
+      "message": "I\u0027m going to be particular here, this note doesn\u0027t really clarify the documentation.  Since the UTC system time part is not relevant once your patch goes in, you should make the configuration documentation accurate.  I think that this really confuses the issue.\n\nsuggest: you remove the UTC specific information from the above paragraph.  Once your code is in, the UTC vs non-UTC issue should be resolved and no longer an on-going operational concern.",
+      "revId": "2028556aeeb3cc5be191ee3ca532b7b3b29d70a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//1rQ\u003d",
         "filename": "keystone/tests/test_utils.py",
         "patchSetId": 4
