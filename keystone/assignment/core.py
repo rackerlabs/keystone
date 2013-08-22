@@ -205,6 +205,25 @@ class Manager(manager.Manager):
         for role_id in roles:
             self.remove_role_from_user_and_project(user_id, tenant_id, role_id)
 
+    # project crud
+    def create_project(self, project_id, project):
+        return self.driver.create_project(project_id, project)
+
+    def list_projects(self, domain_id=None):
+        return self.driver.list_projects(domain_id)
+
+    def list_user_projects(self, user_id):
+        return self.driver.list_user_projects(user_id)
+
+    def get_project(self, project_id):
+        return self.driver.get_project(project_id)
+
+    def update_project(self, project_id, project):
+        return self.driver.update_project(project_id, project)
+
+    def delete_project(self, project_id):
+        return self.driver.delete_project(project_id)
+
 
 class Driver(object):
 
