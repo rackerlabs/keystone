@@ -573,7 +573,7 @@ When generating SSL certificates the following values are read
 * ``key_size``: Key size to create. Defaults to 1024.
 * ``valid_days``: How long the certificate is valid for. Defaults to 3650 (10 years).
 * ``ca_key``: The private key for the CA. Defaults to ``/etc/keystone/ssl/certs/cakey.pem``.
-* ``cert_subject``: The subject to set in the certificate. Defaults to /C=US/ST=Unset/L=Unset/O=Unset/CN=localhost. When setting the subject it is important to set CN to be the address of the server so client validation will succeed. This generally means having the subject be at least /CN=<keystone ip>
+* ``cert_subject``: The subject to set in the certificate. Defaults to CN=localhost,O=Unset,L=Unset,ST=Unset,C=US. When setting the subject it is important to set CN to be the address of the server so client validation will succeed. This generally means having the subject be at least CN=<keystone ip>. The use of OpenSSL's subject DN format is deprecated because it is non-standard, subjects should be specified in RFC-4514 format.
 
 Generating SSL certificates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

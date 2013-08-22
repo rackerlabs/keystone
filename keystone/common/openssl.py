@@ -17,6 +17,7 @@
 
 import os
 
+from keystone.common import dn_conv
 from keystone.common import environment
 from keystone.common import utils
 from keystone import config
@@ -43,6 +44,11 @@ class BaseCertificateConfigure(object):
     """
 
     def __init__(self, conf_obj, keystone_user, keystone_group, **kwargs):
+
+        # Make sure certificate subject is in correct format
+        cert_subject = self.normalize_cert_subject(conf_obj.cert_subject,
+                                                   'openssl')
+        # Initialize
         self.conf_dir = os.path.dirname(conf_obj.ca_certs)
         self.use_keystone_user = keystone_user
         self.use_keystone_group = keystone_group
@@ -58,7 +64,7 @@ class BaseCertificateConfigure(object):
                                'signing_cert': conf_obj.certfile,
                                'key_size': int(conf_obj.key_size),
                                'valid_days': int(conf_obj.valid_days),
-                               'cert_subject': conf_obj.cert_subject}
+                               'cert_subject': cert_subject}
 
         try:
             # OpenSSL 1.0 and newer support default_md = default, olders do not
@@ -76,6 +82,53 @@ class BaseCertificateConfigure(object):
         to_exec = command % self.ssl_dictionary
         LOG.info(to_exec)
         environment.subprocess.check_call(to_exec.rsplit(' '))
+
+    def normalize_cert_subject(self, subject, format='rfc'):
+        '''Assure certificate subject is in correct format
+
+        Certificate subject is required to be specified as a RFC-4514
+        formatted DN (Distinguished Name). If the subject is in
+        OpenSSL format a deprecated warning is emitted (possibly
+        raising a log.DeprecatedConfig exception).
+
+        The subject is returned in the specified format which may be
+        one of 'rfc' or 'openssl'.
+
+        If the subject is an invalid DN a ValueError is raised.
+
+        :param string subject: certificate subject
+        :param string format: format subject is returned in,
+                              may be 'rfc' or 'openssl'
+        :returns: subject in specified format
+        :raises: ValueError
+        :raises: log.DeprecatedConfig
+        '''
+
+        if dn_conv.is_openssl_dn(subject):
+            LOG.deprecated('OpenSSL style format deprecated, '
+                           'use RFC-4514 format instead. '
+                           'Subject "%s" should be "%s" instead.',
+                           subject,
+                           dn_conv.openssl_dn_to_rfc_dn(subject))
+            if format == 'rfc':
+                result = dn_conv.openssl_dn_to_rfc_dn(subject)
+            elif format == 'openssl':
+                result = subject
+            else:
+                raise ValueError('unknown format "%s"' % format)
+
+        elif dn_conv.is_rfc_dn(subject):
+            if format == 'rfc':
+                result = subject
+            elif format == 'openssl':
+                result = dn_conv.rfc_dn_to_openssl_dn(subject)
+            else:
+                raise ValueError('unknown format "%s"' % format)
+
+        else:
+            raise ValueError('subject is invalid dn "%s"' % subject)
+
+        return result
 
     def build_ssl_config_file(self):
         utils.make_dirs(os.path.dirname(self.ssl_config_file_name),

@@ -302,7 +302,7 @@
 #key_size = 1024
 #valid_days = 3650
 #cert_required = False
-#cert_subject = /C=US/ST=Unset/L=Unset/O=Unset/CN=localhost
+#cert_subject = CN=localhost,O=Unset,L=Unset,ST=Unset,C=US
 
 [signing]
 # Deprecated in favor of provider in the [token] section
@@ -315,7 +315,7 @@
 #ca_key = /etc/keystone/ssl/private/cakey.pem
 #key_size = 2048
 #valid_days = 3650
-#cert_subject = /C=US/ST=Unset/L=Unset/O=Unset/CN=www.example.com
+#cert_subject = CN=www.example.com,O=Unset,L=Unset,ST=Unset,C=US
 
 [ldap]
 # url = ldap://localhost
