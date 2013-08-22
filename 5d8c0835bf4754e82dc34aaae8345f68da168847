@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//+sM\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-22T23:30:17Z",
+      "side": 1,
+      "message": "Should it be driver-specific?",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//+xo\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-22T23:30:17Z",
+      "side": 1,
+      "message": "What\u0027s the difference between query_string and filters? Aren\u0027t they the same thing? Perhaps something like\n\ndef list_domains(self, **filters):\n\nThat way, controller simply need to pass the query string.",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//+sA\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-22T23:30:17Z",
+      "side": 1,
+      "message": "def list_domains(self, **filters):",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
