@@ -127,6 +127,10 @@ function run_flake8 {
 
 
   echo "Running flake8 ..."
+  if [ $never_venv -eq 1 ]; then
+      echo "**WARNING**:"
+      echo "Running flake8 without virtual env may miss OpenStack HACKING detection"
+  fi
   # Opt-out files from flake8
   ignore_scripts="*.pyc,*.pyo,*.sh,*.swp,*.rst"
   ignore_files="*.txt"
