@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//+2I\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-08-22T22:41:10Z",
+      "side": 1,
+      "message": "Hi Brant, this file seems specific to utils tests. Having this new test here is confusing, I think. I know you didn\u0027t put the new tests under \"UtilsTestCase\" class, but still per the file name, test_utils.py, it seems like not a quite an obvious fit. Wondering if it\u0027s a good idea to move it somewhere else?",
+      "revId": "f34346e71a8730c8ca8c7bb31d9208b0d13be426",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
