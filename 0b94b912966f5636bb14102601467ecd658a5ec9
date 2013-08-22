@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//+4w\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-22T22:33:14Z",
+      "side": 1,
+      "message": "ayoung: bkhudson: what **exactly** are ya\u0027ll suggesting be moved and to where?\n\nwhy should \u0027assignment\u0027 (which is still a fail) handle any aspect of project crud?",
+      "parentUuid": "AAAASX///7c\u003d",
+      "revId": "0b94b912966f5636bb14102601467ecd658a5ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//zIo\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
