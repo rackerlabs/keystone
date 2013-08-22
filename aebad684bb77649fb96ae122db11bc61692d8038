@@ -408,6 +408,23 @@
       "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX///9E\u003d",
+        "filename": "keystone/tests/test_v3_os_ep_filter.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-22T18:25:53Z",
+      "side": 1,
+      "message": "When you remove os_ep_filter from pipeline, I\u0027m guessing these tests will fail unless you add it dynamically.\n\nLook at https://review.openstack.org/#/c/29130/64/keystone/tests/test_v3_oauth1.py to see how it was added",
+      "revId": "aebad684bb77649fb96ae122db11bc61692d8038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
