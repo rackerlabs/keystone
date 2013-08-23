@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//+cI\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-23T01:10:45Z",
+      "side": 1,
+      "message": "++ that makes sense, but i would say the right implementation is likely \"global default\" with each driver able to override the global default as-needed, but if not defined in the config, rely on the global.",
+      "parentUuid": "AAAASX//+sM\u003d",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//+xo\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 2
@@ -47,6 +65,58 @@
       "writtenOn": "2013-08-22T23:30:17Z",
       "side": 1,
       "message": "def list_domains(self, **filters):",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//+ak\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-23T01:10:45Z",
+      "side": 1,
+      "message": "This starts getting sticky depending on where we end up doing the caching (directly in assignment or...).  I would prefer to avoid **kwargs-style interfacing in the manager layer  unless it\u0027s really needed.\n\nAs it stands, filtered interfaces (when filtering is applied) likely will need to be explicitly deemed as \"un-cacheable\", I am unsure at this point what the invalidations will look like under those circumstances.",
+      "parentUuid": "AAAASX//+sA\u003d",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//+Y8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-23T01:10:45Z",
+      "side": 1,
+      "message": "if called in this manner (named-args) the list_domains becomes uncachable (current implementation).  Likely, if filtering occurs, it shouldn\u0027t be cached, but if no filtering is done, it might make sense to cache.  Open for discussion on this point",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//+Y4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 630,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-23T01:10:45Z",
+      "side": 1,
+      "message": "same as above",
       "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
