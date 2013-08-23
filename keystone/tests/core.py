@@ -22,6 +22,7 @@ import socket
 import StringIO
 import sys
 import time
+import logging
 
 import gettext
 from lxml import etree
@@ -48,7 +49,6 @@ from keystone.contrib import oauth1
 from keystone import credential
 from keystone import exception
 from keystone import identity
-from keystone.openstack.common import log as logging
 from keystone.openstack.common import timeutils
 from keystone import policy
 from keystone import token
@@ -57,6 +57,10 @@ from keystone import trust
 
 
 LOG = logging.getLogger(__name__)
+debug_handler = logging.StreamHandler(sys.stderr)
+debug_handler.setLevel(logging.DEBUG)
+LOG.addHandler(debug_handler)
+
 ROOTDIR = os.path.dirname(os.path.abspath('..'))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
 TESTSDIR = os.path.join(ROOTDIR, 'keystone', 'tests')
