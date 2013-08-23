@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//7As\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-23T18:01:06Z",
+      "side": 0,
+      "message": "This was added from Oslo to be used consistently throughout Keystone. It should probably not be removed since it was introduced to have one logging implementation.",
+      "revId": "4dbda648c9006cd7621737b2170deb5ce2ebfb21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
