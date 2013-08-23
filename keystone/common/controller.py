@@ -214,7 +214,7 @@ class V3Controller(V2Controller):
 
     @classmethod
     def base_url(cls, path=None):
-        endpoint = CONF.public_endpoint % CONF
+        endpoint = CONF.public_endpoint
 
         # allow a missing trailing slash in the config
         if endpoint[-1] != '/':

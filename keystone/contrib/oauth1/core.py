@@ -89,7 +89,7 @@ def filter_token(access_token_ref):
 
 
 def rebuild_url(path):
-    endpoint = CONF.public_endpoint % CONF
+    endpoint = CONF.public_endpoint
 
     # allow a missing trailing slash in the config
     if endpoint[-1] != '/':

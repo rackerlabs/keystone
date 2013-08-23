@@ -38,7 +38,7 @@ class OAuth1Tests(test_v3.RestfulTestCase):
     def setUp(self):
         super(OAuth1Tests, self).setUp()
         self.controller = controllers.OAuthControllerV3()
-        self.base_url = CONF.public_endpoint % CONF + "v3"
+        self.base_url = CONF.public_endpoint + "v3"
         self._generate_paste_config()
         self.load_backends()
         self.admin_app = webtest.TestApp(
