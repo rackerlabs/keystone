@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//53Y\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:23:34Z",
+      "side": 1,
+      "message": "remove \u0027in Keystone\u0027 because it\u0027s implied by the project.\n\nshould this be \"for projects and users\"?",
+      "revId": "4048e17da1badd3806290f56efef25f2bc6bd8d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//52I\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:23:34Z",
+      "side": 1,
+      "message": "did you consider using a function wrapper for sending the notification after the function completes? Then wouldn\u0027t have to save the return values here. It might make the rest of these changes smoother.",
+      "revId": "4048e17da1badd3806290f56efef25f2bc6bd8d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
