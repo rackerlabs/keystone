@@ -86,6 +86,24 @@
       "revId": "2028556aeeb3cc5be191ee3ca532b7b3b29d70a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//870\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4234
+      },
+      "writtenOn": "2013-08-23T09:19:04Z",
+      "side": 1,
+      "message": "Dear Chmouel\n\nAs I comment, I think actual functionality tests should be added in test_backend_memcache.py. \n\nIf I misunderstand your comment, please let me know.",
+      "parentUuid": "AAAARn//1rQ\u003d",
+      "revId": "2028556aeeb3cc5be191ee3ca532b7b3b29d70a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
