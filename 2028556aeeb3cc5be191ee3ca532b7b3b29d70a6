@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//9Kw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4234
+      },
+      "writtenOn": "2013-08-23T09:02:40Z",
+      "side": 1,
+      "message": "Dear Morgan\n\nThank you for your review. \n\nI agree. I will remove this paragraph in next patch.",
+      "parentUuid": "AAAASX//+sQ\u003d",
+      "revId": "2028556aeeb3cc5be191ee3ca532b7b3b29d70a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//1rQ\u003d",
         "filename": "keystone/tests/test_utils.py",
         "patchSetId": 4
