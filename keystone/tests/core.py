@@ -16,6 +16,7 @@
 
 import datetime
 import errno
+import logging as generic_logging
 import os
 import shutil
 import socket
@@ -57,6 +58,10 @@ from keystone import trust
 
 
 LOG = logging.getLogger(__name__)
+debug_handler = generic_logging.StreamHandler(sys.stderr)
+debug_handler.setLevel(generic_logging.DEBUG)
+LOG.logger.addHandler(debug_handler)
+
 ROOTDIR = os.path.dirname(os.path.abspath('..'))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
 TESTSDIR = os.path.join(ROOTDIR, 'keystone', 'tests')
