@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//6jU\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-23T19:39:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//91I\u003d",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//+xo\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 2
