@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASX//59I\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "remove \"to Keystone\". This is implied by the project.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//58c\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "these strings are all similar except for the operation (see 34 and 51). Suggest move this string construction into _send_notification to share it.\n\nI made this comment in patch set 11. I don\u0027t understand the response. I\u0027m suggesting move the string construction into _send_notification which is a function private to this module so other parts of Keystone are not going to be calling it.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//58U\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "add to the docstring that this method does not raise.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//57s\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "Suggest remove this comment. It\u0027s more confusing than useful.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//564\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "change \"host\" to \"host\u003dhost\". The function takes a keyword parameter for host.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//6kM\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 14
@@ -13,6 +98,142 @@
       "writtenOn": "2013-08-23T19:34:44Z",
       "side": 1,
       "message": "do we want to raise an exception here?",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//558\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "remove this function; it\u0027s redundant.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//54Y\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "remove this line and use resource_id.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//55A\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "what are these 2 lines used for?",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//54I\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "remove this since it\u0027s the same as line 51, just use resource_id.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//55Q\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "there\u0027s a lot of duplicate code amongst these test functions. Consolidate it. The fake_send_notifications should be put into a class that keeps track of whether it\u0027s called or not and what value is expected.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//54E\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "remove this since it\u0027s the same as line 51, just use resource_id.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//534\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "\u0027some_resource_id\u0027 is the same as resource, so use resource.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//54k\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-23T23:14:52Z",
+      "side": 1,
+      "message": "use \"host\u003dhost\" since this is defined as a keyword parameter.",
       "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
