@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//91k\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-23T04:50:07Z",
+      "side": 1,
+      "message": "It\u0027s a fair question.  As it stands, this probably wouldn\u0027t quite work - since I tried to make it realistic to a deployment (so, for instance, mades assumptions like a specific domain is created to hold cloud administrators)...but I don\u0027t think we would want such a domain created automatically.  Trade-off from this being a realistic example vs something that might work OK in a dummy deployment.",
+      "parentUuid": "AAAARn//yUA\u003d",
+      "revId": "50e3558ffe12357b57ce3ab4b4426bde22cdbd67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//yFE\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-22T00:19:27Z",
       "side": 1,
       "message": "What? Controller have to implicitly invoke check_protection()? What if they don\u0027t or forgot to? Will there be no protection or denied all?",
+      "revId": "50e3558ffe12357b57ce3ab4b4426bde22cdbd67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//93k\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-23T04:50:07Z",
+      "side": 1,
+      "message": "I\u0027m not sure what the alternative is.  We can\u0027t, say, use the regular protection provided in this wrapper as first step - since it might fail because we havn\u0027t provided target entities that might be checked by the policy rule.  What this means is that unusual API calls that deal with multiple entities (e.g. check_grant()) do have to do something different.  It turns out that that this, so far, has only been needed in two classes of API call (see identity controller)",
+      "parentUuid": "AAAARn//yFE\u003d",
       "revId": "50e3558ffe12357b57ce3ab4b4426bde22cdbd67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//93Q\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-23T04:50:07Z",
+      "side": 1,
+      "message": "So this is unchanged from the original code, where we just passed flatter(kwargs) into policy_api_enforce().",
+      "parentUuid": "AAAARn//yNM\u003d",
+      "revId": "50e3558ffe12357b57ce3ab4b4426bde22cdbd67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//yBw\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 15
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-22T00:19:27Z",
       "side": 1,
       "message": "This seem like an overly complication. It only works in conjunction with explicit invocation of check_protection.",
+      "revId": "50e3558ffe12357b57ce3ab4b4426bde22cdbd67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//924\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-23T04:50:07Z",
+      "side": 1,
+      "message": "It is, I agree.  Working on suggestion made by Adam to get round difficulty of obtaining the method name correctly from within the API method itself, rather than in the wrapper.",
+      "parentUuid": "AAAARn//yBw\u003d",
       "revId": "50e3558ffe12357b57ce3ab4b4426bde22cdbd67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
