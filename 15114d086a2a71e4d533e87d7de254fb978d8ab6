@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//6kM\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-23T19:34:44Z",
+      "side": 1,
+      "message": "do we want to raise an exception here?",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
