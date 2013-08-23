@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//6YU\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 12
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-23T20:41:28Z",
+      "side": 1,
+      "message": "super nit: get rid of the \"a\" before toggle-able. should be \"This is toggle-able for ...\"",
+      "revId": "df6b0cac853649cc6fa57a2a67355bf1347f7dea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
