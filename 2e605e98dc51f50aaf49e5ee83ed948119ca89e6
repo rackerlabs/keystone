@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//6tQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-23T19:24:35Z",
+      "side": 1,
+      "message": "Should DocImpact and SecurityImpact tags be added?",
+      "revId": "2e605e98dc51f50aaf49e5ee83ed948119ca89e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//6n4\u003d",
+        "filename": "keystone/tests/test_dn_conv.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-23T19:24:35Z",
+      "side": 1,
+      "message": "Is this needed if you\u0027re running these tests from ./run_tests.py?",
+      "revId": "2e605e98dc51f50aaf49e5ee83ed948119ca89e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
