@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//9tM\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-23T05:49:43Z",
+      "side": 1,
+      "message": "updated to be more descriptive option.",
+      "revId": "b3c4f5c9c5a00e262c5978be171f15ba105c3a5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
