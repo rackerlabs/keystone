@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//6yY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-23T19:04:19Z",
+      "side": 1,
+      "message": "I don\u0027t think you meant to check this line in. Looks like a typo.\ntoken should default to token, password to password.",
+      "revId": "b3fd870f5115a49aa9fd492fffe52dfc3265e08a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//6xs\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-23T19:04:19Z",
+      "side": 1,
+      "message": "use project_id instead of tenant_id. fix throughout this file.",
+      "revId": "b3fd870f5115a49aa9fd492fffe52dfc3265e08a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//6ww\u003d",
+        "filename": "keystone/contrib/endpoint_filter/configuration.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-23T19:04:19Z",
+      "side": 1,
+      "message": "date is wrong and and LLC is used instead of Foundation.\nThough i really like the addition of this file, I will be adding one like this to the oauth extension",
+      "revId": "b3fd870f5115a49aa9fd492fffe52dfc3265e08a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//6vU\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-23T19:04:19Z",
+      "side": 1,
+      "message": "big +1 for this file as a whole.",
+      "revId": "b3fd870f5115a49aa9fd492fffe52dfc3265e08a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
