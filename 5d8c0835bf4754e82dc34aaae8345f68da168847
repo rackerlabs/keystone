@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//91I\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-23T04:57:04Z",
+      "side": 1,
+      "message": "OK, let me look at this.",
+      "parentUuid": "AAAASX//+cI\u003d",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//+xo\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 2
@@ -48,6 +66,24 @@
       "writtenOn": "2013-08-22T23:30:17Z",
       "side": 1,
       "message": "What\u0027s the difference between query_string and filters? Aren\u0027t they the same thing? Perhaps something like\n\ndef list_domains(self, **filters):\n\nThat way, controller simply need to pass the query string.",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//91Q\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-23T04:57:04Z",
+      "side": 1,
+      "message": "So I agree the names aren\u0027t quiet right.  query_string is the query string form context that contains, actually a dict of the filter requests.  filters is a list of valid filter keys that we support for this api.  Let me change the names to make this clearer",
+      "parentUuid": "AAAASX//+xo\u003d",
       "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//91A\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-23T04:57:04Z",
+      "side": 1,
+      "message": "See me previous comment backend/sql",
+      "parentUuid": "AAAASX//+sA\u003d",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//+Y8\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 2
@@ -100,6 +154,24 @@
       "writtenOn": "2013-08-23T01:10:45Z",
       "side": 1,
       "message": "if called in this manner (named-args) the list_domains becomes uncachable (current implementation).  Likely, if filtering occurs, it shouldn\u0027t be cached, but if no filtering is done, it might make sense to cache.  Open for discussion on this point",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//90k\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-23T04:57:04Z",
+      "side": 1,
+      "message": "so to help me think about this, at which layer are we planning do the caching?",
+      "parentUuid": "AAAASX//+Y8\u003d",
       "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
