@@ -16,6 +16,24 @@
       "revId": "6eae862ede40539a71c0280f520bb6c065729314",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//90c\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-23T04:58:35Z",
+      "side": 1,
+      "message": "It looks like we can do something like: self.get_token.set(\u003ccache_value\u003e, arg1, arg2, ...)\n\nHowever, it would default to the global expiration time.  I\u0027ll need to play with this a bit to see what pitfalls exist.  I\u0027ll try with the next patchset.",
+      "parentUuid": "AAAASX///rg\u003d",
+      "revId": "6eae862ede40539a71c0280f520bb6c065729314",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
