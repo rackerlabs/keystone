@@ -178,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//6yc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-23T18:55:40Z",
+      "side": 1,
+      "message": "caching is going to occur at the manager layer.  Methods on the manager do the caching so regardless of the backend we get the ability to cache.\n\nThis also allows us to invalidate cache intelligently based upon update and delete calls that go through the manger.\n\nAs a base (initial example) look at https://review.openstack.org/#/c/43195/ for where the cache gets setup.\n\nthe cache library doesn\u0027t do well with kwargs/uses of named args on invocation of a method (i have an idea how to solve this, but it\u0027s much more involved and harder to test on an initial pass).  Invalidations are the real sticking point.",
+      "parentUuid": "AAAASX//90k\u003d",
+      "revId": "5d8c0835bf4754e82dc34aaae8345f68da168847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//+Y4\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 2
