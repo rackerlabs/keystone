@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//6aM\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-23T20:37:41Z",
+      "side": 1,
+      "message": "Thanks, rebase artifact ...",
+      "parentUuid": "AAAASX//6yY\u003d",
+      "revId": "b3fd870f5115a49aa9fd492fffe52dfc3265e08a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//6xs\u003d",
         "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
         "patchSetId": 27
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-23T19:04:19Z",
       "side": 1,
       "message": "use project_id instead of tenant_id. fix throughout this file.",
+      "revId": "b3fd870f5115a49aa9fd492fffe52dfc3265e08a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//6Zc\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-23T20:37:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//6xs\u003d",
       "revId": "b3fd870f5115a49aa9fd492fffe52dfc3265e08a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//6ZI\u003d",
+        "filename": "keystone/contrib/endpoint_filter/configuration.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-23T20:37:41Z",
+      "side": 1,
+      "message": "Yes. I want to propose to write some documentation regarding how to develop extensions. It has been quite painful, if I had a template to follow it would have shorten significantly my time.\nI will propose it in the next meeting. Maybe you can work with me on this ...\nFabio",
+      "parentUuid": "AAAASX//6ww\u003d",
+      "revId": "b3fd870f5115a49aa9fd492fffe52dfc3265e08a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//6vU\u003d",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 27
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-23T19:04:19Z",
       "side": 1,
       "message": "big +1 for this file as a whole.",
+      "revId": "b3fd870f5115a49aa9fd492fffe52dfc3265e08a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//6Y0\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-23T20:37:41Z",
+      "side": 1,
+      "message": "gyee went the extra mile in helping me here ...",
+      "parentUuid": "AAAASX//6vU\u003d",
       "revId": "b3fd870f5115a49aa9fd492fffe52dfc3265e08a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
