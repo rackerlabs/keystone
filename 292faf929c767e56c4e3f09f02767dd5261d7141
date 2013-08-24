@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//4lQ\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-24T22:52:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//43s\u003d",
+      "revId": "292faf929c767e56c4e3f09f02767dd5261d7141",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//43w\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//4lM\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-24T22:52:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//43w\u003d",
+      "revId": "292faf929c767e56c4e3f09f02767dd5261d7141",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//43g\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2013-08-24T16:39:29Z",
       "side": 1,
       "message": "Should we make sure this is documented so that it is recommended that this configuration option is under the identity section?",
+      "revId": "292faf929c767e56c4e3f09f02767dd5261d7141",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//4lI\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-24T22:52:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//43g\u003d",
       "revId": "292faf929c767e56c4e3f09f02767dd5261d7141",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
