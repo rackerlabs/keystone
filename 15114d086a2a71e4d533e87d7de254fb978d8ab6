@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//5ds\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//59I\u003d",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//58c\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-23T23:14:52Z",
       "side": 1,
       "message": "these strings are all similar except for the operation (see 34 and 51). Suggest move this string construction into _send_notification to share it.\n\nI made this comment in patch set 11. I don\u0027t understand the response. I\u0027m suggesting move the string construction into _send_notification which is a function private to this module so other parts of Keystone are not going to be calling it.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//5d0\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "Having the methods notify_created(), notify_updated(), and notify_deleted() was suggested in an early patch set, discussed between morganfainberg and stevemar. Doing this seemed like a better solution than the first implementation where the event_type was determined by what was passed in (see the early implementation).\n\nSo the main reason why this was changed was because this is easier to read and if the construction of event_type is moved to _send_notification then we have to have some logic in there to determine the difference between \u0027identity.resource.created\u0027, \u0027identity.resource.updated\u0027 and \u0027identity.resource.deleted\u0027, which somewhat brings us back to square one with the early implementations.",
+      "parentUuid": "AAAASX//58c\u003d",
       "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//5fs\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//58U\u003d",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//57s\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 14
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-23T23:14:52Z",
       "side": 1,
       "message": "Suggest remove this comment. It\u0027s more confusing than useful.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//5fk\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//57s\u003d",
       "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//5fg\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//564\u003d",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//6kM\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 14
@@ -98,6 +188,24 @@
       "writtenOn": "2013-08-23T19:34:44Z",
       "side": 1,
       "message": "do we want to raise an exception here?",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//5fc\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "When notifications fail the exceptions are raised in the notifier driver in keystone/openstack/common/notifier/*",
+      "parentUuid": "AAAASX//6kM\u003d",
       "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//5fQ\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//558\u003d",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//54Y\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 14
@@ -132,6 +258,24 @@
       "writtenOn": "2013-08-23T23:14:52Z",
       "side": 1,
       "message": "remove this line and use resource_id.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//5ew\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//54Y\u003d",
       "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//5fM\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "AAAASX//55A\u003d",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//54I\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 14
@@ -166,6 +328,24 @@
       "writtenOn": "2013-08-23T23:14:52Z",
       "side": 1,
       "message": "remove this since it\u0027s the same as line 51, just use resource_id.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//5fA\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//54I\u003d",
       "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +386,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//5e8\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//54E\u003d",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//534\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 14
@@ -223,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//5e4\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//534\u003d",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//54k\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 14
@@ -234,6 +450,24 @@
       "writtenOn": "2013-08-23T23:14:52Z",
       "side": 1,
       "message": "use \"host\u003dhost\" since this is defined as a keyword parameter.",
+      "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//5e0\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-24T04:13:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//54k\u003d",
       "revId": "15114d086a2a71e4d533e87d7de254fb978d8ab6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
