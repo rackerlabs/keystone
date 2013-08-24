@@ -70,7 +70,10 @@ FILE_OPTIONS = {
         cfg.IntOpt('expiration', default=86400),
         cfg.StrOpt('provider', default=None),
         cfg.StrOpt('driver',
-                   default='keystone.token.backends.sql.Token')],
+                   default='keystone.token.backends.sql.Token'),
+        cfg.BoolOpt('caching', default=True),
+        cfg.IntOpt('cache_time', default=300),
+        cfg.IntOpt('revocation_cache_time', default=3600)],
     'cache': [
         cfg.StrOpt('config_prefix', default='cache.keystone'),
         cfg.IntOpt('expiration_time', default=60),
