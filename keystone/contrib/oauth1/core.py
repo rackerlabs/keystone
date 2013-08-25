@@ -169,7 +169,21 @@ class Driver(object):
         raise exception.NotImplemented()
 
     def get_consumer(self, consumer_id):
-        """Get consumer.
+        """Get consumer, returns the consumer id (key)
+        and description.
+
+        :param consumer_id: id of consumer to get
+        :type consumer_ref: string
+        :returns: consumer_ref
+
+        """
+        raise exception.NotImplemented()
+
+    def get_consumer_with_secret(self, consumer_id):
+        """Get consumer with secret, returns the consumer id (key),
+        description, and consumer secret. Secrets should only be shared
+        upon consumer creation; however to verify OAuth requests the
+        consumer secret is required to verify incoming OAuth requests.
 
         :param consumer_id: id of consumer to get
         :type consumer_ref: string
