@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//3tU\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-25T22:17:37Z",
+      "side": 0,
+      "message": "what was wrong with this pattern?",
+      "revId": "da26317a14b83852610e2c0c07084d78e180129c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

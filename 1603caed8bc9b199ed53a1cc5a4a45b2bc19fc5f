@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASX//3tY\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-25T22:17:37Z",
+      "side": 1,
+      "message": "the pattern used by other sql drivers in _get_x() methods is that the session is required, and these methods are exclusively called by internal methods which already have sessions available anyway.\n\nso, make it required, and pass in a session appropriately",
+      "revId": "1603caed8bc9b199ed53a1cc5a4a45b2bc19fc5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//4Co\u003d",
         "filename": "keystone/contrib/oauth1/backends/sql.py",
         "patchSetId": 1
