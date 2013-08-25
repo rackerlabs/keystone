@@ -178,6 +178,16 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    def get_consumer_with_secret(self, consumer_id):
+        """Get consumer with secret.
+
+        :param consumer_id: id of consumer to get
+        :type consumer_ref: string
+        :returns: consumer_ref
+
+        """
+        raise exception.NotImplemented()
+
     def delete_consumer(self, consumer_id):
         """Delete consumer.
 
