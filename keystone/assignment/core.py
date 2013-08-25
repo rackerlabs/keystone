@@ -16,6 +16,7 @@
 
 """Main entry point into the assignment service."""
 
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import manager
 from keystone import config
@@ -25,6 +26,7 @@ from keystone.openstack.common import log as logging
 
 CONF = config.CONF
 LOG = logging.getLogger(__name__)
+SHOULD_CACHE = cache.should_cache_fn('assignment')
 
 DEFAULT_DOMAIN = {'description':
                   (u'Owns users and tenants (i.e. projects)'
@@ -204,6 +206,97 @@ class Manager(manager.Manager):
             raise exception.NotFound(tenant_id)
         for role_id in roles:
             self.remove_role_from_user_and_project(user_id, tenant_id, role_id)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=CONF.assignment.cache_time)
+    def get_domain(self, domain_id):
+        return self.driver.get_domain(domain_id)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=CONF.assignment.cache_time)
+    def get_domain_by_name(self, domain_name):
+        return self.driver.get_domain_by_name(domain_name)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=CONF.assignment.cache_time)
+    def list_domains(self):
+        return self.driver.list_domains()
+
+    def create_domain(self, domain_id, domain):
+        ret = self.driver.create_domain(domain_id, domain)
+        self.list_domains.invalidate(self)
+        if SHOULD_CACHE(ret):
+            self.get_domain.set(ret, domain_id)
+            self.get_domain_by_name.set(ret, ret['name'])
+        return ret
+
+    def update_domain(self, domain_id, domain):
+        ret = self.driver.update_domain(domain_id, domain)
+        self.list_domains.invalidate(self)
+        if SHOULD_CACHE(ret):
+            self.get_domain.set(ret, domain_id)
+            self.get_domain_by_name.set(ret, ret['name'])
+        return ret
+
+    def delete_domain(self, domain_id):
+        try:
+            domain = self.driver.get_domain(domain_id)
+            self.driver.delete_domain(domain_id)
+            self.list_domains.invalidate(self)
+            self.get_domain.invalidate(self, domain_id)
+            self.get_domain_by_name.invalidate(self, domain['name'])
+        except exception.DomainNotFound:
+            # Domain was deleted before we got to it. Nothing left to do.
+            pass
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=CONF.assignment.cache_time)
+    def get_project(self, project_id):
+        return self.driver.get_project(project_id)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=CONF.assignment.cache_time)
+    def get_project_by_name(self, tenant_name, domain_id):
+        return self.driver.get_project_by_name(tenant_name, domain_id)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=CONF.assignment.cache_time)
+    def list_projects(self, domain_id=None):
+        return self.driver.list_projects(domain_id)
+
+    def create_project(self, project_id, project):
+        ret = self.driver.create_project(project_id, project)
+        self.list_projects.invalidate(self)
+        self.list_projects.invalidate(self, ret['domain_id'])
+        if SHOULD_CACHE(ret):
+            self.get_project.set(ret, project_id)
+            self.get_project_by_name.set(ret, project_id, ret['domain_id'])
+        return ret
+
+    def update_project(self, project_id, project):
+        ret = self.driver.update_project(project_id, project)
+        self.list_projects.invalidate(self)
+        self.list_projects.invalidate(self, ret['domain_id'])
+        self.get_project.invalidate(self, project_id)
+        self.get_project_by_name.invalidate(self, ret['name'],
+                                            ret['domain_id'])
+        if SHOULD_CACHE(ret):
+            self.get_project.set(ret, project_id)
+            self.get_project_by_name.set(ret, project_id, ret['domain_id'])
+        return ret
+
+    def delete_project(self, project_id):
+        try:
+            project = self.driver.get_project(project_id)
+            self.driver.delete_project(project_id)
+            self.list_projects.invalidate(self)
+            self.list_projects.invalidate(self, project['domain_id'])
+            self.get_project.invalidate(self, project_id)
+            self.get_project_by_name.invalidate(self, project['name'],
+                                                project['domain_id'])
+        except exception.ProjectNotFound:
+            # Project was deleted before we got to it. Nothing left to do.
+            pass
 
 
 class Driver(object):
