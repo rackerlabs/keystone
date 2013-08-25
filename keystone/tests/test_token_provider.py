@@ -689,6 +689,7 @@ SAMPLE_MALFORMED_TOKEN = {
     }
 }
 
+
 class TestTokenProvider(test.TestCase):
     def setUp(self):
         super(TestTokenProvider, self).setUp()

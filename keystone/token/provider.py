@@ -17,6 +17,7 @@
 """Token provider interface."""
 
 
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import manager
 from keystone import config
@@ -27,6 +28,7 @@ from keystone.openstack.common import timeutils
 
 CONF = config.CONF
 LOG = logging.getLogger(__name__)
+SHOULD_CACHE = cache.should_cache_fn('token')
 
 
 # supported token versions
@@ -101,17 +103,17 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(self.get_token_provider())
 
     def validate_token(self, token_id, belongs_to=None):
-        token = self.driver.validate_token(token_id, belongs_to)
+        token = self._validate_token(token_id, belongs_to)
         self._is_valid_token(token_id, token)
         return token
 
     def validate_v2_token(self, token_id, belongs_to=None):
-        token = self.driver.validate_v2_token(token_id, belongs_to)
+        token = self._validate_v2_token(token_id, belongs_to)
         self._is_valid_token(token_id, token)
         return token
 
     def validate_v3_token(self, token_id):
-        token = self.driver.validate_v3_token(token_id)
+        token = self._validate_v3_token(token_id)
         self._is_valid_token(token_id, token)
         return token
 
@@ -133,6 +135,38 @@ class Manager(manager.Manager):
         :raises: keystone.exception.Unauthorized
         """
         self.validate_v3_token(token_id)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=CONF.token.cache_time)
+    def _validate_v3_token(self, token_id):
+        # caches data from the driver on validate calls.
+        return self.driver.validate_v3_token(token_id)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=CONF.token.cache_time)
+    def _validate_v2_token(self, token_id, belongs_to=None):
+        # caches data from the driver on validate calls.
+        return self.driver.validate_v2_token(token_id, belongs_to)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=CONF.token.cache_time)
+    def _validate_token(self, token_id, belongs_to):
+        # caches data from the driver on validate calls.
+        return self.driver.validate_token(token_id, belongs_to)
+
+    def invalidate_individual_token_cache(self, token_id, belongs_to=None):
+        # NOTE(morganfainberg): invalidate takes the exact same arguments as
+        # the normal method, this means we need to pass "self" in (which gets
+        # stripped off).
+
+        # FIXME(morganfainberg): Does this cache actually need to be
+        # invalidated? We maintain a cached revocation list, which should be
+        # consulted before accepting a token as valid.  For now we will
+        # do the explicit individual token invalidation.
+        self._validate_v3_token.invalidate(self, token_id)
+        self._validate_v2_token.invalidate(self, token_id)
+        self._validate_v2_token.invalidate(self, token_id, belongs_to)
+        self._validate_token.invalidate(self, token_id, belongs_to)
 
     def _is_valid_token(self, token_id, token):
          # Verify the token has not expired and not in the revocation list
