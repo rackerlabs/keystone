@@ -213,7 +213,7 @@ class V3TokenDataHelper(object):
             return
 
         if access_token:
-            token_data['roles'] = json.loads(access_token['requested_roles'])
+            token_data['roles'] = json.loads(access_token['roles'])
             return
 
         if CONF.trust.enabled and trust:
