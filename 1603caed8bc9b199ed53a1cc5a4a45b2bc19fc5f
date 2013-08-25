@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//4Co\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2874
+      },
+      "writtenOn": "2013-08-25T10:33:10Z",
+      "side": 1,
+      "message": "why not pass the session into _get_consumer()?",
+      "revId": "1603caed8bc9b199ed53a1cc5a4a45b2bc19fc5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
