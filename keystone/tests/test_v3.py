@@ -48,7 +48,6 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         self.config(self.config_files())
 
         self.setup_database()
-        # ensure the cache region instance is setup
         cache.configure_cache_region(cache.REGION)
 
         self.load_backends()
