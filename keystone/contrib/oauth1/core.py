@@ -210,14 +210,12 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def create_request_token(self, consumer_id, requested_roles,
-                             requested_project, request_token_duration):
+    def create_request_token(self, consumer_id, requested_project,
+                             request_token_duration):
         """Create request token.
 
         :param consumer_id: the id of the consumer
         :type consumer_id: string
-        :param requested_roles: requested roles
-        :type requested_roles: string
         :param requested_project_id: requested project id
         :type requested_project_id: string
         :param request_token_duration: duration of request token
@@ -247,13 +245,15 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def authorize_request_token(self, request_id, user_id):
+    def authorize_request_token(self, request_id, user_id, requested_roles):
         """Authorize request token.
 
         :param request_id: the id of the request token, to be authorized
         :type request_id: string
         :param user_id: the id of the authorizing user
         :type user_id: string
+        :param requested_roles: list of authorized roles for the consumer
+        :type requested_roles: list
         returns: verifier
 
         """

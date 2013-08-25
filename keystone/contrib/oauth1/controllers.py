@@ -159,19 +159,14 @@ class OAuthControllerV3(controller.V3Controller):
         headers = context['headers']
         oauth_headers = oauth1.get_oauth_headers(headers)
         consumer_id = oauth_headers.get('oauth_consumer_key')
-        requested_role_ids = headers.get('Requested-Role-Ids')
         requested_project_id = headers.get('Requested-Project-Id')
         if not consumer_id:
             raise exception.ValidationError(
                 attribute='oauth_consumer_key', target='request')
-        if not requested_role_ids:
-            raise exception.ValidationError(
-                attribute='requested_role_ids', target='request')
         if not requested_project_id:
             raise exception.ValidationError(
                 attribute='requested_project_id', target='request')
 
-        req_role_ids = requested_role_ids.split(',')
         consumer_ref = self.oauth_api._get_consumer(consumer_id)
         consumer = oauth1.Consumer(key=consumer_ref['id'],
                                    secret=consumer_ref['secret'])
@@ -182,8 +177,7 @@ class OAuthControllerV3(controller.V3Controller):
             http_url=url,
             headers=context['headers'],
             query_string=context['query_string'],
-            parameters={'requested_role_ids': requested_role_ids,
-                        'requested_project_id': requested_project_id})
+            parameters={'requested_project_id': requested_project_id})
         oauth_server = oauth1.Server()
         oauth_server.add_signature_method(oauth1.SignatureMethod_HMAC_SHA1())
         params = oauth_server.verify_request(oauth_request,
@@ -195,27 +189,8 @@ class OAuthControllerV3(controller.V3Controller):
             msg = _('Non-oauth parameter - project, do not match')
             raise exception.Unauthorized(message=msg)
 
-        roles_params = params['requested_role_ids']
-        roles_params_list = roles_params.split(',')
-        if roles_params_list != req_role_ids:
-            msg = _('Non-oauth parameter - roles, do not match')
-            raise exception.Unauthorized(message=msg)
-
-        req_role_list = list()
-        all_roles = self.identity_api.list_roles()
-        for role in all_roles:
-            for req_role in req_role_ids:
-                if role['id'] == req_role:
-                    req_role_list.append(role)
-
-        if len(req_role_list) == 0:
-            msg = _('could not find matching roles for provided role ids')
-            raise exception.Unauthorized(message=msg)
-
-        json_roles = jsonutils.dumps(req_role_list)
         request_token_duration = CONF.oauth1.request_token_duration
         token_ref = self.oauth_api.create_request_token(consumer_id,
-                                                        json_roles,
                                                         requested_project_id,
                                                         request_token_duration)
 
@@ -320,7 +295,7 @@ class OAuthControllerV3(controller.V3Controller):
 
         return response
 
-    def authorize(self, context, request_token_id):
+    def authorize(self, context, request_token_id, roles):
         """An authenticated user is going to authorize a request token.
 
         As a security precaution, the requested roles must match those in
@@ -339,12 +314,10 @@ class OAuthControllerV3(controller.V3Controller):
             if now > expires:
                 raise exception.Unauthorized(_('Request token is expired'))
 
-        req_roles = req_token['requested_roles']
-        req_roles_list = jsonutils.loads(req_roles)
-
-        req_set = set()
-        for x in req_roles_list:
-            req_set.add(x['id'])
+        # put the roles in a set for easy comparison
+        role_set = set()
+        for x in roles:
+            role_set.add(x['id'])
 
         # verify the authorizing user has the roles
         user_token = self.token_api.get_token(context['token_id'])
@@ -353,9 +326,17 @@ class OAuthControllerV3(controller.V3Controller):
         user_id = user_token['user'].get('id')
         cred_set = set(user_roles)
 
-        if not cred_set.issuperset(req_set):
+        if not cred_set.issuperset(role_set):
             msg = _('authorizing user does not have role required')
             raise exception.Unauthorized(message=msg)
+
+        # create list of roles, id and name
+        role_list = list()
+        all_roles = self.identity_api.list_roles()
+        for x in all_roles:
+            for role in role_set:
+                if x['id'] == role:
+                    role_list.append(x)
 
         # verify the user has the project too
         req_project_id = req_token['requested_project_id']
@@ -371,7 +352,7 @@ class OAuthControllerV3(controller.V3Controller):
 
         # finally authorize the token
         authed_token = self.oauth_api.authorize_request_token(
-            request_token_id, user_id)
+            request_token_id, user_id, role_list)
 
         to_return = {'token': {'oauth_verifier': authed_token['verifier']}}
         return to_return
