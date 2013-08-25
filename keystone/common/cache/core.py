@@ -57,25 +57,26 @@ class DebugProxy(proxy.ProxyBackend):
         return values
 
     def set(self, key, value):
-        msg = _('CACHE_SET: Key: %(key)s Value: %(value)s')
+        msg = _('CACHE_SET: Key: "%(key)s" Value: %(value)s')
         LOG.debug(msg % {'key': key, 'value': value})
         return self.proxied.set(key, value)
 
     def set_multi(self, keys):
-        LOG.debug(_('CACHE_SET_MULTI: %s') % keys)
+        LOG.debug(_('CACHE_SET_MULTI: "%s"') % keys)
         self.proxied.set_multi(keys)
 
     def delete(self, key):
         self.proxied.delete(key)
-        LOG.debug(_('CACHE_DELETE: %s') % key)
+        LOG.debug(_('CACHE_DELETE: "%s"') % key)
 
     def delete_multi(self, keys):
-        LOG.debug(_('CACHE_DELETE_MULTI: %s') % keys)
+        LOG.debug(_('CACHE_DELETE_MULTI: "%s"') % keys)
         self.proxied.delete_multi(keys)
 
 
 class CacheIsolatingProxy(proxy.ProxyBackend):
     """Proxy that forces a memory copy of stored values.
+
     The default in-memory cache-region does not perform a copy on values it
     is meant to cache.  Therefore if the value is modified after set or after
     get, the cached value also is modified.  This proxy does a copy as the last
