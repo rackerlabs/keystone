@@ -22,7 +22,9 @@ from keystone.common import sql
 from keystone.common.sql import migration
 from keystone.contrib.oauth1 import core
 from keystone import exception
+from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
+import pdb
 
 
 class Consumer(sql.ModelBase, sql.DictBase):
@@ -44,7 +46,7 @@ class RequestToken(sql.ModelBase, sql.DictBase):
     verifier = sql.Column(sql.String(64), nullable=True)
     authorizing_user_id = sql.Column(sql.String(64), nullable=True)
     requested_project_id = sql.Column(sql.String(64), nullable=False)
-    requested_roles = sql.Column(sql.Text(), nullable=False)
+    requested_roles = sql.Column(sql.Text(), nullable=True)
     consumer_id = sql.Column(sql.String(64), sql.ForeignKey('consumer.id'),
                              nullable=False, index=True)
     expires_at = sql.Column(sql.String(64), nullable=True)
@@ -162,8 +164,7 @@ class OAuth1(sql.Base):
             session.flush()
         return core.filter_consumer(consumer_ref.to_dict())
 
-    def create_request_token(self, consumer_id, roles,
-                             project_id, token_duration):
+    def create_request_token(self, consumer_id, project_id, token_duration):
         expiry_date = None
         if token_duration:
             now = timeutils.utcnow()
@@ -177,7 +178,7 @@ class OAuth1(sql.Base):
         ref['verifier'] = None
         ref['authorizing_user_id'] = None
         ref['requested_project_id'] = project_id
-        ref['requested_roles'] = roles
+        ref['requested_roles'] = None
         ref['consumer_id'] = consumer_id
         ref['expires_at'] = expiry_date
         session = self.get_session()
@@ -198,17 +199,20 @@ class OAuth1(sql.Base):
         token_ref = self._get_request_token(session, request_token_id)
         return token_ref.to_dict()
 
-    def authorize_request_token(self, request_token_id, user_id):
+    def authorize_request_token(self, request_token_id, user_id,
+                                roles):
         session = self.get_session()
         with session.begin():
             token_ref = self._get_request_token(session, request_token_id)
             token_dict = token_ref.to_dict()
             token_dict['authorizing_user_id'] = user_id
             token_dict['verifier'] = str(random.randint(1000, 9999))
+            token_dict['requested_roles'] = jsonutils.dumps(roles)
 
             new_token = RequestToken.from_dict(token_dict)
             for attr in RequestToken.attributes:
-                if (attr == 'authorizing_user_id' or attr == 'verifier'):
+                if (attr == 'authorizing_user_id' or attr == 'verifier'
+                    or attr == 'requested_roles'):
                     setattr(token_ref, attr, getattr(new_token, attr))
 
             session.flush()
