@@ -84,18 +84,16 @@ class OAuth1(sql.Base):
     def db_sync(self):
         migration.db_sync()
 
-    def _get_consumer(self, consumer_id):
-        session = self.get_session()
+    def _get_consumer(self, consumer_id, session=None):
+        if session is None:
+            session = self.get_session()
         consumer_ref = session.query(Consumer).get(consumer_id)
         if consumer_ref is None:
             raise exception.NotFound(_('Consumer not found'))
         return consumer_ref
 
     def get_consumer(self, consumer_id):
-        session = self.get_session()
-        consumer_ref = session.query(Consumer).get(consumer_id)
-        if consumer_ref is None:
-            raise exception.NotFound(_('Consumer not found'))
+        consumer_ref = self._get_consumer(consumer_id)
         return core.filter_consumer(consumer_ref.to_dict())
 
     def create_consumer(self, consumer):
@@ -110,7 +108,7 @@ class OAuth1(sql.Base):
         return consumer_ref.to_dict()
 
     def _delete_consumer(self, session, consumer_id):
-        consumer_ref = self._get_consumer(session, consumer_id)
+        consumer_ref = self._get_consumer(consumer_id)
         q = session.query(Consumer)
         q = q.filter_by(id=consumer_id)
         q.delete(False)
@@ -158,11 +156,8 @@ class OAuth1(sql.Base):
             old_consumer_dict = consumer_ref.to_dict()
             old_consumer_dict.update(consumer)
             new_consumer = Consumer.from_dict(old_consumer_dict)
-            for attr in Consumer.attributes:
-                if (attr != 'id' or attr != 'secret'):
-                            setattr(consumer_ref,
-                                    attr,
-                                    getattr(new_consumer, attr))
+            attr = 'description'
+            setattr(consumer_ref, attr, getattr(new_consumer, attr))
             consumer_ref.extra = new_consumer.extra
             session.flush()
         return core.filter_consumer(consumer_ref.to_dict())

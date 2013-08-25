@@ -30,6 +30,12 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
     def config_files(self):
         return self._config_file_list
 
+    def setup_database(self):
+        test.setup_test_database()
+
+    def teardown_database(self):
+        test.teardown_test_database()
+
     def setUp(self, load_sample_data=True):
         """Setup for v3 Restful Test Cases.
 
@@ -40,7 +46,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         """
         self.config(self.config_files())
 
-        test.setup_test_database()
+        self.setup_database()
         self.load_backends()
 
         self.public_app = webtest.TestApp(
@@ -105,7 +111,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         self.admin_server.kill()
         self.public_server = None
         self.admin_server = None
-        test.teardown_test_database()
+        self.teardown_database()
         # need to reset the plug-ins
         auth.controllers.AUTH_METHODS = {}
         #drop the policy rules
