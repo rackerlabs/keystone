@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//4Ks\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-25T07:27:22Z",
+      "side": 1,
+      "message": "actually I plan to try and implement this...so have marked as work to do, if not, I agree.",
+      "parentUuid": "AAAASX//45g\u003d",
+      "revId": "2c11e27ecfa4216d2b03240343c20865e209c421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//45Q\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//4Kk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-25T07:27:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//45Q\u003d",
+      "revId": "2c11e27ecfa4216d2b03240343c20865e209c421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//45A\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2013-08-24T15:51:20Z",
       "side": 1,
       "message": "Couldn\u0027t line 363 be moved up under line 359?",
+      "revId": "2c11e27ecfa4216d2b03240343c20865e209c421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//4Lg\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-25T07:27:22Z",
+      "side": 1,
+      "message": "nice idea...done",
+      "parentUuid": "AAAASX//45A\u003d",
       "revId": "2c11e27ecfa4216d2b03240343c20865e209c421",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
