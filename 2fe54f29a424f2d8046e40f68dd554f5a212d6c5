@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//z8I\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-26T22:35:58Z",
+      "side": 1,
+      "message": "there\u0027s an example in [identity] but not in [assignment]. Should list_limit also be in assignment?",
+      "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//z7Q\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-26T22:35:58Z",
+      "side": 1,
+      "message": "I assume this should be assignment here and not identity.",
+      "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
