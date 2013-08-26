@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//3Gk\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-26T05:20:40Z",
+      "side": 1,
+      "message": "if an endpoint is not valid, this will raise an EndpointNotFound error.  Since the keystone.catalog.backends.sql.Catalog.get_endpoint is expected to raise an exception if the endpoint doesn\u0027t exist.\n\nSuggest the following:\n 1. handle the exception here (make this an explicit for loop and append known good refs to the endpoint array, and handle EndpointNotFound properly)\n 2. Create a test that verifies the catalog still is produced properly (with filtering) if an invalid endpoint is associated to that project.",
+      "revId": "d12fd16e895a811d40e55f7b0faa37df07b7b80e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//3GQ\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-26T05:20:40Z",
+      "side": 1,
+      "message": "(NIT): \"fro\" should be \"from\"",
+      "revId": "d12fd16e895a811d40e55f7b0faa37df07b7b80e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
