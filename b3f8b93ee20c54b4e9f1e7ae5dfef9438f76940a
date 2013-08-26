@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//0XI\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-26T20:08:18Z",
+      "side": 1,
+      "message": "++ This was my original understanding of the recommendation when I talked with stevemar about having specific methods for update/delete/create notifications.",
+      "parentUuid": "AAAASX//0oQ\u003d",
+      "revId": "b3f8b93ee20c54b4e9f1e7ae5dfef9438f76940a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//0nw\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 15
