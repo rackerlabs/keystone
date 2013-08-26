@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//0oQ\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-26T19:01:58Z",
+      "side": 1,
+      "message": "I\u0027m not suggesting to go back to what was done in patch set 1. Instead, pass the resource_type and operation (\u0027deleted\u0027 in this case) to _send_notification, then _send_notification can build the event_type string. It doesn\u0027t have to try to guess the operation since it\u0027s passed in.",
+      "revId": "b3f8b93ee20c54b4e9f1e7ae5dfef9438f76940a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//0nw\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-26T19:01:58Z",
+      "side": 1,
+      "message": "why storing this in the instance?",
+      "revId": "b3f8b93ee20c54b4e9f1e7ae5dfef9438f76940a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//0no\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-26T19:01:58Z",
+      "side": 1,
+      "message": "why storing this in the instance?",
+      "revId": "b3f8b93ee20c54b4e9f1e7ae5dfef9438f76940a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//0ng\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-26T19:01:58Z",
+      "side": 1,
+      "message": "why storing this in the instance?",
+      "revId": "b3f8b93ee20c54b4e9f1e7ae5dfef9438f76940a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
