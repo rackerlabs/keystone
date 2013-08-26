@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//1lM\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-26T15:00:49Z",
+      "side": 1,
+      "message": "The opening of this paragraph expresses my concern - is there not an existing, well-accepted library that already does *everything* contained in this module?",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//1lo\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-26T15:00:49Z",
+      "side": 1,
+      "message": "poor UX - don\u0027t suppress useful exceptions",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//1kY\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-26T15:00:49Z",
+      "side": 0,
+      "message": "i see why you made this change, but having a hard requirement on python-ldap is going to be surprising for non-ldap deployments. if it\u0027s possible to avoid this, that\u0027d be nice!",
+      "revId": "9c92d27937f733645631eb43a1ad48bae78d630c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
