@@ -34,6 +34,24 @@
       "revId": "da26317a14b83852610e2c0c07084d78e180129c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//z8c\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 2874
+      },
+      "writtenOn": "2013-08-26T22:17:29Z",
+      "side": 0,
+      "message": "I think the new way is better in this case.",
+      "parentUuid": "AAAASX//3s4\u003d",
+      "revId": "da26317a14b83852610e2c0c07084d78e180129c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
