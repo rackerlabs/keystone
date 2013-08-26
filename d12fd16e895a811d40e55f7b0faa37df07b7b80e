@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//1Cs\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-26T18:04:05Z",
+      "side": 1,
+      "message": "I had added the code and remove the hanging endpoint in case there is an error. This will partially clean the data. I am working on a proposal to have a better extension - core data integrity framework.",
+      "parentUuid": "AAAASX//3Gk\u003d",
+      "revId": "d12fd16e895a811d40e55f7b0faa37df07b7b80e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//3GQ\u003d",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 28
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-26T05:20:40Z",
       "side": 1,
       "message": "(NIT): \"fro\" should be \"from\"",
+      "revId": "d12fd16e895a811d40e55f7b0faa37df07b7b80e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//1Cg\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-26T18:04:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASX//3GQ\u003d",
       "revId": "d12fd16e895a811d40e55f7b0faa37df07b7b80e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
