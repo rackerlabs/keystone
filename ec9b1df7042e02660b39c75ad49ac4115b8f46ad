@@ -16,6 +16,24 @@
       "revId": "ec9b1df7042e02660b39c75ad49ac4115b8f46ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//vUw\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-26T13:17:13Z",
+      "side": 1,
+      "message": "LDAP filter to reduce/focus the groups returned.  It is a performance tune, optional, but necessaryfor many users.",
+      "parentUuid": "AAAARn//x+I\u003d",
+      "revId": "ec9b1df7042e02660b39c75ad49ac4115b8f46ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
