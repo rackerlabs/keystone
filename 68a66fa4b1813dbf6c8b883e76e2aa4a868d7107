@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//0RQ\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-26T20:46:40Z",
+      "side": 1,
+      "message": "This is not py3k compatible.  In py3k this would raise an invalid token error (SyntaxError).\n\nCorrect syntax that is 2.6, 2.7, and 3k compatible would be:\n  PUBLIC_DIR_PERMS \u003d 0o755",
+      "revId": "68a66fa4b1813dbf6c8b883e76e2aa4a868d7107",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
