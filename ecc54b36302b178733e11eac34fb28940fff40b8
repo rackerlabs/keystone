@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//23c\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-26T07:29:27Z",
+      "side": 1,
+      "message": "This will likely need to change (caching wise) to work with henry-nash\u0027s filtering/pagination code.",
+      "revId": "ecc54b36302b178733e11eac34fb28940fff40b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//23s\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-26T07:29:27Z",
+      "side": 1,
+      "message": "This will likely need to change (caching wise) to work with henry-nash\u0027s filtering/pagination code.",
+      "revId": "ecc54b36302b178733e11eac34fb28940fff40b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
