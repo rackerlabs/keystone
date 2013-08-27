@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//+pQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 7135
+      },
+      "writtenOn": "2013-08-27T09:22:53Z",
+      "side": 1,
+      "message": "would be better to rename this to old_tenant_id as Dolph pointed out.",
+      "revId": "6d97aef4ea363e3ddbb51e5a7dc8e8c1a6827d30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//+pY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 7135
+      },
+      "writtenOn": "2013-08-27T09:22:53Z",
+      "side": 1,
+      "message": "extra white space",
+      "revId": "6d97aef4ea363e3ddbb51e5a7dc8e8c1a6827d30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//+nY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 7135
+      },
+      "writtenOn": "2013-08-27T09:22:53Z",
+      "side": 1,
+      "message": "Can get_roles_for_user_and_project achieve the similar goal?",
+      "revId": "6d97aef4ea363e3ddbb51e5a7dc8e8c1a6827d30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
