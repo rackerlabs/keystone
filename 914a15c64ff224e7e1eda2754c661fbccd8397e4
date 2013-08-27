@@ -407,6 +407,24 @@
       "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7aQ\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-27T21:32:38Z",
+      "side": 1,
+      "message": "because endpoint_filter_extension is not in the default pipeline. We need a way to pass in a custom api paste file so we can test enabling the extension.",
+      "parentUuid": "AAAASn//7wI\u003d",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
