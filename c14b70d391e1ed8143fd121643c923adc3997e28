@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//+fE\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8054
+      },
+      "writtenOn": "2013-08-27T10:06:06Z",
+      "side": 1,
+      "message": "imported but unused",
+      "revId": "c14b70d391e1ed8143fd121643c923adc3997e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
