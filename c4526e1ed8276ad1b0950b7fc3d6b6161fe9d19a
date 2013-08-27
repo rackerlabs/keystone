@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//7LA\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:37:41Z",
+      "side": 1,
+      "message": "is there a test for this? I didn\u0027t find it.",
+      "revId": "c4526e1ed8276ad1b0950b7fc3d6b6161fe9d19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7O8\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:37:41Z",
+      "side": 1,
+      "message": "I still don\u0027t understand why the metadata that this function was called with wouldn\u0027t be passed on when calling the super implementation. Add a comment to the code.",
+      "revId": "c4526e1ed8276ad1b0950b7fc3d6b6161fe9d19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7LE\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:37:41Z",
+      "side": 1,
+      "message": "is there a test for this? I didn\u0027t find it.",
+      "revId": "c4526e1ed8276ad1b0950b7fc3d6b6161fe9d19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7NY\u003d",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:37:41Z",
+      "side": 1,
+      "message": "suggest have a constant for \u0027/OS-EP-FILTER\u0027 (like PATH_PREFIX)",
+      "revId": "c4526e1ed8276ad1b0950b7fc3d6b6161fe9d19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7NU\u003d",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:37:41Z",
+      "side": 1,
+      "message": "and also a constant for this string that\u0027s copied in several places.",
+      "revId": "c4526e1ed8276ad1b0950b7fc3d6b6161fe9d19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
