@@ -85,6 +85,23 @@
       "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn///us\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-27T06:24:54Z",
+      "side": 1,
+      "message": "Out of curiosity, is there a way we notify the client that we\u0027ve eliminated some results with the list_limit?",
+      "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
