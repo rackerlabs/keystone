@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//76U\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-27T19:57:50Z",
+      "side": 1,
+      "message": "Not sure this is correct.  I thought we were making the rule that revocation events would flush the cache.  Typcially, we do not check the revocation list in the Server, we merely provide this as an option for the client.",
+      "revId": "ee022e5d7c338dc02d46c374fdd0200e16f0bdc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
