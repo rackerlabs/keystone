@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//7PY\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//7lo\u003d",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//7lk\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-27T21:27:13Z",
       "side": 1,
       "message": "capitalize JSON and Keystone",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7PI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//7lk\u003d",
       "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//7Ow\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 825,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//7lg\u003d",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//7lU\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 18
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-27T21:27:13Z",
       "side": 1,
       "message": "change \"is\" to \"is a\"",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7Ok\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 834,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//7lU\u003d",
       "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//7Og\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//7lI\u003d",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//7lE\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 18
@@ -98,6 +188,24 @@
       "writtenOn": "2013-08-27T21:27:13Z",
       "side": 1,
       "message": "why would you use role:admin and not is_admin:1?",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7OI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 838,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "Because I don\u0027t think they are the same.  \u0027is_admin\u0027 gets set to 1 if the admin token is used (really a bootstrapping operation) while role:admin means the admin role has been assigned.  If is_admin is set to 1 then the policy engine is never even called...it is by-passed (this was true before, too) - so there is no point referring to it in policy rules.",
+      "parentUuid": "AAAASn//7lE\u003d",
       "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//7OE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//7ks\u003d",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//7kg\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 18
@@ -132,6 +258,24 @@
       "writtenOn": "2013-08-27T21:27:13Z",
       "side": 1,
       "message": "change \"availble\" to \"available\"",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7OA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//7kg\u003d",
       "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//7Nw\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 18
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "see my comment in the connfiguration.rst",
+      "parentUuid": "AAAASn//7jw\u003d",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//7jY\u003d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 18
@@ -166,6 +328,24 @@
       "writtenOn": "2013-08-27T21:27:13Z",
       "side": 1,
       "message": "suggest use rule:admin_required rather than role:admin",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7Kc\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 18
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//7jY\u003d",
       "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//7Kg\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//7i0\u003d",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//7iU\u003d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 18
@@ -200,6 +398,24 @@
       "writtenOn": "2013-08-27T21:27:13Z",
       "side": 1,
       "message": "why are these using role:admin and not rule:admin_required?",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7Kk\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 18
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "Agreed, fixed.",
+      "parentUuid": "AAAASn//7iU\u003d",
       "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//7Ew\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "flake tells me that I have indent extra to distinguish between the continuation of the if statement and the actionable block of code...if you know another way of doing it, I\u0027m all ears!!",
+      "parentUuid": "AAAASn//7g4\u003d",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//7fM\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 18
@@ -240,6 +474,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//7KI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "that\u0027s a good point....",
+      "parentUuid": "AAAASn//7fM\u003d",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//7cw\u003d",
         "filename": "keystone/tests/test_v3_protection.py",
         "patchSetId": 18
@@ -251,6 +503,24 @@
       "writtenOn": "2013-08-27T21:27:13Z",
       "side": 1,
       "message": "it looks like someone who shouldn\u0027t know that a user exists or not can tell whether they exist because this returns Forbidden whereas if the user didn\u0027t exist it would return Not Found.\n\nThis should return Not Found so that the server isn\u0027t giving out extra information to an attacker.",
+      "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7Dw\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T22:52:38Z",
+      "side": 1,
+      "message": "So I discussed this with Dolphm and others.  I originally had support for error code obfuscation in this patch, but actually (as you point out) it isn\u0027t that my new code that needs to lie, but rather the standard response from the policy engine (i.e. to pretend it is NotFound).  Not everyone things it is worth doing (UUIDs are hard to guess).  I personally think (and will be proposing a BP for IceHouse) that we ought to have a config switch that \"hardens\" our error codes in this way.  However, I think this is out of scope of the patch here.",
+      "parentUuid": "AAAASn//7cw\u003d",
       "revId": "436f08b413cb1df89caeaedfe60b9904ed2fdc37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
