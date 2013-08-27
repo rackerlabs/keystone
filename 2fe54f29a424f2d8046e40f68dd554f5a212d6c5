@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "AAAASn///W0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-27T06:07:58Z",
+      "side": 1,
+      "message": "This should be the Keystone global limit, applicable to all the drivers. But drivers themselves can choose to use this one or have their own. I am guessing in most cases drivers would want to use their own.",
+      "parentUuid": "AAAASX//z8I\u003d",
+      "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn///Wo\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 17
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-27T06:07:58Z",
+      "side": 1,
+      "message": "May want to just document this in configuration.rst instead.",
+      "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//z7Q\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 17
@@ -30,6 +65,23 @@
       "writtenOn": "2013-08-26T22:35:58Z",
       "side": 1,
       "message": "I assume this should be assignment here and not identity.",
+      "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn///Uk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-27T06:07:58Z",
+      "side": 1,
+      "message": "May want to doc this somewhere, like developing.rst.",
       "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
