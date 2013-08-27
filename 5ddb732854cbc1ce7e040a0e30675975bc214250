@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//89A\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T16:18:48Z",
+      "side": 1,
+      "message": "I don\u0027t think the above describes the goal here.  If a user changes their default tenant ID, then all that should happen (conceptually) is that the member_role should be transferred from the old tenant to the new one.  We already have a method to create the member in the new one, we just need to add one to delete (JUST) the member role from the old one.",
+      "revId": "5ddb732854cbc1ce7e040a0e30675975bc214250",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//880\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T16:18:48Z",
+      "side": 1,
+      "message": "bad alignment of 2nd line",
+      "revId": "5ddb732854cbc1ce7e040a0e30675975bc214250",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//87w\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T16:18:48Z",
+      "side": 1,
+      "message": "Why would we raise a conflict here?  Ok, so they are updating with the same value, so no harm done.  if old_tenant_id \u003d\u003d user[\u0027tenantId\u0027], then we have no work to do here",
+      "revId": "5ddb732854cbc1ce7e040a0e30675975bc214250",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//84s\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T16:18:48Z",
+      "side": 1,
+      "message": "So I understand what you are trying to do here, but it\u0027s not safe.  What if the user had a role due to group membership, for instance?  I think what you need to do is call get_roles_for_user_and_project(),which will list you all the roles this user has on the that project.  If this returns only one role and that role is member_role, then it is safe to call remove_user_from_project().\n\nThe above will also mean you don\u0027t need to scan the user_refs yourself.",
+      "revId": "5ddb732854cbc1ce7e040a0e30675975bc214250",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
