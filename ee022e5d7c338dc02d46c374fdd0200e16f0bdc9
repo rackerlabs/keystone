@@ -16,6 +16,24 @@
       "revId": "ee022e5d7c338dc02d46c374fdd0200e16f0bdc9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7zI\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-27T20:15:24Z",
+      "side": 1,
+      "message": "I\u0027m fine with removing that.  Revocations do refresh the cache of the revocation_list.\n\nDone in the next patchset.",
+      "parentUuid": "AAAASn//76U\u003d",
+      "revId": "ee022e5d7c338dc02d46c374fdd0200e16f0bdc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
