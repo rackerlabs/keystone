@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn///aU\u003d",
+        "filename": "keystone/contrib/endpoint_filter/configuration.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-27T05:17:55Z",
+      "side": 1,
+      "message": "whitespace here",
+      "revId": "2e081a8eddfa18d5b2c909b0c9deed8d4621547a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn///aM\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-27T05:17:55Z",
+      "side": 1,
+      "message": "(NIT): \u0027wuth\u0027 should be \u0027with\u0027",
+      "revId": "2e081a8eddfa18d5b2c909b0c9deed8d4621547a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
