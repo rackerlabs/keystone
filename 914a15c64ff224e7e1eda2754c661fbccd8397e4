@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//8D8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 32
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "add a . at end of sentence.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//8Ds\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "change \"understand\" to \"pick\"?",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//8Dk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 32
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "add a . at end of sentence.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//8Ek\u003d",
         "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
         "patchSetId": 32
@@ -13,6 +64,346 @@
       "writtenOn": "2013-08-27T19:21:42Z",
       "side": 1,
       "message": "Shouldn\u0027t class names be CamelCase per:\nhttp://www.python.org/dev/peps/pep-0008/#class-names\n\nseems like pep8 tools have passed it so I guess this is ok.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//8CM\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "should \"metadata\u003dNone\" be \"metadata\u003dmetadata\"? Otherwise metadata isn\u0027t used.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7/A\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "remove this line and then can unindent 30 lines.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7/g\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "use \"service\" rather than \"services[service_id]\" on lines 53-56. service was set as an alias at line 48, so use it.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//77o\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "change \"give\" to \"given\"",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//77g\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "move this import up with the rest of the imports.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//77I\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "move this import up with the rest of the imports.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//77E\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "is this only available on the admin interface?",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//760\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "change \"a\" to \"an\"",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//76s\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "change \"assiciated\" to \"associated\"",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//76Y\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "change \"list\" to \"list of\" (add of)",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//76I\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "should be \"List all projects associated with an endpoint.\" ?",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//744\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "suggest leave these in alphabetical order, so move up to after line 50.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//74w\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "suggest keep in alphabetical order, so move after credential.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//74I\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "update this comment, since this is not for admin_token_auth.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//71M\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "suggest change \"ep\" to \"endpoint\" and \"prj\" to \"project\". reviewers shouldn\u0027t have to guess what these shorthand strings are.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//70Y\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "add a test to show what happens if you send in a body.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//708\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "change \"No valid\" to \"Invalid\"\n\n(this applies throughout the file, see line 109, 141, etc)",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7z8\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "remove duplication throughout this file. The path string creation is duplicated from 126-129 to here.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7yo\u003d",
+        "filename": "keystone/tests/test_sql_migrate_extensions.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "suggest remove \"SqlUpgrade\" prefix from this class. It\u0027s already in a package so it\u0027s unique.\n\nAlso, don\u0027t abbreviate EP, change to Endpoint.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7wI\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T20:20:34Z",
+      "side": 1,
+      "message": "why this change?",
       "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
