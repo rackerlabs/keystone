@@ -138,6 +138,40 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//8NI\u003d",
+        "filename": "keystone/contrib/quotas/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-27T18:38:04Z",
+      "side": 1,
+      "message": "Please make this a separate file: controllers.py and change name to ResourceV3Controller",
+      "revId": "c14b70d391e1ed8143fd121643c923adc3997e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//8M8\u003d",
+        "filename": "keystone/contrib/quotas/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-27T18:38:04Z",
+      "side": 1,
+      "message": "Please move this code to a routers.py file.",
+      "revId": "c14b70d391e1ed8143fd121643c923adc3997e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//+fE\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 4
