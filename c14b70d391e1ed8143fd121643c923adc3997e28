@@ -2,6 +2,142 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//+gM\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-08-27T10:32:54Z",
+      "side": 1,
+      "message": "It should be better move unique to __table_args__. Example https://github.com/openstack/keystone/blob/master/keystone/assignment/backends/sql.py#L672.\nNote: name of UniqueConstraint should be generated as\nuniq_tablename0column0column2.",
+      "revId": "c14b70d391e1ed8143fd121643c923adc3997e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//+f8\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-08-27T10:32:54Z",
+      "side": 1,
+      "message": "Use __table_args__ \u003d () in missing indexes and constraints case.",
+      "revId": "c14b70d391e1ed8143fd121643c923adc3997e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//+fw\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-08-27T10:32:54Z",
+      "side": 1,
+      "message": "For PK nullable is False by default.",
+      "revId": "c14b70d391e1ed8143fd121643c923adc3997e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//+hw\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-08-27T10:32:54Z",
+      "side": 1,
+      "message": "Missing column type.",
+      "revId": "c14b70d391e1ed8143fd121643c923adc3997e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//+eo\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-08-27T10:32:54Z",
+      "side": 1,
+      "message": "Index for user_id is missing at least.",
+      "revId": "c14b70d391e1ed8143fd121643c923adc3997e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//+fU\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-08-27T10:32:54Z",
+      "side": 1,
+      "message": "Extra nullable.",
+      "revId": "c14b70d391e1ed8143fd121643c923adc3997e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//+fQ\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-08-27T10:32:54Z",
+      "side": 1,
+      "message": "Type is missing.",
+      "revId": "c14b70d391e1ed8143fd121643c923adc3997e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//+fM\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6507
+      },
+      "writtenOn": "2013-08-27T10:32:54Z",
+      "side": 1,
+      "message": "The same.",
+      "revId": "c14b70d391e1ed8143fd121643c923adc3997e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//+fE\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 4
