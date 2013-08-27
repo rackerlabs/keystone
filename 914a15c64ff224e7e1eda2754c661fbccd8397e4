@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//8Ek\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 901
+      },
+      "writtenOn": "2013-08-27T19:21:42Z",
+      "side": 1,
+      "message": "Shouldn\u0027t class names be CamelCase per:\nhttp://www.python.org/dev/peps/pep-0008/#class-names\n\nseems like pep8 tools have passed it so I guess this is ok.",
+      "revId": "914a15c64ff224e7e1eda2754c661fbccd8397e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
