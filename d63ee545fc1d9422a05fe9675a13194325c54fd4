@@ -1,0 +1,344 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//7bM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "change \"lomg\" to \"long\"",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7bI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "change \"limt\" to \"limit\"",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7a8\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "capitalize \"Keystone\", or just remove it since it\u0027s implied.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7aU\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "suggest remove \"all the way back up\"\n\nchange \"V3Controlle\" to \"V3Controller\" (add r)\n\nalso, doesn\u0027t this apply to V2?",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7aI\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 19
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "suggest remove \"None\" and leave it blank.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7Zg\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "query_dict should be called \"query_dict_in_out\" because it\u0027s modified.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7YM\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "use named arguments for named parameters. (query_dict\u003dquery_dict, valid_filters\u003dvalid_filters). This applies throughout this file.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7Y4\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "the server needs to indicate to the client that the list limit was hit somehow.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7Xg\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "there\u0027s a lot of copy-paste code here, suggest consolidate.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7W8\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "copy-paste code should be consolidated.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7WQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "remove this comment since it\u0027s a copy of 255-257.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7Vg\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "suggest log something and just ignore the filter. This will be better for forwards/backwards compatibility.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7VM\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "suggest return True to ignore the filter.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7U0\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "suggest change name to request_dict_in_out so that callers know it will be modified.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7UY\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "failing here will make it hard to support unexpected inexact filters (for example, if a new filter is added in Icehouse, clients start using it, and then that client is used against a H server it will fail). I think it would be better to ignore unexpected values.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7T0\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "the value could contain a % or ?, so those special characters should be escaped.\n\nthis comment applies at 358 and 360.",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7SU\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "suggest \u0027continue\u0027 here, remove the else, and then can drop a level of indentation",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7S8\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "change \"filers\" to \"filters\"",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7Rg\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "suggest change 155-159 to\n\n return not (isinstance(val_attr, basestring) and val_attr \u003d\u003d \u00270\u0027)",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7QY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-27T22:13:53Z",
+      "side": 1,
+      "message": "consolidate copy/pasted code (e.g., 417-421 is the same as 399-403)",
+      "revId": "d63ee545fc1d9422a05fe9675a13194325c54fd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
