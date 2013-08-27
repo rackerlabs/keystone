@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn///7s\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-27T00:52:42Z",
+      "side": 1,
+      "message": "the try-except is completely broken - remove it",
+      "revId": "46037f6d379063f5133c56403255fc79402c7c41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn///7Y\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-27T00:52:42Z",
+      "side": 1,
+      "message": "don\u0027t mix underscores and camel case together.\n\nand definitely don\u0027t use camel case.",
+      "revId": "46037f6d379063f5133c56403255fc79402c7c41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn///7o\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-27T00:52:42Z",
+      "side": 1,
+      "message": "raise an instance of the exception, not the class",
+      "revId": "46037f6d379063f5133c56403255fc79402c7c41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn///7c\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-27T00:52:42Z",
+      "side": 1,
+      "message": "reading the conditional and the else statement: \"if the user is not in the project, remove the user from the project\"\n\ni have no idea what the intended behavior is here",
+      "revId": "46037f6d379063f5133c56403255fc79402c7c41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
