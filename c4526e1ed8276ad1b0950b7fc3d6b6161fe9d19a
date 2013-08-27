@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//7J8\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-27T23:06:06Z",
+      "side": 1,
+      "message": "Yes there is, please look at:\ntest_implicit_project_id_scoped_token_ep_filter_full_catalog",
+      "parentUuid": "AAAASn//7LA\u003d",
+      "revId": "c4526e1ed8276ad1b0950b7fc3d6b6161fe9d19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//7O8\u003d",
         "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
         "patchSetId": 34
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-27T22:37:41Z",
       "side": 1,
       "message": "I still don\u0027t understand why the metadata that this function was called with wouldn\u0027t be passed on when calling the super implementation. Add a comment to the code.",
+      "revId": "c4526e1ed8276ad1b0950b7fc3d6b6161fe9d19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7G4\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-27T23:06:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//7O8\u003d",
       "revId": "c4526e1ed8276ad1b0950b7fc3d6b6161fe9d19a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//7KA\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-27T23:06:06Z",
+      "side": 1,
+      "message": "Yes, there is, please look at:\ntest_implicit_project_id_scoped_token_handling_bad_reference",
+      "parentUuid": "AAAASn//7LE\u003d",
+      "revId": "c4526e1ed8276ad1b0950b7fc3d6b6161fe9d19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//7NY\u003d",
         "filename": "keystone/contrib/endpoint_filter/routers.py",
         "patchSetId": 34
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//7Ek\u003d",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-27T23:06:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//7NY\u003d",
+      "revId": "c4526e1ed8276ad1b0950b7fc3d6b6161fe9d19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//7NU\u003d",
         "filename": "keystone/contrib/endpoint_filter/routers.py",
         "patchSetId": 34
@@ -81,6 +153,24 @@
       "writtenOn": "2013-08-27T22:37:41Z",
       "side": 1,
       "message": "and also a constant for this string that\u0027s copied in several places.",
+      "revId": "c4526e1ed8276ad1b0950b7fc3d6b6161fe9d19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//6+Y\u003d",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-08-27T23:06:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//7NU\u003d",
       "revId": "c4526e1ed8276ad1b0950b7fc3d6b6161fe9d19a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
