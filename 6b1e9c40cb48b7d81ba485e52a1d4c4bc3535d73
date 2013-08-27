@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//zjk\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-27T00:30:13Z",
+      "side": 1,
+      "message": "as common a dual core CPU\u0027s and hyperthreading are, I\u0027d be happy to default to 2 or 4\n\nthese should also be documented in keystone.conf.sample",
+      "revId": "6b1e9c40cb48b7d81ba485e52a1d4c4bc3535d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
