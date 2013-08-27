@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "AAAASn///Ks\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T07:12:46Z",
+      "side": 1,
+      "message": "I think I\u0027ll leave this here, and remove it from [identity[ below and document the act of configuringt he individual drover section is configuration.rst as guang-yee suggested",
+      "parentUuid": "AAAASX//z8I\u003d",
+      "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn///K4\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T07:12:46Z",
+      "side": 1,
+      "message": "Agreed.",
+      "parentUuid": "AAAASn///W0\u003d",
+      "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn///Wo\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 17
@@ -48,6 +84,24 @@
       "writtenOn": "2013-08-27T06:07:58Z",
       "side": 1,
       "message": "May want to just document this in configuration.rst instead.",
+      "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn///IA\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 17
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T07:12:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn///Wo\u003d",
       "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn///NM\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T07:12:46Z",
+      "side": 1,
+      "message": "Ooops, nice catch.",
+      "parentUuid": "AAAASX//z7Q\u003d",
+      "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn///Uk\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 17
@@ -88,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn///Lc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T07:12:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn///Uk\u003d",
+      "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn///us\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 17
@@ -99,6 +189,24 @@
       "writtenOn": "2013-08-27T06:24:54Z",
       "side": 1,
       "message": "Out of curiosity, is there a way we notify the client that we\u0027ve eliminated some results with the list_limit?",
+      "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn///MI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-27T07:12:46Z",
+      "side": 1,
+      "message": "So there are mixed views on that.  Some systems return something like error 206 (Partial Content), which is probably the closest return code to match this scenario (although not a perfect match).  The problem is that this would probably confuse a much of existing clients for keystone who aren\u0027t expecting it.  I\u0027m open to ideas on was we could indicate this, however.",
+      "parentUuid": "AAAASn///us\u003d",
       "revId": "2fe54f29a424f2d8046e40f68dd554f5a212d6c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
