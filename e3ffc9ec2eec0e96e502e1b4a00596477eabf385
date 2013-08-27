@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//69E\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-27T23:32:18Z",
+      "side": 1,
+      "message": "Nice documentation. Perhaps in IceHouse timeframe we would enhance keystone-maange to bootstrap the admin domain and update policy.json accordingly?",
+      "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//68M\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 19
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-27T23:32:18Z",
+      "side": 1,
+      "message": "should we make admin_domain_id standout as it is expected to be replaced with a real one? i.e.\n\n\"cloud_admin\": [[\"rule:admin_required\", \"domain_id:\u003cadmin_domain_id\u003e\"]],",
+      "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//62k\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-27T23:32:18Z",
+      "side": 1,
+      "message": "Does that mean I can\u0027t add user X in Domain A to group Y in Domain B even if I am domain admin of Domain B?",
+      "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//61w\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 834,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-27T23:32:18Z",
+      "side": 1,
+      "message": "Same as above, not all resource need to be in the same domain right? I should be able to grant a role to User X of Domain A to Project Y of Domain B if I am domain admin o Domain B.",
+      "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
