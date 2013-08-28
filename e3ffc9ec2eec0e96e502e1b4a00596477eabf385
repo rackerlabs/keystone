@@ -67,6 +67,23 @@
       "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//6zA\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-28T00:14:54Z",
+      "side": 1,
+      "message": "DELETE?",
+      "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
