@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//2xU\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 21
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-08-28T19:21:32Z",
+      "side": 1,
+      "message": "like this and we are already using it. Thanks",
+      "revId": "c7a5c6cf27a80ca50db9f1a1a74e8795eeefd9d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2xg\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 21
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-08-28T19:21:32Z",
+      "side": 1,
+      "message": "Wondering if revoke token follow this rule? In revoke token call we just pass x-auth and x-subject token but no target, did we make any change to treat x-subject-token as target? in that case can we assume https://bugs.launchpad.net/keystone/+bug/1186059 is fix now?",
+      "revId": "c7a5c6cf27a80ca50db9f1a1a74e8795eeefd9d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
