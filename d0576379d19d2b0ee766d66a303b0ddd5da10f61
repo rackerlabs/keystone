@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//11Y\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T23:12:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//2Ik\u003d",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//2Gg\u003d",
         "filename": "keystone/assignment/backends/kvs.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-28T21:46:44Z",
       "side": 1,
       "message": "Some reason query_dict_in_out sounds weird. Maybe query_params? it\u0027s really query parameters. Anyway, I don\u0027t have a strong opinion on this one.",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//10c\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T23:12:46Z",
+      "side": 1,
+      "message": "The view of some of the reviewers was to make it obvious that this gets modified...is it the \"in_out\" bit you don\u0027t like or the query_dict bit?",
+      "parentUuid": "AAAASn//2Gg\u003d",
       "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//1zE\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T23:12:46Z",
+      "side": 1,
+      "message": "So we could do that.  Only issue is that if the \"trimming\" happened in the underlying backend (e.g. SQL) then we won\u0027t know if it got trimmed there.  So is it worth logging these ones (which will only happen for backends that don\u0027t support limiting)?",
+      "parentUuid": "AAAASn//2R4\u003d",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//2Aw\u003d",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 21
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-28T21:46:44Z",
       "side": 1,
       "message": "seem like _trim_to_limit() is implemented in multiple places. Should it belong to wrap_collection()? Or at least move it to common utils.",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1yw\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T23:12:46Z",
+      "side": 1,
+      "message": "Good point - moved it the the Manger super class",
+      "parentUuid": "AAAASn//2Aw\u003d",
       "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//1y4\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T23:12:46Z",
+      "side": 1,
+      "message": "See previous comment in assignments.",
+      "parentUuid": "AAAASn//2RU\u003d",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//2AY\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 21
@@ -98,6 +188,24 @@
       "writtenOn": "2013-08-28T21:46:44Z",
       "side": 1,
       "message": "list_limit not applicable to credential?",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1ys\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T23:12:46Z",
+      "side": 1,
+      "message": "missed that one - added.",
+      "parentUuid": "AAAASn//2AY\u003d",
       "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//1xo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T23:12:46Z",
+      "side": 1,
+      "message": "see previous comments on this topic",
+      "parentUuid": "AAAASn//2RE\u003d",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//2Q4\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 21
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//1xg\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T23:12:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//2Q4\u003d",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//2NA\u003d",
         "filename": "keystone/policy/core.py",
         "patchSetId": 21
@@ -149,6 +293,24 @@
       "writtenOn": "2013-08-28T21:05:48Z",
       "side": 1,
       "message": "Recommend Debug log if limiting the list.",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1xU\u003d",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T23:12:46Z",
+      "side": 1,
+      "message": "see previous comments",
+      "parentUuid": "AAAASn//2NA\u003d",
       "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
