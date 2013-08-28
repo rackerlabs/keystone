@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//20Q\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T19:19:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//3II\u003d",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//3H0\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 20
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-28T19:01:11Z",
       "side": 1,
       "message": "change \"un-satisfied\" to \"unsatisfied\"",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//20M\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T19:19:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//3H0\u003d",
       "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//2zY\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T19:19:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//3Go\u003d",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//3Gw\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 20
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-28T19:01:11Z",
       "side": 1,
       "message": "this isn\u0027t used as far as I can tell, so remove it.",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2zc\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T19:19:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//3Gw\u003d",
       "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//2zU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T19:19:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//3CU\u003d",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//3Cg\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 20
@@ -98,6 +188,24 @@
       "writtenOn": "2013-08-28T19:01:11Z",
       "side": 1,
       "message": "this isn\u0027t used so should remove it.",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2zQ\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T19:19:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//3Cg\u003d",
       "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//2zE\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T19:19:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//3BI\u003d",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//29E\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 20
@@ -132,6 +258,24 @@
       "writtenOn": "2013-08-28T19:01:11Z",
       "side": 1,
       "message": "why did this change?",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2xc\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1698,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T19:19:07Z",
+      "side": 1,
+      "message": "The previous test isn\u0027t safe (for instance if you set users \u003d [] just before the for loop, no error is raised).  I found this when trying to re-use this code for my filter tests.  technical, I know, it should be in a separate patch....but didn\u0027t seem worth it",
+      "parentUuid": "AAAASn//29E\u003d",
       "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//2xQ\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 2906,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T19:19:07Z",
+      "side": 1,
+      "message": "Sorry, you\u0027re right...this is hang over comment form the pagination version of this test (when thing ARE ordered).",
+      "parentUuid": "AAAASn//210\u003d",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//21Y\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 20
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//2xM\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 2918,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T19:19:07Z",
+      "side": 1,
+      "message": "as above",
+      "parentUuid": "AAAASn//21Y\u003d",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//20s\u003d",
         "filename": "keystone/tests/test_v3_protection.py",
         "patchSetId": 20
@@ -183,6 +363,24 @@
       "writtenOn": "2013-08-28T19:01:11Z",
       "side": 1,
       "message": "why were these tests removed?",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2ww\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T19:19:07Z",
+      "side": 1,
+      "message": "I moved them into their own file: test_v3_filters.py",
+      "parentUuid": "AAAASn//20s\u003d",
       "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
