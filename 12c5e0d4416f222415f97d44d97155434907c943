@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//1/c\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:12:49Z",
+      "side": 1,
+      "message": "change \"/CN\u003d\u003ckeystone ip\u003e\" to \"CN\u003d\u003ckeystone ip\" (remove /)",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1+8\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:12:49Z",
+      "side": 1,
+      "message": "change \"it\u0027s\" to \"its\" . This applies throughout this file. it\u0027s \u003d it is",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1+k\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:12:49Z",
+      "side": 1,
+      "message": "change \"somtimes\" to \"sometimes\"",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1+g\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:12:49Z",
+      "side": 1,
+      "message": "remove a with",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//1lM\u003d",
         "filename": "keystone/common/dn_conv.py",
         "patchSetId": 3
@@ -19,6 +87,57 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//1+Q\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:12:49Z",
+      "side": 1,
+      "message": "suggest change 247-250 to\n\n  return _openssl_dn_re.search(dn)",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//17s\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:12:49Z",
+      "side": 1,
+      "message": "I don\u0027t see any tests that do rfc_dn_to_openssl_dn with reverse\u003dFalse.",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1+I\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:12:49Z",
+      "side": 1,
+      "message": "this needs \"param boolean\" like line 256",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//1lo\u003d",
         "filename": "keystone/common/dn_conv.py",
         "patchSetId": 3
@@ -30,6 +149,91 @@
       "writtenOn": "2013-08-26T15:00:49Z",
       "side": 1,
       "message": "poor UX - don\u0027t suppress useful exceptions",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//18M\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:12:49Z",
+      "side": 1,
+      "message": "I don\u0027t see any tests that verify that rfc_dn_to_openssl_dn raises if the dn is invalid.",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//17I\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:12:49Z",
+      "side": 1,
+      "message": "I don\u0027t see any test that verifies this part.",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//19c\u003d",
+        "filename": "keystone/tests/test_dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:12:49Z",
+      "side": 1,
+      "message": "line 18 should be in its own section, see https://github.com/openstack-dev/hacking/blame/master/HACKING.rst#L69",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//17g\u003d",
+        "filename": "keystone/tests/test_dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:12:49Z",
+      "side": 1,
+      "message": "use multivalue_rdn\u003dTrue since it\u0027s a named parameter.",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//17c\u003d",
+        "filename": "keystone/tests/test_dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:12:49Z",
+      "side": 1,
+      "message": "use multivalue_rdn\u003dTrue since it\u0027s a named parameter.",
       "revId": "12c5e0d4416f222415f97d44d97155434907c943",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
