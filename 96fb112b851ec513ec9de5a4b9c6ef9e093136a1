@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//2CE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-28T21:37:03Z",
+      "side": 1,
+      "message": "\"...for identity\" , not projects\ndomain and project notifications go in assigments backend, not identity",
+      "revId": "96fb112b851ec513ec9de5a4b9c6ef9e093136a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
