@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//2w0\u003d",
+        "filename": "keystone/tests/test_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-28T19:19:49Z",
+      "side": 1,
+      "message": "Why is this duplicated",
+      "revId": "9400658a1cdd3d5fff8d088d682e9ad705170e26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
