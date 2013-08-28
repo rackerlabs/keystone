@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review-1: Arvind Tiwari <arvind.tiwari@hp.com>
+Approved+1: ayoung <ayoung@redhat.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 28 Aug 2013 21:49:32 +0000
+Reviewed-on: https://review.openstack.org/38308
+Project: openstack/keystone
+Branch: refs/heads/master
