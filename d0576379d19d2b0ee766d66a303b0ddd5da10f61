@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//2R4\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-28T21:05:48Z",
+      "side": 1,
+      "message": "Recommend debug log when trimming the list (aid in troubleshooting)",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2RU\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-28T21:05:48Z",
+      "side": 1,
+      "message": "Recommend debug log if trimming occurs. (aid in debugging/analyzing results if needed)",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2RE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-28T21:05:48Z",
+      "side": 1,
+      "message": "Recommend Debug log line if limiting return.",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2Q4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-28T21:05:48Z",
+      "side": 1,
+      "message": "Should this be elif (consistency, not because it changes the logic flow)?",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2NA\u003d",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-28T21:05:48Z",
+      "side": 1,
+      "message": "Recommend Debug log if limiting the list.",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
