@@ -16,6 +16,24 @@
       "revId": "8d1d9d2a62e65879a24ea70532d3ed9947436865",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2Ts\u003d",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-28T20:42:48Z",
+      "side": 1,
+      "message": "I\u0027ll get an update for this in the next caching patchset.  In theory, this should always be expired since we go sub-second, but good point.",
+      "parentUuid": "AAAASn//2v4\u003d",
+      "revId": "8d1d9d2a62e65879a24ea70532d3ed9947436865",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
