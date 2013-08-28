@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//5LE\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6492
+      },
+      "writtenOn": "2013-08-28T10:24:48Z",
+      "side": 1,
+      "message": "I don\u0027t see advantages of your approach before my. \nMy approach also provide ability to extend  logic with new quota types by adding new tables. Separated tables allows to keep data structure less complicated and use foreign keys.\n\nIf you disagree with my thoughts please provide me your feedback.",
+      "parentUuid": "AAAARH//+AI\u003d",
+      "revId": "91f5b37aa448d76828330c531027cfcf92bf717a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH//+AY\u003d",
         "filename": "keystone/contrib/quotas/backends/sql.py",
         "patchSetId": 1
