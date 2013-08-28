@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//2Ik\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-28T21:46:44Z",
+      "side": 1,
+      "message": "replace \"a filter should remove\" with \"a filter must remove\"?",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2Gg\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-28T21:46:44Z",
+      "side": 1,
+      "message": "Some reason query_dict_in_out sounds weird. Maybe query_params? it\u0027s really query parameters. Anyway, I don\u0027t have a strong opinion on this one.",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//2R4\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 21
@@ -19,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//2Aw\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-28T21:46:44Z",
+      "side": 1,
+      "message": "seem like _trim_to_limit() is implemented in multiple places. Should it belong to wrap_collection()? Or at least move it to common utils.",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//2RU\u003d",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 21
@@ -30,6 +81,23 @@
       "writtenOn": "2013-08-28T21:05:48Z",
       "side": 1,
       "message": "Recommend debug log if trimming occurs. (aid in debugging/analyzing results if needed)",
+      "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2AY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-28T21:46:44Z",
+      "side": 1,
+      "message": "list_limit not applicable to credential?",
       "revId": "d0576379d19d2b0ee766d66a303b0ddd5da10f61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
