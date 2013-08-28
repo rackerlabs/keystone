@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//11M\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T22:35:38Z",
+      "side": 1,
+      "message": "Would be nice to have a constant for the attribute name.",
+      "revId": "4a7199b4a6dcf7c6b5c38c43d2bbff1533b6df28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
