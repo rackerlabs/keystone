@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//2v4\u003d",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-28T19:22:26Z",
+      "side": 1,
+      "message": "- DELTA?",
+      "revId": "8d1d9d2a62e65879a24ea70532d3ed9947436865",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
