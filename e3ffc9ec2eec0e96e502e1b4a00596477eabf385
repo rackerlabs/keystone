@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//6pc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T00:39:15Z",
+      "side": 1,
+      "message": "Agreed.",
+      "parentUuid": "AAAASn//69E\u003d",
+      "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//68M\u003d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 19
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-27T23:32:18Z",
       "side": 1,
       "message": "should we make admin_domain_id standout as it is expected to be replaced with a real one? i.e.\n\n\"cloud_admin\": [[\"rule:admin_required\", \"domain_id:\u003cadmin_domain_id\u003e\"]],",
+      "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//6o4\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 19
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T00:39:15Z",
+      "side": 1,
+      "message": "Nice idea....so the problem is that this IS a working policy file - I added a hole bunch of unit tests that validate that a file this would actually work...and I create a domain with an id of \u0027admin_domain_id\u0027.  Originally I had lots of comments in this file that explained what it all meant....until I discovered you can\u0027t  have comments in this file....",
+      "parentUuid": "AAAASn//68M\u003d",
       "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//6oc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T00:39:15Z",
+      "side": 1,
+      "message": "Depends on the rule in the policy file. I chose to allow it in my example (i.e. you only check the domain of the group you are adding the user to).  You could, of course, have a rule that checked both if you wanted to prevent this.",
+      "parentUuid": "AAAASn//62k\u003d",
+      "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//61w\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 19
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//6oQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 834,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T00:39:15Z",
+      "side": 1,
+      "message": "Correct, depends on the rule in the policy file.",
+      "parentUuid": "AAAASn//61w\u003d",
+      "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//6zA\u003d",
         "filename": "keystone/tests/test_v3_protection.py",
         "patchSetId": 19
@@ -81,6 +153,24 @@
       "writtenOn": "2013-08-28T00:14:54Z",
       "side": 1,
       "message": "DELETE?",
+      "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//6oM\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-28T00:39:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//6zA\u003d",
       "revId": "e3ffc9ec2eec0e96e502e1b4a00596477eabf385",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
