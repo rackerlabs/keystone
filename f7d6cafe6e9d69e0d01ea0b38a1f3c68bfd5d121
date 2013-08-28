@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//3II\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T19:01:11Z",
+      "side": 1,
+      "message": "change \"a copy of a dict\" to \"a reference to a dict\" since it\u0027s not copied.",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3H0\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T19:01:11Z",
+      "side": 1,
+      "message": "change \"un-satisfied\" to \"unsatisfied\"",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3Go\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T19:01:11Z",
+      "side": 1,
+      "message": "this isn\u0027t used as far as I can tell, so remove it.",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3Gw\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T19:01:11Z",
+      "side": 1,
+      "message": "this isn\u0027t used as far as I can tell, so remove it.",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3CU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T19:01:11Z",
+      "side": 1,
+      "message": "this isn\u0027t used so should remove it.",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3Cg\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T19:01:11Z",
+      "side": 1,
+      "message": "this isn\u0027t used so should remove it.",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3BI\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T19:01:11Z",
+      "side": 1,
+      "message": "remove this method it\u0027s redundant.",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//29E\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1698,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T19:01:11Z",
+      "side": 1,
+      "message": "why did this change?",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//210\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 2906,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T19:01:11Z",
+      "side": 1,
+      "message": "what are the first 10 users? are they ordered somehow?",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//21Y\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 2918,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T19:01:11Z",
+      "side": 1,
+      "message": "what are the first 5 users? are they ordered somehow?",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//20s\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T19:01:11Z",
+      "side": 1,
+      "message": "why were these tests removed?",
+      "revId": "f7d6cafe6e9d69e0d01ea0b38a1f3c68bfd5d121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
