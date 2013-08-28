@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//2F4\u003d",
+        "filename": "keystone/auth/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-28T21:27:24Z",
+      "side": 1,
+      "message": "This function is untested.",
+      "revId": "7aa3b4d70347a716c69d250fda7444b4ab9c17bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
