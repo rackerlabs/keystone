@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//2Gc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T21:30:23Z",
+      "side": 1,
+      "message": "suggest put removing the KVS backend into a separate commit, see https://wiki.openstack.org/wiki/GitCommitMessages#Examples_of_bad_practice",
+      "revId": "1603caed8bc9b199ed53a1cc5a4a45b2bc19fc5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2Gk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T21:30:23Z",
+      "side": 1,
+      "message": "capitalize I.",
+      "revId": "1603caed8bc9b199ed53a1cc5a4a45b2bc19fc5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//3tY\u003d",
         "filename": "keystone/contrib/oauth1/backends/sql.py",
         "patchSetId": 1
@@ -49,6 +83,24 @@
       "side": 1,
       "message": "@dolphm, I call this method in other files because I need to know the secret of the consumer. If I call the usual get_consumer, then it is filtered out.\n\nI\u0027m suggesting that we keep session as a required parameter. But default it to None.",
       "parentUuid": "AAAASX//3tY\u003d",
+      "revId": "1603caed8bc9b199ed53a1cc5a4a45b2bc19fc5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2E8\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T21:30:23Z",
+      "side": 1,
+      "message": "\"I\u0027m suggesting that we keep session as a required parameter. But default it to None.\" -- how can a parameter have a default and also be required?",
+      "parentUuid": "AAAASn///Wk\u003d",
       "revId": "1603caed8bc9b199ed53a1cc5a4a45b2bc19fc5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

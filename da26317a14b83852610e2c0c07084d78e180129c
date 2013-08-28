@@ -52,6 +52,23 @@
       "revId": "da26317a14b83852610e2c0c07084d78e180129c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2Do\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-28T21:30:23Z",
+      "side": 0,
+      "message": "why was this test changed?",
+      "revId": "da26317a14b83852610e2c0c07084d78e180129c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
