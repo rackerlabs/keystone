@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//3I0\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-28T18:25:32Z",
+      "side": 1,
+      "message": "if you\u0027re going to wrap it in a try/except then you could simplify the try block to:\n\n  return ref[\u0027token_data\u0027][\u0027token\u0027][\u0027OS-OAUTH1\u0027][\u0027consumer_id\u0027] \u003d\u003d consumer_id",
+      "revId": "f28d9f4f7b222119b5c5481eb7d318695ce43c95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
