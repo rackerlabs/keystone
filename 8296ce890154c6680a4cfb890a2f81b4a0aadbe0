@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//xoo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-29T20:39:14Z",
+      "side": 1,
+      "message": "Recommend warning that the list truncation doesn\u0027t notify the client that results have been limited.",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//x3k\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 24
@@ -189,6 +206,24 @@
       "side": 1,
       "message": "there was a bunch of discussion about this recently... my take away was that non OpenStack Foundation copyright notices are effectively meaningless and harmless.\n\nthat said, \"OpenStack LLC\" should be replaced with \"OpenStack Foundation\" because the LLC was a rax entity that no longer exists",
       "parentUuid": "AAAASn//xr8\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xFA\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-29T20:39:14Z",
+      "side": 1,
+      "message": "More information on this conversation: https://wiki.openstack.org/wiki/LegalIssuesFAQ#Copyright_Headers",
+      "parentUuid": "AAAASn//xGM\u003d",
       "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
