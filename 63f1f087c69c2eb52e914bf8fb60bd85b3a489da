@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//1S4\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-08-29T01:37:15Z",
+      "side": 1,
+      "message": "This makes more sense now.. Sorry I didn\u0027t catch this before. Thanks!",
+      "revId": "63f1f087c69c2eb52e914bf8fb60bd85b3a489da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
