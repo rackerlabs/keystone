@@ -161,6 +161,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//1Bs\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-29T03:25:06Z",
+      "side": 1,
+      "message": "If you are calling this method from other files, you are probably in need of another interface method (get_consumer_with_secret or \"get_consumer_secret(consumer_id)\").  A _prefix should indicate that it is private (though python doesn\u0027t enforce this).  An alternative would be to make get_consumer take an option \"include_secret\" option.  \n\nI think a new interface method is more correct in this situation.",
+      "parentUuid": "AAAASn//1FI\u003d",
+      "revId": "1603caed8bc9b199ed53a1cc5a4a45b2bc19fc5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//4Co\u003d",
         "filename": "keystone/contrib/oauth1/backends/sql.py",
         "patchSetId": 1
@@ -190,6 +208,23 @@
       "side": 1,
       "message": "thanks for the catch, i will.",
       "parentUuid": "AAAASX//4Co\u003d",
+      "revId": "1603caed8bc9b199ed53a1cc5a4a45b2bc19fc5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//0/s\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-29T03:25:06Z",
+      "side": 1,
+      "message": "Could this be done as consumer_ref.description \u003d new_consumer.description ?",
       "revId": "1603caed8bc9b199ed53a1cc5a4a45b2bc19fc5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
