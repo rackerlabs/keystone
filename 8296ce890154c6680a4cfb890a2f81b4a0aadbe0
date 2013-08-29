@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//xt0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-29T18:25:33Z",
+      "side": 1,
+      "message": "It is unreachable....and it was unreachable before (so unchanged functionality).  It\u0027s the separate pagination patch that changes this.\n\nAlso, it should 30 (since this is the page size, not the maximum list size)",
+      "parentUuid": "AAAASn//x3k\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//x2w\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-29T18:00:19Z",
       "side": 1,
       "message": "good stuff, but are they documented anywhere?",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xsY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-29T18:25:33Z",
+      "side": 1,
+      "message": "So they are disabled for Havana (but ready to turn on early in IceHouse as soon as the api-review is accepted (see: https://review.openstack.org/#/c/43900)",
+      "parentUuid": "AAAASn//x2w\u003d",
       "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//xsU\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-29T18:25:33Z",
+      "side": 1,
+      "message": ":-)",
+      "parentUuid": "AAAASn//x2A\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//xzI\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 24
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-29T18:00:19Z",
       "side": 1,
       "message": "Wonder if we should just return an empty list instead if domain_id is not the default domain_id. User meant for filtering by domain, and if backend does not support domain, user should get an empty list.",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xuI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-29T18:25:33Z",
+      "side": 1,
+      "message": "I\u0027m not so sure.  If the request is, say, \"GET /users?domain_id\u003ddomainXYZ\" and domainXYZ is a domain that is being backed by its own LDAP server, then the answer is ALL the users in that domain, not none.  That\u0027s what the code about tries to do.",
+      "parentUuid": "AAAASn//xzI\u003d",
       "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//xr8\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-29T18:25:33Z",
+      "side": 1,
+      "message": "I\u0027m ok removing it....although has our policy changed form allowing copyright notices to be added when substantial bodies of code are new (like this whole file is)?",
+      "parentUuid": "AAAASn//xyc\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//xxc\u003d",
         "filename": "keystone/tests/filter_pagination.py",
         "patchSetId": 24
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//xrg\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-29T18:25:33Z",
+      "side": 1,
+      "message": "so I did it this way  so that creating a new list would delete the old ones...to make sure one test was\u0027t polluting another...but I agree it is a bit messy.  Let me see how it could be done more cleanly",
+      "parentUuid": "AAAASn//xxc\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//xyA\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 24
@@ -115,6 +223,24 @@
       "writtenOn": "2013-08-29T18:00:19Z",
       "side": 1,
       "message": "why is this change necessary?",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xrI\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1747,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-29T18:25:33Z",
+      "side": 1,
+      "message": "see comment on earlier patch....the code isn\u0027t safe (i.e. if we you set users\u003d[] before going into the for loop, you get no error.  I found this while tryring to copy this code to use in my new tests below.  If preferred, I can split this out and make it a separate patch.",
+      "parentUuid": "AAAASn//xyA\u003d",
       "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
