@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//0Ns\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-29T07:44:33Z",
+      "side": 1,
+      "message": "Please see my earlier comments on patch 6",
+      "revId": "5790190b77daa9e70031092af8d93fc40385642b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//0RQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-29T07:44:33Z",
+      "side": 1,
+      "message": "I think this could be more simply written as:\n\nif user.get(\u0027tenantId\u0027):",
+      "revId": "5790190b77daa9e70031092af8d93fc40385642b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//0Tw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-29T07:44:33Z",
+      "side": 1,
+      "message": "So two issues here.  First, I think this is the wrong way round.  If there is only one role and that role is membership, then you want remove it and cleanup any structures the backend has relating to that user and project (for that you could call remove_user_from_project()).  If, however, there are multiple roles and one of those roles is membership, then just remove that membership role using remove_user_membership_from_project(), leaving the rest of the roles and structures in place.\n\nIn fact, however, if you look at the code for remove_role_from_user_and_project() in, say, the sql assignment backend you will see that if you call it to remove a role and that was the last role the user has, then it will clean up anyway.  So in fact, this whole test can become:\n\nIf the use has the role membership on this project:\n    call remove_user_membership_from_project()",
+      "revId": "5790190b77daa9e70031092af8d93fc40385642b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
