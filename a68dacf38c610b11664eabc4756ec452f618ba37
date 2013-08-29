@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//xOM\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-29T20:06:59Z",
+      "side": 1,
+      "message": "suggest \"Like get_consumer() but returned consumer_ref includes the consumer secret\"\n\nAlso, put the part after . to a new paragraph.",
+      "revId": "a68dacf38c610b11664eabc4756ec452f618ba37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xOc\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-29T20:06:59Z",
+      "side": 1,
+      "message": "reword this part, it repeats itself. change\n\n however ...\n\nto\n\n the consumer secret is required to verify incoming OAuth requests.",
+      "revId": "a68dacf38c610b11664eabc4756ec452f618ba37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
