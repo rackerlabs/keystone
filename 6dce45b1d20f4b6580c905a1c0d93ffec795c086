@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//wn4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T22:38:28Z",
+      "side": 1,
+      "message": "Nice description! :)",
+      "revId": "6dce45b1d20f4b6580c905a1c0d93ffec795c086",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
