@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//xgs\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-29T19:18:29Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAASn//xlY\u003d",
+      "revId": "c4ecf058f12cddb5543b308279f7fd9b5143960e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//xmU\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-29T18:55:40Z",
       "side": 1,
       "message": "suggest change this so resource_id isn\u0027t an instance variable. It\u0027s only used in this function.",
+      "revId": "c4ecf058f12cddb5543b308279f7fd9b5143960e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xg0\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-29T19:18:29Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAASn//xmU\u003d",
       "revId": "c4ecf058f12cddb5543b308279f7fd9b5143960e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//xhc\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-29T19:18:29Z",
+      "side": 1,
+      "message": "that was actually intentional to hide the fact that i\u0027m using class-based callables as decorators\n\n  @notifications.Created(\u0027user\u0027)\n\nwould be weird, imo. the alternative would be to do:\n\n  created \u003d Created\n\nin this module, to create aliases to the properly capitalized classes. thoughts?",
+      "parentUuid": "AAAASn//xmE\u003d",
+      "revId": "c4ecf058f12cddb5543b308279f7fd9b5143960e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//xkw\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 21
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-29T18:55:40Z",
       "side": 1,
       "message": "suggest initialize these variables in setUp... self.exp_operation \u003d None\n\nalso, self.exp_resource_id \u003d None and self.exp_host (from 37, 38)",
+      "revId": "c4ecf058f12cddb5543b308279f7fd9b5143960e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xgk\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-29T19:18:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//xkw\u003d",
       "revId": "c4ecf058f12cddb5543b308279f7fd9b5143960e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
