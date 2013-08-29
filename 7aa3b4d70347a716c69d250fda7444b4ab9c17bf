@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//08g\u003d",
+        "filename": "keystone/auth/plugins/signature.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-29T03:55:16Z",
+      "side": 1,
+      "message": "(NIT): Copyright is wrong.  Suggest removing this line all together.\n\nFor more details see: https://wiki.openstack.org/wiki/LegalIssuesFAQ#Copyright_Headers",
+      "revId": "7aa3b4d70347a716c69d250fda7444b4ab9c17bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//08o\u003d",
+        "filename": "keystone/auth/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-29T03:55:16Z",
+      "side": 1,
+      "message": "(NIT): Copyright is wrong.  Suggest removing this line all together.\n\nFor more details see: https://wiki.openstack.org/wiki/LegalIssuesFAQ#Copyright_Headers",
+      "revId": "7aa3b4d70347a716c69d250fda7444b4ab9c17bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//08k\u003d",
+        "filename": "keystone/auth/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-29T03:55:16Z",
+      "side": 1,
+      "message": "This seems sub-optimal, instantiating a new manager object each time.\n\nRecommend the auth_util functions should turn into a mixin/inherited class that the plugins can inherit from. \n\nAlternatively, an object that uses the @depedancy.requires decorator could be instantiated in the auth plugin and referenced there.",
+      "revId": "7aa3b4d70347a716c69d250fda7444b4ab9c17bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//07M\u003d",
+        "filename": "keystone/auth/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-29T03:55:16Z",
+      "side": 1,
+      "message": "String needs to be wrapped in _() for translations.",
+      "revId": "7aa3b4d70347a716c69d250fda7444b4ab9c17bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//07I\u003d",
+        "filename": "keystone/auth/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-29T03:55:16Z",
+      "side": 1,
+      "message": "String needs to be wrapped in _() for translations.",
+      "revId": "7aa3b4d70347a716c69d250fda7444b4ab9c17bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//2F4\u003d",
         "filename": "keystone/auth/utils.py",
         "patchSetId": 10
