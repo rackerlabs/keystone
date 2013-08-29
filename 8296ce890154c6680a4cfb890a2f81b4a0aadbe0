@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//x3k\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T18:00:19Z",
+      "side": 1,
+      "message": "30 -\u003e CONF.list_limit?\n\nAlso, line 321-323 seem like unreachable code.",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//x2w\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T18:00:19Z",
+      "side": 1,
+      "message": "good stuff, but are they documented anywhere?",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//x2A\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T18:00:19Z",
+      "side": 1,
+      "message": "Nice! Much better.",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xzI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T18:00:19Z",
+      "side": 1,
+      "message": "Wonder if we should just return an empty list instead if domain_id is not the default domain_id. User meant for filtering by domain, and if backend does not support domain, user should get an empty list.",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xyc\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T18:00:19Z",
+      "side": 1,
+      "message": "Please remove this.",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xxc\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T18:00:19Z",
+      "side": 1,
+      "message": "why split? if split is needed, just call _create_user_data() multiple times with different domain_id.",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xyA\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1747,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T18:00:19Z",
+      "side": 1,
+      "message": "why is this change necessary?",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
