@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//wsk\u003d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-29T22:09:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//w3Q\u003d",
+      "revId": "17e4c402ee9b09e55bf51be5d79f28ba19d7ad90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//w3M\u003d",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-29T21:27:52Z",
       "side": 1,
       "message": "this code is copied in several places, suggest consolidate.",
+      "revId": "17e4c402ee9b09e55bf51be5d79f28ba19d7ad90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//wsg\u003d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-29T22:09:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//w3M\u003d",
       "revId": "17e4c402ee9b09e55bf51be5d79f28ba19d7ad90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
