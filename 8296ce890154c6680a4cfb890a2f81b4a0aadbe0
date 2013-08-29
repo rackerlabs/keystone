@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//xJE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T20:50:41Z",
+      "side": 1,
+      "message": "yeah, you\u0027re right, they are separate properties. That\u0027s why we should punt pagination to IceHouse and just do filtering for now. :)",
+      "parentUuid": "AAAASn//xt0\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//x2w\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 24
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "So they are disabled for Havana (but ready to turn on early in IceHouse as soon as the api-review is accepted (see: https://review.openstack.org/#/c/43900)",
       "parentUuid": "AAAASn//x2w\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xIo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T20:50:41Z",
+      "side": 1,
+      "message": "oic, sounds good",
+      "parentUuid": "AAAASn//xsY\u003d",
       "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -230,6 +266,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//xHo\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T20:50:41Z",
+      "side": 1,
+      "message": "I don\u0027t have a strong opinion on this one. As long as it is OK with the OpenStack legal guys I am cool with it.",
+      "parentUuid": "AAAASn//xr8\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//xxc\u003d",
         "filename": "keystone/tests/filter_pagination.py",
         "patchSetId": 24
@@ -265,6 +319,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//xGQ\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T20:50:41Z",
+      "side": 1,
+      "message": "Seem like split adds unnecessary complication.",
+      "parentUuid": "AAAASn//xrg\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//xyA\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 24
@@ -294,6 +366,24 @@
       "side": 1,
       "message": "see comment on earlier patch....the code isn\u0027t safe (i.e. if we you set users\u003d[] before going into the for loop, you get no error.  I found this while tryring to copy this code to use in my new tests below.  If preferred, I can split this out and make it a separate patch.",
       "parentUuid": "AAAASn//xyA\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xA4\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1747,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T20:50:41Z",
+      "side": 1,
+      "message": "yeah, sorry I missed that one.",
+      "parentUuid": "AAAASn//xrI\u003d",
       "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
