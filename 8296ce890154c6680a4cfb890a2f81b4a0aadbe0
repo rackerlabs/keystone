@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//xGM\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-29T20:34:00Z",
+      "side": 1,
+      "message": "there was a bunch of discussion about this recently... my take away was that non OpenStack Foundation copyright notices are effectively meaningless and harmless.\n\nthat said, \"OpenStack LLC\" should be replaced with \"OpenStack Foundation\" because the LLC was a rax entity that no longer exists",
+      "parentUuid": "AAAASn//xr8\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//xxc\u003d",
         "filename": "keystone/tests/filter_pagination.py",
         "patchSetId": 24
