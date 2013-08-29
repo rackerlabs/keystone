@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//y0E\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-08-29T14:28:42Z",
+      "side": 1,
+      "message": "In the next patch set, this is updated to reflect notifications sent for just projects and users.",
+      "revId": "76d61aeacc93f77625aad949b202da227fa42edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//yz8\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-08-29T14:28:42Z",
+      "side": 1,
+      "message": "In the next patch set, this is updated to reflect notifications sent for just projects and users.",
+      "revId": "76d61aeacc93f77625aad949b202da227fa42edd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
