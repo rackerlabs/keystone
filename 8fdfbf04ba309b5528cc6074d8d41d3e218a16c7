@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//xug\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-29T18:12:46Z",
+      "side": 0,
+      "message": "shoot, looks like i removed this in the rebase.",
+      "revId": "8fdfbf04ba309b5528cc6074d8d41d3e218a16c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
