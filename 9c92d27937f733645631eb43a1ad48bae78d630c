@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//xMk\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-08-29T20:10:54Z",
+      "side": 0,
+      "message": "I think that Kieran is right about the calling code\u0027s expectations.  If you add the initial get_user and get_group back in just to do the check and keep your new join logic I think you still have a pretty big win.",
+      "parentUuid": "AAAARn//7zg\u003d",
+      "revId": "9c92d27937f733645631eb43a1ad48bae78d630c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//7/s\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 1
