@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//wps\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-29T22:34:36Z",
+      "side": 1,
+      "message": "Only User? Pretty sure we are doing notifications for all Keystone resources, eventually.",
+      "revId": "bc88ea94fb11071a1d3461d6d18e890964d41125",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
