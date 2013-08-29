@@ -16,8 +16,10 @@
 
 """Keystone Caching Layer Implementation."""
 
-import dogpile.cache
+import copy
 
+import dogpile.cache
+from dogpile.cache import api
 from dogpile.cache import proxy
 from dogpile.cache import util
 
@@ -70,6 +72,39 @@ class DebugProxy(proxy.ProxyBackend):
     def delete_multi(self, keys):
         LOG.debug(_('CACHE_DELETE_MULTI: %s') % keys)
         self.proxied.delete_multi(keys)
+
+
+class CacheIsolatingProxy(proxy.ProxyBackend):
+    """Proxy that forces a memory copy of stored values.
+    The default in-memory cache-region does not perform a copy on values it
+    is meant to cache.  Therefore if the value is modified after set or after
+    get, the cached value also is modified.  This proxy does a copy as the last
+    thing before storing data.
+    """
+    def get(self, key):
+        value = self.proxied.get(key)
+        if value != api.NO_VALUE:
+            value = copy.deepcopy(value)
+        return value
+
+    def get_multi(self, keys):
+        values = []
+        for v in self.proxied.get_multi(keys):
+            if v != api.NO_VALUE:
+                v = copy.deepcopy(v)
+            values.append(v)
+        return values
+
+    def set(self, key, value):
+        if value != api.NO_VALUE:
+            value = copy.deepcopy(value)
+        self.proxied.set(key, value)
+
+    def set_multi(self, mapping):
+        for key, value in mapping.items():
+            if value != api.NO_VALUE:
+                value = copy.deepcopy(value)
+            self._cache[key] = value
 
 
 def build_cache_config():
