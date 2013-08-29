@@ -16,6 +16,24 @@
       "revId": "fa9506176738747ff58172280028100e8d55e5c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xaE\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-08-29T19:23:07Z",
+      "side": 1,
+      "message": "Good question.  The scope of this documentation is to explain what notifications are being sent.  How to configure notification and how to implement custom drivers should probably be done as a separate commit.  That would be useful information to have.\n\nThe configuration.rst document might be the best place to add info on how to configure the notification drivers.",
+      "parentUuid": "AAAASn//yQ4\u003d",
+      "revId": "fa9506176738747ff58172280028100e8d55e5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
