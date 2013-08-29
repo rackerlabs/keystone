@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//xlU\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-29T18:55:40Z",
+      "side": 0,
+      "message": "revert whitespace change.",
+      "revId": "8fdfbf04ba309b5528cc6074d8d41d3e218a16c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
