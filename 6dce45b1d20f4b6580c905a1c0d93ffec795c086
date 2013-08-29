@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//wg4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-29T23:17:46Z",
+      "side": 1,
+      "message": "it\u0027s -\u003e its",
+      "revId": "6dce45b1d20f4b6580c905a1c0d93ffec795c086",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//wn4\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
