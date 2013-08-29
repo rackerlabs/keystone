@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//xSg\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-29T19:52:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//xcM\u003d",
+      "revId": "d5db8a38ca8309ceab72dad63c6288e8d391b998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//xbY\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-29T19:20:50Z",
       "side": 1,
       "message": "the docstring should be descriptive and not just a reiteration of the function name. Please describe what it means to get a consumer with secret. I don\u0027t know what it means to get a consumer with a secret... does it mean I have to supply a secret to get it?",
+      "revId": "d5db8a38ca8309ceab72dad63c6288e8d391b998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//xSc\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-29T19:52:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//xbY\u003d",
       "revId": "d5db8a38ca8309ceab72dad63c6288e8d391b998",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
