@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//whw\u003d",
+        "filename": "keystone/auth/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-08-29T23:12:25Z",
+      "side": 1,
+      "message": "Hi Morgan.the util function is not holding any state and is only a set of utilities. So i thought it would be better to define as static method at module level.\nI am still trying to understand why you would recommend to make it a class type.",
+      "parentUuid": "AAAASn//08k\u003d",
+      "revId": "7aa3b4d70347a716c69d250fda7444b4ab9c17bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//07M\u003d",
         "filename": "keystone/auth/utils.py",
         "patchSetId": 10
