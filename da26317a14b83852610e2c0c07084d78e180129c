@@ -69,6 +69,24 @@
       "revId": "da26317a14b83852610e2c0c07084d78e180129c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1FQ\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-29T02:57:16Z",
+      "side": 0,
+      "message": "In the KVS backend, I was not passing the consumer reference through the filter_consumer function. I was only doing so in the SQL backend.\n\nThis test was only passing because it was using the KVS backend. Once I enabled the SQL backend, it was failing - rightly so.",
+      "parentUuid": "AAAASn//2Do\u003d",
+      "revId": "da26317a14b83852610e2c0c07084d78e180129c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
