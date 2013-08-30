@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//sKw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-30T20:42:05Z",
+      "side": 1,
+      "message": "add a comment why this exception can be ignored.",
+      "revId": "52a13e8df25a17bf03f233d70ec1066a6aef2b4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//sJ4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-30T20:42:05Z",
+      "side": 1,
+      "message": "why removing  self.assert_admin(context) ? Looks like this is called from the  self.assert_admin(context) V2 extension.",
+      "revId": "52a13e8df25a17bf03f233d70ec1066a6aef2b4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
