@@ -16,6 +16,24 @@
       "revId": "bc88ea94fb11071a1d3461d6d18e890964d41125",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//wB0\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-30T01:55:34Z",
+      "side": 1,
+      "message": "User + Projects for havana, at least. as-is, this accurately reflects the current master",
+      "parentUuid": "AAAASn//wps\u003d",
+      "revId": "bc88ea94fb11071a1d3461d6d18e890964d41125",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
