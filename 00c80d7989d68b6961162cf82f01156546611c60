@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//sPU\u003d",
+        "filename": "keystone/contrib/oauth1/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-30T20:27:02Z",
+      "side": 1,
+      "message": "add \"the\"",
+      "revId": "00c80d7989d68b6961162cf82f01156546611c60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//sPI\u003d",
+        "filename": "keystone/contrib/oauth1/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-30T20:27:02Z",
+      "side": 1,
+      "message": "should \"oauth1\" here be \"OAuth1\" like in the title? Pick a name for the extension and stick with it.",
+      "revId": "00c80d7989d68b6961162cf82f01156546611c60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//sPA\u003d",
+        "filename": "keystone/contrib/oauth1/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-30T20:27:02Z",
+      "side": 1,
+      "message": "Capitalize these sentences.\n\nChange \"example\" to \"For example\"\n\nBoth of these apply to all of these steps.",
+      "revId": "00c80d7989d68b6961162cf82f01156546611c60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//sOc\u003d",
+        "filename": "keystone/contrib/oauth1/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-30T20:27:02Z",
+      "side": 1,
+      "message": "capitalize SQL",
+      "revId": "00c80d7989d68b6961162cf82f01156546611c60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
