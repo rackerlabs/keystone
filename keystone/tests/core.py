@@ -131,6 +131,20 @@ def setup_test_database():
         pass
 
 
+def generate_paste_config(filter_name, new_paste_file_name):
+    # Generate a file, based on keystone-paste.ini, that is named:
+    # new_paste_file_name, and includes filter_name in the pipeline
+
+    with open(etcdir('keystone-paste.ini'), 'r') as f:
+        contents = f.read()
+
+    new_contents = contents.replace(' service_v3',
+                                    ' %s service_v3' % (filter_name))
+
+    with open(new_paste_file_name, 'w') as f:
+        f.write(new_contents)
+
+
 def teardown_test_database():
     sql.core.set_global_engine(None)
 
