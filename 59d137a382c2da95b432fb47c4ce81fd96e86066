@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//sXg\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 8
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-08-30T20:08:02Z",
+      "side": 1,
+      "message": "can\u0027t be enabled by default until Icehouse.",
+      "revId": "59d137a382c2da95b432fb47c4ce81fd96e86066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
