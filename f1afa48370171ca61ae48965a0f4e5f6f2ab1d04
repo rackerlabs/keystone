@@ -16,6 +16,24 @@
       "revId": "f1afa48370171ca61ae48965a0f4e5f6f2ab1d04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//r3I\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-30T21:36:01Z",
+      "side": 0,
+      "message": "i\u0027m thinking about eliminating the white space here, as _create_access_token and _get_oauth_token do not have a white space after initializing oreq",
+      "parentUuid": "AAAASn//r50\u003d",
+      "revId": "f1afa48370171ca61ae48965a0f4e5f6f2ab1d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
