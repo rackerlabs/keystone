@@ -16,6 +16,23 @@
       "revId": "e6804903e00f49b977959efe64cc7ddc568669d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//tkQ\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-30T15:43:54Z",
+      "side": 1,
+      "message": "what is this doing to sanitize anything? it\u0027s just setting an environment variable..?",
+      "revId": "e6804903e00f49b977959efe64cc7ddc568669d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
