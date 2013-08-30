@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//wZQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-30T00:54:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//xoo\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//x3k\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 24
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "yeah, you\u0027re right, they are separate properties. That\u0027s why we should punt pagination to IceHouse and just do filtering for now. :)",
       "parentUuid": "AAAASn//xt0\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//wZI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-30T00:54:55Z",
+      "side": 1,
+      "message": "Yep, agreed.",
+      "parentUuid": "AAAASn//xJE\u003d",
       "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -278,6 +314,24 @@
       "side": 1,
       "message": "I don\u0027t have a strong opinion on this one. As long as it is OK with the OpenStack legal guys I am cool with it.",
       "parentUuid": "AAAASn//xr8\u003d",
+      "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//wZE\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-30T00:54:55Z",
+      "side": 1,
+      "message": "I\u0027ll kill it!",
+      "parentUuid": "AAAASn//xHo\u003d",
       "revId": "8296ce890154c6680a4cfb890a2f81b4a0aadbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
