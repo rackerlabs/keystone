@@ -70,6 +70,10 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
 
         self.load_backends()
 
+        if self.EXTENSION_TO_ADD:
+            new_paste_file = test.generate_paste_config(self.EXTENSION_TO_ADD)
+            app_conf = 'config:%s' % (new_paste_file)
+
         self.public_app = webtest.TestApp(
             self.loadapp(app_conf, name='main'))
         self.admin_app = webtest.TestApp(
@@ -152,6 +156,8 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
         #drop the policy rules
         CONF.reset()
         rules.reset()
+        if self.EXTENSION_TO_ADD:
+            test.remove_generated_paste_config(self.EXTENSION_TO_ADD)
         super(RestfulTestCase, self).tearDown()
 
     def new_ref(self):
