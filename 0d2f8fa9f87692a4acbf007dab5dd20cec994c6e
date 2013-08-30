@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//r9g\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-30T21:18:05Z",
+      "side": 1,
+      "message": "suggest change \"``\u003cresource type\u003e``\u0027s\" to \"resource types\"",
+      "revId": "0d2f8fa9f87692a4acbf007dab5dd20cec994c6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
