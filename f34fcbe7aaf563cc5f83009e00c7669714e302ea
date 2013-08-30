@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//rzQ\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-30T21:55:23Z",
+      "side": 1,
+      "message": "Are the versions still correct?",
+      "revId": "f34fcbe7aaf563cc5f83009e00c7669714e302ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
