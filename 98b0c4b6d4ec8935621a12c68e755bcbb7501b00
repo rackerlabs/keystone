@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//t9Y\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-30T14:30:43Z",
+      "side": 1,
+      "message": "I like this generic description better.",
+      "revId": "98b0c4b6d4ec8935621a12c68e755bcbb7501b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//uMI\u003d",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 1
@@ -13,6 +30,23 @@
       "writtenOn": "2013-08-30T13:16:14Z",
       "side": 1,
       "message": "Change \"template used\" -\u003e \"template is used\"",
+      "revId": "98b0c4b6d4ec8935621a12c68e755bcbb7501b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//t88\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-08-30T14:30:43Z",
+      "side": 1,
+      "message": "Is it always going to be \u0027INFO\u0027? Are we using other priorities?",
       "revId": "98b0c4b6d4ec8935621a12c68e755bcbb7501b00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
