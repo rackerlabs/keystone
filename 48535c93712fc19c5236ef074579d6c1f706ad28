@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//uRw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-30T13:10:15Z",
+      "side": 1,
+      "message": "RST: double colon",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//uRo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-30T13:10:15Z",
+      "side": 1,
+      "message": "has been \"truncated\" ?",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//uRk\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-30T13:10:15Z",
+      "side": 1,
+      "message": "``list_{entity}``",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//uRU\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-30T13:10:15Z",
+      "side": 1,
+      "message": "this is super specific and likely to become outdated / unmaintained",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//uOo\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-30T13:10:15Z",
+      "side": 1,
+      "message": "i see this particular change as a giant red flag that this change is only half-baked\n\nyou\u0027re changing the contract with the drivers in such a way that you\u0027re mixing (and obfuscating) A) the contract that the driver MUST implement with B) the optional hints that the driver MAY implement.\n\nit\u0027s now super unclear what this method does\n\nand \u0027query_dict_in_out\u0027 has to be one of the worst variable names i\u0027ve ever seen. and i thought \u0027valid_filters\u0027 was bad",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//uQk\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-30T13:10:15Z",
+      "side": 1,
+      "message": "decorator?\n\n  @truncate_list(\u0027catalog\u0027)",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//uP4\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-30T13:10:15Z",
+      "side": 1,
+      "message": "this is easier to read as a one liner\n\n  return CONF.credential.list_limit or CONF.list_limit",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
