@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//uH0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-30T13:55:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//uRw\u003d",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//uRo\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 25
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-30T13:10:15Z",
       "side": 1,
       "message": "has been \"truncated\" ?",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//uHw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-30T13:55:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//uRo\u003d",
       "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//uHU\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-30T13:55:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//uRk\u003d",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//uRU\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 25
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-30T13:10:15Z",
       "side": 1,
       "message": "this is super specific and likely to become outdated / unmaintained",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//uHQ\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-30T13:55:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//uRU\u003d",
       "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//uE4\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-30T13:55:25Z",
+      "side": 1,
+      "message": "So I have now tried to clarify this in developing.rst as well as provide doc sting info here.\n\nAre you concerned about the principle of passing down the filters specified, or the way I am doing it?\n\nIn terms of query_dict_in_out - I was responding to other core reviews who felt it was important to indicate explicitly that this the data references buy this parameter may be modified.",
+      "parentUuid": "AAAASn//uOo\u003d",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//uQk\u003d",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 25
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//uE0\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-30T13:55:25Z",
+      "side": 1,
+      "message": "let me look at that idea",
+      "parentUuid": "AAAASn//uQk\u003d",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//uP4\u003d",
         "filename": "keystone/credential/core.py",
         "patchSetId": 25
@@ -115,6 +223,24 @@
       "writtenOn": "2013-08-30T13:10:15Z",
       "side": 1,
       "message": "this is easier to read as a one liner\n\n  return CONF.credential.list_limit or CONF.list_limit",
+      "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//uEg\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-08-30T13:55:25Z",
+      "side": 1,
+      "message": "I\u0027ll fix this either individually or as part of @truncate as you suggest",
+      "parentUuid": "AAAASn//uP4\u003d",
       "revId": "48535c93712fc19c5236ef074579d6c1f706ad28",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
