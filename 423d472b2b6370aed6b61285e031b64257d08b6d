@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//r60\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-30T21:30:04Z",
+      "side": 1,
+      "message": "suggest revert this change. Most parts have CONF as a module-level constant",
+      "revId": "423d472b2b6370aed6b61285e031b64257d08b6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//r6k\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-08-30T21:30:04Z",
+      "side": 1,
+      "message": "suggest put () around self.CONF.public_endpoint % self.CONF  so reviewers don\u0027t have to think about operator precedence of % and +",
+      "revId": "423d472b2b6370aed6b61285e031b64257d08b6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
