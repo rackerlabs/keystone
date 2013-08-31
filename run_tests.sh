@@ -22,6 +22,7 @@ function usage {
   echo ""
   echo "  -V, --virtual-env        Always use virtualenv.  Install automatically if not present"
   echo "  -N, --no-virtual-env     Don't use virtualenv.  Run tests in local environment"
+  echo "                           OpenStack HACKING detection may be missed in flake8 checking."
   echo "  -r, --recreate-db        Recreate the test database (deprecated, as this is now the default)."
   echo "  -n, --no-recreate-db     Don't recreate the test database."
   echo "  -x, --stop               Stop running tests after the first error or failure."
@@ -127,6 +128,14 @@ function run_flake8 {
 
 
   echo "Running flake8 ..."
+  set +eu
+  ${command_wrapper} python -c "import hacking" 2>/dev/null
+  no_hacking=$?
+  set -eu
+  if [ $never_venv -eq 1 -a $no_hacking -eq 1 ]; then
+      echo "**WARNING**:" >&2
+      echo "Running flake8 without virtual env may miss OpenStack HACKING detection" >&2
+  fi
   # Just run flake8 in current environment
   echo ${wrapper} flake8 $FLAGS | tee pep8.txt
   ${wrapper} flake8 $FLAGS | tee pep8.txt
