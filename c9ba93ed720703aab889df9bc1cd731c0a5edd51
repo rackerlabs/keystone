@@ -16,6 +16,24 @@
       "revId": "c9ba93ed720703aab889df9bc1cd731c0a5edd51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//rb8\u003d",
+        "filename": "keystone/contrib/oauth1/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-08-31T01:22:39Z",
+      "side": 1,
+      "message": "True, want to say:\n\n\"Optionally, add the ... \"",
+      "parentUuid": "AAAASn//rnI\u003d",
+      "revId": "c9ba93ed720703aab889df9bc1cd731c0a5edd51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
