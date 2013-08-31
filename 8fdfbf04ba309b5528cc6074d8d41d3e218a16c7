@@ -52,6 +52,24 @@
       "revId": "8fdfbf04ba309b5528cc6074d8d41d3e218a16c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//rWA\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-08-31T02:51:35Z",
+      "side": 0,
+      "message": "This was in place because of the lack of call to super().  Since the call to super() has been added in, it is ok for this to be removed provided tests pass (they are currently passing).",
+      "parentUuid": "AAAASn//r/U\u003d",
+      "revId": "8fdfbf04ba309b5528cc6074d8d41d3e218a16c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
