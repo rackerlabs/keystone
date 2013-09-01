@@ -24,7 +24,7 @@ nosehtmloutput
 Sphinx>=1.1.2
 testtools>=0.9.32
 # test wsgi apps without starting an http server
-webtest
+WebTest==2.0.7
 
 # for python-keystoneclient
 # keystoneclient <0.2.1
