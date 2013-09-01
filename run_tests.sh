@@ -104,7 +104,7 @@ function cleanup_test_db {
 
 function run_tests {
   # Just run the test suites in current environment
-  ${wrapper} $NOSETESTS
+  ${wrapper} $NOSETESTS 2>&1 |tee run_tests.log
   # If we get some short import error right away, print the error log directly
   RESULT=$?
   if [ "$RESULT" -ne "0" ];
