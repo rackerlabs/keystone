@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//oxo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-02T02:51:15Z",
+      "side": 1,
+      "message": "maybe user already has a _member_ role in new tenant, in this case, we just ignore this exception.",
+      "parentUuid": "AAAASn//sKw\u003d",
+      "revId": "52a13e8df25a17bf03f233d70ec1066a6aef2b4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//sJ4\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-30T20:42:05Z",
       "side": 1,
       "message": "why removing  self.assert_admin(context) ? Looks like this is called from the  self.assert_admin(context) V2 extension.",
+      "revId": "52a13e8df25a17bf03f233d70ec1066a6aef2b4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//oz8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-02T02:51:15Z",
+      "side": 1,
+      "message": "This function will call update_user which also has self.assert_admin(context) in line 220. So need I reseve this line also?",
+      "parentUuid": "AAAASn//sJ4\u003d",
       "revId": "52a13e8df25a17bf03f233d70ec1066a6aef2b4d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
