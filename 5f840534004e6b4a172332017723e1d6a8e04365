@@ -33,6 +33,24 @@
       "revId": "5f840534004e6b4a172332017723e1d6a8e04365",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//l7g\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-03T01:33:34Z",
+      "side": 1,
+      "message": "well, i find that LOG already init, so here might better to use global var LOG",
+      "parentUuid": "AAAASn//l7o\u003d",
+      "revId": "5f840534004e6b4a172332017723e1d6a8e04365",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
