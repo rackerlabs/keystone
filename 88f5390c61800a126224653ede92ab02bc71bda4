@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//jQM\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-03T16:00:45Z",
+      "side": 1,
+      "message": "rename this column to just \u0027roles\u0027? they\u0027re not longer \u0027requested\u0027 by the consumer",
+      "revId": "88f5390c61800a126224653ede92ab02bc71bda4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
