@@ -51,6 +51,24 @@
       "revId": "e6804903e00f49b977959efe64cc7ddc568669d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//i5o\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-03T16:54:26Z",
+      "side": 1,
+      "message": "agreed, this should be reworded since we aren\u0027t necessarily \u0027sanitizing\u0027 anything.",
+      "parentUuid": "AAAASn//jA4\u003d",
+      "revId": "e6804903e00f49b977959efe64cc7ddc568669d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
