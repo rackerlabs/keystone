@@ -16,6 +16,24 @@
       "revId": "dc3269748151e346da6cea58cfa9054dce12a0d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hy4\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-03T19:37:47Z",
+      "side": 1,
+      "message": "addressed these concerns by revising the first paragraph a bit, following bkhudson\u0027s comments which were similar\n\nregarding resource types with spaces, we don\u0027t have any *yet*, but we\u0027d probably need to use hyphens or underscores when we get there",
+      "parentUuid": "AAAASn//jBo\u003d",
+      "revId": "dc3269748151e346da6cea58cfa9054dce12a0d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
