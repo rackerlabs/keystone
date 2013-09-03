@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//l84\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-03T01:04:37Z",
+      "side": 1,
+      "message": "Hmm.... it would be nice to find a way to get around requiring logging.DEBUG since all that is handled by the keystone.openstack.common.log. Not sure what the best answer is for that right now though.",
+      "revId": "5f840534004e6b4a172332017723e1d6a8e04365",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
