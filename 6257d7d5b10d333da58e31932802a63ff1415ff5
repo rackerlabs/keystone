@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//geI\u003d",
+        "filename": "keystone/auth/plugins/signature.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T23:46:38Z",
+      "side": 1,
+      "message": "Ok.",
+      "parentUuid": "AAAASn//g+I\u003d",
+      "revId": "6257d7d5b10d333da58e31932802a63ff1415ff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//g9U\u003d",
         "filename": "keystone/auth/plugins/signature.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-03T21:50:39Z",
       "side": 1,
       "message": "message should be wrapped in _()",
+      "revId": "6257d7d5b10d333da58e31932802a63ff1415ff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//geE\u003d",
+        "filename": "keystone/auth/plugins/signature.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T23:46:38Z",
+      "side": 1,
+      "message": "Ok.",
+      "parentUuid": "AAAASn//g9U\u003d",
       "revId": "6257d7d5b10d333da58e31932802a63ff1415ff5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
