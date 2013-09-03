@@ -33,6 +33,24 @@
       "revId": "e6804903e00f49b977959efe64cc7ddc568669d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jA4\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:42:01Z",
+      "side": 1,
+      "message": "I\u0027m confused, according to: http://pythonhosted.org/passlib/lib/passlib.exc.html\n\n\"exception passlib.exc.PasswordSizeError\nError raised if a password exceeds the maximum size allowed by Passlib (4096 characters)\n\nApplications wishing to use a different limit should set the PASSLIB_MAX_PASSWORD_SIZE environmental variable before Passlib is loaded\"\n\nIt seems like we\u0027re just setting it to the already default limit?",
+      "parentUuid": "AAAASn//tkQ\u003d",
+      "revId": "e6804903e00f49b977959efe64cc7ddc568669d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
