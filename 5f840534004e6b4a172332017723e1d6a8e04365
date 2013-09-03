@@ -105,6 +105,24 @@
       "revId": "5f840534004e6b4a172332017723e1d6a8e04365",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//lww\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-03T03:47:05Z",
+      "side": 1,
+      "message": "Sounds good, fixed in next changeset.  (removing superfluous LOG \u003d on L38)",
+      "parentUuid": "AAAASn//l6E\u003d",
+      "revId": "5f840534004e6b4a172332017723e1d6a8e04365",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
