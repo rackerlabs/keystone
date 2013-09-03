@@ -16,6 +16,40 @@
       "revId": "88f5390c61800a126224653ede92ab02bc71bda4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jKs\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-03T16:13:46Z",
+      "side": 1,
+      "message": "(NIT): for easier readability \u0027x\u0027 could renamed to \u0027role\u0027 \n\nfor role in roles:",
+      "revId": "88f5390c61800a126224653ede92ab02bc71bda4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jKg\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-03T16:13:46Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "88f5390c61800a126224653ede92ab02bc71bda4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
