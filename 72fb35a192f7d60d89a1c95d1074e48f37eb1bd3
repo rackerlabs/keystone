@@ -16,6 +16,23 @@
       "revId": "72fb35a192f7d60d89a1c95d1074e48f37eb1bd3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//i7w\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:49:18Z",
+      "side": 1,
+      "message": "this might be better served as a flag or something... \nWhat if I do not want any .log file to clutter things?\n\nSuggest passing a --log \u003cfile_name\u003e argument to the shell script, and checking if that exists before this line. \n\nWill this append to the log or over-write each time?",
+      "revId": "72fb35a192f7d60d89a1c95d1074e48f37eb1bd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
