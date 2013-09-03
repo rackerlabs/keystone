@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//gmE\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T23:08:25Z",
+      "side": 1,
+      "message": "can\u0027t you just call this from the controller? why create the new function?",
+      "revId": "67e47a952a2a1e695aae43d51188da9c7633faa5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gmI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T23:08:25Z",
+      "side": 1,
+      "message": "not seeing a lot of guards here to block against if something does not exist.",
+      "revId": "67e47a952a2a1e695aae43d51188da9c7633faa5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gm0\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T23:08:25Z",
+      "side": 1,
+      "message": "why can this be ignored? add a comment here",
+      "revId": "67e47a952a2a1e695aae43d51188da9c7633faa5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
