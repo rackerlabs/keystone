@@ -51,6 +51,42 @@
       "revId": "5f840534004e6b4a172332017723e1d6a8e04365",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//l7I\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-03T01:55:24Z",
+      "side": 1,
+      "message": "Unfortunately, this is needed if we want to get a dump of the startup config (and a few other things).",
+      "parentUuid": "AAAASn//l84\u003d",
+      "revId": "5f840534004e6b4a172332017723e1d6a8e04365",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//l6k\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-03T01:55:24Z",
+      "side": 1,
+      "message": "@ZhiQiang Fan: \n\nThe main reason to do the CONF.prog is simply for cleaner loglines.  Notice in the examples below the added information after mod_wsgi when using LOG or __name__?  I don\u0027t believe that it adds a lot more useful data without making it harder to process (PIDs are already included).\n\nExamples (these are taken from the apache log, and a very simple configuration, no tuning of log-format etc):\n\nUsing the current code (CONF.prog):\n[Mon Sep 02 17:06:43 2013] [error] 2013-09-02 17:06:43.615 57352 DEBUG mod_wsgi [-] config_dir                     \u003d None log_opt_values /opt/stack/oslo.config/oslo/config/cfg.py:1920\n\n\nUsing LOG or __name__:\n\n[Mon Sep 02 18:45:19 2013] [error] 2013-09-02 18:45:19.108 59420 DEBUG _mod_wsgi_76ce607bcf3310bd8c9d1d17977cd24e [-] config_dir                     \u003d None log_opt_values /opt/stack/oslo.config/oslo/config/cfg.py:1920",
+      "parentUuid": "AAAASn//l7g\u003d",
+      "revId": "5f840534004e6b4a172332017723e1d6a8e04365",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
