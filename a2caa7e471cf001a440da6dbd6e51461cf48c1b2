@@ -19,6 +19,58 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//jeU\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:26:08Z",
+      "side": 1,
+      "message": "Also, it should be OpenStack Foundation",
+      "parentUuid": "AAAASn//jhU\u003d",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jG4\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:26:08Z",
+      "side": 1,
+      "message": "add nullable\u003dTrue",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jHM\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:26:08Z",
+      "side": 1,
+      "message": "i think adding index\u003dTrue to project_id would eliminate this line, same for line 73",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jnc\u003d",
         "filename": "keystone/contrib/quotas/backends/sql.py",
         "patchSetId": 1
@@ -138,6 +190,23 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//jGY\u003d",
+        "filename": "keystone/contrib/quotas/migrate_repo/README",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:26:08Z",
+      "side": 1,
+      "message": "you don\u0027t really need this file, just the .cfg one",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jiI\u003d",
         "filename": "keystone/contrib/quotas/migrate_repo/versions/001_add_initial_quota_tables.py",
         "patchSetId": 1
@@ -149,6 +218,23 @@
       "writtenOn": "2013-09-03T15:12:45Z",
       "side": 1,
       "message": "2013 would be better",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jFc\u003d",
+        "filename": "keystone/contrib/quotas/migrate_repo/versions/001_add_initial_quota_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:26:08Z",
+      "side": 1,
+      "message": "why is this line needed?",
       "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
