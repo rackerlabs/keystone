@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//iBM\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-03T18:59:41Z",
+      "side": 1,
+      "message": "self.query_dict \u003d query_dict\n\nI need the original query parameters so I can support filtering extensions.",
+      "revId": "eadf80068d56b909bec4980b57ee433b17fd6465",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
