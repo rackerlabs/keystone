@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//jhU\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:12:45Z",
+      "side": 1,
+      "message": "2013 should be better",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jnc\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:12:45Z",
+      "side": 1,
+      "message": "with session.begin() wrapping is needed",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jmA\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:12:45Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jlY\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:12:45Z",
+      "side": 1,
+      "message": "shouldn\u0027t \u0027with session.begin()\u0027 start after right here?",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jlA\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:12:45Z",
+      "side": 1,
+      "message": "with session.begin()?",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jj4\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:12:45Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jjQ\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:12:45Z",
+      "side": 1,
+      "message": "the same as at 183",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jis\u003d",
+        "filename": "keystone/contrib/quotas/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:12:45Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jiI\u003d",
+        "filename": "keystone/contrib/quotas/migrate_repo/versions/001_add_initial_quota_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:12:45Z",
+      "side": 1,
+      "message": "2013 would be better",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jhc\u003d",
+        "filename": "keystone/contrib/quotas/migrate_repo/versions/001_add_initial_quota_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:12:45Z",
+      "side": 1,
+      "message": "square brackets (as list creation) is not necessary here",
+      "revId": "a2caa7e471cf001a440da6dbd6e51461cf48c1b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
