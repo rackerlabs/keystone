@@ -26,6 +26,7 @@ from keystone.common import wsgi
 from keystone import config
 from keystone.contrib import endpoint_filter
 from keystone.contrib import oauth1
+from keystone.contrib import quotas
 from keystone import controllers
 from keystone import credential
 from keystone import identity
@@ -58,7 +59,8 @@ DRIVERS = dict(
     policy_api=policy.Manager(),
     token_api=token.Manager(),
     trust_api=trust.Manager(),
-    token_provider_api=token.provider.Manager())
+    token_provider_api=token.provider.Manager(),
+    quotas_api=quotas.core.Manager())
 
 dependency.resolve_future_dependencies()
 
