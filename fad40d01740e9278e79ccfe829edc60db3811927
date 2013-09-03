@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//jgI\u003d",
+        "filename": "keystone/contrib/quotas/__init__.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:29:08Z",
+      "side": 1,
+      "message": "should be 2013",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jf4\u003d",
+        "filename": "keystone/contrib/quotas/__init__.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:29:08Z",
+      "side": 1,
+      "message": "is it necessary?",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jfw\u003d",
+        "filename": "keystone/contrib/quotas/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:29:08Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jeo\u003d",
+        "filename": "keystone/contrib/quotas/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:29:08Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jdI\u003d",
+        "filename": "keystone/contrib/quotas/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:29:08Z",
+      "side": 1,
+      "message": "identity-api? copy paste?",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jdA\u003d",
+        "filename": "keystone/contrib/quotas/router.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:29:08Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jc8\u003d",
+        "filename": "keystone/contrib/quotas/router.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6506
+      },
+      "writtenOn": "2013-09-03T15:29:08Z",
+      "side": 1,
+      "message": "typo: operations",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
