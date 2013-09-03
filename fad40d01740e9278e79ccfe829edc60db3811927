@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//jRI\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:17:09Z",
+      "side": 1,
+      "message": "change router to routers; also every other contrib/backend has that file named routers, so rename the file too.",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jgI\u003d",
         "filename": "keystone/contrib/quotas/__init__.py",
         "patchSetId": 11
@@ -53,6 +70,74 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//jPE\u003d",
+        "filename": "keystone/contrib/quotas/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:17:09Z",
+      "side": 1,
+      "message": "suggest passing in resource id, instead of setting it in the driver.\nthis way you can run \nresource \u003d self._assign_unique_id(resource) before\n\nthis can probably be extended to other create_ calls",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jOA\u003d",
+        "filename": "keystone/contrib/quotas/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:17:09Z",
+      "side": 1,
+      "message": "call \nself._require_matching_id(resource_id, resource)\nbefore calling update at the driver level \n\nalso, why is resource being defaulted to None?\n\nthese comments are for all update_ calls too.",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jLU\u003d",
+        "filename": "keystone/contrib/quotas/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:17:09Z",
+      "side": 1,
+      "message": "so, are lines 60-64 are for validating the request is good, right?\n\nyou check the project exists, then if the quota has a resource id?\n\nI suggest a _validate_request function, or at least some comments in here to explain what\u0027s going on. I suggest a separate function because there might be other things you want to check within quota.",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jLE\u003d",
+        "filename": "keystone/contrib/quotas/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:17:09Z",
+      "side": 1,
+      "message": "2 things.\n\n1) messages should be wrapped in _()\n2) a more descriptive message would be better\n\nboth these comments go for UserQuota as well",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jeo\u003d",
         "filename": "keystone/contrib/quotas/core.py",
         "patchSetId": 11
@@ -70,6 +155,23 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//jKY\u003d",
+        "filename": "keystone/contrib/quotas/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:17:09Z",
+      "side": 1,
+      "message": "description doesn\u0027t mention quota. copy/paste?",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jdI\u003d",
         "filename": "keystone/contrib/quotas/core.py",
         "patchSetId": 11
@@ -81,6 +183,40 @@
       "writtenOn": "2013-09-03T15:29:08Z",
       "side": 1,
       "message": "identity-api? copy paste?",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jJU\u003d",
+        "filename": "keystone/contrib/quotas/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:17:09Z",
+      "side": 1,
+      "message": "also, missing entire Driver class which should have public methods that the driver implements",
+      "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jJo\u003d",
+        "filename": "keystone/contrib/quotas/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:17:09Z",
+      "side": 1,
+      "message": "Alternatively, you could add these in the CONF file, and call it with CONF.quotas.driver, in case there is another driver..",
       "revId": "fad40d01740e9278e79ccfe829edc60db3811927",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
