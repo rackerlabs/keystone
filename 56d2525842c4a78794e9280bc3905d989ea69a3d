@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//iF4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "I will update the commit message",
+      "parentUuid": "AAAASn//jS4\u003d",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jRA\u003d",
         "filename": "keystone/auth/auth_utils.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-03T16:09:00Z",
       "side": 1,
       "message": "For easier readability, \u0027message\u0027 could be built on a separate line and just passed in here\n\nmsg \u003d _(\u0027Some message info here\u0027)\nraise exception.Unauthorized(message\u003dmsg)",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//iTc\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAASn//jRA\u003d",
       "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//iTU\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAASn//jQ0\u003d",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jPM\u003d",
         "filename": "keystone/auth/auth_utils.py",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-03T16:09:00Z",
       "side": 1,
       "message": "(NIT): Could docstrings be added to these methods for clarity? This method especially returns multiple values and raises exceptions in certain cases, it would be nice to have these documented.",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//iNA\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "I will change the api to check if the required parameters are sent in auth_payload and will return only the credentials. Thanks for catching this in review.",
+      "parentUuid": "AAAASn//jPM\u003d",
       "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//iSU\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "it is actually aligned in the code. Not sure why it is not aligned in gerrit.",
+      "parentUuid": "AAAASn//jQk\u003d",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jQI\u003d",
         "filename": "keystone/auth/auth_utils.py",
         "patchSetId": 11
@@ -98,6 +188,24 @@
       "writtenOn": "2013-09-03T16:09:00Z",
       "side": 1,
       "message": "It might be nice to have a little more information about what is failing here and fail loud if we can.",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//iQk\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "Basically here i raise a validation error if the signature or signature algorithm is missing in the auth_paylod. Please suggest me how do you want to change this?",
+      "parentUuid": "AAAASn//jQI\u003d",
       "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//iQE\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "it is actually aligned in the code. Not sure why it is not aligned in gerrit.",
+      "parentUuid": "AAAASn//jQc\u003d",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jOw\u003d",
         "filename": "keystone/auth/auth_utils.py",
         "patchSetId": 11
@@ -132,6 +258,24 @@
       "writtenOn": "2013-09-03T16:09:00Z",
       "side": 1,
       "message": "(NIT): docstrings here too?",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//iOo\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "do you mean remove the doc-strings here?",
+      "parentUuid": "AAAASn//jOw\u003d",
       "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//iGw\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "If the payload is missing domain id or name we will not be able to lookup the domain information. From my understanding we are doing the correct check here. So we dont need to make changes.",
+      "parentUuid": "AAAASn//jOo\u003d",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jOc\u003d",
         "filename": "keystone/auth/auth_utils.py",
         "patchSetId": 11
@@ -166,6 +328,24 @@
       "writtenOn": "2013-09-03T16:09:00Z",
       "side": 1,
       "message": "align the first letter of \u0027target\u0027 with the first letter of \u0027attribute\u0027 on line 101 if possible.",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//iPg\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "it is actually aligned in the code. Not sure why it is not aligned in gerrit.",
+      "parentUuid": "AAAASn//jOc\u003d",
       "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//iHE\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "if the project id or project_name is missing in auth payload  we will not be able to lookup for the project information. From my understanding we are doing the correct check here. So we dont need to make changes.",
+      "parentUuid": "AAAASn//jNs\u003d",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jN8\u003d",
         "filename": "keystone/auth/auth_utils.py",
         "patchSetId": 11
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//iPM\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "it is actually aligned in the code. Not sure why it is not aligned in gerrit.",
+      "parentUuid": "AAAASn//jN8\u003d",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jNg\u003d",
         "filename": "keystone/auth/auth_utils.py",
         "patchSetId": 11
@@ -217,6 +433,24 @@
       "writtenOn": "2013-09-03T16:09:00Z",
       "side": 1,
       "message": "Same comment here as comment on line 102",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//iPE\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-09-03T18:51:03Z",
+      "side": 1,
+      "message": "it is actually aligned in the code. Not sure why it is not aligned in gerrit.",
+      "parentUuid": "AAAASn//jNg\u003d",
       "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
