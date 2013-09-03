@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//jJY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-03T16:24:20Z",
+      "side": 1,
+      "message": "(NIT): limt -\u003e limit",
+      "revId": "4989e672d1a40b9350cd3e0ad93ca1f96eb2709a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jGc\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-03T16:24:20Z",
+      "side": 1,
+      "message": "(NIT): add NOTE(henry-nash): here",
+      "revId": "4989e672d1a40b9350cd3e0ad93ca1f96eb2709a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
