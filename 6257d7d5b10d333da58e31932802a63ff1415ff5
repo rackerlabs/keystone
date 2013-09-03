@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//g+I\u003d",
+        "filename": "keystone/auth/plugins/signature.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T21:50:39Z",
+      "side": 1,
+      "message": "nit, get rid of blank line, you\u0027ll have to re-order the imports likely, too.",
+      "revId": "6257d7d5b10d333da58e31932802a63ff1415ff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//g9U\u003d",
+        "filename": "keystone/auth/plugins/signature.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T21:50:39Z",
+      "side": 1,
+      "message": "message should be wrapped in _()",
+      "revId": "6257d7d5b10d333da58e31932802a63ff1415ff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
