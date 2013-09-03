@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//g5w\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T22:02:05Z",
+      "side": 1,
+      "message": "I\u0027m probably being picky, but this should probably be in a separate function, and it should be called at line 75. Rather than calling it right away ..",
+      "revId": "5bd18bc9b1612f7b709724dc527f8a53021456a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//g4U\u003d",
+        "filename": "keystone/tests/test_dn_conv.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T22:02:05Z",
+      "side": 1,
+      "message": "nit, OpenStack Foundation",
+      "revId": "5bd18bc9b1612f7b709724dc527f8a53021456a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
