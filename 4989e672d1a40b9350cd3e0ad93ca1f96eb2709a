@@ -33,6 +33,23 @@
       "revId": "4989e672d1a40b9350cd3e0ad93ca1f96eb2709a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//jCI\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-03T16:32:11Z",
+      "side": 1,
+      "message": "request_dict -\u003e list_directives",
+      "revId": "4989e672d1a40b9350cd3e0ad93ca1f96eb2709a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
