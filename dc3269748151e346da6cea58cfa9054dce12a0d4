@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//jBo\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-03T16:32:58Z",
+      "side": 1,
+      "message": "Suggest adding a similar sentence for resource type.\n\nDepending on the resource, the ``\u003cresource_type\u003e`` in the above notification\u0027s ``event_type`` is updated. Mention that resource_type is always singular. \n\nDo we have resource types that have spaces? Request Token? User Quota?",
+      "revId": "dc3269748151e346da6cea58cfa9054dce12a0d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
