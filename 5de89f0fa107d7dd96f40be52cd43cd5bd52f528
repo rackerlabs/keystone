@@ -1,0 +1,463 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//h4I\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 31
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "change \"performanse\" to \"performance\"",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//h4A\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 31
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "change \"provding\" to \"providing\"",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//h1c\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "remove debug code.",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//h0M\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "there\u0027s no filters parameter.",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//h0A\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "there\u0027s no query_string parameter",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hz4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "change \"filters\" to \"list directives\"?",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hzs\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "revert this change to add ,",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hyo\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "add another blank line here.",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hwc\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "change \"that is\" to \"that it\"",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hvc\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "pep 8 : \"Use one leading underscore only for non-public methods and instance variables.\"\n\nsuggest change to _end_of_list.",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hug\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "suggest do \"if not valid_filters: continue\" then don\u0027t have to indent so much.",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hvA\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "why no else leg? add a comment.",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hxw\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "use pep8 for method naming, see http://www.python.org/dev/peps/pep-0008/#method-names-and-instance-variables\n\nrename addfilter to add_filter.",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hxo\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "rename to add_page_index",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hxk\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "rename to add_page_size",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hxc\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "rename to filter_items",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hxU\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "rename to paginator_items",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hxM\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "rename to get_exact_filter_by_name",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hxI\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "rename mark_filter_satisifed",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hxE\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "rename to mark_end_of_list",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hxA\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "rename to is_end_of_list",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//htQ\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "is this line needed? I assume that filter_by wouldn\u0027t do anything if passed an empty dict.",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hsk\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "remove \"in list_directive\" since that\u0027s the implied target of anything in the docs for list_directive.",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hrA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 1185,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "This function needs to check that the backend did the filtering by domain_id and do it itself if the backend didn\u0027t.",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hqY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 1273,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "remove debug code",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hpc\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "suggest change to not ... and continue so can get rid of this wacky indenting.",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hoE\u003d",
+        "filename": "keystone/tests/test_listdirectives.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-03T20:01:14Z",
+      "side": 1,
+      "message": "change to assertEqual",
+      "revId": "5de89f0fa107d7dd96f40be52cd43cd5bd52f528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
