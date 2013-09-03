@@ -472,6 +472,24 @@
       "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hD0\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-03T21:34:29Z",
+      "side": 1,
+      "message": "Ok, thanks for clarifying!",
+      "parentUuid": "AAAASn//iPE\u003d",
+      "revId": "56d2525842c4a78794e9280bc3905d989ea69a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
