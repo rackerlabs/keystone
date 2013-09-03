@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//gfY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-03T23:58:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//hjM\u003d",
+      "revId": "d995fda56afde0d9ecb492aba99aa6e44de437dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//hgs\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-03T20:28:56Z",
       "side": 1,
       "message": "suggest change name to something more descriptive and less scary \"limit_response_element_count\"",
+      "revId": "d995fda56afde0d9ecb492aba99aa6e44de437dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//giQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-03T23:58:50Z",
+      "side": 1,
+      "message": "how about truncate_response?",
+      "parentUuid": "AAAASn//hgs\u003d",
       "revId": "d995fda56afde0d9ecb492aba99aa6e44de437dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//gh0\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-03T23:58:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//heo\u003d",
+      "revId": "d995fda56afde0d9ecb492aba99aa6e44de437dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//heE\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 6
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//gfw\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-03T23:58:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//heE\u003d",
+      "revId": "d995fda56afde0d9ecb492aba99aa6e44de437dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//hcs\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 6
@@ -81,6 +153,24 @@
       "writtenOn": "2013-09-03T20:28:56Z",
       "side": 1,
       "message": "the test at line 401 is list_directives.filteritems() and this one is \"is None\", is there a reason for the difference in the test?",
+      "revId": "d995fda56afde0d9ecb492aba99aa6e44de437dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gfs\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-03T23:58:50Z",
+      "side": 1,
+      "message": "...its just that there may be no filter items left by now since self.filter() will have marked them as satisfied.  Refactored code to make this clearer",
+      "parentUuid": "AAAASn//hcs\u003d",
       "revId": "d995fda56afde0d9ecb492aba99aa6e44de437dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
