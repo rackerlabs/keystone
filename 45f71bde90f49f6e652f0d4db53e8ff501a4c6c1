@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//ey8\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//gjo\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gjA\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 32
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-04T00:20:15Z",
       "side": 1,
       "message": "why do you have to pass in a resource reference when the query is already selecting on that resource?",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//epU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "So 2 reasons....1. it is how the other projects did it (!), and 2) we need the model in inside core/sql...and the query might already have something applied to it (so can\u0027t star the query inside core/sql)...but wasn\u0027t sure of the correct way of extracting the model from a partially built query",
+      "parentUuid": "AAAASn//gjA\u003d",
       "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//eyU\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "OK, agree in principle...only problem is that I have now used list_directives as the parameter name everywhere, so changing this to the logical name would be a bit painful....",
+      "parentUuid": "AAAASn//gd0\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gbs\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 32
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-04T00:20:15Z",
       "side": 1,
       "message": "what makes these filters suddenly valid? is there a reason to have \u0027filters\u0027 outside of context?",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//fA4\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "so context contains the filters specified by the caller, valid_filters is meant to be the set of filters we actually support.  The word \u0027valid\u0027 is clearly creating confusion - I\u0027ll rename to something more illuminating - \u0027supported_filters\u0027?",
+      "parentUuid": "AAAASn//gbs\u003d",
       "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//e/0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "I did it this way so that controllers that are happy for this class to handle  all the filtering (as opposed to asking their driver to do it) could remain unchanged...i.e. wouldn\u0027t have to build a list_directive before calling wrap_collection.  I\u0027ve added a comment to make that clearer.  If you prefer to make all controllers build it, then let me know, and I\u0027ll modify accordingly",
+      "parentUuid": "AAAASn//gdI\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gcw\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 32
@@ -98,6 +188,24 @@
       "writtenOn": "2013-09-04T00:20:15Z",
       "side": 1,
       "message": "(the outer parens are unnecessary)",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//fAg\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//gcw\u003d",
       "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//e1Q\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "I always had difficulty getting the indentation right for an if statement that spreads over two lines...flake8 keeps telling me  indent the second line of the if clause more, to differentiate from the statement block...finally worked it out (duh...)",
+      "parentUuid": "AAAASn//gYQ\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gXM\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 32
@@ -132,6 +258,24 @@
       "writtenOn": "2013-09-04T00:20:15Z",
       "side": 1,
       "message": "we don\u0027t support pagination anymore... this entire method looks pointless",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//e1g\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "Ok, changing name...we want, ideally, a single method that will do filtering (and in the next patch) apply any limit if all the filters have been successfully applied...but agree to remove the pagination word",
+      "parentUuid": "AAAASn//gXM\u003d",
       "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//e+Y\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "So this is just the existing code moved here (from the V3Controller class) so that we use a common function when filtering between the controller and driver.  However, I\u0027ll clean up the comments.",
+      "parentUuid": "AAAASn//gYE\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gXw\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 32
@@ -166,6 +328,24 @@
       "writtenOn": "2013-09-04T00:20:15Z",
       "side": 1,
       "message": "we test explicitly for a poorly thought out api?",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//e90\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "AAAASn//gXw\u003d",
       "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//e9w\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "AAAASn//gXo\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gaw\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 32
@@ -200,6 +398,24 @@
       "writtenOn": "2013-09-04T00:20:15Z",
       "side": 1,
       "message": "we want to eliminate relative imports, which is only recently possible... not propagate them",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//e7Q\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//gaw\u003d",
       "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//e8U\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1749,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "The code is unsafe (which I found when I tried to copy it and re-use it).  I\u0027ll remove and submit under separate bug fix.",
+      "parentUuid": "AAAASn//gag\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gbU\u003d",
         "filename": "keystone/tests/test_listdirectives.py",
         "patchSetId": 32
@@ -234,6 +468,24 @@
       "writtenOn": "2013-09-04T00:20:15Z",
       "side": 1,
       "message": "you forgot to add an ibm copyright",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//e7I\u003d",
+        "filename": "keystone/tests/test_listdirectives.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:30:50Z",
+      "side": 1,
+      "message": "done :-)",
+      "parentUuid": "AAAASn//gbU\u003d",
       "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
