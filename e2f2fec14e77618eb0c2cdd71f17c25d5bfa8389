@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//f60\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6456
+      },
+      "writtenOn": "2013-09-04T02:58:02Z",
+      "side": 1,
+      "message": "Are we taking care of this question with final patch?",
+      "revId": "e2f2fec14e77618eb0c2cdd71f17c25d5bfa8389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
