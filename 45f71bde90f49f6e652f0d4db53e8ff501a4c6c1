@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//dlI\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T14:16:37Z",
+      "side": 1,
+      "message": "\u003e partially built query\n\nit\u0027s a perfectly valid query already.\n\nthe sqlalchemy docs show how to introspect the data that a query will select:\n\n  http://docs.sqlalchemy.org/ru/latest/orm/query.html#sqlalchemy.orm.query.Query.column_descriptions\n\ni\u0027m not sure either approach would work for joined queries?",
+      "parentUuid": "AAAASn//epU\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gd0\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 32
@@ -107,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//duA\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T14:16:37Z",
+      "side": 1,
+      "message": "i\u0027m not convinced that you need the module at all... the one useful method probably belongs as a class method on the base V3Controller, as different API\u0027s would implement it differently",
+      "parentUuid": "AAAASn//eyU\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gbs\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 32
@@ -136,6 +172,24 @@
       "side": 1,
       "message": "so context contains the filters specified by the caller, valid_filters is meant to be the set of filters we actually support.  The word \u0027valid\u0027 is clearly creating confusion - I\u0027ll rename to something more illuminating - \u0027supported_filters\u0027?",
       "parentUuid": "AAAASn//gbs\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//dtg\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T14:16:37Z",
+      "side": 1,
+      "message": "renaming it doesn\u0027t solve the problem that the prefix is unjustified",
+      "parentUuid": "AAAASn//fA4\u003d",
       "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -247,6 +301,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//dvs\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T14:16:37Z",
+      "side": 1,
+      "message": "ah, i normally see:\n\n  if (some very long expression where\n          this is doubly indented):\n      # and this is normally indented\n\nalternatively, evaluate the conditional expression before you write the if statement\n\n  condition \u003d (\n      some very long expression)\n  if condition:\n      # whatever",
+      "parentUuid": "AAAASn//e1Q\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gXM\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 32
@@ -311,6 +383,24 @@
       "side": 1,
       "message": "So this is just the existing code moved here (from the V3Controller class) so that we use a common function when filtering between the controller and driver.  However, I\u0027ll clean up the comments.",
       "parentUuid": "AAAASn//gYE\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//dwE\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T14:16:37Z",
+      "side": 1,
+      "message": "the behavior is crap",
+      "parentUuid": "AAAASn//e+Y\u003d",
       "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -451,6 +541,24 @@
       "side": 1,
       "message": "The code is unsafe (which I found when I tried to copy it and re-use it).  I\u0027ll remove and submit under separate bug fix.",
       "parentUuid": "AAAASn//gag\u003d",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//dkM\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1749,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T14:16:37Z",
+      "side": 1,
+      "message": "i\u0027d be curious... other than memory usage, they should have the same behavior afaict",
+      "parentUuid": "AAAASn//e8U\u003d",
       "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
