@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//bjY\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-04T20:23:55Z",
+      "side": 1,
+      "message": "This is 512 because that is the proper value when used by active directory.  Perhaps there should be a comment explaining this?",
+      "revId": "801a81506e688bca800bd4164b4210fdcc5fee05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
