@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//cN8\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-04T18:14:28Z",
+      "side": 1,
+      "message": "alright, this will be changed in quite a few spots...",
+      "parentUuid": "AAAASn//jQM\u003d",
+      "revId": "88f5390c61800a126224653ede92ab02bc71bda4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jKs\u003d",
         "filename": "keystone/contrib/oauth1/controllers.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//cNk\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-04T18:14:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//jKs\u003d",
+      "revId": "88f5390c61800a126224653ede92ab02bc71bda4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//jKg\u003d",
         "filename": "keystone/contrib/oauth1/controllers.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2013-09-03T16:13:46Z",
       "side": 1,
       "message": "Same here",
+      "revId": "88f5390c61800a126224653ede92ab02bc71bda4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//cNQ\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-04T18:14:28Z",
+      "side": 1,
+      "message": "i already use \u0027role\u0027 in the second loop, and didn\u0027t want to call it \u0027some_role\u0027 or \u0027all_role\u0027... left it as-is.",
+      "parentUuid": "AAAASn//jKg\u003d",
       "revId": "88f5390c61800a126224653ede92ab02bc71bda4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
