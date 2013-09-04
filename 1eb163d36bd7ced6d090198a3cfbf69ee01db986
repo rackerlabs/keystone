@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//dIQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T15:30:44Z",
+      "side": 1,
+      "message": "it looks like every v2 user method has this bug too... but we\u0027re passing tenantId down to the driver to be persisted, but this attribute should be moved to \u0027default_project_id\u0027 past this layer",
+      "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//dKY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T15:30:44Z",
+      "side": 1,
+      "message": "the pass in unnecessary",
+      "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
