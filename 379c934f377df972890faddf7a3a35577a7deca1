@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//gTg\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:47:08Z",
+      "side": 1,
+      "message": "this represents the first case where a driver has to understand not just the interface it\u0027s implementing, but also the complex object it (might) be passed... that\u0027s probably not a good thing?",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gSM\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:47:08Z",
+      "side": 1,
+      "message": "this is an interesting design choice, because i think it would be impossible for a driver to properly determine if it satisfied a filter if the parameters of the filter became more advanced over time in a backwards compatible fashion. only the caller can really know if the \"directives\" were satisfied as expected.\n\nfor example, say all filtering is case-sensitive in the first implementation. so, drivers happily mark \u0027satisfied\u0027 when a filter provides a case sensitive comparison.\n\nbut then, the optional directives thing evolves to support case insensitivity... the driver would continue to mark \u0027satisfied\u0027, which i suppose is true because it did some filtering but it\u0027s now returning a superset of the expected results. only the caller can look at the result set and see that filtering needs to be applied to properly satisfy the hints.",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gTM\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:47:08Z",
+      "side": 1,
+      "message": "documentation is very misleading... you\u0027re not building anything to pass to the driver (like a dict)... you\u0027re just passing the driver an instance of this class",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gUA\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:47:08Z",
+      "side": 1,
+      "message": "is there a future use case for invalid_filters or credible_filters?",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gR0\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:47:08Z",
+      "side": 1,
+      "message": "thisstuffisreallyhardtoread so please_follow_pep8_naming_conventions",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gSA\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:47:08Z",
+      "side": 1,
+      "message": "what\u0027s a paginator and why is this patch concerned with pagination?",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
