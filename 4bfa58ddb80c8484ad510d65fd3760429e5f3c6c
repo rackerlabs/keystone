@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//d9U\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-04T13:26:29Z",
+      "side": 1,
+      "message": "check this",
+      "revId": "4bfa58ddb80c8484ad510d65fd3760429e5f3c6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//d9w\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-04T13:26:29Z",
+      "side": 1,
+      "message": "check this",
+      "revId": "4bfa58ddb80c8484ad510d65fd3760429e5f3c6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//d+I\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-04T13:26:29Z",
+      "side": 1,
+      "message": "please check this",
+      "revId": "4bfa58ddb80c8484ad510d65fd3760429e5f3c6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
