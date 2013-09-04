@@ -454,6 +454,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//apQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T23:37:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//bjI\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b7I\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 35
@@ -993,6 +1011,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//apc\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T23:37:33Z",
+      "side": 1,
+      "message": "let me think on that one for a follow up",
+      "parentUuid": "AAAASn//b0A\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//bzg\u003d",
         "filename": "keystone/tests/test_driver_hints.py",
         "patchSetId": 35
@@ -1010,6 +1046,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//aps\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T23:37:33Z",
+      "side": 1,
+      "message": "good point now its a list...maybe follow up with that change",
+      "parentUuid": "AAAASn//bzg\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b/A\u003d",
         "filename": "keystone/tests/test_v3_filters.py",
         "patchSetId": 35
@@ -1021,6 +1075,24 @@
       "writtenOn": "2013-09-04T19:05:54Z",
       "side": 1,
       "message": "(out of scope, but...) when did this API appear? it should really be:\n\n  GET /domains?disabled\n\nthere\u0027s some incomplete docs here ... ?\n\n  https://github.com/openstack/identity-api/blob/master/openstack-identity-api/v3/src/markdown/identity-api-v3.md#list-entities-filtered-by-attribute",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ap4\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T23:37:33Z",
+      "side": 1,
+      "message": "went in for Grizzly....it\u0027s what you and I agreed to at the time via IRC!  We can revise it, of course.",
+      "parentUuid": "AAAASn//b/A\u003d",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
