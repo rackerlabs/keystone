@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Verified+1: SmokeStack
+Approved+1: Morgan Fainberg <m@metacloud.com>
+Code-Review+2: Morgan Fainberg <m@metacloud.com>
+Code-Review+1: ldbragst <ldbragst@us.ibm.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Qin Zhao <chaochin@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 04 Sep 2013 04:46:56 +0000
+Reviewed-on: https://review.openstack.org/44543
+Project: openstack/keystone
+Branch: refs/heads/master
