@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//auM\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 37
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-04T23:45:22Z",
+      "side": 1,
+      "message": "(NIT) \"list of dicts\"",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
