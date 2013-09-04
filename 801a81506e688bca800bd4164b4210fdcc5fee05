@@ -16,6 +16,24 @@
       "revId": "801a81506e688bca800bd4164b4210fdcc5fee05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bgE\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-04T20:33:32Z",
+      "side": 1,
+      "message": "is it proper for the keystone server to return 512 when the user is enabled and 514 when the user is disabled? Shouldn\u0027t it return true or false? I need to try this configuration to see if that\u0027s how it works.",
+      "parentUuid": "AAAASn//bjY\u003d",
+      "revId": "801a81506e688bca800bd4164b4210fdcc5fee05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
