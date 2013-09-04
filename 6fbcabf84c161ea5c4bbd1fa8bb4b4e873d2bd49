@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//bnw\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T20:11:33Z",
+      "side": 1,
+      "message": "what\u0027s true?",
+      "revId": "6fbcabf84c161ea5c4bbd1fa8bb4b4e873d2bd49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bqE\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T20:11:33Z",
+      "side": 1,
+      "message": "sigh... blob is not intended to be a complex object",
+      "revId": "6fbcabf84c161ea5c4bbd1fa8bb4b4e873d2bd49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//br4\u003d",
         "filename": "keystone/contrib/ec2/routers.py",
         "patchSetId": 10
