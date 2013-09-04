@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//gjo\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "why should this kwarg default to None, thereby forcing the callee to be defensive about handling it? no one should be calling this besides the manager, and if the manager isn\u0027t calling it correctly, then it\u0027s broken",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gjA\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "why do you have to pass in a resource reference when the query is already selecting on that resource?",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gd0\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "whythehardtoreadmodulename?",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gbs\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "what makes these filters suddenly valid? is there a reason to have \u0027filters\u0027 outside of context?",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gdI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "if you can build this here, why bother allowing the caller to provide it?",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gcw\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "(the outer parens are unnecessary)",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gYQ\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "i\u0027m not sure i\u0027ve ever seen indentation like this",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gXM\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "we don\u0027t support pagination anymore... this entire method looks pointless",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gYE\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "why would you do that?!",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gXw\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "we test explicitly for a poorly thought out api?",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gXo\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "be explicit",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gaw\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "we want to eliminate relative imports, which is only recently possible... not propagate them",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gag\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1749,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "what was the point of this change?",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gbU\u003d",
+        "filename": "keystone/tests/test_listdirectives.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T00:20:15Z",
+      "side": 1,
+      "message": "you forgot to add an ibm copyright",
+      "revId": "45f71bde90f49f6e652f0d4db53e8ff501a4c6c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
