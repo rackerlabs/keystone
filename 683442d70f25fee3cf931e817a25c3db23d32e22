@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//b+o\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:05:54Z",
+      "side": 1,
+      "message": "revise",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b+k\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:05:54Z",
+      "side": 1,
+      "message": "revise",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b+Y\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:05:54Z",
+      "side": 1,
+      "message": "i don\u0027t think you need a double ampersand before a bulleted list (actually, that\u0027s probably a syntax error?)",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b+w\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:05:54Z",
+      "side": 1,
+      "message": "revise",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b+I\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:05:54Z",
+      "side": 1,
+      "message": "is the line wrap necessary?",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//cIU\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:05:54Z",
+      "side": 1,
+      "message": "this bit is still wrong -- the functionality of __init__ here belongs in ControllerV3. you\u0027re passing this object to the driver!",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//cLw\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:05:54Z",
+      "side": 1,
+      "message": "conflicts with comparator\u003d\u0027equals\u0027",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//cKw\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:05:54Z",
+      "side": 1,
+      "message": "do you really mean to build a new list? i suspect this should be a generator but then your \u0027mark_filter_satisfied()\u0027 will break things as-is",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//cJ4\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:05:54Z",
+      "side": 1,
+      "message": "this method contains two for-loops for not much benefit?",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b9s\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:05:54Z",
+      "side": 1,
+      "message": "why not initialize every hint with satisfied\u003dFalse and just set it to True?\n\ni\u0027m still lost on what a driver is supposed to do if it can only partially satisfy a hint (my example earlier was contrived and i guess your response didn\u0027t consider custom drivers or any evolution to \u0027hints\u0027)",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b/A\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:05:54Z",
+      "side": 1,
+      "message": "(out of scope, but...) when did this API appear? it should really be:\n\n  GET /domains?disabled\n\nthere\u0027s some incomplete docs here ... ?\n\n  https://github.com/openstack/identity-api/blob/master/openstack-identity-api/v3/src/markdown/identity-api-v3.md#list-entities-filtered-by-attribute",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
