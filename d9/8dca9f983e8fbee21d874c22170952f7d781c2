@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Approved+1: ayoung <ayoung@redhat.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: ZhiQiang Fan <aji.zqfan@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 04 Sep 2013 15:24:12 +0000
+Reviewed-on: https://review.openstack.org/44776
+Project: openstack/keystone
+Branch: refs/heads/master
