@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//f2U\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-04T03:26:20Z",
+      "side": 1,
+      "message": "See other comment about setup in oauth1 extension.",
+      "revId": "5a4a699924d33b93eaecbe230da9936fe9001b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//f2k\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-04T03:26:20Z",
+      "side": 1,
+      "message": "See other comment about \"teardown\" in oauth1 extension.",
+      "revId": "5a4a699924d33b93eaecbe230da9936fe9001b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//f2s\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-04T03:26:20Z",
+      "side": 1,
+      "message": "It would be great if this logic was moved to the test.core as well.  This could be made generic based upon if PASTE_INI is not none (or something similar) and would eliminate more duplicated code.",
+      "revId": "5a4a699924d33b93eaecbe230da9936fe9001b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//f3E\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-04T03:26:20Z",
+      "side": 1,
+      "message": "This should also be moved to tests.core, it would eliminate the need for custom code.",
+      "revId": "5a4a699924d33b93eaecbe230da9936fe9001b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
