@@ -121,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bk0\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-04T20:27:50Z",
+      "side": 1,
+      "message": "suggest combine these to remove duplication.\n\n hints \u003d hints or driver_hints.Hints()",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b8g\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 35
@@ -132,6 +149,74 @@
       "writtenOn": "2013-09-04T19:40:08Z",
       "side": 1,
       "message": "you\u0027ve copy/pasted yourself into needing another decorator\n\n  @default_hints\n\nor just use a real list and then it\u0027s a one liner\n\n  hints \u003d hints or []",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bkc\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-04T20:27:50Z",
+      "side": 1,
+      "message": "same comment here, to avoid duplication.",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bkQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-04T20:27:50Z",
+      "side": 1,
+      "message": "list limit changes don\u0027t belong with filtering.",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bjs\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-04T20:27:50Z",
+      "side": 1,
+      "message": "suggest remove \"if at all possible\" from these comments.\n\nsuggest change \"implement\" to \"heed\" ? I don\u0027t think drivers implement hints.",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bjk\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-04T20:27:50Z",
+      "side": 1,
+      "message": "remove \u003dNone here? the other methods don\u0027t have hints\u003dNone.",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +240,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bjc\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-04T20:27:50Z",
+      "side": 1,
+      "message": "nice +1.",
+      "parentUuid": "AAAASn//b7s\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b8A\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 35
@@ -166,6 +269,23 @@
       "writtenOn": "2013-09-04T19:40:08Z",
       "side": 1,
       "message": "unnecessary line break",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bjI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-04T20:27:50Z",
+      "side": 1,
+      "message": "suggest reformat these lines so they line up with \"list\" in previous line.",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
