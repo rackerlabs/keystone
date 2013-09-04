@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//gYs\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-04T00:16:15Z",
+      "side": 1,
+      "message": "line up the comment with the code",
+      "revId": "d9867d00fec61c3b7685ac95faf6ad2ee60bc028",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gYw\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-04T00:16:15Z",
+      "side": 1,
+      "message": "project_id for creds is optional. If absent, it is implicitly scoped to all projects.\n\nif (project_id is not None and\n    creds.get(\u0027project_id\u0027) and\n    project_id !\u003d creds[\u0027project_id\u0027]):",
+      "revId": "d9867d00fec61c3b7685ac95faf6ad2ee60bc028",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gYI\u003d",
+        "filename": "keystone/auth/plugins/signature.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-04T00:16:15Z",
+      "side": 1,
+      "message": "Invalid signature. Remove EC2 as this is generic signature auth.",
+      "revId": "d9867d00fec61c3b7685ac95faf6ad2ee60bc028",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
