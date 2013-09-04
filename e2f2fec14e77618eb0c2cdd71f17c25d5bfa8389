@@ -16,6 +16,91 @@
       "revId": "e2f2fec14e77618eb0c2cdd71f17c25d5bfa8389",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//dW8\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-04T14:58:00Z",
+      "side": 1,
+      "message": "i think assertTrue is better",
+      "revId": "e2f2fec14e77618eb0c2cdd71f17c25d5bfa8389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//dW4\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-04T14:58:00Z",
+      "side": 1,
+      "message": "assertFalse",
+      "revId": "e2f2fec14e77618eb0c2cdd71f17c25d5bfa8389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//dWs\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-04T14:58:00Z",
+      "side": 1,
+      "message": "assertFalse",
+      "revId": "e2f2fec14e77618eb0c2cdd71f17c25d5bfa8389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//dWo\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-04T14:58:00Z",
+      "side": 1,
+      "message": "assertTrue",
+      "revId": "e2f2fec14e77618eb0c2cdd71f17c25d5bfa8389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//dWk\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-04T14:58:00Z",
+      "side": 1,
+      "message": "assertTrue",
+      "revId": "e2f2fec14e77618eb0c2cdd71f17c25d5bfa8389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
