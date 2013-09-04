@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//f+U\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-04T05:28:34Z",
+      "side": 1,
+      "message": "Actually, this function is like function above:remove_user_from_project. We\u0027d better leave this function here for better modular",
+      "parentUuid": "AAAASn//gmE\u003d",
+      "revId": "67e47a952a2a1e695aae43d51188da9c7633faa5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gmI\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-03T23:08:25Z",
       "side": 1,
       "message": "not seeing a lot of guards here to block against if something does not exist.",
+      "revId": "67e47a952a2a1e695aae43d51188da9c7633faa5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//f9Y\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-04T05:28:34Z",
+      "side": 1,
+      "message": "The first caller, \"self.identity_api.get_project(user[\u0027tenantId\u0027])\" if keystone dose not have the project, this function will throw an exception \"ProjectNotFound\",  in such case, the user will receive this exception. Otherwise, This part is not supposed to break.\n\nI will improve \"old_tenant_id \u003d user_property[\u0027tenantId\u0027]\"\n\nThank you for your comments",
+      "parentUuid": "AAAASn//gmI\u003d",
       "revId": "67e47a952a2a1e695aae43d51188da9c7633faa5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//fh8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-04T05:28:34Z",
+      "side": 1,
+      "message": "Yes, your advice is  of vital value",
+      "parentUuid": "AAAASn//f24\u003d",
+      "revId": "67e47a952a2a1e695aae43d51188da9c7633faa5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gm0\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 12
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-03T23:08:25Z",
       "side": 1,
       "message": "why can this be ignored? add a comment here",
+      "revId": "67e47a952a2a1e695aae43d51188da9c7633faa5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//f9I\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-04T05:28:34Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAASn//gm0\u003d",
       "revId": "67e47a952a2a1e695aae43d51188da9c7633faa5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
