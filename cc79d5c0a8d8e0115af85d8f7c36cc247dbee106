@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//a/Y\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T22:15:53Z",
+      "side": 1,
+      "message": "duped in https://review.openstack.org/#/c/43257/36/keystone/common/controller.py",
+      "revId": "cc79d5c0a8d8e0115af85d8f7c36cc247dbee106",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
