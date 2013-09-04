@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//br4\u003d",
+        "filename": "keystone/contrib/ec2/routers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-04T20:03:21Z",
+      "side": 1,
+      "message": "OS-EC2/from_token",
+      "revId": "6fbcabf84c161ea5c4bbd1fa8bb4b4e873d2bd49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//brM\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1983,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-04T20:03:21Z",
+      "side": 1,
+      "message": "change path...keep extension name the same",
+      "revId": "6fbcabf84c161ea5c4bbd1fa8bb4b4e873d2bd49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
