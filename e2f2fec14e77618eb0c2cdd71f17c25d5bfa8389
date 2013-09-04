@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//c80\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-04T16:00:19Z",
+      "side": 1,
+      "message": "I don\u0027t think we can change this behavior in grizzly.",
+      "parentUuid": "AAAASn//f60\u003d",
+      "revId": "e2f2fec14e77618eb0c2cdd71f17c25d5bfa8389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//dW8\u003d",
         "filename": "tests/test_backend_ldap.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-04T14:58:00Z",
       "side": 1,
       "message": "i think assertTrue is better",
+      "revId": "e2f2fec14e77618eb0c2cdd71f17c25d5bfa8389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//c70\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-04T16:00:19Z",
+      "side": 1,
+      "message": "assertTrue doesn\u0027t verify that the result is a Boolean.  See the test at line 341 and compare it to the line in the original code at line 329. user_ref[\u0027enabled\u0027] was 512 and not True as expected and this was not caught because it used assertEqual(user_ref[\u0027enabled\u0027], True) which is equivalent to assertTrue((user_ref[\u0027enabled\u0027]).\n\nThis applies to the other comments on using assertFalse, assertTrue.",
+      "parentUuid": "AAAASn//dW8\u003d",
       "revId": "e2f2fec14e77618eb0c2cdd71f17c25d5bfa8389",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
