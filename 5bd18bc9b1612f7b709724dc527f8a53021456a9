@@ -33,6 +33,24 @@
       "revId": "5bd18bc9b1612f7b709724dc527f8a53021456a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//e4A\u003d",
+        "filename": "keystone/tests/test_dn_conv.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1779
+      },
+      "writtenOn": "2013-09-04T09:10:27Z",
+      "side": 1,
+      "message": "John works for Red Hat and so his contributions are under Red Hat copyright. There is no copyright assignment to the OpenStack Foundation required.",
+      "parentUuid": "AAAASn//g4U\u003d",
+      "revId": "5bd18bc9b1612f7b709724dc527f8a53021456a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
