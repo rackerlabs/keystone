@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//d7E\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T13:33:45Z",
+      "side": 1,
+      "message": "other than the __init__ here, you\u0027re basically just building a list of  dicts, right? (it\u0027s actually a dict of dicts, but you only seem to be complicating things with the outer dict?)\n\nso, why not just refactor the __init__() into a function used by the v3 controllers to build a list of dicts, and pass the list down to the drivers?",
+      "parentUuid": "AAAASn//ev0\u003d",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gSM\u003d",
         "filename": "keystone/common/listdirectives.py",
         "patchSetId": 33
@@ -177,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//d7o\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T13:33:45Z",
+      "side": 1,
+      "message": "i just think the prefix_ is silly. you might as well run around and start renaming everything to valid_variable and supported_option",
+      "parentUuid": "AAAASn//euo\u003d",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gR0\u003d",
         "filename": "keystone/common/listdirectives.py",
         "patchSetId": 33
@@ -241,6 +277,24 @@
       "side": 1,
       "message": "just wanted an id....is there something simpler you would prefer?",
       "parentUuid": "AAAASn//gQ8\u003d",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//d6k\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T13:33:45Z",
+      "side": 1,
+      "message": "you\u0027re using the data structure like a list as far as i can tell... so use a list, instead of a dict with useless indexing",
+      "parentUuid": "AAAASn//eyE\u003d",
       "revId": "379c934f377df972890faddf7a3a35577a7deca1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
