@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//f24\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-04T03:23:48Z",
+      "side": 1,
+      "message": "I think if we are catching an exception here we should log it is happening.",
+      "revId": "67e47a952a2a1e695aae43d51188da9c7633faa5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gm0\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 12
