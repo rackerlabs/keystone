@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//evw\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:31:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//gPQ\u003d",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gTg\u003d",
         "filename": "keystone/common/listdirectives.py",
         "patchSetId": 33
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-04T00:47:08Z",
       "side": 1,
       "message": "this represents the first case where a driver has to understand not just the interface it\u0027s implementing, but also the complex object it (might) be passed... that\u0027s probably not a good thing?",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ev0\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:31:08Z",
+      "side": 1,
+      "message": "So I\u0027m open to suggestions....obviously trying to satisfy you (valid) issues that we need to formalize the interface and what it passes.",
+      "parentUuid": "AAAASn//gTg\u003d",
       "revId": "379c934f377df972890faddf7a3a35577a7deca1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//ev8\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:31:08Z",
+      "side": 1,
+      "message": "So I think the driver should know if it can handle the filter, for instance whether the SQL it emits will be case sensitive or not (in fact, that is the case in code for the inexact filters today, even though they are disabled)",
+      "parentUuid": "AAAASn//gSM\u003d",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gTM\u003d",
         "filename": "keystone/common/listdirectives.py",
         "patchSetId": 33
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-04T00:47:08Z",
       "side": 1,
       "message": "documentation is very misleading... you\u0027re not building anything to pass to the driver (like a dict)... you\u0027re just passing the driver an instance of this class",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//euk\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:31:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//gTM\u003d",
       "revId": "379c934f377df972890faddf7a3a35577a7deca1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//euo\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:31:08Z",
+      "side": 1,
+      "message": "Something has to process the url query string and decide whether the attributes passed are indeed things we support filtering on.  That\u0027s the point of valid_filters.  As per a previous comment, maybe this could be better names - \u0027supported_filters\u0027 ?",
+      "parentUuid": "AAAASn//gUA\u003d",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gR0\u003d",
         "filename": "keystone/common/listdirectives.py",
         "patchSetId": 33
@@ -98,6 +188,24 @@
       "writtenOn": "2013-09-04T00:47:08Z",
       "side": 1,
       "message": "thisstuffisreallyhardtoread so please_follow_pep8_naming_conventions",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//eyM\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:31:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//gR0\u003d",
       "revId": "379c934f377df972890faddf7a3a35577a7deca1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//eyE\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:31:08Z",
+      "side": 1,
+      "message": "just wanted an id....is there something simpler you would prefer?",
+      "parentUuid": "AAAASn//gQ8\u003d",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gSA\u003d",
         "filename": "keystone/common/listdirectives.py",
         "patchSetId": 33
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//eyQ\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:31:08Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "AAAASn//gSA\u003d",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gLc\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 33
@@ -149,6 +293,24 @@
       "writtenOn": "2013-09-04T01:22:15Z",
       "side": 1,
       "message": "this code will break if someone tries to filter on a property from a base class, like `deleted`. something like this should allow you to reach up the inheritance hierarchy-\n\n  getattr(model, key).property.columns[0].type",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//eqw\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T10:31:08Z",
+      "side": 1,
+      "message": "Thanks, nice.  Done.",
+      "parentUuid": "AAAASn//gLc\u003d",
       "revId": "379c934f377df972890faddf7a3a35577a7deca1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
