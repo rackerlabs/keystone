@@ -16,6 +16,24 @@
       "revId": "a3a40563791d876f9b3568b3821ba019e305aba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gAE\u003d",
+        "filename": "doc/source/extensions/oauth1-configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-04T02:22:07Z",
+      "side": 1,
+      "message": "this is the only value that is currently valid",
+      "parentUuid": "AAAASn//l8Q\u003d",
+      "revId": "a3a40563791d876f9b3568b3821ba019e305aba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
