@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//gPQ\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T01:22:15Z",
+      "side": 1,
+      "message": "the comment explains one of these constants, but not both. i don\u0027t know what the other one is for, or what the difference between them is",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gTg\u003d",
         "filename": "keystone/common/listdirectives.py",
         "patchSetId": 33
@@ -87,6 +104,23 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//gQ8\u003d",
+        "filename": "keystone/common/listdirectives.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T01:22:15Z",
+      "side": 1,
+      "message": "i don\u0027t see why you\u0027re using random indexes",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//gSA\u003d",
         "filename": "keystone/common/listdirectives.py",
         "patchSetId": 33
@@ -98,6 +132,23 @@
       "writtenOn": "2013-09-04T00:47:08Z",
       "side": 1,
       "message": "what\u0027s a paginator and why is this patch concerned with pagination?",
+      "revId": "379c934f377df972890faddf7a3a35577a7deca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gLc\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T01:22:15Z",
+      "side": 1,
+      "message": "this code will break if someone tries to filter on a property from a base class, like `deleted`. something like this should allow you to reach up the inheritance hierarchy-\n\n  getattr(model, key).property.columns[0].type",
       "revId": "379c934f377df972890faddf7a3a35577a7deca1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
