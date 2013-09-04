@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bus\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b+o\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b+k\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 35
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-04T19:05:54Z",
       "side": 1,
       "message": "revise",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//buk\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b+k\u003d",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bug\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b+Y\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b+w\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 35
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-04T19:05:54Z",
       "side": 1,
       "message": "revise",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//buY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b+w\u003d",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bqs\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b+I\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b88\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 35
@@ -98,6 +188,24 @@
       "writtenOn": "2013-09-04T19:40:08Z",
       "side": 1,
       "message": "i don\u0027t think the domain bit should be optional, which means splitting the method according to the responsibilities it currently has:\n\n  def list_projects(self, hints):\n\n  def list_projects_in_domain(self, domain_id, hints):",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bl8\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b88\u003d",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//blo\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b8o\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b8g\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 35
@@ -166,6 +292,24 @@
       "writtenOn": "2013-09-04T20:27:50Z",
       "side": 1,
       "message": "same comment here, to avoid duplication.",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//blc\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "nice...you da python king :-)",
+      "parentUuid": "AAAASn//b8g\u003d",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -275,6 +419,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//biU\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b8A\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//bjI\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 35
@@ -303,6 +465,24 @@
       "writtenOn": "2013-09-04T19:40:08Z",
       "side": 1,
       "message": "this is a validation error somewhere else, why is it ignored here?",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bhY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "So we raise a validation error when we build the Hints from the query string if it\u0027s an inexact filter we don\u0027t support.  If it gets through to here then either someone has added something to the Hint manually or we have a code error.  So we log it for debug, ignore the filter but don\u0027t fail the query",
+      "parentUuid": "AAAASn//b7I\u003d",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -343,6 +523,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bfE\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "not sure I understand....",
+      "parentUuid": "AAAASn//cLw\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//cKw\u003d",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 35
@@ -377,6 +575,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bgw\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//cJ4\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b9s\u003d",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 35
@@ -388,6 +604,24 @@
       "writtenOn": "2013-09-04T19:05:54Z",
       "side": 1,
       "message": "why not initialize every hint with satisfied\u003dFalse and just set it to True?\n\ni\u0027m still lost on what a driver is supposed to do if it can only partially satisfy a hint (my example earlier was contrived and i guess your response didn\u0027t consider custom drivers or any evolution to \u0027hints\u0027)",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bd0\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "So could do that, maybe existing functionality is Ok as start?  Since it is contained within this class",
+      "parentUuid": "AAAASn//b9s\u003d",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -479,6 +713,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bXg\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Agreed...although this is the current code and fucntionaliy....let\u0027s do that in a separate patch",
+      "parentUuid": "AAAASn//b4Y\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b34\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 35
@@ -490,6 +742,24 @@
       "writtenOn": "2013-09-04T19:40:08Z",
       "side": 1,
       "message": "hints is required, and then it\u0027s not, and then it\u0027s required, and then it\u0027s not...\n\nlet drivers expect it, and provide them (at least) an empty list",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bXY\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b34\u003d",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -513,6 +783,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bXM\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "not sure which line this was for...but other changes should have fixed this",
+      "parentUuid": "AAAASn//b3w\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b3U\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 35
@@ -524,6 +812,24 @@
       "writtenOn": "2013-09-04T19:40:08Z",
       "side": 1,
       "message": "wow... this must not be tested",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bWs\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b3U\u003d",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -547,6 +853,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bVU\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b2o\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b2I\u003d",
         "filename": "keystone/tests/filter_pagination.py",
         "patchSetId": 35
@@ -558,6 +882,24 @@
       "writtenOn": "2013-09-04T19:40:08Z",
       "side": 1,
       "message": "more pagination stuff that should be cut... rename the module, the class, etc",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bVQ\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b2I\u003d",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -581,6 +923,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bUM\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b14\u003d",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//b0s\u003d",
         "filename": "keystone/tests/filter_pagination.py",
         "patchSetId": 35
@@ -592,6 +952,24 @@
       "writtenOn": "2013-09-04T19:40:08Z",
       "side": 1,
       "message": "i don\u0027t think this is relevant",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bUA\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T22:58:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//b0s\u003d",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
