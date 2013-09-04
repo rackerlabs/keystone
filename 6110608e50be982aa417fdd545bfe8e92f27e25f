@@ -16,6 +16,24 @@
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//amk\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 37
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-04T23:47:36Z",
+      "side": 1,
+      "message": "Happy to fix that as a follow-up",
+      "parentUuid": "AAAASn//auM\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
