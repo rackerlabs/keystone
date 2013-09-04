@@ -87,6 +87,108 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//b88\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "i don\u0027t think the domain bit should be optional, which means splitting the method according to the responsibilities it currently has:\n\n  def list_projects(self, hints):\n\n  def list_projects_in_domain(self, domain_id, hints):",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b8o\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "unnecessary line break",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b8g\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "you\u0027ve copy/pasted yourself into needing another decorator\n\n  @default_hints\n\nor just use a real list and then it\u0027s a one liner\n\n  hints \u003d hints or []",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b7s\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "hints \u003d controller.V3Controller.build_driver_hints(context)",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b8A\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "unnecessary line break",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b7I\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "this is a validation error somewhere else, why is it ignored here?",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//cIU\u003d",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 35
@@ -166,6 +268,244 @@
       "writtenOn": "2013-09-04T19:05:54Z",
       "side": 1,
       "message": "why not initialize every hint with satisfied\u003dFalse and just set it to True?\n\ni\u0027m still lost on what a driver is supposed to do if it can only partially satisfy a hint (my example earlier was contrived and i guess your response didn\u0027t consider custom drivers or any evolution to \u0027hints\u0027)",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b5E\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "does this violate pep8? http://www.python.org/dev/peps/pep-0008/#public-and-internal-interfaces",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b4k\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "if key not in model.attributes:\n    raise ValidationError(\u0027Cannot filter by...\u0027)",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b5Q\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "this method is a useless wrapper",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b5o\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "why would hints be none? *at least* guarantee to the driver it\u0027ll be an empty list, not None",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b4Y\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "this should be a one liner, it\u0027s still an undocumented api...",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b34\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "hints is required, and then it\u0027s not, and then it\u0027s required, and then it\u0027s not...\n\nlet drivers expect it, and provide them (at least) an empty list",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b3w\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "\"filters\" should be in context and the copy pasta here can probably go away",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b3U\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "wow... this must not be tested",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b2o\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "thisisnotveryreadable",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b2I\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "more pagination stuff that should be cut... rename the module, the class, etc",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b14\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "can you open a bug that bp split-identity bp merged unfinished before committing more undocumented code to work around that spectacular failure? cite the bug here so these hacks can be found and removed",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b0s\u003d",
+        "filename": "keystone/tests/filter_pagination.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "i don\u0027t think this is relevant",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//b0A\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "this interface would fail if presented with:\n\n  name__contains\u003dfoor\u0026name__contains\u003dbar\n\nwhich is perfectly valid HTTP... i don\u0027t know if you want to deny that or not",
+      "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bzg\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-04T19:40:08Z",
+      "side": 1,
+      "message": "you\u0027re already built a list, so you can avoid the unnecessary for loop dance and just check the length:\n\n  self.assertEqual(len(hints.filters()), 2)",
       "revId": "683442d70f25fee3cf931e817a25c3db23d32e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
