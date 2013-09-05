@@ -236,8 +236,11 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
     def create(self, values):
         values = utils.hash_ldap_user_password(values)
         if self.enabled_mask:
+            orig_enabled = values['enabled']
             self.mask_enabled_attribute(values)
         values = super(UserApi, self).create(values)
+        if self.enabled_mask:
+            values['enabled'] = orig_enabled
         return values
 
     def check_password(self, user_id, password):
