@@ -16,6 +16,24 @@
       "revId": "c99c41116127cd0a47f297fbb4fd20802c9e2842",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Wb8\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T21:17:36Z",
+      "side": 1,
+      "message": "I don\u0027t want to obfuscate the fix with cleanup changes. I\u0027d have no problem with someone submitting a change to clean this up separately.",
+      "parentUuid": "AAAASn//Wdw\u003d",
+      "revId": "c99c41116127cd0a47f297fbb4fd20802c9e2842",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
