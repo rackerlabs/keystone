@@ -37,6 +37,312 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//avo\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 37
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "extra \"containing\" here",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//avc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 37
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "suggest change \"implements\" to \"satisfies\" (satisfies is used at line 142)",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//avE\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "suggest remove the duplication here by not copy-pasting.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ats\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "does this still apply? why would domain be passed in hints rather than calling list_projects_in_domain",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//atE\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "suggest consolidate duplicated code in list_projects and list_projects_in_domain",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ars\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "suggest change \"in the system\" to \"in the domain\"",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//arY\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "remove extra blank line",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//arA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "remove \"already applied\" or \"satisfied\"",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//aq8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "change \"must\" to \"will\"",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//aq0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "remove \"has\"",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//aqo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "this comment doesn\u0027t make sense.\n\nWhy isn\u0027t this comment about hints up in the docstring?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//apo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "how do you know ref_value and filter_value are strings and can be lowercased?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ap0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "suggest use a dict of comparator_name to comparator_function rather than long if / elif",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//apA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "remove () here, also should add the comparator that was invalid.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//aoE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "does the ref (r) need to be flattened like at line 396?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ams\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "suggest use if not and continue so don\u0027t have to indent so much, or move the code to another function.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//al4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "this isn\u0027t a sentence and doesn\u0027t make sense to me.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ak8\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "add : after TODO(henry-nash) to match the normal format.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//aeQ\u003d",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 37
@@ -54,6 +360,159 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//aj4\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "should be \"term consists of\" ?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ajw\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "change \u0027comapartor\u0027 to \u0027comparator\"",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ajI\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "I don\u0027t see anyplace this function is used.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ai0\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "fix the formatting.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ais\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "what\u0027s list_directive?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//aig\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "key is not a parameter",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ah4\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "add : after TODO(henry-nash)",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ahY\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "would clean up this function if there was an \"exact_filter\" function just like \"inexact_filter\" (used at line 342)",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//aiY\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "does this handle flattening of attributes (as is done in https://review.openstack.org/#/c/43257/37/keystone/common/controller.py) ?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//adU\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 37
@@ -65,6 +524,23 @@
       "writtenOn": "2013-09-05T00:38:20Z",
       "side": 1,
       "message": "See the comment about making the hints.filters an @property\n\nRight now you could end up with a custom hints object that has .filters as a property and result in a traceback on line 339.\n\nThis is a hypothetical situation, because the controllers currently do not send anything but the correct formatted hints object",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//agA\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "suggest give a name to [] magic constant., e.g., \n\n hints\u003d[]\n user_refs \u003d self.list_users_in_group(group_id, hints)",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +581,57 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//aew\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 1159,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "why does this one use Hints() but https://review.openstack.org/#/c/43257/37/keystone/identity/backends/ldap.py used [] for no Hints ?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//adI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "why change name of variable?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//adw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "suggest move this code into a function (maybe into _get_domain_id_and_driver) rather than copy-pasting.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//adA\u003d",
         "filename": "keystone/policy/controllers.py",
         "patchSetId": 37
@@ -122,6 +649,74 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//acw\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "change \"compartor\" to \"comparator\"\n\nisn\u0027t this what hints.get_exact_filter_by_name is doing already?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ack\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "what do we need this for?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//acY\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "I thought this was done already.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//acQ\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 1808,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "revert whitespace change.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//alA\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 37
@@ -133,6 +728,23 @@
       "writtenOn": "2013-09-04T23:52:19Z",
       "side": 1,
       "message": "This test is skipped until IceHouse anyway...at which time this should be fined up to build the hints using add_filter",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//abM\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:42:46Z",
+      "side": 1,
+      "message": "a comment here would be nice to say what this is for.",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
