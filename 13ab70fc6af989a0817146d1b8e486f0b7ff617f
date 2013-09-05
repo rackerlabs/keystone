@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//Ya0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-09-05T12:55:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//sBI\u003d",
+      "revId": "13ab70fc6af989a0817146d1b8e486f0b7ff617f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//sBE\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-30T21:05:31Z",
       "side": 1,
       "message": "I think the default should be 1 if this is going into Havana.",
+      "revId": "13ab70fc6af989a0817146d1b8e486f0b7ff617f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Yaw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-09-05T12:55:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//sBE\u003d",
       "revId": "13ab70fc6af989a0817146d1b8e486f0b7ff617f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//Yas\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-09-05T12:55:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//sBY\u003d",
+      "revId": "13ab70fc6af989a0817146d1b8e486f0b7ff617f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//sBU\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-30T21:05:31Z",
       "side": 1,
       "message": "I think the default should be 1 if this is going into Havana.",
+      "revId": "13ab70fc6af989a0817146d1b8e486f0b7ff617f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Yao\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-09-05T12:55:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//sBU\u003d",
       "revId": "13ab70fc6af989a0817146d1b8e486f0b7ff617f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//YaY\u003d",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-09-05T12:55:51Z",
+      "side": 1,
+      "message": "Will do.",
+      "parentUuid": "AAAASn//sA8\u003d",
+      "revId": "13ab70fc6af989a0817146d1b8e486f0b7ff617f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//sBc\u003d",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2013-08-30T21:05:31Z",
       "side": 1,
       "message": "add a comment why it\u0027s ok to ignore this error.",
+      "revId": "13ab70fc6af989a0817146d1b8e486f0b7ff617f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//YaU\u003d",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-09-05T12:55:51Z",
+      "side": 1,
+      "message": "ok.",
+      "parentUuid": "AAAASn//sBc\u003d",
       "revId": "13ab70fc6af989a0817146d1b8e486f0b7ff617f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
