@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//WkE\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-05T20:47:19Z",
+      "side": 1,
+      "message": "Planning to use this in future patches?",
+      "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Wjs\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-05T20:47:19Z",
+      "side": 1,
+      "message": "Should these be changed to Python docstrings? \n\n:param path: the path provided \n\nfor example? And the returns docstring as well",
+      "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//WjY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-05T20:47:19Z",
+      "side": 1,
+      "message": "Same here, we have the returns docstring but not the parameter docstrings. Might be nice to have both to be consistent.",
+      "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//WhU\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-05T20:47:19Z",
+      "side": 1,
+      "message": "This is a good description, should tag it with a \u0027NOTE(henry-nash):\u0027",
+      "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Wgo\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-05T20:47:19Z",
+      "side": 1,
+      "message": "Should this be added to the docstrings since this method raises?",
+      "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Wgc\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-05T20:47:19Z",
+      "side": 1,
+      "message": "Same comment here as previous.",
+      "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
