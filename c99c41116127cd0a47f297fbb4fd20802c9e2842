@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//Wdw\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-05T21:02:37Z",
+      "side": 1,
+      "message": "(NIT): The naming of this variable can be a bit confusing since we are passing in \u0027values\u0027 and it looks like we are working with that variable at first glance. Wondering if it would be acceptable in this patch to change \u0027values\u0027 within the scope of create() (line 237) to something more distinct for easier readability between \u0027values\u0027 being passed in and \u0027values\u0027 being declared on 237 from the passed in variable \u0027values\u0027?",
+      "revId": "c99c41116127cd0a47f297fbb4fd20802c9e2842",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
