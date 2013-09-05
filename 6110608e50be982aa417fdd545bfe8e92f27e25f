@@ -37,6 +37,91 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//aeQ\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-05T00:38:20Z",
+      "side": 1,
+      "message": "Likely this should become an @property in the future.  (you only check hasattr in the code referencing it in sql.core)",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//adU\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-05T00:38:20Z",
+      "side": 1,
+      "message": "See the comment about making the hints.filters an @property\n\nRight now you could end up with a custom hints object that has .filters as a property and result in a traceback on line 339.\n\nThis is a hypothetical situation, because the controllers currently do not send anything but the correct formatted hints object",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//aeE\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-05T00:38:20Z",
+      "side": 1,
+      "message": "(NIT): This comment look superfluous?  It appears to be a join below.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ad8\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-05T00:38:20Z",
+      "side": 1,
+      "message": "(NIT): This comment look superfluous?  It appears to be a join below.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//adA\u003d",
+        "filename": "keystone/policy/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-05T00:38:20Z",
+      "side": 1,
+      "message": "Hints are not passed to the driver here.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//alA\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 37
