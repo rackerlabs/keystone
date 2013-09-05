@@ -571,17 +571,15 @@ class LDAPIdentity(test.TestCase, BaseLDAPIdentity):
 
         user_ref = self.identity_api.create_user('fake1', user)
 
-        self.assertEqual(user_ref['enabled'], 512)
-        # TODO(blk-u): 512 seems wrong, should it be True?
-        self.assertNotIn('enabled_nomask', user_ref)
-        # TODO(blk-u): should enabled_nomask be returned like other results?
+        # Use assertIs rather than assertTrue because assertIs will assert the
+        # value is a Boolean as expected.
+        self.assertIs(user_ref['enabled'], True)
+        self.assertEqual(user_ref['enabled_nomask'], 512)
 
         enabled_vals = get_enabled_vals()
         self.assertEqual(enabled_vals, [512])
 
         user_ref = self.identity_api.get_user('fake1')
-        # Use assertIs rather than assertTrue because assertIs will assert the
-        # value is a Boolean as expected.
         self.assertIs(user_ref['enabled'], True)
         self.assertEqual(user_ref['enabled_nomask'], 512)
 
