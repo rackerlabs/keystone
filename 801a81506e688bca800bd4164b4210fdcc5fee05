@@ -52,6 +52,24 @@
       "revId": "801a81506e688bca800bd4164b4210fdcc5fee05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bbM\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-05T12:38:57Z",
+      "side": 1,
+      "message": "Maybe Im confused. I did not think this was a return value. I thought this was the magic value active directory used/stored to identify a user as enabled.  Whether we should return it or not I\u0027m not sure",
+      "parentUuid": "AAAASn//bgE\u003d",
+      "revId": "801a81506e688bca800bd4164b4210fdcc5fee05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
