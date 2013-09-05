@@ -34,6 +34,24 @@
       "revId": "801a81506e688bca800bd4164b4210fdcc5fee05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//aYg\u003d",
+        "filename": "tests/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T00:52:48Z",
+      "side": 1,
+      "message": "Brad - I opened a bug for this: https://bugs.launchpad.net/keystone/+bug/1220945",
+      "parentUuid": "AAAASn//bgE\u003d",
+      "revId": "801a81506e688bca800bd4164b4210fdcc5fee05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
