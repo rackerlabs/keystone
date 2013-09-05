@@ -69,6 +69,24 @@
       "revId": "e6804903e00f49b977959efe64cc7ddc568669d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//YNQ\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-09-05T13:40:53Z",
+      "side": 1,
+      "message": "I think it\u0027s worse than not sanitizing.  It will override a user provided value.  If the don\u0027t set it passlib will default to 4096.  If they do set it this patch will ignore it and set it to 4096.  As a user I would not expect this behavior.",
+      "parentUuid": "AAAASn//i5o\u003d",
+      "revId": "e6804903e00f49b977959efe64cc7ddc568669d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
