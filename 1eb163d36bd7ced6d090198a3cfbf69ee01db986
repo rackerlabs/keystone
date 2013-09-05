@@ -19,6 +19,74 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//WRc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T22:12:07Z",
+      "side": 1,
+      "message": "suggest change name to \"original_user\"",
+      "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//WSE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T22:12:07Z",
+      "side": 1,
+      "message": "change name to old_project_id . tenant is a deprecated term.",
+      "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//WR0\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T22:12:07Z",
+      "side": 1,
+      "message": "add a comment for what this code (230-236) is doing, or move it into a new function with a descriptive name.",
+      "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//WSs\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-05T22:12:07Z",
+      "side": 1,
+      "message": "wrap in _() so that the log message gets translated.\n\nalso, use named substitution markers for translation.\n\nalso, change from warning to debug. It\u0027s not a problem if the user is already a member of their default project.",
+      "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//dKY\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 14
