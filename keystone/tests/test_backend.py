@@ -2789,7 +2789,7 @@ class CommonHelperTests(test.TestCase):
     def test_format_helper_raises_malformed_on_incomplete_format(self):
         self.assertRaises(exception.MalformedEndpoint,
                           core.format_url,
-                          "http://%(foo)",
+                          "http://%(foo)s",
                           {"foo": "1"})
 
 

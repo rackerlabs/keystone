@@ -526,7 +526,7 @@ class ContextFormatter(logging.Formatter):
         lines = stringbuffer.getvalue().split('\n')
         stringbuffer.close()
 
-        if CONF.logging_exception_prefix.find('%(asctime)') != -1:
+        if CONF.logging_exception_prefix.find('%(asctime)s') != -1:
             record.asctime = self.formatTime(record, self.datefmt)
 
         formatted_lines = []
