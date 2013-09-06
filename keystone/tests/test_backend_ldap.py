@@ -720,6 +720,20 @@ class LDAPIdentity(test.TestCase, BaseLDAPIdentity):
                           self.identity_api.get_project,
                           project['id'])
 
+    def test_project_update_attrs(self):
+        # Creating a project with a description attrs
+        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'domain_id': CONF.identity.default_domain_id,
+                   'enabled': True}
+        self.assignment_api.create_project(project['id'], project)
+
+        # Add a description attribute
+        project['description'] = uuid.uuid4().hex
+        self.assignment_api.update_project(project['id'], project)
+
+        project_ref = self.identity_api.get_project(project['id'])
+        self.assertDictEqual(project_ref, project)
+
     def test_cache_layer_project_crud(self):
         # NOTE(morganfainberg): LDAP implementation does not currently support
         # updating project names.  This method override provides a different
