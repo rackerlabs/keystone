@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//UQ0\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-06T14:12:01Z",
+      "side": 1,
+      "message": "I think the \"\"\" on lines 226 and 228 can be removed since this comment isn\u0027t a docstring for the method. Just replace with a note\n\n# NOTE(\u003cuser_name\u003e): Remove the member role from the old tenant.",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//UP8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-06T14:12:01Z",
+      "side": 1,
+      "message": "(NIT): for easier readability, the string could be taken out and assigned to a msg variable and that could be used in LOG.debug(msg) which might make things a little easier to read.",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ULU\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1514,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-06T14:12:01Z",
+      "side": 1,
+      "message": "(NIT): suggest updating the name of this test to be more descriptive. Something like \u0027test_remove_user_membership_from_project_raises_404\u0027 or role not found, which would describe the outcome your expecting a little more.",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//UOY\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1525,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-06T14:12:01Z",
+      "side": 1,
+      "message": "Do we need two separate assertRaises here? The first one makes sense but why the second one on line 1521?",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//UKo\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-06T14:12:01Z",
+      "side": 1,
+      "message": "According to Dolphm\u0027s last comments: \n\nhttps://bugs.launchpad.net/keystone/+bug/1219739\n\nShould these tests be skipped?",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
