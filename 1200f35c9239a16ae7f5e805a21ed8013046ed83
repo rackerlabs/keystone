@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//Ups\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-06T11:23:11Z",
+      "side": 1,
+      "message": "since this patch does not depend on it, i think it is better to remove this",
+      "parentUuid": "AAAASn//WkE\u003d",
+      "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Wjs\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 10
@@ -30,6 +48,41 @@
       "writtenOn": "2013-09-05T20:47:19Z",
       "side": 1,
       "message": "Should these be changed to Python docstrings? \n\n:param path: the path provided \n\nfor example? And the returns docstring as well",
+      "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//UqA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-06T11:23:11Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAASn//Wjs\u003d",
+      "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Up0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-06T11:23:11Z",
+      "side": 1,
+      "message": "L338-L343 can short to:\n\nelse if increment \u003d\u003d 0:\n\n    return cls.base_url(path)\n\nreturn None is the default behaviour",
       "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +123,40 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//Upw\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-06T11:23:11Z",
+      "side": 1,
+      "message": "i think it is better to log it too",
+      "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//UqE\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-06T11:23:11Z",
+      "side": 1,
+      "message": "i think it is better log this exception too",
+      "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Wgo\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 10
@@ -98,6 +185,23 @@
       "writtenOn": "2013-09-05T20:47:19Z",
       "side": 1,
       "message": "Same comment here as previous.",
+      "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Uqg\u003d",
+        "filename": "keystone/tests/test_v3_pagination.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-06T11:23:11Z",
+      "side": 1,
+      "message": "LLC-\u003eFoundation",
       "revId": "1200f35c9239a16ae7f5e805a21ed8013046ed83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
