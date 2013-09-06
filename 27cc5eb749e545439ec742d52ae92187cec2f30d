@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//T48\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-06T15:36:06Z",
+      "side": 1,
+      "message": "+1, this is not the place for a docstring.",
+      "parentUuid": "AAAASn//UQ0\u003d",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//UP8\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 18
@@ -64,6 +82,40 @@
       "writtenOn": "2013-09-06T14:12:01Z",
       "side": 1,
       "message": "Do we need two separate assertRaises here? The first one makes sense but why the second one on line 1521?",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//T2g\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1525,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-06T15:36:06Z",
+      "side": 1,
+      "message": "the docstring for remove_user_membership_from_project says that it raises keystone.exception.ProjectNotFound and keystone.exception.UserNotFound . Either these tests are wrong or the docstring is wrong, because this is testing that the function raises RoleNotFound, which isn\u0027t mentioned, and it\u0027s not testing that ProjectNotFound and UserNotFound are raised.",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//T2I\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1944,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-06T15:36:06Z",
+      "side": 1,
+      "message": "also need to assert that the new membership was added and the old membership was removed using  self.identity_api.get_roles_for_user_and_project() like at 1510-1512",
       "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
