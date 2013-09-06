@@ -398,20 +398,39 @@ class BaseLdap(object):
         for k, v in values.iteritems():
             if k == 'id' or k in self.attribute_ignore:
                 continue
-            if k in self.immutable_attrs and old_obj[k] != v:
+
+            # Skip it if the value didnt change.
+            if k in old_obj and old_obj[k] == v:
+                continue
+
+            # If we have a key with no values and it was actually not already
+            # there previously then skip it.
+            if k not in old_obj and not v:
+                continue
+
+            # else if there is a key/value and the attribute wasn't already
+            # added there, then create it.
+            elif k not in old_obj and v:
+                op = ldap.MOD_ADD
+                modlist.append((op, self.attribute_mapping.get(k, k), [v]))
+                continue
+
+            # Disallow modifying immutable attributes.
+            if k in self.immutable_attrs:
                 msg = (_("Cannot change %(option_name)s %(attr)s") %
                        {'option_name': self.options_name, 'attr': k})
                 raise exception.ValidationError(msg)
+
+            # If value is None it means we want to delete that attribute.
             if v is None:
-                if old_obj[k] is not None:
-                    modlist.append((ldap.MOD_DELETE,
-                                    self.attribute_mapping.get(k, k),
-                                    None))
-            elif old_obj[k] != v:
-                if old_obj[k] is None:
-                    op = ldap.MOD_ADD
-                else:
-                    op = ldap.MOD_REPLACE
+                modlist.append((ldap.MOD_DELETE,
+                    self.attribute_mapping.get(k, k),
+                    None))
+                continue
+
+            # If the value has changed, replace it.
+            if old_obj[k] != v:
+                op = ldap.MOD_REPLACE
                 modlist.append((op, self.attribute_mapping.get(k, k), [v]))
 
         if modlist:
