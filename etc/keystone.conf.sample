@@ -82,6 +82,16 @@
 # or a module with notify() method:
 # onready = keystone.common.systemd
 
+# === Notification Options ===
+# Driver or drivers to handle sending notifications
+# notification_driver =
+
+# Default notification level for outgoing notifications
+# default_notification_level = INFO
+
+# Default publisher_id for outgoing notifications
+# default_publisher_id =
+
 [sql]
 # The SQLAlchemy connection string used to connect to the database
 # connection = sqlite:///keystone.db
