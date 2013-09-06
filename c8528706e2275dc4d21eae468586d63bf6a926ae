@@ -16,6 +16,24 @@
       "revId": "c8528706e2275dc4d21eae468586d63bf6a926ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//VPI\u003d",
+        "filename": "tools/pip-requires",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4375
+      },
+      "writtenOn": "2013-09-06T07:03:15Z",
+      "side": 1,
+      "message": "That would mean the next review once 0.7.11 is released. The 0.7.x series is a stable branch, so it\u0027 s unlikely to break things. I guess \u003c\u003d0.8 would have worked too. BTW. it\u0027s the same bound as in the \"requirements\" project.",
+      "parentUuid": "AAAASn//Wqo\u003d",
+      "revId": "c8528706e2275dc4d21eae468586d63bf6a926ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
