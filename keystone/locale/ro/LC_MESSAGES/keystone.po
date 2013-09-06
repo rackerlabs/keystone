@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-09-05 06:01+0000\n"
+"POT-Creation-Date: 2013-09-06 06:00+0000\n"
 "PO-Revision-Date: 2013-06-08 07:51+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Romanian "
@@ -269,7 +269,7 @@ msgid "Access token is expired"
 msgstr ""
 
 #: keystone/auth/plugins/oauth1.py:75
-#: keystone/contrib/oauth1/controllers.py:285
+#: keystone/contrib/oauth1/controllers.py:260
 msgid "There should not be any non-oauth parameters"
 msgstr ""
 
@@ -758,7 +758,7 @@ msgid "Cannot change consumer secret"
 msgstr ""
 
 #: keystone/contrib/oauth1/controllers.py:133
-#: keystone/contrib/oauth1/backends/sql.py:276
+#: keystone/contrib/oauth1/backends/sql.py:279
 msgid "User IDs do not match"
 msgstr ""
 
@@ -766,48 +766,40 @@ msgstr ""
 msgid "Could not find role"
 msgstr ""
 
-#: keystone/contrib/oauth1/controllers.py:195
+#: keystone/contrib/oauth1/controllers.py:189
 msgid "Non-oauth parameter - project, do not match"
 msgstr ""
 
-#: keystone/contrib/oauth1/controllers.py:201
-msgid "Non-oauth parameter - roles, do not match"
-msgstr ""
-
-#: keystone/contrib/oauth1/controllers.py:212
-msgid "could not find matching roles for provided role ids"
-msgstr ""
-
-#: keystone/contrib/oauth1/controllers.py:264
-#: keystone/contrib/oauth1/controllers.py:340
+#: keystone/contrib/oauth1/controllers.py:239
+#: keystone/contrib/oauth1/controllers.py:315
 msgid "Request token is expired"
 msgstr ""
 
-#: keystone/contrib/oauth1/controllers.py:289
+#: keystone/contrib/oauth1/controllers.py:264
 msgid "provided consumer key does not match stored consumer key"
 msgstr ""
 
-#: keystone/contrib/oauth1/controllers.py:293
+#: keystone/contrib/oauth1/controllers.py:268
 msgid "provided verifier does not match stored verifier"
 msgstr ""
 
-#: keystone/contrib/oauth1/controllers.py:297
+#: keystone/contrib/oauth1/controllers.py:272
 msgid "provided request key does not match stored request key"
 msgstr ""
 
-#: keystone/contrib/oauth1/controllers.py:301
+#: keystone/contrib/oauth1/controllers.py:276
 msgid "Request Token does not have an authorizing user id"
 msgstr ""
 
-#: keystone/contrib/oauth1/controllers.py:357
+#: keystone/contrib/oauth1/controllers.py:331
 msgid "authorizing user does not have role required"
 msgstr ""
 
-#: keystone/contrib/oauth1/controllers.py:369
+#: keystone/contrib/oauth1/controllers.py:346
 msgid "User is not a member of the requested project"
 msgstr ""
 
-#: keystone/contrib/oauth1/backends/sql.py:90
+#: keystone/contrib/oauth1/backends/sql.py:91
 msgid "Consumer not found"
 msgstr ""
 
@@ -815,7 +807,7 @@ msgstr ""
 msgid "Request token not found"
 msgstr ""
 
-#: keystone/contrib/oauth1/backends/sql.py:256
+#: keystone/contrib/oauth1/backends/sql.py:259
 msgid "Access token not found"
 msgstr ""
 
@@ -1619,8 +1611,8 @@ msgstr ""
 msgid "Unexpected error or malformed token determining token expiry: %s"
 msgstr ""
 
-#: keystone/token/provider.py:191 keystone/token/providers/uuid.py:548
-#: keystone/token/providers/uuid.py:559
+#: keystone/token/provider.py:191 keystone/token/providers/uuid.py:556
+#: keystone/token/providers/uuid.py:567
 msgid "Failed to validate token"
 msgstr ""
 
@@ -1660,29 +1652,29 @@ msgstr ""
 msgid "Trustor is disabled."
 msgstr ""
 
-#: keystone/token/providers/uuid.py:242
+#: keystone/token/providers/uuid.py:250
 msgid "Trustee has no delegated roles."
 msgstr ""
 
-#: keystone/token/providers/uuid.py:251
+#: keystone/token/providers/uuid.py:259
 #, python-format
 msgid "User %(user_id)s has no access to project %(project_id)s"
 msgstr ""
 
-#: keystone/token/providers/uuid.py:256
+#: keystone/token/providers/uuid.py:264
 #, python-format
 msgid "User %(user_id)s has no access to domain %(domain_id)s"
 msgstr ""
 
-#: keystone/token/providers/uuid.py:306
+#: keystone/token/providers/uuid.py:314
 msgid "User is not a trustee."
 msgstr ""
 
-#: keystone/token/providers/uuid.py:476
+#: keystone/token/providers/uuid.py:484
 msgid "Non-default domain is not supported"
 msgstr ""
 
-#: keystone/token/providers/uuid.py:484
+#: keystone/token/providers/uuid.py:492
 msgid "Domain scoped token is not supported"
 msgstr ""
 
@@ -1753,5 +1745,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Invalid LDAP TLS certs option: %(option). Choose one of: %(options)s"
+#~ msgstr ""
+
+#~ msgid "Non-oauth parameter - roles, do not match"
+#~ msgstr ""
+
+#~ msgid "could not find matching roles for provided role ids"
 #~ msgstr ""
 
