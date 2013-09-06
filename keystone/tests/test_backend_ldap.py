@@ -583,31 +583,31 @@ class LDAPIdentity(test.TestCase, BaseLDAPIdentity):
         # Use assertIs rather than assertTrue because assertIs will assert the
         # value is a Boolean as expected.
         self.assertIs(user_ref['enabled'], True)
-        self.assertEqual(user_ref['enabled_nomask'], 512)
+        self.assertNotIn('enabled_nomask', user_ref)
 
         user['enabled'] = False
         user_ref = self.identity_api.update_user('fake1', user)
         self.assertIs(user_ref['enabled'], False)
-        self.assertEqual(user_ref['enabled_nomask'], 514)
+        self.assertNotIn('enabled_nomask', user_ref)
 
         enabled_vals = get_enabled_vals()
         self.assertEqual(enabled_vals, [514])
 
         user_ref = self.identity_api.get_user('fake1')
         self.assertIs(user_ref['enabled'], False)
-        self.assertEqual(user_ref['enabled_nomask'], 514)
+        self.assertNotIn('enabled_nomask', user_ref)
 
         user['enabled'] = True
         user_ref = self.identity_api.update_user('fake1', user)
         self.assertIs(user_ref['enabled'], True)
-        self.assertEqual(user_ref['enabled_nomask'], 512)
+        self.assertNotIn('enabled_nomask', user_ref)
 
         enabled_vals = get_enabled_vals()
         self.assertEqual(enabled_vals, [512])
 
         user_ref = self.identity_api.get_user('fake1')
         self.assertIs(user_ref['enabled'], True)
-        self.assertEqual(user_ref['enabled_nomask'], 512)
+        self.assertNotIn('enabled_nomask', user_ref)
 
     def test_user_api_get_connection_no_user_password(self):
         """Don't bind in case the user and password are blank."""
