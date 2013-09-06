@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//S14\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-06T21:33:23Z",
+      "side": 1,
+      "message": "it might be useful to have a comment here why this can be skipped, like\n\n # No value and was not in original, already not present",
+      "revId": "73466e81e59fc51c1aba4c15feb26e6ce20847b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//S1g\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-06T21:33:23Z",
+      "side": 1,
+      "message": "suggest have explicit check that the value wasn\u0027t changed, since if wasn\u0027t changed then don\u0027t care about immutable\n\n if k in old_obj and obj_obj[k] \u003d\u003d v:\n    # Value was not changed\n    continue\n\n if k in self.immutable_attrs:\n    raise ...\n\nthen \n1) don\u0027t check k in self.immutable_attrs twice, and\n2) I think it\u0027s clearer.",
+      "revId": "73466e81e59fc51c1aba4c15feb26e6ce20847b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Syw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-06T21:33:23Z",
+      "side": 1,
+      "message": "I think we already checked this.",
+      "revId": "73466e81e59fc51c1aba4c15feb26e6ce20847b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Syo\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-06T21:33:23Z",
+      "side": 1,
+      "message": "suggest \"continue\" here like at line 404 to match the pattern.",
+      "revId": "73466e81e59fc51c1aba4c15feb26e6ce20847b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Sys\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-06T21:33:23Z",
+      "side": 1,
+      "message": "I think we already checked this, too.",
+      "revId": "73466e81e59fc51c1aba4c15feb26e6ce20847b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
