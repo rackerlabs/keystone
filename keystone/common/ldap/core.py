@@ -389,20 +389,27 @@ class BaseLdap(object):
         for k, v in values.iteritems():
             if k == 'id' or k in self.attribute_ignore:
                 continue
-            if k in self.immutable_attrs and old_obj[k] != v:
+            if k not in old_obj and not v:
+                continue
+
+            if (k not in old_obj and k in self.immutable_attrs) or \
+               (k in self.immutable_attrs and old_obj[k] != v) :
                 msg = (_("Cannot change %(option_name)s %(attr)s") %
                        {'option_name': self.options_name, 'attr': k})
                 raise exception.ValidationError(msg)
+
+            if k not in old_obj and v:
+                op = ldap.MOD_ADD
+                modlist.append((op, self.attribute_mapping.get(k, k), [v]))
+                continue
+
             if v is None:
                 if old_obj[k] is not None:
                     modlist.append((ldap.MOD_DELETE,
                                     self.attribute_mapping.get(k, k),
                                     None))
             elif old_obj[k] != v:
-                if old_obj[k] is None:
-                    op = ldap.MOD_ADD
-                else:
-                    op = ldap.MOD_REPLACE
+                op = ldap.MOD_REPLACE
                 modlist.append((op, self.attribute_mapping.get(k, k), [v]))
 
         if modlist:
