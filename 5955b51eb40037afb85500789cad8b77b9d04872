@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//S0k\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-06T21:19:57Z",
+      "side": 1,
+      "message": "When specifying the notification driver, if we use rpc_notifier the default is impl_kombu, but if the user wants to use qpid, they need to set rpc_backend \u003d keystone.openstack.common.rpc.impl_qpid. \n\nThis should probably be documented here as well.",
+      "revId": "5955b51eb40037afb85500789cad8b77b9d04872",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//S0U\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-06T21:19:57Z",
+      "side": 1,
+      "message": "Might need to have notification_topics set here as well: \n\nhttp://docs.openstack.org/trunk/openstack-network/admin/content/ch_adv_notification_overview.html",
+      "revId": "5955b51eb40037afb85500789cad8b77b9d04872",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
