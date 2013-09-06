@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//V0Y\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-06T00:38:14Z",
+      "side": 1,
+      "message": "I think it is OK to use tenantId here, or some one change it all together at one time",
+      "parentUuid": "AAAASn//dIQ\u003d",
+      "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//WRc\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-05T22:12:07Z",
       "side": 1,
       "message": "suggest change name to \"original_user\"",
+      "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//V0k\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-06T00:38:14Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAASn//WRc\u003d",
       "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//V0s\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-06T00:38:14Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAASn//WSE\u003d",
+      "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//WR0\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 14
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-05T22:12:07Z",
       "side": 1,
       "message": "add a comment for what this code (230-236) is doing, or move it into a new function with a descriptive name.",
+      "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//V0w\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-06T00:38:14Z",
+      "side": 1,
+      "message": "I will add some comments to describe this part of code",
+      "parentUuid": "AAAASn//WR0\u003d",
       "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//V00\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-06T00:38:14Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAASn//WSs\u003d",
+      "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//dKY\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 14
@@ -98,6 +188,24 @@
       "writtenOn": "2013-09-04T15:30:44Z",
       "side": 1,
       "message": "the pass in unnecessary",
+      "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//V04\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-06T00:38:14Z",
+      "side": 1,
+      "message": "Yes, this should be removed~~~",
+      "parentUuid": "AAAASn//dKY\u003d",
       "revId": "1eb163d36bd7ced6d090198a3cfbf69ee01db986",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
