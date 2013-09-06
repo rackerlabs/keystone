@@ -34,6 +34,24 @@
       "revId": "6715d489308e0a2f252486561adca6c7ce85c474",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//T8w\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-06T15:07:44Z",
+      "side": 1,
+      "message": "Yeah that sums it up nicely, I\u0027m just wondering if we have to add it to a meeting agenda or something like that to discuss it so that everyone agrees on a single format, boolean or not, and then finish the fix accordingly.",
+      "parentUuid": "AAAASn//WdI\u003d",
+      "revId": "6715d489308e0a2f252486561adca6c7ce85c474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
