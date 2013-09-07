@@ -16,6 +16,23 @@
       "revId": "0ac79d1a19952dbcd4e562b826812aaa33ba5874",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Shw\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-07T01:05:52Z",
+      "side": 1,
+      "message": "at py2.7 I get all kinds of errors:\n\nERROR: invocation failed, logfile: /opt/stack/keystone/.tox/py27/log/py27-1.log\nERROR: actionid\u003dpy27\n\n...\n/opt/stack/keystone/.tox/py27/build/lxml/src/lxml/includes/etree_defs.h:9:31: fatal error: libxml/xmlversion.h: No such file or directory\n\n...\n\nERROR: could not install deps [-r/opt/stack/keystone/requirements.txt, -r/opt/stack/keystone/test-requirements.txt]\n___________________________________ summary ____________________________________\nERROR:   py26: InterpreterNotFound: python2.6\nERROR:   py27: could not install deps [-r/opt/stack/keystone/requirements.txt, -r/opt/stack/keystone/test-requirements.txt]\nERROR:   py33: InterpreterNotFound: python3.3\nERROR:   pep8: could not install deps [-r/opt/stack/keystone/requirements.txt, -r/opt/stack/keystone/test-requirements.txt]\n\n\nwhat is my environment missing that things went horribly wrong?  I did git pull origin master before doding pip install tox.",
+      "revId": "0ac79d1a19952dbcd4e562b826812aaa33ba5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
