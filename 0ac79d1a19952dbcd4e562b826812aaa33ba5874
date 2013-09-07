@@ -33,6 +33,24 @@
       "revId": "0ac79d1a19952dbcd4e562b826812aaa33ba5874",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//R60\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-07T16:43:00Z",
+      "side": 1,
+      "message": "I recall seeing this in my environment a while back too, a library (lxml) had a dependency problem. No idea why.\n\nThis should explain how to fix: http://stackoverflow.com/questions/15759150/src-lxml-etree-defs-h931-fatal-error-libxml-xmlversion-h-no-such-file-or-di\n\nBut either way, I think this is outside the scope of the change, and even if you ran ./run_tests with the -u option; you would get the same error.",
+      "parentUuid": "AAAASn//Shw\u003d",
+      "revId": "0ac79d1a19952dbcd4e562b826812aaa33ba5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
