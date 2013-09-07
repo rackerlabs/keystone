@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//SiE\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-07T00:54:54Z",
+      "side": 1,
+      "message": "OK so I followed the instructions and when I run tox I get:\n\npy26 create: /opt/stack/keystone/.tox/py26\nERROR: InterpreterNotFound: python2.6\n  \nI do end up having py27 installed so everything I think will be OK.  But perhaps we need a comment that says you must have either py26 or py27 installed or that it is OK that one of these is not installed?   Also when I hit:\npy27 installdeps: -r/opt/stack/keystone/requirements.txt, -r/opt/stack/keystone/test-requirements.txt\nIT TAKES A REAL LONG TIME.  Perhaps a comment regarding installing deps can take a significant chunk of time?",
+      "revId": "0ac79d1a19952dbcd4e562b826812aaa33ba5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
