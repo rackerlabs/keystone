@@ -1740,7 +1740,11 @@ class IdentityTests(object):
     def test_list_users(self):
         users = self.identity_api.list_users()
         for test_user in default_fixtures.USERS:
-            self.assertTrue(x for x in users if x['id'] == test_user['id'])
+            found = False
+            for x in users:
+                if x['id'] == test_user['id']:
+                    found = True
+            self.assertTrue(found)
 
     def test_list_groups(self):
         group1 = {
@@ -1811,7 +1815,11 @@ class IdentityTests(object):
     def test_list_roles(self):
         roles = self.identity_api.list_roles()
         for test_role in default_fixtures.ROLES:
-            self.assertTrue(x for x in roles if x['id'] == test_role['id'])
+            found = False
+            for x in roles:
+                if x['id'] == test_role['id']:
+                    found = True
+            self.assertTrue(found)
 
     def test_delete_project_with_role_assignments(self):
         tenant = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
