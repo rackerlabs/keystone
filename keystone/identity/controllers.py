@@ -64,11 +64,8 @@ class Tenant(controller.V2Controller):
             raise exception.Unauthorized(e)
 
         user_ref = token_ref['user']
-        tenant_ids = self.identity_api.get_projects_for_user(user_ref['id'])
-        tenant_refs = []
-        for tenant_id in tenant_ids:
-            ref = self.identity_api.get_project(tenant_id)
-            tenant_refs.append(self._filter_domain_id(ref))
+        tenant_refs = self.assignment_api.list_user_projects(user_ref['id'])
+        tenant_refs = [self._filter_domain_id(ref) for ref in tenant_refs]
         params = {
             'limit': context['query_string'].get('limit'),
             'marker': context['query_string'].get('marker'),
@@ -350,7 +347,7 @@ class Role(controller.V2Controller):
         self.assert_admin(context)
         # Ensure user exists by getting it first.
         self.identity_api.get_user(user_id)
-        tenant_ids = self.identity_api.get_projects_for_user(user_id)
+        tenant_ids = self.assignment_api.list_user_project_ids(user_id)
         o = []
         for tenant_id in tenant_ids:
             role_ids = self.identity_api.get_roles_for_user_and_project(

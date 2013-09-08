@@ -243,6 +243,16 @@ class Manager(manager.Manager):
         for role_id in roles:
             self.remove_role_from_user_and_project(user_id, tenant_id, role_id)
 
+    def list_user_projects(self, user_id):
+        group_ids = [x['id'] for
+                     x in self.identity_api.list_groups_for_user(user_id)]
+        return self.driver.list_user_projects(user_id, group_ids)
+
+    def list_user_project_ids(self, user_id):
+        group_ids = [x['id'] for
+                     x in self.identity_api.list_groups_for_user(user_id)]
+        return self.driver.list_user_project_ids(user_id, group_ids)
+
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=CONF.assignment.cache_time)
     def get_domain(self, domain_id):
@@ -357,8 +367,13 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def get_projects_for_user(self, user_id):
+    def list_user_project_ids(self, user_id, group_ids):
         """Get the tenants associated with a given user.
+
+        :param user_id: the user in question
+        :param group_ids: the groups this user is a member of.  This list is
+                          build in the Manager, so that the driver itself
+                          does not have to call across to identity.
 
         :returns: a list of tenant_id's.
         :raises: keystone.exception.UserNotFound
@@ -524,8 +539,11 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_user_projects(self, user_id):
+    def list_user_projects(self, user_id, group_ids):
         """List all projects associated with a given user.
+
+        :param user_id: the user in question
+        :param group_ids: the groups this user is a member of
 
         :returns: a list of project_refs or an empty list.
 
