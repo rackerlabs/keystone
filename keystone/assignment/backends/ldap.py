@@ -115,12 +115,12 @@ class Assignment(assignment.Driver):
     def list_roles(self):
         return self.role.get_all()
 
-    def get_projects_for_user(self, user_id):
+    def list_user_projects(self, user_id, group_ids):
         self.identity_api.get_user(user_id)
         user_dn = self.user._id_to_dn(user_id)
         associations = (self.role.list_project_roles_for_user
                         (user_dn, self.project.tree_dn))
-        return [p['id'] for p in
+        return [self._set_default_domain(x) for x in
                 self.project.get_user_projects(user_dn, associations)]
 
     def get_project_users(self, tenant_id):
