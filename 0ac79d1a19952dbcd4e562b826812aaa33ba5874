@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//Roc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-08T01:24:11Z",
+      "side": 1,
+      "message": "++ on both of these.  Pretty much only rhel, centos, scentific still use 2.6, py27 is correct on everything else.",
+      "parentUuid": "AAAASn//SiE\u003d",
+      "revId": "0ac79d1a19952dbcd4e562b826812aaa33ba5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Shw\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 3
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "I recall seeing this in my environment a while back too, a library (lxml) had a dependency problem. No idea why.\n\nThis should explain how to fix: http://stackoverflow.com/questions/15759150/src-lxml-etree-defs-h931-fatal-error-libxml-xmlversion-h-no-such-file-or-di\n\nBut either way, I think this is outside the scope of the change, and even if you ran ./run_tests with the -u option; you would get the same error.",
       "parentUuid": "AAAASn//Shw\u003d",
+      "revId": "0ac79d1a19952dbcd4e562b826812aaa33ba5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Rog\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-08T01:24:11Z",
+      "side": 1,
+      "message": "There are some required libraries that are needed to successfully build the venv.  These should likely be documented as a link.  Libxml2 and libxslt are both in the list (causing the errors outlined above). I believe there are a couple more.  \n\nI am not sure if keystone should be responsible for maintaining this or if the link should be maintained as expected libs from the openstack/requirements repo, eg if you were to build 100% of requirements these are the line required)",
+      "parentUuid": "AAAASn//R60\u003d",
       "revId": "0ac79d1a19952dbcd4e562b826812aaa33ba5874",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
