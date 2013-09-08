@@ -173,6 +173,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_list_user_projects(self):
         self.skipTest('Blocked by bug 1101287')
 
+    def test_list_user_projects_with_grants(self):
+        self.skipTest('Blocked by bug 1221805')
+
     def test_create_duplicate_user_name_in_different_domains(self):
         self.skipTest('Blocked by bug 1101276')
 
