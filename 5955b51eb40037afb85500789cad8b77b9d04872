@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//RLU\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-08T16:41:37Z",
+      "side": 1,
+      "message": "Added the rpc options.",
+      "parentUuid": "AAAASn//S0k\u003d",
+      "revId": "5955b51eb40037afb85500789cad8b77b9d04872",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//S0U\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-06T21:19:57Z",
       "side": 1,
       "message": "Might need to have notification_topics set here as well: \n\nhttp://docs.openstack.org/trunk/openstack-network/admin/content/ch_adv_notification_overview.html",
+      "revId": "5955b51eb40037afb85500789cad8b77b9d04872",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//RMQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-08T16:41:37Z",
+      "side": 1,
+      "message": "thanks for the reference, next patch set is based on that.",
+      "parentUuid": "AAAASn//S0U\u003d",
       "revId": "5955b51eb40037afb85500789cad8b77b9d04872",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
