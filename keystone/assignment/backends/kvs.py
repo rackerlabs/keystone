@@ -101,9 +101,13 @@ class Assignment(kvs.Base, assignment.Driver):
         role_ids = self.db.get('role_list', [])
         return [self.get_role(x) for x in role_ids]
 
-    def get_projects_for_user(self, user_id):
+    def list_user_project_ids(self, user_id, group_ids):
         user_ref = self._get_user(user_id)
         return user_ref.get('tenants', [])
+
+    def list_user_projects(self, user_id, group_ids):
+        return [self.get_project(x) for
+                x in self.list_user_project_ids(user_id, group_ids)]
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         self.identity_api.get_user(user_id)
