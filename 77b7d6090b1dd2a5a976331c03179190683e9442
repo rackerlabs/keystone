@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//OSg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-09T18:23:04Z",
+      "side": 1,
+      "message": "There are a lot of cases that we use the context / token to determine domain (no x-domain-subject).  If there is an LDAP (read-only) backend, the \u0027cloud admin\u0027 will not be able to execute those calls since they wont be part of the domain.  I think that fundamental flaw can be fixed in Icehouse.  But as long as that is a \"known\" limitation.",
+      "parentUuid": "AAAASn//O8k\u003d",
+      "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//OyQ\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-09T16:20:34Z",
       "side": 1,
       "message": "I wonder what the advantage of doing thee two gets are?",
+      "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//OSA\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-09T18:23:04Z",
+      "side": 1,
+      "message": "Any case I wasn\u0027t willing to hunt down edge cases for I didn\u0027t want to \"cleanup\".  To answer your question, unsure without a bit more looking.",
+      "parentUuid": "AAAASn//OyQ\u003d",
       "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//ORs\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-09T18:23:04Z",
+      "side": 1,
+      "message": "Will need to hunt down the various methods that can call int and make sure they are guarded.  I\u0027ll have a real answer on that by next patchset.  Same answer as above really.",
+      "parentUuid": "AAAASn//OyA\u003d",
+      "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Pqo\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-09T14:00:51Z",
       "side": 1,
       "message": "I\u0027d perhaps suggest we lift the get_user call up to the manager - and pass in the user_ref....this removes identity-assignment cross calling from within the driver..see parallel patch I am working on: https://review.openstack.org/#/c/45584/. (this will need re-basing once yours is in, of course)",
+      "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ORk\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-09T18:23:04Z",
+      "side": 1,
+      "message": "The whole thing should be moved to the manager and/or controller.  If we do that, follow through on the TODO by ayoung (will look into this).",
+      "parentUuid": "AAAASn//Pqo\u003d",
       "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//ORE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-09T18:23:04Z",
+      "side": 1,
+      "message": "Not opposed, just lets be _very_ sure we want that before making the change.  Going to hold on this until discussed a bit further.",
+      "parentUuid": "AAAASn//O0I\u003d",
+      "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//O0A\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 2
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//ORA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-09T18:23:04Z",
+      "side": 1,
+      "message": "Will remove comment.  Done.",
+      "parentUuid": "AAAASn//O0A\u003d",
+      "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Oz8\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 2
@@ -132,6 +240,24 @@
       "writtenOn": "2013-09-09T16:20:34Z",
       "side": 1,
       "message": "I don\u0027t think so",
+      "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//OQ4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-09T18:23:04Z",
+      "side": 1,
+      "message": "Will remove comment.  Done.",
+      "parentUuid": "AAAASn//Oz8\u003d",
       "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
