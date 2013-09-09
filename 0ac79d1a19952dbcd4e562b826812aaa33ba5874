@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//N0k\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-09T20:44:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//Roc\u003d",
+      "revId": "0ac79d1a19952dbcd4e562b826812aaa33ba5874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Shw\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 3
