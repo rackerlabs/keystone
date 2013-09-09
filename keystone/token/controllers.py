@@ -356,7 +356,7 @@ class Auth(controller.V2Controller):
         """Returns the tenant_ref for the user's tenant."""
         tenant_ref = None
         if tenant_id:
-            tenants = self.identity_api.get_projects_for_user(user_id)
+            tenants = self.assignment_api.get_projects_for_user(user_id)
             if tenant_id not in tenants:
                 msg = 'User %s is unauthorized for tenant %s' % (
                     user_id, tenant_id)

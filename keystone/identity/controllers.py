@@ -64,7 +64,7 @@ class Tenant(controller.V2Controller):
             raise exception.Unauthorized(e)
 
         user_ref = token_ref['user']
-        tenant_ids = self.identity_api.get_projects_for_user(user_ref['id'])
+        tenant_ids = self.assignment_api.get_projects_for_user(user_ref['id'])
         tenant_refs = []
         for tenant_id in tenant_ids:
             ref = self.identity_api.get_project(tenant_id)
@@ -169,7 +169,8 @@ class Tenant(controller.V2Controller):
 class User(controller.V2Controller):
     def get_user(self, context, user_id):
         self.assert_admin(context)
-        ref = self.identity_api.get_user(user_id)
+        ref = self.identity_api.get_user(user_id,
+                                         domain_scope=DEFAULT_DOMAIN_ID)
         return {'user': self._filter_domain_id(ref)}
 
     def get_users(self, context):
@@ -180,15 +181,15 @@ class User(controller.V2Controller):
                 context, context['query_string'].get('name'))
 
         self.assert_admin(context)
-        user_list = self.identity_api.list_users()
+        user_list = self.identity_api.list_users(
+            domain_scope=DEFAULT_DOMAIN_ID)
         for x in user_list:
             self._filter_domain_id(x)
         return {'users': user_list}
 
     def get_user_by_name(self, context, user_name):
         self.assert_admin(context)
-        ref = self.identity_api.get_user_by_name(
-            user_name, DEFAULT_DOMAIN_ID)
+        ref = self.identity_api.get_user_by_name(user_name, DEFAULT_DOMAIN_ID)
         return {'user': self._filter_domain_id(ref)}
 
     # CRUD extension
@@ -223,7 +224,8 @@ class User(controller.V2Controller):
             msg = 'Enabled field should be a boolean'
             raise exception.ValidationError(message=msg)
 
-        user_ref = self.identity_api.update_user(user_id, user)
+        user_ref = self.identity_api.update_user(
+            user_id, user, domain_scope=DEFAULT_DOMAIN_ID)
 
         if user.get('password') or not user.get('enabled', True):
         # If the password was changed or the user was disabled we clear tokens
@@ -232,7 +234,7 @@ class User(controller.V2Controller):
 
     def delete_user(self, context, user_id):
         self.assert_admin(context)
-        self.identity_api.delete_user(user_id)
+        self.identity_api.delete_user(user_id, domain_scope=DEFAULT_DOMAIN_ID)
         self._delete_tokens_for_user(user_id)
 
     def set_user_enabled(self, context, user_id, user):
@@ -349,8 +351,8 @@ class Role(controller.V2Controller):
         """
         self.assert_admin(context)
         # Ensure user exists by getting it first.
-        self.identity_api.get_user(user_id)
-        tenant_ids = self.identity_api.get_projects_for_user(user_id)
+        self.identity_api.get_user(user_id, domain_scope=DEFAULT_DOMAIN_ID)
+        tenant_ids = self.assignment_api.get_projects_for_user(user_id)
         o = []
         for tenant_id in tenant_ids:
             role_ids = self.identity_api.get_roles_for_user_and_project(
@@ -443,7 +445,7 @@ class DomainV3(controller.V3Controller):
         if not domain.get('enabled', True):
             projects = [x for x in self.identity_api.list_projects()
                         if x.get('domain_id') == domain_id]
-            for user in self.identity_api.list_users():
+            for user in self.identity_api.list_users(domain_scope=domain_id):
                 # TODO(dolph): disable domain-scoped tokens
                 """
                 self.token_api.revoke_tokens(
@@ -485,17 +487,25 @@ class DomainV3(controller.V3Controller):
         # users of a disabled domain are prevented from authenticating.
         # However there are some existing bugs in this area (e.g. 1130236).
         # Consider removing this code once these have been fixed.
-        user_refs = self.identity_api.list_users()
+        user_refs = self.identity_api.list_users(domain_scope=domain_id)
         user_refs = [r for r in user_refs if r['domain_id'] == domain_id]
         for user in user_refs:
             if user['enabled']:
                 user['enabled'] = False
-                self.identity_api.update_user(user['id'], user)
+                try:
+                    self.identity_api.update_user(user['id'], user,
+                                                  domain_scope=domain_id)
+                except exception.ForbiddenAction:
+                    # NOTE(morganfainberg): If an ldap back-end is set to
+                    # read-only, it will raise ForbiddenAction for each user.
+                    # We should move on and ensure we clean up tokens for the
+                    # users of the domain.
+                    pass
                 self._delete_tokens_for_user(user['id'])
 
         # Now, for safety, reload list of users, as well as projects, that are
         # owned by this domain.
-        user_refs = self.identity_api.list_users()
+        user_refs = self.identity_api.list_users(domain_scope=domain_id)
         user_ids = [r['id'] for r in user_refs if r['domain_id'] == domain_id]
 
         proj_refs = self.identity_api.list_projects()
@@ -507,17 +517,31 @@ class DomainV3(controller.V3Controller):
             project_cntl._delete_project(context, project)
 
         # Get the list of groups owned by this domain and delete them
-        group_refs = self.identity_api.list_groups()
+        group_refs = self.identity_api.list_groups(domain_scope=domain_id)
         group_ids = ([r['id'] for r in group_refs
                      if r['domain_id'] == domain_id])
         group_cntl = GroupV3()
         for group in group_ids:
-            group_cntl._delete_group(context, group)
+            try:
+                group_cntl._delete_group(context, group)
+            except exception.ForbiddenAction:
+                # NOTE(morganfainberg): If an ldap back-end is set to
+                # read-only, it will raise ForbiddenAction for each group.  We
+                # should move on and ensure we clean up credentials etc for
+                # more than the first group
+                pass
 
         # And finally, delete the users themselves
         user_cntl = UserV3()
         for user in user_ids:
-            user_cntl._delete_user(context, user)
+            try:
+                user_cntl._delete_user(context, user)
+            except exception.ForbiddenAction:
+                # NOTE(morganfainberg): If an ldap back-end is set to
+                # read-only, it will raise ForbiddenAction for each user. We
+                # should move on and ensure we clean up credentials etc for
+                # more than the first user.
+                pass
 
     @controller.protected()
     def delete_domain(self, context, domain_id):
@@ -575,7 +599,21 @@ class ProjectV3(controller.V3Controller):
 
     @controller.filterprotected('enabled', 'name')
     def list_user_projects(self, context, filters, user_id):
-        refs = self.identity_api.list_user_projects(user_id)
+        domain_scope = self._get_domain_id_for_request(context)
+        user = self.identity_api.get_user(user_id, domain_scope=domain_scope)
+        refs = self.assignment_api.list_user_projects(user_id)
+
+        # NOTE(morganfainberg): moved the "project_id" and "tenant_id"
+        # additional project_ref work to the controller from the driver so
+        # we can support a basic understanding domain_scope. The underlying
+        # method should be lifted from the driver and handled here, at the
+        # controller level.
+        if user.get('project_id'):
+            refs.add(self.assignment_api.get_project(user['project_id']))
+        # FIXME(dolph): this should be removed with proper migrations
+        if user.get('tenant_id'):
+            refs.add(self.assignment_api.get_project(user['tenant_id']))
+
         return ProjectV3.wrap_collection(context, refs, filters)
 
     @controller.protected()
@@ -620,12 +658,16 @@ class UserV3(controller.V3Controller):
     def __init__(self):
         super(UserV3, self).__init__()
         self.get_member_from_driver = self.identity_api.get_user
+        self.get_member_requires_domain_scope = True
 
     def _check_user_and_group_protection(self, context, prep_info,
                                          user_id, group_id):
         ref = {}
-        ref['user'] = self.identity_api.get_user(user_id)
-        ref['group'] = self.identity_api.get_group(group_id)
+        domain_scope = self._get_domain_id_for_request(context)
+        ref['user'] = self.identity_api.get_user(user_id,
+                                                 domain_scope=domain_scope)
+        ref['group'] = self.identity_api.get_group(group_id,
+                                                   domain_scope=domain_scope)
         self.check_protection(context, prep_info, ref)
 
     @controller.protected()
@@ -719,6 +761,7 @@ class GroupV3(controller.V3Controller):
     def __init__(self):
         super(GroupV3, self).__init__()
         self.get_member_from_driver = self.identity_api.get_group
+        self.get_member_requires_domain_scope = True
 
     @controller.protected()
     def create_group(self, context, group):
@@ -840,17 +883,21 @@ class RoleV3(controller.V3Controller):
 
         """
         ref = {}
+        if domain_id:
+            ref['domain'] = self.assignment_api.get_domain(domain_id)
+            domain_scope = domain_id
+        else:
+            ref['project'] = self.assignment_api.get_project(project_id)
+            domain_scope = ref['project']['domain_id']
+
         if role_id:
             ref['role'] = self.identity_api.get_role(role_id)
         if user_id:
-            ref['user'] = self.identity_api.get_user(user_id)
+            ref['user'] = self.identity_api.get_user(user_id,
+                                                     domain_scope=domain_scope)
         else:
-            ref['group'] = self.identity_api.get_group(group_id)
-
-        if domain_id:
-            ref['domain'] = self.assignment_api.get_domain(domain_id)
-        else:
-            ref['project'] = self.assignment_api.get_project(project_id)
+            ref['group'] = self.identity_api.get_group(
+                group_id, domain_scope=domain_scope)
 
         self.check_protection(context, protection, ref)
 
@@ -861,10 +908,19 @@ class RoleV3(controller.V3Controller):
         self._require_domain_xor_project(domain_id, project_id)
         self._require_user_xor_group(user_id, group_id)
 
+        # NOTE(morganfainberg): _require_domain_xor_project guarantees we only
+        # have either a project_id or a domain_id. Use this information to set
+        # proper domain_scope.
+        if project_id:
+            project_ref = self.assignment_api.get_project(project_id)
+            domain_scope = project_ref['domain_id']
+        if domain_id:
+            domain_scope = domain_id
+
         if user_id:
-            self.identity_api.get_user(user_id)
+            self.identity_api.get_user(user_id, domain_scope=domain_scope)
         if group_id:
-            self.identity_api.get_group(group_id)
+            self.identity_api.get_group(group_id, domain_scope)
 
         self.identity_api.create_grant(
             role_id, user_id, group_id, domain_id, project_id,
@@ -876,6 +932,9 @@ class RoleV3(controller.V3Controller):
         """Lists roles granted to user/group on either a domain or project."""
         self._require_domain_xor_project(domain_id, project_id)
         self._require_user_xor_group(user_id, group_id)
+
+        # FIXME(morganfainberg): Do we need to verify user_id or group_id are
+        # infact valid here?
 
         refs = self.identity_api.list_grants(
             user_id, group_id, domain_id, project_id,
@@ -889,10 +948,19 @@ class RoleV3(controller.V3Controller):
         self._require_domain_xor_project(domain_id, project_id)
         self._require_user_xor_group(user_id, group_id)
 
+        # NOTE(morganfainberg): _require_domain_xor_project guarantees we only
+        # have either a project_id or a domain_id. Use this information to set
+        # proper domain_scope.
+        if project_id:
+            project_ref = self.assignment_api.get_project(project_id)
+            domain_scope = project_ref['domain_id']
+        if domain_id:
+            domain_scope = domain_id
+
         if user_id:
-            self.identity_api.get_user(user_id)
+            self.identity_api.get_user(user_id, domain_scope=domain_scope)
         if group_id:
-            self.identity_api.get_group(group_id)
+            self.identity_api.get_group(group_id, domain_scope=domain_scope)
 
         self.identity_api.get_grant(
             role_id, user_id, group_id, domain_id, project_id,
@@ -904,6 +972,9 @@ class RoleV3(controller.V3Controller):
         """Revokes a role from user/group on either a domain or project."""
         self._require_domain_xor_project(domain_id, project_id)
         self._require_user_xor_group(user_id, group_id)
+
+        # FIXME(morganfainberg): Do we need to verify user_id or group_id are
+        # infact valid here?
 
         self.identity_api.delete_grant(
             role_id, user_id, group_id, domain_id, project_id,
@@ -1034,8 +1105,19 @@ class RoleAssignmentV3(controller.V3Controller):
 
             """
             try:
+                # NOTE(morganfainberg): Used to determine domain_scope for the
+                # list_users_in_group call.
+                if 'domain' in ref:
+                    domain_scope = ref['domain'].get('domain_id')
+                elif 'project' in ref:
+                    project_ref = self.identity_api.get_project(
+                        ref['project'].get('project_id'))
+                    domain_scope = project_ref['domain_id']
+                else:
+                    domain_scope = None
+
                 members = self.identity_api.list_users_in_group(
-                    ref['group']['id'])
+                    ref['group']['id'], domain_scope=domain_scope)
             except exception.GroupNotFound:
                 members = []
                 # The group is missing, which should not happen since
