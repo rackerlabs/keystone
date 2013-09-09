@@ -34,6 +34,24 @@
       "revId": "c8528706e2275dc4d21eae468586d63bf6a926ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//O6Y\u003d",
+        "filename": "tools/pip-requires",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-09T15:41:30Z",
+      "side": 1,
+      "message": "openstack/requirements pins this to \u003e\u003d0.7.8,\u003c0.8... I\u0027d suggest we do the same unless we have strong reasoning otherwise",
+      "parentUuid": "AAAASn//VPI\u003d",
+      "revId": "c8528706e2275dc4d21eae468586d63bf6a926ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
