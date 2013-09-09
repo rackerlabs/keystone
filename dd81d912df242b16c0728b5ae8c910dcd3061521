@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//PRM\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-09T14:16:05Z",
+      "side": 1,
+      "message": "Should this be wrapped in a finally (for the try inside the if) and outside of the if too?",
+      "revId": "dd81d912df242b16c0728b5ae8c910dcd3061521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//PQY\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-09T14:16:05Z",
+      "side": 1,
+      "message": "Why does this need to be specified as None?",
+      "revId": "dd81d912df242b16c0728b5ae8c910dcd3061521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
