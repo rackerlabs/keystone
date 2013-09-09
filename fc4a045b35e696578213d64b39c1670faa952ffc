@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//PPI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-09T14:26:46Z",
+      "side": 1,
+      "message": "Keystone*",
+      "revId": "fc4a045b35e696578213d64b39c1670faa952ffc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//POM\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-09T14:26:46Z",
+      "side": 1,
+      "message": "Refactoring this will also have to be done in the keystone.conf.sample: \n\nhttps://github.com/openstack/keystone/blob/master/etc/keystone.conf.sample#L6",
+      "revId": "fc4a045b35e696578213d64b39c1670faa952ffc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
