@@ -27,7 +27,8 @@ _DEFAULT_AUTH_METHODS = ['external', 'password', 'token']
 FILE_OPTIONS = {
     '': [
         cfg.StrOpt('admin_token', secret=True, default='ADMIN'),
-        cfg.StrOpt('bind_host', default='0.0.0.0'),
+        cfg.StrOpt('public_bind_ip', default='0.0.0.0'),
+        cfg.StrOpt('admin_bind_ip', default='0.0.0.0'),
         cfg.IntOpt('compute_port', default=8774),
         cfg.IntOpt('admin_port', default=35357),
         cfg.IntOpt('public_port', default=5000),
