@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//Pqo\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-09T14:00:51Z",
+      "side": 1,
+      "message": "I\u0027d perhaps suggest we lift the get_user call up to the manager - and pass in the user_ref....this removes identity-assignment cross calling from within the driver..see parallel patch I am working on: https://review.openstack.org/#/c/45584/. (this will need re-basing once yours is in, of course)",
+      "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Pqg\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-09T14:00:51Z",
+      "side": 1,
+      "message": "same comment as above..",
+      "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
