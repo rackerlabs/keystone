@@ -108,7 +108,8 @@ class Manager(manager.Manager):
         """
         def _get_group_project_roles(user_id, project_ref):
             role_list = []
-            group_refs = self.identity_api.list_groups_for_user(user_id)
+            group_refs = self.identity_api.list_groups_for_user(
+                user_id, domain_scope=project_ref['domain_id'])
             for x in group_refs:
                 try:
                     metadata_ref = self._get_metadata(
@@ -172,7 +173,8 @@ class Manager(manager.Manager):
 
         def _get_group_domain_roles(user_id, domain_id):
             role_list = []
-            group_refs = self.identity_api.list_groups_for_user(user_id)
+            group_refs = self.identity_api.list_groups_for_user(
+                user_id, domain_scope=domain_id)
             for x in group_refs:
                 try:
                     metadata_ref = self._get_metadata(group_id=x['id'],

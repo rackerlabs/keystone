@@ -178,7 +178,7 @@ class V3TokenDataHelper(object):
             # no need to repopulate user if it already exists
             return
 
-        user_ref = self.identity_api.get_user(user_id)
+        user_ref = self.identity_api.get_user(user_id, domain_scope=domain_id)
         if CONF.trust.enabled and trust and 'OS-TRUST:trust' not in token_data:
             trustor_user_ref = (self.identity_api.get_user(
                                 trust['trustor_user_id']))

@@ -128,6 +128,9 @@ def protected(callback=None):
                 action = 'identity:%s' % f.__name__
                 creds = _build_policy_check_credentials(self, action,
                                                         context, kwargs)
+
+                domain_scope = self._get_domain_id_for_request(context)
+
                 # Check to see if we need to include the target entity in our
                 # policy checks.  We deduce this by seeing if the class has
                 # specified a get_member() method and that kwargs contains the
@@ -137,7 +140,13 @@ def protected(callback=None):
                         self.get_member_from_driver is not None):
                             key = '%s_id' % self.member_name
                             if key in kwargs:
-                                ref = self.get_member_from_driver(kwargs[key])
+                                if self.get_member_requires_domain_scope:
+                                    ref = self.get_member_from_driver(
+                                        kwargs[key],
+                                        domain_scope=domain_scope)
+                                else:
+                                    ref = self.get_member_from_driver(
+                                        kwargs[key])
                                 policy_dict = {'target':
                                                {self.member_name: ref}}
 
@@ -238,6 +247,10 @@ class V2Controller(wsgi.Application):
         ref.pop('domain_id', None)
         return ref
 
+    def _get_domain_id_for_request(self, context):
+        """Get the domain_id for a v2.0 call."""
+        return DEFAULT_DOMAIN_ID
+
 
 class V3Controller(V2Controller):
     """Base controller class for Identity API v3.
@@ -252,9 +265,11 @@ class V3Controller(V2Controller):
     collection_name = 'entities'
     member_name = 'entity'
     get_member_from_driver = None
+    get_member_requires_domain_scope = False
 
     def _delete_tokens_for_group(self, group_id):
-        user_refs = self.identity_api.list_users_in_group(group_id)
+        user_refs = self.identity_api.list_users_in_group(
+            group_id, domain_scope=DEFAULT_DOMAIN_ID)
         for user in user_refs:
             self._delete_tokens_for_user(user['id'])
 
@@ -352,7 +367,9 @@ class V3Controller(V2Controller):
     def _get_domain_id_for_request(self, context):
         """Get the domain_id for a v3 call."""
 
-        if context['is_admin']:
+        # FIXME(morganfainberg): Does this need to also be per-domain-identity
+        # aware?
+        if context.get('is_admin'):
             return DEFAULT_DOMAIN_ID
 
         # Fish the domain_id out of the token
@@ -362,6 +379,12 @@ class V3Controller(V2Controller):
         # this version of normalize_domain will only be called inside
         # a v3 protected call).  However, this optimization is probably not
         # worth the duplication of state
+
+        # FIXME(morganfainberg): It is an insufficient assumption that a user
+        # will only ever make a request for that user's domain. (e.g. a user
+        # with a "cloud admin" role, that should be allowed access across
+        # all domains).  This is going to need some refactoring to handle
+        # the per-domain-identity-driver concept.
         try:
             token_ref = self.token_api.get_token(context['token_id'])
         except exception.TokenNotFound:

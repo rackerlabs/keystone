@@ -102,12 +102,21 @@ class Assignment(kvs.Base, assignment.Driver):
         return [self.get_role(x) for x in role_ids]
 
     def get_projects_for_user(self, user_id):
-        user_ref = self._get_user(user_id)
+        # NOTE(morganfainberg): To emulate the way the rest of the assignment
+        # drivers work, handle the exception and return an empty list. The
+        # assignment_api shouldn't be checking for user validity, but for
+        # actual membership, where in the other drivers, grants are separate
+        # from the identity store.  KVS by default shares the same in-memory
+        # structure across drivers.
+        try:
+            user_ref = self._get_user(user_id)
+        except exception.UserNotFound:
+            user_ref = {}
         return user_ref.get('tenants', [])
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.identity_api.get_user(user_id)
-        self.get_project(tenant_id)
+        project = self.get_project(tenant_id)
+        self.identity_api.get_user(user_id, domain_scope=project['domain_id'])
         self.get_role(role_id)
         try:
             metadata_ref = self._get_metadata(user_id, tenant_id)
@@ -147,8 +156,10 @@ class Assignment(kvs.Base, assignment.Driver):
             user_ref = self._get_user(user_id)
             tenants = set(user_ref.get('tenants', []))
             tenants.remove(tenant_id)
+            tenant_ref = self.get_project(tenant_id)
             user_ref['tenants'] = list(tenants)
-            self.identity_api.update_user(user_id, user_ref)
+            self.identity_api.update_user(user_id, user_ref,
+                                          domain_scope=tenant_ref['domain_id'])
 
     def list_role_assignments(self):
         """List the role assignments.
@@ -260,7 +271,9 @@ class Assignment(kvs.Base, assignment.Driver):
                 if tenant_id not in tenants:
                     tenants.add(tenant_id)
                     user_ref['tenants'] = list(tenants)
-                    self.identity_api.update_user(user_id, user_ref)
+                    tenant_ref = self.get_project(tenant_id)
+                    self.identity_api.update_user(user_id, user_ref,
+                                                  tenant_ref['domain_id'])
             else:
                 self.db.set('metadata-%s-%s' % (domain_id, user_id), metadata)
         else:
@@ -342,10 +355,7 @@ class Assignment(kvs.Base, assignment.Driver):
                      inherited_to_projects=False):
 
         self.get_role(role_id)
-        if user_id:
-            self.identity_api.get_user(user_id)
-        if group_id:
-            self.identity_api.get_group(group_id)
+
         if domain_id:
             self.get_domain(domain_id)
         if project_id:
@@ -366,10 +376,7 @@ class Assignment(kvs.Base, assignment.Driver):
     def list_grants(self, user_id=None, group_id=None,
                     domain_id=None, project_id=None,
                     inherited_to_projects=False):
-        if user_id:
-            self.identity_api.get_user(user_id)
-        if group_id:
-            self.identity_api.get_group(group_id)
+
         if domain_id:
             self.get_domain(domain_id)
         if project_id:
@@ -389,10 +396,7 @@ class Assignment(kvs.Base, assignment.Driver):
                   domain_id=None, project_id=None,
                   inherited_to_projects=False):
         self.get_role(role_id)
-        if user_id:
-            self.identity_api.get_user(user_id)
-        if group_id:
-            self.get_group(group_id)
+
         if domain_id:
             self.get_domain(domain_id)
         if project_id:
@@ -415,10 +419,7 @@ class Assignment(kvs.Base, assignment.Driver):
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
         self.get_role(role_id)
-        if user_id:
-            self.identity_api.get_user(user_id)
-        if group_id:
-            self.identity_api.get_group(group_id)
+
         if domain_id:
             self.get_domain(domain_id)
         if project_id:
