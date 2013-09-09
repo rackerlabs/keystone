@@ -91,8 +91,6 @@ class Assignment(assignment.Driver):
                       domain_id=None, group_id=None):
 
         def _get_roles_for_just_user_and_project(user_id, tenant_id):
-            self.identity_api.get_user(user_id)
-            self.get_project(tenant_id)
             return [self.role._dn_to_id(a.role_dn)
                     for a in self.role.get_role_assignments
                     (self.project._id_to_dn(tenant_id))
@@ -116,7 +114,6 @@ class Assignment(assignment.Driver):
         return self.role.get_all()
 
     def get_projects_for_user(self, user_id):
-        self.identity_api.get_user(user_id)
         user_dn = self.user._id_to_dn(user_id)
         associations = (self.role.list_project_roles_for_user
                         (user_dn, self.project.tree_dn))
@@ -141,8 +138,6 @@ class Assignment(assignment.Driver):
                                  self.project._id_to_dn(tenant_id))
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.identity_api.get_user(user_id)
-        self.get_project(tenant_id)
         self.get_role(role_id)
         user_dn = self.user._id_to_dn(user_id)
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)

@@ -161,9 +161,12 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.identity_api.add_user_to_project(self.tenant_bar['id'],
                                               user['id'])
         self.identity_api.delete_user(user['id'])
-        self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_projects_for_user,
-                          user['id'])
+        # NOTE(morganfainberg): assignment_api does not validate the user_id
+        # is in-fact valid.  By the time it reaches the assignment_api, it
+        # should already be known that the user is valid or bogus. (The
+        # controller should have already checked for this)
+        self.assertEqual([],
+                         self.identity_api.get_projects_for_user(user['id']))
 
     def test_create_null_user_name(self):
         user = {'id': uuid.uuid4().hex,
@@ -218,7 +221,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.identity_api.add_user_to_project(self.tenant_bar['id'],
                                               user['id'])
         self.assignment_api.delete_project(self.tenant_bar['id'])
-        tenants = self.identity_api.get_projects_for_user(user['id'])
+        tenants = self.assignment_api.get_projects_for_user(user['id'])
         self.assertEquals(tenants, [])
 
     def test_metadata_removed_on_delete_user(self):

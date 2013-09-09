@@ -508,9 +508,6 @@ class Manager(manager.Manager):
     def list_domains(self):
         return self.assignment_api.list_domains()
 
-    def list_user_projects(self, user_id):
-        return self.assignment_api.list_user_projects(user_id)
-
     def add_user_to_project(self, tenant_id, user_id):
         return self.assignment_api.add_user_to_project(tenant_id, user_id)
 

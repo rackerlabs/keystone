@@ -61,11 +61,18 @@ class Assignment(sql.Base, assignment.Driver):
 
     def get_project_users(self, tenant_id):
         self.get_session()
-        self.get_project(tenant_id)
+        project_ref = self.get_project(tenant_id)
+
         user_refs = []
         #TODO(ayoung): Move to controller or manager
         for user_id in self.get_project_user_ids(tenant_id):
-            user_ref = self.identity_api.get_user(user_id)
+            # FIXME(morganfainberg): This will only return users in the same
+            # domain driver as the project IF the per-domain-identity-driver is
+            # used. Since per-domain-identity-driver is an experimental feature
+            # this is an acceptable behavior, but will need to be fixed in
+            # Icehouse for full-feature support.
+            user_ref = self.identity_api.get_user(
+                user_id, domain_scope=project_ref['domain_id'])
             user_refs.append(user_ref)
         return user_refs
 
@@ -171,10 +178,6 @@ class Assignment(sql.Base, assignment.Driver):
     def delete_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
-        if user_id:
-            self.identity_api.get_user(user_id)
-        if group_id:
-            self.identity_api.get_group(group_id)
 
         session = self.get_session()
         self._get_role(session, role_id)
@@ -228,7 +231,6 @@ class Assignment(sql.Base, assignment.Driver):
         # call seems essentially the same as 'list_user_projects()'
         # later in this driver.  Both should be removed.
 
-        self.identity_api.get_user(user_id)
         session = self.get_session()
         query = session.query(UserProjectGrant)
         query = query.filter_by(user_id=user_id)
@@ -236,9 +238,7 @@ class Assignment(sql.Base, assignment.Driver):
         return [x.project_id for x in membership_refs]
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.identity_api.get_user(user_id)
         session = self.get_session()
-        self._get_project(session, tenant_id)
         self._get_role(session, role_id)
         try:
             metadata_ref = self._get_metadata(user_id, tenant_id)
@@ -518,18 +518,11 @@ class Assignment(sql.Base, assignment.Driver):
         # earlier in this driver.  Both should be removed.
 
         session = self.get_session()
-        user = self.identity_api.get_user(user_id)
         metadata_refs = session\
             .query(UserProjectGrant)\
             .filter_by(user_id=user_id)
         project_ids = set([x.project_id for x in metadata_refs
                            if x.data.get('roles')])
-        if user.get('project_id'):
-            project_ids.add(user['project_id'])
-
-        # FIXME(dolph): this should be removed with proper migrations
-        if user.get('tenant_id'):
-            project_ids.add(user['tenant_id'])
 
         return [self.get_project(x) for x in project_ids]
 

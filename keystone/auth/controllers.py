@@ -135,29 +135,6 @@ class AuthInfo(object):
             raise exception.TrustNotFound(trust_id=trust_id)
         return trust
 
-    def lookup_user(self, user_info):
-        user_id = user_info.get('id')
-        user_name = user_info.get('name')
-        user_ref = None
-        if not user_id and not user_name:
-            raise exception.ValidationError(attribute='id or name',
-                                            target='user')
-        try:
-            if user_name:
-                if 'domain' not in user_info:
-                    raise exception.ValidationError(attribute='domain',
-                                                    target='user')
-                domain_ref = self._lookup_domain(user_info['domain'])
-                user_ref = self.identity_api.get_user_by_name(
-                    user_name, domain_ref['id'])
-            else:
-                user_ref = self.identity_api.get_user(user_id)
-        except exception.UserNotFound as e:
-            LOG.exception(e)
-            raise exception.Unauthorized(e)
-        self._assert_user_is_enabled(user_ref)
-        return user_ref
-
     def _validate_and_normalize_scope_data(self):
         """Validate and normalize scope data."""
         if 'scope' not in self.auth:

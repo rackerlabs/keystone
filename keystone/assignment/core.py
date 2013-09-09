@@ -108,7 +108,8 @@ class Manager(manager.Manager):
         """
         def _get_group_project_roles(user_id, project_ref):
             role_list = []
-            group_refs = self.identity_api.list_groups_for_user(user_id)
+            group_refs = self.identity_api.list_groups_for_user(
+                user_id, domain_scope=project_ref['domain_id'])
             for x in group_refs:
                 try:
                     metadata_ref = self._get_metadata(
@@ -172,7 +173,8 @@ class Manager(manager.Manager):
 
         def _get_group_domain_roles(user_id, domain_id):
             role_list = []
-            group_refs = self.identity_api.list_groups_for_user(user_id)
+            group_refs = self.identity_api.list_groups_for_user(
+                user_id, domain_scope=domain_id)
             for x in group_refs:
                 try:
                     metadata_ref = self._get_metadata(group_id=x['id'],
@@ -213,7 +215,7 @@ class Manager(manager.Manager):
 
         """
         try:
-            self.driver.add_role_to_user_and_project(
+            self.add_role_to_user_and_project(
                 user_id,
                 tenant_id,
                 config.CONF.member_role_id)
@@ -223,9 +225,9 @@ class Manager(manager.Manager):
                      config.CONF.member_role_id)
             role = {'id': CONF.member_role_id,
                     'name': CONF.member_role_name}
-            self.driver.create_role(config.CONF.member_role_id, role)
+            self.create_role(config.CONF.member_role_id, role)
             #now that default role exists, the add should succeed
-            self.driver.add_role_to_user_and_project(
+            self.add_role_to_user_and_project(
                 user_id,
                 tenant_id,
                 config.CONF.member_role_id)
@@ -281,6 +283,12 @@ class Manager(manager.Manager):
                         expiration_time=CONF.assignment.cache_time)
     def get_project_by_name(self, tenant_name, domain_id):
         return self.driver.get_project_by_name(tenant_name, domain_id)
+
+    def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
+        project_ref = self.identity_api.get_project(tenant_id)
+        self.identity_api.get_user(user_id, project_ref['domain_id'])
+        return self.driver.add_role_to_user_and_project(user_id, tenant_id,
+                                                        role_id)
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=CONF.assignment.cache_time)
@@ -369,9 +377,7 @@ class Driver(object):
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         """Add a role to a user within given tenant.
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.ProjectNotFound,
-                 keystone.exception.RoleNotFound
+        :raises: keystone.exception.RoleNotFound
         """
         raise exception.NotImplemented()
 

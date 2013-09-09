@@ -38,11 +38,16 @@ import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
 
+from keystone.common import config
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
 from keystone import exception
 from keystone import token
+
+
+CONF = config.CONF
+DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
 
 @dependency.requires('catalog_api', 'credential_api', 'token_provider_api')
@@ -100,7 +105,8 @@ class Ec2Controller(controller.V2Controller):
         # TODO(termie): this is copied from TokenController.authenticate
         token_id = uuid.uuid4().hex
         tenant_ref = self.identity_api.get_project(creds_ref['tenant_id'])
-        user_ref = self.identity_api.get_user(creds_ref['user_id'])
+        user_ref = self.identity_api.get_user(creds_ref['user_id'],
+                                              domain_scope=DEFAULT_DOMAIN_ID)
         metadata_ref = {}
         metadata_ref['roles'] = (
             self.identity_api.get_roles_for_user_and_project(
@@ -273,7 +279,8 @@ class Ec2Controller(controller.V2Controller):
         :raises exception.UserNotFound: on failure
 
         """
-        user_ref = self.identity_api.get_user(user_id)
+        user_ref = self.identity_api.get_user(user_id,
+                                              domain_scope=DEFAULT_DOMAIN_ID)
         if not user_ref:
             raise exception.UserNotFound(user_id=user_id)
 

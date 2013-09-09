@@ -84,11 +84,34 @@ class UserAuthInfo(object):
                 user_ref = self.identity_api.get_user_by_name(
                     user_name, domain_ref['id'])
             else:
-                user_ref = self.identity_api.get_user(user_id)
+                # FIXME(morganfainberg): Current implementation requires domain
+                # to be included in all cases if we want to get the correct
+                # identity driver in the per-domain-identity model. This
+                # assumption should be addressed by either making domain
+                # required or encoding the domain information in the user_id.
+                if 'domain' in user_info:
+                    # NOTE(morganfainberg): If the domain is passed in, use it
+                    # to lookup the user. Otherwise fall back to the default
+                    # domain  driver. This is done in this manner to remain API
+                    # compatible.
+                    domain_scope_ref = self._lookup_domain(user_info['domain'])
+                    user_ref = self.identity_api.get_user(
+                        user_id, domain_scope_ref['id'])
+                else:
+                    user_ref = self.identity_api.get_user(user_id)
+
+                # NOTE(morganfainberg): Intentionally lookup the domain based
+                # upon the user's information to ensure that we don't have
+                # mismatched domains.  The domain_scope lookup could simply
+                # result in the shared "default domain" driver, which does not
+                # actually have to be the correct domain for the user.  This
+                # guarantees we are looking at the correct domain in both
+                # cases. In the cleanup for Icehouse the need for this logic
+                # should go away.
                 domain_ref = self.identity_api.get_domain(
                     user_ref['domain_id'])
                 self._assert_domain_is_enabled(domain_ref)
-        except exception.UserNotFound as e:
+        except (exception.UserNotFound, exception.DomainNotFound) as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
         self._assert_user_is_enabled(user_ref)

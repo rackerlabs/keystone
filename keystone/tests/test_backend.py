@@ -1502,10 +1502,13 @@ class IdentityTests(object):
                           self.tenant_baz['id'],
                           self.user_foo['id'])
 
-    def test_get_projects_for_user_404(self):
-        self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_projects_for_user,
-                          uuid.uuid4().hex)
+    def test_get_projects_for_bogus_user_empty(self):
+        # NOTE(morganfainberg): assignment_api does not validate the user_id
+        # is in-fact valid.  By the time it reaches the assignment_api, it
+        # should already be known that the user is valid or bogus. (The
+        # controller should have already checked for this)
+        self.assertEqual(
+            [], self.identity_api.get_projects_for_user(uuid.uuid4().hex))
 
     def test_update_project_404(self):
         self.assertRaises(exception.ProjectNotFound,
@@ -1535,9 +1538,12 @@ class IdentityTests(object):
         self.identity_api.add_user_to_project(self.tenant_bar['id'],
                                               user['id'])
         self.identity_api.delete_user(user['id'])
-        self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_projects_for_user,
-                          user['id'])
+        # NOTE(morganfainberg): assignment_api does not validate the user_id
+        # is in-fact valid.  By the time it reaches the assignment_api, it
+        # should already be known that the user is valid or bogus. (The
+        # controller should have already checked for this)
+        self.assertEqual([],
+                         self.identity_api.get_projects_for_user(user['id']))
 
     def test_delete_user_with_project_roles(self):
         user = {'id': uuid.uuid4().hex,
@@ -1550,9 +1556,12 @@ class IdentityTests(object):
             self.tenant_bar['id'],
             self.role_member['id'])
         self.identity_api.delete_user(user['id'])
-        self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_projects_for_user,
-                          user['id'])
+        # NOTE(morganfainberg): assignment_api does not validate the user_id
+        # is in-fact valid.  By the time it reaches the assignment_api, it
+        # should already be known that the user is valid or bogus. (The
+        # controller should have already checked for this)
+        self.assertEqual([],
+                         self.identity_api.get_projects_for_user(user['id']))
 
     def test_delete_user_404(self):
         self.assertRaises(exception.UserNotFound,
@@ -2271,7 +2280,7 @@ class IdentityTests(object):
                  'password': uuid.uuid4().hex, 'domain_id': domain['id'],
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
-        user_projects = self.identity_api.list_user_projects(user1['id'])
+        user_projects = self.assignment_api.list_user_projects(user1['id'])
         self.assertEquals(len(user_projects), 0)
         self.identity_api.create_grant(user_id=user1['id'],
                                        project_id=self.tenant_bar['id'],
@@ -2279,7 +2288,7 @@ class IdentityTests(object):
         self.identity_api.create_grant(user_id=user1['id'],
                                        project_id=self.tenant_baz['id'],
                                        role_id=self.role_member['id'])
-        user_projects = self.identity_api.list_user_projects(user1['id'])
+        user_projects = self.assignment_api.list_user_projects(user1['id'])
         self.assertEquals(len(user_projects), 2)
 
     def test_cache_layer_domain_crud(self):
