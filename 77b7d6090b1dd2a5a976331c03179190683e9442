@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//OJI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-09T18:54:46Z",
+      "side": 1,
+      "message": "I assume you mean, if there is an LDAP Assignment backend?  If so, then I agree - but I\u0027m pretty sure we will end up depreciating the LDAP assignment backend, so the more common case is an SQL backend. So all I am saying is if the grant APIs can always be executed, then cloud admin roles can still be made to work.",
+      "parentUuid": "AAAASn//OSg\u003d",
+      "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//OyQ\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 2
