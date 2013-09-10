@@ -160,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//NEs\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-10T03:59:22Z",
+      "side": 1,
+      "message": "Looking into this more, the refactoring would be significant as LDAP and KVS implement this in drastically different manners.  I think punting this change to IceHouse and the bigger cleanup would be better.",
+      "parentUuid": "AAAASn//ORk\u003d",
+      "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Pqg\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 2
@@ -171,6 +189,24 @@
       "writtenOn": "2013-09-09T14:00:51Z",
       "side": 1,
       "message": "same comment as above..",
+      "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ND8\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-10T03:59:22Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "AAAASn//Pqg\u003d",
       "revId": "77b7d6090b1dd2a5a976331c03179190683e9442",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
