@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//LI0\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-10T16:27:05Z",
+      "side": 1,
+      "message": "the link to setup is here ^",
+      "revId": "97f989151dc1d4f3bfe489027136ef637dd8d798",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//LIs\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-10T16:27:05Z",
+      "side": 1,
+      "message": "following the link to Setup is first required here; should the testing section be moved further up the page?",
+      "revId": "97f989151dc1d4f3bfe489027136ef637dd8d798",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//LwI\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 4
