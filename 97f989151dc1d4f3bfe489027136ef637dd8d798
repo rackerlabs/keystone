@@ -104,6 +104,24 @@
       "revId": "97f989151dc1d4f3bfe489027136ef637dd8d798",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//K+M\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-10T17:09:48Z",
+      "side": 1,
+      "message": "Dolph,  would you be willing to add the following statement after the tox command. \"If you run into any errors running the tox command please make sure you followed the setup instructions referenced above.\"  Here is why I ran into trouble:\n \nPreviously I never looked at the keystone setup instructions because I used devstack and that setup my environment to be good enough to run run_tests.   Now I come back admittedly having never had to look at the setup instructions for keystone and running tox makes it clear i better have run keystone setup instructions.  That\u0027s why I think its worth the extra reminder after the tox command.  Beyond that the setup instructions are fine",
+      "parentUuid": "AAAASn//Lc0\u003d",
+      "revId": "97f989151dc1d4f3bfe489027136ef637dd8d798",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
