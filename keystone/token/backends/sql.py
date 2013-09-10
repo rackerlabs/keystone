@@ -137,6 +137,7 @@ class Token(sql.Base, token.Driver):
         return tokens
 
     def _list_tokens_for_user(self, user_id, tenant_id=None):
+        print "LTFU: ", user_id
         session = self.get_session()
         tokens = []
         now = timeutils.utcnow()
