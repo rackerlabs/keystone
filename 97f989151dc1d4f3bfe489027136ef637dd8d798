@@ -16,6 +16,24 @@
       "revId": "97f989151dc1d4f3bfe489027136ef637dd8d798",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Lvk\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-10T13:26:57Z",
+      "side": 1,
+      "message": "try copy and pasting the command as specified :)\n\nAs for pre-reqs, they\u0027re out of scope for a section on tests, but they are documented in \"Installing dependencies\":\n\n  http://docs.openstack.org/developer/keystone/setup.html#installing-dependencies\n\nI\u0027d like a change towards tox to *improve* the new developer experience... if that\u0027s not what I\u0027m doing, I don\u0027t want this change to merge. Specifically, the gate runs tox, not run_tests.sh, and new developers find it confusing/frustrating when run_tests.sh succeeds and the \"same\" test fails in the gate.\n\nShould setup.html be merged with developing.html? or maybe moved from \"Getting Started\" to \"Developers Documentation\" (probably not a great move, considering we also doc how to install from source in Getting Started).",
+      "parentUuid": "AAAASn//LwI\u003d",
+      "revId": "97f989151dc1d4f3bfe489027136ef637dd8d798",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
