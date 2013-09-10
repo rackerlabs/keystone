@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//J8A\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-10T23:21:58Z",
+      "side": 1,
+      "message": "If you mean in the Driver class, then our standard is that this should be a pure virtual class as far as the public API methods - so not sure I can do that.",
+      "parentUuid": "AAAASn//Kcg\u003d",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//KcE\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-10T20:22:33Z",
       "side": 1,
       "message": "suggest add another newline to separate imports from package vars.",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//J7w\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-10T23:21:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//KcE\u003d",
       "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//J6s\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-10T23:21:58Z",
+      "side": 1,
+      "message": "Added comment.\n\nIt is not enough that \u0027roles\u0027 existing, but it must be a non-empty list, so I think .get() is the right thing to do.",
+      "parentUuid": "AAAASn//KZ4\u003d",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//KY0\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-10T20:22:33Z",
       "side": 1,
       "message": "suggest have project_ids be a set to begin with.",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//J6M\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-10T23:21:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//KY0\u003d",
       "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//J6E\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-10T23:21:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//KX4\u003d",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//KXs\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2013-09-10T20:22:33Z",
       "side": 1,
       "message": "278-282 is a copy of 268-272, suggest move into a function.",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//J5Q\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-10T23:21:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//KXs\u003d",
       "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//J6A\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-10T23:21:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//KYo\u003d",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//KZQ\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//J5M\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-10T23:21:58Z",
+      "side": 1,
+      "message": "Comment added - we want to avoid calling across drivers.",
+      "parentUuid": "AAAASn//KZQ\u003d",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//KVM\u003d",
         "filename": "keystone/tests/test_backend_kvs.py",
         "patchSetId": 1
@@ -149,6 +293,24 @@
       "writtenOn": "2013-09-10T20:22:33Z",
       "side": 1,
       "message": "depreciated -\u003e deprecated",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//J5E\u003d",
+        "filename": "keystone/tests/test_backend_kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-10T23:21:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//KVM\u003d",
       "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
