@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//LwI\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-10T13:15:37Z",
+      "side": 1,
+      "message": "So I ran this command and I get:\nERROR: unknown environment \u0027p27\u0027\n\nAlso this section is still missing what command I need to run to ensure my environment has all the pre-reqs needed to run tox.   Do I need to run the latest version of devstack to make sure my environment has the proper pre-reqs?  or something else????\n\nPlease understand how you degraded the new developer experience.  Before with run_tests.sh things pretty much worked right away (at least for me).  Now with tox everything blows up and I walk away frustrated.  This will slow down our ability to get new contributors on board.  Can we please have something that says you must make sure you setup your environment by doing x, y, z so that tox will find its pre-reqs and run properly?  I am happy to test these instructions given I am feeling this pain right now",
+      "revId": "97f989151dc1d4f3bfe489027136ef637dd8d798",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
