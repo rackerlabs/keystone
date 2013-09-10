@@ -34,6 +34,24 @@
       "revId": "97f989151dc1d4f3bfe489027136ef637dd8d798",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//LtI\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-10T13:31:46Z",
+      "side": 1,
+      "message": "@brad, dolph is subtly hinting at the typo in the command you used: \"tox -e p27\" should be \"tox -e py27\"",
+      "parentUuid": "AAAASn//Lvk\u003d",
+      "revId": "97f989151dc1d4f3bfe489027136ef637dd8d798",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
