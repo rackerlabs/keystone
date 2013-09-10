@@ -217,6 +217,30 @@ class V2Controller(wsgi.Application):
         for user_ref in self.identity_api.get_project_users(project_id):
             self._delete_tokens_for_user(user_ref['id'], project_id=project_id)
 
+    def _delete_tokens_for_role(self, role_id):
+        assignments = (
+            self.assignment_api.list_role_assignments(role_id=role_id))
+        user_ids = set()
+        for assignment in assignments:
+            if 'user_id' in assignment:
+                user_ids.add(assignment['user_id'])
+            elif 'group_id' in assignment:
+                # Add in any users for this group, being tolerant of any
+                # database integrity errors.
+                try:
+                    users = self.identity_api.list_users_in_group(
+                        assignment['group_id'])
+                except exception.GroupNotFound:
+                    continue
+                for user in users:
+                    user_ids.add(user['id'])
+
+        # TODO(henry-nash) We should extract the project_ids from the
+        # assignments above, and pass those into the _delete_tokens_for_user()
+        # call so as to not revoke tokens on projects that are unaffected.
+        for user_id in user_ids:
+            self._delete_tokens_for_user(user_id)
+
     def _require_attribute(self, ref, attr):
         """Ensures the reference contains the specified attribute."""
         if ref.get(attr) is None or ref.get(attr) == '':

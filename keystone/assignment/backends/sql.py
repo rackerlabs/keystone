@@ -284,7 +284,7 @@ class Assignment(sql.Base, assignment.Driver):
             msg = 'Cannot remove role that has not been granted, %s' % role_id
             raise exception.RoleNotFound(message=msg)
 
-    def list_role_assignments(self):
+    def list_role_assignments(self, role_id=None):
 
         # TODO(henry-nash): The current implementation is really simulating
         # us having a common role assignment table, rather than having the
@@ -299,42 +299,48 @@ class Assignment(sql.Base, assignment.Driver):
         for x in refs:
             for r in self._roles_from_role_dicts(
                     x.data.get('roles', {}), False):
-                        assignment_list.append({'user_id': x.user_id,
-                                                'domain_id': x.domain_id,
-                                                'role_id': r})
+                if role_id is None or role_id == r:
+                    assignment_list.append({'user_id': x.user_id,
+                                            'domain_id': x.domain_id,
+                                            'role_id': r})
             for r in self._roles_from_role_dicts(
                     x.data.get('roles', {}), True):
-                        assignment_list.append({'user_id': x.user_id,
-                                                'domain_id': x.domain_id,
-                                                'role_id': r,
-                                                'inherited_to_projects': True})
+                if role_id is None or role_id == r:
+                    assignment_list.append({'user_id': x.user_id,
+                                            'domain_id': x.domain_id,
+                                            'role_id': r,
+                                            'inherited_to_projects': True})
         refs = session.query(UserProjectGrant).all()
         for x in refs:
             for r in self._roles_from_role_dicts(
                     x.data.get('roles', {}), False):
-                        assignment_list.append({'user_id': x.user_id,
-                                                'project_id': x.project_id,
-                                                'role_id': r})
+                if role_id is None or role_id == r:
+                    assignment_list.append({'user_id': x.user_id,
+                                            'project_id': x.project_id,
+                                            'role_id': r})
         refs = session.query(GroupDomainGrant).all()
         for x in refs:
             for r in self._roles_from_role_dicts(
                     x.data.get('roles', {}), False):
-                        assignment_list.append({'group_id': x.group_id,
-                                                'domain_id': x.domain_id,
-                                                'role_id': r})
+                if role_id is None or role_id == r:
+                    assignment_list.append({'group_id': x.group_id,
+                                            'domain_id': x.domain_id,
+                                            'role_id': r})
             for r in self._roles_from_role_dicts(
                     x.data.get('roles', {}), True):
-                        assignment_list.append({'group_id': x.group_id,
-                                                'domain_id': x.domain_id,
-                                                'role_id': r,
-                                                'inherited_to_projects': True})
+                if role_id is None or role_id == r:
+                    assignment_list.append({'group_id': x.group_id,
+                                            'domain_id': x.domain_id,
+                                            'role_id': r,
+                                            'inherited_to_projects': True})
         refs = session.query(GroupProjectGrant).all()
         for x in refs:
             for r in self._roles_from_role_dicts(
                     x.data.get('roles', {}), False):
-                        assignment_list.append({'group_id': x.group_id,
-                                                'project_id': x.project_id,
-                                                'role_id': r})
+                if role_id is None or role_id == r:
+                    assignment_list.append({'group_id': x.group_id,
+                                            'project_id': x.project_id,
+                                            'role_id': r})
         return assignment_list
 
     # CRUD
