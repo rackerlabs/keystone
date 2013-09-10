@@ -201,11 +201,11 @@ class Manager(manager.Manager):
                 msg = (_('Unable to delete token returned in list for user '
                          '%(user)s, ignoring and continuing. '
                          '(Tenant: %(tenant)s, Trust: %(trust)s, '
-                         'Consumer: %(consumer)s)' % {
+                         'Consumer: %(consumer)s)') % {
                              'user': user_id,
                              'tenant': tenant_id,
                              'trust': trust_id,
-                             'consumer': consumer_id}))
+                             'consumer': consumer_id})
                 LOG.debug(msg)
 
     def list_tokens(self, user_id, tenant_id=None, trust_id=None,

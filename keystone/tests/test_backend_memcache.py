@@ -61,7 +61,6 @@ class MemcacheClient(object):
         return self.get(key)
 
     def get(self, key):
-        print self.cache
         """Retrieves the value for a key or None."""
         self.check_key(key)
         obj = self.cache.get(key)
@@ -78,7 +77,6 @@ class MemcacheClient(object):
             return data_copy
 
     def set(self, key, value, time=0):
-        print 'Setting'
         """Sets the value for a key."""
         self.check_key(key)
             # NOTE(morganfainberg): This behaves more like memcache
@@ -219,7 +217,8 @@ class MemcacheToken(tests.TestCase, test_backend.TokenTests):
                               self.token_api.get_token, data_in['id'])
 
 
-class MemcacheTokenCacheInvalidation(tests.TestCase, test_backend.TokenCacheInvalidation):
+class MemcacheTokenCacheInvalidation(tests.TestCase,
+                                     test_backend.TokenCacheInvalidation):
     def setUp(self):
         super(MemcacheTokenCacheInvalidation, self).setUp()
         identity.CONF.token.driver = (
