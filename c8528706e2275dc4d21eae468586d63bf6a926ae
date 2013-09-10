@@ -52,6 +52,24 @@
       "revId": "c8528706e2275dc4d21eae468586d63bf6a926ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//MeA\u003d",
+        "filename": "tools/pip-requires",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4375
+      },
+      "writtenOn": "2013-09-10T08:00:55Z",
+      "side": 1,
+      "message": "I agree, seems to have changed meanwhile.",
+      "parentUuid": "AAAASn//O6Y\u003d",
+      "revId": "c8528706e2275dc4d21eae468586d63bf6a926ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
