@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//Kcg\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-10T20:22:33Z",
+      "side": 1,
+      "message": "suggest make this the default implementation (in assignment/core.py)\n\nthen do need to override it in all these backends where this is the implementation (for example the ldap backend).",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//KcE\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-10T20:22:33Z",
+      "side": 1,
+      "message": "suggest add another newline to separate imports from package vars.",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//KZ4\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-10T20:22:33Z",
+      "side": 1,
+      "message": "suggest use \"\u0027roles\u0027 in project_grant.data\" here since don\u0027t care about the value.\n\nI\u0027ve been trying to figure out what\u0027s the difference between a group has roles or doesn\u0027t have roles... please add a comment why this makes a difference.",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//KY0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-10T20:22:33Z",
+      "side": 1,
+      "message": "suggest have project_ids be a set to begin with.",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//KX4\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-10T20:22:33Z",
+      "side": 1,
+      "message": "should domain_ids be a set so don\u0027t loop through a domain multiple times (at line 288) ?",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//KXs\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-10T20:22:33Z",
+      "side": 1,
+      "message": "278-282 is a copy of 268-272, suggest move into a function.",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//KYo\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-10T20:22:33Z",
+      "side": 1,
+      "message": "suggest have project_ids be a set to begin with.",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//KZQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-10T20:22:33Z",
+      "side": 1,
+      "message": "seems strange to pass in groups for the user since the groups are always calculated from the user, aren\u0027t they?\n\nmaybe pass in the identity_api and have this function call the method on the identity API.\n\nAlternatively, add a comment why pass in group_ids.",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//KVM\u003d",
+        "filename": "keystone/tests/test_backend_kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-10T20:22:33Z",
+      "side": 1,
+      "message": "depreciated -\u003e deprecated",
+      "revId": "2ba5b42abe4c134c54e641b70c200ff597a1a350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
