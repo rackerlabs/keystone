@@ -451,8 +451,13 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def list_role_assignments(self):
+    def list_role_assignments(self, role_id=None):
+        """Lists role assignments.
 
+        :param role_id: if role_id is specified, then only return those
+                        assignments that include that role.
+
+        """
         raise exception.NotImplemented()
 
     # domain crud
