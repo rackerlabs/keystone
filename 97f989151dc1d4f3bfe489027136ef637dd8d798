@@ -52,6 +52,24 @@
       "revId": "97f989151dc1d4f3bfe489027136ef637dd8d798",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Lc0\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-10T16:20:56Z",
+      "side": 1,
+      "message": "Hi Steve, I figured that out. So Dolph\u0027s comment made me feel kinda dumb.  But the fact you felt you needed to explain me his comment made me feel super extra dumb :-). Some days I dont know why I come in :-).  In any case I think all we need to get a +1 from me (and hence dumb guy certified) is to add a line after the tox command to remind folks to make sure any necessary dependencies are installed and then have the link for reference.  I will test doing what the link says and if that works then we are good.  Dolph, make sense?",
+      "parentUuid": "AAAASn//LtI\u003d",
+      "revId": "97f989151dc1d4f3bfe489027136ef637dd8d798",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
