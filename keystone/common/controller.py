@@ -133,6 +133,19 @@ def protected(callback=None):
                 # specified a get_member() method and that kwargs contains the
                 # appropriate entity id.
                 policy_dict = {}
+                # If the context has X-Subject-Token then we can safely treat
+                # X-Subject-Token as target of the request
+                if context.get('subject_token_id'):
+                    try:
+                        subject_token = self.token_api.get_token(
+                            context.get('subject_token_id'))
+                        policy_dict = {'target': {self.member_name:
+                                                  subject_token}}
+                    except exception.TokenNotFound:
+                        # No need to throws the exception as
+                        # unauthorized user can guess if token exists
+                        LOG.warning(_('RBAC: subject token not found'))
+
                 if (hasattr(self, 'get_member_from_driver') and
                         self.get_member_from_driver is not None):
                             key = '%s_id' % self.member_name
@@ -140,7 +153,6 @@ def protected(callback=None):
                                 ref = self.get_member_from_driver(kwargs[key])
                                 policy_dict = {'target':
                                                {self.member_name: ref}}
-
                 # Add in the kwargs, which means that any entity provided as a
                 # parameter for calls like create and update will be included.
                 policy_dict.update(kwargs)
