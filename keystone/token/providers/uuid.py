@@ -459,7 +459,9 @@ class Provider(token.provider.Provider):
             token_ref = self.token_api.get_token(token_id)
             return self._verify_token_ref(token_ref, belongs_to)
         except exception.TokenNotFound:
-                raise exception.Unauthorized()
+                raise exception.NotFound(target=token_id)
+        except exception.Unauthorized:
+                raise
 
     def _verify_token_ref(self, token_ref, belongs_to=None):
         """Verify and return the given token_ref."""
