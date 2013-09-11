@@ -133,14 +133,23 @@ def protected(callback=None):
                 # specified a get_member() method and that kwargs contains the
                 # appropriate entity id.
                 policy_dict = {}
-                if (hasattr(self, 'get_member_from_driver') and
-                        self.get_member_from_driver is not None):
-                            key = '%s_id' % self.member_name
-                            if key in kwargs:
-                                ref = self.get_member_from_driver(kwargs[key])
-                                policy_dict = {'target':
-                                               {self.member_name: ref}}
 
+                # If the context has X-Subject-Token then we can safely treat
+                # X-Subject-Token as target of the request
+                if context.get('subject_token_id') is not None:
+                    token_ref = self.token_api.get_token(
+                        context['subject_token_id'])
+                    policy_dict = {
+                        'target': {
+                            self.member_name: {
+                                'user_id': token_ref['user_id']}}}
+
+                elif (hasattr(self, 'get_member_from_driver') and
+                        self.get_member_from_driver is not None):
+                    key = '%s_id' % self.member_name
+                    if key in kwargs:
+                        ref = self.get_member_from_driver(kwargs[key])
+                        policy_dict = {'target': {self.member_name: ref}}
                 # Add in the kwargs, which means that any entity provided as a
                 # parameter for calls like create and update will be included.
                 policy_dict.update(kwargs)
