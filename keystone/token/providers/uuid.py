@@ -459,11 +459,8 @@ class Provider(token.provider.Provider):
 
     def _verify_token(self, token_id):
         """Verify the given token and return the token_ref."""
-        try:
-            token_ref = self.token_api.get_token(token_id)
-            return self._verify_token_ref(token_ref)
-        except exception.TokenNotFound:
-                raise exception.Unauthorized()
+        token_ref = self.token_api.get_token(token_id)
+        return self._verify_token_ref(token_ref)
 
     def _verify_token_ref(self, token_ref):
         """Verify and return the given token_ref."""
@@ -551,7 +548,7 @@ class Provider(token.provider.Provider):
                 token_data = self.v2_token_data_helper.format_token(
                     token_ref, roles_ref, catalog_ref)
             return token_data
-        except (exception.ValidationError, exception.TokenNotFound) as e:
+        except exception.ValidationError as e:
             LOG.exception(_('Failed to validate token'))
             raise exception.Unauthorized(e)
 
@@ -561,8 +558,8 @@ class Provider(token.provider.Provider):
             token_data = self._validate_v3_token_ref(token_ref)
             return token_data
         except (exception.ValidationError,
-                exception.TokenNotFound,
-                exception.UserNotFound):
+                exception.UserNotFound,
+                exception.Unauthorized):
             LOG.exception(_('Failed to validate token'))
 
     def _validate_v3_token_ref(self, token_ref):
