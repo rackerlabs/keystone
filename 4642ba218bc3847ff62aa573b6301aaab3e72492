@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//JXY\u003d",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-11T06:08:42Z",
+      "side": 1,
+      "message": "please back out this change. You are doing domain look up twice, once in line 97 and this one here if user_name is in auth payload. There\u0027s a performance cost with that.",
+      "revId": "4642ba218bc3847ff62aa573b6301aaab3e72492",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
