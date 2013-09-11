@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//HRs\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-11T19:16:07Z",
+      "side": 1,
+      "message": "shouldn\u0027t his check go into _get_user  instead?",
+      "revId": "4642ba218bc3847ff62aa573b6301aaab3e72492",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//HRQ\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-11T19:16:07Z",
+      "side": 1,
+      "message": "We probably need to drop this function.   We probably are only going to be able to do user_ids in the future.",
+      "revId": "4642ba218bc3847ff62aa573b6301aaab3e72492",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//HRk\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-11T19:16:07Z",
+      "side": 1,
+      "message": "Drop experimental from the comment.",
+      "revId": "4642ba218bc3847ff62aa573b6301aaab3e72492",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//JXY\u003d",
         "filename": "keystone/auth/plugins/password.py",
         "patchSetId": 3
@@ -13,6 +64,75 @@
       "writtenOn": "2013-09-11T06:08:42Z",
       "side": 1,
       "message": "please back out this change. You are doing domain look up twice, once in line 97 and this one here if user_name is in auth payload. There\u0027s a performance cost with that.",
+      "revId": "4642ba218bc3847ff62aa573b6301aaab3e72492",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//HRA\u003d",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-11T19:16:07Z",
+      "side": 1,
+      "message": "make paths set  domain_ref and indent this to the else block above.",
+      "parentUuid": "AAAASn//JXY\u003d",
+      "revId": "4642ba218bc3847ff62aa573b6301aaab3e72492",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//HQk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-11T19:16:07Z",
+      "side": 1,
+      "message": "we seem to be looking domain info up multiple times.  at a minimum, we should set it in the kwargs and check for it before doing yet another lookup.",
+      "revId": "4642ba218bc3847ff62aa573b6301aaab3e72492",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//HQY\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-11T19:16:07Z",
+      "side": 1,
+      "message": "Inline",
+      "revId": "4642ba218bc3847ff62aa573b6301aaab3e72492",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//HQE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-11T19:16:07Z",
+      "side": 1,
+      "message": "If this is an LDAP backend it should just error out.",
       "revId": "4642ba218bc3847ff62aa573b6301aaab3e72492",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
