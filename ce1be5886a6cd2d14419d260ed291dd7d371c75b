@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//HPw\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-11T19:16:59Z",
+      "side": 1,
+      "message": "you\u0027re getting a bunch of project references and then throwing everything away but the project ID...",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//HPc\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-11T19:16:59Z",
+      "side": 1,
+      "message": "... continuing comment from left side L118 -- implement this in each driver instead",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//HPs\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-11T19:16:59Z",
+      "side": 1,
+      "message": "... continuing comment from right side L118 -- and then you\u0027re making N calls to get each project ref that you just threw away",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//HO0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-11T19:16:59Z",
+      "side": 1,
+      "message": "this comment appears confusing because it\u0027s not relevant to the current state of the codebase, is it?",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//HtM\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3

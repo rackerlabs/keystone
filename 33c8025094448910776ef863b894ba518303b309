@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//HPo\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-11T19:16:59Z",
+      "side": 0,
+      "message": "it seems valuable to deprecate/remove this function, and only implement it in the manager, if it\u0027s useful at all (?)",
+      "revId": "33c8025094448910776ef863b894ba518303b309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
