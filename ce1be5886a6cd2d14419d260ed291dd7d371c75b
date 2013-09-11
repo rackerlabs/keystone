@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//HtM\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-11T18:08:07Z",
+      "side": 1,
+      "message": "can we just do this?\n\nreturn [x[\u0027id\u0027] for x in self.list_user_projects(user_id)]",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Hsk\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-11T18:08:07Z",
+      "side": 1,
+      "message": "group_ids\u003dNone?",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//HqI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-11T18:08:07Z",
+      "side": 1,
+      "message": "do we also need to make sure tenant is in the \"default\" domain as this is V2 API?",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//HqE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-11T18:08:07Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
