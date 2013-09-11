@@ -324,8 +324,9 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase):
     def test_revoke_token(self):
         headers = {'X-Subject-Token': self.get_scoped_token()}
         self.delete('/auth/tokens', headers=headers, expected_status=204)
-        self.head('/auth/tokens', headers=headers, expected_status=401)
-
+        # 401 is not a correct test as the x-auth-token passed the auth
+        # Also as per doc identity-api-v3.md#400-bad-request his should be 404
+        self.head('/auth/tokens', headers=headers, expected_status=404)
         # make sure we have a CRL
         r = self.get('/auth/tokens/OS-PKI/revoked')
         self.assertIn('signed', r.result)
@@ -351,6 +352,112 @@ class TestUUIDTokenAPIs(TestPKITokenAPIs):
         # this test is only applicable for PKI tokens
         # skipping it for UUID tokens
         pass
+
+
+class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
+    """Test token revoke using v3 Identity API by token owner and admin."""
+    def setUp(self):
+        """Setup for Test Cases.
+        One domain A
+        Two users userNormalA and userAdminA
+
+        """
+        super(TestTokenRevokeSelfAndAdmin, self).setUp()
+
+        self.domainA = self.new_domain_ref()
+        self.domainA['name'] = 'test-domainA'
+        self.identity_api.create_domain(self.domainA['id'], self.domainA)
+
+        self.userAdminA = self.new_user_ref(domain_id=self.domainA['id'])
+        self.userAdminA['password'] = uuid.uuid4().hex
+        self.identity_api.create_user(self.userAdminA['id'], self.userAdminA)
+
+        self.userNormalA = self.new_user_ref(
+            domain_id=self.domainA['id'])
+        self.userNormalA['password'] = uuid.uuid4().hex
+        self.identity_api.create_user(self.userNormalA['id'], self.userNormalA)
+
+        self.role1 = self.new_role_ref()
+        self.role1['name'] = 'admin'
+        self.identity_api.create_role(self.role1['id'], self.role1)
+
+        self.identity_api.create_grant(self.role1['id'],
+                                       user_id=self.userAdminA['id'],
+                                       domain_id=self.domainA['id'])
+
+        # Finally, switch to the v3 sample policy file
+        self.orig_policy_file = CONF.policy_file
+        from keystone.policy.backends import rules
+        rules.reset()
+        self.opt(policy_file=test.etcdir('policy.v3cloudsample.json'))
+
+    def test_revoke_token_self(self):
+        r = self.post(
+            '/auth/tokens',
+            body=self.build_authentication_request(
+                user_id=self.userNormalA['id'],
+                password=self.userNormalA['password'],
+                user_domain_id=self.domainA['id']))
+
+        user_token = r.headers.get('X-Subject-Token')
+        self.assertNotEmpty(user_token)
+        headers = {'X-Subject-Token': user_token}
+
+        r = self.post(
+            '/auth/tokens',
+            body=self.build_authentication_request(
+                user_id=self.userAdminA['id'],
+                password=self.userAdminA['password'],
+                domain_name=self.domainA['name']))
+        adminA_token = r.headers.get('X-Subject-Token')
+
+        self.head('/auth/tokens', headers=headers, expected_status=204,
+                  token=adminA_token)
+        self.head('/auth/tokens', headers=headers, expected_status=204,
+                  token=user_token)
+        self.delete('/auth/tokens', headers=headers, expected_status=204,
+                    token=user_token)
+        self.head('/auth/tokens', headers=headers, expected_status=401,
+                  token=user_token)
+        self.delete('/auth/tokens', headers=headers, expected_status=401,
+                    token=user_token)
+        self.delete('/auth/tokens', headers=headers, expected_status=404,
+                    token=adminA_token)
+        self.head('/auth/tokens', headers=headers, expected_status=404,
+                  token=adminA_token)
+
+    def test_revoke_token_adminA(self):
+        r = self.post(
+            '/auth/tokens',
+            body=self.build_authentication_request(
+                user_id=self.userNormalA['id'],
+                password=self.userNormalA['password'],
+                user_domain_id=self.domainA['id']))
+
+        user_token = r.headers.get('X-Subject-Token')
+        self.assertNotEmpty(user_token)
+        headers = {'X-Subject-Token': user_token}
+
+        r = self.post(
+            '/auth/tokens',
+            body=self.build_authentication_request(
+                user_id=self.userAdminA['id'],
+                password=self.userAdminA['password'],
+                domain_name=self.domainA['name']))
+        adminA_token = r.headers.get('X-Subject-Token')
+
+        self.head('/auth/tokens', headers=headers, expected_status=204,
+                  token=adminA_token)
+        self.head('/auth/tokens', headers=headers, expected_status=204,
+                  token=user_token)
+        self.delete('/auth/tokens', headers=headers, expected_status=204,
+                    token=adminA_token)
+        self.head('/auth/tokens', headers=headers, expected_status=401,
+                  token=user_token)
+        self.delete('/auth/tokens', headers=headers, expected_status=404,
+                    token=adminA_token)
+        self.head('/auth/tokens', headers=headers, expected_status=404,
+                  token=adminA_token)
 
 
 class TestTokenRevoking(test_v3.RestfulTestCase):
@@ -510,9 +617,13 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
                 'user_id': self.user1['id'],
                 'role_id': self.role1['id']})
         self.delete(grant_url)
+        # Token will be invalidated but for the below call a new valid
+        # token will be created. 401 is not a correct test as the
+        # x-auth-token passed the auth. Also as per doc
+        # identity-api-v3.md#400-bad-request his should be 404
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token},
-                  expected_status=401)
+                  expected_status=404)
 
     def test_domain_user_role_assignment_maintains_token(self):
         """Test user-domain role assignment maintains existing token.
@@ -565,9 +676,12 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
             body={'project': {'enabled': False}})
 
         # user should no longer have access to the project
+        # wrong test, as for the below call new valid token will be passed
+        # 401 is not a correct test as the x-auth-token passed the auth
+        # Also as per doc identity-api-v3.md#400-bad-request his should be 404
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token},
-                  expected_status=401)
+                  expected_status=404)
         resp = self.post(
             '/auth/tokens',
             body=self.build_authentication_request(
@@ -595,9 +709,13 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
             '/projects/%(project_id)s' % {'project_id': self.projectA['id']})
 
         # user should no longer have access to the project
+        # Correct but for below test a new scoped token will
+        # be created hence, 401 is not a correct test as the
+        # x-auth-token passed the auth Also as per doc
+        # identity-api-v3.md#400-bad-request his should be 404
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token},
-                  expected_status=401)
+                  expected_status=404)
         resp = self.post(
             '/auth/tokens',
             body=self.build_authentication_request(
@@ -656,12 +774,15 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
                 'group_id': self.group1['id'],
                 'role_id': self.role1['id']})
         self.delete(grant_url)
+        # 401 is not a correct test as the x-auth-token passed
+        # the auth. Also as per doc identity-api-v3.md#400-bad-request
+        # his should be 404
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token1},
-                  expected_status=401)
+                  expected_status=404)
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token2},
-                  expected_status=401)
+                  expected_status=404)
         # But user3's token should still be valid
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token3},
@@ -736,9 +857,13 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
         self.delete('/groups/%(group_id)s/users/%(user_id)s' % {
             'group_id': self.group1['id'],
             'user_id': self.user1['id']})
+        # wrong test, as for the below call new valid token will
+        # be passed. 401 is not a correct test as the x-auth-token
+        # passed the auth. Also as per doc
+        # identity-api-v3.md#400-bad-request his should be 404
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token1},
-                  expected_status=401)
+                  expected_status=404)
         # But user2's token should still be valid
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token2},
@@ -747,9 +872,13 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
         self.put('/groups/%(group_id)s/users/%(user_id)s' % {
             'group_id': self.group2['id'],
             'user_id': self.user2['id']})
+        # wrong test, as for the below call new valid token will
+        # be passed. 401 is not a correct test as the x-auth-token
+        # passed the auth. Also as per doc
+        # identity-api-v3.md#400-bad-request his should be 404
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token2},
-                  expected_status=401)
+                  expected_status=404)
 
     def test_removing_role_assignment_does_not_affect_other_users(self):
         """Revoking a role from one user should not affect other users."""
@@ -782,9 +911,13 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
              'role_id': self.role1['id']})
 
         # authorization for the first user should now fail
+        # wrong test, as for the below call new valid
+        # token will be passed.401 is not a correct test as the
+        # x-auth-token passed the auth. Also as per doc
+        # identity-api-v3.md#400-bad-request his should be 404
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': user1_token},
-                  expected_status=401)
+                  expected_status=404)
         self.post(
             '/auth/tokens',
             body=self.build_authentication_request(

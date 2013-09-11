@@ -85,11 +85,11 @@
     "identity:update_policy": [["rule:cloud_admin"]],
     "identity:delete_policy": [["rule:cloud_admin"]],
 
-    "identity:check_token": [["rule:admin_required"]],
+    "identity:check_token": [["user_id:%(target.entity.user_id)s"],["rule:admin_required"]],
     "identity:validate_token": [["rule:service_or_admin"]],
     "identity:validate_token_head": [["rule:service_or_admin"]],
     "identity:revocation_list": [["rule:service_or_admin"]],
-    "identity:revoke_token": [["rule:admin_or_owner"]],
+    "identity:revoke_token": [["user_id:%(target.entity.user_id)s"],["rule:admin_required"]],
 
     "identity:create_trust": [["user_id:%(trust.trustor_user_id)s"]],
     "identity:get_trust": [["rule:admin_or_owner"]],

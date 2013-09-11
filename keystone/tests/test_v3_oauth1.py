@@ -354,8 +354,12 @@ class AuthTokenTests(OAuthFlowTests):
         # Check Keystone Token no longer exists
         headers = {'X-Subject-Token': self.keystone_token_id,
                    'X-Auth-Token': self.keystone_token_id}
+        # I think it is better to test 404 not found
+        # because Keystone Token no longer exists.
+        # 'X-Auth-Token': self.keystone_token_id is not
+        # used for auth test_v3.v3_request will create another token.
         self.get('/auth/tokens', headers=headers,
-                 expected_status=401)
+                 expected_status=404)
 
     def test_deleting_consumer_also_deletes_tokens(self):
         self.test_oauth_flow()
@@ -375,8 +379,12 @@ class AuthTokenTests(OAuthFlowTests):
         # Check Keystone Token no longer exists
         headers = {'X-Subject-Token': self.keystone_token_id,
                    'X-Auth-Token': self.keystone_token_id}
+        # I think it is better to test 404 not found
+        # because Keystone Token no longer exists.
+        # 'X-Auth-Token': self.keystone_token_id is not
+        # used for auth test_v3.v3_request will create another token.
         self.head('/auth/tokens', headers=headers,
-                  expected_status=401)
+                  expected_status=404)
 
     def test_change_user_password_also_deletes_tokens(self):
         self.test_oauth_flow()
