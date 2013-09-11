@@ -26,7 +26,6 @@ from keystone.tests import default_fixtures
 from keystone import token
 from keystone import trust
 
-
 CONF = config.CONF
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
@@ -432,7 +431,7 @@ class AuthWithToken(AuthTest):
 
         # Check the token is now invalid
         self.assertRaises(
-            exception.Unauthorized,
+            exception.NotFound,
             self.controller.validate_token,
             dict(is_admin=True, query_string={}),
             token_id=token_id)

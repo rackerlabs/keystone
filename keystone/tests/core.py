@@ -32,6 +32,7 @@ import testtools
 
 
 from keystone.openstack.common import gettextutils
+from keystone.openstack.common import policy as common_policy
 
 # NOTE(blk-u):
 # gettextutils.install() must run to set _ before importing any modules that
