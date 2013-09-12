@@ -15,6 +15,7 @@
 # under the License.
 
 from keystone import auth
+from keystone.common import controller
 from keystone import exception
 from keystone import identity
 from keystone.openstack.common import log as logging
@@ -23,6 +24,7 @@ from keystone.openstack.common import log as logging
 METHOD_NAME = 'password'
 
 LOG = logging.getLogger(__name__)
+V3Controller = controller.V3Controller
 
 
 class UserAuthInfo(object):
@@ -92,7 +94,7 @@ class UserAuthInfo(object):
             LOG.exception(e)
             raise exception.Unauthorized(e)
         self._assert_user_is_enabled(user_ref)
-        self.user_ref = user_ref
+        self.user_ref = V3Controller.normalize_default_project_id(user_ref)
         self.user_id = user_ref['id']
         self.domain_id = domain_ref['id']
 
