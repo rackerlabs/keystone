@@ -32,6 +32,7 @@ class User(sql.ModelBase, sql.DictBase):
     password = sql.Column(sql.String(128))
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
+    default_project_id = sql.Column(sql.String(64))
     # Unique constraint across two columns to create the separation
     # rather than just only 'name' being unique
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
