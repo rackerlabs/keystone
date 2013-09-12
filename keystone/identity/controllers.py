@@ -126,9 +126,11 @@ class Tenant(controller.V2Controller):
 
     def get_project_users(self, context, tenant_id, **kw):
         self.assert_admin(context)
-        user_refs = self.identity_api.get_project_users(tenant_id)
-        for user_ref in user_refs:
-            self._filter_domain_id(user_ref)
+        user_refs = []
+        user_ids = self.assignment_api.get_project_user_ids(tenant_id)
+        for user_id in user_ids:
+            user_ref = self.identity_api.get_user(user_id, version=2)
+            user_refs.append(self._filter_domain_id(user_ref))
         return {'users': user_refs}
 
     def _format_project_list(self, tenant_refs, **kwargs):
@@ -169,7 +171,7 @@ class Tenant(controller.V2Controller):
 class User(controller.V2Controller):
     def get_user(self, context, user_id):
         self.assert_admin(context)
-        ref = self.identity_api.get_user(user_id)
+        ref = self.identity_api.get_user(user_id, version=2)
         return {'user': self._filter_domain_id(ref)}
 
     def get_users(self, context):
@@ -180,7 +182,7 @@ class User(controller.V2Controller):
                 context, context['query_string'].get('name'))
 
         self.assert_admin(context)
-        user_list = self.identity_api.list_users()
+        user_list = self.identity_api.list_users(version=2)
         for x in user_list:
             self._filter_domain_id(x)
         return {'users': user_list}
@@ -188,7 +190,7 @@ class User(controller.V2Controller):
     def get_user_by_name(self, context, user_name):
         self.assert_admin(context)
         ref = self.identity_api.get_user_by_name(
-            user_name, DEFAULT_DOMAIN_ID)
+            user_name, DEFAULT_DOMAIN_ID, version=2)
         return {'user': self._filter_domain_id(ref)}
 
     # CRUD extension
@@ -203,16 +205,17 @@ class User(controller.V2Controller):
             msg = 'Enabled field must be a boolean'
             raise exception.ValidationError(message=msg)
 
-        default_tenant_id = user.get('tenantId', None)
-        if (default_tenant_id is not None
-                and self.identity_api.get_project(default_tenant_id) is None):
-            raise exception.ProjectNotFound(project_id=default_tenant_id)
+        default_project_id = user.get('tenantId', None)
+        if (default_project_id is not None
+                and self.identity_api.get_project(default_project_id) is None):
+            raise exception.ProjectNotFound(project_id=default_project_id)
         user_id = uuid.uuid4().hex
         user_ref = self._normalize_domain_id(context, user.copy())
         user_ref['id'] = user_id
-        new_user_ref = self.identity_api.create_user(user_id, user_ref)
-        if default_tenant_id:
-            self.identity_api.add_user_to_project(default_tenant_id, user_id)
+        new_user_ref = self.identity_api.create_user(user_id, user_ref,
+                                                     version=2)
+        if default_project_id:
+            self.identity_api.add_user_to_project(default_project_id, user_id)
         return {'user': self._filter_domain_id(new_user_ref)}
 
     def update_user(self, context, user_id, user):
@@ -223,7 +226,25 @@ class User(controller.V2Controller):
             msg = 'Enabled field should be a boolean'
             raise exception.ValidationError(message=msg)
 
-        user_ref = self.identity_api.update_user(user_id, user)
+        default_project_id = user.pop('tenantId', None)
+        if default_project_id is not None:
+            user['default_project_id'] = default_project_id
+
+        old_user_ref = self.identity_api.get_user(user_id, version=2)
+        user_ref = self.identity_api.update_user(user_id, user, version=2)
+
+        if 'tenantId' in user_ref:
+            if user_ref['tenantId'] != old_user_ref.get('tenantId'):
+                if old_user_ref.get('tenantId'):
+                    self.assignment_api.remove_user_from_project(
+                        user_id, old_user_ref['tenantId'])
+                if user_ref['tenantId']:
+                    try:
+                        self.assignment_api.add_user_to_project(
+                            user_ref['tenantId'], user_id)
+                    except exception.Conflict:
+                        # We are already a member of that tenant
+                        pass
 
         if user.get('password') or not user.get('enabled', True):
         # If the password was changed or the user was disabled we clear tokens
@@ -443,7 +464,7 @@ class DomainV3(controller.V3Controller):
         if not domain.get('enabled', True):
             projects = [x for x in self.identity_api.list_projects()
                         if x.get('domain_id') == domain_id]
-            for user in self.identity_api.list_users():
+            for user in self.identity_api.list_users(version=3):
                 # TODO(dolph): disable domain-scoped tokens
                 """
                 self.token_api.revoke_tokens(
@@ -634,27 +655,30 @@ class UserV3(controller.V3Controller):
 
         ref = self._assign_unique_id(self._normalize_dict(user))
         ref = self._normalize_domain_id(context, ref)
-        ref = self.identity_api.create_user(ref['id'], ref)
+        ref = self.identity_api.create_user(ref['id'], ref, version=3)
         return UserV3.wrap_member(context, ref)
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users(self, context, filters):
         refs = self.identity_api.list_users(
-            domain_scope=self._get_domain_id_for_request(context))
+            domain_scope=self._get_domain_id_for_request(context),
+            version=3)
         return UserV3.wrap_collection(context, refs, filters)
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users_in_group(self, context, filters, group_id):
         refs = self.identity_api.list_users_in_group(
             group_id,
-            domain_scope=self._get_domain_id_for_request(context))
+            domain_scope=self._get_domain_id_for_request(context),
+            version=3)
         return UserV3.wrap_collection(context, refs, filters)
 
     @controller.protected()
     def get_user(self, context, user_id):
         ref = self.identity_api.get_user(
             user_id,
-            domain_scope=self._get_domain_id_for_request(context))
+            domain_scope=self._get_domain_id_for_request(context),
+            version=3)
         return UserV3.wrap_member(context, ref)
 
     @controller.protected()
@@ -662,7 +686,8 @@ class UserV3(controller.V3Controller):
         self._require_matching_id(user_id, user)
         ref = self.identity_api.update_user(
             user_id, user,
-            domain_scope=self._get_domain_id_for_request(context))
+            domain_scope=self._get_domain_id_for_request(context),
+            version=3)
 
         if user.get('password') or not user.get('enabled', True):
             # revoke all tokens owned by this user
@@ -1035,7 +1060,7 @@ class RoleAssignmentV3(controller.V3Controller):
             """
             try:
                 members = self.identity_api.list_users_in_group(
-                    ref['group']['id'])
+                    ref['group']['id'], version=3)
             except exception.GroupNotFound:
                 members = []
                 # The group is missing, which should not happen since
