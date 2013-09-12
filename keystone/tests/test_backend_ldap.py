@@ -1100,6 +1100,14 @@ class MultiLDAPandSQLIdentity(sql.Base, tests.TestCase, BaseLDAPIdentity):
         ref = self.identity_api.get_user(
             userd['id'], domain_scope=CONF.identity.default_domain_id)
         del userd['password']
+        # NOTE(morganfainberg): LDAP backend doesn't always store
+        # default_project_id, so we don't pass it in during this test.  Since
+        # normalization happens at the controller, the SQL backends will see
+        # default_project_id (it is a proper column now).  For the purposes
+        # of this test, default_project_id isn't relevant, so remove it if it
+        # exists. This is repeated throughout this test on all refs returned
+        # by get_user.
+        ref.pop('default_project_id', None)
         self.assertDictEqual(ref, userd)
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
@@ -1121,10 +1129,12 @@ class MultiLDAPandSQLIdentity(sql.Base, tests.TestCase, BaseLDAPIdentity):
         ref = self.identity_api.get_user(
             user1['id'], domain_scope=self.domain1['id'])
         del user1['password']
+        ref.pop('default_project_id', None)
         self.assertDictEqual(ref, user1)
         ref = self.identity_api.get_user(
             user2['id'], domain_scope=self.domain2['id'])
         del user2['password']
+        ref.pop('default_project_id', None)
         self.assertDictEqual(ref, user2)
 
         # Domains 3 and 4 share the same backend, so you should be
@@ -1133,16 +1143,20 @@ class MultiLDAPandSQLIdentity(sql.Base, tests.TestCase, BaseLDAPIdentity):
         ref = self.identity_api.get_user(
             user3['id'], domain_scope=self.domain3['id'])
         del user3['password']
+        ref.pop('default_project_id', None)
         self.assertDictEqual(ref, user3)
         ref = self.identity_api.get_user(
             user4['id'], domain_scope=self.domain4['id'])
         del user4['password']
+        ref.pop('default_project_id', None)
         self.assertDictEqual(ref, user4)
         ref = self.identity_api.get_user(
             user3['id'], domain_scope=self.domain4['id'])
+        ref.pop('default_project_id', None)
         self.assertDictEqual(ref, user3)
         ref = self.identity_api.get_user(
             user4['id'], domain_scope=self.domain3['id'])
+        ref.pop('default_project_id', None)
         self.assertDictEqual(ref, user4)
 
     def test_scanning_of_config_dir(self):

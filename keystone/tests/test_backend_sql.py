@@ -327,6 +327,49 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertEqual(arbitrary_value, ref['extra'][arbitrary_key])
 
+    def test_authenticate(self):
+        user_ref = self.identity_api.authenticate(
+            user_id=self.user_sna['id'],
+            password=self.user_sna['password'])
+        self.assertNotIn('password', user_ref)
+        self.user_sna['enabled'] = True
+        # NOTE(morganfainberg): remove password from the original we are
+        # comparing the user_ref to.  The API should never return password in
+        # the ref.
+        self.user_sna.pop('password')
+        # NOTE(morganfainberg): SQL backend should always have
+        # default_project_id in the user_ref, it is a column.
+        self.assertIn('default_project_id', user_ref)
+        user_ref.pop('default_project_id')
+        self.assertDictEqual(user_ref, self.user_sna)
+
+    def test_get_user(self):
+        user_ref = self.identity_api.get_user(self.user_foo['id'])
+        self.assertNotIn('password', user_ref)
+        # NOTE(morganfainberg): remove password from the original we are
+        # comparing the user_ref to.  The API should never return password in
+        # the ref.
+        self.user_foo.pop('password')
+        # NOTE(morganfainberg): SQL backend should always have
+        # default_project_id in the user_ref, it is a column.
+        self.assertIn('default_project_id', user_ref)
+        user_ref.pop('default_project_id')
+        self.assertDictEqual(user_ref, self.user_foo)
+
+    def test_get_user_by_name(self):
+        user_ref = self.identity_api.get_user_by_name(
+            self.user_foo['name'], DEFAULT_DOMAIN_ID)
+        self.assertNotIn('password', user_ref)
+        # NOTE(morganfainberg): remove password from the original we are
+        # comparing the user_ref to.  The API should never return password in
+        # the ref.
+        self.user_foo.pop('password')
+        # NOTE(morganfainberg): SQL backend should always have
+        # default_project_id in the user_ref, it is a column.
+        self.assertIn('default_project_id', user_ref)
+        user_ref.pop('default_project_id')
+        self.assertDictEqual(user_ref, self.user_foo)
+
 
 class SqlTrust(SqlTests, test_backend.TrustTests):
     pass
