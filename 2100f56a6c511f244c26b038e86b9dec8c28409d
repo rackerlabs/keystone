@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//EZo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-12T20:47:29Z",
+      "side": 1,
+      "message": "I will fix this",
+      "parentUuid": "AAAASn//Ejo\u003d",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Ejk\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-12T15:26:18Z",
       "side": 1,
       "message": "s/through/throw?",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//EcE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-12T20:47:29Z",
+      "side": 1,
+      "message": "sorry for that",
+      "parentUuid": "AAAASn//Ejk\u003d",
       "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//EcU\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-12T20:47:29Z",
+      "side": 1,
+      "message": "if I raise it here unauth caller will get 404 in place of 401, that may allow token harvesting.",
+      "parentUuid": "AAAASn//EjQ\u003d",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Emo\u003d",
         "filename": "keystone/openstack/common/policy.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-12T15:26:18Z",
       "side": 1,
       "message": "there\u0027s no way this is a sync..?",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//EZA\u003d",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-12T20:47:29Z",
+      "side": 1,
+      "message": "This is possible in case of rule like\n\"identity:check_token\": [[\"user_id:%(target.entity.user_id)s\"],[\"rule:admin_required\"]],\nand token is already revoked.\n\nIn any case I do not this it is harmful.",
+      "parentUuid": "AAAASn//Emo\u003d",
       "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//EYc\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-12T20:47:29Z",
+      "side": 1,
+      "message": "I will fix",
+      "parentUuid": "AAAASn//Ei4\u003d",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Egw\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2013-09-12T15:26:18Z",
       "side": 1,
       "message": "test_user_revokes_own_token",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//EYM\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-12T20:47:29Z",
+      "side": 1,
+      "message": "will fix",
+      "parentUuid": "AAAASn//Egw\u003d",
       "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//ETo\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-12T20:47:29Z",
+      "side": 1,
+      "message": "Will fix",
+      "parentUuid": "AAAASn//EgU\u003d",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//EiY\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 2
@@ -172,6 +298,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//ELg\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-12T20:47:29Z",
+      "side": 1,
+      "message": "will fix it",
+      "parentUuid": "AAAASn//EiY\u003d",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//EiA\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 2
@@ -183,6 +327,24 @@
       "writtenOn": "2013-09-12T15:26:18Z",
       "side": 1,
       "message": "remove the opinion",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ELY\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-12T20:47:29Z",
+      "side": 1,
+      "message": "will fix it",
+      "parentUuid": "AAAASn//EiA\u003d",
       "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
