@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//DY4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-12T21:16:39Z",
+      "side": 1,
+      "message": "Probably need to remove the period here, this might still fail pep8... \n\n\n2013-09-12 18:58:27.006 |   /home/jenkins/workspace/gate-keystone-pep8$ /home/jenkins/workspace/gate-keystone-pep8/.tox/pep8/bin/flake8 --filename\u003dkeystone* bin \n2013-09-12 18:58:28.400 | bin/keystone-all:1:1: H803  git commit title (\u0027Fix SQLAlchemy constraints.\u0027) should not end with period",
+      "revId": "3ee407ee2d12ddd27d3ca626803e12ec8e03b0b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
