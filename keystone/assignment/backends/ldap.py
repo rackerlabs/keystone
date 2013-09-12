@@ -123,14 +123,12 @@ class Assignment(assignment.Driver):
         return [p['id'] for p in
                 self.project.get_user_projects(user_dn, associations)]
 
-    def get_project_users(self, tenant_id):
+    def get_project_user_ids(self, tenant_id):
         self.get_project(tenant_id)
         tenant_dn = self.project._id_to_dn(tenant_id)
         rolegrants = self.role.get_role_assignments(tenant_dn)
-        users = [self.user.get_filtered(self.user._dn_to_id(user_id))
-                 for user_id in
-                 self.project.get_user_dns(tenant_id, rolegrants)]
-        return self._set_default_domain(users)
+        return [self.user._dn_to_id(user_id) for user_id in
+                self.project.get_user_dns(tenant_id, rolegrants)]
 
     def _subrole_id_to_dn(self, role_id, tenant_id):
         if tenant_id is None:
