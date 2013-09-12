@@ -42,23 +42,26 @@ class IdentityTests(object):
         return domain
 
     def test_project_add_and_remove_user_role(self):
-        user_refs = self.identity_api.get_project_users(self.tenant_bar['id'])
-        self.assertNotIn(self.user_two['id'], [x['id'] for x in user_refs])
+        user_ids = self.assignment_api.get_project_user_ids(
+            self.tenant_bar['id'])
+        self.assertNotIn(self.user_two['id'], user_ids)
 
         self.identity_api.add_role_to_user_and_project(
             tenant_id=self.tenant_bar['id'],
             user_id=self.user_two['id'],
             role_id=self.role_other['id'])
-        user_refs = self.identity_api.get_project_users(self.tenant_bar['id'])
-        self.assertIn(self.user_two['id'], [x['id'] for x in user_refs])
+        user_ids = self.assignment_api.get_project_user_ids(
+            self.tenant_bar['id'])
+        self.assertIn(self.user_two['id'], user_ids)
 
         self.identity_api.remove_role_from_user_and_project(
             tenant_id=self.tenant_bar['id'],
             user_id=self.user_two['id'],
             role_id=self.role_other['id'])
 
-        user_refs = self.identity_api.get_project_users(self.tenant_bar['id'])
-        self.assertNotIn(self.user_two['id'], [x['id'] for x in user_refs])
+        user_ids = self.assignment_api.get_project_user_ids(
+            self.tenant_bar['id'])
+        self.assertNotIn(self.user_two['id'], user_ids)
 
     def test_authenticate_bad_user(self):
         self.assertRaises(AssertionError,
@@ -142,19 +145,16 @@ class IdentityTests(object):
                           uuid.uuid4().hex,
                           DEFAULT_DOMAIN_ID)
 
-    def test_get_project_users(self):
-        tenant_ref = self.identity_api.get_project_users(self.tenant_baz['id'])
-        user_ids = []
-        for user in tenant_ref:
-            self.assertNotIn('password', user)
-            user_ids.append(user.get('id'))
+    def test_get_project_user_ids(self):
+        user_ids = self.assignment_api.get_project_user_ids(
+            self.tenant_baz['id'])
         self.assertEquals(len(user_ids), 2)
         self.assertIn(self.user_two['id'], user_ids)
         self.assertIn(self.user_badguy['id'], user_ids)
 
-    def test_get_project_users_404(self):
+    def test_get_project_user_ids_404(self):
         self.assertRaises(exception.ProjectNotFound,
-                          self.identity_api.get_project_users,
+                          self.assignment_api.get_project_user_ids,
                           uuid.uuid4().hex)
 
     def test_get_user(self):
@@ -164,6 +164,19 @@ class IdentityTests(object):
         #               not be returned by the api
         self.user_foo.pop('password')
         self.assertDictEqual(user_ref, self.user_foo)
+
+    def test_get_user_normalized_default_project_id(self):
+        v2_user_ref = self.identity_api.get_user(self.user_two['id'],
+                                                 version=2)
+        v3_user_ref = self.identity_api.get_user(self.user_two['id'],
+                                                 version=3)
+        # NOTE(termie): the password field is left in user_foo to make
+        #               it easier to authenticate in tests, but should
+        #               not be returned by the api
+        self.user_two.pop('password')
+        self.assertDictEqual(v3_user_ref, self.user_two)
+        self.assertEqual(v2_user_ref['tenantId'],
+                         self.user_two['default_project_id'])
 
     def test_get_user_404(self):
         self.assertRaises(exception.UserNotFound,
@@ -179,6 +192,16 @@ class IdentityTests(object):
         #               not be returned by the api
         self.user_foo.pop('password')
         self.assertDictEqual(user_ref, self.user_foo)
+
+    def test_get_user_by_name_normalized_default_project_id(self):
+        v2_user_ref = self.identity_api.get_user_by_name(
+            self.user_two['name'], DEFAULT_DOMAIN_ID, version=2)
+        v3_user_ref = self.identity_api.get_user_by_name(
+            self.user_two['name'], DEFAULT_DOMAIN_ID, version=3)
+        self.user_two.pop('password')
+        self.assertDictEqual(v3_user_ref, self.user_two)
+        self.assertEqual(v2_user_ref['tenantId'],
+                         self.user_two['default_project_id'])
 
     def test_get_user_by_name_404(self):
         self.assertRaises(exception.UserNotFound,
@@ -1630,6 +1653,65 @@ class IdentityTests(object):
                           self.assignment_api.update_project,
                           tenant['id'],
                           tenant)
+
+    def test_normalize_default_project_id_dict(self):
+        user = self.user_foo
+        user['default_project_id'] = 'TestProjectId'
+
+        v2 = self.identity_api._normalize_default_project_id(user, version=2)
+        v3 = self.identity_api._normalize_default_project_id(user, version=3)
+
+        self.assertIn('tenantId', v2)
+        self.assertNotIn('default_project_id', v2)
+        self.assertIn('default_project_id', v3)
+        self.assertNotIn('tenantId', v3)
+        self.assertEqual(user['default_project_id'], v2['tenantId'])
+        self.assertEqual(user['default_project_id'], v3['default_project_id'])
+
+    def test_normalize_default_project_id_errors_on_unknown_version(self):
+        user = self.user_foo
+        user['default_project_id'] = 'TestProjectId'
+
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api._normalize_default_project_id,
+                          user,
+                          version=5)
+
+    def test_normalize_default_project_id_list(self):
+        user_list = [self.user_two, self.user_badguy]
+
+        v2_list = self.identity_api._normalize_default_project_id(user_list,
+                                                                  version=2)
+        v3_list = self.identity_api._normalize_default_project_id(user_list,
+                                                                  version=3)
+
+        self.assertEqual(len(v2_list), 2)
+        self.assertEqual(len(v3_list), 2)
+        for i, user in enumerate(v2_list):
+            self.assertIn('tenantId', user)
+            self.assertNotIn('default_project_id', user)
+            self.assertEqual(user_list[i]['default_project_id'],
+                             user['tenantId'])
+        for i, user in enumerate(v3_list):
+            self.assertNotIn('tenantId', user)
+            self.assertIn('default_project_id', user)
+            self.assertEqual(user_list[i]['default_project_id'],
+                             user['default_project_id'])
+
+    def test_normalize_default_project_id_errors_on_unknown_type(self):
+        self.assertRaises(ValueError,
+                          self.identity_api._normalize_default_project_id,
+                          'bogus',
+                          version=2)
+
+    def test_normalize_default_project_id_empty_project(self):
+        user = self.user_foo
+        user['default_project_id'] = None
+        v2 = self.identity_api._normalize_default_project_id(user, version=2)
+        v3 = self.identity_api._normalize_default_project_id(user, version=3)
+
+        self.assertNotIn('tenantId', v2)
+        self.assertNotIn('default_project_id', v3)
 
     def test_create_user_long_name_fails(self):
         user = {'id': 'fake1', 'name': 'a' * 256,
