@@ -98,7 +98,8 @@ class User(Model):
     """
 
     required_keys = ('id', 'name', 'domain_id')
-    optional_keys = ('password', 'description', 'email', 'enabled')
+    optional_keys = ('password', 'description', 'email', 'enabled',
+                     'default_project_id')
 
 
 class Group(Model):

@@ -63,16 +63,6 @@ class Assignment(sql.Base, assignment.Driver):
         project_refs = query.all()
         return [project_ref.user_id for project_ref in project_refs]
 
-    def get_project_users(self, tenant_id):
-        self.get_session()
-        self.get_project(tenant_id)
-        user_refs = []
-        #TODO(ayoung): Move to controller or manager
-        for user_id in self.get_project_user_ids(tenant_id):
-            user_ref = self.identity_api.get_user(user_id)
-            user_refs.append(user_ref)
-        return user_refs
-
     def _get_metadata(self, user_id=None, tenant_id=None,
                       domain_id=None, group_id=None):
         session = self.get_session()
