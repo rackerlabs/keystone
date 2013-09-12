@@ -2,6 +2,193 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//Ejo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "this is equivalent to\n\n  if context.get(\u0027subject_token_id\u0027):",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Ejk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "s/through/throw?",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//EjQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "if the subject-token-id doesn\u0027t exist, then why would you *not* want to raise a 404??",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Emo\u003d",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "there\u0027s no way this is a sync..?",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Ei4\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "i\u0027m not sure this comment is entirely helpful... pretty much everything in this file *could* be linked to the spec... but it\u0027s not, because that would just be a lot of redundant links",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Egw\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "test_user_revokes_own_token",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Ef8\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "same comment as L460",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Eg0\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "test_admin_revokes_user_token",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//EgU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "these last three or four API calls could use some commenting to explain why the expected status is correct\n\n  # invalid X-Auth-Token causes a 401\n\n  # invalid X-Subject-Token causes a 404\n\netc",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//EiY\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "tests shouldn\u0027t express opinion, remove the comment",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//EiA\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "remove the opinion",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//GdA\u003d",
         "filename": "keystone/token/providers/uuid.py",
         "patchSetId": 2
@@ -13,6 +200,41 @@
       "writtenOn": "2013-09-12T00:20:16Z",
       "side": 1,
       "message": "TokenNotFound should be a 404 already, the above 2 lines are probably not needed.",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Eho\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "the entire try/except can be removed... just keep the try block",
+      "parentUuid": "AAAASn//GdA\u003d",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Ehs\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T15:26:18Z",
+      "side": 1,
+      "message": "what\u0027s the point of this? remove it",
       "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
