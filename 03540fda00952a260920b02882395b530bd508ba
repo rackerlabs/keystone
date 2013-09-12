@@ -16,6 +16,24 @@
       "revId": "03540fda00952a260920b02882395b530bd508ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//ES8\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T16:06:59Z",
+      "side": 1,
+      "message": "`single backticks` renders italics while ``double backticks`` renders a literal\n\ni use `single backticks` intentionally as it felt like italics were appropriate when referring to the format, rather than a literal (as there\u0027s no file/tool/etc named \"ini\"... it\u0027s more of a concept)",
+      "parentUuid": "AAAASn//GOo\u003d",
+      "revId": "03540fda00952a260920b02882395b530bd508ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
