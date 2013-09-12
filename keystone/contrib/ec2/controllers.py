@@ -100,7 +100,8 @@ class Ec2Controller(controller.V2Controller):
         # TODO(termie): this is copied from TokenController.authenticate
         token_id = uuid.uuid4().hex
         tenant_ref = self.identity_api.get_project(creds_ref['tenant_id'])
-        user_ref = self.identity_api.get_user(creds_ref['user_id'])
+        user_ref = self.normalize_default_project_id(
+            self.identity_api.get_user(creds_ref['user_id']))
         metadata_ref = {}
         metadata_ref['roles'] = (
             self.identity_api.get_roles_for_user_and_project(

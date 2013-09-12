@@ -168,12 +168,12 @@ class Auth(controller.V2Controller):
                 if expiry < timeutils.parse_isotime(timeutils.isotime()):
                     raise exception.Forbidden()()
             user_id = trust_ref['trustor_user_id']
-            trustor_user_ref = self.identity_api.get_user(
-                trust_ref['trustor_user_id'])
+            trustor_user_ref = self.normalize_default_project_id(
+                self.identity_api.get_user(trust_ref['trustor_user_id']))
             if not trustor_user_ref['enabled']:
                 raise exception.Forbidden()()
-            trustee_user_ref = self.identity_api.get_user(
-                trust_ref['trustee_user_id'])
+            trustee_user_ref = self.normalize_default_project_id(
+                self.identity_api.get_user(trust_ref['trustee_user_id']))
             if not trustee_user_ref['enabled']:
                 raise exception.Forbidden()()
             if trust_ref['impersonation'] == 'True':
@@ -182,7 +182,8 @@ class Auth(controller.V2Controller):
                 current_user_ref = trustee_user_ref
 
         else:
-            current_user_ref = self.identity_api.get_user(user_id)
+            current_user_ref = self.normalize_default_project_id(
+                self.identity_api.get_user(user_id))
 
         metadata_ref = {}
         tenant_id = self._get_project_id_from_auth(auth)
