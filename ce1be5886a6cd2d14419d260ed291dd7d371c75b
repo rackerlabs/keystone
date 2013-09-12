@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//EZQ\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-12T16:03:15Z",
+      "side": 1,
+      "message": "As discussed, have removed list_user_project_ids in favor of only supporting list_user_projects",
+      "parentUuid": "AAAASn//HPw\u003d",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//HPc\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 3
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//Erg\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-12T16:03:15Z",
+      "side": 1,
+      "message": "Agreed.",
+      "parentUuid": "AAAASn//HO0\u003d",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//HtM\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -81,6 +117,24 @@
       "writtenOn": "2013-09-11T18:08:07Z",
       "side": 1,
       "message": "can we just do this?\n\nreturn [x[\u0027id\u0027] for x in self.list_user_projects(user_id)]",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//HTE\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-12T16:03:15Z",
+      "side": 1,
+      "message": "not sure why that would work...we need to look at the group roles as well...",
+      "parentUuid": "AAAASn//HtM\u003d",
       "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//HTI\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-12T16:03:15Z",
+      "side": 1,
+      "message": "No, the Manger always fills in the group_ids for  us....",
+      "parentUuid": "AAAASn//Hsk\u003d",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//HqI\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//Ero\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-12T16:03:15Z",
+      "side": 1,
+      "message": "That is a good point! I think the current code is broken there too.",
+      "parentUuid": "AAAASn//HqI\u003d",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//HqE\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -132,6 +222,24 @@
       "writtenOn": "2013-09-11T18:08:07Z",
       "side": 1,
       "message": "same as above",
+      "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Erk\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-12T16:03:15Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "AAAASn//HqE\u003d",
       "revId": "ce1be5886a6cd2d14419d260ed291dd7d371c75b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
