@@ -379,6 +379,47 @@ class KeystoneClientTests(object):
                           client.tokens.authenticate,
                           token=token_id)
 
+    def test_disable_tenant_invalidates_token(self):
+        from keystoneclient import exceptions as client_exceptions
+
+        admin_client = self.get_client(admin=True)
+        foo_client = self.get_client(self.user_foo)
+        tenant_bar = admin_client.tenants.get(self.tenant_bar['id'])
+
+        # Disable the tenant.
+        tenant_bar.update(enabled=False)
+
+        # Test that the token has been removed.
+        self.assertRaises(client_exceptions.Unauthorized,
+                          foo_client.tokens.authenticate,
+                          token=foo_client.auth_token)
+
+        # Test that the user access has been disabled.
+        self.assertRaises(client_exceptions.Unauthorized,
+                          self.get_client,
+                          self.user_foo)
+
+    def test_delete_tenant_invalidates_token(self):
+        from keystoneclient import exceptions as client_exceptions
+
+        # noils
+        admin_client = self.get_client(admin=True)
+        foo_client = self.get_client(self.user_foo)
+        tenant_bar = admin_client.tenants.get(self.tenant_bar['id'])
+
+        # Delete the tenant.
+        tenant_bar.delete()
+
+        # Test that the token has been removed.
+        self.assertRaises(client_exceptions.Unauthorized,
+                          foo_client.tokens.authenticate,
+                          token=foo_client.auth_token)
+
+        # Test that the user access has been disabled.
+        self.assertRaises(client_exceptions.Unauthorized,
+                          self.get_client,
+                          self.user_foo)
+
     def test_disable_user_invalidates_token(self):
         from keystoneclient import exceptions as client_exceptions
 
@@ -1143,6 +1184,12 @@ class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
     def test_policy_crud(self):
         """Due to lack of endpoint CRUD"""
         raise nose.exc.SkipTest('N/A')
+
+    def test_disable_tenant_invalidates_token(self):
+        raise self.skipTest('N/A')
+
+    def test_delete_tenant_invalidates_token(self):
+        raise self.skipTest('N/A')
 
 
 class Kc11TestCase(CompatTestCase, KeystoneClientTests):
