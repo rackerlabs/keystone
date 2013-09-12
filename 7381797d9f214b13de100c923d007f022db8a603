@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//DXg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-12T21:24:09Z",
+      "side": 1,
+      "message": "suggest reword to make it obvious that H803 requires that there is NOT a period at end of first line of commit message.\n\nFrom https://github.com/openstack-dev/hacking/blob/master/hacking/core.py#L950:\n\n H803 Commit message should not end with a period",
+      "revId": "7381797d9f214b13de100c923d007f022db8a603",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//DXI\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-12T21:24:09Z",
+      "side": 1,
+      "message": "suggest change to \n\n H803 Commit message should not end with a period (do not remove per list discussion)\n\na) should describe what it\u0027s for\nb) make sure we don\u0027t remove it because we\u0027ve been working to remove all of these",
+      "revId": "7381797d9f214b13de100c923d007f022db8a603",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
