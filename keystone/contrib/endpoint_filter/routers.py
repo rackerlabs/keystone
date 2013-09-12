@@ -16,6 +16,7 @@
 
 from keystone.common import wsgi
 from keystone.contrib.endpoint_filter import controllers
+from keystone.contrib.endpoint_filter import core
 
 
 class EndpointFilterExtension(wsgi.ExtensionRouter):
@@ -24,6 +25,7 @@ class EndpointFilterExtension(wsgi.ExtensionRouter):
     PATH_PROJECT_ENDPOINT = '/projects/{project_id}/endpoints/{endpoint_id}'
 
     def add_routes(self, mapper):
+        core.Manager()
         endpoint_filter_controller = controllers.EndpointFilterV3Controller()
         mapper.connect(self.PATH_PREFIX + '/endpoints/{endpoint_id}/projects',
                        controller=endpoint_filter_controller,

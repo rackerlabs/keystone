@@ -24,8 +24,6 @@ from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import config
-from keystone.contrib import endpoint_filter
-from keystone.contrib import oauth1
 from keystone import controllers
 from keystone import credential
 from keystone import identity
@@ -52,15 +50,11 @@ DRIVERS = dict(
     assignment_api=assignment.Manager(),
     catalog_api=catalog.Manager(),
     credentials_api=credential.Manager(),
-    endpoint_filter_api=endpoint_filter.Manager(),
     identity_api=_IDENTITY_API,
-    oauth1_api=oauth1.Manager(),
     policy_api=policy.Manager(),
     token_api=token.Manager(),
     trust_api=trust.Manager(),
     token_provider_api=token.provider.Manager())
-
-dependency.resolve_future_dependencies()
 
 
 def fail_gracefully(f):
@@ -81,6 +75,7 @@ def fail_gracefully(f):
 
 @fail_gracefully
 def public_app_factory(global_conf, **local_conf):
+    dependency.resolve_future_dependencies()
     controllers.register_version('v2.0')
     conf = global_conf.copy()
     conf.update(local_conf)
@@ -93,6 +88,7 @@ def public_app_factory(global_conf, **local_conf):
 
 @fail_gracefully
 def admin_app_factory(global_conf, **local_conf):
+    dependency.resolve_future_dependencies()
     conf = global_conf.copy()
     conf.update(local_conf)
     return wsgi.ComposingRouter(routes.Mapper(),

@@ -398,8 +398,9 @@ class Provider(token.provider.Provider):
 
         access_token = None
         if 'oauth1' in method_names:
-            access_token_id = auth_context['access_token_id']
-            access_token = self.oauth_api.get_access_token(access_token_id)
+            if hasattr(self, 'oauth_api'):
+                access_token_id = auth_context['access_token_id']
+                access_token = self.oauth_api.get_access_token(access_token_id)
 
         token_data = self.v3_token_data_helper.get_token_data(
             user_id,
@@ -599,3 +600,8 @@ class Provider(token.provider.Provider):
         elif version == token.provider.V2:
             return self._validate_v2_token_ref(token_ref)
         raise token.provider.UnsupportedTokenVersionException()
+
+
+@dependency.requires('oauth_api')
+class OAuthProvider(Provider):
+    pass

@@ -19,6 +19,7 @@
 import json
 
 from keystone.common import cms
+from keystone.common import dependency
 from keystone.common import environment
 from keystone import config
 from keystone import exception
@@ -42,3 +43,8 @@ class Provider(uuid.Provider):
             LOG.exception('Unable to sign token')
             raise exception.UnexpectedError(_(
                 'Unable to sign token.'))
+
+
+@dependency.requires('oauth_api')
+class OAUTHProvider(Provider):
+    pass
