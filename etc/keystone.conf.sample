@@ -211,6 +211,10 @@
 # set to False.
 # debug_cache_backend = False
 
+# Enable debugging of the dogpile library.  This will cause a significant
+# increase to keystone's logs if debug logging is enabled
+# debug_cache_library = False
+
 [policy]
 # driver = keystone.policy.backends.sql.Policy
 

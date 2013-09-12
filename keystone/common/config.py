@@ -92,7 +92,8 @@ FILE_OPTIONS = {
         # Global toggle for all caching using the should_cache_fn mechanism.
         cfg.BoolOpt('enabled', default=False),
         # caching backend specific debugging.
-        cfg.BoolOpt('debug_cache_backend', default=False)],
+        cfg.BoolOpt('debug_cache_backend', default=False),
+        cfg.BoolOpt('debug_cache_library', default=False)],
     'ssl': [
         cfg.BoolOpt('enable', default=False),
         cfg.StrOpt('certfile',

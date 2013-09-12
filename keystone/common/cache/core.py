@@ -16,9 +16,12 @@
 
 """Keystone Caching Layer Implementation."""
 
+import logging
+
 import dogpile.cache
 from dogpile.cache import proxy
 from dogpile.cache import util
+from dogpile.core import dogpile
 
 from keystone import config
 from keystone import exception
@@ -143,6 +146,10 @@ def configure_cache_region(region):
             cls = importutils.import_class(class_path)
             LOG.debug(_('Adding cache-proxy \'%s\' to backend.') % class_path)
             region.wrap(cls)
+
+        if not CONF.cache.debug_cache_library:
+            # Reduce log spam when debugging dogpile.cache is not needed
+            dogpile.log.setLevel(logging.INFO)
 
     return region
 
