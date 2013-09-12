@@ -214,8 +214,9 @@ class V2Controller(wsgi.Application):
                                           trust['id'])
 
     def _delete_tokens_for_project(self, project_id):
-        for user_ref in self.identity_api.get_project_users(project_id):
-            self._delete_tokens_for_user(user_ref['id'], project_id=project_id)
+        user_ids = self.assignment_api.list_user_ids_for_project(project_id)
+        for user_id in user_ids:
+            self._delete_tokens_for_user(user_id, project_id=project_id)
 
     def _require_attribute(self, ref, attr):
         """Ensures the reference contains the specified attribute."""
@@ -233,10 +234,50 @@ class V2Controller(wsgi.Application):
         ref['domain_id'] = DEFAULT_DOMAIN_ID
         return ref
 
-    def _filter_domain_id(self, ref):
+    @classmethod
+    def _filter_domain_id(cls, ref):
         """Remove domain_id since v2 calls are not domain-aware."""
         ref.pop('domain_id', None)
         return ref
+
+    @staticmethod
+    def v3_to_v2_user(ref):
+        """Convert a user_ref from v3 to v2 compatible.
+
+        * v2.0 users are not domain aware, and should have domain_id removed
+        * v2.0 users expect the use of tenantId instead of default_project_id
+
+        This method should only be applied to user_refs being returned from the
+        v2.0 controller(s).
+
+        If ref is a list type, we will iterate through each element and do the
+        conversion.
+        """
+
+        def _format_default_project_id(ref):
+            """Convert default_project_id to tenantId for v2 calls."""
+            default_project_id = ref.pop('default_project_id', None)
+            if default_project_id is not None:
+                ref['tenantId'] = default_project_id
+            elif 'tenantId' in ref:
+                # NOTE(morganfainberg): To avoid v2.0 confusion if somehow a
+                # tenantId property sneaks its way into the extra blob on the
+                # user, we remove it here.  If default_project_id is set, we
+                # would override it in either case.
+                del ref['tenantId']
+
+        def _normalize_and_filter_user_properties(ref):
+            """Run through the various filter/normalization methods."""
+            _format_default_project_id(ref)
+            V2Controller._filter_domain_id(ref)
+            return ref
+
+        if isinstance(ref, dict):
+            return _normalize_and_filter_user_properties(ref)
+        elif isinstance(ref, list):
+            return [_normalize_and_filter_user_properties(x) for x in ref]
+        else:
+            raise ValueError(_('Expected dict or list: %s') % type(ref))
 
 
 class V3Controller(V2Controller):
@@ -379,7 +420,8 @@ class V3Controller(V2Controller):
             ref['domain_id'] = self._get_domain_id_for_request(context)
         return ref
 
-    def _filter_domain_id(self, ref):
+    @classmethod
+    def _filter_domain_id(cls, ref):
         """Override v2 filter to let domain_id out for v3 calls."""
         return ref
 
