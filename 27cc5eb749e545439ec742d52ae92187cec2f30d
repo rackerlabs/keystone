@@ -176,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//Fx4\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1525,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-12T06:19:50Z",
+      "side": 1,
+      "message": "def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):\n        try:\n            metadata_ref \u003d self._get_metadata(user_id, tenant_id)\n            try:\n                metadata_ref[\u0027roles\u0027] \u003d self._remove_role_from_role_dicts(\n                    role_id, False, metadata_ref.get(\u0027roles\u0027, []))\n            except KeyError:\n                raise exception.RoleNotFound(message\u003d_(\n                    \u0027Cannot remove role that has not been granted, %s\u0027) %\n                    role_id)\n\n            if len(metadata_ref[\u0027roles\u0027]):\n                self._update_metadata(user_id, tenant_id, metadata_ref)\n            else:\n                session \u003d self.get_session()\n                q \u003d session.query(UserProjectGrant)\n                q \u003d q.filter_by(user_id\u003duser_id)\n                q \u003d q.filter_by(project_id\u003dtenant_id)\n                q.delete()\n        except exception.MetadataNotFound:\n            msg \u003d \u0027Cannot remove role that has not been granted, %s\u0027 % role_id\n            raise exception.RoleNotFound(message\u003dmsg)",
+      "parentUuid": "AAAASn//F8s\u003d",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//T2I\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 18
