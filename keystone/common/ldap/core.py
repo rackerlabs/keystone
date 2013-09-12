@@ -542,6 +542,8 @@ class LdapWrapper(object):
         return self.conn.add_s(dn, ldap_attrs)
 
     def search_s(self, dn, scope, query, attrlist=None):
+        filtered_attrlist = [attr for attr in attrlist if attr is not None]
+        attrlist = filtered_attrlist
         LOG.debug(_(
             'LDAP search: dn=%(dn)s, scope=%(scope)s, query=%(query)s, '
             'attrs=%(attrlist)s') % {
