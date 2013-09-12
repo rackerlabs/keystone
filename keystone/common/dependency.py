@@ -17,6 +17,7 @@
 REGISTRY = {}
 
 _future_dependencies = {}
+_future_optionals = {}
 
 
 class UnresolvableDependencyException(Exception):
@@ -50,12 +51,23 @@ def requires(*dependencies):
         """Inject each dependency from the registry."""
         self.__wrapped_init__(*args, **kwargs)
 
-        for dependency in self._dependencies:
+        for dependency in getattr(self, '_dependencies', []):
             if dependency not in REGISTRY:
                 if dependency in _future_dependencies:
                     _future_dependencies[dependency] += [self]
                 else:
                     _future_dependencies[dependency] = [self]
+
+                continue
+
+            setattr(self, dependency, REGISTRY[dependency])
+
+        for dependency in getattr(self, '_optionals', []):
+            if dependency not in REGISTRY:
+                if dependency in _future_optionals:
+                    _future_optionals[dependency] += [self]
+                else:
+                    _future_optionals[dependency] = [self]
 
                 continue
 
@@ -67,8 +79,57 @@ def requires(*dependencies):
         The dependencies of the parent class are combined with that of the
         child class to create a new set of dependencies.
         """
+
         existing_dependencies = getattr(cls, '_dependencies', set())
         cls._dependencies = existing_dependencies.union(dependencies)
+        if not hasattr(cls, '__wrapped_init__'):
+            cls.__wrapped_init__ = cls.__init__
+            cls.__init__ = wrapper
+        return cls
+
+    return wrapped
+
+
+def optional(*dependencies):
+    """Optionally inject specified dependencies from the registry into the
+       instance.
+
+    """
+    def wrapper(self, *args, **kwargs):
+        """Inject each dependency from the registry."""
+        self.__wrapped_init__(*args, **kwargs)
+
+        for dependency in getattr(self, '_dependencies', []):
+            if dependency not in REGISTRY:
+                if dependency in _future_dependencies:
+                    _future_dependencies[dependency] += [self]
+                else:
+                    _future_dependencies[dependency] = [self]
+
+                continue
+
+            setattr(self, dependency, REGISTRY[dependency])
+
+        for dependency in getattr(self, '_optionals', []):
+            if dependency not in REGISTRY:
+                if dependency in _future_optionals:
+                    _future_optionals[dependency] += [self]
+                else:
+                    _future_optionals[dependency] = [self]
+
+                continue
+
+            setattr(self, dependency, REGISTRY[dependency])
+
+    def wrapped(cls):
+        """Note the optional dependencies on the object for later injection.
+
+        The dependencies of the parent class are combined with that of the
+        child class to create a new set of dependencies.
+        """
+
+        existing_optionals = getattr(cls, '_optionals', set())
+        cls._optionals = existing_optionals.union(dependencies)
         if not hasattr(cls, '__wrapped_init__'):
             cls.__wrapped_init__ = cls.__init__
             cls.__init__ = wrapper
@@ -85,6 +146,13 @@ def resolve_future_dependencies(provider_name=None):
             setattr(target, provider_name, REGISTRY[provider_name])
 
         return
+
+    for dependency, targets in _future_optionals.iteritems():
+        provider = REGISTRY.get(dependency)
+        for target in targets:
+            setattr(target, dependency, provider)
+
+    _future_optionals.clear()
 
     try:
         for dependency, targets in _future_dependencies.iteritems():
@@ -106,3 +174,4 @@ def reset():
 
     REGISTRY.clear()
     _future_dependencies.clear()
+    _future_optionals.clear()
