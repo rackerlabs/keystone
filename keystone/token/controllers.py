@@ -95,7 +95,7 @@ class Auth(controller.V2Controller):
 
         user_ref, tenant_ref, metadata_ref, expiry, bind = auth_info
         core.validate_auth_info(self, user_ref, tenant_ref)
-        user_ref = self._filter_domain_id(user_ref)
+        user_ref = controller.V2Controller.v3_to_v2_user(user_ref)
         if tenant_ref:
             tenant_ref = self._filter_domain_id(tenant_ref)
         auth_token_data = self._get_auth_token_data(user_ref,

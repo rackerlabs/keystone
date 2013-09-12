@@ -118,6 +118,10 @@ class Ec2Controller(controller.V2Controller):
         catalog_ref = self.catalog_api.get_catalog(
             user_ref['id'], tenant_ref['id'], metadata_ref)
 
+        # NOTE(morganfainberg): Normalize any v3-specific information on the
+        # user ref down to v2.0 as this controller is v2.0 and this data
+        # could be consumed by an entity outside of keystone.
+        user_ref = controller.V2Controller.v3_to_v2_user(user_ref)
         auth_token_data = dict(user=user_ref,
                                tenant=tenant_ref,
                                metadata=metadata_ref,
