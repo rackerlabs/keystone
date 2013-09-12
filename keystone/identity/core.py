@@ -251,6 +251,32 @@ class Manager(manager.Manager):
         driver = self._select_identity_driver(domain_id)
         return (domain_id, driver)
 
+    def _format_default_project_id(self, ref, version):
+        ref = ref.copy()
+        if version == 2:
+            default_project_id = ref.pop('default_project_id', None)
+            if default_project_id is not None:
+                ref['tenantId'] = default_project_id
+        elif version == 3:
+            if ('default_project_id' in ref and
+                    ref.get('default_project_id') is None):
+                ref.pop('default_project_id', None)
+        else:
+            raise exception.VersionNotFound(version=version)
+        return ref
+
+    def _normalize_default_project_id(self, ref, version):
+        try:
+            if isinstance(ref, dict):
+                return self._format_default_project_id(ref, version)
+            elif isinstance(ref, list):
+                return [self._format_default_project_id(x, version)
+                        for x in ref]
+            else:
+                raise ValueError(_('Expected dict or list: %s') % type(ref))
+        except exception.VersionNotFound as e:
+            raise exception.ValidationError(e)
+
     # The actual driver calls - these are pre/post processed here as
     # part of the Manager layer to make sure we:
     #
@@ -267,7 +293,7 @@ class Manager(manager.Manager):
 
     @notifications.created('user')
     @domains_configured
-    def create_user(self, user_id, user_ref):
+    def create_user(self, user_id, user_ref, version=3):
         user = user_ref.copy()
         user['name'] = clean.user_name(user['name'])
         user.setdefault('enabled', True)
@@ -281,35 +307,39 @@ class Manager(manager.Manager):
         ref = driver.create_user(user_id, user)
         if not driver.is_domain_aware():
             ref = self._set_domain_id(ref, domain_id)
+        ref = self._normalize_default_project_id(ref, version)
         return ref
 
     @domains_configured
-    def get_user(self, user_id, domain_scope=None):
+    def get_user(self, user_id, domain_scope=None, version=3):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
         ref = driver.get_user(user_id)
         if not driver.is_domain_aware():
             ref = self._set_domain_id(ref, domain_id)
+        ref = self._normalize_default_project_id(ref, version=version)
         return ref
 
     @domains_configured
-    def get_user_by_name(self, user_name, domain_id):
+    def get_user_by_name(self, user_name, domain_id, version=3):
         driver = self._select_identity_driver(domain_id)
         ref = driver.get_user_by_name(user_name, domain_id)
         if not driver.is_domain_aware():
             ref = self._set_domain_id(ref, domain_id)
+        ref = self._normalize_default_project_id(ref, version)
         return ref
 
     @domains_configured
-    def list_users(self, domain_scope=None):
+    def list_users(self, domain_scope=None, version=3):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
         user_list = driver.list_users()
         if not driver.is_domain_aware():
             user_list = self._set_domain_id(user_list, domain_id)
+        user_list = self._normalize_default_project_id(user_list, version)
         return user_list
 
     @notifications.updated('user')
     @domains_configured
-    def update_user(self, user_id, user_ref, domain_scope=None):
+    def update_user(self, user_id, user_ref, domain_scope=None, version=3):
         user = user_ref.copy()
         if 'name' in user:
             user['name'] = clean.user_name(user['name'])
@@ -322,6 +352,7 @@ class Manager(manager.Manager):
         ref = driver.update_user(user_id, user)
         if not driver.is_domain_aware():
             ref = self._set_domain_id(ref, domain_id)
+        ref = self._normalize_default_project_id(ref, version)
         return ref
 
     @notifications.deleted('user')
@@ -395,11 +426,12 @@ class Manager(manager.Manager):
         return group_list
 
     @domains_configured
-    def list_users_in_group(self, group_id, domain_scope=None):
+    def list_users_in_group(self, group_id, domain_scope=None, version=3):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
         user_list = driver.list_users_in_group(group_id)
         if not driver.is_domain_aware():
             user_list = self._set_domain_id(user_list, domain_id)
+        user_list = self._normalize_default_project_id(user_list, version)
         return user_list
 
     @domains_configured
@@ -428,9 +460,6 @@ class Manager(manager.Manager):
 
     def get_projects_for_user(self, user_id):
         return self.assignment_api.get_projects_for_user(user_id)
-
-    def get_project_users(self, tenant_id):
-        return self.assignment_api.get_project_users(tenant_id)
 
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         return self.assignment_api.get_roles_for_user_and_project(

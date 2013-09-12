@@ -170,6 +170,12 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_delete_group_with_user_project_domain_links(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
 
+    def test_get_user_by_name_normalized_default_project_id(self):
+        self.skipTest('N/A: LDAP does not store default_tenant_id by default.')
+
+    def test_get_user_normalized_default_project_id(self):
+        self.skipTest('N/A: LDAP does not store default_tenant_id by default.')
+
     def test_list_user_projects(self):
         self.skipTest('Blocked by bug 1101287')
 
