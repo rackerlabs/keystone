@@ -42,23 +42,26 @@ class IdentityTests(object):
         return domain
 
     def test_project_add_and_remove_user_role(self):
-        user_refs = self.identity_api.get_project_users(self.tenant_bar['id'])
-        self.assertNotIn(self.user_two['id'], [x['id'] for x in user_refs])
+        user_ids = self.assignment_api.get_project_user_ids(
+            self.tenant_bar['id'])
+        self.assertNotIn(self.user_two['id'], user_ids)
 
         self.identity_api.add_role_to_user_and_project(
             tenant_id=self.tenant_bar['id'],
             user_id=self.user_two['id'],
             role_id=self.role_other['id'])
-        user_refs = self.identity_api.get_project_users(self.tenant_bar['id'])
-        self.assertIn(self.user_two['id'], [x['id'] for x in user_refs])
+        user_ids = self.assignment_api.get_project_user_ids(
+            self.tenant_bar['id'])
+        self.assertIn(self.user_two['id'], user_ids)
 
         self.identity_api.remove_role_from_user_and_project(
             tenant_id=self.tenant_bar['id'],
             user_id=self.user_two['id'],
             role_id=self.role_other['id'])
 
-        user_refs = self.identity_api.get_project_users(self.tenant_bar['id'])
-        self.assertNotIn(self.user_two['id'], [x['id'] for x in user_refs])
+        user_ids = self.assignment_api.get_project_user_ids(
+            self.tenant_bar['id'])
+        self.assertNotIn(self.user_two['id'], user_ids)
 
     def test_authenticate_bad_user(self):
         self.assertRaises(AssertionError,
@@ -142,19 +145,16 @@ class IdentityTests(object):
                           uuid.uuid4().hex,
                           DEFAULT_DOMAIN_ID)
 
-    def test_get_project_users(self):
-        tenant_ref = self.identity_api.get_project_users(self.tenant_baz['id'])
-        user_ids = []
-        for user in tenant_ref:
-            self.assertNotIn('password', user)
-            user_ids.append(user.get('id'))
+    def test_get_project_user_ids(self):
+        user_ids = self.assignment_api.get_project_user_ids(
+            self.tenant_baz['id'])
         self.assertEquals(len(user_ids), 2)
         self.assertIn(self.user_two['id'], user_ids)
         self.assertIn(self.user_badguy['id'], user_ids)
 
-    def test_get_project_users_404(self):
+    def test_get_project_user_ids_404(self):
         self.assertRaises(exception.ProjectNotFound,
-                          self.identity_api.get_project_users,
+                          self.assignment_api.get_project_user_ids,
                           uuid.uuid4().hex)
 
     def test_get_user(self):

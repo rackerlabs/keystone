@@ -392,6 +392,13 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.get('/users')
         self.assertValidUserListResponse(r, ref=self.user)
 
+    def test_list_users_no_default_project(self):
+        """Call ``GET /users`` making sure no default_project_id."""
+        user = self.new_user_ref(self.domain_id)
+        self.identity_api.create_user(self.user_id, user)
+        r = self.get('/users')
+        self.assertValidUserListResponse(r, ref=user)
+
     def test_list_users_xml(self):
         """Call ``GET /users`` (xml data)."""
         r = self.get('/users', content_type='xml')
@@ -402,6 +409,14 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.get('/users/%(user_id)s' % {
             'user_id': self.user['id']})
         self.assertValidUserResponse(r, self.user)
+
+    def test_get_user_with_default_project(self):
+        """Call ``GET /users/{user_id}`` making sure of default_project_id."""
+        user = self.new_user_ref(domain_id=self.domain_id,
+                                 project_id=self.project_id)
+        self.identity_api.create_user(self.user_id, user)
+        r = self.get('/users/%(user_id)s' % {'user_id': user['id']})
+        self.assertValidUserResponse(r, user)
 
     def test_add_user_to_group(self):
         """Call ``PUT /groups/{group_id}/users/{user_id}``."""
