@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//GdA\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-12T00:20:16Z",
+      "side": 1,
+      "message": "TokenNotFound should be a 404 already, the above 2 lines are probably not needed.",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//GdY\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-12T00:20:16Z",
+      "side": 1,
+      "message": "this should probably no longer catch TokenNotFound.  This method is called directly when doing GET on a v2.0 token url.",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Gdg\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-12T00:20:16Z",
+      "side": 1,
+      "message": "This probably needs to incluse a raise Unauthorized(e)\nand also not catch TokenNotFound",
+      "revId": "2100f56a6c511f244c26b038e86b9dec8c28409d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
