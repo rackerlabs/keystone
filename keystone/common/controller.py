@@ -214,8 +214,9 @@ class V2Controller(wsgi.Application):
                                           trust['id'])
 
     def _delete_tokens_for_project(self, project_id):
-        for user_ref in self.identity_api.get_project_users(project_id):
-            self._delete_tokens_for_user(user_ref['id'], project_id=project_id)
+        user_ids = self.assignment_api.list_user_ids_for_project(project_id)
+        for user_id in user_ids:
+            self._delete_tokens_for_user(user_id, project_id=project_id)
 
     def _require_attribute(self, ref, attr):
         """Ensures the reference contains the specified attribute."""
@@ -237,6 +238,23 @@ class V2Controller(wsgi.Application):
         """Remove domain_id since v2 calls are not domain-aware."""
         ref.pop('domain_id', None)
         return ref
+
+    @classmethod
+    def normalize_default_project_id(cls, ref):
+
+        def _format_default_project_id(ref):
+            ref = ref.copy()
+            default_project_id = ref.pop('default_project_id', None)
+            if default_project_id is not None:
+                ref['tenantId'] = default_project_id
+            return ref
+
+        if isinstance(ref, dict):
+            return _format_default_project_id(ref)
+        elif isinstance(ref, list):
+            return [_format_default_project_id(x) for x in ref]
+        else:
+            raise ValueError(_('Expected dict or list: %s') % type(ref))
 
 
 class V3Controller(V2Controller):
@@ -382,6 +400,22 @@ class V3Controller(V2Controller):
     def _filter_domain_id(self, ref):
         """Override v2 filter to let domain_id out for v3 calls."""
         return ref
+
+    @classmethod
+    def normalize_default_project_id(cls, ref):
+
+        def _format_default_project_id(ref):
+            ref = ref.copy()
+            if ref.get('default_project_id') is None:
+                ref.pop('default_project_id', None)
+            return ref
+
+        if isinstance(ref, dict):
+            return _format_default_project_id(ref)
+        elif isinstance(ref, list):
+            return [_format_default_project_id(x) for x in ref]
+        else:
+            raise ValueError(_('Expected dict or list: %s') % type(ref))
 
     def check_protection(self, context, prep_info, target_attr=None):
         """Provide call protection for complex target attributes.
