@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//EXY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T16:01:45Z",
+      "side": 1,
+      "message": "i find the suggested comment to be almost as confusing as the condition, but a comment would definitely be appreciated :)",
+      "parentUuid": "AAAASn//S14\u003d",
+      "revId": "73466e81e59fc51c1aba4c15feb26e6ce20847b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//S1g\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-06T21:33:23Z",
       "side": 1,
       "message": "suggest have explicit check that the value wasn\u0027t changed, since if wasn\u0027t changed then don\u0027t care about immutable\n\n if k in old_obj and obj_obj[k] \u003d\u003d v:\n    # Value was not changed\n    continue\n\n if k in self.immutable_attrs:\n    raise ...\n\nthen \n1) don\u0027t check k in self.immutable_attrs twice, and\n2) I think it\u0027s clearer.",
+      "revId": "73466e81e59fc51c1aba4c15feb26e6ce20847b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//EXA\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T16:01:45Z",
+      "side": 1,
+      "message": "suggest learn about articles and pronouns? ;)\n\nbut +1 for the suggestion",
+      "parentUuid": "AAAASn//S1g\u003d",
       "revId": "73466e81e59fc51c1aba4c15feb26e6ce20847b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +117,23 @@
       "writtenOn": "2013-09-06T21:33:23Z",
       "side": 1,
       "message": "I think we already checked this, too.",
+      "revId": "73466e81e59fc51c1aba4c15feb26e6ce20847b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//EWM\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 735,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-12T16:01:45Z",
+      "side": 1,
+      "message": "can you add a negative test for an immutable attribute?",
       "revId": "73466e81e59fc51c1aba4c15feb26e6ce20847b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
