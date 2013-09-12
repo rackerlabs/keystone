@@ -360,10 +360,10 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def get_project_users(self, tenant_id):
-        """Lists all users with a relationship to the specified project.
+    def list_user_ids_for_project(self, tenant_id):
+        """Lists all user IDs with a role assignment in the specified project.
 
-        :returns: a list of user_refs or an empty set.
+        :returns: a list of user_ids or an empty set.
         :raises: keystone.exception.ProjectNotFound
 
         """
