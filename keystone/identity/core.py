@@ -429,9 +429,6 @@ class Manager(manager.Manager):
     def get_projects_for_user(self, user_id):
         return self.assignment_api.get_projects_for_user(user_id)
 
-    def get_project_users(self, tenant_id):
-        return self.assignment_api.get_project_users(tenant_id)
-
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         return self.assignment_api.get_roles_for_user_and_project(
             user_id, tenant_id)

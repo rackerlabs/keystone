@@ -633,6 +633,12 @@ class JsonTestCase(RestfulTestCase, CoreApiTests):
     def assertValidExtensionResponse(self, r, expected):
         self.assertValidExtension(r.result.get('extension'), expected)
 
+    def assertValidUser(self, user):
+        super(JsonTestCase, self).assertValidUser(user)
+        self.assertNotIn('default_project_id', user)
+        if 'tenantId' in user:
+            self.assertIsNotNone(user.get('tenantId'))
+
     def assertValidAuthenticationResponse(self, r,
                                           require_service_catalog=False):
         self.assertIsNotNone(r.result.get('access'))
