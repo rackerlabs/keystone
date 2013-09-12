@@ -16,7 +16,9 @@
 
 import uuid
 
+from keystone.common import controller
 from keystone import exception
+from keystone import tests
 from keystone.tests import test_v3
 
 
@@ -391,6 +393,13 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.get('/users')
         self.assertValidUserListResponse(r, ref=self.user)
 
+    def test_list_users_no_default_project(self):
+        """Call ``GET /users`` making sure no default_project_id."""
+        user = self.new_user_ref(self.domain_id)
+        self.identity_api.create_user(self.user_id, user)
+        r = self.get('/users')
+        self.assertValidUserListResponse(r, ref=user)
+
     def test_list_users_xml(self):
         """Call ``GET /users`` (xml data)."""
         r = self.get('/users', content_type='xml')
@@ -401,6 +410,14 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.get('/users/%(user_id)s' % {
             'user_id': self.user['id']})
         self.assertValidUserResponse(r, self.user)
+
+    def test_get_user_with_default_project(self):
+        """Call ``GET /users/{user_id}`` making sure of default_project_id."""
+        user = self.new_user_ref(domain_id=self.domain_id,
+                                 project_id=self.project_id)
+        self.identity_api.create_user(self.user_id, user)
+        r = self.get('/users/%(user_id)s' % {'user_id': user['id']})
+        self.assertValidUserResponse(r, user)
 
     def test_add_user_to_group(self):
         """Call ``PUT /groups/{group_id}/users/{user_id}``."""
@@ -1552,3 +1569,104 @@ class IdentityInheritanceDisabledTestCase(test_v3.RestfulTestCase):
         self.head(member_url, expected_status=404)
         self.get(collection_url, expected_status=404)
         self.delete(member_url, expected_status=404)
+
+
+class TestV3toV2Methods(tests.TestCase):
+    """Test V3 to V2 conversion convenience methods."""
+
+    def setUp(self):
+        super(TestV3toV2Methods, self).setUp()
+        self.user_id = uuid.uuid4().hex
+        self.default_project_id = uuid.uuid4().hex
+        self.tenant_id = uuid.uuid4().hex
+        self.domain_id = uuid.uuid4().hex
+        # User with only default_project_id in ref
+        self.user1 = {'id': self.user_id,
+                      'name': self.user_id,
+                      'default_project_id': self.default_project_id,
+                      'domain_id': self.domain_id}
+        # User without default_project_id or tenantId in ref
+        self.user2 = {'id': self.user_id,
+                      'name': self.user_id,
+                      'domain_id': self.tenant_id}
+        # User with both tenantId and default_project_id in ref
+        self.user3 = {'id': self.user_id,
+                      'name': self.user_id,
+                      'default_project_id': self.default_project_id,
+                      'tenantId': self.tenant_id,
+                      'domain_id': self.domain_id}
+        # User with only tenantId in ref
+        self.user4 = {'id': self.user_id,
+                      'name': self.user_id,
+                      'tenantId': self.tenant_id,
+                      'domain_id': self.domain_id}
+
+    def test_v3_to_v2_user_static_method(self):
+
+        user1 = controller.V2Controller.v3_to_v2_user(self.user1)
+        self.assertIn('tenantId', user1)
+        self.assertNotIn('domain_id', user1)
+        self.assertNotIn('default_project_id', user1)
+        self.assertEquals(user1['tenantId'], self.default_project_id)
+        user2 = controller.V2Controller.v3_to_v2_user(self.user2)
+        self.assertNotIn('tenantId', user2)
+        self.assertNotIn('domain_id', user2)
+        user3 = controller.V2Controller.v3_to_v2_user(self.user3)
+        self.assertIn('tenantId', user3)
+        self.assertNotIn('domain_id', user3)
+        self.assertNotIn('default_project_id', user3)
+        self.assertEquals(user3['tenantId'], self.default_project_id)
+        user4 = controller.V2Controller.v3_to_v2_user(self.user4)
+        self.assertNotIn('tenantId', user4)
+        self.assertNotIn('domain_id', user4)
+
+    def test_v3_to_v2_user_static_method_list(self):
+        user_list = [self.user1, self.user2, self.user3, self.user4]
+        updated_list = controller.V2Controller.v3_to_v2_user(user_list)
+
+        self.assertEquals(len(updated_list), len(user_list))
+
+        user1, user2, user3, user4 = updated_list
+        self.assertIn('tenantId', user1)
+        self.assertNotIn('domain_id', user1)
+        self.assertNotIn('default_project_id', user1)
+        self.assertEquals(user1['tenantId'], self.default_project_id)
+
+        self.assertNotIn('tenantId', user2)
+        self.assertNotIn('domain_id', user2)
+
+        self.assertIn('tenantId', user3)
+        self.assertNotIn('domain_id', user3)
+        self.assertNotIn('default_project_id', user3)
+        self.assertEquals(user3['tenantId'], self.default_project_id)
+
+        self.assertNotIn('tenantId', user4)
+        self.assertNotIn('domain_id', user4)
+
+    def test_v2controller_filter_domain_id(self):
+        # V2.0 is not domain aware, ensure domain_id is popped off the ref.
+        other_data = uuid.uuid4().hex
+        domain_id = uuid.uuid4().hex
+        ref = {'domain_id': domain_id,
+               'other_data': other_data}
+
+        ref_no_domain_id = {'other_data': other_data}
+
+        controller.V2Controller._filter_domain_id(ref)
+        self.assertNotIn(ref, 'domain_id')
+        self.assertEquals(ref['other_data'], other_data)
+        # Make sure we don't error/muck up data if domain_id isn't present
+        controller.V2Controller._filter_domain_id(ref_no_domain_id)
+        self.assertEquals(ref_no_domain_id['other_data'], other_data)
+
+    def test_v3controller_filter_domain_id(self):
+        # No data should be filtered out in this case.
+        other_data = uuid.uuid4().hex
+        domain_id = uuid.uuid4().hex
+        ref = {'domain_id': domain_id,
+               'other_data': other_data}
+
+        controller.V3Controller._filter_domain_id(ref)
+        self.assertIn('domain_id', ref)
+        self.assertEquals(ref['other_data'], other_data)
+        self.assertEquals(ref['domain_id'], domain_id)
