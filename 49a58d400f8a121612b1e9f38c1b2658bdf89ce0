@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//GKs\u003d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-12T03:19:37Z",
+      "side": 1,
+      "message": "Here maybe we could add a NOTE or a FIXME to purpose something to Oslo\u0027s log.py module that would allow us to set the log level without having to import logging from the Python standard library again. Thoughts?",
+      "revId": "49a58d400f8a121612b1e9f38c1b2658bdf89ce0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
