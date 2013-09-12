@@ -16,6 +16,7 @@
 
 from keystone.common import wsgi
 from keystone.contrib.oauth1 import controllers
+from keystone.contrib.oauth1 import core
 
 
 class OAuth1Extension(wsgi.ExtensionRouter):
@@ -51,6 +52,7 @@ class OAuth1Extension(wsgi.ExtensionRouter):
     """
 
     def add_routes(self, mapper):
+        core.Manager()
         consumer_controller = controllers.ConsumerCrudV3()
         access_token_controller = controllers.AccessTokenCrudV3()
         access_token_roles_controller = controllers.AccessTokenRolesV3()
