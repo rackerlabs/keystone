@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//QzI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-12T05:42:20Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAASn//T48\u003d",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//UP8\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 18
@@ -65,6 +83,23 @@
       "writtenOn": "2013-09-06T14:12:01Z",
       "side": 1,
       "message": "(NIT): suggest updating the name of this test to be more descriptive. Something like \u0027test_remove_user_membership_from_project_raises_404\u0027 or role not found, which would describe the outcome your expecting a little more.",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//F+4\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1523,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-12T05:42:20Z",
+      "side": 1,
+      "message": "OK",
       "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +140,42 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//F90\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1525,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-12T05:42:20Z",
+      "side": 1,
+      "message": "Just make sure that a non-existent user can not be changed any more",
+      "parentUuid": "AAAASn//UOY\u003d",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//F8s\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1525,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-12T05:42:20Z",
+      "side": 1,
+      "message": "This function called remove_role_from_user_and_project which raises this exception. it is a docstring bug, Iwll add rolenotfound in it. thank you",
+      "parentUuid": "AAAASn//T2g\u003d",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//T2I\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 18
@@ -122,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//F9s\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1944,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-12T05:42:20Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAASn//T2I\u003d",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//UKo\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 18
@@ -133,6 +222,24 @@
       "writtenOn": "2013-09-06T14:12:01Z",
       "side": 1,
       "message": "According to Dolphm\u0027s last comments: \n\nhttps://bugs.launchpad.net/keystone/+bug/1219739\n\nShould these tests be skipped?",
+      "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Qzk\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-12T05:42:20Z",
+      "side": 1,
+      "message": "Yes, he said \"A fix for this bug should un-skip tests introduced in https://review.openstack.org/#/c/42826/\". but some one must fix the bug first",
+      "parentUuid": "AAAASn//UKo\u003d",
       "revId": "27cc5eb749e545439ec742d52ae92187cec2f30d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
