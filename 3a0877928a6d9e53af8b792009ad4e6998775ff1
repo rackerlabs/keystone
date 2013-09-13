@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//A6M\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-13T16:30:28Z",
+      "side": 1,
+      "message": "So my preferred name as \"list_projects_for_user()\", since I think we want to use \"list\" for something that returns more than one item.  The issue is that list_user_projects() is already exposes as an API (it\u0027s what the entry in the policy file would be) - so I did not want to change this for rc1 as part of this fix.  I could of course call it \"list_projects_for_user()\" internally, and just keep \"list_user_projects()\" as the public API?",
+      "parentUuid": "AAAASn//C4k\u003d",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//C3o\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-13T01:16:00Z",
       "side": 1,
       "message": "The first sentence of this note (other than the SQL-specific stuff) applies to all the backends and not just the sql backend, so move it up to the Manager or copy it in all backends.",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//AiU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-13T16:30:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//C3o\u003d",
       "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//AiY\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-13T16:30:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//C3Q\u003d",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//C1c\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-13T01:16:00Z",
       "side": 1,
       "message": "this works, but requires in-out parameter. suggest return a list and caller appends it, or do \"yield domain_grant.domain_id\" then can add each as generated.",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//A3k\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-13T16:30:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//C1c\u003d",
       "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//Als\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-13T16:30:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//CxE\u003d",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//C48\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 4
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//AiI\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-13T16:30:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//C48\u003d",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//CvQ\u003d",
         "filename": "keystone/identity/backends/pam.py",
         "patchSetId": 4
@@ -115,6 +223,24 @@
       "writtenOn": "2013-09-13T01:16:00Z",
       "side": 1,
       "message": "suggest don\u0027t change the name of the method.",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Ah0\u003d",
+        "filename": "keystone/identity/backends/pam.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-13T16:30:28Z",
+      "side": 1,
+      "message": "so other comment on this....",
+      "parentUuid": "AAAASn//CvQ\u003d",
       "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
