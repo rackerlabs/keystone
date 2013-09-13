@@ -16,6 +16,24 @@
       "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//A4c\u003d",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-13T14:51:13Z",
+      "side": 1,
+      "message": "Seems current policy.py is not in sync with OSLO\u0027s policy.py. It was merged around 7 month back.\nPlease advise what to do?",
+      "parentUuid": "AAAASn//Dfk\u003d",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
