@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn/+/ng\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-13T22:38:19Z",
+      "side": 1,
+      "message": "I suspect the owner rule is broken. It should\u0027ve been\n\n\"owner\" : [[\"user_id:%(target.entity.user_id)s\"]],\n\nI would like the make see one as admin_or_owner\n\n\"identity:check_token\": [[\"rule:admin_or_owner\"]],",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/nY\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-13T22:38:19Z",
+      "side": 1,
+      "message": "admin_or_owner",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/nI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-13T22:38:19Z",
+      "side": 1,
+      "message": "LOG.warning(_(\u0027RBACK: subject token not found\u0027))\n\nAlso, we may want to re-raise TokeNotFound. No needed to waste any more cycles if subject token is invalid.",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Dfk\u003d",
         "filename": "keystone/openstack/common/policy.py",
         "patchSetId": 3
@@ -49,6 +100,108 @@
       "side": 1,
       "message": "i\u0027m not aware of any reason that it can\u0027t be sync\u0027d, try it!",
       "parentUuid": "AAAASn//A4c\u003d",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/lo\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-13T22:38:19Z",
+      "side": 1,
+      "message": "you don\u0027t need to setup domains and users as the super class has loaded the sample data. See the setUp() method in test_v3.RestfulTestCase.",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/lA\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-13T22:38:19Z",
+      "side": 1,
+      "message": "move line 392-409 to setUp()",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/k8\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-13T22:38:19Z",
+      "side": 1,
+      "message": "see above",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/k0\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-13T22:38:19Z",
+      "side": 1,
+      "message": "remove all these comments ad the code is pretty obvious",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/mU\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-13T22:38:19Z",
+      "side": 1,
+      "message": "no need for this comment as code is pretty obvious",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/mM\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-13T22:38:19Z",
+      "side": 1,
+      "message": "same as above",
       "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
