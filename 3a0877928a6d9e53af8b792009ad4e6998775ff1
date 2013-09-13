@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//C4k\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-13T01:16:00Z",
+      "side": 1,
+      "message": "why change the method name? I think get_projects_for_user is more descriptive than list_user_projects.\n\n\"list_user_projects\" could mean to list all the projects that are \"user projects\"",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//C3o\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-13T01:16:00Z",
+      "side": 1,
+      "message": "The first sentence of this note (other than the SQL-specific stuff) applies to all the backends and not just the sql backend, so move it up to the Manager or copy it in all backends.",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//C3Q\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-13T01:16:00Z",
+      "side": 1,
+      "message": "\"as series\" -\u003e \"as a series\" (add \"a\")",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//C1c\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-13T01:16:00Z",
+      "side": 1,
+      "message": "this works, but requires in-out parameter. suggest return a list and caller appends it, or do \"yield domain_grant.domain_id\" then can add each as generated.",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//CxE\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-13T01:16:00Z",
+      "side": 1,
+      "message": "I think you can remove the [] here, since set() can take a generator\n\nHere\u0027s an example:\n\n print set(x[0] for x in [\u0027abc\u0027, \u0027def\u0027, \u0027ghi\u0027])\n\nworks for me.",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//C48\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-13T01:16:00Z",
+      "side": 1,
+      "message": "typo, change \"build\" to \"built\"",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//CvQ\u003d",
+        "filename": "keystone/identity/backends/pam.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-13T01:16:00Z",
+      "side": 1,
+      "message": "suggest don\u0027t change the name of the method.",
+      "revId": "3a0877928a6d9e53af8b792009ad4e6998775ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
