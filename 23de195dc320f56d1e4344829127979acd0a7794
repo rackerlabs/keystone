@@ -34,6 +34,24 @@
       "revId": "23de195dc320f56d1e4344829127979acd0a7794",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/3s\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-13T19:56:00Z",
+      "side": 1,
+      "message": "OK. So adding a short sentence making the intention you just clarified more explicit would be helpful",
+      "parentUuid": "AAAASn/+/98\u003d",
+      "revId": "23de195dc320f56d1e4344829127979acd0a7794",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
