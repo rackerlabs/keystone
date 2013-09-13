@@ -34,6 +34,24 @@
       "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/zk\u003d",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-13T20:37:21Z",
+      "side": 1,
+      "message": "i\u0027m not aware of any reason that it can\u0027t be sync\u0027d, try it!",
+      "parentUuid": "AAAASn//A4c\u003d",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
