@@ -16,6 +16,24 @@
       "revId": "80830b0c6b933ab8a9b2a0685e7e9d17cec29587",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Cbs\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-13T03:51:38Z",
+      "side": 1,
+      "message": "++ on deserializing.",
+      "parentUuid": "AAAASn//Cp4\u003d",
+      "revId": "80830b0c6b933ab8a9b2a0685e7e9d17cec29587",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
