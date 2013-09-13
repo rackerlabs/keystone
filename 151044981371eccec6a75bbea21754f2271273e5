@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn/+/ew\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-13T23:39:07Z",
+      "side": 1,
+      "message": "add \u0027DocImpact\u0027",
+      "revId": "151044981371eccec6a75bbea21754f2271273e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn/+/gM\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
