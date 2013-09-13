@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//AFc\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-13T19:08:33Z",
+      "side": 1,
+      "message": "group_ids does not appear to be used in this function. Is it a placeholder for a future enhancement or not supported by this backend?  Perhaps a comment to clarify the situation",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//AEw\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-13T19:08:33Z",
+      "side": 1,
+      "message": "group_ids does not appear to be used in this function. Is it a placeholder for a future enhancement or not supported by this backend?  Perhaps a comment to clarify the situation",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//AEM\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-13T19:08:33Z",
+      "side": 1,
+      "message": "perhaps its overkill but maybe it worthwhile to mention as a comment why we only need to check the default domain for LDAP (i.e. multiple domains not supported by LDAP implementation)",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//AAc\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-13T19:08:33Z",
+      "side": 1,
+      "message": "great comment!",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+//M\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-13T19:08:33Z",
+      "side": 1,
+      "message": "great comment!",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/+M\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-13T19:08:33Z",
+      "side": 1,
+      "message": "Is this necessary because this is a legacy function (e.g. COMPAT(diablo))  and thus needs to stay compartmentalized in the default domain?",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
