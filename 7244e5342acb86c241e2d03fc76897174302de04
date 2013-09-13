@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn/+/kI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-13T22:48:07Z",
+      "side": 1,
+      "message": "do we need to normalize \u0027enabled\u0027 before comparing it to True?",
+      "revId": "7244e5342acb86c241e2d03fc76897174302de04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
