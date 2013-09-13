@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn/+/gM\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-13T23:21:01Z",
+      "side": 1,
+      "message": "Suggest indicating this is the only driver in the default configuration (or indicate the ones on L95 and L97 are not in the default).  It seems unclear at first glance what the default vs. non default is based upon how this breaks from the norm of the \"commented out\" option shows the default.",
+      "revId": "151044981371eccec6a75bbea21754f2271273e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn/+/70\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
@@ -30,6 +47,24 @@
       "writtenOn": "2013-09-13T19:19:43Z",
       "side": 1,
       "message": "Should this say \"If True\"  or \"If passed and set to True\"\n\njust saying \"If passed\" seems inaccurate",
+      "revId": "151044981371eccec6a75bbea21754f2271273e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/hQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-13T23:21:01Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAASn/+/8A\u003d",
       "revId": "151044981371eccec6a75bbea21754f2271273e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
