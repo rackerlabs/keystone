@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn/+/70\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-13T19:19:43Z",
+      "side": 1,
+      "message": "Is notifications really a typical sample value that would be used for this? It seems so generic.",
+      "revId": "151044981371eccec6a75bbea21754f2271273e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/8A\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-09-13T19:19:43Z",
+      "side": 1,
+      "message": "Should this say \"If True\"  or \"If passed and set to True\"\n\njust saying \"If passed\" seems inaccurate",
+      "revId": "151044981371eccec6a75bbea21754f2271273e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
