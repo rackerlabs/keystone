@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "AAAASn/+/yw\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-13T21:01:59Z",
+      "side": 1,
+      "message": "I am really looking forward to this change.  It will make grants much easier to work with.",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//AAc\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 5
@@ -98,6 +115,23 @@
       "writtenOn": "2013-09-13T19:08:33Z",
       "side": 1,
       "message": "Is this necessary because this is a legacy function (e.g. COMPAT(diablo))  and thus needs to stay compartmentalized in the default domain?",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/xc\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3225,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-13T21:01:59Z",
+      "side": 1,
+      "message": "(NIT): Test plan looks to be in disagreement with the results below.  \"Both\" projects and below indicates 3 projects are returned.  This might just be an omission in the docstring.",
       "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
