@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//8Ak\u003d",
+        "filename": "keystone/contrib/oauth1/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-16T21:47:50Z",
+      "side": 1,
+      "message": "suggest change to\n\n from keystone.contrib import oauth1\n\noauth1 imports * from core.",
+      "revId": "d05eeeae93aa6aec295c4468b50231a0648a7812",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//8Ag\u003d",
+        "filename": "keystone/contrib/oauth1/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-16T21:47:50Z",
+      "side": 1,
+      "message": "should add a comment here because a casual observer will think this doesn\u0027t do anything. Something like this:\n\n # This is needed for dependency injection,\n # it loads the OAuth driver which registers it as a dependency.",
+      "revId": "d05eeeae93aa6aec295c4468b50231a0648a7812",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//8AU\u003d",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-16T21:47:50Z",
+      "side": 1,
+      "message": "move this up to after line 22.",
+      "revId": "d05eeeae93aa6aec295c4468b50231a0648a7812",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//8AI\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-16T21:47:50Z",
+      "side": 1,
+      "message": "suggest do \"if self.oauth_api:\" since we expect it to be an object don\u0027t have to worry about empty strings or 0.",
+      "revId": "d05eeeae93aa6aec295c4468b50231a0648a7812",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
