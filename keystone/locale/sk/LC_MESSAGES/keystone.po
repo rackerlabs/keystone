@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-09-11 06:00+0000\n"
+"POT-Creation-Date: 2013-09-16 06:00+0000\n"
 "PO-Revision-Date: 2013-08-30 04:19+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Slovak "
@@ -843,14 +843,14 @@ msgstr ""
 msgid "User not found in group"
 msgstr ""
 
-#: keystone/identity/backends/ldap.py:182
+#: keystone/identity/backends/ldap.py:181
 #, python-format
 msgid ""
 "Group member '%(user_dn)s' not found in '%(group_id)s'. The user should "
 "be removed from the group. The user will be ignored."
 msgstr ""
 
-#: keystone/identity/backends/ldap.py:322
+#: keystone/identity/backends/ldap.py:323
 #, python-format
 msgid "User %(user_id)s is already a member of group %(group_id)s"
 msgstr ""
@@ -1580,7 +1580,7 @@ msgstr ""
 msgid "enforce %(action)s: %(credentials)s"
 msgstr ""
 
-#: keystone/tests/core.py:113
+#: keystone/tests/core.py:126
 #, python-format
 msgid "Failed to checkout %s"
 msgstr ""
