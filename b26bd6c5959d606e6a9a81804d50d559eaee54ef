@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//70k\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-16T22:50:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//8Fw\u003d",
+      "revId": "b26bd6c5959d606e6a9a81804d50d559eaee54ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//9Z4\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-16T15:26:16Z",
       "side": 1,
       "message": "Do we still need a comment here from Brad\u0027s suggestion in patch set 5?",
+      "revId": "b26bd6c5959d606e6a9a81804d50d559eaee54ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//71E\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-16T22:50:06Z",
+      "side": 1,
+      "message": "Sorry, yep, missed that!  Good catch.",
+      "parentUuid": "AAAAS3//9Z4\u003d",
       "revId": "b26bd6c5959d606e6a9a81804d50d559eaee54ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
