@@ -52,6 +52,24 @@
       "revId": "23de195dc320f56d1e4344829127979acd0a7794",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//9XA\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-16T15:31:23Z",
+      "side": 1,
+      "message": "rewrote the first sentence of this paragraph to better reflect that",
+      "parentUuid": "AAAASn/+/3s\u003d",
+      "revId": "23de195dc320f56d1e4344829127979acd0a7794",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
