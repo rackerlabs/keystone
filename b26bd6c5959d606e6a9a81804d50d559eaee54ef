@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//9Z4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-16T15:26:16Z",
+      "side": 1,
+      "message": "Do we still need a comment here from Brad\u0027s suggestion in patch set 5?",
+      "revId": "b26bd6c5959d606e6a9a81804d50d559eaee54ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
