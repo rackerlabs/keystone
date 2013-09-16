@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//8Tc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-16T20:25:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn/+/ew\u003d",
+      "revId": "151044981371eccec6a75bbea21754f2271273e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn/+/gM\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//8TI\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-16T20:25:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn/+/gM\u003d",
+      "revId": "151044981371eccec6a75bbea21754f2271273e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn/+/70\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2013-09-13T19:19:43Z",
       "side": 1,
       "message": "Is notifications really a typical sample value that would be used for this? It seems so generic.",
+      "revId": "151044981371eccec6a75bbea21754f2271273e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//8Ss\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-16T20:25:23Z",
+      "side": 1,
+      "message": "I don\u0027t know if it\u0027s what someone would typically use, but it\u0027s the default, so that\u0027s what we put in the sample config file.\n\nSee https://github.com/openstack/keystone/blob/master/keystone/openstack/common/notifier/rpc_notifier.py#L26 and https://github.com/openstack/oslo-incubator/blob/master/openstack/common/notifier/rpc_notifier.py#L26",
+      "parentUuid": "AAAASn/+/70\u003d",
       "revId": "151044981371eccec6a75bbea21754f2271273e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2013-09-13T23:21:01Z",
       "side": 1,
       "message": "+1",
+      "parentUuid": "AAAASn/+/8A\u003d",
+      "revId": "151044981371eccec6a75bbea21754f2271273e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//8Sk\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-16T20:25:23Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAASn/+/8A\u003d",
       "revId": "151044981371eccec6a75bbea21754f2271273e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
