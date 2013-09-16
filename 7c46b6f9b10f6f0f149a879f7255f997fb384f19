@@ -239,6 +239,40 @@
       "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//85E\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-16T17:33:28Z",
+      "side": 1,
+      "message": "add: \"as e\" before the \":\" to support the comment I left on line 565",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//85M\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-16T17:33:28Z",
+      "side": 1,
+      "message": "You don\u0027t need to catch \"unauthorized\", after LOG.execption, do:\n\nraise exception.Unauthorized(e)",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
