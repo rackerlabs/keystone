@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//+Hs\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-16T12:06:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//AFc\u003d",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//AEw\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-13T19:08:33Z",
       "side": 1,
       "message": "group_ids does not appear to be used in this function. Is it a placeholder for a future enhancement or not supported by this backend?  Perhaps a comment to clarify the situation",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//+HM\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-16T12:06:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//AEw\u003d",
       "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//+HI\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-16T12:06:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//AEM\u003d",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn/+/yw\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-13T21:01:59Z",
       "side": 1,
       "message": "I am really looking forward to this change.  It will make grants much easier to work with.",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn/+/Ec\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-16T12:06:51Z",
+      "side": 1,
+      "message": "absolutely...I\u0027ve already assigned myself a blueprint for this for IceHouse !",
+      "parentUuid": "AAAASn/+/yw\u003d",
       "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn/+/EY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-16T12:06:51Z",
+      "side": 1,
+      "message": "Yes, I\u0027ll add a comment",
+      "parentUuid": "AAAASn/+/+M\u003d",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn/+/xc\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 5
@@ -132,6 +222,24 @@
       "writtenOn": "2013-09-13T21:01:59Z",
       "side": 1,
       "message": "(NIT): Test plan looks to be in disagreement with the results below.  \"Both\" projects and below indicates 3 projects are returned.  This might just be an omission in the docstring.",
+      "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//+GA\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3225,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-16T12:06:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn/+/xc\u003d",
       "revId": "a3a789676852763cc135838cf1b2ed1333c171b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
