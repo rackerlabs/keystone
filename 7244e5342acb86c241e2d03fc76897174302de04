@@ -16,6 +16,24 @@
       "revId": "7244e5342acb86c241e2d03fc76897174302de04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//9YY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-16T15:28:14Z",
+      "side": 1,
+      "message": "i\u0027m not sure what you mean in this context?",
+      "parentUuid": "AAAASn/+/kI\u003d",
+      "revId": "7244e5342acb86c241e2d03fc76897174302de04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
