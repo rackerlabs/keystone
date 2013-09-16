@@ -34,6 +34,24 @@
       "revId": "03540fda00952a260920b02882395b530bd508ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//9SA\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-16T15:48:50Z",
+      "side": 1,
+      "message": "Gotcha, thanks for clarifying!",
+      "parentUuid": "AAAASn//ES8\u003d",
+      "revId": "03540fda00952a260920b02882395b530bd508ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
