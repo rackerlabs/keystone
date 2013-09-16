@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//9Mk\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-16T16:07:03Z",
+      "side": 1,
+      "message": "Is this behavior opened in another bug somewhere? If so maybe it should be added to the comment too?",
+      "revId": "c70f8c61d50c2358d712b365bec4a8f288314b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
