@@ -918,6 +918,42 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
         self.assertRaises(client_exceptions.BadRequest,
                           client.tenants.list, limit=-1)
 
+    def test_user_list_marker(self):
+        client = self.get_client(admin=True)
+
+        users = client.users.list()
+        self.assertEqual(len(users), 4)
+
+        users_marker = client.users.list(marker=users[0].id)
+        self.assertEqual(len(users_marker), 3)
+        self.assertEqual(users[1].name, users_marker[0].name)
+        self.assertEqual(users[2].name, users_marker[1].name)
+
+    def test_user_list_marker_not_found(self):
+        from keystoneclient import exceptions as client_exceptions
+
+        client = self.get_client(admin=True)
+        self.assertRaises(client_exceptions.BadRequest,
+                          client.users.list, marker=uuid.uuid4().hex)
+
+    def test_user_list_limit(self):
+        client = self.get_client(admin=True)
+
+        users = client.users.list()
+        self.assertEqual(len(users), 4)
+
+        users_limited = client.users.list(limit=2)
+        self.assertEqual(len(users_limited), 2)
+        self.assertEqual(users[0].name, users_limited[0].name)
+        self.assertEqual(users[1].name, users_limited[1].name)
+
+    def test_user_list_limit_bad_value(self):
+        from keystoneclient import exceptions as client_exceptions
+
+        client = self.get_client(admin=True)
+        self.assertRaises(client_exceptions.BadRequest,
+                          client.users.list, limit=-1)
+
     def test_roles_get_by_user(self):
         client = self.get_client(admin=True)
         roles = client.roles.roles_for_user(user=self.user_foo['id'],
