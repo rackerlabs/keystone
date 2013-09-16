@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//8A8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-16T21:38:35Z",
+      "side": 1,
+      "message": "Is this suppose to reference a specific bug number? Also it would be helpful to add a little description as to why this is being committed.",
+      "revId": "8332276caef84ec192eab3562bddbda1dcd94a98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
