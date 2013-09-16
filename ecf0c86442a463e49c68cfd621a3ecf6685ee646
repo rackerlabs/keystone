@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//9YQ\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-16T15:47:53Z",
+      "side": 1,
+      "message": "update docstrings to reflect the new method signature",
+      "revId": "ecf0c86442a463e49c68cfd621a3ecf6685ee646",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//9UE\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-16T15:47:53Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "ecf0c86442a463e49c68cfd621a3ecf6685ee646",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//9UA\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-16T15:47:53Z",
+      "side": 1,
+      "message": "Like this.",
+      "revId": "ecf0c86442a463e49c68cfd621a3ecf6685ee646",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//9Ts\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-16T15:47:53Z",
+      "side": 1,
+      "message": "Fix whitespace.",
+      "revId": "ecf0c86442a463e49c68cfd621a3ecf6685ee646",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
