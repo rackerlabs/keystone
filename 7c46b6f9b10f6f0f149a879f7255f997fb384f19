@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//9RA\u003d",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-16T16:01:16Z",
+      "side": 1,
+      "message": "Fix whitespace issue",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Dfk\u003d",
         "filename": "keystone/openstack/common/policy.py",
         "patchSetId": 3
