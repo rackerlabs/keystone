@@ -22,6 +22,7 @@ import memcache
 
 from keystone.common import utils
 from keystone import exception
+from keystone import identity
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
 from keystone import tests
@@ -214,3 +215,18 @@ class MemcacheToken(tests.TestCase, test_backend.TokenTests):
             data_in = _create_token(expire_time_expired)
             self.assertRaises(exception.TokenNotFound,
                               self.token_api.get_token, data_in['id'])
+
+
+class MemcacheTokenCacheInvalidation(tests.TestCase,
+                                     test_backend.TokenCacheInvalidation):
+    def setUp(self):
+        super(MemcacheTokenCacheInvalidation, self).setUp()
+        identity.CONF.token.driver = (
+            'keystone.token.backends.memcache.Token')
+        self.load_backends()
+        fake_client = MemcacheClient()
+        self.token_man = token.Manager()
+        self.token_man.driver = token_memcache.Token(client=fake_client)
+        self.token_api = self.token_man
+        self.token_provider_api.driver.token_api = self.token_api
+        self._create_test_data()
