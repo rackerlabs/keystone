@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAS3//3vw\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-17T21:58:49Z",
+      "side": 1,
+      "message": "if nothing else, you can avoid import sqlalchemy by using\n\n  sql.IntegrityError\n\n(which is already available here)",
+      "revId": "73786cfc66ed2515e239251a175f0ee7fead95d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//3wg\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 1
@@ -19,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//3vc\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-17T21:58:49Z",
+      "side": 1,
+      "message": "This is me not commenting on L117.",
+      "revId": "73786cfc66ed2515e239251a175f0ee7fead95d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//3wo\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 1
@@ -30,6 +64,24 @@
       "writtenOn": "2013-09-17T21:50:19Z",
       "side": 1,
       "message": "change to raise so don\u0027t lose the backtrace.",
+      "revId": "73786cfc66ed2515e239251a175f0ee7fead95d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//3vg\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-17T21:58:49Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAS3//3wo\u003d",
       "revId": "73786cfc66ed2515e239251a175f0ee7fead95d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
