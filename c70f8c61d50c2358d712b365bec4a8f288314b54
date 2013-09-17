@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAS3//6Ck\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-09-17T11:33:53Z",
+      "side": 1,
+      "message": "That\u0027s too fancy for gerrit hook script, so it didn\u0027t pick it up as \"Topic\"\nbut nm, since it\u0027s the same on master.",
+      "revId": "c70f8c61d50c2358d712b365bec4a8f288314b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//9Mk\u003d",
         "filename": "tests/test_keystoneclient.py",
         "patchSetId": 2
