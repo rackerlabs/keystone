@@ -16,6 +16,24 @@
       "revId": "9a445fdbb3f6e74640cdaa1856e26d3a05cf6149",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//4zg\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-17T17:19:07Z",
+      "side": 1,
+      "message": "So I obviously just moved the code up into the Manager, but I agree a debug would be useful here.",
+      "parentUuid": "AAAAS3//5Ew\u003d",
+      "revId": "9a445fdbb3f6e74640cdaa1856e26d3a05cf6149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
