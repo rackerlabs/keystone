@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//7eU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-17T02:25:03Z",
+      "side": 1,
+      "message": "(NIT): Suggest revising  this to something like: \n\nFix misused assertTrue in unit tests\n\nRefactored unit tests to use assertEquals instead of assertTrue where needed.",
+      "revId": "4318c244402829181cf55414d1326d99c02d4623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
