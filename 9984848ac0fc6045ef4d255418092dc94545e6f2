@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//7eY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-17T02:22:53Z",
+      "side": 1,
+      "message": "Not allowed here yet.  Icehouse.",
+      "revId": "9984848ac0fc6045ef4d255418092dc94545e6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//7eQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-17T02:22:53Z",
+      "side": 1,
+      "message": "This change is OK, but not necessary yet.",
+      "revId": "9984848ac0fc6045ef4d255418092dc94545e6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
