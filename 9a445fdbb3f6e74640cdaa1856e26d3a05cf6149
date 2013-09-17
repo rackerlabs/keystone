@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//5Ew\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-17T16:12:26Z",
+      "side": 1,
+      "message": "I didn\u0027t get around to publishing the comments from patch set 1 before you pushed up patch set 2. Just wondering if we can log some information here instead of just passing on the exception? Thoughts?",
+      "revId": "9a445fdbb3f6e74640cdaa1856e26d3a05cf6149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
