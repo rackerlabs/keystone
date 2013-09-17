@@ -199,10 +199,22 @@ class Manager(manager.Manager):
         # invalidated? We maintain a cached revocation list, which should be
         # consulted before accepting a token as valid.  For now we will
         # do the explicit individual token invalidation.
+
+        # NOTE(henry-nash): Due to the fact that we cache on the exact
+        # arguments passed to _validate_xx_token(), we have to ensure we
+        # cover all the bases.  I believe that in fact, with the current code
+        # it isn't necessary to call _validate_v2_token and _validate_token
+        # with just the token_id, but future changes might allow this and might
+        # introduce a subtle caching bug, so we cover that base here anyway.
+
         self._validate_v3_token.invalidate(self, token_id)
         self._validate_v2_token.invalidate(self, token_id)
-        self._validate_v2_token.invalidate(self, token_id, belongs_to)
-        self._validate_token.invalidate(self, token_id, belongs_to)
+        self._validate_v2_token.invalidate(self, token_id, None)
+        self._validate_token.invalidate(self, token_id)
+        self._validate_token.invalidate(self, token_id, None)
+        if belongs_to is not None:
+            self._validate_v2_token.invalidate(self, token_id, belongs_to)
+            self._validate_token.invalidate(self, token_id, belongs_to)
 
 
 class Provider(object):
