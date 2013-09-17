@@ -178,8 +178,8 @@ class Token(token.Driver):
         self._add_to_revocation_list(data)
         return result
 
-    def list_tokens(self, user_id, tenant_id=None, trust_id=None,
-                    consumer_id=None):
+    def list_token_refs(self, user_id, tenant_id=None, trust_id=None,
+                        consumer_id=None):
         tokens = []
         user_key = self._prefix_user_id(user_id)
         user_record = self.client.get(user_key) or ""
@@ -208,7 +208,7 @@ class Token(token.Driver):
                     except KeyError:
                         continue
 
-                tokens.append(token_id)
+                tokens.append(token_ref)
         return tokens
 
     def list_revoked_tokens(self):

@@ -115,3 +115,15 @@ class KvsCatalog(tests.TestCase, test_backend.CatalogTests):
     def test_get_catalog(self):
         catalog_ref = self.catalog_api.get_catalog('foo', 'bar')
         self.assertDictEqual(catalog_ref, self.catalog_foobar)
+
+
+class KvsTokenCacheInvalidation(tests.TestCase,
+                                test_backend.TokenCacheInvalidation):
+    def setUp(self):
+        super(KvsTokenCacheInvalidation, self).setUp()
+        identity.CONF.identity.driver = (
+            'keystone.identity.backends.kvs.Identity')
+        identity.CONF.token.driver = (
+            'keystone.token.backends.kvs.Token')
+        self.load_backends()
+        self._create_test_data()
