@@ -14,6 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import sqlalchemy
+
 from keystone.common import dependency
 from keystone.common import sql
 from keystone.common.sql import migration
@@ -108,8 +110,14 @@ class Identity(sql.Base, identity.Driver):
         session = self.get_session()
         with session.begin():
             user_ref = User.from_dict(user)
-            session.add(user_ref)
-            session.flush()
+            try:
+                session.add(user_ref)
+                session.flush()
+            except sqlalchemy.exc.IntegrityError as e:
+                if e.message.find("foreign key constraint fails") > -1:
+                    raise exception.DomainNotFound(domain_id=user.domain_id)
+                else:
+                    raise e
         return identity.filter_user(user_ref.to_dict())
 
     def list_users(self):
