@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//8Ig\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-17T18:13:32Z",
+      "side": 1,
+      "message": "Please look at patch #5",
+      "parentUuid": "AAAASn/+/ng\u003d",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn/+/nY\u003d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 3
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//8c8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-17T18:13:32Z",
+      "side": 1,
+      "message": "Fixing the logging comments.\nIn authorization view it is not safe to through this here as unauth user can guess if token is valid or not and will allow token harvesting.\n\nPlease look at patch #5",
+      "parentUuid": "AAAASn/+/nI\u003d",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//9RA\u003d",
         "filename": "keystone/openstack/common/policy.py",
         "patchSetId": 3
@@ -64,6 +100,24 @@
       "writtenOn": "2013-09-16T16:01:16Z",
       "side": 1,
       "message": "Fix whitespace issue",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//8bY\u003d",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-17T18:13:32Z",
+      "side": 1,
+      "message": "Fixed in next patch #5",
+      "parentUuid": "AAAAS3//9RA\u003d",
       "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//8bk\u003d",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-17T18:13:32Z",
+      "side": 1,
+      "message": "What I want to say is current Keystone\u0027s policy.py file is off from OSLO\u0027s policy.py.\n\nPlease take a look\nhttps://github.com/openstack/keystone/blob/master/keystone/openstack/common/policy.py\nhttps://github.com/openstack/oslo-incubator/blob/master/openstack/common/policy.py\n\nI am trying to fix OSLO\u0027s policy.py with my change, please look https://review.openstack.org/#/c/46589/",
+      "parentUuid": "AAAASn/+/zk\u003d",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn/+/ak\u003d",
         "filename": "keystone/openstack/common/policy.py",
         "patchSetId": 3
@@ -157,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//8a4\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-17T18:13:32Z",
+      "side": 1,
+      "message": "This is how other test (TestTokenRevoking) is doing at the same time test data is little different in this test.",
+      "parentUuid": "AAAASn/+/lo\u003d",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn/+/lA\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 3
@@ -168,6 +258,24 @@
       "writtenOn": "2013-09-13T22:38:19Z",
       "side": 1,
       "message": "move line 392-409 to setUp()",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//8Zc\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-17T18:13:32Z",
+      "side": 1,
+      "message": "Is it a big concern? Most of the test is doing this way.\nIf it is really bothering I will move it to setup.\nThoughts???",
+      "parentUuid": "AAAASn/+/lA\u003d",
       "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -208,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//8Zw\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-17T18:13:32Z",
+      "side": 1,
+      "message": "Fixed in next patch #5",
+      "parentUuid": "AAAASn/+/k0\u003d",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn/+/mU\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 3
@@ -219,6 +345,24 @@
       "writtenOn": "2013-09-13T22:38:19Z",
       "side": 1,
       "message": "no need for this comment as code is pretty obvious",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//8Y8\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-17T18:13:32Z",
+      "side": 1,
+      "message": "OK, fixed in next patch #5",
+      "parentUuid": "AAAASn/+/mU\u003d",
       "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -270,6 +414,24 @@
       "writtenOn": "2013-09-16T17:33:28Z",
       "side": 1,
       "message": "You don\u0027t need to catch \"unauthorized\", after LOG.execption, do:\n\nraise exception.Unauthorized(e)",
+      "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//8WM\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-17T18:13:32Z",
+      "side": 1,
+      "message": "Fix in next patch #5",
+      "parentUuid": "AAAAS3//85M\u003d",
       "revId": "7c46b6f9b10f6f0f149a879f7255f997fb384f19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
