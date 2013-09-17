@@ -133,7 +133,7 @@ class Token(sql.Base, token.Driver):
         token_references = query.filter_by(valid=True)
         for token_ref in token_references:
             token_ref_dict = token_ref.to_dict()
-            tokens.append(token_ref_dict['id'])
+            tokens.append(token_ref_dict)
         return tokens
 
     def _list_tokens_for_user(self, user_id, tenant_id=None):
@@ -148,7 +148,7 @@ class Token(sql.Base, token.Driver):
         for token_ref in token_references:
             token_ref_dict = token_ref.to_dict()
             if self._tenant_matches(tenant_id, token_ref_dict):
-                tokens.append(token_ref['id'])
+                tokens.append(token_ref_dict)
         return tokens
 
     def _list_tokens_for_consumer(self, user_id, consumer_id):
@@ -164,12 +164,12 @@ class Token(sql.Base, token.Driver):
             for token_ref in token_references:
                 token_ref_dict = token_ref.to_dict()
                 if self._consumer_matches(consumer_id, token_ref_dict):
-                    tokens.append(token_ref_dict['id'])
+                    tokens.append(token_ref_dict)
             session.flush()
         return tokens
 
-    def list_tokens(self, user_id, tenant_id=None, trust_id=None,
-                    consumer_id=None):
+    def list_token_refs(self, user_id, tenant_id=None, trust_id=None,
+                        consumer_id=None):
         if trust_id:
             return self._list_tokens_for_trust(trust_id)
         if consumer_id:
