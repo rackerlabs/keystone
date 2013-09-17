@@ -153,19 +153,66 @@ class Manager(manager.Manager):
 
     def delete_token(self, token_id):
         unique_id = self.unique_id(token_id)
+        token = self.driver.get_token(unique_id)
         self.driver.delete_token(unique_id)
-        self._invalidate_individual_token_cache(unique_id)
+
+        # NOTE(henry-nash): To make sure we invalidate all token caches,
+        # we need to extract any tenant id from the token and pass it
+        # into the invalidation method.
+
+        tenant_id = None
+        if token.get('tenant'):
+            tenant_id = token['tenant'].get('id', None)
+        self._invalidate_individual_token_cache(unique_id, tenant_id)
         self.invalidate_revocation_list()
 
     def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
                       consumer_id=None):
-        token_list = self.driver.list_tokens(user_id, tenant_id, trust_id,
-                                             consumer_id)
-        self.driver.delete_tokens(user_id, tenant_id, trust_id, consumer_id)
-        for token_id in token_list:
-            unique_id = self.unique_id(token_id)
-            self._invalidate_individual_token_cache(unique_id, tenant_id)
+        token_list = self.list_token_refs(user_id, tenant_id, trust_id,
+                                          consumer_id)
+        self._delete_tokens(user_id, tenant_id, trust_id, consumer_id)
+
+        # NOTE(henry-nash): token_list holds the list of token refs that match
+        # this user and the other optional parameters. We need to invalidate
+        # any token cache entries, however we must handle tenant_id specially,
+        # since there could be a validate_token cache with just token_id
+        # as well as token_id and tenant_id.  Therefore if tenant_id was
+        # not specified in the call, we explicitly invalidate cache entries
+        # for each token_id+tenant_id pair.
+
+        for token in token_list:
+            unique_id = self.unique_id(token['id'])
+            this_tenant_id = tenant_id
+            if this_tenant_id is None and token.get('tenant'):
+                this_tenant_id = token['tenant'].get('id', None)
+            self._invalidate_individual_token_cache(unique_id, this_tenant_id)
         self.invalidate_revocation_list()
+
+    def _delete_tokens(self, user_id, tenant_id=None, trust_id=None,
+                       consumer_id=None):
+        token_list = self.list_tokens(user_id,
+                                      tenant_id=tenant_id,
+                                      trust_id=trust_id,
+                                      consumer_id=consumer_id)
+        for token in token_list:
+            try:
+                self.delete_token(token)
+            except exception.NotFound:
+                msg = (_('Unable to delete token returned in list for user '
+                         '%(user)s, ignoring and continuing. '
+                         '(Tenant: %(tenant)s, Trust: %(trust)s, '
+                         'Consumer: %(consumer)s)') % {
+                             'user': user_id,
+                             'tenant': tenant_id,
+                             'trust': trust_id,
+                             'consumer': consumer_id})
+                LOG.debug(msg)
+
+    def list_tokens(self, user_id, tenant_id=None, trust_id=None,
+                    consumer_id=None):
+        return [token['id'] for token in self.driver.list_token_refs(
+                user_id, tenant_id=tenant_id, trust_id=trust_id,
+                consumer_id=consumer_id)]
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=CONF.token.revocation_cache_time)
@@ -240,49 +287,13 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
-                      consumer_id=None):
-        """Deletes tokens by user.
+    def list_token_refs(self, user_id, tenant_id=None, trust_id=None,
+                        consumer_id=None):
+        """Returns a list of current tokens for a user
 
-        If the tenant_id is not None, only delete the tokens by user id under
-        the specified tenant.
-
-        If the trust_id is not None, it will be used to query tokens and the
-        user_id will be ignored.
-
-        If the consumer_id is not None, only delete the tokens by consumer id
-        that match the specified consumer id.
-
-        :param user_id: identity of user
-        :type user_id: string
-        :param tenant_id: identity of the tenant
-        :type tenant_id: string
-        :param trust_id: identity of the trust
-        :type trust_id: string
-        :param consumer_id: identity of the consumer
-        :type consumer_id: string
-        :returns: None.
-        :raises: keystone.exception.TokenNotFound
-
-        """
-        token_list = self.list_tokens(user_id,
-                                      tenant_id=tenant_id,
-                                      trust_id=trust_id,
-                                      consumer_id=consumer_id)
-
-        for token in token_list:
-            try:
-                self.delete_token(token)
-            except exception.NotFound:
-                pass
-
-    def list_tokens(self, user_id, tenant_id=None, trust_id=None,
-                    consumer_id=None):
-        """Returns a list of current token_id's for a user
-
-        This is effectively a private method only used by the ``delete_tokens``
-        method and should not be called by anything outside of the
-        ``token_api`` manager or the token driver itself.
+        This is effectively a private method only used by the Manager
+        ``_delete_tokens`` method and should not be called by anything
+        outside of the ``token_api`` manager or the token driver itself.
 
         :param user_id: identity of the user
         :type user_id: string
@@ -292,7 +303,7 @@ class Driver(object):
         :type trust_id: string
         :param consumer_id: identity of the consumer
         :type consumer_id: string
-        :returns: list of token_id's
+        :returns: list of tokens
 
         """
         raise exception.NotImplemented()

@@ -153,8 +153,11 @@ class Assignment(kvs.Base, assignment.Driver):
             user_ref['tenants'] = list(tenants)
             self.identity_api.update_user(user_id, user_ref)
 
-    def list_role_assignments(self):
+    def list_role_assignments(self, role_id=None):
         """List the role assignments.
+
+        :param role_id: if role_id is specified, then only return those
+                        assignments that include that role.
 
         The kvs backend stores role assignments as key-values:
 
@@ -187,9 +190,10 @@ class Assignment(kvs.Base, assignment.Driver):
             entry = self.db.get(key)
             for r in self._roles_from_role_dicts(entry.get('roles', {}),
                                                  False):
-                role_assignment = template.copy()
-                role_assignment['role_id'] = r
-                assignment_list.append(role_assignment)
+                if role_id is None or role_id == r:
+                    role_assignment = template.copy()
+                    role_assignment['role_id'] = r
+                    assignment_list.append(role_assignment)
 
         return assignment_list
 

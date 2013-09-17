@@ -81,7 +81,7 @@ class Token(kvs.Base, token.Driver):
             if not token.startswith('token-') or self.is_expired(now, ref):
                 continue
             if self.trust_matches(trust_id, ref):
-                tokens.append(token.split('-', 1)[1])
+                tokens.append(ref)
         return tokens
 
     def _consumer_matches(self, consumer_id, token_ref_dict):
@@ -104,7 +104,7 @@ class Token(kvs.Base, token.Driver):
             if not token.startswith('token-') or self.is_expired(now, ref):
                 continue
             if self._consumer_matches(consumer_id, ref):
-                tokens.append(token.split('-', 1)[1])
+                tokens.append(ref)
         return tokens
 
     def _list_tokens_for_user(self, user_id, tenant_id=None):
@@ -124,11 +124,11 @@ class Token(kvs.Base, token.Driver):
             else:
                 if (user_matches(user_id, ref) and
                         tenant_matches(tenant_id, ref)):
-                        tokens.append(token.split('-', 1)[1])
+                        tokens.append(ref)
         return tokens
 
-    def list_tokens(self, user_id, tenant_id=None, trust_id=None,
-                    consumer_id=None):
+    def list_token_refs(self, user_id, tenant_id=None, trust_id=None,
+                        consumer_id=None):
         if trust_id:
             return self._list_tokens_for_trust(trust_id)
         if consumer_id:
