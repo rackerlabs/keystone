@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//4g4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-17T18:28:41Z",
+      "side": 0,
+      "message": "-2; this presents a new security vulnerability\n\nI\u0027m not sure why this was removed - this method is exposed directly to the api via keystone.contrib.admin_crud.core",
+      "revId": "54b8ec55e649b1ebfc86e442ed6396158ce2251e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
