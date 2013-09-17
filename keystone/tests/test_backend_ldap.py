@@ -210,6 +210,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_list_role_assignments_unfiltered(self):
         self.skipTest('Blocked by bug 1195019')
 
+    def test_list_role_assignments_bad_role(self):
+        self.skipTest('Blocked by bug 1195019')
+
     def test_multi_group_grants_on_project_domain(self):
         self.skipTest('Blocked by bug 1101287')
 
