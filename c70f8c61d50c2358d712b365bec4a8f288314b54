@@ -33,6 +33,24 @@
       "revId": "c70f8c61d50c2358d712b365bec4a8f288314b54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//6Bs\u003d",
+        "filename": "tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2013-09-17T11:37:56Z",
+      "side": 1,
+      "message": "Dolph, how come this test passed on master?",
+      "parentUuid": "AAAAS3//9Mk\u003d",
+      "revId": "c70f8c61d50c2358d712b365bec4a8f288314b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
