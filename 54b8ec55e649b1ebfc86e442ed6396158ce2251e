@@ -16,6 +16,23 @@
       "revId": "54b8ec55e649b1ebfc86e442ed6396158ce2251e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//4fk\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-17T18:31:16Z",
+      "side": 0,
+      "message": "disregard the above, i didn\u0027t realize this was calling another controller method",
+      "revId": "54b8ec55e649b1ebfc86e442ed6396158ce2251e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
