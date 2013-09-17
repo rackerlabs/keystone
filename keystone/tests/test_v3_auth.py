@@ -362,14 +362,18 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
         users, groups, roles and projects for the subsequent tests:
 
         - Two domains: A & B
-        - DomainA has user1, domainB has user2 and user3
+        - DomainA has user1 and user5, domainB has user2, 3 and 4
         - DomainA has group1 and group2, domainB has group3
-        - User1 has a role on domainA
-        - Two projects: A & B, both in domainA
-        - All users have a role on projectA
-        - Two groups: 1 & 2
-        - User1 and user2 are members of group1
+        - User1, 2 and 5 are members of group1
         - User3 is a member of group2
+        - Three projects: A,B & C all in domainA
+        - Group1 has role1 on Project A and B
+        - user1, 2 and 3 have role1 projectA
+        - User4 has role1 on Project C
+        - User5 has effective role1 on ProjectA by virtue of its
+          membership of group1
+        - User1 has role2 on domainA
+        - User6 has role1 on domainA and ProjectA
 
         """
         super(TestTokenRevoking, self).setUp()
@@ -383,8 +387,10 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
         self.assignment_api.create_project(self.projectA['id'], self.projectA)
         self.projectB = self.new_project_ref(domain_id=self.domainA['id'])
         self.assignment_api.create_project(self.projectB['id'], self.projectB)
+        self.projectC = self.new_project_ref(domain_id=self.domainA['id'])
+        self.assignment_api.create_project(self.projectC['id'], self.projectC)
 
-        # Now create some users, one in domainA and two of them in domainB
+        # Now create some users
         self.user1 = self.new_user_ref(
             domain_id=self.domainA['id'])
         self.user1['password'] = uuid.uuid4().hex
@@ -399,6 +405,21 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
             domain_id=self.domainB['id'])
         self.user3['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user3['id'], self.user3)
+
+        self.user4 = self.new_user_ref(
+            domain_id=self.domainB['id'])
+        self.user4['password'] = uuid.uuid4().hex
+        self.identity_api.create_user(self.user4['id'], self.user4)
+
+        self.user5 = self.new_user_ref(
+            domain_id=self.domainA['id'])
+        self.user5['password'] = uuid.uuid4().hex
+        self.identity_api.create_user(self.user5['id'], self.user5)
+
+        self.user6 = self.new_user_ref(
+            domain_id=self.domainA['id'])
+        self.user6['password'] = uuid.uuid4().hex
+        self.identity_api.create_user(self.user6['id'], self.user6)
 
         self.group1 = self.new_group_ref(
             domain_id=self.domainA['id'])
@@ -418,13 +439,15 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
                                             self.group1['id'])
         self.identity_api.add_user_to_group(self.user3['id'],
                                             self.group2['id'])
+        self.identity_api.add_user_to_group(self.user5['id'],
+                                            self.group1['id'])
 
         self.role1 = self.new_role_ref()
         self.identity_api.create_role(self.role1['id'], self.role1)
         self.role2 = self.new_role_ref()
         self.identity_api.create_role(self.role2['id'], self.role2)
 
-        self.identity_api.create_grant(self.role1['id'],
+        self.identity_api.create_grant(self.role2['id'],
                                        user_id=self.user1['id'],
                                        domain_id=self.domainA['id'])
         self.identity_api.create_grant(self.role1['id'],
@@ -439,6 +462,18 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
         self.identity_api.create_grant(self.role1['id'],
                                        group_id=self.group1['id'],
                                        project_id=self.projectA['id'])
+        self.identity_api.create_grant(self.role1['id'],
+                                       group_id=self.group1['id'],
+                                       project_id=self.projectB['id'])
+        self.identity_api.create_grant(self.role2['id'],
+                                       user_id=self.user4['id'],
+                                       project_id=self.projectC['id'])
+        self.identity_api.create_grant(self.role1['id'],
+                                       user_id=self.user6['id'],
+                                       project_id=self.projectA['id'])
+        self.identity_api.create_grant(self.role1['id'],
+                                       user_id=self.user6['id'],
+                                       domain_id=self.domainA['id'])
 
     def test_unscoped_token_remains_valid_after_role_assignment(self):
         r = self.post(
@@ -512,6 +547,91 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token},
                   expected_status=401)
+
+    def test_deleting_role_revokes_token(self):
+        """Test deleting a role revokes token.
+
+        Test Plan:
+        - Get 5 tokens
+          - user1, scoped to ProjectA by virtue of user role1 assignment
+          - user5, scoped to ProjectB by virtue of group role1 assignment
+          - user4, scoped to ProjectC by virtue of user role2 assignment
+          - user6, scoped to ProjectA by virtue of user role1 assignment
+          - user6, scoped to DomainA by virtue of user role1 assignment
+        - Delete role1
+        - Check the tokens on Project A and B, and DomainA are revoked,
+          but not the one for Project C
+
+        """
+        auth_data = self.build_authentication_request(
+            user_id=self.user1['id'],
+            password=self.user1['password'],
+            project_id=self.projectA['id'])
+        resp = self.post('/auth/tokens', body=auth_data)
+        tokenA = resp.headers.get('X-Subject-Token')
+        auth_data = self.build_authentication_request(
+            user_id=self.user5['id'],
+            password=self.user5['password'],
+            project_id=self.projectB['id'])
+        resp = self.post('/auth/tokens', body=auth_data)
+        tokenB = resp.headers.get('X-Subject-Token')
+        auth_data = self.build_authentication_request(
+            user_id=self.user4['id'],
+            password=self.user4['password'],
+            project_id=self.projectC['id'])
+        resp = self.post('/auth/tokens', body=auth_data)
+        tokenC = resp.headers.get('X-Subject-Token')
+        auth_data = self.build_authentication_request(
+            user_id=self.user6['id'],
+            password=self.user6['password'],
+            project_id=self.projectA['id'])
+        resp = self.post('/auth/tokens', body=auth_data)
+        tokenD = resp.headers.get('X-Subject-Token')
+        auth_data = self.build_authentication_request(
+            user_id=self.user6['id'],
+            password=self.user6['password'],
+            domain_id=self.domainA['id'])
+        resp = self.post('/auth/tokens', body=auth_data)
+        tokenE = resp.headers.get('X-Subject-Token')
+        # Confirm tokens are valid
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': tokenA},
+                  expected_status=204)
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': tokenB},
+                  expected_status=204)
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': tokenC},
+                  expected_status=204)
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': tokenD},
+                  expected_status=204)
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': tokenE},
+                  expected_status=204)
+
+        # Delete the role, which should invalidate the tokens
+        role_url = '/roles/%s' % self.role1['id']
+        self.delete(role_url)
+
+        # Check the tokens that used role1 is invalid
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': tokenA},
+                  expected_status=401)
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': tokenB},
+                  expected_status=401)
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': tokenD},
+                  expected_status=401)
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': tokenE},
+                  expected_status=401)
+
+        # ...but the one using role2 is still valid
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': tokenC},
+                  expected_status=204)
 
     def test_domain_user_role_assignment_maintains_token(self):
         """Test user-domain role assignment maintains existing token.
