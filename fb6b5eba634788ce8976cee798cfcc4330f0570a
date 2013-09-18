@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//2o4\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-18T08:03:05Z",
+      "side": 1,
+      "message": "No, I think there are others - see identity/core.py where the Manager handles domain scope that the driver calls do not get to see.",
+      "parentUuid": "AAAAS3//5P4\u003d",
+      "revId": "fb6b5eba634788ce8976cee798cfcc4330f0570a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//5PQ\u003d",
         "filename": "keystone/identity/backends/pam.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-17T15:24:22Z",
       "side": 1,
       "message": "this looks broken? shouldn\u0027t it be ... \n\n  [{\u0027id\u0027: tenant_id, \u0027name\u0027: tenant_id}]",
+      "revId": "fb6b5eba634788ce8976cee798cfcc4330f0570a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//2oU\u003d",
+        "filename": "keystone/identity/backends/pam.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-18T08:03:05Z",
+      "side": 1,
+      "message": "To be honest, I\u0027m not sure...the comment earlier in the file says that user is equivalent to tenant and all any of the methods do is return the passed in values back to the caller....so not sure what else to do...",
+      "parentUuid": "AAAAS3//5PQ\u003d",
       "revId": "fb6b5eba634788ce8976cee798cfcc4330f0570a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
