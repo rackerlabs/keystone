@@ -52,7 +52,8 @@ def moved_to_assignment(f):
 def filter_user(user_ref):
     """Filter out private items in a user dict.
 
-    'password', 'tenants' and 'groups' are never returned.
+    :param user_ref user dictionary. The values
+     'password', 'tenants' and 'groups' are removed if present.
 
     :returns: user_ref
 

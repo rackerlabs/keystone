@@ -33,6 +33,19 @@ CONF = config.CONF
 LOG = log.getLogger(__name__)
 
 
+def filter_user(user_ref):
+    """Filter out private items in an entity user dict.
+    :param user_ref  the entity user dict.  In addition to the
+    values filtered by the baseclass, the 'dn' field is removed.
+    :returns: user_ref
+
+    """
+    if user_ref:
+        user_ref = common_ldap.filter_entity(user_ref)
+        user_ref = identity.filter_user(user_ref)
+    return user_ref
+
+
 @dependency.requires('assignment_api')
 class Identity(identity.Driver):
     def __init__(self, conf=None):
@@ -59,7 +72,7 @@ class Identity(identity.Driver):
             raise AssertionError('Invalid user / password')
         conn = None
         try:
-            conn = self.user.get_connection(self.user._id_to_dn(user_id),
+            conn = self.user.get_connection(user_ref['dn'],
                                             password)
             if not conn:
                 raise AssertionError('Invalid user / password')
@@ -68,13 +81,13 @@ class Identity(identity.Driver):
         finally:
             if conn:
                 conn.unbind_s()
-        return identity.filter_user(user_ref)
+        return filter_user(user_ref)
 
     def _get_user(self, user_id):
         return self.user.get(user_id)
 
     def get_user(self, user_id):
-        return identity.filter_user(self._get_user(user_id))
+        return filter_user(self._get_user(user_id))
 
     def list_users(self):
         return self.user.get_all_filtered()
@@ -82,34 +95,46 @@ class Identity(identity.Driver):
     def get_user_by_name(self, user_name, domain_id):
         # domain_id will already have been handled in the Manager layer,
         # parameter left in so this matches the Driver specification
-        return identity.filter_user(self.user.get_by_name(user_name))
+        return filter_user(self.user.get_by_name(user_name))
 
     # CRUD
     def create_user(self, user_id, user):
         user_ref = self.user.create(user)
-        return identity.filter_user(user_ref)
+        tenant_id = user.get('tenant_id')
+        if tenant_id is not None:
+            self.assignment_api.add_user_to_project(tenant_id, user_id)
+        return filter_user(user_ref)
 
     def update_user(self, user_id, user):
         if 'id' in user and user['id'] != user_id:
             raise exception.ValidationError('Cannot change user ID')
-        old_obj = self.user.get(user_id)
-        if 'name' in user and old_obj.get('name') != user['name']:
+        old = self.user.get(user_id)
+        if 'name' in user and old.get('name') != user['name']:
             raise exception.Conflict('Cannot change user name')
+        if 'tenant_id' in user and old.get('tenant_id') != user['tenant_id']:
+            if old['tenant_id']:
+                self.project.remove_user(old['tenant_id'],
+                                         old['dn'],
+                                         user_id)
+            if user['tenant_id']:
+                self.project.add_user(user['tenant_id'],
+                                      old['dn'],
+                                      user_id)
 
         user = utils.hash_ldap_user_password(user)
         if self.user.enabled_mask:
             self.user.mask_enabled_attribute(user)
-        self.user.update(user_id, user, old_obj)
+        self.user.update(user_id, user, old)
         return self.user.get_filtered(user_id)
 
     def delete_user(self, user_id):
         self.assignment_api.delete_user(user_id)
-        user_dn = self.user._id_to_dn(user_id)
+        user = self.user.get(user_id)
+        user_dn = user['dn']
         groups = self.group.list_user_groups(user_dn)
         for group in groups:
             self.group.remove_user(user_dn, group['id'], user_id)
 
-        user = self.user.get(user_id)
         if hasattr(user, 'tenant_id'):
             self.project.remove_user(user.tenant_id,
                                      self.user._id_to_dn(user_id))
@@ -131,20 +156,20 @@ class Identity(identity.Driver):
         return self.group.delete(group_id)
 
     def add_user_to_group(self, user_id, group_id):
-        self.get_user(user_id)
+        user_ref = self._get_user(user_id)
+        user_dn = user_ref['dn']
         self.get_group(group_id)
-        user_dn = self.user._id_to_dn(user_id)
         self.group.add_user(user_dn, group_id, user_id)
 
     def remove_user_from_group(self, user_id, group_id):
-        self.get_user(user_id)
+        user_ref = self._get_user(user_id)
+        user_dn = user_ref['dn']
         self.get_group(group_id)
-        user_dn = self.user._id_to_dn(user_id)
         self.group.remove_user(user_dn, group_id, user_id)
 
     def list_groups_for_user(self, user_id):
-        self.get_user(user_id)
-        user_dn = self.user._id_to_dn(user_id)
+        user_ref = self._get_user(user_id)
+        user_dn = user_ref['dn']
         return self.group.list_user_groups(user_dn)
 
     def list_groups(self):
@@ -193,10 +218,17 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
 
     model = models.User
 
+    def _ldap_res_to_model_with_dn(self, res):
+        model = self._ldap_res_to_model_without_dn(res)
+        model['dn'] = res[0]
+        return model
+
     def __init__(self, conf):
         super(UserApi, self).__init__(conf)
         self.enabled_mask = conf.ldap.user_enabled_mask
         self.enabled_default = conf.ldap.user_enabled_default
+        self._ldap_res_to_model_without_dn = self._ldap_res_to_model
+        self._ldap_res_to_model = self._ldap_res_to_model_with_dn
 
     def _ldap_res_to_model(self, res):
         obj = super(UserApi, self)._ldap_res_to_model(res)
@@ -231,10 +263,10 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
 
     def get_filtered(self, user_id):
         user = self.get(user_id)
-        return identity.filter_user(user)
+        return filter_user(user)
 
     def get_all_filtered(self):
-        return [identity.filter_user(user) for user in self.get_all()]
+        return [filter_user(user) for user in self.get_all()]
 
 
 class GroupApi(common_ldap.BaseLdap):

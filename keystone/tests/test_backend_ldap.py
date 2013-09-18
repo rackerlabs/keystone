@@ -479,6 +479,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assertRaises(exception.Conflict,
                           super(BaseLDAPIdentity, self).test_update_user_name)
 
+    def test_attribute_update(self):
+        self.skipTest("Blank value in a required field is an error in LDAP")
+
     def test_arbitrary_attributes_are_returned_from_create_user(self):
         self.skipTest("Using arbitrary attributes doesn't work under LDAP")
 
@@ -1048,6 +1051,15 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
 
     def test_create_grant_no_group(self):
         self.skipTest('Blocked by bug 1101287')
+
+    def test_list_users_no_dn(self):
+        users = self.identity_api.list_users()
+        self.assertEqual(len(default_fixtures.USERS), len(users))
+        user_ids = set(user['id'] for user in users)
+        expected_user_ids = set(user['id'] for user in default_fixtures.USERS)
+        for user_ref in users:
+            self.assertNotIn('dn', user_ref)
+        self.assertEqual(expected_user_ids, user_ids)
 
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):

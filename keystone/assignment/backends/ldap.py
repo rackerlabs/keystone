@@ -134,8 +134,8 @@ class Assignment(assignment.Driver):
         # NOTE(henry-nash): The LDAP backend is being deprecated, so no
         # support is provided for projects that the user has a role on solely
         # by virtue of group membership.
-        self.identity_api.get_user(user_id)
-        user_dn = self.user._id_to_dn(user_id)
+        user_ref = self.identity_api.driver._get_user(user_id)
+        user_dn = user_ref['dn']
         associations = (self.role.list_project_roles_for_user
                         (user_dn, self.project.tree_dn))
         # Since the LDAP backend doesn't store the domain_id in the LDAP
@@ -160,10 +160,10 @@ class Assignment(assignment.Driver):
                                  self.project._id_to_dn(tenant_id))
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.identity_api.get_user(user_id)
+        user_ref = self.identity_api.driver._get_user(user_id)
         self.get_project(tenant_id)
         self.get_role(role_id)
-        user_dn = self.user._id_to_dn(user_id)
+        user_dn = user_ref['dn']
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
         self.role.add_user(role_id, role_dn, user_dn, user_id, tenant_id)
         tenant_dn = self.project._id_to_dn(tenant_id)
