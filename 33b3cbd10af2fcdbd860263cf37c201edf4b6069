@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//zm0\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-18T22:05:21Z",
+      "side": 1,
+      "message": "suggest change \"elif\" to \"else\" to match the pattern.",
+      "revId": "33b3cbd10af2fcdbd860263cf37c201edf4b6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zmk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-18T22:05:21Z",
+      "side": 1,
+      "message": "don\u0027t we need to disallow adding immutable attributes, too? (move 419-422 before 413).\n\nSeems odd there isn\u0027t a test for this.",
+      "revId": "33b3cbd10af2fcdbd860263cf37c201edf4b6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
