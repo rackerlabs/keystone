@@ -337,9 +337,9 @@ class AuthTokenTests(OAuthFlowTests):
 
         # now verify the oauth section
         oauth_section = r.result['token']['OS-OAUTH1']
-        self.assertEquals(oauth_section['access_token_id'],
-                          self.access_token.key)
-        self.assertEquals(oauth_section['consumer_id'], self.consumer.key)
+        self.assertEqual(oauth_section['access_token_id'],
+                         self.access_token.key)
+        self.assertEqual(oauth_section['consumer_id'], self.consumer.key)
 
     def test_delete_access_token_also_revokes_token(self):
         self.test_oauth_flow()
