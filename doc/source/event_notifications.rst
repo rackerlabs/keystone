@@ -32,6 +32,7 @@ A notification is sent when a resource is successfully ``created``,
 
 - ``user``
 - ``project`` (i.e. "tenant")
+- ``domain`` (it will not result in notifications being emitted for resources owned by the domain, for example users or projects)
 
 The following message template is used to form a message when an operation on a
 resource completes successfully::
