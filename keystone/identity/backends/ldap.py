@@ -65,7 +65,7 @@ class Identity(identity.Driver):
             raise AssertionError('Invalid user / password')
         conn = None
         try:
-            conn = self.user.get_connection(self.user._id_to_dn(user_id),
+            conn = self.user.get_connection(user_ref['dn'],
                                             password)
             if not conn:
                 raise AssertionError('Invalid user / password')
@@ -109,11 +109,11 @@ class Identity(identity.Driver):
                 old_obj.get('tenant_id') != user['tenant_id']:
             if old_obj['tenant_id']:
                 self.project.remove_user(old_obj['tenant_id'],
-                                         self.user._id_to_dn(user_id),
+                                         old_obj['dn'],
                                          user_id)
             if user['tenant_id']:
                 self.project.add_user(user['tenant_id'],
-                                      self.user._id_to_dn(user_id),
+                                      old_obj['dn'],
                                       user_id)
 
         user = utils.hash_ldap_user_password(user)
@@ -124,12 +124,12 @@ class Identity(identity.Driver):
 
     def delete_user(self, user_id):
         self.assignment_api.delete_user(user_id)
-        user_dn = self.user._id_to_dn(user_id)
+        user = self.user.get(user_id)
+        user_dn = user['dn']
         groups = self.group.list_user_groups(user_dn)
         for group in groups:
             self.group.remove_user(user_dn, group['id'], user_id)
 
-        user = self.user.get(user_id)
         if hasattr(user, 'tenant_id'):
             self.project.remove_user(user.tenant_id,
                                      self.user._id_to_dn(user_id))
@@ -151,20 +151,20 @@ class Identity(identity.Driver):
         return self.group.delete(group_id)
 
     def add_user_to_group(self, user_id, group_id):
-        self.get_user(user_id)
+        user_ref = self._get_user(user_id)
+        user_dn = user_ref['dn']
         self.get_group(group_id)
-        user_dn = self.user._id_to_dn(user_id)
         self.group.add_user(user_dn, group_id, user_id)
 
     def remove_user_from_group(self, user_id, group_id):
-        self.get_user(user_id)
+        user_ref = self._get_user(user_id)
+        user_dn = user_ref['dn']
         self.get_group(group_id)
-        user_dn = self.user._id_to_dn(user_id)
         self.group.remove_user(user_dn, group_id, user_id)
 
     def list_groups_for_user(self, user_id):
-        self.get_user(user_id)
-        user_dn = self.user._id_to_dn(user_id)
+        user_ref = self._get_user(user_id)
+        user_dn = user_ref['dn']
         return self.group.list_user_groups(user_dn)
 
     def list_groups(self):
@@ -213,10 +213,17 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
 
     model = models.User
 
+    def _ldap_res_to_model_with_dn(self, res):
+        model = self._ldap_res_to_model_without_dn(res)
+        model['dn'] = res[0]
+        return model
+
     def __init__(self, conf):
         super(UserApi, self).__init__(conf)
         self.enabled_mask = conf.ldap.user_enabled_mask
         self.enabled_default = conf.ldap.user_enabled_default
+        self._ldap_res_to_model_without_dn = self._ldap_res_to_model
+        self._ldap_res_to_model = self._ldap_res_to_model_with_dn
 
     def _ldap_res_to_model(self, res):
         obj = super(UserApi, self)._ldap_res_to_model(res)

@@ -347,9 +347,9 @@ class BaseLdap(object):
             return None
         finally:
             conn.unbind_s()
-        try:
+        if len(res):
             return res[0]
-        except IndexError:
+        else:
             return None
 
     def _ldap_get_all(self, filter=None):
