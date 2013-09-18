@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//zzU\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-18T21:37:04Z",
+      "side": 1,
+      "message": "the other docstrings have the exceptions raised, seems like with this change this function could also raise keystone.exception.RoleNotFound if the role_id isn\u0027t a known role id.",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zyg\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-18T21:37:04Z",
+      "side": 1,
+      "message": "suggest use a tuple here rather than dict.",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zxs\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-18T21:37:04Z",
+      "side": 1,
+      "message": "suggest create a new list with the ones to keep rather than the ones to remove. Then don\u0027t have to worry about adding to a prune list and then searching through the original list all over again.",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zxA\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-18T21:37:04Z",
+      "side": 1,
+      "message": "give a name to the {} magic number so reviewers know what it is.",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zwc\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-18T21:37:04Z",
+      "side": 1,
+      "message": "don\u0027t we usually do \"CONF \u003d config.CONF\" (like in https://review.openstack.org/#/c/46613/5/keystone/tests/test_auth.py). Seems odd to import identity just to do this.",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zvk\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-18T21:37:04Z",
+      "side": 1,
+      "message": "why would the token have tenant but not have the tenant\u0027s ID?",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zuo\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-18T21:37:04Z",
+      "side": 1,
+      "message": "suggest change token to token_id since that\u0027s what delete_token takes.",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
