@@ -100,6 +100,19 @@ def ldap_scope(scope):
                 'options': ', '.join(LDAP_SCOPES.keys())})
 
 
+def filter_entity(entity_ref):
+    """Filter out private items in an entity dict.
+
+    'dn' is used in LDAP, but should not be returned to the user
+
+    :returns: entity_ref
+
+    """
+    if entity_ref:
+        entity_ref.pop('dn', None)
+    return entity_ref
+
+
 class BaseLdap(object):
     DEFAULT_SUFFIX = "dc=example,dc=com"
     DEFAULT_OU = None

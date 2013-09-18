@@ -47,6 +47,7 @@ def filter_user(user_ref):
     :returns: user_ref
 
     """
+
     if user_ref:
         user_ref = user_ref.copy()
         user_ref.pop('password', None)
