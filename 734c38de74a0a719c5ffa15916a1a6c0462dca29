@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//0Ro\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 14
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-18T18:51:32Z",
+      "side": 1,
+      "message": "do we continue to support the old config option? (for backwards compatibility)",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//0PU\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-18T18:51:32Z",
+      "side": 1,
+      "message": "suggest change user_id here to user_dn.",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//0O0\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-18T18:51:32Z",
+      "side": 1,
+      "message": "(nit) capitalize IDs\n\nwhat does relationship mean?",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
