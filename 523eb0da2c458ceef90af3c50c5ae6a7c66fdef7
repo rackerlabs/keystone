@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//0bo\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-18T18:02:05Z",
+      "side": 1,
+      "message": "The intention here is to list the ids.  most consumers of this were using a list comprehension to extract the ids.  This is really a v2ism and delete tokens.  I think changing this is outside the scope of this change, but should be revisited in I.",
+      "parentUuid": "AAAAS3//2Ow\u003d",
+      "revId": "523eb0da2c458ceef90af3c50c5ae6a7c66fdef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//2g4\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-18T09:52:10Z",
       "side": 1,
       "message": "How about we call this \"list_users_ids_for_project()\", which then  sits nicely against the existing \"list_projects_for_user()\"?",
+      "revId": "523eb0da2c458ceef90af3c50c5ae6a7c66fdef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//0bk\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-18T18:02:05Z",
+      "side": 1,
+      "message": "done in next patchset.",
+      "parentUuid": "AAAAS3//2g4\u003d",
       "revId": "523eb0da2c458ceef90af3c50c5ae6a7c66fdef7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
