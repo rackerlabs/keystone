@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//2nA\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-18T08:07:54Z",
+      "side": 1,
+      "message": "So Change: https://review.openstack.org/#/c/45584/ (now merged) has removed this function, with \"list_projects_for_user()\" in its place.",
+      "revId": "d7b2216b9a9ac2e3ac9bc69a2dd10754fea6d8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//2nI\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-18T08:07:54Z",
+      "side": 1,
+      "message": "So Change: https://review.openstack.org/#/c/45584/ (now merged) has removed this function, with \"list_projects_for_user()\" in its place.",
+      "revId": "d7b2216b9a9ac2e3ac9bc69a2dd10754fea6d8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//2nQ\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-18T08:07:54Z",
+      "side": 1,
+      "message": "So Change: https://review.openstack.org/#/c/45584/ (now merged) has removed this function, with \"list_projects_for_user()\" in its place.",
+      "revId": "d7b2216b9a9ac2e3ac9bc69a2dd10754fea6d8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//2nc\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-18T08:07:54Z",
+      "side": 1,
+      "message": "So Change: https://review.openstack.org/#/c/45584/ (now merged) has removed this function, with \"list_projects_for_user()\" in its place.",
+      "revId": "d7b2216b9a9ac2e3ac9bc69a2dd10754fea6d8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
