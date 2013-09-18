@@ -69,7 +69,8 @@ from keystone import trust
 
 
 LOG = logging.getLogger(__name__)
-ROOTDIR = os.path.dirname(os.path.abspath('..'))
+ROOTDIR = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                                        "../.."))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
 TESTSDIR = os.path.join(ROOTDIR, 'keystone', 'tests')
 ETCDIR = os.path.join(ROOTDIR, 'etc')
