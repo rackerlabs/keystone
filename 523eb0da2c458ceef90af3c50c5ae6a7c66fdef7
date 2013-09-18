@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//2Ow\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-18T09:52:10Z",
+      "side": 1,
+      "message": "So one thing to ask ourselves, is what is the intention of this method?  Is it to list all the user_ids that have an explicit role on this project? Or is it to list all users_ids that have an effective role on this project (for example, by virtue of group membership)? I suspect it is the latter.  If so, then we need to amend this method to do a similar job to \"list_projects_for_user()\".  However, I think this is probably outside the scope of this change.",
+      "revId": "523eb0da2c458ceef90af3c50c5ae6a7c66fdef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//2g4\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-18T09:52:10Z",
+      "side": 1,
+      "message": "How about we call this \"list_users_ids_for_project()\", which then  sits nicely against the existing \"list_projects_for_user()\"?",
+      "revId": "523eb0da2c458ceef90af3c50c5ae6a7c66fdef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
