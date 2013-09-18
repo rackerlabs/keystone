@@ -265,6 +265,7 @@ class Manager(manager.Manager):
     def get_domain_by_name(self, domain_name):
         return self.driver.get_domain_by_name(domain_name)
 
+    @notifications.created('domain')
     def create_domain(self, domain_id, domain):
         ret = self.driver.create_domain(domain_id, domain)
         if SHOULD_CACHE(ret):
@@ -272,12 +273,14 @@ class Manager(manager.Manager):
             self.get_domain_by_name.set(ret, self, ret['name'])
         return ret
 
+    @notifications.updated('domain')
     def update_domain(self, domain_id, domain):
         ret = self.driver.update_domain(domain_id, domain)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, ret['name'])
         return ret
 
+    @notifications.deleted('domain')
     def delete_domain(self, domain_id):
         domain = self.driver.get_domain(domain_id)
         self.driver.delete_domain(domain_id)
