@@ -74,6 +74,11 @@ class CrudExtension(wsgi.ExtensionRouter):
             controller=tenant_controller,
             action='get_project_users',
             conditions=dict(method=['GET']))
+        mapper.connect(
+            '/tenantname/{tenant_name}',
+            controller=tenant_controller,
+            action='get_project_by_name',
+            conditions=dict(method=['GET']))
 
         # User Operations
         mapper.connect(
@@ -97,6 +102,11 @@ class CrudExtension(wsgi.ExtensionRouter):
             controller=user_controller,
             action='delete_user',
             conditions=dict(method=['DELETE']))
+        mapper.connect(
+            '/username/{user_name}',
+            controller=user_controller,
+            action='get_user_by_name',
+            conditions=dict(method=['GET']))
 
         # COMPAT(diablo): the copy with no OS-KSADM is from diablo
         mapper.connect(
