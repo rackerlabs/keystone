@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//y6I\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T05:34:13Z",
+      "side": 1,
+      "message": "If another patchset is required, I\u0027ll change the test name.",
+      "parentUuid": "AAAAS3//zDA\u003d",
+      "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zCs\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-19T02:28:11Z",
       "side": 1,
       "message": "?",
+      "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//y6Q\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T05:34:13Z",
+      "side": 1,
+      "message": "tenantId should never be \"None\" in the new mechanism for normalizing the default_project_id.  The normalize should strip it out if it exists and is None.  This probably should have had a comment.",
+      "parentUuid": "AAAAS3//zCs\u003d",
       "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
