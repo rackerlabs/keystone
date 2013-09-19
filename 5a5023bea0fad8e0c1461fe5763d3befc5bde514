@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//wlg\u003d",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T19:59:02Z",
+      "side": 0,
+      "message": "I\u0027m not going to know how to build the documentation if this isn\u0027t here.",
+      "revId": "5a5023bea0fad8e0c1461fe5763d3befc5bde514",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

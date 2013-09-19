@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//wn0\u003d",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T19:59:02Z",
+      "side": 1,
+      "message": "could add a note here saying that the source for this is in doc/source/",
+      "revId": "5427c984b63e7f01971e6caa4f4eaf20a382a591",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//wnY\u003d",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T19:59:02Z",
+      "side": 1,
+      "message": "http://api.openstack.org/api-ref-identity.html\n\nThe source is in identity-api, so still good to have a reference to it.",
+      "revId": "5427c984b63e7f01971e6caa4f4eaf20a382a591",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//wmk\u003d",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T19:59:02Z",
+      "side": 1,
+      "message": "Could also add link for documentation for cloud administrators is at : http://docs.openstack.org/trunk/\n\nsource is https://github.com/openstack/openstack-manuals",
+      "revId": "5427c984b63e7f01971e6caa4f4eaf20a382a591",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//wmg\u003d",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T19:59:02Z",
+      "side": 1,
+      "message": "capitalize Keystone",
+      "revId": "5427c984b63e7f01971e6caa4f4eaf20a382a591",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
