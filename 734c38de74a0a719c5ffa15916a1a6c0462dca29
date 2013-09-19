@@ -124,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//zLg\u003d",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "It appears to not be required.  removed.",
+      "parentUuid": "AAAAS3//0Fw\u003d",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//0FU\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 14
@@ -135,6 +153,24 @@
       "writtenOn": "2013-09-18T20:53:05Z",
       "side": 1,
       "message": "why businessCategory? It made more sense for domains because needed something that worked with both inetOrgPerson and groupOfNames, but default_project_id is user-only. There\u0027s no good choice... how about departmentNumber .",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zqk\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "This is now None.  If someone wants to use it, they need to explicitly map it first.",
+      "parentUuid": "AAAAS3//0FU\u003d",
       "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -158,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//zpI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Not sure.  I wanted to leave that in since it was there before hand.  I figure this can be chased down/removed in I when we do further cleanup.",
+      "parentUuid": "AAAAS3//0Ec\u003d",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//0EQ\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 14
@@ -169,6 +223,24 @@
       "writtenOn": "2013-09-18T20:53:05Z",
       "side": 1,
       "message": "why changing this? doesn\u0027t it cause a problem with existing deployments?",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zqI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Good catch.  this one shouldn\u0027t have been changed.",
+      "parentUuid": "AAAAS3//0EQ\u003d",
       "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -192,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//zos\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//0Do\u003d",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//0C8\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 14
@@ -203,6 +293,24 @@
       "writtenOn": "2013-09-18T20:53:05Z",
       "side": 1,
       "message": "what if ref already has a tenantId? Should it get overridden?",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zow\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "default_project_id is the V3 mechanism, I\u0027ve erred on the side of always letting that one win in the case of a conflict.  So in short, yes, it would be overwritten.\n\nIn the case of a SQL ID backend, we pull that out in the migration and put it into the default_project_id column.",
+      "parentUuid": "AAAAS3//0C8\u003d",
       "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -226,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//zog\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//0DM\u003d",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//0CI\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 14
@@ -237,6 +363,24 @@
       "writtenOn": "2013-09-18T20:53:05Z",
       "side": 1,
       "message": "why need to do this? Add a comment.",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zng\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//0CI\u003d",
       "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -260,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//ziE\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//0CE\u003d",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//0Ag\u003d",
         "filename": "keystone/common/models.py",
         "patchSetId": 14
@@ -271,6 +433,24 @@
       "writtenOn": "2013-09-18T20:53:05Z",
       "side": 1,
       "message": "add default_project_id ... not sure why this information is duplicated, but it is.",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zLs\u003d",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//0Ag\u003d",
       "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -294,6 +474,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//zL4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Looks like not.  Removing.",
+      "parentUuid": "AAAAS3//0BI\u003d",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//0A4\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
         "patchSetId": 14
@@ -305,6 +503,24 @@
       "writtenOn": "2013-09-18T20:53:05Z",
       "side": 1,
       "message": "should we log a warning or something?",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zL0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "I don\u0027t think it is required.  The user would likely cause other issues across keystone long before we got here if it was used.",
+      "parentUuid": "AAAAS3//0A4\u003d",
       "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -328,6 +544,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//zgs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "I\u0027ve erred on the side of always accepting the V3 version as the correct version when dealing with multiples.  This continues here and we clean out the mishmash of options to represent the same data.  At the very least, v2 tenantId and v3 default_project_id should be smashed down.\n\nOrder of selection:\ndefault_project_id\ntenantId\ntenant_id (this is a strange one that likely shouldn\u0027t have occurred, but was referenced in some places)\n\nI am not sure what a unit test here would show, this is a fairly straightforward if/elif/elif block.",
+      "parentUuid": "AAAAS3//z/E\u003d",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//z/Y\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
         "patchSetId": 14
@@ -339,6 +573,24 @@
       "writtenOn": "2013-09-18T20:53:05Z",
       "side": 1,
       "message": "seems like if the user didn\u0027t have default_project_id, tenantId, or tenant_id, then should not do the update.",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zhQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//z/Y\u003d",
       "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -362,6 +614,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//zMA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Looks like not.  Removing.",
+      "parentUuid": "AAAAS3//z/A\u003d",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//z+c\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
         "patchSetId": 14
@@ -373,6 +643,24 @@
       "writtenOn": "2013-09-18T20:53:05Z",
       "side": 1,
       "message": "suggest put all 3 in, then client can use tenantId, tenant_id, or default_project_id as they want.",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zhk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Done, though tenant_id will be omitted as this was just cleanup in the case it snuck through (it was referenced in a couple places but not part of the spec).",
+      "parentUuid": "AAAAS3//z+c\u003d",
       "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -396,6 +684,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//zhM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//z+A\u003d",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//z98\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
         "patchSetId": 14
@@ -407,6 +713,24 @@
       "writtenOn": "2013-09-18T20:53:05Z",
       "side": 1,
       "message": "remove nullable\u003dTrue since it\u0027s the default, and it wasn\u0027t used in keystone/identity/backends/sql.py",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zhw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//z98\u003d",
       "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -430,6 +754,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//zgc\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Short of making the manager version aware, it isn\u0027t possible.  For v2.0 requests, \"tenantId\" is needed where v3 would be \"default_project_id\". I was determined that the controller should be smart here instead of needing to pass a \"Version\" argument to the manager (look at the first couple patchsets, it\u0027s a less-elegant solution).",
+      "parentUuid": "AAAAS3//z70\u003d",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//z/g\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 14
@@ -447,6 +789,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//zgU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//z/g\u003d",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//z4U\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 14
@@ -458,6 +818,24 @@
       "writtenOn": "2013-09-18T20:53:05Z",
       "side": 1,
       "message": "what about tenant_id ? Should that be supported, too?",
+      "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zf8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 1,
+      "message": "tenant_id is not part of the spec, but was referenced in the LDAP backend a couple places.  To ensure we didn\u0027t lose that information (e.g. if someone converted) I captured it in the migration.  It was more of an edge-case than anything else.  If we want to support it, I can add it in.",
+      "parentUuid": "AAAAS3//z4U\u003d",
       "revId": "734c38de74a0a719c5ffa15916a1a6c0462dca29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

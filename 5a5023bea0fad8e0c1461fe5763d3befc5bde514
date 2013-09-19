@@ -16,6 +16,24 @@
       "revId": "5a5023bea0fad8e0c1461fe5763d3befc5bde514",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//zX4\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-19T01:10:54Z",
+      "side": 0,
+      "message": "This is handled by the various methods on the driver that does the get_user.  I think we have a couple tests that are not accurate (get_user, get_users, etc).  I\u0027ll update those to reflect this test.  Since the controller does the ids-\u003erefs now via the identity_api, that should be sufficient.",
+      "parentUuid": "AAAAS3//z3w\u003d",
+      "revId": "5a5023bea0fad8e0c1461fe5763d3befc5bde514",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
