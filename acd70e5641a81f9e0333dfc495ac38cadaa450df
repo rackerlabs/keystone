@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//xCc\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-19T19:17:08Z",
+      "side": 1,
+      "message": "nit: message should be: OAuth1 is disabled",
+      "revId": "acd70e5641a81f9e0333dfc495ac38cadaa450df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
