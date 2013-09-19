@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//wU4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-19T21:09:54Z",
+      "side": 1,
+      "message": "Can/Should we log a message here?",
+      "revId": "48d95fd53da5f59d468e4f7fabff5ca6917aa659",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
