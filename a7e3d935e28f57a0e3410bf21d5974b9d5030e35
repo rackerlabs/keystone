@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//yEE\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-19T14:47:55Z",
+      "side": 1,
+      "message": "I don\u0027t think it can raise anything, in fact.",
+      "parentUuid": "AAAAS3//zzU\u003d",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zyg\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-18T21:37:04Z",
       "side": 1,
       "message": "suggest use a tuple here rather than dict.",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//yCY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-19T14:47:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zyg\u003d",
       "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//yBU\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-19T14:47:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zxs\u003d",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zxA\u003d",
         "filename": "keystone/tests/test_auth.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-18T21:37:04Z",
       "side": 1,
       "message": "give a name to the {} magic number so reviewers know what it is.",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//yCE\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-19T14:47:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zxA\u003d",
       "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//yB8\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-19T14:47:55Z",
+      "side": 1,
+      "message": "Copied this from kvs backend...but you are right.  However, this comment should go into the underlying patch (as per my comment, there was a problem with my rebase and this file is not changed by this patch)...I will apply this.",
+      "parentUuid": "AAAAS3//zwc\u003d",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zvk\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 5
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//yB4\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-19T14:47:55Z",
+      "side": 1,
+      "message": "This has all now been removed in the latest patch",
+      "parentUuid": "AAAAS3//zvk\u003d",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zuo\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 5
@@ -115,6 +223,24 @@
       "writtenOn": "2013-09-18T21:37:04Z",
       "side": 1,
       "message": "suggest change token to token_id since that\u0027s what delete_token takes.",
+      "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//yB0\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-19T14:47:55Z",
+      "side": 1,
+      "message": "This has all been removed in the latest patch...",
+      "parentUuid": "AAAAS3//zuo\u003d",
       "revId": "a7e3d935e28f57a0e3410bf21d5974b9d5030e35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
