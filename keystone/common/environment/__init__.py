@@ -78,8 +78,8 @@ def use_eventlet(monkeypatch_thread=None):
     # Raise the default from 8192 to accommodate large tokens
     eventlet.wsgi.MAX_HEADER_LINE = 16384
 
-    eventlet.patcher.monkey_patch(all=False, socket=True, time=True,
-                                  thread=monkeypatch_thread)
+    eventlet.patcher.monkey_patch(os=False, select=True, socket=True,
+                                  thread=monkeypatch_thread, time=True)
 
     Server = eventlet_server.Server
     httplib = _httplib
