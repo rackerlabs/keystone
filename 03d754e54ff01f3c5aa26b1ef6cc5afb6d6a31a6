@@ -2,6 +2,142 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAS3//whQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T20:34:05Z",
+      "side": 1,
+      "message": "(nit) revert whitespace change",
+      "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//whI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T20:34:05Z",
+      "side": 1,
+      "message": "add a comment what this is for.",
+      "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//wj0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T20:34:05Z",
+      "side": 1,
+      "message": "seems like the SQL backend should take care of this, and the controller shouldn\u0027t have to know anything about what\u0027s going on with the different backends.",
+      "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//wgY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T20:34:05Z",
+      "side": 1,
+      "message": "add a comment why need to do this since it\u0027s not obvious.",
+      "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//wgE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T20:34:05Z",
+      "side": 1,
+      "message": "we a test in keystone/tests/test_sql_upgrade.py to show that this works with some data.",
+      "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//wgA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T20:34:05Z",
+      "side": 1,
+      "message": "we a test in keystone/tests/test_sql_upgrade.py to show that this works with some data.",
+      "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//wjo\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T20:34:05Z",
+      "side": 1,
+      "message": "add a comment why we need to do this, since it\u0027s not intuitive.\n\nWhat if there was some other property that we need to normalize, are we going to have another function to call?\n\nSuggest call the function self.normalize_user_properties() or something.\n\nAlso, add some documentation to self.identity_api.get_user() that callers need to normalize the default_project_id or other properties (or whatever it is that they need to do) because of ... (whatever the reason is).\n\nAlternatively, maybe it would make more sense to have a static function in V2 controller (don\u0027t bother overriding in V3 since it would never be called from a V3 controller) to normalize a V3 user to V2...\n\n controller.V2Controller.V3_user_to_V2(user_ref)",
+      "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//wi4\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T20:34:05Z",
+      "side": 1,
+      "message": "the reply to \"I don\u0027t see why identity_api.get_user can\u0027t normalize_default_project_id so all the callers don\u0027t have to remember to do it.\" was \"Short of making the manager version aware, it isn\u0027t possible.\" ... seems like the identity_api would always return a canonical \"v3\" version and only if a \"v2\" user was required then it would be translated.",
+      "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zDA\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 16
@@ -31,6 +167,40 @@
       "side": 1,
       "message": "If another patchset is required, I\u0027ll change the test name.",
       "parentUuid": "AAAAS3//zDA\u003d",
+      "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//wiM\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T20:34:05Z",
+      "side": 1,
+      "message": "seems like it would be easier to change the default LDAP backend test config to store default_project_id (also, I think this is a more likely configuration out in the field)",
+      "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//wdM\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-19T20:34:05Z",
+      "side": 1,
+      "message": "suggest do \"del ref[\u0027default_project_id\u0027]\" ... I\u0027m not a fan of tests not knowing whether something is going to be there or not.",
       "revId": "03d754e54ff01f3c5aa26b1ef6cc5afb6d6a31a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
