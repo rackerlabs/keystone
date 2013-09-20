@@ -51,6 +51,24 @@
       "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ucg\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-20T14:35:01Z",
+      "side": 1,
+      "message": "So remove_user_from_project() WAS intended to be the inverse operation of add_user_to_project() -- it\u0027s supposed to remove the member_role (_member_) and that\u0027s it. Just like add_user_to_project() adds the _member_ role, and that\u0027s it. It looks like morgan added remove_user_membership_from_project() to satisfy the original use case :-/",
+      "parentUuid": "AAAAS3//vE8\u003d",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
