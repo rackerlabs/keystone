@@ -307,6 +307,11 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           self.identity_api.get_group,
                           group['id'])
 
+    def test_update_user_name(self):
+        """A user's name connect be changed through the LDAP driver."""
+        self.assertRaises(exception.Conflict,
+                          super(BaseLDAPIdentity, self).test_update_user_name)
+
 
 class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
     def setUp(self):
