@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//v8g\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2835,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-20T00:34:00Z",
+      "side": 1,
+      "message": "based on the rest of your tests, it looks like you should be calling this here as well:\n\n  self._check_scoped_tokens_are_valid()",
+      "revId": "07a080d3d6f2bdc37daaf5105f3848d2450f8b17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
