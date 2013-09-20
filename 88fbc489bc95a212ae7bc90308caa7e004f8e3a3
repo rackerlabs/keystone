@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//vnY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2013-09-20T05:48:11Z",
+      "side": 1,
+      "message": "monir: % -\u003e ,\nit is recommended to use comma instead of percent in log parameter,\n\nsee: http://docs.python.org/2/library/logging.html#logging.Logger.debug",
+      "revId": "88fbc489bc95a212ae7bc90308caa7e004f8e3a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
