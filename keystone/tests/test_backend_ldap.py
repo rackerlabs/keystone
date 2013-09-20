@@ -332,6 +332,15 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assertRaises(exception.Conflict,
                           super(BaseLDAPIdentity, self).test_update_user_name)
 
+    def test_arbitrary_attributes_are_returned_from_get_user(self):
+        pass
+
+    def test_arbitrary_attributes_are_returned_from_update_user0(self):
+        pass
+
+    def test_arbitrary_attributes_are_returned_from_update_user1(self):
+        pass
+
 
 class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
     def setUp(self):
