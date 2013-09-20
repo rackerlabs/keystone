@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//tho\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-20T19:03:30Z",
+      "side": 1,
+      "message": "(NIT): this is picky but I suggest in the title we either use \u0027tenant\u0027 or \u0027project\u0027 consistently. \n\n\u0027Add user to project if project ID is changed\u0027 \n\nOR \n\n\u0027Add user to tenant if tenant ID is changed\u0027",
+      "revId": "370ac10c0bf225830d85d3a2d2197991b91dfb42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//thc\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-20T19:03:30Z",
+      "side": 1,
+      "message": "Let\u0027s document these parameters in the docstrings.",
+      "revId": "370ac10c0bf225830d85d3a2d2197991b91dfb42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
