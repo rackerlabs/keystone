@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//udk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-20T14:35:37Z",
+      "side": 1,
+      "message": "Should a bug report be opened for this? Since we are in bug only mode?",
+      "revId": "6f895e58c8390437c2125a956973c78ef1d9055c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ucQ\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-20T14:35:37Z",
+      "side": 1,
+      "message": "How come we have to determine on the length of \u0027res\u0027? Couldn\u0027t this same things be accomplished with just:\n\nif res:\n    return res[0]\n\nI feel like having the length function in there makes it seem like we are dependent on what the length of res is, but in this case aren\u0027t we just using it to ensure res is something other than \u0027\u0027 an empty string and None?",
+      "revId": "6f895e58c8390437c2125a956973c78ef1d9055c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
