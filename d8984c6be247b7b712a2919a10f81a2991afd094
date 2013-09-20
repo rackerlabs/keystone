@@ -16,6 +16,24 @@
       "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//veo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-20T06:44:29Z",
+      "side": 1,
+      "message": "tenant_id is really only being accounted for in the upgrade because of a reference in the ldap identity backend (in-case someone converted data).  It isn\u0027t part of the spec and therefore was left out in the down-grade.  If anything, I\u0027d be more inclined to remove it from the tests and upgrade than add it in here since it was used in such a limited capacity.",
+      "parentUuid": "AAAAS3//vgg\u003d",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
