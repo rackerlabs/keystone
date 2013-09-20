@@ -1955,6 +1955,30 @@ class IdentityTests(object):
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], True)
 
+    def test_update_user_name(self):
+        user = {'id': uuid.uuid4().hex,
+                'name': 'initial_name',
+                'enabled': True,
+                'domain_id': DEFAULT_DOMAIN_ID}
+        self.identity_api.create_user(user['id'], user)
+        user_ref = self.identity_api.get_user(user['id'])
+        self.assertEqual(user['name'], user_ref['name'])
+
+        user_ref['name'] = 'changed_name'
+        updated_user = self.identity_api.update_user(user_ref['id'], user_ref)
+
+        # NOTE(dstanek): the SQL backend adds an 'extra' field containing a
+        #                dictionary of the extra fields in addition to the
+        #                field on the object. For the details see:
+        #                SqlIdentity.test_update_project_returns_extra
+        if 'extra' in updated_user:
+            del updated_user['extra']
+
+        self.assertDictEqual(user_ref, updated_user)
+
+        user_ref = self.identity_api.get_user(user_ref['id'])
+        self.assertEqual(user_ref['name'], 'changed_name')
+
     def test_update_user_enable_fails(self):
         user = {'id': 'fake1', 'name': 'fake1', 'enabled': True,
                 'domain_id': DEFAULT_DOMAIN_ID}
