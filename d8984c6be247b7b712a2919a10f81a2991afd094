@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//txQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-20T18:14:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//uVk\u003d",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//uVE\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 19
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-20T15:36:18Z",
       "side": 1,
       "message": "This is beautiful. Wish there were a few testcases that called it directly (because this has to work correctly for v2 to be correct).",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//txA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-20T18:14:44Z",
+      "side": 1,
+      "message": "I figured that this was exercised by a lot of test code; but you are correct it is much better to directly test this as well.  I\u0027ll add a couple specific tests. Thanks for the recommendation.",
+      "parentUuid": "AAAAS3//uVE\u003d",
       "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//tw8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-20T18:14:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//uRw\u003d",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//uRs\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
         "patchSetId": 19
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-20T15:36:18Z",
       "side": 1,
       "message": "suggest change name to \"migrate_default_project_to_extra\" since that\u0027s the column name.",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//tw4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-20T18:14:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//uRs\u003d",
       "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//twk\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-20T18:14:44Z",
+      "side": 1,
+      "message": "It isn\u0027t that the token api expects it, it is that the data might be consumed by an external source, it is part of the token data.  Since this is V2.0, we should have the \"correct\" form of tenantId vs default_project_id.  Comment will be added.",
+      "parentUuid": "AAAAS3//uRI\u003d",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//uQY\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 19
@@ -150,6 +240,24 @@
       "writtenOn": "2013-09-20T15:36:18Z",
       "side": 1,
       "message": "would be nice to have a testcase that calls this directly if possible.",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//twg\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-20T18:14:44Z",
+      "side": 1,
+      "message": "I\u0027ll see if I can craft something to test this explicitly.  It is tested as a side effect of the Multiple Domain backend test (where we mix SQL and LDAP) as the ldap backend doesn\u0027t return default_project_id and the SQL one does even if null in the DB, so this filters it out.",
+      "parentUuid": "AAAAS3//uQY\u003d",
       "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -191,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//txU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-20T18:14:44Z",
+      "side": 1,
+      "message": "This change is specific to maintaining compatibility with the LDAP backend - so moving it to the controller made sense so this patchset was \"working\": https://github.com/openstack/keystone/blob/master/keystone/identity/backends/ldap.py#L108\n\nThe other review would still need to occur and be applied over the top.  Either that or i could make my changeset dependent on that review.  Both work, just need to pick the approach.",
+      "parentUuid": "AAAAS3//ucg\u003d",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//uNg\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 19
@@ -202,6 +328,24 @@
       "writtenOn": "2013-09-20T15:36:18Z",
       "side": 1,
       "message": "Seems strange that core.validate_auth_info takes a \"canonical\"/v3 user but the rest of this function uses v2 users. Please add a comment why this is the case.",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//twE\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-20T18:14:44Z",
+      "side": 1,
+      "message": "Same as with the ec2 one, this is that the data could be consumed externally, therefore we make sure the correct version.  comment will be added.",
+      "parentUuid": "AAAAS3//uNg\u003d",
       "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
