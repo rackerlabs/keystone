@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//tWU\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-20T20:22:55Z",
+      "side": 1,
+      "message": "(NIT): this is picky but since we are documenting the return and raise values, we should probably be consistent and doc the parameter (tenant_id) as well. Thought?",
+      "revId": "54585bbcd680b00b8334a1f2ffedbd45a7cbc440",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//tV8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-20T20:22:55Z",
+      "side": 1,
+      "message": "Should a TODO be added to clean up?",
+      "revId": "54585bbcd680b00b8334a1f2ffedbd45a7cbc440",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
