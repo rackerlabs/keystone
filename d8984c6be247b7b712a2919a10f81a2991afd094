@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//vgg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-20T06:23:19Z",
+      "side": 1,
+      "message": "might want to account for \u0027tenant_id\u0027 as well since you are looking for it in upgrade\n\ndata[\u0027tenant_id\u0027] \u003d user.default_project_id",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
