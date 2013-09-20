@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAS3//uVk\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-20T15:36:18Z",
+      "side": 1,
+      "message": "(nit) move this to after line 187. It will be a little easier to maintain keystone.conf.sample and config.py if the options are in the same order in both.",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//uVE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-20T15:36:18Z",
+      "side": 1,
+      "message": "This is beautiful. Wish there were a few testcases that called it directly (because this has to work correctly for v2 to be correct).",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//uRw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-20T15:36:18Z",
+      "side": 1,
+      "message": "suggest change name to \"migrate_default_project_from_extra\" since that\u0027s the column name.",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//uRs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-20T15:36:18Z",
+      "side": 1,
+      "message": "suggest change name to \"migrate_default_project_to_extra\" since that\u0027s the column name.",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//vgg\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/034_add_default_project_id_column_to_user.py",
         "patchSetId": 19
@@ -37,6 +105,57 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//uRQ\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-20T15:36:18Z",
+      "side": 1,
+      "message": "while I think the comment was needed when the function was about removing default_project_id, I think it\u0027s pretty obvious why we would need to convert a v3 user to a v2 user, so I don\u0027t think this comment is needed.",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//uRI\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-20T15:36:18Z",
+      "side": 1,
+      "message": "I\u0027m surprised that the token provider API expects v2 users and not \"canonical\"/v3 users. Please add a comment that this is the case.",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//uQY\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-20T15:36:18Z",
+      "side": 1,
+      "message": "would be nice to have a testcase that calls this directly if possible.",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//vE8\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 19
@@ -66,6 +185,23 @@
       "side": 1,
       "message": "So remove_user_from_project() WAS intended to be the inverse operation of add_user_to_project() -- it\u0027s supposed to remove the member_role (_member_) and that\u0027s it. Just like add_user_to_project() adds the _member_ role, and that\u0027s it. It looks like morgan added remove_user_membership_from_project() to satisfy the original use case :-/",
       "parentUuid": "AAAAS3//vE8\u003d",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//uNg\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-20T15:36:18Z",
+      "side": 1,
+      "message": "Seems strange that core.validate_auth_info takes a \"canonical\"/v3 user but the rest of this function uses v2 users. Please add a comment why this is the case.",
       "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
