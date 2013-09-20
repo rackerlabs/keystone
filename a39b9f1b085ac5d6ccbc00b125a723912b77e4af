@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//uKg\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-20T15:50:27Z",
+      "side": 1,
+      "message": "There should be a testcase for the case when this is called with an unknown role_id and it doesn\u0027t raise RoleNotFound, just returns an empty list.\n\nAlso, could add to the docstring that this function doesn\u0027t verify that the role exists.",
+      "revId": "a39b9f1b085ac5d6ccbc00b125a723912b77e4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//uME\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-20T15:50:27Z",
+      "side": 1,
+      "message": "change to \n\n for user, project_id in user_and_project_ids_to_action:",
+      "revId": "a39b9f1b085ac5d6ccbc00b125a723912b77e4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
