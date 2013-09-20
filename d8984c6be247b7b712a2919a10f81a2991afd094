@@ -34,6 +34,23 @@
       "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//vE8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-20T09:57:43Z",
+      "side": 1,
+      "message": "(I know we discussed this on the keystone meting...) but this is attempting to fix the the same problem as: https://review.openstack.org/#/c/42826/23/keystone/identity/controllers.py.  However, I think the code may be incorrect, since I don\u0027t think you want to remove ALL the roles from the old project (which is what remove_user_from_project() does), rather just remove the membership role.\n\nIf there a reason why we can\u0027t let https://review.openstack.org/#/c/42826/23/keystone/identity/controllers.py just be laid on top of the general clean up here?",
+      "revId": "d8984c6be247b7b712a2919a10f81a2991afd094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
