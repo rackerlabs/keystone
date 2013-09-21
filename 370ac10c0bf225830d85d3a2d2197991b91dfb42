@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//s3o\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-21T00:12:25Z",
+      "side": 1,
+      "message": "Good catch!\n I will change it to \"Add user to project if project ID ischanged\"",
+      "parentUuid": "AAAAS3//tho\u003d",
+      "revId": "370ac10c0bf225830d85d3a2d2197991b91dfb42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//thc\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 23
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-20T19:03:30Z",
       "side": 1,
       "message": "Let\u0027s document these parameters in the docstrings.",
+      "revId": "370ac10c0bf225830d85d3a2d2197991b91dfb42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//s28\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-21T00:12:25Z",
+      "side": 1,
+      "message": "Hi, Lance:\n    I know what you mean, but i think it is not so necessary that we should add a descriptions for this function,\nObviously, tenant_id and user_is is comprehensoble and readble.\n\nWould you agree with me?\n\nThank you~~~",
+      "parentUuid": "AAAAS3//thc\u003d",
       "revId": "370ac10c0bf225830d85d3a2d2197991b91dfb42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
