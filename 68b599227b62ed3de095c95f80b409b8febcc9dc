@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//q1k\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T23:39:38Z",
+      "side": 1,
+      "message": "should this be assignment_api rather than identity_api (see line 233).\n\nAlso, if get_project raises ProjectNotFound (as implied by line 233), then don\u0027t need to raise it here... alternativerly, line 233 needs to be fixed to check for None like this line.",
+      "revId": "68b599227b62ed3de095c95f80b409b8febcc9dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q1c\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T23:39:38Z",
+      "side": 1,
+      "message": "if the tenant isn\u0027t present in user_ref but was present in original user (tenantId was removed with tenantId: None), then don\u0027t we need to self.assignment_api.remove_user_from_project() ?",
+      "revId": "68b599227b62ed3de095c95f80b409b8febcc9dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
