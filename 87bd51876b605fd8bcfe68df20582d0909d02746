@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//q6g\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:52:29Z",
+      "side": 1,
+      "message": "should not use LOG.exception here since this should be more like a warning than an error, use LOG.warning. Can add exc_info\u003dTrue if really need to dump exception.",
+      "revId": "87bd51876b605fd8bcfe68df20582d0909d02746",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q6c\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:52:29Z",
+      "side": 1,
+      "message": "should not use LOG.exception here since this should be more like a warning than an error, use LOG.warning. Can add exc_info\u003dTrue if really need to dump exception.",
+      "revId": "87bd51876b605fd8bcfe68df20582d0909d02746",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q5w\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:52:29Z",
+      "side": 1,
+      "message": "seems like this change could be reverted (back to the original with NOTE(termie)",
+      "revId": "87bd51876b605fd8bcfe68df20582d0909d02746",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q5o\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:52:29Z",
+      "side": 1,
+      "message": "seems like this change could be reverted (back to the original with NOTE(termie)",
+      "revId": "87bd51876b605fd8bcfe68df20582d0909d02746",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q5k\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:52:29Z",
+      "side": 1,
+      "message": "seems like this change could be reverted (back to the original with NOTE(termie)",
+      "revId": "87bd51876b605fd8bcfe68df20582d0909d02746",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
