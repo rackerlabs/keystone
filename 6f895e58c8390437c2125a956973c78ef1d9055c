@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//q2M\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T23:28:59Z",
+      "side": 1,
+      "message": "This is related to https://bugs.launchpad.net/keystone/+bug/1226171\n\nBut it might be actually a separate bug.",
+      "parentUuid": "AAAAS3//tZE\u003d",
+      "revId": "6f895e58c8390437c2125a956973c78ef1d9055c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//ucQ\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "res is an array.  If the Array is empty, return None.  Otherwise, return the first element.  This is the same logic as before, but without the try/except.  THis way is slightly less expensive, and, I thought,  clearer.",
       "parentUuid": "AAAAS3//ucQ\u003d",
+      "revId": "6f895e58c8390437c2125a956973c78ef1d9055c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q2Q\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T23:28:59Z",
+      "side": 1,
+      "message": "Suggest a comment to indicate the use of it.  It is better than the try/except in my opinion.",
+      "parentUuid": "AAAAS3//tZQ\u003d",
       "revId": "6f895e58c8390437c2125a956973c78ef1d9055c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
