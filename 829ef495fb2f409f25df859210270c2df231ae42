@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//q80\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "this comment should also say to add the member role on the new tenant.",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q8E\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "use self.assignment_api",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q8A\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "use self.assignment_api",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q8g\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "since we know the member_role_id here already, use \n\n self.identity_api.remove_role_from_user_and_project(user_id, tenant_id, member_role_id)\n\nThen, revert the change to keystone/assignment/core.py and keystone/identity/core.py because remove_user_membership_from_project won\u0027t be used.",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q78\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "use self.assignment_api",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q8M\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "add a space at the end of this line, change\n\n role\u0027\n\nto\n\n role \u0027",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q74\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "use self.assignment_api",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q70\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "use self.assignment_api",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q7w\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1512,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "use self.assignment_api",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q7s\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1519,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "use self.assignment_api",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q7o\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1525,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "use self.assignment_api",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q7k\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "change \"for on\" to \"based on\"",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q7g\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "change \"for on\" to \"based on\"",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q7c\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "change \"for on\" to \"based on\"",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q7U\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "change \"for on\" to \"based on\"",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q7Q\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 632,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "this needs a docstring.  Suggest change name to \"assertNoRoles\"",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q7M\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "remove $",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q7I\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "remove this because it\u0027s the default. Also fix in other places where this is used (697)",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q64\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "use format string here rather than + (like at line 684)",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q7E\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "remove this because it\u0027s the default. Also fix in other places where this is used (700)",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q60\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-22T22:30:14Z",
+      "side": 1,
+      "message": "use format string here rather than + (like at line 684)",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
