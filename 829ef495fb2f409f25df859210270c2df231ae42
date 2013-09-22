@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAS3//q6Q\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:54:02Z",
+      "side": 1,
+      "message": "(NIT): add a period at the end of this line in the docstring.",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q80\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 24
@@ -13,6 +30,23 @@
       "writtenOn": "2013-09-22T22:30:14Z",
       "side": 1,
       "message": "this comment should also say to add the member role on the new tenant.",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q54\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:54:02Z",
+      "side": 1,
+      "message": "What if \u0027tenantId\u0027 is set to None?  Is the expected behavior to update the user but not remove the user\u0027s member role from the current project?",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +132,40 @@
       "writtenOn": "2013-09-22T22:30:14Z",
       "side": 1,
       "message": "add a space at the end of this line, change\n\n role\u0027\n\nto\n\n role \u0027",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q6A\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:54:02Z",
+      "side": 1,
+      "message": "If this fails you\u0027ve already removed the user but not performed the update (e.g. RoleNotFound, or ProjectNotFound [think of it from the stand point of multiple keystone processes running and a race here]).  It would probably be better to either remove tenantId from the user dict and log it then proceed to the update.",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q5s\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:54:02Z",
+      "side": 1,
+      "message": "Don\u0027t add this here.  Just reference assignment_api everywhere for this method.",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +342,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//q5g\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 632,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:54:02Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAS3//q7Q\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q7M\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 24
@@ -336,6 +422,23 @@
       "writtenOn": "2013-09-22T22:30:14Z",
       "side": 1,
       "message": "remove this because it\u0027s the default. Also fix in other places where this is used (700)",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q5M\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:54:02Z",
+      "side": 1,
+      "message": "This should reference the CONF for the member role (in the case that it is changed with a test override)",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
