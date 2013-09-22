@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//q/U\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:13:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//rBc\u003d",
+      "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//rBU\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-22T20:51:25Z",
       "side": 1,
       "message": "Am I crazy or does this function take tenant_id, user_id and not user_id, tenant_id (see https://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L233 ) ? Not tested?\n\nAlso, this function can raise ProjectNotFound and UserNotFound. It seems inappropriate to return a 404 when the user was updated (at line 235). So need to revert the change if this fails, or ignore NotFound from this?",
+      "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q+w\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:13:12Z",
+      "side": 1,
+      "message": "good catch.  working on handling exception.",
+      "parentUuid": "AAAAS3//rBU\u003d",
       "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//q/k\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:13:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//rBI\u003d",
+      "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//rBE\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 22
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-22T20:51:25Z",
       "side": 1,
       "message": "already done by assertDictEqual at line 167, so suggest remove.",
+      "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q/g\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:13:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//rBE\u003d",
       "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//q/c\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:13:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//rBA\u003d",
+      "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//rDU\u003d",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 22
@@ -98,6 +188,24 @@
       "writtenOn": "2013-09-22T20:51:25Z",
       "side": 1,
       "message": "use assertIsNone",
+      "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q/Y\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:13:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//rDU\u003d",
       "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//q/Q\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1599,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:13:12Z",
+      "side": 1,
+      "message": "Ah yep, I had it backwards I thought assertEqual was deprecated.",
+      "parentUuid": "AAAAS3//rAw\u003d",
+      "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//rDE\u003d",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 22
@@ -132,6 +258,24 @@
       "writtenOn": "2013-09-22T20:51:25Z",
       "side": 1,
       "message": "Not sure that this belongs in \"test_v3_identity.py\" since it\u0027s in the V2 controller and not the V3 controller. (But I\u0027m also fine leaving it here... the tests are poorly organized in general.)",
+      "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q/I\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1574,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:13:12Z",
+      "side": 1,
+      "message": "I wasn\u0027t sure where to put it, and it isn\u0027t something I wanted to run each time for each backend.  Lets plan to reorg if possible tests to be better in Icehouse.",
+      "parentUuid": "AAAAS3//rDE\u003d",
       "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//q/E\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1575,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:13:12Z",
+      "side": 1,
+      "message": "will remove \"convenience\" from the docstring.",
+      "parentUuid": "AAAAS3//rC4\u003d",
+      "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//rCc\u003d",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 22
@@ -166,6 +328,24 @@
       "writtenOn": "2013-09-22T20:51:25Z",
       "side": 1,
       "message": "seems like we know exactly what the resulting user should look like, so why not using like assertEqual(self.user1, expected_v2_user1) ?",
+      "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//q/M\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1609,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-22T22:13:12Z",
+      "side": 1,
+      "message": "Fair enough, I\u0027ll build a \"expected result\" version as well.",
+      "parentUuid": "AAAAS3//rCc\u003d",
       "revId": "dd5c6935bd476c99ef8ee4f27fd08f55ec3bd7a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
