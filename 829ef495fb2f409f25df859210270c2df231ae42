@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//qmo\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "No problem~~~",
+      "parentUuid": "AAAAS3//q6Q\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q80\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-22T22:30:14Z",
       "side": 1,
       "message": "this comment should also say to add the member role on the new tenant.",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//qqM\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAAS3//q80\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//qp8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "users:\n{\n\u0027tenantId\u0027:\"\",\n\u0027email\u0027: \"kaitian521@gmail.com\"\n}\n\nIn such case, we should update email and other attributes",
+      "parentUuid": "AAAAS3//q54\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q8E\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 24
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-22T22:30:14Z",
       "side": 1,
       "message": "use self.assignment_api",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//qpU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "Why should I use assignment_api? identity_api call assignment_api.",
+      "parentUuid": "AAAAS3//q8E\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//qpE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "Why should I use assignment_api? identity_api call assignment_api.",
+      "parentUuid": "AAAAS3//q8A\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q8g\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 24
@@ -98,6 +188,24 @@
       "writtenOn": "2013-09-22T22:30:14Z",
       "side": 1,
       "message": "since we know the member_role_id here already, use \n\n self.identity_api.remove_role_from_user_and_project(user_id, tenant_id, member_role_id)\n\nThen, revert the change to keystone/assignment/core.py and keystone/identity/core.py because remove_user_membership_from_project won\u0027t be used.",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//qoM\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "AAAAS3//q8g\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//qos\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "Why should I use assignment_api? identity_api call assignment_api.",
+      "parentUuid": "AAAAS3//q78\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q8M\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 24
@@ -132,6 +258,24 @@
       "writtenOn": "2013-09-22T22:30:14Z",
       "side": 1,
       "message": "add a space at the end of this line, change\n\n role\u0027\n\nto\n\n role \u0027",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//qow\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "Yes! This is a good catch",
+      "parentUuid": "AAAAS3//q8M\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -166,6 +310,24 @@
       "writtenOn": "2013-09-22T22:54:02Z",
       "side": 1,
       "message": "Don\u0027t add this here.  Just reference assignment_api everywhere for this method.",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//qmk\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "according to brant, this function should be removed",
+      "parentUuid": "AAAAS3//q5s\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +436,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//qk4\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "Yes. BUT i copied this from above...",
+      "parentUuid": "AAAAS3//q7k\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q7g\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 24
@@ -285,6 +465,24 @@
       "writtenOn": "2013-09-22T22:30:14Z",
       "side": 1,
       "message": "change \"for on\" to \"based on\"",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//qk0\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "AAAAS3//q7g\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +506,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//qkw\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "AAAAS3//q7c\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q7U\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 24
@@ -319,6 +535,24 @@
       "writtenOn": "2013-09-22T22:30:14Z",
       "side": 1,
       "message": "change \"for on\" to \"based on\"",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//qks\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "AAAAS3//q7U\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -360,6 +594,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//qko\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 632,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "No problem~~~",
+      "parentUuid": "AAAAS3//q5g\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q7M\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 24
@@ -371,6 +623,24 @@
       "writtenOn": "2013-09-22T22:30:14Z",
       "side": 1,
       "message": "remove $",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//qkg\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "This is a miatake when using vim",
+      "parentUuid": "AAAAS3//q7M\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -394,6 +664,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//qik\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "Yes, I put “method\u003dGET” just for readable",
+      "parentUuid": "AAAAS3//q7I\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q64\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 24
@@ -405,6 +693,24 @@
       "writtenOn": "2013-09-22T22:30:14Z",
       "side": 1,
       "message": "use format string here rather than + (like at line 684)",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//qig\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "YES",
+      "parentUuid": "AAAAS3//q64\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -428,6 +734,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//qic\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "YES",
+      "parentUuid": "AAAAS3//q7E\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q5M\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 24
@@ -445,6 +769,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//qh8\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "Maybe ishould use CONF.memver_role_name",
+      "parentUuid": "AAAAS3//q5M\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q60\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 24
@@ -456,6 +798,24 @@
       "writtenOn": "2013-09-22T22:30:14Z",
       "side": 1,
       "message": "use format string here rather than + (like at line 684)",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//qiY\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-23T05:21:33Z",
+      "side": 1,
+      "message": "YES",
+      "parentUuid": "AAAAS3//q60\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
