@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//pUo\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-23T13:58:31Z",
+      "side": 1,
+      "message": "i\u0027d *much* rather see a new driver method rather than doubling the complexity of this method (and pushing it closer towards being incompatible with our caching implementation). everything you\u0027re doing is on the python side, so you might as well just wrap this method in the base driver class, no?",
+      "revId": "6d57aaae0f1b4bfe15d6736e68bcbd355ed52953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
