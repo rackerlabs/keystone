@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//okQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-23T16:55:03Z",
+      "side": 1,
+      "message": "It is valid to not have a tenantId.  If you look at the current functionality, setting this to None should be valid, and should remove the user\u0027s \"membership\" role.",
+      "parentUuid": "AAAAS3//qp8\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q8E\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 24
@@ -328,6 +346,24 @@
       "side": 1,
       "message": "according to brant, this function should be removed",
       "parentUuid": "AAAAS3//q5s\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//okU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-23T16:55:03Z",
+      "side": 1,
+      "message": "Yep. I was saying the same thing.",
+      "parentUuid": "AAAAS3//qmk\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
