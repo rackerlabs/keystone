@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//n/o\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-23T20:23:05Z",
+      "side": 1,
+      "message": "is \u0027admin\u0027 really the role ID you\u0027re testing for? where did that role come from?\n\n(nit) the extra parens and line breaks here make this hard to read would this fit?\n\n  existing_assignments_for_role \u003d len(\n      self.assignment_api.list_role_assignments_for_role(role_id\u003d\u0027admin\u0027))\n\nor\n\n  existing_assignments_for_role \u003d len(\n      self.assignment_api.list_role_assignments_for_role(\n          role_id\u003d\u0027admin\u0027))",
+      "revId": "81f604af85f3bc5e26bf8b7bc2bc68ce70c18691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//nxg\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-23T20:23:05Z",
+      "side": 1,
+      "message": "this bug is marked Invalid?",
+      "revId": "81f604af85f3bc5e26bf8b7bc2bc68ce70c18691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//nw4\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-23T20:23:05Z",
+      "side": 1,
+      "message": "this is a substantial amount of extra setup to only be used in one test :( makes all the other tests much more difficult to follow",
+      "revId": "81f604af85f3bc5e26bf8b7bc2bc68ce70c18691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
