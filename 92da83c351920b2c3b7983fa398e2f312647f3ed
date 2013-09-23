@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//nl4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-23T21:18:02Z",
+      "side": 1,
+      "message": "it\u0027s just RBAC\n\n  Role Based Access Control",
+      "revId": "92da83c351920b2c3b7983fa398e2f312647f3ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//nls\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-23T21:18:02Z",
+      "side": 1,
+      "message": "the pass is redundant (a no-op is redundant with any op)",
+      "revId": "92da83c351920b2c3b7983fa398e2f312647f3ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//nlg\u003d",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-23T21:18:02Z",
+      "side": 1,
+      "message": "can\u0027t just pull in one change",
+      "revId": "92da83c351920b2c3b7983fa398e2f312647f3ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

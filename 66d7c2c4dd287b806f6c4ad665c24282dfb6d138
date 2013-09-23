@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//nlo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-23T21:18:02Z",
+      "side": 0,
+      "message": "?",
+      "revId": "66d7c2c4dd287b806f6c4ad665c24282dfb6d138",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//nlk\u003d",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-23T21:18:02Z",
+      "side": 0,
+      "message": "?",
+      "revId": "66d7c2c4dd287b806f6c4ad665c24282dfb6d138",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
