@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//o4M\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-23T15:35:09Z",
+      "side": 1,
+      "message": "i think the prevailing pattern is to use \u0027if\u0027 on every block, so either change this \u0027elif\u0027 to an \u0027if\u0027 or change all the rest from \u0027if\u0027 to \u0027elif\u0027 -- just looking for consistency (the elif stands out as-is)",
+      "parentUuid": "AAAAS3//vNI\u003d",
+      "revId": "33b3cbd10af2fcdbd860263cf37c201edf4b6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zmk\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 8
