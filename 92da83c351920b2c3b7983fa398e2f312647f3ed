@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//nZ8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-23T22:17:20Z",
+      "side": 1,
+      "message": "I know.\nsorry for that.",
+      "parentUuid": "AAAAS3//nl4\u003d",
+      "revId": "92da83c351920b2c3b7983fa398e2f312647f3ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//nls\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 10
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//nZ4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-23T22:17:20Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAAS3//nls\u003d",
+      "revId": "92da83c351920b2c3b7983fa398e2f312647f3ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//nlg\u003d",
         "filename": "keystone/openstack/common/policy.py",
         "patchSetId": 10
@@ -47,6 +83,24 @@
       "writtenOn": "2013-09-23T21:18:02Z",
       "side": 1,
       "message": "can\u0027t just pull in one change",
+      "revId": "92da83c351920b2c3b7983fa398e2f312647f3ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//nYg\u003d",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-23T22:17:20Z",
+      "side": 1,
+      "message": "Keystone version of policy.py way different than Oslo\u0027s \nhttps://review.openstack.org/#/c/46589/8/openstack/common/policy.py\nChange-Id: Iefc2d87863f386ed3fe3263e4e4feb192420b5b5\n\nDo you want me to sync up that Oslo\u0027s:policy.py in Keystone:policy.py in separate patch?\nPlease advise",
+      "parentUuid": "AAAAS3//nlg\u003d",
       "revId": "92da83c351920b2c3b7983fa398e2f312647f3ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
