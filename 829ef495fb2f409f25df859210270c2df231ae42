@@ -160,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//oWk\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-23T17:58:33Z",
+      "side": 1,
+      "message": "We\u0027ve been working to remove calls to identity_api that should be made directly to assignment_api. The alias for assignment_api functions in identity_api is only there to make the original change easier. New code should use assignment_api and not continue to use identity_api.",
+      "parentUuid": "AAAAS3//qpU\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q8A\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 24
