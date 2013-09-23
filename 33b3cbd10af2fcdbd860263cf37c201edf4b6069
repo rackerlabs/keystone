@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//oKU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-23T18:43:30Z",
+      "side": 1,
+      "message": "I mistakenly put \"else\" here rather than \"if\", that\u0027s probably where the confusion came from.",
+      "parentUuid": "AAAAS3//o4M\u003d",
+      "revId": "33b3cbd10af2fcdbd860263cf37c201edf4b6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zmk\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 8
