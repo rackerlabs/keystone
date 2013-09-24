@@ -54,6 +54,7 @@ IntegrityError = sql.exc.IntegrityError
 OperationalError = sql.exc.OperationalError
 NotFound = sql.orm.exc.NoResultFound
 Boolean = sql.Boolean
+Integer = sql.Integer
 Text = sql.Text
 UniqueConstraint = sql.UniqueConstraint
 relationship = sql.orm.relationship

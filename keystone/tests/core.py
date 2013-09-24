@@ -63,6 +63,7 @@ from keystone import identity
 from keystone.openstack.common import log as logging
 from keystone.openstack.common import timeutils
 from keystone import policy
+from keystone import quota
 from keystone import token
 from keystone.token import provider as token_provider
 from keystone import trust
@@ -314,7 +315,7 @@ class TestCase(NoModule, testtools.TestCase):
         # identity driver.
         for manager in [identity, assignment, catalog, credential,
                         endpoint_filter, policy, token, token_provider,
-                        trust, oauth1]:
+                        trust, oauth1, quota]:
             # manager.__name__ is like keystone.xxx[.yyy],
             # converted to xxx[_yyy]
             manager_name = ('%s_api' %
