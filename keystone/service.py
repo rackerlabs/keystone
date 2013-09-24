@@ -31,6 +31,7 @@ from keystone import credential
 from keystone import identity
 from keystone.openstack.common import log as logging
 from keystone import policy
+from keystone import quota
 from keystone import routers
 from keystone import token
 from keystone import trust
@@ -58,7 +59,8 @@ DRIVERS = dict(
     policy_api=policy.Manager(),
     token_api=token.Manager(),
     trust_api=trust.Manager(),
-    token_provider_api=token.provider.Manager())
+    token_provider_api=token.provider.Manager(),
+    quota_api=quota.Manager())
 
 dependency.resolve_future_dependencies()
 
@@ -130,6 +132,9 @@ def v3_app_factory(global_conf, **local_conf):
 
     if CONF.trust.enabled:
         trust.routers.append_v3_routers(mapper, v3routers)
+
+    if CONF.quota.enabled:
+        quota.routers.append_v3_routers(mapper, v3routers)
 
     # Add in the v3 version api
     v3routers.append(routers.VersionV3('admin'))
