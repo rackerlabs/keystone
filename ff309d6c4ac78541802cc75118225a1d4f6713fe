@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//m9Q\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-24T00:45:20Z",
+      "side": 1,
+      "message": "(nit) change \"update\" to \"updated\"",
+      "revId": "ff309d6c4ac78541802cc75118225a1d4f6713fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//m9k\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-24T00:45:20Z",
+      "side": 1,
+      "message": "comparing with nova\u0027s tox.ini, is there a reason nova has -U here and keystone doesn\u0027t?",
+      "revId": "ff309d6c4ac78541802cc75118225a1d4f6713fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
