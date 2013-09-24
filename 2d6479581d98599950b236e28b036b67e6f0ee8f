@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//j1A\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-24T17:31:57Z",
+      "side": 1,
+      "message": "(nit) change \"didnt\" to \"didn\u0027t\"",
+      "revId": "2d6479581d98599950b236e28b036b67e6f0ee8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//j0A\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-24T17:31:57Z",
+      "side": 1,
+      "message": "Don\u0027t we need to disallow adding immutable attributes, too? (move 419-422 before 413).",
+      "revId": "2d6479581d98599950b236e28b036b67e6f0ee8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
