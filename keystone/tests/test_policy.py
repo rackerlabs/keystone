@@ -29,6 +29,16 @@ from keystone import tests
 CONF = config.CONF
 
 
+def mocked_load_rules(*args, **kwargs):
+    # FIXME(gyee): latest Oslo policy Enforcer class reloads the rule in
+    # its enforce() method even though rules has been initialized via
+    # set_rules(). To make it easier to do our tests, we're going to
+    # monkeypatch load_roles() so it does nothing.
+    # This seem like a bug in Oslo policy as we shoudn't have to reload
+    # the rules if they have already been set using set_rules().
+    pass
+
+
 class PolicyFileTestCase(tests.TestCase):
     def setUp(self):
         super(PolicyFileTestCase, self).setUp()
@@ -85,7 +95,7 @@ class PolicyTestCase(tests.TestCase):
         these_rules = common_policy.Rules(
             dict((k, common_policy.parse_rule(v))
                  for k, v in self.rules.items()))
-        common_policy.set_rules(these_rules)
+        rules._ENFORCER.set_rules(these_rules)
 
     def tearDown(self):
         rules.reset()
@@ -171,7 +181,7 @@ class DefaultPolicyTestCase(tests.TestCase):
         these_rules = common_policy.Rules(
             dict((k, common_policy.parse_rule(v))
                  for k, v in self.rules.items()), default_rule)
-        common_policy.set_rules(these_rules)
+        rules._ENFORCER.set_rules(these_rules)
 
     def tearDown(self):
         super(DefaultPolicyTestCase, self).tearDown()
@@ -182,9 +192,17 @@ class DefaultPolicyTestCase(tests.TestCase):
                           self.credentials, "example:exist", {})
 
     def test_not_found_policy_calls_default(self):
+        rules._ENFORCER.load_rules = mocked_load_rules
         rules.enforce(self.credentials, "example:noexist", {})
 
     def test_default_not_found(self):
-        self._set_rules("default_noexist")
+        new_default_rule = "default_noexist"
+        # FIXME(gyee): need to overwrite the Enforcer's default_rule first
+        # as it is create the new rules from using its default_rule instead
+        # of the default_role passed in from set_rules(). I think this is a
+        # bug in oslo policy.
+        rules._ENFORCER.default_rule = new_default_rule
+        self._set_rules(new_default_rule)
+        rules._ENFORCER.load_rules = mocked_load_rules
         self.assertRaises(exception.ForbiddenAction, rules.enforce,
                           self.credentials, "example:noexist", {})
