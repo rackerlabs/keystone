@@ -16,6 +16,24 @@
       "revId": "a16ba64f6db417ddf49e99f3cf0df212d526a895",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//jMk\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-24T20:03:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//jNE\u003d",
+      "revId": "a16ba64f6db417ddf49e99f3cf0df212d526a895",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
