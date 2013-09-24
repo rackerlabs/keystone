@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//mwk\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-24T02:31:08Z",
+      "side": 1,
+      "message": "There are two circumstances that should be considered: one is that tenantId is an empty string \"\", the second is that tenantId is an invalid tenant, for example \u0027tenantId\u0027:\u0027abcd12333333\u0027 where this tenant dose not exist.\n\nIn such above cases, what should we do?",
+      "parentUuid": "AAAAS3//okQ\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//q8E\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 24
@@ -172,6 +190,24 @@
       "side": 1,
       "message": "We\u0027ve been working to remove calls to identity_api that should be made directly to assignment_api. The alias for assignment_api functions in identity_api is only there to make the original change easier. New code should use assignment_api and not continue to use identity_api.",
       "parentUuid": "AAAAS3//qpU\u003d",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//mys\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-24T02:31:08Z",
+      "side": 1,
+      "message": "OK I know that, Thank you for your reply",
+      "parentUuid": "AAAAS3//oWk\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -329,6 +365,24 @@
       "writtenOn": "2013-09-22T22:54:02Z",
       "side": 1,
       "message": "If this fails you\u0027ve already removed the user but not performed the update (e.g. RoleNotFound, or ProjectNotFound [think of it from the stand point of multiple keystone processes running and a race here]).  It would probably be better to either remove tenantId from the user dict and log it then proceed to the update.",
+      "revId": "829ef495fb2f409f25df859210270c2df231ae42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//mu4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-09-24T02:31:08Z",
+      "side": 1,
+      "message": "Hi? Morgan, thank you for your comments here, but I want to know exactly where and how \"this fails \"?  If user gives an invalid tenantId, an exception will throw out.\n\nWould you like to give a detail about this condition?\nWhy should I \" remove tenantId from the user dict\"?\nThank you !",
+      "parentUuid": "AAAAS3//q6A\u003d",
       "revId": "829ef495fb2f409f25df859210270c2df231ae42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
