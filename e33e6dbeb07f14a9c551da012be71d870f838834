@@ -16,6 +16,24 @@
       "revId": "e33e6dbeb07f14a9c551da012be71d870f838834",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//lH4\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 703,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-24T12:37:49Z",
+      "side": 1,
+      "message": "this is explicitly overriding the same method in test_backend.py -- i could just raise a skiptest N/A but I\u0027d rather test something as closely as possible to super\u0027s method. if that\u0027s confusing, this is basically a subset of test_domain_crud\u0027s coverage and can be removed",
+      "parentUuid": "AAAAS3//o/Y\u003d",
+      "revId": "e33e6dbeb07f14a9c551da012be71d870f838834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
