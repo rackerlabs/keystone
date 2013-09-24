@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//j5A\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-24T17:23:02Z",
+      "side": 1,
+      "message": "the way you are doing it in common/controller.py, should this be\n\ntarget.entity.user.id?",
+      "revId": "56a99887bc09259fa6dd658b70e544ced6b671bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//j5Q\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-24T17:23:02Z",
+      "side": 1,
+      "message": "subject_token -\u003e token_ref\n\nAre you sure you want to set the entire token_ref to policy_dict? When you flatten policy_dict, you are going to end up with\n\ntarget.entity.user.id\n\nwhich may be different than the one you are expecting in policy.v3cloudsample.json. If you don\u0027t need everything, you may want to cleanup token_ref before flatten it.",
+      "revId": "56a99887bc09259fa6dd658b70e544ced6b671bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//j3A\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-24T17:23:02Z",
+      "side": 1,
+      "message": "Why are we eating the Unauthorized exception?",
+      "revId": "56a99887bc09259fa6dd658b70e544ced6b671bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
