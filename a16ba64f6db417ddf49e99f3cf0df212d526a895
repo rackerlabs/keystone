@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//jNE\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2013-09-24T20:01:00Z",
+      "side": 1,
+      "message": "Let\u0027s make it:\n\n  oslo.config\u003e\u003d1.2.0",
+      "revId": "a16ba64f6db417ddf49e99f3cf0df212d526a895",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
