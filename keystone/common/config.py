@@ -265,7 +265,32 @@ FILE_OPTIONS = {
         cfg.StrOpt('template_file',
                    default='default_catalog.templates'),
         cfg.StrOpt('driver',
-                   default='keystone.catalog.backends.sql.Catalog')]}
+                   default='keystone.catalog.backends.sql.Catalog')],
+    'quota': [
+        cfg.BoolOpt('enabled', default=True),
+        cfg.StrOpt('driver',
+                   default='keystone.quota.backends.sql.Quotas')],
+    'nova': [
+        cfg.IntOpt('instances', default=10),
+        cfg.IntOpt('cores', default=20),
+        cfg.IntOpt('ram', default=50 * 1024),
+        cfg.IntOpt('security_groups', default=10),
+        cfg.IntOpt('floating_ips', default=10),
+        cfg.IntOpt('fixed_ips', default=-1),
+        cfg.IntOpt('metadata_items', default=128),
+        cfg.IntOpt('injected_files', default=5),
+        cfg.IntOpt('injected_files_content_bytes', default=10 * 1024),
+        cfg.IntOpt('injected_file_path_bytes', default=255),
+        cfg.IntOpt('security_group_rules', default=20)],
+    'cinder': [
+        cfg.IntOpt('key_pairs', default=100),
+        cfg.IntOpt('volumes', default=10),
+        cfg.IntOpt('snapshots', default=10),
+        cfg.IntOpt('gigabytes', default=1000)],
+    'neutron': [
+        cfg.IntOpt('network', default=10),
+        cfg.IntOpt('subnet', default=10),
+        cfg.IntOpt('port', default=50)]}
 
 
 CONF = cfg.CONF
