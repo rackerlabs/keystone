@@ -16,6 +16,24 @@
       "revId": "dc62539d6f170a8c3901aceb052bb5a69d17812c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//m2g\u003d",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-24T01:28:17Z",
+      "side": 1,
+      "message": "token_foremat is no longer supported.  If a user does a customer token_provider, they need to change from using token_format to specifying the token provider.  We can\u0027t catch every possible combination, but we can remove the test indicating to people that custom token_format is an acceptable approach.",
+      "parentUuid": "AAAAS3//nF4\u003d",
+      "revId": "dc62539d6f170a8c3901aceb052bb5a69d17812c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
