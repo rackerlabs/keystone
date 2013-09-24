@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//noQ\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-24T09:52:59Z",
+      "side": 1,
+      "message": "\u0027admin\u0027 is part of default_fixtures....I could use any of the role_ids we are about to add an assignment for here...\n\nChanged line formatting as suggested.",
+      "parentUuid": "AAAAS3//n/o\u003d",
+      "revId": "81f604af85f3bc5e26bf8b7bc2bc68ce70c18691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//nxg\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 11
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//np8\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-24T09:52:59Z",
+      "side": 1,
+      "message": "Ah, yes, it has been superseded.  Have update with correct bug 1195019",
+      "parentUuid": "AAAAS3//nxg\u003d",
+      "revId": "81f604af85f3bc5e26bf8b7bc2bc68ce70c18691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//nw4\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 11
@@ -65,6 +101,24 @@
       "writtenOn": "2013-09-23T20:23:05Z",
       "side": 1,
       "message": "this is a substantial amount of extra setup to only be used in one test :( makes all the other tests much more difficult to follow",
+      "revId": "81f604af85f3bc5e26bf8b7bc2bc68ce70c18691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//lkk\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-24T09:52:59Z",
+      "side": 1,
+      "message": "Fair point - that was worrying me too!  Have moved the test specific data into the test itself.",
+      "parentUuid": "AAAAS3//nw4\u003d",
       "revId": "81f604af85f3bc5e26bf8b7bc2bc68ce70c18691",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
