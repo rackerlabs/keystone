@@ -603,6 +603,13 @@ class SqlUpgradeTests(SqlMigrateBase):
         user_table = self.select_table("user")
         self.assertEquals(user_table.c.name.type.length, 255)
 
+    def test_upgrade_33_to_34(self):
+        self.upgrade(34)
+
+        quota_table = self.select_table("quota")
+        self.assertEquals(type(quota_table.c.resource.type),
+                          sqlalchemy.types.VARCHAR)
+
     def test_downgrade_32_to_31(self):
         self.upgrade(32)
         session = self.Session()
