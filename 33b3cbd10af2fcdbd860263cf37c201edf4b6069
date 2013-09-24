@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//msw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-24T02:44:59Z",
+      "side": 1,
+      "message": "These nits are not worth holding up the patch.",
+      "parentUuid": "AAAAS3//oKU\u003d",
+      "revId": "33b3cbd10af2fcdbd860263cf37c201edf4b6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zmk\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 8
@@ -101,6 +119,24 @@
       "writtenOn": "2013-09-20T08:52:10Z",
       "side": 1,
       "message": "I probably need to improve the tests for all of this,",
+      "parentUuid": "AAAAS3//zmk\u003d",
+      "revId": "33b3cbd10af2fcdbd860263cf37c201edf4b6069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//mso\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-09-24T02:44:59Z",
+      "side": 1,
+      "message": "+1 on the reordering",
       "parentUuid": "AAAAS3//zmk\u003d",
       "revId": "33b3cbd10af2fcdbd860263cf37c201edf4b6069",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
