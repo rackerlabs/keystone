@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//mq8\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-24T03:04:38Z",
+      "side": 1,
+      "message": "looks like these should both refer to bug 1221805 now (thanks adam!)",
+      "parentUuid": "AAAAS3//nxg\u003d",
+      "revId": "81f604af85f3bc5e26bf8b7bc2bc68ce70c18691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//nw4\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 11
