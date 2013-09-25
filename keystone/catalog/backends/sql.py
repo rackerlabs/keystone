@@ -21,8 +21,10 @@ from keystone.common import sql
 from keystone.common.sql import migration
 from keystone import config
 from keystone import exception
+from keystone.openstack.common import log as logging
 
 
+LOG = logging.getLogger(__name__)
 CONF = config.CONF
 
 
@@ -166,9 +168,18 @@ class Catalog(sql.Base, catalog.Driver):
                 'name': endpoint.service['name'],
                 'publicURL': ''
             }
+            try:
+                url = core.format_url(endpoint['url'], d)
+            except exception.MalformedEndpoint as e:
+                LOG.warning(
+                    "Malformed URL %s in endpoint %s" % (
+                        endpoint['id'],
+                        endpoint['url']
+                    )
+                )
+                continue
             catalog.setdefault(region, {})
             catalog[region].setdefault(service_type, default_service)
-            url = core.format_url(endpoint['url'], d)
             interface_url = '%sURL' % endpoint['interface']
             catalog[region][service_type][interface_url] = url
 
