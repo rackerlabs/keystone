@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAS3//gLs\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-25T15:56:42Z",
+      "side": 1,
+      "message": "To translate the warning message, wrap string in _().\n\nIf all we do is log a warning, isn\u0027t the API still going to be destroyed?",
+      "revId": "bfaad2e56327d6f1b311600475baa7492ba7cf64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//gRU\u003d",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 1
