@@ -2356,6 +2356,55 @@ class IdentityTests(object):
         ref['name'] = ref['name'].upper()
         self.assignment_api.create_domain(ref['id'], ref)
 
+    def test_attribute_update(self):
+        project = {
+            'domain_id': CONF.identity.default_domain_id,
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex}
+        self.assignment_api.create_project(project['id'], project)
+
+        # pick a key known to be non-existant
+        key = 'description'
+
+        def assert_key_equals(value):
+            project_ref = self.assignment_api.update_project(
+                project['id'], project)
+            self.assertEqual(project_ref[key], value)
+            project_ref = self.identity_api.get_project(project['id'])
+            self.assertEqual(project_ref[key], value)
+
+        def assert_get_key_is(value):
+            project_ref = self.assignment_api.update_project(
+                project['id'], project)
+            self.assertIs(project_ref.get(key), value)
+            project_ref = self.identity_api.get_project(project['id'])
+            self.assertIs(project_ref.get(key), value)
+
+        # add an attribute that doesn't exist, set it to a falsey value
+        value = ''
+        project[key] = value
+        assert_key_equals(value)
+
+        # set an attribute with a falsey value to null
+        value = None
+        project[key] = value
+        assert_get_key_is(value)
+
+        # do it again, in case updating from this situation is handled oddly
+        value = None
+        project[key] = value
+        assert_get_key_is(value)
+
+        # set a possibly-null value to a falsey value
+        value = ''
+        project[key] = value
+        assert_key_equals(value)
+
+        # set a falsey value to a truthy value
+        value = uuid.uuid4().hex
+        project[key] = value
+        assert_key_equals(value)
+
     def test_user_crud(self):
         user = {'domain_id': CONF.identity.default_domain_id,
                 'id': uuid.uuid4().hex,
