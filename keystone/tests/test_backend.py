@@ -2274,6 +2274,54 @@ class IdentityTests(object):
                           self.identity_api.get_domain,
                           domain['id'])
 
+    def test_attribute_update(self):
+        user = {
+            'domain_id': CONF.identity.default_domain_id,
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'password': uuid.uuid4().hex}
+        self.identity_api.create_user(user['id'], user)
+
+        # pick a key known to be non-existant
+        key = uuid.uuid4().hex
+
+        def assert_key_equals(value):
+            user_ref = self.identity_api.update_user(user['id'], user)
+            self.assertEqual(user_ref[key], value)
+            user_ref = self.identity_api.get_user(user['id'])
+            self.assertEqual(user_ref[key], value)
+
+        def assert_get_key_is(value):
+            user_ref = self.identity_api.update_user(user['id'], user)
+            self.assertIs(user_ref.get(key), value)
+            user_ref = self.identity_api.get_user(user['id'])
+            self.assertIs(user_ref.get(key), value)
+
+        # add an attribute that doesn't exist, set it to a falsey value
+        value = ''
+        user[key] = value
+        assert_key_equals(value)
+
+        # set an attribute with a falsey value to null
+        value = None
+        user[key] = value
+        assert_get_key_is(value)
+
+        # do it again, in case updating from this situation is handled oddly
+        value = None
+        user[key] = value
+        assert_get_key_is(value)
+
+        # set a possibly-null value to a falsey value
+        value = ''
+        user[key] = value
+        assert_key_equals(value)
+
+        # set a falsey value to a truthy value
+        value = uuid.uuid4().hex
+        user[key] = value
+        assert_key_equals(value)
+
     def test_user_crud(self):
         user = {'domain_id': CONF.identity.default_domain_id,
                 'id': uuid.uuid4().hex,
