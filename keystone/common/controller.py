@@ -304,6 +304,13 @@ class V2Controller(wsgi.Application):
         ref.pop('domain_id', None)
         return ref
 
+    @staticmethod
+    def normalize_username(ref):
+        """Adds username to match the v2 spec."""
+        if 'username' not in ref and 'name' in ref:
+            ref['username'] = ref['name']
+        return ref
+
 
 class V3Controller(V2Controller):
     """Base controller class for Identity API v3.
