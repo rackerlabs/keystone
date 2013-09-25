@@ -16,6 +16,24 @@
       "revId": "80cac706b1c1f98a9265bc3fa585087f3c69f334",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//hsk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-09-25T08:00:37Z",
+      "side": 1,
+      "message": "I think enabled can be only true or false and from what I understand https://github.com/openstack/keystone/blob/master/keystone/clean.py#L46 this ensures it",
+      "parentUuid": "AAAAS3//h1M\u003d",
+      "revId": "80cac706b1c1f98a9265bc3fa585087f3c69f334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
