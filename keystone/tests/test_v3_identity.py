@@ -1602,6 +1602,7 @@ class TestV3toV2Methods(tests.TestCase):
         # User with only default_project_id in ref
         self.user1 = {'id': self.user_id,
                       'name': self.user_id,
+                      'name': self.user_id,
                       'default_project_id': self.default_project_id,
                       'domain_id': self.domain_id}
         # User without default_project_id or tenantId in ref
@@ -1623,11 +1624,13 @@ class TestV3toV2Methods(tests.TestCase):
         # Expected result if the user is meant to have a tenantId element
         self.expected_user = {'id': self.user_id,
                               'name': self.user_id,
+                              'username': self.user_id,
                               'tenantId': self.default_project_id}
 
         # Expected result if the user is not meant ot have a tenantId element
         self.expected_user_no_tenant_id = {'id': self.user_id,
-                                           'name': self.user_id}
+                                           'name': self.user_id,
+                                           'username': self.user_id}
 
     def test_v3_to_v2_user_method(self):
 
