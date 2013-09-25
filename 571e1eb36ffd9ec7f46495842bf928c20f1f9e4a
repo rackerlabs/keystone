@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//ibY\u003d",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-25T02:18:27Z",
+      "side": 1,
+      "message": "The help text output is getting pretty ugly. :(",
+      "revId": "571e1eb36ffd9ec7f46495842bf928c20f1f9e4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
