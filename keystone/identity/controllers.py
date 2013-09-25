@@ -191,6 +191,7 @@ class User(controller.V2Controller):
 
     # CRUD extension
     def create_user(self, context, user):
+        user = self._normalize_username(user)
         user = self._normalize_dict(user)
         self.assert_admin(context)
 
@@ -219,6 +220,7 @@ class User(controller.V2Controller):
 
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
+        user = self._normalize_username(user)
         self.assert_admin(context)
 
         if 'enabled' in user and not isinstance(user['enabled'], bool):
@@ -296,6 +298,25 @@ class User(controller.V2Controller):
 
     def set_user_password(self, context, user_id, user):
         return self.update_user(context, user_id, user)
+
+    def update_user_project(self, context, user_id, user):
+        """Update the default tenant."""
+        self.assert_admin(context)
+
+        try:
+            # ensure that we're a member of that tenant
+            self.identity_api.add_user_to_project(
+                user.get('tenantId'), user_id)
+        except exception.Conflict:
+            # we're already a member of that tenant
+            pass
+
+        return self.update_user(context, user_id, user)
+
+    def _normalize_username(self, d):
+        if 'name' not in d and 'username' in d:
+            d['name'] = d.pop('username')
+        return d
 
 
 class Role(controller.V2Controller):
