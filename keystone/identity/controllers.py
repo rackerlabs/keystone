@@ -191,6 +191,7 @@ class User(controller.V2Controller):
 
     # CRUD extension
     def create_user(self, context, user):
+        user = self.normalize_username_in_request(user)
         user = self._normalize_dict(user)
         self.assert_admin(context)
 
@@ -219,6 +220,7 @@ class User(controller.V2Controller):
 
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
+        user = self.normalize_username_in_request(user)
         self.assert_admin(context)
 
         if 'enabled' in user and not isinstance(user['enabled'], bool):
