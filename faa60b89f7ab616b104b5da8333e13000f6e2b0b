@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//c2c\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-09-26T14:19:25Z",
+      "side": 1,
+      "message": "looks like this line is upsetting Jenkins\n\nsince it\u0027s not in a loop, remove the continue.",
+      "revId": "faa60b89f7ab616b104b5da8333e13000f6e2b0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
