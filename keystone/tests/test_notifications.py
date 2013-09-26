@@ -19,6 +19,7 @@ import uuid
 from keystone import notifications
 from keystone.openstack.common.notifier import api as notifier_api
 from keystone import tests
+from keystone.tests import test_v3
 
 
 EXP_RESOURCE_TYPE = uuid.uuid4().hex
@@ -145,3 +146,106 @@ class NotificationsTestCase(tests.TestCase):
         self.stubs.Set(notifier_api, 'notify', fake_notify)
         notifications._send_notification(resource, resource_type, operation,
                                          host=host)
+
+
+class NotificationsForEntities(test_v3.RestfulTestCase):
+    def setUp(self):
+        super(NotificationsForEntities, self).setUp()
+
+        self.exp_resource_id = None
+        self.exp_operation = None
+        self.exp_host = None
+        self.exp_resource_type = None
+        self.send_notification_called = False
+
+        def fake_notify(operation, resource_type, resource_id, host=None):
+            self.assertEqual(self.exp_operation, operation)
+            self.assertEqual(self.exp_resource_id, resource_id)
+            self.assertEqual(self.exp_host, host)
+            self.assertEqual(self.exp_resource_type, resource_type)
+            self.send_notification_called = True
+
+        self.stubs.Set(notifications, '_send_notification', fake_notify)
+
+    def save_expected_values(self, exp_resource_id, exp_operation,
+                             exp_host, exp_resource_type):
+        self.exp_resource_id = exp_resource_id
+        self.exp_operation = exp_operation
+        self.exp_host = exp_host
+        self.exp_resource_type = exp_resource_type
+
+    def test_create_user(self):
+        ref = self.new_user_ref(domain_id=self.domain_id)
+        self.save_expected_values(ref['id'], 'created', None, 'user')
+        self.identity_api.create_user(ref['id'], ref)
+        self.assertTrue(self.send_notification_called)
+        return ref
+
+    def test_update_user(self):
+        ref = self.test_create_user()
+        self.save_expected_values(ref['id'], 'updated', None, 'user')
+        self.identity_api.update_user(ref['id'], ref)
+        self.assertTrue(self.send_notification_called)
+
+    def test_delete_user(self):
+        ref = self.test_create_user()
+        self.save_expected_values(ref['id'], 'deleted', None, 'user')
+        self.identity_api.delete_user(ref['id'])
+        self.assertTrue(self.send_notification_called)
+
+    def test_create_role(self):
+        ref = self.new_role_ref()
+        self.save_expected_values(ref['id'], 'created', None, 'role')
+        self.assignment_api.create_role(ref['id'], ref)
+        self.assertTrue(self.send_notification_called)
+        return ref
+
+    def test_update_role(self):
+        ref = self.test_create_role()
+        self.save_expected_values(ref['id'], 'updated', None, 'role')
+        self.assignment_api.update_role(ref['id'], ref)
+        self.assertTrue(self.send_notification_called)
+
+    def test_delete_role(self):
+        ref = self.test_create_role()
+        self.save_expected_values(ref['id'], 'deleted', None, 'role')
+        self.assignment_api.delete_role(ref['id'])
+        self.assertTrue(self.send_notification_called)
+
+    def test_create_group(self):
+        ref = self.new_group_ref(domain_id=self.domain_id)
+        self.save_expected_values(ref['id'], 'created', None, 'group')
+        self.identity_api.create_group(ref['id'], ref)
+        self.assertTrue(self.send_notification_called)
+        return ref
+
+    def test_update_group(self):
+        ref = self.test_create_group()
+        self.save_expected_values(ref['id'], 'updated', None, 'group')
+        self.identity_api.update_group(ref['id'], ref)
+        self.assertTrue(self.send_notification_called)
+
+    def test_delete_group(self):
+        ref = self.test_create_group()
+        self.save_expected_values(ref['id'], 'deleted', None, 'group')
+        self.identity_api.delete_group(ref['id'])
+        self.assertTrue(self.send_notification_called)
+
+    def test_create_project(self):
+        ref = self.new_project_ref(domain_id=self.domain_id)
+        self.save_expected_values(ref['id'], 'created', None, 'project')
+        self.assignment_api.create_project(ref['id'], ref)
+        self.assertTrue(self.send_notification_called)
+        return ref
+
+    def test_update_project(self):
+        ref = self.test_create_project()
+        self.save_expected_values(ref['id'], 'updated', None, 'project')
+        self.assignment_api.update_project(ref['id'], ref)
+        self.assertTrue(self.send_notification_called)
+
+    def test_delete_project(self):
+        ref = self.test_create_project()
+        self.save_expected_values(ref['id'], 'deleted', None, 'project')
+        self.assignment_api.delete_project(ref['id'])
+        self.assertTrue(self.send_notification_called)

@@ -32,6 +32,8 @@ A notification is sent when a resource is successfully ``created``,
 
 - ``user``
 - ``project`` (i.e. "tenant")
+- ``role``
+- ``group``
 
 The following message template is used to form a message when an operation on a
 resource completes successfully::
