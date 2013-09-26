@@ -812,6 +812,37 @@ class CoreApiTests(object):
             expected_status=200)
         self.assertEqual(self._get_role_name(r.result), '_member_')
 
+    def test_authenticating_a_user_with_no_password(self):
+        token = self.get_scoped_token()
+
+        username = uuid.uuid4().hex
+
+        # create the user
+        self.admin_request(
+            method='POST',
+            path='/v2.0/users',
+            body={
+                'user': {
+                    'name': username,
+                    'enabled': True,
+                },
+            },
+            token=token)
+
+        # fail to authenticate
+        self.public_request(
+            method='POST',
+            path='/v2.0/tokens',
+            body={
+                'auth': {
+                    'passwordCredentials': {
+                        'username': username,
+                        'password': 'password',
+                    },
+                },
+            },
+            expected_status=401)
+
 
 class JsonTestCase(RestfulTestCase, CoreApiTests):
     content_type = 'json'
