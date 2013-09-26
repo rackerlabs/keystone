@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//bYc\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-26T20:38:59Z",
+      "side": 1,
+      "message": "setting this domain name to something specific is unnecessary",
+      "revId": "cbe9e55b016faa78f9b94f944ad54469785f1b56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
