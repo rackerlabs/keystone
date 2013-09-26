@@ -21,6 +21,7 @@ from keystone.common import dependency
 from keystone import config
 from keystone import exception
 from keystone import identity
+from keystone import notifications
 from keystone.openstack.common import log as logging
 from keystone.openstack.common import timeutils
 
@@ -134,6 +135,7 @@ class TrustV3(controller.V3Controller):
                                                 target='roles')
         return trust_roles
 
+    @notifications.created('trust')
     @controller.protected()
     def create_trust(self, context, trust=None):
         """Create a new trust.
@@ -208,6 +210,7 @@ class TrustV3(controller.V3Controller):
             self._fill_in_roles(context, trust, global_roles)
         return TrustV3.wrap_collection(context, trusts)
 
+    @notifications.deleted('trust')
     @controller.protected()
     def delete_trust(self, context, trust_id):
         trust = self.trust_api.get_trust(trust_id)
