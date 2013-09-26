@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//bLU\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-09-26T22:25:56Z",
+      "side": 1,
+      "message": "indent for line 197 does not look correct.",
+      "revId": "f1f0bbc4b42adeeced224778271f1297b9632b96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
