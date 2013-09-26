@@ -371,6 +371,7 @@ class Manager(manager.Manager):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
         driver.delete_user(user_id)
 
+    @notifications.created('group')
     @domains_configured
     def create_group(self, group_id, group_ref):
         group = group_ref.copy()
@@ -394,6 +395,7 @@ class Manager(manager.Manager):
             ref = self._set_domain_id(ref, domain_id)
         return ref
 
+    @notifications.updated('group')
     @domains_configured
     def update_group(self, group_id, group, domain_scope=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
@@ -404,6 +406,7 @@ class Manager(manager.Manager):
             ref = self._set_domain_id(ref, domain_id)
         return ref
 
+    @notifications.deleted('group')
     @domains_configured
     def delete_group(self, group_id, domain_scope=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
