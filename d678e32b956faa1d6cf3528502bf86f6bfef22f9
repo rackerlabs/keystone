@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAS3//e0M\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-26T00:26:47Z",
+      "side": 1,
+      "message": "Should be using assertIsInstance.",
+      "revId": "d678e32b956faa1d6cf3528502bf86f6bfef22f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//x3Q\u003d",
         "filename": "keystone/tests/core.py",
         "patchSetId": 1
@@ -13,6 +30,23 @@
       "writtenOn": "2013-09-19T14:10:11Z",
       "side": 1,
       "message": "cool, nice catch",
+      "revId": "d678e32b956faa1d6cf3528502bf86f6bfef22f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ezA\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 812,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-26T00:26:47Z",
+      "side": 1,
+      "message": "should be assertIn",
       "revId": "d678e32b956faa1d6cf3528502bf86f6bfef22f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
