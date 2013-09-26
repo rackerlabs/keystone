@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//bXQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-09-26T20:50:04Z",
+      "side": 1,
+      "message": "we only care about user_id? what about other attributes like token scope and roles?",
+      "revId": "386a26cecd0bc71c8436e990d666f06c64c82fc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
