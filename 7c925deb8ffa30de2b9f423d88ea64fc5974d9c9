@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//e1Y\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-26T00:18:20Z",
+      "side": 1,
+      "message": "Note that when switch to testr then this will not be accurate anymore since you get no feedback.",
+      "revId": "7c925deb8ffa30de2b9f423d88ea64fc5974d9c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//e1Q\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-26T00:18:20Z",
+      "side": 1,
+      "message": "Since talking about virtualenvs, could add about -r to rebuild the virtualenv",
+      "revId": "7c925deb8ffa30de2b9f423d88ea64fc5974d9c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//e1g\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-26T00:18:20Z",
+      "side": 1,
+      "message": "suggest add pep8 to this. I\u0027d prefer developers do py27,pep8 before submitting a change.",
+      "revId": "7c925deb8ffa30de2b9f423d88ea64fc5974d9c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//e00\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-26T00:18:20Z",
+      "side": 1,
+      "message": "We also have _sql_livetest.py, which should be easier than this method.",
+      "revId": "7c925deb8ffa30de2b9f423d88ea64fc5974d9c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//e1I\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-26T00:18:20Z",
+      "side": 1,
+      "message": "tox keystone.tests.test_sql_upgrade\n\notherwise I get \"NameError: name \u0027_\u0027 is not defined\"",
+      "revId": "7c925deb8ffa30de2b9f423d88ea64fc5974d9c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
