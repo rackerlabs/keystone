@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-09-11 06:00+0000\n"
+"POT-Creation-Date: 2013-09-26 06:00+0000\n"
 "PO-Revision-Date: 2013-09-04 23:27+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Nepali "
@@ -203,23 +203,24 @@ msgstr ""
 msgid "Creating the default role %s because it does not exist."
 msgstr ""
 
-#: keystone/assignment/core.py:636 keystone/identity/core.py:216
+#: keystone/assignment/core.py:656 keystone/identity/core.py:244
+#: keystone/identity/core.py:256
 #, python-format
 msgid "Expected dict or list: %s"
 msgstr ""
 
-#: keystone/assignment/backends/kvs.py:138
-#: keystone/assignment/backends/sql.py:271
+#: keystone/assignment/backends/kvs.py:140
+#: keystone/assignment/backends/sql.py:320
 #, python-format
 msgid "Cannot remove role that has not been granted, %s"
 msgstr ""
 
-#: keystone/assignment/backends/ldap.py:405
+#: keystone/assignment/backends/ldap.py:409
 #, python-format
 msgid "Role %s not found"
 msgstr ""
 
-#: keystone/assignment/backends/sql.py:109
+#: keystone/assignment/backends/sql.py:103
 msgid "Inherited roles can only be assigned to domains"
 msgstr ""
 
@@ -338,12 +339,12 @@ msgid "RBAC: Proceeding without tenant"
 msgstr ""
 
 #: keystone/common/controller.py:122 keystone/common/controller.py:190
-#: keystone/common/controller.py:396
+#: keystone/common/controller.py:463
 msgid "RBAC: Bypassing authorization"
 msgstr ""
 
 #: keystone/common/controller.py:148 keystone/common/controller.py:188
-#: keystone/common/controller.py:412
+#: keystone/common/controller.py:479
 msgid "RBAC: Authorization granted"
 msgstr ""
 
@@ -352,7 +353,28 @@ msgstr ""
 msgid "RBAC: Adding query filter params (%s)"
 msgstr ""
 
-#: keystone/common/controller.py:368
+#: keystone/common/controller.py:251
+#, python-format
+msgid "Project (%s)"
+msgstr ""
+
+#: keystone/common/controller.py:253
+#, python-format
+msgid "Domain (%s)"
+msgstr ""
+
+#: keystone/common/controller.py:255
+msgid "Unknown Target"
+msgstr ""
+
+#: keystone/common/controller.py:256
+#, python-format
+msgid ""
+"Group (%(group)s), referenced in assignment for %(target)s, not found - "
+"ignoring."
+msgstr ""
+
+#: keystone/common/controller.py:434
 msgid "Invalid token in _get_domain_id_for_request"
 msgstr ""
 
@@ -591,30 +613,30 @@ msgstr ""
 msgid "LDAP add: dn=%(dn)s, attrs=%(attrs)s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:545
+#: keystone/common/ldap/core.py:550
 #, python-format
 msgid ""
 "LDAP search: dn=%(dn)s, scope=%(scope)s, query=%(query)s, "
 "attrs=%(attrlist)s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:598
+#: keystone/common/ldap/core.py:603
 msgid ""
 "LDAP Server does not support paging. Disable paging in keystone.conf to "
 "avoid this message."
 msgstr ""
 
-#: keystone/common/ldap/core.py:614
+#: keystone/common/ldap/core.py:619
 #, python-format
 msgid "LDAP modify: dn=%(dn)s, modlist=%(modlist)s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:620
+#: keystone/common/ldap/core.py:625
 #, python-format
 msgid "LDAP delete: dn=%s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:625
+#: keystone/common/ldap/core.py:630
 #, python-format
 msgid "LDAP delete_ext: dn=%(dn)s, serverctrls=%(serverctrls)s"
 msgstr ""
@@ -739,11 +761,11 @@ msgid ""
 "table"
 msgstr ""
 
-#: keystone/contrib/ec2/controllers.py:241
+#: keystone/contrib/ec2/controllers.py:245
 msgid "Token belongs to another user"
 msgstr ""
 
-#: keystone/contrib/ec2/controllers.py:266
+#: keystone/contrib/ec2/controllers.py:270
 msgid "Credential belongs to another user"
 msgstr ""
 
@@ -810,29 +832,39 @@ msgstr ""
 msgid "Access token not found"
 msgstr ""
 
-#: keystone/identity/controllers.py:1053
+#: keystone/identity/controllers.py:264
+#, python-format
+msgid "Unable to remove user %(user)s from %(tenant)s."
+msgstr ""
+
+#: keystone/identity/controllers.py:283
+#, python-format
+msgid "Unable to add user %(user)s to %(tenant)s."
+msgstr ""
+
+#: keystone/identity/controllers.py:1107
 #, python-format
 msgid ""
 "Group %(group)s not found for role-assignment - %(target)s with Role: "
 "%(role)s"
 msgstr ""
 
-#: keystone/identity/core.py:91
+#: keystone/identity/core.py:92
 #, python-format
 msgid "Invalid domain name (%s) found in config file name"
 msgstr ""
 
-#: keystone/identity/core.py:116
+#: keystone/identity/core.py:117
 #, python-format
 msgid "Unable to locate domain config directory: %s"
 msgstr ""
 
-#: keystone/identity/core.py:129
+#: keystone/identity/core.py:130
 #, python-format
 msgid "Ignoring file (%s) while scanning domain config directory"
 msgstr ""
 
-#: keystone/identity/core.py:170
+#: keystone/identity/core.py:171
 msgid ""
 "Running an experimental and unsupported configuration "
 "(domain_specific_drivers_enabled = True); this will result in known "
@@ -843,14 +875,14 @@ msgstr ""
 msgid "User not found in group"
 msgstr ""
 
-#: keystone/identity/backends/ldap.py:182
+#: keystone/identity/backends/ldap.py:167
 #, python-format
 msgid ""
 "Group member '%(user_dn)s' not found in '%(group_id)s'. The user should "
 "be removed from the group. The user will be ignored."
 msgstr ""
 
-#: keystone/identity/backends/ldap.py:322
+#: keystone/identity/backends/ldap.py:308
 #, python-format
 msgid "User %(user_id)s is already a member of group %(group_id)s"
 msgstr ""
@@ -1580,45 +1612,45 @@ msgstr ""
 msgid "enforce %(action)s: %(credentials)s"
 msgstr ""
 
-#: keystone/tests/core.py:113
+#: keystone/tests/core.py:126
 #, python-format
 msgid "Failed to checkout %s"
 msgstr ""
 
-#: keystone/token/controllers.py:386
+#: keystone/token/controllers.py:374
 #, python-format
 msgid "User %(u_id)s is unauthorized for tenant %(t_id)s"
 msgstr ""
 
-#: keystone/token/controllers.py:403 keystone/token/controllers.py:406
+#: keystone/token/controllers.py:391 keystone/token/controllers.py:394
 msgid "Token does not belong to specified tenant."
 msgstr ""
 
-#: keystone/token/provider.py:81
+#: keystone/token/provider.py:82
 msgid ""
 "keystone.conf [signing] token_format (deprecated) conflicts with "
 "keystone.conf [token] provider"
 msgstr ""
 
-#: keystone/token/provider.py:89
+#: keystone/token/provider.py:90
 msgid ""
 "keystone.conf [signing] token_format is deprecated in favor of "
 "keystone.conf [token] provider"
 msgstr ""
 
-#: keystone/token/provider.py:99
+#: keystone/token/provider.py:100
 msgid ""
 "Unrecognized keystone.conf [signing] token_format: expected either 'UUID'"
 " or 'PKI'"
 msgstr ""
 
-#: keystone/token/provider.py:187
+#: keystone/token/provider.py:190
 #, python-format
 msgid "Unexpected error or malformed token determining token expiry: %s"
 msgstr ""
 
-#: keystone/token/provider.py:191 keystone/token/providers/uuid.py:556
-#: keystone/token/providers/uuid.py:567
+#: keystone/token/provider.py:194 keystone/token/providers/uuid.py:555
+#: keystone/token/providers/uuid.py:566
 msgid "Failed to validate token"
 msgstr ""
 
@@ -1676,11 +1708,15 @@ msgstr ""
 msgid "User is not a trustee."
 msgstr ""
 
-#: keystone/token/providers/uuid.py:484
+#: keystone/token/providers/uuid.py:406
+msgid "Oauth is disabled."
+msgstr ""
+
+#: keystone/token/providers/uuid.py:483
 msgid "Non-default domain is not supported"
 msgstr ""
 
-#: keystone/token/providers/uuid.py:492
+#: keystone/token/providers/uuid.py:491
 msgid "Domain scoped token is not supported"
 msgstr ""
 
