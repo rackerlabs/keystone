@@ -541,7 +541,7 @@ class LdapWrapper(object):
 
     def add_s(self, dn, attrs):
         ldap_attrs = [(kind, [py2ldap(x) for x in safe_iter(values)])
-                      for kind, values in attrs]
+                      for kind, values in attrs if kind is not None]
         sane_attrs = [(kind, values
                        if kind != 'userPassword'
                        else ['****'])
