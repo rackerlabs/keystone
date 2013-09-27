@@ -16,6 +16,24 @@
       "revId": "6648131c66798434d05c1cb943e65b83afff7def",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ZlU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-27T14:12:53Z",
+      "side": 1,
+      "message": "the attrs shown here are sane_attrs which are filtered ldap_attrs which don\u0027t contain any None\u0027s anymore, so i don\u0027t think the debug output would be misleading as is",
+      "parentUuid": "AAAAS3//aZc\u003d",
+      "revId": "6648131c66798434d05c1cb943e65b83afff7def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
