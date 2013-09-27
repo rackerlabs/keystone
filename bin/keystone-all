@@ -18,6 +18,7 @@
 import logging
 import os
 import signal
+import socket
 import sys
 
 # If ../keystone/__init__.py exists, add ../ to Python search path, so that
@@ -73,7 +74,11 @@ def serve(*servers):
     signal.signal(signal.SIGINT, sigint_handler)
 
     for server in servers:
-        server.start()
+        try:
+            server.start()
+        except socket.error, e:
+            logging.exception(e)
+            sys.exit(e.message)
 
     # notify calling process we are ready to serve
     if CONF.onready:
