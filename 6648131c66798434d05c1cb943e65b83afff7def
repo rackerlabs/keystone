@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//aZc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-27T07:33:24Z",
+      "side": 1,
+      "message": "Maybe tack something onto this log to indicate we didn\u0027t pass the \u0027None\u0027 attributes to ldap?",
+      "revId": "6648131c66798434d05c1cb943e65b83afff7def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
