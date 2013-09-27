@@ -18,6 +18,7 @@
 import logging
 import os
 import signal
+import socket
 import sys
 
 # If ../keystone/__init__.py exists, add ../ to Python search path, so that
@@ -72,8 +73,13 @@ def sigint_handler(signal, frame):
 def serve(*servers):
     signal.signal(signal.SIGINT, sigint_handler)
 
-    for server in servers:
-        server.start()
+    for name, server in servers:
+        try:
+            server.start()
+        except socket.error as e:
+            logging.exception('Failed to start the %(name)s server' % {
+                'name': name})
+            sys.exit(e)
 
     # notify calling process we are ready to serve
     if CONF.onready:
@@ -86,7 +92,7 @@ def serve(*servers):
             except Exception:
                 logging.exception('Failed to execute onready command')
 
-    for server in servers:
+    for name, server in servers:
         server.wait()
 
 
@@ -121,12 +127,12 @@ if __name__ == '__main__':
     environment.use_eventlet(monkeypatch_thread)
 
     servers = []
-    servers.append(create_server(paste_config,
-                                 'admin',
-                                 CONF.bind_host,
-                                 int(CONF.admin_port)))
-    servers.append(create_server(paste_config,
-                                 'main',
-                                 CONF.bind_host,
-                                 int(CONF.public_port)))
+    servers.append(('admin', create_server(paste_config,
+                    'admin',
+                    CONF.bind_host,
+                    int(CONF.admin_port))))
+    servers.append(('main', create_server(paste_config,
+                    'main',
+                    CONF.bind_host,
+                    int(CONF.public_port))))
     serve(*servers)
