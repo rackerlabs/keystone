@@ -20,6 +20,7 @@
 
 """Utility methods for working with WSGI servers."""
 
+import inspect
 import re
 
 import routes.middleware
@@ -235,6 +236,7 @@ class Application(BaseApplication):
         params = self._normalize_dict(params)
 
         try:
+            self._method_inspect(method, params)
             result = method(context, **params)
         except exception.Unauthorized as e:
             LOG.warning(
@@ -264,6 +266,33 @@ class Application(BaseApplication):
 
         response_code = self._get_response_code(req)
         return render_response(body=result, status=response_code)
+
+    def _method_inspect(self, method, params):
+        spec = inspect.getargspec(method)
+        if spec.defaults:
+            default_args = set(spec.args[-len(spec.defaults):])
+            required_args = set(spec.args[:-len(spec.defaults)])
+        else:
+            default_args = set()
+            required_args = set(spec.args)
+        required_args.remove('self')
+        required_args.remove('context')
+        real_args = set(params)
+        msg = ''
+
+        if real_args == required_args or spec.keywords:
+            return
+        if not spec.keywords:
+            extra_param = real_args - required_args - default_args
+            if extra_param:
+                msg += _('%(extra_param)s is redundant.') % {
+                    'extra_param': list(extra_param)}
+        required_param = required_args - real_args - default_args
+        if required_param:
+            msg += _('%(required_param)s is required.') % {
+                'required_param': list(required_param)}
+        if required_param or extra_param:
+            raise TypeError(msg)
 
     def _get_response_code(self, req):
         req_method = req.environ['REQUEST_METHOD']
