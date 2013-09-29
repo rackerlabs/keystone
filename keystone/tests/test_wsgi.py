@@ -111,6 +111,28 @@ class ApplicationTest(BaseWSGITest):
         resp = wsgi.render_exception(e)
         self.assertEqual(resp.status_int, 401)
 
+    def test_method_params(self):
+        class FakeApp(wsgi.Application):
+            def index(self, context, arg0, arg1):
+                return arg0, arg1
+        req = self._make_request()
+        req.environ['openstack.params'] = {'arg0': 'value0', 'arg1': 'value1'}
+        resp = req.get_response(FakeApp())
+        self.assertEqual(jsonutils.loads(resp.body), ['value0', 'value1'])
+
+        req = self._make_request()
+        req.environ['openstack.params'] = {'arg3': 'value3'}
+        resp = req.get_response(FakeApp())
+        expected = {
+            "error": {
+                "message": "['arg3'] is redundant.['arg0', 'arg1'] is \
+required.",
+                "code": 400,
+                "title": "Bad Request"
+            }
+        }
+        self.assertEqual(jsonutils.loads(resp.body), expected)
+
 
 class ExtensionRouterTest(BaseWSGITest):
     def test_extensionrouter_local_config(self):

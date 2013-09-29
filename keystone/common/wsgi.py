@@ -20,6 +20,7 @@
 
 """Utility methods for working with WSGI servers."""
 
+import inspect
 import re
 
 import routes.middleware
@@ -201,6 +202,7 @@ class BaseApplication(object):
 
 
 class Application(BaseApplication):
+
     @webob.dec.wsgify(RequestClass=Request)
     def __call__(self, req):
         arg_dict = req.environ['wsgiorg.routing_args'][1]
@@ -235,6 +237,7 @@ class Application(BaseApplication):
         params = self._normalize_dict(params)
 
         try:
+            self._method_inspect(req, method, context, params)
             result = method(context, **params)
         except exception.Unauthorized as e:
             LOG.warning(
@@ -264,6 +267,30 @@ class Application(BaseApplication):
 
         response_code = self._get_response_code(req)
         return render_response(body=result, status=response_code)
+
+    def _method_inspect(self, req, method, context, params):
+        req_method = req.environ['REQUEST_METHOD']
+        if req_method != 'GET':
+            #:TODO(jeffry4l) how to handle the POST body?
+            return
+        spec = inspect.getargspec(method)
+        args = set(spec.args)
+        real_param = set(params)
+        real_param.add('context')
+        real_param.add('self')
+        msg = ''
+        if real_param == args or spec.keywords:
+            return
+        if not spec.keywords:
+            extra_param = real_param - args
+            if extra_param:
+                msg += _('%(extra_param)s is redundant.') % \
+                    {'extra_param': list(extra_param)}
+        required_param = args - real_param
+        if required_param:
+            msg += _('%(required_param)s is required.') % \
+                {'required_param': list(required_param)}
+        raise TypeError(msg)
 
     def _get_response_code(self, req):
         req_method = req.environ['REQUEST_METHOD']
