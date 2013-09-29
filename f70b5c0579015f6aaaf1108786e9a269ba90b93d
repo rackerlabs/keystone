@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//WKI\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2616,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T06:07:32Z",
+      "side": 1,
+      "message": "Please change to self.assertEqual(user[\u0027arbitrary_attr\u0027], attr_value)\nhttp://docs.python.org/2/library/unittest.html#deprecated-aliases",
+      "revId": "f70b5c0579015f6aaaf1108786e9a269ba90b93d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WKE\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2625,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T06:07:32Z",
+      "side": 1,
+      "message": "same",
+      "revId": "f70b5c0579015f6aaaf1108786e9a269ba90b93d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WKA\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2634,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T06:07:32Z",
+      "side": 1,
+      "message": "same",
+      "revId": "f70b5c0579015f6aaaf1108786e9a269ba90b93d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WJ8\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2646,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T06:07:32Z",
+      "side": 1,
+      "message": "same",
+      "revId": "f70b5c0579015f6aaaf1108786e9a269ba90b93d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
