@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//WMU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T05:56:41Z",
+      "side": 1,
+      "message": "Maybe  we need a link  :)\n\nSome of the TestCase methods have been deprecated since python 2.7\nhttp://docs.python.org/2/library/unittest.html#deprecated-aliases",
+      "revId": "5142d4f4c2afb8403bb743c404d7df5e239e64df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WOI\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T05:56:41Z",
+      "side": 1,
+      "message": "self.assertIsInstance(d2, dict, \u0027Second argument is not a dict\u0027)\nis more clear :-)",
+      "revId": "5142d4f4c2afb8403bb743c404d7df5e239e64df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WOA\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T05:56:41Z",
+      "side": 1,
+      "message": "we\u0027d better format these three lines to  one line.",
+      "revId": "5142d4f4c2afb8403bb743c404d7df5e239e64df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WNc\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 812,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T05:56:41Z",
+      "side": 1,
+      "message": "How about change to \nself.assertIn(self.user_two[\u0027id\u0027], [x.id for x in user_refs])   ?",
+      "revId": "5142d4f4c2afb8403bb743c404d7df5e239e64df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WNY\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1026,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T05:56:41Z",
+      "side": 1,
+      "message": "How about change to \n self.assertIn(self.tenant_baz[\u0027id\u0027], [x.tenantId for x in role_refs])",
+      "revId": "5142d4f4c2afb8403bb743c404d7df5e239e64df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WMs\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T05:56:41Z",
+      "side": 1,
+      "message": "self.assertNotIn(self.tenant_baz[\u0027id\u0027], [x.tenantId for x in role_refs])",
+      "revId": "5142d4f4c2afb8403bb743c404d7df5e239e64df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WMo\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T05:56:41Z",
+      "side": 1,
+      "message": "change to \nself.assertEqual(ref[k], entity[k] ,msg)",
+      "revId": "5142d4f4c2afb8403bb743c404d7df5e239e64df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
