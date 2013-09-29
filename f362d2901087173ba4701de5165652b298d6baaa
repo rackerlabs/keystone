@@ -16,6 +16,24 @@
       "revId": "f362d2901087173ba4701de5165652b298d6baaa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WOo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T05:12:24Z",
+      "side": 1,
+      "message": "we\u0027e better  use Closes-Bug: #\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "parentUuid": "AAAAS3//byI\u003d",
+      "revId": "f362d2901087173ba4701de5165652b298d6baaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
