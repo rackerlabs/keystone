@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//WQA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T04:24:48Z",
+      "side": 1,
+      "message": "we should use Closes-Bug: #\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "2db73ccedc955f8aace1af534e480417544e4e19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WQE\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-09-29T04:24:48Z",
+      "side": 1,
+      "message": "Please use socket.error as e:      :)\nsee http://stackoverflow.com/questions/2535760/python-try-except-comma-vs-as-in-except",
+      "revId": "2db73ccedc955f8aace1af534e480417544e4e19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
