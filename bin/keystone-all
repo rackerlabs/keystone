@@ -18,8 +18,8 @@
 import logging
 import os
 import signal
-import sys
 import socket
+import sys
 
 # If ../keystone/__init__.py exists, add ../ to Python search path, so that
 # it will override what happens to be installed in /usr/(local/)lib/python...
@@ -76,7 +76,7 @@ def serve(*servers):
     for server in servers:
         try:
             server.start()
-        except socket.error,e:
+        except socket.error, e:
             logging.exception(e)
             sys.exit(e.message)
 
