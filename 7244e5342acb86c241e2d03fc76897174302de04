@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAS3//VEM\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-09-30T05:09:09Z",
+      "side": 1,
+      "message": "Why do we need to assert admin here? Not only here, it is in many apis?  What is the use of policy file, if we are asserting admin here?\n\ne.g I consider \"admin\" as some one equivalent to \"cloud admin\". Obviously he can delete/update any tenant.\nIn a typical deployment if we want a domain owner to delete/upate his domain\u0027s  tenant, how to do it.  If we don\u0027t assert \"admin\" then any one can deploy their custom policy file which allows \u0027domainadmin\" to manilpulate his domain\u0027s tenant.",
+      "revId": "7244e5342acb86c241e2d03fc76897174302de04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn/+/kI\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 3
