@@ -19,11 +19,9 @@ import os
 import re
 import shutil
 import socket
-import StringIO
 import sys
 import time
 
-from lxml import etree
 import mox
 from paste import deploy
 import stubout
