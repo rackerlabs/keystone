@@ -16,6 +16,57 @@
       "revId": "ea679794177b2b6758937bea948519513fbf2cbe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//TIQ\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 964
+      },
+      "writtenOn": "2013-09-30T16:35:56Z",
+      "side": 1,
+      "message": "These can be left as-is. The fix to the linked bug lies in lines 42 and 74 having correct link markup.",
+      "revId": "ea679794177b2b6758937bea948519513fbf2cbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//TIg\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 964
+      },
+      "writtenOn": "2013-09-30T16:35:56Z",
+      "side": 1,
+      "message": "The fix to this bug is in correctly marking up this line. \n \nSee http://sphinx-doc.org/markup/inline.html#ref-role",
+      "revId": "ea679794177b2b6758937bea948519513fbf2cbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//TII\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 964
+      },
+      "writtenOn": "2013-09-30T16:35:56Z",
+      "side": 1,
+      "message": "Needs back ticks, see http://sphinx-doc.org/markup/inline.html#ref-role",
+      "revId": "ea679794177b2b6758937bea948519513fbf2cbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
