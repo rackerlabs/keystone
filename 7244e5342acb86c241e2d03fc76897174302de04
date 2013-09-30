@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//VDg\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-09-30T05:16:20Z",
+      "side": 1,
+      "message": "Changing this is outside the scope of this patchset (the line was not modified) as this is a back-port to folsom.  We should likely examine that type of change separate from a backport patchset.",
+      "parentUuid": "AAAAS3//VEM\u003d",
+      "revId": "7244e5342acb86c241e2d03fc76897174302de04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn/+/kI\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 3
