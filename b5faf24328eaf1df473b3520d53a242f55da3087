@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//SfM\u003d",
+        "filename": "setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-09-30T19:49:51Z",
+      "side": 1,
+      "message": "https://github.com/openstack/requirements/blob/master/setup.py has pbr\u003e0.5.21,\u003c1.0 -- should this be the same?",
+      "revId": "b5faf24328eaf1df473b3520d53a242f55da3087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
