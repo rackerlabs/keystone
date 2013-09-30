@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//TSY\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-09-30T16:02:51Z",
+      "side": 1,
+      "message": "take advantage of os.path.join() rather than explicitly specifying forward slashes\n\n  os.path.normpath(os.path.join(\n    os.path.dirname(os.path.abspath(__file__)), \u0027..\u0027, \u0027..\u0027))",
+      "revId": "126bd10d42a4b84d73e105d3f1df3d4ddeb2b938",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
