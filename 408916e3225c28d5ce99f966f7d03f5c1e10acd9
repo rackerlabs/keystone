@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//VEo\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-30T05:08:58Z",
+      "side": 1,
+      "message": "argsepc is depreciated from 3.0 onwards, maybe use getfullargespec() ?",
+      "revId": "408916e3225c28d5ce99f966f7d03f5c1e10acd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//VEI\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-30T05:08:58Z",
+      "side": 1,
+      "message": "Preferably format this within the \u0027\\\u0027`",
+      "revId": "408916e3225c28d5ce99f966f7d03f5c1e10acd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//VEQ\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-09-30T05:08:58Z",
+      "side": 1,
+      "message": "Perhaps also test the a missing arg?",
+      "revId": "408916e3225c28d5ce99f966f7d03f5c1e10acd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
