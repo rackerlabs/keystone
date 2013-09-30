@@ -21,8 +21,8 @@ Configuring Services to work with Keystone
 .. toctree::
    :maxdepth: 1
 
-..  _middlewarearchitecture: middlewarearchitecture.rst
-..  _configuration: configuration.rst
+..  _middlewarearchitecture: middlewarearchitecture.html
+..  _configuration: configuration.html
 
 Once Keystone is installed and running (see configuration_), services
 need to be configured to work with it. To do this, we primarily install and
