@@ -20,6 +20,7 @@ from keystone import controllers
 from keystone.openstack.common.fixture import moxstubout
 from keystone.openstack.common import jsonutils
 from keystone import tests
+from keystone.tests import matchers
 
 
 CONF = config.CONF
@@ -339,7 +340,7 @@ vnd.openstack.identity-v3+xml"/>
         self.assertEqual(resp.status_int, 300)
         data = resp.body
         expected = self.VERSIONS_RESPONSE % dict(port=CONF.public_port)
-        self.assertEqualXML(data, expected)
+        self.assertThat(data, matchers.XMLEquals(expected))
 
     def test_admin_versions(self):
         client = self.client(self.admin_app)
@@ -347,7 +348,7 @@ vnd.openstack.identity-v3+xml"/>
         self.assertEqual(resp.status_int, 300)
         data = resp.body
         expected = self.VERSIONS_RESPONSE % dict(port=CONF.admin_port)
-        self.assertEqualXML(data, expected)
+        self.assertThat(data, matchers.XMLEquals(expected))
 
     def test_public_version_v2(self):
         client = self.client(self.public_app)
@@ -355,7 +356,7 @@ vnd.openstack.identity-v3+xml"/>
         self.assertEqual(resp.status_int, 200)
         data = resp.body
         expected = self.v2_VERSION_RESPONSE % dict(port=CONF.public_port)
-        self.assertEqualXML(data, expected)
+        self.assertThat(data, matchers.XMLEquals(expected))
 
     def test_admin_version_v2(self):
         client = self.client(self.admin_app)
@@ -363,7 +364,7 @@ vnd.openstack.identity-v3+xml"/>
         self.assertEqual(resp.status_int, 200)
         data = resp.body
         expected = self.v2_VERSION_RESPONSE % dict(port=CONF.admin_port)
-        self.assertEqualXML(data, expected)
+        self.assertThat(data, matchers.XMLEquals(expected))
 
     def test_public_version_v3(self):
         client = self.client(self.public_app)
@@ -371,7 +372,7 @@ vnd.openstack.identity-v3+xml"/>
         self.assertEqual(resp.status_int, 200)
         data = resp.body
         expected = self.v3_VERSION_RESPONSE % dict(port=CONF.public_port)
-        self.assertEqualXML(data, expected)
+        self.assertThat(data, matchers.XMLEquals(expected))
 
     def test_admin_version_v3(self):
         client = self.client(self.public_app)
@@ -379,7 +380,7 @@ vnd.openstack.identity-v3+xml"/>
         self.assertEqual(resp.status_int, 200)
         data = resp.body
         expected = self.v3_VERSION_RESPONSE % dict(port=CONF.admin_port)
-        self.assertEqualXML(data, expected)
+        self.assertThat(data, matchers.XMLEquals(expected))
 
     def test_v2_disabled(self):
         self.stubs.Set(controllers, '_VERSIONS', ['v3'])
@@ -390,7 +391,7 @@ vnd.openstack.identity-v3+xml"/>
         self.assertEqual(resp.status_int, 200)
         data = resp.body
         expected = self.v3_VERSION_RESPONSE % dict(port=CONF.public_port)
-        self.assertEqualXML(data, expected)
+        self.assertThat(data, matchers.XMLEquals(expected))
 
         # only v3 information should be displayed by requests to /
         v3_only_response = ((self.DOC_INTRO + '<versions %(namespace)s>' +
@@ -402,7 +403,7 @@ vnd.openstack.identity-v3+xml"/>
         resp = client.get('/', headers=self.REQUEST_HEADERS)
         self.assertEqual(resp.status_int, 300)
         data = resp.body
-        self.assertEqualXML(data, v3_only_response)
+        self.assertThat(data, matchers.XMLEquals(v3_only_response))
 
     def test_v3_disabled(self):
         self.stubs.Set(controllers, '_VERSIONS', ['v2.0'])
@@ -413,7 +414,7 @@ vnd.openstack.identity-v3+xml"/>
         self.assertEqual(resp.status_int, 200)
         data = resp.body
         expected = self.v2_VERSION_RESPONSE % dict(port=CONF.public_port)
-        self.assertEqualXML(data, expected)
+        self.assertThat(data, matchers.XMLEquals(expected))
 
         # only v2 information should be displayed by requests to /
         v2_only_response = ((self.DOC_INTRO + '<versions %(namespace)s>' +
@@ -425,4 +426,4 @@ vnd.openstack.identity-v3+xml"/>
         resp = client.get('/', headers=self.REQUEST_HEADERS)
         self.assertEqual(resp.status_int, 300)
         data = resp.body
-        self.assertEqualXML(data, v2_only_response)
+        self.assertThat(data, matchers.XMLEquals(v2_only_response))
