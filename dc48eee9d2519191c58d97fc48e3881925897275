@@ -16,6 +16,24 @@
       "revId": "dc48eee9d2519191c58d97fc48e3881925897275",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//TNA\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-09-30T16:16:19Z",
+      "side": 1,
+      "message": "I\u0027m probably overly paranoid, but since user can be changed by create_user I wanted to make sure I was using something completely controlled by the test.",
+      "parentUuid": "AAAAS3//TUg\u003d",
+      "revId": "dc48eee9d2519191c58d97fc48e3881925897275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
