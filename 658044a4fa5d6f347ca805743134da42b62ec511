@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//Tjk\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-30T15:09:29Z",
+      "side": 1,
+      "message": "Suggest rewording the test description here?",
+      "revId": "658044a4fa5d6f347ca805743134da42b62ec511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
