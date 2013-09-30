@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//Tlw\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 870,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-30T15:04:22Z",
+      "side": 1,
+      "message": "(NIT): suggest renaming from username0 to username_base or _original. Might help the readability.",
+      "revId": "1e3e5632e7d9090b5c49f87ff02df135b5d84bb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//Tlo\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-09-30T15:04:22Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "1e3e5632e7d9090b5c49f87ff02df135b5d84bb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
