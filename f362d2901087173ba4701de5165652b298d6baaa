@@ -34,6 +34,23 @@
       "revId": "f362d2901087173ba4701de5165652b298d6baaa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//Qfo\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-01T12:36:38Z",
+      "side": 1,
+      "message": "Should the driver grow a get_user method instead of using underscored methods?",
+      "revId": "f362d2901087173ba4701de5165652b298d6baaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
