@@ -14,9 +14,12 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import base64
 import hashlib
 
+from keystone.common import base64utils
 from keystone.common import environment
+from keystone.common import pemutils
 from keystone.openstack.common import log as logging
 
 
@@ -45,27 +48,92 @@ def cms_verify(formatted, signing_cert_file_name, ca_file_name):
     return output
 
 
-def token_to_cms(signed_text):
-    copy_of_text = signed_text.replace('-', '/')
+def cms_pem_to_token_id(cms_pem):
+    '''Convert cms pem to a token_id which is URL safe
 
-    formatted = "-----BEGIN CMS-----\n"
-    line_length = 64
-    while len(copy_of_text) > 0:
-        if (len(copy_of_text) > line_length):
-            formatted += copy_of_text[:line_length]
-            copy_of_text = copy_of_text[line_length:]
-        else:
-            formatted += copy_of_text
-            copy_of_text = ""
-        formatted += "\n"
+    The cms data will be encoded in base64 to be used as a token id.
 
-    formatted += "-----END CMS-----\n"
+    token id's are utilized in various HTTP contexts:
+        * URL components
+        * HTTP header values
 
-    return formatted
+    Therefore it is essential the token id be safe to use in these
+    contexts. Standard base64 is NOT safe.
+
+    base64url text is designed to be safe for use in filenames and
+    URL's. It is defined in RFC-4648 Section 5.
+
+    base64url differs from base64 in the last two alphabet characters
+    at index 62 and 63, these are sometimes referred as the
+    altchars. The '+' character at index 62 is replaced by '-'
+    (hyphen) and the '/' character at index 63 is replaced by '_'
+    (underscore).
+
+    base64url continues to use the '=' pad character which is NOT URL
+    safe. RFC-4648 suggests two alternate methods to deal with this.
+
+    percent-encode
+        percent-encode the pad character (e.g. '=' becomes
+        '%3D'). This makes the base64url text fully safe. But
+        percent-enconding has the downside of requiring
+        percent-decoding prior to feeding the base64url text into a
+        base64url decoder since most base64url decoders do not
+        recognize %3D as a pad character and most decoders require
+        correct padding.
+
+    no-padding
+        padding is not strictly necessary to decode base64 or
+        base64url text, the pad can be computed from the input text
+        length. However many decoders demand padding and will consider
+        non-padded text to be malformed. If one wants to omit the
+        trailing pad character(s) for use in URL's it can be added back
+        using the base64utils.base64_assure_padding() function.
+
+    For our use we elect to strip the padding rather than
+    percent-encode the padding. This makes the token id slightly
+    shorter and cleaner.
+
+    :param cms_pem: text containing cms data in PEM format
+    :returns: a URL safe token_id
+    '''
+
+    # Extract the bindary data from the PEM formatted input
+    binary_data = pemutils.get_pem_data(cms_pem, 'cms')
+    if binary_data is None:
+        raise ValueError('no pem found in cms_pem')
+
+    # Encode binary data with a URL safe base64 alphabet
+    text = base64.urlsafe_b64encode(binary_data)
+
+    # Strip the padding because it's not URL safe
+    token_id = base64utils.base64_strip_padding(text)
+
+    return token_id
+
+
+def token_id_to_cms_pem(token_id):
+    '''Convert a URL safe token_id to cms data in PEM format
+
+    See cms_pem_to_token_id() for a full explanation of how the token
+    id encodes the cms data.
+
+    :param token_id: a URL safe string containing CMS data
+    :returns: cms data in PEM format
+    '''
+
+    # Restore padding because urlsafe_b64decode demands correct padding
+    text = base64utils.base64_assure_padding(token_id)
+
+    # Decode the URL safe base64 back into binary data
+    binary_data = base64.urlsafe_b64decode(text)
+
+    # Format the binary data into PEM format
+    cms_pem = pemutils.binary_to_pem(binary_data, 'cms')
+    return cms_pem
 
 
 def verify_token(token, signing_cert_file_name, ca_file_name):
-    return cms_verify(token_to_cms(token),
+    return cms_verify(token_id_to_cms_pem(token),
                       signing_cert_file_name,
                       ca_file_name)
 
@@ -142,20 +210,7 @@ def cms_sign_text(text, signing_cert_file_name, signing_key_file_name):
 
 def cms_sign_token(text, signing_cert_file_name, signing_key_file_name):
     output = cms_sign_text(text, signing_cert_file_name, signing_key_file_name)
-    return cms_to_token(output)
-
-
-def cms_to_token(cms_text):
-
-    start_delim = "-----BEGIN CMS-----"
-    end_delim = "-----END CMS-----"
-    signed_text = cms_text
-    signed_text = signed_text.replace('/', '-')
-    signed_text = signed_text.replace(start_delim, '')
-    signed_text = signed_text.replace(end_delim, '')
-    signed_text = signed_text.replace('\n', '')
-
-    return signed_text
+    return cms_pem_to_token_id(output)
 
 
 def cms_hash_token(token_id):
