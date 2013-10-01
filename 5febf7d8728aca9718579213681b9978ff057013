@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//QaA\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-01T13:05:00Z",
+      "side": 1,
+      "message": "Since logging.exception will print the stack trace plug the string message for the exception I\u0027d rather see a more descriptive message passed in.  Something more like:\n\n  logging.exception(\u0027Failed to start server\u0027)\n\nBonus points if you can take the name passed into create_server and use that in the message.  That way it could say \u0027Failed to start admin server\u0027.",
+      "revId": "5febf7d8728aca9718579213681b9978ff057013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
