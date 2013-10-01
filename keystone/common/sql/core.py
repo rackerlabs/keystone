@@ -185,25 +185,14 @@ class DictBase(models.ModelBase):
         return getattr(self, key)
 
 
-def mysql_on_checkout(dbapi_conn, connection_rec, connection_proxy):
-    """Ensures that MySQL connections checked out of the pool are alive.
-
-    Borrowed from:
-    http://groups.google.com/group/sqlalchemy/msg/a4ce563d802c929f
-
-    Error codes caught:
-    * 2006 MySQL server has gone away
-    * 2013 Lost connection to MySQL server during query
-    * 2014 Commands out of sync; you can't run this command now
-    * 2045 Can't open shared memory; no answer from server (%lu)
-    * 2055 Lost connection to MySQL server at '%s', system error: %d
-
-    from http://dev.mysql.com/doc/refman/5.6/en/error-messages-client.html
-    """
+def mysql_on_checkout(engine, dbapi_conn, connection_rec, connection_proxy):
+    """Ensures that MySQL connections checked out of the pool are alive."""
+    cursor = dbapi_conn.cursor()
     try:
-        dbapi_conn.cursor().execute('select 1')
-    except dbapi_conn.OperationalError as e:
-        if e.args[0] in (2006, 2013, 2014, 2045, 2055):
+        cursor.execute('select 1')
+    except Exception as e:
+        is_disconnect = engine.dialect.is_disconnect(e, dbapi_conn, cursor)
+        if is_disconnect:
             LOG.warn(_('Got mysql server has gone away: %s'), e)
             raise DisconnectionError("Database server went away")
         else:
@@ -247,7 +236,8 @@ class Base(object):
             engine = sql.create_engine(CONF.sql.connection, **engine_config)
 
             if engine.name == 'mysql':
-                sql.event.listen(engine, 'checkout', mysql_on_checkout)
+                callback = functools.partial(mysql_on_checkout, engine)
+                sql.event.listen(engine, 'checkout', callback)
 
             return engine
 
