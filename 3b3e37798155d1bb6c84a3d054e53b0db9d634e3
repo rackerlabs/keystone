@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//LpM\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-02T19:38:43Z",
+      "side": 1,
+      "message": "Weren\u0027t these previously updated to replace the \u0027*_user0\u0027 with a different name to be more descriptive?",
+      "revId": "3b3e37798155d1bb6c84a3d054e53b0db9d634e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
