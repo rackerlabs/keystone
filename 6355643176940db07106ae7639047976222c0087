@@ -33,6 +33,24 @@
       "revId": "6355643176940db07106ae7639047976222c0087",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//MPc\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-02T16:15:28Z",
+      "side": 1,
+      "message": "it\u0027s not valid on db2,\n\n$ db2 \"select 1\"\nSQL0104N  An unexpected token \"END-OF-STATEMENT\" was found following \"select\n1\".  Expected tokens may include:  \"\u003ctable_expr\u003e\".  SQLSTATE\u003d42601\n\nI also tried on postgres and \"select 1\" works.\n\nkeystone_test\u003d# select 1;\n ?column?\n----------\n        1\n(1 row)\n\nI\u0027ll move this change into https://review.openstack.org/#/c/49272/ .",
+      "parentUuid": "AAAAS3//MTA\u003d",
+      "revId": "6355643176940db07106ae7639047976222c0087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
