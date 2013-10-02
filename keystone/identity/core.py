@@ -464,8 +464,8 @@ class Manager(manager.Manager):
     #def get_role(self, role_id):
     #    return self.assignment_api.get_role(role_id)
 
-    def list_roles(self):
-        return self.assignment_api.list_roles()
+    #def list_roles(self):
+    #    return self.assignment_api.list_roles()
 
     #def get_project_users(self, tenant_id):
     #    return self.assignment_api.get_project_users(tenant_id)

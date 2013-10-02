@@ -215,7 +215,7 @@ class V3TokenDataHelper(object):
         if access_token:
             filtered_roles = []
             authed_role_ids = json.loads(access_token['role_ids'])
-            all_roles = self.identity_api.list_roles()
+            all_roles = self.assignment_api.list_roles()
             for role in all_roles:
                 for authed_role in authed_role_ids:
                     if authed_role == role['id']:

@@ -1882,7 +1882,7 @@ class IdentityTests(object):
         self.assertIn(project2['id'], project_ids)
 
     def test_list_roles(self):
-        roles = self.identity_api.list_roles()
+        roles = self.assignment_api.list_roles()
         self.assertEqual(len(default_fixtures.ROLES), len(roles))
         role_ids = set(role['id'] for role in roles)
         expected_role_ids = set(role['id'] for role in default_fixtures.ROLES)

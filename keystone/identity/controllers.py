@@ -345,7 +345,7 @@ class Role(controller.V2Controller):
 
     def get_roles(self, context):
         self.assert_admin(context)
-        return {'roles': self.identity_api.list_roles()}
+        return {'roles': self.assignment_api.list_roles()}
 
     def add_role_to_user(self, context, user_id, role_id, tenant_id=None):
         """Add a role to a user and tenant pair.
@@ -845,7 +845,7 @@ class RoleV3(controller.V3Controller):
 
     @controller.filterprotected('name')
     def list_roles(self, context, filters):
-        refs = self.identity_api.list_roles()
+        refs = self.assignment_api.list_roles()
         return RoleV3.wrap_collection(context, refs, filters)
 
     @controller.protected()
