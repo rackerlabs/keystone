@@ -288,6 +288,7 @@ class AccessTokenCRUDTests(OAuthFlowTests):
         self.assertValidListLinks(resp.result.get('links'))
 
     def test_get_role_in_access_token(self):
+        print "<<<<<<<<<<<<<<<>TESTE<>>>>>>>>>>>>>>>>>>>>>>>>>"
         self.test_oauth_flow()
         url = ('/users/%(id)s/OS-OAUTH1/access_tokens/%(key)s/roles/%(role)s'
                % {'id': self.user_id, 'key': self.access_token.key,

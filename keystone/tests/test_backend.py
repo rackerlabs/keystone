@@ -147,14 +147,14 @@ class IdentityTests(object):
                           uuid.uuid4().hex)
 
     def test_get_project_by_name(self):
-        tenant_ref = self.identity_api.get_project_by_name(
+        tenant_ref = self.assignment_api.get_project_by_name(
             self.tenant_bar['name'],
             DEFAULT_DOMAIN_ID)
         self.assertDictEqual(tenant_ref, self.tenant_bar)
 
     def test_get_project_by_name_404(self):
         self.assertRaises(exception.ProjectNotFound,
-                          self.identity_api.get_project_by_name,
+                          self.assignment_api.get_project_by_name,
                           uuid.uuid4().hex,
                           DEFAULT_DOMAIN_ID)
 
@@ -1849,7 +1849,7 @@ class IdentityTests(object):
         self.assertIn(domain2['id'], domain_ids)
 
     def test_list_projects(self):
-        projects = self.identity_api.list_projects()
+        projects = self.assignment_api.list_projects()
         self.assertEquals(len(projects), 4)
         project_ids = []
         for project in projects:

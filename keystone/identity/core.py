@@ -452,14 +452,14 @@ class Manager(manager.Manager):
     # API should be removed, with the controller and tests making the correct
     # calls direct to assignment.
 
-    def get_project_by_name(self, tenant_name, domain_id):
-        return self.assignment_api.get_project_by_name(tenant_name, domain_id)
+    #def get_project_by_name(self, tenant_name, domain_id):
+    #    return self.assignment_api.get_project_by_name(tenant_name, domain_id)
 
     def get_project(self, tenant_id):
         return self.assignment_api.get_project(tenant_id)
 
-    def list_projects(self, domain_id=None):
-        return self.assignment_api.list_projects(domain_id)
+    #def list_projects(self, domain_id=None):
+    #    return self.assignment_api.list_projects(domain_id)
 
     def get_role(self, role_id):
         return self.assignment_api.get_role(role_id)
@@ -467,8 +467,8 @@ class Manager(manager.Manager):
     def list_roles(self):
         return self.assignment_api.list_roles()
 
-    def get_project_users(self, tenant_id):
-        return self.assignment_api.get_project_users(tenant_id)
+    #def get_project_users(self, tenant_id):
+    #    return self.assignment_api.get_project_users(tenant_id)
 
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         return self.assignment_api.get_roles_for_user_and_project(

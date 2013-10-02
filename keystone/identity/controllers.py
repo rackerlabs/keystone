@@ -39,7 +39,7 @@ class Tenant(controller.V2Controller):
                 context, context['query_string'].get('name'))
 
         self.assert_admin(context)
-        tenant_refs = self.identity_api.list_projects()
+        tenant_refs = self.assignment_api.list_projects()
         for tenant_ref in tenant_refs:
             tenant_ref = self.filter_domain_id(tenant_ref)
         params = {
@@ -82,7 +82,7 @@ class Tenant(controller.V2Controller):
 
     def get_project_by_name(self, context, tenant_name):
         self.assert_admin(context)
-        ref = self.identity_api.get_project_by_name(
+        ref = self.assignment_api.get_project_by_name(
             tenant_name, DEFAULT_DOMAIN_ID)
         return {'tenant': self.filter_domain_id(ref)}
 
@@ -491,7 +491,7 @@ class DomainV3(controller.V3Controller):
         # FIXME(dolph): need a driver call to directly revoke all tokens by
         #               project or domain, regardless of user
         if not domain.get('enabled', True):
-            projects = [x for x in self.identity_api.list_projects()
+            projects = [x for x in self.assignment_api.list_projects()
                         if x.get('domain_id') == domain_id]
             for user in self.identity_api.list_users():
                 # TODO(dolph): disable domain-scoped tokens
@@ -548,7 +548,7 @@ class DomainV3(controller.V3Controller):
         user_refs = self.identity_api.list_users()
         user_ids = [r['id'] for r in user_refs if r['domain_id'] == domain_id]
 
-        proj_refs = self.identity_api.list_projects()
+        proj_refs = self.assignment_api.list_projects()
         proj_ids = [r['id'] for r in proj_refs if r['domain_id'] == domain_id]
 
         # First delete the projects themselves
@@ -620,12 +620,12 @@ class ProjectV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'enabled', 'name')
     def list_projects(self, context, filters):
-        refs = self.identity_api.list_projects()
+        refs = self.assignment_api.list_projects()
         return ProjectV3.wrap_collection(context, refs, filters)
 
     @controller.filterprotected('enabled', 'name')
     def list_user_projects(self, context, filters, user_id):
-        refs = self.identity_api.list_projects_for_user(user_id)
+        refs = self.assignment_api.list_projects_for_user(user_id)
         return ProjectV3.wrap_collection(context, refs, filters)
 
     @controller.protected()

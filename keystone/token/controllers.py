@@ -331,7 +331,7 @@ class Auth(controller.V2Controller):
 
         if tenant_name:
             try:
-                tenant_ref = self.identity_api.get_project_by_name(
+                tenant_ref = self.assignment_api.get_project_by_name(
                     tenant_name, DEFAULT_DOMAIN_ID)
                 tenant_id = tenant_ref['id']
             except exception.ProjectNotFound as e:

@@ -194,7 +194,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                           self.identity_api.get_project,
                           tenant['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.identity_api.get_project_by_name,
+                          self.assignment_api.get_project_by_name,
                           tenant['name'],
                           DEFAULT_DOMAIN_ID)
 
