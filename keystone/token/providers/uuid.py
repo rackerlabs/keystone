@@ -144,7 +144,7 @@ class V3TokenDataHelper(object):
         return {'id': domain_ref['id'], 'name': domain_ref['name']}
 
     def _get_filtered_project(self, project_id):
-        project_ref = self.identity_api.get_project(project_id)
+        project_ref = self.assignment_api.get_project(project_id)
         filtered_project = {
             'id': project_ref['id'],
             'name': project_ref['name']}
@@ -165,7 +165,7 @@ class V3TokenDataHelper(object):
     def _get_roles_for_user(self, user_id, domain_id, project_id):
         roles = []
         if domain_id:
-            roles = self.identity_api.get_roles_for_user_and_domain(
+            roles = self.assignment_api.get_roles_for_user_and_domain(
                 user_id, domain_id)
         if project_id:
             roles = self.assignment_api.get_roles_for_user_and_project(
@@ -507,7 +507,7 @@ class Provider(token.provider.Provider):
                     trust_ref['trustor_user_id'])
                 if trustor_user_ref['domain_id'] != DEFAULT_DOMAIN_ID:
                     raise exception.Unauthorized(msg)
-                project_ref = self.identity_api.get_project(
+                project_ref = self.assignment_api.get_project(
                     trust_ref['project_id'])
                 if project_ref['domain_id'] != DEFAULT_DOMAIN_ID:
                     raise exception.Unauthorized(msg)

@@ -77,7 +77,7 @@ class Tenant(controller.V2Controller):
     def get_project(self, context, tenant_id):
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
-        ref = self.identity_api.get_project(tenant_id)
+        ref = self.assignment_api.get_project(tenant_id)
         return {'tenant': self.filter_domain_id(ref)}
 
     def get_project_by_name(self, context, tenant_name):
@@ -630,7 +630,7 @@ class ProjectV3(controller.V3Controller):
 
     @controller.protected()
     def get_project(self, context, project_id):
-        ref = self.identity_api.get_project(project_id)
+        ref = self.assignment_api.get_project(project_id)
         return ProjectV3.wrap_member(context, ref)
 
     @controller.protected()

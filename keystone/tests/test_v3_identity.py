@@ -290,7 +290,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                           self.identity_api.get_domain,
                           self.domain2['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.identity_api.get_project,
+                          self.assignment_api.get_project,
                           self.project2['id'])
         self.assertRaises(exception.GroupNotFound,
                           self.identity_api.get_group,
@@ -305,7 +305,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # ...and that all self.domain entities are still here
         r = self.identity_api.get_domain(self.domain['id'])
         self.assertDictEqual(r, self.domain)
-        r = self.identity_api.get_project(self.project['id'])
+        r = self.assignment_api.get_project(self.project['id'])
         self.assertDictEqual(r, self.project)
         r = self.identity_api.get_group(self.group['id'])
         self.assertDictEqual(r, self.group)

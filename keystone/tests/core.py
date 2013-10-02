@@ -349,7 +349,7 @@ class TestCase(NoModule, testtools.TestCase):
                     rv = self.assignment_api.create_project(
                         tenant['id'], tenant)
                 except exception.Conflict:
-                    rv = self.identity_api.get_project(tenant['id'])
+                    rv = self.assignment_api.get_project(tenant['id'])
                     pass
                 setattr(self, 'tenant_%s' % tenant['id'], rv)
 

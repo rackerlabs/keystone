@@ -119,7 +119,7 @@ class AuthInfo(object):
                 project_ref = self.assignment_api.get_project_by_name(
                     project_name, domain_ref['id'])
             else:
-                project_ref = self.identity_api.get_project(project_id)
+                project_ref = self.assignment_api.get_project(project_id)
         except exception.ProjectNotFound as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)

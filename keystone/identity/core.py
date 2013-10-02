@@ -474,9 +474,9 @@ class Manager(manager.Manager):
     #    return self.assignment_api.get_roles_for_user_and_project(
     #        user_id, tenant_id)
 
-    def get_roles_for_user_and_domain(self, user_id, domain_id):
-        return (self.assignment_api.get_roles_for_user_and_domain
-                (user_id, domain_id))
+    #def get_roles_for_user_and_domain(self, user_id, domain_id):
+    #    return (self.assignment_api.get_roles_for_user_and_domain
+    #            (user_id, domain_id))
 
     def _subrole_id_to_dn(self, role_id, tenant_id):
         return self.assignment_api._subrole_id_to_dn(role_id, tenant_id)
