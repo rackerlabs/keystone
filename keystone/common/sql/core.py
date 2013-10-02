@@ -185,12 +185,8 @@ class DictBase(models.ModelBase):
         return getattr(self, key)
 
 
-def mysql_db2_on_checkout(engine, dbapi_conn, connection_rec,
-                          connection_proxy):
-    """Ensures that MySQL and DB2 connections checked out of the pool are
-    alive.
-
-    """
+def on_checkout(engine, dbapi_conn, connection_rec, connection_proxy):
+    """Ensures that connections checked out of the pool are alive."""
     cursor = dbapi_conn.cursor()
     try:
         sql = 'select 1'
@@ -243,8 +239,8 @@ class Base(object):
 
             engine = sql.create_engine(CONF.sql.connection, **engine_config)
 
-            if engine.name in ('mysql', 'ibm_db_sa'):
-                callback = functools.partial(mysql_db2_on_checkout, engine)
+            if engine.name in ('mysql', 'ibm_db_sa', 'postgresql'):
+                callback = functools.partial(on_checkout, engine)
                 sql.event.listen(engine, 'checkout', callback)
 
             return engine
