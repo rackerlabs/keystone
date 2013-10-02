@@ -103,7 +103,7 @@ class IdentityTests(object):
         #               not be returned by the api
         user.pop('password')
         self.assertDictContainsSubset(user, user_ref)
-        role_list = self.identity_api.get_roles_for_user_and_project(
+        role_list = self.assignment_api.get_roles_for_user_and_project(
             user['id'], self.tenant_baz['id'])
         self.assertEqual(len(role_list), 1)
         self.assertIn(CONF.member_role_id, role_list)
@@ -536,7 +536,7 @@ class IdentityTests(object):
         self.assertEqual(assignment_list, [])
 
     def test_add_duplicate_role_grant(self):
-        roles_ref = self.identity_api.get_roles_for_user_and_project(
+        roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
         self.assertNotIn(self.role_admin['id'], roles_ref)
         self.identity_api.add_role_to_user_and_project(
@@ -585,7 +585,7 @@ class IdentityTests(object):
                 tenant_id=project_ref['id'],
                 role_id=role_ref['id'])
 
-        role_list = self.identity_api.get_roles_for_user_and_project(
+        role_list = self.assignment_api.get_roles_for_user_and_project(
             user_id=user_ref['id'],
             tenant_id=project_ref['id'])
 
@@ -593,19 +593,19 @@ class IdentityTests(object):
                          set([role_ref['id'] for role_ref in role_ref_list]))
 
     def test_get_role_by_user_and_project(self):
-        roles_ref = self.identity_api.get_roles_for_user_and_project(
+        roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
         self.assertNotIn(self.role_admin['id'], roles_ref)
         self.identity_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], self.role_admin['id'])
-        roles_ref = self.identity_api.get_roles_for_user_and_project(
+        roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
         self.assertIn(self.role_admin['id'], roles_ref)
         self.assertNotIn('member', roles_ref)
 
         self.identity_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], 'member')
-        roles_ref = self.identity_api.get_roles_for_user_and_project(
+        roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
         self.assertIn(self.role_admin['id'], roles_ref)
         self.assertIn('member', roles_ref)
@@ -692,18 +692,18 @@ class IdentityTests(object):
 
     def test_get_roles_for_user_and_project_404(self):
         self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_roles_for_user_and_project,
+                          self.assignment_api.get_roles_for_user_and_project,
                           uuid.uuid4().hex,
                           self.tenant_bar['id'])
 
         self.assertRaises(exception.ProjectNotFound,
-                          self.identity_api.get_roles_for_user_and_project,
+                          self.assignment_api.get_roles_for_user_and_project,
                           self.user_foo['id'],
                           uuid.uuid4().hex)
 
     def test_add_role_to_user_and_project_404(self):
         self.assertRaises(exception.UserNotFound,
-                          self.identity_api.add_role_to_user_and_project,
+                          self.assignment_api.add_role_to_user_and_project,
                           uuid.uuid4().hex,
                           self.tenant_bar['id'],
                           self.role_admin['id'])
@@ -725,7 +725,7 @@ class IdentityTests(object):
             self.user_foo['id'], self.tenant_bar['id'], 'member')
         self.identity_api.remove_role_from_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], 'member')
-        roles_ref = self.identity_api.get_roles_for_user_and_project(
+        roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
         self.assertNotIn('member', roles_ref)
         self.assertRaises(exception.NotFound,
@@ -1226,7 +1226,7 @@ class IdentityTests(object):
         # Now test the alternate way of getting back lists of grants,
         # where user and group roles are combined.  These should match
         # the above results.
-        combined_role_list = self.identity_api.get_roles_for_user_and_project(
+        combined_role_list = self.assignment_api.get_roles_for_user_and_project(
             user1['id'], project1['id'])
         self.assertEquals(len(combined_role_list), 4)
         self.assertIn(role_list[4]['id'], combined_role_list)
@@ -1308,7 +1308,7 @@ class IdentityTests(object):
 
         # Read by the roles, ensuring we get the correct 3 roles for
         # both project and domain
-        combined_role_list = self.identity_api.get_roles_for_user_and_project(
+        combined_role_list = self.assignment_api.get_roles_for_user_and_project(
             user1['id'], project1['id'])
         self.assertEquals(len(combined_role_list), 3)
         self.assertIn(role_list[3]['id'], combined_role_list)
@@ -1909,7 +1909,7 @@ class IdentityTests(object):
         self.identity_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], alt_role['id'])
         self.identity_api.delete_role(role['id'])
-        roles_ref = self.identity_api.get_roles_for_user_and_project(
+        roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
         self.assertNotIn(role['id'], roles_ref)
         self.assertIn(alt_role['id'], roles_ref)
@@ -3321,7 +3321,7 @@ class InheritanceTests(object):
 
         # Now get the effective roles for the user and project, this
         # should only include the direct role assignment on the project
-        combined_role_list = self.identity_api.get_roles_for_user_and_project(
+        combined_role_list = self.assignment_api.get_roles_for_user_and_project(
             user1['id'], project1['id'])
         self.assertEquals(len(combined_role_list), 1)
         self.assertIn(role_list[0]['id'], combined_role_list)
@@ -3334,7 +3334,7 @@ class InheritanceTests(object):
 
         # Now get the effective roles for the user and project again, this
         # should now include the inherited role on the domain
-        combined_role_list = self.identity_api.get_roles_for_user_and_project(
+        combined_role_list = self.assignment_api.get_roles_for_user_and_project(
             user1['id'], project1['id'])
         self.assertEquals(len(combined_role_list), 2)
         self.assertIn(role_list[0]['id'], combined_role_list)
@@ -3406,7 +3406,7 @@ class InheritanceTests(object):
 
         # Now get the effective roles for the user and project, this
         # should only include the direct role assignment on the project
-        combined_role_list = self.identity_api.get_roles_for_user_and_project(
+        combined_role_list = self.assignment_api.get_roles_for_user_and_project(
             user1['id'], project1['id'])
         self.assertEquals(len(combined_role_list), 1)
         self.assertIn(role_list[0]['id'], combined_role_list)
@@ -3423,7 +3423,7 @@ class InheritanceTests(object):
 
         # Now get the effective roles for the user and project again, this
         # should now include the inherited roles on the domain
-        combined_role_list = self.identity_api.get_roles_for_user_and_project(
+        combined_role_list = self.assignment_api.get_roles_for_user_and_project(
             user1['id'], project1['id'])
         self.assertEquals(len(combined_role_list), 3)
         self.assertIn(role_list[0]['id'], combined_role_list)

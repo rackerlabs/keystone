@@ -312,7 +312,7 @@ class Role(controller.V2Controller):
             raise exception.NotImplemented(message='User roles not supported: '
                                                    'tenant ID required')
 
-        roles = self.identity_api.get_roles_for_user_and_project(
+        roles = self.assignment_api.get_roles_for_user_and_project(
             user_id, tenant_id)
         return {'roles': [self.identity_api.get_role(x)
                           for x in roles]}
@@ -403,7 +403,7 @@ class Role(controller.V2Controller):
             # the default domain.
             if tenant['domain_id'] != DEFAULT_DOMAIN_ID:
                 continue
-            role_ids = self.identity_api.get_roles_for_user_and_project(
+            role_ids = self.assignment_api.get_roles_for_user_and_project(
                 user_id, tenant['id'])
             for role_id in role_ids:
                 ref = {'roleId': role_id,

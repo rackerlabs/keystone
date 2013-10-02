@@ -36,7 +36,7 @@ CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
 
-@dependency.requires('catalog_api', 'identity_api')
+@dependency.requires('catalog_api', 'identity_api','assignment_api')
 class V2TokenDataHelper(object):
     """Creates V2 token data."""
     @classmethod
@@ -132,7 +132,7 @@ class V2TokenDataHelper(object):
         return services.values()
 
 
-@dependency.requires('catalog_api', 'identity_api')
+@dependency.requires('catalog_api', 'identity_api','assignment_api')
 class V3TokenDataHelper(object):
     """Token data helper."""
     def __init__(self):
@@ -168,7 +168,7 @@ class V3TokenDataHelper(object):
             roles = self.identity_api.get_roles_for_user_and_domain(
                 user_id, domain_id)
         if project_id:
-            roles = self.identity_api.get_roles_for_user_and_project(
+            roles = self.assignment_api.get_roles_for_user_and_project(
                 user_id, project_id)
         return [self.identity_api.get_role(role_id) for role_id in roles]
 
@@ -329,7 +329,7 @@ class V3TokenDataHelper(object):
 
 
 @dependency.optional('oauth_api')
-@dependency.requires('token_api', 'identity_api', 'catalog_api')
+@dependency.requires('token_api', 'identity_api', 'catalog_api','assignment_api')
 class Provider(token.provider.Provider):
     def __init__(self, *args, **kwargs):
         super(Provider, self).__init__(*args, **kwargs)

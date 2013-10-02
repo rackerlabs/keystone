@@ -847,7 +847,7 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
         # and group roles are combined.  Only directly assigned user
         # roles are available, since group grants are not yet supported
 
-        combined_role_list = self.identity_api.get_roles_for_user_and_project(
+        combined_role_list = self.assignment_api.get_roles_for_user_and_project(
             user1['id'], project1['id'])
         self.assertEquals(len(combined_role_list), 2)
         self.assertIn(role_list[0]['id'], combined_role_list)

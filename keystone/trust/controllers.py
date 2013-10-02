@@ -157,7 +157,7 @@ class TrustV3(controller.V3Controller):
             global_roles = self.identity_api.list_roles()
             clean_roles = self._clean_role_list(context, trust, global_roles)
             if trust.get('project_id'):
-                user_roles = self.identity_api.get_roles_for_user_and_project(
+                user_roles = self.assignment_api.get_roles_for_user_and_project(
                     user_id, trust['project_id'])
             else:
                 user_roles = []

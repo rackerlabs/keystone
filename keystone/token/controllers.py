@@ -365,7 +365,7 @@ class Auth(controller.V2Controller):
         if tenant_id:
             try:
                 tenant_ref = self.identity_api.get_project(tenant_id)
-                role_list = self.identity_api.get_roles_for_user_and_project(
+                role_list = self.assignment_api.get_roles_for_user_and_project(
                     user_id, tenant_id)
             except exception.ProjectNotFound:
                 pass
