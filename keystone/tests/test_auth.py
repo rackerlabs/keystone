@@ -230,7 +230,7 @@ class AuthWithToken(AuthTest):
     def test_auth_unscoped_token_project(self):
         """Verify getting a token in a tenant with an unscoped token."""
         # Add a role in so we can check we get this back
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'],
             self.tenant_bar['id'],
             self.role_member['id'])
@@ -253,7 +253,7 @@ class AuthWithToken(AuthTest):
     def test_auth_token_project_group_role(self):
         """Verify getting a token in a tenant with group roles."""
         # Add a v2 style role in so we can check we get this back
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'],
             self.tenant_bar['id'],
             self.role_member['id'])
@@ -410,7 +410,7 @@ class AuthWithToken(AuthTest):
         self.assignment_api.create_project(project1['id'], project1)
         role_one = {'id': 'role_one', 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role_one['id'], role_one)
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], project1['id'], role_one['id'])
         no_context = {}
 
@@ -597,7 +597,7 @@ class AuthWithTrust(AuthTest):
         self.assigned_roles = [self.role_member['id'],
                                self.role_browser['id']]
         for assigned_role in self.assigned_roles:
-            self.identity_api.add_role_to_user_and_project(
+            self.assignment_api.add_role_to_user_and_project(
                 self.trustor['id'], self.tenant_bar['id'], assigned_role)
 
         self.sample_data = {'trustor_user_id': self.trustor['id'],
@@ -816,7 +816,7 @@ class AuthWithTrust(AuthTest):
             self.controller.authenticate, {}, request_body)
 
     def test_token_from_trust_with_wrong_role_fails(self):
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             self.trustor['id'],
             self.tenant_bar['id'],
             self.role_other['id'])

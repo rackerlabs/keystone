@@ -44,7 +44,7 @@ class IdentityTests(object):
             self.tenant_bar['id'])
         self.assertNotIn(self.user_two['id'], user_ids)
 
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             tenant_id=self.tenant_bar['id'],
             user_id=self.user_two['id'],
             role_id=self.role_other['id'])
@@ -539,10 +539,10 @@ class IdentityTests(object):
         roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
         self.assertNotIn(self.role_admin['id'], roles_ref)
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], self.role_admin['id'])
         self.assertRaises(exception.Conflict,
-                          self.identity_api.add_role_to_user_and_project,
+                          self.assignment_api.add_role_to_user_and_project,
                           self.user_foo['id'],
                           self.tenant_bar['id'],
                           self.role_admin['id'])
@@ -580,7 +580,7 @@ class IdentityTests(object):
             self.identity_api.create_role(role_ref['id'], role_ref)
             role_ref_list.append(role_ref)
 
-            self.identity_api.add_role_to_user_and_project(
+            self.assignment_api.add_role_to_user_and_project(
                 user_id=user_ref['id'],
                 tenant_id=project_ref['id'],
                 role_id=role_ref['id'])
@@ -596,14 +596,14 @@ class IdentityTests(object):
         roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
         self.assertNotIn(self.role_admin['id'], roles_ref)
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], self.role_admin['id'])
         roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
         self.assertIn(self.role_admin['id'], roles_ref)
         self.assertNotIn('member', roles_ref)
 
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], 'member')
         roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
@@ -709,19 +709,19 @@ class IdentityTests(object):
                           self.role_admin['id'])
 
         self.assertRaises(exception.ProjectNotFound,
-                          self.identity_api.add_role_to_user_and_project,
+                          self.assignment_api.add_role_to_user_and_project,
                           self.user_foo['id'],
                           uuid.uuid4().hex,
                           self.role_admin['id'])
 
         self.assertRaises(exception.RoleNotFound,
-                          self.identity_api.add_role_to_user_and_project,
+                          self.assignment_api.add_role_to_user_and_project,
                           self.user_foo['id'],
                           self.tenant_bar['id'],
                           uuid.uuid4().hex)
 
     def test_remove_role_from_user_and_project(self):
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], 'member')
         self.identity_api.remove_role_from_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], 'member')
@@ -1588,7 +1588,7 @@ class IdentityTests(object):
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
         self.identity_api.create_user(user['id'], user)
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             user['id'],
             self.tenant_bar['id'],
             self.role_member['id'])
@@ -1892,7 +1892,7 @@ class IdentityTests(object):
         tenant = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'domain_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project(tenant['id'], tenant)
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], tenant['id'], 'member')
         self.assignment_api.delete_project(tenant['id'])
         self.assertRaises(exception.NotFound,
@@ -1904,9 +1904,9 @@ class IdentityTests(object):
         alt_role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_role(role['id'], role)
         self.identity_api.create_role(alt_role['id'], alt_role)
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], role['id'])
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], alt_role['id'])
         self.identity_api.delete_role(role['id'])
         roles_ref = self.assignment_api.get_roles_for_user_and_project(

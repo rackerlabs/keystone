@@ -133,12 +133,12 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             self.role['id'] = self.role_id
             self.role['name'] = 'admin'
             self.identity_api.create_role(self.role_id, self.role)
-            self.identity_api.add_role_to_user_and_project(
+            self.assignment_api.add_role_to_user_and_project(
                 self.user_id, self.project_id, self.role_id)
-            self.identity_api.add_role_to_user_and_project(
+            self.assignment_api.add_role_to_user_and_project(
                 self.default_domain_user_id, self.default_domain_project_id,
                 self.role_id)
-            self.identity_api.add_role_to_user_and_project(
+            self.assignment_api.add_role_to_user_and_project(
                 self.default_domain_user_id, self.project_id,
                 self.role_id)
 

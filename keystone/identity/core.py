@@ -478,13 +478,13 @@ class Manager(manager.Manager):
     #    return (self.assignment_api.get_roles_for_user_and_domain
     #            (user_id, domain_id))
 
-    def _subrole_id_to_dn(self, role_id, tenant_id):
-        return self.assignment_api._subrole_id_to_dn(role_id, tenant_id)
+    #def _subrole_id_to_dn(self, role_id, tenant_id):
+    #    return self.assignment_api._subrole_id_to_dn(role_id, tenant_id)
 
-    def add_role_to_user_and_project(self, user_id,
-                                     tenant_id, role_id):
-        return (self.assignment_api.add_role_to_user_and_project
-                (user_id, tenant_id, role_id))
+    #def add_role_to_user_and_project(self, user_id,
+    #                                 tenant_id, role_id):
+    #    return (self.assignment_api.add_role_to_user_and_project
+    #            (user_id, tenant_id, role_id))
 
     def create_role(self, role_id, role):
         return self.assignment_api.create_role(role_id, role)

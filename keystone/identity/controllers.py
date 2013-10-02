@@ -359,7 +359,7 @@ class Role(controller.V2Controller):
             raise exception.NotImplemented(message='User roles not supported: '
                                                    'tenant_id required')
 
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             user_id, tenant_id, role_id)
 
         role_ref = self.assignment_api.get_role(role_id)
@@ -425,7 +425,7 @@ class Role(controller.V2Controller):
         # TODO(termie): for now we're ignoring the actual role
         tenant_id = role.get('tenantId')
         role_id = role.get('roleId')
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             user_id, tenant_id, role_id)
         self._delete_tokens_for_user(user_id)
 

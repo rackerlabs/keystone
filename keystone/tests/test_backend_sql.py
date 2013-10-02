@@ -232,7 +232,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         role = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex}
         self.identity_api.create_role(role['id'], role)
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             user['id'],
             self.tenant_bar['id'],
             role['id'])
@@ -256,7 +256,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         role = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex}
         self.identity_api.create_role(role['id'], role)
-        self.identity_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_project(
             user['id'],
             self.tenant_bar['id'],
             role['id'])
