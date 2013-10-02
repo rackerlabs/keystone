@@ -185,15 +185,23 @@ class DictBase(models.ModelBase):
         return getattr(self, key)
 
 
-def mysql_on_checkout(engine, dbapi_conn, connection_rec, connection_proxy):
-    """Ensures that MySQL connections checked out of the pool are alive."""
+def mysql_db2_on_checkout(engine, dbapi_conn, connection_rec,
+                          connection_proxy):
+    """Ensures that MySQL and DB2 connections checked out of the pool are
+    alive.
+
+    """
     cursor = dbapi_conn.cursor()
     try:
-        cursor.execute('select 1')
+        sql = 'select 1'
+        if engine.name == 'ibm_db_sa':
+            # DB2 requires a table expression
+            sql = 'select 1 from (values (1)) AS t1'
+        cursor.execute(sql)
     except Exception as e:
         is_disconnect = engine.dialect.is_disconnect(e, dbapi_conn, cursor)
         if is_disconnect:
-            LOG.warn(_('Got mysql server has gone away: %s'), e)
+            LOG.warn(_('Got database server has gone away: %s'), e)
             raise DisconnectionError("Database server went away")
         else:
             raise
@@ -235,8 +243,8 @@ class Base(object):
 
             engine = sql.create_engine(CONF.sql.connection, **engine_config)
 
-            if engine.name == 'mysql':
-                callback = functools.partial(mysql_on_checkout, engine)
+            if engine.name in ('mysql', 'ibm_db_sa'):
+                callback = functools.partial(mysql_db2_on_checkout, engine)
                 sql.event.listen(engine, 'checkout', callback)
 
             return engine
