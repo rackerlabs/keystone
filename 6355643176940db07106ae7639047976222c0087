@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//MTI\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-02T16:06:55Z",
+      "side": 1,
+      "message": "because you\u0027re making the except block much more broad, i think you should initialize the cursor outside of the try block\n\n  cursor \u003d dbapi_conn.cursor()\n  try:\n    cursor.execute(\u0027select 1\u0027)\n  except Exception as e:",
+      "revId": "6355643176940db07106ae7639047976222c0087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//MTA\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-02T16:06:55Z",
+      "side": 1,
+      "message": "why from migrate_version? is `select 1` not valid on db2 or something?",
+      "revId": "6355643176940db07106ae7639047976222c0087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
