@@ -170,7 +170,7 @@ class V3TokenDataHelper(object):
         if project_id:
             roles = self.assignment_api.get_roles_for_user_and_project(
                 user_id, project_id)
-        return [self.identity_api.get_role(role_id) for role_id in roles]
+        return [self.assignment_api.get_role(role_id) for role_id in roles]
 
     def _populate_user(self, token_data, user_id, domain_id, project_id,
                        trust):
@@ -535,7 +535,7 @@ class Provider(token.provider.Provider):
                 metadata_ref = token_ref['metadata']
                 roles_ref = []
                 for role_id in metadata_ref.get('roles', []):
-                    roles_ref.append(self.identity_api.get_role(role_id))
+                    roles_ref.append(self.assignment_api.get_role(role_id))
 
                 # Get a service catalog if possible
                 # This is needed for on-behalf-of requests

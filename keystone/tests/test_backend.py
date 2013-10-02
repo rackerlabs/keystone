@@ -199,13 +199,13 @@ class IdentityTests(object):
                           DEFAULT_DOMAIN_ID)
 
     def test_get_role(self):
-        role_ref = self.identity_api.get_role(self.role_admin['id'])
+        role_ref = self.assignment_api.get_role(self.role_admin['id'])
         role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
         self.assertDictEqual(role_ref_dict, self.role_admin)
 
     def test_get_role_404(self):
         self.assertRaises(exception.RoleNotFound,
-                          self.identity_api.get_role,
+                          self.assignment_api.get_role,
                           uuid.uuid4().hex)
 
     def test_create_duplicate_role_name_fails(self):
@@ -1467,19 +1467,19 @@ class IdentityTests(object):
     def test_role_crud(self):
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_role(role['id'], role)
-        role_ref = self.identity_api.get_role(role['id'])
+        role_ref = self.assignment_api.get_role(role['id'])
         role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
         self.assertDictEqual(role_ref_dict, role)
 
         role['name'] = uuid.uuid4().hex
         self.identity_api.update_role(role['id'], role)
-        role_ref = self.identity_api.get_role(role['id'])
+        role_ref = self.assignment_api.get_role(role['id'])
         role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
         self.assertDictEqual(role_ref_dict, role)
 
         self.identity_api.delete_role(role['id'])
         self.assertRaises(exception.RoleNotFound,
-                          self.identity_api.get_role,
+                          self.assignment_api.get_role,
                           role['id'])
 
     def test_update_role_404(self):

@@ -112,7 +112,7 @@ class Ec2Controller(controller.V2Controller):
         roles = metadata_ref.get('roles', [])
         if not roles:
             raise exception.Unauthorized(message='User not valid for tenant.')
-        roles_ref = [self.identity_api.get_role(role_id)
+        roles_ref = [self.assignment_api.get_role(role_id)
                      for role_id in roles]
 
         catalog_ref = self.catalog_api.get_catalog(

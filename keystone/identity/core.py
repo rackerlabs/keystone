@@ -455,14 +455,14 @@ class Manager(manager.Manager):
     #def get_project_by_name(self, tenant_name, domain_id):
     #    return self.assignment_api.get_project_by_name(tenant_name, domain_id)
 
-    def get_project(self, tenant_id):
-        return self.assignment_api.get_project(tenant_id)
+    #def get_project(self, tenant_id):
+    #    return self.assignment_api.get_project(tenant_id)
 
     #def list_projects(self, domain_id=None):
     #    return self.assignment_api.list_projects(domain_id)
 
-    def get_role(self, role_id):
-        return self.assignment_api.get_role(role_id)
+    #def get_role(self, role_id):
+    #    return self.assignment_api.get_role(role_id)
 
     def list_roles(self):
         return self.assignment_api.list_roles()

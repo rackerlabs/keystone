@@ -357,7 +357,7 @@ class TestCase(NoModule, testtools.TestCase):
                 try:
                     rv = self.identity_api.create_role(role['id'], role)
                 except exception.Conflict:
-                    rv = self.identity_api.get_role(role['id'])
+                    rv = self.assignment_api.get_role(role['id'])
                     pass
                 setattr(self, 'role_%s' % role['id'], rv)
 

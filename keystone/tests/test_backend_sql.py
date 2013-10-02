@@ -206,7 +206,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                           role['id'],
                           role)
         self.assertRaises(exception.RoleNotFound,
-                          self.identity_api.get_role,
+                          self.assignment_api.get_role,
                           role['id'])
 
     def test_delete_project_with_user_association(self):

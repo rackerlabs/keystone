@@ -314,13 +314,13 @@ class Role(controller.V2Controller):
 
         roles = self.assignment_api.get_roles_for_user_and_project(
             user_id, tenant_id)
-        return {'roles': [self.identity_api.get_role(x)
+        return {'roles': [self.assignment_api.get_role(x)
                           for x in roles]}
 
     # CRUD extension
     def get_role(self, context, role_id):
         self.assert_admin(context)
-        return {'role': self.identity_api.get_role(role_id)}
+        return {'role': self.assignment_api.get_role(role_id)}
 
     def create_role(self, context, role):
         role = self._normalize_dict(role)
@@ -362,7 +362,7 @@ class Role(controller.V2Controller):
         self.identity_api.add_role_to_user_and_project(
             user_id, tenant_id, role_id)
 
-        role_ref = self.identity_api.get_role(role_id)
+        role_ref = self.assignment_api.get_role(role_id)
         return {'role': role_ref}
 
     def remove_role_from_user(self, context, user_id, role_id, tenant_id=None):
@@ -429,7 +429,7 @@ class Role(controller.V2Controller):
             user_id, tenant_id, role_id)
         self._delete_tokens_for_user(user_id)
 
-        role_ref = self.identity_api.get_role(role_id)
+        role_ref = self.assignment_api.get_role(role_id)
         return {'role': role_ref}
 
     # COMPAT(diablo): CRUD extension
@@ -850,7 +850,7 @@ class RoleV3(controller.V3Controller):
 
     @controller.protected()
     def get_role(self, context, role_id):
-        ref = self.identity_api.get_role(role_id)
+        ref = self.assignment_api.get_role(role_id)
         return RoleV3.wrap_member(context, ref)
 
     @controller.protected()
@@ -895,7 +895,7 @@ class RoleV3(controller.V3Controller):
         """
         ref = {}
         if role_id:
-            ref['role'] = self.identity_api.get_role(role_id)
+            ref['role'] = self.assignment_api.get_role(role_id)
         if user_id:
             ref['user'] = self.identity_api.get_user(user_id)
         else:
