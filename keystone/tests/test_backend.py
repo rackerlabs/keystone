@@ -1511,17 +1511,17 @@ class IdentityTests(object):
 
     def test_add_user_to_project_404(self):
         self.assertRaises(exception.ProjectNotFound,
-                          self.identity_api.add_user_to_project,
+                          self.assignment_api.add_user_to_project,
                           uuid.uuid4().hex,
                           self.user_foo['id'])
 
         self.assertRaises(exception.UserNotFound,
-                          self.identity_api.add_user_to_project,
+                          self.assignment_api.add_user_to_project,
                           self.tenant_bar['id'],
                           uuid.uuid4().hex)
 
     def test_remove_user_from_project(self):
-        self.identity_api.add_user_to_project(self.tenant_baz['id'],
+        self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                               self.user_foo['id'])
         self.identity_api.remove_user_from_project(self.tenant_baz['id'],
                                                    self.user_foo['id'])
@@ -1575,7 +1575,7 @@ class IdentityTests(object):
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
         self.identity_api.create_user(user['id'], user)
-        self.identity_api.add_user_to_project(self.tenant_bar['id'],
+        self.assignment_api.add_user_to_project(self.tenant_bar['id'],
                                               user['id'])
         self.identity_api.delete_user(user['id'])
         self.assertRaises(exception.UserNotFound,
