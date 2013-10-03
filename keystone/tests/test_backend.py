@@ -231,7 +231,7 @@ class IdentityTests(object):
         self.assignment_api.create_role('fake2', role2)
         role1['name'] = 'fake2name'
         self.assertRaises(exception.Conflict,
-                          self.identity_api.update_role,
+                          self.assignment_api.update_role,
                           'fake1',
                           role1)
 
@@ -1472,7 +1472,7 @@ class IdentityTests(object):
         self.assertDictEqual(role_ref_dict, role)
 
         role['name'] = uuid.uuid4().hex
-        self.identity_api.update_role(role['id'], role)
+        self.assignment_api.update_role(role['id'], role)
         role_ref = self.assignment_api.get_role(role['id'])
         role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
         self.assertDictEqual(role_ref_dict, role)
@@ -1485,7 +1485,7 @@ class IdentityTests(object):
     def test_update_role_404(self):
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assertRaises(exception.RoleNotFound,
-                          self.identity_api.update_role,
+                          self.assignment_api.update_role,
                           role['id'],
                           role)
 

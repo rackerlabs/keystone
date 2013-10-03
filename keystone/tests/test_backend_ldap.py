@@ -379,7 +379,7 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
         self.assertEqual(role_ref['id'], 'fake1')
 
         role['name'] = 'fake2'
-        self.identity_api.update_role('fake1', role)
+        self.assignment_api.update_role('fake1', role)
 
         self.assignment_api.delete_role('fake1')
         self.assertRaises(exception.RoleNotFound,
@@ -400,7 +400,7 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
 
         self.role_member['name'] = uuid.uuid4().hex
         self.assertRaises(exception.ForbiddenAction,
-                          self.identity_api.update_role,
+                          self.assignment_api.update_role,
                           self.role_member['id'],
                           self.role_member)
 

@@ -857,7 +857,7 @@ class RoleV3(controller.V3Controller):
     def update_role(self, context, role_id, role):
         self._require_matching_id(role_id, role)
 
-        ref = self.identity_api.update_role(role_id, role)
+        ref = self.assignment_api.update_role(role_id, role)
         return RoleV3.wrap_member(context, ref)
 
     @controller.protected()

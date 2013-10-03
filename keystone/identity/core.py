@@ -497,8 +497,8 @@ class Manager(manager.Manager):
     #    return (self.assignment_api.remove_role_from_user_and_project
     #            (user_id, tenant_id, role_id))
 
-    def update_role(self, role_id, role):
-        return self.assignment_api.update_role(role_id, role)
+    #def update_role(self, role_id, role):
+    #    return self.assignment_api.update_role(role_id, role)
 
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
