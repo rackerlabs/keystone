@@ -16,6 +16,24 @@
       "revId": "f18dbd7e74303b7e0af97439ed935038e2231feb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//H68\u003d",
+        "filename": "keystone/tests/test_sql_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-03T21:42:38Z",
+      "side": 1,
+      "message": "Keystone doesn\u0027t now have a dependency on mysql or db2, and I\u0027d rather not add one, especially since this change is targeted to be backported to Havana. Eventually we\u0027ll be using oslo.db so it can be covered there.",
+      "parentUuid": "AAAAS3//H+g\u003d",
+      "revId": "f18dbd7e74303b7e0af97439ed935038e2231feb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
