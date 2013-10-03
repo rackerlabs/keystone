@@ -122,8 +122,6 @@ FILE_OPTIONS = {
                    default=('/C=US/ST=Unset/L=Unset/O=Unset/'
                             'CN=www.example.com'))],
     'sql': [
-        cfg.StrOpt('connection', secret=True,
-                   default='sqlite:///keystone.db'),
         cfg.IntOpt('idle_timeout', default=200)],
     'assignment': [
         # assignment has no default for backward compatibility reasons.
