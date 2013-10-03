@@ -377,7 +377,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         self.role1['name'] = 'admin'
         self.assignment_api.create_role(self.role1['id'], self.role1)
 
-        self.identity_api.create_grant(self.role1['id'],
+        self.assignment_api.create_grant(self.role1['id'],
                                        user_id=self.userAdminA['id'],
                                        domain_id=self.domainA['id'])
 
@@ -541,19 +541,19 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
         self.role2 = self.new_role_ref()
         self.assignment_api.create_role(self.role2['id'], self.role2)
 
-        self.identity_api.create_grant(self.role2['id'],
+        self.assignment_api.create_grant(self.role2['id'],
                                        user_id=self.user1['id'],
                                        domain_id=self.domainA['id'])
-        self.identity_api.create_grant(self.role1['id'],
+        self.assignment_api.create_grant(self.role1['id'],
                                        user_id=self.user1['id'],
                                        project_id=self.projectA['id'])
-        self.identity_api.create_grant(self.role1['id'],
+        self.assignment_api.create_grant(self.role1['id'],
                                        user_id=self.user2['id'],
                                        project_id=self.projectA['id'])
-        self.identity_api.create_grant(self.role1['id'],
+        self.assignment_api.create_grant(self.role1['id'],
                                        user_id=self.user3['id'],
                                        project_id=self.projectA['id'])
-        self.identity_api.create_grant(self.role1['id'],
+        self.assignment_api.create_grant(self.role1['id'],
                                        group_id=self.group1['id'],
                                        project_id=self.projectA['id'])
 
@@ -675,16 +675,16 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
         self.identity_api.create_user(self.user6['id'], self.user6)
         self.identity_api.add_user_to_group(self.user5['id'],
                                             self.group1['id'])
-        self.identity_api.create_grant(self.role1['id'],
+        self.assignment_api.create_grant(self.role1['id'],
                                        group_id=self.group1['id'],
                                        project_id=self.projectB['id'])
-        self.identity_api.create_grant(self.role2['id'],
+        self.assignment_api.create_grant(self.role2['id'],
                                        user_id=self.user4['id'],
                                        project_id=self.projectC['id'])
-        self.identity_api.create_grant(self.role1['id'],
+        self.assignment_api.create_grant(self.role1['id'],
                                        user_id=self.user6['id'],
                                        project_id=self.projectA['id'])
-        self.identity_api.create_grant(self.role1['id'],
+        self.assignment_api.create_grant(self.role1['id'],
                                        user_id=self.user6['id'],
                                        domain_id=self.domainA['id'])
 
@@ -1330,28 +1330,28 @@ class TestAuthJSON(test_v3.RestfulTestCase):
             self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
 
-        self.identity_api.create_grant(role_list[0]['id'],
+        self.assignment_api.create_grant(role_list[0]['id'],
                                        user_id=user1['id'],
                                        domain_id=domainA['id'])
-        self.identity_api.create_grant(role_list[1]['id'],
+        self.assignment_api.create_grant(role_list[1]['id'],
                                        user_id=user1['id'],
                                        project_id=projectA['id'])
-        self.identity_api.create_grant(role_list[2]['id'],
+        self.assignment_api.create_grant(role_list[2]['id'],
                                        user_id=user2['id'],
                                        domain_id=domainA['id'])
-        self.identity_api.create_grant(role_list[3]['id'],
+        self.assignment_api.create_grant(role_list[3]['id'],
                                        user_id=user2['id'],
                                        project_id=projectA['id'])
-        self.identity_api.create_grant(role_list[4]['id'],
+        self.assignment_api.create_grant(role_list[4]['id'],
                                        group_id=group1['id'],
                                        domain_id=domainA['id'])
-        self.identity_api.create_grant(role_list[5]['id'],
+        self.assignment_api.create_grant(role_list[5]['id'],
                                        group_id=group1['id'],
                                        project_id=projectA['id'])
-        self.identity_api.create_grant(role_list[6]['id'],
+        self.assignment_api.create_grant(role_list[6]['id'],
                                        group_id=group2['id'],
                                        domain_id=domainA['id'])
-        self.identity_api.create_grant(role_list[7]['id'],
+        self.assignment_api.create_grant(role_list[7]['id'],
                                        group_id=group2['id'],
                                        project_id=projectA['id'])
 

@@ -265,7 +265,7 @@ class AuthWithToken(AuthTest):
         self.identity_api.create_group(new_group['id'], new_group)
         self.identity_api.add_user_to_group(self.user_foo['id'],
                                             new_group['id'])
-        self.identity_api.create_grant(
+        self.assignment_api.create_grant(
             group_id=new_group['id'],
             project_id=self.tenant_bar['id'],
             role_id=self.role_admin['id'])
@@ -307,19 +307,19 @@ class AuthWithToken(AuthTest):
         self.identity_api.create_group(new_group['id'], new_group)
         self.identity_api.add_user_to_group(self.user_foo['id'],
                                             new_group['id'])
-        self.identity_api.create_grant(
+        self.assignment_api.create_grant(
             user_id=self.user_foo['id'],
             project_id=project1['id'],
             role_id=self.role_member['id'])
-        self.identity_api.create_grant(
+        self.assignment_api.create_grant(
             group_id=new_group['id'],
             project_id=project1['id'],
             role_id=self.role_admin['id'])
-        self.identity_api.create_grant(
+        self.assignment_api.create_grant(
             user_id=self.user_foo['id'],
             domain_id=domain1['id'],
             role_id=role_foo_domain1['id'])
-        self.identity_api.create_grant(
+        self.assignment_api.create_grant(
             group_id=new_group['id'],
             domain_id=domain1['id'],
             role_id=role_group_domain1['id'])

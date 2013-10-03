@@ -500,19 +500,19 @@ class Manager(manager.Manager):
     #def update_role(self, role_id, role):
     #    return self.assignment_api.update_role(role_id, role)
 
-    def create_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
-                     inherited_to_projects=False):
-        return (self.assignment_api.create_grant
-                (role_id, user_id, group_id, domain_id, project_id,
-                 inherited_to_projects))
+    #def create_grant(self, role_id, user_id=None, group_id=None,
+    #                 domain_id=None, project_id=None,
+    #                 inherited_to_projects=False):
+    #    return (self.assignment_api.create_grant
+    #            (role_id, user_id, group_id, domain_id, project_id,
+    #             inherited_to_projects))
 
-    def list_grants(self, user_id=None, group_id=None,
-                    domain_id=None, project_id=None,
-                    inherited_to_projects=False):
-        return (self.assignment_api.list_grants
-                (user_id, group_id, domain_id, project_id,
-                 inherited_to_projects))
+    #def list_grants(self, user_id=None, group_id=None,
+    #                domain_id=None, project_id=None,
+    #                inherited_to_projects=False):
+    #    return (self.assignment_api.list_grants
+    #            (user_id, group_id, domain_id, project_id,
+    #             inherited_to_projects))
 
     def get_grant(self, role_id, user_id=None, group_id=None,
                   domain_id=None, project_id=None,

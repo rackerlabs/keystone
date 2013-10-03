@@ -920,7 +920,7 @@ class RoleV3(controller.V3Controller):
         if group_id:
             self.identity_api.get_group(group_id)
 
-        self.identity_api.create_grant(
+        self.assignment_api.create_grant(
             role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
 
@@ -931,7 +931,7 @@ class RoleV3(controller.V3Controller):
         self._require_domain_xor_project(domain_id, project_id)
         self._require_user_xor_group(user_id, group_id)
 
-        refs = self.identity_api.list_grants(
+        refs = self.assignment_api.list_grants(
             user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
         return RoleV3.wrap_collection(context, refs)

@@ -88,13 +88,13 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self.assignment_api.create_role(self.role['id'], self.role)
         self.role1 = self.new_role_ref()
         self.assignment_api.create_role(self.role1['id'], self.role1)
-        self.identity_api.create_grant(self.role['id'],
+        self.assignment_api.create_grant(self.role['id'],
                                        user_id=self.user1['id'],
                                        domain_id=self.domainA['id'])
-        self.identity_api.create_grant(self.role['id'],
+        self.assignment_api.create_grant(self.role['id'],
                                        user_id=self.user2['id'],
                                        domain_id=self.domainA['id'])
-        self.identity_api.create_grant(self.role1['id'],
+        self.assignment_api.create_grant(self.role1['id'],
                                        user_id=self.user1['id'],
                                        domain_id=self.domainA['id'])
 
