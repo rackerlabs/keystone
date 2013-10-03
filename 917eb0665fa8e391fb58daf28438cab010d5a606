@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//IOc\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "In the interest of future planning and possibly moving this to Oslo, it might be helpful to have this whole change contained within a directory specific to base64 operations. This will be helpful because then in Oslo it can be treated as a module as well (e.g. see the openstack/common/rpc/* or openstack/common/notifier/* modules for examples). Then when that times comes it would be easier to just move a directory instead of moving several modules underneath /keystone/common/. \n\nThis might also be helpful if we want to move InvalidBase64Error to its own module (/keystone/common/base64utils/exceptions.py for instance, making it easier to add new exceptions if/when this all develops. This makes things easier to find and reference when they are all in one place, and also follow structure similar to other openstack projects. \n\nJust a couple thoughts.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IOI\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "Follow docstring convention specified in keystone/HACKING.rst\n\n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#docstrings\n\n\nmainly \"\"\" instead of \u0027\u0027\u0027\n\nThis applies for all instances in this module.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//INs\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "Document param alphabet with it default value.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//INQ\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "is sans supposed to be sanitizes?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//INA\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "How do I know what characters those will be? Should a doc be linked here to official documentation?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IMs\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "We can  use the keystone.openstack.common.log module to log output here, this is what the rest of keystone uses as well.This applies to all places where logging should happen in this file. Line 236, 240, 263, etc...",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IMM\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "Is sans suppose to be sanitized?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ILY\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "as follows",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IKk\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "utilities",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IKA\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "(NIT): In the interest of object oriented naming, this might make sense to be named \u0027PEMParser\u0027",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IJY\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "(NIT): allow \"unknown .... and \"valid.. to be at the same indentation levels even though they are on different lines. This helps readability.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IJM\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IIs\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "Follow docstring convention specified in keystone/HACKING.rst\n\n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#docstrings\n\n\nmainly \"\"\" instead of \u0027\u0027\u0027\n\nThis applies to all instances in this module",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IIg\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "Use common logging solution (keystone/openstack/common/log.py)",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IIc\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "Use common logging.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IH4\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "probably don\u0027t need to explicitly say \u0027string\u0027 in the docstring, example given in: \n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#docstrings\n\nThis applies for all occurrences in this module.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IHo\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "(NIT): suggest renaming variable \u0027b\u0027 to \u0027block\u0027. helps readability.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IG4\u003d",
+        "filename": "keystone/tests/test_base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "I think we have unittest in keystone already",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IG8\u003d",
+        "filename": "keystone/tests/test_base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "Can we make the test case name a little more descriptive? Here we are testing base64_utils.is_valid_base64 so why not dedicate this test case to that?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IFU\u003d",
+        "filename": "keystone/tests/test_base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "This assert kind of goes against the grain of this test. By the naming \u0027test_is_valid\u0027 we assume the positive path of the test, and the first assert checks to make sure a negative path is caught. Maybe we should have a second unit test to explicitly check the bad path cases. \n\ndef test_base64_utils_is_valid(self): \n    .... \n\n\ndef test_base64_utils_not_valid(self): \n    ..... \n\n\nor something along those lines.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//IHQ\u003d",
+        "filename": "keystone/tests/test_pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:59:45Z",
+      "side": 1,
+      "message": "Follow docstring conventions defined in keystone/HACKING.rst",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
