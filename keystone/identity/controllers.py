@@ -588,7 +588,7 @@ class DomainV3(controller.V3Controller):
 
         # OK, we are go for delete!
         self._delete_domain_contents(context, domain_id)
-        return self.identity_api.delete_domain(domain_id)
+        return self.assignment_api.delete_domain(domain_id)
 
     def _get_domain_by_name(self, context, domain_name):
         """Get the domain via its unique name.

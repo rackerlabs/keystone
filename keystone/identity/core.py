@@ -540,11 +540,11 @@ class Manager(manager.Manager):
     def update_domain(self, domain_id, domain):
         return self.assignment_api.update_domain(domain_id, domain)
 
-    def delete_domain(self, domain_id):
-        return self.assignment_api.delete_domain(domain_id)
+    #def delete_domain(self, domain_id):
+    #    return self.assignment_api.delete_domain(domain_id)
 
-    def list_domains(self):
-        return self.assignment_api.list_domains()
+    #def list_domains(self):
+    #    return self.assignment_api.list_domains()
 
     #def list_projects_for_user(self, user_id):
     #    return self.assignment_api.list_projects_for_user(user_id)

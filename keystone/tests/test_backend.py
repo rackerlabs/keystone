@@ -2353,7 +2353,7 @@ class IdentityTests(object):
         domain_ref = self.identity_api.get_domain(domain['id'])
         self.assertDictEqual(domain_ref, domain)
 
-        self.identity_api.delete_domain(domain['id'])
+        self.assignment_api.delete_domain(domain['id'])
         self.assertRaises(exception.DomainNotFound,
                           self.identity_api.get_domain,
                           domain['id'])

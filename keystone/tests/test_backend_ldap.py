@@ -711,10 +711,10 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
                           self.identity_api.get_domain,
                           domain['id'])
         self.assertRaises(exception.DomainNotFound,
-                          self.identity_api.delete_domain,
+                          self.assignment_api.delete_domain,
                           domain['id'])
         self.assertRaises(exception.Forbidden,
-                          self.identity_api.delete_domain,
+                          self.assignment_api.delete_domain,
                           CONF.identity.default_domain_id)
         self.assertRaises(exception.DomainNotFound,
                           self.identity_api.get_domain,
