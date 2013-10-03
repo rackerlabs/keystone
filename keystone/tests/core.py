@@ -60,6 +60,7 @@ from keystone.contrib import oauth1
 from keystone import credential
 from keystone import exception
 from keystone import identity
+from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import log as logging
 from keystone.openstack.common import timeutils
 from keystone import policy
@@ -133,9 +134,20 @@ def checkout_vendor(repo, rev):
     return revdir
 
 
+_set_session_module_defaults = False
+
+
 def setup_test_database():
     db = tmpdir('test.db')
     pristine = tmpdir('test.db.pristine')
+
+    global _set_session_module_defaults
+    if not _set_session_module_defaults:
+        # TODO(blk-u): this also has to happen when start keystone and http!
+        session.set_defaults(
+            sql_connection="sqlite:///" + db,
+            sqlite_db=db)
+        _set_session_module_defaults = True
 
     try:
         if os.path.exists(db):
@@ -172,7 +184,7 @@ def remove_generated_paste_config(extension_name):
 
 
 def teardown_test_database():
-    sql.core.set_global_engine(None)
+    session.cleanup()
 
 
 class TestClient(object):

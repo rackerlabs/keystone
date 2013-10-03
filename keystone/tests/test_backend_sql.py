@@ -22,6 +22,7 @@ from keystone.common import sql
 from keystone import config
 from keystone import exception
 from keystone.identity.backends import sql as identity_sql
+from keystone.openstack.common.db.sqlalchemy import session
 from keystone import tests
 from keystone.tests import default_fixtures
 from keystone.tests import test_backend
@@ -54,7 +55,7 @@ class SqlTests(tests.TestCase, sql.Base):
     def tearDown(self):
         sql.ModelBase.metadata.drop_all(bind=self.engine)
         self.engine.dispose()
-        sql.set_global_engine(None)
+        session.cleanup()
         super(SqlTests, self).tearDown()
 
 
