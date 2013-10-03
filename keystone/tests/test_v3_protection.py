@@ -55,12 +55,12 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         super(IdentityTestProtectedCase, self).setUp(load_sample_data=False)
         # Start by creating a couple of domains
         self.domainA = self.new_domain_ref()
-        self.identity_api.create_domain(self.domainA['id'], self.domainA)
+        self.assignment_api.create_domain(self.domainA['id'], self.domainA)
         self.domainB = self.new_domain_ref()
-        self.identity_api.create_domain(self.domainB['id'], self.domainB)
+        self.assignment_api.create_domain(self.domainB['id'], self.domainB)
         self.domainC = self.new_domain_ref()
         self.domainC['enabled'] = False
-        self.identity_api.create_domain(self.domainC['id'], self.domainC)
+        self.assignment_api.create_domain(self.domainC['id'], self.domainC)
 
         # Now create some users, one in domainA and two of them in domainB
         self.user1 = self.new_user_ref(domain_id=self.domainA['id'])
@@ -411,9 +411,9 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
             load_sample_data=False)
         # Start by creating a couple of domains
         self.domainA = self.new_domain_ref()
-        self.identity_api.create_domain(self.domainA['id'], self.domainA)
+        self.assignment_api.create_domain(self.domainA['id'], self.domainA)
         self.domainB = self.new_domain_ref()
-        self.identity_api.create_domain(self.domainB['id'], self.domainB)
+        self.assignment_api.create_domain(self.domainB['id'], self.domainB)
         self.admin_domain = {'id': 'admin_domain_id', 'name': 'Admin_domain'}
         self.assignment_api.create_domain(self.admin_domain['id'],
                                           self.admin_domain)

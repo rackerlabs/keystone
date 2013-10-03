@@ -337,7 +337,7 @@ class TestCase(NoModule, testtools.TestCase):
         if hasattr(self, 'identity_api'):
             for domain in fixtures.DOMAINS:
                 try:
-                    rv = self.identity_api.create_domain(domain['id'], domain)
+                    rv = self.assignment_api.create_domain(domain['id'], domain)
                 except exception.Conflict:
                     rv = self.identity_api.get_domain(domain['id'])
                 except exception.NotImplemented:

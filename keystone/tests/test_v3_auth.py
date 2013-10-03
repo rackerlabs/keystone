@@ -362,7 +362,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         super(TestTokenRevokeSelfAndAdmin, self).setUp()
 
         self.domainA = self.new_domain_ref()
-        self.identity_api.create_domain(self.domainA['id'], self.domainA)
+        self.assignment_api.create_domain(self.domainA['id'], self.domainA)
 
         self.userAdminA = self.new_user_ref(domain_id=self.domainA['id'])
         self.userAdminA['password'] = uuid.uuid4().hex
@@ -493,9 +493,9 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
 
         # Start by creating a couple of domains and projects
         self.domainA = self.new_domain_ref()
-        self.identity_api.create_domain(self.domainA['id'], self.domainA)
+        self.assignment_api.create_domain(self.domainA['id'], self.domainA)
         self.domainB = self.new_domain_ref()
-        self.identity_api.create_domain(self.domainB['id'], self.domainB)
+        self.assignment_api.create_domain(self.domainB['id'], self.domainB)
         self.projectA = self.new_project_ref(domain_id=self.domainA['id'])
         self.assignment_api.create_project(self.projectA['id'], self.projectA)
         self.projectB = self.new_project_ref(domain_id=self.domainA['id'])
@@ -1296,7 +1296,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         """
 
         domainA = self.new_domain_ref()
-        self.identity_api.create_domain(domainA['id'], domainA)
+        self.assignment_api.create_domain(domainA['id'], domainA)
         projectA = self.new_project_ref(domain_id=domainA['id'])
         self.assignment_api.create_project(projectA['id'], projectA)
 

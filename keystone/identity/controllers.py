@@ -467,7 +467,7 @@ class DomainV3(controller.V3Controller):
         self._require_attribute(domain, 'name')
 
         ref = self._assign_unique_id(self._normalize_dict(domain))
-        ref = self.identity_api.create_domain(ref['id'], ref)
+        ref = self.assignment_api.create_domain(ref['id'], ref)
         return DomainV3.wrap_member(context, ref)
 
     @controller.filterprotected('enabled', 'name')

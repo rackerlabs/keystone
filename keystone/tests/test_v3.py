@@ -100,7 +100,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             self.domain_id = uuid.uuid4().hex
             self.domain = self.new_domain_ref()
             self.domain['id'] = self.domain_id
-            self.identity_api.create_domain(self.domain_id, self.domain)
+            self.assignment_api.create_domain(self.domain_id, self.domain)
 
             self.project_id = uuid.uuid4().hex
             self.project = self.new_project_ref(

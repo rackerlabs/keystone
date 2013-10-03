@@ -528,8 +528,8 @@ class Manager(manager.Manager):
     #            (role_id, user_id, group_id, domain_id, project_id,
     #             inherited_to_projects))
 
-    def create_domain(self, domain_id, domain):
-        return self.assignment_api.create_domain(domain_id, domain)
+    #def create_domain(self, domain_id, domain):
+    #    return self.assignment_api.create_domain(domain_id, domain)
 
     def get_domain_by_name(self, domain_name):
         return self.assignment_api.get_domain_by_name(domain_name)
