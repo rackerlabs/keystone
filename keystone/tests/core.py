@@ -355,7 +355,7 @@ class TestCase(NoModule, testtools.TestCase):
 
             for role in fixtures.ROLES:
                 try:
-                    rv = self.identity_api.create_role(role['id'], role)
+                    rv = self.assignment_api.create_role(role['id'], role)
                 except exception.Conflict:
                     rv = self.assignment_api.get_role(role['id'])
                     pass

@@ -202,7 +202,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         role = {'id': uuid.uuid4().hex,
                 'name': None}
         self.assertRaises(exception.Conflict,
-                          self.identity_api.create_role,
+                          self.assignment_api.create_role,
                           role['id'],
                           role)
         self.assertRaises(exception.RoleNotFound,
@@ -231,7 +231,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.identity_api.create_user(user['id'], user)
         role = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex}
-        self.identity_api.create_role(role['id'], role)
+        self.assignment_api.create_role(role['id'], role)
         self.assignment_api.add_role_to_user_and_project(
             user['id'],
             self.tenant_bar['id'],
@@ -255,7 +255,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.identity_api.create_user(user['id'], user)
         role = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex}
-        self.identity_api.create_role(role['id'], role)
+        self.assignment_api.create_role(role['id'], role)
         self.assignment_api.add_role_to_user_and_project(
             user['id'],
             self.tenant_bar['id'],

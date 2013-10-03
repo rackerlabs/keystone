@@ -85,9 +85,9 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self.identity_api.create_group(self.group3['id'], self.group3)
 
         self.role = self.new_role_ref()
-        self.identity_api.create_role(self.role['id'], self.role)
+        self.assignment_api.create_role(self.role['id'], self.role)
         self.role1 = self.new_role_ref()
-        self.identity_api.create_role(self.role1['id'], self.role1)
+        self.assignment_api.create_role(self.role1['id'], self.role1)
         self.identity_api.create_grant(self.role['id'],
                                        user_id=self.user1['id'],
                                        domain_id=self.domainA['id'])
@@ -442,7 +442,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         self.admin_role = {'id': uuid.uuid4().hex, 'name': 'admin'}
         self.assignment_api.create_role(self.admin_role['id'], self.admin_role)
         self.role = self.new_role_ref()
-        self.identity_api.create_role(self.role['id'], self.role)
+        self.assignment_api.create_role(self.role['id'], self.role)
 
         # The cloud admin just gets the admin role
         self.assignment_api.create_grant(self.admin_role['id'],

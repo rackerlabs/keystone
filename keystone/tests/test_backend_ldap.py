@@ -374,7 +374,7 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
 
     def test_configurable_allowed_role_actions(self):
         role = {'id': 'fake1', 'name': 'fake1'}
-        self.identity_api.create_role('fake1', role)
+        self.assignment_api.create_role('fake1', role)
         role_ref = self.assignment_api.get_role('fake1')
         self.assertEqual(role_ref['id'], 'fake1')
 
@@ -394,7 +394,7 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
 
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assertRaises(exception.ForbiddenAction,
-                          self.identity_api.create_role,
+                          self.assignment_api.create_role,
                           role['id'],
                           role)
 
@@ -821,7 +821,7 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
         role_list = []
         for _ in range(2):
             role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-            self.identity_api.create_role(role['id'], role)
+            self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
 
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,

@@ -211,10 +211,10 @@ class IdentityTests(object):
     def test_create_duplicate_role_name_fails(self):
         role = {'id': 'fake1',
                 'name': 'fake1name'}
-        self.identity_api.create_role('fake1', role)
+        self.assignment_api.create_role('fake1', role)
         role['id'] = 'fake2'
         self.assertRaises(exception.Conflict,
-                          self.identity_api.create_role,
+                          self.assignment_api.create_role,
                           'fake2',
                           role)
 
@@ -227,8 +227,8 @@ class IdentityTests(object):
             'id': 'fake2',
             'name': 'fake2name'
         }
-        self.identity_api.create_role('fake1', role1)
-        self.identity_api.create_role('fake2', role2)
+        self.assignment_api.create_role('fake1', role1)
+        self.assignment_api.create_role('fake2', role2)
         role1['name'] = 'fake2name'
         self.assertRaises(exception.Conflict,
                           self.identity_api.update_role,
@@ -577,7 +577,7 @@ class IdentityTests(object):
         role_ref_list = []
         for i in range(2):
             role_ref = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-            self.identity_api.create_role(role_ref['id'], role_ref)
+            self.assignment_api.create_role(role_ref['id'], role_ref)
             role_ref_list.append(role_ref)
 
             self.assignment_api.add_role_to_user_and_project(
@@ -956,11 +956,11 @@ class IdentityTests(object):
     def test_get_and_remove_role_grant_by_group_and_cross_domain(self):
         group1_domain1_role = {'id': uuid.uuid4().hex,
                                'name': uuid.uuid4().hex}
-        self.identity_api.create_role(group1_domain1_role['id'],
+        self.assignment_api.create_role(group1_domain1_role['id'],
                                       group1_domain1_role)
         group1_domain2_role = {'id': uuid.uuid4().hex,
                                'name': uuid.uuid4().hex}
-        self.identity_api.create_role(group1_domain2_role['id'],
+        self.assignment_api.create_role(group1_domain2_role['id'],
                                       group1_domain2_role)
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_domain(domain1['id'], domain1)
@@ -1008,11 +1008,11 @@ class IdentityTests(object):
     def test_get_and_remove_role_grant_by_user_and_cross_domain(self):
         user1_domain1_role = {'id': uuid.uuid4().hex,
                               'name': uuid.uuid4().hex}
-        self.identity_api.create_role(user1_domain1_role['id'],
+        self.assignment_api.create_role(user1_domain1_role['id'],
                                       user1_domain1_role)
         user1_domain2_role = {'id': uuid.uuid4().hex,
                               'name': uuid.uuid4().hex}
-        self.identity_api.create_role(user1_domain2_role['id'],
+        self.assignment_api.create_role(user1_domain2_role['id'],
                                       user1_domain2_role)
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_domain(domain1['id'], domain1)
@@ -1060,9 +1060,9 @@ class IdentityTests(object):
 
     def test_role_grant_by_group_and_cross_domain_project(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_role(role1['id'], role1)
+        self.assignment_api.create_role(role1['id'], role1)
         role2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_role(role2['id'], role2)
+        self.assignment_api.create_role(role2['id'], role2)
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_domain(domain1['id'], domain1)
         domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
@@ -1104,9 +1104,9 @@ class IdentityTests(object):
 
     def test_role_grant_by_user_and_cross_domain_project(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_role(role1['id'], role1)
+        self.assignment_api.create_role(role1['id'], role1)
         role2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_role(role2['id'], role2)
+        self.assignment_api.create_role(role2['id'], role2)
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_domain(domain1['id'], domain1)
         domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
@@ -1151,7 +1151,7 @@ class IdentityTests(object):
         role_list = []
         for _ in range(10):
             role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-            self.identity_api.create_role(role['id'], role)
+            self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_domain(domain1['id'], domain1)
@@ -1260,7 +1260,7 @@ class IdentityTests(object):
         role_list = []
         for _ in range(6):
             role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-            self.identity_api.create_role(role['id'], role)
+            self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_domain(domain1['id'], domain1)
@@ -1324,7 +1324,7 @@ class IdentityTests(object):
 
     def test_delete_role_with_user_and_group_grants(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_role(role1['id'], role1)
+        self.assignment_api.create_role(role1['id'], role1)
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_domain(domain1['id'], domain1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
@@ -1385,7 +1385,7 @@ class IdentityTests(object):
 
     def test_delete_user_with_group_project_domain_links(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_role(role1['id'], role1)
+        self.assignment_api.create_role(role1['id'], role1)
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_domain(domain1['id'], domain1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
@@ -1425,7 +1425,7 @@ class IdentityTests(object):
 
     def test_delete_group_with_user_project_domain_links(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_role(role1['id'], role1)
+        self.assignment_api.create_role(role1['id'], role1)
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_domain(domain1['id'], domain1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
@@ -1466,7 +1466,7 @@ class IdentityTests(object):
 
     def test_role_crud(self):
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_role(role['id'], role)
+        self.assignment_api.create_role(role['id'], role)
         role_ref = self.assignment_api.get_role(role['id'])
         role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
         self.assertDictEqual(role_ref_dict, role)
@@ -1902,8 +1902,8 @@ class IdentityTests(object):
     def test_delete_role_check_role_grant(self):
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         alt_role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.identity_api.create_role(role['id'], role)
-        self.identity_api.create_role(alt_role['id'], alt_role)
+        self.assignment_api.create_role(role['id'], role)
+        self.assignment_api.create_role(alt_role['id'], alt_role)
         self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], role['id'])
         self.assignment_api.add_role_to_user_and_project(
@@ -3294,7 +3294,7 @@ class InheritanceTests(object):
         role_list = []
         for _ in range(3):
             role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-            self.identity_api.create_role(role['id'], role)
+            self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_domain(domain1['id'], domain1)
@@ -3368,7 +3368,7 @@ class InheritanceTests(object):
         role_list = []
         for _ in range(4):
             role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-            self.identity_api.create_role(role['id'], role)
+            self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
         domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_domain(domain1['id'], domain1)

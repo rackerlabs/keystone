@@ -332,7 +332,7 @@ class Role(controller.V2Controller):
 
         role_id = uuid.uuid4().hex
         role['id'] = role_id
-        role_ref = self.identity_api.create_role(role_id, role)
+        role_ref = self.assignment_api.create_role(role_id, role)
         return {'role': role_ref}
 
     def delete_role(self, context, role_id):
@@ -840,7 +840,7 @@ class RoleV3(controller.V3Controller):
         self._require_attribute(role, 'name')
 
         ref = self._assign_unique_id(self._normalize_dict(role))
-        ref = self.identity_api.create_role(ref['id'], ref)
+        ref = self.assignment_api.create_role(ref['id'], ref)
         return RoleV3.wrap_member(context, ref)
 
     @controller.filterprotected('name')

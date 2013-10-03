@@ -1015,9 +1015,9 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             domain_id=self.domain['id'])
         self.assignment_api.create_project(self.project1['id'], self.project1)
         self.role1 = self.new_role_ref()
-        self.identity_api.create_role(self.role1['id'], self.role1)
+        self.assignment_api.create_role(self.role1['id'], self.role1)
         self.role2 = self.new_role_ref()
-        self.identity_api.create_role(self.role2['id'], self.role2)
+        self.assignment_api.create_role(self.role2['id'], self.role2)
 
         # Now add one of each of the four types of assignment
 

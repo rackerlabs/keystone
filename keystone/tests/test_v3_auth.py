@@ -375,7 +375,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
 
         self.role1 = self.new_role_ref()
         self.role1['name'] = 'admin'
-        self.identity_api.create_role(self.role1['id'], self.role1)
+        self.assignment_api.create_role(self.role1['id'], self.role1)
 
         self.identity_api.create_grant(self.role1['id'],
                                        user_id=self.userAdminA['id'],
@@ -537,9 +537,9 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
                                             self.group2['id'])
 
         self.role1 = self.new_role_ref()
-        self.identity_api.create_role(self.role1['id'], self.role1)
+        self.assignment_api.create_role(self.role1['id'], self.role1)
         self.role2 = self.new_role_ref()
-        self.identity_api.create_role(self.role2['id'], self.role2)
+        self.assignment_api.create_role(self.role2['id'], self.role2)
 
         self.identity_api.create_grant(self.role2['id'],
                                        user_id=self.user1['id'],
@@ -582,7 +582,7 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
 
         # create a new role
         role = self.new_role_ref()
-        self.identity_api.create_role(role['id'], role)
+        self.assignment_api.create_role(role['id'], role)
 
         # assign a new role
         self.put(
@@ -1327,7 +1327,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         role_list = []
         for _ in range(8):
             role = self.new_role_ref()
-            self.identity_api.create_role(role['id'], role)
+            self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
 
         self.identity_api.create_grant(role_list[0]['id'],

@@ -132,7 +132,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
             self.role = self.new_role_ref()
             self.role['id'] = self.role_id
             self.role['name'] = 'admin'
-            self.identity_api.create_role(self.role_id, self.role)
+            self.assignment_api.create_role(self.role_id, self.role)
             self.assignment_api.add_role_to_user_and_project(
                 self.user_id, self.project_id, self.role_id)
             self.assignment_api.add_role_to_user_and_project(
