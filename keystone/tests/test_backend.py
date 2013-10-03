@@ -655,10 +655,10 @@ class IdentityTests(object):
         self.assertIn(self.role_other['id'], roles_ids)
 
         # Now delete both grants for user1
-        self.identity_api.delete_grant(user_id=new_user1['id'],
+        self.assignment_api.delete_grant(user_id=new_user1['id'],
                                        domain_id=new_domain['id'],
                                        role_id='member')
-        self.identity_api.delete_grant(user_id=new_user1['id'],
+        self.assignment_api.delete_grant(user_id=new_user1['id'],
                                        domain_id=new_domain['id'],
                                        role_id='other')
         roles_ref = self.assignment_api.list_grants(
@@ -770,7 +770,7 @@ class IdentityTests(object):
             project_id=self.tenant_baz['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
-        self.identity_api.delete_grant(user_id=self.user_foo['id'],
+        self.assignment_api.delete_grant(user_id=self.user_foo['id'],
                                        project_id=self.tenant_baz['id'],
                                        role_id='member')
         roles_ref = self.assignment_api.list_grants(
@@ -778,7 +778,7 @@ class IdentityTests(object):
             project_id=self.tenant_baz['id'])
         self.assertEquals(len(roles_ref), 0)
         self.assertRaises(exception.NotFound,
-                          self.identity_api.delete_grant,
+                          self.assignment_api.delete_grant,
                           user_id=self.user_foo['id'],
                           project_id=self.tenant_baz['id'],
                           role_id='member')
@@ -807,7 +807,7 @@ class IdentityTests(object):
             project_id=self.tenant_bar['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
-        self.identity_api.delete_grant(group_id=new_group['id'],
+        self.assignment_api.delete_grant(group_id=new_group['id'],
                                        project_id=self.tenant_bar['id'],
                                        role_id='member')
         roles_ref = self.assignment_api.list_grants(
@@ -815,7 +815,7 @@ class IdentityTests(object):
             project_id=self.tenant_bar['id'])
         self.assertEquals(len(roles_ref), 0)
         self.assertRaises(exception.NotFound,
-                          self.identity_api.delete_grant,
+                          self.assignment_api.delete_grant,
                           group_id=new_group['id'],
                           project_id=self.tenant_bar['id'],
                           role_id='member')
@@ -847,7 +847,7 @@ class IdentityTests(object):
             domain_id=new_domain['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
-        self.identity_api.delete_grant(group_id=new_group['id'],
+        self.assignment_api.delete_grant(group_id=new_group['id'],
                                        domain_id=new_domain['id'],
                                        role_id='member')
         roles_ref = self.assignment_api.list_grants(
@@ -855,7 +855,7 @@ class IdentityTests(object):
             domain_id=new_domain['id'])
         self.assertEquals(len(roles_ref), 0)
         self.assertRaises(exception.NotFound,
-                          self.identity_api.delete_grant,
+                          self.assignment_api.delete_grant,
                           group_id=new_group['id'],
                           domain_id=new_domain['id'],
                           role_id='member')
@@ -908,7 +908,7 @@ class IdentityTests(object):
             domain_id=new_domain['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
-        self.identity_api.delete_grant(group_id=new_group['id'],
+        self.assignment_api.delete_grant(group_id=new_group['id'],
                                        domain_id=new_domain['id'],
                                        role_id='member')
         roles_ref = self.assignment_api.list_grants(
@@ -916,7 +916,7 @@ class IdentityTests(object):
             domain_id=new_domain['id'])
         self.assertEquals(len(roles_ref), 0)
         self.assertRaises(exception.NotFound,
-                          self.identity_api.delete_grant,
+                          self.assignment_api.delete_grant,
                           group_id=new_group['id'],
                           domain_id=new_domain['id'],
                           role_id='member')
@@ -940,7 +940,7 @@ class IdentityTests(object):
             domain_id=new_domain['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
-        self.identity_api.delete_grant(user_id=new_user['id'],
+        self.assignment_api.delete_grant(user_id=new_user['id'],
                                        domain_id=new_domain['id'],
                                        role_id='member')
         roles_ref = self.assignment_api.list_grants(
@@ -948,7 +948,7 @@ class IdentityTests(object):
             domain_id=new_domain['id'])
         self.assertEquals(len(roles_ref), 0)
         self.assertRaises(exception.NotFound,
-                          self.identity_api.delete_grant,
+                          self.assignment_api.delete_grant,
                           user_id=new_user['id'],
                           domain_id=new_domain['id'],
                           role_id='member')
@@ -992,7 +992,7 @@ class IdentityTests(object):
             domain_id=domain2['id'])
         self.assertDictEqual(roles_ref[0], group1_domain2_role)
 
-        self.identity_api.delete_grant(group_id=group1['id'],
+        self.assignment_api.delete_grant(group_id=group1['id'],
                                        domain_id=domain2['id'],
                                        role_id=group1_domain2_role['id'])
         roles_ref = self.assignment_api.list_grants(
@@ -1000,7 +1000,7 @@ class IdentityTests(object):
             domain_id=domain2['id'])
         self.assertEquals(len(roles_ref), 0)
         self.assertRaises(exception.NotFound,
-                          self.identity_api.delete_grant,
+                          self.assignment_api.delete_grant,
                           group_id=group1['id'],
                           domain_id=domain2['id'],
                           role_id=group1_domain2_role['id'])
@@ -1045,7 +1045,7 @@ class IdentityTests(object):
             domain_id=domain2['id'])
         self.assertDictEqual(roles_ref[0], user1_domain2_role)
 
-        self.identity_api.delete_grant(user_id=user1['id'],
+        self.assignment_api.delete_grant(user_id=user1['id'],
                                        domain_id=domain2['id'],
                                        role_id=user1_domain2_role['id'])
         roles_ref = self.assignment_api.list_grants(
@@ -1053,7 +1053,7 @@ class IdentityTests(object):
             domain_id=domain2['id'])
         self.assertEquals(len(roles_ref), 0)
         self.assertRaises(exception.NotFound,
-                          self.identity_api.delete_grant,
+                          self.assignment_api.delete_grant,
                           user_id=user1['id'],
                           domain_id=domain2['id'],
                           role_id=user1_domain2_role['id'])
@@ -1093,7 +1093,7 @@ class IdentityTests(object):
         self.assertIn(role1['id'], roles_ref_ids)
         self.assertIn(role2['id'], roles_ref_ids)
 
-        self.identity_api.delete_grant(group_id=group1['id'],
+        self.assignment_api.delete_grant(group_id=group1['id'],
                                        project_id=project1['id'],
                                        role_id=role1['id'])
         roles_ref = self.assignment_api.list_grants(
@@ -1138,7 +1138,7 @@ class IdentityTests(object):
         self.assertIn(role1['id'], roles_ref_ids)
         self.assertIn(role2['id'], roles_ref_ids)
 
-        self.identity_api.delete_grant(user_id=user1['id'],
+        self.assignment_api.delete_grant(user_id=user1['id'],
                                        project_id=project1['id'],
                                        role_id=role1['id'])
         roles_ref = self.assignment_api.list_grants(

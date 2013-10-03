@@ -514,19 +514,19 @@ class Manager(manager.Manager):
     #            (user_id, group_id, domain_id, project_id,
     #             inherited_to_projects))
 
-    def get_grant(self, role_id, user_id=None, group_id=None,
-                  domain_id=None, project_id=None,
-                  inherited_to_projects=False):
-        return (self.assignment_api.get_grant
-                (role_id, user_id, group_id, domain_id, project_id,
-                 inherited_to_projects))
+    #def get_grant(self, role_id, user_id=None, group_id=None,
+    #              domain_id=None, project_id=None,
+    #              inherited_to_projects=False):
+    #    return (self.assignment_api.get_grant
+    #            (role_id, user_id, group_id, domain_id, project_id,
+    #             inherited_to_projects))
 
-    def delete_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
-                     inherited_to_projects=False):
-        return (self.assignment_api.delete_grant
-                (role_id, user_id, group_id, domain_id, project_id,
-                 inherited_to_projects))
+    #def delete_grant(self, role_id, user_id=None, group_id=None,
+    #                 domain_id=None, project_id=None,
+    #                 inherited_to_projects=False):
+    #    return (self.assignment_api.delete_grant
+    #            (role_id, user_id, group_id, domain_id, project_id,
+    #             inherited_to_projects))
 
     def create_domain(self, domain_id, domain):
         return self.assignment_api.create_domain(domain_id, domain)

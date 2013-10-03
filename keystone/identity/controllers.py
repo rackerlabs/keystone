@@ -948,7 +948,7 @@ class RoleV3(controller.V3Controller):
         if group_id:
             self.identity_api.get_group(group_id)
 
-        self.identity_api.get_grant(
+        self.assignment_api.get_grant(
             role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
 
@@ -959,7 +959,7 @@ class RoleV3(controller.V3Controller):
         self._require_domain_xor_project(domain_id, project_id)
         self._require_user_xor_group(user_id, group_id)
 
-        self.identity_api.delete_grant(
+        self.assignment_api.delete_grant(
             role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
 
