@@ -38,6 +38,7 @@ from keystone.common import utils
 from keystone import config
 from keystone import credential
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import session
 from keystone import tests
 from keystone.tests import default_fixtures
 
@@ -69,9 +70,8 @@ class SqlMigrateBase(tests.TestCase):
         self.base = sql.Base()
 
         # create and share a single sqlalchemy engine for testing
-        self.engine = self.base.get_engine(allow_global_engine=False)
-        sql.core.set_global_engine(self.engine)
-        self.Session = self.base.get_sessionmaker(engine=self.engine,
+        self.engine = self.base.get_engine()
+        self.Session = self.base.get_sessionmaker(self.engine,
                                                   autocommit=False)
 
         self.initialize_sql()
@@ -89,7 +89,7 @@ class SqlMigrateBase(tests.TestCase):
                                  autoload=True)
         self.downgrade(0)
         table.drop(self.engine, checkfirst=True)
-        sql.core.set_global_engine(None)
+        session.cleanup()
         super(SqlMigrateBase, self).tearDown()
 
     def select_table(self, name):
