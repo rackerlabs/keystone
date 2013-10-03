@@ -800,7 +800,7 @@ class AuthWithTrust(AuthTest):
 
     def test_token_from_trust_with_no_role_fails(self):
         for assigned_role in self.assigned_roles:
-            self.identity_api.remove_role_from_user_and_project(
+            self.assignment_api.remove_role_from_user_and_project(
                 self.trustor['id'], self.tenant_bar['id'], assigned_role)
         request_body = self.build_v2_token_request('TWO', 'two2')
         self.assertRaises(
@@ -821,7 +821,7 @@ class AuthWithTrust(AuthTest):
             self.tenant_bar['id'],
             self.role_other['id'])
         for assigned_role in self.assigned_roles:
-            self.identity_api.remove_role_from_user_and_project(
+            self.assignment_api.remove_role_from_user_and_project(
                 self.trustor['id'], self.tenant_bar['id'], assigned_role)
 
         request_body = self.build_v2_token_request('TWO', 'two2')

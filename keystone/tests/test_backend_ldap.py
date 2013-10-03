@@ -381,7 +381,7 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
         role['name'] = 'fake2'
         self.identity_api.update_role('fake1', role)
 
-        self.identity_api.delete_role('fake1')
+        self.assignment_api.delete_role('fake1')
         self.assertRaises(exception.RoleNotFound,
                           self.assignment_api.get_role,
                           'fake1')
@@ -405,7 +405,7 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
                           self.role_member)
 
         self.assertRaises(exception.ForbiddenAction,
-                          self.identity_api.delete_role,
+                          self.assignment_api.delete_role,
                           self.role_member['id'])
 
     def test_project_filter(self):

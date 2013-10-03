@@ -341,7 +341,7 @@ class Role(controller.V2Controller):
         # We must first, however, revoke any tokens for users that have an
         # assignment with this role.
         self._delete_tokens_for_role(role_id)
-        self.identity_api.delete_role(role_id)
+        self.assignment_api.delete_role(role_id)
 
     def get_roles(self, context):
         self.assert_admin(context)
@@ -379,7 +379,7 @@ class Role(controller.V2Controller):
 
         # This still has the weird legacy semantics that adding a role to
         # a user also adds them to a tenant, so we must follow up on that
-        self.identity_api.remove_role_from_user_and_project(
+        self.assignment_api.remove_role_from_user_and_project(
             user_id, tenant_id, role_id)
         self._delete_tokens_for_user(user_id)
 
@@ -449,7 +449,7 @@ class Role(controller.V2Controller):
         role_ref_ref = urlparse.parse_qs(role_ref_id)
         tenant_id = role_ref_ref.get('tenantId')[0]
         role_id = role_ref_ref.get('roleId')[0]
-        self.identity_api.remove_role_from_user_and_project(
+        self.assignment_api.remove_role_from_user_and_project(
             user_id, tenant_id, role_id)
         self._delete_tokens_for_user(user_id)
 
@@ -866,7 +866,7 @@ class RoleV3(controller.V3Controller):
         # We must first, however, revoke any tokens for users that have an
         # assignment with this role.
         self._delete_tokens_for_role(role_id)
-        self.identity_api.delete_role(role_id)
+        self.assignment_api.delete_role(role_id)
 
     def _require_domain_xor_project(self, domain_id, project_id):
         if (domain_id and project_id) or (not domain_id and not project_id):

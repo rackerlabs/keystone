@@ -52,7 +52,7 @@ class IdentityTests(object):
             self.tenant_bar['id'])
         self.assertIn(self.user_two['id'], user_ids)
 
-        self.identity_api.remove_role_from_user_and_project(
+        self.assignment_api.remove_role_from_user_and_project(
             tenant_id=self.tenant_bar['id'],
             user_id=self.user_two['id'],
             role_id=self.role_other['id'])
@@ -723,13 +723,13 @@ class IdentityTests(object):
     def test_remove_role_from_user_and_project(self):
         self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], 'member')
-        self.identity_api.remove_role_from_user_and_project(
+        self.assignment_api.remove_role_from_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], 'member')
         roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
         self.assertNotIn('member', roles_ref)
         self.assertRaises(exception.NotFound,
-                          self.identity_api.remove_role_from_user_and_project,
+                          self.assignment_api.remove_role_from_user_and_project,
                           self.user_foo['id'],
                           self.tenant_bar['id'],
                           'member')
@@ -1365,7 +1365,7 @@ class IdentityTests(object):
             group_id=group1['id'],
             domain_id=domain1['id'])
         self.assertEquals(len(roles_ref), 1)
-        self.identity_api.delete_role(role1['id'])
+        self.assignment_api.delete_role(role1['id'])
         roles_ref = self.identity_api.list_grants(
             user_id=user1['id'],
             project_id=project1['id'])
@@ -1477,7 +1477,7 @@ class IdentityTests(object):
         role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
         self.assertDictEqual(role_ref_dict, role)
 
-        self.identity_api.delete_role(role['id'])
+        self.assignment_api.delete_role(role['id'])
         self.assertRaises(exception.RoleNotFound,
                           self.assignment_api.get_role,
                           role['id'])
@@ -1604,7 +1604,7 @@ class IdentityTests(object):
 
     def test_delete_role_404(self):
         self.assertRaises(exception.RoleNotFound,
-                          self.identity_api.delete_role,
+                          self.assignment_api.delete_role,
                           uuid.uuid4().hex)
 
     def test_create_project_case_sensitivity(self):
@@ -1908,7 +1908,7 @@ class IdentityTests(object):
             self.user_foo['id'], self.tenant_bar['id'], role['id'])
         self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], alt_role['id'])
-        self.identity_api.delete_role(role['id'])
+        self.assignment_api.delete_role(role['id'])
         roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
         self.assertNotIn(role['id'], roles_ref)
