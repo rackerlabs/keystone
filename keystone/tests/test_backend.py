@@ -1839,7 +1839,7 @@ class IdentityTests(object):
         domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_domain(domain1['id'], domain1)
         self.assignment_api.create_domain(domain2['id'], domain2)
-        domains = self.identity_api.list_domains()
+        domains = self.assignment_api.list_domains()
         self.assertEquals(len(domains), 3)
         domain_ids = []
         for domain in domains:

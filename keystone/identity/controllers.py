@@ -472,7 +472,7 @@ class DomainV3(controller.V3Controller):
 
     @controller.filterprotected('enabled', 'name')
     def list_domains(self, context, filters):
-        refs = self.identity_api.list_domains()
+        refs = self.assignment_api.list_domains()
         return DomainV3.wrap_collection(context, refs, filters)
 
     @controller.protected()

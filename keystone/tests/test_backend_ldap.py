@@ -259,7 +259,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assertEqual(res[0]['id'], user_1_id, "Expected user 1 id")
 
     def test_list_domains(self):
-        domains = self.identity_api.list_domains()
+        domains = self.assignment_api.list_domains()
         self.assertEquals(
             domains,
             [assignment.DEFAULT_DOMAIN])
@@ -969,7 +969,7 @@ class LdapIdentitySqlAssignment(sql.Base, tests.TestCase, BaseLDAPIdentity):
         pass
 
     def test_list_domains(self):
-        domains = self.identity_api.list_domains()
+        domains = self.assignment_api.list_domains()
         self.assertEquals(domains, [assignment.DEFAULT_DOMAIN])
 
     def test_project_filter(self):
