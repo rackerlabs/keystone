@@ -669,7 +669,7 @@ def create_engine(sql_connection, sqlite_fk=False):
 
     engine = sqlalchemy.create_engine(sql_connection, **engine_args)
 
-    sqlalchemy.event.listen(engine, 'checkin', _thread_yield)
+    #sqlalchemy.event.listen(engine, 'checkin', _thread_yield)
 
     if 'mysql' in connection_dict.drivername:
         sqlalchemy.event.listen(engine, 'checkout', _ping_listener)
