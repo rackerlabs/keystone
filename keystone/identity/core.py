@@ -552,8 +552,8 @@ class Manager(manager.Manager):
     #def add_user_to_project(self, tenant_id, user_id):
     #    return self.assignment_api.add_user_to_project(tenant_id, user_id)
 
-    def remove_user_from_project(self, tenant_id, user_id):
-        return self.assignment_api.remove_user_from_project(tenant_id, user_id)
+    #def remove_user_from_project(self, tenant_id, user_id):
+    #    return self.assignment_api.remove_user_from_project(tenant_id, user_id)
 
 
 class Driver(object):

@@ -1523,7 +1523,7 @@ class IdentityTests(object):
     def test_remove_user_from_project(self):
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                               self.user_foo['id'])
-        self.identity_api.remove_user_from_project(self.tenant_baz['id'],
+        self.assignment_api.remove_user_from_project(self.tenant_baz['id'],
                                                    self.user_foo['id'])
         tenants = self.assignment_api.list_projects_for_user(
             self.user_foo['id'])
@@ -1531,17 +1531,17 @@ class IdentityTests(object):
 
     def test_remove_user_from_project_404(self):
         self.assertRaises(exception.ProjectNotFound,
-                          self.identity_api.remove_user_from_project,
+                          self.assignment_api.remove_user_from_project,
                           uuid.uuid4().hex,
                           self.user_foo['id'])
 
         self.assertRaises(exception.UserNotFound,
-                          self.identity_api.remove_user_from_project,
+                          self.assignment_api.remove_user_from_project,
                           self.tenant_bar['id'],
                           uuid.uuid4().hex)
 
         self.assertRaises(exception.NotFound,
-                          self.identity_api.remove_user_from_project,
+                          self.assignment_api.remove_user_from_project,
                           self.tenant_baz['id'],
                           self.user_foo['id'])
 
