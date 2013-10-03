@@ -2349,7 +2349,7 @@ class IdentityTests(object):
         self.assertDictEqual(domain_ref, domain)
 
         domain['name'] = uuid.uuid4().hex
-        self.identity_api.update_domain(domain['id'], domain)
+        self.assignment_api.update_domain(domain['id'], domain)
         domain_ref = self.identity_api.get_domain(domain['id'])
         self.assertDictEqual(domain_ref, domain)
 

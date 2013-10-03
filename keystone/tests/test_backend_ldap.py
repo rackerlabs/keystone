@@ -700,11 +700,11 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
 
         domain['description'] = uuid.uuid4().hex
         self.assertRaises(exception.DomainNotFound,
-                          self.identity_api.update_domain,
+                          self.assignment_api.update_domain,
                           domain['id'],
                           domain)
         self.assertRaises(exception.Forbidden,
-                          self.identity_api.update_domain,
+                          self.assignment_api.update_domain,
                           CONF.identity.default_domain_id,
                           domain)
         self.assertRaises(exception.DomainNotFound,
