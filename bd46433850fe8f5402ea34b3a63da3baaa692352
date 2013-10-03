@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//ISk\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:08:53Z",
+      "side": 1,
+      "message": "Follow docstring convention specified in keystone/HACKING.rst \n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#docstrings\n\n\nmainly \"\"\" instead of \u0027\u0027\u0027",
+      "revId": "bd46433850fe8f5402ea34b3a63da3baaa692352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ITo\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:08:53Z",
+      "side": 1,
+      "message": "binary*",
+      "revId": "bd46433850fe8f5402ea34b3a63da3baaa692352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ITU\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:08:53Z",
+      "side": 1,
+      "message": "Should this be wrapped in LOG.error(_(\u0027No pem found in cms\u0027)) or something similar?",
+      "revId": "bd46433850fe8f5402ea34b3a63da3baaa692352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ITA\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:08:53Z",
+      "side": 1,
+      "message": "(NIT): Can var \u0027text\u0027 be renamed to \u0027encoded_binary\u0027 or something a little more descriptive?",
+      "revId": "bd46433850fe8f5402ea34b3a63da3baaa692352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ISo\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:08:53Z",
+      "side": 1,
+      "message": "Follow docstring convention specified in keystone/HACKING.rst \n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#docstrings",
+      "revId": "bd46433850fe8f5402ea34b3a63da3baaa692352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ISg\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-03T20:08:53Z",
+      "side": 1,
+      "message": "Same comment here as above relating to var \u0027text\u0027",
+      "revId": "bd46433850fe8f5402ea34b3a63da3baaa692352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
