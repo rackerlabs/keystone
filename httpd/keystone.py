@@ -31,11 +31,15 @@ from keystone.openstack.common import gettextutils
 gettextutils.install('keystone', lazy=True)
 
 from keystone.common import environment
+from keystone.common import sql
 from keystone import config
 from keystone.openstack.common import log
 
 
 CONF = config.CONF
+
+sql.initialize()
+
 CONF(project='keystone')
 config.setup_logging(CONF)
 
