@@ -549,8 +549,8 @@ class Manager(manager.Manager):
     #def list_projects_for_user(self, user_id):
     #    return self.assignment_api.list_projects_for_user(user_id)
 
-    def add_user_to_project(self, tenant_id, user_id):
-        return self.assignment_api.add_user_to_project(tenant_id, user_id)
+    #def add_user_to_project(self, tenant_id, user_id):
+    #    return self.assignment_api.add_user_to_project(tenant_id, user_id)
 
     def remove_user_from_project(self, tenant_id, user_id):
         return self.assignment_api.remove_user_from_project(tenant_id, user_id)

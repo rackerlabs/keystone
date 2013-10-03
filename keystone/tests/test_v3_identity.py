@@ -167,7 +167,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             project_id=self.project2['id'])
         self.identity_api.create_user(self.user2['id'], self.user2)
 
-        self.identity_api.add_user_to_project(self.project2['id'],
+        self.assignment_api.add_user_to_project(self.project2['id'],
                                               self.user2['id'])
 
         # First check a user in that domain can authenticate, via

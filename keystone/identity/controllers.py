@@ -214,7 +214,7 @@ class User(controller.V2Controller):
             self.identity_api.create_user(user_id, user_ref))
 
         if default_project_id is not None:
-            self.identity_api.add_user_to_project(default_project_id, user_id)
+            self.assignment_api.add_user_to_project(default_project_id, user_id)
         return {'user': new_user_ref}
 
     def update_user(self, context, user_id, user):

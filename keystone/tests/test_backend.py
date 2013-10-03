@@ -92,7 +92,7 @@ class IdentityTests(object):
             'password': 'no_meta2',
         }
         self.identity_api.create_user(user['id'], user)
-        self.identity_api.add_user_to_project(self.tenant_baz['id'],
+        self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                               user['id'])
         user_ref = self.identity_api.authenticate(
             user_id=user['id'],
@@ -1490,7 +1490,7 @@ class IdentityTests(object):
                           role)
 
     def test_add_user_to_project(self):
-        self.identity_api.add_user_to_project(self.tenant_baz['id'],
+        self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                               self.user_foo['id'])
         tenants = self.assignment_api.list_projects_for_user(
             self.user_foo['id'])
@@ -1501,7 +1501,7 @@ class IdentityTests(object):
         self.assertRaises(exception.RoleNotFound,
                           self.assignment_api.get_role,
                           CONF.member_role_id)
-        self.identity_api.add_user_to_project(self.tenant_baz['id'],
+        self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                               self.user_foo['id'])
         tenants = (
             self.assignment_api.list_projects_for_user(self.user_foo['id']))

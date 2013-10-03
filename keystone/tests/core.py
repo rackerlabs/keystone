@@ -371,7 +371,7 @@ class TestCase(NoModule, testtools.TestCase):
                     pass
                 for tenant_id in tenants:
                     try:
-                        self.identity_api.add_user_to_project(tenant_id,
+                        self.assignment_api.add_user_to_project(tenant_id,
                                                               user['id'])
                     except exception.Conflict:
                         pass

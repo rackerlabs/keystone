@@ -273,7 +273,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             'enabled': True,
         }
         self.identity_api.create_user(user['id'], user)
-        self.identity_api.add_user_to_project(self.tenant_baz['id'],
+        self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                               user['id'])
         driver = self.identity_api._select_identity_driver(
             user['domain_id'])

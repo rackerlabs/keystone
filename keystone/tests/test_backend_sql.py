@@ -158,7 +158,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
         self.identity_api.create_user(user['id'], user)
-        self.identity_api.add_user_to_project(self.tenant_bar['id'],
+        self.assignment_api.add_user_to_project(self.tenant_bar['id'],
                                               user['id'])
         self.identity_api.delete_user(user['id'])
         self.assertRaises(exception.UserNotFound,
@@ -215,7 +215,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
         self.identity_api.create_user('fake', user)
-        self.identity_api.add_user_to_project(self.tenant_bar['id'],
+        self.assignment_api.add_user_to_project(self.tenant_bar['id'],
                                               user['id'])
         self.assignment_api.delete_project(self.tenant_bar['id'])
         tenants = self.assignment_api.list_projects_for_user(user['id'])

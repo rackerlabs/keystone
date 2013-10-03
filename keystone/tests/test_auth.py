@@ -300,7 +300,7 @@ class AuthWithToken(AuthTest):
                               'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role_group_domain1['id'],
                                       role_group_domain1)
-        self.identity_api.add_user_to_project(project1['id'],
+        self.assignment_api.add_user_to_project(project1['id'],
                                               self.user_foo['id'])
         new_group = {'id': uuid.uuid4().hex, 'domain_id': domain1['id'],
                      'name': uuid.uuid4().hex}
