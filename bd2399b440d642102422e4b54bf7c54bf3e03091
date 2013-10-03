@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//JXc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2013-10-03T14:57:34Z",
+      "side": 1,
+      "message": "Mention the olso-incubator change?\n\nhttps://review.openstack.org/#/c/48733/\n\nThat would have the unit tests for the DB2 case (which otherwise seem to be lacking in keystone here).",
+      "revId": "bd2399b440d642102422e4b54bf7c54bf3e03091",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
