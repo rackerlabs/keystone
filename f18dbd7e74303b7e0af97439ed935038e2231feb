@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//H+g\u003d",
+        "filename": "keystone/tests/test_sql_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 5313
+      },
+      "writtenOn": "2013-10-03T21:20:27Z",
+      "side": 1,
+      "message": "Why Fake engine, try the real one, creating a sqlalchemy engine does not actually establishes the connection, so you can pass a connection string with the right dialect and it will create engine with dialect in connection string, then you are actually testing things each dialect implementation",
+      "revId": "f18dbd7e74303b7e0af97439ed935038e2231feb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
