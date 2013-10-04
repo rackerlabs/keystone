@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//GEI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-04T14:18:10Z",
+      "side": 1,
+      "message": "These*\n\nI\u0027m good with this change.. This is minor and if you don\u0027t end up respinning to fix something else I don\u0027t think this is a big deal, especially now that Jenkins passed.",
+      "revId": "39d06951b64978d53aea8e59fc5d4e4e28852f11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
