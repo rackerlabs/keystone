@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//E3s\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-04T19:47:43Z",
+      "side": 1,
+      "message": "this does actually work (infra will eventually close the bug just by mentioning it like this in the commit message body), and is equivalent to the more modern \"Fixes-Bug: 1149987\" in the footer, where we also support Partial-Bug (marks In Progress, won\u0027t close the bug) and Related-Bug (won\u0027t mark In Progress, but cross links to the bug anyway) as more granular options",
+      "parentUuid": "AAAAS3//FoI\u003d",
+      "revId": "6c1018065fd327b8878ba00bfca7227e70181cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//FFY\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 5
@@ -115,6 +133,23 @@
       "writtenOn": "2013-10-03T19:54:53Z",
       "side": 1,
       "message": "Encapsulate in () or [] so that \\ can be removed.",
+      "revId": "6c1018065fd327b8878ba00bfca7227e70181cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//E3M\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-04T19:47:43Z",
+      "side": 1,
+      "message": "or just open the dict on the previous line, which i think is a bit cleaner\n\n  msg +\u003d _(\u0027%(extra_param)s is redundant.\u0027) % {\n      \u0027extra_param\u0027: list(extra_param)}",
       "revId": "6c1018065fd327b8878ba00bfca7227e70181cce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
