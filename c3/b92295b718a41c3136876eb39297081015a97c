@@ -1,0 +1,16 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Mark McLoughlin <markmc@redhat.com>
+Verified+1: SmokeStack
+Code-Review+1: Doug Hellmann <doug.hellmann@dreamhost.com>
+Code-Review+1: ldbragst <ldbragst@us.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: ZhiQiang Fan <aji.zqfan@gmail.com>
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Qin Zhao <chaochin@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 04 Oct 2013 15:49:32 +0000
+Reviewed-on: https://review.openstack.org/49285
+Project: openstack/keystone
+Branch: refs/heads/master
