@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//FRU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-04T17:51:21Z",
+      "side": 1,
+      "message": "This is not Py3k Compatible.  If we are aiming to be Py3k compatible you will need to use something like: http://pythonhosted.org/six/#six.with_metaclass .",
+      "revId": "2741893a639a9ab9bb96724d6897e4414a63e0e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
