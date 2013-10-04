@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAS3//FoI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-04T19:36:11Z",
+      "side": 1,
+      "message": "I have not seen this syntax for tagging.  Should it be \u0027Fixes-Bug: #1149987\u0027?",
+      "revId": "6c1018065fd327b8878ba00bfca7227e70181cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//FFY\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-04T19:36:11Z",
+      "side": 1,
+      "message": "This method doesn\u0027t need req (based on my comment below) or context (because it\u0027s not used).",
+      "revId": "6c1018065fd327b8878ba00bfca7227e70181cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//FFc\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-04T19:36:11Z",
+      "side": 1,
+      "message": "Why would you not want to handle non-GETs?  For instance, User.create_user takes a user param that is pulled to the POSTed body.",
+      "revId": "6c1018065fd327b8878ba00bfca7227e70181cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IVA\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 5
@@ -30,6 +81,23 @@
       "writtenOn": "2013-10-03T19:54:53Z",
       "side": 1,
       "message": "Comments here would be helpful.",
+      "revId": "6c1018065fd327b8878ba00bfca7227e70181cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//E6E\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-04T19:36:11Z",
+      "side": 1,
+      "message": "This line has a bug.  If required params are missing, but **kwargs is specified in the method definition a nice error message will not be constructed.",
       "revId": "6c1018065fd327b8878ba00bfca7227e70181cce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
