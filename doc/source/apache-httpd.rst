@@ -67,9 +67,9 @@ Copy the file httpd/wsgi-keystone.conf to the appropriate location for your apac
 
     /etc/httpd/conf.d/wsgi-keystone.conf
 
-Create the directory ``/var/www/cgi-bin/keystone/``. You can either hardlink or softlink the files ``main`` and ``admin`` to the file ``keystone.py`` in this directory.  For a distribution appropriate place, it should probably be copied to::
+Create the directory ``/var/www/cgi-bin/keystone/``. You can either hardlink or softlink the files ``main`` and ``admin`` to the file ``keystone.wsgi`` in this directory.  For a distribution appropriate place, it should probably be copied to::
 
-    /usr/share/openstack/keystone/httpd/keystone.py
+    /usr/share/keystone/keystone.wsgi
 
 Keystone's primary configuration file (``etc/keystone.conf``) and the PasteDeploy
 configuration file (``etc/keystone-paste.ini``) must be readable to HTTPD in
