@@ -111,6 +111,57 @@ class ApplicationTest(BaseWSGITest):
         resp = wsgi.render_exception(e)
         self.assertEqual(resp.status_int, 401)
 
+    def test_method_params(self):
+
+        class FakeApp(wsgi.Application):
+            def index(self, context):
+                return ['index']
+        req = self._make_request()
+        resp = req.get_response(FakeApp())
+        self.assertEqual(['index'], jsonutils.loads(resp.body))
+
+        class FakeApp(wsgi.Application):
+            def index(self, context, arg0, arg1):
+                return arg0, arg1
+
+        req = self._make_request()
+        req.environ['openstack.params'] = {'arg0': 'value0', 'arg1': 'value1'}
+        resp = req.get_response(FakeApp())
+        self.assertEqual(jsonutils.loads(resp.body), ['value0', 'value1'])
+
+        req = self._make_request()
+        req.environ['openstack.params'] = {'arg0': 'value0'}
+        resp = req.get_response(FakeApp())
+        expected = {
+            "error": {
+                "message": "['arg1'] is required.",
+                "code": 400,
+                "title": "Bad Request"
+            }
+        }
+        self.assertEqual(jsonutils.loads(resp.body), expected)
+
+        req = self._make_request()
+        req.environ['openstack.params'] = {'arg3': 'value3'}
+        resp = req.get_response(FakeApp())
+        expected = {
+            "error": {
+                "message": "['arg3'] is redundant. "
+                           "['arg0', 'arg1'] is required.",
+                "code": 400,
+                "title": "Bad Request"
+            }
+        }
+        self.assertEqual(jsonutils.loads(resp.body), expected)
+
+        class FakeApp(wsgi.Application):
+            def index(self, context, arg0, arg1='1'):
+                return arg0, arg1
+        req = self._make_request()
+        req.environ['openstack.params'] = {'arg0': '0'}
+        resp = req.get_response(FakeApp())
+        self.assertEqual(['0', '1'], jsonutils.loads(resp.body))
+
 
 class ExtensionRouterTest(BaseWSGITest):
     def test_extensionrouter_local_config(self):
@@ -310,3 +361,94 @@ class LocalizedResponseTest(tests.TestCase):
         # are lazy-translated.
         self.assertIsInstance(_('The resource could not be found.'),
                               gettextutils.Message)
+
+
+class TestControllerMethodInspection(tests.TestCase):
+
+    def setUp(self):
+        super(TestControllerMethodInspection, self).setUp()
+        self.app = wsgi.Application()
+        self.inspect = self.app._method_inspect
+
+    def assertSuccess(self, func_user_test, params):
+        self.inspect(func_user_test, params)
+
+    def assertFailure(self, func_user_test, params):
+        self.assertRaises(exception.ControllerArgsError,
+                          self.inspect,
+                          func_user_test,
+                          params)
+
+    def test_all_required_parameters_provided(self):
+
+        def func_under_test(a):
+            pass
+        self.assertSuccess(func_under_test, params=['a'])
+
+        def func_under_test(a, b):
+            pass
+        self.assertSuccess(func_under_test, params=['a', 'b'])
+
+    def test_optional_parameters_provided(self):
+
+        def func_under_test(a=None):
+            pass
+        self.assertSuccess(func_under_test, params=['a'])
+
+    def test_optional_parameters_not_provided(self):
+
+        def func_under_test(a=None):
+            pass
+        self.assertSuccess(func_under_test, params=[])
+
+        def func_under_test(a, b=None):
+            pass
+        self.assertSuccess(func_under_test, params=['a'])
+
+    def test_some_required_parameters_missing(self):
+
+        def func_under_test(a, b):
+            pass
+        self.assertFailure(func_under_test, params=['b'])
+
+    def test_extra_parameter_supplied(self):
+
+        def func_under_test(a):
+            pass
+        self.assertFailure(func_under_test, params=['a', 'b'])
+
+    def test_extra_parameter_supplied_with_kwargs_defined(self):
+
+        def func_under_test(a, **kw):
+            pass
+        self.assertSuccess(func_under_test, params=['a', 'b'])
+
+    def test_some_required_parameters_missing_with_kwargs_defined(self):
+
+        def func_under_test(a, b, **kw):
+            pass
+        self.assertFailure(func_under_test, params=['a'])
+
+    def test_a_method_works(self):
+
+        class AppUnderTest(object):
+            def index(self, a):
+                pass
+        self.assertSuccess(AppUnderTest().index, params=['a'])
+
+        class AppUnderTest(object):
+            def index(self, a, b):
+                pass
+        self.assertFailure(AppUnderTest().index, params=['a'])
+
+    def test_auto_provided_params_are_ignored(self):
+
+        class AppUnderTest(object):
+            def index(self, context):
+                pass
+        self.assertSuccess(AppUnderTest().index, params=[])
+
+        class AppUnderTest(object):
+            def index(self, context, a):
+                pass
+        self.assertSuccess(AppUnderTest().index, params=['a'])
