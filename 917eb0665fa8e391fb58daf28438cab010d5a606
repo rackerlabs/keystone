@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAS3//FzY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-04T15:32:41Z",
+      "side": 1,
+      "message": "I would tag this as Partial-Bug instead of Fixes-Bug since there will be another commit with the final fix.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IOc\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -104,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//F5o\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-04T15:32:41Z",
+      "side": 1,
+      "message": "Can\u0027t this be implemented with str.rstrip?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IMM\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -115,6 +149,23 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "Is sans suppose to be sanitized?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//F6w\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-04T15:32:41Z",
+      "side": 1,
+      "message": "Can\u0027t this and the function above be implemented with textwrap?",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -166,6 +217,23 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "(NIT): In the interest of object oriented naming, this might make sense to be named \u0027PEMParser\u0027",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//F4k\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-04T15:32:41Z",
+      "side": 1,
+      "message": "Is everything really optional here?  It seems like all of the property code in this class is just compensating for a lack of required types.  I\u0027d rather see a couple of class methods like from_pem_type and from_pem_header to create instances of this class.  As is there are strange corner cases that can happen like providing unmatching type and header to the __init__.",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +376,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//F1c\u003d",
+        "filename": "keystone/tests/test_base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-04T15:32:41Z",
+      "side": 1,
+      "message": "I think you want to use keystone.test.TestCase instead of unittest.TestCase.  This applies to all test cases below.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IG8\u003d",
         "filename": "keystone/tests/test_base64_utils.py",
         "patchSetId": 1
@@ -336,6 +421,23 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "This assert kind of goes against the grain of this test. By the naming \u0027test_is_valid\u0027 we assume the positive path of the test, and the first assert checks to make sure a negative path is caught. Maybe we should have a second unit test to explicitly check the bad path cases. \n\ndef test_base64_utils_is_valid(self): \n    .... \n\n\ndef test_base64_utils_not_valid(self): \n    ..... \n\n\nor something along those lines.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//F1A\u003d",
+        "filename": "keystone/tests/test_pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-04T15:32:41Z",
+      "side": 1,
+      "message": "keystone.tests.TestCase instead of unittest.TestCase as I mentioned in the other test module.",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
