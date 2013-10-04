@@ -34,6 +34,24 @@
       "revId": "f18dbd7e74303b7e0af97439ed935038e2231feb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//GJo\u003d",
+        "filename": "keystone/tests/test_sql_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 5313
+      },
+      "writtenOn": "2013-10-04T13:53:27Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAAS3//H68\u003d",
+      "revId": "f18dbd7e74303b7e0af97439ed935038e2231feb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
