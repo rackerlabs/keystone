@@ -20,6 +20,7 @@
 
 """Utility methods for working with WSGI servers."""
 
+import inspect
 import re
 
 import routes.middleware
@@ -235,6 +236,7 @@ class Application(BaseApplication):
         params = self._normalize_dict(params)
 
         try:
+            self._method_inspect(method, params)
             result = method(context, **params)
         except exception.Unauthorized as e:
             LOG.warning(
@@ -244,10 +246,9 @@ class Application(BaseApplication):
         except exception.Error as e:
             LOG.warning(e)
             return render_exception(e, user_locale=req.best_match_language())
-        except TypeError as e:
+        except exception.ControllerArgsError as e:
             LOG.exception(e)
-            return render_exception(exception.ValidationError(e),
-                                    user_locale=req.best_match_language())
+            return render_exception(e, user_locale=req.best_match_language())
         except Exception as e:
             LOG.exception(e)
             return render_exception(exception.UnexpectedError(exception=e),
@@ -264,6 +265,46 @@ class Application(BaseApplication):
 
         response_code = self._get_response_code(req)
         return render_response(body=result, status=response_code)
+
+    def _method_inspect(self, method, params):
+        """Validates the number of params passed to controller methods.
+
+        A `ControllerArgsError` will be raised if:
+          1. Required arguments are missing
+          2. Unexpected keyword args are provided to a method not
+             expecting **kwargs
+        """
+        params = set(params)
+
+        spec = inspect.getargspec(method)
+        if spec.defaults:
+            required_args = set(spec.args[:-len(spec.defaults)])
+        else:
+            required_args = set(spec.args)
+
+        if 'context' in required_args:  # provided by caller
+            required_args.remove('context')
+        if 'self' in required_args:  # provided by Python
+            required_args.remove('self')
+
+        if params == required_args:
+            # called with all required args
+            return
+
+        err_args = {}
+
+        extra_params = None
+        if not spec.keywords:
+            extra_params = params - set(spec.args)
+            if extra_params:
+                err_args['extra_params'] = extra_params
+
+        missing_required_params = required_args - params
+        if missing_required_params:
+            err_args['missing_required_params'] = missing_required_params
+
+        if err_args:
+            raise exception.ControllerArgsError(**err_args)
 
     def _get_response_code(self, req):
         req_method = req.environ['REQUEST_METHOD']
