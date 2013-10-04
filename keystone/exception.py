@@ -69,6 +69,22 @@ class ValidationError(Error):
     title = 'Bad Request'
 
 
+class ControllerArgsError(ValidationError):
+
+    def _build_message(self, message, **kwargs):
+        message = ''
+
+        extra_params = kwargs.pop('extra_params', None)
+        if extra_params:
+            message += _('%s is redundant.') % list(extra_params)
+
+        missing_required_params = kwargs.pop('missing_required_params', None)
+        if missing_required_params:
+            message += _('%s is required.') % list(missing_required_params)
+
+        return message
+
+
 class StringLengthExceeded(ValidationError):
     message_format = _("String length exceeded.The length of"
                        " string '%(string)s' exceeded the limit"
