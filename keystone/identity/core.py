@@ -537,8 +537,8 @@ class Manager(manager.Manager):
     def get_domain(self, domain_id):
         return self.assignment_api.get_domain(domain_id)
 
-    #def update_domain(self, domain_id, domain):
-    #    return self.assignment_api.update_domain(domain_id, domain)
+    def update_domain(self, domain_id, domain):
+        return self.assignment_api.update_domain(domain_id, domain)
 
     #def delete_domain(self, domain_id):
     #    return self.assignment_api.delete_domain(domain_id)
