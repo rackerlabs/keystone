@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//FbQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-04T16:59:14Z",
+      "side": 1,
+      "message": "Does this have a blueprint? Might be easier to track with a blueprint since this is going to be a string of commits.",
+      "revId": "40295f0aaf8306a572b1e778af636cc06c2035c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
