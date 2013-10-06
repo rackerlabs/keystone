@@ -216,3 +216,8 @@ class Token(token.Driver):
         if list_json:
             return jsonutils.loads('[%s]' % list_json)
         return []
+
+    def flush_expired_tokens(self):
+        """Archive or delete tokens that have expired.
+        """
+        raise exception.NotImplemented()
