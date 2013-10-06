@@ -56,10 +56,6 @@ class TestDrivers(testtools.TestCase):
         interface = policy.Driver()
         self.assertInterfaceNotImplemented(interface)
 
-    def test_token_driver_unimplemented(self):
-        interface = token.Driver()
-        self.assertInterfaceNotImplemented(interface)
-
     def test_oauth1_driver_unimplemented(self):
         interface = oauth1.Driver()
         self.assertInterfaceNotImplemented(interface)
