@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH///NE\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-06T16:09:36Z",
+      "side": 1,
+      "message": "This will break all non-HTML formats.  What you really what to do is replace instances of middlewarearchitecture_ with :doc:`middlewarearchitecture`",
+      "revId": "e5f2ba20b86716f3555abaa054a938350acd7950",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH///NA\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-06T16:09:36Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "e5f2ba20b86716f3555abaa054a938350acd7950",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
