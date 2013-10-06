@@ -52,10 +52,6 @@ class TestDrivers(testtools.TestCase):
             if name[0] != '_' and callable(method):
                 self.assertMethodNotImplemented(method)
 
-    def test_catalog_driver_unimplemented(self):
-        interface = catalog.Driver()
-        self.assertInterfaceNotImplemented(interface)
-
     def test_policy_driver_unimplemented(self):
         interface = policy.Driver()
         self.assertInterfaceNotImplemented(interface)
