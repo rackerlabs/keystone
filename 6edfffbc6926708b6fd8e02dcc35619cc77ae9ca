@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH///MY\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-06T16:32:25Z",
+      "side": 1,
+      "message": "I don\u0027t understand what this comment block is saying.  Are you able to remove this block and replace it with unit tests that show the expected behaviors?",
+      "revId": "6edfffbc6926708b6fd8e02dcc35619cc77ae9ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH///MI\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-06T16:32:25Z",
+      "side": 1,
+      "message": "I believe this is still broken.  Adapting my test_some_required_parameters_missing_with_kwargs_defined test to your code shows that this case is still broken.  The test is define in my alternative patch: https://review.openstack.org/49828",
+      "revId": "6edfffbc6926708b6fd8e02dcc35619cc77ae9ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
