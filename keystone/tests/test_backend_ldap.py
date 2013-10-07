@@ -22,17 +22,21 @@ import ldap
 
 from keystone import assignment
 from keystone.common import cache
-from keystone.common.ldap import fakeldap
+from keystone.common import ldap as common_ldap
 from keystone.common import sql
 from keystone import config
 from keystone import exception
 from keystone import identity
 from keystone import tests
 from keystone.tests import default_fixtures
+from keystone.tests import fakeldap
 from keystone.tests import test_backend
 
 
 CONF = config.CONF
+
+
+common_ldap.register_handler('fake://', lambda: fakeldap.FakeLdap)
 
 
 class BaseLDAPIdentity(test_backend.IdentityTests):
@@ -640,7 +644,13 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
         # we have to track all calls on 'conn' to make sure that
         # conn.simple_bind_s is not called
         conn = self.mox.CreateMockAnything()
-        conn = fakeldap.FakeLdap(CONF.ldap.url).AndReturn(conn)
+        conn = fakeldap.FakeLdap(CONF.ldap.url,
+                                 0,
+                                 alias_dereferencing=None,
+                                 tls_cacertdir=None,
+                                 tls_cacertfile=None,
+                                 tls_req_cert=2,
+                                 use_tls=False).AndReturn(conn)
         self.mox.ReplayAll()
 
         user_api.get_connection(user=None, password=None)
