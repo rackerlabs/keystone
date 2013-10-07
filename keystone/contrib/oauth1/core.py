@@ -18,7 +18,11 @@
 
 from __future__ import absolute_import
 
+import abc
+
 import oauth2 as oauth
+
+import six
 
 from keystone.common import dependency
 from keystone.common import extension
@@ -135,9 +139,11 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.oauth1.driver)
 
 
+@six.add_metaclass(abc.ABCMeta)
 class Driver(object):
     """Interface description for an OAuth1 driver."""
 
+    @abc.abstractmethod
     def create_consumer(self, consumer_ref):
         """Create consumer.
 
@@ -148,6 +154,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
     def update_consumer(self, consumer_id, consumer_ref):
         """Update consumer.
 
@@ -160,6 +167,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
     def list_consumers(self):
         """List consumers.
 
@@ -168,6 +176,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
     def get_consumer(self, consumer_id):
         """Get consumer, returns the consumer id (key)
         and description.
@@ -179,6 +188,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
     def get_consumer_with_secret(self, consumer_id):
         """Like get_consumer() but returned consumer_ref includes
         the consumer secret.
@@ -193,6 +203,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
     def delete_consumer(self, consumer_id):
         """Delete consumer.
 
@@ -203,6 +214,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
     def list_access_tokens(self, user_id):
         """List access tokens.
 
@@ -213,6 +225,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
     def delete_access_token(self, user_id, access_token_id):
         """Delete access token.
 
@@ -225,6 +238,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
     def create_request_token(self, consumer_id, requested_project,
                              request_token_duration):
         """Create request token.
@@ -240,6 +254,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
     def get_request_token(self, request_token_id):
         """Get request token.
 
@@ -250,6 +265,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
     def get_access_token(self, access_token_id):
         """Get access token.
 
@@ -260,6 +276,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
     def authorize_request_token(self, request_id, user_id, role_ids):
         """Authorize request token.
 
@@ -274,6 +291,7 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
     def create_access_token(self, request_id, access_token_duration):
         """Create access token.
 
