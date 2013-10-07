@@ -97,7 +97,7 @@ class TestAuthInfo(test_v3.RestfulTestCase):
 class TestPKITokenAPIs(test_v3.RestfulTestCase):
     def config_files(self):
         conf_files = super(TestPKITokenAPIs, self).config_files()
-        conf_files.append(tests.testsdir('test_pki_token_provider.conf'))
+        conf_files.append(tests.dirs.tests('test_pki_token_provider.conf'))
         return conf_files
 
     def setUp(self):
@@ -332,7 +332,7 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase):
 class TestUUIDTokenAPIs(TestPKITokenAPIs):
     def config_files(self):
         conf_files = super(TestUUIDTokenAPIs, self).config_files()
-        conf_files.append(tests.testsdir('test_uuid_token_provider.conf'))
+        conf_files.append(tests.dirs.tests('test_uuid_token_provider.conf'))
         return conf_files
 
     def test_v3_token_id(self):
@@ -385,7 +385,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         self.orig_policy_file = CONF.policy_file
         from keystone.policy.backends import rules
         rules.reset()
-        self.opt(policy_file=tests.etcdir('policy.v3cloudsample.json'))
+        self.opt(policy_file=tests.dirs.etc('policy.v3cloudsample.json'))
 
     def test_user_revokes_own_token(self):
         r = self.post(
