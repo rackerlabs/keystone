@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATH//9Ds\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T14:54:50Z",
+      "side": 1,
+      "message": "identity_api*\n\nand add partial bug #",
+      "revId": "389fe775121c1db838dd36a3befb00793931724a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//9Dc\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T14:54:50Z",
+      "side": 1,
+      "message": "These should be removed if they are not needed anymore.",
+      "revId": "389fe775121c1db838dd36a3befb00793931724a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//9fM\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 1
