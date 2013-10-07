@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//9Cc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T15:01:16Z",
+      "side": 1,
+      "message": "identity_api * and add partial-bug #",
+      "revId": "1ba4415602ef83facfa92ea0e29a943d15fdc5da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//9CY\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T15:01:16Z",
+      "side": 1,
+      "message": "add space before \u0027assignment_api\u0027",
+      "revId": "1ba4415602ef83facfa92ea0e29a943d15fdc5da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//9CQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T15:01:16Z",
+      "side": 1,
+      "message": "Remove",
+      "revId": "1ba4415602ef83facfa92ea0e29a943d15fdc5da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
