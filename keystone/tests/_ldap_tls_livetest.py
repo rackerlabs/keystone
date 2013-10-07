@@ -40,8 +40,8 @@ class LiveTLSLDAPIdentity(_ldap_livetest.LiveLDAPIdentity):
 
     def _set_config(self):
         self.config([tests.etcdir('keystone.conf.sample'),
-                     tests.testsdir('test_overrides.conf'),
-                     tests.testsdir('backend_tls_liveldap.conf')])
+                     tests.confdir('test_overrides.conf'),
+                     tests.confdir('backend_tls_liveldap.conf')])
 
     def test_tls_certfile_demand_option(self):
         CONF.ldap.use_tls = True

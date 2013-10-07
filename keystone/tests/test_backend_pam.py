@@ -29,8 +29,8 @@ class PamIdentity(tests.TestCase):
     def setUp(self):
         super(PamIdentity, self).setUp()
         self.config([tests.etcdir('keystone.conf.sample'),
-                     tests.testsdir('test_overrides.conf'),
-                     tests.testsdir('backend_pam.conf')])
+                     tests.confdir('test_overrides.conf'),
+                     tests.confdir('backend_pam.conf')])
         self.identity_api = identity_pam.PamIdentity()
         id = uuid.uuid4().hex
         self.tenant_in = {'id': id, 'name': id}

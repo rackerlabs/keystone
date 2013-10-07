@@ -52,8 +52,8 @@ class SqlMigrateBase(tests.TestCase):
         self.metadata.bind = self.engine
 
     _config_file_list = [tests.etcdir('keystone.conf.sample'),
-                         tests.testsdir('test_overrides.conf'),
-                         tests.testsdir('backend_sql.conf')]
+                         tests.confdir('test_overrides.conf'),
+                         tests.confdir('backend_sql.conf')]
 
     #override this to specify the complete list of configuration files
     def config_files(self):

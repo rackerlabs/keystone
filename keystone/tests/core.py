@@ -93,7 +93,7 @@ def etcdir(*p):
     return os.path.join(ETCDIR, *p)
 
 
-def testsdir(*p):
+def confdir(*p):
     return os.path.join(TESTSDIR, *p)
 
 
@@ -133,7 +133,7 @@ def checkout_vendor(repo, rev):
     return revdir
 
 
-def setup_test_database():
+def setup_database():
     db = tmpdir('test.db')
     pristine = tmpdir('test.db.pristine')
 
@@ -171,7 +171,7 @@ def remove_generated_paste_config(extension_name):
     os.remove(paste_file_to_remove)
 
 
-def teardown_test_database():
+def teardown_database():
     sql.core.set_global_engine(None)
 
 
@@ -257,7 +257,7 @@ class TestCase(NoModule, testtools.TestCase):
     def setUp(self):
         super(TestCase, self).setUp()
         self.config([etcdir('keystone.conf.sample'),
-                     testsdir('test_overrides.conf')])
+                     confdir('test_overrides.conf')])
         # ensure the cache region instance is setup
         cache.configure_cache_region(cache.REGION)
         self.mox = mox.Mox()
