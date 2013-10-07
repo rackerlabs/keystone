@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//9Tk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T14:46:10Z",
+      "side": 1,
+      "message": "identity_api*",
+      "revId": "86e3e4e51a955a91fde21e618db7bb16ef04d778",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//9Tg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T14:46:10Z",
+      "side": 1,
+      "message": "Add:\n\nPartial-Bug: 1220913",
+      "revId": "86e3e4e51a955a91fde21e618db7bb16ef04d778",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//9TQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T14:46:10Z",
+      "side": 1,
+      "message": "Remove commented out code, unless it was discussed to keep it around for some reason.",
+      "revId": "86e3e4e51a955a91fde21e618db7bb16ef04d778",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
