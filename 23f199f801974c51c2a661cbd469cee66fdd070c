@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//9A4\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-07T15:05:43Z",
+      "side": 1,
+      "message": "Suggest making this an abstract method as well, the subclass should simply call super() in the case that there is nothing to override.  See the TODO on line 274.  This doesn\u0027t need to become a virtual method, but should be abstract at the very least.",
+      "revId": "23f199f801974c51c2a661cbd469cee66fdd070c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
