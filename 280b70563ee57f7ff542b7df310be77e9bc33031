@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//9aY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T13:43:30Z",
+      "side": 1,
+      "message": "identity_api?",
+      "revId": "280b70563ee57f7ff542b7df310be77e9bc33031",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//9ac\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T13:43:30Z",
+      "side": 1,
+      "message": "Add: \n\nPartial-Bug: 1220913\n\nso that all these changes can be tracked with the same bug report.",
+      "revId": "280b70563ee57f7ff542b7df310be77e9bc33031",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
