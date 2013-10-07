@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//9Bs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T15:05:07Z",
+      "side": 1,
+      "message": "identity_api and add partial-bug #",
+      "revId": "9b218724f04100e451c97f23e561b84693faab3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//9Bg\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T15:05:07Z",
+      "side": 1,
+      "message": "Remove these",
+      "revId": "9b218724f04100e451c97f23e561b84693faab3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
