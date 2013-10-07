@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//9MU\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-07T14:22:18Z",
+      "side": 1,
+      "message": "shouldn\u0027t six be grouped with oauth2?",
+      "revId": "cc4a7eea219b84a0e61edd82c31b40585592f623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
