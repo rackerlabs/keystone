@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//9DE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T14:57:48Z",
+      "side": 1,
+      "message": "Remove this instead of commenting out?",
+      "revId": "d9a007c644da4874e2542f47d41e8bf7b7eff0c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//9C4\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T14:57:48Z",
+      "side": 1,
+      "message": "add a space: \n\n(\u0027catalog_api\u0027, \u0027identity_api\u0027, \u0027assignment_api\u0027)\n\nThis applies to all occurrences in this module. Adding a space should take care of the pep8 failures.",
+      "revId": "d9a007c644da4874e2542f47d41e8bf7b7eff0c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
