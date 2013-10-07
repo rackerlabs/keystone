@@ -16,6 +16,24 @@
       "revId": "140732e1f076e71ca735b4e285d1943d4c08ccd3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//8kg\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2013-10-07T16:29:51Z",
+      "side": 1,
+      "message": "abc is a standard library module and six is a third-party dependency. My understanding of the style guidelines is those two types of modules should be listed separately.",
+      "parentUuid": "AAAATH//8+4\u003d",
+      "revId": "140732e1f076e71ca735b4e285d1943d4c08ccd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
