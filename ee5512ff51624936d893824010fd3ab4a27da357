@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//9E0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T14:48:05Z",
+      "side": 1,
+      "message": "I think we\u0027re adding the calls back into the identity_api here.",
+      "revId": "ee5512ff51624936d893824010fd3ab4a27da357",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//9Eo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-07T14:48:05Z",
+      "side": 1,
+      "message": "Add; \n\nPartial-Bug: 1220913",
+      "revId": "ee5512ff51624936d893824010fd3ab4a27da357",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
