@@ -51,7 +51,3 @@ class TestDrivers(testtools.TestCase):
             method = getattr(interface, name)
             if name[0] != '_' and callable(method):
                 self.assertMethodNotImplemented(method)
-
-    def test_endpoint_filter_driver_unimplemented(self):
-        interface = endpoint_filter.Driver()
-        self.assertInterfaceNotImplemented(interface)
