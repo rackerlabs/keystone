@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//7Ss\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-07T23:25:13Z",
+      "side": 1,
+      "message": "Change \"logging\" to \"log\"",
+      "revId": "0d75858b2ca16ee474210b2b11d7c0d8bb751bba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//7Sc\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-07T23:25:13Z",
+      "side": 1,
+      "message": "wrap the string in _() so that it\u0027s translated.",
+      "revId": "0d75858b2ca16ee474210b2b11d7c0d8bb751bba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//7SU\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-07T23:25:13Z",
+      "side": 1,
+      "message": "don\u0027t exit from a function. Re-raise the exception (or raise a new exception) and let the caller figure out what to do.",
+      "revId": "0d75858b2ca16ee474210b2b11d7c0d8bb751bba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//7SM\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 8
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-07T23:25:13Z",
+      "side": 1,
+      "message": "suggest change create_server to return (name, server) instead, then don\u0027t have to duplicate the strings (\u0027admin\u0027 and \u0027main\u0027)",
+      "revId": "0d75858b2ca16ee474210b2b11d7c0d8bb751bba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
