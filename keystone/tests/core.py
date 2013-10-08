@@ -22,6 +22,7 @@ import socket
 import StringIO
 import sys
 import time
+import warnings
 
 from lxml import etree
 import mox
@@ -264,6 +265,8 @@ class TestCase(NoModule, testtools.TestCase):
         self.opt(policy_file=etcdir('policy.json'))
         self.stubs = stubout.StubOutForTesting()
         self.stubs.Set(exception, '_FATAL_EXCEPTION_FORMAT_ERRORS', True)
+
+        warnings.filterwarnings('ignore', category=DeprecationWarning)
 
     def config(self, config_files):
         CONF(args=[], project='keystone', default_config_files=config_files)
