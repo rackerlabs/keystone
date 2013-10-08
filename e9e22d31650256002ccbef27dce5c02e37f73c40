@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//2lM\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-08T23:34:01Z",
+      "side": 1,
+      "message": "This method is called directly by the Auth (v3) controller http://git.openstack.org/cgit/openstack/keystone/tree/keystone/auth/controllers.py#n374 which will result in a significant amount of logging claiming the method is deprecated.  This should be made to not rely on the V2 controller prior to this patchset going in (or in this patchset).\n\nThe bug referencing this issue is bug 1222696",
+      "revId": "e9e22d31650256002ccbef27dce5c02e37f73c40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
