@@ -22,6 +22,7 @@ import socket
 import StringIO
 import sys
 import time
+import warnings
 
 from lxml import etree
 from paste import deploy
@@ -259,6 +260,8 @@ class TestCase(testtools.TestCase):
         # ensure the cache region instance is setup
         cache.configure_cache_region(cache.REGION)
         self.opt(policy_file=etcdir('policy.json'))
+
+        warnings.filterwarnings('ignore', category=DeprecationWarning)
 
     def config(self, config_files):
         CONF(args=[], project='keystone', default_config_files=config_files)
