@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATH//7CM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-08T01:11:50Z",
+      "side": 1,
+      "message": "remove \"See bug report for complete issue description.\" since this is implied.",
+      "revId": "bd46433850fe8f5402ea34b3a63da3baaa692352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//ISk\u003d",
         "filename": "keystone/common/cms.py",
         "patchSetId": 1
@@ -36,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//7Bo\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-08T01:11:50Z",
+      "side": 1,
+      "message": "suggest remove the comment because it\u0027s documenting one line that\u0027s obvious already.",
+      "parentUuid": "AAAAS3//ITo\u003d",
+      "revId": "bd46433850fe8f5402ea34b3a63da3baaa692352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//ITU\u003d",
         "filename": "keystone/common/cms.py",
         "patchSetId": 1
@@ -47,6 +82,23 @@
       "writtenOn": "2013-10-03T20:08:53Z",
       "side": 1,
       "message": "Should this be wrapped in LOG.error(_(\u0027No pem found in cms\u0027)) or something similar?",
+      "revId": "bd46433850fe8f5402ea34b3a63da3baaa692352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//7Bg\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-08T01:11:50Z",
+      "side": 1,
+      "message": "remove comment because the code is obvious already.",
       "revId": "bd46433850fe8f5402ea34b3a63da3baaa692352",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
