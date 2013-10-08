@@ -273,6 +273,20 @@ class AuthInfo(object):
 
 @dependency.requires('token_provider_api')
 class Auth(controller.V3Controller):
+
+    # Note(atiwari): From V3 auth controller code we are
+    # calling protection() wrappers, but we are not
+    # setting up the member_name and  collection_name
+    # attributes auth controller.
+    # In the absence of these attributes, default 'entity'
+    # string will be used represent the target which is
+    # generic. Policy can be defined using 'entity' but it
+    # would not reflect exact entity is in context.
+    # We are defining collection_name = 'auths' and
+    # member_name = 'auth' to facilitate policy decisions.
+    collection_name = 'auths'
+    member_name = 'auth'
+
     def __init__(self, *args, **kw):
         super(Auth, self).__init__(*args, **kw)
         self.token_controllers_ref = token.controllers.Auth()
