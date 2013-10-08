@@ -65,6 +65,41 @@ class Base(auth.AuthMethodHandler):
         pass
 
 
+class DeprecatedGrizzly(Base):
+    @utils.deprecated(as_of=utils.deprecated.ICEHOUSE,
+                      in_favor_of='keystone.auth.external.Default',
+                      remove_in=+1)
+    def __init__(self):
+        super(DeprecatedGrizzly, self).__init__()
+
+    def _authenticate(self, remote_user, auth_info):
+        """Use remote_user to look up the user in the identity backend
+
+        Mimic the behaviour of external authentication and remote_user in
+        the Grizzly release.
+        """
+        # FIXME(aloga): remote_user is not good enough since we are
+        # requiring domain_id to do user lookup now. Try to get
+        # the user_id from auth_info for now, assuming external auth
+        # has checked to make sure the user is the same as the one specified
+        # in "identity".
+        if 'password' in auth_info.get_method_names():
+            user_info = auth_info.get_method_data('password')
+            user_ref = auth_info.lookup_user(user_info['user'])
+            if remote_user != user_ref['name']:
+                msg = _('remote_user does not match supplied credentials '
+                        '%(remote)s != %(name)s') % {"remote": remote_user,
+                                                     "name": user_ref['name']}
+                LOG.warning(msg)
+                msg = _('Unable to lookup user %s') % (remote_user)
+                raise Exception(msg)
+            return user_ref
+        else:
+            msg = _("The 'password' method must be defined in methods "
+                    "for external.DeprecatedGrizzly")
+            raise Exception(msg)
+
+
 class Default(Base):
     def _authenticate(self, remote_user, context, auth_info):
         """Use remote_user to look up the user in the identity backend."""

@@ -1094,6 +1094,71 @@ class TestAuthExternalDisabled(test_v3.RestfulTestCase):
                           auth_context)
 
 
+class TestAuthExternalDeprecatedGrizzly(test_v3.RestfulTestCase):
+    content_type = 'json'
+
+    def config_files(self):
+        cfg_list = self._config_file_list[:]
+        cfg_list.append(tests.testsdir('auth_plugin_external_deprecated.conf'))
+        return cfg_list
+
+    def test_remote_user(self):
+        api = auth.controllers.Auth()
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])['auth']
+        context, auth_info, auth_context = self.build_external_auth_request(
+            self.user['name'], auth_data=auth_data)
+        api.authenticate(context, auth_info, auth_context)
+        self.assertEqual(auth_context['user_id'], self.user['id'])
+
+    def test_remote_user_valid_password_user_not_valid(self):
+        # GrizzlyDeprecated will try to authenticate using REMOTE_USER as the
+        # username, then check that it is equal to the provided username in
+        # password
+        api = auth.controllers.Auth()
+        auth_data = self.build_authentication_request(
+            user_id=uuid.uuid4().hex,
+            password=self.user['password'])['auth']
+        context, auth_info, auth_context = self.build_external_auth_request(
+            self.user['id'], auth_data=auth_data)
+
+        self.assertRaises(exception.Unauthorized,
+                          api.authenticate,
+                          context,
+                          auth_info,
+                          auth_context)
+
+    def test_remote_user_not_valid(self):
+        # GrizzlyDeprecated will try to authenticate using REMOTE_USER as the
+        # username, then check that it is equal to the provided username in
+        # password
+        api = auth.controllers.Auth()
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])['auth']
+        context, auth_info, auth_context = self.build_external_auth_request(
+            uuid.uuid4().hex, auth_data=auth_data)
+
+        self.assertRaises(exception.Unauthorized,
+                          api.authenticate,
+                          context,
+                          auth_info,
+                          auth_context)
+
+    def test_remote_user_and_no_password(self):
+        # REMOTE_USER without password fails in GrizzlyDeprecated
+        api = auth.controllers.Auth()
+        context, auth_info, auth_context = self.build_external_auth_request(
+            self.default_domain_user['name'])
+
+        self.assertRaises(exception.Unauthorized,
+                          api.authenticate,
+                          context,
+                          auth_info,
+                          auth_context)
+
+
 class TestAuthExternalDomain(test_v3.RestfulTestCase):
     content_type = 'json'
 
