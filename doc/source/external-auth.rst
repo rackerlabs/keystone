@@ -1,12 +1,50 @@
 ===========================================
 Using external authentication with Keystone
 ===========================================
+.. _external-auth:
 
 When Keystone is executed in :doc:`HTTPD <apache-httpd>` it is possible to
 use external authentication methods different from the authentication
-provided by the identity store backend. For example, this makes possible to
-use a SQL identity backend together with X.509 authentication, Kerberos, etc.
-instead of using the username/password combination.
+provided by the identity store backend or the different authentication plugins.
+For example, this makes possible to use a SQL identity backend together with
+X.509 authentication, Kerberos, etc. instead of using the username/password
+combination.
+
+V3 Configuration
+================
+
+In pre-Havana Keystone, there was no way to disable external authentication. In
+the Havana release, in order to activate the external authentication mechanism in
+Keystone you have to explicitly add `external` to the list of enabled authentication
+methods::
+
+    [auth]
+    methods = password, token, external
+
+Afterwards you have to choose the plugin that you actually want to use. There are
+three plugins available:
+
+* ``keystone.auth.plugins.ExternalDeprecatedGrizzly``: This plugin mimics the
+  external authentication behaviour of the Grizzly release.  It tries to get
+  the ``user_id`` from the auth info, assuming external authentication
+  has checked to make sure the user is the same as the one specified
+  in the identity backend. Note that this behaviour is deprecated, and you
+  should switch to ``keystone.auth.plugins.ExternalDefault`` or
+  ``keystone.auth.plugins.ExternalDomain``.
+* ``keystone.auth.plugins.ExternalDefault``: This plugin won't take into account
+  the domain information that the external authentication method may pass down
+  to Keystone and will rely on the configured default domain. The ``REMOTE_USER``
+  variable will be considered as the username.
+* ``keystone.auth.plugins.ExternalDomain``: This plugin will split the
+  ``REMOTE_USER`` by the rightmost ``@``. The first part will be considered
+  as the username, whereas the second one will be the domain.
+
+To configure the plugin that should be used, add it in the ``external`` option
+in the ``auth`` section of your configuration file::
+
+    [auth]
+    external = keystone.auth.plugins.ExternalDefault
+
 
 Using HTTPD authentication
 ==========================
