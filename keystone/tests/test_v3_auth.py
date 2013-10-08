@@ -1617,6 +1617,20 @@ class TestAuthJSON(test_v3.RestfulTestCase):
             password=uuid.uuid4().hex)
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
+    def test_remote_user_with_default_domain(self):
+        api = auth.controllers.Auth()
+        auth_data = self.build_authentication_request()['auth']
+        # Now test to make sure the user name can, itself, contain the
+        # '@' character.
+        user = {'name': 'myname@mydivision'}
+        self.identity_api.update_user(self.default_domain_user['id'], user)
+        context = {'REMOTE_USER': user['name']}
+        auth_info = auth.controllers.AuthInfo(context, auth_data)
+        auth_context = {'extras': {}, 'method_names': []}
+        api.authenticate(context, auth_info, auth_context)
+        self.assertEqual(auth_context['user_id'],
+                         self.default_domain_user['id'])
+
     def test_remote_user_no_realm(self):
         CONF.auth.methods = 'external'
         api = auth.controllers.Auth()

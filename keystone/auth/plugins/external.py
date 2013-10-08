@@ -36,8 +36,7 @@ class ExternalDefault(object):
             msg = _('No authenticated user')
             raise exception.Unauthorized(msg)
         try:
-            names = REMOTE_USER.split('@')
-            username = names.pop(0)
+            username = REMOTE_USER
             domain_id = CONF.identity.default_domain_id
             user_ref = auth_info.identity_api.get_user_by_name(username,
                                                                domain_id)
