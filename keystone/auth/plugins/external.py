@@ -27,6 +27,7 @@ CONF = config.CONF
 
 class ExternalBase(object):
     _metaclass__ = abc.ABCMeta
+
     def authenticate(self, context, auth_info, auth_context):
         """Use REMOTE_USER to look up the user in the identity backend.
 
@@ -58,13 +59,32 @@ class ExternalBase(object):
         pass
 
 
+class ExternalDeprecatedGrizzly(ExternalBase):
+    def _authenticate(self, REMOTE_USER, auth_info):
+        """Use REMOTE_USER to look up the user in the identity backend
+
+        Mimic thge bahaviour of external authentication and REMOTE_USER in
+        the Grizzly release.
+        """
+        # FIXME(gyee): REMOTE_USER is not good enough since we are
+        # requiring domain_id to do user lookup now. Try to get
+        # the user_id from auth_info for now, assuming external auth
+        # has check to make sure user is the same as the one specify
+        # in "identity".
+        if 'password' in auth_info.get_method_names():
+            user_info = auth_info.get_method_data('password')
+            user_ref = auth_info.lookup_user(user_info['user'])
+            return user_ref
+        else:
+            msg = _('Unable to lookup user %s') % (REMOTE_USER)
+            raise exception.Unauthorized(msg)
+
+
 class ExternalDefault(ExternalBase):
     def _authenticate(self, REMOTE_USER, auth_info):
         """Use REMOTE_USER to look up the user in the identity backend."""
-        names = REMOTE_USER.split('@')
-        username = names.pop(0)
         domain_id = CONF.identity.default_domain_id
-        user_ref = auth_info.identity_api.get_user_by_name(username,
+        user_ref = auth_info.identity_api.get_user_by_name(REMOTE_USER,
                                                            domain_id)
         return user_ref
 
