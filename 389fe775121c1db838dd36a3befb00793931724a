@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//670\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-08T01:37:55Z",
+      "side": 1,
+      "message": "can we get this from dependency registry rather than create a new one?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/dependency.py#L17",
+      "revId": "389fe775121c1db838dd36a3befb00793931724a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//9Dc\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 1
@@ -36,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//67s\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-08T01:37:55Z",
+      "side": 1,
+      "message": "Remove commented-out code.",
+      "revId": "389fe775121c1db838dd36a3befb00793931724a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//9fM\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 1
@@ -47,6 +81,23 @@
       "writtenOn": "2013-10-07T13:37:15Z",
       "side": 1,
       "message": "Why is this here?",
+      "revId": "389fe775121c1db838dd36a3befb00793931724a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//67o\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-08T01:37:55Z",
+      "side": 1,
+      "message": "remove this.",
       "revId": "389fe775121c1db838dd36a3befb00793931724a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
