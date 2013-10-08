@@ -273,6 +273,16 @@ class AuthInfo(object):
 
 @dependency.requires('token_provider_api')
 class Auth(controller.V3Controller):
+    """There are no Auth collections
+
+        We are defining collection_name = 'auths' and
+        member_name = 'auth' to facilitate policy decisions.
+
+    """
+
+    collection_name = 'auths'
+    member_name = 'auth'
+
     def __init__(self, *args, **kw):
         super(Auth, self).__init__(*args, **kw)
         self.token_controllers_ref = token.controllers.Auth()
