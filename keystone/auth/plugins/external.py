@@ -22,6 +22,7 @@ import six
 
 from keystone import auth
 from keystone.common import config
+from keystone.common import utils
 from keystone import exception
 from keystone.openstack.common import log as logging
 
@@ -66,10 +67,8 @@ class Base(auth.AuthMethodHandler):
 class Default(Base):
     def _authenticate(self, remote_user, auth_info):
         """Use remote_user to look up the user in the identity backend."""
-        names = remote_user.split('@')
-        username = names.pop(0)
         domain_id = CONF.identity.default_domain_id
-        user_ref = auth_info.identity_api.get_user_by_name(username,
+        user_ref = auth_info.identity_api.get_user_by_name(remote_user,
                                                            domain_id)
         return user_ref
 
@@ -96,19 +95,21 @@ class Domain(Base):
         return user_ref
 
 
-# NOTE(aloga): ExternalDefault and External have been renamed to Default and
-# Domain.
 class ExternalDefault(Default):
     """Deprecated. Please use keystone.auth.external.Default instead."""
+
+    @utils.deprecated(as_of=utils.deprecated.ICEHOUSE,
+                      in_favor_of='keystone.auth.external.Default',
+                      remove_in=+1)
     def __init__(self):
-        msg = _('keystone.auth.external.ExternalDefault is deprecated in'
-                'favor of keystone.auth.external.Default')
-        LOG.warning(msg)
+        super(ExternalDefault, self).__init__()
 
 
 class ExternalDomain(Domain):
     """Deprecated. Please use keystone.auth.external.Domain instead."""
+
+    @utils.deprecated(as_of=utils.deprecated.ICEHOUSE,
+                      in_favor_of='keystone.auth.external.Domain',
+                      remove_in=+1)
     def __init__(self):
-        msg = _('keystone.auth.external.ExternalDomain is deprecated in'
-                'favor of keystone.auth.external.Domain')
-        LOG.warning(msg)
+        super(ExternalDomain, self).__init__()
