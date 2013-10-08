@@ -102,6 +102,8 @@ limits the python environment to just what you're installing as depdendencies,
 useful to keep a clean environment for working on Keystone. The tools directory
 in keystone has a script already created to make this very simple::
 
+    # Install the dependencies of virtualenv
+    $ pip install virtualenv
     $ python tools/install_venv.py
 
 This will create a local virtual environment in the directory ``.venv``.
