@@ -1,12 +1,40 @@
 ===========================================
 Using external authentication with Keystone
 ===========================================
+.. _external-auth:
 
-When Keystone is executed in :doc:`HTTPD <apache-httpd>` it is possible to
-use external authentication methods different from the authentication
-provided by the identity store backend. For example, this makes possible to
-use a SQL identity backend together with X.509 authentication, Kerberos, etc.
-instead of using the username/password combination.
+When Keystone is executed in a web server like :doc:`Apache HTTPD <apache-httpd>`
+it is possible to use external authentication methods different from the
+authentication provided by the identity store backend or the different
+authentication plugins. For example, this makes possible to use an SQL identity
+backend together with X.509 authentication, Kerberos, etc. instead of using the
+username/password combination.
+
+When a web server is in charge of authentication, it is normally possible to set
+the ``REMOTE_USER`` environment variable so that it can be used in the
+underlying application. Keystone can be configured to use that environment
+variable if set, so that the authentication is handled by the http server.
+
+Configuration
+=============
+
+In V2 Identity API, there is no way to disable external authentication. In
+the V3 API in order to activate the external authentication mechanism, the
+``external`` method must be in the list of enabled authentication methods. By
+default it is enabled, so if you don't want to use external authentication,
+remove it from the ``methods`` option in the ``auth`` section.
+
+To configure the plugin that should be used set the ``external`` option again
+in the ``auth`` section. There are two external authentication method plugins
+provided by Keystone:
+
+* ``keystone.auth.plugins.external.Default``: This plugin won't take into account
+  the domain information that the external authentication method may pass down
+  to Keystone and will always use the configured default domain. The ``REMOTE_USER``
+  variable is the username.
+* ``keystone.auth.plugins.external.Domain``: This plugin expects that the
+  ``REMOTE_DOMAIN`` variable contains the domain for the user. If this variable
+  is not present, the configured default domain will be used.
 
 Using HTTPD authentication
 ==========================

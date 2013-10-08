@@ -1104,9 +1104,10 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
 
     def test_remote_user_with_realm(self):
         api = auth.controllers.Auth()
-        remote_user = '%s@%s' % (self.user['name'], self.domain['name'])
+        remote_user = self.user['name']
+        remote_domain = self.domain['name']
         context, auth_info, auth_context = self.build_external_auth_request(
-            remote_user)
+            remote_user, remote_domain=remote_domain)
 
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'], self.user['id'])
@@ -1115,9 +1116,9 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
         # '@' character.
         user = {'name': 'myname@mydivision'}
         self.identity_api.update_user(self.user['id'], user)
-        remote_user = '%s@%s' % (user["name"], self.domain['name'])
+        remote_user = user["name"]
         context, auth_info, auth_context = self.build_external_auth_request(
-            remote_user)
+            remote_user, remote_domain=remote_domain)
 
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'], self.user['id'])
@@ -1126,8 +1127,10 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
         CONF.token.bind = ['kerberos']
         auth_data = self.build_authentication_request(
             project_id=self.project['id'])
-        remote_user = '%s@%s' % (self.user['name'], self.domain['name'])
+        remote_user = self.user['name']
+        remote_domain = self.domain['name']
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
+                                             'REMOTE_DOMAIN': remote_domain,
                                              'AUTH_TYPE': 'Negotiate'})
         r = self.post('/auth/tokens', body=auth_data)
         token = self.assertValidProjectScopedTokenResponse(r)
@@ -1136,8 +1139,10 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
     def test_unscoped_bind_with_remote_user(self):
         CONF.token.bind = ['kerberos']
         auth_data = self.build_authentication_request()
-        remote_user = '%s@%s' % (self.user['name'], self.domain['name'])
+        remote_user = self.user['name']
+        remote_domain = self.domain['name']
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
+                                             'REMOTE_DOMAIN': remote_domain,
                                              'AUTH_TYPE': 'Negotiate'})
         r = self.post('/auth/tokens', body=auth_data)
         token = self.assertValidUnscopedTokenResponse(r)
@@ -1605,6 +1610,15 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         api = auth.controllers.Auth()
         context, auth_info, auth_context = self.build_external_auth_request(
             self.default_domain_user['name'])
+        api.authenticate(context, auth_info, auth_context)
+        self.assertEqual(auth_context['user_id'],
+                         self.default_domain_user['id'])
+        # Now test to make sure the user name can, itself, contain the
+        # '@' character.
+        user = {'name': 'myname@mydivision'}
+        self.identity_api.update_user(self.default_domain_user['id'], user)
+        context, auth_info, auth_context = self.build_external_auth_request(
+            user["name"])
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'],
                          self.default_domain_user['id'])
