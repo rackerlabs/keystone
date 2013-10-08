@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//2k8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-08T23:35:41Z",
+      "side": 1,
+      "message": "Remove lines 7 and 8 to solve the current issue pep8 is complaining about.",
+      "revId": "60199c2756bdf7e798bae983e9e924f9b3451feb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
