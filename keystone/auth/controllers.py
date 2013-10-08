@@ -274,6 +274,9 @@ class AuthInfo(object):
 
 @dependency.requires('token_provider_api')
 class Auth(controller.V3Controller):
+    collection_name = 'auths'
+    member_name = 'auth'
+
     def __init__(self, *args, **kw):
         super(Auth, self).__init__(*args, **kw)
         self.token_controllers_ref = token.controllers.Auth()
