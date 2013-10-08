@@ -33,6 +33,9 @@ import datetime
 import functools
 import os
 import time
+import warnings
+
+from testtools import matchers
 
 from keystone.common import utils
 from keystone import tests
@@ -105,3 +108,68 @@ class UtilsTestCase(tests.TestCase):
         for d in ['+0', '-11', '-8', '-5', '+5', '+8', '+14']:
             TZ = 'UTC' + d
             _test_unixtime()
+
+
+class TestDeprecating(tests.TestCase):
+
+    def assertDeprecationWarning(self, w, msg):
+        self.assertThat(w[-1].message,
+                        matchers.IsInstance(DeprecationWarning))
+        self.assertThat(str(w[-1].message),
+                        matchers.Contains(msg))
+
+    def test_deprecating_a_function(self):
+
+        @utils.deprecate
+        def do_outdated_stuff(f):
+            return f
+
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+
+            retval = do_outdated_stuff('here')
+
+            self.assertThat(retval, matchers.Equals('here'))
+            self.assertDeprecationWarning(w, 'do_outdated_stuff')
+
+    def test_deprecating_a_method(self):
+
+        class C(object):
+            @utils.deprecate
+            def outdated_method(self, *args):
+                return args
+
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+
+            retval = C().outdated_method(1, 'of anything')
+
+            self.assertThat(retval, matchers.Equals((1, 'of anything')))
+            self.assertDeprecationWarning(w, 'outdated_method')
+
+    def test_deprecating_with_a_custom_error_message(self):
+
+        @utils.deprecate('A custom error message')
+        def do_outdated_stuff(f):
+            return f
+
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+
+            do_outdated_stuff('here')
+
+            self.assertDeprecationWarning(w, 'A custom error message')
+
+    def test_deprecating_with_a_custom_error_message_with_name(self):
+
+        @utils.deprecate('stop using %(name)s')
+        def do_outdated_stuff(f):
+            return f
+
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+
+            do_outdated_stuff('here')
+
+            expected_msg = 'stop using do_outdated_stuff'
+            self.assertDeprecationWarning(w, expected_msg)
