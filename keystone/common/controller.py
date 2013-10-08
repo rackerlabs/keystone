@@ -147,8 +147,18 @@ def protected(callback=None):
                         context['subject_token_id'])
                     policy_dict.setdefault('target', {})
                     policy_dict['target'].setdefault(self.member_name, {})
-                    policy_dict['target'][self.member_name]['user_id'] = (
+                    policy_dict['target'][self.member_name].setdefault(
+                        'user', {})
+                    policy_dict['target'][self.member_name]['user']['id'] = (
                         token_ref['user_id'])
+                    if 'domain' in token_ref['user']:
+                        policy_dict['target'][self.member_name].setdefault(
+                            'user', {})
+                        policy_dict['target'][self.member_name][
+                            'user'].setdefault('domain', {})
+                        policy_dict['target'][self.member_name]['user'][
+                            'domain']['id'] = (
+                                token_ref['user']['domain']['id'])
 
                 # Add in the kwargs, which means that any entity provided as a
                 # parameter for calls like create and update will be included.
