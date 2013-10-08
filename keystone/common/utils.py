@@ -19,11 +19,13 @@
 #    under the License.
 
 import calendar
+import functools
 import grp
 import hashlib
 import json
 import os
 import pwd
+import warnings
 
 import passlib.hash
 
@@ -511,3 +513,12 @@ def make_dirs(path, mode=None, user=None, group=None, log=None):
             raise EnvironmentError("makedirs('%s'): %s" % (path, exc.strerror))
 
     set_permissions(path, mode, user, group, log)
+
+
+def deprecate(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        msg = _("%s is deprecated and will be removed in future releases")
+        warnings.warn(msg % func.__name__, DeprecationWarning, stacklevel=2)
+        return func(*args, **kwargs)
+    return wrapper
