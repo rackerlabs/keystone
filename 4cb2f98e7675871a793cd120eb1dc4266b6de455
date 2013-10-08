@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//4sM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-08T13:52:14Z",
+      "side": 1,
+      "message": "Add partial bug #",
+      "revId": "4cb2f98e7675871a793cd120eb1dc4266b6de455",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//4sE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-08T13:52:14Z",
+      "side": 1,
+      "message": "Remove commented out code",
+      "revId": "4cb2f98e7675871a793cd120eb1dc4266b6de455",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
