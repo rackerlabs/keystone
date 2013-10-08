@@ -32,6 +32,13 @@ provided by Keystone:
   the domain information that the external authentication method may pass down
   to Keystone and will always use the configured default domain. The ``REMOTE_USER``
   variable is the username.
+* ``keystone.auth.plugins.external.DeprecatedGrizzly``: This plugin mimics the
+  external authentication behaviour of the Grizzly release.  It tries to get
+  the ``user_id`` from the auth info, assuming external authentication
+  has checked to make sure the user is the same as the one specified
+  in the identity backend. Note that this behaviour is deprecated, and you
+  should switch to ``keystone.auth.plugins.external.Default`` or
+  ``keystone.auth.plugins.external.Domain``.
 * ``keystone.auth.plugins.external.Domain``: This plugin expects that the
   ``REMOTE_USER`` variable is formatted like ``<username>@<domain>``, where
   ``username`` is the name of the user, and ``domain`` is the domain the user is
