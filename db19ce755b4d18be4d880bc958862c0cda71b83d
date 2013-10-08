@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//7GQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-08T00:44:20Z",
+      "side": 1,
+      "message": "add a comma after public.",
+      "revId": "db19ce755b4d18be4d880bc958862c0cda71b83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//7F8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-08T00:44:20Z",
+      "side": 1,
+      "message": "The security required for the CA key is more than what\u0027s required for the server key, so I don\u0027t think they should go in the same place.\n\nIn a previous project, I decided it was better to just delete the CA key after generating certs. If users needed to regenerate the certs, it would be easier to just run the command to regenerate all of them with the script rather than generating by hand.",
+      "revId": "db19ce755b4d18be4d880bc958862c0cda71b83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
