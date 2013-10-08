@@ -1610,6 +1610,15 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'],
                          self.default_domain_user['id'])
+        # Now test to make sure the user name can, itself, contain the
+        # '@' character.
+        user = {'name': 'myname@mydivision'}
+        self.identity_api.update_user(self.default_domain_user['id'], user)
+        context, auth_info, auth_context = self.build_external_auth_request(
+            user["name"])
+        api.authenticate(context, auth_info, auth_context)
+        self.assertEqual(auth_context['user_id'],
+                         self.default_domain_user['id'])
 
     def test_remote_user_no_domain(self):
         api = auth.controllers.Auth()
