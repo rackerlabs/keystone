@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//7C8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-08T01:02:25Z",
+      "side": 1,
+      "message": "change \"direct\" to \"directly\"",
+      "revId": "5b7a9775935f42d64b891bd3b3671c5764696485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//7C4\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2615,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-08T01:02:25Z",
+      "side": 1,
+      "message": "nice, should use this everywhere. suggest change name to create_user_dict ?",
+      "revId": "5b7a9775935f42d64b891bd3b3671c5764696485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//7Cs\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2643,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-08T01:02:25Z",
+      "side": 1,
+      "message": "move this down a line since it\u0027s not used yet.",
+      "revId": "5b7a9775935f42d64b891bd3b3671c5764696485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//7Co\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-08T01:02:25Z",
+      "side": 1,
+      "message": "suggest rather than skip test what it does. (same applies to all these)",
+      "revId": "5b7a9775935f42d64b891bd3b3671c5764696485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
