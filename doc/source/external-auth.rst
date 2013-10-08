@@ -1,12 +1,51 @@
 ===========================================
 Using external authentication with Keystone
 ===========================================
+.. _external-auth:
 
 When Keystone is executed in :doc:`HTTPD <apache-httpd>` it is possible to
 use external authentication methods different from the authentication
-provided by the identity store backend. For example, this makes possible to
-use a SQL identity backend together with X.509 authentication, Kerberos, etc.
-instead of using the username/password combination.
+provided by the identity store backend or the different authentication plugins.
+For example, this makes possible to use a SQL identity backend together with
+X.509 authentication, Kerberos, etc. instead of using the username/password
+combination.
+
+V3 Configuration
+================
+
+In pre-Havana Keystone, there was no way to disable external authentication. In
+the Havana release, in order to activate the external authentication mechanism in
+Keystone `external` must be in the list of enabled authentication
+methods::
+
+    [auth]
+    methods = external, password, token
+
+There are three external authentication method plugins provided by Keystone:
+
+* ``keystone.auth.plugins.external.Default``: This plugin won't take into account
+  the domain information that the external authentication method may pass down
+  to Keystone and will always use the configured default domain. The ``REMOTE_USER``
+  variable is the username.
+* ``keystone.auth.plugins.external.DeprecatedGrizzly``: This plugin mimics the
+  external authentication behaviour of the Grizzly release.  It tries to get
+  the ``user_id`` from the auth info, assuming external authentication
+  has checked to make sure the user is the same as the one specified
+  in the identity backend. Note that this behaviour is deprecated, and you
+  should switch to ``keystone.auth.plugins.external.Default`` or
+  ``keystone.auth.plugins.external.Domain``.
+* ``keystone.auth.plugins.external.Domain``: This plugin expects that the
+  ``REMOTE_USER`` variable is formatted like ``<username>@<domain>``, where
+  ``username`` is the name of the user, and ``domain`` is the domain the user is
+  in. The ``REMOTE_USER`` variable will be splitted by the rightmost ``@``. The
+  domain is mandatory.
+
+To configure the plugin that should be used, add it in the ``external`` option
+in the ``auth`` section of your configuration file::
+
+    [auth]
+    external = keystone.auth.plugins.external.Default
+
 
 Using HTTPD authentication
 ==========================
