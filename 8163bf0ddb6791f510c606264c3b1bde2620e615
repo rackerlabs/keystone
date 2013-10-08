@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//4q8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-08T13:54:36Z",
+      "side": 1,
+      "message": "change \u0027entity_api\u0027 to \u0027identity_api\u0027 and add partial bug #",
+      "revId": "8163bf0ddb6791f510c606264c3b1bde2620e615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//4rM\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-08T13:54:36Z",
+      "side": 1,
+      "message": "remove commented out code.",
+      "revId": "8163bf0ddb6791f510c606264c3b1bde2620e615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
