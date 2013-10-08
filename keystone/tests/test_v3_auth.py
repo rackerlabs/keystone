@@ -1088,6 +1088,40 @@ class TestAuthExternalDisabled(test_v3.RestfulTestCase):
                           auth_context)
 
 
+class TestAuthExternalDeprecatedGrizzly(test_v3.RestfulTestCase):
+    content_type = 'json'
+
+    def config_files(self):
+        list = self._config_file_list[:]
+        list.append('auth_plugin_external_deprecated.conf')
+        return list
+
+    def test_remote_user(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])['auth']
+        api = auth.controllers.Auth()
+        context = {'REMOTE_USER': self.user['name']}
+        auth_info = auth.controllers.AuthInfo(None, auth_data)
+        auth_context = {'extras': {}, 'method_names': []}
+        api.authenticate(context, auth_info, auth_context)
+        self.assertEqual(auth_context['user_id'], self.user['id'])
+
+    def test_remote_user_no_domain(self):
+        auth_data = self.build_authentication_request(
+            username=self.user['name'],
+            password=self.user['password'])['auth']
+        api = auth.controllers.Auth()
+        context = {'REMOTE_USER': self.user['name']}
+        auth_info = auth.controllers.AuthInfo(None, auth_data)
+        auth_context = {'extras': {}, 'method_names': []}
+        self.assertRaises(exception.Unauthorized,
+                          api.authenticate,
+                          context,
+                          auth_info,
+                          auth_context)
+
+
 class TestAuthExternalDomain(test_v3.RestfulTestCase):
     content_type = 'json'
 
@@ -1141,6 +1175,11 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
 
 class TestAuthJSON(test_v3.RestfulTestCase):
     content_type = 'json'
+
+    def config_files(self):
+        list = self._config_file_list[:]
+        list.append('auth_plugin_external_default.conf')
+        return list
 
     def test_unscoped_token_with_user_id(self):
         auth_data = self.build_authentication_request(
@@ -1623,6 +1662,16 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request()['auth']
         context = {'REMOTE_USER': self.default_domain_user['name']}
         auth_info = auth.controllers.AuthInfo(None, auth_data)
+        auth_context = {'extras': {}, 'method_names': []}
+        api.authenticate(context, auth_info, auth_context)
+        self.assertEqual(auth_context['user_id'],
+                         self.default_domain_user['id'])
+        # Now test to make sure the user name can, itself, contain the
+        # '@' character.
+        user = {'name': 'myname@mydivision'}
+        self.identity_api.update_user(self.default_domain_user['id'], user)
+        context = {'REMOTE_USER': user['name']}
+        auth_info = auth.controllers.AuthInfo(context, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'],
