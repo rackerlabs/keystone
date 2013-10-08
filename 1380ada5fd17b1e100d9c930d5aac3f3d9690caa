@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//27c\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-08T21:42:41Z",
+      "side": 1,
+      "message": "Can this be something move descriptive like: \"Adds domain id to policy_dict\" or whatever makes sense to you.  In a second paragraph you could mentions bug 1186059.",
+      "revId": "1380ada5fd17b1e100d9c930d5aac3f3d9690caa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//27I\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-08T21:42:41Z",
+      "side": 1,
+      "message": "How about \u0027Fixes-Bug: #1233874\u0027?",
+      "revId": "1380ada5fd17b1e100d9c930d5aac3f3d9690caa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
