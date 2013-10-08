@@ -19,11 +19,13 @@
 #    under the License.
 
 import calendar
+import functools
 import grp
 import hashlib
 import json
 import os
 import pwd
+import warnings
 
 import passlib.hash
 
@@ -511,3 +513,40 @@ def make_dirs(path, mode=None, user=None, group=None, log=None):
             raise EnvironmentError("makedirs('%s'): %s" % (path, exc.strerror))
 
     set_permissions(path, mode, user, group, log)
+
+
+def deprecate(message_or_func):
+    """A decorator warning user's about deprecating callables.
+
+    deprecate can be used without arguments to warn using the default
+    warning message or a custom warning message can be specified.  If
+    the custom warning message contains %(name)s, it will be replaced
+    with the deprecated callable's name.
+
+    Using the default warning message:
+
+    >>> @deprecate
+    ... def a(): pass
+
+    Using a custom warning message:
+
+    >>> @deprecate('please stop using %(name)s')
+    ... def b(): pass
+    """
+
+    def decorator(func):
+        @functools.wraps
+        def wrapped(*args, **kwargs):
+            warnings.warn(msg % dict(name=func.__name__),
+                          DeprecationWarning,
+                          stacklevel=2)
+            return func(*args, **kwargs)
+        return wrapped
+
+    if callable(message_or_func):
+        msg = _("%(name)s is deprecated and will be removed "
+                "in future releases")
+        return decorator(message_or_func)
+
+    msg = str(message_or_func)
+    return decorator
