@@ -19,6 +19,7 @@ import uuid
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import utils
 from keystone import exception
 
 
@@ -27,20 +28,25 @@ INTERFACES = ['public', 'internal', 'admin']
 
 @dependency.requires('catalog_api')
 class Service(controller.V2Controller):
+
+    @utils.deprecate
     def get_services(self, context):
         self.assert_admin(context)
         service_list = self.catalog_api.list_services()
         return {'OS-KSADM:services': service_list}
 
+    @utils.deprecate
     def get_service(self, context, service_id):
         self.assert_admin(context)
         service_ref = self.catalog_api.get_service(service_id)
         return {'OS-KSADM:service': service_ref}
 
+    @utils.deprecate
     def delete_service(self, context, service_id):
         self.assert_admin(context)
         self.catalog_api.delete_service(service_id)
 
+    @utils.deprecate
     def create_service(self, context, OS_KSADM_service):
         self.assert_admin(context)
         service_id = uuid.uuid4().hex
@@ -53,6 +59,8 @@ class Service(controller.V2Controller):
 
 @dependency.requires('catalog_api')
 class Endpoint(controller.V2Controller):
+
+    @utils.deprecate
     def get_endpoints(self, context):
         """Merge matching v3 endpoint refs into legacy refs."""
         self.assert_admin(context)
@@ -77,6 +85,7 @@ class Endpoint(controller.V2Controller):
             legacy_ep['%surl' % endpoint['interface']] = endpoint['url']
         return {'endpoints': legacy_endpoints.values()}
 
+    @utils.deprecate
     def create_endpoint(self, context, endpoint):
         """Create three v3 endpoint refs based on a legacy ref."""
         self.assert_admin(context)
@@ -109,6 +118,7 @@ class Endpoint(controller.V2Controller):
         legacy_endpoint_ref['id'] = legacy_endpoint_id
         return {'endpoint': legacy_endpoint_ref}
 
+    @utils.deprecate
     def delete_endpoint(self, context, endpoint_id):
         """Delete up to three v3 endpoint refs based on a legacy ref ID."""
         self.assert_admin(context)

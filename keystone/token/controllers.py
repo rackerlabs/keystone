@@ -19,6 +19,7 @@ import json
 from keystone.common import cms
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
 from keystone import exception
@@ -34,23 +35,26 @@ DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
 class ExternalAuthNotApplicable(Exception):
     """External authentication is not applicable."""
-    pass
 
 
 @dependency.requires('token_provider_api')
 class Auth(controller.V2Controller):
+
+    @utils.deprecate
     def ca_cert(self, context, auth=None):
         ca_file = open(CONF.signing.ca_certs, 'r')
         data = ca_file.read()
         ca_file.close()
         return data
 
+    @utils.deprecate
     def signing_cert(self, context, auth=None):
         cert_file = open(CONF.signing.certfile, 'r')
         data = cert_file.read()
         cert_file.close()
         return data
 
+    @utils.deprecate
     def authenticate(self, context, auth=None):
         """Authenticate credentials and return a token.
 
@@ -394,6 +398,7 @@ class Auth(controller.V2Controller):
                     _('Token does not belong to specified tenant.'))
         return data
 
+    @utils.deprecate
     @controller.protected()
     def validate_token_head(self, context, token_id):
         """Check that a token is valid.
@@ -406,6 +411,7 @@ class Auth(controller.V2Controller):
         belongs_to = context['query_string'].get('belongsTo')
         self.token_provider_api.check_v2_token(token_id, belongs_to)
 
+    @utils.deprecate
     @controller.protected()
     def validate_token(self, context, token_id):
         """Check that a token is valid.
@@ -418,12 +424,14 @@ class Auth(controller.V2Controller):
         belongs_to = context['query_string'].get('belongsTo')
         return self.token_provider_api.validate_v2_token(token_id, belongs_to)
 
+    @utils.deprecate
     def delete_token(self, context, token_id):
         """Delete a token, effectively invalidating it for authz."""
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
         self.token_api.delete_token(token_id)
 
+    @utils.deprecate
     @controller.protected()
     def revocation_list(self, context, auth=None):
         tokens = self.token_api.list_revoked_tokens()
@@ -440,6 +448,7 @@ class Auth(controller.V2Controller):
 
         return {'signed': signed_text}
 
+    @utils.deprecate
     def endpoints(self, context, token_id):
         """Return a list of endpoints available to the token."""
         self.assert_admin(context)
