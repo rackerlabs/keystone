@@ -26,12 +26,15 @@ from keystone import config
 from keystone import exception
 from keystone.openstack.common import log as logging
 
+
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 LOG = logging.getLogger(__name__)
 
 
 class Tenant(controller.V2Controller):
+
+    @controller.v2_deprecated
     def get_all_projects(self, context, **kw):
         """Gets a list of all tenants for an admin user."""
         if 'name' in context['query_string']:
@@ -48,6 +51,7 @@ class Tenant(controller.V2Controller):
         }
         return self._format_project_list(tenant_refs, **params)
 
+    @controller.v2_deprecated
     def get_projects_for_token(self, context, **kw):
         """Get valid tenants for token based on token used to authenticate.
 
@@ -74,12 +78,14 @@ class Tenant(controller.V2Controller):
         }
         return self._format_project_list(tenant_refs, **params)
 
+    @controller.v2_deprecated
     def get_project(self, context, tenant_id):
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
         ref = self.identity_api.get_project(tenant_id)
         return {'tenant': self.filter_domain_id(ref)}
 
+    @controller.v2_deprecated
     def get_project_by_name(self, context, tenant_name):
         self.assert_admin(context)
         ref = self.identity_api.get_project_by_name(
@@ -87,6 +93,7 @@ class Tenant(controller.V2Controller):
         return {'tenant': self.filter_domain_id(ref)}
 
     # CRUD Extension
+    @controller.v2_deprecated
     def create_project(self, context, tenant):
         tenant_ref = self._normalize_dict(tenant)
 
@@ -101,6 +108,7 @@ class Tenant(controller.V2Controller):
             self._normalize_domain_id(context, tenant_ref))
         return {'tenant': self.filter_domain_id(tenant)}
 
+    @controller.v2_deprecated
     def update_project(self, context, tenant_id, tenant):
         self.assert_admin(context)
         # Remove domain_id if specified - a v2 api caller should not
@@ -117,12 +125,14 @@ class Tenant(controller.V2Controller):
             tenant_id, clean_tenant)
         return {'tenant': tenant_ref}
 
+    @controller.v2_deprecated
     def delete_project(self, context, tenant_id):
         self.assert_admin(context)
         # Delete all tokens belonging to the users for that project
         self._delete_tokens_for_project(tenant_id)
         self.assignment_api.delete_project(tenant_id)
 
+    @controller.v2_deprecated
     def get_project_users(self, context, tenant_id, **kw):
         self.assert_admin(context)
         user_refs = []
@@ -168,11 +178,14 @@ class Tenant(controller.V2Controller):
 
 
 class User(controller.V2Controller):
+
+    @controller.v2_deprecated
     def get_user(self, context, user_id):
         self.assert_admin(context)
         ref = self.identity_api.get_user(user_id)
         return {'user': self.identity_api.v3_to_v2_user(ref)}
 
+    @controller.v2_deprecated
     def get_users(self, context):
         # NOTE(termie): i can't imagine that this really wants all the data
         #               about every single user in the system...
@@ -184,12 +197,14 @@ class User(controller.V2Controller):
         user_list = self.identity_api.list_users()
         return {'users': self.identity_api.v3_to_v2_user(user_list)}
 
+    @controller.v2_deprecated
     def get_user_by_name(self, context, user_name):
         self.assert_admin(context)
         ref = self.identity_api.get_user_by_name(user_name, DEFAULT_DOMAIN_ID)
         return {'user': self.identity_api.v3_to_v2_user(ref)}
 
     # CRUD extension
+    @controller.v2_deprecated
     def create_user(self, context, user):
         user = self._normalize_dict(user)
         self.assert_admin(context)
@@ -217,6 +232,7 @@ class User(controller.V2Controller):
             self.identity_api.add_user_to_project(default_project_id, user_id)
         return {'user': new_user_ref}
 
+    @controller.v2_deprecated
     def update_user(self, context, user_id, user):
         # NOTE(termie): this is really more of a patch than a put
         self.assert_admin(context)
@@ -286,20 +302,25 @@ class User(controller.V2Controller):
 
         return {'user': user_ref}
 
+    @controller.v2_deprecated
     def delete_user(self, context, user_id):
         self.assert_admin(context)
         self.identity_api.delete_user(user_id)
         self._delete_tokens_for_user(user_id)
 
+    @controller.v2_deprecated
     def set_user_enabled(self, context, user_id, user):
         return self.update_user(context, user_id, user)
 
+    @controller.v2_deprecated
     def set_user_password(self, context, user_id, user):
         return self.update_user(context, user_id, user)
 
 
 class Role(controller.V2Controller):
+
     # COMPAT(essex-3)
+    @controller.v2_deprecated
     def get_user_roles(self, context, user_id, tenant_id=None):
         """Get the roles for a user and tenant pair.
 
@@ -318,10 +339,12 @@ class Role(controller.V2Controller):
                           for x in roles]}
 
     # CRUD extension
+    @controller.v2_deprecated
     def get_role(self, context, role_id):
         self.assert_admin(context)
         return {'role': self.identity_api.get_role(role_id)}
 
+    @controller.v2_deprecated
     def create_role(self, context, role):
         role = self._normalize_dict(role)
         self.assert_admin(context)
@@ -335,6 +358,7 @@ class Role(controller.V2Controller):
         role_ref = self.identity_api.create_role(role_id, role)
         return {'role': role_ref}
 
+    @controller.v2_deprecated
     def delete_role(self, context, role_id):
         self.assert_admin(context)
         # The driver will delete any assignments for this role.
@@ -343,10 +367,12 @@ class Role(controller.V2Controller):
         self._delete_tokens_for_role(role_id)
         self.identity_api.delete_role(role_id)
 
+    @controller.v2_deprecated
     def get_roles(self, context):
         self.assert_admin(context)
         return {'roles': self.identity_api.list_roles()}
 
+    @controller.v2_deprecated
     def add_role_to_user(self, context, user_id, role_id, tenant_id=None):
         """Add a role to a user and tenant pair.
 
@@ -365,6 +391,7 @@ class Role(controller.V2Controller):
         role_ref = self.identity_api.get_role(role_id)
         return {'role': role_ref}
 
+    @controller.v2_deprecated
     def remove_role_from_user(self, context, user_id, role_id, tenant_id=None):
         """Remove a role from a user and tenant pair.
 
@@ -384,6 +411,7 @@ class Role(controller.V2Controller):
         self._delete_tokens_for_user(user_id)
 
     # COMPAT(diablo): CRUD extension
+    @controller.v2_deprecated
     def get_role_refs(self, context, user_id):
         """Ultimate hack to get around having to make role_refs first-class.
 
@@ -414,6 +442,7 @@ class Role(controller.V2Controller):
         return {'roles': o}
 
     # COMPAT(diablo): CRUD extension
+    @controller.v2_deprecated
     def create_role_ref(self, context, user_id, role):
         """This is actually used for adding a user to a tenant.
 
@@ -433,6 +462,7 @@ class Role(controller.V2Controller):
         return {'role': role_ref}
 
     # COMPAT(diablo): CRUD extension
+    @controller.v2_deprecated
     def delete_role_ref(self, context, user_id, role_ref_id):
         """This is actually used for deleting a user from a tenant.
 
