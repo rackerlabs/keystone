@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//2mU\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-08T23:27:38Z",
+      "side": 1,
+      "message": "Does our logging system use CaptureWarnings?  I am not seeing it referenced in our sample logging.conf or as a defaulted-on oslo option.  This could mean that warnings will not be captured in all cases for deprecation.  If we aren\u0027t capturing warnings (in one-way or another) we should be using a standard log call here instead.\n\nhttp://docs.python.org/2/library/logging.html#logging.captureWarnings",
+      "revId": "6c2be9244cc074f50801dc284fe7a2ecbc4a92f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
