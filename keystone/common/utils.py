@@ -519,6 +519,8 @@ def deprecate(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         msg = _("%s is deprecated and will be removed in future releases")
-        warnings.warn(msg % func.__name__, DeprecationWarning, stacklevel=2)
+        warnings.warn(unicode(msg % func.__name__),
+                      DeprecationWarning,
+                      stacklevel=2)
         return func(*args, **kwargs)
     return wrapper
