@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATH//204\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-10-08T22:11:06Z",
+      "side": 1,
+      "message": "\"Got database server has gone away\" doesn\u0027t sound right. How about get rid of \"Got\"?\nJust \"Database server has gone away\"?",
+      "revId": "f18dbd7e74303b7e0af97439ed935038e2231feb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//H+g\u003d",
         "filename": "keystone/tests/test_sql_core.py",
         "patchSetId": 4
