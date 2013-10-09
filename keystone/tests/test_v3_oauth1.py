@@ -19,7 +19,6 @@ import os
 import urlparse
 import uuid
 
-from keystone.common import cms
 from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib
@@ -27,6 +26,7 @@ from keystone.contrib import oauth1
 from keystone.contrib.oauth1 import controllers
 from keystone.openstack.common import importutils
 from keystone.tests import test_v3
+from keystoneclient.common import cms
 
 
 CONF = config.CONF
