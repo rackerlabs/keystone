@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//0Xw\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T13:03:38Z",
+      "side": 1,
+      "message": "hrm, i\u0027m not sure confdir is a better name -- it really is the test dir!",
+      "revId": "9450b7cbc147e9cb43f23c05f62af0d2055907c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
