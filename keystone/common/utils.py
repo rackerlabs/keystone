@@ -19,6 +19,7 @@
 #    under the License.
 
 import calendar
+import functools
 import grp
 import hashlib
 import json
@@ -516,3 +517,78 @@ def make_dirs(path, mode=None, user=None, group=None, log=None):
             raise EnvironmentError("makedirs('%s'): %s" % (path, exc.strerror))
 
     set_permissions(path, mode, user, group, log)
+
+
+class deprecated(object):
+    """A decorator to mark callables as deprecated.
+
+    deprecated can be used without arguments to warn using the default
+    warning message or a custom warning message can be specified.  If
+    the custom warning message contains %(name)s, it will be replaced
+    with the deprecated callable's name.
+
+    Using the default warning message:
+
+    >>> @deprecated
+    ... def a(): pass
+
+    Using a custom warning message:
+
+    >>> @deprecated('please stop using %(name)s')
+    ... def b(): pass
+
+    """
+
+    FOLSOM = 'F'
+    GRIZZLY = 'G'
+    ICEHOUSE = 'I'
+
+    _RELEASES = {
+        'F': 'Folsom',
+        'G': 'Grizzly',
+        'H': 'Havana',
+        'I': 'Icehouse',
+    }
+
+    _deprecated_msg_with_alternative = (
+        '%(what)s is deprecated as of %(as_of)s in favor of '
+        '%(in_favor_of)s and may be removed in %(removed_in)s.')
+
+    _deprecated_msg_no_alternative = (
+        '%(what)s is deprecated as of %(as_of)s and may be '
+        'removed in %(removed_in)s. It will not be superseded.')
+
+    def __init__(self, as_of, in_favor_of=None, what=None):
+        self.as_of = as_of
+        self.in_favor_of = in_favor_of
+        self.what = what
+
+    def __call__(self, func):
+        if not self.what:
+            self.what = func.__name__ + '()'
+
+        @functools.wraps(func)
+        def wrapped(*args, **kwargs):
+            msg, details = self._build_message()
+            LOG.deprecated(msg, details)
+            return func(*args, **kwargs)
+        return wrapped
+
+    def _get_release_plus_2(self, release):
+        new_release = chr(ord(release) + 2)
+        if new_release in self._RELEASES:
+            return self._RELEASES[new_release]
+        else:
+            return 'the "%s" release' % new_release
+
+    def _build_message(self):
+        details = dict(what=self.what,
+                       as_of=self._RELEASES[self.as_of],
+                       removed_in=self._get_release_plus_2(self.as_of))
+
+        if self.in_favor_of:
+            details['in_favor_of'] = self.in_favor_of
+            msg = self._deprecated_msg_with_alternative
+        else:
+            msg = self._deprecated_msg_no_alternative
+        return msg, details
