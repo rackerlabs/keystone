@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//zbk\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T16:09:15Z",
+      "side": 1,
+      "message": "i feel like this reads better as a decorator if it\u0027s past tense:\n\n  @deprecated",
+      "revId": "4dd9c7a3744c61686be1ea37c2ec550f192987e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//zX8\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T16:09:15Z",
+      "side": 1,
+      "message": "same issue as in https://review.openstack.org/#/c/50186/ -- by default there\u0027s no recommendation for an alternative (see an example in comment on L548)",
+      "revId": "4dd9c7a3744c61686be1ea37c2ec550f192987e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//zaw\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T16:09:15Z",
+      "side": 1,
+      "message": "i\u0027m not familiar with how it\u0027s handled, but i believe oslo logging also provides for:\n\n  LOG.deprecated()",
+      "revId": "4dd9c7a3744c61686be1ea37c2ec550f192987e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//zVM\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T16:09:15Z",
+      "side": 1,
+      "message": "(wishlist) it\u0027d be nice to be able to specify the earliest release where a feature can be removed (both for our own sake and for end users).\n\nthe openstack convention is to be release - 2 backwards compatible on the service side, which implies that a deprecated feature can be removed in release + 2 after being officially deprecated. so i\u0027m envisioning something like:\n\n  @deprecated(as_of\u003dICEHOUSE, in_favor_of\u003d\u0027the v3 API\u0027)\n  def some_api_method(self):\n    pass\n\nresulting in a log such as:\n\n  WARNING: some_api_method is deprecated in favor\n  of v3 API and may be removed in Icehouse + 2 releases.\n\nThis is obviously verbose for deprecating the entire v2 API method by method, so you could have a helper decorator that has the correct arguments pre-set, e.g.:\n\n  @v2_api_deprecated",
+      "revId": "4dd9c7a3744c61686be1ea37c2ec550f192987e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
