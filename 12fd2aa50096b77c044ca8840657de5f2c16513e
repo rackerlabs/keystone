@@ -16,6 +16,57 @@
       "revId": "12fd2aa50096b77c044ca8840657de5f2c16513e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//0HU\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-09T13:59:48Z",
+      "side": 1,
+      "message": "could use assertEqual(data.read_args, [])... I think that would be more obvious.",
+      "revId": "12fd2aa50096b77c044ca8840657de5f2c16513e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//0HE\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-09T13:59:48Z",
+      "side": 1,
+      "message": "similar here, assertEqual(data.read_kwargs, {})",
+      "revId": "12fd2aa50096b77c044ca8840657de5f2c16513e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//0HA\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-09T13:59:48Z",
+      "side": 1,
+      "message": "then this could be self.assertEqual(data.read_args[0], [10])",
+      "revId": "12fd2aa50096b77c044ca8840657de5f2c16513e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
