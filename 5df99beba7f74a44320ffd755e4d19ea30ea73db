@@ -16,6 +16,24 @@
       "revId": "5df99beba7f74a44320ffd755e4d19ea30ea73db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//z34\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-09T14:33:08Z",
+      "side": 1,
+      "message": "good point, i\u0027ll wait and see if there are other comments before uploading a new patch set.",
+      "parentUuid": "AAAATH//0Ow\u003d",
+      "revId": "5df99beba7f74a44320ffd755e4d19ea30ea73db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
