@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//znU\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T15:19:19Z",
+      "side": 1,
+      "message": "i\u0027d rather not merge tests asserting broken behavior without at least referencing a bug explaining that this is misbehaving",
+      "revId": "8a1775ee186856c97145630c0ceb87ed695e3f1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
