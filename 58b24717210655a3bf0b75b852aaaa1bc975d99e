@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//2i4\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-09T03:44:33Z",
+      "side": 1,
+      "message": "This is here because keystone.common.kvs:DictKvs.get doesn\u0027t work like dict.get.  The default is None, but if the lookup fails and the default is None then an exception is raised.  This is why the Kvs backend couldn\u0027t update a user\u0027s name.  See http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/kvs.py#n28\n\nIf this is a bug I can change it so that if a default is provided it is returned and if not then the exception is raised.",
+      "parentUuid": "AAAATH//7EE\u003d",
+      "revId": "58b24717210655a3bf0b75b852aaaa1bc975d99e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//7Dw\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-08T00:56:58Z",
       "side": 1,
       "message": "could use uuid for this, too.",
+      "revId": "58b24717210655a3bf0b75b852aaaa1bc975d99e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//2h8\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1974,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-09T03:44:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//7Dw\u003d",
       "revId": "58b24717210655a3bf0b75b852aaaa1bc975d99e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//2hc\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1981,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-09T03:44:33Z",
+      "side": 1,
+      "message": "I\u0027m using the original uuid now, but adding a string I control to better validate the test.",
+      "parentUuid": "AAAATH//7DI\u003d",
+      "revId": "58b24717210655a3bf0b75b852aaaa1bc975d99e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//7DY\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2013-10-08T00:56:58Z",
       "side": 1,
       "message": "seems like all the backends should work the same way.",
+      "revId": "58b24717210655a3bf0b75b852aaaa1bc975d99e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//2gY\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1984,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-09T03:44:33Z",
+      "side": 1,
+      "message": "I agree, but in this case the SQL backend has different behavior because of a essex/folsom bug.  I\u0027d rather not add the behavior here and wait for a day when the extra field can just be deprecated.",
+      "parentUuid": "AAAATH//7DY\u003d",
       "revId": "58b24717210655a3bf0b75b852aaaa1bc975d99e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//2hA\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1986,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-09T03:44:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//7DU\u003d",
+      "revId": "58b24717210655a3bf0b75b852aaaa1bc975d99e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//7Dg\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2013-10-08T00:56:58Z",
       "side": 1,
       "message": "could use pop and do this in one line.",
+      "revId": "58b24717210655a3bf0b75b852aaaa1bc975d99e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//2hE\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1989,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-09T03:44:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//7Dg\u003d",
       "revId": "58b24717210655a3bf0b75b852aaaa1bc975d99e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
