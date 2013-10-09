@@ -16,11 +16,11 @@ import json
 import uuid
 
 from keystone import auth
-from keystone.common import cms
 from keystone import config
 from keystone import exception
 from keystone import tests
 from keystone.tests import test_v3
+from keystoneclient.common import cms
 
 
 CONF = config.CONF

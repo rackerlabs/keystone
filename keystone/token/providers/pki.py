@@ -18,27 +18,47 @@
 
 import json
 
-from keystone.common import cms
-from keystone.common import environment
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log as logging
 from keystone.token.providers import uuid
+from keystoneclient.common import cms
+#from keystone.common import cms
 
 
 CONF = config.CONF
 
 LOG = logging.getLogger(__name__)
 
+subprocess = None
+
+
+# FIXME(jeffrey4l): remove this when keystoneclient import
+# subprocess graceful
+# When running the unittest, the subprocess imported in this
+# And keystoneclient are different. 
+def _ensure_subprocess():
+    global subprocess
+    if not subprocess:
+        try:
+            from eventlet import patcher
+            if patcher.already_patched.get('os'):
+                from eventlet.green import subprocess
+            else:
+                import subprocess
+        except ImportError:
+            import subprocess  # noqa
+
 
 class Provider(uuid.Provider):
     def _get_token_id(self, token_data):
         try:
+            _ensure_subprocess()
             token_id = cms.cms_sign_token(json.dumps(token_data),
                                           CONF.signing.certfile,
                                           CONF.signing.keyfile)
             return token_id
-        except environment.subprocess.CalledProcessError:
+        except subprocess.CalledProcessError:
             LOG.exception('Unable to sign token')
             raise exception.UnexpectedError(_(
                 'Unable to sign token.'))
