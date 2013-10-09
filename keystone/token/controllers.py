@@ -16,7 +16,8 @@
 
 import json
 
-from keystone.common import cms
+from keystoneclient.common import cms
+
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi

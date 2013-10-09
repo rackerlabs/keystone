@@ -19,7 +19,8 @@ import os
 import urlparse
 import uuid
 
-from keystone.common import cms
+from keystoneclient.common import cms
+
 from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib

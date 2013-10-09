@@ -18,7 +18,8 @@
 
 import json
 
-from keystone.common import cms
+from keystoneclient.common import cms
+
 from keystone.common import environment
 from keystone import config
 from keystone import exception
@@ -36,7 +37,9 @@ class Provider(uuid.Provider):
         try:
             token_id = cms.cms_sign_token(json.dumps(token_data),
                                           CONF.signing.certfile,
-                                          CONF.signing.keyfile)
+                                          CONF.signing.keyfile,
+                                          subprocess=environment.subprocess
+                                          )
             return token_id
         except environment.subprocess.CalledProcessError:
             LOG.exception('Unable to sign token')
