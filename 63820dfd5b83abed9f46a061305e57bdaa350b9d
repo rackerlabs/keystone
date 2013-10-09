@@ -16,6 +16,24 @@
       "revId": "63820dfd5b83abed9f46a061305e57bdaa350b9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//zfw\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-09T15:35:42Z",
+      "side": 1,
+      "message": "Brant had the same question.\n\nhttps://review.openstack.org/#/c/47884/7/keystone/identity/backends/kvs.py",
+      "parentUuid": "AAAATH//zls\u003d",
+      "revId": "63820dfd5b83abed9f46a061305e57bdaa350b9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
