@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//0Z0\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T12:54:43Z",
+      "side": 1,
+      "message": "remove?",
+      "revId": "74ab1646fc99ea2cccf37516e38bdd0457b0ad75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//0ZY\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T12:54:43Z",
+      "side": 1,
+      "message": "i think this whole thing might belong somewhere in keystone.common.environment with other eventlet-related bits",
+      "revId": "74ab1646fc99ea2cccf37516e38bdd0457b0ad75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
