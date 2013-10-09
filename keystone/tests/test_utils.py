@@ -31,8 +31,13 @@
 
 import datetime
 import functools
+import logging
 import os
 import time
+import uuid
+
+from six.moves import cStringIO
+from testtools import matchers
 
 from keystone.common import utils
 from keystone import tests
@@ -128,3 +133,98 @@ class LimitingReaderTests(tests.TestCase):
         self.assertEqual(len(data.read_args), 1)
         self.assertEqual(len(data.read_kwargs), 0)
         self.assertEqual(data.read_args[0], 10)
+
+
+class TestDeprecating(tests.TestCase):
+
+    def setUp(self):
+        super(TestDeprecating, self).setUp()
+        self.deprecated_message = cStringIO()
+        self.handler = logging.StreamHandler(self.deprecated_message)
+        self.logger = logging.getLogger('keystone.common.utils')
+        self.logger.addHandler(self.handler)
+
+    def tearDown(self):
+        super(TestDeprecating, self).tearDown()
+        self.logger.removeHandler(self.handler)
+
+    def test_deprecating_a_function(self):
+
+        @utils.deprecated
+        def do_outdated_stuff(data):
+            return data
+
+        expected_rv = uuid.uuid4().hex
+        retval = do_outdated_stuff(expected_rv)
+
+        self.assertThat(retval, matchers.Equals(expected_rv))
+        self.assertThat(self.deprecated_message.getvalue(),
+                        matchers.Contains('do_outdated_stuff'))
+
+    def test_deprecating_a_method(self):
+
+        class C(object):
+            @utils.deprecated
+            def outdated_method(self, *args):
+                return args
+
+        retval = C().outdated_method(1, 'of anything')
+
+        self.assertThat(retval, matchers.Equals((1, 'of anything')))
+        self.assertThat(self.deprecated_message.getvalue(),
+                        matchers.Contains('outdated_method'))
+
+    def test_deprecating_with_a_custom_error_message(self):
+
+        @utils.deprecated('A custom error message')
+        def do_outdated_stuff(data):
+            return data
+
+        expected_rv = uuid.uuid4().hex
+        retval = do_outdated_stuff(expected_rv)
+
+        self.assertThat(retval, matchers.Equals(expected_rv))
+        expected = 'A custom error message'
+        self.assertThat(self.deprecated_message.getvalue(),
+                        matchers.Contains(expected))
+
+    def test_deprecating_with_a_custom_error_message_with_name(self):
+
+        @utils.deprecated('stop using %(name)s')
+        def do_outdated_stuff():
+            return
+
+        do_outdated_stuff()
+
+        expected = 'stop using do_outdated_stuff'
+        self.assertThat(self.deprecated_message.getvalue(),
+                        matchers.Contains(expected))
+
+    def test_deprecated_in_release(self):
+
+        @utils.deprecated_in_release(what='v2 API',
+                                     release='Icehouse + 2',
+                                     in_favor_of='v3 API')
+        def do_outdated_stuff():
+            return
+
+        do_outdated_stuff()
+
+        expected = ('v2 API is deprecated in favor of v3 API '
+                    'and may be removed in Icehouse + 2')
+        self.assertThat(self.deprecated_message.getvalue(),
+                        matchers.Contains(expected))
+
+    def test_deprecated_in_release_use_callable_name(self):
+
+        @utils.deprecated_in_release('Icehouse + 2',
+                                     in_favor_of='different_stuff')
+        def do_outdated_stuff():
+            return
+
+        do_outdated_stuff()
+
+        expected = ('do_outdated_stuff is deprecated in favor of '
+                    'different_stuff and may be removed in Icehouse + 2')
+        self.assertThat(self.deprecated_message.getvalue(),
+                        matchers.Contains(expected))
