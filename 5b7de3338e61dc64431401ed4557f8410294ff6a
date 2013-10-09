@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATH//x6g\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-10-09T22:09:21Z",
+      "side": 1,
+      "message": "can we make this configurable? i.e.\n\nif CONF.auth_external.domain_aware:\n  # do the split\nelse:\n  # do not split",
+      "revId": "5b7de3338e61dc64431401ed4557f8410294ff6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//1lE\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 1
