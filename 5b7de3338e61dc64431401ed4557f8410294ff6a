@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//1lE\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1620,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-10-09T06:55:15Z",
+      "side": 1,
+      "message": "This test looks pretty similar to test_remote_user_no_realm(), except that you are testing for support of the \u0027@\u0027 char.  Fine to have a separate test, but perhaps the method name should distinguish better between the intent of the two tests.",
+      "revId": "5b7de3338e61dc64431401ed4557f8410294ff6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
