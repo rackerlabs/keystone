@@ -83,7 +83,7 @@ def use_eventlet(monkeypatch_thread=None):
     # understanding Eventlet in Keystone. The following is a complete list
     # of what is monkey patched instead of passing all=False and then passing
     # module=True to monkey patch a specific module.
-    eventlet.patcher.monkey_patch(os=False, select=True, socket=True,
+    eventlet.patcher.monkey_patch(os=True, select=True, socket=True,
                                   thread=monkeypatch_thread, time=True,
                                   psycopg=False, MySQLdb=False)
 
