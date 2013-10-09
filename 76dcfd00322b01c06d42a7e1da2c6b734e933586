@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//0Q4\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T14:01:21Z",
+      "side": 1,
+      "message": "this is a much better method name!",
+      "revId": "76dcfd00322b01c06d42a7e1da2c6b734e933586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//0RE\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T14:01:21Z",
+      "side": 1,
+      "message": "could update docstr?",
+      "revId": "76dcfd00322b01c06d42a7e1da2c6b734e933586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//0FQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T14:01:21Z",
+      "side": 1,
+      "message": "could use `backticks` on the attribute names and add a period",
+      "revId": "76dcfd00322b01c06d42a7e1da2c6b734e933586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//0Fg\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T14:01:21Z",
+      "side": 1,
+      "message": "unnecessary whitespace",
+      "revId": "76dcfd00322b01c06d42a7e1da2c6b734e933586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//0Es\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1132,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T14:01:21Z",
+      "side": 1,
+      "message": "calling GET /v2.0/users/{user_id} would have returned OS-KSADM:password in the current master... it\u0027d be nice to test that it\u0027s not returned just to illustrate (same goes for list_users)",
+      "revId": "76dcfd00322b01c06d42a7e1da2c6b734e933586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
