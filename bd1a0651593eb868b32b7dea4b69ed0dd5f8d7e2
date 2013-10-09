@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//0Ak\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T14:15:46Z",
+      "side": 1,
+      "message": "``backticks`` on attribute names",
+      "revId": "bd1a0651593eb868b32b7dea4b69ed0dd5f8d7e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//z/0\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T14:15:46Z",
+      "side": 1,
+      "message": "i\u0027d rather not add support for this if there\u0027s no demand for it",
+      "revId": "bd1a0651593eb868b32b7dea4b69ed0dd5f8d7e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//z/A\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1105,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T14:15:46Z",
+      "side": 1,
+      "message": "new_username \u003d uuid.uuid4().hex :)",
+      "revId": "bd1a0651593eb868b32b7dea4b69ed0dd5f8d7e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//z+w\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1605,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T14:15:46Z",
+      "side": 1,
+      "message": "?",
+      "revId": "bd1a0651593eb868b32b7dea4b69ed0dd5f8d7e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
