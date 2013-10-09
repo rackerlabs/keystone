@@ -19,6 +19,7 @@
 #    under the License.
 
 import calendar
+import functools
 import grp
 import hashlib
 import json
@@ -516,3 +517,49 @@ def make_dirs(path, mode=None, user=None, group=None, log=None):
             raise EnvironmentError("makedirs('%s'): %s" % (path, exc.strerror))
 
     set_permissions(path, mode, user, group, log)
+
+
+def deprecated(message_or_func):
+    """A decorator to mark callables as deprecated.
+
+    deprecated can be used without arguments to warn using the default
+    warning message or a custom warning message can be specified.  If
+    the custom warning message contains %(name)s, it will be replaced
+    with the deprecated callable's name.
+
+    Using the default warning message:
+
+    >>> @deprecated
+    ... def a(): pass
+
+    Using a custom warning message:
+
+    >>> @deprecated('please stop using %(name)s')
+    ... def b(): pass
+
+    """
+
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapped(*args, **kwargs):
+            LOG.deprecated(msg, dict(name=func.__name__))
+            return func(*args, **kwargs)
+        return wrapped
+
+    if callable(message_or_func):
+        msg = _("%(name)s is deprecated and will be removed "
+                "in future releases")
+        return decorator(message_or_func)
+
+    msg = str(message_or_func)
+    return decorator
+
+
+def deprecated_in_release(release, in_favor_of, what='%(name)s'):
+    """A decorator for logging a release deprecation message.
+
+    """
+    msg = _('%(what)s is deprecated in favor of %(in_favor_of)s '
+            'and may be removed in %(release)s')
+    details = dict(what=what, release=release, in_favor_of=in_favor_of)
+    return deprecated(msg % details)
