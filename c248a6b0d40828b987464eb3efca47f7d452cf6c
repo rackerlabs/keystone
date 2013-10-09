@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//0TY\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T13:27:12Z",
+      "side": 1,
+      "message": "can\u0027t you just do extra_params and missing_required_params as optional kwargs of _build_message() defaulting to None?",
+      "revId": "c248a6b0d40828b987464eb3efca47f7d452cf6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//0Rs\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-09T13:27:12Z",
+      "side": 1,
+      "message": "a space would be nice between the sentences :)",
+      "revId": "c248a6b0d40828b987464eb3efca47f7d452cf6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
