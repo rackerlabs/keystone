@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//tB8\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-10T23:27:05Z",
+      "side": 1,
+      "message": "@gyee - I think this is handled by switching to the ExternalDomain implementation (see line 69)",
+      "parentUuid": "AAAATH//x6g\u003d",
+      "revId": "5b7de3338e61dc64431401ed4557f8410294ff6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//1lE\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 1
