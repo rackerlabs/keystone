@@ -13,8 +13,15 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+from keystone.common import config
 from keystone.common import wsgi
+from keystone.openstack.common import log as logging
 from keystone.token import controllers
+from keystone.token import provider
+
+
+CONF = config.CONF
+LOG = logging.getLogger(__name__)
 
 
 class Router(wsgi.ComposableRouter):
@@ -45,13 +52,26 @@ class Router(wsgi.ComposableRouter):
                        action='endpoints',
                        conditions=dict(method=['GET']))
 
-        # Certificates used to verify auth tokens
-        mapper.connect('/certificates/ca',
-                       controller=token_controller,
-                       action='ca_cert',
-                       conditions=dict(method=['GET']))
+        enable_certificates = False
 
-        mapper.connect('/certificates/signing',
-                       controller=token_controller,
-                       action='signing_cert',
-                       conditions=dict(method=['GET']))
+        if CONF.token.provider is None:
+            if (CONF.signing.token_format is not None and
+                    CONF.signing.token_format == 'PKI'):
+                msg = _('keystone.conf [signing] token_format is deprecated'
+                        'in favor of keystone.conf [token] provider')
+                LOG.warning(msg)
+                enable_certificates = True
+        elif CONF.token.provider == provider.PKI_PROVIDER:
+            enable_certificates = True
+
+        if enable_certificates:
+            # Certificates used to verify auth tokens
+            mapper.connect('/certificates/ca',
+                           controller=token_controller,
+                           action='ca_cert',
+                           conditions=dict(method=['GET']))
+
+            mapper.connect('/certificates/signing',
+                           controller=token_controller,
+                           action='signing_cert',
+                           conditions=dict(method=['GET']))
