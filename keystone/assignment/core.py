@@ -80,7 +80,8 @@ class Manager(manager.Manager):
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         ret = self.driver.update_project(tenant_id, tenant_ref)
         self.get_project.invalidate(self, tenant_id)
-        self.get_project_by_name.invalidate(self, ret['name'],
+        self.get_project_by_name.invalidate(self,
+                                            ret['name'].encode('utf-8'),
                                             ret['domain_id'])
         return ret
 
@@ -89,7 +90,8 @@ class Manager(manager.Manager):
         project = self.driver.get_project(tenant_id)
         ret = self.driver.delete_project(tenant_id)
         self.get_project.invalidate(self, tenant_id)
-        self.get_project_by_name.invalidate(self, project['name'],
+        self.get_project_by_name.invalidate(self,
+                                            project['name'].encode('utf-8'),
                                             project['domain_id'])
         return ret
 

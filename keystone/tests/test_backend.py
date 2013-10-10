@@ -1556,6 +1556,17 @@ class IdentityTests(object):
                           uuid.uuid4().hex,
                           dict())
 
+    def test_create_update_delete_unicode_project(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.identity_api.create_domain(domain['id'], domain)
+        unicode_project_name = u'name \u540d\u5b57'
+        project = {'id': uuid.uuid4().hex,
+                   'name': unicode_project_name,
+                   'domain_id': domain['id']}
+        self.assignment_api.create_project(project['id'], project)
+        self.assignment_api.update_project(project['id'], project)
+        self.assignment_api.delete_project(project['id'])
+
     def test_delete_project_404(self):
         self.assertRaises(exception.ProjectNotFound,
                           self.assignment_api.delete_project,
